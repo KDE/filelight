@@ -22,7 +22,6 @@
 
 #include <qpainter.h>
 #include <qtimer.h>      //resizeEvent()
-#include <qstatusbar.h>
 
 #include <kaction.h>
 #include <kiconeffect.h> //mousePressEvent() [visual feedback]

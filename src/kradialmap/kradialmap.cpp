@@ -26,17 +26,16 @@
  *   granted to use the methodology with this program.                     *
  *                                                                         *
  ***************************************************************************/
- 
+
 #include <qapplication.h>   //sendEvent
 #include <qtimer.h>         //member
 #include <qcursor.h>        //slotPostMouseEvent()
 #include <qbitmap.h>        //ctor - finding cursor size
-#include <qstatusbar.h>
 
 #include <kmainwindow.h>    //member *
 #include <kaction.h>        //member
 #include <krun.h>           //slotSpawnKonqi(), pupup slots
-#include <kmessagebox.h>    
+#include <kmessagebox.h>
 #include <kpopupmenu.h>     //ctor
 #include <kcursor.h>        //ctor
 #include <klocale.h>
