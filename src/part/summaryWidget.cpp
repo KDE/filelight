@@ -111,6 +111,6 @@ SummaryWidget::diskInformationReady()
    layout()->addItem( new QSpacerItem( 16, 16, QSizePolicy::Minimum, QSizePolicy::Fixed ) );
 }
 
-};
+}
 
 #include "summaryWidget.moc"
