@@ -1,5 +1,5 @@
 SUBDIRS     = radialMap
-INCLUDES    = $(all_includes) -I$(top_srcdir)/src
+INCLUDES    = $(all_includes) -I$(top_srcdir)/filelight/src
 METASOURCES = AUTO
 
 #Part

@@ -170,7 +170,7 @@ Part::configFilelight()
 KAboutData*
 Part::createAboutData()
 {
-    static KAboutData about( APP_NAME, I18N_NOOP( APP_PRETTYNAME ), VERSION );
+    static KAboutData about( APP_NAME, I18N_NOOP( APP_PRETTYNAME ), APP_VERSION );
     return &about;
 }
 
