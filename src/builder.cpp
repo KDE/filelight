@@ -1,0 +1,144 @@
+/***************************************************************************
+                          builder.cpp  -  description
+                             -------------------
+    begin                : Tue Sep 16 2003
+    copyright            : (C) 2003 by Max Howell
+    email                : max.howell@methylblue.com
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+
+#include <string.h>
+#include <qstring.h>
+#include <qregexp.h>
+#include <kdebug.h>
+#include <klocale.h>
+
+#include "define.h"
+#include "builder.h"
+#include "filetree.h"
+#include "filemap.h"
+#include "settings.h"
+
+
+extern Settings Gsettings;
+extern unsigned int MAX_RING_DEPTH;
+
+//**** REMOVE NEED FOR the +1 with MAX_RING_DEPTH uses
+//**** add some angle bounds checking (possibly in Segment ctor? can I delete in a ctor?)
+ 
+Builder::Builder( FileMap *m, const Directory* const d, bool fast ) :
+   m_map( m ),
+   m_root( d ),
+   m_minSize( static_cast<unsigned int>((d->size() * 3) / (PI * m->height() - m->MAP_2MARGIN )) ), //filesize that gives 2px at any depth
+   m_depth( &m->m_visibleDepth )
+{
+  m_signature = new Chain<Segment> [MAX_RING_DEPTH + 1]; //**** make it so +1 is not needed at some point
+
+  if( !fast || *m_depth == 0 ) //depth 0 is special case usability-wise //**** WHY?!
+  {
+    //determine depth rather than use old one
+    *m_depth = 0;
+    findVisibleDepth( d );
+  }
+
+  m_map->setRingBreadth();
+  setLimits( m_map->m_ringBreadth );
+  build( d );
+
+  m_map->m_signature = m_signature;
+} 
+
+
+void
+Builder::findVisibleDepth( const Directory* const dir, const unsigned int depth )
+{
+  if( *m_depth >= MAX_RING_DEPTH ) //**** should be able to change to == after code has stabalised
+  {
+    *m_depth = MAX_RING_DEPTH;
+    return;
+  }
+  if( *m_depth < depth )
+    *m_depth = depth;
+
+  for( ConstIterator<File> it = dir->constIterator(); it != dir->end(); ++it )
+  {
+    if( (*it)->isDir() ) {
+      if( (*it)->size() > m_minSize )
+        findVisibleDepth( (Directory *)*it, depth + 1 ); //if no files greater than min size the depth is still recorded
+    }
+  }
+}
+
+
+void
+Builder::setLimits( const unsigned int &b )
+{
+  double size3 = m_root->size() * 3;
+  double pi2B   = PI * 2 * b;
+  
+  for( unsigned int d = 0; d <= *m_depth; ++d )
+    m_limits[d] = (unsigned int)(size3 / (double)(pi2B * (d + 1))); //min is angle that gives 3px outer diameter for that depth
+}
+
+
+//**** segments currently overlap at edges (i.e. end of first is start of next)
+bool
+Builder::build( const Directory* const dir, const unsigned int depth, unsigned int a_start, const unsigned int a_end )
+{
+  if( dir->fileCount() == 0 )
+    return false;
+
+  unsigned int hiddenSize = 0, hiddenFileCount = 0;
+
+  for( ConstIterator<File> it = dir->constIterator(); it != dir->end(); ++it )
+  {
+    if( (*it)->size() > m_limits[depth] )
+    {
+      unsigned int a_len = (unsigned int)(5760 * ((double)(*it)->size() / (double)m_root->size()));
+
+      Segment *s = new Segment( *it, a_start, a_len );
+      
+      (m_signature + depth)->append( s );
+
+      if( (*it)->isDir() )
+      {
+        if( depth == *m_depth )
+          s->m_hasHiddenChildren = true;
+        else
+          s->m_hasHiddenChildren = build( (Directory*)*it, depth + 1, a_start, a_start + a_len ); //recursion
+      }
+
+      a_start += a_len; //**** should we add 1?
+    }
+    else //do always as code is small and if() would just add overhead
+    {
+      hiddenSize += (*it)->size();
+      if( (*it)->isDir() ) //**** considered virtual, but dir wouldn't count itself!
+        hiddenFileCount += static_cast<const Directory*>(*it)->fileCount(); //need to add one to count the dir as well
+
+      ++hiddenFileCount;
+    }
+  }
+
+  if( hiddenFileCount == dir->fileCount() && !Gsettings.showSmallFiles )
+    return true;
+  else if( ( Gsettings.showSmallFiles && hiddenSize > m_limits[depth] ) ||
+           ( depth == 0 && ( hiddenSize > dir->size() / 8 ) ) ) //**** || > size() * 0.75
+  {
+    //append a segment for unrepresented space
+    QString s( i18n( "%1 files ~ %2" ).arg( KGlobal::locale()->formatNumber( hiddenFileCount, 0 ) ).arg( makeHumanReadable( hiddenSize / hiddenFileCount ) ) );
+    (m_signature + depth)->append( new Segment( new File( strdup( s.local8Bit() ), hiddenSize ), a_start, a_end - a_start ) );
+  }
+
+  return false;
+
+
+}
