@@ -7,5 +7,6 @@ Type=Application
 Exec=filelight %u
 Icon=filelight.png
 Comment=View disk usage information
+Comment[sv]=Visa information om diskanvändning
 Terminal=0
 MimeType=inode/directory
