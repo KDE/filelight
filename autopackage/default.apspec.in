@@ -1,0 +1,57 @@
+[Meta]
+SoftwareVersion: @VERSION@
+RootName: @methylblue.com/filelight/:$SOFTWAREVERSION:1
+DisplayName: Filelight - disk-usage information
+ShortName: filelight
+Maintainer: Max Howell <max.howell@methylblue.com>
+Packager: Max Howell <max.howell@methylblue.com>
+Summary: Graphical disk-usage information
+
+[Description]
+Filelight allows you to understand exactly where your diskspace is being used by graphically representating your filesystem as a set of concentric, segmented-rings.
+
+[BuildPrepare]
+prepareBuild --enable-final --disable-debug --without-arts
+
+[BuildUnprepare]
+unprepareBuild
+
+[Imports]
+echo '*' | import
+
+[Prepare]
+# Dependency checking
+requireAtLeast @kde.org/kdelibs:3.2
+
+[Install]
+# Cheeky, but kde won't relocate yet..
+prefix=`$KDEDIR/bin/kde-config --prefix`
+kdeconfig="$KDEDIR/bin/kde-config"
+
+installExe bin/filelight
+installLib lib/kde3/*
+
+#installs it to pre kde 3.2 location!
+#installDesktop Utilities share/applications/kde/filelight.desktop
+#thus I do this:
+copyFile share/applications/kde/filelight.desktop $prefix/share/applications/kde/filelight.desktop
+
+#these just don't seem to work :(
+#installIconTheme crystalsvg share/icons/crystalsvg || true
+#installConfig share/config/filelightrc
+
+pushd share
+ pushd apps/filelight
+  datadir=`$kdeconfig --expandvars --install data`/filelight
+  copyFiles filelightui.rc filelight_partui.rc "$datadir"
+ popd
+ copyFile services/filelight_part.desktop `$kdeconfig --expandvars --install services`
+ copyFile config/filelightrc `$kdeconfig --expandvars --install config`
+
+ copyFiles icons/* `$kdeconfig --expandvars --install icon`
+ copyFiles doc/HTML/* `$kdeconfig --expandvars --install html`
+ copyFiles locale/* `$kdeconfig --expandvars --install locale`
+popd
+
+[Uninstall]
+uninstallFromLog
