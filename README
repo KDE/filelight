@@ -7,26 +7,28 @@ graphically representating your filesystem as a set of concentric
 segmented-rings.
 
 README last updated with respect to 1.0-beta7
+--------------------------------------------------------------------------------
 
 
- Features
-==========
+ Dependencies
+==============
 
-* Click on directories to see them in more detail
-* Click on files to launch in the appropriate viewer (as configured in
-  Konqueror)
+Filelight depends on KDElibs >= 3.2 and therefore Qt >= 3.2.
+
+
+ Usage Tips
+============
+
+* Click on directories to see re-center the view on them
+* Click on files to launch the application associated with them
 * Middle click to open files/directories with Konqueror
-* Right click on the center white circle to manipulate the directory the view is
-  centered about
-* You can specify a directory to scan on startup at the command line eg:
+* Right click on the central white circle to manipulate the base directory
+* Increase the window size to see more detail
+* Hover over segments to find out more information
+* Available as a view-KPart in Konqueror
+* You can specify a directory to scan on startup from the command line, eg:
 
-  # filelight /home/mxcl
-
-* Increase the window size for more detail - small files are hidden at smaller
-  window sizes
-* Hover over segments to find out more information about the region of the
-  filesystem it represents
-* Available as a KPart in Konqueror
+      $ filelight /home/mxcl
 
 
  Install
@@ -38,9 +40,9 @@ See the accompanying file; INSTALL.
  Bugs
 ======
 
-Filelight is still under development and I'd be most chuffed if you could report
-bugs either through filelight@methylblue.com or the forums at
-http://www.methylblue.com/filelight/
+There are less bugs everyday! Please report bugs to filelight@methylblue.com
+--------------------------------------------------------------------------------
+
 
 I hope you enjoy using Filelight!
 
