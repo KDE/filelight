@@ -183,7 +183,7 @@ private:
         
         bool intersects( unsigned int a ) const { return ( ( a >= start() ) && ( a < end() ) ); }
         
-        friend void Map::colorise();
+        friend class Map;
         friend class Builder;
         
     private:

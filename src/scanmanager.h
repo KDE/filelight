@@ -78,7 +78,7 @@ public:
 
     void run();
     
-    friend bool ScanManager::startPrivate( const QString & );
+    friend class ScanManager;
     
 private:
     QString m_path;
