@@ -53,7 +53,7 @@ signals:
     void cacheInvalidated();
 
 private:
-    void startPrivate( const QString & );
+    bool startPrivate( const QString & );
     void customEvent( QCustomEvent * e );
 
     void wait();
@@ -78,7 +78,7 @@ public:
 
     void run();
     
-    friend void ScanManager::startPrivate( const QString & );
+    friend bool ScanManager::startPrivate( const QString & );
     
 private:
     QString m_path;

@@ -19,21 +19,25 @@
 #define SETTINGS_H
 
 #include <qstringlist.h>
+#include <qstring.h>
 
 
 //**** remove scheme prefix
 enum  MapScheme { scheme_rainbow, scheme_highContrast, scheme_kde, scheme_fileDensity };
-class KConfig;
-class QStringList;
 
 struct Settings
 {
   //keep everything positive, avoid using DON'T, NOT or NO
 public:
+  Settings( const QString &s ) : m_path( s ) {}
+  
+private:
+  const QString m_path;
+
+public:
   bool scanAcrossMounts;
   bool scanRemoteMounts;
   bool scanRemovableMedia;
-  QStringList skipList;
   MapScheme scheme;
   int  contrast;
   int  aaFactor;
@@ -41,13 +45,10 @@ public:
   int  minFontPitch;
   bool showSmallFiles;
   unsigned int  defaultRingDepth;
-  
-  void readSettings( KConfig *kc ) { config = kc; readSettings(); }
+  QStringList skipList; //bottom as biggest member
+    
   bool readSettings();
   bool writeSettings();
-
-private:
-  KConfig *config; //don't want just anyone messing with the config variable, no no!
 };
 
 #endif

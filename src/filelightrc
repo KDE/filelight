@@ -1,4 +1,4 @@
-[general]
+[filelight_part]
 skipList=/dev/,/proc/,/sys/,/root/
 
 [window]

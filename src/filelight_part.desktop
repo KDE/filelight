@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=RadialMap View
+MimeType=inode/directory
+ServiceTypes=KParts/ReadOnlyPart
+X-KDE-Library=libfilelight
+Type=Service
+Icon=filelight

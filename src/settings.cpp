@@ -27,22 +27,21 @@
 bool Settings::readSettings()
 {
   //**** need to return false somehow if error, but how detect error?
-
-  config->setGroup( "general" );
-  scanAcrossMounts   = config->readBoolEntry( "scanAcrossMounts", false );
-  scanRemoteMounts   = config->readBoolEntry( "scanRemoteMounts", false );
-  scanRemovableMedia = config->readBoolEntry( "scanRemovableMedia", false );
+  KConfig config( m_path );
+  
+  config.setGroup( "filelight_part" );
+  scanAcrossMounts   = config.readBoolEntry( "scanAcrossMounts", false );
+  scanRemoteMounts   = config.readBoolEntry( "scanRemoteMounts", false );
+  scanRemovableMedia = config.readBoolEntry( "scanRemovableMedia", false );
 #if KDE_VERSION >= 0x030103
-  skipList           = config->readPathListEntry( "skipList" );
+  skipList           = config.readPathListEntry( "skipList" );
 #endif
-
-  config->setGroup( "appearance" );
-  scheme             = (MapScheme)config->readNumEntry( "scheme", 0 );  
-  contrast           = config->readNumEntry( "contrast", 50 );
-  aaFactor           = config->readNumEntry( "aaFactor", 2 );
-  varyLabelFontSizes = config->readBoolEntry( "varyLabelFontSizes", true );
-  minFontPitch       = config->readNumEntry( "minFontPitch", QFont().pointSize() - 3);
-  showSmallFiles     = config->readBoolEntry( "showSmallFiles", false );  
+  scheme             = (MapScheme)config.readNumEntry( "scheme", 0 );
+  contrast           = config.readNumEntry( "contrast", 50 );
+  aaFactor           = config.readNumEntry( "aaFactor", 2 );
+  varyLabelFontSizes = config.readBoolEntry( "varyLabelFontSizes", true );
+  minFontPitch       = config.readNumEntry( "minFontPitch", QFont().pointSize() - 3);
+  showSmallFiles     = config.readBoolEntry( "showSmallFiles", false );  
 
   defaultRingDepth = 4;
   
@@ -52,24 +51,23 @@ bool Settings::readSettings()
 
 bool Settings::writeSettings()
 {
-  if( config->isReadOnly() ) return false;
+  KConfig config( m_path );
 
-  config->setGroup( "general" );
+  config.setGroup( "filelight_part" );
 
-  config->writeEntry( "scanAcrossMounts", scanAcrossMounts );
-  config->writeEntry( "scanRemoteMounts", scanRemoteMounts );
-  config->writeEntry( "scanRemovableMedia", scanRemovableMedia );
+  config.writeEntry( "scanAcrossMounts", scanAcrossMounts );
+  config.writeEntry( "scanRemoteMounts", scanRemoteMounts );
+  config.writeEntry( "scanRemovableMedia", scanRemovableMedia );
 #if KDE_VERSION >= 0x030103
-  config->writePathEntry( "skipList", skipList );
+  config.writePathEntry( "skipList", skipList );
 #endif
 
-  config->setGroup( "appearance" );
-  config->writeEntry( "scheme", scheme );  
-  config->writeEntry( "contrast", contrast );
-  config->writeEntry( "aaFactor", aaFactor );  
-  config->writeEntry( "varyLabelFontSizes", varyLabelFontSizes );
-  config->writeEntry( "minFontPitch", minFontPitch );
-  config->writeEntry( "showSmallFiles", showSmallFiles);
+  config.writeEntry( "scheme", scheme );  
+  config.writeEntry( "contrast", contrast );
+  config.writeEntry( "aaFactor", aaFactor );  
+  config.writeEntry( "varyLabelFontSizes", varyLabelFontSizes );
+  config.writeEntry( "minFontPitch", minFontPitch );
+  config.writeEntry( "showSmallFiles", showSmallFiles);
    
   return true;
 }

@@ -66,7 +66,6 @@ void ScanManager::abort()
 }
 
 
-inline
 void ScanManager::wait()
 {
   //**** blocks UI, but you only use this in emergencys
@@ -94,8 +93,7 @@ bool ScanManager::start( KURL url )
 
   if( err == ScanManager::NoError )
   {
-    startPrivate( path );
-    return true;    
+    return startPrivate( path );
   }
   else
   {
@@ -105,7 +103,7 @@ bool ScanManager::start( KURL url )
 }
 
 
-void ScanManager::startPrivate( const QString &path )
+bool ScanManager::startPrivate( const QString &path )
 {
   kdDebug() << "Scan requested for: " << path << "\n";
 
@@ -114,7 +112,7 @@ void ScanManager::startPrivate( const QString &path )
     //shouldn't happen, but lets prevent mega-disasters just in case eh?
     kdWarning() << "Filelight attempted to run 2 scans concurrently!\n";
     //**** emit scanFailed with specific error message
-    return;
+    return false;
   }
 
 
@@ -164,8 +162,8 @@ void ScanManager::startPrivate( const QString &path )
       {
         //we found a completed tree, thus no need to scan
         kdDebug() << "Found cache-handle, generating map..\n";
-        emit cached( d );
-        return;
+        QApplication::postEvent( this, new ScanCompleteEvent( d ) );  //Qt will delete it for us
+        return true;
       }
       else
       {
@@ -204,6 +202,8 @@ void ScanManager::startPrivate( const QString &path )
   emit started( path );
 
   m_thread->start();
+  
+  return true;
 }
 
 
@@ -214,7 +214,8 @@ void ScanManager::customEvent( QCustomEvent * e )
     {
       Directory *tree = static_cast<ScanCompleteEvent*>(e)->tree();
 
-      cache.append( tree );
+      //FIXME now you're doing cached ones this way too you should definately sanity check the cache
+      //cache.append( tree );
       //**** very important to sanity check the cache now
       emit succeeded( tree );
     }

@@ -47,12 +47,9 @@
     <Action name="scan_root"/>
     <Action name="scan_recent"/>
     <Action name="scan_rescan"/>
-    <Action name="view_zoom_in"/>
-    <Action name="view_zoom_out"/>
     <Action name="go_up"/>
     <Action name="go_back"/>
     <Action name="go_forward"/>
-    <Action name="options_configure"/>
     <Action name="clear_location"/>
     <Action name="location_bar"/>
     <Action name="go"/>
@@ -66,12 +63,9 @@
     <Action name="scan_root"/>
     <Action name="scan_recent"/>
     <Action name="scan_rescan"/>
-    <Action name="view_zoom_in"/>
-    <Action name="view_zoom_out"/>
     <Action name="go_up"/>
     <Action name="go_back"/>
     <Action name="go_forward"/>
-    <Action name="options_configure"/>
     <Action name="clear_location"/>
     <Action name="location_bar"/>
     <Action name="go"/>
@@ -90,7 +84,6 @@
     <Action name="scan_recent"/>
     <Action name="go_back"/>
     <Action name="go_forward"/>
-    <Action name="options_configure"/>
     <Action name="clear_location"/>
     <Action name="location_bar"/>
     <Action name="go"/>
@@ -98,8 +91,6 @@
   <disable>
     <Action name="scan_stop"/>
     <Action name="scan_rescan"/>
-    <Action name="view_zoom_in"/>
-    <Action name="view_zoom_out"/>
     <Action name="go_up"/>
   </disable>
 </State>

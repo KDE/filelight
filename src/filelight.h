@@ -22,34 +22,30 @@
  #include <config.h>
 #endif
 
-#undef PACKAGE
-#undef VERSION
+#undef  PACKAGE
+#undef  VERSION
 #define PACKAGE "filelight"
-#define VERSION "0.6.3"
+#define VERSION "0.7.0"
 
 
-#include <kmainwindow.h>
-#include "scanmanager.h" //**** unless you remember how to declare the enum
-
-
+#include <kparts/mainwindow.h>
 
 class QString;
 class QTimer;
 class QLabel;
 class KHistoryCombo;
-class KConfig;
 class KAction;
 class KRecentFilesAction;
 class KURL;
+class KConfig;
 
-class FilelightCanvas;
+class FilelightPart;
 class ScanProgressBox;
-class ScanManager;
 class HistoryCollection;
 class Directory;
 
 
-class Filelight : public KMainWindow
+class Filelight : public KParts::MainWindow
 {
   Q_OBJECT
 
@@ -58,6 +54,7 @@ class Filelight : public KMainWindow
     virtual ~Filelight();
 
   public slots:
+  //FIXME make this pricate and add it to the ctor
     bool slotScanUrl( const KURL & ); //needed by main.cpp
     
   private slots:
@@ -68,24 +65,23 @@ class Filelight : public KMainWindow
     void slotScanHomeDirectory();
     void slotScanRootDirectory();
 
-    void showSettings();
     void editToolbars();
     void slotNewToolbarConfig();
 
-    void scanStarted( const QString & );
-    void scanFailed( const QString &, ScanManager::ErrorCode );
-    void scanAborted();
-    void newMapCreated( const Directory * );
+    void scanStarted();
+    void scanFailed( const QString & );
+    void scanCompleted();
 
+    //FIXME rename as is different meaning
+    void slotAbortScan();    
+    
   protected:
     virtual void saveProperties( KConfig * );
     virtual void readProperties( KConfig * );
     virtual bool queryExit();
         
   private:
-    KConfig         *m_config;
-    ScanManager     *m_manager;
-    FilelightCanvas *m_canvas;
+    FilelightPart *m_part;    
 
     QLabel             *m_status[2];
     KHistoryCombo      *m_combo;

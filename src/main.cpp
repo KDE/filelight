@@ -25,8 +25,10 @@
 #include <kurl.h>
 #include <kapp.h>
 
-#include "define.h"
 #include "filelight.h"
+
+#define PACKAGE "filelight"
+#define PRETTYNAME "Filelight"
 
 
 static KCmdLineOptions options[] =
@@ -39,21 +41,14 @@ static KCmdLineOptions options[] =
 
 int main(int argc, char *argv[])
 {
-/* 
- KAboutData ( const char *appName, const char *programName,
-                const char *version, const char *shortDescription = 0,
-                int licenseType = License_Unknown, const char *copyrightStatement = 0,
-                const char *text = 0, const char *homePageAddress = 0,
-                const char *bugsEmailAddress = "submit@bugs.kde.org" ) */
-
 //**** add more detail to description
   static const char *description = I18N_NOOP("Recursive graphical display of disk usage.");
   static const char *homepage    = "http://www.methylblue.com/filelight/";
   static const char *bugs        = "filelight@methylblue.com";
                 
   KAboutData aboutData( PACKAGE, I18N_NOOP( PRETTYNAME ),
-    VERSION, description, KAboutData::License_GPL_V2, "(c) Max Howell",
-    I18N_NOOP( "Original concept by Steffen Gerlach" ), homepage, bugs );
+    VERSION, description, KAboutData::License_GPL_V2, "(C) 2003 Max Howell",
+    I18N_NOOP( "Filelight is based on work by Steffen Gerlach" ), homepage, bugs );
     
   aboutData.addAuthor( "Max Howell", I18N_NOOP("Author"), "max.howell@methylblue.com", "http://www.methylblue.com/" );
   aboutData.addCredit( "Steffen Gerlach", I18N_NOOP("Original concept"), 0, "http://www.steffengerlach.de/" );
