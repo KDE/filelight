@@ -85,9 +85,9 @@ bool ScanManager::start( const KURL &url, bool force )
   {
     struct stat statbuf;
 
-    if( access( path, R_OK ) != 0 )
-      err = ScanManager::NoPermission;
-    else if( stat( url.path(), &statbuf ) == 0 )
+//    if( access( path, R_OK ) != 0 )
+//      err = ScanManager::NoPermission; else
+    if( stat( url.path(), &statbuf ) == 0 )
     {
       if( !S_ISDIR( statbuf.st_mode ) )
         err = ScanManager::NotDirectory;

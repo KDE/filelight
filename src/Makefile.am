@@ -24,6 +24,9 @@ utilities_DATA = filelight.desktop
 rcdir = $(kde_datadir)/filelight
 rc_DATA = filelightui.rc
 
+configdir = $(kde_confdir)
+config_DATA = filelightrc
+
 messages: rc.cpp
 	LIST=`find . -name \*.h -o -name \*.hh -o -name \*.H -o -name \*.hxx -o -name \*.hpp -o -name \*.cpp -o -name \*.cc -o -name \*.cxx -o -name \*.ecpp -o -name \*.C`; \
 	if test -n "$$LIST"; then \

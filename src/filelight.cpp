@@ -101,10 +101,6 @@ Filelight::Filelight() : KMainWindow( 0, "filelight" )
   connect( m_settingsDialog, SIGNAL( mapIsInvalid() ), m_manager, SLOT( emptyCache() ) );
 
   applyMainWindowSettings( m_config, "window" );
-  //**** make a default config and then remove this
-  //     also remove the default skipList bit as that is broken anyway
-  if( !m_config->hasGroup( "window" ) )
-    resize( 600, 440 );
 }
 
 
