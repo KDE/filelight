@@ -7,7 +7,9 @@
 #include "fileTree.h"
 #include <fstab.h>
 #include "localLister.h"
+#ifdef HAVE_MNTENT_H
 #include <mntent.h>
+#endif
 #include <qapplication.h> //postEvent()
 #include <qfile.h>
 #include "scan.h"
@@ -230,11 +232,18 @@ namespace Filelight
       //  ** you want a KDE extension that handles this for you really
 
       struct fstab *fstab_ent;
+#ifdef HAVE_MNTENT_H
       struct mntent *mnt_ent;
+#endif
       FILE *fp;
       QString str;
 
+
+#ifdef HAVE_MNTENT_H
       if( setfsent() == 0 || !( fp = setmntent( INFO_MOUNTED_PARTITIONS, "r" ) ) )
+#else
+      if( setfsent() == 0 )
+#endif
          return false;
 
       #define FS_NAME   fstab_ent->fs_spec    // device-name
@@ -243,7 +252,13 @@ namespace Filelight
       #define FS_MNTOPS fstab_ent->fs_mntops  // mount-options
 
       QStringList remoteFsTypes;
-      remoteFsTypes << "smbfs" << MNTTYPE_NFS;
+      remoteFsTypes << "smbfs" ;
+#ifdef MNTTYPE_NFS
+      remoteFsTypes << MNTTYPE_NFS;
+#else
+      remoteFsTypes << "nfs";
+#endif
+      // What about afs?
 
       while( (fstab_ent = getfsent()) != NULL )
       {
@@ -274,6 +289,7 @@ namespace Filelight
 
       //scan mtab, **** mtab should take priority, but currently it isn't
 
+#ifdef HAVE_MNTENT_H
       while( ( mnt_ent = getmntent( fp ) ) != NULL )
       {
          bool b = false;
@@ -293,6 +309,7 @@ namespace Filelight
       }
 
       endmntent( fp ); /* close mtab.. */
+#endif
 
 
       return true;
