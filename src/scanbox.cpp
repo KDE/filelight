@@ -18,9 +18,10 @@
 #include <qlabel.h>
 #include <qtimer.h>
 
+#include <kglobal.h>
 #include <klocale.h>
 
-#include "scanthread.h"
+#include "scanmanager.h"
 #include "scanbox.h"
 
 

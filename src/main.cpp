@@ -76,11 +76,8 @@ int main(int argc, char *argv[])
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
     
     //scan any command line arguments
-    if( args->count() > 0 ) {
-      KURL url = args->url( 0 );
-      url.cleanPath();
-      t->slotScanUrl( url );
-    }
+    if( args->count() > 0 )
+      t->slotScanUrl( args->url( 0 ) );
 
     args->clear();
 

@@ -41,12 +41,13 @@ class FileMap : public KPixmap
 
     bool isNull() const { return ( m_signature == NULL ); }
 
-    void setGlob( const QString &s ) { m_glob = s; }
-    
+    //**** most of these are to allow access to visibleDepth, why not make that a public function??!
     friend class Builder;
     friend const Segment *FilelightCanvas::segmentAt( QPoint & ) const;
     friend void FilelightCanvas::paintExplodedLabels( QPainter & ) const;
-    friend void FilelightCanvas::refresh( int filth );    
+    friend void FilelightCanvas::refresh( int filth );
+    friend void FilelightCanvas::slotZoomIn();
+    friend void FilelightCanvas::slotZoomOut();    
 
   private:
     void paint( unsigned int = 1 );
@@ -63,13 +64,16 @@ class FileMap : public KPixmap
     QColor kdeColour[2]; //KDE colours are loaded into this
     
     QCString m_centerText;
-    QString  m_glob;
 
     double deltaRed, deltaGreen, deltaBlue;
 
     unsigned int MAP_2MARGIN;
 };
 
+
+//**** REALLY BAD DESIGN!! Segments expect the tree they point to to be deleted after them!
+//     Deary me, I can't guarentee that. Think of cache invalidation, that clears cache then deletes signature after.
+//     well I need a separate flag for fake/hidden kids etc.
 
 class Segment //all angles are in 16ths of degrees
 {
@@ -95,7 +99,6 @@ public:
 
    friend void FileMap::colorise();
    friend class Builder;
-   //friend void Builder::build( const Directory*, unsigned int, unsigned int, unsigned int );
 
 private:
    void setPalette( const QColor &p, const QColor &b ) { m_pen = p; m_brush = b; }

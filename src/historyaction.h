@@ -18,138 +18,117 @@
 #ifndef HISTORYACTION_H
 #define HISTORYACTION_H
 
+#include <qobject.h>
+#include <qstring.h>
+#include <qstringlist.h>
+
+#include <kaccel.h>
+#include <kconfig.h>
+#include <klocale.h>
 #include <kaction.h>
+#include <kurl.h>
+#include <kapp.h>          //KDE_VERSION
+#include <kdebug.h>
 
 
 
-class QString;
-class QStringList;
+//**** the only sucky bit here is excessive signal/slotting
 
-class HistoryAction : public KAction
+class HistoryAction : KAction
 {
-  Q_OBJECT
+Q_OBJECT
 
-  public:
+  HistoryAction( const QString &text, const char *icon, const KShortcut &cut, KActionCollection *ac, const char *name ) :
+    KAction( text, icon, cut, 0, 0, ac, name ),
+    m_text( text )
+  {
+    KAction::setEnabled( false );
+    connect( this, SIGNAL( activated() ), SLOT( pop() ) ); //**** wouldn't find slot it in KAction ctor for some reason
+  }
 
-    HistoryAction( const QString &s, const QString& pix, const KShortcut &cut, const QObject *receiver, const char *slot, KActionCollection *parent, const char *name )
-     : KAction( s, pix, cut, receiver, slot, parent, name ), m_prefix( s )
-       { setEnabled( false ); }
+  friend class HistoryCollection;
 
-    void push( const QString &s )
-    {
-      if( s != QString::null && s != m_history.last() ) {
-        setText( s );
-        m_history.append( s );
-        if( !isEnabled() ) setEnabled( true );
-      }
-    }
+signals:
+  void activated( HistoryAction*, const QString & );
 
-    const QString pop() //will crash if empty mind
-    {
-      const QString s = m_history.last();
+public slots:
+  void setEnabled( bool b = true )
+    { if( b ) b = !m_list.isEmpty(); KAction::setEnabled( b ); }
+  void push( const QString &path )
+    { if( !path.isEmpty() && m_list.last() != path ) { m_list.append( path ); setText(); KAction::setEnabled( true ); } }
+  void pop()
+    { const QString s = m_list.last(); m_list.pop_back(); emit activated( this, s ); setText(); setEnabled(); }
 
-      m_history.pop_back();
+private:
+  void clear()
+    { m_list.clear(); KAction::setText( m_text ); }
+  void setText()
+    { if( !m_list.isEmpty() ) KAction::setText( m_text + ": " + m_list.last() ); else KAction::setText( m_text ); }
 
-      if( !m_history.isEmpty() )
-        setText( m_history.last() );
-      else {
-        clearText();
-        setEnabled( false );
-      }
-
-      return s;
-    }
-
-    void setHistory( const QStringList &list ) { m_history = list; setEnabled( true ); setText( m_history.last() ); } //friend this to saveProperties at some point
-    void clear() { if( !m_history.isEmpty() ) { m_history.clear(); clearText(); setEnabled( false ); } }
-
-    const QStringList &history() const { return m_history; }
-
-  public slots:
-    virtual void setEnabled( bool b ) { if( b && m_history.isEmpty() ) b = false; KAction::setEnabled( b ); }
-
-  private:
-    void clearText() { KAction::setText( m_prefix ); }
-    //**** internationalise this bit ->
-    void setText( const QString &s ) { KAction::setText( m_prefix + ": " + s ); }
-
-    QStringList m_history;
-    QString     m_prefix;
+  const QString m_text;
+  QStringList m_list;
 };
 
-#endif
 
-
-/*
-
-#include <qobject.h>
-
-class QStringList;
-class KMainWindow;
-class KAction;
-
-
-
-#include <qstringlist.h>
-#include <kmainwindow.h>
-#include <kstdaction.h>
-
-
-//deleting this yourself will give undefined behaviour!
-
-class Histories : public QObject
+class HistoryCollection : public QObject
 {
 Q_OBJECT
 
 public:
-    Histories( KMainWindow *parent, const char *member, const char *name = 0 ) : QObject( parent, name )
+    HistoryCollection( KActionCollection *ac, QObject *parent, const char *name ) :
+      QObject( parent, name ),
+      m_b( new HistoryAction( i18n( "Back" ), "back", KStdAccel::back(), ac, "go_back" ) ),
+      m_f( new HistoryAction( i18n( "Forward" ), "forward",  KStdAccel::forward(), ac, "go_forward" ) ),
+      m_receiver( 0 )      
     {
-      connect( this, SIGNAL( activated() ), parent, SLOT( member ) ) );
-
-      m_back = KStdAction::back( this, SLOT( back ), parent->actionCollection() );
-      m_fwd  = KStdAction::forward( this, SLOT( forward ), parent->actionCollection() );
-
-      m_status = Histories::None;
+      connect( m_b, SIGNAL( activated( HistoryAction *, const QString & ) ), this, SLOT( process( HistoryAction *, const QString & ) ) );
+      connect( m_f, SIGNAL( activated( HistoryAction *, const QString & ) ), this, SLOT( process( HistoryAction *, const QString & ) ) );
     }
 
-public slots:
-    void historify( const QString &historicPath )
+    void save( KConfig *config )
     {
-      //check for empty/Null etc. valid? make that a function to pass by addr
-
-      switch( m_status ) {
-      case Histories::None:
-        m_fwdHist.clear();
-      case Histories::Forward:
-        m_fwdHist.pop_back();
-        m_back.append( historicPath );
-        m_back.setText( QString( "Back: " ) + historicPath );
-        break;
-      case Histories::Back:
-        m_backHist.pop_back();
-        m_fwdHist.append( historicPath );
-        m_fwdHist.setText( QString( "Forward: " ) + historicPath );
-      default:
-        break;
-
-      m_status = Histories::None;
+      #if KDE_VERSION >= 0x030103
+      config->writePathEntry( "backHistory", m_b->m_list );
+      config->writePathEntry( "forwardHistory", m_f->m_list );
+      #endif
     }
 
-    void cancel() { m_status = Histories::None; }
-            
-private slots:
-    void back() { emit activated( m_backHist.last(); m_status = Histories::Back );
-    void forward() { emit activated( m_fwdHist.last(); m_status = Histories::Forward );
+    void restore( KConfig *config )
+    {
+      #if KDE_VERSION >= 0x030103
+      m_b->m_list = config->readPathListEntry( "backHistory" );
+      m_f->m_list = config->readPathListEntry( "forwardHistory" );
+      //**** text is not updated, no matter
+      #endif
+    }
 
 signals:
-    activated( const QString & );
+    void activated( const KURL & );
+                    
+public slots:
+    void push( const KURL &url )
+    {
+      if( m_receiver == NULL )
+      {
+        m_f->clear();
+        m_receiver = m_b;
+      }
+
+      m_receiver->push( url.path( 1 ) );
+      m_receiver = NULL;
+    }
+    void stop() { m_receiver = NULL; }
+        
+private slots:
+    void process( HistoryAction *ha, const QString &path )
+    {
+      //**** sucks! sucks!
+      m_receiver = ( ha == m_b ) ? m_f : m_b;
+      emit activated( path );
+    }
 
 private:
-    enum Status { None, Back, Forward }
-
-    QStringList m_backHist, m_fwdHist;
-    KAction    *m_back, m_fwd;
-    Status      m_status;
+    HistoryAction *m_b, *m_f, *m_receiver;
 };
 
-*/
+#endif

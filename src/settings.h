@@ -18,10 +18,11 @@
 #ifndef SETTINGS_H
 #define SETTINGS_H
 
+#include <qstringlist.h>
 
-enum MapScheme { scheme_rainbow, scheme_highContrast, scheme_kde, scheme_fileDensity };
 
-
+//**** remove scheme prefix
+enum  MapScheme { scheme_rainbow, scheme_highContrast, scheme_kde, scheme_fileDensity };
 class KConfig;
 class QStringList;
 
@@ -39,6 +40,7 @@ public:
   bool varyLabelFontSizes;
   int  minFontPitch;
   bool showSmallFiles;
+  int  defaultRingDepth;
   
   void useKConfig( KConfig *kc ) { config = kc; }
   bool readSettings();

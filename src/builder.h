@@ -39,7 +39,7 @@ private:
     const unsigned int m_minSize;
     unsigned int   *m_depth;
     Chain<Segment> *m_signature; //**** try ** here
-    unsigned int    m_limits[MAX_MAX_RING_DEPTH];
+    unsigned int   *m_limits;
 };
 
 #endif

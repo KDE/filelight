@@ -57,8 +57,8 @@ public slots:
   void slotSliderReleased();
       
 signals:
-  void treeCacheInvalidated();
-  void dirtyCanvas( int );
+  void mapIsInvalid();
+  void canvasIsDirty( int );
 
 private:
   QTimer *m_timer;

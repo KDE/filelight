@@ -40,15 +40,13 @@
 #define COLOR_GREY QColor( 0, 0, 140, QColor::Hsv )
 
 extern Settings Gsettings;
-unsigned int MAX_RING_DEPTH = DEFAULT_MAX_RING_DEPTH;
 
 
 FileMap::FileMap() :
     m_signature( NULL ),
     m_ringBreadth( MIN_RING_BREADTH ),
     m_innerRadius( 0 ),
-    m_visibleDepth( 0 ),
-    m_glob( "" )
+    m_visibleDepth( DEFAULT_RING_DEPTH )
 {
 
   //optimise for speed
@@ -61,31 +59,23 @@ FileMap::FileMap() :
   config->setGroup( "General" );
   kdeColour[1] = config->readColorEntry( "selectBackground", 0 );
 
-/*  for( int h,s,v,i=0; i < 2; ++i )
-  {
-    kdeColour[i].hsv( &h, &s, &v );
-    kdDebug() << s << endl;
-    if( s < 180 )
-      kdeColour[i].setHsv( h, 180, v );
-  }*/
-  
   deltaRed   = (double)(kdeColour[0].red()   - kdeColour[1].red())   / 2880; //2880 for semicircle
   deltaGreen = (double)(kdeColour[0].green() - kdeColour[1].green()) / 2880;
   deltaBlue  = (double)(kdeColour[0].blue()  - kdeColour[1].blue())  / 2880;
 
+  //***** this is all broken. No longer is a maximum depth!
   QFont font;
   if( Gsettings.varyLabelFontSizes )
-    font.setPointSize( Gsettings.minFontPitch + MAX_RING_DEPTH );
+    font.setPointSize( Gsettings.minFontPitch + 5 );
   int fmh   = QFontMetrics( font ).height();
   int fmhD4 = fmh / 4;
   MAP_2MARGIN = 2 * ( fmh - (fmhD4 - LABEL_MAP_SPACER) ); //margin is dependent on fitting in labels at top and bottom
-
-
 }
 
 
 FileMap::~FileMap()
 {
+  kdDebug() << "~FileMap\n";
   delete [] m_signature;
 }
 
@@ -104,6 +94,8 @@ void FileMap::invalidate( const bool &b )
 
     this->convertFromImage( img );
   }
+
+  m_visibleDepth = Gsettings.defaultRingDepth;
 }
 
 
@@ -117,7 +109,7 @@ void FileMap::make( const Directory *tree, bool refresh )
   QApplication::setOverrideCursor( KCursor::waitCursor() );
   
   {
-    //build a signature of visible components    
+    //build a signature of visible components
     delete [] m_signature;
     Builder builder( this, tree, refresh );
   }
@@ -217,61 +209,6 @@ void FileMap::colorise()
 
     for( Iterator<Segment> it = ring->iterator(); it != ring->end(); ++it )
     {
-      
-      
-      /*
-      switch( Gsettings.scheme )
-      {
-      case scheme_kde:
-        {
-
-      //gradient will work by figuring out rgb delta values for 360 degrees
-      //then each component is angle*delta
-
-        int h, s, v, a = (*it)->start();
-
-        if( a > 2880 ) a = 2880 - (a - 2880);
-
-        h = (int)(deltaRed * a) + kdeColour[1].red();
-        s = (int)(deltaGreen * a) + kdeColour[1].green();
-        v = (int)(deltaBlue * a) + kdeColour[1].blue();
-
-        cb.setRgb( h, s, v );
-        cb.hsv( &h, &s, &v );
-
-        v = int((float)v / darkness);
-
-        cb.setHsv( h, s, v );
-        cp.setHsv( h, 255, v - CONTRAST );
-
-        }
-        break;
-
-      case scheme_highContrast:
-
-        cp.setHsv( 0, 0, 0 ); //values of h, s and v are irrelevant
-        cb.setHsv( 0, 0, 155 + CONTRAST );
-
-        break;
-
-      default:
-        {
-          int v = int(255 / darkness);
-          int h = int((*it)->start() / 16);
-          
-          if( (*it)->file()->isDir() || (*it)->isFake() )
-          {
-            cb.setHsv( h, 160, v );
-            cp.setHsv( h, 255, v - CONTRAST );
-          }
-          else
-          {
-            cb.setHsv( h, 20, 225 );
-            cp.setHsv( h, 20, 225 - CONTRAST );//v - CONTRAST );
-          }
-        }
-      }*/
-
       switch( Gsettings.scheme )
       {
       case scheme_kde:
@@ -364,6 +301,9 @@ void FileMap::aaPaint()
 
 void FileMap::paint( unsigned int scaleFactor )
 {
+  if( scaleFactor == 0 ) //just in case
+    scaleFactor = 1;
+
   QPainter paint;
   QRect rect = m_rect;
   int step = m_ringBreadth;

@@ -205,46 +205,46 @@ void SettingsDlg::timeout()
 {
   m_timer->stop();
 
-  emit treeCacheInvalidated(); //will empty cache and force a rescan
+  emit mapIsInvalid(); //will empty cache and force a rescan
 }
 
 
 void SettingsDlg::changeScheme( int s )
 {
   Gsettings.scheme = (MapScheme)s;
-  emit dirtyCanvas( 1 );
+  emit canvasIsDirty( 1 );
 }
 void SettingsDlg::changeContrast( int c )
 {
   Gsettings.contrast = c;
-  emit dirtyCanvas( 3 );
+  emit canvasIsDirty( 3 );
 }
 void SettingsDlg::toggleUseAntialiasing( bool b )
 {
   Gsettings.aaFactor = b ? 2 : 1;
-  emit dirtyCanvas( 2 );
+  emit canvasIsDirty( 2 );
 }
 void SettingsDlg::toggleVaryLabelFontSizes( bool b )
 {
   Gsettings.varyLabelFontSizes = b;
   minFontPitch->setEnabled( b );
-  emit dirtyCanvas( 0 );
+  emit canvasIsDirty( 0 );
 }
 void SettingsDlg::changeMinFontPitch( int p )
 {
   Gsettings.minFontPitch = p;
-  emit dirtyCanvas( 0 );
+  emit canvasIsDirty( 0 );
 }
 void SettingsDlg::toggleShowSmallFiles( bool b )
 {
   Gsettings.showSmallFiles = b;
-  emit dirtyCanvas( 1 );
+  emit canvasIsDirty( 1 );
 }
 
 
 void SettingsDlg::slotSliderReleased()
 {
-  emit dirtyCanvas( 2 );
+  emit canvasIsDirty( 2 );
 }
 
 

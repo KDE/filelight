@@ -27,10 +27,8 @@
 #define PACKAGE "filelight"
 #define VERSION "0.6.3"
 
-#include <kmainwindow.h>
-#include <kaction.h>
 
-#include "filetree.h"
+#include <kmainwindow.h>
 
 class QString;
 class QTimer;
@@ -45,9 +43,9 @@ class KURL;
 class FilelightCanvas;
 class ScanProgressBox;
 class SettingsDlg;
-class ScanThread;
-class HistoryAction;
-
+class ScanManager;
+class HistoryCollection;
+class Directory;
 
 
 class Filelight : public KMainWindow
@@ -58,39 +56,27 @@ class Filelight : public KMainWindow
     Filelight();
     virtual ~Filelight();
 
-  signals:
-    void scanStarted();
-    void scanUnrequired( const Directory * );
-    void scanFinished( const Directory * );    
-    void scanFailed( const QString & );
-    
   public slots:
-    void slotUpdateInterface( const Directory* );
-    void slotUpdateHistories( const QString & );
-                            
-    void slotClearCache();
-
-    void slotScanUrl( const KURL& );
-        
+    void slotScanUrl( const KURL & ); //needed by main.cpp
+    
   private slots:
     void slotUp();
-    void slotBack();
-    void slotForward();
     void slotRescan();
-
-    void startScan( const QString &, bool = false );
-    void stopScan();
-
     void slotComboScan();
-            
     void slotScanDirectory();
     void slotScanHomeDirectory();
     void slotScanRootDirectory();
 
+    void editToolbars();
+    void slotNewToolbarConfig();
+
+    void scanStarted( const QString & );
+    void scanFailed( const QString & );
+    void newMapCreated( const Directory * );    
+
   protected:
     virtual void saveProperties( KConfig * );
     virtual void readProperties( KConfig * );
-    virtual void customEvent( QCustomEvent * );
     virtual bool queryExit();
         
   private:
@@ -98,18 +84,14 @@ class Filelight : public KMainWindow
     SettingsDlg     *m_settingsDialog;
     QLabel          *m_status[2];
     KSimpleConfig   *m_config;
-    bool             m_bool;
     KHistoryCombo   *m_combo;
-
-    HistoryAction      *m_backHistory, *m_forwardHistory;
+    ScanManager     *m_manager;
+    
+    HistoryCollection *m_histories;
     KRecentFilesAction *m_recentHistory;
-
-    ScanThread *m_scanThread;
 
     void setupStatusBar();
     void setupActions();
-
-    const QString validateScan( const QString & );
 };
 
 #endif

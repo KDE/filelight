@@ -37,9 +37,8 @@
 
 #define MIN_RING_BREADTH 20
 #define MAX_RING_BREADTH 60
-#define DEFAULT_MAX_RING_DEPTH 4    //means 5 rings, first ring is 0
-#define MAX_MAX_RING_DEPTH 25
-#define MIN_MIN_RING_DEPTH 0
+#define DEFAULT_RING_DEPTH 4 //first level = 0
+#define MIN_RING_DEPTH 0
 
 
 //factor for filesizes in scan, i.e. show in kB, MB, GB or TB (TB only possible on 64bit systems)

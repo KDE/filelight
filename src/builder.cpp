@@ -29,44 +29,63 @@
 
 
 extern Settings Gsettings;
-extern unsigned int MAX_RING_DEPTH;
 
 //**** REMOVE NEED FOR the +1 with MAX_RING_DEPTH uses
 //**** add some angle bounds checking (possibly in Segment ctor? can I delete in a ctor?)
+//**** this class is a mess
  
-Builder::Builder( FileMap *m, const Directory* const d, bool fast ) :
+Builder::Builder( FileMap *m, const Directory* const dir, bool fast ) :
    m_map( m ),
-   m_root( d ),
-   m_minSize( static_cast<unsigned int>((d->size() * 3) / (PI * m->height() - m->MAP_2MARGIN )) ), //filesize that gives 2px at any depth
+   m_root( dir ),
+   m_minSize( static_cast<unsigned int>((dir->size() * 3) / (PI * m->height() - m->MAP_2MARGIN )) ), //filesize that gives 2px at any depth
    m_depth( &m->m_visibleDepth )
 {
-  m_signature = new Chain<Segment> [MAX_RING_DEPTH + 1]; //**** make it so +1 is not needed at some point
-
-  if( !fast || *m_depth == 0 ) //depth 0 is special case usability-wise //**** WHY?!
+  m_signature = new Chain<Segment> [*m_depth + 1];
+  
+  if( !fast )//|| *m_depth == 0 ) //depth 0 is special case usability-wise //**** WHY?!
   {
     //determine depth rather than use old one
-    *m_depth = 0;
-    findVisibleDepth( d );
+    kdDebug() << *m_depth << endl;
+    
+    findVisibleDepth( dir ); //sets m_depth
+
+    kdDebug() << *m_depth << endl;    
   }
 
   m_map->setRingBreadth();
   setLimits( m_map->m_ringBreadth );
-  build( d );
+  build( dir );
 
   m_map->m_signature = m_signature;
+
+  delete m_limits;
 } 
 
 
 void
 Builder::findVisibleDepth( const Directory* const dir, const unsigned int depth )
 {
-  if( *m_depth >= MAX_RING_DEPTH ) //**** should be able to change to == after code has stabalised
+  //**** because I don't use the same minimumSize criteria as in the visual function
+  //     this can lead to incorrect visual representation
+
+  //**** also this function doesn't check to see if anything is actually visible
+  //     it just assumes that when it reaches a new level everything in it is visible
+  //     automatically. This isn't right especially as there might be no files in the
+  //     dir provided to this function!
+  
+  static unsigned int stopDepth = 0;
+
+  if( dir == m_root )
   {
-    *m_depth = MAX_RING_DEPTH;
-    return;
+    stopDepth = *m_depth;
+    *m_depth = 0;
   }
+
+
   if( *m_depth < depth )
     *m_depth = depth;
+  if( *m_depth >= stopDepth )
+    return;
 
   for( ConstIterator<File> it = dir->constIterator(); it != dir->end(); ++it )
   {
@@ -79,10 +98,12 @@ Builder::findVisibleDepth( const Directory* const dir, const unsigned int depth 
 
 
 void
-Builder::setLimits( const unsigned int &b )
+Builder::setLimits( const unsigned int &b ) //b = breadth?
 {
   double size3 = m_root->size() * 3;
   double pi2B   = PI * 2 * b;
+
+  m_limits = new unsigned int [*m_depth + 1];
   
   for( unsigned int d = 0; d <= *m_depth; ++d )
     m_limits[d] = (unsigned int)(size3 / (double)(pi2B * (d + 1))); //min is angle that gives 3px outer diameter for that depth
@@ -93,7 +114,9 @@ Builder::setLimits( const unsigned int &b )
 bool
 Builder::build( const Directory* const dir, const unsigned int depth, unsigned int a_start, const unsigned int a_end )
 {
-  if( dir->fileCount() == 0 )
+  //first iteration: dir == m_root
+
+  if( dir->fileCount() == 0 ) //we do fileCount rather than size to avoid chance of divide by zero later
     return false;
 
   unsigned int hiddenSize = 0, hiddenFileCount = 0;

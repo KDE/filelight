@@ -44,6 +44,7 @@ bool Settings::readSettings()
   minFontPitch       = config->readNumEntry( "minFontPitch", QFont().pointSize() - 3);
   showSmallFiles     = config->readBoolEntry( "showSmallFiles", false );  
 
+  defaultRingDepth = 4;
   
   //**** follows will happen if entry exists, but has no members..
   //  ** which is broken behavior

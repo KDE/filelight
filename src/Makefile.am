@@ -3,7 +3,7 @@ METASOURCES = AUTO
 
 EXTRA_DIST = filelight.h scanbox.h segmenttip.h filemap.h \
              settingsdialog.ui settingsdlg.h filetree.h \
-             scanthread.h settings.h canvas.h builder.h \
+             scanmanager.h settings.h canvas.h builder.h \
              historyaction.h define.h
 
 bin_PROGRAMS = filelight
@@ -12,7 +12,7 @@ filelight_SOURCES = main.cpp utils.cpp builder.cpp settings.cpp \
                     canvas.cpp canvaslabels.cpp canvasevents.cpp \
                     filemap.cpp segmenttip.cpp \
                     settingsdlg.cpp settingsdialog.ui \
-                    filelight.cpp scanthread.cpp scanbox.cpp
+                    filelight.cpp scanmanager.cpp scanbox.cpp
 filelight_LDADD   = $(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT) $(LIBSOCKET)
 filelight_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 

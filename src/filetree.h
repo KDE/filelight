@@ -20,7 +20,7 @@
 #ifndef FILETREE_H
 #define FILETREE_H
 
-typedef unsigned long int Filesize;
+typedef unsigned long int FileSize;
 typedef unsigned long int Dirsize;  //**** currently unused
 
 
@@ -39,10 +39,10 @@ public:
   //**** unlinking is slow and you don't use it very much in this context.
   //  ** Perhaps you can make a faster deletion system that doesn't bother tidying up first
   //  ** and then you MUST call some kind of detach() function when you remove elements otherwise
-    virtual ~Link() { delete data; unlink(); }
+    virtual ~Link() { delete data; unlink(); } //**** I don't think this virtual is necessary, but don't remove until you can verify it with cachegrind
 
     friend class Iterator<T>;
-    friend class ConstIterator<T>;    
+    friend class ConstIterator<T>;
     friend class Chain<T>;
 
 private:
@@ -69,16 +69,16 @@ public:
     //here we have a choice, really I should make two classes one const the other not
     const T* operator*() const { return link->data; }
     T* operator*() { return link->data; }
-    
+
     Iterator<T>& operator++() { link = link->next; return *this; } //**** does it waste time returning in places where we don't use the retval?
 
     bool isNull() const { return (link == 0); } //REMOVE WITH ABOVE REMOVAL you don't want null iterators to be possible
-    
+
     void transferTo( Chain<T> &chain )
     {
       chain.append( remove() );
     }
-    
+
     T* const remove() //remove from list, delete Link, data is returned NOT deleted
     {
       T* const d = link->data;
@@ -90,7 +90,7 @@ public:
 
       return d;
     }
-    
+
 private:
     Link<T> *link;
 };
@@ -114,7 +114,8 @@ private:
     const Link<T> *link;
 };
 
-
+//**** try to make a generic list class and then a brief full list template that inlines
+//     thus reducing code bloat
 template <class T>
 class Chain
 {
@@ -138,10 +139,10 @@ public:
       if( isEmpty() ) return;
 
       Link<T>* const first = head.next;
-      Link<T>* const last  = head.prev;      
+      Link<T>* const last  = head.prev;
 
       head.unlink();
-      
+
       first->prev = c.head.prev;
       c.head.prev->next = first;
 
@@ -158,6 +159,7 @@ public:
 
 private:
     Link<T> head;
+    void operator=( const Chain& ) {}
 };
 
 
@@ -166,53 +168,65 @@ class Directory;
 class File
 {
 public:
-    File( const char *n, const Filesize s ) : m_parent( 0 ), m_name( n ), m_size( s ) { }
-//    File( const char *n, const Directory *p, const Filesize s ) : m_parent( p ), m_name( n ), m_size( s ) { }    
+    File( char *name, FileSize size ) : m_parent( 0 ), m_name( name ), m_size( size ) { }
     virtual ~File() { delete [] m_name; }
 
     const   Directory* parent() const { return m_parent; }
-    const   Filesize     size() const { return m_size; }
+    const   FileSize     size() const { return m_size; }
     const   char*        name() const { return m_name; }
+  //**** this sucks, and isn't very OO, try to do it via virtual's or dynamic_cast
     virtual bool        isDir() const { return false; }
 
     friend class Directory; //**** too broad, but never mind I spose
-    
+
 protected:
-    const Directory* m_parent; //NULL if this is treeRoot
-    const char* m_name;
-    Filesize m_size;   //use units of kB
+    File( char *name, FileSize size, Directory *parent ) : m_parent( parent ), m_name( name ), m_size( size ) { }
+
+  /*const*/ Directory* m_parent; //NULL if this is treeRoot //can't const due to Directory::append()
+  /*const*/ char *m_name; //can't const either
+    FileSize m_size;   //use units of kB
+
+private:
+    File( const File& ) {}
+    void operator=( const File& ) {}
 };
 
-
+//**** when you modify this to take into account hardlinks you should make the Chain layered not inherited
 class Directory : public Chain<File>, public File
 {
 public:
-    Directory( const char *filename ) : File( filename, 0 ), m_fileCount( 0 ) { } //DON'T pass the full path!
+    Directory( char *name ) : File( name, 0 ), m_fileCount( 0 ) { } //DON'T pass the full path!
     virtual ~Directory() { }
 
     //overides Chain
-    void append( Directory *p )
+    void append( Directory *d, char *name=0 )
     {
-      m_fileCount += p->fileCount(); //we also need to add one for the dir.
-      append( (File*)p ); //will add 1 to filecount for the dir itself
+      m_fileCount += d->fileCount(); //doesn't include the dir itself
+      if( name ) { delete d->m_name; d->m_name = name; } //directories that had a fullpath copy just their names this way
+      d->m_parent = this;
+      append( static_cast<File *>(d) ); //will add 1 to filecount for the dir itself
     }
 
-    void append( File *p )
+    void append( char *name, FileSize size )
     {
-      ++m_fileCount;
-      m_size += p->size();
-      p->m_parent = this;
-      Chain<File>::append( p );
+      append( new File( name, size, this ) );
     }
-
-  //**** this SUCKS! but what to do? See ScanThread::scan()
-    void setName( char *p ) { delete [] m_name; m_name = p; }
     
     unsigned int fileCount() const { return m_fileCount; }
     virtual bool isDir()     const { return true; }
 
 private:
-    unsigned int m_fileCount;
+//    Directory( const Directory& ) {}
+    void operator=( const Directory& ) {}
+
+    void append( File *p )
+    {
+      ++m_fileCount;
+      m_size += p->size();
+      Chain<File>::append( p );
+    }
+
+    unsigned int m_fileCount;    
 };
 
 #endif
