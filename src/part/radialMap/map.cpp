@@ -14,6 +14,7 @@
 #include "Config.h"
 #include "debug.h"
 #include "fileTree.h"
+#define SINCOS_H_IMPLEMENTATION (1)
 #include "sincos.h"
 #include "widget.h"
 
