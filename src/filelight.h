@@ -29,6 +29,7 @@
 
 
 #include <kmainwindow.h>
+#include "scanmanager.h" //**** unless you remember how to declare the enum
 
 class QString;
 class QTimer;
@@ -71,7 +72,7 @@ class Filelight : public KMainWindow
     void slotNewToolbarConfig();
 
     void scanStarted( const QString & );
-    void scanFailed( const QString & );
+    void scanFailed( const QString &, ScanManager::ErrorCode );
     void newMapCreated( const Directory * );    
 
   protected:

@@ -31,12 +31,12 @@
 #include <kstatusbar.h>
 #include <ksimpleconfig.h> //m_config
 #include <klocale.h>
-#include <kdebug.h>
 #include <kurl.h>
 #include <kdirselectdialog.h> //slotScanDirectory
 #include <kcombobox.h>        //locationbar
 #include <kurlcompletion.h>   //locationbar
 #include <kcursor.h>          //access to KCursors
+#include <kmessagebox.h>      //scanFailed()
 
 #include "define.h"     //for fullPath()
 #include "filetree.h"
@@ -63,13 +63,12 @@ Filelight::Filelight() : KMainWindow( 0, "filelight" )
   Gsettings.useKConfig( m_config );
   m_settingsDialog = new SettingsDlg( this, "settings_dialog" ); //will read our application settings from the config into the global settings structure
 
-  m_canvas = new FilelightCanvas( this, "canvas" );
-  setCentralWidget( m_canvas );
-
-  //**** was crashing when canvas was after scan_manager, probably since cache was somehow linked to signature. This is bad.
+  m_canvas  = new FilelightCanvas( statusBar(), this, "canvas" );
   m_manager = new ScanManager( this, "scan_manager" );
+
   ScanManager::readMounts();
-      
+
+  setCentralWidget( m_canvas );      
   setStandardToolBarMenuEnabled( true );
   
   setupStatusBar();
@@ -84,9 +83,6 @@ Filelight::Filelight() : KMainWindow( 0, "filelight" )
   
   connect( m_canvas, SIGNAL( invalidated( const KURL & ) ), m_histories, SLOT( push( const KURL & ) ) );
   connect( m_canvas, SIGNAL( created( const Directory * ) ), this, SLOT( newMapCreated( const Directory * ) ) );
-//**** would be better to just pass a pointer to the statusbar to canvas I feel
-  connect( m_canvas, SIGNAL( mouseOverSegment( const QString& ) ), statusBar(), SLOT( message( const QString & ) ) );
-  connect( m_canvas, SIGNAL( mouseOverNothing() ), statusBar(), SLOT( clear() ) );
 
 //**** should I handle scan-related signals with events instead?
 //     probably since you don't depend on immediate execution of any of this code
@@ -96,15 +92,12 @@ Filelight::Filelight() : KMainWindow( 0, "filelight" )
   connect( m_manager, SIGNAL( started( const QString & ) ), this, SLOT( scanStarted( const QString & ) ) );
   connect( m_manager, SIGNAL( cached( const Directory * ) ), m_canvas, SLOT( createFromCache( const Directory * ) ) );
   connect( m_manager, SIGNAL( succeeded( const Directory * ) ), m_canvas, SLOT( create( const Directory * ) ) );
-  connect( m_manager, SIGNAL( failed( const QString & ) ), m_canvas, SLOT( create( const QString & ) ) );
-  connect( m_manager, SIGNAL( failed( const QString & ) ), m_combo, SLOT( clearEdit() ) );
-  connect( m_manager, SIGNAL( failed( const QString & ) ), m_combo, SLOT( clearEdit() ) );
-  connect( m_manager, SIGNAL( failed( const QString & ) ), this, SLOT( scanFailed( const QString & ) ) );
+  connect( m_manager, SIGNAL( failed( const QString &, ScanManager::ErrorCode ) ), m_canvas, SLOT( create( const QString & ) ) );
+  connect( m_manager, SIGNAL( failed( const QString &, ScanManager::ErrorCode ) ), m_combo, SLOT( clearEdit() ) );
+  connect( m_manager, SIGNAL( failed( const QString &, ScanManager::ErrorCode ) ), this, SLOT( scanFailed( const QString &, ScanManager::ErrorCode ) ) );
   connect( m_manager, SIGNAL( cacheInvalidated() ), m_canvas, SLOT( invalidate() ) );
 
   connect( m_settingsDialog, SIGNAL( canvasIsDirty( int ) ), m_canvas, SLOT( refresh( int ) ) );
-//execution order is arbituary, but both slots cause map invalidation, so it doesn't matter which one is called first :)
-  connect( m_settingsDialog, SIGNAL( mapIsInvalid() ), this, SLOT( slotRescan() ) );
   connect( m_settingsDialog, SIGNAL( mapIsInvalid() ), m_manager, SLOT( emptyCache() ) );
 
   applyMainWindowSettings( m_config, "window" );
@@ -141,7 +134,7 @@ void Filelight::setupStatusBar()
   
   connect( m_manager, SIGNAL( started( const QString & ) ), progress, SLOT( start() ) );
   connect( m_manager, SIGNAL( succeeded( const Directory * ) ), progress, SLOT( stop() ) );
-  connect( m_manager, SIGNAL( failed( const QString & ) ), progress, SLOT( stop() ) );
+  connect( m_manager, SIGNAL( failed( const QString &, ScanManager::ErrorCode ) ), progress, SLOT( stop() ) );
 }
 
 void Filelight::setupActions()
@@ -252,7 +245,7 @@ void Filelight::slotScanDirectory()
   if( s == QString::null )
     s = getenv( "HOME" ); //using getenv is cheap //**** so is QDir or whatever it is
 
-  const KURL url = KDirSelectDialog::selectDirectory( s, false, this, i18n( "Scan Directory") );
+  const KURL url = KDirSelectDialog::selectDirectory( s, false, this );
 
   if( !url.isEmpty() )
     m_manager->start( url );
@@ -265,12 +258,13 @@ void Filelight::slotScanUrl( const KURL &url ) { m_manager->start( url ); }
 
 void Filelight::slotRescan()
 {
+  //**** this is far from ideal. You lose the whole cache! FIXME!
   //this disconnection to prevent histories from being "updated"
-  disconnect( m_canvas, SIGNAL( invalidated( const KURL & ) ), m_histories, SLOT( push( const QString & ) ) );  
+  disconnect( m_canvas, SIGNAL( invalidated( const KURL & ) ), m_histories, SLOT( push( const KURL & ) ) );  
   connect( m_canvas, SIGNAL( invalidated( const KURL & ) ), m_manager, SLOT( start( const KURL & ) ) );
-  m_canvas->invalidate();
+  m_manager->emptyCache(); //causes canvas to invalidate
   disconnect( m_canvas, SIGNAL( invalidated( const KURL & ) ), m_manager, SLOT( start( const KURL & ) ) );
-  connect( m_canvas, SIGNAL( invalidated( const KURL & ) ), m_histories, SLOT( push( const QString & ) ) );  
+  connect( m_canvas, SIGNAL( invalidated( const KURL & ) ), m_histories, SLOT( push( const KURL & ) ) );  
 }
 
 
@@ -286,10 +280,8 @@ void Filelight::slotComboScan()
       m_manager->start( path, true );
 
     else //then normal scan
-    {
-      m_combo->addToHistory( path );
-      m_manager->start( path );
-    }
+     if( m_manager->start( path ) )
+       m_combo->addToHistory( path ); //add if path was sane
   }
 }
 
@@ -340,21 +332,40 @@ void Filelight::newMapCreated( const Directory *tree )
         goUp->setText( i18n( "Up: %1" ).arg( url.upURL().path( 1 ) ) );
       }
 
-      //**** should be done on failure too?
-      //     don't think so, but we do store failed paths in the canvas
-      //**** also you need to remove the file: when you support more than just file and then handle everything by url (will be interesting to implement :)
       m_recentHistory->addURL( newPath );
-//      m_recentHistory->setCurrentItem( m_recentHistory->items().findIndex( newPath.prepend( "file:" ) ) );
   }
 
   QApplication::restoreOverrideCursor();
 }
 
 
-void Filelight::scanFailed( const QString &path )
+void Filelight::scanFailed( const QString &path, ScanManager::ErrorCode err )
 {
-  //**** message _should_ be more specific, why did it fail?
-  m_status[0]->setText( i18n( "Unable to scan %1" ).arg( path ) );
+  QString s;
+
+  switch( err )
+  {
+  case ScanManager::InvalidProtocol:
+    s = i18n( "The URL protocol must be: file:/" );
+    break;
+  case ScanManager::InvalidUrl:
+    s = i18n( "The URL is not valid: %1" ).arg( path );
+    break;    
+  case ScanManager::NotDirectory:
+    s = i18n( "%1 is not a directory." ).arg( path );
+    break;    
+  case ScanManager::NotFound:
+    s = i18n( "Directory not found: %1" ).arg( path );
+    break;
+  case ScanManager::NoPermission:
+    s = i18n( "Unable to enter: %1. You don't have access rights to this location." ).arg( path );
+    break;
+
+  default:
+    s = i18n( "The scan did not complete: %1" ).arg( path );
+  }
+
+  KMessageBox::sorry( this, s );
   newMapCreated( NULL );
 }
 

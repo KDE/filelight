@@ -23,10 +23,10 @@
 #include <qfont.h>
 #include <qfontmetrics.h>
 
+#include <kglobal.h>
 #include <kconfig.h>       //loading kde colours
 #include <kpixmap.h>       //derived from
 #include <kimageeffect.h>  //desaturate()
-#include <kdebug.h>
 #include <kcursor.h>       //make()
 
 #include "define.h"
@@ -75,7 +75,6 @@ FileMap::FileMap() :
 
 FileMap::~FileMap()
 {
-  kdDebug() << "~FileMap\n";
   delete [] m_signature;
 }
 
@@ -227,8 +226,6 @@ void FileMap::colorise()
         cb.setRgb( h, s1, v1 );
         cb.hsv( &h, &s1, &v1 );
 
-        kdDebug() << s1 << endl;
-        
         break;
       }
 

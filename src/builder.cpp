@@ -18,7 +18,7 @@
 #include <string.h>
 #include <qstring.h>
 #include <qregexp.h>
-#include <kdebug.h>
+#include <kglobal.h>
 #include <klocale.h>
 
 #include "define.h"
@@ -45,11 +45,7 @@ Builder::Builder( FileMap *m, const Directory* const dir, bool fast ) :
   if( !fast )//|| *m_depth == 0 ) //depth 0 is special case usability-wise //**** WHY?!
   {
     //determine depth rather than use old one
-    kdDebug() << *m_depth << endl;
-    
     findVisibleDepth( dir ); //sets m_depth
-
-    kdDebug() << *m_depth << endl;    
   }
 
   m_map->setRingBreadth();
@@ -67,6 +63,7 @@ Builder::findVisibleDepth( const Directory* const dir, const unsigned int depth 
 {
   //**** because I don't use the same minimumSize criteria as in the visual function
   //     this can lead to incorrect visual representation
+  //**** BUT, you can't set those limits until you know m_depth!
 
   //**** also this function doesn't check to see if anything is actually visible
   //     it just assumes that when it reaches a new level everything in it is visible

@@ -40,7 +40,7 @@ public:
   bool varyLabelFontSizes;
   int  minFontPitch;
   bool showSmallFiles;
-  int  defaultRingDepth;
+  unsigned int  defaultRingDepth;
   
   void useKConfig( KConfig *kc ) { config = kc; }
   bool readSettings();

@@ -51,8 +51,6 @@ ScanManager::ScanManager( QObject *parent, const char *name )
 
 ScanManager::~ScanManager()
 {
-  kdDebug() << "~ScanManager\n";
-
   if( m_thread->running() )
   {
     kdDebug() << "Stopping ScanThread..\n";
@@ -71,9 +69,9 @@ void ScanManager::abort()
 }
 
 
-void ScanManager::start( const KURL &url, bool force )
+bool ScanManager::start( const KURL &url, bool force )
 {
-  ScanManager::ScanError err = ScanManager::NoError;
+  ScanManager::ErrorCode err = ScanManager::NoError;
   QString path;
   
   //**** need to add initial / if not present frankly
@@ -87,13 +85,15 @@ void ScanManager::start( const KURL &url, bool force )
   {
     struct stat statbuf;
 
-    if( stat( url.path(), &statbuf ) == 0 )
+    if( access( path, R_OK ) != 0 )
+      err = ScanManager::NoPermission;
+    else if( stat( url.path(), &statbuf ) == 0 )
     {
       if( !S_ISDIR( statbuf.st_mode ) )
         err = ScanManager::NotDirectory;
     }
     else
-      err = ScanManager::UnableToStat;
+      err = ScanManager::NotFound;
   }
     
   if( err == ScanManager::NoError )
@@ -106,9 +106,11 @@ void ScanManager::start( const KURL &url, bool force )
   }
   else
   {
-    kdDebug() << err << endl;
-    emit failed( url.path( 1 ) );
+    emit failed( url.path( 1 ), err );
+    return false;
   }
+
+  return true;
 }
 
 
@@ -146,7 +148,7 @@ void ScanManager::startPrivate( const QString &path, bool force )
     {
       //find a pointer to the requested branch
 
-      kdDebug() << "1Cache-hit: " << cachePath << endl;
+      kdDebug() << "Cache-(a)hit: " << cachePath << endl;
       
       QStringList slist = QStringList::split( "/", path.mid( cachePath.length() ) );
       Directory *d = *it;
@@ -172,7 +174,7 @@ void ScanManager::startPrivate( const QString &path, bool force )
       if( d != NULL )
       {
         //we found a completed tree, thus no need to scan
-        kdDebug() << "Found cached tree\n";
+        kdDebug() << "Found cache-handle, generating map..\n";
         emit cached( d );
         return;
       }
@@ -186,7 +188,7 @@ void ScanManager::startPrivate( const QString &path, bool force )
     }
     else if( cachePath.startsWith( path ) ) //then part of the requested tree is already scanned
     {
-      kdDebug() << "2Cache-hit: " << cachePath << endl;
+      kdDebug() << "Cache-(b)hit: " << cachePath << endl;
       it.transferTo( *list );
     }
   }
@@ -232,7 +234,7 @@ void ScanManager::customEvent( QCustomEvent * e )
 
   case 65434: //scan failed //**** implement error messages into this
 
-    emit failed( static_cast<ScanFailedEvent*>(e)->path() );
+    emit failed( static_cast<ScanFailedEvent*>(e)->path(), ScanManager::UnknownError );
 
   default: break;
   }

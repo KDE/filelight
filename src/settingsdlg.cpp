@@ -33,7 +33,6 @@
 
 #include "settingsdlg.h"
 #include "settings.h"
-#include "scanthread.h"
 
 
 

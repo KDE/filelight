@@ -37,10 +37,10 @@ public:
     ScanManager( QObject *parent, const char *name );
     ~ScanManager();
 
-    enum ScanError { NoError, InvalidProtocol, InvalidUrl, NotDirectory, UnableToStat };
+    enum ErrorCode { NoError, InvalidProtocol, InvalidUrl, NotDirectory, NoPermission, NotFound, UnknownError };
     
 public slots:
-    void start( const KURL &, bool = false );
+    bool start( const KURL &, bool = false );
     void abort();
     void emptyCache() { cache.empty(); emit cacheInvalidated(); }
 
@@ -49,7 +49,7 @@ signals:
     void aborted();
     void cached( const Directory * );
     void succeeded( const Directory * );
-    void failed( const QString & ); //**** KURL?
+    void failed( const QString &, ScanManager::ErrorCode ); //**** KURL?
     void cacheInvalidated();
 
 private:
