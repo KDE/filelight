@@ -6,10 +6,10 @@
 
 #include <math.h>
 
-#if __GLIBC__ < 2 ||  __GLIBC__ == 2 && __GLIBC_MINOR__ < 1
+#if !defined(__GLIBC__) || (__GLIBC__ < 2) ||  (__GLIBC__ == 2 && __GLIBC_MINOR__ < 1)
 
    void
-   sincos( int angleRadians, int *Sin, int *Cos )
+   sincos( int angleRadians, double *Sin, double *Cos )
    {
       *Sin = sin( angleRadians );
       *Cos = cos( angleRadians );
