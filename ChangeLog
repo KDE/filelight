@@ -1,0 +1,110 @@
+0.6.3
+     Made "Scan Directory..." a KStdAction::open with setText( "Scan Directory..." );
+     Swaped map rendering from bitBlt to paintPixmap (again) as some users get problems with the labels being obliterated
+     LocationBar history is saved inbetween sessions for KDE >= 3.1.3
+     Rescans are forced if locationBar Go is pushed for location to current map
+     Fixed several bugs related to resizing the filemap
+     Initial map display had a long running issue which meant you had to perform a resize to ensure all detail was shown. I finally put in the hours and fixed it.
+     Cancelling scans clears the location bar
+     Option to show files not represented as segments (because they are too small) combined in large segments with relevant summaries
+     Directories that would normally have no child segments shown now have hidden Files segment shown
+     Fixed faulty show/hide of progress box when many scans done in quick succession
+     Session management
+     Saving of Window/*bar settings inbetween sessions
+     Fixed popup related non-updates and false action calls
+     Canvas code cleanup
+     Stopped combo activated scans being called twice
+     Improved map generation speed (scan speeds are still slow however)
+     Appropriate wait cursors are set during long operations (scans, map generation)
+     Fixed misrendered transparency when tooltips exceed Filelight boundries
+     Optimised and de-flickered the tooltips
+     Segments that contain unrepresented files (due to 5 level limit on maps) now show a thick border at the edge to indicate that there are unrepresented files
+     Commandline now accepts ../ and ./ type arguments
+     Add "Open Konsole here" to context-menu, also tidied it up and made it properly context relevant
+     Popup title is now relative to map path to reduce menu width somewhat without resorting to csqueeze()
+     Fixed bug with not showing unrepresented files for dirs that contained dirs
+     Improvement selection of units for tooltips (always prefer megabytes unless < 0.01 MB)
+     Improved selection of decimal places for size display (2sig.fig. please)
+     Label font sizes now default to the system standard
+     Labels have indentation relative to their level
+     Label selection improved (not enough yet though!)
+     Better looking label line diagonals
+     When smaller fonts are requested, Filelight maximises the font size differences
+     Attempted to fix crash at exit bug
+     Made files shades of gray, made indicator for directories that have unshown files
+     Removed presence of multi-file segments except in root level circumstances (unless Show Small Files is selected in Settings)
+     Contrast system revamped, you can now have more contrast
+     Segment colouring system rewritten, better distinction between different segment types
+     Used more KStdActions (less work for translation teams at very least)
+     Fixed bug where segmenttip wasn't shown for 1st pixel but labels were
+0.6.2
+     Attempted a fix for the absurdly large file bug (eg > 1400GB!)
+     Linking bug fixed for Gentoo systems
+     Compile bug fixed for GCC < 3
+     Fixed crash bug when scan had been stopped and then back then forward pressed
+     Fixed another compile bug for systems that don't support large files (Debian apparently)
+     Internationalisation support thanks to patch from André Somers
+     Made the tooltip translucent (NOT a gimmick, this feature is essential IMO)
+     Started making debug messages use kdDebug so users can enable/disable the messages
+     Implemented XML GUI
+     Vast slot/signal cleanup, fixed many bugs
+     Fixed a few bugs with the progress box
+     Cancelled scans now remain stored in the back/forward histories
+     Fixed incorrect reporting of directory file counts
+     Increased minimum segment size to 3px outer diameter (any depth)
+     Added location_bar UI element to toolbar (much work)
+     The segment tip now appears below the cursor when hovering over the upper part of the map
+     Increased the recent scans list to 8 entries and made the combohistory work better
+0.6.1
+     Filelight again compiles on KDE <= 3.1.3 (but with some reduced functionality)
+     Rewrote HistoryAction code
+     Improved default choice of smallest font
+     Lowest level segment labels show whenever mouse is not over anything
+     Middle click opens segment according to mime type (eg. jpgs open in kuickshow)
+     Implemented realtime contrast updates
+     Added antialiasing, font size and contrast settings to appearance tab
+     Renamed "colour scheme" tab "appearance"
+     Extruded label fontsizes reflect their segment's depth
+     Rescans ignore tree cache
+     Changing scan options clears the tree cache
+     Directory select dialog shows current path as selected when opened
+     Scans no longer have to be repeated
+     Implemented antialiasing for the map, very slow so only happens after resizes
+     Gracefully handles failures to read file attributes
+     Rewrote backend with templating, should have done that in first place!
+     Improved changelog listing methods!
+     Included support for GNU systems that don't support large files (>2GB)
+0.6.0
+     Added expanded labels to give more information on segments in focus
+     Added settings dialogs
+     Added new colour schemes
+     Allowed scans to not cross at mount points
+     Added #Files info for directory tooltips
+     filemap is now displayed centrally
+     Shows percentage of files in directories
+0.5.1
+     Added Filelight to the Utilities submenu in the K-Menu
+     Tooltips are now presented for file info instead of using the statusbar
+     Made resizing of the filemap smoother
+     Improved the icon and made a 48x48 and 22x22 version
+     Reworked the code somewhat
+     Scans can now be cancelled
+     The go history actions are more intelligent
+     Fixed all the bugs I could find
+     Attempted to improve filemap contrast some more (still not perfect, but getting there)
+     Added visual activation cues for various clicks
+0.50
+     Few bug fixes
+     Improved performance for rendering and scanning
+     Improved contrast of the filemap
+     Added icon
+     Added left and right click functionality
+     Improved error handling
+0.45
+     Added toolbar, implemented history functionality
+     Click to scan segments
+     Increased filesize limit to 4096 GB
+     Fixed <time.h> required - make bug
+     Various optimisations
+0.4
+     Initial public release

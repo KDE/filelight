@@ -1,0 +1,13 @@
+Begin3
+title:          Filelight
+Version:        0.6.3
+Entered-date:   5/9/2003
+Description:    Graphical display of disk usage
+Keywords:       kde disk usage du filesystem diskspace
+author:         Max Howell <max.howell@methylblue.com>
+Maintained-by:  Max Howell <max.howell@methylblue.com>
+Home-page:      http://www.methylblue.com/filelight/
+Platform:       unix
+Copying-policy: GPL
+End
+
