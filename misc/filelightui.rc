@@ -1,0 +1,108 @@
+<!DOCTYPE kpartgui>
+<kpartgui name="filelight" version="4">
+<MenuBar>
+  <Menu name="file" noMerge="1"><text>&amp;Scan</text>
+   <Action name="scan_directory"/>
+    <Separator/>
+    <Action name="scan_home"/>
+    <Action name="scan_root"/>
+    <Separator/>
+    <Action name="scan_recent"/>
+    <Separator/>
+    <Action name="scan_rescan"/>
+    <Action name="scan_stop"/>
+    <Merge/>
+    <Separator/>
+    <Action name="file_quit"/>
+  </Menu>
+  <Menu name="view" noMerge="1"><text>&amp;View</text></Menu>
+  <Menu name="go_web" noMerge="1"><text>&amp;Go</text>
+    <Action name="go_up"/>
+    <Separator/>
+    <Action name="go_back"/>
+    <Action name="go_forward"/>
+  </Menu>
+</MenuBar>
+
+<ToolBar name="mainToolBar" noMerge="1"><text>Main Toolbar</text>
+    <Action name="go_back"/>
+    <Action name="go_forward"/>
+    <Action name="go_up"/>
+    <Separator lineSeperator="true"/>
+    <Action name="scan_rescan"/>
+    <Action name="scan_stop"/>
+</ToolBar>
+<ToolBar name="locationToolBar" fullWidth="true" noMerge="1"><text>Location Toolbar</text>
+    <Action name="clear_location"/>
+    <Action name="location_bar"/>
+    <Action name="go"/>
+</ToolBar>
+
+<State name="scan_started">
+  <enable>
+    <Action name="scan_stop"/>
+  </enable>
+  <disable>
+    <Action name="scan_directory"/>
+    <Action name="scan_home"/>
+    <Action name="scan_root"/>
+    <Action name="scan_recent"/>
+    <Action name="scan_rescan"/>
+    <Action name="go_up"/>
+    <Action name="go_back"/>
+    <Action name="go_forward"/>
+    <Action name="clear_location"/>
+    <Action name="location_bar"/>
+    <Action name="go"/>
+    <Action name="view_zoom_in"/>
+    <Action name="view_zoom_out"/>
+    <Action name="configure_filelight"/>
+  </disable>
+</State>
+
+<State name="scan_complete">
+  <enable>
+    <Action name="scan_directory"/>
+    <Action name="scan_home"/>
+    <Action name="scan_root"/>
+    <Action name="scan_recent"/>
+    <Action name="scan_rescan"/>
+    <Action name="go_up"/>
+    <Action name="go_back"/>
+    <Action name="go_forward"/>
+    <Action name="clear_location"/>
+    <Action name="location_bar"/>
+    <Action name="go"/>
+    <Action name="view_zoom_in"/>
+    <Action name="view_zoom_out"/>
+    <Action name="configure_filelight"/>
+  </enable>
+  <disable>
+    <Action name="scan_stop"/>
+  </disable>
+</State>
+
+<State name="scan_failed">
+  <!-- only for full failure situations -->
+  <enable>
+    <Action name="scan_directory"/>
+    <Action name="scan_home"/>
+    <Action name="scan_root"/>
+    <Action name="scan_recent"/>
+    <Action name="go_back"/>
+    <Action name="go_forward"/>
+    <Action name="clear_location"/>
+    <Action name="location_bar"/>
+    <Action name="go"/>
+    <Action name="configure_filelight"/>
+  </enable>
+  <disable>
+    <Action name="scan_stop"/>
+    <Action name="scan_rescan"/>
+    <Action name="go_up"/>
+    <Action name="view_zoom_in"/>
+    <Action name="view_zoom_out"/>
+  </disable>
+</State>
+
+</kpartgui>

@@ -1,0 +1,40 @@
+<!DOCTYPE kpartgui>
+<kpartgui name="filelight_part" version="2">
+<MenuBar>
+  <Menu name="view">
+    <Action name="view_zoom_in" group="view_merge_group"/>
+    <Action name="view_zoom_out" group="view_merge_group"/>
+  </Menu>
+  <Menu name="settings">
+    <Action name="configure_filelight" group="configure_merge_group"/>
+  </Menu>
+</MenuBar>
+
+<State name="scan_started">
+  <disable>
+    <Action name="view_zoom_in"/>
+    <Action name="view_zoom_out"/>
+    <Action name="configure_filelight"/>
+  </disable>
+</State>
+
+<State name="scan_complete">
+  <enable>
+    <Action name="view_zoom_in"/>
+    <Action name="view_zoom_out"/>
+    <Action name="configure_filelight"/>
+  </enable>
+</State>
+
+<State name="scan_failed">
+  <!-- only for full failure situations -->
+  <enable>
+    <Action name="configure_filelight"/>
+  </enable>
+  <disable>
+    <Action name="view_zoom_in"/>
+    <Action name="view_zoom_out"/>
+  </disable>
+</State>
+
+</kpartgui>
