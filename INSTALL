@@ -8,7 +8,7 @@ fine as does GNU tar.
 The configure script is provided (at some byte-cost!) so the procedure
 should be as simple as:
 
-./configure --prefix `kde-config --prefix`
+./configure
 make
 su
 make install
@@ -26,14 +26,17 @@ email me if you're stuck, and I'd even  appreciate email if you had
 problems but found out how to get round them; this way I can improve
 Filelight.
 
-Homepage: http://www.methylblue.com/filelight/
-Forums:   http://www.methylblue.com/forum/
-Email:    filelight@methylblue.com.
+If your compile fails and you used Linux please try the autopackage, it is a
+distribution-neutral binary wrapped in a graphical installer. It is very nice.
 
+http://www.methylblue.com/filelight/#packages
 
 Generic instructions follow, enjoy Filelight!
 
-Max Howell (max.howell@methylblue.com)
+Max Howell
+
+Homepage: http://www.methylblue.com/filelight/
+Email:    filelight@methylblue.com.
 
 
 
@@ -79,7 +82,7 @@ The simplest way to compile this package is:
      documentation.
 
   4. You can remove the program binaries and object files from the
-     source code directory by typing `make clean'.  
+     source code directory by typing `make clean'.
 
 Compilers and Options
 =====================
