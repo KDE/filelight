@@ -47,7 +47,6 @@ class KMainWindow;
 class KActionCollection;
 class KAction;
 class KURL;
-class QStatusBar;
 class QString;
 class QTimer;
 class QPoint;
@@ -92,6 +91,7 @@ signals:
     void activated( const KURL & );
     void invalidated( const KURL & );
     void created( const Directory * );
+    void hoverUpdated( const QString & );
 
 protected:
     virtual void paintEvent( QPaintEvent * );
@@ -228,7 +228,6 @@ private:
     QString     m_path;
 
     QTimer     *m_timer;
-    QStatusBar *m_status;
     Map         m_map;
     SegmentTip  m_tip;
 

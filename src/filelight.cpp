@@ -48,7 +48,6 @@
 #include "historyaction.h"
 
 
-
 /**********************************************
   CONSTRUCTOR/DESTRUCTOR
  **********************************************/
@@ -60,7 +59,7 @@ Filelight::Filelight()
     setStandardToolBarMenuEnabled( true );
     setupStatusBar();
     setupActions();
-    
+
 /*
     factory = KLibLoader::self()->factory( "libfilelight" );
     if( factory )
@@ -77,20 +76,20 @@ Filelight::Filelight()
        KMessageBox::error( this, "No FilelightPart found !" );
     }
 */
- 
 
-  createGUI( m_part );  
+
+  createGUI( m_part );
   stateChanged( "scan_failed" );
 
   KConfig *config = KGlobal::config();
-  
+
 #if KDE_VERSION >= 0x030103
   config->setGroup( "general" );
   m_combo->setHistoryItems( config->readPathListEntry( "comboHistory" ) );
 #endif
-  
+
   applyMainWindowSettings( config, "window" );
-  
+
   connect( m_part, SIGNAL( started( KIO::Job * ) ), this, SLOT( scanStarted() ) );
   connect( m_part, SIGNAL( completed() ), this, SLOT( scanCompleted() ) );
   connect( m_part, SIGNAL( canceled( const QString & ) ), this, SLOT( scanFailed( const QString & ) ) );
@@ -112,17 +111,19 @@ void Filelight::setupStatusBar()
   m_status[0]->setText( i18n( "Scan to begin..." ) );
 
   ScanProgressBox *progress = new ScanProgressBox( this, "progress_box" ); //see scanbox.h
-    
+
   statusbar->addWidget( m_status[0], 1, false );
   statusbar->addWidget( m_status[1], 0, false );
   statusbar->addWidget( progress,    0, true );
 
   m_status[1]->hide(); //hide() here because add() (above) calls show() *rolls eyes*
   progress->hide();
-  
+
 //FIXME  connect( m_manager, SIGNAL( started( const QString & ) ), progress, SLOT( start() ) );
 //FIXME  connect( m_manager, SIGNAL( succeeded( const Directory * ) ), progress, SLOT( stop() ) );
-//FIXME  connect( m_manager, SIGNAL( failed( const QString &, ScanManager::ErrorCode ) ), progress, SLOT( stop() ) );  
+//FIXME  connect( m_manager, SIGNAL( failed( const QString &, ScanManager::ErrorCode ) ), progress, SLOT( stop() ) );
+
+  connect( m_part , SIGNAL( newHoverFilename( const QString & ) ),  this, SLOT( newHoverFilename ( const QString & ) ) );
 }
 
 void Filelight::setupActions()
@@ -251,7 +252,7 @@ void Filelight::slotAbortScan()
 {
   actionCollection()->action( "scan_stop" )->setEnabled( false );
   m_status[0]->setText( "Aborting scan..." );
-  
+
   m_part->closeURL();
 }
 
@@ -275,7 +276,7 @@ void Filelight::scanStarted()
 void Filelight::scanFailed( const QString &err )
 {
     KMessageBox::sorry( this, err );
-    
+
     stateChanged( "scan_failed" );
     actionCollection()->action( "go_up" )->setText( i18n( "Up" ) );
 
@@ -287,7 +288,7 @@ void Filelight::scanCompleted()
 {
     KAction *goUp = actionCollection()->action( "go_up" );
     QString path = m_part->url().path( 1 );
-    
+
     QLineEdit *edit = m_combo->lineEdit();
     KURL url( m_part->url() );
 
@@ -296,7 +297,7 @@ void Filelight::scanCompleted()
     if( edit->text() != path )
     edit->setText( path );
 
-    
+
     //FIXME the part handles all this
     m_status[0]->setText( i18n( "Showing: %1" ).arg( path ) );
     //m_status[1]->setText( i18n( "Files: %1" ).arg( KGlobal::locale()->formatNumber( tree->fileCount(), 0 ) ) );
@@ -311,6 +312,12 @@ void Filelight::scanCompleted()
         goUp->setText( i18n( "Up: %1" ).arg( url.upURL().path( 1 ) ) );
 
     m_recentScans->addURL( url ); //FIXME doesn't set the tick
+}
+
+
+void Filelight::newHoverFilename(const QString & fullpath)
+{
+    m_status[0]->setText( fullpath );
 }
 
 

@@ -52,7 +52,7 @@ void KRadialMap::resizeEvent( QResizeEvent * )
 
 void KRadialMap::paintEvent( QPaintEvent * )
 {
-  QPainter paint( this );  
+  QPainter paint( this );
   //bltBit for some Qt setups will bitBlt _after_ the labels are painted. Which buggers things up!
   //shame as bitBlt is faster, possibly Qt bug? Should report the bug?
 //  bitBlt( this, m_xOffset, m_yOffset, m_map );
@@ -79,7 +79,7 @@ void KRadialMap::paintEvent( QPaintEvent * )
 const KRadialMap::Segment *KRadialMap::segmentAt( QPoint &e ) const
 {
   //determine which segment QPoint e is above
-  
+
   e -= m_offset;
 
   if( e.x() <= m_map.width() && e.y() <= m_map.height() )
@@ -138,8 +138,8 @@ void KRadialMap::mouseMoveEvent( QMouseEvent *e )
       setCursor( KCursor::handCursor() );
       //FIXME much redundancy in calculating focus path, you do this SO many times!
       m_tip.updateTip( m_focus->file(), m_tree );
-      m_status->message( fullPath( m_focus->file() ) );
       repaint( false ); //repaint required to update labels now before transparency is generated
+      emit hoverUpdated( fullPath( m_focus->file() ) );
     }
 
     m_tip.moveto( mapToGlobal( e->pos() ), *this, ( p.y() < 0 ) ); //updates tooltip psuedo-tranparent background
@@ -148,7 +148,7 @@ void KRadialMap::mouseMoveEvent( QMouseEvent *e )
   {
     unsetCursor();
     m_tip.hide();
-    m_status->clear();
+    emit hoverUpdated( "" );
     update();
   }
 }

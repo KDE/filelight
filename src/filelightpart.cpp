@@ -1,7 +1,7 @@
 //
 // C++ Implementation: filelightpart
 //
-// Description: 
+// Description:
 //
 //
 // Author: Max Howell <mxcl@methylblue.com>, (C) 2003
@@ -55,7 +55,7 @@ FilelightPart::FilelightPart( QWidget *parentWidget, const char *widgetName, QOb
     Gsettings.readSettings();
 
     ScanManager::readMounts();
-    
+
     KStdAction::zoomIn(  m_map, SLOT( slotZoomIn() ), actionCollection() );
     KStdAction::zoomOut( m_map, SLOT( slotZoomOut() ), actionCollection() );
     //FIXME std action is good or not for KParts?
@@ -67,22 +67,24 @@ FilelightPart::FilelightPart( QWidget *parentWidget, const char *widgetName, QOb
     setInstance( FilelightPartFactory::instance() );
     setWidget( m_map );
     setXMLFile( "filelight_partui.rc" );
-                           
+
     connect( m_map, SIGNAL( created( const Directory * ) ), SIGNAL( completed() ) );
-    connect( m_map, SIGNAL( created( const Directory * ) ), SLOT( scanFinished() ) );    
+    connect( m_map, SIGNAL( created( const Directory * ) ), SLOT( scanFinished() ) );
     connect( m_manager, SIGNAL( started( const QString & ) ), SLOT( scanStarted( const QString & ) ) );
-    
+
     connect( m_map, SIGNAL( activated( const KURL & ) ), SLOT( updateURL( const KURL & ) ) );
-        
+
     connect( m_manager, SIGNAL( started( const QString & ) ), m_map, SLOT( invalidate() ) );
 
     connect( m_manager, SIGNAL( cached( const Directory * ) ), m_map, SLOT( createFromCache( const Directory * ) ) );
     connect( m_manager, SIGNAL( succeeded( const Directory * ) ), m_map, SLOT( create( const Directory * ) ) );
     connect( m_manager, SIGNAL( failed( const QString &, ScanManager::ErrorCode ) ), SLOT( scanFailed( const QString &, ScanManager::ErrorCode ) ) );
 //    connect( m_manager, SIGNAL( aborted() ), this, SLOT( scanAborted() ) );
-    
+
     connect( m_manager, SIGNAL( cacheInvalidated() ), m_map, SLOT( invalidate() ) );
-    
+
+    connect( m_map, SIGNAL( hoverUpdated( const QString & ) ),  SLOT( hoverUpdated( const QString & ) ) );
+
 }
 
 
@@ -101,12 +103,12 @@ KAboutData* FilelightPart::createAboutData()
   static const char *bugs        = "filelight@methylblue.com";
   static const char *copyright   = "(C) 2003 Max Howell";
   static const char *more        = I18N_NOOP( "Filelight is available as a KPart and stand-alone application" );
-                
+
   KAboutData* aboutData = new KAboutData( "filelight", "Filelight", "0.7.0", description, KAboutData::License_GPL_V2, copyright, more, homepage, bugs );
-    
+
   aboutData->addAuthor( "Max Howell", I18N_NOOP("Author"), "max.howell@methylblue.com", "http://www.methylblue.com/" );
   aboutData->addCredit( "Steffen Gerlach", I18N_NOOP("Original concept"), 0, "http://www.steffengerlach.de/" );
-  aboutData->addCredit( "André Somers", I18N_NOOP("Internationalisation Support"), "a.t.somers@student.utwente.nl" );
+  aboutData->addCredit( "AndrÃ© Somers", I18N_NOOP("Internationalisation Support"), "a.t.somers@student.utwente.nl" );
   aboutData->addCredit( "Stephanie James", I18N_NOOP("\"Girlfriend Usability Testing\"") );
   aboutData->addCredit( "Marcel Meyer", I18N_NOOP("Testing, bug reports and suggestions") );
 
@@ -115,7 +117,7 @@ KAboutData* FilelightPart::createAboutData()
 
 
 bool FilelightPart::openURL( const KURL &u )
-{  
+{
     bool b;
 
     if( u == this->url() )
@@ -125,13 +127,13 @@ bool FilelightPart::openURL( const KURL &u )
     }
     else
         b = m_manager->start( u );
-    
+
     if( b )
     {
         m_url = u;
         emit started( 0 );
     }
-        
+
     return b;
 }
 
@@ -146,7 +148,7 @@ bool FilelightPart::closeURL()
 void FilelightPart::updateURL( const KURL &u )
 {
     //FIXME instead there must be a way to check if started and if not do this
-          
+
     m_url = u;
 
     emit m_ext->openURLNotify();
@@ -221,5 +223,15 @@ void FilelightPart::showSettings()
 
   dialog->show(); //deletes itself
 }
+
+
+void FilelightPart::hoverUpdated( const QString &fullpath )
+{
+    emit newHoverFilename( fullpath );
+    // TODO: in case we are really running inside konqueror, tell konqueror to
+    //       update its statusbar
+    //       <mcamen@mcamen.de>
+}
+
 
 #include "filelightpart.moc"

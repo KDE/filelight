@@ -74,6 +74,8 @@ class Filelight : public KParts::MainWindow
 
     //FIXME rename as is different meaning
     void slotAbortScan();    
+
+    void newHoverFilename( const QString & );
     
   protected:
     virtual void saveProperties( KConfig * );

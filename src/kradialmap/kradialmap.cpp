@@ -54,7 +54,6 @@ KRadialMap::KRadialMap( QWidget *parent, const char *name )
   , m_tree( 0 )
   , m_focus( 0 )
   , m_timer( new QTimer( this ) )
-  , m_status( new QStatusBar( this ) )
   , m_tip( KCursor::handCursor().bitmap()->height() ) //needs to know cursor height
 {
   setWFlags( Qt::WRepaintNoErase ); //prevent flicker
@@ -96,8 +95,6 @@ void KRadialMap::invalidate( const bool &b )
 
     m_map.invalidate( b );
     if( b ) update();
-
-    m_status->clear();
 
     //tell rest of Filelight
     emit invalidated( url );

@@ -81,7 +81,12 @@ private slots:
     void showSettings();
 
     void updateURL( const KURL & );
+
+    void hoverUpdated( const QString & );
     
+signals:
+    void newHoverFilename( const QString & );
+
 private:
     FilelightBrowserExtension *m_ext;
     ScanManager *m_manager;
