@@ -27,7 +27,6 @@
 #include <klocale.h>
 #include <kaction.h>
 #include <kurl.h>
-#include <kapp.h>          //KDE_VERSION
 #include <kdebug.h>
 
 

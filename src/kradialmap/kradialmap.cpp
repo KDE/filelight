@@ -35,12 +35,11 @@
 
 #include <kmainwindow.h>    //member *
 #include <kaction.h>        //member
-#include <krun.h>           //slotSpawnKonqi()
+#include <krun.h>           //slotSpawnKonqi(), pupup slots
 #include <kmessagebox.h>    
 #include <kpopupmenu.h>     //ctor
 #include <kcursor.h>        //ctor
 #include <klocale.h>
-#include <krun.h>           //popup slots
 
 #include "kradialmap.h"
 #include "../settings.h"

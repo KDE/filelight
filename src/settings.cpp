@@ -15,36 +15,33 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <kapp.h> //KDE_VERSION
 #include <kconfig.h>
 #include <qstringlist.h>
 #include <qfont.h>
 
 #include "settings.h"
- 
+
 
 
 bool Settings::readSettings()
 {
   //**** need to return false somehow if error, but how detect error?
   KConfig config( m_path );
-  
+
   config.setGroup( "filelight_part" );
   scanAcrossMounts   = config.readBoolEntry( "scanAcrossMounts", false );
   scanRemoteMounts   = config.readBoolEntry( "scanRemoteMounts", false );
   scanRemovableMedia = config.readBoolEntry( "scanRemovableMedia", false );
-#if KDE_VERSION >= 0x030103
   skipList           = config.readPathListEntry( "skipList" );
-#endif
   scheme             = (MapScheme)config.readNumEntry( "scheme", 0 );
   contrast           = config.readNumEntry( "contrast", 50 );
   aaFactor           = config.readNumEntry( "aaFactor", 2 );
   varyLabelFontSizes = config.readBoolEntry( "varyLabelFontSizes", true );
   minFontPitch       = config.readNumEntry( "minFontPitch", QFont().pointSize() - 3);
-  showSmallFiles     = config.readBoolEntry( "showSmallFiles", false );  
+  showSmallFiles     = config.readBoolEntry( "showSmallFiles", false );
 
   defaultRingDepth = 4;
-  
+
   return true;
 }
 
@@ -58,16 +55,14 @@ bool Settings::writeSettings()
   config.writeEntry( "scanAcrossMounts", scanAcrossMounts );
   config.writeEntry( "scanRemoteMounts", scanRemoteMounts );
   config.writeEntry( "scanRemovableMedia", scanRemovableMedia );
-#if KDE_VERSION >= 0x030103
   config.writePathEntry( "skipList", skipList );
-#endif
 
-  config.writeEntry( "scheme", scheme );  
+  config.writeEntry( "scheme", scheme );
   config.writeEntry( "contrast", contrast );
-  config.writeEntry( "aaFactor", aaFactor );  
+  config.writeEntry( "aaFactor", aaFactor );
   config.writeEntry( "varyLabelFontSizes", varyLabelFontSizes );
   config.writeEntry( "minFontPitch", minFontPitch );
   config.writeEntry( "showSmallFiles", showSmallFiles);
-   
+
   return true;
 }

@@ -19,11 +19,11 @@
  *   granted to use the methodology with this program.                     *
  *                                                                         *
  ***************************************************************************/
- 
+
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
 #include <kurl.h>
-#include <kapp.h>
+#include <kapplication.h>
 
 #include "filelight.h"
 
@@ -45,11 +45,11 @@ int main(int argc, char *argv[])
   static const char *description = I18N_NOOP("Recursive graphical display of disk usage.");
   static const char *homepage    = "http://www.methylblue.com/filelight/";
   static const char *bugs        = "filelight@methylblue.com";
-                
+
   KAboutData aboutData( PACKAGE, I18N_NOOP( PRETTYNAME ),
     VERSION, description, KAboutData::License_GPL_V2, "(C) 2003 Max Howell",
     I18N_NOOP( "Filelight is based on work by Steffen Gerlach" ), homepage, bugs );
-    
+
   aboutData.addAuthor( "Max Howell", I18N_NOOP("Author"), "max.howell@methylblue.com", "http://www.methylblue.com/" );
   aboutData.addCredit( "Steffen Gerlach", I18N_NOOP("Original concept"), 0, "http://www.steffengerlach.de/" );
   aboutData.addCredit( "André Somers", I18N_NOOP("Internationalisation Support"), "a.t.somers@student.utwente.nl" );
@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
     a.setMainWidget( t );
 
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-    
+
     //scan any command line arguments
     if( args->count() > 0 )
       t->slotScanUrl( args->url( 0 ) );

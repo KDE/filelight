@@ -19,7 +19,7 @@
 #include <qpainter.h>
 #include <qtooltip.h> //for its palette
 
-#include <kapp.h>     //installing eventFilters
+#include <kapplication.h>     //installing eventFilters
 #include <kglobal.h>
 #include <klocale.h>
 #include <kpixmap.h>

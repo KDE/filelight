@@ -35,19 +35,15 @@ HistoryCollection::HistoryCollection( KActionCollection *ac, QObject *parent, co
 
 void HistoryCollection::save( KConfig *config )
     {
-      #if KDE_VERSION >= 0x030103
       config->writePathEntry( "backHistory", m_b->m_list );
       config->writePathEntry( "forwardHistory", m_f->m_list );
-      #endif
     }
 
 void HistoryCollection::restore( KConfig *config )
     {
-      #if KDE_VERSION >= 0x030103
       m_b->m_list = config->readPathListEntry( "backHistory" );
       m_f->m_list = config->readPathListEntry( "forwardHistory" );
       //**** texts are not updated, no matter
-      #endif
     }
 
 #include "historyaction.moc"

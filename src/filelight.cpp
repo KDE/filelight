@@ -24,6 +24,7 @@
 
 #include <qstring.h>
 
+#include <kapplication.h>
 #include <kaction.h>
 #include <kaccel.h>        //keyboard shortcuts
 #include <kedittoolbar.h>  //for editToolbar dialog
@@ -83,10 +84,8 @@ Filelight::Filelight()
 
   KConfig *config = KGlobal::config();
 
-#if KDE_VERSION >= 0x030103
   config->setGroup( "general" );
   m_combo->setHistoryItems( config->readPathListEntry( "comboHistory" ) );
-#endif
 
   applyMainWindowSettings( config, "window" );
 
@@ -136,7 +135,7 @@ void Filelight::setupActions()
 
 //locationToolBar
   KWidgetAction *combo = new KWidgetAction( m_combo, i18n( "Location Bar" ), 0, 0, 0, actionCollection(), "location_bar" );
-  new KAction( i18n( "Clear Location Bar" ), QApplication::reverseLayout() ? "clear_left" : "locationbar_erase", 0, m_combo, SLOT( clearEdit() ), actionCollection(), "clear_location" );
+  new KAction( i18n( "Clear Location Bar" ), KApplication::reverseLayout() ? "clear_left" : "locationbar_erase", 0, m_combo, SLOT( clearEdit() ), actionCollection(), "clear_location" );
   new KAction( i18n( "Go" ), "key_enter", 0, m_combo, SIGNAL( returnPressed() ), actionCollection(), "go" );
 
 //scan
@@ -171,10 +170,8 @@ bool Filelight::queryExit()
 
   saveMainWindowSettings( config, "window" );
   m_recentScans->saveEntries( config );
-#if KDE_VERSION >= 0x030103
   config->setGroup( "general" );
   config->writePathEntry( "comboHistory", m_combo->historyItems() );
-#endif
   config->sync();
 
   return true;
