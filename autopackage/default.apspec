@@ -1,0 +1,57 @@
+# -*-shell-script-*-
+
+[Meta]
+RootName: @methylblue.com/filelight:$SOFTWAREVERSION
+DisplayName: Filelight
+ShortName: filelight
+Maintainer: Max Howell <max.howell@filelight.com>
+Packager: Max Howell <max.howell@filelight.com>
+Summary: Graphical disk-usage information
+URL: http://www.methyblue.com/filelight
+License: GNU General Public License, Version 2
+SoftwareVersion: 1.0.0
+AutopackageTarget: 1.0
+
+# Only uncomment InterfaceVersion if your package exposes interfaces to other software,
+# for instance if it includes DSOs or python/perl modules. See the developer guide for more info,
+# or ask on autopackage-dev if you don't understand interface versioning in autopackage.
+#
+# InterfaceVersion: 0.0
+
+[Prepare]
+requireAtLeast @kde.org/kdelibs:3.2
+
+[Description]
+Filelight allows you to understand exactly where your diskspace is being used by graphically 
+representating your filesystem as a set of concentric, segmented-rings.
+
+[BuildPrepare]
+echo "Do not build with unsermake! You must rebuild the Makefiles thus:"
+echo "  $ UNSERMAKE=no make -f Makefile.cvs"
+echo
+
+prepareBuild() --enable-final --disable-debug --without-arts
+
+[BuildUnprepare]
+unprepareBuild()
+
+[Imports]
+cd filelight
+echo '*' | import
+
+[Install]
+PREFIX=getKdePrefix
+
+# Put your installation script here
+installExe bin/*
+installLib lib/kde3/*
+
+installDesktop share/applications/kde/filelight.desktop
+installIcon share/icons/crystalsvg
+installConfig share/config/filelightrc
+
+copyFiles filelightui.rc filelight_partui.rc $PREFIX/share/apps/filelight/
+
+[Uninstall]
+# Usually just the following line is enough to uninstall everything
+uninstallFromLog
