@@ -187,7 +187,7 @@ void FilelightPart::scanFailed( const QString &path, ScanManager::ErrorCode err 
     s = i18n( "Directory not found: %1" ).arg( path );
     break;
   case ScanManager::NoPermission:
-    s = i18n( "Unable to enter: %1\nYou don't have access rights to this location." ).arg( path );
+    s = i18n( "Unable to enter: %1\nYou do not have access rights to this location." ).arg( path );
     break;
 
   default:

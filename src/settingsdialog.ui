@@ -110,7 +110,7 @@
                                     </sizepolicy>
                                 </property>
                                 <property name="text">
-                                    <string>&amp;Don't scan these directories:</string>
+                                    <string>&amp;Do not scan these directories:</string>
                                 </property>
                                 <property name="textFormat">
                                     <enum>PlainText</enum>
@@ -265,7 +265,7 @@
                                             <string></string>
                                         </property>
                                         <property name="whatsThis" stdset="0">
-                                            <string>Selecting this option will prevent scanning of filesystems that aren't on this computer e.g. NFS or Samba mounts.</string>
+                                            <string>Selecting this option will prevent scanning of filesystems that are not on this computer, e.g. NFS or Samba mounts.</string>
                                         </property>
                                     </widget>
                                     <widget class="QCheckBox" row="0" column="0" rowspan="1" colspan="2">
@@ -273,10 +273,10 @@
                                             <cstring>scanAcrossMounts</cstring>
                                         </property>
                                         <property name="text">
-                                            <string>Scan across filesystem &amp;boundries</string>
+                                            <string>Scan across filesystem &amp;boundaries</string>
                                         </property>
                                         <property name="whatsThis" stdset="0">
-                                            <string>Selecting this option will prevent Filelight from scanning directories that are not in the same filesystem the scan started.</string>
+                                            <string>Selecting this option will prevent Filelight from scanning directories that are not in the same filesystem as where the scan started.</string>
                                         </property>
                                     </widget>
                                     <widget class="QCheckBox" row="2" column="1">
@@ -434,7 +434,7 @@
                                             <cstring>minFontPitch</cstring>
                                         </property>
                                         <property name="whatsThis" stdset="0">
-                                            <string>The smallest font size Filelight can render labels.</string>
+                                            <string>The smallest font size with which Filelight can render labels.</string>
                                         </property>
                                     </widget>
                                     <widget class="QCheckBox" row="0" column="0" rowspan="1" colspan="3">
