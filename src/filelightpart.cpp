@@ -11,7 +11,7 @@
 //
 
 #include "filelightpart.h"
-#include "kradialmap/kradialmap.h"
+#include "part/kradialmap.h"
 #include "scanmanager.h"
 #include "settingsdlg.h"
 #include "settings.h"

@@ -1,4 +1,4 @@
-SUBDIRS = kradialmap
+SUBDIRS = part
 INCLUDES = $(all_includes)
 METASOURCES = AUTO
 
@@ -26,10 +26,8 @@ libcommon_la_SOURCES = filelightpart.cpp scanmanager.cpp settings.cpp settingsdi
 bin_PROGRAMS = filelight
 
 filelight_SOURCES = main.cpp filelight.cpp scanbox.cpp historyaction.cpp
-filelight_LDADD   = libcommon.la ./kradialmap/libkradialmap.a $(LIB_KFILE) $(LIB_KPARTS) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT) $(LIBSOCKET)
+filelight_LDADD   = libcommon.la ./part/libkradialmap.a $(LIB_KFILE) $(LIB_KPARTS) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT) $(LIBSOCKET)
 filelight_LDFLAGS = $(all_libraries) $(KDE_RPATH)
-
-xdg_apps_DATA = filelight.desktop
 
 configdir = $(kde_confdir)
 config_DATA = filelightrc
@@ -39,11 +37,8 @@ config_DATA = filelightrc
 
 kde_module_LTLIBRARIES = libfilelight.la
 libfilelight_la_SOURCES = dummy.cpp
-libfilelight_la_LIBADD  = libcommon.la ./kradialmap/libkradialmap.a $(LIB_KFILE) $(LIB_KPARTS) $(LIB_KDEUI) $(LIB_QT)
+libfilelight_la_LIBADD  = libcommon.la ./part/libkradialmap.a $(LIB_KFILE) $(LIB_KPARTS) $(LIB_KDEUI) $(LIB_QT)
 libfilelight_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN)
 
 dummy.cpp:
 	echo > dummy.cpp
-
-partdesktopdir   = $(kde_servicesdir)
-partdesktop_DATA = filelight_part.desktop
