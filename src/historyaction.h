@@ -42,8 +42,8 @@ Q_OBJECT
     KAction( text, icon, cut, 0, 0, ac, name ),
     m_text( text )
   {
-    KAction::setEnabled( false );
-    connect( this, SIGNAL( activated() ), SLOT( pop() ) ); //**** wouldn't find slot it in KAction ctor for some reason
+    //**** wouldn't find slot it in KAction ctor for some reason
+    connect( this, SIGNAL( activated() ), SLOT( pop() ) );
   }
 
   friend class HistoryCollection;

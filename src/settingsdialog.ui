@@ -1,4 +1,4 @@
-<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
 <class>SettingsDialog</class>
 <widget class="QDialog">
     <property name="name">
@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>365</width>
-            <height>542</height>
+            <height>544</height>
         </rect>
     </property>
     <property name="caption">
@@ -34,11 +34,14 @@
                     <property name="text">
                         <string>&amp;Reset</string>
                     </property>
+                    <property name="accel">
+                        <string>Alt+R</string>
+                    </property>
                     <property name="autoDefault">
                         <bool>false</bool>
                     </property>
                     <property name="whatsThis" stdset="0">
-                        <string>Will reset Filelight to the state it was in before this dialog was opened.</string>
+                        <string>Reset any changes you have made since you opened this dialog.</string>
                     </property>
                 </widget>
                 <spacer>
@@ -64,6 +67,9 @@
                     </property>
                     <property name="text">
                         <string>&amp;Close</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+C</string>
                     </property>
                     <property name="default">
                         <bool>true</bool>
@@ -127,7 +133,7 @@
                                     <string></string>
                                 </property>
                                 <property name="whatsThis" stdset="0">
-                                    <string>Filelight will skip any paths listed here when performing scan operations.</string>
+                                    <string>Filelight will not scan these directories unless you specifically request them.</string>
                                 </property>
                             </widget>
                             <widget class="QLayoutWidget">
@@ -165,6 +171,9 @@
                                         <property name="text">
                                             <string>R&amp;emove</string>
                                         </property>
+                                        <property name="accel">
+                                            <string>Alt+E</string>
+                                        </property>
                                         <property name="autoDefault">
                                             <bool>false</bool>
                                         </property>
@@ -175,6 +184,9 @@
                                         </property>
                                         <property name="text">
                                             <string>&amp;Add...</string>
+                                        </property>
+                                        <property name="accel">
+                                            <string>Alt+A</string>
                                         </property>
                                         <property name="autoDefault">
                                             <bool>false</bool>
@@ -261,11 +273,14 @@
                                         <property name="text">
                                             <string>Exclude re&amp;mote filesystems</string>
                                         </property>
+                                        <property name="accel">
+                                            <string>Alt+M</string>
+                                        </property>
                                         <property name="toolTip" stdset="0">
                                             <string></string>
                                         </property>
                                         <property name="whatsThis" stdset="0">
-                                            <string>Selecting this option will exclude filesystems that aren't on this computer e.g. NFS or Samba (Windows) mounts.</string>
+                                            <string>Selecting this option will prevent scanning of filesystems that aren't on this computer e.g. NFS or Samba mounts.</string>
                                         </property>
                                     </widget>
                                     <widget class="QCheckBox" row="0" column="0" rowspan="1" colspan="2">
@@ -275,8 +290,11 @@
                                         <property name="text">
                                             <string>Scan across filesystem &amp;boundries</string>
                                         </property>
+                                        <property name="accel">
+                                            <string>Alt+B</string>
+                                        </property>
                                         <property name="whatsThis" stdset="0">
-                                            <string>Selecting this option will cause Filelight to not scan directories that are on other filesystems to the one it starts in.</string>
+                                            <string>Selecting this option will prevent Filelight from scanning directories that are not in the same filesystem the scan started.</string>
                                         </property>
                                     </widget>
                                     <widget class="QCheckBox" row="2" column="1">
@@ -289,11 +307,14 @@
                                         <property name="text">
                                             <string>Exclude remo&amp;vable media</string>
                                         </property>
+                                        <property name="accel">
+                                            <string>Alt+V</string>
+                                        </property>
                                         <property name="toolTip" stdset="0">
                                             <string></string>
                                         </property>
                                         <property name="whatsThis" stdset="0">
-                                            <string>Selecting this option will cause Filelight to not scan filesystems from removable media (eg. CD-ROMs).</string>
+                                            <string>Selecting this option will prevent Filelight from scanning removable media (eg. CD-ROMs).</string>
                                         </property>
                                     </widget>
                                 </grid>
@@ -388,6 +409,9 @@
                                                         <property name="orientation">
                                                             <enum>Horizontal</enum>
                                                         </property>
+                                                        <property name="whatsThis" stdset="0">
+                                                            <string>Here you can vary the contrast of the filemap in realtime.</string>
+                                                        </property>
                                                     </widget>
                                                 </hbox>
                                             </widget>
@@ -402,8 +426,11 @@
                                 <property name="text">
                                     <string>&amp;Use anti-aliasing</string>
                                 </property>
+                                <property name="accel">
+                                    <string>Alt+U</string>
+                                </property>
                                 <property name="whatsThis" stdset="0">
-                                    <string>Render the map anti-aliased. Unfortunately this operation is slow.</string>
+                                    <string>Anti-aliasing the filemap makes it clearer and prettier, unfortunately it also makes rendering very slow.</string>
                                 </property>
                             </widget>
                             <widget class="QLayoutWidget">
@@ -444,8 +471,11 @@
                                         <property name="text">
                                             <string>&amp;Vary label font sizes</string>
                                         </property>
+                                        <property name="accel">
+                                            <string>Alt+V</string>
+                                        </property>
                                         <property name="whatsThis" stdset="0">
-                                            <string>Labels that are connected to outer segments will use a smaller font to make it easier to discern which labels are the most important.</string>
+                                            <string>The font size of exploded labels can be varied relative to the depth of the directories they represent. This helps you spot the important labels more easily. Set a sensible minimum font size.</string>
                                         </property>
                                     </widget>
                                     <spacer row="1" column="0">
@@ -506,7 +536,7 @@
                                     <string>Show small files</string>
                                 </property>
                                 <property name="whatsThis" stdset="0">
-                                    <string>Selecting this option will cause Filelight to show all files that are too small to be represented by a segment as a single grey segment.</string>
+                                    <string>Some files are too small to be rendered on the filemap. Selecting this option makes these files visible by merging them all into a single "multi-segment".</string>
                                 </property>
                             </widget>
                         </vbox>

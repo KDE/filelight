@@ -2,5 +2,5 @@
 skipList=/dev/,/proc/,/sys/,/root/
 
 [window]
-Height=600
-Width=400
+Height=400
+Width=600

@@ -22,11 +22,11 @@
 #include <qthread.h>
 #include <qevent.h>
 #include <qstring.h>
-
+#include <kurl.h>
 #include "filetree.h"
 
 
-class KURL;
+//class KURL;
 class ScanThread;
 
 class ScanManager : public QObject
@@ -37,10 +37,11 @@ public:
     ScanManager( QObject *parent, const char *name );
     ~ScanManager();
 
-    enum ErrorCode { NoError, InvalidProtocol, InvalidUrl, NotDirectory, NoPermission, NotFound, UnknownError };
+    enum ErrorCode { NoError, InvalidProtocol, InvalidUrl, RelativePath, NoPermission, NotFound, UnknownError };
     
 public slots:
-    bool start( const KURL &, bool = false );
+    bool start( KURL );
+    void _start( const KURL &url ) { start( url ); }
     void abort();
     void emptyCache() { cache.empty(); emit cacheInvalidated(); }
 
@@ -53,7 +54,7 @@ signals:
     void cacheInvalidated();
 
 private:
-    void startPrivate( const QString &, bool );
+    void startPrivate( const QString & );
     void customEvent( QCustomEvent * e );
     
     ScanThread *m_thread; //stack allocated seems to crash on destruction with Qt < 3.2
@@ -76,8 +77,8 @@ public:
 
     void run();
     
-    friend void ScanManager::startPrivate( const QString &, bool );
-
+    friend void ScanManager::startPrivate( const QString & );
+    
 private:
     QString m_path;
     Chain<Directory> *m_trees;

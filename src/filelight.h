@@ -35,10 +35,9 @@ class QString;
 class QTimer;
 class QLabel;
 class KHistoryCombo;
-class KSimpleConfig;
+class KConfig;
 class KAction;
 class KRecentFilesAction;
-class KPopupMenu;
 class KURL;
 
 class FilelightCanvas;
@@ -58,7 +57,7 @@ class Filelight : public KMainWindow
     virtual ~Filelight();
 
   public slots:
-    void slotScanUrl( const KURL & ); //needed by main.cpp
+    bool slotScanUrl( const KURL & ); //needed by main.cpp
     
   private slots:
     void slotUp();
@@ -82,14 +81,14 @@ class Filelight : public KMainWindow
         
   private:
     FilelightCanvas *m_canvas;
-    SettingsDlg     *m_settingsDialog;
+    SettingsDlg     *m_dialog;
     QLabel          *m_status[2];
-    KSimpleConfig   *m_config;
+    KConfig         *m_config;
     KHistoryCombo   *m_combo;
     ScanManager     *m_manager;
     
-    HistoryCollection *m_histories;
-    KRecentFilesAction *m_recentHistory;
+    HistoryCollection  *m_histories;
+    KRecentFilesAction *m_recentScans;
 
     void setupStatusBar();
     void setupActions();

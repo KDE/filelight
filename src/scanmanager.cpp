@@ -69,52 +69,37 @@ void ScanManager::abort()
 }
 
 
-bool ScanManager::start( const KURL &url, bool force )
+bool ScanManager::start( KURL url )
 {
   ScanManager::ErrorCode err = ScanManager::NoError;
-  QString path;
-  
-  //**** need to add initial / if not present frankly
-  //     as user might be confused if it isn't working, especially as we only accept absolute paths
-
+  url.cleanPath();
+  QString path( url.path( 1 ) ); //always assume path points to a directory
+      
   if( url.protocol() != "file" )
     err = ScanManager::InvalidProtocol;
   else if( !url.isValid() )
     err = ScanManager::InvalidUrl;
-  else
-  {
-    struct stat statbuf;
+  else if( path[0] != '/' )
+    err = ScanManager::RelativePath;
+  else if( access( path, F_OK ) != 0 ) //stat( path, &statbuf ) == 0 
+    err = ScanManager::NotFound;
+  else if( access( path, R_OK | X_OK ) != 0 )
+    err = ScanManager::NoPermission;
 
-//    if( access( path, R_OK ) != 0 )
-//      err = ScanManager::NoPermission; else
-    if( stat( url.path(), &statbuf ) == 0 )
-    {
-      if( !S_ISDIR( statbuf.st_mode ) )
-        err = ScanManager::NotDirectory;
-    }
-    else
-      err = ScanManager::NotFound;
-  }
-    
   if( err == ScanManager::NoError )
   {
-    //**** maybe don't pass const instead of this mess?
-    KURL tmp( url );
-    tmp.cleanPath();
-    QString path( tmp.path( 1 ) );
-    startPrivate( path, force );
+    startPrivate( path );
+    return true;    
   }
   else
   {
-    emit failed( url.path( 1 ), err );
+    emit failed( path, err );
     return false;
   }
-
-  return true;
 }
 
 
-void ScanManager::startPrivate( const QString &path, bool force )
+void ScanManager::startPrivate( const QString &path )
 {
   kdDebug() << "Scan requested for: " << path << "\n";
 
@@ -128,9 +113,7 @@ void ScanManager::startPrivate( const QString &path, bool force )
 
 
   Chain<Directory> *list = new Chain<Directory>;
-  
-  if( !force )
-  {
+
 
   /* CHECK CACHE
    *   user wants: /usr/local/
@@ -192,8 +175,8 @@ void ScanManager::startPrivate( const QString &path, bool force )
       it.transferTo( *list );
     }
   }
-  }
 
+  
   //add empty directories for any mount points that are in the path
   //**** empty directories is not ideal as adds to fileCount incorrectly
   QStringList slist( Gsettings.skipList );

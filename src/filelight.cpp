@@ -59,10 +59,9 @@ Settings Gsettings;   //global options struct
 Filelight::Filelight() : KMainWindow( 0, "filelight" )
 {
   //**** some of these can be initialised with the class
-  m_config = new KSimpleConfig( "filelightrc" );
+  m_config = new KConfig( "filelightrc" );
   Gsettings.useKConfig( m_config );
-  m_settingsDialog = new SettingsDlg( this, "settings_dialog" ); //will read our application settings from the config into the global settings structure
-
+  m_dialog  = new SettingsDlg( this, "settings_dialog" ); //will read our application settings from the config into the global settings structure
   m_canvas  = new FilelightCanvas( statusBar(), this, "canvas" );
   m_manager = new ScanManager( this, "scan_manager" );
 
@@ -74,7 +73,7 @@ Filelight::Filelight() : KMainWindow( 0, "filelight" )
   setupStatusBar();
   setupActions();
   createGUI( "filelightui.rc" );
- // stateChanged( "scan_failed" ); //**** for some reason doing this didn't disable the zoom actions. Don't know why yet
+  stateChanged( "scan_failed" );
 
 #if KDE_VERSION >= 0x030103
   m_config->setGroup( "general" );
@@ -92,13 +91,12 @@ Filelight::Filelight() : KMainWindow( 0, "filelight" )
   connect( m_manager, SIGNAL( started( const QString & ) ), this, SLOT( scanStarted( const QString & ) ) );
   connect( m_manager, SIGNAL( cached( const Directory * ) ), m_canvas, SLOT( createFromCache( const Directory * ) ) );
   connect( m_manager, SIGNAL( succeeded( const Directory * ) ), m_canvas, SLOT( create( const Directory * ) ) );
-  connect( m_manager, SIGNAL( failed( const QString &, ScanManager::ErrorCode ) ), m_canvas, SLOT( create( const QString & ) ) );
-  connect( m_manager, SIGNAL( failed( const QString &, ScanManager::ErrorCode ) ), m_combo, SLOT( clearEdit() ) );
+//  connect( m_manager, SIGNAL( failed( const QString &, ScanManager::ErrorCode ) ), m_combo, SLOT( clearEdit() ) );
   connect( m_manager, SIGNAL( failed( const QString &, ScanManager::ErrorCode ) ), this, SLOT( scanFailed( const QString &, ScanManager::ErrorCode ) ) );
   connect( m_manager, SIGNAL( cacheInvalidated() ), m_canvas, SLOT( invalidate() ) );
 
-  connect( m_settingsDialog, SIGNAL( canvasIsDirty( int ) ), m_canvas, SLOT( refresh( int ) ) );
-  connect( m_settingsDialog, SIGNAL( mapIsInvalid() ), m_manager, SLOT( emptyCache() ) );
+  connect( m_dialog, SIGNAL( canvasIsDirty( int ) ), m_canvas, SLOT( refresh( int ) ) );
+  connect( m_dialog, SIGNAL( mapIsInvalid() ), m_manager, SLOT( emptyCache() ) );
 
   applyMainWindowSettings( m_config, "window" );
 }
@@ -150,44 +148,41 @@ void Filelight::setupActions()
   KStdAction::open( this, SLOT( slotScanDirectory() ), actionCollection(), "scan_directory" )->setText( i18n( "&Scan Directory..." ) );
   new KAction( i18n( "Scan &Home Directory" ), "gohome", CTRL+Key_Home, this, SLOT( slotScanHomeDirectory() ), actionCollection(), "scan_home" );
   new KAction( i18n( "Scan &Root Directory" ), "folder_red_side", 0, this, SLOT( slotScanRootDirectory() ), actionCollection(), "scan_root" );
-  m_recentHistory = new KRecentFilesAction( i18n( "&Recent Scans" ), 0, actionCollection(), "scan_recent", 8 );
-  KAction *reload = new KAction( i18n( "Rescan" ), "reload", KStdAccel::reload(), this, SLOT( slotRescan() ), actionCollection(), "scan_rescan" );
-  KAction *stop   = new KAction( i18n( "Stop" ), "stop", Qt::Key_Escape, m_manager, SLOT( abort() ), actionCollection(), "scan_stop" );
+  m_recentScans = new KRecentFilesAction( i18n( "&Recent Scans" ), 0, actionCollection(), "scan_recent", 8 );
+  new KAction( i18n( "Rescan" ), "reload", KStdAccel::reload(), this, SLOT( slotRescan() ), actionCollection(), "scan_rescan" );
+  new KAction( i18n( "Stop" ), "stop", Qt::Key_Escape, m_manager, SLOT( abort() ), actionCollection(), "scan_stop" );
   KStdAction::quit( this, SLOT( close() ), actionCollection() );
 
 //view
-  KStdAction::zoomIn( m_canvas, SLOT( slotZoomIn() ), actionCollection() )->setEnabled( false );
-  KStdAction::zoomOut( m_canvas, SLOT( slotZoomOut() ), actionCollection() )->setEnabled( false );
+  KStdAction::zoomIn( m_canvas, SLOT( slotZoomIn() ), actionCollection() );
+  KStdAction::zoomOut( m_canvas, SLOT( slotZoomOut() ), actionCollection() );
 
 //go
-  KStdAction::up( this, SLOT( slotUp() ), actionCollection() )->setEnabled( false );
+  KStdAction::up( this, SLOT( slotUp() ), actionCollection() );
   m_histories = new HistoryCollection( actionCollection(), this, "history_collection" );
 
-//settings      
-  KStdAction::preferences( m_settingsDialog, SLOT( show() ), actionCollection() );
+//settings
+  KStdAction::preferences( m_dialog, SLOT( show() ), actionCollection() );
   KStdAction::configureToolbars(this, SLOT(editToolbars()), actionCollection());
 //  KStdAction::keyBindings(this, SLOT( slotConfigureKeyBindings()), actionCollection());
 
-  m_recentHistory->loadEntries( m_config );
+  m_recentScans->loadEntries( m_config );
   combo->setAutoSized( true ); //**** what does this do?
-  
-  connect( m_recentHistory, SIGNAL( urlSelected( const KURL& ) ), this, SLOT( slotScanUrl( const KURL& ) ) );
+
+  connect( m_recentScans, SIGNAL( urlSelected( const KURL& ) ), this, SLOT( slotScanUrl( const KURL& ) ) );
   connect( m_combo, SIGNAL( returnPressed() ), this, SLOT( slotComboScan() ) );
   connect( m_histories, SIGNAL( activated( const KURL & ) ), this, SLOT( slotScanUrl( const KURL & ) ) );
-
-  reload->setEnabled( false );
-  stop->setEnabled( false );
 }
 
 
 bool Filelight::queryExit()
 {
   saveMainWindowSettings( m_config, "window" );
-  m_recentHistory->saveEntries( m_config );
+  m_recentScans->saveEntries( m_config );
 #if KDE_VERSION >= 0x030103
   m_config->setGroup( "general" );
   m_config->writePathEntry( "comboHistory", m_combo->historyItems() );
-#endif  
+#endif
   m_config->sync();
 
   return true;
@@ -201,15 +196,13 @@ bool Filelight::queryExit()
 void Filelight::saveProperties( KConfig *config )
 {
   m_histories->save( config );
-  //**** use KURLs
   config->writeEntry( "currentMap", m_canvas->path() );
 }
 
 void Filelight::readProperties( KConfig *config )
 {
   m_histories->restore( config );
-  //**** use KURLs
-  m_manager->start( config->readEntry( "currentMap", QString::null ) );
+  m_manager->start( config->readEntry( "currentMap", "" ) );
 }
 
 
@@ -233,7 +226,7 @@ void Filelight::slotNewToolbarConfig()
   applyMainWindowSettings( m_config, "window" );
 }
 
- 
+
 void Filelight::slotScanDirectory()
 {
   //**** idea is to set the path to the last scanned directory. Below doesn't work if scan cancelled/failed etc.
@@ -243,42 +236,43 @@ void Filelight::slotScanDirectory()
 
   const KURL url = KDirSelectDialog::selectDirectory( s, false, this );
 
-  if( !url.isEmpty() )
-    m_manager->start( url );
+  if( !url.isEmpty() ) //**** fairly sure retVal for cancelled dialog
+    slotScanUrl( url );
 }
- 
-void Filelight::slotScanHomeDirectory() { m_manager->start( getenv( "HOME" ) ); }
-void Filelight::slotScanRootDirectory() { m_manager->start( "/" ); }
-void Filelight::slotUp()                { m_manager->start( KURL( m_canvas->path() ).upURL() ); }
-void Filelight::slotScanUrl( const KURL &url ) { m_manager->start( url ); }
+
+void Filelight::slotScanHomeDirectory() { slotScanUrl( getenv( "HOME" ) ); }
+void Filelight::slotScanRootDirectory() { slotScanUrl( "/" ); }
+void Filelight::slotUp()                { slotScanUrl( KURL( m_canvas->path() ).upURL() ); }
+
+bool Filelight::slotScanUrl( const KURL &url )
+{
+  if( url == KURL( m_canvas->path() ) )
+  {
+    slotRescan();
+    return true;
+  }
+  else
+    return m_manager->start( url );
+}
 
 void Filelight::slotRescan()
 {
   //**** this is far from ideal. You lose the whole cache! FIXME!
   //this disconnection to prevent histories from being "updated"
-  disconnect( m_canvas, SIGNAL( invalidated( const KURL & ) ), m_histories, SLOT( push( const KURL & ) ) );  
-  connect( m_canvas, SIGNAL( invalidated( const KURL & ) ), m_manager, SLOT( start( const KURL & ) ) );
+  disconnect( m_canvas, SIGNAL( invalidated( const KURL & ) ), m_histories, SLOT( push( const KURL & ) ) );
+  connect( m_canvas, SIGNAL( invalidated( const KURL & ) ), m_manager, SLOT( _start( const KURL & ) ) );
   m_manager->emptyCache(); //causes canvas to invalidate
-  disconnect( m_canvas, SIGNAL( invalidated( const KURL & ) ), m_manager, SLOT( start( const KURL & ) ) );
-  connect( m_canvas, SIGNAL( invalidated( const KURL & ) ), m_histories, SLOT( push( const KURL & ) ) );  
+  disconnect( m_canvas, SIGNAL( invalidated( const KURL & ) ), m_manager, SLOT( _start( const KURL & ) ) );
+  connect( m_canvas, SIGNAL( invalidated( const KURL & ) ), m_histories, SLOT( push( const KURL & ) ) );
 }
 
 
 void Filelight::slotComboScan()
 {
-  //**** m_canvas->path() is poo remove it if you can!
   const QString path( m_combo->lineEdit()->text() );
 
-  if( !path.isEmpty() )
-  {
-    if( path == m_canvas->path() ) //then force rescan
-
-      m_manager->start( path, true );
-
-    else //then normal scan
-     if( m_manager->start( path ) )
-       m_combo->addToHistory( path ); //add if path was sane
-  }
+  if( slotScanUrl( path ) )
+    m_combo->addToHistory( path ); //add if path was sane
 }
 
 
@@ -309,26 +303,26 @@ void Filelight::newMapCreated( const Directory *tree )
       goUp->setText( i18n( "Up" ) );
       setCaption( "" );
 
+      m_status[0]->clear();
+
   } else {
 
       QString newPath = fullPath( tree );
       QLineEdit *edit = m_combo->lineEdit();
-            
+
       stateChanged( "scan_complete" );
-      
+
       if( edit->text() != newPath )
         edit->setText( newPath );
-                  
+
       setCaption( newPath );
       m_status[0]->setText( i18n( "Showing: %1" ).arg( newPath ) );
       m_status[1]->setText( i18n( "Files: %1" ).arg( KGlobal::locale()->formatNumber( tree->fileCount(), 0 ) ) );
 
-      if( newPath != "/" ) {
-        KURL url( newPath );
-        goUp->setText( i18n( "Up: %1" ).arg( url.upURL().path( 1 ) ) );
-      }
+      if( newPath != "/" )
+        goUp->setText( i18n( "Up: %1" ).arg( KURL( newPath ).upURL().path( 1 ) ) );
 
-      m_recentHistory->addURL( newPath );
+      m_recentScans->addURL( newPath ); //**** doesn't set the tick
   }
 
   QApplication::restoreOverrideCursor();
@@ -347,22 +341,22 @@ void Filelight::scanFailed( const QString &path, ScanManager::ErrorCode err )
   case ScanManager::InvalidUrl:
     s = i18n( "The URL is not valid: %1" ).arg( path );
     break;    
-  case ScanManager::NotDirectory:
-    s = i18n( "%1 is not a directory." ).arg( path );
+  case ScanManager::RelativePath:
+    s = i18n( "Filelight only accepts absolute paths, eg. /%1" ).arg( path );
     break;    
   case ScanManager::NotFound:
     s = i18n( "Directory not found: %1" ).arg( path );
     break;
   case ScanManager::NoPermission:
-    s = i18n( "Unable to enter: %1. You don't have access rights to this location." ).arg( path );
+    s = i18n( "Unable to enter: %1\nYou don't have access rights to this location." ).arg( path );
     break;
 
   default:
     s = i18n( "The scan did not complete: %1" ).arg( path );
+    newMapCreated( NULL ); //with most errors you don't want to disable the interface
   }
 
   KMessageBox::sorry( this, s );
-  newMapCreated( NULL );
 }
 
 
