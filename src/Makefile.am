@@ -25,8 +25,7 @@ filelight_SOURCES = main.cpp filelight.cpp filelightpart.cpp scanmanager.cpp set
 filelight_LDADD   = ./kradialmap/libkradialmap.a $(LIB_KFILE) $(LIB_KPARTS) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT) $(LIBSOCKET)
 filelight_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 
-utilitiesdir = $(kde_appsdir)/Utilities
-utilities_DATA = filelight.desktop
+xdg_apps_DATA = filelight.desktop
 
 configdir = $(kde_confdir)
 config_DATA = filelightrc
