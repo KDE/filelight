@@ -38,13 +38,7 @@ class HistoryAction : KAction
 {
 Q_OBJECT
 
-  HistoryAction( const QString &text, const char *icon, const KShortcut &cut, KActionCollection *ac, const char *name ) :
-    KAction( text, icon, cut, 0, 0, ac, name ),
-    m_text( text )
-  {
-    //**** wouldn't find slot it in KAction ctor for some reason
-    connect( this, SIGNAL( activated() ), SLOT( pop() ) );
-  }
+  HistoryAction( const QString &text, const char *icon, const KShortcut &cut, KActionCollection *ac, const char *name );
 
   friend class HistoryCollection;
 
@@ -75,32 +69,10 @@ class HistoryCollection : public QObject
 Q_OBJECT
 
 public:
-    HistoryCollection( KActionCollection *ac, QObject *parent, const char *name ) :
-      QObject( parent, name ),
-      m_b( new HistoryAction( i18n( "Back" ), "back", KStdAccel::back(), ac, "go_back" ) ),
-      m_f( new HistoryAction( i18n( "Forward" ), "forward",  KStdAccel::forward(), ac, "go_forward" ) ),
-      m_receiver( 0 )      
-    {
-      connect( m_b, SIGNAL( activated( HistoryAction *, const QString & ) ), this, SLOT( process( HistoryAction *, const QString & ) ) );
-      connect( m_f, SIGNAL( activated( HistoryAction *, const QString & ) ), this, SLOT( process( HistoryAction *, const QString & ) ) );
-    }
+    HistoryCollection( KActionCollection *ac, QObject *parent, const char *name );
 
-    void save( KConfig *config )
-    {
-      #if KDE_VERSION >= 0x030103
-      config->writePathEntry( "backHistory", m_b->m_list );
-      config->writePathEntry( "forwardHistory", m_f->m_list );
-      #endif
-    }
-
-    void restore( KConfig *config )
-    {
-      #if KDE_VERSION >= 0x030103
-      m_b->m_list = config->readPathListEntry( "backHistory" );
-      m_f->m_list = config->readPathListEntry( "forwardHistory" );
-      //**** texts are not updated, no matter
-      #endif
-    }
+    void save( KConfig *config );
+    void restore( KConfig *config );
 
 signals:
     void activated( const KURL & );

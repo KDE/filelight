@@ -4,8 +4,7 @@ METASOURCES = AUTO
 
 EXTRA_DIST = filelight.h scanbox.h \
              settingsdialog.ui settingsdlg.h filetree.h \
-             scanmanager.h settings.h \
-             historyaction.h
+             scanmanager.h settings.h
 
 messages: rc.cpp
 	LIST=`find . -name \*.h -o -name \*.cpp \
@@ -22,7 +21,7 @@ rc_DATA = filelight_partui.rc filelightui.rc
 
 bin_PROGRAMS = filelight
 
-filelight_SOURCES = main.cpp filelight.cpp filelightpart.cpp scanmanager.cpp settings.cpp settingsdialog.ui settingsdlg.cpp scanbox.cpp historyaction.moc.cpp
+filelight_SOURCES = main.cpp filelight.cpp filelightpart.cpp scanmanager.cpp settings.cpp settingsdialog.ui settingsdlg.cpp scanbox.cpp historyaction.cpp
 filelight_LDADD   = ./kradialmap/libkradialmap.a $(LIB_KFILE) $(LIB_KPARTS) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT) $(LIBSOCKET)
 filelight_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 
