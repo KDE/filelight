@@ -20,10 +20,10 @@
 #ifndef FILETREE_H
 #define FILETREE_H
 
+#include <stdlib.h>
+
 typedef unsigned long int FileSize;
 typedef unsigned long int Dirsize;  //**** currently unused
-
-
 
 template <class T> class Iterator;
 template <class T> class ConstIterator;
@@ -169,7 +169,7 @@ class File
 {
 public:
     File( char *name, FileSize size ) : m_parent( 0 ), m_name( name ), m_size( size ) { }
-    virtual ~File() { delete [] m_name; }
+    virtual ~File() { free( m_name ); } //you must allocated the memory with strdup()
 
     const   Directory* parent() const { return m_parent; }
     const   FileSize     size() const { return m_size; }
