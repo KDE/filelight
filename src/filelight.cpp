@@ -585,5 +585,7 @@ void Filelight::customEvent( QCustomEvent * e )
 
   default: break;
   }
-      
+
 }
+
+#include "filelight.moc"

@@ -37,6 +37,7 @@
      Segment colouring system rewritten, better distinction between different segment types
      Used more KStdActions (less work for translation teams at very least)
      Fixed bug where segmenttip wasn't shown for 1st pixel but labels were
+     Directories with unshown files have better arrow heads now thanks to some clever trig
 0.6.2
      Attempted a fix for the absurdly large file bug (eg > 1400GB!)
      Linking bug fixed for Gentoo systems

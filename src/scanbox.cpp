@@ -76,3 +76,5 @@ ScanProgressBox::stop()
     m_timer2->start( 3000, true );
   }
 }
+
+#include "scanbox.moc"

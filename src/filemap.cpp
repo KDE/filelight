@@ -401,48 +401,55 @@ void FileMap::paint( unsigned int scaleFactor )
 
   for( int x = m_visibleDepth; x >= 0; --x )
   {
+    int width = rect.width() / 2;
+    //clever geometric trick to find largest angle that will give biggest arrow head
+    int a_max = acos( (double)width / double(width + 5 * scaleFactor) ) * (180*16 / M_PI);
+
     for( ConstIterator<Segment> it = ring->constIterator(); it != ring->end(); ++it )
     {
-      paint.setPen( (*it)->pen() ); //**** slow
+      //draw the pie segments, most of this code is concerned with drawing the little
+      //arrows on the ends of segments when they have hidden files
+
+      paint.setPen( (*it)->pen() );
 
       if( (*it)->hasHiddenChildren() )
       {
-        //**** draw single arrow head
-        //      * if greater than 180 degrees this may not work well, so try and see )
-
+        //draw arrow head to indicate undisplayed files/directories
         QPointArray pts( 3 );
         QPoint pos, cpos = rect.center();
-        double sinra, cosra;
-        int width = rect.width() / 2;
-        double ra;
+        int a[3] = { (*it)->start(), (*it)->length(), 0 };
 
-        ra = M_PI/2880 * (*it)->start(); //convert to radians
-        sincos( ra, &sinra, &cosra );
-        pos.rx() = cpos.x() + static_cast<int>(cosra * width);
-        pos.ry() = cpos.y() - static_cast<int>(sinra * width);
-        pts.setPoint( 0, pos );
+        a[2] = a[0] + (a[1] / 2); //assign to halfway between
+        if( a[1] > a_max )
+        {
+          a[1] = a_max;
+          a[0] = a[2] - a_max / 2;
+        }
 
-        ra = M_PI/2880 * ((*it)->start() + (*it)->length());
-        sincos( ra, &sinra, &cosra );
-        pos.rx() = cpos.x() + static_cast<int>(cosra * width);
-        pos.ry() = cpos.y() - static_cast<int>(sinra * width);
-        pts.setPoint( 1, pos );
+        a[1] += a[0];
 
-        width += 5 * scaleFactor;
-        ra = M_PI/2880 * ((*it)->start() + (*it)->length() / 2);
-        sincos( ra, &sinra, &cosra );
-        pos.rx() = cpos.x() + static_cast<int>(cosra * width);
-        pos.ry() = cpos.y() - static_cast<int>(sinra * width);
-        pts.setPoint( 2, pos );
+        for( int i = 0, radius = width; i < 3; ++i )
+        {
+          double ra = M_PI/(180*16) * a[i], sinra, cosra;
 
-        paint.setBrush( (*it)->pen() );        
+          if( i == 2 )
+            radius += 5 * scaleFactor;
+          sincos( ra, &sinra, &cosra );
+          pos.rx() = cpos.x() + static_cast<int>(cosra * radius);
+          pos.ry() = cpos.y() - static_cast<int>(sinra * radius);
+          pts.setPoint( i, pos );
+        }
+
+        paint.setBrush( (*it)->pen() );
         paint.drawPolygon( pts );
       }      
+
       paint.setBrush( (*it)->brush() );
       paint.drawPie( rect, (*it)->start(), (*it)->length() );
 
       if( (*it)->hasHiddenChildren() )
       {
+        //**** code is bloated!
         paint.save();
         QPen pen = paint.pen();
         int width = 2 * scaleFactor;
@@ -473,6 +480,7 @@ void FileMap::paint( unsigned int scaleFactor )
 
   if( scaleFactor > 1 )
   {
+    //have to end in order to smoothscale()
     paint.end();
 
     int x1, y1, x2, y2;
