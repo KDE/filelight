@@ -38,6 +38,7 @@
 #include <kurlcompletion.h>   //locationbar
 #include <kcursor.h>          //access to KCursors
 #include <kmessagebox.h>      //scanFailed()
+#include <ksqueezedtextlabel.h>
 
 //new stuff
 #include <klibloader.h>
@@ -103,8 +104,8 @@ void Filelight::setupStatusBar()
 {
   KStatusBar *statusbar = statusBar();
 
-  m_status[0] = new QLabel( this, "status_message" );
-  m_status[1] = new QLabel( this, "status_files" );
+  m_status[0] = new KSqueezedTextLabel( this, "status_message" );
+  m_status[1] = new KSqueezedTextLabel( this, "status_files" );
 
   m_status[0]->setIndent( 4 );
   m_status[0]->setText( i18n( "Scan to begin..." ) );
@@ -114,6 +115,9 @@ void Filelight::setupStatusBar()
   statusbar->addWidget( m_status[0], 1, false );
   statusbar->addWidget( m_status[1], 0, false );
   statusbar->addWidget( progress,    0, true );
+
+  m_status[0]->setSizePolicy( QSizePolicy( QSizePolicy::Preferred, QSizePolicy::Fixed ) );
+  m_status[1]->setSizePolicy( QSizePolicy( QSizePolicy::Preferred, QSizePolicy::Fixed ) );
 
   m_status[1]->hide(); //hide() here because add() (above) calls show() *rolls eyes*
   progress->hide();

@@ -32,7 +32,7 @@
 
 class QString;
 class QTimer;
-class QLabel;
+class KSqueezedTextLabel;
 class KHistoryCombo;
 class KAction;
 class KRecentFilesAction;
@@ -85,7 +85,7 @@ class Filelight : public KParts::MainWindow
   private:
     FilelightPart *m_part;    
 
-    QLabel             *m_status[2];
+    KSqueezedTextLabel *m_status[2];
     KHistoryCombo      *m_combo;
     HistoryCollection  *m_histories;
     KRecentFilesAction *m_recentScans;
