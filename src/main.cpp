@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
     
   aboutData.addAuthor( "Max Howell", I18N_NOOP("Author"), "max.howell@methylblue.com", "http://www.methylblue.com/" );
   aboutData.addCredit( "Steffen Gerlach", I18N_NOOP("Original concept"), 0, "http://www.steffengerlach.de/" );
-  aboutData.addCredit( "André Somers", I18N_NOOP("Internationalisation Support"), "a.t.somers@student.utwente.nl" );
+  aboutData.addCredit( "AndrÃ© Somers", I18N_NOOP("Internationalisation Support"), "a.t.somers@student.utwente.nl" );
   aboutData.addCredit( "Stephanie James", I18N_NOOP("\"Girlfriend Usability Testing\"") );
   aboutData.addCredit( "Marcel Meyer", I18N_NOOP("Testing, bug reports and suggestions") );
 
