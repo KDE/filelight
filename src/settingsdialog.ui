@@ -34,9 +34,6 @@
                     <property name="text">
                         <string>&amp;Reset</string>
                     </property>
-                    <property name="accel">
-                        <string>Alt+R</string>
-                    </property>
                     <property name="autoDefault">
                         <bool>false</bool>
                     </property>
@@ -67,9 +64,6 @@
                     </property>
                     <property name="text">
                         <string>&amp;Close</string>
-                    </property>
-                    <property name="accel">
-                        <string>Alt+C</string>
                     </property>
                     <property name="default">
                         <bool>true</bool>
@@ -171,9 +165,6 @@
                                         <property name="text">
                                             <string>R&amp;emove</string>
                                         </property>
-                                        <property name="accel">
-                                            <string>Alt+E</string>
-                                        </property>
                                         <property name="autoDefault">
                                             <bool>false</bool>
                                         </property>
@@ -184,9 +175,6 @@
                                         </property>
                                         <property name="text">
                                             <string>&amp;Add...</string>
-                                        </property>
-                                        <property name="accel">
-                                            <string>Alt+A</string>
                                         </property>
                                         <property name="autoDefault">
                                             <bool>false</bool>
@@ -273,9 +261,6 @@
                                         <property name="text">
                                             <string>Exclude re&amp;mote filesystems</string>
                                         </property>
-                                        <property name="accel">
-                                            <string>Alt+M</string>
-                                        </property>
                                         <property name="toolTip" stdset="0">
                                             <string></string>
                                         </property>
@@ -290,9 +275,6 @@
                                         <property name="text">
                                             <string>Scan across filesystem &amp;boundries</string>
                                         </property>
-                                        <property name="accel">
-                                            <string>Alt+B</string>
-                                        </property>
                                         <property name="whatsThis" stdset="0">
                                             <string>Selecting this option will prevent Filelight from scanning directories that are not in the same filesystem the scan started.</string>
                                         </property>
@@ -306,9 +288,6 @@
                                         </property>
                                         <property name="text">
                                             <string>Exclude remo&amp;vable media</string>
-                                        </property>
-                                        <property name="accel">
-                                            <string>Alt+V</string>
                                         </property>
                                         <property name="toolTip" stdset="0">
                                             <string></string>
@@ -426,9 +405,6 @@
                                 <property name="text">
                                     <string>&amp;Use anti-aliasing</string>
                                 </property>
-                                <property name="accel">
-                                    <string>Alt+U</string>
-                                </property>
                                 <property name="whatsThis" stdset="0">
                                     <string>Anti-aliasing the filemap makes it clearer and prettier, unfortunately it also makes rendering very slow.</string>
                                 </property>
@@ -470,9 +446,6 @@
                                         </property>
                                         <property name="text">
                                             <string>&amp;Vary label font sizes</string>
-                                        </property>
-                                        <property name="accel">
-                                            <string>Alt+V</string>
                                         </property>
                                         <property name="whatsThis" stdset="0">
                                             <string>The font size of exploded labels can be varied relative to the depth of the directories they represent. This helps you spot the important labels more easily. Set a sensible minimum font size.</string>
