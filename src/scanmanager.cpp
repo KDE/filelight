@@ -194,18 +194,14 @@ void ScanManager::startPrivate( const QString &path, bool force )
 
   //add empty directories for any mount points that are in the path
   //**** empty directories is not ideal as adds to fileCount incorrectly
-  if( !Gsettings.skipList.isEmpty() )
-  {
-    QStringList slist( Gsettings.skipList );
-    if( !Gsettings.scanAcrossMounts )
-      slist += localMounts;
-    if( !Gsettings.scanRemoteMounts )
-      slist += remoteMounts;
-
-    for( QStringList::iterator it = slist.begin(); it != slist.end(); ++it )
-      if( (*it).startsWith( path ) )
-        list->append( new Directory( strdup( path ) ) );
-  }
+  QStringList slist( Gsettings.skipList );
+  if( !Gsettings.scanAcrossMounts )
+    slist += localMounts;
+  if( !Gsettings.scanRemoteMounts )
+    slist += remoteMounts;
+  for( QStringList::iterator it = slist.begin(); it != slist.end(); ++it )
+    if( (*it).startsWith( path ) )
+      list->append( new Directory( strdup( *it ) ) );
     
   //start separate thread, control is immediately returned
   ScanThread::fileCounter = 0;
@@ -435,11 +431,11 @@ Directory *ScanThread::scan( const QString &path, const QString &dirname )
 
         for( Iterator<Directory> it = m_trees->iterator(); it != m_trees->end(); ++it )
         {
-          QString scanned_path( (*it)->name() );
-          
-          if( new_path == scanned_path )
+          QString tree_path( (*it)->name() );
+
+          if( new_path == tree_path )
           {
-            kdDebug() << "Tree pre-completed: " << scanned_path << "\n";
+            kdDebug() << "Tree pre-completed: " << tree_path << "\n";
             d = it.remove();
             fileCounter += d->fileCount();
             //**** ideally don't have this redundant extra somehow

@@ -71,10 +71,6 @@ class FileMap : public KPixmap
 };
 
 
-//**** REALLY BAD DESIGN!! Segments expect the tree they point to to be deleted after them!
-//     Deary me, I can't guarentee that. Think of cache invalidation, that clears cache then deletes signature after.
-//     well I need a separate flag for fake/hidden kids etc.
-
 class Segment //all angles are in 16ths of degrees
 {
 public:
@@ -82,7 +78,8 @@ public:
     : m_angleStart( s ),
       m_angleSegment( l ),
       m_file( f ),
-      m_hasHiddenChildren( false ) { }
+      m_hasHiddenChildren( false ),
+      m_fake( f->parent() == NULL ) {}
    virtual ~Segment() { if( isFake() ) delete m_file; } //created by us in Builder::build()
 
    const File    *file() const { return m_file; }
@@ -92,7 +89,7 @@ public:
    const QColor&   pen() const { return m_pen; }
    const QColor& brush() const { return m_brush; }
 
-   bool isFake() const { return ( !m_file->isDir() && m_file->parent() == 0 ); }
+   bool isFake() const { return m_fake; }
    bool hasHiddenChildren() const { return m_hasHiddenChildren; }
    
    bool intersects( unsigned int a ) const { return ( ( a >= start() ) && ( a < end() ) ); }
@@ -107,6 +104,7 @@ private:
    const File* const m_file;
    QColor m_pen, m_brush;
    bool m_hasHiddenChildren;
+   const bool m_fake;
 };
 
 #endif
