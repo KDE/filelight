@@ -29,6 +29,7 @@
 #include <kiconloader.h>
 #include <kmessagebox.h>
 #include <knuminput.h>
+#include <kdebug.h>
 
 
 #include "settingsdlg.h"
@@ -38,29 +39,27 @@
 
 #define TIMEOUT 1000
 
-extern Settings Gsettings;
 
-
-SettingsDlg::SettingsDlg( QWidget *parent, const char *name ) : SettingsDialog( parent, name, false ) //3rd param => modal
+SettingsDlg::SettingsDlg( Settings *s, QWidget *parent, const char *name )
+ : SettingsDialog( parent, name, false ), //3rd param => modal
+   m_settings( s ),
+   m_timer( new QTimer( this ) )
 {
-  m_timer = new QTimer( this );
-
   colourSchemeGroup->setFrameShape( QFrame::NoFrame );
 
   colourSchemeGroup->insert( new QRadioButton( "Rainbow", colourSchemeGroup ), scheme_rainbow );
   colourSchemeGroup->insert( new QRadioButton( "KDE Colours", colourSchemeGroup ), scheme_kde );
   colourSchemeGroup->insert( new QRadioButton( "High Contrast", colourSchemeGroup ), scheme_highContrast );
-//  colourSchemeGroup->insert( new QRadioButton( "File Density", colourSchemeGroup ), scheme_fileDensity );
 
   //read in settings before you make all those nasty connections!
-  reset(); //reads global Settings and makes this dialog's gui reflect them
-  
+  reset(); //makes gui reflect global settings
+
   connect( m_timer, SIGNAL( timeout() ), this, SLOT( timeout() ) );
 
-  connect( m_addButton,       SIGNAL( clicked() ), this, SLOT( addDirectory() ) );
-  connect( m_removeButton,    SIGNAL( clicked() ), this, SLOT( removeDirectory() ) );
-  connect( m_resetButton,     SIGNAL( clicked() ), this, SLOT( reset() ) );
-  connect( m_closeButton,     SIGNAL( clicked() ), this, SLOT( close() ) );
+  connect( m_addButton,    SIGNAL( clicked() ), this, SLOT( addDirectory() ) );
+  connect( m_removeButton, SIGNAL( clicked() ), this, SLOT( removeDirectory() ) );
+  connect( m_resetButton,  SIGNAL( clicked() ), this, SLOT( reset() ) );
+  connect( m_closeButton,  SIGNAL( clicked() ), this, SLOT( close() ) );
 
   connect( colourSchemeGroup, SIGNAL( clicked( int ) ), this, SLOT( changeScheme( int ) ) );
   connect( contrastSlider, SIGNAL( valueChanged( int ) ), this, SLOT( changeContrast( int ) ) );
@@ -87,30 +86,32 @@ SettingsDlg::~SettingsDlg()
 
 void SettingsDlg::closeEvent( QCloseEvent * e )
 {
-  //if a rescan is pending, force it now!
+  //if an invalidation is pending, force it now!
   if( m_timer->isActive() )
     m_timer->changeInterval( 0 );
 
-  Gsettings.writeSettings();
+  m_settings->writeSettings();
 
   QWidget::closeEvent( e );
+
+  deleteLater();
 }
 
 
 void SettingsDlg::reset()
 {
-  Gsettings.readSettings();
+  m_settings->readSettings();
 
   //tab 1
-  scanAcrossMounts->setChecked( Gsettings.scanAcrossMounts );
-  dontScanRemoteMounts->setChecked( !Gsettings.scanRemoteMounts );
-  dontScanRemovableMedia->setChecked( !Gsettings.scanRemovableMedia );
+  scanAcrossMounts->setChecked( m_settings->scanAcrossMounts );
+  dontScanRemoteMounts->setChecked( !m_settings->scanRemoteMounts );
+  dontScanRemovableMedia->setChecked( !m_settings->scanRemovableMedia );
 
-  dontScanRemoteMounts->setEnabled( Gsettings.scanAcrossMounts );
-//  dontScanRemovableMedia.setEnabled( Gsettings.scanAcrossMounts );
+  dontScanRemoteMounts->setEnabled( m_settings->scanAcrossMounts );
+//  dontScanRemovableMedia.setEnabled( m_settings->scanAcrossMounts );
 
   m_listBox->clear();
-  m_listBox->insertStringList( Gsettings.skipList );
+  m_listBox->insertStringList( m_settings->skipList );
   m_listBox->setSelected( 0, true );
 
   if( m_listBox->count() == 0 )
@@ -119,28 +120,28 @@ void SettingsDlg::reset()
     m_removeButton->setEnabled( true );
 
   //tab 2
-  if( colourSchemeGroup->id( colourSchemeGroup->selected() ) != Gsettings.scheme )
+  if( colourSchemeGroup->id( colourSchemeGroup->selected() ) != m_settings->scheme )
   {
-    colourSchemeGroup->setButton( Gsettings.scheme );
+    colourSchemeGroup->setButton( m_settings->scheme );
       //setButton doesn't call a single QButtonGroup signal!
       //so we need to call this ourselves (and hence the detection above)
-      changeScheme( Gsettings.scheme );
+      changeScheme( m_settings->scheme );
   }
-  contrastSlider->setValue( Gsettings.contrast );
+  contrastSlider->setValue( m_settings->contrast );
 
-  useAntialiasing->setChecked( (Gsettings.aaFactor > 1) ? true : false );
+  useAntialiasing->setChecked( (m_settings->aaFactor > 1) ? true : false );
 
-  varyLabelFontSizes->setChecked( Gsettings.varyLabelFontSizes );
-  minFontPitch->setEnabled( Gsettings.varyLabelFontSizes );
-  minFontPitch->setValue( Gsettings.minFontPitch );
-  showSmallFiles->setChecked( Gsettings.showSmallFiles );
+  varyLabelFontSizes->setChecked( m_settings->varyLabelFontSizes );
+  minFontPitch->setEnabled( m_settings->varyLabelFontSizes );
+  minFontPitch->setValue( m_settings->minFontPitch );
+  showSmallFiles->setChecked( m_settings->showSmallFiles );
 }
 
 
 
 void SettingsDlg::toggleScanAcrossMounts( bool b )
 {
-  Gsettings.scanAcrossMounts = b;
+  m_settings->scanAcrossMounts = b;
 
   dontScanRemoteMounts->setEnabled( b );
 //  dontScanRemovableMedia.setEnabled( b );
@@ -148,12 +149,12 @@ void SettingsDlg::toggleScanAcrossMounts( bool b )
 
 void SettingsDlg::toggleDontScanRemoteMounts( bool b )
 {
-  Gsettings.scanRemoteMounts = !b;
+  m_settings->scanRemoteMounts = !b;
 }
 
 void SettingsDlg::toggleDontScanRemovableMedia( bool b )
 {
-  Gsettings.scanRemovableMedia = !b;
+  m_settings->scanRemovableMedia = !b;
 }
 
 
@@ -167,11 +168,11 @@ void SettingsDlg::addDirectory()
 
   QString path = url.path( 1 );
 
-  if( Gsettings.skipList.contains( path ) )
+  if( m_settings->skipList.contains( path ) )
     KMessageBox::sorry( this, "That directory is already set to be excluded from scans" );
 
   else {
-    Gsettings.skipList.append( path );
+    m_settings->skipList.append( path );
     m_listBox->insertItem( path );
     m_removeButton->setEnabled( true );
   }
@@ -184,11 +185,11 @@ void SettingsDlg::removeDirectory()
   //**** would be better to handle both lists with indices. should be foolproof
   //  ** if you just ensure the UI looks to be working this should work fine, hopefully (was problem with if same dir being removed from skipList then it would break UI )
 
-  Gsettings.skipList.remove( m_listBox->currentText() ); //removes all similar entries, which is probably what user wants?
+  m_settings->skipList.remove( m_listBox->currentText() ); //removes all similar entries, which is probably what user wants?
 
   //safest method to ensure consistency
   m_listBox->clear();
-  m_listBox->insertStringList( Gsettings.skipList );
+  m_listBox->insertStringList( m_settings->skipList );
 
   if( m_listBox->count() == 0 ) m_removeButton->setEnabled( false );
 }
@@ -210,33 +211,33 @@ void SettingsDlg::timeout()
 
 void SettingsDlg::changeScheme( int s )
 {
-  Gsettings.scheme = (MapScheme)s;
+  m_settings->scheme = (MapScheme)s;
   emit canvasIsDirty( 1 );
 }
 void SettingsDlg::changeContrast( int c )
 {
-  Gsettings.contrast = c;
+  m_settings->contrast = c;
   emit canvasIsDirty( 3 );
 }
 void SettingsDlg::toggleUseAntialiasing( bool b )
 {
-  Gsettings.aaFactor = b ? 2 : 1;
+  m_settings->aaFactor = b ? 2 : 1;
   emit canvasIsDirty( 2 );
 }
 void SettingsDlg::toggleVaryLabelFontSizes( bool b )
 {
-  Gsettings.varyLabelFontSizes = b;
+  m_settings->varyLabelFontSizes = b;
   minFontPitch->setEnabled( b );
   emit canvasIsDirty( 0 );
 }
 void SettingsDlg::changeMinFontPitch( int p )
 {
-  Gsettings.minFontPitch = p;
+  m_settings->minFontPitch = p;
   emit canvasIsDirty( 0 );
 }
 void SettingsDlg::toggleShowSmallFiles( bool b )
 {
-  Gsettings.showSmallFiles = b;
+  m_settings->showSmallFiles = b;
   emit canvasIsDirty( 1 );
 }
 

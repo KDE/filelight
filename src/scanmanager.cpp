@@ -51,21 +51,27 @@ ScanManager::ScanManager( QObject *parent, const char *name )
 
 ScanManager::~ScanManager()
 {
-  if( m_thread->running() )
-  {
-    kdDebug() << "Stopping ScanThread..\n";
-    ScanThread::abort();
-    m_thread->wait();
-  }
-  
+  wait(); //emits aborted()
   delete m_thread;
 }
 
 
 void ScanManager::abort()
 {
-  m_thread->abort();
-  emit aborted();
+  if( m_thread->running() )
+  {
+    m_thread->abort();
+    emit aborted();
+  }
+}
+
+
+inline
+void ScanManager::wait()
+{
+  //**** blocks UI, but you only use this in emergencys
+  abort();
+  m_thread->wait();
 }
 
 

@@ -1,3 +1,28 @@
+//  NO feedback when aborting, you need to connect something to scanManager abort that disables stop and shows a message
+   consider KDialog for dialog, as that adds - Filelight after the caption for you
+
+TODAY
+//  waste of memory to create a settings dialog for whole session.
+//    - see how amarok does it
+  implement singly linked lists
+  Remove the majority of Chain uses, use the Qt/STL ones
+  Perhaps instead of the following just move lots of Filemap into canvas.
+   - filemap shouldn't have possession of the signature since canvas is what uses it!
+  Filemap should be built fresh each time a map is requested, you don't construct very often so this is non-issue.
+    - draw this all out before you start for a change!
+    - handles resizes itself though as Builder is not called often for that
+    - rename Builder FileMapBuilder
+    - Builder
+  go through and make everything into URLs
+   - OR NOT, look URLs are harder to manipulate, try to remove dependence on URLs
+  better transferTo that allows across boundries that you have trouble with
+//  scanFailed needs to say why it failed.
+  implement cache sanity check or you'll have crashes on rescans as it currently stands
+  thorough bug testing, then release with a note saying "code rewrite, pls report all crash bugs!"
+  REDESIGN OF BUILDER
+    reports if maximum depth for system was met
+
+        
 0.9.0
     split rendering engine from data-gatherer and allow data to be fed through a pipe thus allowing different data sources to be profiled. (http://methylblue.com/forum/viewtopic.php?t=19)
 0.8.0
@@ -5,6 +30,8 @@
     Support drag and drop of URLs
     WhatIsThis Tips
 0.7.0
+  Make a KPart
+  Summary screen that shows mounts and various statistics (can be added to the table,like juk)
   Trace inodes in binarytree to avoid hardlink problems
   place a KDirWatch on the directory under scrutiny
   show preview icons next to the labels
@@ -18,6 +45,7 @@
     colour by username scheme
     show file density statistics <-- make that a colour scheme
     last access time colour scheme
+
 0.6.4
     BASICALLY, 0.7.0 will be kparting Filelight, so finish up the codebase in the 0.6.x series
   Submit to KDE(utils/admin ??)
@@ -29,12 +57,11 @@
   implement memory savings by not using double linked lists all the time
   Use QPixmapCache for the circle on the end of labels. (fill with white?)
   Implement a LabelList cache somehow.
-  fix caching system
     Allow breaking of trees so rescans don't invalidate the cache, however you must either do integrity checks on the cache after scans or carry a pointer to the rejoin point with the scanning code so they can be reconnected (remove the bad tree from the cache first and then reinsert when complete)
-  seperate scanning code from Filelight class
+//  seperate scanning code from Filelight class
   see if a QThread pool helps scans, if so, implement
-  reduce redundancy of 3 referals to current path (make it so location bar reflects place when left cleared too long or something)
-  you shouldn't leave the location_bar clear when cleared (signal only, user alteration is their own buisness..)
+??  reduce redundancy of 3 referals to current path (make it so location bar reflects place when left cleared too long or something)
+  when focus leaves editcombo and is clear, set to current path
   implement Marcel's desktop file and credit him for bug reports and stuff too
   put in Jeff's patch and credit him
   optimise tooltip code a bit more, it's a shame to use the expensive version of drawText()
@@ -46,82 +73,69 @@
    - who then controls various ring variables?
    - rename canvas component in preparation for kparting
    - for colour schemes, have colour scheme, and colour patterning methods (eg rainbow + modtime, kde colourse + file density, etc)
-  MAX_RING_DEPTH stuff sucks
-   - make FileMap strictly a building class, returns a pixmap and a parameter structure
-  m_map->make() should cause the canvas to update surely? (would save LOC)
-
+  make FileMap strictly a building class, returns a pixmap and a parameter structure
+  m_map->make() should cause the canvas to update surely? (would save LOC) (needs to be made a QObject, but this will be part of builder anyway which can emit signals as appropriate
+  fontvary should use floats
+  
 0.6.3
+    label strut joins shouldn't be interfere with map, so insist on min length
+     - if needs to be shrunk instead reverse and extend previous label struts if poss
+     - this could be done with seperate function, perhaps you should split this into canvaslabels.cpp and have a few non-class functions that handle labels and take iterator parameters
+    mnt/detritus/media/new/full_length_mixes/ shows how top labels don't show
+     - determine if canvas is too square and shrink map accordingly
+    too many labels get shown often
+    add spacing above and below labels
+    ideally, eventually show which labels are children of which by grouping them with a coloured square or something
+    finish colour system
+     - multi-segment rendering technique is not good enough yet
+     - multi-segments could be half height same colour as parent without line inbetween type things (worth trying out)
+     - don't show multi segment if unshown directory? Just show arrowhead?
+    need better judgement of map spacer (combo of pixmap and placement), key in with arrowhead size and label strut lengths
+    BUG   clicking contrast slider doesn't cause re-aa after rerendering (clicking should skip the non-aa step really, even if many clicks are planned (as otherwise you need another timer))
+    filesize units should stay the same on single map, or perhaps builder should determine unit to use for the map, you can have divergence with the central unit if absolutely necessary but labels should show base unit always and show lower/higher units in brackets after if appropriate, can we make it so that makeHumanReadable returns a processed string perhaps? What's best? (so you pass "blah %1" and get back "blah 12MB")
+    test session management still works
+    BUGGY various signals in the dialog on clicking reset()
+    improve session management loading (no unecessary signals please)
+
+//     - slightly indent labels for higher levels too
+??     - improve indent, maybe a little more idented (is ident direction irrational?)
+??     - when showing root labels, show all labels if you're not showing many or if there isn't many labels
 ??  if you click on segment you can get a strange blt after image where tip would be
 ??  font size bug, credit bug reporter -- check to see if it was a bug by testing with 0.6.2
 ??  WHAT'S the point in showing the multi-file segments when no files in dir shown as the dir shows most that info already
 ??   - make it so multi-file and file segments are half height or have pre-spacer or something to differentiate, discern multi as already tho)
 ??  grep through KDE code for thread applications and figure out why yours crashes sometimes on exit
 //  set processing in background cursor when you do non-disable type scan operations (as the aa takes ages)
-
-    label strut joins shouldn't be interfere with map, so insist on min length
-     - if needs to be shrunk instead reverse and extend previous label struts if poss
-     - this could be done with seperate function, perhaps you should split this into canvaslabels.cpp and have a few non-class functions that handle labels and take iterator parameters
-     - when showing root labels, show all labels if you're not showing many or if there isn't many labels
-     - mnt/detritus/media/new/full_length_mixes/ shows how top labels don't show
-        - determine if canvas is too square and shrink map accordingly
-     - too many labels get shown often
-     - vertical labels are still less likely to be shown (perhaps)
-//     - slightly indent labels for higher levels too
-     - improve indent, maybe a little more idented
-     - add spacing above and below labels
-     - ideally, eventually show which labels are children of which by grouping them with a coloured square or something
-     - *optimise*
-
 //    make other colour schemes do generic things to files/dirs etc.
 //    make highcontrast scheme have blue hue
 //    make max. contrast higher, unify contrast system (? or wait for plugin method)
-
-    finish colour system
-    
-    allow multi-segments to express their hiddenChildreness
-      - actually what's the point? the hidden Segments may as well not be shown anyway but you are showing them to appease, nobody wants to see such small directories, and if they do, they can select it through the appropriate dialog
-    multi-segments could be half height same colour as parent without line inbetween type things (worth trying out)
-
+??    allow multi-segments to express their hiddenChildreness
+??      - actually what's the point? the hidden Segments may as well not be shown anyway but you are showing them to appease, nobody wants to see such small directories, and if they do, they can select it through the appropriate dialog
 //    you need to show when there are unrepresented subdirectories always at all depths
-
-    when you change font size settings you need to recalculate the map spacer
-      - well now there is no theoretical maximum font size
-      - maybe there should be. Minimum of metrics of minPitchSize + max_ring_depth
-      - maybe map spacer should be proportional to other map parts
-      - whatever you need a more flexible system here
-      - SOME WHITESPACE IS REQUIRED TO GIVE GOOD LOOKING RESIZES
-      - needs to be taken into account by the arrow height for hiddenChildren segments
-      
+//    you also need to make the stop button disable and wait cursor be set when stop is pushed
 //    allow changing of maximum possible scan depth (zoom actions?)
-    zoom actions don't work fully yet:
-     - nothing happens when limit is reached, yet MAX_RING_DEPTH is still incremented]
-     - the opposite of what people want can happen when zooming out displays less!
-     - often hidden segments will remain hidden because the files inside are too small to be displayed
-      
+//    zoom actions don't work fully yet:
+//     - nothing happens when limit is reached, yet MAX_RING_DEPTH is still incremented]
+??     - the opposite of what people want can happen when zooming out displays less!
+??     - often hidden segments will remain hidden because the files inside are too small to be displayed
 //    BUG   doesn't show tip for first pixel inside segments
-    BUG   clicking contrast slider doesn't cause re-aa after rerendering (clicking should skip the non-aa step really, even if many clicks are planned (as otherwise you need another timer))
 //    BUG   when you click to expand tooltip isn't shown but labels are if cursor is over segment
-    BUG   segmentTipArrows for segments > 180 degs muck up
+//    BUG   segmentTipArrows for segments > 180 degs muck up
 //    BUG   attempting to rescan an empty directory crashes filelight
-
-    #include mocs
-    BUGGY various signals in the dialog on clicking reset()
-
-    COMPILE ISSUE sincos issues (detect if available?)
-    
-    CRASH in paintexplodedlabels
-
-    improve session management loading (no unecessary signals please)
-
-    check for potential divide by zero errors
-    stabalise translation strings (so you must put what'sthis tips in too
-     - Use Std::back and Std::forward to reduce translation requirements
-     - can I grab the similar strings from konqi for locationbar etc?
-    POLISH!
-    give various credits to those who've helped (Steph too)
-
-    New Screenshots: /opt/OpenOffice.org/share/cde/
-    
+//    use and install default configuration, remove various if() defaults (skipList, window size)
+//    you can't use KStds for the history action, restore the XML gui method of enable() as this is far more sensible
+NO    for first level of labels (try to) show file sizes in lighter grey font (depends on contrast) underneath label
+//    #include mocs
+??    COMPILE ISSUE sincos issues (detect if available?)
+//    CRASH when cacheIsInvalid() is called from settingsDialog
+//    check for potential divide by zero errors
+//     - Use Std::back and Std::forward to reduce translation requirements
+NO     - can I grab the similar strings from konqi for locationbar etc?
+//    RecentScans menu needs to be checked that it's selected the right thing after all scan operations
+//    Think about a scanCannotCommence type signal or a return value from startScan?
+//      - you are seperating scanmanagement from interface soon so you need something or other
+??    remove use of m_canvas->path() and remove that function. Interface shouldn't know via that route
+??    CRASH in startScan() after rescan requested then back pushed and cache was definately corrupted at some point as it said cache state: *(()*W( or so!
 //    CRASH in build (recursed several times) when showSmallFiles is set
 //    (also back and forward have back: back and forward didn't load which is probably due to the scan finishing after the list is set so you need to set the bool )
 //    set work in bg cursor as app overide too

@@ -20,11 +20,10 @@
  
 #include <kpixmap.h>
 
-#include "canvas.h"  //for friendships
-#include "builder.h" //for friendships
+#include "canvas.h"   //for friendships
+#include "builder.h"  //for friendships
+#include "filetree.h" //some inline functions
 
-
-class File;
 class QColor;
 class Segment;
 
@@ -55,11 +54,12 @@ class FileMap : public KPixmap
     void colorise();
     void setRingBreadth();    
 
-    Chain<Segment> *m_signature; //**** would -> Chain** <- make it an array?
-    QRect m_rect;
-    unsigned int m_ringBreadth;  //ring breadth
-    unsigned int m_innerRadius;  //radius of inner circle
-    unsigned int m_visibleDepth; //visible depth of system
+    Chain<Segment> *m_signature;
+    Segment        *m_rootSegment;
+    QRect           m_rect;
+    unsigned int    m_ringBreadth;  //ring breadth
+    unsigned int    m_innerRadius;  //radius of inner circle
+    unsigned int    m_visibleDepth; //visible depth of system
 
     QColor kdeColour[2]; //KDE colours are loaded into this
     
@@ -74,12 +74,12 @@ class FileMap : public KPixmap
 class Segment //all angles are in 16ths of degrees
 {
 public:
-   Segment( const File *f, unsigned int s, unsigned int l )
+   Segment( const File *f, unsigned int s, unsigned int l, bool isFake = false )
     : m_angleStart( s ),
       m_angleSegment( l ),
       m_file( f ),
       m_hasHiddenChildren( false ),
-      m_fake( f->parent() == NULL ) {}
+      m_fake( isFake ) {}
    virtual ~Segment() { if( isFake() ) delete m_file; } //created by us in Builder::build()
 
    const File    *file() const { return m_file; }

@@ -21,10 +21,9 @@
 #include "settingsdialog.h" //generate by uic
 
 
-
+class Settings;
 class QWidget;
 class QTimer;
-class QRect;
  
 class SettingsDlg : public SettingsDialog
 {
@@ -32,11 +31,11 @@ class SettingsDlg : public SettingsDialog
 Q_OBJECT
 
 public: 
-  SettingsDlg( QWidget *parent=0, const char *name=0 );
+  SettingsDlg( Settings *, QWidget *parent=0, const char *name=0 );
   virtual ~SettingsDlg();
 
 protected:
-  virtual void closeEvent( QCloseEvent * e );
+  virtual void closeEvent( QCloseEvent * );
   virtual void reject();
 
 public slots:
@@ -61,7 +60,8 @@ signals:
   void canvasIsDirty( int );
 
 private:
-  QTimer *m_timer;
+  Settings *m_settings;
+  QTimer   *m_timer;
 };
 
 #endif

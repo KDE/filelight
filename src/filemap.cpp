@@ -43,7 +43,8 @@ extern Settings Gsettings;
 
 
 FileMap::FileMap() :
-    m_signature( NULL ),
+    m_signature( 0 ),
+    m_rootSegment( 0 ),
     m_ringBreadth( MIN_RING_BREADTH ),
     m_innerRadius( 0 ),
     m_visibleDepth( DEFAULT_RING_DEPTH )
@@ -65,8 +66,6 @@ FileMap::FileMap() :
 
   //***** this is all broken. No longer is a maximum depth!
   QFont font;
-  if( Gsettings.varyLabelFontSizes )
-    font.setPointSize( Gsettings.minFontPitch + 5 );
   int fmh   = QFontMetrics( font ).height();
   int fmhD4 = fmh / 4;
   MAP_2MARGIN = 2 * ( fmh - (fmhD4 - LABEL_MAP_SPACER) ); //margin is dependent on fitting in labels at top and bottom
@@ -82,6 +81,8 @@ FileMap::~FileMap()
 void FileMap::invalidate( const bool &b )
 {
   delete [] m_signature;
+  delete m_rootSegment;
+  m_rootSegment = NULL;
   m_signature = NULL;
 
   if( b )
@@ -112,6 +113,9 @@ void FileMap::make( const Directory *tree, bool refresh )
     delete [] m_signature;
     Builder builder( this, tree, refresh );
   }
+
+  delete m_rootSegment;
+  m_rootSegment = new Segment( tree, 0, 16*360);
 
   //colour the segments
   colorise();
@@ -202,11 +206,9 @@ void FileMap::colorise()
   double contrast = (double)Gsettings.contrast / (double)100;
   int h, s1, s2, v1, v2;
   
-  for( unsigned int d = 0; d <= m_visibleDepth; ++d, darkness += 0.04 )
+  for( unsigned int i = 0; i <= m_visibleDepth; ++i, darkness += 0.04 )
   {
-    #define ring (m_signature + d)
-
-    for( Iterator<Segment> it = ring->iterator(); it != ring->end(); ++it )
+    for( Iterator<Segment> it = m_signature[i].iterator(); it != m_signature[i].end(); ++it )
     {
       switch( Gsettings.scheme )
       {
@@ -274,8 +276,6 @@ void FileMap::colorise()
       //**** using percentages is not strictly correct as the eye doesn't work like that
       //**** darkness factor is not done for kde_colour scheme, and also value for files is incorrect really for files in this scheme as it is not set like rainbow one is
     }
-
-    #undef ring
   }
 }
 
@@ -333,16 +333,13 @@ void FileMap::paint( unsigned int scaleFactor )
 
   fill(); //erase background
 
-  
-  #define ring (m_signature + x)
-
   for( int x = m_visibleDepth; x >= 0; --x )
   {
     int width = rect.width() / 2;
     //clever geometric trick to find largest angle that will give biggest arrow head
-    int a_max = acos( (double)width / double(width + 5 * scaleFactor) ) * (180*16 / M_PI);
+    int a_max = int(acos( (double)width / double((width + 5) * scaleFactor) ) * (180*16 / M_PI));
 
-    for( ConstIterator<Segment> it = ring->constIterator(); it != ring->end(); ++it )
+    for( ConstIterator<Segment> it = m_signature[x].constIterator(); it != m_signature[x].end(); ++it )
     {
       //draw the pie segments, most of this code is concerned with drawing the little
       //arrows on the ends of segments when they have hidden files
@@ -445,6 +442,4 @@ void FileMap::paint( unsigned int scaleFactor )
   m_innerRadius = rect.width() / 2; //rect.width should be multiple of 2
 
   paint.end();
-
-  #undef ring
 }

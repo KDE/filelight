@@ -8,16 +8,17 @@ fine as does GNU tar.
 The configure script is provided (at some byte-cost!) so the procedure
 should be as simple as:
 
-./configure
+./configure --prefix `kde-config --prefix`
 make
 su
 make install
 
 
-You may want to try --enable-final to try to reduce the final binary
-size, although in my experience it just doesn't compile. If you follow
-these instructions you should end up with a shortcut in Utilities
-in the K-Menu.
+It is important to specify the prefix properly, otherwise you may not
+install an interface! You may want to try --enable-final to try to reduce
+the final binary size, although in my experience it just doesn't compile.
+If you follow these instructions you should end up with a shortcut in
+Utilities in the K-Menu.
 
 Compile problems might occur, if so check you have the basic requirements
 KDE 3.1.x and Qt 3.1.x with their development packages, however please

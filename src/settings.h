@@ -42,7 +42,7 @@ public:
   bool showSmallFiles;
   unsigned int  defaultRingDepth;
   
-  void useKConfig( KConfig *kc ) { config = kc; }
+  void readSettings( KConfig *kc ) { config = kc; readSettings(); }
   bool readSettings();
   bool writeSettings();
 

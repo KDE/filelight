@@ -98,7 +98,7 @@ public:
       #if KDE_VERSION >= 0x030103
       m_b->m_list = config->readPathListEntry( "backHistory" );
       m_f->m_list = config->readPathListEntry( "forwardHistory" );
-      //**** text is not updated, no matter
+      //**** texts are not updated, no matter
       #endif
     }
 

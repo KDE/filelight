@@ -31,6 +31,8 @@
 #include <kmainwindow.h>
 #include "scanmanager.h" //**** unless you remember how to declare the enum
 
+
+
 class QString;
 class QTimer;
 class QLabel;
@@ -42,7 +44,6 @@ class KURL;
 
 class FilelightCanvas;
 class ScanProgressBox;
-class SettingsDlg;
 class ScanManager;
 class HistoryCollection;
 class Directory;
@@ -67,12 +68,14 @@ class Filelight : public KMainWindow
     void slotScanHomeDirectory();
     void slotScanRootDirectory();
 
+    void showSettings();
     void editToolbars();
     void slotNewToolbarConfig();
 
     void scanStarted( const QString & );
     void scanFailed( const QString &, ScanManager::ErrorCode );
-    void newMapCreated( const Directory * );    
+    void scanAborted();
+    void newMapCreated( const Directory * );
 
   protected:
     virtual void saveProperties( KConfig * );
@@ -80,13 +83,12 @@ class Filelight : public KMainWindow
     virtual bool queryExit();
         
   private:
-    FilelightCanvas *m_canvas;
-    SettingsDlg     *m_dialog;
-    QLabel          *m_status[2];
     KConfig         *m_config;
-    KHistoryCombo   *m_combo;
     ScanManager     *m_manager;
-    
+    FilelightCanvas *m_canvas;
+
+    QLabel             *m_status[2];
+    KHistoryCombo      *m_combo;
     HistoryCollection  *m_histories;
     KRecentFilesAction *m_recentScans;
 

@@ -54,7 +54,7 @@ ScanProgressBox::start()
 {
   show();
   m_timer2->stop(); //stop premature hiding
-  m_timer1->start( 50 );
+  m_timer1->start( 50 ); //20 times per second - very smooth
   report();
 }
 

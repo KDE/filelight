@@ -38,6 +38,9 @@
      Used more KStdActions (less work for translation teams at very least)
      Fixed bug where segmenttip wasn't shown for 1st pixel but labels were
      Directories with unshown files have better arrow heads now thanks to some clever trig
+     Checked for possible cases where division by zero might occur and corrected code
+     Huge code rewrite in preparation for transition to KPart (must release soon, this is getting silly)
+     Allow clicks on the central circle to represent the map's root (eg. middle-click to open in Konqi)
 0.6.2
      Attempted a fix for the absurdly large file bug (eg > 1400GB!)
      Linking bug fixed for Gentoo systems

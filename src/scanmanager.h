@@ -26,7 +26,6 @@
 #include "filetree.h"
 
 
-//class KURL;
 class ScanThread;
 
 class ScanManager : public QObject
@@ -43,20 +42,22 @@ public slots:
     bool start( KURL );
     void _start( const KURL &url ) { start( url ); }
     void abort();
-    void emptyCache() { cache.empty(); emit cacheInvalidated(); }
+    void emptyCache() { wait(); cache.empty(); emit cacheInvalidated(); } //**** will block if thread is running (but prevents possible crash)
 
 signals:
     void started( const QString & );
     void aborted();
     void cached( const Directory * );
     void succeeded( const Directory * );
-    void failed( const QString &, ScanManager::ErrorCode ); //**** KURL?
+    void failed( const QString &, ScanManager::ErrorCode );
     void cacheInvalidated();
 
 private:
     void startPrivate( const QString & );
     void customEvent( QCustomEvent * e );
-    
+
+    void wait();
+
     ScanThread *m_thread; //stack allocated seems to crash on destruction with Qt < 3.2
     Chain<Directory> cache;
 

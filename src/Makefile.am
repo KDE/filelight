@@ -11,7 +11,7 @@ bin_PROGRAMS = filelight
 filelight_SOURCES = main.cpp utils.cpp builder.cpp settings.cpp \
                     canvas.cpp canvaslabels.cpp canvasevents.cpp \
                     filemap.cpp segmenttip.cpp \
-                    settingsdlg.cpp settingsdialog.ui \
+                    settingsdialog.ui settingsdlg.cpp \
                     filelight.cpp scanmanager.cpp scanbox.cpp
 filelight_LDADD   = $(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT) $(LIBSOCKET)
 filelight_LDFLAGS = $(all_libraries) $(KDE_RPATH)
@@ -28,7 +28,7 @@ configdir = $(kde_confdir)
 config_DATA = filelightrc
 
 messages: rc.cpp
-	LIST=`find . -name \*.h -o -name \*.hh -o -name \*.H -o -name \*.hxx -o -name \*.hpp -o -name \*.cpp -o -name \*.cc -o -name \*.cxx -o -name \*.ecpp -o -name \*.C`; \
+	LIST=`find . -name \*.h -o -name \*.cpp \
 	if test -n "$$LIST"; then \
 	 $(XGETTEXT) rc.cpp $$LIST -o $(podir)/filelight.pot; \
 	fi

@@ -25,12 +25,14 @@
 
 
   
-QString fullPath( const File *file, const Directory* const root )
+QString fullPath( const File *file, const Directory* root ) //root defaults to 0
 {
   QString path;
 
-  for( const Directory *p = (Directory *)file; (p != root && p != 0); p = p->parent() )
-    path.prepend( p->name() );
+  if( root == file ) root = 0; //prevent returning empty string when there is something we could return
+
+  for( const Directory *d = static_cast<const Directory *>(file); (d != root && d != 0); d = d->parent() )
+    path.prepend( d->name() );
 
   return path;
 }

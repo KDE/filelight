@@ -11,9 +11,12 @@ segmented-rings.
    FEATURES
 ************
 
-* Click on directories to "zoom-in"
+* Click on directories to see them in more detail
 * Click on files to launch in the appropriate viewer (as configured in
   Konqueror)
+* Middle click to open files/directories with Konqueror
+* Right click on the center white circle to manipulate the directory the view is
+  centered about
 * You can specify a directory to scan on startup at the command line eg:
 
   # filelight /home/mxcl

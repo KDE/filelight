@@ -20,7 +20,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <stdlib.h> //getenv()
+//#include <stdlib.h> //getenv()
 
 #include <qstring.h>
 
@@ -56,23 +56,21 @@ Settings Gsettings;   //global options struct
   CONSTRUCTOR/DESTRUCTOR
  **********************************************/
 
-Filelight::Filelight() : KMainWindow( 0, "filelight" )
+Filelight::Filelight() : KMainWindow( 0, "filelight" ),
+    m_config( /*new KConfig( "filelightrc" )*/ KGlobal::config() ),
+    m_manager( new ScanManager( this, "scan_manager" ) ),
+    m_canvas( new FilelightCanvas( statusBar(), this, "canvas" ) )
 {
-  //**** some of these can be initialised with the class
-  m_config = new KConfig( "filelightrc" );
-  Gsettings.useKConfig( m_config );
-  m_dialog  = new SettingsDlg( this, "settings_dialog" ); //will read our application settings from the config into the global settings structure
-  m_canvas  = new FilelightCanvas( statusBar(), this, "canvas" );
-  m_manager = new ScanManager( this, "scan_manager" );
+  Gsettings.readSettings( m_config ); //no class can have references to Gsettings in its ctor
 
   ScanManager::readMounts();
 
-  setCentralWidget( m_canvas );      
+  setCentralWidget( m_canvas );
   setStandardToolBarMenuEnabled( true );
   
   setupStatusBar();
   setupActions();
-  createGUI( "filelightui.rc" );
+  createGUI();
   stateChanged( "scan_failed" );
 
 #if KDE_VERSION >= 0x030103
@@ -86,17 +84,14 @@ Filelight::Filelight() : KMainWindow( 0, "filelight" )
 //**** should I handle scan-related signals with events instead?
 //     probably since you don't depend on immediate execution of any of this code
 //     also this could all be part of one event
-  connect( m_manager, SIGNAL( started( const QString & ) ), m_status[1], SLOT( clear() ) );
   connect( m_manager, SIGNAL( started( const QString & ) ), m_canvas, SLOT( invalidate() ) );
   connect( m_manager, SIGNAL( started( const QString & ) ), this, SLOT( scanStarted( const QString & ) ) );
   connect( m_manager, SIGNAL( cached( const Directory * ) ), m_canvas, SLOT( createFromCache( const Directory * ) ) );
   connect( m_manager, SIGNAL( succeeded( const Directory * ) ), m_canvas, SLOT( create( const Directory * ) ) );
-//  connect( m_manager, SIGNAL( failed( const QString &, ScanManager::ErrorCode ) ), m_combo, SLOT( clearEdit() ) );
   connect( m_manager, SIGNAL( failed( const QString &, ScanManager::ErrorCode ) ), this, SLOT( scanFailed( const QString &, ScanManager::ErrorCode ) ) );
-  connect( m_manager, SIGNAL( cacheInvalidated() ), m_canvas, SLOT( invalidate() ) );
+  connect( m_manager, SIGNAL( aborted() ), this, SLOT( scanAborted() ) );
 
-  connect( m_dialog, SIGNAL( canvasIsDirty( int ) ), m_canvas, SLOT( refresh( int ) ) );
-  connect( m_dialog, SIGNAL( mapIsInvalid() ), m_manager, SLOT( emptyCache() ) );
+  connect( m_manager, SIGNAL( cacheInvalidated() ), m_canvas, SLOT( invalidate() ) );
 
   applyMainWindowSettings( m_config, "window" );
 }
@@ -104,7 +99,7 @@ Filelight::Filelight() : KMainWindow( 0, "filelight" )
 
 Filelight::~Filelight()
 {
-  delete m_config;
+//  delete m_config;
 }
 
 
@@ -124,7 +119,8 @@ void Filelight::setupStatusBar()
   statusbar->addWidget( m_status[1], 0, false );
   statusbar->addWidget( progress,    0, true );
 
-  progress->hide(); //hide() here because add() (above) calls show() *rolls eyes*
+  m_status[1]->hide(); //hide() here because add() (above) calls show() *rolls eyes*
+  progress->hide();
   
   connect( m_manager, SIGNAL( started( const QString & ) ), progress, SLOT( start() ) );
   connect( m_manager, SIGNAL( succeeded( const Directory * ) ), progress, SLOT( stop() ) );
@@ -162,7 +158,7 @@ void Filelight::setupActions()
   m_histories = new HistoryCollection( actionCollection(), this, "history_collection" );
 
 //settings
-  KStdAction::preferences( m_dialog, SLOT( show() ), actionCollection() );
+  KStdAction::preferences( this, SLOT( showSettings() ), actionCollection() );
   KStdAction::configureToolbars(this, SLOT(editToolbars()), actionCollection());
 //  KStdAction::keyBindings(this, SLOT( slotConfigureKeyBindings()), actionCollection());
 
@@ -211,6 +207,16 @@ void Filelight::readProperties( KConfig *config )
   SLOTS
  **********************************************/
 
+void Filelight::showSettings()
+{
+  SettingsDlg *dialog = new SettingsDlg( &Gsettings, this, "settings_dialog" );
+
+  connect( dialog, SIGNAL( canvasIsDirty( int ) ), m_canvas, SLOT( refresh( int ) ) );
+  connect( dialog, SIGNAL( mapIsInvalid() ), m_manager, SLOT( emptyCache() ) );
+
+  dialog->show(); //deletes itself
+}
+
 void Filelight::editToolbars()
 {
   //**** personally I feel this should be handles by KMainWindow, so pay attention and see if it gets implemented that way
@@ -229,14 +235,9 @@ void Filelight::slotNewToolbarConfig()
 
 void Filelight::slotScanDirectory()
 {
-  //**** idea is to set the path to the last scanned directory. Below doesn't work if scan cancelled/failed etc.
-  QString s = m_canvas->path();
-  if( s == QString::null )
-    s = getenv( "HOME" ); //using getenv is cheap //**** so is QDir or whatever it is
+  const KURL url = KDirSelectDialog::selectDirectory( m_canvas->path(), false, this );
 
-  const KURL url = KDirSelectDialog::selectDirectory( s, false, this );
-
-  if( !url.isEmpty() ) //**** fairly sure retVal for cancelled dialog
+  if( !url.isEmpty() )
     slotScanUrl( url );
 }
 
@@ -282,50 +283,13 @@ void Filelight::slotComboScan()
 void Filelight::scanStarted( const QString &path )
 {
   //interface amendments
-  QString qs = QString( i18n( "Scanning: %1" ).arg( path ) );
+  QString qs = i18n( "Scanning: %1" ).arg( path );
   QApplication::setOverrideCursor( KCursor::workingCursor() );
   stateChanged( "scan_started" );
   m_combo->clearFocus(); //**** KDE/Qt should do this for you! bug?
   setCaption( qs );
   m_status[0]->setText( qs );
-  m_status[1]->clear();
-}
-
-
-void Filelight::newMapCreated( const Directory *tree )
-{
-  KAction *goUp = actionCollection()->action( "go_up" );
-
-  if( tree == NULL ) //if no tree we keep a somewhat disabled interface
-  {
-      stateChanged( "scan_failed" );
-
-      goUp->setText( i18n( "Up" ) );
-      setCaption( "" );
-
-      m_status[0]->clear();
-
-  } else {
-
-      QString newPath = fullPath( tree );
-      QLineEdit *edit = m_combo->lineEdit();
-
-      stateChanged( "scan_complete" );
-
-      if( edit->text() != newPath )
-        edit->setText( newPath );
-
-      setCaption( newPath );
-      m_status[0]->setText( i18n( "Showing: %1" ).arg( newPath ) );
-      m_status[1]->setText( i18n( "Files: %1" ).arg( KGlobal::locale()->formatNumber( tree->fileCount(), 0 ) ) );
-
-      if( newPath != "/" )
-        goUp->setText( i18n( "Up: %1" ).arg( KURL( newPath ).upURL().path( 1 ) ) );
-
-      m_recentScans->addURL( newPath ); //**** doesn't set the tick
-  }
-
-  QApplication::restoreOverrideCursor();
+  m_status[1]->hide();
 }
 
 
@@ -340,10 +304,10 @@ void Filelight::scanFailed( const QString &path, ScanManager::ErrorCode err )
     break;
   case ScanManager::InvalidUrl:
     s = i18n( "The URL is not valid: %1" ).arg( path );
-    break;    
+    break;
   case ScanManager::RelativePath:
     s = i18n( "Filelight only accepts absolute paths, eg. /%1" ).arg( path );
-    break;    
+    break;
   case ScanManager::NotFound:
     s = i18n( "Directory not found: %1" ).arg( path );
     break;
@@ -352,11 +316,63 @@ void Filelight::scanFailed( const QString &path, ScanManager::ErrorCode err )
     break;
 
   default:
-    s = i18n( "The scan did not complete: %1" ).arg( path );
-    newMapCreated( NULL ); //with most errors you don't want to disable the interface
+    newMapCreated( NULL ); //will disable the interface, only suitable for some errors
+    return;
   }
 
   KMessageBox::sorry( this, s );
+}
+
+
+void Filelight::scanAborted()
+{
+  actionCollection()->action( "scan_stop" )->setEnabled( false );
+  m_status[0]->setText( "Aborting scan..." );
+}
+
+
+void Filelight::newMapCreated( const Directory *tree )
+{
+  KAction *goUp = actionCollection()->action( "go_up" );
+  QString path = fullPath( tree );
+
+  if( tree == NULL ) //if no tree we keep a somewhat disabled interface
+  {
+      stateChanged( "scan_failed" );
+
+      goUp->setText( i18n( "Up" ) );
+      setCaption( "" );
+
+      //**** shown for abort mostly, which sucks
+      m_status[0]->setText( i18n( "The scan did not complete" ) );
+
+  } else {
+
+      QLineEdit *edit = m_combo->lineEdit();
+      KURL url( path );
+
+      stateChanged( "scan_complete" );
+
+      if( edit->text() != path )
+        edit->setText( path );
+
+      setCaption( path );
+      m_status[0]->setText( i18n( "Showing: %1" ).arg( path ) );
+      m_status[1]->setText( i18n( "Files: %1" ).arg( KGlobal::locale()->formatNumber( tree->fileCount(), 0 ) ) );
+      m_status[1]->show();
+
+      if( path == "/" )
+      {
+        goUp->setEnabled( false );
+        goUp->setText( i18n( "Up" ) );
+      }
+      else
+        goUp->setText( i18n( "Up: %1" ).arg( url.upURL().path( 1 ) ) );
+
+      m_recentScans->addURL( url ); //**** doesn't set the tick
+  }
+
+  QApplication::restoreOverrideCursor();
 }
 
 

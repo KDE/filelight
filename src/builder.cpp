@@ -155,7 +155,7 @@ Builder::build( const Directory* const dir, const unsigned int depth, unsigned i
   {
     //append a segment for unrepresented space
     QString s( i18n( "%1 files ~ %2" ).arg( KGlobal::locale()->formatNumber( hiddenFileCount, 0 ) ).arg( makeHumanReadable( hiddenSize / hiddenFileCount ) ) );
-    (m_signature + depth)->append( new Segment( new File( strdup( s.local8Bit() ), hiddenSize ), a_start, a_end - a_start ) );
+    (m_signature + depth)->append( new Segment( new File( strdup( s.local8Bit() ), hiddenSize ), a_start, a_end - a_start, true ) );
   }
 
   return false;
