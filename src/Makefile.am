@@ -7,7 +7,7 @@ EXTRA_DIST = filelight.h scanbox.h \
              scanmanager.h settings.h
 
 messages: rc.cpp
-	LIST=`find . -name \*.h -o -name \*.cpp` \
+	LIST=`find . -name \*.h -o -name \*.cpp` ;\
 	if test -n "$$LIST"; then \
 	 $(XGETTEXT) rc.cpp $$LIST -o $(podir)/filelight.pot; \
 	fi
