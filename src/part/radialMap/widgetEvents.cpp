@@ -178,7 +178,8 @@ RadialMap::Widget::mousePressEvent( QMouseEvent *e )
             break;
 
          case 1:
-            KRun::runCommand( QString( "konsole --workdir \"%1\"" ).arg( url.url() ) );
+            // --workdir only works for local file paths
+            KRun::runCommand( QString( "konsole --workdir \"%1\"" ).arg( url.path() ) );
             break;
 
          case 2:
