@@ -1,37 +1,19 @@
-//  NO feedback when aborting, you need to connect something to scanManager abort that disables stop and shows a message
-   consider KDialog for dialog, as that adds - Filelight after the caption for you
-   Get it working with Solaris
-   See Tel's mail for crash bug
+If is a partition show free space
+if the view is square shrink the map slightly as a slightly rectangular view is preferable
+Part settings file is not same as app settings file
+Use KDialog for dialog
+Get it working on non-linux
+Implement cache sanity checks
+Support drag and drop of URLs
 
 
-TODAY
-//  waste of memory to create a settings dialog for whole session.
-//    - see how amarok does it
+EVENTUALLY
   implement singly linked lists
-  Remove the majority of Chain uses, use the Qt/STL ones
-  Perhaps instead of the following just move lots of Filemap into canvas.
-   - filemap shouldn't have possession of the signature since canvas is what uses it!
-  Filemap should be built fresh each time a map is requested, you don't construct very often so this is non-issue.
-    - draw this all out before you start for a change!
-    - handles resizes itself though as Builder is not called often for that
-    - rename Builder FileMapBuilder
-    - Builder
-  go through and make everything into URLs
-   - OR NOT, look URLs are harder to manipulate, try to remove dependence on URLs
-  better transferTo that allows across boundries that you have trouble with
-//  scanFailed needs to say why it failed.
+  Remove the majority of Chain uses, use the Qt/STL ones you doofus!
   implement cache sanity check or you'll have crashes on rescans as it currently stands
   thorough bug testing, then release with a note saying "code rewrite, pls report all crash bugs!"
-  REDESIGN OF BUILDER
-    reports if maximum depth for system was met
+  split rendering engine from data-gatherer and allow data to be fed through a pipe thus allowing different data sources to be profiled.
 
-        
-0.9.0
-    split rendering engine from data-gatherer and allow data to be fed through a pipe thus allowing different data sources to be profiled. (http://methylblue.com/forum/viewtopic.php?t=19)
-0.8.0
-    Complete KHandbook
-    Support drag and drop of URLs
-    WhatIsThis Tips
 0.7.0
  Use AC_CHECK_FUNC to check for sincos() as this is the worst bug currently in the sources
   Make a KPart
@@ -80,7 +62,7 @@ TODAY
   make FileMap strictly a building class, returns a pixmap and a parameter structure
   m_map->make() should cause the canvas to update surely? (would save LOC) (needs to be made a QObject, but this will be part of builder anyway which can emit signals as appropriate
   fontvary should use floats
-  
+
 0.6.3
     label strut joins shouldn't be interfere with map, so insist on min length
      - if needs to be shrunk instead reverse and extend previous label struts if poss
@@ -261,20 +243,20 @@ URGENT
 SCANS
     if you have no permissions on a file/dir still add 1 to file count?
     create list of trees that can be added/should be ignored before the scan
-      
+
 INTERFACE
 //  Stop button on toolbar
   add standard KDE toolbar and menubar /show/hide/configure settings to menus
-    
+
 MAYBE
   Stick the pixmap in a gridlayout so it's always central? See Kuickshow maybe..
-  
+
 FEATURES
   Handle recursive hardlinks
 //  You shouldn't have to rescan stuff you've scanned
   create html summary files (pics and text)
   support other protocols than file:/
-    
+
 OPTIMISATION
   if you could make only Directorys double linked links then you would save a lot of memory (files never need to be changed, directories can be shifted around)
   try the multi-threaded scan approach again, but this time with a pool of 10 or so threads, not as many as directories are found

@@ -1,15 +1,16 @@
-*********************
-  FILELIGHT 0.6.3 ***
-*********************
+
+ Filelight README
+==================
 
 Filelight allows you to understand exactly where your diskspace is being used by
 graphically representating your filesystem as a set of concentric
 segmented-rings.
 
+README last updated with respect to 1.0-beta7
 
-************
-   FEATURES
-************
+
+ Features
+==========
 
 * Click on directories to see them in more detail
 * Click on files to launch in the appropriate viewer (as configured in
@@ -25,18 +26,17 @@ segmented-rings.
   window sizes
 * Hover over segments to find out more information about the region of the
   filesystem it represents
+* Available as a KPart in Konqueror
 
 
-************
-    INSTALL
-************
+ Install
+=========
 
 See the accompanying file; INSTALL.
 
 
-************
-       BUGS
-************
+ Bugs
+======
 
 Filelight is still under development and I'd be most chuffed if you could report
 bugs either through filelight@methylblue.com or the forums at
@@ -44,14 +44,4 @@ http://www.methylblue.com/filelight/
 
 I hope you enjoy using Filelight!
 
-Max Howell (max.howell@methylblue.com)
-
-
-************
-     CREDIT
-************
-
-Many thanks to Steffen Gerlach who came up with the method of representing
-filesystem information with sets of concentric segemented-rings, Nikolaus
-Regnat for making the debian packages and Herbert Graeber (aka Packman)
-for the SuSE packages.
+Max Howell <max.howell@methylblue.com>
