@@ -30,7 +30,7 @@ namespace RadialMap
       int x1, y1, x2, y2, x3;
       int tx, ty;
 
-      QCString qs;
+      QString qs;
    };
 
    class LabelList : public QPtrList<Label>

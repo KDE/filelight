@@ -20,7 +20,7 @@
 #include <kparts/genericfactory.h>
 #include <kstatusbar.h>
 #include <kstdaction.h>
-#include <qapplication.h> //setOverrideCursor()
+#include <qfile.h>        //encodeName()
 #include <qtimer.h>       //postInit() hack
 #include <qvbox.h>
 #include <unistd.h>       //access()
@@ -101,6 +101,7 @@ Part::openURL( const KURL &u )
    KURL url = u;
    url.cleanPath( true );
    const QString path = url.path( 1 );
+   const QCString path8bit = QFile::encodeName( path );
    const bool isLocal = url.protocol() == "file";
 
    if( url.isEmpty() )
@@ -115,11 +116,11 @@ Part::openURL( const KURL &u )
    {
       KMSG( i18n( "Filelight only accepts absolute paths, eg. /%1" ).arg( path ) );
    }
-   else if( isLocal && access( path, F_OK ) != 0 ) //stat( path, &statbuf ) == 0
+   else if( isLocal && access( path8bit, F_OK ) != 0 ) //stat( path, &statbuf ) == 0
    {
       KMSG( i18n( "Directory not found: %1" ).arg( path ) );
    }
-   else if( isLocal && access( path, R_OK | X_OK ) != 0 )
+   else if( isLocal && access( path8bit, R_OK | X_OK ) != 0 )
    {
       KMSG( i18n( "Unable to enter: %1\nYou don't have access rights to this location." ).arg( path ) );
    }
