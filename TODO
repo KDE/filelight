@@ -1,5 +1,8 @@
 //  NO feedback when aborting, you need to connect something to scanManager abort that disables stop and shows a message
    consider KDialog for dialog, as that adds - Filelight after the caption for you
+   Get it working with Solaris
+   See Tel's mail for crash bug
+
 
 TODAY
 //  waste of memory to create a settings dialog for whole session.
@@ -30,6 +33,7 @@ TODAY
     Support drag and drop of URLs
     WhatIsThis Tips
 0.7.0
+ Use AC_CHECK_FUNC to check for sincos() as this is the worst bug currently in the sources
   Make a KPart
   Summary screen that shows mounts and various statistics (can be added to the table,like juk)
   Trace inodes in binarytree to avoid hardlink problems
