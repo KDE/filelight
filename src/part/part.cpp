@@ -122,7 +122,7 @@ Part::openURL( const KURL &u )
    }
    else if( isLocal && access( path8bit, R_OK | X_OK ) != 0 )
    {
-      KMSG( i18n( "Unable to enter: %1\nYou don't have access rights to this location." ).arg( path ) );
+      KMSG( i18n( "Unable to enter: %1\nYou do not have access rights to this location." ).arg( path ) );
    }
    else
    {

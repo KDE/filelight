@@ -189,8 +189,8 @@ RadialMap::Widget::mousePressEvent( QMouseEvent *e )
          {
             const KURL url = Widget::url( m_focus->file() );
             const QString message = ( m_focus->file()->isDirectory()
-               ? i18n( "<qt>The directory at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</b> deleted!" )
-               : i18n( "<qt><i>'%1'</i> will be <b>permanently</b> deleted!" )).arg( url.prettyURL() );
+               ? i18n( "<qt>The directory at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</b> deleted." )
+               : i18n( "<qt><i>'%1'</i> will be <b>permanently</b> deleted." )).arg( url.prettyURL() );
             const int userIntention = KMessageBox::warningContinueCancel( this, message, QString::null, KGuiItem( i18n("&Delete"), "editdelete" ) );
 
             if( userIntention == KMessageBox::Continue ) {

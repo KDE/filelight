@@ -50,7 +50,7 @@
                             </sizepolicy>
                         </property>
                         <property name="text">
-                            <string>&amp;Don't scan these directories:</string>
+                            <string>&amp;Do not scan these directories:</string>
                         </property>
                         <property name="textFormat">
                             <enum>PlainText</enum>
@@ -205,7 +205,7 @@
                                     <string></string>
                                 </property>
                                 <property name="whatsThis" stdset="0">
-                                    <string>Prevents scanning of filesystems that aren't on this computer, e.g. NFS or Samba mounts.</string>
+                                    <string>Prevents scanning of filesystems that are not on this computer, e.g. NFS or Samba mounts.</string>
                                 </property>
                             </widget>
                             <widget class="QCheckBox" row="0" column="0" rowspan="1" colspan="2">
@@ -396,7 +396,7 @@
                                             <cstring>minFontPitch</cstring>
                                         </property>
                                         <property name="whatsThis" stdset="0">
-                                            <string>The smallest font size Filelight can render labels.</string>
+                                            <string>The smallest font size Filelight can use to render labels.</string>
                                         </property>
                                     </widget>
                                     <widget class="KIntSpinBox">

@@ -30,7 +30,7 @@ MainWindow::MainWindow() : KParts::MainWindow(), m_part( 0 )
     KLibFactory *factory = KLibLoader::self()->factory( "libfilelight" );
 
     if( !factory ) {
-       KMessageBox::error( this, i18n("KDE could not find the Filelight Part, or the Filelight Part could not be started! Did you make install?") );
+       KMessageBox::error( this, i18n("KDE could not find the Filelight Part, or the Filelight Part could not be started. Did you make install?") );
        //exit() seems to not exist inside the std namespace for some users!
        using namespace std;
        exit( 1 ); //don't use QApplication::exit() - it causes a crash

@@ -24,7 +24,7 @@ SettingsDialog::SettingsDialog( QWidget *parent, const char *name )
     colourSchemeGroup->setFrameShape( QFrame::NoFrame );
 
     colourSchemeGroup->insert( new QRadioButton( i18n("Rainbow"), colourSchemeGroup ), Filelight::Rainbow );
-    colourSchemeGroup->insert( new QRadioButton( i18n("KDE Colours"), colourSchemeGroup ), Filelight::KDE );
+    colourSchemeGroup->insert( new QRadioButton( i18n("KDE Colors"), colourSchemeGroup ), Filelight::KDE );
     colourSchemeGroup->insert( new QRadioButton( i18n("High Contrast"), colourSchemeGroup ), Filelight::HighContrast );
 
     //read in settings before you make all those nasty connections!

@@ -31,7 +31,7 @@ int main( int argc, char *argv[] )
 
     //TODO complete this list!
     about.addCredit( "Steffen Gerlach", I18N_NOOP("Inspiration"), 0, "http://www.steffengerlach.de/" );
-    about.addCredit( "André Somers",   I18N_NOOP("Internationalisation support") );
+    about.addCredit( "André Somers",   I18N_NOOP("Internationalization support") );
     about.addCredit( "Stephanie James", I18N_NOOP("\"Girlfriend usability-testing\"") );
     about.addCredit( "Marcus Camen",    I18N_NOOP("Bravery in the face of unreadable code (patches)") );
 
