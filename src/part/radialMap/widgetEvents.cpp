@@ -119,19 +119,19 @@ RadialMap::Widget::mouseMoveEvent( QMouseEvent *e )
       if( m_focus != oldFocus ) //if not same as last time
       {
          setCursor( KCursor::handCursor() );
-         m_tip.updateTip( m_focus->file(), m_tree );
+         m_tip->updateTip( m_focus->file(), m_tree );
          emit mouseHover( m_focus->file()->fullPath() );
 
          //repaint required to update labels now before transparency is generated
          repaint( false );
       }
 
-      m_tip.moveto( e->globalPos(), *this, ( p.y() < 0 ) ); //updates tooltip psuedo-tranparent background
+      m_tip->moveto( e->globalPos(), *this, ( p.y() < 0 ) ); //updates tooltip psuedo-tranparent background
    }
    else if( oldFocus && oldFocus->file() != m_tree )
    {
       unsetCursor();
-      m_tip.hide();
+      m_tip->hide();
       update();
 
       emit mouseHover( QString::null );
@@ -213,7 +213,7 @@ RadialMap::Widget::mousePressEvent( QMouseEvent *e )
 
          const QRect rect( e->x() - 20, e->y() - 20, 40, 40 );
 
-         m_tip.hide(); //user expects this
+         m_tip->hide(); //user expects this
 
          if( !isDir || e->button() == Qt::MidButton )
          {

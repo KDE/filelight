@@ -56,6 +56,7 @@ namespace RadialMap
 
     public:
         Widget( QWidget* = 0, const char* = 0 );
+        ~Widget() { delete m_tip; }
 
         QString path() const;
         KURL url( File const * const = 0 ) const;
@@ -102,7 +103,7 @@ namespace RadialMap
         QPoint           m_offset;
         QTimer           m_timer;
         Map              m_map;
-        SegmentTip       m_tip;
+        SegmentTip       *m_tip;
         Segment         *m_rootSegment;
     };
 }

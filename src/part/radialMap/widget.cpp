@@ -21,10 +21,11 @@ RadialMap::Widget::Widget( QWidget *parent, const char *name )
    : QWidget( parent, name, Qt::WNoAutoErase )
    , m_tree( 0 )
    , m_focus( 0 )
-   , m_tip( KCursor::handCursor().bitmap()->height() ) //needs to know cursor height
    , m_rootSegment( 0 ) //TODO we don't delete it, *shrug*
 {
    setBackgroundColor( Qt::white );
+   const QBitmap *cursor = KCursor::handCursor().bitmap();
+   m_tip = new SegmentTip(cursor ? cursor->height() : 16);
 
    connect( this, SIGNAL(created( const Directory* )), SLOT(sendFakeMouseEvent()) );
    connect( this, SIGNAL(created( const Directory* )), SLOT(update()) );
