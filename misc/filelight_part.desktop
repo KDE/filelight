@@ -1,15 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=RadialMap View
-Name[da]=Radialkort-visning
-Name[es]=Vista en mapa radial
-Name[et]=RadialMap vaade
-Name[it]=Vista a mappa radiale
-Name[nl]=Radiale weergave
-Name[pt]=Vista em Mapa Radial
-Name[pt_BR]=Vista em Mapa Radial
-Name[sv]=Radiell avbildningsvy
-Name[xx]=xxRadialMap Viewxx
 MimeType=inode/directory
 ServiceTypes=KParts/ReadOnlyPart
 X-KDE-Library=libfilelight
