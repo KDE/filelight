@@ -21,6 +21,7 @@ Comment[ru]=Нагладное представление файловой си�
 Comment[sr]=Приказује податке о заузетости диска
 Comment[sr@Latn]=Prikazuje podatke o zauzetosti diska
 Comment[sv]=Visa information om diskanvändning
+Comment[tr]=Disk kullanım bilgisini görmek için
 Comment[zh_CN]=查看磁盘使用信息
 Terminal=false
 MimeType=inode/directory

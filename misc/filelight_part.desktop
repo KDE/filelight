@@ -12,6 +12,7 @@ Name[pt_BR]=Vista em Mapa Radial
 Name[sr]=Приказ кружне мапе
 Name[sr@Latn]=Prikaz kružne mape
 Name[sv]=Radiell avbildningsvy
+Name[tr]=RadyalHarita Görünümü
 MimeType=inode/directory
 ServiceTypes=KParts/ReadOnlyPart
 X-KDE-Library=libfilelight
