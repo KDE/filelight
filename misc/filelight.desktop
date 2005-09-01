@@ -2,6 +2,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=Filelight
+Name[xx]=xxFilelightxx
 Generic Name=Disk Usage Statistics
 Type=Application
 Exec=filelight %f
@@ -24,6 +25,7 @@ Comment[sr]=Приказује податке о заузетости диска
 Comment[sr@Latn]=Prikazuje podatke o zauzetosti diska
 Comment[sv]=Visa information om diskanvändning
 Comment[tr]=Disk kullanım bilgisini görmek için
+Comment[xx]=xxView disk usage informationxx
 Comment[zh_CN]=查看磁盘使用信息
 Terminal=false
 MimeType=inode/directory
