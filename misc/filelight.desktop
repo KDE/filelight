@@ -25,6 +25,7 @@ Comment[sr]=Приказује податке о заузетости диска
 Comment[sr@Latn]=Prikazuje podatke o zauzetosti diska
 Comment[sv]=Visa information om diskanvändning
 Comment[tr]=Disk kullanım bilgisini görmek için
+Comment[uk]=Перегляд використання диска
 Comment[xx]=xxView disk usage informationxx
 Comment[zh_CN]=查看磁盘使用信息
 Terminal=false
