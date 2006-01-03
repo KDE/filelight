@@ -16,6 +16,7 @@
 #include <klibloader.h>
 #include <klocale.h>
 #include <kmessagebox.h>
+#include <kshell.h>
 #include <kstatusbar.h>
 #include <ktoolbar.h>
 #include <kurl.h>
@@ -147,7 +148,7 @@ inline void MainWindow::slotUp()                { slotScanUrl( m_part->url().upU
 inline void
 MainWindow::slotComboScan()
 {
-   const QString path = m_combo->lineEdit()->text();
+   const QString path = KShell::tildeExpand(m_combo->lineEdit()->text());
    if( slotScanPath( path ) )
       m_combo->addToHistory( path );
 }
