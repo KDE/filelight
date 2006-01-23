@@ -8,6 +8,7 @@ Type=Application
 Exec=filelight %f
 Icon=filelight.png
 Comment=View disk usage information
+Comment[bg]=Информация за използване на диска
 Comment[cs]=Zobrazení využití disku
 Comment[da]=Vis information om diskforbrug
 Comment[de]=Zeigt Nutzungsinformationen der Festplatte an
