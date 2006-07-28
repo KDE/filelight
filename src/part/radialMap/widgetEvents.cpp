@@ -67,6 +67,9 @@ RadialMap::Widget::segmentAt( QPoint &e ) const
 
     e -= m_offset;
 
+    if( !m_map.m_signature )
+       return 0;
+
     if( e.x() <= m_map.width() && e.y() <= m_map.height() )
     {
         //transform to cartesian coords
