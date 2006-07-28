@@ -76,6 +76,8 @@ namespace Filelight
       RadialMap::Widget  *m_map;
       class ScanManager  *m_manager;
 
+      bool m_started;
+
    private:
       bool start( const KURL& );
 

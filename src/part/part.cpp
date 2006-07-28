@@ -177,13 +177,11 @@ Part::createAboutData()
 bool
 Part::start( const KURL &url )
 {
-   static bool b = true; //FIXME do this better! :)
-
-   if( b ) {
+   if( !m_started ) {
       m_statusbar->addStatusBarItem( new ProgressBox( statusBar(), this ), 0, true );
       connect( m_map, SIGNAL(mouseHover( const QString& )), statusBar(), SLOT(message( const QString& )) );
       connect( m_map, SIGNAL(created( const Directory* )), statusBar(), SLOT(clear()) );
-      b = false;
+      m_started = true;
    }
 
    if( m_manager->start( url ) ) {
@@ -240,7 +238,10 @@ Part::mapChanged( const Directory *tree )
 
    emit setWindowCaption( prettyURL() );
 
-   static_cast<ProgressBox*>(statusBar()->child( "ProgressBox" ))->setText( tree->children() );
+   ProgressBox *progress = static_cast<ProgressBox *>(statusBar()->child( "ProgressBox" ));
+
+   if( progress )
+      progress->setText( tree->children() );
 }
 
 } //namespace Filelight
