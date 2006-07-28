@@ -33,7 +33,7 @@ RadialMap::Builder::Builder( RadialMap::Map *m, const Directory* const d, bool f
 
     m_map->m_signature = m_signature;
 
-    delete m_limits;
+    delete [] m_limits;
 }
 
 
