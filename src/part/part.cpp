@@ -44,6 +44,7 @@ Part::Part( QWidget *parentWidget, const char *widgetName, QObject *parent, cons
   , m_statusbar( new StatusBarExtension( this ) )
   , m_map( 0 )
   , m_manager( new ScanManager( this ) )
+  , m_started( false )
 {
     QPixmap::setDefaultOptimization( QPixmap::BestOptim );
 
