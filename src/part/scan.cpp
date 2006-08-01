@@ -178,8 +178,12 @@ namespace Filelight
    {
       Directory *tree = (Directory*)e->data();
 
-      delete m_thread; //note the lister deletes itself
-      m_thread = 0;
+      if( m_thread ) {
+          m_thread->terminate();
+          m_thread->wait();
+          delete m_thread; //note the lister deletes itself
+          m_thread = 0;
+      }
 
       emit completed( tree );
 
