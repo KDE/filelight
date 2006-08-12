@@ -156,7 +156,8 @@ namespace Filelight
       }
 
       struct stat statbuf;
-      for( dirent *ent; ent = readdir( dir ); )
+      dirent *ent;
+      while ((ent = readdir( dir )))
       {
          if( ScanManager::s_abort )
             return cwd;

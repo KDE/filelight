@@ -1,4 +1,4 @@
-<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>Dialog</class>
 <widget class="QDialog">
     <property name="name">
@@ -31,7 +31,7 @@
                     <cstring>Widget2</cstring>
                 </property>
                 <attribute name="title">
-                    <string>&amp;Scanning</string>
+                    <string>Scannin&amp;g</string>
                 </attribute>
                 <vbox>
                     <property name="name">
@@ -50,7 +50,7 @@
                             </sizepolicy>
                         </property>
                         <property name="text">
-                            <string>&amp;Do not scan these directories:</string>
+                            <string>Do &amp;not scan these directories:</string>
                         </property>
                         <property name="textFormat">
                             <enum>PlainText</enum>
@@ -199,7 +199,10 @@
                                     <bool>false</bool>
                                 </property>
                                 <property name="text">
-                                    <string>Exclude re&amp;mote filesystems</string>
+                                    <string>Exclude remote files&amp;ystems</string>
+                                </property>
+                                <property name="accel">
+                                    <string>Alt+Y</string>
                                 </property>
                                 <property name="toolTip" stdset="0">
                                     <string></string>
@@ -215,8 +218,11 @@
                                 <property name="text">
                                     <string>Scan across filesystem &amp;boundaries</string>
                                 </property>
+                                <property name="accel">
+                                    <string>Alt+B</string>
+                                </property>
                                 <property name="whatsThis" stdset="0">
-                                    <string>Stops scans entering directories that are part of other filesystems. For example, this will usually prevent the contents of &lt;b&gt;/mnt&lt;/b&gt; from being scanned if you scan &lt;b&gt;/&lt;/b&gt;.</string>
+                                    <string>Allows scans to enter directories that are part of other filesystems. For example, when unchecked, this will usually prevent the contents of &lt;b&gt;/mnt&lt;/b&gt; from being scanned if you scan &lt;b&gt;/&lt;/b&gt;.</string>
                                 </property>
                             </widget>
                             <widget class="QCheckBox" row="2" column="1">
@@ -227,7 +233,10 @@
                                     <bool>false</bool>
                                 </property>
                                 <property name="text">
-                                    <string>Exclude remo&amp;vable media</string>
+                                    <string>E&amp;xclude removable media</string>
+                                </property>
+                                <property name="accel">
+                                    <string>Alt+X</string>
                                 </property>
                                 <property name="toolTip" stdset="0">
                                     <string></string>
@@ -288,7 +297,7 @@
                                             <cstring>textLabel3</cstring>
                                         </property>
                                         <property name="text">
-                                            <string>&amp;Contrast</string>
+                                            <string>Co&amp;ntrast</string>
                                         </property>
                                         <property name="textFormat">
                                             <enum>PlainText</enum>
@@ -348,7 +357,7 @@
                                     <bool>true</bool>
                                 </property>
                                 <property name="text">
-                                    <string>&amp;Vary label font sizes</string>
+                                    <string>Var&amp;y label font sizes</string>
                                 </property>
                                 <property name="whatsThis" stdset="0">
                                     <string>The font size of exploded labels can be varied relative to the depth of the directories they represent. This helps you spot the important labels more easily. Set a sensible minimum font size.</string>
@@ -387,7 +396,7 @@
                                             <bool>true</bool>
                                         </property>
                                         <property name="text">
-                                            <string>Minimum &amp;font size:</string>
+                                            <string>Minimum font si&amp;ze:</string>
                                         </property>
                                         <property name="textFormat">
                                             <enum>PlainText</enum>
