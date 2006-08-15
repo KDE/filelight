@@ -209,7 +209,10 @@ DiskList::readDF()
 void
 DiskList::dfDone()
 {
-   debug() << k_funcinfo << endl;
+   DEBUG_ANNOUNCE
+
+   #undef BLANK
+   QString const BLANK( QChar(' ') );
 
    if( updatesDisabled )
       return ; //Don't touch the data for now..
