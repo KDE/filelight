@@ -208,7 +208,7 @@ namespace Filelight
             }
 
             if( !d ) //then scan
-               if( d = scan( new_path, new_dirname ) ) //then scan was successful
+               if ((d = scan( new_path, new_dirname ))) //then scan was successful
                   cwd->append( d );
          }
 
@@ -236,11 +236,11 @@ namespace Filelight
 #ifdef HAVE_MNTENT_H
       struct mntent *mnt_ent;
 #endif
-      FILE *fp;
       QString str;
 
 
 #ifdef HAVE_MNTENT_H
+      FILE *fp;
       if( setfsent() == 0 || !( fp = setmntent( INFO_MOUNTED_PARTITIONS, "r" ) ) )
 #else
       if( setfsent() == 0 )

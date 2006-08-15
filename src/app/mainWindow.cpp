@@ -5,6 +5,7 @@
 #include "part/part.h"
 #include "historyAction.h"
 
+#include <cstdlib>            //std::exit()
 #include <kaccel.h>           //KStdAccel namespace
 #include <kaction.h>
 #include <kapplication.h>     //setupActions()
@@ -21,12 +22,16 @@
 #include <ktoolbar.h>
 #include <kurl.h>
 #include <kurlcompletion.h>   //locationbar
-#include <stdlib.h>           //std::exit()
+#include <qtooltip.h>
+#include <qpopupmenu.h>
+
 
 
 namespace Filelight {
 
-MainWindow::MainWindow() : KParts::MainWindow(), m_part( 0 )
+MainWindow::MainWindow()
+        : KParts::MainWindow()
+        , m_part( 0 )
 {
     KLibFactory *factory = KLibLoader::self()->factory( "libfilelight" );
 
@@ -58,8 +63,6 @@ MainWindow::MainWindow() : KParts::MainWindow(), m_part( 0 )
     config->setGroup( "general" );
     m_combo->setHistoryItems( config->readPathListEntry( "comboHistory" ) );
     applyMainWindowSettings( config, "window" );
-
-    statusBar()->message( i18n( "Use the Scan-menu to begin..." ) );
 }
 
 inline void
@@ -149,7 +152,7 @@ inline void
 MainWindow::slotComboScan()
 {
    const QString path = KShell::tildeExpand(m_combo->lineEdit()->text());
-   if( slotScanPath( path ) )
+   if (slotScanPath( path ))
       m_combo->addToHistory( path );
 }
 
@@ -159,15 +162,15 @@ MainWindow::slotScanPath( const QString &path )
    return slotScanUrl( KURL::fromPathOrURL( path ) );
 }
 
-/*inline */bool //FIXME you may have to move this to the header :(
+bool
 MainWindow::slotScanUrl( const KURL &url )
 {
    const KURL oldUrl = m_part->url();
    const bool b = m_part->openURL( url );
 
-   if( b ) {
+   if (b) {
       m_histories->push( oldUrl );
-      actionCollection()->action( "go_back" )->KAction::setEnabled( false ); } //FIXME
+      action( "go_back" )->KAction::setEnabled( false ); } //FIXME
 
    return b;
 }
@@ -175,7 +178,7 @@ MainWindow::slotScanUrl( const KURL &url )
 inline void
 MainWindow::slotAbortScan()
 {
-    if( m_part->closeURL() ) actionCollection()->action( "scan_stop" )->setEnabled( false );
+    if( m_part->closeURL() ) action( "scan_stop" )->setEnabled( false );
 }
 
 inline void
@@ -189,26 +192,26 @@ inline void
 MainWindow::scanFailed()
 {
     stateChanged( "scan_failed" );
-    actionCollection()->action( "go_up" )->setText( i18n( "Up" ) );
+    setActionMenuTextOnly( action( "go_up" ), QString::null );
     m_combo->lineEdit()->clear();
 }
 
 void
 MainWindow::scanCompleted()
 {
-    KAction *goUp  = actionCollection()->action( "go_up" );
+    KAction *goUp  = action( "go_up" );
     const KURL url = m_part->url();
 
     stateChanged( "scan_complete" );
 
     m_combo->lineEdit()->setText( m_part->prettyURL() );
 
-    if( url.path( 1 ) == "/" )
-    {
+    if ( url.path( 1 ) == "/") {
         goUp->setEnabled( false );
-        goUp->setText( i18n( "Up" ) );
+        setActionMenuTextOnly( goUp, QString() );
     }
-    else goUp->setText( i18n( "Up: %1" ).arg( url.upURL().path( 1 ) ) );
+    else
+        setActionMenuTextOnly( goUp, url.upURL().path( 1 ) );
 
     m_recentScans->addURL( url ); //FIXME doesn't set the tick
 }
@@ -242,5 +245,30 @@ MainWindow::readProperties( KConfig *config ) //virtual
 }
 
 } //namespace Filelight
+
+
+
+/// declared in historyAction.h
+
+void setActionMenuTextOnly( KAction *a, QString const &suffix )
+{
+    QString const menu_text = suffix.isEmpty()
+            ? a->text()
+            : i18n( "&Up: /home/mxcl", "%1: %2" ).arg( a->text(), suffix );
+
+    for (int i = 0; i < a->containerCount(); ++i) {
+        QWidget *w = a->container( i );
+        int const id = a->itemId( i );
+
+        if (w->inherits( "QPopupMenu" ))
+            static_cast<QPopupMenu*>(w)->changeItem( id, menu_text );
+
+        else if (w->inherits( "KToolBar" )) {
+            QWidget *button = static_cast<KToolBar*>(w)->getWidget( id );
+            if (button->inherits( "KToolBarButton" ))
+                QToolTip::add( button, suffix );
+        }
+    }
+}
 
 #include "mainWindow.moc"

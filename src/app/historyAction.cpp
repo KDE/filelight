@@ -10,19 +10,41 @@
 
 inline
 HistoryAction::HistoryAction( const QString &text, const char *icon, const KShortcut &cut, KActionCollection *ac, const char *name )
-  : KAction( text, icon, cut, 0, 0, ac, name )
-  , m_text( text )
+        : KAction( text, icon, cut, 0, 0, ac, name )
+        , m_text( text )
 {
-    //ui files make this false, but better to be safe
+    // ui files make this false, but we can't rely on UI file as it isn't compiled in :(
     KAction::setEnabled( false );
 }
 
+void
+HistoryAction::push( const QString &path )
+{
+    if( !path.isEmpty() && m_list.last() != path )
+    {
+        m_list.append( path );
+        setActionMenuTextOnly( this, path );
+        KAction::setEnabled( true );
+    }
+}
+
+QString
+HistoryAction::pop()
+{
+    const QString s = m_list.last();
+    m_list.pop_back();
+    setActionMenuTextOnly( this, m_list.last() );
+    setEnabled();
+    return s;
+}
+
+
 
 HistoryCollection::HistoryCollection( KActionCollection *ac, QObject *parent, const char *name )
-  : QObject( parent, name )
-  , m_b( new HistoryAction( i18n( "Back" ), "back", KStdAccel::back(), ac, "go_back" ) )
-  , m_f( new HistoryAction( i18n( "Forward" ), "forward",  KStdAccel::forward(), ac, "go_forward" ) )
-  , m_receiver( 0 )
+        : QObject( parent, name )
+        , m_b( new HistoryAction( i18n( "Back" ), "back", KStdAccel::back(), ac, "go_back" ) )
+        , m_f( new HistoryAction( i18n( "Forward" ), "forward",  KStdAccel::forward(), ac, "go_forward" ) )
+        , m_receiver( 0 )
 {
     connect( m_b, SIGNAL(activated()), SLOT(pop()) );
     connect( m_f, SIGNAL(activated()), SLOT(pop()) );

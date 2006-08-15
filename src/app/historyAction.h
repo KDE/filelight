@@ -11,6 +11,10 @@
 class KConfig;
 
 
+/// defined in mainWindow.cpp
+void setActionMenuTextOnly( KAction *a, QString const &suffix );
+
+
 class HistoryAction : KAction
 {
     HistoryAction( const QString &text, const char *icon, const KShortcut &cut, KActionCollection *ac, const char *name );
@@ -23,29 +27,10 @@ public:
     void clear() { m_list.clear(); KAction::setText( m_text ); }
 
 private:
-    void setText()
-    {
-        QString newText = m_text;
-        if( !m_list.isEmpty() ) { newText += ": "; newText += m_list.last(); }
-        KAction::setText( newText );
-    }
-    void push( const QString &path )
-    {
-        if( !path.isEmpty() && m_list.last() != path )
-        {
-            m_list.append( path );
-            setText();
-            KAction::setEnabled( true );
-        }
-    }
-    QString pop()
-    {
-        const QString s = m_list.last();
-        m_list.pop_back();
-        setText();
-        setEnabled();
-        return s;
-    }
+    void setText();
+
+    void push( const QString &path );
+    QString pop();
 
     const QString m_text;
     QStringList m_list;
