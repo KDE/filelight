@@ -1,17 +1,17 @@
-If is a partition show free space
-if the view is square shrink the map slightly as a slightly rectangular view is preferable
-Part settings file is not same as app settings file
-Use KDialog for dialog
-Get it working on non-linux
-Implement cache sanity checks
-Support drag and drop of URLs
+1.1
+  If scanning a partition show free space
+  if the view is square shrink the map slightly as a slightly rectangular view is preferable
 
+1.0
+  better summary screen, use mtab properly, remove horrid codebase
+  fix that Part settings file is not same as app settings file
+  Support drag and drop of URLs
+  implement cache sanity check or you'll have crashes on rescans as it currently stands
+  check for zero toolbar buttons, and actions in general since KDE still doesn't tell the user when UI not installed properly
 
 EVENTUALLY
-  implement singly linked lists
+  implement vectors instead of double-linked lists for file data
   Remove the majority of Chain uses, use the Qt/STL ones you doofus!
-  implement cache sanity check or you'll have crashes on rescans as it currently stands
-  thorough bug testing, then release with a note saying "code rewrite, pls report all crash bugs!"
   split rendering engine from data-gatherer and allow data to be fed through a pipe thus allowing different data sources to be profiled.
 
 0.7.0
