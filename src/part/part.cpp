@@ -39,12 +39,12 @@ BrowserExtension::BrowserExtension( Part *parent, const char *name )
 
 
 Part::Part( QWidget *parentWidget, const char *widgetName, QObject *parent, const char *name, const QStringList& )
-  : ReadOnlyPart( parent, name )
-  , m_ext( new BrowserExtension( this ) )
-  , m_statusbar( new StatusBarExtension( this ) )
-  , m_map( 0 )
-  , m_manager( new ScanManager( this ) )
-  , m_started( false )
+        : ReadOnlyPart( parent, name )
+        , m_ext( new BrowserExtension( this ) )
+        , m_statusbar( new StatusBarExtension( this ) )
+        , m_map( 0 )
+        , m_manager( new ScanManager( this ) )
+        , m_started( false )
 {
     QPixmap::setDefaultOptimization( QPixmap::BestOptim );
 

@@ -1,6 +1,7 @@
 1.1
   If scanning a partition show free space
   if the view is square shrink the map slightly as a slightly rectangular view is preferable
+  use kdirwatcher, then move rescan to scan menu, rename force rescan
 
 1.0
   better summary screen, use mtab properly, remove horrid codebase

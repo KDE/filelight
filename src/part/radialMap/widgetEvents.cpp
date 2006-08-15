@@ -5,6 +5,7 @@
 #include "radialMap.h"   //class Segment
 #include "widget.h"
 
+#include <cmath>         //::segmentAt()
 #include <kcursor.h>     //::mouseMoveEvent()
 #include <kiconeffect.h> //::mousePressEvent()
 #include <kiconloader.h> //::mousePressEvent()
@@ -13,8 +14,9 @@
 #include <kmessagebox.h> //::mousePressEvent()
 #include <kpopupmenu.h>  //::mousePressEvent()
 #include <krun.h>        //::mousePressEvent()
-#include <math.h>        //::segmentAt()
+#include <kurldrag.h>
 #include <qapplication.h>//QApplication::setOverrideCursor()
+#include <qclipboard.h>
 #include <qpainter.h>
 #include <qtimer.h>      //::resizeEvent()
 
@@ -147,6 +149,8 @@ RadialMap::Widget::mousePressEvent( QMouseEvent *e )
    //m_tip is hidden already by event filter
    //m_focus is set correctly (I've been strict, I assure you it is correct!)
 
+   enum { Konqueror, Konsole, Center, Open, Copy, Delete };
+
    if( m_focus && !m_focus->isFake() )
    {
       const KURL url   = Widget::url( m_focus->file() );
@@ -157,74 +161,79 @@ RadialMap::Widget::mousePressEvent( QMouseEvent *e )
          KPopupMenu popup;
          popup.insertTitle( m_focus->file()->fullPath( m_tree ) );
 
-         if( isDir )
-         {
-            popup.insertItem( SmallIconSet( "konqueror" ), i18n( "Open &Konqueror Here" ), 0 );
-            if( url.protocol() == "file" )
-               popup.insertItem( SmallIconSet( "konsole" ), i18n( "Open &Konsole Here" ), 1 );
+         if (isDir) {
+            popup.insertItem( SmallIconSet( "konqueror" ), i18n( "Open &Konqueror Here" ), Konqueror );
 
-            if( m_focus->file() != m_tree )
-            {
+            if( url.protocol() == "file" )
+               popup.insertItem( SmallIconSet( "konsole" ), i18n( "Open &Konsole Here" ), Konsole );
+
+            if (m_focus->file() != m_tree) {
                popup.insertSeparator();
-               popup.insertItem( SmallIconSet( "viewmag" ), i18n( "&Center Map Here" ), 2 );
+               popup.insertItem( SmallIconSet( "viewmag" ), i18n( "&Center Map Here" ), Center );
             }
          }
-         else popup.insertItem( SmallIconSet( "fileopen" ), i18n( "&Open" ), 3 );
+         else
+            popup.insertItem( SmallIconSet( "fileopen" ), i18n( "&Open" ), Open );
 
          popup.insertSeparator();
-         popup.insertItem( SmallIconSet( "editdelete" ), i18n( "&Delete" ), 4 );
+         popup.insertItem( SmallIconSet( "editcopy" ), i18n( "&Copy to clipboard" ), Copy );
 
-         switch( popup.exec( e->globalPos(), 1 ) ) {
-         case 0:
-            //KRun::runCommand will show an error message if there was trouble
-            KRun::runCommand( QString( "kfmclient openURL \"%1\"" ).arg( url.url() ) );
-            break;
+         popup.insertSeparator();
+         popup.insertItem( SmallIconSet( "editdelete" ), i18n( "&Delete" ), Delete );
 
-         case 1:
-            // --workdir only works for local file paths
-            KRun::runCommand( QString( "konsole --workdir \"%1\"" ).arg( url.path() ) );
-            break;
+         switch (popup.exec( e->globalPos(), 1 )) {
+            case Konqueror:
+                //KRun::runCommand will show an error message if there was trouble
+                KRun::runCommand( QString( "kfmclient openURL \"%1\"" ).arg( url.url() ) );
+                break;
 
-         case 2:
-         case 3:
-            goto sectionTwo;
+            case Konsole:
+                // --workdir only works for local file paths
+                KRun::runCommand( QString( "konsole --workdir \"%1\"" ).arg( url.path() ) );
+                break;
 
-         case 4:
-         {
-            const KURL url = Widget::url( m_focus->file() );
-            const QString message = ( m_focus->file()->isDirectory()
-               ? i18n( "<qt>The directory at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</b> deleted." )
-               : i18n( "<qt><i>'%1'</i> will be <b>permanently</b> deleted." )).arg( url.prettyURL() );
-            const int userIntention = KMessageBox::warningContinueCancel( this, message, QString::null, KGuiItem( i18n("&Delete"), "editdelete" ) );
+            case Center:
+            case Open:
+                goto section_two;
 
-            if( userIntention == KMessageBox::Continue ) {
-               KIO::Job *job = KIO::del( url );
-               job->setWindow( this );
-               connect( job, SIGNAL(result( KIO::Job* )), SLOT(deleteJobFinished( KIO::Job* )) );
-               QApplication::setOverrideCursor( KCursor::workingCursor() );
+            case Copy:
+                QApplication::clipboard()->setData( new KURLDrag( KURL::List( url ) ) );
+                break;
+
+            case Delete:
+            {
+                const KURL url = Widget::url( m_focus->file() );
+                const QString message = ( m_focus->file()->isDirectory()
+                ? i18n( "<qt>The directory at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</b> deleted." )
+                : i18n( "<qt><i>'%1'</i> will be <b>permanently</b> deleted." )).arg( url.prettyURL() );
+                const int userIntention = KMessageBox::warningContinueCancel( this, message, QString::null, KGuiItem( i18n("&Delete"), "editdelete" ) );
+
+                if( userIntention == KMessageBox::Continue ) {
+                KIO::Job *job = KIO::del( url );
+                job->setWindow( this );
+                connect( job, SIGNAL(result( KIO::Job* )), SLOT(deleteJobFinished( KIO::Job* )) );
+                QApplication::setOverrideCursor( KCursor::workingCursor() );
+                }
             }
-         }
 
-         default:
-            //ensure m_focus is set for new mouse position
-            sendFakeMouseEvent();
+            default:
+                //ensure m_focus is set for new mouse position
+                sendFakeMouseEvent();
          }
 
       } else {
 
-      sectionTwo:
-
+      section_two:
          const QRect rect( e->x() - 20, e->y() - 20, 40, 40 );
 
          m_tip->hide(); //user expects this
 
-         if( !isDir || e->button() == Qt::MidButton )
-         {
+         if (!isDir || e->button() == Qt::MidButton) {
             KIconEffect::visualActivate( this, rect );
             new KRun( url, this, true ); //FIXME see above
          }
-         else if( m_focus->file() != m_tree ) //is left mouse button
-         {
+         else if (m_focus->file() != m_tree) {
+            //is left mouse button
             KIconEffect::visualActivate( this, rect );
             emit activated( url ); //activate first, this will cause UI to prepare itself
             createFromCache( (Directory *)m_focus->file() );
