@@ -22,7 +22,7 @@ class MyRadialMap : public RadialMap::Widget
 {
 public:
    MyRadialMap( QWidget *parent )
-      : RadialMap::Widget( parent )
+        : RadialMap::Widget( parent )
    {}
 
    virtual void setCursor( const QCursor &c )
@@ -54,22 +54,22 @@ public:
 namespace Filelight {
 
 SummaryWidget::SummaryWidget( QWidget *parent, const char *name )
-   : QWidget( parent, name )
-   , m_disks( new DiskList( this ) )
+        : QWidget( parent, name )
+        , m_disks( new DiskList( this ) )
 {
-   setPaletteBackgroundColor( Qt::white );
+    setPaletteBackgroundColor( Qt::white );
 
-   m_disks->readFSTAB();
-   m_disks->readDF();
+    connect( m_disks, SIGNAL(readDFDone()), SLOT(diskInformationReady()) );
 
-   connect( m_disks, SIGNAL(readDFDone()), SLOT(diskInformationReady()) );
+    m_disks->readFSTAB();
+    m_disks->readDF();
 
-  (new QGridLayout( this, 1, 2 ))->setAutoAdd( true );
+    (new QGridLayout( this, 1, 2 ))->setAutoAdd( true );
 }
 
 SummaryWidget::~SummaryWidget()
 {
-   Config::scheme = oldScheme;
+    Config::scheme = oldScheme;
 }
 
 void
@@ -83,8 +83,13 @@ SummaryWidget::diskInformationReady()
    oldScheme = Config::scheme;
    Config::scheme = (Filelight::MapScheme)2000;
 
-   for( Disk *disk = m_disks->first(); disk; disk = m_disks->next() )
+   for (Disk *disk = m_disks->first(); disk; disk = m_disks->next())
    {
+      if (disk->freeKB() == 0 && disk->usedKB() == 0) {
+         debug() << disk->mountPoint() << endl;
+         continue;
+      }
+
       QWidget *box = new QVBox( this );
       RadialMap::Widget *map = new MyRadialMap( box );
 
@@ -108,7 +113,8 @@ SummaryWidget::diskInformationReady()
       connect( map, SIGNAL(activated( const KURL& )), SIGNAL(activated( const KURL& )) );
    }
 
-   layout()->addItem( new QSpacerItem( 16, 16, QSizePolicy::Minimum, QSizePolicy::Fixed ) );
+   // hides last odd numbered map if we add below
+//   layout()->addItem( new QSpacerItem( 16, 16, QSizePolicy::Minimum, QSizePolicy::Fixed ) );
 }
 
 }

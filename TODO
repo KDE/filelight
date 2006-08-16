@@ -2,12 +2,12 @@
   If scanning a partition show free space
   if the view is square shrink the map slightly as a slightly rectangular view is preferable
   use kdirwatcher, then move rescan to scan menu, rename force rescan
+  clicking center goes up directory
 
 1.0
   better summary screen, use mtab properly, remove horrid codebase
   fix that Part settings file is not same as app settings file
   Support drag and drop of URLs
-  implement cache sanity check or you'll have crashes on rescans as it currently stands
   check for zero toolbar buttons, and actions in general since KDE still doesn't tell the user when UI not installed properly
 
 EVENTUALLY

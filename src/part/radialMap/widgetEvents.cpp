@@ -151,7 +151,7 @@ RadialMap::Widget::mousePressEvent( QMouseEvent *e )
 
    enum { Konqueror, Konsole, Center, Open, Copy, Delete };
 
-   if( m_focus && !m_focus->isFake() )
+   if (m_focus && !m_focus->isFake())
    {
       const KURL url   = Widget::url( m_focus->file() );
       const bool isDir = m_focus->file()->isDirectory();
@@ -203,16 +203,18 @@ RadialMap::Widget::mousePressEvent( QMouseEvent *e )
             case Delete:
             {
                 const KURL url = Widget::url( m_focus->file() );
-                const QString message = ( m_focus->file()->isDirectory()
-                ? i18n( "<qt>The directory at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</b> deleted." )
-                : i18n( "<qt><i>'%1'</i> will be <b>permanently</b> deleted." )).arg( url.prettyURL() );
-                const int userIntention = KMessageBox::warningContinueCancel( this, message, QString::null, KGuiItem( i18n("&Delete"), "editdelete" ) );
+                const QString message = m_focus->file()->isDirectory()
+                        ? i18n( "<qt>The directory at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</b> deleted." )
+                        : i18n( "<qt><i>'%1'</i> will be <b>permanently</b> deleted." );
+                const int userIntention = KMessageBox::warningContinueCancel(
+                        this, message.arg( url.prettyURL() ),
+                        QString::null, KGuiItem( i18n("&Delete"), "editdelete" ) );
 
-                if( userIntention == KMessageBox::Continue ) {
-                KIO::Job *job = KIO::del( url );
-                job->setWindow( this );
-                connect( job, SIGNAL(result( KIO::Job* )), SLOT(deleteJobFinished( KIO::Job* )) );
-                QApplication::setOverrideCursor( KCursor::workingCursor() );
+                if (userIntention == KMessageBox::Continue) {
+                    KIO::Job *job = KIO::del( url );
+                    job->setWindow( this );
+                    connect( job, SIGNAL(result( KIO::Job* )), SLOT(deleteJobFinished( KIO::Job* )) );
+                    QApplication::setOverrideCursor( KCursor::workingCursor() );
                 }
             }
 
@@ -220,20 +222,19 @@ RadialMap::Widget::mousePressEvent( QMouseEvent *e )
                 //ensure m_focus is set for new mouse position
                 sendFakeMouseEvent();
          }
-
-      } else {
+      }
+      else { // not right mouse button
 
       section_two:
          const QRect rect( e->x() - 20, e->y() - 20, 40, 40 );
 
-         m_tip->hide(); //user expects this
+         m_tip->hide(); // user expects this
 
          if (!isDir || e->button() == Qt::MidButton) {
             KIconEffect::visualActivate( this, rect );
             new KRun( url, this, true ); //FIXME see above
          }
-         else if (m_focus->file() != m_tree) {
-            //is left mouse button
+         else if (m_focus->file() != m_tree) { // is left click
             KIconEffect::visualActivate( this, rect );
             emit activated( url ); //activate first, this will cause UI to prepare itself
             createFromCache( (Directory *)m_focus->file() );
