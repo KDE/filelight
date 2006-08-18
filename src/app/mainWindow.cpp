@@ -22,8 +22,9 @@
 #include <ktoolbar.h>
 #include <kurl.h>
 #include <kurlcompletion.h>   //locationbar
-#include <qtooltip.h>
+#include <qobjectlist.h>
 #include <qpopupmenu.h>
+#include <qtooltip.h>
 
 
 
@@ -35,7 +36,7 @@ MainWindow::MainWindow()
 {
     KLibFactory *factory = KLibLoader::self()->factory( "libfilelight" );
 
-    if( !factory ) {
+    if (!factory) {
        KMessageBox::error( this, i18n("KDE could not find the Filelight Part, or the Filelight Part could not be started. Did you make install?") );
        //exit() seems to not exist inside the std namespace for some users!
        using namespace std;
@@ -50,6 +51,11 @@ MainWindow::MainWindow()
     createGUI( m_part );
 
     stateChanged( "scan_failed" ); //bah! doesn't affect the parts' actions, should I add them to the actionCollection here?
+
+    QObjectList *buttons = toolBar()->queryList( "KToolBarButton" );
+    if (buttons->isEmpty())
+        KMessageBox::error( this, i18n("Filelight is not installed properly, consequently its menus and toolbars will appear reduced or even empty") );
+    delete buttons;
 
     connect( m_part, SIGNAL(started( KIO::Job* )), SLOT(scanStarted()) );
     connect( m_part, SIGNAL(completed()), SLOT(scanCompleted()) );

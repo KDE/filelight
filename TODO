@@ -21,7 +21,6 @@
   fix that Part settings file is not same as app settings file
 
 1.0
-  figure out the 50% of time crash on startup with no URLs
   check for zero toolbar buttons, and actions in general since KDE still doesn't tell the user when UI not installed properly
 
 MAYBE
