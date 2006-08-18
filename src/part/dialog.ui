@@ -1,4 +1,4 @@
-<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
 <class>Dialog</class>
 <widget class="QDialog">
     <property name="name">
@@ -201,9 +201,6 @@
                                 <property name="text">
                                     <string>Exclude remote files&amp;ystems</string>
                                 </property>
-                                <property name="accel">
-                                    <string>Alt+Y</string>
-                                </property>
                                 <property name="toolTip" stdset="0">
                                     <string></string>
                                 </property>
@@ -218,9 +215,6 @@
                                 <property name="text">
                                     <string>Scan across filesystem &amp;boundaries</string>
                                 </property>
-                                <property name="accel">
-                                    <string>Alt+B</string>
-                                </property>
                                 <property name="whatsThis" stdset="0">
                                     <string>Allows scans to enter directories that are part of other filesystems. For example, when unchecked, this will usually prevent the contents of &lt;b&gt;/mnt&lt;/b&gt; from being scanned if you scan &lt;b&gt;/&lt;/b&gt;.</string>
                                 </property>
@@ -234,9 +228,6 @@
                                 </property>
                                 <property name="text">
                                     <string>E&amp;xclude removable media</string>
-                                </property>
-                                <property name="accel">
-                                    <string>Alt+X</string>
                                 </property>
                                 <property name="toolTip" stdset="0">
                                     <string></string>
