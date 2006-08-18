@@ -239,6 +239,8 @@ RadialMap::Widget::mousePressEvent( QMouseEvent *e )
             emit activated( url ); //activate first, this will cause UI to prepare itself
             createFromCache( (Directory *)m_focus->file() );
          }
+         else
+            emit giveMeTreeFor( url.upURL() );
       }
    }
 }
@@ -251,4 +253,23 @@ RadialMap::Widget::deleteJobFinished( KIO::Job *job )
       invalidate();
    else
       job->showErrorDialog( this );
+}
+
+#include "debug.h"
+void
+RadialMap::Widget::dropEvent( QDropEvent *e )
+{
+    DEBUG_ANNOUNCE
+
+    KURL::List urls;
+    if (KURLDrag::decode( e, urls ) && urls.count())
+        emit giveMeTreeFor( urls.first() );
+}
+
+void
+RadialMap::Widget::dragEnterEvent( QDragEnterEvent *e )
+{
+    DEBUG_ANNOUNCE
+
+    e->accept( KURLDrag::canDecode( e ) );
 }

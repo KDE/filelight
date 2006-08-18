@@ -65,6 +65,10 @@ Part::Part( QWidget *parentWidget, const char *widgetName, QObject *parent, cons
     connect( m_map, SIGNAL(created( const Directory* )), SLOT(mapChanged( const Directory* )) );
     connect( m_map, SIGNAL(activated( const KURL& )), SLOT(updateURL( const KURL& )) );
 
+    // TODO make better system
+    connect( m_map, SIGNAL(giveMeTreeFor( const KURL& )), SLOT(updateURL( const KURL& )) );
+    connect( m_map, SIGNAL(giveMeTreeFor( const KURL& )), SLOT(openURL( const KURL& )) );
+
     connect( m_manager, SIGNAL(completed( Directory* )), SLOT(scanCompleted( Directory* )) );
     connect( m_manager, SIGNAL(aboutToEmptyCache()), m_map, SLOT(invalidate()) );
 

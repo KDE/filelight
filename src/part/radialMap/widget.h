@@ -83,12 +83,15 @@ namespace RadialMap
         void invalidated( const KURL& );
         void created( const Directory* );
         void mouseHover( const QString& );
+        void giveMeTreeFor( const KURL& );
 
     protected:
         virtual void paintEvent( QPaintEvent* );
         virtual void resizeEvent( QResizeEvent* );
         virtual void mouseMoveEvent( QMouseEvent* );
         virtual void mousePressEvent( QMouseEvent* );
+        virtual void dragEnterEvent( QDragEnterEvent* );
+        virtual void dropEvent( QDropEvent* );
 
     protected:
         const Segment *segmentAt( QPoint& ) const; //FIXME const reference for a library others can use

@@ -21,32 +21,14 @@ namespace Filelight
 
    class BrowserExtension : public KParts::BrowserExtension
    {
-   Q_OBJECT
-
    public:
       BrowserExtension( Part*, const char * = 0 );
-
-   protected slots:
-   /*
-      void selected(TreeMapItem*);
-      void contextMenu(TreeMapItem*,const QPoint&);
-
-      void updateActions();
-      void refresh();
-
-      void copy() { copySelection( false ); }
-      void cut() { copySelection( true ); }
-      void trash();
-      void del();
-      void shred();
-      void editMimeType();
-   */
    };
 
 
    class Part : public KParts::ReadOnlyPart
    {
-   Q_OBJECT
+      Q_OBJECT
 
    public:
       Part( QWidget *, const char *, QObject *, const char *, const QStringList& );

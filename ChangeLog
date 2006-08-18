@@ -1,5 +1,7 @@
 1.0
     Added copy to clipboard function to segment context menus
+    Accepts URLs from drag and drop
+    Click central circle to go "up"
 
 0.6.3
      Made "Scan Directory..." a KStdAction::open with setText( "Scan Directory..." );

@@ -6,26 +6,20 @@
 
 #include <qwidget.h>
 
-class DiskList;
 
-namespace Filelight
+class SummaryWidget : public QWidget
 {
-   class SummaryWidget : public QWidget
-   {
-   Q_OBJECT
-   public:
-      SummaryWidget( QWidget *parent, const char *name );
-     ~SummaryWidget();
+    Q_OBJECT
 
-   signals:
-      void activated( const KURL& );
+public:
+    SummaryWidget( QWidget *parent, const char *name );
+    ~SummaryWidget();
 
-   private slots:
-      void diskInformationReady();
+signals:
+    void activated( const KURL& );
 
-   private:
-      DiskList *m_disks;
-   };
-}
+private:
+    void createDiskMaps();
+};
 
 #endif

@@ -23,6 +23,7 @@ RadialMap::Widget::Widget( QWidget *parent, const char *name )
    , m_focus( 0 )
    , m_rootSegment( 0 ) //TODO we don't delete it, *shrug*
 {
+   setAcceptDrops( true );
    setBackgroundColor( Qt::white );
    const QBitmap *cursor = KCursor::handCursor().bitmap();
    m_tip = new SegmentTip(cursor ? cursor->height() : 16);

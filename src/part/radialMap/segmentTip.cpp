@@ -4,6 +4,7 @@
 #include "fileTree.h"
 #include "segmentTip.h"
 
+#include <cstdlib>
 #include <kapplication.h>    //installing eventFilters
 #include <kglobal.h>
 #include <kglobalsettings.h>

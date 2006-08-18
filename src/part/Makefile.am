@@ -16,6 +16,4 @@ libfilelight_la_SOURCES = \
    fileTree.cpp \
    localLister.cpp \
    remoteLister.cpp \
-   diskLister.cpp \
-   disk.cpp \
    summaryWidget.cpp
