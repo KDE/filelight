@@ -6,7 +6,7 @@ Filelight allows you to understand exactly where your diskspace is being used by
 graphically representating your filesystem as a set of concentric
 segmented-rings.
 
-README last updated with respect to 1.0-beta7
+README last updated with respect to 1.0
 --------------------------------------------------------------------------------
 
 
@@ -19,7 +19,7 @@ Filelight depends on KDElibs >= 3.2 and therefore Qt >= 3.2.
  Usage Tips
 ============
 
-* Click on directories to see re-center the view on them
+* Click on directories to center the view there
 * Click on files to launch the application associated with them
 * Middle click to open files/directories with Konqueror
 * Right click on the central white circle to manipulate the base directory

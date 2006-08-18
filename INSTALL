@@ -1,11 +1,36 @@
-Build like so:
 
-$ ./configure && make && su -c "make install"
+ Filelight INSTALL
+===================
 
-You may like to try:
+Simply:
 
-$ CXXFLAGS="-O3" ./configure --enable-final --disable-debug \
-    && make && su -c "make install"
+        $ ./configure && make && su -c "make install"
 
-But if that doesn't work always, always try the first way before filing a bug.
-Thanks!
+But, I recommend:
+
+        $ CXXFLAGS="-O3" ./configure --enable-final --disable-debug \
+            && make && su -c "make install"
+
+
+ Troubleshooting
+=================
+
+Check you have the kde development packages installed, they'll be named
+something like:
+
+        kde-devel
+
+This should pull in a lot of other development packages (unless they are already
+installed) like:
+
+        x11-devel
+        qt-devel
+
+If you get stuck, please email me the config.log file with any information you
+can provide. I will get back to you! Compile issues suck, I know this full well.
+--------------------------------------------------------------------------------
+
+
+I hope you enjoy using Filelight!
+
+Max Howell <max.howell@methylblue.com>
