@@ -9,7 +9,7 @@
 
 //static definitions
 const uint File::DENOMINATOR[4] = { 1<<0, 1<<10, 1<<20, 1<<30 };
-static const char PREFIX[4][3]   = { "Ki", "Mi", "Gi", "Ti" };
+static const char PREFIX[4]   = { 'K', 'M', 'G', 'T' };
 
 
 QString
