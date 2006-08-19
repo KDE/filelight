@@ -19,9 +19,8 @@
   Trace inodes in binarytree to avoid recursive hardlinks and counting same directory tree twice
   admin mode
   fix that Part settings file is not same as app settings file
-
-1.0
-  check for zero toolbar buttons, and actions in general since KDE still doesn't tell the user when UI not installed properly
+  support other mouse actions for central circle (ie middle click, right click)
+  write caches for all scans, so if crash or something that root scan that took 20 mins is not lost
 
 MAYBE
   flicking mouse wheel shows different information in tooltip, and there's an off setting, show temp status message to reflect info box

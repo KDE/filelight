@@ -6,12 +6,12 @@
 
 #include "config.h"
 
-//#undef VERSION
+#undef VERSION
 #undef PACKAGE
 #undef PRETTYNAME
 
 #define APP_NAME "filelight"
-#define APP_VERSION "1.0-beta7"
+#define APP_VERSION "1.0"
 #define APP_PRETTYNAME "Filelight"
 
 #endif

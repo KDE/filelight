@@ -20,7 +20,7 @@ ProgressBox::ProgressBox( QWidget *parent, QObject *part )
    setSizePolicy( QSizePolicy::Minimum, QSizePolicy::Fixed );
 
    setText( 999999 );
-   setMinimumWidth( width() );
+   setMinimumWidth( sizeHint().width() );
 
    connect( &m_timer, SIGNAL(timeout()), SLOT(report()) );
    connect( part, SIGNAL(started( KIO::Job* )), SLOT(start()) );
@@ -51,6 +51,7 @@ ProgressBox::stop()
 void
 ProgressBox::halt()
 {
+   // canceled by stop button
    m_timer.stop();
    QTimer::singleShot( 2000, this, SLOT(hide()) );
 }
