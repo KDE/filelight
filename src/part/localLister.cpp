@@ -110,6 +110,24 @@ namespace Filelight
       #define ST_NBLOCKSIZE 512
    #endif
 
+//some GNU systems don't support big files for some reason
+#ifndef __USE_LARGEFILE64 //see dirent.h
+ #define DIRENT dirent
+ #define SCANDIR scandir
+ #define STATSTRUCT stat
+ #define LSTAT lstat
+#else
+ #define DIRENT dirent64
+ #define SCANDIR scandir64
+ #define STATSTRUCT stat64
+ #define LSTAT lstat64
+#endif
+
+#ifndef NULL
+#define NULL 0
+#endif
+
+
    #include <errno.h>
    static void
    outputError( QCString path )
