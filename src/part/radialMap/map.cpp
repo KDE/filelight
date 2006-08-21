@@ -22,15 +22,15 @@
 
 
 RadialMap::Map::Map()
-: m_signature( 0 )
-, m_ringBreadth( MIN_RING_BREADTH )
-, m_innerRadius( 0 )
-, m_visibleDepth( DEFAULT_RING_DEPTH )
+        : m_signature( 0 )
+        , m_ringBreadth( MIN_RING_BREADTH )
+        , m_innerRadius( 0 )
+        , m_visibleDepth( DEFAULT_RING_DEPTH )
 {
-   //FIXME this is all broken. No longer is a maximum depth!
-   const int fmh   = QFontMetrics( QFont() ).height();
-   const int fmhD4 = fmh / 4;
-   MAP_2MARGIN = 2 * ( fmh - (fmhD4 - LABEL_MAP_SPACER) ); //margin is dependent on fitting in labels at top and bottom
+    //FIXME this is all broken. No longer is a maximum depth!
+    const int fmh   = QFontMetrics( QFont() ).height();
+    const int fmhD4 = fmh / 4;
+    MAP_2MARGIN = 2 * ( fmh - (fmhD4 - LABEL_MAP_SPACER) ); //margin is dependent on fitting in labels at top and bottom
 }
 
 RadialMap::Map::~Map()
@@ -145,6 +145,10 @@ RadialMap::Map::resize( const QRect &rect )
       //resize the pixmap
       size += MAP_2MARGIN;
       KPixmap::resize( size, size );
+
+      // for summary widget this is a good optimisation as it happens
+      if (KPixmap::isNull())
+          return false;
 
       if( m_signature != 0 )
       {
@@ -292,7 +296,7 @@ RadialMap::Map::paint( unsigned int scaleFactor )
 {
    DEBUG_ANNOUNCE
 
-   if( scaleFactor == 0 ) //just in case
+   if (scaleFactor == 0) //just in case
       scaleFactor = 1;
 
    QPainter paint;
@@ -322,6 +326,8 @@ RadialMap::Map::paint( unsigned int scaleFactor )
    //**** best option you can think of is to make the circles slightly less perfect,
    //  ** i.e. slightly eliptic when resizing inbetween
 
+   if (KPixmap::isNull())
+      return;
 
    paint.begin( this );
 
