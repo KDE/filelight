@@ -111,16 +111,13 @@ namespace Filelight
    #endif
 
 //some GNU systems don't support big files for some reason
-#ifndef __USE_LARGEFILE64 //see dirent.h
- #define DIRENT dirent
- #define SCANDIR scandir
- #define STATSTRUCT stat
- #define LSTAT lstat
-#else
- #define DIRENT dirent64
- #define SCANDIR scandir64
- #define STATSTRUCT stat64
- #define LSTAT lstat64
+#ifdef __USE_LARGEFILE64 //see dirent.h
+ #define dirent dirent64
+ #define scandir scandir64
+ #define stat stat64
+ #define statstruct stat64
+ #define lstat lstat64
+ #define readdir readdir64
 #endif
 
 #ifndef NULL
