@@ -1,6 +1,7 @@
 //Author:    Max Howell <max.howell@methylblue.com>, (C) 2003-4
 //Copyright: See COPYING file that comes with this distribution
 
+#include "crashHandler.h"
 #include "define.h"
 #include <kaboutdata.h>
 #include <kapplication.h>
@@ -19,7 +20,7 @@ static const KCmdLineOptions options[] =
 static KAboutData about(
         APP_NAME, I18N_NOOP( APP_PRETTYNAME ), APP_VERSION,
         I18N_NOOP("Graphical disk-usage information"), KAboutData::License_GPL_V2,
-        I18N_NOOP("(C )2006 Max Howell"), 0,
+        I18N_NOOP("(C) 2006 Max Howell"), 0,
         "http://www.methylblue.com/filelight/", "filelight@methylblue.com" );
 
 
@@ -39,6 +40,8 @@ int main( int argc, char *argv[] )
 
     KApplication app;
 
+    KCrash::setCrashHandler( mxcl::crashHandler );
+
     if (!app.isRestored()) {
         MainWindow *mw = new MainWindow();
         app.setMainWidget( mw );
@@ -49,7 +52,8 @@ int main( int argc, char *argv[] )
 
         mw->show();
     }
-    else RESTORE( MainWindow );
+    else
+        RESTORE( MainWindow );
 
     return app.exec();
 }
