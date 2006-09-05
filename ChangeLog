@@ -1,3 +1,5 @@
+1.0.1
+    Added the Amarok crash-handler, which I wrote, in case you were wondering
 1.0
     Added copy to clipboard function to segment context menus
     Accepts URLs from drag and drop

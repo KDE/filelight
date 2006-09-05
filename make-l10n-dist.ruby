@@ -58,13 +58,14 @@ languages = `svn cat #{protocol}://#{user}@svn.kde.org/home/kde/#{branch}/l10n/s
 for lang in languages
    lang.chomp!()
    `rm -rf #{product}`
-   docdirname = "l10n/#{lang}/docs/extragear-#{category}/#{product}"
-   `svn co -q #{protocol}://#{user}@svn.kde.org/home/kde/#{branch}/#{docdirname} > /dev/null 2>&1`
+   dirname = "l10n/#{lang}/docs/extragear-#{category}/#{product}"
+   `svn co -q #{protocol}://#{user}@svn.kde.org/home/kde/#{branch}/#{dirname} > /dev/null 2>&1`
    next unless FileTest.exists?( product )
-   print "Copying {product} documentation for #{lang}...  "
+
+   print "Copying #{product} documentation for #{lang}...  "
    `cp -R #{product}/ ../doc/#{lang}`
 
-   # we don't want KDE_DOCS = AUTO, cause that makes the
+   # we don't want KDE_DOCS = AUTO, because that makes the
    # build system assume that the product of the app is the
    # same as the product of the dir the Makefile.am is in.
    # Instead, we explicitly pass the product..
@@ -84,8 +85,8 @@ puts "\n"
 # po
 for lang in languages
    lang.chomp!()
-   pofilename = "l10n/#{lang}/messages/extragear-#{category}/#{product}.po"
-   `svn cat #{protocol}://#{user}@svn.kde.org/home/kde/#{branch}/#{pofilename} 2> /dev/null | tee l10n/#{product}.po`
+   filename = "l10n/#{lang}/messages/extragear-#{category}/#{product}.po"
+   `svn cat #{protocol}://#{user}@svn.kde.org/home/kde/#{branch}/#{filename} 2> /dev/null | tee l10n/#{product}.po`
    next if FileTest.size( "l10n/#{product}.po" ) == 0
 
    dest = "po/#{lang}"
