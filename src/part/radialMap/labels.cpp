@@ -1,5 +1,5 @@
-//Author:    Max Howell <max.howell@methylblue.com>, (C) 2003-4
-//Copyright: See COPYING file that comes with this distribution
+// Copyright 2003-6 Max Howell <max.howell@methylblue.com>
+// Redistributable under the terms of the GNU General Public License
 
 #include <kstringhandler.h>
 #include <qfont.h>
@@ -87,7 +87,7 @@ RadialMap::Widget::paintExplodedLabels( QPainter &paint ) const
       unsigned int a1, a2, minAngle;
 
       a1 = m_focus->start();
-      a2 = m_focus->end();  //boundry angles
+      a2 = m_focus->end();  //boundary angles
       minAngle = int(m_focus->length() * LABEL_MIN_ANGLE_FACTOR);
 
 
@@ -191,7 +191,7 @@ RadialMap::Widget::paintExplodedLabels( QPainter &paint ) const
       int x1, y1, x2, y2, x3, tx, ty; //coords
       double sinra, cosra, ra;  //angles
 
-      int cx = m_map.width()  / 2 + m_offset.x();  //centre relative to canvas
+      int cx = m_map.width()  / 2 + m_offset.x();  //center relative to canvas
       int cy = m_map.height() / 2 + m_offset.y();
 
       int spacer, preSpacer = int(m_map.m_ringBreadth * 0.5) + m_map.m_innerRadius;

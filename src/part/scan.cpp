@@ -1,5 +1,5 @@
-//Author:    Max Howell <max.howell@methylblue.com>, (C) 2003-4
-//Copyright: See COPYING file that comes with this distribution
+// Copyright 2003-6 Max Howell <max.howell@methylblue.com>
+// Redistributable under the terms of the GNU General Public License
 
 #include "debug.h"
 #include "fileTree.h"
@@ -46,7 +46,7 @@ namespace Filelight
    bool
    ScanManager::start( const KURL &url )
    {
-      //url is guarenteed clean and safe
+      //url is guaranteed clean and safe
 
       debug() << "Scan requested for: " << url.prettyURL() << endl;
 

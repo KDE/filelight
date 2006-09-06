@@ -1,22 +1,8 @@
-/***************************************************************************
-                          filelight.h  -  description
-                             -------------------
-    begin                : Mon May 12 22:38:30 BST 2003
-    copyright            : (C) 2003 by Max Howell
-    email                : mh9193@bris.ac.uk
- ***************************************************************************/
+// Copyright 2003-6 Max Howell <max.howell@methylblue.com>
+// Redistributable under the terms of the GNU General Public License
 
-/***************************************************************************
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
- *                                                                         *
- ***************************************************************************/
-
-#ifndef FILELIGHT_H
-#define FILELIGHT_H
+#ifndef MAIN_WINDOW_H
+#define MAIN_WINDOW_H
 
 #include <kparts/mainwindow.h>
 

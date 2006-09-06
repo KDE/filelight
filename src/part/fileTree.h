@@ -1,8 +1,8 @@
-//Author:    Max Howell <max.howell@methylblue.com>, (C) 2004
-//Copyright: See COPYING file that comes with this distribution
+// Copyright 2003-6 Max Howell <max.howell@methylblue.com>
+// Redistributable under the terms of the GNU General Public License
 
-#ifndef FILETREE_H
-#define FILETREE_H
+#ifndef FILE_TREE_H
+#define FILE_TREE_H
 
 #include <qcstring.h> //qstrdup
 #include <qfile.h>    //decodeName()

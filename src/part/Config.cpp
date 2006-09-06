@@ -1,3 +1,5 @@
+// Copyright 2003-6 Max Howell <max.howell@methylblue.com>
+// Redistributable under the terms of the GNU General Public License
 
 #include "Config.h"
 #include <kconfig.h>

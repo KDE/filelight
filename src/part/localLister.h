@@ -1,8 +1,8 @@
-//Author:    Max Howell <max.howell@methylblue.com>, (C) 2003-4
-//Copyright: See COPYING file that comes with this distribution
+// Copyright 2003-6 Max Howell <max.howell@methylblue.com>
+// Redistributable under the terms of the GNU General Public License
 
-#ifndef LOCALLISTER_H
-#define LOCALLISTER_H
+#ifndef LOCAL_LISTER_H
+#define LOCAL_LISTER_H
 
 #include <qthread.h>
 

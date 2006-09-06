@@ -1,5 +1,5 @@
-//Author:    Max Howell <max.howell@methylblue.com>, (C) 2004
-//Copyright: See COPYING file that comes with this distribution
+// Copyright 2003-6 Max Howell <max.howell@methylblue.com>
+// Redistributable under the terms of the GNU General Public License
 
 #include "Config.h"
 #include "debug.h"
@@ -214,23 +214,21 @@ DiskList::DiskList()
 void
 Disk::guessIconName()
 {
-   if( mount.contains( "cdrom", false ) )       icon = "cdrom";
-   else if( device.contains( "cdrom", false ) )  icon = "cdrom";
-   else if( mount.contains( "writer", false ) ) icon = "cdwriter";
-   else if( device.contains( "writer", false ) ) icon = "cdwriter";
-   else if( mount.contains( "mo", false ) )     icon = "mo";
-   else if( device.contains( "mo", false ) )     icon = "mo";
-   else if( device.contains( "fd", false ) ) {
-      if( device.contains( "360", false ) )      icon = "5floppy";
-      if( device.contains( "1200", false ) )     icon = "5floppy";
-      else
-         icon = "3floppy";
+   if (mount.contains( "cdrom", false )) icon = "cdrom";
+   else if (device.contains( "cdrom", false )) icon = "cdrom";
+   else if (mount.contains( "writer", false )) icon = "cdwriter";
+   else if (device.contains( "writer", false )) icon = "cdwriter";
+   else if (mount.contains( "mo", false )) icon = "mo";
+   else if (device.contains( "mo", false )) icon = "mo";
+   else if (device.contains( "fd", false )) {
+      if (device.contains( "360", false )) icon = "5floppy";
+      else if (device.contains( "1200", false )) icon = "5floppy";
+      else icon = "3floppy";
    }
-   else if( mount.contains( "floppy", false ) ) icon = "3floppy";
-   else if( mount.contains( "zip", false ) )    icon = "zip";
-   else if( type.contains( "nfs", false ) )        icon = "nfs";
-   else
-      icon = "hdd";
+   else if (mount.contains( "floppy", false )) icon = "3floppy";
+   else if (mount.contains( "zip", false )) icon = "zip";
+   else if (type.contains( "nfs", false )) icon = "nfs";
+   else icon = "hdd";
 
    icon += /*mounted() ? */"_mount"/* : "_unmount"*/;
 }

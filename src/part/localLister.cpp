@@ -1,5 +1,5 @@
-//Author:    Max Howell <max.howell@methylblue.com>, (C) 2003-4
-//Copyright: See COPYING file that comes with this distribution
+// Copyright 2003-6 Max Howell <max.howell@methylblue.com>
+// Redistributable under the terms of the GNU General Public License
 
 #include "Config.h"
 #include "debug.h"
@@ -56,7 +56,7 @@ namespace Filelight
 
       if( ScanManager::s_abort ) //scan was cancelled
       {
-         debug() << "Scan succesfully aborted\n";
+         debug() << "Scan successfully aborted\n";
          delete tree;
          tree = 0;
       }
@@ -135,7 +135,7 @@ namespace Filelight
 
       switch( errno ) {
       case EACCES:
-         out( "Inadequate access permisions" );
+         out( "Inadequate access permissions" );
       case EMFILE:
          out( "Too many file descriptors in use by Filelight" );
       case ENFILE:
@@ -312,7 +312,7 @@ namespace Filelight
 
          str = QString( FS_FILE );
          if( str == "/" ) continue;
-         str += "/";
+         str += '/';
 
          if( remoteFsTypes.contains( FS_TYPE ) )
             if( b = !s_remoteMounts.contains( str ) )

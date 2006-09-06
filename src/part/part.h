@@ -1,8 +1,8 @@
-// Author:    Max Howell <max.howell@methylblue.com>, (C) 2003-4
-// Copyright: See COPYING file that comes with this distribution
+// Copyright 2003-6 Max Howell <max.howell@methylblue.com>
+// Redistributable under the terms of the GNU General Public License
 
-#ifndef FILELIGHTPART_H
-#define FILELIGHTPART_H
+#ifndef FILELIGHT_PART_H
+#define FILELIGHT_PART_H
 
 #include <kparts/browserextension.h>
 #include <kparts/statusbarextension.h>
@@ -22,7 +22,7 @@ namespace Filelight
    class BrowserExtension : public KParts::BrowserExtension
    {
    public:
-      BrowserExtension( Part*, const char * = 0 );
+      explicit BrowserExtension( Part*, const char * = 0 );
    };
 
 

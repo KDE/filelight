@@ -1,8 +1,8 @@
-// Author: Max Howell <max.howell@methylblue.com>, (C) 2004
-// Copyright: See COPYING file that comes with this distribution
+// Copyright 2003-6 Max Howell <max.howell@methylblue.com>
+// Redistributable under the terms of the GNU General Public License
 
-#ifndef SEGMENTTIP_H
-#define SEGMENTTIP_H
+#ifndef SEGMENT_TIP_H
+#define SEGMENT_TIP_H
 
 #include <kpixmap.h>
 #include <qwidget.h>
@@ -15,7 +15,7 @@ namespace RadialMap
     class SegmentTip : public QWidget
     {
     public:
-        SegmentTip( uint );
+        explicit SegmentTip( uint );
 
         void updateTip( const File*, const Directory* );
         void moveTo( QPoint, const QWidget&, bool );

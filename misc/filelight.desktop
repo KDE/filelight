@@ -3,7 +3,7 @@
 Encoding=UTF-8
 Name=Filelight
 Name[xx]=xxFilelightxx
-Generic Name=Disk Usage Statistics
+GenericName=Disk Usage Information
 Type=Application
 Exec=filelight %f
 Icon=filelight.png

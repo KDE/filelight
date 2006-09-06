@@ -1,5 +1,5 @@
-//Author:    Max Howell <max.howell@methylblue.com>, (C) 2003-4
-//Copyright: See COPYING file that comes with this distribution
+// Copyright 2003-6 Max Howell <max.howell@methylblue.com>
+// Redistributable under the terms of the GNU General Public License
 
 #ifndef SCAN_H
 #define SCAN_H
@@ -21,8 +21,8 @@ namespace Filelight
       friend class RemoteLister;
 
    public:
-      ScanManager( QObject *parent );
-      virtual ~ScanManager();
+      explicit ScanManager( QObject *parent );
+      ~ScanManager();
 
       bool start( const KURL& );
       bool running() const;

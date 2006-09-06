@@ -1,5 +1,5 @@
-//Author:    Max Howell <max.howell@methylblue.com>, (C) 2003-4
-//Copyright: See COPYING file that comes with this distribution
+// Copyright 2003-6 Max Howell <max.howell@methylblue.com>
+// Redistributable under the terms of the GNU General Public License
 
 #include <kcursor.h>         //make()
 #include <kglobalsettings.h> //kdeColours
@@ -64,7 +64,7 @@ RadialMap::Map::make( const Directory *tree, bool refresh )
 {
    DEBUG_ANNOUNCE
 
-   //**** determineText seems pointless optimisation
+   //**** determineText seems pointless optimization
    //   but is it good to keep the text consistent?
    //   even if it makes it a lie?
 
@@ -146,7 +146,7 @@ RadialMap::Map::resize( const QRect &rect )
       size += MAP_2MARGIN;
       KPixmap::resize( size, size );
 
-      // for summary widget this is a good optimisation as it happens
+      // for summary widget this is a good optimization as it happens
       if (KPixmap::isNull())
           return false;
 

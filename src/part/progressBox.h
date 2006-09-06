@@ -1,8 +1,8 @@
-//Author:    Max Howell <max.howell@methylblue.com>, (C) 2003-4
-//Copyright: See COPYING file that comes with this distribution
+// Copyright 2003-6 Max Howell <max.howell@methylblue.com>
+// Redistributable under the terms of the GNU General Public License
 
-#ifndef PROGRESSBOX_H
-#define PROGRESSBOX_H
+#ifndef PROGRESS_BOX_H
+#define PROGRESS_BOX_H
 
 #include <qlabel.h>
 #include <qtimer.h>

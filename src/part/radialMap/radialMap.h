@@ -1,8 +1,8 @@
-//Author:    Max Howell <max.howell@methylblue.com>, (C) 2003-4
-//Copyright: See COPYING file that comes with this distribution
+// Copyright 2003-6 Max Howell <max.howell@methylblue.com>
+// Redistributable under the terms of the GNU General Public License
 
-#ifndef RADIALMAP_H
-#define RADIALMAP_H
+#ifndef RADIAL_MAP_H
+#define RADIAL_MAP_H
 
 #include <qcolor.h>
 

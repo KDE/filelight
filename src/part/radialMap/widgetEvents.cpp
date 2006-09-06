@@ -1,5 +1,5 @@
-//Author:    Max Howell <max.howell@methylblue.com>, (C) 2003-4
-//Copyright: See COPYING file that comes with this distribution
+// Copyright 2003-6 Max Howell <max.howell@methylblue.com>
+// Redistributable under the terms of the GNU General Public License
 
 #include "fileTree.h"
 #include "radialMap.h"   //class Segment
@@ -131,7 +131,7 @@ RadialMap::Widget::mouseMoveEvent( QMouseEvent *e )
          repaint( false );
       }
 
-      m_tip->moveTo( e->globalPos(), *this, ( p.y() < 0 ) ); //updates tooltip psuedo-tranparent background
+      m_tip->moveTo( e->globalPos(), *this, ( p.y() < 0 ) ); //updates tooltip pseudo-tranparent background
    }
    else if( oldFocus && oldFocus->file() != m_tree )
    {

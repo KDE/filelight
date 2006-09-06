@@ -1,5 +1,5 @@
-//Author:    Max Howell <max.howell@methylblue.com>, (C) 2003-4
-//Copyright: See COPYING file that comes with this distribution
+// Copyright 2003-6 Max Howell <max.howell@methylblue.com>
+// Redistributable under the terms of the GNU General Public License
 
 #include "builder.h"
 #include "Config.h"
@@ -130,7 +130,7 @@ RadialMap::Builder::build( const Directory* const dir, const unsigned int depth,
       //append a segment for unrepresented space - a "fake" segment
 
       // I dunno how to i18n this
-      const QString s = i18n( "There can't ever be only 1 file", "%1 files, each about %2" )
+      const QString s = i18n( "There cannot ever be only 1 file", "%1 files, each about %2" )
          .arg( hiddenFileCount )
          .arg( File::humanReadableSize( hiddenSize/hiddenFileCount ) );
 

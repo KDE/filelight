@@ -1,8 +1,8 @@
-//Author:    Max Howell <max.howell@methylblue.com>, (C) 2003-4
-//Copyright: See COPYING file that comes with this distribution
+// Copyright 2003-6 Max Howell <max.howell@methylblue.com>
+// Redistributable under the terms of the GNU General Public License
 
-#ifndef REMOTELISTER_H
-#define REMOTELISTER_H
+#ifndef REMOTE_LISTER_H
+#define REMOTE_LISTER_H
 
 #include <kdirlister.h>
 
