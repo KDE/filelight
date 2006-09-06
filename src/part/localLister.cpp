@@ -4,12 +4,10 @@
 #include "Config.h"
 #include "debug.h"
 #include <dirent.h>
+#include <errno.h>
 #include "fileTree.h"
 #include <fstab.h>
 #include "localLister.h"
-#ifdef HAVE_MNTENT_H
-#include <mntent.h>
-#endif
 #include <qapplication.h> //postEvent()
 #include <qfile.h>
 #include "scan.h"
@@ -17,10 +15,15 @@
 #include <sys/types.h>
 #include <unistd.h>
 
+#ifdef HAVE_MNTENT_H
+#include <mntent.h>
+#endif
+
+
 namespace Filelight
 {
-   QStringList LocalLister::s_remoteMounts;
-   QStringList LocalLister::s_localMounts;
+   QStringList LocalLister::s_remote_mounts;
+   QStringList LocalLister::s_local_mounts;
 
    LocalLister::LocalLister( const QString &path, Chain<Directory> *cachedTrees, QObject *parent )
       : QThread()
@@ -32,8 +35,8 @@ namespace Filelight
       //TODO empty directories is not ideal as adds to fileCount incorrectly
 
       QStringList list( Config::skipList );
-      if( !Config::scanAcrossMounts ) list += s_localMounts;
-      if( !Config::scanRemoteMounts ) list += s_remoteMounts;
+      if (!Config::scanAcrossMounts) list += s_local_mounts;
+      if (!Config::scanRemoteMounts) list += s_remote_mounts;
 
       for( QStringList::ConstIterator it = list.constBegin(); it != list.constEnd(); ++it )
          if( (*it).startsWith( path ) )
@@ -120,12 +123,7 @@ namespace Filelight
  #define readdir readdir64
 #endif
 
-#ifndef NULL
-#define NULL 0
-#endif
 
-
-   #include <errno.h>
    static void
    outputError( QCString path )
    {
@@ -235,99 +233,59 @@ namespace Filelight
       return cwd;
    }
 
-   bool
+   void
    LocalLister::readMounts()
    {
-      #define INFO_PARTITIONS "/proc/partitions"
-      #define INFO_MOUNTED_PARTITIONS "/etc/mtab" /* on Linux... */
+      //FIXME
+      // * no removable media detection
+      // * no updates if mounts change
+      // * you want a KDE extension that handles this for you really
 
-      //**** SHAMBLES
-      //  ** mtab should have priority as mount points don't have to follow fstab
-      //  ** no removable media detection
-      //  ** no updates if mounts change
-      //  ** you want a KDE extension that handles this for you really
+      QValueList<QCString> remote_types; remote_types
+            << "smbfs"
+         #ifdef MNTTYPE_NFS
+            << MNTTYPE_NFS
+         #else
+            << "nfs";
+         #endif
 
-      struct fstab *fstab_ent;
-#ifdef HAVE_MNTENT_H
-      struct mntent *mnt_ent;
-#endif
-      QString str;
+      #ifndef HAVE_MNTENT_H
+         #define SET_ENT setfsent()
+         #define GET_ENT getfsent()
+         #define MOUNT_PATH fs_file
+         #define FS_TYPE fs_vfstype
+         #define END_ENT endfsent()
+      #else
+         #ifndef _PATH_MOUNTED
+            #define _PATH_MOUNTED "/etc/mtab"
+         #endif
 
+         #define SET_ENT setmntent( _PATH_MOUNTED, "r" )
+         #define GET_ENT getmntent( fp )
+         #define MOUNT_PATH mnt_dir
+         #define FS_TYPE mnt_type
+         #define END_ENT endmntent( fp )
 
-#ifdef HAVE_MNTENT_H
-      FILE *fp;
-      if( setfsent() == 0 || !( fp = setmntent( INFO_MOUNTED_PARTITIONS, "r" ) ) )
-#else
-      if( setfsent() == 0 )
-#endif
-         return false;
+         FILE *fp;
+      #endif
 
-      #define FS_NAME   fstab_ent->fs_spec    // device-name
-      #define FS_FILE   fstab_ent->fs_file    // mount-point
-      #define FS_TYPE   fstab_ent->fs_vfstype // fs-type
-      #define FS_MNTOPS fstab_ent->fs_mntops  // mount-options
+      if (SET_ENT) {
+         struct fstab *ent;
+         while ((ent = GET_ENT) != NULL ) {
+            QString path = QFile::decodeName( ent->MOUNT_PATH );
+            if (path == "/")
+               continue;
+            path += '/';
 
-      QStringList remoteFsTypes;
-      remoteFsTypes << "smbfs" ;
-#ifdef MNTTYPE_NFS
-      remoteFsTypes << MNTTYPE_NFS;
-#else
-      remoteFsTypes << "nfs";
-#endif
-      // What about afs?
+            if (remote_types.contains( ent->FS_TYPE ))
+               s_remote_mounts += path;
+            else
+               s_local_mounts += path;
 
-      while( (fstab_ent = getfsent()) != NULL )
-      {
-         str = QString( FS_FILE );
-         if( str == "/" ) continue;
-         str += '/';
-
-         if( remoteFsTypes.contains( FS_TYPE ) )
-            s_remoteMounts.append( str ); //**** NO! can't be sure won't have trailing slash, need to do a check first dummy!!
-
-         else
-            s_localMounts.append( str ); //**** NO! can't be sure won't have trailing slash, need to do a check first dummy!!
-
-         kdDebug() << "FSTAB: " << FS_TYPE << "\n";
+            debug() << "Found mount point: " << ent->MOUNT_PATH << "\n";
+         }
       }
 
-      endfsent();  /* close fstab.. */
-
-      #undef  FS_NAME
-      #undef  FS_FILE
-      #undef  FS_TYPE
-      #undef  FS_MNTOPS
-
-      #define FS_NAME   mnt_ent->mnt_fsname // device-name
-      #define FS_FILE   mnt_ent->mnt_dir    // mount-point
-      #define FS_TYPE   mnt_ent->mnt_type	  // fs-type
-      #define FS_MNTOPS mnt_ent->mnt_opts   // mount-options
-
-      //scan mtab, **** mtab should take priority, but currently it isn't
-
-#ifdef HAVE_MNTENT_H
-      while( ( mnt_ent = getmntent( fp ) ) != NULL )
-      {
-         bool b = false;
-
-         str = QString( FS_FILE );
-         if( str == "/" ) continue;
-         str += '/';
-
-         if( remoteFsTypes.contains( FS_TYPE ) )
-            if( b = !s_remoteMounts.contains( str ) )
-            s_remoteMounts.append( str ); //**** NO! can't be sure won't have trailing slash, need to do a check first dummy!!
-
-         else if( b = !s_localMounts.contains( str ) )
-            s_localMounts.append( str ); //**** NO! can't be sure won't have trailing slash, need to do a check first dummy!!
-
-         if( b ) kdDebug() << "MTAB: " << FS_TYPE << "\n";
-      }
-
-      endmntent( fp ); /* close mtab.. */
-#endif
-
-
-      return true;
+      END_ENT;
    }
 }

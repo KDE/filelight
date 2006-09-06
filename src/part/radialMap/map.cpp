@@ -100,8 +100,6 @@ RadialMap::Map::make( const Directory *tree, bool refresh )
 void
 RadialMap::Map::setRingBreadth()
 {
-   DEBUG_ANNOUNCE
-
    //FIXME called too many times on creation
 
    m_ringBreadth = (height() - MAP_2MARGIN) / (2 * m_visibleDepth + 4);
@@ -116,8 +114,6 @@ RadialMap::Map::setRingBreadth()
 bool
 RadialMap::Map::resize( const QRect &rect )
 {
-   DEBUG_ANNOUNCE
-
    //there's a MAP_2MARGIN border
 
    #define mw width()
@@ -171,8 +167,6 @@ RadialMap::Map::resize( const QRect &rect )
 void
 RadialMap::Map::colorise()
 {
-   DEBUG_ANNOUNCE
-
    QColor cp, cb;
    double darkness = 1;
    double contrast = (double)Config::contrast / (double)100;
@@ -294,8 +288,6 @@ RadialMap::Map::aaPaint()
 void
 RadialMap::Map::paint( unsigned int scaleFactor )
 {
-   DEBUG_ANNOUNCE
-
    if (scaleFactor == 0) //just in case
       scaleFactor = 1;
 

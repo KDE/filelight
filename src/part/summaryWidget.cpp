@@ -159,50 +159,40 @@ DiskList::DiskList()
     char buffer[4096];
     FILE *df = popen( "env LC_ALL=POSIX df " DF_ARGS, "r" );
     int const N = fread( (void*)buffer, sizeof(char), 4096, df );
-    buffer[ N ] = '\0';
     pclose( df );
 
-    QString output = QString::fromLocal8Bit( buffer );
+    QString output = QString::fromLocal8Bit( buffer, N );
     QTextStream t( &output, IO_ReadOnly );
-    QString const BLANK( QChar(' ') );
+    QChar const BLANK( ' ' ); //saves repeated creation of a QChar object
 
     while (!t.atEnd()) {
-        QString s = t.readLine();
-        s = s.simplifyWhiteSpace();
+        QString s = t.readLine().simplifyWhiteSpace();
 
         if (s.isEmpty())
             continue;
 
-        if (s.find( BLANK ) < 0) // devicename was too long, rest in next line
-            if (!t.eof()) { // just appends the next line
-                QString v = t.readLine();
-                s = s.append( v.latin1() );
-                s = s.simplifyWhiteSpace();
-            }
+        if (s.find( BLANK ) < 0)
+            // devicename was too long, the rest wrapped to the next line
+            if (!t.eof())
+                s = s.append( t.readLine().simplifyWhiteSpace() );
+
+        #define GET_NEXT_COLUMN( assign_to_me, modifier ) \
+            n = s.find( BLANK ); \
+            assign_to_me = s.left( n ).modifier; \
+            s.remove( 0, n + 1 );
 
         Disk disk;
-        disk.device = s.left( s.find( BLANK ) );
-        s = s.remove( 0, s.find( BLANK ) + 1 );
+        int n;
 
+        GET_NEXT_COLUMN( disk.device, simplifyWhiteSpace() )
     #ifndef NO_FS_TYPE
-        disk.type = s.left( s.find( BLANK ) );
-        s = s.remove( 0, s.find( BLANK ) + 1 );
+        GET_NEXT_COLUMN( disk.type, simplifyWhiteSpace() )
     #endif
+        GET_NEXT_COLUMN( disk.size, toInt() )
+        GET_NEXT_COLUMN( disk.used, toInt() )
+        GET_NEXT_COLUMN( disk.free, toInt() )
 
-        int n = s.find( BLANK );
-        disk.size = s.left( n ).toInt();
-        s = s.remove( 0, n + 1 );
-
-        n = s.find( BLANK );
-        disk.used = s.left( n ).toInt();
-        s = s.remove( 0, n + 1 );
-
-        n = s.find( BLANK );
-        disk.free = s.left( n ).toInt();
-        s = s.remove( 0, n + 1 );
-
-        s = s.remove( 0, s.find( BLANK ) + 1 );  // delete the capacity 94%
-        disk.mount = s;
+        disk.mount = s.remove( 0, s.find( BLANK ) + 1 );  // delete the capacity %
 
         disk.guessIconName();
 

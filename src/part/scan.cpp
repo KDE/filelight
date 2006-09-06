@@ -20,7 +20,7 @@ namespace Filelight
       , m_thread( 0 )
       , m_cache( new Chain<Directory> )
    {
-      Filelight::LocalLister::readMounts();
+      LocalLister::readMounts();
    }
 
    ScanManager::~ScanManager()
