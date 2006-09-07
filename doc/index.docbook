@@ -51,9 +51,8 @@ as Authors, publish date, the abstract, and Keywords -->
 <address><email>max.howell@methylblue.com</email></address>
 </affiliation>
 </author>
-</authorgroup>
-
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
+</authorgroup>
 
 <copyright>
 <year>2003</year>
@@ -109,7 +108,7 @@ consistent documentation style across all KDE apps. -->
 <title>Introduction</title>
 
 <screenshot>
-<screeninfo>Filelight Screenshot</screeninfo>
+<screeninfo>&filelight; Screenshot</screeninfo>
 <mediaobject>
 <imageobject><imagedata fileref="main.png" format="PNG"/></imageobject>
 <textobject><phrase>Screenshot</phrase></textobject>
@@ -118,7 +117,7 @@ consistent documentation style across all KDE apps. -->
 
 
 <para>
-&filelight; allows you to quickly understand exactly where your diskspace is being used by graphically representing your filesystem as a set of concentric segmented-rings. You can use it to locate hotspots of disk usage and then manipulate those areas using Konqueror.
+&filelight; allows you to quickly understand exactly where your diskspace is being used by graphically representing your file system as a set of concentric segmented-rings. You can use it to locate hotspots of disk usage and then manipulate those areas using &konqueror;.
 </para>
 
 </chapter>
@@ -140,7 +139,7 @@ consistent documentation style across all KDE apps. -->
 </mediaobject>
 </screenshot>
 
-<para>The scanning tab allows you to configure how &filelight; scans directories. The <guimenuitem> Don't scan these directories:</guimenuitem> is used to excluded certain directories from your scan. This option is very useful for skipping directories that you may not have permissions to read, or directories that are part of a virtual filesystem, such as /proc. To add a directory to the list, click the <guibutton>Add...</guibutton> button, this will start a dialog where you can choose the directory of your choice from a tree view. To remove a directory simply select the directory of your choice and click the <guibutton>Remove</guibutton> button.</para>
+<para>The scanning tab allows you to configure how &filelight; scans folders. The <guimenuitem> Don't scan these folders:</guimenuitem> is used to excluded certain folders from your scan. This option is very useful for skipping folders that you may not have permissions to read, or folders that are part of a virtual filesystem, such as /proc. To add a folder to the list, click the <guibutton>Add...</guibutton> button, this will start a dialog where you can choose the folder of your choice from a tree view. To remove a folder simply select the folder of your choice and click the <guibutton>Remove</guibutton> button.</para>
 
 <!--<madpenguin8>I'll add a description here about what the "Scan across fs boundries" option when the option works ;-)-->
 </sect1>
@@ -158,11 +157,11 @@ consistent documentation style across all KDE apps. -->
 
 <para>The <guimenuitem>Appearance</guimenuitem> tab allows you to configure the way &filelight; looks.</para>
 
-<para>The  <guimenuitem>Scheme</guimenuitem> section is used to choose a color scheme for &filelight;. The color schemes are Rainbow, KDE Colours, and High Contrast. There is also a <guimenuitem>Contrast:</guimenuitem> slider to adjust the contrast of the ring segments for easier viewing.</para>
+<para>The <guimenuitem>Scheme</guimenuitem> section is used to choose a color scheme for &filelight;. The color schemes are Rainbow, &kde; Colours, and High Contrast. There is also a <guimenuitem>Contrast:</guimenuitem> slider to adjust the contrast of the ring segments for easier viewing.</para>
 
-<para>The <guimenuitem>Use anti-aliasing</guimenuitem> checkbox is used to enable the use of anti-aliasing in the &filelight; view. Selected, this option makes the ring segments have a much cleaner look.</para>
+<para>The <guimenuitem>Use anti-aliasing</guimenuitem> check box is used to enable the use of anti-aliasing in the &filelight; view. Selected, this option makes the ring segments have a much cleaner look.</para>
 
-<para>The <guimenuitem>Vary label font sizes</guimenuitem> check box is useful when you have files or directories with long names. This option will change the size of the font to allow it to fit in the view better. When this option is enabled a <guimenuitem>Minimum font size:</guimenuitem> spinbox becomes available for choosing the smallest size font to scale to.</para>
+<para>The <guimenuitem>Vary label font sizes</guimenuitem> check box is useful when you have files or folders with long names. This option will change the size of the font to allow it to fit in the view better. When this option is enabled a <guimenuitem>Minimum font size:</guimenuitem> spinbox becomes available for choosing the smallest size font to scale to.</para>
 
 <para>The <guimenuitem>Show small files</guimenuitem> option is disabled by default as small files tend to clutter the &filelight; view. Enable this option if you would like to have your small files included in the &filelight; view.</para>
 
@@ -196,7 +195,7 @@ cursor up the menu to the <guimenu>Utilities</guimenu> menu item. Choose
 
 <para>
 You can start &filelight; by typing its name on the command line.
-If you give it a directory name, as in the example below, it will scan that directory.
+If you give it a folder name, as in the example below, it will scan that folder.
 </para>
 
 <informalexample>
@@ -208,15 +207,15 @@ If you give it a directory name, as in the example below, it will scan that dire
 </sect2>
 </sect1>
 
-<sect1 id="scanning-directories">
-<title>Scanning Directories</title>
+<sect1 id="scanning-folders">
+<title>Scanning folders</title>
 <para>
-Scanning a directory shows it's contents as a filemap. To scan a directory, use the scan menu, or type a url straight into the location bar.
+Scanning a folder shows it's contents as a filemap. To scan a folder, use the scan menu, or type a url straight into the location bar.
 </para>
 
 <!--<sect2 id="scan-home"><para>1</para></sect2>
 <sect2 id="scan-root"><para>1</para></sect2>
-<sect2 id="scan-directory"><para>1</para></sect2>
+<sect2 id="scan-folder"><para>1</para></sect2>
 <sect2 id="scan-recent"><para>1</para></sect2>-->
 
 </sect1>
@@ -224,7 +223,7 @@ Scanning a directory shows it's contents as a filemap. To scan a directory, use 
 <sect1 id="exploring-filemaps">
 <title>Exploring Filemaps</title>
 <para>
-Once a scan has completed you will be presented with a filemap that represents the directory you scanned. The filemap is a series of segmented-rings that expand from the center. Brightly coloured segments are directories, grey segments are files. Segments are sized in proportion to their filesize. Segments can be nested, so for example, /home/mxcl will be one level outwards and within the bounds of the segment representing /home. Segments are labeled and hovering the mouse over segments will give you more details of that segment and its child segments.
+Once a scan has completed you will be presented with a filemap that represents the folder you scanned. The filemap is a series of segmented-rings that expand from the center. Brightly coloured segments are folders, grey segments are files. Segments are sized in proportion to their filesize. Segments can be nested, so for example, /home/mxcl will be one level outwards and within the bounds of the segment representing /home. Segments are labeled and hovering the mouse over segments will give you more details of that segment and its child segments.
 </para>
 
 <screenshot>
@@ -236,7 +235,7 @@ Once a scan has completed you will be presented with a filemap that represents t
 </screenshot>
 
 <para>
-You can open directories with Konqueror or Konsole using the context menu for that segment. Middle clicks open files by mimetype, so images with Kuickshow. You can right click the central circle to get a context menu for the scanned directory. Left clicking segments will re-center the map on that segment.
+You can open folders with &konqueror; or &konsole; using the context menu for that segment. Middle clicks open files by mimetype, so images with Kuickshow. You can right click the central circle to get a context menu for the scanned folder. Left clicking segments will re-center the map on that segment.
 </para>
 
 <para>
@@ -245,7 +244,7 @@ If you want to improve the documentation, I'll happily accept patches :) Thanks.
 
 <!--<sect2 id="scan-home"><para>1</para></sect2>
 <sect2 id="scan-root"><para>1</para></sect2>
-<sect2 id="scan-directory"><para>1</para></sect2>
+<sect2 id="scan-folder"><para>1</para></sect2>
 <sect2 id="scan-recent"><para>1</para></sect2>-->
 
 </sect1>
@@ -287,9 +286,9 @@ If you want to improve the documentation, I'll happily accept patches :) Thanks.
 <keycombo><keycap>Ctrl</keycap><keycap>o</keycap></keycombo>
 </shortcut>
 <guimenu>Scan</guimenu>
-<guimenuitem>Scan Directory..</guimenuitem>
+<guimenuitem>Scan folder..</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Offers a directory selection dialog so you can choose a directory to scan.</action></para></listitem>
+<listitem><para><action>Offers a folder selection dialog so you can choose a folder to scan.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -298,17 +297,17 @@ If you want to improve the documentation, I'll happily accept patches :) Thanks.
 <keycombo><keycap>Ctrl</keycap><keycap>Home</keycap></keycombo>
 </shortcut>
 <guimenu>Scan</guimenu>
-<guimenuitem>Scan Home Directory</guimenuitem>
+<guimenuitem>Scan Home folder</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Starts a scan of the user's home directory.</action></para></listitem>
+<listitem><para><action>Starts a scan of the user's home folder.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
 <guimenu>Scan</guimenu>
-<guimenuitem>Scan Root Directory</guimenuitem>
+<guimenuitem>Scan Root folder</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Starts a scan of the root directory.</action></para></listitem>
+<listitem><para><action>Starts a scan of the root folder.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -316,7 +315,7 @@ If you want to improve the documentation, I'll happily accept patches :) Thanks.
 <guimenu>Scan</guimenu>
 <guimenuitem>Recent Scans</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Provides a list of your most recent scanned directories allowing quick access to these directories.</action></para></listitem>
+<listitem><para><action>Provides a list of your most recent scanned folders allowing quick access to these folders.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -327,7 +326,7 @@ If you want to improve the documentation, I'll happily accept patches :) Thanks.
 <guimenu>Scan</guimenu>
 <guimenuitem>Rescan</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Starts a new scan of the current working directory, this is useful when changes have been made to the filesystem.</action></para></listitem>
+<listitem><para><action>Starts a new scan of the current working folder, this is useful when changes have been made to the filesystem.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -564,6 +563,8 @@ distribution. -->
 Documentation copyright 2003 Max B. Howell <email>max.howell@methylblue.com</email>
 </para>
 
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
+
 &underFDL;
 
 </sect1>
@@ -577,7 +578,7 @@ Documentation copyright 2003 Max B. Howell <email>max.howell@methylblue.com</ema
 <title>How to obtain &filelight;</title>
 
 <para>
-&filelight; is not yet part of the KDE project, it can be found at:
+&filelight; is not yet part of the &kde; project, it can be found at:
 <ulink url="http://www.methylblue.com/filelight/">http://www.methylblue.com/filelight/</ulink>.
 </para>
 </sect1>
@@ -586,7 +587,7 @@ Documentation copyright 2003 Max B. Howell <email>max.howell@methylblue.com</ema
 <title>Compilation and Installation</title>
 
 <para>
-In order to compile and install &filelight; on your system, type the following in the base directory of the &filelight; distribution:
+In order to compile and install &filelight; on your system, type the following in the base folder of the &filelight; distribution:
 <screen width="40">
 <prompt>%</prompt> <userinput>./configure --prefix=`kde-config --prefix`</userinput>
 <prompt>%</prompt> <userinput>make</userinput>
