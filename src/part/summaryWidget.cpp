@@ -184,6 +184,9 @@ DiskList::DiskList()
         Disk disk;
         int n;
 
+        Q_DEBUG_BLOCK
+        qDebug() << s;
+
         GET_NEXT_COLUMN( disk.device, simplifyWhiteSpace() )
     #ifndef NO_FS_TYPE
         GET_NEXT_COLUMN( disk.type, simplifyWhiteSpace() )
@@ -197,6 +200,9 @@ DiskList::DiskList()
         disk.guessIconName();
 
         *this += disk;
+
+        qDebug() << "Used:" << disk.used;
+        qDebug() << "Free:" << disk.free;
     }
 }
 

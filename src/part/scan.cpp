@@ -26,7 +26,7 @@ namespace Filelight
    ScanManager::~ScanManager()
    {
       if( m_thread ) {
-         debug() << "Attempting to abort scan operation...\n";
+         qDebug() << "Attempting to abort scan operation...\n";
          s_abort = true;
          m_thread->wait();
       }
@@ -48,11 +48,11 @@ namespace Filelight
    {
       //url is guaranteed clean and safe
 
-      debug() << "Scan requested for: " << url.prettyURL() << endl;
+      qDebug() << "Scan requested for:" << url;
 
       if( running() ) {
          //shouldn't happen, but lets prevent mega-disasters just in case eh?
-         kdWarning() << "Attempted to run 2 scans concurrently!\n";
+         qWarning() << "Attempted to run 2 scans concurrently!";
          //TODO give user an error
          return false;
       }
@@ -82,7 +82,7 @@ namespace Filelight
             {
                //find a pointer to the requested branch
 
-               debug() << "Cache-(a)hit: " << cachePath << endl;
+               qDebug() << "Cache-(a)hit: " << cachePath;
 
                QStringList split = QStringList::split( '/', path.mid( cachePath.length() ) );
                Directory *d = *it;
@@ -110,7 +110,7 @@ namespace Filelight
                   delete trees;
 
                   //we found a completed tree, thus no need to scan
-                  debug() << "Found cache-handle, generating map..\n";
+                  qDebug() << "Found cache-handle, generating map..";
 
                   //1001 indicates that this should not be cached
                   QCustomEvent *e = new QCustomEvent( 1001 );
@@ -122,14 +122,14 @@ namespace Filelight
                else
                {
                   //something went wrong, we couldn't find the directory we were expecting
-                  error() << "Didn't find " << path << " in the cache!\n";
+                  qError() << "Didn't find" << path << "in the cache!";
                   delete it.remove(); //safest to get rid of it
                   break; //do a full scan
                }
             }
             else if( cachePath.startsWith( path ) ) //then part of the requested tree is already scanned
             {
-               debug() << "Cache-(b)hit: " << cachePath << endl;
+               qDebug() << "Cache-(b)hit:" << cachePath;
                it.transferTo( *trees );
             }
          }

@@ -59,7 +59,7 @@ namespace Filelight
 
       if( ScanManager::s_abort ) //scan was cancelled
       {
-         debug() << "Scan successfully aborted\n";
+         qDebug() << "Scan successfully aborted\n";
          delete tree;
          tree = 0;
       }
@@ -129,7 +129,7 @@ namespace Filelight
    {
       ///show error message that stat or opendir may give
 
-      #define out( s ) error() << s ": " << path << endl; break
+      #define out( s ) qError() << s ": " << path; break
 
       switch( errno ) {
       case EACCES:
@@ -212,7 +212,7 @@ namespace Filelight
             {
                if( new_path == (*it)->name8Bit() )
                {
-                  debug() << "Tree pre-completed: " << (*it)->name() << "\n";
+                  qDebug() << "Tree pre-completed: " << (*it)->name() << "\n";
                   d = it.remove();
                   ScanManager::s_files += d->children();
                   //**** ideally don't have this redundant extra somehow
@@ -236,6 +236,8 @@ namespace Filelight
    void
    LocalLister::readMounts()
    {
+      Q_DEBUG_BLOCK
+
       //FIXME
       // * no removable media detection
       // * no updates if mounts change
@@ -243,6 +245,7 @@ namespace Filelight
 
       QValueList<QCString> remote_types; remote_types
             << "smbfs"
+            << "sshfs"
          #ifdef MNTTYPE_NFS
             << MNTTYPE_NFS
          #else
@@ -282,7 +285,7 @@ namespace Filelight
             else
                s_local_mounts += path;
 
-            debug() << "Found mount point: " << ent->MOUNT_PATH << "\n";
+            qDebug() << "Found mount point: " << ent->MOUNT_PATH;
          }
       }
 

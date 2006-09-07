@@ -22,6 +22,15 @@
   support other mouse actions for central circle (ie middle click, right click)
   write caches for all scans, so if crash or something that root scan that took 20 mins is not lost
 
+1.0.1
+  Bug where percentages for summary screen are wrong
+  Check we are reporting same sizes as du
+  http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=230849
+  Make first run for users at summary screen explain what is going on
+    * more click targets for showing that partition
+    * non intrusive help message of some kind
+    * explain why we look like a browser
+
 MAYBE
   flicking mouse wheel shows different information in tooltip, and there's an off setting, show temp status message to reflect info box
   ideally, eventually show which labels are children of which by grouping them with a coloured square or something

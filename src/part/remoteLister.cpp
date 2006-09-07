@@ -40,7 +40,7 @@ namespace Filelight
       {
          /// returns the next store available for scanning
 
-         debug() << "propagate: " << url << endl;
+         qDebug() << "propagate: " << url;
 
          if( parent ) {
             parent->directory->append( directory );
@@ -92,7 +92,7 @@ namespace Filelight
    void
    RemoteLister::completed()
    {
-      debug() << "completed: " << url().prettyURL() << endl;
+      qDebug() << "completed: " << url().prettyURL();
 
       //as usual KDE documentation didn't suggest I needed to do this at all
       //I had to figure it out myself
@@ -103,7 +103,7 @@ namespace Filelight
    void
    RemoteLister::canceled()
    {
-      debug() << "canceled: " << url().prettyURL() << endl;
+      qDebug() << "canceled: " << url().prettyURL();
 
       QTimer::singleShot( 0, this, SLOT(_completed()) );
    }
@@ -143,12 +143,12 @@ namespace Filelight
          currentStore->stores.remove( first );
 
          //this returns _immediately_
-         debug() << "scanning: " << url << endl;
+         qDebug() << "Scanning:" << url;
          openURL( url );
       }
       else {
 
-         debug() << "I think we're done\n";
+         qDebug() << "I think we're done";
 
          Q_ASSERT( m_root == m_store );
 
