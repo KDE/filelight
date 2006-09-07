@@ -109,7 +109,7 @@ SegmentTip::updateTip( const File* const file, const Directory* const root )
     QString s2        = file->humanReadableSize();
     KLocale *loc      = KGlobal::locale();
     const uint MARGIN = 3;
-    const uint pc     = 100 * file->size() / root->size();
+    const uint pc     = (100 * int64_t(file->size())) / root->size(); //64 bits for summaryWidget sizes
     uint maxw         = 0;
     uint h            = fontMetrics().height()*2 + 2*MARGIN;
 
