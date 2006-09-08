@@ -1,6 +1,8 @@
 // Copyright 2003-6 Max Howell <max.howell@methylblue.com>
 // Redistributable under the terms of the GNU General Public License
 
+#include "debug.h"
+#include "deleteDialog.h"
 #include "fileTree.h"
 #include "radialMap.h"   //class Segment
 #include "widget.h"
@@ -202,20 +204,26 @@ RadialMap::Widget::mousePressEvent( QMouseEvent *e )
 
             case Delete:
             {
-                const KURL url = Widget::url( m_focus->file() );
-                const QString message = m_focus->file()->isDirectory()
-                        ? i18n( "<qt>The directory at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</b> deleted." )
-                        : i18n( "<qt><i>'%1'</i> will be <b>permanently</b> deleted." );
-                const int userIntention = KMessageBox::warningContinueCancel(
-                        this, message.arg( url.prettyURL() ),
-                        QString::null, KGuiItem( i18n("&Delete"), "editdelete" ) );
+                KURL const url = Widget::url( m_focus->file() );
+                bool const is_dir = m_focus->file()->isDirectory();
+                int const r = DeleteDialog( url, is_dir, this ).exec();
 
-                if (userIntention == KMessageBox::Continue) {
-                    KIO::Job *job = KIO::del( url );
-                    job->setWindow( this );
-                    connect( job, SIGNAL(result( KIO::Job* )), SLOT(deleteJobFinished( KIO::Job* )) );
-                    QApplication::setOverrideCursor( KCursor::workingCursor() );
+                switch (r) {
+                    case QDialog::Accepted:
+                    {
+                        File const *f = m_focus->file();
+                        f->parent()->remove( f );
+
+                        createFromCache( m_tree );
+                        break;
+                    }
+                    case DeleteDialog::IndeterminateResult:
+                        invalidate();
+                        break;
+                    case QDialog::Rejected:
+                        break;
                 }
+                break;
             }
 
             default:
@@ -245,17 +253,6 @@ RadialMap::Widget::mousePressEvent( QMouseEvent *e )
    }
 }
 
-void
-RadialMap::Widget::deleteJobFinished( KIO::Job *job )
-{
-   QApplication::restoreOverrideCursor();
-   if( !job->error() )
-      invalidate();
-   else
-      job->showErrorDialog( this );
-}
-
-#include "debug.h"
 void
 RadialMap::Widget::dropEvent( QDropEvent *e )
 {

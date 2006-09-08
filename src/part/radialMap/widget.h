@@ -75,7 +75,6 @@ namespace RadialMap
     private slots:
         void resizeTimeout();
         void sendFakeMouseEvent();
-        void deleteJobFinished( KIO::Job* );
         void createFromCache( const Directory* );
 
     signals:

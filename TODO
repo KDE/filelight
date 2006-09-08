@@ -23,7 +23,6 @@
   write caches for all scans, so if crash or something that root scan that took 20 mins is not lost
 
 1.0.1
-  Bug where percentages for summary screen are wrong
   Check we are reporting same sizes as du
   http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=230849
   Make first run for users at summary screen explain what is going on

@@ -168,7 +168,7 @@ public:
    File( const char *name, FileSize size ) : m_parent( 0 ), m_name( qstrdup( name ) ), m_size( size ) {}
    virtual ~File() { delete [] m_name; }
 
-   const Directory *parent() const { return m_parent; }
+   Directory *parent() const { return m_parent; }
    const char *name8Bit() const { return m_name; }
    const FileSize size() const { return m_size; }
    QString name() const { return QFile::decodeName( m_name ); }
@@ -218,6 +218,19 @@ public:
    void append( const char *name, FileSize size )
    {
       append( new File( name, size, this ) );
+   }
+
+   void remove( const File *f )
+   {
+      for (Iterator<File> it = iterator(); it != end(); ++it)
+         if (*it == f) {
+            if (f->isDirectory())
+               m_children -= ((Directory*)f)->children();
+
+            m_size -= f->size();
+
+            delete it.remove();
+         }
    }
 
 private:
