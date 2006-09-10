@@ -6,6 +6,7 @@ Name[xx]=xxFilelightxx
 GenericName=Disk Usage Information
 GenericName[ga]=Faisnéis maidir le húsáid diosca
 GenericName[ja]=ディスクの使用状況
+GenericName[nl]=Informatie over schijfgebruik
 GenericName[pt]=Informações de Utilização do Disco
 Type=Application
 Exec=filelight %f
