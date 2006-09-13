@@ -34,7 +34,7 @@ K_EXPORT_COMPONENT_FACTORY( libfilelight, Filelight::Factory )
 
 
 BrowserExtension::BrowserExtension( Part *parent, const char *name )
-  : KParts::BrowserExtension( parent, name )
+        : KParts::BrowserExtension( parent, name )
 {}
 
 

@@ -1,9 +1,9 @@
 // Copyright 2003-6 Max Howell <max.howell@methylblue.com>
 // Redistributable under the terms of the GNU General Public License
 
+#include "historyAction.h"
 #include "mainWindow.h"
 #include "part/part.h"
-#include "historyAction.h"
 
 #include <cstdlib>            //std::exit()
 #include <kaccel.h>           //KStdAccel namespace
@@ -54,7 +54,9 @@ MainWindow::MainWindow()
 
     QObjectList *buttons = toolBar()->queryList( "KToolBarButton" );
     if (buttons->isEmpty())
-        KMessageBox::error( this, i18n("Filelight is not installed properly, consequently its menus and toolbars will appear reduced or even empty") );
+        KMessageBox::error( this, i18n(
+            "Filelight doesn't seem to be installed properly, "
+            "consequently its menus and toolbars will appear reduced or even empty") );
     delete buttons;
 
     connect( m_part, SIGNAL(started( KIO::Job* )), SLOT(scanStarted()) );

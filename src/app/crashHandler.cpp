@@ -150,7 +150,7 @@ mxcl::crashHandler( int /*signal*/ )
                     "Build date: " __DATE__ "\n"
                     "CC version: " __VERSION__ "\n" //assuming we're using GCC
                     "KDElibs:    " KDE_VERSION_STRING "\n"
-                    "Qt:         " + QString(qVersion()) + "\n"
+                    "Qt:         " + QString(qVersion()) + '\n' +
                 #ifdef NDEBUG
                     "Debug:      false"
                 #else

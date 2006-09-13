@@ -59,7 +59,7 @@ namespace Filelight
 
       if( ScanManager::s_abort ) //scan was cancelled
       {
-         qDebug() << "Scan successfully aborted\n";
+         qDebug() << "Scan successfully aborted";
          delete tree;
          tree = 0;
       }
@@ -186,20 +186,19 @@ namespace Filelight
             continue;
          }
 
-         if( S_ISLNK( statbuf.st_mode ) ||
-            S_ISCHR(  statbuf.st_mode ) ||
-            S_ISBLK(  statbuf.st_mode ) ||
-            S_ISFIFO( statbuf.st_mode ) ||
-            S_ISSOCK( statbuf.st_mode ) )
-         {
+         if (S_ISLNK( statbuf.st_mode ) ||
+               S_ISCHR(  statbuf.st_mode ) ||
+               S_ISBLK(  statbuf.st_mode ) ||
+               S_ISFIFO( statbuf.st_mode ) ||
+               S_ISSOCK( statbuf.st_mode ))
             continue;
-         }
 
-         if( S_ISREG( statbuf.st_mode ) ) //file
-            //using units of KiB as 32bit max is 4GiB and 64bit ints are expensive
+         if (S_ISREG( statbuf.st_mode )) /// i.e. a normal file
+            // we use units of KiB because in bytes uint32_t only will go to
+            // 4GiB and we should avoid the expense of int64_t if possible
             cwd->append( ent->d_name, (ST_NBLOCKS( statbuf ) * ST_NBLOCKSIZE) / 1024 );
 
-         else if( S_ISDIR( statbuf.st_mode ) )  //directory
+         else if (S_ISDIR( statbuf.st_mode ))
          {
             Directory *d = 0;
             QCString new_dirname = ent->d_name;
@@ -212,7 +211,7 @@ namespace Filelight
             {
                if( new_path == (*it)->name8Bit() )
                {
-                  qDebug() << "Tree pre-completed: " << (*it)->name() << "\n";
+                  qDebug() << "Tree pre-completed: " << (*it)->name();
                   d = it.remove();
                   ScanManager::s_files += d->children();
                   //**** ideally don't have this redundant extra somehow

@@ -26,7 +26,7 @@ namespace Filelight
    ScanManager::~ScanManager()
    {
       if( m_thread ) {
-         qDebug() << "Attempting to abort scan operation...\n";
+         qDebug() << "Attempting to abort scan operation...";
          s_abort = true;
          m_thread->wait();
       }
