@@ -2,124 +2,48 @@
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1.2-Based Variant V1.0//EN" "dtd/kdex.dtd" [
   <!ENTITY kappname "&filelight;">
   <!ENTITY filelight "<application>Filelight</application>">
-
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % English "INCLUDE"><!-- change language only here -->
 ]>
 
-<!-- Do not define any other entities; instead, use the entities
-       from kde-genent.entities and $LANG/user.entities. -->
-<!-- kdoctemplate v0.8 October 1 1999
-     Minor update to "Credits and Licenses" section on August 24, 2000
-     Removed "Revision history" section on 22 January 2001   -->
-
-<!--
-This template was designed by: David Rugge davidrugge@mindspring.com
-with lots of help from: Eric Bischoff ebisch@cybercable.tm.fr
-and Frederik Fouvry fouvry@sfs.nphil.uni-tuebingen.de
-of the KDE DocBook team.
-
-You may freely use this template for writing any sort of KDE documentation.
-If you have any changes or improvements, please let us know.
-
-In the future, we may want to change from SGML-based DocBook to XML-based
-DocBook. To make this change easier, please be careful :
-- in XML, the case of the <tags> and attributes is relevant ;
-- also, quote all attributes.
-
-Please don't forget to remove all these comments in your final documentation,
-thanks ;-).
--->
-
-<!-- ................................................................ -->
-
-<!-- The language must NOT be changed here. -->
-
 <book lang="&language;">
 
-<!-- This header contains all of the meta-information for the document such
-as Authors, publish date, the abstract, and Keywords -->
-
 <bookinfo>
-<title>The &filelight; Handbook</title>
-
-<authorgroup>
-<author>
-<firstname>Max</firstname>
-<surname>Howell</surname>
-<affiliation>
-<address><email>max.howell@methylblue.com</email></address>
-</affiliation>
-</author>
-<!-- TRANS:ROLES_OF_TRANSLATORS -->
-</authorgroup>
-
-<copyright>
-<year>2003</year>
-<holder>Max Howell</holder>
-</copyright>
-<!-- Translators: put here the copyright notice of the translation -->
-<!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
-     and in the FDL itself on how to use it. -->
-<legalnotice>&FDLNotice;</legalnotice>
-
-<!-- Date and version information of the documentation
-Don't forget to include this last date and this last revision number, we
-need them for translation coordination !
-Please respect the format of the date (DD/MM/YYYY) and of the version
-(V.MM.LL), it could be used by automation scripts.
-Do NOT change these in the translation. -->
-
-<date>03/11/2003</date>
-<releaseinfo>2</releaseinfo>
-
-<!-- Abstract about this handbook -->
-
-<abstract>
-<para>
-&filelight; displays disk usage information recursively, effectively a graphical version of the command line tool, du.
-</para>
-</abstract>
-
-<!-- This is a set of Keywords for indexing by search engines.
-Please at least include KDE, the KDE package it is in, the name
- of your application, and a few relevant keywords. -->
-
-<keywordset>
-<keyword>KDE</keyword>
-<keyword>Filelight</keyword>
-<keyword>du</keyword>
-<keyword>disk usage</keyword>
-<keyword>statistics</keyword>
-</keywordset>
-
+   <title>The &filelight; Handbook</title>
+   <authorgroup>
+      <author>
+         <firstname>Max</firstname>
+         <surname>Howell</surname>
+         <affiliation><address><email>max.howell@methylblue.com</email></address></affiliation>
+      </author>
+      <!-- TRANS:ROLES_OF_TRANSLATORS -->
+   </authorgroup>
+   <copyright><year>2006</year><holder>Max Howell</holder></copyright>
+   <!-- Translators: put here the copyright notice of the translation -->
+   <legalnotice>&FDLNotice;</legalnotice>
+   <date>14/09/2006</date>
+   <releaseinfo>3</releaseinfo>
+   <abstract><para>&filelight; creates an interactive map of concentric segmented-rings that helps visualise disk usage on your computer.</para></abstract>
+   <!-- These may be used by search engines -->
+   <keywordset>
+      <keyword>KDE</keyword>
+      <keyword>Filelight</keyword>
+      <keyword>du</keyword>
+      <keyword>disk usage</keyword>
+   </keywordset>
 </bookinfo>
 
-<!-- The contents of the documentation begin here.  Label
-each chapter so with the id attribute. This is necessary for two reasons: it
-allows you to easily reference the chapter from other chapters of your
-document, and if there is no ID, the name of the generated HTML files will vary
-from time to time making it hard to manage for maintainers and for the CVS
-system. Any chapter labelled (OPTIONAL) may be left out at the author's
-discretion. Other chapters should not be left out in order to maintain a
-consistent documentation style across all KDE apps. -->
 
 <chapter id="introduction">
-<title>Introduction</title>
-
-<screenshot>
-<screeninfo>&filelight; Screenshot</screeninfo>
-<mediaobject>
-<imageobject><imagedata fileref="main.png" format="PNG"/></imageobject>
-<textobject><phrase>Screenshot</phrase></textobject>
-</mediaobject>
-</screenshot>
-
-
-<para>
-&filelight; allows you to quickly understand exactly where your diskspace is being used by graphically representing your file system as a set of concentric segmented-rings. You can use it to locate hotspots of disk usage and then manipulate those areas using &konqueror;.
-</para>
-
+   <title>Introduction</title>
+   <screenshot>
+      <screeninfo>&filelight; 1.0 Screenshot</screeninfo>
+      <mediaobject>
+         <imageobject><imagedata fileref="radial_map.png" format="PNG"/></imageobject>
+         <textobject><phrase>Screenshot</phrase></textobject>
+      </mediaobject>
+   </screenshot>
+   <para>&filelight; allows you to quickly understand exactly where your diskspace is being used by graphically representing your file system as a set of concentric segmented-rings. You can use it to locate hotspots of disk usage and then manipulate those areas using &konqueror;.</para>
 </chapter>
 
 
@@ -141,7 +65,6 @@ consistent documentation style across all KDE apps. -->
 
 <para>The scanning tab allows you to configure how &filelight; scans folders. The <guimenuitem> Don't scan these folders:</guimenuitem> is used to excluded certain folders from your scan. This option is very useful for skipping folders that you may not have permissions to read, or folders that are part of a virtual filesystem, such as /proc. To add a folder to the list, click the <guibutton>Add...</guibutton> button, this will start a dialog where you can choose the folder of your choice from a tree view. To remove a folder simply select the folder of your choice and click the <guibutton>Remove</guibutton> button.</para>
 
-<!--<madpenguin8>I'll add a description here about what the "Scan across fs boundries" option when the option works ;-)-->
 </sect1>
 
 <sect1 id="appearance">
@@ -156,19 +79,15 @@ consistent documentation style across all KDE apps. -->
 </screenshot>
 
 <para>The <guimenuitem>Appearance</guimenuitem> tab allows you to configure the way &filelight; looks.</para>
-
 <para>The <guimenuitem>Scheme</guimenuitem> section is used to choose a color scheme for &filelight;. The color schemes are Rainbow, &kde; Colours, and High Contrast. There is also a <guimenuitem>Contrast:</guimenuitem> slider to adjust the contrast of the ring segments for easier viewing.</para>
-
 <para>The <guimenuitem>Use anti-aliasing</guimenuitem> check box is used to enable the use of anti-aliasing in the &filelight; view. Selected, this option makes the ring segments have a much cleaner look.</para>
-
 <para>The <guimenuitem>Vary label font sizes</guimenuitem> check box is useful when you have files or folders with long names. This option will change the size of the font to allow it to fit in the view better. When this option is enabled a <guimenuitem>Minimum font size:</guimenuitem> spinbox becomes available for choosing the smallest size font to scale to.</para>
-
 <para>The <guimenuitem>Show small files</guimenuitem> option is disabled by default as small files tend to clutter the &filelight; view. Enable this option if you would like to have your small files included in the &filelight; view.</para>
 
 </sect1>
 </chapter>
 
-<!-- REMOVE ME ************************************ -->
+
 <chapter id="using">
 <title>Using &filelight;</title>
 
@@ -178,7 +97,6 @@ consistent documentation style across all KDE apps. -->
 
 <sect2 id="starting-from-the-menu">
 <title>From the K-Menu</title>
-
 <para>
 Open the &kde; program menu by clicking on the
 <guiicon>big K</guiicon> icon on your
@@ -186,25 +104,21 @@ panel. This will raise the <guimenu>program menu</guimenu>. Move your
 cursor up the menu to the <guimenu>Utilities</guimenu> menu item. Choose
 <guimenuitem>&filelight;</guimenuitem>.
 </para>
-
 </sect2>
-
 
 <sect2 id="starting-from-the-command-line">
 <title>From the Command Line</title>
-
 <para>
 You can start &filelight; by typing its name on the command line.
 If you give it a folder name, as in the example below, it will scan that folder.
 </para>
-
 <informalexample>
 <screen>
 <prompt>%</prompt><userinput><command>filelight</command> <option><replaceable>/home</replaceable></option></userinput>
 </screen>
 </informalexample>
-
 </sect2>
+
 </sect1>
 
 <sect1 id="scanning-folders">
@@ -212,12 +126,6 @@ If you give it a folder name, as in the example below, it will scan that folder.
 <para>
 Scanning a folder shows it's contents as a filemap. To scan a folder, use the scan menu, or type a url straight into the location bar.
 </para>
-
-<!--<sect2 id="scan-home"><para>1</para></sect2>
-<sect2 id="scan-root"><para>1</para></sect2>
-<sect2 id="scan-folder"><para>1</para></sect2>
-<sect2 id="scan-recent"><para>1</para></sect2>-->
-
 </sect1>
 
 <sect1 id="exploring-filemaps">
@@ -225,53 +133,22 @@ Scanning a folder shows it's contents as a filemap. To scan a folder, use the sc
 <para>
 Once a scan has completed you will be presented with a filemap that represents the folder you scanned. The filemap is a series of segmented-rings that expand from the center. Brightly coloured segments are folders, grey segments are files. Segments are sized in proportion to their filesize. Segments can be nested, so for example, /home/mxcl will be one level outwards and within the bounds of the segment representing /home. Segments are labeled and hovering the mouse over segments will give you more details of that segment and its child segments.
 </para>
-
 <screenshot>
 <screeninfo>Filemap Screenshot</screeninfo>
 <mediaobject>
-<imageobject><imagedata fileref="filemap.png" format="PNG"/></imageobject>
+<imageobject><imagedata fileref="radial_map.png" format="PNG"/></imageobject>
 <textobject><phrase>Screenshot</phrase></textobject>
 </mediaobject>
 </screenshot>
-
 <para>
 You can open folders with &konqueror; or &konsole; using the context menu for that segment. Middle clicks open files by mimetype, so images with Kuickshow. You can right click the central circle to get a context menu for the scanned folder. Left clicking segments will re-center the map on that segment.
 </para>
-
 <para>
 If you want to improve the documentation, I'll happily accept patches :) Thanks.
 </para>
-
-<!--<sect2 id="scan-home"><para>1</para></sect2>
-<sect2 id="scan-root"><para>1</para></sect2>
-<sect2 id="scan-folder"><para>1</para></sect2>
-<sect2 id="scan-recent"><para>1</para></sect2>-->
-
 </sect1>
 
 </chapter>
-
-
-
-
-
-<!--<para>
-<screenshot>
-<screeninfo>Here's a screenshot of &filelight;</screeninfo>
-	<mediaobject>
-	  <imageobject>
-	    <imagedata fileref="screenshot.png" format="PNG"/>
-	  </imageobject>
-	  <imageobject>
-	    <imagedata fileref="screenshot.eps" format="EPS"/>
-	  </imageobject>
-	  <textobject>
-	    <phrase>Screenshot</phrase>
-	  </textobject>
-	</mediaobject>
-</screenshot>
-</para>-->
-
 
 
 <chapter id="commands">
@@ -398,7 +275,6 @@ If you want to improve the documentation, I'll happily accept patches :) Thanks.
 <title>The Settings Menu</title>
 <variablelist>
 
-
 <varlistentry>
 <term><menuchoice>
 <guimenu>Settings</guimenu>
@@ -494,115 +370,47 @@ If you want to improve the documentation, I'll happily accept patches :) Thanks.
 </variablelist>
 </sect1>
 
-
 </chapter>
-
-<!--
-<chapter id="faq">
-<title>Questions and Answers</title>
-
-(OPTIONAL but recommended) This chapter should include all of the silly
-(and not-so-silly) newbie questions that fill up your mailbox. This chapter
-should be reserved for BRIEF questions and answers! If one question uses more
-than a page or so then it should probably be part of the
-"Using this Application" chapter instead. You should use links to
-cross-reference questions to the parts of your documentation that answer them.
-This is also a great place to provide pointers to other FAQ's if your users
-must do some complicated configuration on other programs in order for your
-application work.
-
-&reporting.bugs;
-&updating.documentation;
-
-<qandaset id="faqlist">
-<qandaentry>
-<question>
-<para>My Mouse doesn't work. How do I quit &filelight;?</para>
-</question>
-<answer>
-<para>You silly goose! Check out the <link linkend="commands">Commands
-Section</link> for the answer.</para>
-</answer>
-</qandaentry>
-<qandaentry>
-<question>
-<para>Why can't I twiddle my documents?</para>
-</question>
-<answer>
-<para>You can only twiddle your documents if you have the foobar.lib
-installed.</para>
-</answer>
-</qandaentry>
-</qandaset>
-</chapter>
--->
-
 
 
 <chapter id="credits">
-
-<!-- Include credits for the programmers, documentation writers, and
-contributors here. The license for your software should then be included below
-the credits with a reference to the appropriate license file included in the KDE
-distribution. -->
-
-<title>Credits and License</title>
-
-<sect1 id="kapp">
-<title>&filelight;</title>
-<para>Program copyright 2003 Max B. Howell <email>max.howell@methylblue.com</email></para>
-
-&underGPL;
-
-</sect1>
-<sect1 id="Documentation">
-
-<title>Documentation</title>
-
-<para>
-Documentation copyright 2003 Max B. Howell <email>max.howell@methylblue.com</email>
-</para>
-
-<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
-
-&underFDL;
-
-</sect1>
-
+   <title>Credits and License</title>
+   <sect1 id="kapp">
+      <title>&filelight;</title>
+      <para>Program copyright 2003 Max B. Howell <email>max.howell@methylblue.com</email></para>
+      &underGPL;
+   </sect1>
+   <sect1 id="Documentation">
+      <title>Documentation</title>
+      <para>Documentation copyright 2003 Max B. Howell <email>max.howell@methylblue.com</email></para>
+      <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
+      &underFDL;
+   </sect1>
 </chapter>
 
+
 <appendix id="installation">
-<title>Installation</title>
-
-<sect1 id="getting-filelight">
-<title>How to obtain &filelight;</title>
-
-<para>
-&filelight; is not yet part of the &kde; project, it can be found at:
-<ulink url="http://www.methylblue.com/filelight/">http://www.methylblue.com/filelight/</ulink>.
-</para>
-</sect1>
-
-<sect1 id="compilation">
-<title>Compilation and Installation</title>
-
-<para>
-In order to compile and install &filelight; on your system, type the following in the base folder of the &filelight; distribution:
-<screen width="40">
-<prompt>%</prompt> <userinput>./configure --prefix=`kde-config --prefix`</userinput>
-<prompt>%</prompt> <userinput>make</userinput>
-<prompt>%</prompt> <userinput>make install</userinput>
-</screen>
-</para>
-
-<para>Since &filelight; uses autoconf and automake you should have not trouble compiling it. Should you run into problems please report them to filelight@methylblue.com or the &filelight; Forums.</para>
-
-</sect1>
-
+   <title>Installation</title>
+   <sect1 id="getting-filelight">
+      <title>How to obtain &filelight;</title>
+      <para>&filelight; is not yet part of the &kde; project, it can be found at <ulink url="http://www.methylblue.com/filelight/">www.methylblue.com/filelight/</ulink>.</para>
+   </sect1>
+   <sect1 id="compilation">
+      <title>Compilation and Installation</title>
+      <para>In order to compile and install &filelight; on your system, type the following in the base folder of the &filelight; distribution:</para>
+      <screen width="40">
+         <prompt>%</prompt> <userinput>./configure --prefix=`kde-config --prefix`</userinput>
+         <prompt>%</prompt> <userinput>make</userinput>
+         <prompt>%</prompt> <userinput>make install</userinput>
+      </screen>
+      <para>Since &filelight; uses autoconf and automake you should have not trouble compiling it. Should you run into problems please report them to filelight@methylblue.com or the &filelight; Forums.</para>
+   </sect1>
 </appendix>
 
 &documentation.index;
+
 </book>
+
 <!--
 Local Variables:
 mode: sgml
