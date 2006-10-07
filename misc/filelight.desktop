@@ -5,6 +5,7 @@ Name=Filelight
 Name[xx]=xxFilelightxx
 GenericName=Disk Usage Information
 GenericName[bg]=Информация за използване на диска
+GenericName[cs]=Informace o využití disku
 GenericName[da]=Information om diskbrug
 GenericName[el]=Πληροφορίες χρήσης δίσκου
 GenericName[es]=Información del uso del disco
