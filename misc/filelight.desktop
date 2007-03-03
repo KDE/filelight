@@ -18,6 +18,7 @@ GenericName[pt]=Informações de Utilização do Disco
 GenericName[pt_BR]=Informações de Utilização do Disco
 GenericName[sk]=Informácie o využití disku
 GenericName[sv]=Information om diskanvändning
+GenericName[uk]=Перегляд використання диска
 Type=Application
 Exec=filelight %f
 Icon=filelight.png
