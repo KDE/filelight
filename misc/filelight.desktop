@@ -3,10 +3,12 @@
 Encoding=UTF-8
 Name=Filelight
 GenericName=Disk Usage Information
+GenericName[el]=Πληροφορίες χρήσης δίσκου
 Type=Application
 Exec=filelight %f
 Icon=filelight.png
 Comment=View disk usage information
+Comment[el]=Προβολή πληροφοριών χρήσης δίσκου
 Terminal=false
 MimeType=inode/directory
 Categories=Qt;KDE;Utility;
