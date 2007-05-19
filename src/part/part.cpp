@@ -252,7 +252,8 @@ Part::mapChanged( const Directory *tree )
 } //namespace Filelight
 
 
-
+#ifndef NDEBUG
 QString QDebug::indent; //see debug.h
+#endif
 
 #include "part.moc"

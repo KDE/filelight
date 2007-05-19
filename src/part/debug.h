@@ -167,6 +167,8 @@ public:
 };
 
 inline QNoDebug qDebug() { return QNoDebug(); }
+inline QNoDebug qWarning() { return QNoDebug(); }
+inline QNoDebug qError() { return QNoDebug(); }
 
 #define Q_DEBUG_BLOCK
 
