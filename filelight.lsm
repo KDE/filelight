@@ -1,10 +1,10 @@
 Begin3
-Title:          Filelight
-Version:        1.0.1
+title:          Filelight
+Version:        1.0
 Entered-date:   5/9/2003
 Description:    Graphical disk usage information
 Keywords:       kde disk usage du filesystem diskspace
-Author:         Max Howell <max.howell@methylblue.com>
+author:         Max Howell <max.howell@methylblue.com>
 Maintained-by:  Max Howell <max.howell@methylblue.com>
 Home-page:      http://www.methylblue.com/filelight/
 Platform:       unix

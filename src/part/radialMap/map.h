@@ -19,25 +19,61 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ***********************************************************************/
 
-#ifndef FILELIGHTSUMMARY_H
-#define FILELIGHTSUMMARY_H
+#ifndef MAP_H
+#define MAP_H
 
-#include <QWidget>
+#include <QPixmap>
+#include <QRect>
+#include <QString>
 
+namespace RadialMap {
+class Segment;
 
-class SummaryWidget : public QWidget
+class Map
 {
-    Q_OBJECT
-
 public:
-    SummaryWidget(QWidget *parent);
-    ~SummaryWidget();
+    Map();
+    ~Map();
 
-signals:
-    void activated(const KUrl&);
+    void make(const Directory *, bool = false);
+    bool resize(const QRect&);
+
+    bool isNull() const {
+        return (m_signature == 0);
+    }
+    void invalidate(const bool);
+
+    int height() const {
+        return m_rect.height();
+    }
+    int width() const {
+        return m_rect.width();
+    }
+
+    QPixmap getPixmap() {
+        return m_pixmap;
+    }
+
+    friend class Builder;
+    friend class Widget;
 
 private:
-    void createDiskMaps();
+    void paint(uint = 1);
+    void aaPaint();
+    void colorise();
+    void setRingBreadth();
+
+    Chain<Segment> *m_signature;
+
+    QRect   m_rect;
+    uint    m_visibleDepth; ///visible level depth of system
+    QPixmap m_pixmap;
+    uint    m_ringBreadth;  ///ring breadth
+    uint    m_innerRadius;  ///radius of inner circle
+    QString m_centerText;
+
+    uint MAP_2MARGIN;
 };
+}
 
 #endif

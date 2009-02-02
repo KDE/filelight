@@ -4,13 +4,8 @@
 
 Simply:
 
-        $ ./configure && make && su -c "make install"
-
-But, I recommend:
-
-        $ CXXFLAGS="-O3" ./configure --enable-final --disable-debug \
-            && make && su -c "make install"
-
+	$ mkdir build && cd build && cmake .. -DCMAKE_INSTALL_PREFIX=/usr \
+		 && make && sudo make install
 
  Troubleshooting
 =================
@@ -26,11 +21,12 @@ installed) like:
         x11-devel
         qt-devel
 
-If you get stuck, please email me the config.log file with any information you
-can provide. I will get back to you! Compile issues suck, I know this full well.
+If you get stuck, please email me with any relevant information you can
+provide. I will get back to you! Compile issues suck, I know this full well.
 --------------------------------------------------------------------------------
 
 
-I hope you enjoy using Filelight!
+We hope you enjoy using Filelight!
 
+Martin Sandsmark <sandsmark@samfundet.no>
 Max Howell <max.howell@methylblue.com>

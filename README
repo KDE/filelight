@@ -3,17 +3,17 @@
 ==================
 
 Filelight allows you to understand exactly where your diskspace is being used by
-graphically representing your file system as a set of concentric
+graphically representating your filesystem as a set of concentric
 segmented-rings.
 
-README last updated with respect to 1.0
 --------------------------------------------------------------------------------
 
 
  Dependencies
 ==============
 
-Filelight depends on KDElibs >= 3.2 and therefore Qt >= 3.2.
+Filelight works on KDElibs >= 4.2 and therefore Qt >= 4.4 (lower versions may
+work, but no guarantees).
 
 
  Usage Tips
@@ -26,14 +26,13 @@ Filelight depends on KDElibs >= 3.2 and therefore Qt >= 3.2.
 * Increase the window size to see more detail
 * Hover over segments to find out more information
 * Available as a view-KPart in Konqueror
-* You can specify a directory to scan on startup from the command line, for
-  example:
+* You can specify a directory to scan on startup from the command line, eg:
 
       $ filelight /home/mxcl
 
 
- Install
-=========
+ Installation
+==============
 
 See the accompanying file; INSTALL.
 
@@ -41,10 +40,11 @@ See the accompanying file; INSTALL.
  Bugs
 ======
 
-There are less bugs everyday! Please report bugs to filelight@methylblue.com
+There are less bugs everyday! Please report bugs to sandsmark@samfundet.no
 --------------------------------------------------------------------------------
 
 
-I hope you enjoy using Filelight!
+We hope you enjoy using Filelight!
 
+Martin Sandsmark <sandsmark@samfundet.no>
 Max Howell <max.howell@methylblue.com>
