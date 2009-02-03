@@ -197,21 +197,21 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
                 openKonqueror = popup.addAction(KIcon("konqueror"), i18n("Open &Konqueror Here"));
 
                 if (url.protocol() == "file")
-                    openKonsole = popup.addAction(KIcon("konsole"), i18n("Open &Konsole Here"));
+                    openKonsole = popup.addAction(KIcon("terminal"), i18n("Open &Konsole Here"));
 
                 if (m_focus->file() != m_tree) {
                     popup.addSeparator();
-                    centerMap = popup.addAction(KIcon("viewmag"), i18n("&Center Map Here"));
+                    centerMap = popup.addAction(KIcon("zoom-in"), i18n("&Center Map Here"));
                 }
             }
             else
                 openFile = popup.addAction(KIcon("fileopen"), i18n("&Open"));
 
             popup.addSeparator();
-            copyClipboard = popup.addAction(KIcon("editcopy"), i18n("&Copy to clipboard"));
+            copyClipboard = popup.addAction(KIcon("edit-copy"), i18n("&Copy to clipboard"));
 
             popup.addSeparator();
-            deleteItem = popup.addAction(KIcon("editdelete"), i18n("&Delete"));
+            deleteItem = popup.addAction(KIcon("edit-delete"), i18n("&Delete"));
 
             QAction* clicked = popup.exec(e->globalPos(), 0);
 
