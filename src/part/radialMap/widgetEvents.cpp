@@ -197,7 +197,7 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
                 openKonqueror = popup.addAction(KIcon("konqueror"), i18n("Open &Konqueror Here"));
 
                 if (url.protocol() == "file")
-                    openKonsole = popup.addAction(KIcon("terminal"), i18n("Open &Konsole Here"));
+                    openKonsole = popup.addAction(KIcon("utilities-terminal"), i18n("Open &Konsole Here"));
 
                 if (m_focus->file() != m_tree) {
                     popup.addSeparator();
