@@ -65,6 +65,8 @@ bool ScanManager::running() const
 
 bool ScanManager::start(const KUrl &url)
 {
+    QMutexLocker locker(&m_mutex); // The m_mutex gets released once locker is destroyed (goes out of scope).
+    
     //url is guarenteed clean and safe
 
     kDebug() << "Scan requested for: " << url.prettyUrl() << endl;
