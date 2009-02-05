@@ -2,15 +2,18 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=Filelight
+Name[x-test]=xxFilelightxx
 Generic Name=Disk Usage Statistics
 Type=Application
 Exec=filelight %f
 Icon=filelight.png
 Comment=View disk usage information
+Comment[ga]=Amharc ar fhaisnéis maidir le húsáid diosca
 Comment[pt]=Ver informações de utilização do disco
 Comment[pt_BR]=Ver informações de utilização do disco
 Comment[tr]=Disk kullanım bilgisini görüntüler
 Comment[uk]=Перегляд інформації про використання дисків
+Comment[x-test]=xxView disk usage informationxx
 Terminal=false
 MimeType=inode/directory
 Categories=Qt;KDE;Utility;
