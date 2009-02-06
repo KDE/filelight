@@ -70,10 +70,6 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
     KGlobal::locale()->insertCatalog("filelight");
     setComponentData(filelightPartFactory::componentData());
     setXMLFile("filelight_partui.rc");
-    // we need an instance
-
-
-//    setInstance(mainComponent());
     setWidget(new QWidget(parentWidget));
 
     m_layout = new QVBoxLayout(widget());
@@ -84,9 +80,7 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
 
     KStandardAction::zoomIn(m_map, SLOT(zoomIn()), actionCollection());
     KStandardAction::zoomOut(m_map, SLOT(zoomOut()), actionCollection());
-    KAction *showPreferences = KStandardAction::preferences(this, SLOT(configFilelight()), actionCollection());
-    showPreferences->setText(i18n("Configure Filelight..."));
-    showPreferences->setObjectName("configure_filelight");
+    KStandardAction::preferences(this, SLOT(configFilelight()), actionCollection());
 
     connect(m_map, SIGNAL(created(const Directory*)), SIGNAL(completed()));
     connect(m_map, SIGNAL(created(const Directory*)), SLOT(mapChanged(const Directory*)));

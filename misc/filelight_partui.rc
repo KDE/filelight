@@ -6,7 +6,7 @@
     <Action name="view_zoom_out" group="view_merge_group"/>
   </Menu>
   <Menu name="settings">
-    <Action name="configure_filelight" group="configure_merge_group"/>
+    <Action name="options_configure" group="settings_configure"/>
   </Menu>
 </MenuBar>
 
@@ -22,14 +22,14 @@
   <enable>
     <Action name="view_zoom_in"/>
     <Action name="view_zoom_out"/>
-    <Action name="configure_filelight"/>
+    <Action name="options_configure"/>
   </enable>
 </State>
 
 <State name="scan_failed">
   <!-- only for full failure situations -->
   <enable>
-    <Action name="configure_filelight"/>
+    <Action name="options_configure"/>
   </enable>
   <disable>
     <Action name="view_zoom_in"/>
