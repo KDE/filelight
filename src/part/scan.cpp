@@ -66,7 +66,7 @@ bool ScanManager::running() const
 bool ScanManager::start(const KUrl &url)
 {
     QMutexLocker locker(&m_mutex); // The m_mutex gets released once locker is destroyed (goes out of scope).
-    
+
     //url is guarenteed clean and safe
 
     kDebug() << "Scan requested for: " << url.prettyUrl() << endl;
@@ -158,6 +158,7 @@ bool ScanManager::start(const KUrl &url)
         //starts listing by itself
         m_thread = new Filelight::LocalLister(path, trees, this);
         connect(m_thread, SIGNAL(branchCompleted(Directory*, bool)), this, SLOT(cacheTree(Directory*, bool)));
+        m_thread->start();
 
         return true;
     }

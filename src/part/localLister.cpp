@@ -63,8 +63,6 @@ LocalLister::LocalLister(const QString &path, Chain<Directory> *cachedTrees, QOb
         if ((*it).startsWith(path))
             //prevent scanning of these directories
             m_trees->append(new Directory((*it).toLocal8Bit()));
-
-    start();
 }
 
 void
