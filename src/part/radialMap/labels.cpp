@@ -110,7 +110,7 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
         unsigned int a1, a2, minAngle;
 
         a1 = m_focus->start();
-        a2 = m_focus->end();  //boundry angles
+        a2 = m_focus->end();  //boundary angles
         minAngle = int(m_focus->length() * LABEL_MIN_ANGLE_FACTOR);
 
 

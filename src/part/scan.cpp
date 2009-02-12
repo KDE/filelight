@@ -19,8 +19,9 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ***********************************************************************/
 
-#include "remoteLister.h"
 #include "scan.h"
+
+#include "remoteLister.h"
 #include "fileTree.h"
 #include "localLister.h"
 
@@ -67,7 +68,7 @@ bool ScanManager::start(const KUrl &url)
 {
     QMutexLocker locker(&m_mutex); // The m_mutex gets released once locker is destroyed (goes out of scope).
 
-    //url is guarenteed clean and safe
+    //url is guaranteed clean and safe
 
     kDebug() << "Scan requested for: " << url.prettyUrl() << endl;
 

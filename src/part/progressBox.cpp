@@ -19,8 +19,9 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ***********************************************************************/
 
-#include "scan.h"
 #include "progressBox.h"
+
+#include "scan.h"
 
 #include <KGlobal>
 #include <KGlobalSettings>

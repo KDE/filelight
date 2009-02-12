@@ -19,8 +19,9 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ***********************************************************************/
 
-#include "Config.h"
 #include "localLister.h"
+
+#include "Config.h"
 #include "fileTree.h"
 #include "scan.h"
 
@@ -31,6 +32,7 @@
 #include <QFile>
 #include <Q3CString>
 
+#include <kde_file.h>
 #include <dirent.h>
 #include <fstab.h>
 #include <sys/stat.h>
@@ -78,7 +80,7 @@ LocalLister::run()
 
     if (ScanManager::s_abort) //scan was cancelled
     {
-        kDebug() << "Scan succesfully aborted";
+        kDebug() << "Scan successfully aborted";
         delete tree;
         tree = 0;
     }
@@ -129,16 +131,6 @@ ST_NBLOCKSIZE: Size of blocks used when calculating ST_NBLOCKS.  */
 #define ST_NBLOCKSIZE 512
 #endif
 
-//some GNU systems don't support big files for some reason
-#ifdef __USE_LARGEFILE64 //see dirent.h
-#define dirent dirent64
-#define scandir scandir64
-#define stat stat64
-#define statstruct stat64
-#define lstat lstat64
-#define readdir readdir64
-#endif
-
 #ifndef NULL
 #define NULL 0
 #endif
@@ -154,7 +146,7 @@ outputError(Q3CString path)
 
     switch (errno) {
     case EACCES:
-        out("Inadequate access permisions");
+        out("Inadequate access permissions");
     case EMFILE:
         out("Too many file descriptors in use by Filelight");
     case ENFILE:
@@ -189,9 +181,9 @@ LocalLister::scan(const Q3CString &path, const Q3CString &dirname)
         return cwd;
     }
 
-    struct stat statbuf;
+    KDE_struct_stat statbuf;
     dirent *ent;
-    while ((ent = readdir(dir)))
+    while ((ent = KDE_readdir(dir)))
     {
         if (ScanManager::s_abort)
             return cwd;
@@ -203,7 +195,7 @@ LocalLister::scan(const Q3CString &path, const Q3CString &dirname)
         new_path += ent->d_name;
 
         //get file information
-        if (lstat(new_path, &statbuf) == -1) {
+        if (KDE_lstat(new_path, &statbuf) == -1) {
             outputError(new_path);
             continue;
         }
@@ -336,7 +328,7 @@ LocalLister::readMounts()
 
         str = QString(FS_FILE);
         if (str == "/") continue;
-        str += "/";
+        str += '/';
 
         if (remoteFsTypes.contains(FS_TYPE))
             if (b = !s_remoteMounts.contains(str))

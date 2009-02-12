@@ -19,11 +19,12 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ***********************************************************************/
 
-#ifndef FILELIGHTSUMMARY_H
-#define FILELIGHTSUMMARY_H
+#ifndef SUMMARYWIDGET_H
+#define SUMMARYWIDGET_H
 
 #include <QWidget>
 
+#include <KUrl>
 
 class SummaryWidget : public QWidget
 {

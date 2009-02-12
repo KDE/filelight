@@ -19,14 +19,16 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ***********************************************************************/
 
+#include "summaryWidget.h"
+
 #include "Config.h"
 #include "fileTree.h"
 #include "radialMap/radialMap.h"
 #include "radialMap/widget.h"
-#include "summaryWidget.h"
 #include "summaryWidget.moc"
 
 #include <KCursor>
+#include <KDebug>
 #include <KIconEffect> //MyRadialMap::mousePressEvent()
 #include <KIconLoader>
 #include <KIcon>
@@ -134,7 +136,7 @@ void SummaryWidget::createDiskMaps()
         if (disk.free == 0 && disk.used == 0)
             continue;
 
-        QWidget *box = new QWidget(this);
+        QWidget *box = new QFrame(this);
         box->setLayout(new QVBoxLayout(box));
         //box->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Maximum);
         RadialMap::Widget *map = new MyRadialMap(box);
@@ -144,17 +146,18 @@ void SummaryWidget::createDiskMaps()
 //            << " &nbsp;" << disk.mount << " "
 //            << "<i>(" << disk.device << ")</i>";
 
-        QGridLayout* horizontalLayout = new QGridLayout(box);
+        QHBoxLayout* horizontalLayout = new QHBoxLayout();
 
-        QLabel *icon = new QLabel(box);
-        icon->setPixmap(KIcon(disk.icon).pixmap(32,32));
-        horizontalLayout->addWidget(icon);
-
-        QLabel *label = new QLabel(disk.mount + " (" + disk.device + ")", box);
-        label->setAlignment(Qt::AlignCenter);
+        QLabel *label = new QLabel(disk.mount + '(' + disk.device + ')', box);
         horizontalLayout->addWidget(label);
 
+        QLabel *icon = new QLabel(box);
+        icon->setPixmap(KIcon(disk.icon).pixmap(16,16));
+        horizontalLayout->addWidget(icon);
+
+        horizontalLayout->setAlignment(Qt::AlignCenter);
         box->layout()->addWidget(map);
+//        box->layout()->setAlignment(map, Qt::AlignCenter);
         box->layout()->addItem(horizontalLayout);
 
         layout()->addWidget(box);

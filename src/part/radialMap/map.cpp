@@ -75,7 +75,7 @@ void RadialMap::Map::invalidate(const bool desaturateTheImage)
 
 void RadialMap::Map::make(const Directory *tree, bool refresh)
 {
-    //**** determineText seems pointless optimisation
+    //**** determineText seems like pointless optimization
     //   but is it good to keep the text consistent?
     //   even if it makes it a lie?
 
@@ -151,7 +151,7 @@ bool RadialMap::Map::resize(const QRect &rect)
         size += MAP_2MARGIN;
         m_pixmap = QPixmap(size, size);
 
-        // for summary widget this is a good optimisation as it happens
+        // for summary widget this is a good optimization as it happens
         if (m_pixmap.isNull())
             return false;
 
@@ -160,7 +160,7 @@ bool RadialMap::Map::resize(const QRect &rect)
             setRingBreadth();
             paint();
         }
-        else m_pixmap.fill(); //FIXME I don't like having to do this..
+        else m_pixmap.fill(QApplication::palette().color(QPalette::Background)); //FIXME I don't like having to do this..
 
         return true;
     }
@@ -332,7 +332,7 @@ void RadialMap::Map::paint(unsigned int scaleFactor)
 
     paint.begin(&m_pixmap);
 
-    m_pixmap.fill(); //erase background
+    m_pixmap.fill(QApplication::palette().color(QPalette::Background)); //erase background
 
     for (int x = m_visibleDepth; x >= 0; --x)
     {

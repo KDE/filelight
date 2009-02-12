@@ -19,8 +19,9 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ***********************************************************************/
 
-#include "part/fileTree.h"
 #include "segmentTip.h"
+
+#include "part/fileTree.h"
 
 #include <cstdlib>
 #include <kapplication.h>    //installing eventFilters

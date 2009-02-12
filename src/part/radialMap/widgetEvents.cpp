@@ -72,7 +72,7 @@ RadialMap::Widget::paintEvent(QPaintEvent*)
     paint.drawPixmap(m_offset, m_map.getPixmap());
 
     //vertical strips
-    if (m_map.width() < width())
+    /*if (m_map.width() < width())
     {
         paint.eraseRect(0, 0, m_offset.x(), height());
         paint.eraseRect(m_map.width() + m_offset.x(), 0, m_offset.x() + 1, height());
@@ -82,7 +82,7 @@ RadialMap::Widget::paintEvent(QPaintEvent*)
     {
         paint.eraseRect(0, 0, width(), m_offset.y());
         paint.eraseRect(0, m_map.height() + m_offset.y(), width(), m_offset.y() + 1);
-    }
+    }*/
 
     //exploded labels
     if (!m_map.isNull() && !m_timer.isActive())
@@ -158,7 +158,7 @@ RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
             repaint();
         }
 
-        m_tip->moveTo(e->globalPos(), *this, (p.y() < 0)); //updates tooltip psuedo-tranparent background
+        m_tip->moveTo(e->globalPos(), *this, (p.y() < 0)); //updates tooltip pseudo-transparent background
     }
     else if (oldFocus && oldFocus->file() != m_tree)
     {
@@ -166,7 +166,7 @@ RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
         m_tip->hide();
         update();
 
-        emit mouseHover(QString::null);
+        emit mouseHover(QString());
     }
 }
 
@@ -230,16 +230,16 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
             } else if (clicked == deleteItem) {
                 const KUrl url = Widget::url(m_focus->file());
                 const QString message = m_focus->file()->isDirectory()
-                                        ? i18n("<qt>The directory at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</b> deleted.")
-                                        : i18n("<qt><i>'%1'</i> will be <b>permanently</b> deleted.");
+                                        ? i18n("<qt>The directory at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</b> deleted.", url.prettyUrl())
+                                        : i18n("<qt><i>'%1'</i> will be <b>permanently</b> deleted.", url.prettyUrl());
                 const int userIntention = KMessageBox::warningContinueCancel(
-                                              this, message.arg(url.prettyUrl()),
-                                              QString::null, KGuiItem(i18n("&Delete"), "editdelete"));
+                                              this, message,
+                                              QString(), KGuiItem(i18n("&Delete"), "editdelete"));
 
                 if (userIntention == KMessageBox::Continue) {
                     KIO::Job *job = KIO::del(url);
                     job->ui()->setWindow(this);
-                    connect(job, SIGNAL(result(KIO::Job*)), SLOT(deleteJobFinished(KIO::Job*)));
+                    connect(job, SIGNAL((KJob*)), SLOT(deleteJobFinished(KIO::Job*)));
                     QApplication::setOverrideCursor(Qt::BusyCursor);
                 }
             } else {

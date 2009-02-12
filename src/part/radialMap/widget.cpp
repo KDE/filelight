@@ -19,6 +19,8 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ***********************************************************************/
 
+#include "widget.h"
+
 #include <KCursor>        //ctor
 #include <KLocale>
 #include <KUrl>
@@ -31,7 +33,6 @@
 #include "part/Config.h"
 #include "part/fileTree.h"
 #include "radialMap.h" //constants
-#include "widget.h"
 #include "map.h"
 
 

@@ -207,7 +207,7 @@ inline void MainWindow::slotScanDirectory()
 }
 
 inline void MainWindow::slotScanHomeDirectory() {
-    slotScanPath(getenv("HOME"));
+    slotScanPath(qgetenv("HOME"));
 }
 inline void MainWindow::slotScanRootDirectory() {
     slotScanPath("/");
@@ -312,7 +312,7 @@ void setActionMenuTextOnly(KAction *a, QString const &suffix)
 {
     QString const menu_text = suffix.isEmpty()
                               ? a->text()
-                              : i18nc("&Up: /home/mxcl", "%1: %2").arg(a->text(), suffix);
+                              : i18nc("&Up: /home/mxcl", "%1: %2", a->text(), suffix);
 
     for (int i = 0; i < a->associatedWidgets().count(); ++i) {
         QWidget *w = a->associatedWidgets().value(i);

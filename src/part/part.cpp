@@ -19,10 +19,11 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ***********************************************************************/
 
+#include "part.h"
+
 #include "Config.h"
 #include "define.h"
 #include "fileTree.h"
-#include "part.h"
 #include "progressBox.h"
 #include "radialMap/widget.h"
 #include "scan.h"
@@ -72,7 +73,7 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
     setXMLFile("filelight_partui.rc");
     setWidget(new QWidget(parentWidget));
 
-    m_layout = new QVBoxLayout(widget());
+    m_layout = new QGridLayout(widget());
     widget()->setLayout(m_layout);
 
     m_map = new RadialMap::Widget(widget());
@@ -144,15 +145,15 @@ Part::openURL(const KUrl &u)
     }
     else if (path[0] != '/')
     {
-        KMSG(i18n("Filelight only accepts absolute paths, eg. /%1").arg(path));
+        KMSG(i18n("Filelight only accepts absolute paths, eg. /%1", path));
     }
     else if (isLocal && access(path8bit, F_OK) != 0) //stat(path, &statbuf) == 0
     {
-        KMSG(i18n("Directory not found: %1").arg(path));
+        KMSG(i18n("Directory not found: %1", path));
     }
     else if (isLocal && access(path8bit, R_OK | X_OK) != 0)
     {
-        KMSG(i18n("Unable to enter: %1\nYou do not have access rights to this location.").arg(path));
+        KMSG(i18n("Unable to enter: %1\nYou do not have access rights to this location.", path));
     }
     else
     {
@@ -262,8 +263,8 @@ Part::scanCompleted(Directory *tree)
     }
     else {
         stateChanged("scan_failed");
-        emit canceled(i18n("Scan failed: %1").arg(prettyUrl()));
-        emit setWindowCaption(QString::null);
+        emit canceled(i18n("Scan failed: %1", prettyUrl()));
+        emit setWindowCaption(QString());
 
         statusBar()->clearMessage();
 

@@ -28,7 +28,7 @@
     <Action name="go_back"/>
     <Action name="go_forward"/>
     <Action name="go_up"/>
-    <Separator lineSeperator="true"/>
+    <Separator/>
     <Action name="scan_rescan"/>
     <Action name="scan_stop"/>
 </ToolBar>

@@ -1,12 +1,11 @@
 # KDE Config File
 [Desktop Entry]
-Encoding=UTF-8
 Name=Filelight
 Name[x-test]=xxFilelightxx
-Generic Name=Disk Usage Statistics
+GenericName=Disk Usage Statistics
 Type=Application
 Exec=filelight %f
-Icon=filelight.png
+Icon=filelight
 Comment=View disk usage information
 Comment[et]=Kettakasutuse teabe kuvamine
 Comment[ga]=Amharc ar fhaisnéis maidir le húsáid diosca
@@ -17,5 +16,5 @@ Comment[tr]=Disk kullanım bilgisini görüntüler
 Comment[uk]=Перегляд інформації про використання дисків
 Comment[x-test]=xxView disk usage informationxx
 Terminal=false
-MimeType=inode/directory
+MimeType=inode/directory;
 Categories=Qt;KDE;Utility;

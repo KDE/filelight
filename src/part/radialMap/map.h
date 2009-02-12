@@ -22,6 +22,8 @@
 #ifndef MAP_H
 #define MAP_H
 
+#include "part/fileTree.h"
+
 #include <QPixmap>
 #include <QRect>
 #include <QString>

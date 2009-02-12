@@ -72,9 +72,10 @@ SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
 
     connect(minFontPitch, SIGNAL (valueChanged(int)), SLOT(changeMinFontPitch(int)));
 
-    m_addButton->setIcon(SmallIcon("fileopen"));
-    m_resetButton->setIcon(SmallIcon("undo"));
-    m_closeButton->setIcon(SmallIcon("fileclose"));
+    m_addButton->setIcon(SmallIcon("folder-open"));
+    m_removeButton->setIcon(SmallIcon("list-remove"));
+    m_resetButton->setIcon(SmallIcon("edit-undo"));
+    m_closeButton->setIcon(SmallIcon("dialog-close"));
 }
 
 

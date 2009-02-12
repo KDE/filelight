@@ -19,8 +19,8 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ***********************************************************************/
 
-#ifndef FILELIGHT_H
-#define FILELIGHT_H
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
 
 #include <kparts/mainwindow.h>
 
