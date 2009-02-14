@@ -3,6 +3,10 @@
 Name=Filelight
 Name[x-test]=xxFilelightxx
 GenericName=Disk Usage Statistics
+GenericName[pt]=Estatísticas de Utilização do Disco
+GenericName[pt_BR]=Estatísticas de Utilização do Disco
+GenericName[sv]=Statistik över diskanvändning
+GenericName[uk]=Статистика використання диска
 Type=Application
 Exec=filelight %f
 Icon=filelight
