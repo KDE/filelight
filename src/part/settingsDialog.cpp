@@ -111,7 +111,8 @@ void SettingsDialog::reset()
     //tab 2
     if (colourSchemeGroup->selected() != Config::scheme) //TODO: This is probably wrong
     {
-        colourSchemeGroup->setSelected(Config::scheme);
+        qobject_cast<QRadioButton*>(colourSchemeGroup->layout()->itemAt(Config::scheme)->widget())->setChecked(true);
+        //colourSchemeGroup->setSelected(Config::scheme);
         //setButton doesn't call a single QButtonGroup signal!
         //so we need to call this ourselves (and hence the detection above)
         changeScheme(Config::scheme);
