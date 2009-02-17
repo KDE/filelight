@@ -167,9 +167,11 @@ bool ScanManager::start(const KUrl &url)
     m_url = url;
     QApplication::setOverrideCursor(Qt::BusyCursor);
     //will start listing straight away
-    QObject *o = new Filelight::RemoteLister(url, (QWidget*)parent());
-    o->setParent(this);
-    o->setObjectName("remote_lister");
+    Filelight::RemoteLister *remoteLister = new Filelight::RemoteLister(url, (QWidget*)parent());
+    connect(remoteLister, SIGNAL(branchCompleted(Directory*, bool)), this, SLOT(cacheTree(Directory*, bool)));
+    remoteLister->setParent(this);
+    remoteLister->setObjectName("remote_lister");
+    remoteLister->openUrl(url);
     return true;
 }
 

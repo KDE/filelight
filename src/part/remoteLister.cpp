@@ -94,16 +94,13 @@ RemoteLister::RemoteLister(const KUrl &url, QWidget *parent)
     // Use SIGNAL(result(KIO::Job*)) instead and then use Job::error()
     connect(this, SIGNAL(completed()), SLOT(completed()));
     connect(this, SIGNAL(canceled()), SLOT(canceled()));
-
-    // We do this non-recursively - it is the only way!
-    openUrl(url);
 }
 
 RemoteLister::~RemoteLister()
 {
-//    Directory *tree = isFinished() ? m_store->directory : 0;
+    Directory *tree = isFinished() ? m_store->directory : 0;
 
-//      qobject_cast<ScanManager*>(parent())->appendTree(tree, false);//FIXME TODO FUCK
+    emit branchCompleted(tree, false);
     delete m_root;
 }
 

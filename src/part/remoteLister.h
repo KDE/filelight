@@ -23,6 +23,8 @@
 #define REMOTELISTER_H
 
 #include <KDirLister>
+#include "fileTree.h"
+
 
 namespace Filelight
 {
@@ -32,6 +34,9 @@ class RemoteLister : public KDirLister
 public:
     RemoteLister(const KUrl &url, QWidget *parent);
     ~RemoteLister();
+
+signals:
+    void branchCompleted(Directory* tree, bool finished);
 
 private slots:
     void completed();
