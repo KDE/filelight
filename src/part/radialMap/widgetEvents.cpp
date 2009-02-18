@@ -89,6 +89,7 @@ RadialMap::Widget::paintEvent(QPaintEvent*)
     if (!m_map.isNull() && !m_timer.isActive())
     {
         QPainter paint(this);
+	paint.setRenderHint(QPainter::Antialiasing);
         paintExplodedLabels(paint);
     }
 }
