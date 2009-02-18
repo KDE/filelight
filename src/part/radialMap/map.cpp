@@ -23,6 +23,7 @@
 #include <KDebug>
 #include <KGlobalSettings> //kdeColours
 #include <qimageblitz/qimageblitz.h>    //desaturate()
+#include <QPainter>
 #include <QApplication>    //make()
 #include <QImage>          //make() & paint()
 #include <QFont>           //ctor
@@ -299,6 +300,9 @@ void RadialMap::Map::paint(bool antialias)
     //  ** i.e. slightly eliptic when resizing inbetween
 
     paint.begin(m_widget);
+    if (antialias)
+	paint.setRenderHint(QPainter::Antialiasing);
+
     rect.moveTo(m_widget->offset());
     for (int x = m_visibleDepth; x >= 0; --x)
     {
