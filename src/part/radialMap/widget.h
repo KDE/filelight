@@ -64,6 +64,8 @@ public:
         return m_tree != 0;
     }
 
+    QPoint offset() { return m_offset; }
+
     friend class Label; //FIXME badness
 
 public slots:

@@ -67,9 +67,10 @@ RadialMap::Widget::paintEvent(QPaintEvent*)
     //shame as bitBlt is faster, possibly Qt bug? Should report the bug? - seems to be race condition
     //bitBlt(this, m_offset, &m_map);
 
-    QPainter paint(this);
 
-    paint.drawPixmap(m_offset, m_map.getPixmap());
+//    paint.drawPixmap(m_offset, m_map.getPixmap());
+    if (!m_map.isNull())
+        m_map.paint(this);
 
     //vertical strips
     /*if (m_map.width() < width())
@@ -86,7 +87,10 @@ RadialMap::Widget::paintEvent(QPaintEvent*)
 
     //exploded labels
     if (!m_map.isNull() && !m_timer.isActive())
+    {
+        QPainter paint(this);
         paintExplodedLabels(paint);
+    }
 }
 
 const RadialMap::Segment*

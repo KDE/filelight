@@ -40,6 +40,7 @@ RadialMap::Widget::Widget(QWidget *parent)
         : QWidget(parent)
         , m_tree(0)
         , m_focus(0)
+        , m_map(this)
         , m_rootSegment(0) //TODO we don't delete it, *shrug*
 {
     setAcceptDrops(true);

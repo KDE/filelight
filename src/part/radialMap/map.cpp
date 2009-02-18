@@ -37,10 +37,10 @@
 #include "sincos.h"
 #include "widget.h"
 
-RadialMap::Map::Map()
+RadialMap::Map::Map(Widget* widget)
         : m_signature(0)
         , m_visibleDepth(DEFAULT_RING_DEPTH)
-        , m_pixmap()
+        , m_widget(widget)
         , m_ringBreadth(MIN_RING_BREADTH)
         , m_innerRadius(0)
 {
@@ -62,12 +62,7 @@ void RadialMap::Map::invalidate(const bool desaturateTheImage)
 
     if (desaturateTheImage)
     {
-        QImage img = m_pixmap.toImage();
-
-        Blitz::desaturate(img, 0.7);
-        Blitz::grayscale(img, true);
-
-        m_pixmap.fromImage(img);
+          //TODO
     }
 
     m_visibleDepth = Config::defaultRingDepth;
@@ -149,18 +144,12 @@ bool RadialMap::Map::resize(const QRect &rect)
 
         //resize the pixmap
         size += MAP_2MARGIN;
-        m_pixmap = QPixmap(size, size);
-
-        // for summary widget this is a good optimization as it happens
-        if (m_pixmap.isNull())
-            return false;
 
         if (m_signature != 0)
         {
             setRingBreadth();
-            paint();
+            //paint();
         }
-        else m_pixmap.fill(QApplication::palette().color(QPalette::Background)); //FIXME I don't like having to do this..
 
         return true;
     }
@@ -289,35 +278,19 @@ void RadialMap::Map::aaPaint()
     //paint() is called during continuous processes
     //aaPaint() is not and is slower so set overidecursor (make sets it too)
     QApplication::setOverrideCursor(Qt::WaitCursor);
-    paint(Config::antiAliasFactor);
+    paint(true);
     QApplication::restoreOverrideCursor();
 }
 
-void RadialMap::Map::paint(unsigned int scaleFactor)
+void RadialMap::Map::paint(bool antialias)
 {
-    if (scaleFactor == 0) //just in case
-        scaleFactor = 1;
-
     QPainter paint;
     QRect rect = m_rect;
     int step = m_ringBreadth;
     int excess = -1;
 
-    //scale the pixmap, or do intelligent distribution of excess to prevent nasty resizing
-    if (scaleFactor > 1)
-    {
-        int x1, y1, x2, y2;
-        rect.getCoords(&x1, &y1, &x2, &y2);
-        x1 *= scaleFactor;
-        y1 *= scaleFactor;
-        x2 *= scaleFactor;
-        y2 *= scaleFactor;
-        rect.setCoords(x1, y1, x2, y2);
-
-        step *= scaleFactor;
-        m_pixmap = QPixmap(m_pixmap.size() * (int)scaleFactor);
-    }
-    else if (m_ringBreadth != MAX_RING_BREADTH && m_ringBreadth != MIN_RING_BREADTH) {
+    //do intelligent distribution of excess to prevent nasty resizing
+    if (m_ringBreadth != MAX_RING_BREADTH && m_ringBreadth != MIN_RING_BREADTH) {
         excess = rect.width() % m_ringBreadth;
         ++step;
     }
@@ -325,20 +298,13 @@ void RadialMap::Map::paint(unsigned int scaleFactor)
     //**** best option you can think of is to make the circles slightly less perfect,
     //  ** i.e. slightly eliptic when resizing inbetween
 
-    if (m_pixmap.isNull()) {
-        kWarning() << "Refusing to draw on null pixmap.";
-        return;
-    }
-
-    paint.begin(&m_pixmap);
-
-    m_pixmap.fill(QApplication::palette().color(QPalette::Background)); //erase background
-
+    paint.begin(m_widget);
+    rect.moveTo(m_widget->offset());
     for (int x = m_visibleDepth; x >= 0; --x)
     {
         int width = rect.width() / 2;
         //clever geometric trick to find largest angle that will give biggest arrow head
-        int a_max = int(acos((double)width / double((width + 5) * scaleFactor)) * (180*16 / M_PI));
+        int a_max = int(acos((double)width / double((width + 5))) * (180*16 / M_PI));
 
         for (ConstIterator<Segment> it = m_signature[x].constIterator(); it != m_signature[x].end(); ++it)
         {
@@ -346,7 +312,7 @@ void RadialMap::Map::paint(unsigned int scaleFactor)
             //arrows on the ends of segments when they have hidden files
 
             paint.setPen((*it)->pen());
-
+    
             if ((*it)->hasHiddenChildren())
             {
                 //draw arrow head to indicate undisplayed files/directories
@@ -368,7 +334,7 @@ void RadialMap::Map::paint(unsigned int scaleFactor)
                     double ra = M_PI/(180*16) * a[i], sinra, cosra;
 
                     if (i == 2)
-                        radius += 5 * scaleFactor;
+                        radius += 5;
                     sincos(ra, &sinra, &cosra);
                     pos.rx() = cpos.x() + static_cast<int>(cosra * radius);
                     pos.ry() = cpos.y() - static_cast<int>(sinra * radius);
@@ -387,7 +353,7 @@ void RadialMap::Map::paint(unsigned int scaleFactor)
                 //**** code is bloated!
                 paint.save();
                 QPen pen = paint.pen();
-                int width = 2 * scaleFactor;
+                int width = 2;
                 pen.setWidth(width);
                 paint.setPen(pen);
                 QRect rect2 = rect;
@@ -412,28 +378,6 @@ void RadialMap::Map::paint(unsigned int scaleFactor)
     paint.setPen(Qt::gray);
     paint.setBrush(Qt::white);
     paint.drawEllipse(rect);
-    if (scaleFactor > 1)
-    {
-        //have to end in order to smoothscale()
-        paint.end();
-
-        int x1, y1, x2, y2;
-        rect.getCoords(&x1, &y1, &x2, &y2);
-        x1 /= scaleFactor;
-        y1 /= scaleFactor;
-        x2 /= scaleFactor;
-        y2 /= scaleFactor;
-        rect.setCoords(x1, y1, x2, y2);
-
-        QImage img = m_pixmap.toImage();
-        img = img.scaled(m_pixmap.size() / (int)scaleFactor, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-        m_pixmap = QPixmap::fromImage(img);
-
-        paint.begin(&m_pixmap);
-        paint.setPen(Qt::gray);
-        paint.setBrush(Qt::white);
-    }
-
     paint.drawText(rect, Qt::AlignCenter, m_centerText);
 
     m_innerRadius = rect.width() / 2; //rect.width should be multiple of 2
