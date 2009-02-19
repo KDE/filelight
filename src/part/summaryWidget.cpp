@@ -107,7 +107,7 @@ SummaryWidget::SummaryWidget(QWidget *parent)
         : QWidget(parent)
 {
     qApp->setOverrideCursor(Qt::WaitCursor);
-    setLayout(new QHBoxLayout(this));
+    setLayout(new QGridLayout(this));
     createDiskMaps();
     qApp->restoreOverrideCursor();
 }
@@ -136,31 +136,35 @@ void SummaryWidget::createDiskMaps()
         if (disk.free == 0 && disk.used == 0)
             continue;
 
-        QWidget *box = new QFrame(this);
-        box->setLayout(new QVBoxLayout(box));
+        QVBoxLayout * lay = new QVBoxLayout(this);
         //box->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Maximum);
-        RadialMap::Widget *map = new MyRadialMap(box);
+        RadialMap::Widget *map = new MyRadialMap(this);
 
 //        QString text; QTextOStream(&text)
 //            << "<img src='" << loader.iconPath(disk.icon, KIconLoader::Toolbar) << "'>"
 //            << " &nbsp;" << disk.mount << " "
 //            << "<i>(" << disk.device << ")</i>";
 
-        QHBoxLayout* horizontalLayout = new QHBoxLayout();
+        QHBoxLayout* horizontalLayout = new QHBoxLayout(this);
 
-        QLabel *label = new QLabel(disk.mount + '(' + disk.device + ')', box);
+        QLabel *label = new QLabel(disk.mount + '(' + disk.device + ')', this);
         horizontalLayout->addWidget(label);
 
-        QLabel *icon = new QLabel(box);
+        QLabel *icon = new QLabel(this);
         icon->setPixmap(KIcon(disk.icon).pixmap(16,16));
         horizontalLayout->addWidget(icon);
 
         horizontalLayout->setAlignment(Qt::AlignCenter);
-        box->layout()->addWidget(map);
+        lay->addWidget(map);
 //        box->layout()->setAlignment(map, Qt::AlignCenter);
-        box->layout()->addItem(horizontalLayout);
+        lay->addItem(horizontalLayout);
 
-        layout()->addWidget(box);
+        if (!(layout()->count() % 2)) {
+            qobject_cast<QGridLayout*>(layout())->addItem(lay, 0, layout()->count() / 2);
+        }
+        else {
+            qobject_cast<QGridLayout*>(layout())->addItem(lay, 1, (int) layout()->count() / 2);
+        }
         //box->show(); // will show its children too
 
         Directory *tree = new Directory(disk.mount.toLocal8Bit());
