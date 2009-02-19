@@ -114,38 +114,31 @@ inline void MainWindow::setupActions() //singleton function
 
     KAction* action;
 
-    //KAction(KIcon("folder_home"), i18n("Scan &Home Directory"), this, SLOT(slotScanHomeDirectory()), ac, "scan_home")
     action = ac->addAction("scan_home", this, SLOT(slotScanHomeDirectory()));
     action->setText(i18n("Scan &Home Directory"));
     action->setIcon(KIcon("user-home"));
     action->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Home));
 
-    //new KAction(i18n("Scan &Root Directory"), "folder_red", 0, this, SLOT(slotScanRootDirectory()), ac, "scan_root");
     action = ac->addAction("scan_root", this, SLOT(slotScanRootDirectory()));
     action->setText(i18n("Scan &Root Directory"));
     action->setIcon(KIcon("folder-red"));
 
-    //new KAction(i18n("Rescan"), "reload", KStandardShortcut::reload(), m_part, SLOT(rescan()), ac, "scan_rescan");
     action = ac->addAction("scan_rescan", m_part, SLOT(rescan()));
     action->setText(i18n("Rescan"));
     action->setIcon(KIcon("view-refresh"));
     action->setShortcut(KStandardShortcut::reload());
 
 
-    //new KAction(i18n("Stop"), "stop", Qt::Key_Escape, this, SLOT(slotAbortScan()), ac, "scan_stop");
     action = ac->addAction("scan_stop", this, SLOT(slotAbortScan()));
     action->setText(i18n("Stop"));
     action->setIcon(KIcon("process-stop"));
     action->setShortcut(Qt::Key_Escape);
-
-    //new KAction(i18n("Clear Location Bar"), KApplication::reverseLayout() ? "clear_left" : "locationbar_erase", 0, m_combo, SLOT(clearEdit()), ac, "clear_location");
 
     //new KAction(i18n("Go"), "key_enter", 0, m_combo, SIGNAL(returnPressed()), ac, "go");
     action = ac->addAction("go", m_combo, SIGNAL(returnPressed()));
     action->setText(i18n("Go"));
     action->setIcon(KIcon("go-jump-locationbar"));
 
-//    K3WidgetAction *combo = new K3WidgetAction(m_combo, i18n("Location Bar"), 0, 0, 0, ac, "location_bar"); //TODO: Wtf was this good for?
     action = ac->addAction("location_bar", 0, 0);
     action->setText(i18n("Location Bar"));
     action->setDefaultWidget(m_combo);
@@ -154,13 +147,11 @@ inline void MainWindow::setupActions() //singleton function
     action->setText(i18n("Scan Directory"));
     action->setIcon(KIcon("folder"));
 
-    //m_recentScans = new KRecentFilesAction(i18n("&Recent Scans"), 0, ac, "scan_recent", 8);
     m_recentScans = new KRecentFilesAction(i18n("&Recent Scans"), ac);
     m_recentScans->setMaxItems(8);
 
     m_histories = new HistoryCollection(ac, this);
 
-//    ac->action("scan_directory")->setText(i18n("&Scan Directory...")); TODO: Uncomment this, and fix.
     m_recentScans->loadEntries(KGlobal::config()->group(""));
     //combo->setAutoSized(true); //FIXME what does this do?
 
