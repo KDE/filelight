@@ -3,6 +3,7 @@
 Name=Filelight
 Name[x-test]=xxFilelightxx
 GenericName=Disk Usage Statistics
+GenericName[ja]=ディスクの使用状況
 GenericName[pt]=Estatísticas de Utilização do Disco
 GenericName[pt_BR]=Estatísticas de Utilização do Disco
 GenericName[sv]=Statistik över diskanvändning
@@ -13,6 +14,7 @@ Icon=filelight
 Comment=View disk usage information
 Comment[et]=Kettakasutuse teabe kuvamine
 Comment[ga]=Amharc ar fhaisnéis maidir le húsáid diosca
+Comment[ja]=ディスクの使用状況を表示します
 Comment[pt]=Ver informações de utilização do disco
 Comment[pt_BR]=Ver informações de utilização do disco
 Comment[sv]=Visa information om hårddiskanvändning
