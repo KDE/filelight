@@ -44,6 +44,7 @@ target_link_libraries(filelightpart radialmap
                       ${KDE4_KDE3SUPPORT_LIBS}
                       ${KDE4_KIO_LIBS}
                       ${KDE4_KFILE_LIBS}
+                      ${KDE4_SOLID_LIBS}
                       qimageblitz)
 
 install(TARGETS filelightpart DESTINATION ${PLUGIN_INSTALL_DIR})

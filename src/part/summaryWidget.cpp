@@ -34,6 +34,11 @@
 #include <KIcon>
 #include <KLocale>
 
+#include <Solid/Device>
+#include <Solid/StorageAccess>
+
+#include <KDiskFreeSpaceInfo>
+
 #include <QLabel>
 #include <QLayout>
 #include <Q3TextStream>
@@ -49,16 +54,12 @@ static Filelight::MapScheme oldScheme;
 
 struct Disk
 {
-    QString device;
-    QString type;
     QString mount;
     QString icon;
 
     int size;
     int used;
     int free; //NOTE used+avail != size (clustersize!)
-
-    void guessIconName();
 };
 
 
@@ -121,8 +122,8 @@ void SummaryWidget::createDiskMaps()
 {
     DiskList disks;
 
-    const Q3CString free = i18n("Free").toLocal8Bit();
-    const Q3CString used = i18n("Used").toLocal8Bit();
+    const QByteArray free = i18n("Free").toLocal8Bit();
+    const QByteArray used = i18n("Used").toLocal8Bit();
 
     KIconLoader loader;
 
@@ -137,26 +138,19 @@ void SummaryWidget::createDiskMaps()
             continue;
 
         QVBoxLayout * lay = new QVBoxLayout(this);
-        //box->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Maximum);
         RadialMap::Widget *map = new MyRadialMap(this);
-
-//        QString text; QTextOStream(&text)
-//            << "<img src='" << loader.iconPath(disk.icon, KIconLoader::Toolbar) << "'>"
-//            << " &nbsp;" << disk.mount << " "
-//            << "<i>(" << disk.device << ")</i>";
 
         QHBoxLayout* horizontalLayout = new QHBoxLayout(this);
 
-        QLabel *label = new QLabel(disk.mount + '(' + disk.device + ')', this);
+        // Create the text and icon under the radialMap.
+        QLabel *label = new QLabel(disk.mount, this);
         horizontalLayout->addWidget(label);
-
         QLabel *icon = new QLabel(this);
         icon->setPixmap(KIcon(disk.icon).pixmap(16,16));
         horizontalLayout->addWidget(icon);
 
         horizontalLayout->setAlignment(Qt::AlignCenter);
         lay->addWidget(map);
-//        box->layout()->setAlignment(map, Qt::AlignCenter);
         lay->addItem(horizontalLayout);
 
         if (!(layout()->count() % 2)) {
@@ -165,7 +159,6 @@ void SummaryWidget::createDiskMaps()
         else {
             qobject_cast<QGridLayout*>(layout())->addItem(lay, 1, (int) layout()->count() / 2);
         }
-        //box->show(); // will show its children too
 
         Directory *tree = new Directory(disk.mount.toLocal8Bit());
         tree->append(free, disk.free);
@@ -177,98 +170,28 @@ void SummaryWidget::createDiskMaps()
     }
 }
 
-
-#if defined(_OS_LINUX_)
-#define DF_ARGS       "-kT"
-#else
-#define DF_ARGS       "-k"
-#define NO_FS_TYPE
-#endif
-
-
 DiskList::DiskList()
 {
-    //FIXME bug prone
-    setenv("LANG", "en_US", 1);
-    setenv("LC_ALL", "en_US", 1);
-    setenv("LC_MESSAGES", "en_US", 1);
-    setenv("LC_TYPE", "en_US", 1);
-    setenv("LANGUAGE", "en_US", 1);
+    const Solid::StorageAccess *partition;
 
-    char buffer[4096];
-    FILE *df = popen("env LC_ALL=POSIX df " DF_ARGS, "r");
-    int const N = fread((void*)buffer, sizeof(char), 4096, df);
-    buffer[ N ] = '\0';
-    pclose(df);
+    foreach (const Solid::Device &device, Solid::Device::listFromType(Solid::DeviceInterface::StorageAccess))
+    { // Iterate over all the partitions available.
 
-    QString output = QString::fromLocal8Bit(buffer);
-    Q3TextStream t(&output, QIODevice::ReadOnly);
-    QString const BLANK(QChar(' '));
+        if (!device.is<Solid::StorageAccess>()) continue; // It happens.
 
-    while (!t.atEnd()) {
-        QString s = t.readLine();
-        s = s.simplified();
+        partition = device.as<Solid::StorageAccess>();
+        if (!partition->isAccessible()) continue;
 
-        if (s.isEmpty())
-            continue;
-
-        if (s.indexOf(BLANK) < 0) // devicename was too long, rest in next line
-            if (!t.eof()) { // just appends the next line
-                QString v = t.readLine();
-                s = s.append(v.toLatin1());
-                s = s.simplified();
-            }
+        KDiskFreeSpaceInfo info = KDiskFreeSpaceInfo::freeSpaceInfo(partition->filePath());
+        if (!info.isValid()) continue;
 
         Disk disk;
-        disk.device = s.left(s.indexOf(BLANK));
-        s = s.remove(0, s.indexOf(BLANK) + 1);
-
-#ifndef NO_FS_TYPE
-        disk.type = s.left(s.indexOf(BLANK));
-        s = s.remove(0, s.indexOf(BLANK) + 1);
-#endif
-
-        int n = s.indexOf(BLANK);
-        disk.size = s.left(n).toInt();
-        s = s.remove(0, n + 1);
-
-        n = s.indexOf(BLANK);
-        disk.used = s.left(n).toInt();
-        s = s.remove(0, n + 1);
-
-        n = s.indexOf(BLANK);
-        disk.free = s.left(n).toInt();
-        s = s.remove(0, n + 1);
-
-        s = s.remove(0, s.indexOf(BLANK) + 1);  // delete the capacity 94%
-        disk.mount = s;
-
-        disk.guessIconName();
+        disk.mount = partition->filePath();
+        disk.icon = device.icon();
+        disk.size = info.size() / 1024; // All sizes are in 1kb large blocks
+        disk.free = info.available() / 1024;
+        disk.used = info.used() / 1024;
 
         *this += disk;
     }
-}
-
-
-void Disk::guessIconName()
-{
-    if (mount.contains("cdrom"))        icon = "media-optical";
-    else if (device.contains("cdrom"))  icon = "media-optical";
-    else if (mount.contains("writer"))  icon = "media-optical-recordable";
-    else if (device.contains("writer")) icon = "media-optical-recordable";
-//   else if(mount.contains("mo"))      icon = "mo";
-//   else if(device.contains("mo"))     icon = "mo";
-    else if (device.contains("fd")) {
-//      if(device.contains("360"))      icon = "media-floppy";
-//      if(device.contains("1200"))     icon = "media-floppy";
-//      else
-        icon = "media-floppy";
-    }
-    else if (mount.contains("floppy"))  icon = "media-floppy";
-    else if (mount.contains("zip"))     icon = "media-floppy";
-    else if (type.contains("nfs"))      icon = "network-server-database";
-    else
-        icon = "drive-harddisk";
-
-//   icon += /*mounted() ? */"_mount"/* : "_unmount"*/;
 }
