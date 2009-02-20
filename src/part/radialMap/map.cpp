@@ -300,8 +300,9 @@ void RadialMap::Map::paint(bool antialias)
     //  ** i.e. slightly eliptic when resizing inbetween
 
     paint.begin(m_widget);
-    if (antialias)
-	paint.setRenderHint(QPainter::Antialiasing);
+
+    if (antialias && Config::antialias)
+        paint.setRenderHint(QPainter::Antialiasing);
 
     rect.moveTo(m_widget->offset());
     for (int x = m_visibleDepth; x >= 0; --x)
@@ -316,7 +317,7 @@ void RadialMap::Map::paint(bool antialias)
             //arrows on the ends of segments when they have hidden files
 
             paint.setPen((*it)->pen());
-    
+
             if ((*it)->hasHiddenChildren())
             {
                 //draw arrow head to indicate undisplayed files/directories

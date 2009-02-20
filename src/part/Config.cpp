@@ -34,8 +34,8 @@ bool Config::scanRemoteMounts;
 bool Config::scanRemovableMedia;
 bool Config::varyLabelFontSizes;
 bool Config::showSmallFiles;
+bool Config::antialias;
 uint Config::contrast;
-uint Config::antiAliasFactor;
 uint Config::minFontPitch;
 uint Config::defaultRingDepth;
 Filelight::MapScheme Config::scheme;
@@ -52,7 +52,7 @@ Filelight::Config::read()
     varyLabelFontSizes = config.readEntry("varyLabelFontSizes", true);
     showSmallFiles     = config.readEntry("showSmallFiles", false);
     contrast           = config.readEntry("contrast", 75);
-    antiAliasFactor    = config.readEntry("antiAliasFactor", 2);
+    antialias          = config.readEntry("antialias", true);
     minFontPitch       = config.readEntry("minFontPitch", QFont().pointSize() - 3);
     scheme = (MapScheme) config.readEntry("scheme", 0);
     skipList           = config.readEntry("skipList", QStringList());
@@ -71,7 +71,7 @@ Filelight::Config::write()
     config.writeEntry("varyLabelFontSizes", varyLabelFontSizes);
     config.writeEntry("showSmallFiles", showSmallFiles);
     config.writeEntry("contrast", contrast);
-    config.writeEntry("antiAliasFactor", antiAliasFactor);
+    config.writeEntry("antialias", antialias);
     config.writeEntry("minFontPitch", minFontPitch);
     config.writeEntry("scheme", (int)scheme); // TODO: make the enum belong to a qwidget,
     //and use magic macros to make it save this properly

@@ -119,7 +119,7 @@ void SettingsDialog::reset()
     }
     contrastSlider->setValue(Config::contrast);
 
-    useAntialiasing->setChecked((Config::antiAliasFactor > 1) ? true : false);
+    useAntialiasing->setChecked(Config::antialias);
 
     varyLabelFontSizes->setChecked(Config::varyLabelFontSizes);
     minFontPitch->setEnabled(Config::varyLabelFontSizes);
@@ -201,7 +201,7 @@ void SettingsDialog::changeContrast(int c)
 }
 void SettingsDialog::toggleUseAntialiasing(bool b)
 {
-    Config::antiAliasFactor = b ? 2 : 1;
+    Config::antialias = b;
     emit canvasIsDirty(2);
 }
 void SettingsDialog::toggleVaryLabelFontSizes(bool b)

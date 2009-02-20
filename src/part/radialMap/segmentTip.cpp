@@ -22,6 +22,7 @@
 #include "segmentTip.h"
 
 #include "part/fileTree.h"
+#include "part/Config.h"
 
 #include <cstdlib>
 #include <kapplication.h>    //installing eventFilters
@@ -105,7 +106,7 @@ SegmentTip::moveTo(QPoint p, QWidget &canvas, bool placeAbove)
         m_pixmap.fill(c);
 
     QPainter paint(&m_pixmap);
-    paint.setRenderHint(QPainter::Antialiasing);
+    if (Config::antialias) paint.setRenderHint(QPainter::Antialiasing);
     paint.setPen(Qt::black);
     paint.setBrush(Qt::NoBrush);
     paint.drawRect(rect());

@@ -47,7 +47,7 @@ public:
     static bool varyLabelFontSizes;
     static bool showSmallFiles;
     static uint contrast;
-    static uint antiAliasFactor;
+    static bool antialias;
     static uint minFontPitch;
     static uint defaultRingDepth;
 

@@ -20,6 +20,7 @@
 ***********************************************************************/
 
 #include "part/fileTree.h"
+#include "part/Config.h"
 #include "radialMap.h"   //class Segment
 #include "widget.h"
 
@@ -63,33 +64,14 @@ RadialMap::Widget::resizeEvent(QResizeEvent*)
 void
 RadialMap::Widget::paintEvent(QPaintEvent*)
 {
-    //bltBit for some Qt setups will bitBlt _after_ the labels are painted. Which buggers things up!
-    //shame as bitBlt is faster, possibly Qt bug? Should report the bug? - seems to be race condition
-    //bitBlt(this, m_offset, &m_map);
-
-
-//    paint.drawPixmap(m_offset, m_map.getPixmap());
     if (!m_map.isNull())
         m_map.paint(this);
-
-    //vertical strips
-    /*if (m_map.width() < width())
-    {
-        paint.eraseRect(0, 0, m_offset.x(), height());
-        paint.eraseRect(m_map.width() + m_offset.x(), 0, m_offset.x() + 1, height());
-    }
-    //horizontal strips
-    if (m_map.height() < height())
-    {
-        paint.eraseRect(0, 0, width(), m_offset.y());
-        paint.eraseRect(0, m_map.height() + m_offset.y(), width(), m_offset.y() + 1);
-    }*/
 
     //exploded labels
     if (!m_map.isNull() && !m_timer.isActive())
     {
         QPainter paint(this);
-	paint.setRenderHint(QPainter::Antialiasing);
+        if (Config::antialias) paint.setRenderHint(QPainter::Antialiasing);
         paintExplodedLabels(paint);
     }
 }
