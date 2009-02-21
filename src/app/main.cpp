@@ -34,9 +34,9 @@ static KAboutData about(
     ki18n(APP_PRETTYNAME),
     APP_VERSION,
     ki18n("Graphical disk-usage information"),
-    KAboutData::License_GPL_V2,
-    ki18n("(C) 2006 Max Howell\n(C) 2008 Martin Sandsmark"),
-    ki18n("You like it, you buy it!"),
+    KAboutData::License_GPL_V3,
+    ki18n("(C) 2006 Max Howell\n(C) 2008, 2009 Martin Sandsmark"),
+    ki18n(""),
     "http://www.methylblue.com/filelight/");
 
 
@@ -46,11 +46,9 @@ int main(int argc, char *argv[])
 
     about.addAuthor(ki18n("Martin Sandsmark"), ki18n("Maintainer"), "sandsmark@iskrembilen.com", "http://iskrembilen.com/");
     about.addAuthor(ki18n("Max Howell"),       ki18n("Original author"), "max.howell@methylblue.com", "http://www.methylblue.com/");
-    about.addAuthor(ki18n("Mike Diehl"),       ki18n("Documentation"), 0, 0);
+    about.addCredit(ki18n("Lukas Appelhans"),  ki18n("Help and support"));
     about.addCredit(ki18n("Steffen Gerlach"),  ki18n("Inspiration"), 0, "http://www.steffengerlach.de/");
-    about.addCredit(ki18n("André Somers"),     ki18n("Internationalization"));
-    about.addCredit(ki18n("Stephanie James"),  ki18n("Testing"));
-    about.addCredit(ki18n("Marcus Camen"),     ki18n("Bravery in the face of unreadable code"));
+    about.addCredit(ki18n("Mike Diehl"),       ki18n("Original documentation"), 0, 0);
 
     KCmdLineArgs::init(argc, argv, &about);
 
