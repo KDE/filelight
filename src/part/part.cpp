@@ -102,11 +102,11 @@ Part::postInit()
 {
     if (url().isEmpty()) //if url is not empty openURL() has been called immediately after ctor, which happens
     {
-        QWidget *summary = new SummaryWidget(widget());
-        summary->setObjectName("summaryWidget");
-        connect(summary, SIGNAL(activated(const KUrl&)), SLOT(openURL(const KUrl&)));
-        summary->show();
-        m_layout->addWidget(summary);
+        m_summary = new SummaryWidget(widget());
+        m_summary->setObjectName("summaryWidget");
+        connect(m_summary, SIGNAL(activated(const KUrl&)), SLOT(openURL(const KUrl&)));
+        m_summary->show();
+        m_layout->addWidget(m_summary);
 
         //FIXME KXMLGUI is b0rked, it should allow us to set this
         //BEFORE createGUI is called but it doesn't
@@ -118,7 +118,8 @@ bool
 Part::openURL(const KUrl &u)
 {
     //we don't want to be using the summary screen anymore
-    delete widget()->findChild<SummaryWidget *>("summaryWidget");
+    if (m_summary != 0)
+        m_summary->hide();
 
     m_map->show();
     m_layout->addWidget(m_map);
@@ -171,6 +172,10 @@ Part::closeURL()
 {
     if (m_manager->abort())
         statusBar()->showMessage(i18n("Aborting Scan..."));
+
+    m_map->hide();
+
+    m_summary->show();
 
     setUrl(KUrl());
 
