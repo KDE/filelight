@@ -61,6 +61,7 @@ BrowserExtension::BrowserExtension(Part *parent)
 
 Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
         : ReadOnlyPart(parent)
+        , m_summary(0)
         , m_ext(new BrowserExtension(this))
         , m_statusbar(new StatusBarExtension(this))
         , m_map(0)
