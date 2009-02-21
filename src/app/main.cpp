@@ -31,12 +31,12 @@
 static KAboutData about(
     APP_NAME,
     0,
-    ki18n(APP_PRETTYNAME),
+    ki18n("Filelight"),
     APP_VERSION,
     ki18n("Graphical disk-usage information"),
     KAboutData::License_GPL_V3,
     ki18n("(C) 2006 Max Howell\n(C) 2008, 2009 Martin Sandsmark"),
-    ki18n(""),
+    KLocalizedString(),
     "http://www.methylblue.com/filelight/");
 
 
