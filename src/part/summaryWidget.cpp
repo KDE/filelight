@@ -41,9 +41,8 @@
 
 #include <QLabel>
 #include <QLayout>
-#include <Q3TextStream>
 #include <QApplication>
-#include <Q3CString>
+#include <QByteArray>
 #include <Q3ValueList>
 #include <QMouseEvent>
 #include <QTextOStream>

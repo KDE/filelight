@@ -43,7 +43,7 @@
 #include <QFile>        //encodeName()
 #include <QTimer>       //postInit() hack
 #include <Q3VBox>
-#include <Q3CString>
+#include <QByteArray>
 #include <QPixmap>
 
 #include <unistd.h>       //access()
@@ -133,7 +133,7 @@ Part::openURL(const KUrl &u)
     KUrl uri = u;
     uri.cleanPath(KUrl::SimplifyDirSeparators);
     const QString path = uri.path(KUrl::AddTrailingSlash);
-    const Q3CString path8bit = QFile::encodeName(path);
+    const QByteArray path8bit = QFile::encodeName(path);
     const bool isLocal = uri.protocol() == "file";
 
     if (uri.isEmpty())

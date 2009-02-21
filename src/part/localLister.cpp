@@ -30,7 +30,7 @@
 
 #include <QApplication> //postEvent()
 #include <QFile>
-#include <Q3CString>
+#include <QByteArray>
 
 #include <kde_file.h>
 #include <dirent.h>
@@ -71,7 +71,7 @@ void
 LocalLister::run()
 {
     //recursively scan the requested path
-    const Q3CString path = QFile::encodeName(m_path);
+    const QByteArray path = QFile::encodeName(m_path);
     Directory *tree = scan(path, path);
 
     //delete the list of trees useful for this scan,
@@ -138,7 +138,7 @@ ST_NBLOCKSIZE: Size of blocks used when calculating ST_NBLOCKS.  */
 
 #include <errno.h>
 static void
-outputError(Q3CString path)
+outputError(QByteArray path)
 {
     ///show error message that stat or opendir may give
 
@@ -171,7 +171,7 @@ outputError(Q3CString path)
 }
 
 Directory*
-LocalLister::scan(const Q3CString &path, const Q3CString &dirname)
+LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
 {
     Directory *cwd = new Directory(dirname);
     DIR *dir = opendir(path);
@@ -191,7 +191,7 @@ LocalLister::scan(const Q3CString &path, const Q3CString &dirname)
         if (qstrcmp(ent->d_name, ".") == 0 || qstrcmp(ent->d_name, "..") == 0)
             continue;
 
-        Q3CString new_path = path;
+        QByteArray new_path = path;
         new_path += ent->d_name;
 
         //get file information
@@ -216,7 +216,7 @@ LocalLister::scan(const Q3CString &path, const Q3CString &dirname)
         else if (S_ISDIR(statbuf.st_mode)) //directory
         {
             Directory *d = 0;
-            Q3CString new_dirname = ent->d_name;
+            QByteArray new_dirname = ent->d_name;
             new_dirname += '/';
             new_path    += '/';
 

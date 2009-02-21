@@ -23,7 +23,7 @@
 #define LOCALLISTER_H
 
 #include <QThread>
-#include <Q3CString>
+#include <QByteArray>
 
 class Directory;
 template<class T> class Chain;
@@ -49,7 +49,7 @@ private:
 
 private:
     virtual void run();
-    Directory *scan(const Q3CString&, const Q3CString&);
+    Directory *scan(const QByteArray&, const QByteArray&);
 
 private:
     static QStringList s_localMounts, s_remoteMounts; //TODO namespace

@@ -22,7 +22,7 @@
 #ifndef FILETREE_H
 #define FILETREE_H
 
-#include <Q3CString> //qstrdup
+#include <QByteArray> //qstrdup
 #include <QFile>    //decodeName()
 
 #include <stdlib.h>
