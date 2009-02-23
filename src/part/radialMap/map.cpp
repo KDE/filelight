@@ -301,6 +301,9 @@ void RadialMap::Map::paint(bool antialias)
 
     paint.begin(m_widget);
 
+    if (!paint.isActive())
+        return;
+
     if (antialias && Config::antialias)
         paint.setRenderHint(QPainter::Antialiasing);
 
