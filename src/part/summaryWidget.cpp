@@ -72,7 +72,7 @@ class MyRadialMap : public RadialMap::Widget
 {
 public:
     MyRadialMap(QWidget *parent)
-            : RadialMap::Widget(parent)
+            : RadialMap::Widget(parent, true)
     {
     }
 
@@ -112,11 +112,6 @@ SummaryWidget::SummaryWidget(QWidget *parent)
     qApp->restoreOverrideCursor();
 }
 
-SummaryWidget::~SummaryWidget()
-{
-    Config::scheme = oldScheme;
-}
-
 void SummaryWidget::createDiskMaps()
 {
     DiskList disks;
@@ -125,9 +120,6 @@ void SummaryWidget::createDiskMaps()
     const QByteArray used = i18n("Used").toLocal8Bit();
 
     KIconLoader loader;
-
-    oldScheme = Config::scheme;
-    Config::scheme = (Filelight::MapScheme)2000;
 
     for (DiskList::ConstIterator it = disks.begin(), end = disks.end(); it != end; ++it)
     {

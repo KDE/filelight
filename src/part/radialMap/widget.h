@@ -52,7 +52,7 @@ class Widget : public QWidget
     Q_OBJECT
 
 public:
-    Widget(QWidget* = 0);
+    Widget(QWidget* = 0, bool = false);
     ~Widget() {
         delete m_tip;
     }
@@ -62,6 +62,10 @@ public:
 
     bool isValid() const {
         return m_tree != 0;
+    }
+
+    bool isSummary() const {
+        return m_isSummary;
     }
 
     QPoint offset() { return m_offset; }
@@ -115,6 +119,7 @@ private:
     Map              m_map;
     SegmentTip       *m_tip;
     Segment          *m_rootSegment;
+    const bool       m_isSummary;
 };
 }
 

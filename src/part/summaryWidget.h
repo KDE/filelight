@@ -32,7 +32,6 @@ class SummaryWidget : public QWidget
 
 public:
     SummaryWidget(QWidget *parent);
-    ~SummaryWidget();
 
 signals:
     void activated(const KUrl&);
