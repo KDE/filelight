@@ -192,7 +192,7 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
                 }
             }
             else
-                openFile = popup.addAction(KIcon("fileopen"), i18n("&Open"));
+                openFile = popup.addAction(KIcon("document-open"), i18n("&Open"));
 
             popup.addSeparator();
             copyClipboard = popup.addAction(KIcon("edit-copy"), i18n("&Copy to clipboard"));
