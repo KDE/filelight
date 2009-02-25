@@ -26,3 +26,4 @@ install(FILES  filelightrc DESTINATION ${CMAKE_INSTALL_PREFIX}/share/config)
 install(FILES  filelight_partui.rc filelightui.rc DESTINATION ${DATA_INSTALL_DIR}/filelight)
 
 kde4_install_icons(${ICON_INSTALL_DIR})
+

@@ -16,12 +16,6 @@
     <Action name="file_quit"/>
   </Menu>
   <Menu name="view" noMerge="1"><text>&amp;View</text></Menu>
-  <Menu name="go_web" noMerge="1"><text>&amp;Go</text>
-    <Action name="go_up"/>
-    <Separator/>
-    <Action name="go_back"/>
-    <Action name="go_forward"/>
-  </Menu>
 </MenuBar>
 
 <ToolBar name="mainToolBar" noMerge="1"><text>Main Toolbar</text>
