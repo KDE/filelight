@@ -118,12 +118,6 @@ Part::postInit()
 bool
 Part::openURL(const KUrl &u)
 {
-    //we don't want to be using the summary screen anymore
-    if (m_summary != 0)
-        m_summary->hide();
-
-    m_map->show();
-    m_layout->addWidget(m_map);
 
     //TODO everyone hates dialogs, instead render the text in big fonts on the Map
     //TODO should have an empty KUrl until scan is confirmed successful
@@ -159,6 +153,13 @@ Part::openURL(const KUrl &u)
     }
     else
     {
+        //we don't want to be using the summary screen anymore
+        if (m_summary != 0)
+            m_summary->hide();
+
+        m_map->show();
+        m_layout->addWidget(m_map);
+
         if (uri == url())
             m_manager->emptyCache(); //same as rescan()
 
