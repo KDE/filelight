@@ -47,7 +47,7 @@ bool isBackingStoreActive()
 // # xdpyinfo | grep backing
     // options:    backing-store YES, save-unders YES
 
-    char buffer[4096];
+    char buffer[4097];
     FILE *xdpyinfo = popen("xdpyinfo", "r");
     int const N = fread((void*)buffer, sizeof(char), 4096, xdpyinfo);
     buffer[N] = '\0';
