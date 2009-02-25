@@ -101,21 +101,18 @@ SegmentTip::moveTo(QPoint p, QWidget &canvas, bool placeAbove)
 
     m_pixmap = QPixmap(size()); //move to updateTip once you are sure it can never be null
 
-    const QColor c = QToolTip::palette().color(QPalette::Active, QPalette::Background);
+    const QColor bg = QToolTip::palette().color(QPalette::Active, QPalette::Background);
+    const QColor fg = QToolTip::palette().color(QPalette::Active, QPalette::WindowText);
+
     if (!m_backing_store)
-        m_pixmap.fill(c);
+        m_pixmap.fill(bg);
 
     QPainter paint(&m_pixmap);
     if (Config::antialias) paint.setRenderHint(QPainter::Antialiasing);
-    paint.setPen(Qt::black);
+
+    paint.setPen(fg);
     paint.setBrush(Qt::NoBrush);
     paint.drawRect(rect());
-    paint.end();
-
-    /* if (m_backing_store)
-        m_pixmap = QPixmap::fromImage(Blitz::fade(m_pixmap.toImage() , 0.6f, c)); */ // TODO: reimplement this
-
-    paint.begin(&m_pixmap);
     paint.drawText(rect(), Qt::AlignCenter, m_text);
     paint.end();
 
