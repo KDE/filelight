@@ -152,8 +152,7 @@ inline void MainWindow::setupActions() //singleton function
 
     m_histories = new HistoryCollection(ac, this);
 
-    m_recentScans->loadEntries(KGlobal::config()->group(""));
-    //combo->setAutoSized(true); //FIXME what does this do?
+    m_recentScans->loadEntries(KGlobal::config()->group("general"));
 
     connect(m_recentScans, SIGNAL(urlSelected(const KUrl&)), SLOT(slotScanUrl(const KUrl&)));
     connect(m_combo, SIGNAL(returnPressed()), SLOT(slotComboScan()));
@@ -209,7 +208,15 @@ inline void MainWindow::slotUp()                {
 
 inline void MainWindow::slotComboScan()
 {
-    const QString path = KShell::tildeExpand(m_combo->lineEdit()->text());
+    QString path = m_combo->lineEdit()->text();
+
+    if (path[0] != '/')
+        path = "~/" + path;
+    //HACK: is this a safe assumption?
+    // Rather find out how to make KHistoryComboBox
+    // autocomplete only absolute paths.
+
+    path = KShell::tildeExpand(path);
     if (slotScanPath(path))
         m_combo->addToHistory(path);
 }
