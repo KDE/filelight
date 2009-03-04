@@ -3,6 +3,7 @@
 Name=Filelight
 Name[x-test]=xxFilelightxx
 GenericName=Disk Usage Statistics
+GenericName[et]=Kettakasutuse statistika
 GenericName[fr]=Statistiques d'utilisation des disques durs.
 GenericName[gl]=Estatísticas da utilización do disco
 GenericName[ja]=ディスクの使用状況
