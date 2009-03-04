@@ -98,9 +98,6 @@ void RadialMap::Map::make(const Directory *tree, bool refresh)
         m_centerText = tree->humanReadableSize((File::UnitPrefix)i);
     }
 
-    //paint the pixmap
-    aaPaint();
-
     QApplication::restoreOverrideCursor();
 }
 
