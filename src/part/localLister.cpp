@@ -84,7 +84,9 @@ LocalLister::run()
         delete tree;
         tree = 0;
     }
+    kDebug() << "Emitting signal to cache results ...";
     emit branchCompleted(tree, false);
+    kDebug() << "Thread terminating ...";
 }
 
 // from system.h in GNU coreutils package
