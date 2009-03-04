@@ -144,11 +144,17 @@ void SummaryWidget::createDiskMaps()
         lay->addWidget(map);
         lay->addItem(horizontalLayout);
 
-        if (!(layout()->count() % 2)) {
-            qobject_cast<QGridLayout*>(layout())->addItem(lay, 0, layout()->count() / 2);
+        if (layout()->count() > 2) {
+            if (layout()->count() % 2) {
+                qobject_cast<QGridLayout*>(layout())->addItem(lay, 0, layout()->count() / 2);
+            }
+            else {
+                qobject_cast<QGridLayout*>(layout())->addItem(lay, 1, layout()->count() / 2);
+            }
         }
-        else {
-            qobject_cast<QGridLayout*>(layout())->addItem(lay, 1, (int) layout()->count() / 2);
+        else
+        {
+            qobject_cast<QGridLayout*>(layout())->addItem(lay, 0, layout()->count());
         }
 
         Directory *tree = new Directory(disk.mount.toLocal8Bit());
