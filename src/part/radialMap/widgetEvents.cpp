@@ -26,9 +26,11 @@
 
 #include <cmath>         //::segmentAt()
 #include <kcursor.h>     //::mouseMoveEvent()
+#include <KDebug>
 #include <kiconeffect.h> //::mousePressEvent()
 #include <kiconloader.h> //::mousePressEvent()
 #include <kio/job.h>     //::mousePressEvent()
+#include <KJob>
 #include <kio/deletejob.h>
 #include <kio/jobuidelegate.h>
 #include <klocale.h>
@@ -221,12 +223,12 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
                                         : i18n("<qt><i>'%1'</i> will be <b>permanently</b> deleted.", url.prettyUrl());
                 const int userIntention = KMessageBox::warningContinueCancel(
                                               this, message,
-                                              QString(), KGuiItem(i18n("&Delete"), "editdelete"));
+                                              QString(), KGuiItem(i18n("&Delete"), "edit-delete"));
 
                 if (userIntention == KMessageBox::Continue) {
                     KIO::Job *job = KIO::del(url);
                     job->ui()->setWindow(this);
-                    connect(job, SIGNAL((KJob*)), SLOT(deleteJobFinished(KIO::Job*)));
+                    connect(job, SIGNAL(finished(KJob*)), this, SLOT(deleteJobFinished(KJob*)));
                     QApplication::setOverrideCursor(Qt::BusyCursor);
                 }
             } else {
@@ -257,13 +259,13 @@ section_two:
 }
 
 void
-RadialMap::Widget::deleteJobFinished(KIO::Job *job)
+RadialMap::Widget::deleteJobFinished(KJob *job)
 {
     QApplication::restoreOverrideCursor();
     if (!job->error())
         invalidate();
     else
-        job->ui()->showErrorMessage();
+        KMessageBox::error(this, job->errorString(), i18n("Error while deleting"));
 }
 
 void

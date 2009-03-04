@@ -25,12 +25,13 @@
 #include <KUrl>
 #include <QTimer>
 #include <QPixmap>
-//Added by qt3to4:
 #include <QResizeEvent>
 #include <QDragEnterEvent>
 #include <QDropEvent>
 #include <QMouseEvent>
 #include <QPaintEvent>
+
+#include <KJob>
 
 #include "segmentTip.h"
 #include "map.h"
@@ -82,7 +83,7 @@ public slots:
 private slots:
     void resizeTimeout();
     void sendFakeMouseEvent();
-    void deleteJobFinished(KIO::Job*);
+    void deleteJobFinished(KJob*);
     void createFromCache(const Directory*);
 
 signals:
