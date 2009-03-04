@@ -71,7 +71,7 @@ RadialMap::Widget::url(File const * const file) const
 }
 
 void
-RadialMap::Widget::invalidate(const bool b)
+RadialMap::Widget::invalidate()
 {
     if (isValid())
     {
@@ -90,9 +90,8 @@ RadialMap::Widget::invalidate(const bool b)
 
         //FIXME move this disablement thing no?
         //      it is confusing in other areas, like the whole createFromCache() thing
-        m_map.invalidate(b); //b signifies whether the pixmap is made to look disabled or not
-        if (b)
-            update();
+        m_map.invalidate();
+        update();
 
         //tell rest of Filelight
         emit invalidated(url());
@@ -128,7 +127,7 @@ void
 RadialMap::Widget::createFromCache(const Directory *tree)
 {
     //no scan was necessary, use cached tree, however we MUST still emit invalidate
-    invalidate(false);
+    invalidate();
     create(tree);
 }
 

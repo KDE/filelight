@@ -77,7 +77,7 @@ public slots:
     void zoomIn();
     void zoomOut();
     void create(const Directory*);
-    void invalidate(const bool = true);
+    void invalidate();
     void refresh(int);
 
 private slots:

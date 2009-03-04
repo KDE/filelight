@@ -45,7 +45,7 @@ public:
     bool isNull() const {
         return (m_signature == 0);
     }
-    void invalidate(const bool);
+    void invalidate();
 
     int height() const {
         return m_rect.height();

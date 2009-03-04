@@ -20,6 +20,7 @@
 ***********************************************************************/
 
 #include <KCursor>         //make()
+#include <KLocale>
 #include <KDebug>
 #include <KGlobalSettings> //kdeColours
 #include <qimageblitz/qimageblitz.h>    //desaturate()
@@ -39,7 +40,7 @@
 #include "widget.h"
 
 RadialMap::Map::Map(Widget* widget)
-        : m_signature(0)
+        : m_signature(NULL)
         , m_visibleDepth(DEFAULT_RING_DEPTH)
         , m_widget(widget)
         , m_ringBreadth(MIN_RING_BREADTH)
@@ -56,15 +57,10 @@ RadialMap::Map::~Map()
     delete [] m_signature;
 }
 
-void RadialMap::Map::invalidate(const bool desaturateTheImage)
+void RadialMap::Map::invalidate()
 {
     delete [] m_signature;
-    m_signature = 0;
-
-    if (desaturateTheImage)
-    {
-          //TODO
-    }
+    m_signature = NULL;
 
     m_visibleDepth = Config::defaultRingDepth;
 }
@@ -143,7 +139,7 @@ bool RadialMap::Map::resize(const QRect &rect)
         //resize the pixmap
         size += MAP_2MARGIN;
 
-        if (m_signature != 0)
+        if (m_signature != NULL)
         {
             setRingBreadth();
             //paint();
@@ -283,8 +279,26 @@ void RadialMap::Map::aaPaint()
 
 void RadialMap::Map::paint(bool antialias)
 {
+
     QPainter paint;
     QRect rect = m_rect;
+
+    //**** best option you can think of is to make the circles slightly less perfect,
+    //  ** i.e. slightly eliptic when resizing inbetween
+
+    paint.begin(m_widget);
+
+    if (antialias && Config::antialias)
+        paint.setRenderHint(QPainter::Antialiasing);
+
+    if (m_signature == NULL)
+    {
+        kDebug() << "no signature.";
+        paint.drawText(rect, 0, i18n("Internal representation is invalid,\nplease reload."));
+        paint.end();
+        return;
+    }
+
     int step = m_ringBreadth;
     int excess = -1;
 
@@ -294,16 +308,6 @@ void RadialMap::Map::paint(bool antialias)
         ++step;
     }
 
-    //**** best option you can think of is to make the circles slightly less perfect,
-    //  ** i.e. slightly eliptic when resizing inbetween
-
-    paint.begin(m_widget);
-
-    if (!paint.isActive())
-        return;
-
-    if (antialias && Config::antialias)
-        paint.setRenderHint(QPainter::Antialiasing);
 
     rect.moveTo(m_widget->offset());
     for (int x = m_visibleDepth; x >= 0; --x)
