@@ -80,6 +80,10 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
     m_map = new RadialMap::Widget(widget());
     m_map->hide();
 
+    m_stateWidget = new QLabel("Busy ..."); //TODO: Something more fancy.
+    m_stateWidget->setAlignment(Qt::AlignCenter);
+    m_stateWidget->hide();
+
     KStandardAction::zoomIn(m_map, SLOT(zoomIn()), actionCollection());
     KStandardAction::zoomOut(m_map, SLOT(zoomOut()), actionCollection());
     KStandardAction::preferences(this, SLOT(configFilelight()), actionCollection());
@@ -108,6 +112,7 @@ Part::postInit()
         connect(m_summary, SIGNAL(activated(const KUrl&)), SLOT(openURL(const KUrl&)));
         m_summary->show();
         m_layout->addWidget(m_summary);
+        m_layout->addWidget(m_map);
 
         //FIXME KXMLGUI is b0rked, it should allow us to set this
         //BEFORE createGUI is called but it doesn't
@@ -157,8 +162,8 @@ Part::openURL(const KUrl &u)
         if (m_summary != 0)
             m_summary->hide();
 
-        m_map->show();
-        m_layout->addWidget(m_map);
+        m_stateWidget->show();
+        m_layout->addWidget(m_stateWidget);
 
         if (uri == url())
             m_manager->emptyCache(); //same as rescan()
@@ -241,7 +246,9 @@ Part::start(const KUrl &url)
         emit started(0); //as a Part, we have to do this
         emit setWindowCaption(s);
         statusBar()->showMessage(s);
+        m_map->hide();
         m_map->invalidate(); //to maintain ui consistency
+
 
         return true;
     }
@@ -254,6 +261,8 @@ Part::rescan()
 {
     //FIXME we have to empty the cache because otherwise rescan picks up the old tree..
     m_manager->emptyCache(); //causes canvas to invalidate
+    m_map->hide();
+    m_stateWidget->show();
     start(url());
 }
 
@@ -266,6 +275,8 @@ Part::scanCompleted(Directory *tree)
         m_map->create(tree);
 
         //do after creating map
+        m_stateWidget->hide();
+        m_map->show();
         stateChanged("scan_complete");
     }
     else {

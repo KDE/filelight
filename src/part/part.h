@@ -27,6 +27,8 @@
 #include <KParts/Part>
 #include <KUrl>
 
+#include <QLabel>
+
 class KAboutData;
 using KParts::StatusBarExtension;
 namespace RadialMap {
@@ -84,6 +86,7 @@ private:
     BrowserExtension   *m_ext;
     StatusBarExtension *m_statusbar;
     RadialMap::Widget  *m_map;
+    QLabel             *m_stateWidget;
     class ScanManager  *m_manager;
 
     bool m_started;
