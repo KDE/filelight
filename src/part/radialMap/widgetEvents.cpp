@@ -68,6 +68,14 @@ RadialMap::Widget::paintEvent(QPaintEvent*)
 {
     if (!m_map.isNull())
         m_map.paint(this);
+    else
+    {
+        QPainter paint;
+        paint.begin(this);
+        paint.drawText(rect(), 0, i18n("Internal representation is invalid,\nplease reload."));
+        paint.end();
+        return;
+    }
 
     //exploded labels
     if (!m_map.isNull() && !m_timer.isActive())

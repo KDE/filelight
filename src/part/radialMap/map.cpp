@@ -291,14 +291,6 @@ void RadialMap::Map::paint(bool antialias)
     if (antialias && Config::antialias)
         paint.setRenderHint(QPainter::Antialiasing);
 
-    if (m_signature == NULL)
-    {
-        kDebug() << "no signature.";
-        paint.drawText(rect, 0, i18n("Internal representation is invalid,\nplease reload."));
-        paint.end();
-        return;
-    }
-
     int step = m_ringBreadth;
     int excess = -1;
 
