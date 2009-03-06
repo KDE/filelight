@@ -272,11 +272,10 @@ Part::scanCompleted(Directory *tree)
     if (tree) {
         statusBar()->showMessage(i18n("Scan completed, generating map..."));
 
-        m_map->create(tree);
-
-        //do after creating map
         m_stateWidget->hide();
         m_map->show();
+        m_map->create(tree);
+
         stateChanged("scan_complete");
     }
     else {

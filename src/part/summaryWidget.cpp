@@ -47,10 +47,6 @@
 #include <QMouseEvent>
 #include <QTextOStream>
 
-
-static Filelight::MapScheme oldScheme;
-
-
 struct Disk
 {
     QString mount;
