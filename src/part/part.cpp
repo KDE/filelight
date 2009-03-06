@@ -80,7 +80,7 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
     m_map = new RadialMap::Widget(widget());
     m_map->hide();
 
-    m_stateWidget = new QLabel("Busy ..."); //TODO: Something more fancy.
+    m_stateWidget = new QLabel(i18n("Busy ...")); //TODO: Something more fancy.
     m_stateWidget->setAlignment(Qt::AlignCenter);
     m_stateWidget->hide();
 
