@@ -22,6 +22,7 @@
 #include "widget.h"
 
 #include <KCursor>        //ctor
+#include <KColorScheme>
 #include <KLocale>
 #include <KUrl>
 #include <QApplication>   //sendEvent
@@ -46,8 +47,11 @@ RadialMap::Widget::Widget(QWidget *parent, bool isSummary)
 {
     setAcceptDrops(true);
 
+    KColorScheme scheme(QPalette::Active, KColorScheme::View);
+
     QPalette palette;
-    palette.setColor(this->backgroundRole(), Qt::white);
+    palette.setColor(this->backgroundRole(), scheme.background().color());
+    setAutoFillBackground(true);
     setPalette(palette);
 
     const QBitmap *cursor = QCursor(Qt::PointingHandCursor).bitmap();
