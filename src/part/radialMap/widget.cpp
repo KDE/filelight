@@ -22,7 +22,6 @@
 #include "widget.h"
 
 #include <KCursor>        //ctor
-#include <KColorScheme>
 #include <KLocale>
 #include <KUrl>
 #include <QApplication>   //sendEvent
@@ -47,12 +46,8 @@ RadialMap::Widget::Widget(QWidget *parent, bool isSummary)
 {
     setAcceptDrops(true);
 
-    KColorScheme scheme(QPalette::Active, KColorScheme::View);
-
-    QPalette palette;
-    palette.setColor(this->backgroundRole(), scheme.background().color());
+    setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
-    setPalette(palette);
 
     const QBitmap *cursor = QCursor(Qt::PointingHandCursor).bitmap();
     m_tip = new SegmentTip(cursor ? cursor->height() : 16);
