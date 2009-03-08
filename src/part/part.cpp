@@ -81,6 +81,7 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
     widget()->setLayout(m_layout);
 
     m_map = new RadialMap::Widget(widget());
+    m_layout->addWidget(m_map);
     m_map->hide();
 
     m_stateWidget = new QLabel(i18n("Busy ...")); //TODO: Something more fancy.
@@ -115,7 +116,6 @@ Part::postInit()
         connect(m_summary, SIGNAL(activated(const KUrl&)), SLOT(openURL(const KUrl&)));
         m_summary->show();
         m_layout->addWidget(m_summary);
-        m_layout->addWidget(m_map);
 
         //FIXME KXMLGUI is b0rked, it should allow us to set this
         //BEFORE createGUI is called but it doesn't
