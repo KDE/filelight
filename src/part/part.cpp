@@ -165,9 +165,6 @@ Part::openURL(const KUrl &u)
         m_stateWidget->show();
         m_layout->addWidget(m_stateWidget);
 
-        if (uri == url())
-            m_manager->emptyCache(); //same as rescan()
-
         return start(uri);
     }
 
@@ -195,6 +192,10 @@ Part::updateURL(const KUrl &u)
     //the map has changed internally, update the interface to reflect this
     emit m_ext->openUrlNotify(); //must be done first
     emit m_ext->setLocationBarUrl(u.prettyUrl());
+
+
+    if (u == url())
+        m_manager->emptyCache(); //same as rescan()
 
     //do this last, or it breaks Konqi location bar
     setUrl(u);

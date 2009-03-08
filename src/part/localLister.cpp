@@ -85,7 +85,7 @@ LocalLister::run()
         tree = 0;
     }
     kDebug() << "Emitting signal to cache results ...";
-    emit branchCompleted(tree, false);
+    emit branchCompleted(tree, true);
     kDebug() << "Thread terminating ...";
 }
 
