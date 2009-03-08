@@ -46,9 +46,6 @@ RadialMap::Widget::Widget(QWidget *parent, bool isSummary)
 {
     setAcceptDrops(true);
 
-    setBackgroundRole(QPalette::Base);
-    setAutoFillBackground(true);
-
     const QBitmap *cursor = QCursor(Qt::PointingHandCursor).bitmap();
     m_tip = new SegmentTip(cursor ? cursor->height() : 16);
 

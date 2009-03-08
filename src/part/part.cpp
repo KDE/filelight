@@ -72,7 +72,10 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
     KGlobal::locale()->insertCatalog("filelight");
     setComponentData(filelightPartFactory::componentData());
     setXMLFile("filelight_partui.rc");
+
     setWidget(new QWidget(parentWidget));
+    widget()->setBackgroundRole(QPalette::Base);
+    widget()->setAutoFillBackground(true);
 
     m_layout = new QGridLayout(widget());
     widget()->setLayout(m_layout);
