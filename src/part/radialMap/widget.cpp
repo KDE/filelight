@@ -45,6 +45,7 @@ RadialMap::Widget::Widget(QWidget *parent, bool isSummary)
         , m_isSummary(isSummary)
 {
     setAcceptDrops(true);
+    setMinimumSize(100,100);//TODO: set a sane minimumsize, not just a random one.
 
     const QBitmap *cursor = QCursor(Qt::PointingHandCursor).bitmap();
     m_tip = new SegmentTip(cursor ? cursor->height() : 16);
