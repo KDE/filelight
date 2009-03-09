@@ -147,7 +147,8 @@ RadialMap::Builder::build(const Directory* const dir, const unsigned int depth, 
     {
         //append a segment for unrepresented space - a "fake" segment
 
-        const QString s = i18n("%1 files, with an average size of %2",
+        const QString s = i18np("1 file, with an average size of %2",
+                                "%1 files, with an average size of %2",
                                 hiddenFileCount,
                                 File::humanReadableSize(hiddenSize/hiddenFileCount));
 
