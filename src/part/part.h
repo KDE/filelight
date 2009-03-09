@@ -67,7 +67,7 @@ public:
     static KAboutData *createAboutData();
 
 public slots:
-    virtual bool openURL(const KUrl&);
+    virtual bool openUrl(const KUrl&);
     void configFilelight();
     void rescan();
 

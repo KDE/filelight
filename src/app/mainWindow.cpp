@@ -229,7 +229,7 @@ inline bool MainWindow::slotScanPath(const QString &path)
 bool MainWindow::slotScanUrl(const KUrl &url)
 {
     const KUrl oldUrl = m_part->url();
-    const bool b = m_part->openURL(url);
+    const bool b = m_part->openUrl(url);
 
     if (b) {
         m_histories->push(oldUrl);

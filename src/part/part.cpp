@@ -82,7 +82,6 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
 
     m_map = new RadialMap::Widget(widget());
     m_layout->addWidget(m_map);
-    m_map->hide();
 
     m_stateWidget = new QLabel(i18n("Busy ...")); //TODO: Something more fancy.
     m_stateWidget->setAlignment(Qt::AlignCenter);
@@ -114,6 +113,7 @@ Part::postInit()
         m_summary = new SummaryWidget(widget());
         m_summary->setObjectName("summaryWidget");
         connect(m_summary, SIGNAL(activated(const KUrl&)), SLOT(openURL(const KUrl&)));
+        m_map->hide();
         m_summary->show();
         m_layout->addWidget(m_summary);
 
@@ -124,7 +124,7 @@ Part::postInit()
 }
 
 bool
-Part::openURL(const KUrl &u)
+Part::openUrl(const KUrl &u)
 {
 
     //TODO everyone hates dialogs, instead render the text in big fonts on the Map
