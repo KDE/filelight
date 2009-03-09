@@ -97,7 +97,7 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
 
     // TODO make better system
     connect(m_map, SIGNAL(giveMeTreeFor(const KUrl&)), SLOT(updateURL(const KUrl&)));
-    connect(m_map, SIGNAL(giveMeTreeFor(const KUrl&)), SLOT(openURL(const KUrl&)));
+    connect(m_map, SIGNAL(giveMeTreeFor(const KUrl&)), SLOT(openUrl(const KUrl&)));
 
     connect(m_manager, SIGNAL(completed(Directory*)), SLOT(scanCompleted(Directory*)));
     connect(m_manager, SIGNAL(aboutToEmptyCache()), m_map, SLOT(invalidate()));
@@ -108,11 +108,11 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
 void
 Part::postInit()
 {
-    if (url().isEmpty()) //if url is not empty openURL() has been called immediately after ctor, which happens
+    if (url().isEmpty()) //if url is not empty openUrl() has been called immediately after ctor, which happens
     {
         m_summary = new SummaryWidget(widget());
         m_summary->setObjectName("summaryWidget");
-        connect(m_summary, SIGNAL(activated(const KUrl&)), SLOT(openURL(const KUrl&)));
+        connect(m_summary, SIGNAL(activated(const KUrl&)), SLOT(openUrl(const KUrl&)));
         m_map->hide();
         m_summary->show();
         m_layout->addWidget(m_summary);
