@@ -11,6 +11,7 @@ GenericName[pt]=Estatísticas de Utilização do Disco
 GenericName[pt_BR]=Estatísticas do uso do disco
 GenericName[sv]=Statistik över diskanvändning
 GenericName[uk]=Статистика використання диска
+GenericName[x-test]=xxDisk Usage Statisticsxx
 Type=Application
 Exec=filelight %f
 Icon=filelight
