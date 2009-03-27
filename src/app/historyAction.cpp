@@ -29,8 +29,8 @@
 #include <KConfigGroup>
 
 
-inline HistoryAction::HistoryAction(const QString &text, KActionCollection *ac)
-        : KAction(text, ac)
+inline HistoryAction::HistoryAction(const KIcon &icon, const QString &text, KActionCollection *ac)
+        : KAction(icon, text, ac)
         , m_text(text)
 {
     // .ui files make this false, but we can't rely on UI file as it isn't compiled in :(
@@ -60,10 +60,12 @@ QString HistoryAction::pop()
 
 HistoryCollection::HistoryCollection(KActionCollection *ac, QObject *parent)
         : QObject(parent)
-        , m_b(new HistoryAction(i18n("Back"), ac))
-        , m_f(new HistoryAction(i18n("Forward"), ac))
+        , m_b(new HistoryAction(KIcon("go-previous"), i18n("Back"), ac))
+        , m_f(new HistoryAction(KIcon("go-next"), i18n("Forward"), ac))
         , m_receiver(0)
 {
+    ac->addAction("go_back", m_b);
+    ac->addAction("go_forward", m_f);
     connect(m_b, SIGNAL(activated()), SLOT(pop()));
     connect(m_f, SIGNAL(activated()), SLOT(pop()));
 }

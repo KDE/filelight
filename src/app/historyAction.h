@@ -22,9 +22,9 @@
 #ifndef HISTORYACTION_H
 #define HISTORYACTION_H
 
-#include <kaction.h>
-#include <kurl.h>
-#include <qstringlist.h>
+#include <KAction>
+#include <KUrl>
+#include <QStringList>
 
 class KConfigGroup;
 class KActionCollection;
@@ -36,7 +36,7 @@ void setActionMenuTextOnly(KAction *a, QString const &suffix);
 
 class HistoryAction : KAction
 {
-    HistoryAction(const QString &text, KActionCollection *ac);
+    HistoryAction(const KIcon &icon, const QString &text, KActionCollection *ac);
 
     friend class HistoryCollection;
 
