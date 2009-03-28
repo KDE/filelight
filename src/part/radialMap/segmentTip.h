@@ -45,7 +45,6 @@ private:
     uint    m_cursorHeight;
     QPixmap m_pixmap;
     QString m_text;
-    bool    m_backing_store;
 };
 }
 

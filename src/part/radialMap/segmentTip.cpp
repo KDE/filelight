@@ -40,29 +40,10 @@
 
 namespace RadialMap {
 
-
-bool isBackingStoreActive()
-{
-    //TODO: THIS IS UGLY!
-// # xdpyinfo | grep backing
-    // options:    backing-store YES, save-unders YES
-
-    char buffer[4097];
-    FILE *xdpyinfo = popen("xdpyinfo", "r");
-    int const N = fread((void*)buffer, sizeof(char), 4096, xdpyinfo);
-    buffer[N] = '\0';
-    pclose(xdpyinfo);
-
-    return QString::fromLocal8Bit(buffer).contains("backing-store YES");
-}
-
-
 SegmentTip::SegmentTip(uint h)
         : QWidget(0, Qt::FramelessWindowHint | Qt::Tool | Qt::WindowStaysOnTopHint | Qt::X11BypassWindowManagerHint)
         , m_cursorHeight(-h)
-        , m_backing_store(isBackingStoreActive())
 {
-    /* setBackgroundMode(Qt::NoBackground); */
 }
 
 void
@@ -104,8 +85,7 @@ SegmentTip::moveTo(QPoint p, QWidget &canvas, bool placeAbove)
     const QColor bg = QToolTip::palette().color(QPalette::Active, QPalette::Background);
     const QColor fg = QToolTip::palette().color(QPalette::Active, QPalette::WindowText);
 
-    if (!m_backing_store)
-        m_pixmap.fill(bg);
+    m_pixmap.fill(bg);
 
     QPainter paint(&m_pixmap);
     if (Config::antialias) paint.setRenderHint(QPainter::Antialiasing);
