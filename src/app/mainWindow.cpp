@@ -85,7 +85,7 @@ MainWindow::MainWindow() : KParts::MainWindow(), m_part(0)
 
         //TODO test these
         connect(m_part, SIGNAL(canceled(const QString&)), m_histories, SLOT(stop()));
-        connect(BrowserExtension::childObject(m_part), SIGNAL(openURLNotify()), SLOT(urlAboutToChange()));
+        connect(BrowserExtension::childObject(m_part), SIGNAL(openUrlNotify()), SLOT(urlAboutToChange()));
 
         const KConfigGroup config = KGlobal::config()->group("general");
         m_combo->setHistoryItems(config.readPathEntry("comboHistory", QStringList()));
@@ -233,7 +233,7 @@ bool MainWindow::slotScanUrl(const KUrl &url)
 
     if (b) {
         m_histories->push(oldUrl);
-        //action("go_back")->setEnabled(false); //FIXME
+        action("go_back")->setEnabled(false); //FIXME
     }
     return b;
 }

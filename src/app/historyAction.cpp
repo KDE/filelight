@@ -34,25 +34,32 @@ inline HistoryAction::HistoryAction(const KIcon &icon, const QString &text, KAct
         , m_text(text)
 {
     // .ui files make this false, but we can't rely on UI file as it isn't compiled in :(
-    KAction::setEnabled(false);
+    setEnabled(false);
 }
 
 void HistoryAction::push(const QString &path)
 {
-    if (!path.isEmpty() && !m_list.isEmpty() && m_list.last() != path)
-    {
+    if (path.isEmpty()) return;
+
+    if (m_list.isEmpty())
         m_list.append(path);
-        setActionMenuTextOnly(this, path);
-        KAction::setEnabled(true);
-    }
+    else if (m_list.last() != path)
+        m_list.append(path);
+
+    setActionMenuTextOnly(this, path);
+    setEnabled(true);
 }
 
 QString HistoryAction::pop()
 {
-    const QString s = m_list.last();
-    m_list.pop_back();
-    setActionMenuTextOnly(this, m_list.last());
-    setEnabled();
+    const QString s = m_list.takeLast();
+    if (m_list.isEmpty())
+        setEnabled(false);
+    else
+    {
+        setActionMenuTextOnly(this, m_list.last());
+        setEnabled(true);
+    }
     return s;
 }
 
