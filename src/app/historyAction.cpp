@@ -41,9 +41,7 @@ void HistoryAction::push(const QString &path)
 {
     if (path.isEmpty()) return;
 
-    if (m_list.isEmpty())
-        m_list.append(path);
-    else if (m_list.last() != path)
+    if (m_list.isEmpty() || (!m_list.isEmpty() && (m_list.last() != path)))
         m_list.append(path);
 
     setActionMenuTextOnly(this, path);
@@ -53,13 +51,10 @@ void HistoryAction::push(const QString &path)
 QString HistoryAction::pop()
 {
     const QString s = m_list.takeLast();
-    if (m_list.isEmpty())
-        setEnabled(false);
-    else
-    {
+    if (!m_list.isEmpty())
         setActionMenuTextOnly(this, m_list.last());
-        setEnabled(true);
-    }
+
+    setEnabled();
     return s;
 }
 

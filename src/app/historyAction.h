@@ -47,6 +47,7 @@ public:
 
     void clear() {
         m_list.clear();
+        setEnabled(false);
         KAction::setText(m_text);
     }
 
