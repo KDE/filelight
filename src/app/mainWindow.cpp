@@ -229,13 +229,14 @@ inline bool MainWindow::slotScanPath(const QString &path)
 bool MainWindow::slotScanUrl(const KUrl &url)
 {
     const KUrl oldUrl = m_part->url();
-    const bool b = m_part->openUrl(url);
 
-    if (b) {
+    if (m_part->openUrl(url))
+    {
         m_histories->push(oldUrl);
-        action("go_back")->setEnabled(false); //FIXME
+        return true;
     }
-    return b;
+    else
+        return false;
 }
 
 inline void MainWindow::slotAbortScan()
@@ -308,6 +309,7 @@ void MainWindow::readProperties(const KConfigGroup &configgroup) //virtual
 
 void setActionMenuTextOnly(KAction *a, QString const &suffix)
 {
+    //TODO: In KDE 4.3, we have KAction::setHelpText(), which can replace this.
     QString const menu_text = suffix.isEmpty()
                               ? a->text()
                               : i18nc("&Up: /home/mxcl", "%1: %2", a->text(), suffix);
