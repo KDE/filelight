@@ -1,0 +1,422 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1.2-Based Variant V1.0//EN" "dtd/kdex.dtd" [
+  <!ENTITY kappname "&filelight;">
+  <!ENTITY filelight "<application>Filelight</application>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % English "INCLUDE"><!-- change language only here -->
+]>
+
+<book lang="&language;">
+
+<bookinfo>
+   <title>The &filelight; Handbook</title>
+   <authorgroup>
+      <author>
+         <firstname>Max</firstname>
+         <surname>Howell</surname>
+         <affiliation><address><email>max.howell@methylblue.com</email></address></affiliation>
+      </author>
+      <!-- TRANS:ROLES_OF_TRANSLATORS -->
+   </authorgroup>
+   <copyright><year>2006</year><holder>Max Howell</holder></copyright>
+   <!-- Translators: put here the copyright notice of the translation -->
+   <legalnotice>&FDLNotice;</legalnotice>
+   <date>14/09/2006</date>
+   <releaseinfo>3</releaseinfo>
+   <abstract><para>&filelight; creates an interactive map of concentric segmented-rings that helps visualise disk usage on your computer.</para></abstract>
+   <!-- These may be used by search engines -->
+   <keywordset>
+      <keyword>KDE</keyword>
+      <keyword>Filelight</keyword>
+      <keyword>du</keyword>
+      <keyword>disk usage</keyword>
+   </keywordset>
+</bookinfo>
+
+
+<chapter id="introduction">
+   <title>Introduction</title>
+   <screenshot>
+      <screeninfo>&filelight; 1.0 Screenshot</screeninfo>
+      <mediaobject>
+         <imageobject><imagedata fileref="radial_map.png" format="PNG"/></imageobject>
+         <textobject><phrase>Screenshot</phrase></textobject>
+      </mediaobject>
+   </screenshot>
+   <para>&filelight; allows you to quickly understand exactly where your diskspace is being used by graphically representing your file system as a set of concentric segmented-rings. You can use it to locate hotspots of disk usage and then manipulate those areas using &konqueror;.</para>
+</chapter>
+
+
+<chapter id="configuring">
+<title>Configuring &filelight;</title>
+
+<para>The &filelight; settings dialog has two tabs for configuring the &filelight; options. The two tabs are <guimenuitem>Scanning</guimenuitem> and <guimenuitem>Appearance</guimenuitem>. Below is a description of the settings tabs. The &filelight; settings dialog can be found by clicking <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure Filelight</guimenuitem></menuchoice>.</para>
+
+<sect1 id="scanning">
+<title>Scanning</title>
+
+<screenshot>
+<screeninfo>Scanning Screenshot</screeninfo>
+<mediaobject>
+<imageobject><imagedata fileref="config_scan.png" format="PNG"/></imageobject>
+<textobject><phrase>Screenshot</phrase></textobject>
+</mediaobject>
+</screenshot>
+
+<para>The scanning tab allows you to configure how &filelight; scans folders. The <guimenuitem> Don't scan these folders:</guimenuitem> is used to excluded certain folders from your scan. This option is very useful for skipping folders that you may not have permissions to read, or folders that are part of a virtual filesystem, such as /proc. To add a folder to the list, click the <guibutton>Add...</guibutton> button, this will start a dialog where you can choose the folder of your choice from a tree view. To remove a folder simply select the folder of your choice and click the <guibutton>Remove</guibutton> button.</para>
+
+</sect1>
+
+<sect1 id="appearance">
+<title>Appearance</title>
+
+<screenshot>
+<screeninfo>Appearance Screenshot</screeninfo>
+<mediaobject>
+<imageobject><imagedata fileref="config_appear.png" format="PNG"/></imageobject>
+<textobject><phrase>Screenshot</phrase></textobject>
+</mediaobject>
+</screenshot>
+
+<para>The <guimenuitem>Appearance</guimenuitem> tab allows you to configure the way &filelight; looks.</para>
+<para>The <guimenuitem>Scheme</guimenuitem> section is used to choose a color scheme for &filelight;. The color schemes are Rainbow, &kde; Colours, and High Contrast. There is also a <guimenuitem>Contrast:</guimenuitem> slider to adjust the contrast of the ring segments for easier viewing.</para>
+<para>The <guimenuitem>Use anti-aliasing</guimenuitem> check box is used to enable the use of anti-aliasing in the &filelight; view. Selected, this option makes the ring segments have a much cleaner look.</para>
+<para>The <guimenuitem>Vary label font sizes</guimenuitem> check box is useful when you have files or folders with long names. This option will change the size of the font to allow it to fit in the view better. When this option is enabled a <guimenuitem>Minimum font size:</guimenuitem> spinbox becomes available for choosing the smallest size font to scale to.</para>
+<para>The <guimenuitem>Show small files</guimenuitem> option is disabled by default as small files tend to clutter the &filelight; view. Enable this option if you would like to have your small files included in the &filelight; view.</para>
+
+</sect1>
+</chapter>
+
+
+<chapter id="using">
+<title>Using &filelight;</title>
+
+<sect1 id="starting">
+<title>Starting &filelight;</title>
+<para>&filelight; can be started from the K-Menu, or from the command-line</para>
+
+<sect2 id="starting-from-the-menu">
+<title>From the K-Menu</title>
+<para>
+Open the &kde; program menu by clicking on the
+<guiicon>big K</guiicon> icon on your
+panel. This will raise the <guimenu>program menu</guimenu>. Move your
+cursor up the menu to the <guimenu>Utilities</guimenu> menu item. Choose
+<guimenuitem>&filelight;</guimenuitem>.
+</para>
+</sect2>
+
+<sect2 id="starting-from-the-command-line">
+<title>From the Command Line</title>
+<para>
+You can start &filelight; by typing its name on the command line.
+If you give it a folder name, as in the example below, it will scan that folder.
+</para>
+<informalexample>
+<screen>
+<prompt>%</prompt><userinput><command>filelight</command> <option><replaceable>/home</replaceable></option></userinput>
+</screen>
+</informalexample>
+</sect2>
+
+</sect1>
+
+<sect1 id="scanning-folders">
+<title>Scanning folders</title>
+<para>
+Scanning a folder shows it's contents as a filemap. To scan a folder, use the scan menu, or type a url straight into the location bar.
+</para>
+</sect1>
+
+<sect1 id="exploring-filemaps">
+<title>Exploring Filemaps</title>
+<para>
+Once a scan has completed you will be presented with a filemap that represents the folder you scanned. The filemap is a series of segmented-rings that expand from the center. Brightly coloured segments are folders, grey segments are files. Segments are sized in proportion to their filesize. Segments can be nested, so for example, /home/mxcl will be one level outwards and within the bounds of the segment representing /home. Segments are labeled and hovering the mouse over segments will give you more details of that segment and its child segments.
+</para>
+<screenshot>
+<screeninfo>Filemap Screenshot</screeninfo>
+<mediaobject>
+<imageobject><imagedata fileref="radial_map.png" format="PNG"/></imageobject>
+<textobject><phrase>Screenshot</phrase></textobject>
+</mediaobject>
+</screenshot>
+<para>
+You can open folders with &konqueror; or &konsole; using the context menu for that segment. Middle clicks open files by mimetype, so images with Kuickshow. You can right click the central circle to get a context menu for the scanned folder. Left clicking segments will re-center the map on that segment.
+</para>
+<para>
+If you want to improve the documentation, I'll happily accept patches :) Thanks.
+</para>
+</sect1>
+
+</chapter>
+
+
+<chapter id="commands">
+<title>Menu and Command Reference</title>
+
+<sect1 id="scan_menu">
+<title>The Scan Menu</title>
+<variablelist>
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo><keycap>Ctrl</keycap><keycap>o</keycap></keycombo>
+</shortcut>
+<guimenu>Scan</guimenu>
+<guimenuitem>Scan folder..</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Offers a folder selection dialog so you can choose a folder to scan.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo><keycap>Ctrl</keycap><keycap>Home</keycap></keycombo>
+</shortcut>
+<guimenu>Scan</guimenu>
+<guimenuitem>Scan Home folder</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Starts a scan of the user's home folder.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Scan</guimenu>
+<guimenuitem>Scan Root folder</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Starts a scan of the root folder.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Scan</guimenu>
+<guimenuitem>Recent Scans</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Provides a list of your most recent scanned folders allowing quick access to these folders.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycap>F5</keycap>
+</shortcut>
+<guimenu>Scan</guimenu>
+<guimenuitem>Rescan</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Starts a new scan of the current working folder, this is useful when changes have been made to the filesystem.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycap>Esc</keycap>
+</shortcut>
+<guimenu>Scan</guimenu>
+<guimenuitem>Stop</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Stops the current scan.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo><keycap>Ctrl</keycap><keycap>q</keycap></keycombo>
+</shortcut>
+<guimenu>Scan</guimenu>
+<guimenuitem>Quit</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Quits &filelight;.</action></para></listitem>
+</varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="go_menu">
+<title>The Go Menu</title>
+<variablelist>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo><keycap>Alt</keycap><keycap>Up</keycap></keycombo>
+</shortcut>
+<guimenu>Go</guimenu>
+<guimenuitem>Up</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Moves you up once in the filesystem.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo><keycap>Alt</keycap><keycap>Left</keycap></keycombo>
+</shortcut>
+<guimenu>Go</guimenu>
+<guimenuitem>Back</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Moves you one step back in your browsing of the filesystem.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo><keycap>Alt</keycap><keycap>Right</keycap></keycombo>
+</shortcut>
+<guimenu>Go</guimenu>
+<guimenuitem>Forward</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Moves you one step forward in your browsing of the filesystem.</action></para></listitem>
+</varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="settings_menu">
+<title>The Settings Menu</title>
+<variablelist>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guisubmenu>Toolbars</guisubmenu>
+<guimenuitem>Show Main Toolbar</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Enables or disable the main application toolbar.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guisubmenu>Toolbars</guisubmenu>
+<guimenuitem>Show Location Toolbar</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Enables or disable the location toolbar.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure Shortcuts...</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Allows you to configure the &filelight; shortcuts.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure Toolbars...</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Allows you to configure the &filelight; toolbar options.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure Filelight...</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Starts the Configure &filelight; dialog.</action></para></listitem>
+</varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="help_menu">
+<title>The Help Menu</title>
+<variablelist>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Help</guimenu>
+<guimenuitem>Filelight Handbook</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Opens this help document.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo><keycap>Shift</keycap><keycap>F1</keycap></keycombo>
+</shortcut>
+<guimenu>Help</guimenu>
+<guimenuitem>What's This?</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Activates the "What's This?" mouse cursor allowing you to click an object to get a "What's this?" tooltip.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Help</guimenu>
+<guimenuitem>Report Bug...</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Starts the bug report tool dialog window.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Help</guimenu>
+<guimenuitem>About Filelight</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Starts the About &filelight; dialog window.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Help</guimenu>
+<guimenuitem>About KDE</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Starts the About &kde; dialog window.</action></para></listitem>
+</varlistentry>
+
+</variablelist>
+</sect1>
+
+</chapter>
+
+
+<chapter id="credits">
+   <title>Credits and License</title>
+   <sect1 id="kapp">
+      <title>&filelight;</title>
+      <para>Program copyright 2003 Max B. Howell <email>max.howell@methylblue.com</email></para>
+      &underGPL;
+   </sect1>
+   <sect1 id="Documentation">
+      <title>Documentation</title>
+      <para>Documentation copyright 2003 Max B. Howell <email>max.howell@methylblue.com</email></para>
+      <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
+      &underFDL;
+   </sect1>
+</chapter>
+
+
+<appendix id="installation">
+   <title>Installation</title>
+   <sect1 id="getting-filelight">
+      <title>How to obtain &filelight;</title>
+      <para>&filelight; is not yet part of the &kde; project, it can be found at <ulink url="http://www.methylblue.com/filelight/">www.methylblue.com/filelight/</ulink>.</para>
+   </sect1>
+   <sect1 id="compilation">
+      <title>Compilation and Installation</title>
+      <para>In order to compile and install &filelight; on your system, type the following in the base folder of the &filelight; distribution:</para>
+      <screen width="40">
+         <prompt>%</prompt> <userinput>./configure --prefix=`kde-config --prefix`</userinput>
+         <prompt>%</prompt> <userinput>make</userinput>
+         <prompt>%</prompt> <userinput>make install</userinput>
+      </screen>
+      <para>Since &filelight; uses autoconf and automake you should have not trouble compiling it. Should you run into problems please report them to filelight@methylblue.com or the &filelight; Forums.</para>
+   </sect1>
+</appendix>
+
+&documentation.index;
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->
