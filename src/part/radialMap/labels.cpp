@@ -19,10 +19,10 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ***********************************************************************/
 
-#include <kstringhandler.h>
-#include <qfont.h>
-#include <qfontmetrics.h>
-#include <qpainter.h>
+#include <KStringHandler>
+#include <QFont>
+#include <QFontMetrics>
+#include <QPainter>
 
 #include "part/Config.h"
 #include "part/fileTree.h"
@@ -78,7 +78,6 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
     //we are a friend of RadialMap::Map
 
     QList<Label*> list;
-    QList<Label*>::iterator it = list.begin();
     unsigned int startLevel = 0;
 
 
@@ -138,6 +137,7 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
     //2. Check to see if any adjacent labels are too close together
     //   if so, remove the least significant labels
 
+    QList<Label*>::iterator it = list.begin();
     QList<Label*>::iterator jt = list.begin();
 
     for (jt = list.begin(); jt != list.end(); ++jt) //**** no need to check _it_ as jt will be NULL if _it_ was too
