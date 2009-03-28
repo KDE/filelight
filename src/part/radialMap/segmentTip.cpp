@@ -124,7 +124,7 @@ SegmentTip::updateTip(const File* const file, const Directory* const root)
     {
         double files  = static_cast<const Directory*>(file)->children();
         const uint pc = uint((100 * files) / (double)root->children());
-        QString s3    = i18n("Files: <numid>%1</numid>", files);
+        QString s3    = i18np("File: %1", "Files: %1", files);
 
         if (pc > 0) s3 += QString(" (%1%)").arg(loc->formatNumber(pc, 0));
 
