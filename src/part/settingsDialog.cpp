@@ -103,8 +103,8 @@ void SettingsDialog::reset()
     //  dontScanRemovableMedia.setEnabled(Config::scanAcrossMounts);
 
     m_listBox->clear();
-    m_listBox->insertStringList(Config::skipList);
-    m_listBox->setSelected(0, true);
+    m_listBox->addItems(Config::skipList);
+    m_listBox->setCurrentRow(0);
 
     m_removeButton->setEnabled(m_listBox->count() == 0);
 
@@ -163,7 +163,7 @@ void SettingsDialog::addDirectory()
         if (!Config::skipList.contains(path))
         {
             Config::skipList.append(path);
-            m_listBox->insertItem(path);
+            m_listBox->addItem(path);
             m_removeButton->setEnabled(true);
         }
         else KMessageBox::sorry(this, i18n("That directory is already set to be excluded from scans"));
@@ -173,11 +173,11 @@ void SettingsDialog::addDirectory()
 
 void SettingsDialog::removeDirectory()
 {
-    Config::skipList.removeAll(m_listBox->currentText()); //removes all entries that match
+    Config::skipList.removeAll(m_listBox->currentItem()->text()); //removes all entries that match
 
     //safest method to ensure consistency
     m_listBox->clear();
-    m_listBox->insertStringList(Config::skipList);
+    m_listBox->addItems(Config::skipList);
 
     m_removeButton->setEnabled(m_listBox->count() == 0);
 }

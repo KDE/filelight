@@ -29,5 +29,5 @@ set(radialmap_STAT_SRCS
     segmentTip.cpp)
 
 kde4_add_library(radialmap STATIC ${radialmap_STAT_SRCS} )
-find_package(Blitz REQUIRED)
+
 
