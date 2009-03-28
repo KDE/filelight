@@ -17,6 +17,7 @@ Type=Application
 Exec=filelight %f
 Icon=filelight
 Comment=View disk usage information
+Comment[de]=Nutzungsinformationen zu Festplatten anzeigen
 Comment[et]=Kettakasutuse teabe kuvamine
 Comment[fr]=Voir de l'information sur l'utilisation des disques durs
 Comment[ga]=Amharc ar fhaisnéis maidir le húsáid diosca
