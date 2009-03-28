@@ -29,7 +29,6 @@
 #include <QImage>          //make() & paint()
 #include <QFont>           //ctor
 #include <QFontMetrics>    //ctor
-#include <QPainter>
 #include <Q3PointArray>
 
 #include "builder.h"

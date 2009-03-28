@@ -53,7 +53,7 @@ class Widget : public QWidget
     Q_OBJECT
 
 public:
-    Widget(QWidget* = 0, bool = false);
+    explicit Widget(QWidget* = 0, bool = false);
     ~Widget() {
         delete m_tip;
     }
