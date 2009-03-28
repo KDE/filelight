@@ -16,13 +16,19 @@
          <surname>Howell</surname>
          <affiliation><address><email>max.howell@methylblue.com</email></address></affiliation>
       </author>
+      <author>
+        <firstname>Martin</firstname>
+        <surname>Sandsmark</surname>
+        <affiliation><address><email>sandsmark@samfundet.no</email></address></affiliation>
+      </author>
       <!-- TRANS:ROLES_OF_TRANSLATORS -->
    </authorgroup>
    <copyright><year>2006</year><holder>Max Howell</holder></copyright>
+   <copyright><year>2009</year><holder>Martin Sandsmark</holder></copyright>
    <!-- Translators: put here the copyright notice of the translation -->
    <legalnotice>&FDLNotice;</legalnotice>
-   <date>14/09/2006</date>
-   <releaseinfo>3</releaseinfo>
+   <date>28/03/2009</date>
+   <releaseinfo>4</releaseinfo>
    <abstract><para>&filelight; creates an interactive map of concentric segmented-rings that helps visualise disk usage on your computer.</para></abstract>
    <!-- These may be used by search engines -->
    <keywordset>
@@ -37,7 +43,7 @@
 <chapter id="introduction">
    <title>Introduction</title>
    <screenshot>
-      <screeninfo>&filelight; 1.0 Screenshot</screeninfo>
+      <screeninfo>&filelight; 1.9 Screenshot</screeninfo>
       <mediaobject>
          <imageobject><imagedata fileref="radial_map.png" format="PNG"/></imageobject>
          <textobject><phrase>Screenshot</phrase></textobject>
@@ -144,7 +150,7 @@ Once a scan has completed you will be presented with a filemap that represents t
 You can open folders with &konqueror; or &konsole; using the context menu for that segment. Middle clicks open files by mimetype, so images with Kuickshow. You can right click the central circle to get a context menu for the scanned folder. Left clicking segments will re-center the map on that segment.
 </para>
 <para>
-If you want to improve the documentation, I'll happily accept patches :) Thanks.
+If you want to improve the documentation, I'll happily accept patches. Thanks.
 </para>
 </sect1>
 
@@ -243,7 +249,7 @@ If you want to improve the documentation, I'll happily accept patches :) Thanks.
 <guimenu>Go</guimenu>
 <guimenuitem>Up</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Moves you up once in the filesystem.</action></para></listitem>
+<listitem><para><action>Moves you up one step in the filesystem.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -306,7 +312,7 @@ If you want to improve the documentation, I'll happily accept patches :) Thanks.
 <guimenu>Settings</guimenu>
 <guimenuitem>Configure Toolbars...</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Allows you to configure the &filelight; toolbar options.</action></para></listitem>
+<listitem><para><action>Allows you to configure and edit the &filelight; toolbar.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -356,7 +362,7 @@ If you want to improve the documentation, I'll happily accept patches :) Thanks.
 <guimenu>Help</guimenu>
 <guimenuitem>About Filelight</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Starts the About &filelight; dialog window.</action></para></listitem>
+<listitem><para><action>Shows the About &filelight; dialog window.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -364,7 +370,7 @@ If you want to improve the documentation, I'll happily accept patches :) Thanks.
 <guimenu>Help</guimenu>
 <guimenuitem>About KDE</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Starts the About &kde; dialog window.</action></para></listitem>
+<listitem><para><action>Shows the About &kde; dialog window.</action></para></listitem>
 </varlistentry>
 
 </variablelist>
@@ -378,11 +384,13 @@ If you want to improve the documentation, I'll happily accept patches :) Thanks.
    <sect1 id="kapp">
       <title>&filelight;</title>
       <para>Program copyright 2003 Max B. Howell <email>max.howell@methylblue.com</email></para>
+      <para>Program copyright 2009 Martin Sandsmark <email>sandsmark@samfundet.no</email></para>
       &underGPL;
    </sect1>
    <sect1 id="Documentation">
       <title>Documentation</title>
       <para>Documentation copyright 2003 Max B. Howell <email>max.howell@methylblue.com</email></para>
+      <para>Documentation copyright 2009 Martin Sandsmark <email>sandsmark@samfundet.no</email></para>
       <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
       &underFDL;
    </sect1>
@@ -393,17 +401,19 @@ If you want to improve the documentation, I'll happily accept patches :) Thanks.
    <title>Installation</title>
    <sect1 id="getting-filelight">
       <title>How to obtain &filelight;</title>
-      <para>&filelight; is not yet part of the &kde; project, it can be found at <ulink url="http://www.methylblue.com/filelight/">www.methylblue.com/filelight/</ulink>.</para>
+      <para>&filelight; is part of the &kde; project's Extragear, it can be found at <ulink url="http://extragear.kde.org/apps/filelight/">http://extragear.kde.org/apps/filelight/</ulink>.</para>
    </sect1>
    <sect1 id="compilation">
       <title>Compilation and Installation</title>
       <para>In order to compile and install &filelight; on your system, type the following in the base folder of the &filelight; distribution:</para>
       <screen width="40">
-         <prompt>%</prompt> <userinput>./configure --prefix=`kde-config --prefix`</userinput>
+         <prompt>%</prompt> <userinput>mkdir build</userinput>
+         <prompt>%</prompt> <userinput>cd build</userinput>
+         <prompt>%</prompt> <userinput>cmake ..</userinput>
          <prompt>%</prompt> <userinput>make</userinput>
          <prompt>%</prompt> <userinput>make install</userinput>
       </screen>
-      <para>Since &filelight; uses autoconf and automake you should have not trouble compiling it. Should you run into problems please report them to filelight@methylblue.com or the &filelight; Forums.</para>
+      <para>Since &filelight; uses cmake you should have not trouble compiling it. Should you run into problems please report them to sandsmark@samfundet.no or if you suspect it is a problem with Filelight, on <ulink url="http://bugs.kde.org">the KDE bug tracker</ulink>.</para>
    </sect1>
 </appendix>
 
