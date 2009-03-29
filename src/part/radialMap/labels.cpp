@@ -34,8 +34,9 @@
 
 namespace RadialMap
 {
-struct Label
+class Label
 {
+public:
     Label(const RadialMap::Segment *s, int l) : segment(s), lvl(l), a(segment->start() + (segment->length() / 2)) { }
 
     bool tooClose(const int &aa) const {
@@ -53,7 +54,7 @@ struct Label
 };
 
 int compareAndSortLabels(Label *item1, Label *item2)       
-    {                                                                                
+{                                                                                
         //you add 1440 to work round the fact that later you want the circle split vertically
         //and as it is you start at 3 o' clock. It's to do with rightPrevY, stops annoying bug
                                                                                               
@@ -70,7 +71,7 @@ int compareAndSortLabels(Label *item1, Label *item2)
             return 1;                                                                         
 
         return -1;
-    }
+}
 
 void
 RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
@@ -321,8 +322,7 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
 
     paint.setPen(QPen(Qt::black, 1));
 
-    for (it = list.begin(); it != list.end(); ++it)
-    {
+    for (it = list.begin(); it != list.end(); ++it) {
         if (varySizes) {
             //**** how much overhead in making new QFont each time?
             //     (implicate sharing remember)
@@ -340,3 +340,4 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
     delete [] sizes;
 }
 }
+
