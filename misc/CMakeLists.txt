@@ -18,8 +18,6 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #######################################################################
 
-include_directories(${KDE4_INCLUDES} ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} )
-
 install(FILES filelight_part.desktop DESTINATION ${SERVICES_INSTALL_DIR})
 install(FILES filelight.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 install(FILES filelightrc DESTINATION ${CMAKE_INSTALL_PREFIX}/share/config)

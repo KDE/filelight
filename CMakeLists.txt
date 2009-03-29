@@ -26,7 +26,7 @@ include(KDE4Defaults)
 
 include(MacroLibrary)
 
-include_directories(src/ ${KDE4_INCLUDES} ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} )
+include_directories( src/ ${KDE4_INCLUDES} ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} )
 
 add_subdirectory(src)
 add_subdirectory(misc)

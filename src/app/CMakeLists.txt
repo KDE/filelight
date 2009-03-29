@@ -18,8 +18,6 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #######################################################################
 
-include_directories(${CMAKE_SOURCE_DIR}/filelight/src ${KDE4_INCLUDES} ${KDE4_INCLUDE_DIR} ${QT_INCLUDES})
-
 set(filelight_SRCS historyAction.cpp mainWindow.cpp main.cpp)
 
 kde4_add_executable(filelight ${filelight_SRCS})
