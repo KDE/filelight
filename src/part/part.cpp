@@ -181,6 +181,7 @@ Part::closeURL()
         statusBar()->showMessage(i18n("Aborting Scan..."));
 
     m_map->hide();
+    m_stateWidget->hide();
 
     m_summary->show();
 
