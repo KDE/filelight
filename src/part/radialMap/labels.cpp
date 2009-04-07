@@ -139,24 +139,32 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
     //   if so, remove the least significant labels
 
     QList<Label*>::iterator it = list.begin();
-    QList<Label*>::iterator jt = list.begin();
+    QList<Label*>::iterator jt = it;
 
-    for (jt = list.begin(); jt != list.end(); ++jt) //**** no need to check _it_ as jt will be NULL if _it_ was too
+    const QList<Label*>::iterator jtEnd = list.end();
+
+    if (jt != jtEnd) ++jt;
+
+    while (jt != jtEnd)
     {
         //this method is fairly efficient
 
         if ((*it)->tooClose((*jt)->a)) {
             if ((*it)->lvl > (*jt)->lvl) {
-                list.erase(it);
-                it = jt;
+                const QList<Label*>::iterator jtDel = jt++;
+                list.erase(jtDel);
             }
             else
-                list.erase(jt);
+            {
+                list.erase(it);
+                it = jt++;
+            }
         }
         else
-            ++it;
-
-        jt = it;
+        {
+            it = jt;
+            ++jt;
+        }
     }
 
     //used in next two steps
