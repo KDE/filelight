@@ -39,7 +39,7 @@ class Label
 public:
     Label(const RadialMap::Segment *s, int l) : segment(s), lvl(l), a(segment->start() + (segment->length() / 2)) { }
 
-    bool tooClose(const int &aa) const {
+    bool tooClose(const int aa) const {
         return (a > aa - LABEL_ANGLE_MARGIN && a < aa + LABEL_ANGLE_MARGIN);
     }
 
@@ -53,22 +53,29 @@ public:
     QString qs;
 };
 
-int compareAndSortLabels(Label *item1, Label *item2)       
-{                                                                                
+int compareAndSortLabels(Label *item1, Label *item2)
+{
         //you add 1440 to work round the fact that later you want the circle split vertically
         //and as it is you start at 3 o' clock. It's to do with rightPrevY, stops annoying bug
-                                                                                              
-        int a1 = (item1)->a + 1440;                                                   
-        int a2 = (item2)->a + 1440;                                                   
-                                                                                              
-        if (a1 == a2)                                                                         
-            return 0;                                                                         
-                                                                                              
-        if (a1 > 5760) a1 -= 5760;                                                            
-        if (a2 > 5760) a2 -= 5760;                                                            
-                                                                                              
-        if (a1 > a2)                                                                          
-            return 1;                                                                         
+
+        int a1 = (item1)->a + 1440;
+        int a2 = (item2)->a + 1440;
+
+        // Also sort by level
+        if (a1 == a2){
+            if (item1->lvl > item2->lvl)
+                return 1;
+            else if (item1->lvl < item2->lvl)
+                return -1;
+            else
+                return 0;
+        }
+
+        if (a1 > 5760) a1 -= 5760;
+        if (a2 > 5760) a2 -= 5760;
+
+        if (a1 > a2)
+            return 1;
 
         return -1;
 }
@@ -136,41 +143,23 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
     }
 
     //2. Check to see if any adjacent labels are too close together
-    //   if so, remove the least significant labels
+    //   if so, remove it (the least significant labels, since we sort by level too).
 
-    QList<Label*>::iterator it = list.begin();
-    QList<Label*>::iterator jt = it;
-
-    const QList<Label*>::iterator jtEnd = list.end();
-
-    if (jt != jtEnd) ++jt;
-
-    while (jt != jtEnd)
+    int pos = 0;
+    while (pos < list.size() - 1)
     {
-        //this method is fairly efficient
-
-        if ((*it)->tooClose((*jt)->a)) {
-            if ((*it)->lvl > (*jt)->lvl) {
-                const QList<Label*>::iterator jtDel = jt++;
-                list.erase(jtDel);
-            }
-            else
-            {
-                list.erase(it);
-                it = jt++;
-            }
-        }
+        if (list[pos]->tooClose(list[pos+1]->a))
+            list.removeAt(pos+1);
         else
-        {
-            it = jt;
-            ++jt;
-        }
+            ++pos;
     }
 
     //used in next two steps
     bool varySizes;
     //**** should perhaps use doubles
     int  *sizes = new int [ m_map.m_visibleDepth + 1 ]; //**** make sizes an array of floats I think instead (or doubles)
+
+    QList<Label*>::iterator it;
 
     do
     {
