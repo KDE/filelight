@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1.2-Based Variant V1.0//EN" "dtd/kdex.dtd" [
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
   <!ENTITY kappname "&filelight;">
   <!ENTITY filelight "<application>Filelight</application>">
   <!ENTITY % addindex "IGNORE">
@@ -328,52 +328,8 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 
 <sect1 id="help_menu">
 <title>The Help Menu</title>
-<variablelist>
 
-<varlistentry>
-<term><menuchoice>
-<guimenu>Help</guimenu>
-<guimenuitem>Filelight Handbook</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Opens this help document.</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo><keycap>Shift</keycap><keycap>F1</keycap></keycombo>
-</shortcut>
-<guimenu>Help</guimenu>
-<guimenuitem>What's This?</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Activates the "What's This?" mouse cursor allowing you to click an object to get a "What's this?" tooltip.</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Help</guimenu>
-<guimenuitem>Report Bug...</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Starts the bug report tool dialog window.</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Help</guimenu>
-<guimenuitem>About Filelight</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Shows the About &filelight; dialog window.</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Help</guimenu>
-<guimenuitem>About KDE</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Shows the About &kde; dialog window.</action></para></listitem>
-</varlistentry>
-
-</variablelist>
+&help.menu.documentation;
 </sect1>
 
 </chapter>
@@ -413,7 +369,7 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
          <prompt>%</prompt> <userinput>make</userinput>
          <prompt>%</prompt> <userinput>make install</userinput>
       </screen>
-      <para>Since &filelight; uses cmake you should have not trouble compiling it. Should you run into problems please report them to sandsmark@samfundet.no or if you suspect it is a problem with Filelight, on <ulink url="http://bugs.kde.org">the KDE bug tracker</ulink>.</para>
+      <para>Since &filelight; uses cmake you should have not trouble compiling it. Should you run into problems please report them to sandsmark@samfundet.no or if you suspect it is a problem with &filelight;, on <ulink url="http://bugs.kde.org">the &kde; bug tracker</ulink>.</para>
    </sect1>
 </appendix>
 
