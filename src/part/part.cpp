@@ -83,9 +83,12 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
     m_map = new RadialMap::Widget(widget());
     m_layout->addWidget(m_map);
 
-    m_stateWidget = new QLabel(i18n("Busy ...")); //TODO: Something more fancy.
-    m_stateWidget->setAlignment(Qt::AlignCenter);
+    m_stateWidget = new ProgressBox(statusBar(), this);
+    m_layout->addWidget(m_stateWidget);
     m_stateWidget->hide();
+
+    m_numberOfFiles = new QLabel();
+    m_statusbar->addStatusBarItem(m_numberOfFiles, 0, true);
 
     KStandardAction::zoomIn(m_map, SLOT(zoomIn()), actionCollection());
     KStandardAction::zoomOut(m_map, SLOT(zoomOut()), actionCollection());
@@ -227,7 +230,7 @@ Part::createAboutData()
                ki18n("Displays file usage in an easy to understand way."),
                KAboutData::License_GPL,
                ki18n("(c) 2002-2004 Max Howell\n\
-			    (c) 2008 Martin T. Sandsmark"),
+			    (c) 2008-2009 Martin T. Sandsmark"),
                ki18n("Please report bugs."),
                "http://iskrembilen.com/",
                "sandsmark@iskrembilen.com");
@@ -237,11 +240,12 @@ bool
 Part::start(const KUrl &url)
 {
     if (!m_started) {
-        m_statusbar->addStatusBarItem(new ProgressBox(statusBar(), this), 0, true);
         connect(m_map, SIGNAL(mouseHover(const QString&)), statusBar(), SLOT(message(const QString&)));
         connect(m_map, SIGNAL(created(const Directory*)), statusBar(), SLOT(clear()));
         m_started = true;
     }
+
+    m_numberOfFiles->setText("");
 
     if (m_manager->start(url)) {
         setUrl(url);
@@ -301,10 +305,8 @@ Part::mapChanged(const Directory *tree)
 
     emit setWindowCaption(prettyUrl());
 
-    ProgressBox *progress = statusBar()->findChild<ProgressBox *>();
+    m_numberOfFiles->setText(QString::number(tree->children()) + " files");
 
-    if (progress)
-        progress->setText(tree->children());
 }
 
 } //namespace Filelight

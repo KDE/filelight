@@ -86,8 +86,9 @@ private:
     BrowserExtension   *m_ext;
     StatusBarExtension *m_statusbar;
     RadialMap::Widget  *m_map;
-    QLabel             *m_stateWidget;
+    QWidget            *m_stateWidget;
     class ScanManager  *m_manager;
+    QLabel             *m_numberOfFiles;
 
     bool m_started;
 
