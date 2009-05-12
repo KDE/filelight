@@ -41,6 +41,7 @@ SegmentTip::SegmentTip(uint h)
         : QWidget(0, Qt::FramelessWindowHint | Qt::Tool | Qt::WindowStaysOnTopHint | Qt::X11BypassWindowManagerHint)
         , m_cursorHeight(-h)
 {
+    setAttribute(Qt::WA_TranslucentBackground);
 }
 
 void
@@ -102,8 +103,9 @@ SegmentTip::updateTip(const File* const file, const Directory* const root)
     // Paint
     m_pixmap = QPixmap(size()); //move to updateTip once you are sure it can never be null
 
-    const QColor bg = QToolTip::palette().color(QPalette::Active, QPalette::Background);
+    QColor bg = QToolTip::palette().color(QPalette::Active, QPalette::Background);
     const QColor fg = QToolTip::palette().color(QPalette::Active, QPalette::WindowText);
+    bg.setAlpha(200);
 
     m_pixmap.fill(bg);
 
@@ -136,7 +138,7 @@ SegmentTip::event(QEvent *e)
         ;
     }
 
-    return false/*QWidget::event(e)*/;
+    return false;
 }
 
 bool
@@ -159,3 +161,4 @@ SegmentTip::eventFilter(QObject*, QEvent *e)
 }
 
 } //namespace RadialMap
+
