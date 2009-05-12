@@ -22,8 +22,8 @@
 #ifndef SEGMENTTIP_H
 #define SEGMENTTIP_H
 
-#include <QWidget>
 #include <QEvent>
+#include <QWidget>
 
 class File;
 class Directory;
@@ -36,7 +36,7 @@ public:
     SegmentTip(uint);
 
     void updateTip(const File*, const Directory*);
-    void moveTo(QPoint, QWidget&, bool);
+    void moveTo(QPoint, bool);
 
 private:
     virtual bool eventFilter(QObject*, QEvent*);

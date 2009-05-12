@@ -25,18 +25,15 @@
 #include "part/Config.h"
 
 #include <cstdlib>
-#include <kapplication.h>    //installing eventFilters
-#include <kglobal.h>
-#include <kglobalsettings.h>
-#include <klocale.h>
 
-#include <qimageblitz/qimageblitz.h>
+#include <KApplication>    //installing eventFilters
+#include <KGlobal>
+#include <KGlobalSettings>
+#include <KLocale>
+
 #include <QPainter>
-#include <qtooltip.h>        //for its palette
-//Added by qt3to4:
 #include <QEvent>
-
-
+#include <QToolTip>
 
 namespace RadialMap {
 
@@ -47,7 +44,7 @@ SegmentTip::SegmentTip(uint h)
 }
 
 void
-SegmentTip::moveTo(QPoint p, QWidget &canvas, bool placeAbove)
+SegmentTip::moveTo(QPoint p, bool placeAbove)
 {
     //**** this function is very slow and seems to be visibly influenced by operations like mapFromGlobal() (who knows why!)
     //  ** so any improvements are much desired
@@ -56,51 +53,11 @@ SegmentTip::moveTo(QPoint p, QWidget &canvas, bool placeAbove)
     p.rx() -= rect().center().x();
     p.ry() -= (placeAbove ? 8 + height() : m_cursorHeight - 8);
 
-    const QRect screen = KGlobalSettings::desktopGeometry(parentWidget());
-
     const int x  = p.x();
     const int y  = p.y();
-    const int x2 = x + width();
-    const int y2 = y + height(); //how's it ever gunna get below screen height?! (well you never know I spose)
-    const int sw = screen.width();
-    const int sh = screen.height();
-
-    if (x  < 0 ) p.setX(0);
-    if (y  < 0 ) p.setY(0);
-    if (x2 > sw) p.rx() -= x2 - sw;
-    if (y2 > sh) p.ry() -= y2 - sh;
-
-
-    //I'm using this QPoint to determine where to offset the bitBlt in m_pixmap
-    QPoint offset = canvas.mapToGlobal(QPoint()) - p;
-    if (offset.x() < 0) offset.setX(0);
-    if (offset.y() < 0) offset.setY(0);
-
-
-    const QRect alphaMaskRect(canvas.mapFromGlobal(p), size());
-    const QRect intersection(alphaMaskRect.intersect(canvas.rect()));
-
-    m_pixmap = QPixmap(size()); //move to updateTip once you are sure it can never be null
-
-    const QColor bg = QToolTip::palette().color(QPalette::Active, QPalette::Background);
-    const QColor fg = QToolTip::palette().color(QPalette::Active, QPalette::WindowText);
-
-    m_pixmap.fill(bg);
-
-    QPainter paint(&m_pixmap);
-    if (Config::antialias) paint.setRenderHint(QPainter::Antialiasing);
-
-    paint.setPen(fg);
-    paint.setBrush(Qt::NoBrush);
-    paint.drawRect(rect());
-    paint.drawText(rect(), Qt::AlignCenter, m_text);
-    paint.end();
-
-    p += screen.topLeft(); //for Xinerama users
 
     move(x, y);
     show();
-    update();
 }
 
 void
@@ -122,7 +79,7 @@ SegmentTip::updateTip(const File* const file, const Directory* const root)
 
     if (file->isDirectory())
     {
-        double files  = static_cast<const Directory*>(file)->children();
+        int files  = static_cast<const Directory*>(file)->children();
         const uint pc = uint((100 * files) / (double)root->children());
         QString s3    = i18np("File: %1", "Files: %1", files);
 
@@ -141,6 +98,22 @@ SegmentTip::updateTip(const File* const file, const Directory* const root)
     if (w > maxw) maxw = w;
 
     resize(maxw + 2 * MARGIN, h);
+
+    // Paint
+    m_pixmap = QPixmap(size()); //move to updateTip once you are sure it can never be null
+
+    const QColor bg = QToolTip::palette().color(QPalette::Active, QPalette::Background);
+    const QColor fg = QToolTip::palette().color(QPalette::Active, QPalette::WindowText);
+
+    m_pixmap.fill(bg);
+
+    QPainter paint(&m_pixmap);
+    if (Config::antialias) paint.setRenderHint(QPainter::Antialiasing);
+
+    paint.setPen(fg);
+    paint.drawRect(rect());
+    paint.drawText(rect(), Qt::AlignCenter, m_text);
+    update();
 }
 
 bool

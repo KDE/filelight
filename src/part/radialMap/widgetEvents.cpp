@@ -25,31 +25,29 @@
 #include "widget.h"
 
 #include <cmath>         //::segmentAt()
-#include <kcursor.h>     //::mouseMoveEvent()
+
+#include <KCursor>     //::mouseMoveEvent()
 #include <KDebug>
-#include <kiconeffect.h> //::mousePressEvent()
-#include <kiconloader.h> //::mousePressEvent()
-#include <kio/job.h>     //::mousePressEvent()
+#include <KIconLoader> //::mousePressEvent()
+#include <KIO/Job>     //::mousePressEvent()
 #include <KJob>
-#include <kio/deletejob.h>
-#include <kio/jobuidelegate.h>
-#include <klocale.h>
-#include <kmessagebox.h> //::mousePressEvent()
-#include <kmenu.h>  //::mousePressEvent()
-#include <krun.h>        //::mousePressEvent()
-#include <kurl.h>
-#include <qapplication.h>//QApplication::setOverrideCursor()
-#include <qclipboard.h>
-#include <qpainter.h>
-#include <qtimer.h>      //::resizeEvent()
-//Added by qt3to4:
+#include <KIO/DeleteJob>
+#include <KIO/JobUiDelegate>
+#include <KLocale>
+#include <KMessageBox> //::mousePressEvent()
+#include <KMenu>  //::mousePressEvent()
+#include <KRun>        //::mousePressEvent()
+#include <KUrl>
+
+#include <QApplication> //QApplication::setOverrideCursor()
+#include <QClipboard>
+#include <QPainter>
+#include <QTimer>      //::resizeEvent()
 #include <QDropEvent>
 #include <QPaintEvent>
 #include <QResizeEvent>
 #include <QMouseEvent>
 #include <QDragEnterEvent>
-
-
 
 void
 RadialMap::Widget::resizeEvent(QResizeEvent*)
@@ -148,14 +146,15 @@ RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
         if (m_focus != oldFocus) //if not same as last time
         {
             setCursor(Qt::PointingHandCursor);
+
+            m_tip->hide(); //HACK: hack to force tooltip to be updated.
             m_tip->updateTip(m_focus->file(), m_tree);
+            m_tip->show(); //HACK: repaint(), update() et al doesn't work.
+
             emit mouseHover(m_focus->file()->fullPath());
-
-            //repaint required to update labels now before transparency is generated
-            repaint();
+            update();
         }
-
-        m_tip->moveTo(e->globalPos(), *this, (p.y() < 0)); //updates tooltip pseudo-transparent background
+        m_tip->moveTo(e->globalPos(), (p.y() < 0));
     }
     else if (oldFocus && oldFocus->file() != m_tree)
     {
