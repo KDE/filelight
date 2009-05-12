@@ -40,7 +40,11 @@ public:
 
 private:
     virtual bool eventFilter(QObject*, QEvent*);
-    virtual bool event(QEvent*);
+
+protected:
+    void paintEvent(QPaintEvent *event);
+    void hideEvent(QHideEvent*);
+    void showEvent(QShowEvent*);
 
     uint    m_cursorHeight;
     QPixmap m_pixmap;

@@ -121,36 +121,11 @@ SegmentTip::updateTip(const File* const file, const Directory* const root)
 }
 
 bool
-SegmentTip::event(QEvent *e)
-{
-    switch (e->type())
-    {
-    case QEvent::Show:
-        kapp->installEventFilter(this);
-        break;
-    case QEvent::Hide:
-        kapp->removeEventFilter(this);
-        break;
-    case QEvent::Paint:
-    {
-        QPainter(this).drawPixmap(0, 0, m_pixmap);
-        return true;
-    }
-    default:
-        ;
-    }
-
-    return false;
-}
-
-bool
 SegmentTip::eventFilter(QObject*, QEvent *e)
 {
     switch (e->type())
     {
     case QEvent::Leave:
-//     case QEvent::MouseButtonPress:
-//     case QEvent::MouseButtonRelease:
     case QEvent::KeyPress:
     case QEvent::KeyRelease:
     case QEvent::FocusIn:
@@ -160,6 +135,24 @@ SegmentTip::eventFilter(QObject*, QEvent *e)
     default:
         return false; //allow this event to passed to target
     }
+}
+
+void
+SegmentTip::paintEvent(QPaintEvent*)
+{
+    QPainter(this).drawPixmap(0, 0, m_pixmap);
+}
+
+void
+SegmentTip::hideEvent(QHideEvent*)
+{
+    kapp->removeEventFilter(this);
+}
+
+void
+SegmentTip::showEvent(QShowEvent*)
+{
+    kapp->installEventFilter(this);
 }
 
 } //namespace RadialMap

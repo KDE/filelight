@@ -147,12 +147,10 @@ RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
         {
             setCursor(Qt::PointingHandCursor);
 
-            m_tip->hide(); //HACK: hack to force tooltip to be updated.
             m_tip->updateTip(m_focus->file(), m_tree);
-            m_tip->show(); //HACK: repaint(), update() et al doesn't work.
 
             emit mouseHover(m_focus->file()->fullPath());
-            update();
+            m_tip->update();
         }
         m_tip->moveTo(e->globalPos(), (p.y() < 0));
     }
