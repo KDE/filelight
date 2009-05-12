@@ -30,6 +30,7 @@
 #include <KGlobal>
 #include <KGlobalSettings>
 #include <KLocale>
+#include <KWindowSystem>
 
 #include <QPainter>
 #include <QEvent>
@@ -105,7 +106,9 @@ SegmentTip::updateTip(const File* const file, const Directory* const root)
 
     QColor bg = QToolTip::palette().color(QPalette::Active, QPalette::Background);
     const QColor fg = QToolTip::palette().color(QPalette::Active, QPalette::WindowText);
-    bg.setAlpha(200);
+
+    if (KWindowSystem::compositingActive())
+        bg.setAlpha(200);
 
     m_pixmap.fill(bg);
 
@@ -115,7 +118,6 @@ SegmentTip::updateTip(const File* const file, const Directory* const root)
     paint.setPen(fg);
     paint.drawRect(rect());
     paint.drawText(rect(), Qt::AlignCenter, m_text);
-    update();
 }
 
 bool
