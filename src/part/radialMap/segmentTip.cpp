@@ -42,7 +42,9 @@ SegmentTip::SegmentTip(uint h)
         : QWidget(0, Qt::FramelessWindowHint | Qt::Tool | Qt::WindowStaysOnTopHint | Qt::X11BypassWindowManagerHint)
         , m_cursorHeight(-h)
 {
+#if QT_VERSION >= 0x040500
     setAttribute(Qt::WA_TranslucentBackground);
+#endif
 }
 
 void
