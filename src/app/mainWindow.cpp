@@ -178,7 +178,7 @@ inline void MainWindow::configToolbars() //slot
 {
     KEditToolBar dialog(factory(), this);
 
-    if (dialog.exec())
+    if (dialog.exec()) //krazy:exclude=crashy
     {
         createGUI(m_part);
         applyMainWindowSettings(KGlobal::config()->group("window"));
