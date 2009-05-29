@@ -44,9 +44,10 @@ RadialMap::Map::Map(bool summary)
         , m_ringBreadth(MIN_RING_BREADTH)
         , m_innerRadius(0)
         , m_summary(summary)
+        , m_scheme(QPalette::Active, KColorScheme::View)
 {
+    m_pixmap.fill(m_scheme.background().color());
 
-    m_pixmap.fill(Qt::transparent);
     //FIXME this is all broken. No longer is a maximum depth!
     const int fmh   = QFontMetrics(QFont()).height();
     const int fmhD4 = fmh / 4;
@@ -83,6 +84,9 @@ void RadialMap::Map::make(const Directory *tree, bool refresh)
 
     //colour the segments
     colorise();
+
+    //paint the pixmap
+    paint();
 
     //determine centerText
     if (!refresh)
@@ -137,7 +141,7 @@ bool RadialMap::Map::resize(const QRect &rect)
             m_rect.setRect(0,0,size,size);
         }
         m_pixmap = QPixmap(m_rect.size());
-        m_pixmap.fill(Qt::transparent);
+        m_pixmap.fill(m_scheme.background().color());
 
         //resize the pixmap
         size += MAP_2MARGIN;
