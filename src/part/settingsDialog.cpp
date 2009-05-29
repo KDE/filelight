@@ -36,8 +36,10 @@
 #include <QVBoxLayout>
 #include <QCloseEvent>
 
-SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
+SettingsDialog::SettingsDialog(QWidget *parent) : KDialog(parent)
 {
+    setButtons(0);//TODO, use the kdialog buttons
+
     setupUi(this);
     QVBoxLayout *vbox = new QVBoxLayout;
     //colourSchemeGroup->setFrameShape(QFrame::NoFrame);
@@ -232,7 +234,7 @@ void SettingsDialog::reject()
 {
     //called when escape is pressed
     reset();
-    QDialog::reject();   //**** doesn't change back scheme so far
+    KDialog::reject();   //**** doesn't change back scheme so far
 }
 
 #include "settingsDialog.moc"

@@ -75,7 +75,7 @@ LocalLister::run()
     Directory *tree = scan(path, path);
 
     //delete the list of trees useful for this scan,
-    //in a sucessful scan the contents would now be transfered to 'tree'
+    //in a sucessful scan the contents would now be transferred to 'tree'
     delete m_trees;
 
     if (ScanManager::s_abort) //scan was cancelled

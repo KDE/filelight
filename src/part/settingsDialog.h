@@ -28,7 +28,7 @@
 #include <QCloseEvent>
 
 
-class SettingsDialog : public QDialog, public Ui::Dialog
+class SettingsDialog : public KDialog, public Ui::Dialog
 {
     Q_OBJECT
 

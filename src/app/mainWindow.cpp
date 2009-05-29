@@ -177,7 +177,6 @@ bool MainWindow::queryExit()
 inline void MainWindow::configToolbars() //slot
 {
     KEditToolBar dialog(factory(), this);
-    // dialog.showButtonApply(false); //TODO: Is this still needed?
 
     if (dialog.exec())
     {
