@@ -64,21 +64,20 @@ RadialMap::Widget::resizeEvent(QResizeEvent*)
 void
 RadialMap::Widget::paintEvent(QPaintEvent*)
 {
+    QPainter paint;
+    paint.begin(this);
+
     if (!m_map.isNull())
-        m_map.paint(this);
+        paint.drawPixmap(m_offset, m_map.pixmap());
     else
     {
-        QPainter paint;
-        paint.begin(this);
         paint.drawText(rect(), 0, i18n("Internal representation is invalid,\nplease reload."));
-        paint.end();
         return;
     }
 
     //exploded labels
     if (!m_map.isNull() && !m_timer.isActive())
     {
-        QPainter paint(this);
         if (Config::antialias) paint.setRenderHint(QPainter::Antialiasing);
         paintExplodedLabels(paint);
     }
@@ -150,7 +149,7 @@ RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
             m_tip->updateTip(m_focus->file(), m_tree);
 
             emit mouseHover(m_focus->file()->fullPath());
-            m_tip->update();
+            update();
         }
         m_tip->moveTo(e->globalPos(), (p.y() < 0));
     }

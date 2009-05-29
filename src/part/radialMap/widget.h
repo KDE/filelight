@@ -69,8 +69,6 @@ public:
         return m_isSummary;
     }
 
-    QPoint offset() { return m_offset; }
-
     friend class Label; //FIXME badness
 
 public slots:

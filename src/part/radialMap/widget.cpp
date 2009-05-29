@@ -40,7 +40,7 @@ RadialMap::Widget::Widget(QWidget *parent, bool isSummary)
         : QWidget(parent)
         , m_tree(0)
         , m_focus(0)
-        , m_map(this)
+        , m_map(isSummary)
         , m_rootSegment(0) //TODO we don't delete it, *shrug*
         , m_isSummary(isSummary)
 {
@@ -160,7 +160,7 @@ RadialMap::Widget::refresh(int filth)
             break;
 
         case 2:
-            m_map.aaPaint();
+            m_map.paint(true); //antialiased painting
             break;
 
         case 3:

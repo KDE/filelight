@@ -38,13 +38,15 @@
 #include "sincos.h"
 #include "widget.h"
 
-RadialMap::Map::Map(Widget* widget)
+RadialMap::Map::Map(bool summary)
         : m_signature(NULL)
         , m_visibleDepth(DEFAULT_RING_DEPTH)
-        , m_widget(widget)
         , m_ringBreadth(MIN_RING_BREADTH)
         , m_innerRadius(0)
+        , m_summary(summary)
 {
+
+    m_pixmap.fill(Qt::transparent);
     //FIXME this is all broken. No longer is a maximum depth!
     const int fmh   = QFontMetrics(QFont()).height();
     const int fmhD4 = fmh / 4;
@@ -134,6 +136,8 @@ bool RadialMap::Map::resize(const QRect &rect)
             //this QRect is used by paint()
             m_rect.setRect(0,0,size,size);
         }
+        m_pixmap = QPixmap(m_rect.size());
+        m_pixmap.fill(Qt::transparent);
 
         //resize the pixmap
         size += MAP_2MARGIN;
@@ -141,7 +145,7 @@ bool RadialMap::Map::resize(const QRect &rect)
         if (m_signature != NULL)
         {
             setRingBreadth();
-            //paint();
+            paint();
         }
 
         return true;
@@ -172,7 +176,7 @@ void RadialMap::Map::colorise()
     {
         for (Iterator<Segment> it = m_signature[i].iterator(); it != m_signature[i].end(); ++it)
         {
-            if (m_widget->isSummary()){ // Summary view has its own colors.
+            if (m_summary){ // Summary view has its own colors.
                 if ((*it)->file()->name() == "Used") {
                     cb = QApplication::palette().highlight().color();
                     cb.getHsv(&h, &s1, &v1);
@@ -267,25 +271,15 @@ void RadialMap::Map::colorise()
     }
 }
 
-void RadialMap::Map::aaPaint()
-{
-    //paint() is called during continuous processes
-    //aaPaint() is not and is slower so set overidecursor (make sets it too)
-    QApplication::setOverrideCursor(Qt::WaitCursor);
-    paint(true);
-    QApplication::restoreOverrideCursor();
-}
-
 void RadialMap::Map::paint(bool antialias)
 {
-
     QPainter paint;
     QRect rect = m_rect;
 
     //**** best option you can think of is to make the circles slightly less perfect,
     //  ** i.e. slightly eliptic when resizing inbetween
 
-    paint.begin(m_widget);
+    paint.begin(&m_pixmap);
 
     if (antialias && Config::antialias)
         paint.setRenderHint(QPainter::Antialiasing);
@@ -300,7 +294,6 @@ void RadialMap::Map::paint(bool antialias)
     }
 
 
-    rect.moveTo(m_widget->offset());
     for (int x = m_visibleDepth; x >= 0; --x)
     {
         int width = rect.width() / 2;
