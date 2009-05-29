@@ -37,15 +37,15 @@ namespace RadialMap
 class Label
 {
 public:
-    Label(const RadialMap::Segment *s, int l) : segment(s), lvl(l), a(segment->start() + (segment->length() / 2)) { }
+    Label(const RadialMap::Segment *s, int l) : segment(s), lvl(l), angle(segment->start() + (segment->length() / 2)) { }
 
-    bool tooClose(const int aa) const {
-        return (a > aa - LABEL_ANGLE_MARGIN && a < aa + LABEL_ANGLE_MARGIN);
+    bool tooClose(const int otherAngle) const {
+        return (angle > otherAngle - LABEL_ANGLE_MARGIN && angle < otherAngle + LABEL_ANGLE_MARGIN);
     }
 
     const RadialMap::Segment *segment;
     const unsigned int lvl;
-    const int a;
+    const int angle;
 
     int x1, y1, x2, y2, x3;
     int tx, ty;
@@ -58,26 +58,18 @@ int compareAndSortLabels(Label *item1, Label *item2)
         //you add 1440 to work round the fact that later you want the circle split vertically
         //and as it is you start at 3 o' clock. It's to do with rightPrevY, stops annoying bug
 
-        int a1 = (item1)->a + 1440;
-        int a2 = (item2)->a + 1440;
+        int angle1 = (item1)->angle + 1440;
+        int angle2 = (item2)->angle + 1440;
 
         // Also sort by level
-        if (a1 == a2){
-            if (item1->lvl > item2->lvl)
-                return 1;
-            else if (item1->lvl < item2->lvl)
-                return -1;
-            else
-                return 0;
-        }
+        if (angle1 == angle2)            
+                return (item1->lvl > item2->lvl);
 
-        if (a1 > 5760) a1 -= 5760;
-        if (a2 > 5760) a2 -= 5760;
+        if (angle1 > 5760) angle1 -= 5760;
+        if (angle2 > 5760) angle2 -= 5760;
 
-        if (a1 > a2)
-            return 1;
+        return (angle1 < angle2);
 
-        return -1;
 }
 
 void
@@ -104,10 +96,10 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
 
         //range=2 means 2 levels to draw labels for
 
-        unsigned int a1, a2, minAngle;
+        unsigned int start, end, minAngle;
 
-        a1 = m_focus->start();
-        a2 = m_focus->end();  //boundary angles
+        start = m_focus->start();
+        end = m_focus->end();  //boundary angles
         minAngle = int(m_focus->length() * LABEL_MIN_ANGLE_FACTOR);
 
 
@@ -119,10 +111,9 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
         //**** keep a topblock var which is the lowestLevel OR startLevel for identation purposes
         for (unsigned int i = startLevel; i <= m_map.m_visibleDepth; ++i)
             for (Iterator<Segment> it = ring->iterator(); it != ring->end(); ++it)
-                if (segment->start() >= a1 && segment->end() <= a2)
+                if (segment->start() >= start && segment->end() <= end)
                     if (segment->length() > minAngle) {
                         list.append(new Label(segment, i));
-                        qSort(list.begin(), list.end(), compareAndSortLabels);
                     }
 
 #undef ring
@@ -135,20 +126,21 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
         for (Iterator<Segment> it = ring->iterator(); it != ring->end(); ++it)
             if ((*it)->length() > 288) {
                 list.append(new Label((*it), 0));
-                qSort(list.begin(), list.end(), compareAndSortLabels);
+                
             }
 
 #undef ring
 
     }
-
+    qSort(list.begin(), list.end(), compareAndSortLabels);
+    
     //2. Check to see if any adjacent labels are too close together
     //   if so, remove it (the least significant labels, since we sort by level too).
 
     int pos = 0;
     while (pos < list.size() - 1)
     {
-        if (list[pos]->tooClose(list[pos+1]->a))
+        if (list[pos]->tooClose(list[pos+1]->angle))
             list.removeAt(pos+1);
         else
             ++pos;
@@ -219,18 +211,18 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
         for (it = list.begin(); it != list.end(); ++it)
         {
             //** bear in mind that text is drawn with QPoint param as BOTTOM left corner of text box
-            QString qs = (*it)->segment->file()->name();
+            QString string = (*it)->segment->file()->name();
             if (varySizes)
                 font.setPointSize(sizes[(*it)->lvl]);
-            QFontMetrics fm(font);
-            int fmh  = fm.height(); //used to ensure label texts don't overlap
-            int fmhD4 = fmh / 4;
+            QFontMetrics fontMetrics(font);
+            int fontHeight  = fontMetrics.height(); //used to ensure label texts don't overlap
+            int lineSpacing = fontHeight / 4;
 
-            fmh += LABEL_TEXT_VMARGIN;
+            fontHeight += LABEL_TEXT_VMARGIN;
 
-            rightSide = ((*it)->a < 1440 || (*it)->a > 4320);
+            rightSide = ((*it)->angle < 1440 || (*it)->angle > 4320);
 
-            ra = M_PI/2880 * (*it)->a; //convert to radians
+            ra = M_PI/2880 * (*it)->angle; //convert to radians
             sincos(ra, &sinra, &cosra);
 
 
@@ -249,22 +241,22 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
                     y2 = prevLeftY /*+ fmh*/;
 
             x2 = x1 - int(double(y2 - y1) / tan(ra));
-            ty = y2 + fmhD4;
+            ty = y2 + lineSpacing;
 
 
             if (rightSide) {
-                if (x2 > width() || ty < fmh || x2 < x1) {
+                if (x2 > width() || ty < fontHeight || x2 < x1) {
                     //skip this strut
                     //**** don't duplicate this code
                     list.erase(it); //will delete the label and set it to list.current() which _should_ be the next ptr
                     break;
                 }
 
-                prevRightY = ty - fmh - fmhD4; //must be after above's "continue"
+                prevRightY = ty - fontHeight - lineSpacing; //must be after above's "continue"
 
-                qs = fm.elidedText(qs, Qt::ElideMiddle, width() - x2);
+                string = fontMetrics.elidedText(string, Qt::ElideMiddle, width() - x2);
 
-                x3 = width() - fm.width(qs)
+                x3 = width() - fontMetrics.width(string)
                      - LABEL_HMARGIN //outer margin
                      - LABEL_TEXT_HMARGIN //margin between strut and text
                      //- ((*it)->lvl - startLevel) * LABEL_HMARGIN; //indentation
@@ -281,13 +273,13 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
                     break;
                 }
 
-                prevLeftY = ty + fmh - fmhD4;
+                prevLeftY = ty + fontHeight - lineSpacing;
 
-                qs = fm.elidedText(qs, Qt::ElideMiddle, x2);
+                string = fontMetrics.elidedText(string, Qt::ElideMiddle, x2);
 
                 //**** needs a little tweaking:
 
-                tx = fm.width(qs) + LABEL_HMARGIN/* + ((*it)->lvl - startLevel) * LABEL_HMARGIN*/;
+                tx = fontMetrics.width(string) + LABEL_HMARGIN/* + ((*it)->lvl - startLevel) * LABEL_HMARGIN*/;
                 if (tx > x2) { //text is too long
                     tx = LABEL_HMARGIN + x2 - tx; //some text will be lost from sight
                     x3 = x2; //no text margin (right side of text here)
@@ -304,7 +296,7 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
             (*it)->x3 = x3;
             (*it)->tx = tx;
             (*it)->ty = ty;
-            (*it)->qs = qs;
+            (*it)->qs = string;
         }
 
         //if an element is deleted at this stage, we need to do this whole
