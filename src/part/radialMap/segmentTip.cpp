@@ -104,7 +104,7 @@ SegmentTip::updateTip(const File* const file, const Directory* const root)
     resize(maxw + 2 * MARGIN, h);
 
     // Paint
-    m_pixmap = QPixmap(size()); //move to updateTip once you are sure it can never be null
+    m_pixmap = QPixmap(size());
 
     QColor bg = QToolTip::palette().color(QPalette::Active, QPalette::Background);
     const QColor fg = QToolTip::palette().color(QPalette::Active, QPalette::WindowText);
@@ -120,6 +120,8 @@ SegmentTip::updateTip(const File* const file, const Directory* const root)
     paint.setPen(fg);
     paint.drawRect(rect());
     paint.drawText(rect(), Qt::AlignCenter, m_text);
+
+    repaint(); //Bug in Qt? (If we don't change the size of the pixmap, and don't do this, we aren't redrawn)
 }
 
 bool
