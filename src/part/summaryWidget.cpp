@@ -124,10 +124,13 @@ void SummaryWidget::createDiskMaps()
         if (disk.free == 0 && disk.used == 0)
             continue;
 
-        QVBoxLayout * lay = new QVBoxLayout(this);
+        QWidget *volume = new QWidget(this);
+        QVBoxLayout *volumeLayout = new QVBoxLayout(volume);
         RadialMap::Widget *map = new MyRadialMap(this);
 
-        QHBoxLayout* horizontalLayout = new QHBoxLayout(this);
+        QWidget *info = new QWidget(this);
+        info->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        QHBoxLayout* horizontalLayout = new QHBoxLayout(info);
 
         // Create the text and icon under the radialMap.
         QLabel *label = new QLabel(disk.mount, this);
@@ -137,21 +140,11 @@ void SummaryWidget::createDiskMaps()
         horizontalLayout->addWidget(icon);
 
         horizontalLayout->setAlignment(Qt::AlignCenter);
-        lay->addWidget(map);
-        lay->addItem(horizontalLayout);
+        volumeLayout->addWidget(map);
+        volumeLayout->addWidget(info);
 
-        if (layout()->count() > 2) {
-            if (layout()->count() % 2) {
-                qobject_cast<QGridLayout*>(layout())->addItem(lay, 0, layout()->count() / 2);
-            }
-            else {
-                qobject_cast<QGridLayout*>(layout())->addItem(lay, 1, layout()->count() / 2);
-            }
-        }
-        else
-        {
-            qobject_cast<QGridLayout*>(layout())->addItem(lay, 0, layout()->count());
-        }
+        //                                                      row (=n/2)           column (0 or 1)
+        qobject_cast<QGridLayout*>(layout())->addWidget(volume, layout()->count()/2, layout()->count() % 2);
 
         Directory *tree = new Directory(disk.mount.toLocal8Bit());
         tree->append(free, disk.free);

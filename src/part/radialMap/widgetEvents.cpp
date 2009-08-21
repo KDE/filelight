@@ -49,8 +49,7 @@
 #include <QMouseEvent>
 #include <QDragEnterEvent>
 
-void
-RadialMap::Widget::resizeEvent(QResizeEvent*)
+void RadialMap::Widget::resizeEvent(QResizeEvent*)
 {
     if (m_map.resize(rect()))
         m_timer.setSingleShot(true);
@@ -61,8 +60,7 @@ RadialMap::Widget::resizeEvent(QResizeEvent*)
     m_offset.ry() = (height() - m_map.height()) / 2;
 }
 
-void
-RadialMap::Widget::paintEvent(QPaintEvent*)
+void RadialMap::Widget::paintEvent(QPaintEvent*)
 {
     QPainter paint;
     paint.begin(this);
@@ -83,8 +81,7 @@ RadialMap::Widget::paintEvent(QPaintEvent*)
     }
 }
 
-const RadialMap::Segment*
-RadialMap::Widget::segmentAt(QPoint &e) const
+const RadialMap::Segment* RadialMap::Widget::segmentAt(QPoint &e) const
 {
     //determine which segment QPoint e is above
 
@@ -130,8 +127,7 @@ RadialMap::Widget::segmentAt(QPoint &e) const
     return 0;
 }
 
-void
-RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
+void RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
 {
     //set m_focus to what we hover over, update UI if it's a new segment
 
@@ -262,8 +258,7 @@ section_two:
     }
 }
 
-void
-RadialMap::Widget::deleteJobFinished(KJob *job)
+void RadialMap::Widget::deleteJobFinished(KJob *job)
 {
     QApplication::restoreOverrideCursor();
     if (!job->error())
@@ -272,16 +267,14 @@ RadialMap::Widget::deleteJobFinished(KJob *job)
         KMessageBox::error(this, job->errorString(), i18n("Error while deleting"));
 }
 
-void
-RadialMap::Widget::dropEvent(QDropEvent *e)
+void RadialMap::Widget::dropEvent(QDropEvent *e)
 {
     KUrl::List uriList = KUrl::List::fromMimeData(e->mimeData());
     if (!uriList.isEmpty())
         emit giveMeTreeFor(uriList.first());
 }
 
-void
-RadialMap::Widget::dragEnterEvent(QDragEnterEvent *e)
+void RadialMap::Widget::dragEnterEvent(QDragEnterEvent *e)
 {
     KUrl::List uriList = KUrl::List::fromMimeData(e->mimeData());
     e->setAccepted(!uriList.isEmpty());
