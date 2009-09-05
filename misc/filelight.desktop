@@ -3,6 +3,7 @@
 Name=Filelight
 Name[x-test]=xxFilelightxx
 GenericName=Disk Usage Statistics
+GenericName[bg]=Статистика на ползването на диска
 GenericName[es]=Estadísticas sobre el uso del disco
 GenericName[et]=Kettakasutuse statistika
 GenericName[fr]=Statistiques d'utilisation des disques durs.
@@ -20,6 +21,7 @@ Type=Application
 Exec=filelight %f
 Icon=filelight
 Comment=View disk usage information
+Comment[bg]=Преглед на данни за използването на диска
 Comment[de]=Nutzungsinformationen zu Festplatten anzeigen
 Comment[es]=Ver información de uso del disco
 Comment[et]=Kettakasutuse teabe kuvamine
