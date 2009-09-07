@@ -29,7 +29,6 @@
 #include <QImage>          //make() & paint()
 #include <QFont>           //ctor
 #include <QFontMetrics>    //ctor
-#include <Q3PointArray>
 
 #include "builder.h"
 #include "part/Config.h"
@@ -280,6 +279,10 @@ void RadialMap::Map::paint(bool antialias)
     QPainter paint;
     QRect rect = m_rect;
 
+    rect.adjust(5, 5, -5, -5);
+    m_rect.moveRight(1);
+
+
     //**** best option you can think of is to make the circles slightly less perfect,
     //  ** i.e. slightly eliptic when resizing inbetween
 
@@ -314,7 +317,7 @@ void RadialMap::Map::paint(bool antialias)
             if ((*it)->hasHiddenChildren())
             {
                 //draw arrow head to indicate undisplayed files/directories
-                Q3PointArray pts(3);
+                QPolygon pts(3);
                 QPoint pos, cpos = rect.center();
                 int a[3] = { (*it)->start(), (*it)->length(), 0 };
 
