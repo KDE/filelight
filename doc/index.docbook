@@ -166,7 +166,7 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo><keycap>Ctrl</keycap><keycap>o</keycap></keycombo>
+<keycombo>&Ctrl;<keycap>O</keycap></keycombo>
 </shortcut>
 <guimenu>Scan</guimenu>
 <guimenuitem>Scan folder..</guimenuitem>
@@ -177,7 +177,7 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo><keycap>Ctrl</keycap><keycap>Home</keycap></keycombo>
+<keycombo>&Ctrl;<keysym>Home</keysym></keycombo>
 </shortcut>
 <guimenu>Scan</guimenu>
 <guimenuitem>Scan Home folder</guimenuitem>
@@ -215,7 +215,7 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycap>Esc</keycap>
+&Esc;
 </shortcut>
 <guimenu>Scan</guimenu>
 <guimenuitem>Stop</guimenuitem>
@@ -226,7 +226,7 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo><keycap>Ctrl</keycap><keycap>q</keycap></keycombo>
+<keycombo>&Ctrl;<keycap>Q</keycap></keycombo>
 </shortcut>
 <guimenu>Scan</guimenu>
 <guimenuitem>Quit</guimenuitem>
@@ -244,7 +244,7 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo><keycap>Alt</keycap><keycap>Up</keycap></keycombo>
+<keycombo>&Alt;<keycap>Up</keycap></keycombo>
 </shortcut>
 <guimenu>Go</guimenu>
 <guimenuitem>Up</guimenuitem>
@@ -255,7 +255,7 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo><keycap>Alt</keycap><keycap>Left</keycap></keycombo>
+<keycombo>&Alt;<keycap>Left</keycap></keycombo>
 </shortcut>
 <guimenu>Go</guimenu>
 <guimenuitem>Back</guimenuitem>
@@ -266,7 +266,7 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo><keycap>Alt</keycap><keycap>Right</keycap></keycombo>
+<keycombo>&Alt;<keycap>Right</keycap></keycombo>
 </shortcut>
 <guimenu>Go</guimenu>
 <guimenuitem>Forward</guimenuitem>
