@@ -1,9 +1,26 @@
 # KDE Config File
 [Desktop Entry]
 Name=Filelight
+Name[bg]=Filelight
+Name[de]=Filelight
+Name[en_GB]=Filelight
+Name[es]=Filelight
+Name[et]=Filelight
+Name[fr]=Filelight
+Name[ga]=Filelight
+Name[gl]=Filelight
+Name[ja]=Filelight
+Name[km]=Filelight
+Name[nds]=Filelight
+Name[pt]=Filelight
+Name[pt_BR]=Filelight
+Name[sv]=Filelight
+Name[tr]=Filelight
+Name[uk]=Filelight
 Name[x-test]=xxFilelightxx
 GenericName=Disk Usage Statistics
 GenericName[bg]=Статистика на ползването на диска
+GenericName[en_GB]=Disk Usage Statistics
 GenericName[es]=Estadísticas sobre el uso del disco
 GenericName[et]=Kettakasutuse statistika
 GenericName[fr]=Statistiques d'utilisation des disques durs.
@@ -23,6 +40,7 @@ Icon=filelight
 Comment=View disk usage information
 Comment[bg]=Преглед на данни за използването на диска
 Comment[de]=Nutzungsinformationen zu Festplatten anzeigen
+Comment[en_GB]=View disk usage information
 Comment[es]=Ver información de uso del disco
 Comment[et]=Kettakasutuse teabe kuvamine
 Comment[fr]=Voir de l'information sur l'utilisation des disques durs
