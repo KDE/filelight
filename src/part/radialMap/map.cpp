@@ -280,7 +280,7 @@ void RadialMap::Map::paint(bool antialias)
     QRect rect = m_rect;
 
     rect.adjust(5, 5, -5, -5);
-    m_rect.moveRight(1);
+    //m_rect.moveRight(1); // Uncommenting this breaks repainting when recreating map from cache
 
 
     //**** best option you can think of is to make the circles slightly less perfect,
