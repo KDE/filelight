@@ -128,7 +128,7 @@ RemoteLister::_completed()
 {
     //m_directory is set to the directory we should operate on
 
-    KFileItemList items = KDirLister::items();
+    const KFileItemList items = KDirLister::items();
     for (KFileItemList::ConstIterator it = items.begin(), end = items.end(); it != end; ++it)
     {
         if (it->isDir())
