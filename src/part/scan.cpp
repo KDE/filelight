@@ -206,8 +206,7 @@ ScanManager::cacheTree(Directory *tree, bool finished)
     if (m_thread) {
         m_thread->terminate();
         kDebug() << "Waiting for thread to terminate ...";
-        if (m_thread->isRunning())
-            m_thread->wait();
+        m_thread->wait();
         kDebug() << "Thread terminated!";
         delete m_thread; //note the lister deletes itself
         m_thread = 0;
