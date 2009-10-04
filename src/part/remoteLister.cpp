@@ -129,7 +129,7 @@ RemoteLister::_completed()
     //m_directory is set to the directory we should operate on
 
     const KFileItemList items = KDirLister::items();
-    for (KFileItemList::ConstIterator it = items.constBegin(), end = items.constEnd(); it != end; ++it)
+    for (KFileItemList::ConstIterator it = items.begin(), end = items.end(); it != end; ++it)
     {
         if (it->isDir())
             m_store->stores += new Store(it->url(), it->name(), m_store);
