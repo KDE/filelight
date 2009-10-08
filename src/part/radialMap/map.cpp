@@ -45,7 +45,6 @@ RadialMap::Map::Map(bool summary)
         , m_summary(summary)
         , m_scheme(QPalette::Active, KColorScheme::View)
 {
-    m_pixmap.fill(m_scheme.background().color());
 
     //FIXME this is all broken. No longer is a maximum depth!
     const int fmh   = QFontMetrics(QFont()).height();
@@ -140,7 +139,6 @@ bool RadialMap::Map::resize(const QRect &rect)
             m_rect.setRect(0,0,size,size);
         }
         m_pixmap = QPixmap(m_rect.size());
-        m_pixmap.fill(m_scheme.background().color());
 
         //resize the pixmap
         size += MAP_2MARGIN;
@@ -280,6 +278,8 @@ void RadialMap::Map::paint(bool antialias)
     QRect rect = m_rect;
 
     rect.adjust(5, 5, -5, -5);
+    m_pixmap.fill(m_scheme.background().color());
+
     //m_rect.moveRight(1); // Uncommenting this breaks repainting when recreating map from cache
 
 
