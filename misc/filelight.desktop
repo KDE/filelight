@@ -2,6 +2,7 @@
 [Desktop Entry]
 Name=Filelight
 Name[bg]=Filelight
+Name[da]=Filelight
 Name[de]=Filelight
 Name[en_GB]=Filelight
 Name[es]=Filelight
@@ -20,6 +21,7 @@ Name[uk]=Filelight
 Name[x-test]=xxFilelightxx
 GenericName=Disk Usage Statistics
 GenericName[bg]=Статистика на ползването на диска
+GenericName[da]=Statistik over diskforbrug
 GenericName[en_GB]=Disk Usage Statistics
 GenericName[es]=Estadísticas sobre el uso del disco
 GenericName[et]=Kettakasutuse statistika
@@ -39,6 +41,7 @@ Exec=filelight %f
 Icon=filelight
 Comment=View disk usage information
 Comment[bg]=Преглед на данни за използването на диска
+Comment[da]=Vis information om diskforbrug
 Comment[de]=Nutzungsinformationen zu Festplatten anzeigen
 Comment[en_GB]=View disk usage information
 Comment[es]=Ver información de uso del disco
