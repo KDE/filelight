@@ -204,7 +204,6 @@ ScanManager::cacheTree(Directory *tree, bool finished)
     QMutexLocker locker(&m_mutex); // This gets released once it is destroyed.
 
     if (m_thread) {
-        m_thread->terminate();
         kDebug() << "Waiting for thread to terminate ...";
         m_thread->wait();
         kDebug() << "Thread terminated!";
