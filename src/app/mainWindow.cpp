@@ -74,16 +74,10 @@ MainWindow::MainWindow() : KParts::MainWindow(), m_part(0)
 
         stateChanged("scan_failed"); //bah! doesn't affect the parts' actions, should I add them to the actionCollection here?
 
-        //QList<QObject *> buttons = toolBar()->findChildren<QObject *>("KToolBarButton"); //FIXME
-        //if (buttons.isEmpty())
-        //    KMessageBox::error(this, i18n("Filelight is not installed properly, consequently its menus and toolbars will appear reduced or even empty"));
-        //delete &buttons;
-
         connect(m_part, SIGNAL(started(KIO::Job*)), SLOT(scanStarted()));
         connect(m_part, SIGNAL(completed()), SLOT(scanCompleted()));
         connect(m_part, SIGNAL(canceled(const QString&)), SLOT(scanFailed()));
 
-        //TODO test these
         connect(m_part, SIGNAL(canceled(const QString&)), m_histories, SLOT(stop()));
         connect(BrowserExtension::childObject(m_part), SIGNAL(openUrlNotify()), SLOT(urlAboutToChange()));
 
@@ -134,7 +128,6 @@ inline void MainWindow::setupActions() //singleton function
     action->setIcon(KIcon("process-stop"));
     action->setShortcut(Qt::Key_Escape);
 
-    //new KAction(i18n("Go"), "key_enter", 0, m_combo, SIGNAL(returnPressed()), ac, "go");
     action = ac->addAction("go", m_combo, SIGNAL(returnPressed()));
     action->setText(i18n("Go"));
     action->setIcon(KIcon("go-jump-locationbar"));
@@ -209,13 +202,13 @@ inline void MainWindow::slotComboScan()
 {
     QString path = m_combo->lineEdit()->text();
 
-    if (path[0] != '/')
-        path = "~/" + path;
-    //HACK: is this a safe assumption?
-    // Rather find out how to make KHistoryComboBox
-    // autocomplete only absolute paths.
+    KUrl url = KUrl(path);
+
+    if (url.isRelative())
+        path = "~/" + path; // KUrlCompletion completes relative to ~, not CWD
 
     path = KShell::tildeExpand(path);
+
     if (slotScanPath(path))
         m_combo->addToHistory(path);
 }
