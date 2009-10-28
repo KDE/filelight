@@ -23,7 +23,6 @@
 #include <KLocale>
 #include <KDebug>
 #include <KGlobalSettings> //kdeColours
-#include <qimageblitz/qimageblitz.h>    //desaturate()
 #include <QPainter>
 #include <QApplication>    //make()
 #include <QImage>          //make() & paint()
