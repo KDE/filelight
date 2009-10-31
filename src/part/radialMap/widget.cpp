@@ -40,6 +40,7 @@ RadialMap::Widget::Widget(QWidget *parent, bool isSummary)
         : QWidget(parent)
         , m_tree(0)
         , m_focus(0)
+        , m_toBeDeleted(0)
         , m_map(isSummary)
         , m_rootSegment(0) //TODO we don't delete it, *shrug*
         , m_isSummary(isSummary)

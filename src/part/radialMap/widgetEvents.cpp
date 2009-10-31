@@ -217,8 +217,9 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
                 url.populateMimeData(mimedata);
                 QApplication::clipboard()->setMimeData(mimedata , QClipboard::Clipboard);
             } else if (clicked == deleteItem) {
-                const KUrl url = Widget::url(m_focus->file());
-                const QString message = m_focus->file()->isDirectory()
+                m_toBeDeleted = m_focus;
+                const KUrl url = Widget::url(m_toBeDeleted->file());
+                const QString message = m_toBeDeleted->file()->isDirectory()
                                         ? i18n("<qt>The directory at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</b> deleted.</qt>", url.prettyUrl())
                                         : i18n("<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>", url.prettyUrl());
                 const int userIntention = KMessageBox::warningContinueCancel(
@@ -261,9 +262,19 @@ section_two:
 void RadialMap::Widget::deleteJobFinished(KJob *job)
 {
     QApplication::restoreOverrideCursor();
-    if (!job->error())
-        invalidate();
-    else
+    if (!job->error() && m_toBeDeleted) {
+        const Directory *dir = m_toBeDeleted->file()->parent();
+        Iterator<File> *fileIterator = 0;
+        for (Iterator<File> it = dir->iterator(); it != dir->end(); ++it) {
+            if (m_toBeDeleted->file() == (*it))
+                it.remove();
+        }
+        m_map.make(m_tree, true);
+        repaint();
+
+        //delete m_toBeDeleted->file(); // TODO: this seems to be cleaned up elsewhere? Make sure of it.
+        m_toBeDeleted = 0;
+    } else
         KMessageBox::error(this, job->errorString(), i18n("Error while deleting"));
 }
 

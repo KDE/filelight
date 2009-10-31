@@ -119,6 +119,7 @@ private:
     SegmentTip       *m_tip;
     Segment          *m_rootSegment;
     const bool       m_isSummary;
+    const Segment    *m_toBeDeleted;
 };
 }
 
