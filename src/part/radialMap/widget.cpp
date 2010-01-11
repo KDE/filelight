@@ -65,7 +65,7 @@ RadialMap::Widget::path() const
 KUrl
 RadialMap::Widget::url(File const * const file) const
 {
-    return KUrl::KUrl(file ? file->fullPath() : m_tree->fullPath());
+    return KUrl(file ? file->fullPath() : m_tree->fullPath());
 }
 
 void

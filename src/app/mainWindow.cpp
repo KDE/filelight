@@ -215,7 +215,7 @@ inline void MainWindow::slotComboScan()
 
 inline bool MainWindow::slotScanPath(const QString &path)
 {
-    return slotScanUrl(KUrl::KUrl(path));
+    return slotScanUrl(KUrl(path));
 }
 
 bool MainWindow::slotScanUrl(const KUrl &url)
