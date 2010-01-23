@@ -27,9 +27,9 @@
    <copyright><year>2009</year><holder>Martin Sandsmark</holder></copyright>
    <!-- Translators: put here the copyright notice of the translation -->
    <legalnotice>&FDLNotice;</legalnotice>
-   <date>28/03/2009</date>
+   <date>2009-03-28</date>
    <releaseinfo>4</releaseinfo>
-   <abstract><para>&filelight; creates an interactive map of concentric segmented-rings that helps visualise disk usage on your computer.</para></abstract>
+   <abstract><para>&filelight; creates an interactive map of concentric segmented-rings that helps visualize disk usage on your computer.</para></abstract>
    <!-- These may be used by search engines -->
    <keywordset>
       <keyword>KDE</keyword>
@@ -69,7 +69,7 @@
 </mediaobject>
 </screenshot>
 
-<para>The scanning tab allows you to configure how &filelight; scans folders. The <guimenuitem> Don't scan these folders:</guimenuitem> is used to excluded certain folders from your scan. This option is very useful for skipping folders that you may not have permissions to read, or folders that are part of a virtual filesystem, such as /proc. To add a folder to the list, click the <guibutton>Add...</guibutton> button, this will start a dialog where you can choose the folder of your choice from a tree view. To remove a folder simply select the folder of your choice and click the <guibutton>Remove</guibutton> button.</para>
+<para>The scanning tab allows you to configure how &filelight; scans folders. The <guimenuitem> Do not scan these folders:</guimenuitem> is used to excluded certain folders from your scan. This option is very useful for skipping folders that you may not have permissions to read, or folders that are part of a virtual filesystem, such as /proc. To add a folder to the list, click the <guibutton>Add...</guibutton> button, this will start a dialog where you can choose the folder of your choice from a tree view. To remove a folder simply select the folder of your choice and click the <guibutton>Remove</guibutton> button.</para>
 
 </sect1>
 
@@ -85,7 +85,7 @@
 </screenshot>
 
 <para>The <guimenuitem>Appearance</guimenuitem> tab allows you to configure the way &filelight; looks.</para>
-<para>The <guimenuitem>Scheme</guimenuitem> section is used to choose a color scheme for &filelight;. The color schemes are Rainbow, &kde; Colours, and High Contrast. There is also a <guimenuitem>Contrast:</guimenuitem> slider to adjust the contrast of the ring segments for easier viewing.</para>
+<para>The <guimenuitem>Scheme</guimenuitem> section is used to choose a color scheme for &filelight;. The color schemes are Rainbow, &kde; Colors, and High Contrast. There is also a <guimenuitem>Contrast:</guimenuitem> slider to adjust the contrast of the ring segments for easier viewing.</para>
 <para>The <guimenuitem>Use anti-aliasing</guimenuitem> check box is used to enable the use of anti-aliasing in the &filelight; view. Selected, this option makes the ring segments have a much cleaner look.</para>
 <para>The <guimenuitem>Vary label font sizes</guimenuitem> check box is useful when you have files or folders with long names. This option will change the size of the font to allow it to fit in the view better. When this option is enabled a <guimenuitem>Minimum font size:</guimenuitem> spinbox becomes available for choosing the smallest size font to scale to.</para>
 <para>The <guimenuitem>Show small files</guimenuitem> option is disabled by default as small files tend to clutter the &filelight; view. Enable this option if you would like to have your small files included in the &filelight; view.</para>
@@ -130,14 +130,14 @@ If you give it a folder name, as in the example below, it will scan that folder.
 <sect1 id="scanning-folders">
 <title>Scanning folders</title>
 <para>
-Scanning a folder shows it's contents as a filemap. To scan a folder, use the scan menu, or type a url straight into the location bar.
+Scanning a folder shows it's contents as a filemap. To scan a folder, use the scan menu, or type a &URL; straight into the location bar.
 </para>
 </sect1>
 
 <sect1 id="exploring-filemaps">
 <title>Exploring Filemaps</title>
 <para>
-Once a scan has completed you will be presented with a filemap that represents the folder you scanned. The filemap is a series of segmented-rings that expand from the center. Brightly coloured segments are folders, grey segments are files. Segments are sized in proportion to their filesize. Segments can be nested, so for example, /home/mxcl will be one level outwards and within the bounds of the segment representing /home. Segments are labeled and hovering the mouse over segments will give you more details of that segment and its child segments.
+Once a scan has completed you will be presented with a filemap that represents the folder you scanned. The filemap is a series of segmented-rings that expand from the center. Brightly colored segments are folders, gray segments are files. Segments are sized in proportion to their filesize. Segments can be nested, so for example, /home/mxcl will be one level outwards and within the bounds of the segment representing /home. Segments are labeled and hovering the mouse over segments will give you more details of that segment and its child segments.
 </para>
 <screenshot>
 <screeninfo>Filemap Screenshot</screeninfo>
@@ -147,7 +147,7 @@ Once a scan has completed you will be presented with a filemap that represents t
 </mediaobject>
 </screenshot>
 <para>
-You can open folders with &konqueror; or &konsole; using the context menu for that segment. Middle clicks open files by mimetype, so images with Kuickshow. You can right click the central circle to get a context menu for the scanned folder. Left clicking segments will re-center the map on that segment.
+You can open folders with &konqueror; or &konsole; using the context menu for that segment. &MMB; clicks open files by mimetype, &eg; images with <application>Gwenview</application>. You can right click the central circle to get a context menu for the scanned folder. Left clicking segments will re-center the map on that segment.
 </para>
 <para>
 If you want to improve the documentation, I'll happily accept patches. Thanks.
@@ -166,7 +166,7 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo>&Ctrl;<keycap>O</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>O</keycap></keycombo>
 </shortcut>
 <guimenu>Scan</guimenu>
 <guimenuitem>Scan folder..</guimenuitem>
@@ -177,7 +177,7 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo>&Ctrl;<keysym>Home</keysym></keycombo>
+<keycombo action="simul">&Ctrl;<keysym>Home</keysym></keycombo>
 </shortcut>
 <guimenu>Scan</guimenu>
 <guimenuitem>Scan Home folder</guimenuitem>
@@ -193,6 +193,7 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 <listitem><para><action>Starts a scan of the root folder.</action></para></listitem>
 </varlistentry>
 
+<!--
 <varlistentry>
 <term><menuchoice>
 <guimenu>Scan</guimenu>
@@ -200,7 +201,7 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 </menuchoice></term>
 <listitem><para><action>Provides a list of your most recent scanned folders allowing quick access to these folders.</action></para></listitem>
 </varlistentry>
-
+-->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
@@ -226,7 +227,7 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo>&Ctrl;<keycap>Q</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
 </shortcut>
 <guimenu>Scan</guimenu>
 <guimenuitem>Quit</guimenuitem>
@@ -237,6 +238,8 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 </variablelist>
 </sect1>
 
+<!-- View menu missing-->
+
 <sect1 id="go_menu">
 <title>The Go Menu</title>
 <variablelist>
@@ -244,7 +247,7 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo>&Alt;<keycap>Up</keycap></keycombo>
+<keycombo action="simul">&Alt;<keycap>Up</keycap></keycombo>
 </shortcut>
 <guimenu>Go</guimenu>
 <guimenuitem>Up</guimenuitem>
@@ -254,9 +257,11 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 
 <varlistentry>
 <term><menuchoice>
+<!--
 <shortcut>
-<keycombo>&Alt;<keycap>Left</keycap></keycombo>
+<keycombo action="simul">&Alt;<keycap>Left</keycap></keycombo>
 </shortcut>
+-->
 <guimenu>Go</guimenu>
 <guimenuitem>Back</guimenuitem>
 </menuchoice></term>
@@ -265,9 +270,11 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 
 <varlistentry>
 <term><menuchoice>
+<!--
 <shortcut>
-<keycombo>&Alt;<keycap>Right</keycap></keycombo>
+<keycombo action="simul">&Alt;<keycap>Right</keycap></keycombo>
 </shortcut>
+-->
 <guimenu>Go</guimenu>
 <guimenuitem>Forward</guimenuitem>
 </menuchoice></term>
@@ -284,8 +291,8 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 <varlistentry>
 <term><menuchoice>
 <guimenu>Settings</guimenu>
-<guisubmenu>Toolbars</guisubmenu>
-<guimenuitem>Show Main Toolbar</guimenuitem>
+<guisubmenu>Toolbars Shown</guisubmenu>
+<guimenuitem>Main Toolbar</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Enables or disable the main application toolbar.</action></para></listitem>
 </varlistentry>
@@ -293,8 +300,8 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 <varlistentry>
 <term><menuchoice>
 <guimenu>Settings</guimenu>
-<guisubmenu>Toolbars</guisubmenu>
-<guimenuitem>Show Location Toolbar</guimenuitem>
+<guisubmenu>Toolbars Shown</guisubmenu>
+<guimenuitem>Location Toolbar</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Enables or disable the location toolbar.</action></para></listitem>
 </varlistentry>
