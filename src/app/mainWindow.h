@@ -51,9 +51,9 @@ public:
 private slots:
     void slotUp();
     void slotComboScan();
-    void slotScanDirectory();
-    void slotScanHomeDirectory();
-    void slotScanRootDirectory();
+    void slotScanFolder();
+    void slotScanHomeFolder();
+    void slotScanRootFolder();
     bool slotScanUrl(const KUrl&);
     bool slotScanPath(const QString&);
     void slotAbortScan();

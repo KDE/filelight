@@ -29,7 +29,7 @@
 #include <KHistoryComboBox>
 #include <KRecentFilesAction>
 #include <KConfig>
-#include <KDirSelectDialog> //slotScanDirectory
+#include <KDirSelectDialog> //slotScanFolder
 #include <KEditToolBar>     //for editToolbar dialog
 #include <QLineEdit>
 #include <KStandardShortcut>
@@ -100,7 +100,7 @@ inline void MainWindow::setupActions() //singleton function
     m_combo->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed));
     m_combo->setDuplicatesEnabled(false);
 
-    KStandardAction::open(this, SLOT(slotScanDirectory()), ac);
+    KStandardAction::open(this, SLOT(slotScanFolder()), ac);
     KStandardAction::quit(this, SLOT(close()), ac);
     KStandardAction::up(this, SLOT(slotUp()), ac);
     KStandardAction::configureToolbars(this, SLOT(configToolbars()), ac);
@@ -108,13 +108,13 @@ inline void MainWindow::setupActions() //singleton function
 
     KAction* action;
 
-    action = ac->addAction("scan_home", this, SLOT(slotScanHomeDirectory()));
-    action->setText(i18n("Scan &Home Directory"));
+    action = ac->addAction("scan_home", this, SLOT(slotScanHomeFolder()));
+    action->setText(i18n("Scan &Home Folder"));
     action->setIcon(KIcon("user-home"));
     action->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Home));
 
-    action = ac->addAction("scan_root", this, SLOT(slotScanRootDirectory()));
-    action->setText(i18n("Scan &Root Directory"));
+    action = ac->addAction("scan_root", this, SLOT(slotScanRootFolder()));
+    action->setText(i18n("Scan &Root Folder"));
     action->setIcon(KIcon("folder-red"));
 
     action = ac->addAction("scan_rescan", m_part, SLOT(rescan()));
@@ -136,8 +136,8 @@ inline void MainWindow::setupActions() //singleton function
     action->setText(i18n("Location Bar"));
     action->setDefaultWidget(m_combo);
 
-    action = ac->addAction("scan_directory", this, SLOT(slotScanDirectory()));
-    action->setText(i18n("Scan Directory"));
+    action = ac->addAction("scan_folder", this, SLOT(slotScanFolder()));
+    action->setText(i18n("Scan Folder"));
     action->setIcon(KIcon("folder"));
 
     m_recentScans = new KRecentFilesAction(i18n("&Recent Scans"), ac);
@@ -183,15 +183,15 @@ inline void MainWindow::configKeys() //slot
     KShortcutsDialog::configure(actionCollection(), KShortcutsEditor::LetterShortcutsAllowed, this, true);
 }
 
-inline void MainWindow::slotScanDirectory()
+inline void MainWindow::slotScanFolder()
 {
-    slotScanUrl(KFileDialog::getExistingDirectoryUrl(m_part->url(), this, QString("Select directory to scan...")));
+    slotScanUrl(KFileDialog::getExistingDirectoryUrl(m_part->url(), this, QString("Select folder to scan...")));
 }
 
-inline void MainWindow::slotScanHomeDirectory() {
+inline void MainWindow::slotScanHomeFolder() {
     slotScanPath(qgetenv("HOME"));
 }
-inline void MainWindow::slotScanRootDirectory() {
+inline void MainWindow::slotScanRootFolder() {
     slotScanPath("/");
 }
 inline void MainWindow::slotUp()                {
