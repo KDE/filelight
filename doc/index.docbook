@@ -56,7 +56,7 @@
 <chapter id="configuring">
 <title>Configuring &filelight;</title>
 
-<para>The &filelight; settings dialog has two tabs for configuring the &filelight; options. The two tabs are <guimenuitem>Scanning</guimenuitem> and <guimenuitem>Appearance</guimenuitem>. Below is a description of the settings tabs. The &filelight; settings dialog can be found by clicking <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure Filelight</guimenuitem></menuchoice>.</para>
+<para>The &filelight; settings dialog has two tabs for configuring the &filelight; options. The two tabs are <guilabel>Scanning</guilabel> and <guilabel>Appearance</guilabel>. Below is a description of the settings tabs. The &filelight; settings dialog can be found by clicking <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure Filelight</guimenuitem></menuchoice>.</para>
 
 <sect1 id="scanning">
 <title>Scanning</title>
@@ -69,7 +69,7 @@
 </mediaobject>
 </screenshot>
 
-<para>The scanning tab allows you to configure how &filelight; scans folders. The <guimenuitem> Do not scan these folders:</guimenuitem> is used to excluded certain folders from your scan. This option is very useful for skipping folders that you may not have permissions to read, or folders that are part of a virtual filesystem, such as /proc. To add a folder to the list, click the <guibutton>Add...</guibutton> button, this will start a dialog where you can choose the folder of your choice from a tree view. To remove a folder simply select the folder of your choice and click the <guibutton>Remove</guibutton> button.</para>
+<para>The scanning tab allows you to configure how &filelight; scans folders. The <guilabel> Do not scan these folders:</guilabel> is used to exclude certain folders from your scan. This option is very useful for skipping folders that you may not have permissions to read, or folders that are part of a virtual filesystem, such as /proc. To add a folder to the list, click the <guibutton>Add...</guibutton> button, this will start a dialog where you can choose the folder of your choice from a tree view. To remove a folder simply select the folder of your choice and click the <guibutton>Remove</guibutton> button.</para>
 
 </sect1>
 
@@ -84,11 +84,11 @@
 </mediaobject>
 </screenshot>
 
-<para>The <guimenuitem>Appearance</guimenuitem> tab allows you to configure the way &filelight; looks.</para>
-<para>The <guimenuitem>Scheme</guimenuitem> section is used to choose a color scheme for &filelight;. The color schemes are Rainbow, &kde; Colors, and High Contrast. There is also a <guimenuitem>Contrast:</guimenuitem> slider to adjust the contrast of the ring segments for easier viewing.</para>
-<para>The <guimenuitem>Use anti-aliasing</guimenuitem> check box is used to enable the use of anti-aliasing in the &filelight; view. Selected, this option makes the ring segments have a much cleaner look.</para>
-<para>The <guimenuitem>Vary label font sizes</guimenuitem> check box is useful when you have files or folders with long names. This option will change the size of the font to allow it to fit in the view better. When this option is enabled a <guimenuitem>Minimum font size:</guimenuitem> spinbox becomes available for choosing the smallest size font to scale to.</para>
-<para>The <guimenuitem>Show small files</guimenuitem> option is disabled by default as small files tend to clutter the &filelight; view. Enable this option if you would like to have your small files included in the &filelight; view.</para>
+<para>The <guilabel>Appearance</guilabel> tab allows you to configure the way &filelight; looks.</para>
+<para>The <guilabel>Color scheme</guilabel> section is used to choose a color scheme for &filelight;. The color schemes are <guilabel>Rainbow</guilabel>, <guilabel>&kde; Colors</guilabel>, and <guilabel>High Contrast</guilabel>. There is also a <guilabel>Contrast:</guilabel> slider to adjust the contrast of the ring segments for easier viewing.</para>
+<para>The <guilabel>Vary label font sizes</guilabel> check box is useful when you have files or folders with long names. This option will change the size of the font to allow it to fit in the view better. When this option is enabled a <guilabel>Minimum font size:</guilabel> spinbox becomes available for choosing the smallest size font to scale to.</para>
+<para>The <guilabel>Use anti-aliasing</guilabel> check box is used to enable the use of anti-aliasing in the &filelight; view. Selected, this option makes the ring segments have a much cleaner look.</para>
+<para>The <guilabel>Show small files</guilabel> option is disabled by default as small files tend to clutter the &filelight; view. Enable this option if you would like to have your small files included in the &filelight; view.</para>
 
 </sect1>
 </chapter>
@@ -193,7 +193,6 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 <listitem><para><action>Starts a scan of the root folder.</action></para></listitem>
 </varlistentry>
 
-<!--
 <varlistentry>
 <term><menuchoice>
 <guimenu>Scan</guimenu>
@@ -201,7 +200,7 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 </menuchoice></term>
 <listitem><para><action>Provides a list of your most recent scanned folders allowing quick access to these folders.</action></para></listitem>
 </varlistentry>
--->
+<!--item only in menu, when scan history not empty?-->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
@@ -238,7 +237,35 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 </variablelist>
 </sect1>
 
-<!-- View menu missing-->
+<sect1 id="view-menu">
+<title>The View Menu</title>
+
+<variablelist>
+    <varlistentry>
+    <term><menuchoice>
+    <shortcut>
+    <keycombo action="simul">&Ctrl;<keycap>+</keycap></keycombo>
+    </shortcut>
+    <guimenu>View</guimenu>
+    <guimenuitem>Zoom In</guimenuitem>
+    </menuchoice></term>
+    <listitem><para><action>Increase the view of the filemap.</action></para>
+    </listitem>
+    </varlistentry>
+
+    <varlistentry>
+    <term><menuchoice>
+    <shortcut>
+    <keycombo action="simul">&Ctrl;<keycap>-</keycap></keycombo>
+    </shortcut>
+    <guimenu>View</guimenu>
+    <guimenuitem>Zoom Out</guimenuitem>
+    </menuchoice></term>
+    <listitem><para><action>Decrease the view of the filemap.</action></para>
+    </listitem>
+    </varlistentry>
+</variablelist>
+</sect1>
 
 <sect1 id="go_menu">
 <title>The Go Menu</title>
@@ -252,7 +279,7 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 <guimenu>Go</guimenu>
 <guimenuitem>Up</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Moves you up one step in the filesystem.</action></para></listitem>
+<listitem><para><action>Moves you up one step in the filesystem to the parent folder.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -265,7 +292,7 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 <guimenu>Go</guimenu>
 <guimenuitem>Back</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Moves you one step back in your browsing of the filesystem.</action></para></listitem>
+<listitem><para><action>Moves you one step back in your browsing history of the filesystem.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -278,7 +305,7 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 <guimenu>Go</guimenu>
 <guimenuitem>Forward</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Moves you one step forward in your browsing of the filesystem.</action></para></listitem>
+<listitem><para><action>Moves you one step forward in your browsing history of the filesystem.</action></para></listitem>
 </varlistentry>
 
 </variablelist>
