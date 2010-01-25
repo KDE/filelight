@@ -62,8 +62,8 @@ QString HistoryAction::pop()
 
 HistoryCollection::HistoryCollection(KActionCollection *ac, QObject *parent)
         : QObject(parent)
-        , m_b(new HistoryAction(KIcon("go-previous"), i18n("Back"), ac))
-        , m_f(new HistoryAction(KIcon("go-next"), i18n("Forward"), ac))
+        , m_b(new HistoryAction(KIcon("go-previous"), i18nc("Back", "Go to the last path viewed"), ac))
+        , m_f(new HistoryAction(KIcon("go-next"), i18nc("Forward", "Go to forward in the history of paths viewed"), ac))
         , m_receiver(0)
 {
     ac->addAction("go_back", m_b);
