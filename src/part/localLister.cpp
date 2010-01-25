@@ -91,50 +91,12 @@ LocalLister::run()
 
 // from system.h in GNU coreutils package
 /* Extract or fake data from a `struct stat'.
-ST_BLKSIZE: Preferred I/O blocksize for the file, in bytes.
 ST_NBLOCKS: Number of blocks in the file, including indirect blocks.
 ST_NBLOCKSIZE: Size of blocks used when calculating ST_NBLOCKS.  */
-#ifndef HAVE_STRUCT_STAT_ST_BLOCKS
-#define ST_BLKSIZE(statbuf) DEV_BSIZE
-#if defined _POSIX_SOURCE || !defined BSIZE /* fileblocks.c uses BSIZE.  */
 #define ST_NBLOCKS(statbuf) ((statbuf).st_size / ST_NBLOCKSIZE + ((statbuf).st_size % ST_NBLOCKSIZE != 0))
-#else /* !_POSIX_SOURCE && BSIZE */
-#define ST_NBLOCKS(statbuf) (S_ISREG ((statbuf).st_mode) || S_ISDIR ((statbuf).st_mode) ? st_blocks ((statbuf).st_size) : 0)
-#endif /* !_POSIX_SOURCE && BSIZE */
-#else /* HAVE_STRUCT_STAT_ST_BLOCKS */
-/* Some systems, like Sequents, return st_blksize of 0 on pipes.
-   Also, when running `rsh hpux11-system cat any-file', cat would
-   determine that the output stream had an st_blksize of 2147421096.
-   So here we arbitrarily limit the `optimal' block size to 4MB.
-   If anyone knows of a system for which the legitimate value for
-   st_blksize can exceed 4MB, please report it as a bug in this code.  */
-#define ST_BLKSIZE(statbuf) ((0 < (statbuf).st_blksize && (statbuf).st_blksize <= (1 << 22)) /* 4MiB */ ? (statbuf).st_blksize : DEV_BSIZE)
-#if defined hpux || defined __hpux__ || defined __hpux
-/* HP-UX counts st_blocks in 1024-byte units.
-   This loses when mixing HP-UX and BSD filesystems with NFS.  */
-#define ST_NBLOCKSIZE 1024
-#else /* !hpux */
-#if defined _AIX && defined _I386
-/* AIX PS/2 counts st_blocks in 4K units.  */
-#define ST_NBLOCKSIZE (4 * 1024)
-#else /* not AIX PS/2 */
-#if defined _CRAY
-#define ST_NBLOCKS(statbuf) (S_ISREG ((statbuf).st_mode) || S_ISDIR ((statbuf).st_mode) ? (statbuf).st_blocks * ST_BLKSIZE(statbuf)/ST_NBLOCKSIZE : 0)
-#endif /* _CRAY */
-#endif /* not AIX PS/2 */
-#endif /* !hpux */
-#endif /* HAVE_STRUCT_STAT_ST_BLOCKS */
-
-#ifndef ST_NBLOCKS
-#define ST_NBLOCKS(statbuf) ((statbuf).st_blocks)
-#endif
 
 #ifndef ST_NBLOCKSIZE
 #define ST_NBLOCKSIZE 512
-#endif
-
-#ifndef NULL
-#define NULL 0
 #endif
 
 
