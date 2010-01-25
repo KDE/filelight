@@ -231,7 +231,7 @@ Part::createAboutData()
                KAboutData::License_GPL,
                ki18n("(c) 2002-2004 Max Howell\n\
 			    (c) 2008-2009 Martin T. Sandsmark"),
-               ki18n("Please report bugs."),
+               KLocalizedString(),
                "http://iskrembilen.com/",
                "sandsmark@iskrembilen.com");
 }
