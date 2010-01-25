@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Settings - Filelight</string>
   </property>
-  <layout class="QVBoxLayout">
+  <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="sizePolicy">
@@ -49,6 +49,9 @@
          </property>
          <property name="wordWrap">
           <bool>false</bool>
+         </property>
+         <property name="buddy">
+          <cstring>m_listBox</cstring>
          </property>
         </widget>
        </item>
@@ -451,7 +454,6 @@
   <tabstop>tabWidget</tabstop>
   <tabstop>varyLabelFontSizes</tabstop>
   <tabstop>m_resetButton</tabstop>
-  <tabstop>m_closeButton</tabstop>
   <tabstop>m_removeButton</tabstop>
   <tabstop>m_addButton</tabstop>
   <tabstop>scanAcrossMounts</tabstop>
