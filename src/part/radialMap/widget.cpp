@@ -46,7 +46,7 @@ RadialMap::Widget::Widget(QWidget *parent, bool isSummary)
         , m_toBeDeleted(0)
 {
     setAcceptDrops(true);
-    setMinimumSize(100,100);//TODO: set a sane minimumsize, not just a random one.
+    setMinimumSize(350, 250);
 
     const QBitmap *cursor = QCursor(Qt::PointingHandCursor).bitmap();
     m_tip = new SegmentTip(cursor ? cursor->height() : 16);
