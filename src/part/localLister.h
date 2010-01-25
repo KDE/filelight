@@ -25,7 +25,7 @@
 #include <QThread>
 #include <QByteArray>
 
-class Directory;
+class Folder;
 template<class T> class Chain;
 
 namespace Filelight
@@ -35,21 +35,21 @@ class LocalLister : public QThread
     Q_OBJECT
 
 public:
-    LocalLister(const QString &path, Chain<Directory> *cachedTrees, QObject *parent);
+    LocalLister(const QString &path, Chain<Folder> *cachedTrees, QObject *parent);
 
     static bool readMounts();
 
 signals:
-    void branchCompleted(Directory* tree, bool finished);
+    void branchCompleted(Folder* tree, bool finished);
 
 private:
     QString m_path;
-    Chain<Directory> *m_trees;
+    Chain<Folder> *m_trees;
     QObject *m_parent;
 
 private:
     virtual void run();
-    Directory *scan(const QByteArray&, const QByteArray&);
+    Folder *scan(const QByteArray&, const QByteArray&);
 
 private:
     static QStringList s_localMounts, s_remoteMounts; //TODO namespace

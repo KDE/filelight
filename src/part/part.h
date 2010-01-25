@@ -34,7 +34,7 @@ using KParts::StatusBarExtension;
 namespace RadialMap {
 class Widget;
 }
-class Directory;
+class Folder;
 
 
 namespace Filelight
@@ -73,8 +73,8 @@ public slots:
 
 private slots:
     void postInit();
-    void scanCompleted(Directory*);
-    void mapChanged(const Directory*);
+    void scanCompleted(Folder*);
+    void mapChanged(const Folder*);
 
 private:
     KStatusBar *statusBar() {

@@ -48,7 +48,7 @@ namespace Filelight
 QStringList LocalLister::s_remoteMounts;
 QStringList LocalLister::s_localMounts;
 
-LocalLister::LocalLister(const QString &path, Chain<Directory> *cachedTrees, QObject *parent)
+LocalLister::LocalLister(const QString &path, Chain<Folder> *cachedTrees, QObject *parent)
         : QThread()
         , m_path(path)
         , m_trees(cachedTrees)
@@ -64,7 +64,7 @@ LocalLister::LocalLister(const QString &path, Chain<Directory> *cachedTrees, QOb
     for (QStringList::ConstIterator it = list.constBegin(); it != list.constEnd(); ++it)
         if ((*it).startsWith(path))
             //prevent scanning of these directories
-            m_trees->append(new Directory((*it).toLocal8Bit()));
+            m_trees->append(new Folder((*it).toLocal8Bit()));
 }
 
 void
@@ -72,7 +72,7 @@ LocalLister::run()
 {
     //recursively scan the requested path
     const QByteArray path = QFile::encodeName(m_path);
-    Directory *tree = scan(path, path);
+    Folder *tree = scan(path, path);
 
     //delete the list of trees useful for this scan,
     //in a sucessful scan the contents would now be transferred to 'tree'
@@ -158,7 +158,7 @@ outputError(QByteArray path)
     case ENOMEM:
         out("Insufficient memory to complete the operation");
     case ENOTDIR:
-        out("A component of the path is not a directory");
+        out("A component of the path is not a folder");
     case EBADF:
         out("Bad file descriptor");
     case EFAULT:
@@ -172,10 +172,10 @@ outputError(QByteArray path)
 #undef out
 }
 
-Directory*
+Folder*
 LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
 {
-    Directory *cwd = new Directory(dirname);
+    Folder *cwd = new Folder(dirname);
     DIR *dir = opendir(path);
 
     if (!dir) {
@@ -215,16 +215,16 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
             //using units of KiB as 32bit max is 4GiB and 64bit ints are expensive
             cwd->append(ent->d_name, (ST_NBLOCKS(statbuf) * ST_NBLOCKSIZE) / 1024);
 
-        else if (S_ISDIR(statbuf.st_mode)) //directory
+        else if (S_ISDIR(statbuf.st_mode)) //folder
         {
-            Directory *d = 0;
+            Folder *d = 0;
             QByteArray new_dirname = ent->d_name;
             new_dirname += '/';
             new_path    += '/';
 
             //check to see if we've scanned this section already
 
-            for (Iterator<Directory> it = m_trees->iterator(); it != m_trees->end(); ++it)
+            for (Iterator<Folder> it = m_trees->iterator(); it != m_trees->end(); ++it)
             {
                 if (new_path == (*it)->name8Bit())
                 {

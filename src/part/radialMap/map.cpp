@@ -64,7 +64,7 @@ void RadialMap::Map::invalidate()
     m_visibleDepth = Config::defaultRingDepth;
 }
 
-void RadialMap::Map::make(const Directory *tree, bool refresh)
+void RadialMap::Map::make(const Folder *tree, bool refresh)
 {
     //**** determineText seems like pointless optimization
     //   but is it good to keep the text consistent?
@@ -244,12 +244,12 @@ void RadialMap::Map::colorise()
                     cb.setHsv(h, s2, (v2 < 90) ? 90 : v2); //too dark if < 100
                     cp.setHsv(h, 17, v1);
                 }
-                else if (!(*it)->file()->isDirectory()) //file
+                else if (!(*it)->file()->isFolder()) //file
                 {
                     cb.setHsv(h, 17, v1);
                     cp.setHsv(h, 17, v2);
                 }
-                else //directory
+                else //folder
                 {
                     cb.setHsv(h, s1, v1); //v was 225
                     cp.setHsv(h, s2, v2); //v was 225 - delta
@@ -277,7 +277,9 @@ void RadialMap::Map::paint(bool antialias)
     QRect rect = m_rect;
 
     rect.adjust(5, 5, -5, -5);
-    m_pixmap.fill(m_scheme.background().color());
+    QColor background = m_scheme.background().color();
+    background.setAlpha(0);
+    m_pixmap.fill(background);
 
     //m_rect.moveRight(1); // Uncommenting this breaks repainting when recreating map from cache
 

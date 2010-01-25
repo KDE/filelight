@@ -33,14 +33,14 @@ static const char PREFIX[4]   = { 'K', 'M', 'G', 'T' };
 
 
 QString
-File::fullPath(const Directory *root /*= 0*/) const
+File::fullPath(const Folder *root /*= 0*/) const
 {
     QString path;
 
     if (root == this)
         root = 0; //prevent returning empty string when there is something we could return
 
-    for (const Directory *d = (Directory*)this; d != root && d; d = d->parent())
+    for (const Folder *d = (Folder*)this; d != root && d; d = d->parent())
         path.prepend(d->name());
 
     return path;

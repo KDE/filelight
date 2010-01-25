@@ -39,10 +39,10 @@ ScanManager::ScanManager(QObject *parent)
         : QObject(parent)
         , m_mutex()
         , m_thread(0)
-        , m_cache(new Chain<Directory>)
+        , m_cache(new Chain<Folder>)
 {
     Filelight::LocalLister::readMounts();
-    connect(this, SIGNAL(branchCompleted(Directory*, bool)), this, SLOT(cacheTree(Directory*, bool)), Qt::QueuedConnection);
+    connect(this, SIGNAL(branchCompleted(Folder*, bool)), this, SLOT(cacheTree(Folder*, bool)), Qt::QueuedConnection);
 }
 
 ScanManager::~ScanManager()
@@ -86,7 +86,7 @@ bool ScanManager::start(const KUrl &url)
     {
         const QString path = url.path(KUrl::AddTrailingSlash);
 
-        Chain<Directory> *trees = new Chain<Directory>;
+        Chain<Folder> *trees = new Chain<Folder>;
 
         /* CHECK CACHE
         *   user wants: /usr/local/
@@ -96,7 +96,7 @@ bool ScanManager::start(const KUrl &url)
         *   cached:     /usr/local/, /usr/include/
         */
 
-        for (Iterator<Directory> it = m_cache->iterator(); it != m_cache->end(); ++it)
+        for (Iterator<Folder> it = m_cache->iterator(); it != m_cache->end(); ++it)
         {
             QString cachePath = (*it)->name();
 
@@ -107,7 +107,7 @@ bool ScanManager::start(const KUrl &url)
                 kDebug() << "Cache-(a)hit: " << cachePath << endl;
 
                 QStringList split = path.mid(cachePath.length()).split('/');
-                Directory *d = *it;
+                Folder *d = *it;
                 Iterator<File> jt;
 
                 while (!split.isEmpty() && d != NULL) //if NULL we have got lost so abort!!
@@ -121,7 +121,7 @@ bool ScanManager::start(const KUrl &url)
                     for (d = 0; jt != end; ++jt)
                         if (s == (*jt)->name())
                         {
-                            d = (Directory*)*jt;
+                            d = (Folder*)*jt;
                             break;
                         }
 
@@ -141,7 +141,7 @@ bool ScanManager::start(const KUrl &url)
                 }
                 else
                 {
-                    //something went wrong, we couldn't find the directory we were expecting
+                    //something went wrong, we couldn't find the folder we were expecting
                     kError() << "Didn't find " << path << " in the cache!\n";
                     delete it.remove(); //safest to get rid of it
                     break; //do a full scan
@@ -158,7 +158,7 @@ bool ScanManager::start(const KUrl &url)
         QApplication::setOverrideCursor(Qt::BusyCursor);
         //starts listing by itself
         m_thread = new Filelight::LocalLister(path, trees, this);
-        connect(m_thread, SIGNAL(branchCompleted(Directory*, bool)), this, SLOT(cacheTree(Directory*, bool)), Qt::QueuedConnection);
+        connect(m_thread, SIGNAL(branchCompleted(Folder*, bool)), this, SLOT(cacheTree(Folder*, bool)), Qt::QueuedConnection);
         m_thread->start();
 
         return true;
@@ -168,7 +168,7 @@ bool ScanManager::start(const KUrl &url)
     QApplication::setOverrideCursor(Qt::BusyCursor);
     //will start listing straight away
     Filelight::RemoteLister *remoteLister = new Filelight::RemoteLister(url, (QWidget*)parent());
-    connect(remoteLister, SIGNAL(branchCompleted(Directory*, bool)), this, SLOT(cacheTree(Directory*, bool)), Qt::QueuedConnection);
+    connect(remoteLister, SIGNAL(branchCompleted(Folder*, bool)), this, SLOT(cacheTree(Folder*, bool)), Qt::QueuedConnection);
     remoteLister->setParent(this);
     remoteLister->setObjectName("remote_lister");
     remoteLister->openUrl(url);
@@ -199,7 +199,7 @@ ScanManager::emptyCache()
 }
 
 void
-ScanManager::cacheTree(Directory *tree, bool finished)
+ScanManager::cacheTree(Folder *tree, bool finished)
 {
     QMutexLocker locker(&m_mutex); // This gets released once it is destroyed.
 

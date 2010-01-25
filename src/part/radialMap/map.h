@@ -39,7 +39,7 @@ public:
     Map(bool summary);
     ~Map();
 
-    void make(const Directory *, bool = false);
+    void make(const Folder *, bool = false);
     bool resize(const QRect&);
 
     bool isNull() const {

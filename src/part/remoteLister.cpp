@@ -37,24 +37,24 @@ namespace Filelight
 //TODO: delete all this stuff!
 
 // You need to use a single DirLister.
-// One per directory breaks KIO (seemingly) and also uses un-godly amounts of memory!
+// One per folder breaks KIO (seemingly) and also uses un-godly amounts of memory!
 
 struct Store {
 
     typedef QLinkedList<Store*> List;
 
-    /// location of the directory
+    /// location of the folder
     const KUrl url;
-    /// the directory on which we are operating
-    Directory *directory;
+    /// the folder on which we are operating
+    Folder *folder;
     /// so we can reference the parent store
     Store *parent;
-    /// directories in this directory that need to be scanned before we can propagate()
+    /// directories in this folder that need to be scanned before we can propagate()
     List stores;
 
-    Store() : directory(0), parent(0) {}
+    Store() : folder(0), parent(0) {}
     Store(const KUrl &u, const QString &name, Store *s)
-            : url(u), directory(new Directory(name.toLocal8Bit() + '/')), parent(s) {}
+            : url(u), folder(new Folder(name.toLocal8Bit() + '/')), parent(s) {}
 
 
     Store* propagate()
@@ -64,7 +64,7 @@ struct Store {
         kDebug() << "propagate: " << url << endl;
 
         if (parent) {
-            parent->directory->append(directory);
+            parent->folder->append(folder);
             if (parent->stores.isEmpty()) {
                 return parent->propagate();
             }
@@ -72,7 +72,7 @@ struct Store {
                 return parent;
         }
 
-        //we reached the root, let's get our next directory scanned
+        //we reached the root, let's get our next folder scanned
         return this;
     }
 
@@ -98,7 +98,7 @@ RemoteLister::RemoteLister(const KUrl &url, QWidget *parent)
 
 RemoteLister::~RemoteLister()
 {
-    Directory *tree = isFinished() ? m_store->directory : 0;
+    Folder *tree = isFinished() ? m_store->folder : 0;
 
     emit branchCompleted(tree, false);
     delete m_root;
@@ -126,7 +126,7 @@ RemoteLister::canceled()
 void
 RemoteLister::_completed()
 {
-    //m_directory is set to the directory we should operate on
+    //m_folder is set to the folder we should operate on
 
     const KFileItemList items = KDirLister::items();
     for (KFileItemList::ConstIterator it = items.begin(), end = items.end(); it != end; ++it)
@@ -134,14 +134,14 @@ RemoteLister::_completed()
         if (it->isDir())
             m_store->stores += new Store(it->url(), it->name(), m_store);
         else
-            m_store->directory->append(it->name().toLocal8Bit(), it->size() / 1024);
+            m_store->folder->append(it->name().toLocal8Bit(), it->size() / 1024);
 
         ScanManager::s_files++;
     }
 
 
     if (m_store->stores.isEmpty())
-        //no directories to scan, so we need to append ourselves to the parent directory
+        //no directories to scan, so we need to append ourselves to the parent folder
         //propagate() will return the next ancestor that has stores left to be scanned, or root if we are done
         m_store = m_store->propagate();
 

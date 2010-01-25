@@ -27,7 +27,7 @@
 #include <QMutex>
 
 class QThread;
-class Directory;
+class Folder;
 template<class T> class Chain;
 
 namespace Filelight
@@ -53,12 +53,12 @@ public:
 public slots:
     bool abort();
     void emptyCache();
-    void cacheTree(Directory*, bool);
+    void cacheTree(Folder*, bool);
 
 signals:
-    void completed(Directory*);
+    void completed(Folder*);
     void aboutToEmptyCache();
-    void branchCompleted(Directory* tree, bool finished);
+    void branchCompleted(Folder* tree, bool finished);
 
 private:
     static bool s_abort;
@@ -67,7 +67,7 @@ private:
     KUrl m_url;
     QMutex m_mutex;
     QThread *m_thread;
-    Chain<Directory> *m_cache;
+    Chain<Folder> *m_cache;
 
 };
 }

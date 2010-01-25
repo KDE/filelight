@@ -26,7 +26,7 @@
 #include <QWidget>
 
 class File;
-class Directory;
+class Folder;
 
 namespace RadialMap
 {
@@ -35,7 +35,7 @@ class SegmentTip : public QWidget
 public:
     SegmentTip(uint);
 
-    void updateTip(const File*, const Directory*);
+    void updateTip(const File*, const Folder*);
     void moveTo(QPoint, bool);
 
 private:

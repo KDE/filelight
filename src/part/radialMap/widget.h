@@ -37,7 +37,7 @@
 #include "map.h"
 
 template <class T> class Chain;
-class Directory;
+class Folder;
 class File;
 namespace KIO {
 class Job;
@@ -74,7 +74,7 @@ public:
 public slots:
     void zoomIn();
     void zoomOut();
-    void create(const Directory*);
+    void create(const Folder*);
     void invalidate();
     void refresh(int);
 
@@ -82,12 +82,12 @@ private slots:
     void resizeTimeout();
     void sendFakeMouseEvent();
     void deleteJobFinished(KJob*);
-    void createFromCache(const Directory*);
+    void createFromCache(const Folder*);
 
 signals:
     void activated(const KUrl&);
     void invalidated(const KUrl&);
-    void created(const Directory*);
+    void created(const Folder*);
     void mouseHover(const QString&);
     void giveMeTreeFor(const KUrl&);
 
@@ -111,7 +111,7 @@ protected:
 private:
     void paintExplodedLabels(QPainter&) const;
 
-    const Directory *m_tree;
+    const Folder *m_tree;
     const Segment   *m_focus;
     QPoint           m_offset;
     QTimer           m_timer;

@@ -94,15 +94,15 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
     KStandardAction::zoomOut(m_map, SLOT(zoomOut()), actionCollection());
     KStandardAction::preferences(this, SLOT(configFilelight()), actionCollection());
 
-    connect(m_map, SIGNAL(created(const Directory*)), SIGNAL(completed()));
-    connect(m_map, SIGNAL(created(const Directory*)), SLOT(mapChanged(const Directory*)));
+    connect(m_map, SIGNAL(created(const Folder*)), SIGNAL(completed()));
+    connect(m_map, SIGNAL(created(const Folder*)), SLOT(mapChanged(const Folder*)));
     connect(m_map, SIGNAL(activated(const KUrl&)), SLOT(updateURL(const KUrl&)));
 
     // TODO make better system
     connect(m_map, SIGNAL(giveMeTreeFor(const KUrl&)), SLOT(updateURL(const KUrl&)));
     connect(m_map, SIGNAL(giveMeTreeFor(const KUrl&)), SLOT(openUrl(const KUrl&)));
 
-    connect(m_manager, SIGNAL(completed(Directory*)), SLOT(scanCompleted(Directory*)));
+    connect(m_manager, SIGNAL(completed(Folder*)), SLOT(scanCompleted(Folder*)));
     connect(m_manager, SIGNAL(aboutToEmptyCache()), m_map, SLOT(invalidate()));
 
     QTimer::singleShot(0, this, SLOT(postInit()));
@@ -156,7 +156,7 @@ Part::openUrl(const KUrl &u)
     }
     else if (isLocal && access(path8bit, F_OK) != 0) //stat(path, &statbuf) == 0
     {
-        KMSG(i18n("Directory not found: %1", path));
+        KMSG(i18n("Folder not found: %1", path));
     }
     else if (isLocal && access(path8bit, R_OK | X_OK) != 0)
     {
@@ -241,7 +241,7 @@ Part::start(const KUrl &url)
 {
     if (!m_started) {
         connect(m_map, SIGNAL(mouseHover(const QString&)), statusBar(), SLOT(message(const QString&)));
-        connect(m_map, SIGNAL(created(const Directory*)), statusBar(), SLOT(clear()));
+        connect(m_map, SIGNAL(created(const Folder*)), statusBar(), SLOT(clear()));
         m_started = true;
     }
 
@@ -276,7 +276,7 @@ Part::rescan()
 }
 
 void
-Part::scanCompleted(Directory *tree)
+Part::scanCompleted(Folder *tree)
 {
     if (tree) {
         statusBar()->showMessage(i18n("Scan completed, generating map..."));
@@ -299,7 +299,7 @@ Part::scanCompleted(Directory *tree)
 }
 
 void
-Part::mapChanged(const Directory *tree)
+Part::mapChanged(const Folder *tree)
 {
     //IMPORTANT -> url() has already been set
 

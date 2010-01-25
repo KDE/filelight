@@ -185,7 +185,7 @@ inline void MainWindow::configKeys() //slot
 
 inline void MainWindow::slotScanFolder()
 {
-    slotScanUrl(KFileDialog::getExistingDirectoryUrl(m_part->url(), this, QString("Select folder to scan...")));
+    slotScanUrl(KFileDialog::getExistingDirectoryUrl(m_part->url(), this, i18n("Select folder to scan...")));
 }
 
 inline void MainWindow::slotScanHomeFolder() {

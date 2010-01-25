@@ -65,7 +65,7 @@ SegmentTip::moveTo(QPoint p, bool placeAbove)
 }
 
 void
-SegmentTip::updateTip(const File* const file, const Directory* const root)
+SegmentTip::updateTip(const File* const file, const Folder* const root)
 {
     const QString s1  = file->fullPath(root);
     QString s2        = file->humanReadableSize();
@@ -81,9 +81,9 @@ SegmentTip::updateTip(const File* const file, const Directory* const root)
     m_text += '\n';
     m_text += s2;
 
-    if (file->isDirectory())
+    if (file->isFolder())
     {
-        int files  = static_cast<const Directory*>(file)->children();
+        int files  = static_cast<const Folder*>(file)->children();
         const uint pc = uint((100 * files) / (double)root->children());
         QString s3    = i18np("File: %1", "Files: %1", files);
 

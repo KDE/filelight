@@ -167,7 +167,7 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
     if (m_focus && !m_focus->isFake())
     {
         const KUrl url   = Widget::url(m_focus->file());
-        const bool isDir = m_focus->file()->isDirectory();
+        const bool isDir = m_focus->file()->isFolder();
 
         // Actions in the right click menu
         QAction* openKonqueror = 0;
@@ -219,8 +219,8 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
             } else if (clicked == deleteItem) {
                 m_toBeDeleted = m_focus;
                 const KUrl url = Widget::url(m_toBeDeleted->file());
-                const QString message = m_toBeDeleted->file()->isDirectory()
-                                        ? i18n("<qt>The directory at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</b> deleted.</qt>", url.prettyUrl())
+                const QString message = m_toBeDeleted->file()->isFolder()
+                                        ? i18n("<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</b> deleted.</qt>", url.prettyUrl())
                                         : i18n("<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>", url.prettyUrl());
                 const int userIntention = KMessageBox::warningContinueCancel(
                                               this, message,
@@ -251,7 +251,7 @@ section_two:
             else if (m_focus->file() != m_tree) { // is left click
                 // KIconEffect::visualActivate(this, rect); // TODO: recreate this
                 emit activated(url); //activate first, this will cause UI to prepare itself
-                createFromCache((Directory *)m_focus->file());
+                createFromCache((Folder *)m_focus->file());
             }
             else
                 emit giveMeTreeFor(url.upUrl());
@@ -263,7 +263,7 @@ void RadialMap::Widget::deleteJobFinished(KJob *job)
 {
     QApplication::restoreOverrideCursor();
     if (!job->error() && m_toBeDeleted) {
-        const Directory *dir = m_toBeDeleted->file()->parent();
+        const Folder *dir = m_toBeDeleted->file()->parent();
         for (Iterator<File> it = dir->iterator(); it != dir->end(); ++it) {
             if (m_toBeDeleted->file() == (*it))
                 it.remove();

@@ -48,11 +48,21 @@ RadialMap::Widget::Widget(QWidget *parent, bool isSummary)
     setAcceptDrops(true);
     setMinimumSize(100,100);//TODO: set a sane minimumsize, not just a random one.
 
+    QColor background = palette().background().color();
+    background.setAlpha(50);
+    QPalette pal = palette();
+    pal.setColor(QPalette::Window, background);
+    setPalette(pal);
+    setAttribute(Qt::WA_TranslucentBackground);
+    parent->setAttribute(Qt::WA_TranslucentBackground);
+    parent->parentWidget()->setAttribute(Qt::WA_TranslucentBackground);
+
+
     const QBitmap *cursor = QCursor(Qt::PointingHandCursor).bitmap();
     m_tip = new SegmentTip(cursor ? cursor->height() : 16);
 
-    connect(this, SIGNAL(created(const Directory*)), SLOT(sendFakeMouseEvent()));
-    connect(this, SIGNAL(created(const Directory*)), SLOT(update()));
+    connect(this, SIGNAL(created(const Folder*)), SLOT(sendFakeMouseEvent()));
+    connect(this, SIGNAL(created(const Folder*)), SLOT(update()));
     connect(&m_timer, SIGNAL(timeout()), SLOT(resizeTimeout()));
 }
 
@@ -97,7 +107,7 @@ RadialMap::Widget::invalidate()
 }
 
 void
-RadialMap::Widget::create(const Directory *tree)
+RadialMap::Widget::create(const Folder *tree)
 {
     //it is not the responsibility of create() to invalidate first
     //skip invalidation at your own risk
@@ -122,7 +132,7 @@ RadialMap::Widget::create(const Directory *tree)
 }
 
 void
-RadialMap::Widget::createFromCache(const Directory *tree)
+RadialMap::Widget::createFromCache(const Folder *tree)
 {
     //no scan was necessary, use cached tree, however we MUST still emit invalidate
     invalidate();

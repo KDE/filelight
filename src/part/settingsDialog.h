@@ -40,8 +40,8 @@ protected:
     virtual void reject();
 
 public slots:
-    void addDirectory();
-    void removeDirectory();
+    void addFolder();
+    void removeFolder();
     void toggleScanAcrossMounts(bool);
     void toggleDontScanRemoteMounts(bool);
     void toggleDontScanRemovableMedia(bool);

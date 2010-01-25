@@ -48,7 +48,7 @@ public:
     const int angle;
 
     int x1, y1, x2, y2, x3;
-    int tx, ty;
+    int tx, ty, tw, th;
 
     QString qs;
 };
@@ -86,12 +86,12 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
     if (m_focus && m_focus->file() != m_tree) //separate behavior for selected vs unselected segments
     {
         //don't bother with files
-        if (m_focus->file() && !m_focus->file()->isDirectory())
+        if (m_focus->file() && !m_focus->file()->isFolder())
             return;
 
         //find the range of levels we will be potentially drawing labels for
         //startLevel is the level above whatever m_focus is in
-        for (const Directory *p = (const Directory*)m_focus->file(); p != m_tree; ++startLevel)
+        for (const Folder *p = (const Folder*)m_focus->file(); p != m_tree; ++startLevel)
             p = p->parent();
 
         //range=2 means 2 levels to draw labels for
@@ -323,6 +323,12 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
         paint.drawEllipse((*it)->x1 - 3, (*it)->y1 - 3, 7, 7); //**** CPU intensive! better to use a pixmap
         paint.drawLine((*it)->x1,  (*it)->y1, (*it)->x2, (*it)->y2);
         paint.drawLine((*it)->x2, (*it)->y2, (*it)->x3, (*it)->y2);
+
+        paint.setBrush(QBrush(Qt::white));
+        paint.setPen(Qt::NoPen);
+        paint.drawRoundedRect((*it)->tx - 2, (*it)->ty - fontMetrics().height() + 2, fontMetrics().width((*it)->qs) + 4, fontMetrics().height() + 2, 5, Qt::RelativeSize);
+
+        paint.setPen(QPen(Qt::black, 1));
         paint.drawText((*it)->tx, (*it)->ty, (*it)->qs);
     }
 

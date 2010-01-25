@@ -31,7 +31,7 @@
 //**** add some angle bounds checking (possibly in Segment ctor? can I delete in a ctor?)
 //**** this class is a mess
 
-RadialMap::Builder::Builder(RadialMap::Map *m, const Directory* const d, bool fast)
+RadialMap::Builder::Builder(RadialMap::Map *m, const Folder* const d, bool fast)
         : m_map(m)
         , m_root(d)
         , m_minSize(static_cast<unsigned int>((d->size() * 3) / (PI * m->height() - m->MAP_2MARGIN)))
@@ -56,7 +56,7 @@ RadialMap::Builder::Builder(RadialMap::Map *m, const Directory* const d, bool fa
 
 
 void
-RadialMap::Builder::findVisibleDepth(const Directory* const dir, const unsigned int depth)
+RadialMap::Builder::findVisibleDepth(const Folder* const dir, const unsigned int depth)
 {
     //**** because I don't use the same minimumSize criteria as in the visual function
     //     this can lead to incorrect visual representation
@@ -79,8 +79,8 @@ RadialMap::Builder::findVisibleDepth(const Directory* const dir, const unsigned 
     if (*m_depth >= stopDepth) return;
 
     for (ConstIterator<File> it = dir->constIterator(); it != dir->end(); ++it)
-        if ((*it)->isDirectory() && (*it)->size() > m_minSize)
-            findVisibleDepth((Directory *)*it, depth + 1); //if no files greater than min size the depth is still recorded
+        if ((*it)->isFolder() && (*it)->size() > m_minSize)
+            findVisibleDepth((Folder *)*it, depth + 1); //if no files greater than min size the depth is still recorded
 }
 
 void
@@ -98,7 +98,7 @@ RadialMap::Builder::setLimits(const uint &b) //b = breadth?
 
 //**** segments currently overlap at edges (i.e. end of first is start of next)
 bool
-RadialMap::Builder::build(const Directory* const dir, const unsigned int depth, unsigned int a_start, const unsigned int a_end)
+RadialMap::Builder::build(const Folder* const dir, const unsigned int depth, unsigned int a_start, const unsigned int a_end)
 {
     //first iteration: dir == m_root
 
@@ -117,12 +117,12 @@ RadialMap::Builder::build(const Directory* const dir, const unsigned int depth, 
 
             (m_signature + depth)->append(s);
 
-            if ((*it)->isDirectory())
+            if ((*it)->isFolder())
             {
                 if (depth != *m_depth)
                 {
                     //recurse
-                    s->m_hasHiddenChildren = build((Directory*)*it, depth + 1, a_start, a_start + a_len);
+                    s->m_hasHiddenChildren = build((Folder*)*it, depth + 1, a_start, a_start + a_len);
                 }
                 else s->m_hasHiddenChildren = true;
             }
@@ -133,8 +133,8 @@ RadialMap::Builder::build(const Directory* const dir, const unsigned int depth, 
 
             hiddenSize += (*it)->size();
 
-            if ((*it)->isDirectory()) //**** considered virtual, but dir wouldn't count itself!
-                hiddenFileCount += static_cast<const Directory*>(*it)->children(); //need to add one to count the dir as well
+            if ((*it)->isFolder()) //**** considered virtual, but dir wouldn't count itself!
+                hiddenFileCount += static_cast<const Folder*>(*it)->children(); //need to add one to count the dir as well
 
             ++hiddenFileCount;
         }

@@ -55,8 +55,8 @@ SettingsDialog::SettingsDialog(QWidget *parent) : KDialog(parent)
 
     connect(&m_timer, SIGNAL(timeout()), SIGNAL(mapIsInvalid()));
 
-    connect(m_addButton,    SIGNAL(clicked()), SLOT(addDirectory()));
-    connect(m_removeButton, SIGNAL(clicked()), SLOT(removeDirectory()));
+    connect(m_addButton,    SIGNAL(clicked()), SLOT(addFolder()));
+    connect(m_removeButton, SIGNAL(clicked()), SLOT(removeFolder()));
     connect(m_resetButton,  SIGNAL(clicked()), SLOT(reset()));
     connect(m_closeButton,  SIGNAL(clicked()), SLOT(close()));
 
@@ -151,9 +151,9 @@ void SettingsDialog::toggleDontScanRemovableMedia(bool b)
 
 
 
-void SettingsDialog::addDirectory()
+void SettingsDialog::addFolder()
 {
-    const KUrl url = KDirSelectDialog::selectDirectory(KUrl("/"), false, this, "Select directory...");
+    const KUrl url = KDirSelectDialog::selectDirectory(KUrl("/"), false, this, "Select folder...");
 
     //TODO error handling!
     //TODO wrong protocol handling!
@@ -168,12 +168,12 @@ void SettingsDialog::addDirectory()
             m_listBox->addItem(path);
             m_removeButton->setEnabled(true);
         }
-        else KMessageBox::sorry(this, i18n("That directory is already set to be excluded from scans"));
+        else KMessageBox::sorry(this, i18n("That folder is already set to be excluded from scans"));
     }
 }
 
 
-void SettingsDialog::removeDirectory()
+void SettingsDialog::removeFolder()
 {
     Config::skipList.removeAll(m_listBox->currentItem()->text()); //removes all entries that match
 

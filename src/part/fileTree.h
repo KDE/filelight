@@ -219,13 +219,13 @@ private:
 };
 
 
-class Directory;
+class Folder;
 class QString;
 
 class File
 {
 public:
-    friend class Directory;
+    friend class Folder;
 
     enum UnitPrefix { kilo, mega, giga, tera };
 
@@ -237,7 +237,7 @@ public:
         delete [] m_name;
     }
 
-    const Directory *parent() const {
+    const Folder *parent() const {
         return m_parent;
     }
     const char *name8Bit() const {
@@ -250,20 +250,20 @@ public:
         return QFile::decodeName(m_name);
     }
 
-    virtual bool isDirectory() const {
+    virtual bool isFolder() const {
         return false;
     }
 
-    QString fullPath(const Directory* = 0) const;
+    QString fullPath(const Folder* = 0) const;
     QString humanReadableSize(UnitPrefix key = mega) const;
 
 public:
     static QString humanReadableSize(uint size, UnitPrefix Key = mega);
 
 protected:
-    File(const char *name, FileSize size, Directory *parent) : m_parent(parent), m_name(qstrdup(name)), m_size(size) {}
+    File(const char *name, FileSize size, Folder *parent) : m_parent(parent), m_name(qstrdup(name)), m_size(size) {}
 
-    Directory *m_parent; //0 if this is treeRoot
+    Folder *m_parent; //0 if this is treeRoot
     char      *m_name;
     FileSize   m_size;   //in units of KiB
 
@@ -273,20 +273,20 @@ private:
 };
 
 
-class Directory : public Chain<File>, public File
+class Folder : public Chain<File>, public File
 {
 public:
-    Directory(const char *name) : File(name, 0), m_children(0) {} //DON'T pass the full path!
+    Folder(const char *name) : File(name, 0), m_children(0) {} //DON'T pass the full path!
 
     uint children() const {
         return m_children;
     }
-    virtual bool isDirectory() const {
+    virtual bool isFolder() const {
         return true;
     }
 
-    ///appends a Directory
-    void append(Directory *d, const char *name=0)
+    ///appends a Folder
+    void append(Folder *d, const char *name=0)
     {
         if (name) {
             delete [] d->m_name;
@@ -315,8 +315,8 @@ private:
     uint m_children;
 
 private:
-    Directory(const Directory&); //undefined
-    void operator=(const Directory&); //undefined
+    Folder(const Folder&); //undefined
+    void operator=(const Folder&); //undefined
 };
 
 #endif
