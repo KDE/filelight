@@ -324,10 +324,6 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
         paint.drawLine((*it)->x1,  (*it)->y1, (*it)->x2, (*it)->y2);
         paint.drawLine((*it)->x2, (*it)->y2, (*it)->x3, (*it)->y2);
 
-        paint.setBrush(QBrush(Qt::white));
-        paint.setPen(Qt::NoPen);
-        paint.drawRoundedRect((*it)->tx - 2, (*it)->ty - fontMetrics().height() + 2, fontMetrics().width((*it)->qs) + 4, fontMetrics().height() + 2, 5, Qt::RelativeSize);
-
         paint.setPen(QPen(Qt::black, 1));
         paint.drawText((*it)->tx, (*it)->ty, (*it)->qs);
     }
