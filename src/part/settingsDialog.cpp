@@ -38,9 +38,9 @@
 
 SettingsDialog::SettingsDialog(QWidget *parent) : KDialog(parent)
 {
-    setButtons(0);//TODO, use the kdialog buttons
+    setButtons(KDialog::Reset | KDialog::Close);
 
-    setupUi(this);
+    setupUi(this->mainWidget());
     QVBoxLayout *vbox = new QVBoxLayout;
     //colourSchemeGroup->setFrameShape(QFrame::NoFrame);
 
@@ -57,8 +57,8 @@ SettingsDialog::SettingsDialog(QWidget *parent) : KDialog(parent)
 
     connect(m_addButton,    SIGNAL(clicked()), SLOT(addFolder()));
     connect(m_removeButton, SIGNAL(clicked()), SLOT(removeFolder()));
-    connect(m_resetButton,  SIGNAL(clicked()), SLOT(reset()));
-    connect(m_closeButton,  SIGNAL(clicked()), SLOT(close()));
+    connect(this,  SIGNAL(resetClicked()), SLOT(reset()));
+    connect(this,  SIGNAL(closeClicked()), SLOT(close()));
 
     connect(colourSchemeGroup, SIGNAL(clicked(int)), SLOT(changeScheme(int)));
     connect(contrastSlider, SIGNAL(valueChanged(int)), SLOT(changeContrast(int)));
@@ -76,8 +76,6 @@ SettingsDialog::SettingsDialog(QWidget *parent) : KDialog(parent)
 
     m_addButton->setIcon(SmallIcon("folder-open"));
     m_removeButton->setIcon(SmallIcon("list-remove"));
-    m_resetButton->setIcon(SmallIcon("edit-undo"));
-    m_closeButton->setIcon(SmallIcon("dialog-close"));
 }
 
 
