@@ -48,16 +48,6 @@ RadialMap::Widget::Widget(QWidget *parent, bool isSummary)
     setAcceptDrops(true);
     setMinimumSize(100,100);//TODO: set a sane minimumsize, not just a random one.
 
-    QColor background = palette().background().color();
-    background.setAlpha(50);
-    QPalette pal = palette();
-    pal.setColor(QPalette::Window, background);
-    setPalette(pal);
-    setAttribute(Qt::WA_TranslucentBackground);
-    parent->setAttribute(Qt::WA_TranslucentBackground);
-    parent->parentWidget()->setAttribute(Qt::WA_TranslucentBackground);
-
-
     const QBitmap *cursor = QCursor(Qt::PointingHandCursor).bitmap();
     m_tip = new SegmentTip(cursor ? cursor->height() : 16);
 
