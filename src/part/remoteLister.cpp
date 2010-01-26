@@ -54,7 +54,7 @@ struct Store {
 
     Store() : folder(0), parent(0) {}
     Store(const KUrl &u, const QString &name, Store *s)
-            : url(u), folder(new Folder(name.toLocal8Bit() + '/')), parent(s) {}
+            : url(u), folder(new Folder(name.toUtf8() + '/')), parent(s) {}
 
 
     Store* propagate()
@@ -134,7 +134,7 @@ RemoteLister::_completed()
         if (it->isDir())
             m_store->stores += new Store(it->url(), it->name(), m_store);
         else
-            m_store->folder->append(it->name().toLocal8Bit(), it->size() / 1024);
+            m_store->folder->append(it->name().toUtf8(), it->size() / 1024);
 
         ScanManager::s_files++;
     }

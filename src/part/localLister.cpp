@@ -64,7 +64,7 @@ LocalLister::LocalLister(const QString &path, Chain<Folder> *cachedTrees, QObjec
     for (QStringList::ConstIterator it = list.constBegin(); it != list.constEnd(); ++it)
         if ((*it).startsWith(path))
             //prevent scanning of these directories
-            m_trees->append(new Folder((*it).toLocal8Bit()));
+            m_trees->append(new Folder((*it).toUtf8()));
 }
 
 void
