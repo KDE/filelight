@@ -112,8 +112,8 @@ void SummaryWidget::createDiskMaps()
 {
     DiskList disks;
 
-    const QByteArray free = i18nc("Free", "Free space on the disks/partitions").toUtf8();
-    const QByteArray used = i18nc("Used", "Used space on the disks/partitions").toUtf8();
+    const QByteArray free = i18nc("Free space on the disks/partitions", "Free").toUtf8();
+    const QByteArray used = i18nc("Used space on the disks/partitions", "Used").toUtf8();
 
     KIconLoader loader;
 

@@ -194,7 +194,7 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
                 }
             }
             else
-                openFile = popup.addAction(KIcon("document-open"), i18nc("&Open", "Scan/open the path of the selected element"));
+                openFile = popup.addAction(KIcon("document-open"), i18nc("Scan/open the path of the selected element", "&Open"));
 
             popup.addSeparator();
             copyClipboard = popup.addAction(KIcon("edit-copy"), i18n("&Copy to clipboard"));
