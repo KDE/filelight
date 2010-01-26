@@ -43,7 +43,7 @@
 #include <QLayout>
 #include <QApplication>
 #include <QByteArray>
-#include <Q3ValueList>
+#include <QList>
 #include <QMouseEvent>
 #include <QTextOStream>
 
@@ -58,7 +58,7 @@ struct Disk
 };
 
 
-struct DiskList : Q3ValueList<Disk>
+struct DiskList : QList<Disk>
 {
     DiskList();
 };
@@ -112,8 +112,8 @@ void SummaryWidget::createDiskMaps()
 {
     DiskList disks;
 
-    const QByteArray free = i18nc("Free", "Free space on the disks/partitions").toLocal8Bit();
-    const QByteArray used = i18nc("Used", "Used space on the disks/partitions").toLocal8Bit();
+    const QByteArray free = i18nc("Free", "Free space on the disks/partitions").toUtf8();
+    const QByteArray used = i18nc("Used", "Used space on the disks/partitions").toUtf8();
 
     KIconLoader loader;
 
