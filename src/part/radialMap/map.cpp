@@ -287,8 +287,10 @@ void RadialMap::Map::paint(bool antialias)
 
     paint.begin(&m_pixmap);
 
-    if (antialias && Config::antialias)
+    if (antialias && Config::antialias) {
+        paint.translate(0.7, 0.7);
         paint.setRenderHint(QPainter::Antialiasing);
+    }
 
     int step = m_ringBreadth;
     int excess = -1;

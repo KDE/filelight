@@ -76,7 +76,11 @@ void RadialMap::Widget::paintEvent(QPaintEvent*)
     //exploded labels
     if (!m_map.isNull() && !m_timer.isActive())
     {
-        if (Config::antialias) paint.setRenderHint(QPainter::Antialiasing);
+        if (Config::antialias) {
+            paint.setRenderHint(QPainter::Antialiasing);
+            //make lines appear on pixel boundaries
+            paint.translate(0.5, 0.5);
+        }
         paintExplodedLabels(paint);
     }
 }
