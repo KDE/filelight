@@ -45,7 +45,7 @@
           </sizepolicy>
          </property>
          <property name="text">
-          <string>Do &amp;not scan these directories:</string>
+          <string>Do &amp;not scan these folders:</string>
          </property>
          <property name="textFormat">
           <enum>Qt::PlainText</enum>
