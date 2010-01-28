@@ -43,4 +43,5 @@ target_link_libraries(filelightpart radialmap
                       ${KDE4_KFILE_LIBS}
                       ${KDE4_SOLID_LIBS})
 
+
 install(TARGETS filelightpart DESTINATION ${PLUGIN_INSTALL_DIR})

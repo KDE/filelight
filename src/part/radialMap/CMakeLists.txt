@@ -28,4 +28,5 @@ set(radialmap_STAT_SRCS
 
 kde4_add_library(radialmap STATIC ${radialmap_STAT_SRCS} )
 
+set_target_properties(radialmap PROPERTIES COMPILE_FLAGS -fPIC)
 

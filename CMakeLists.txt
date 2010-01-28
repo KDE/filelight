@@ -22,7 +22,7 @@ project(Filelight)
 
 find_package(KDE4 REQUIRED)
 
-add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS} -fPIC)
+add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 
 include(KDE4Defaults)
 
