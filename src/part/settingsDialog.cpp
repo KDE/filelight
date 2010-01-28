@@ -35,6 +35,7 @@
 #include <QSlider>
 #include <QVBoxLayout>
 #include <QCloseEvent>
+#include <QDir>
 
 SettingsDialog::SettingsDialog(QWidget *parent) : KDialog(parent)
 {
@@ -151,7 +152,7 @@ void SettingsDialog::toggleDontScanRemovableMedia(bool b)
 
 void SettingsDialog::addFolder()
 {
-    const KUrl url = KDirSelectDialog::selectDirectory(KUrl("/"), false, this, "Select Folder to Scan");
+    const KUrl url = KDirSelectDialog::selectDirectory(KUrl(QDir::rootPath()), false, this, "Select Folder to Scan");
 
     //TODO error handling!
     //TODO wrong protocol handling!

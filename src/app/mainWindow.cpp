@@ -189,10 +189,10 @@ inline void MainWindow::slotScanFolder()
 }
 
 inline void MainWindow::slotScanHomeFolder() {
-    slotScanPath(qgetenv("HOME"));
+    slotScanPath(QDir::homePath());
 }
 inline void MainWindow::slotScanRootFolder() {
-    slotScanPath("/");
+    slotScanPath(QDir::rootPath());
 }
 inline void MainWindow::slotUp()                {
     slotScanUrl(m_part->url().upUrl());
