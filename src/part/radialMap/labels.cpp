@@ -309,8 +309,6 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
 
     //5. Render labels
 
-    paint.setPen(QPen(Qt::black, 1));
-
     for (it = list.begin(); it != list.end(); ++it) {
         if (varySizes) {
             //**** how much overhead in making new QFont each time?
@@ -324,7 +322,6 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
         paint.drawLine((*it)->x1,  (*it)->y1, (*it)->x2, (*it)->y2);
         paint.drawLine((*it)->x2, (*it)->y2, (*it)->x3, (*it)->y2);
 
-        paint.setPen(QPen(Qt::black, 1));
         paint.drawText((*it)->tx, (*it)->ty, (*it)->qs);
     }
 
