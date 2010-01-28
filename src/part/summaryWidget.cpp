@@ -117,7 +117,7 @@ void SummaryWidget::createDiskMaps()
 
     KIconLoader loader;
 
-    for (DiskList::ConstIterator it = disks.begin(), end = disks.end(); it != end; ++it)
+    for (DiskList::ConstIterator it = disks.constBegin(), end = disks.constEnd(); it != end; ++it)
     {
         Disk const &disk = *it;
 
