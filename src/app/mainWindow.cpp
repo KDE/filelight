@@ -83,11 +83,12 @@ MainWindow::MainWindow() : KParts::MainWindow(), m_part(0)
 
         const KConfigGroup config = KGlobal::config()->group("general");
         m_combo->setHistoryItems(config.readPathEntry("comboHistory", QStringList()));
-        applyMainWindowSettings(config, "window");
     } else {
         KMessageBox::error(this, i18n("Unable to create part widget."));
         std::exit(1);
     }
+
+    setAutoSaveSettings("window");
 }
 
 inline void MainWindow::setupActions() //singleton function
@@ -159,7 +160,6 @@ bool MainWindow::queryExit()
 
     KConfigGroup config = KGlobal::config()->group("general");
 
-    saveMainWindowSettings(KGlobal::config()->group("window"));
     m_recentScans->saveEntries(config);
     config.writePathEntry("comboHistory", m_combo->historyItems());
     config.sync();
