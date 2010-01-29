@@ -26,10 +26,8 @@
 
 class KSqueezedTextLabel;
 class KHistoryComboBox;
-class KAction;
 class KRecentFilesAction;
 
-class ScanProgressBox;
 class HistoryCollection;
 
 
