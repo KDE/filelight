@@ -25,10 +25,6 @@
 #include <QLabel>
 #include <QTimer>
 
-namespace KIO {
-class Job;
-}
-
 
 class ProgressBox : public QLabel
 {
