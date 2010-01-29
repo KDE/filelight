@@ -318,7 +318,7 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
             paint.setFont(font);
         }
 
-        paint.drawEllipse((*it)->x1 - 3, (*it)->y1 - 3, 7, 7); //**** CPU intensive! better to use a pixmap
+        paint.drawEllipse((*it)->x1 - 3, (*it)->y1 - 3, 6, 6); //**** CPU intensive! better to use a pixmap
         paint.drawLine((*it)->x1,  (*it)->y1, (*it)->x2, (*it)->y2);
         paint.drawLine((*it)->x2, (*it)->y2, (*it)->x3, (*it)->y2);
 
