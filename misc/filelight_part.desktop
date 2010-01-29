@@ -1,25 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=Radial Map
-Name[bg]=Изглед с радиална карта
-Name[da]=Radialkort-visning
-Name[de]=Radialansicht
-Name[el]=Προβολή RadialMap
-Name[en_GB]=RadialMap View
-Name[es]=Vista del mapa radial
-Name[et]=Radiaalvaade
-Name[fr]=Vue RadialMap
-Name[ga]=Mapa Gathach
-Name[gl]=Vista en mapa radial
-Name[ja]=放射状マップ表示
-Name[km]=ទិដ្ឋភាព RadialMap
-Name[nds]=RadialMap View
-Name[pt]=Vista em Mapa Radial
-Name[pt_BR]=Visualização em mapa radial
-Name[sv]=Radiell avbildningsvy
-Name[tr]=RadialMap Görüntüleme
-Name[uk]=Перегляд RadialMap
-Name[x-test]=xxRadialMap Viewxx
 MimeType=inode/directory;
 ServiceTypes=KParts/ReadOnlyPart
 X-KDE-Library=filelightpart
