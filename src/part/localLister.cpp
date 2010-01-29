@@ -26,7 +26,6 @@
 #include "scan.h"
 
 #include <KDebug>
-#include <KMessageBox>
 
 #include <QApplication> //postEvent()
 #include <QFile>

@@ -24,7 +24,6 @@
 
 #include <KUrl>
 #include <QTimer>
-#include <QPixmap>
 #include <QResizeEvent>
 #include <QDragEnterEvent>
 #include <QDropEvent>

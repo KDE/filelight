@@ -20,7 +20,6 @@
 ***********************************************************************/
 
 #include <KCursor>         //make()
-#include <KLocale>
 #include <KDebug>
 #include <KGlobalSettings> //kdeColours
 #include <QPainter>

@@ -24,7 +24,6 @@
 #include <KGlobal>
 #include <KLocale>
 
-#include <QFile>
 
 
 //static definitions

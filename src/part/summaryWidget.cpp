@@ -27,7 +27,6 @@
 #include "radialMap/widget.h"
 #include "summaryWidget.moc"
 
-#include <KCursor>
 #include <KDebug>
 #include <KIconEffect> //MyRadialMap::mousePressEvent()
 #include <KIconLoader>
@@ -40,12 +39,11 @@
 #include <KDiskFreeSpaceInfo>
 
 #include <QLabel>
-#include <QLayout>
 #include <QApplication>
 #include <QByteArray>
 #include <QList>
 #include <QMouseEvent>
-#include <QTextOStream>
+#include <QLayout>
 
 struct Disk
 {

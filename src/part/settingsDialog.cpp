@@ -23,16 +23,13 @@
 #include "Config.h"
 
 #include <KDirSelectDialog>
-#include <KIconLoader>
 #include <KLocale>
 #include <KMessageBox>
-#include <KNumInput>
 
 #include <QApplication> //Getting desktop width
 #include <QCheckBox>
 #include <QPushButton>
 #include <QRadioButton>
-#include <QSlider>
 #include <QVBoxLayout>
 #include <QCloseEvent>
 #include <QDir>

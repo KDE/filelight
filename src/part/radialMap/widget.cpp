@@ -22,7 +22,6 @@
 #include "widget.h"
 
 #include <KCursor>        //ctor
-#include <KLocale>
 #include <KUrl>
 #include <QApplication>   //sendEvent
 #include <QBitmap>        //ctor - finding cursor size

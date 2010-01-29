@@ -28,7 +28,6 @@
 
 #include <KApplication>    //installing eventFilters
 #include <KGlobal>
-#include <KGlobalSettings>
 #include <KLocale>
 #include <KWindowSystem>
 

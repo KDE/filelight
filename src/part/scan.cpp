@@ -25,7 +25,6 @@
 #include "fileTree.h"
 #include "localLister.h"
 
-#include <KCursor>
 #include <KDebug>
 
 #include <QApplication>

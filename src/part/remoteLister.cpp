@@ -26,7 +26,6 @@
 #include <KDebug>
 #include <KDirLister>
 
-#include <QApplication>
 #include <QLinkedList>
 #include <QTimer>
 #include <QWidget>

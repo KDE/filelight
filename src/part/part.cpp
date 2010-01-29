@@ -35,16 +35,14 @@
 #include <KActionCollection>
 #include <KLocale>
 #include <KMessageBox>  //::start()
-#include <KParts/BrowserExtension>
-#include <KParts/GenericFactory>
-#include <KStatusBar>
 #include <KStandardAction>
+#include <KStatusBar>
+#include <KParts/GenericFactory>
+
 
 #include <QFile>        //encodeName()
 #include <QTimer>       //postInit() hack
-#include <Q3VBox>
 #include <QByteArray>
-#include <QPixmap>
 
 #include <unistd.h>       //access()
 #include <iostream>
