@@ -1,6 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=RadialMap View
+Name=Radial Map
 Name[bg]=Изглед с радиална карта
 Name[da]=Radialkort-visning
 Name[de]=Radialansicht
@@ -23,6 +23,5 @@ Name[x-test]=xxRadialMap Viewxx
 MimeType=inode/directory;
 ServiceTypes=KParts/ReadOnlyPart
 X-KDE-Library=filelightpart
-# X-KDE-PluginKeyword=filelightpart
 Type=Service
 Icon=view_filelight
