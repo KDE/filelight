@@ -1,11 +1,28 @@
 # KDE Config File
 [Desktop Entry]
 Name=Filelight
+Name[es]=Filelight
+Name[nb]=Filelight
+Name[nn]=Filelight
+Name[pt]=Filelight
+Name[pt_BR]=Filelight
+Name[uk]=Filelight
 GenericName=Disk Usage Statistics
+GenericName[es]=Estadísticas de uso de discos
+GenericName[nb]=Bruksstatistikk
+GenericName[pt]=Estatísticas de Utilização do Disco
+GenericName[pt_BR]=Estatísticas do uso do disco
+GenericName[uk]=Статистика використання диска
 Type=Application
 Exec=filelight %f
 Icon=filelight
 Comment=View disk usage information
+Comment[es]=Muestra información sobre el uso de discos
+Comment[nb]=Vis informasjon om diskbruk
+Comment[nn]=Viser informasjon om diskbruk
+Comment[pt]=Ver a informação da utilização do disco
+Comment[pt_BR]=Exibe as informações de utilização do disco
+Comment[uk]=Перегляд інформації про використання дисків
 Terminal=false
 MimeType=inode/directory;
 Categories=Qt;KDE;Utility;
