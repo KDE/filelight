@@ -1,6 +1,7 @@
 # KDE Config File
 [Desktop Entry]
 Name=Filelight
+Name[da]=Filelight
 Name[de]=Filelight
 Name[es]=Filelight
 Name[et]=Filelight
@@ -14,6 +15,7 @@ Name[sv]=Filelight
 Name[uk]=Filelight
 Name[x-test]=xxFilelightxx
 GenericName=Disk Usage Statistics
+GenericName[da]=Statistik over diskforbrug
 GenericName[de]=Statistiken über Festplattenbelegung
 GenericName[es]=Estadísticas de uso de discos
 GenericName[et]=Kettakasutuse statistika
@@ -29,6 +31,7 @@ Type=Application
 Exec=filelight %f
 Icon=filelight
 Comment=View disk usage information
+Comment[da]=Vis information om diskforbrug
 Comment[de]=Nutzungsinformationen zu Festplatten anzeigen
 Comment[es]=Muestra información sobre el uso de discos
 Comment[et]=Kettakasutuse teabe kuvamine
