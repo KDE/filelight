@@ -22,11 +22,11 @@
 #include "define.h"
 #include "mainWindow.h"
 
-#include <kaboutdata.h>
-#include <kapplication.h>
-#include <kcmdlineargs.h>
-#include <klocale.h>
-#include <kurl.h>
+#include <KAboutData>
+#include <KApplication>
+#include <KCmdLineArgs>
+#include <KLocale>
+#include <KUrl>
 
 static KAboutData about(
     APP_NAME,

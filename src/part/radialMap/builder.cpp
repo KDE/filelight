@@ -19,12 +19,13 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ***********************************************************************/
 
-#include "builder.h"
 #include "part/Config.h"
 #include "part/fileTree.h"
-#include <kglobal.h> //locale object
-#include <klocale.h>
 #include "widget.h"
+#include "builder.h"
+
+#include <KGlobal> //locale object
+#include <KLocale>
 
 
 //**** REMOVE NEED FOR the +1 with MAX_RING_DEPTH uses

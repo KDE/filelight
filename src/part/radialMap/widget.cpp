@@ -21,18 +21,19 @@
 
 #include "widget.h"
 
-#include <KCursor>        //ctor
-#include <KUrl>
-#include <QApplication>   //sendEvent
-#include <QBitmap>        //ctor - finding cursor size
-#include <QCursor>        //slotPostMouseEvent()
-#include <QTimer>         //member
-#include <QWidget>
-
 #include "part/Config.h"
 #include "part/fileTree.h"
 #include "radialMap.h" //constants
 #include "map.h"
+
+#include <KCursor>        //ctor
+#include <KUrl>
+
+#include <QtGui/QApplication>   //sendEvent
+#include <QtGui/QBitmap>        //ctor - finding cursor size
+#include <QtGui/QCursor>        //slotPostMouseEvent()
+#include <QtCore/QTimer>         //member
+#include <QtGui/QWidget>
 
 
 RadialMap::Widget::Widget(QWidget *parent, bool isSummary)

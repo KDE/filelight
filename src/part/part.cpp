@@ -39,10 +39,9 @@
 #include <KStatusBar>
 #include <KParts/GenericFactory>
 
-
-#include <QFile>        //encodeName()
-#include <QTimer>       //postInit() hack
-#include <QByteArray>
+#include <QtCore/QFile>        //encodeName()
+#include <QtCore/QTimer>       //postInit() hack
+#include <QtCore/QByteArray>
 
 #include <unistd.h>       //access()
 #include <iostream>

@@ -22,10 +22,9 @@
 #ifndef RADIALMAP_H
 #define RADIALMAP_H
 
-#include <qcolor.h>
+#include <QColor>
 
 class File;
-
 
 namespace RadialMap
 {

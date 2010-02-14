@@ -22,12 +22,11 @@
 #include "historyAction.h"
 
 #include <KAction>
-#include <KConfig>
-#include <KLocale>
 #include <KActionCollection>
-#include <KStandardShortcut>
+#include <KConfig>
 #include <KConfigGroup>
-
+#include <KLocale>
+#include <KStandardShortcut>
 
 inline HistoryAction::HistoryAction(const KIcon &icon, const QString &text, KActionCollection *ac)
         : KAction(icon, text, ac)

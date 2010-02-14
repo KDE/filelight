@@ -19,14 +19,15 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ***********************************************************************/
 
+#include <QtGui/QApplication>    //make()
+#include <QtGui/QImage>          //make() & paint()
+#include <QtGui/QFont>           //ctor
+#include <QtGui/QFontMetrics>    //ctor
+#include <QtGui/QPainter>
+
 #include <KCursor>         //make()
 #include <KDebug>
 #include <KGlobalSettings> //kdeColours
-#include <QPainter>
-#include <QApplication>    //make()
-#include <QImage>          //make() & paint()
-#include <QFont>           //ctor
-#include <QFontMetrics>    //ctor
 
 #include "builder.h"
 #include "part/Config.h"

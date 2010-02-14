@@ -27,7 +27,7 @@
 #include <KParts/Part>
 #include <KUrl>
 
-#include <QLabel>
+#include <QtGui/QLabel>
 
 class KAboutData;
 using KParts::StatusBarExtension;

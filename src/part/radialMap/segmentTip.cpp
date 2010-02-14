@@ -24,16 +24,15 @@
 #include "part/fileTree.h"
 #include "part/Config.h"
 
-#include <cstdlib>
-
 #include <KApplication>    //installing eventFilters
 #include <KGlobal>
 #include <KLocale>
 #include <KWindowSystem>
 
-#include <QPainter>
-#include <QEvent>
-#include <QToolTip>
+#include <QtGui/QPainter>
+#include <QtGui/QToolTip>
+
+#include <cstdlib>
 
 namespace RadialMap {
 

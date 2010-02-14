@@ -22,15 +22,12 @@
 #ifndef FILETREE_H
 #define FILETREE_H
 
-#include <QByteArray> //qstrdup
-#include <QFile>    //decodeName()
+#include <QtCore/QByteArray> //qstrdup
+#include <QtCore/QFile> //decodeName()
 
 #include <stdlib.h>
 
-
 //TODO these are pointlessly general purpose now, make them incredibly specific
-
-
 
 typedef unsigned long int FileSize;
 typedef unsigned long int Dirsize;  //**** currently unused

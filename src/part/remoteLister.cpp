@@ -26,9 +26,9 @@
 #include <KDebug>
 #include <KDirLister>
 
-#include <QLinkedList>
-#include <QTimer>
-#include <QWidget>
+#include <QtCore/QLinkedList>
+#include <QtCore/QTimer>
+#include <QtGui/QWidget>
 
 namespace Filelight
 {

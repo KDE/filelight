@@ -23,8 +23,8 @@
 #define HISTORYACTION_H
 
 #include <KAction>
-#include <KUrl>
 #include <QStringList>
+#include <KUrl>
 
 class KConfigGroup;
 class KActionCollection;

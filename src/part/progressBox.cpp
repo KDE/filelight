@@ -28,7 +28,7 @@
 #include <KIO/Job>
 #include <KLocale>
 
-#include <QLabel>
+#include <QtGui/QLabel>
 
 
 ProgressBox::ProgressBox(QWidget *parent, QObject *part)

@@ -19,7 +19,6 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ***********************************************************************/
 
-
 #include "Config.h"
 
 #include <KConfig>
@@ -27,7 +26,6 @@
 #include <KGlobal>
 #include <KSharedConfig>
 #include <KSharedPtr>
-
 
 bool Config::scanAcrossMounts;
 bool Config::scanRemoteMounts;

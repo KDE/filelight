@@ -22,8 +22,8 @@
 #ifndef LOCALLISTER_H
 #define LOCALLISTER_H
 
-#include <QThread>
-#include <QByteArray>
+#include <QtCore/QByteArray>
+#include <QtCore/QThread>
 
 class Folder;
 template<class T> class Chain;

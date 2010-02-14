@@ -22,9 +22,9 @@
 #ifndef SUMMARYWIDGET_H
 #define SUMMARYWIDGET_H
 
-#include <QWidget>
-
 #include <KUrl>
+
+#include <QtGui/QWidget>
 
 class SummaryWidget : public QWidget
 {

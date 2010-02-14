@@ -38,12 +38,12 @@
 
 #include <KDiskFreeSpaceInfo>
 
-#include <QLabel>
-#include <QApplication>
-#include <QByteArray>
-#include <QList>
-#include <QMouseEvent>
-#include <QLayout>
+#include <QtGui/QLabel>
+#include <QtGui/QApplication>
+#include <QtCore/QByteArray>
+#include <QtCore/QList>
+#include <QtGui/QMouseEvent>
+#include <QtGui/QLayout>
 
 struct Disk
 {

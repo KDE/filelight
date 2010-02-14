@@ -27,9 +27,9 @@
 
 #include <KDebug>
 
-#include <QApplication> //postEvent()
-#include <QFile>
-#include <QByteArray>
+#include <QtGui/QApplication> //postEvent()
+#include <QtCore/QFile>
+#include <QtCore/QByteArray>
 
 #include <kde_file.h>
 #include <dirent.h>

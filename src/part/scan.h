@@ -23,8 +23,8 @@
 #define SCAN_H
 
 #include <KUrl>
-#include <QObject>
-#include <QMutex>
+#include <QtCore/QObject>
+#include <QtCore/QMutex>
 
 class QThread;
 class Folder;

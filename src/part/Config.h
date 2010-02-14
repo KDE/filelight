@@ -22,10 +22,9 @@
 #ifndef Config_H
 #define Config_H
 
-#include <QStringList>
+#include <QtCore/QStringList>
 
 class KConfig;
-
 
 namespace Filelight
 {

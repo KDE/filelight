@@ -22,8 +22,8 @@
 #ifndef SEGMENTTIP_H
 #define SEGMENTTIP_H
 
-#include <QEvent>
-#include <QWidget>
+#include <QtCore/QEvent>
+#include <QtGui/QWidget>
 
 class File;
 class Folder;

@@ -24,11 +24,11 @@
 
 #include "part/fileTree.h"
 
-#include <QPixmap>
-#include <QRect>
-#include <QString>
-
 #include <KColorScheme>
+
+#include <QtGui/QPixmap>
+#include <QtCore/QRect>
+#include <QtCore/QString>
 
 namespace RadialMap {
 class Segment;

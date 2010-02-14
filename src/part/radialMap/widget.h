@@ -22,15 +22,15 @@
 #ifndef WIDGET_H
 #define WIDGET_H
 
-#include <KUrl>
-#include <QTimer>
-#include <QResizeEvent>
-#include <QDragEnterEvent>
-#include <QDropEvent>
-#include <QMouseEvent>
-#include <QPaintEvent>
-
 #include <KJob>
+#include <KUrl>
+
+#include <QtGui/QDragEnterEvent>
+#include <QtGui/QDropEvent>
+#include <QtGui/QMouseEvent>
+#include <QtGui/QPaintEvent>
+#include <QtGui/QResizeEvent>
+#include <QtCore/QTimer>
 
 #include "segmentTip.h"
 #include "map.h"

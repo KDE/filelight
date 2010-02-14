@@ -24,13 +24,11 @@
 #include "radialMap.h"   //class Segment
 #include "widget.h"
 
-#include <cmath>         //::segmentAt()
-
 #include <KCursor>     //::mouseMoveEvent()
 #include <KDebug>
 #include <KIconLoader> //::mousePressEvent()
-#include <KIO/Job>     //::mousePressEvent()
 #include <KJob>
+#include <KIO/Job>     //::mousePressEvent()
 #include <KIO/DeleteJob>
 #include <KIO/JobUiDelegate>
 #include <KLocale>
@@ -39,15 +37,17 @@
 #include <KRun>        //::mousePressEvent()
 #include <KUrl>
 
-#include <QApplication> //QApplication::setOverrideCursor()
-#include <QClipboard>
-#include <QPainter>
-#include <QTimer>      //::resizeEvent()
-#include <QDropEvent>
-#include <QPaintEvent>
-#include <QResizeEvent>
-#include <QMouseEvent>
-#include <QDragEnterEvent>
+#include <QtGui/QApplication> //QApplication::setOverrideCursor()
+#include <QtGui/QClipboard>
+#include <QtGui/QPainter>
+#include <QtCore/QTimer>      //::resizeEvent()
+#include <QtGui/QDropEvent>
+#include <QtGui/QPaintEvent>
+#include <QtGui/QResizeEvent>
+#include <QtGui/QMouseEvent>
+#include <QtGui/QDragEnterEvent>
+
+#include <cmath>         //::segmentAt()
 
 void RadialMap::Widget::resizeEvent(QResizeEvent*)
 {

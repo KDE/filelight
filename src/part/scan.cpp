@@ -27,7 +27,7 @@
 
 #include <KDebug>
 
-#include <QApplication>
+#include <QtGui/QApplication>
 
 namespace Filelight
 {

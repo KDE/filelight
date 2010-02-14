@@ -22,8 +22,8 @@
 #ifndef PROGRESSBOX_H
 #define PROGRESSBOX_H
 
-#include <QLabel>
-#include <QTimer>
+#include <QtGui/QLabel>
+#include <QtCore/QTimer>
 
 
 class ProgressBox : public QLabel

@@ -26,13 +26,13 @@
 #include <KLocale>
 #include <KMessageBox>
 
-#include <QApplication> //Getting desktop width
-#include <QCheckBox>
-#include <QPushButton>
-#include <QRadioButton>
-#include <QVBoxLayout>
-#include <QCloseEvent>
-#include <QDir>
+#include <QtGui/QApplication> //Getting desktop width
+#include <QtGui/QCheckBox>
+#include <QtGui/QPushButton>
+#include <QtGui/QRadioButton>
+#include <QtGui/QVBoxLayout>
+#include <QtGui/QCloseEvent>
+#include <QtCore/QDir>
 
 SettingsDialog::SettingsDialog(QWidget *parent) : KDialog(parent)
 {
