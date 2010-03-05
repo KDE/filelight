@@ -1,20 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=Radial Map
-Name[da]=Radialkort
-Name[de]=Kreisförmige Darstellung
-Name[en_GB]=Radial Map
-Name[es]=Mapa radial
-Name[et]=Radiaalkaart
-Name[fr]=Carte radiale
-Name[gl]=Mapa radial
-Name[nl]=Radiale grafiek
-Name[pt]=Mapa Radial
-Name[pt_BR]=Mapa radial
-Name[sk]=Radiálna mapa
-Name[sv]=Radiell avbildning
-Name[uk]=Радіальна карта
-Name[x-test]=xxRadial Mapxx
 MimeType=inode/directory;
 ServiceTypes=KParts/ReadOnlyPart
 X-KDE-Library=filelightpart
