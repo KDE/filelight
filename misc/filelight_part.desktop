@@ -1,6 +1,8 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=Radial Map
+Name[pt]=Mapa Radial
+Name[uk]=Радіальна карта
 MimeType=inode/directory;
 ServiceTypes=KParts/ReadOnlyPart
 X-KDE-Library=filelightpart
