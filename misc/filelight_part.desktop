@@ -1,7 +1,10 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=Radial Map
+Name[nb]=Radiell
+Name[nn]=Ut frå midtpunkt
 Name[pt]=Mapa Radial
+Name[sv]=Radiell avbildning
 Name[uk]=Радіальна карта
 MimeType=inode/directory;
 ServiceTypes=KParts/ReadOnlyPart
