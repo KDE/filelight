@@ -46,8 +46,8 @@ public:
     bool start(const KUrl&);
     bool running() const;
 
-    static uint files() {
-        return s_files;
+    uint files() const {
+        return m_files;
     }
 
 public slots:
@@ -61,8 +61,8 @@ signals:
     void branchCompleted(Folder* tree, bool finished);
 
 private:
-    static bool s_abort;
-    static uint s_files;
+    bool m_abort;
+    uint m_files;
 
     KUrl m_url;
     QMutex m_mutex;

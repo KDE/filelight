@@ -28,11 +28,13 @@
 
 namespace Filelight
 {
+class ScanManager;
+
 class RemoteLister : public KDirLister
 {
     Q_OBJECT
 public:
-    RemoteLister(const KUrl &url, QWidget *parent);
+    RemoteLister(const KUrl &url, QWidget *parent, ScanManager* manager);
     ~RemoteLister();
 
 signals:
@@ -45,6 +47,7 @@ private slots:
 
 private:
     class Store *m_root, *m_store;
+    ScanManager* m_manager;
 };
 }
 

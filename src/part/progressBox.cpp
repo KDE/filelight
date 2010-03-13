@@ -31,8 +31,9 @@
 #include <QtGui/QLabel>
 
 
-ProgressBox::ProgressBox(QWidget *parent, QObject *part)
+ProgressBox::ProgressBox(QWidget *parent, QObject *part, Filelight::ScanManager *m) 
         : QLabel(parent)
+        , m_manager(m)
 {
     hide();
 
@@ -62,7 +63,7 @@ ProgressBox::start() //slot
 void
 ProgressBox::report() //slot
 {
-    setText(Filelight::ScanManager::files());
+    setText(m_manager->files());
 }
 
 void

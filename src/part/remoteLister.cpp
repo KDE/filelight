@@ -81,10 +81,11 @@ private:
 };
 
 
-RemoteLister::RemoteLister(const KUrl &url, QWidget *parent)
+RemoteLister::RemoteLister(const KUrl &url, QWidget *parent, ScanManager* manager)
         : KDirLister(parent)
         , m_root(new Store(url, url.url(), 0))
         , m_store(m_root)
+        , m_manager(manager)
 {
     setAutoUpdate(false); // Don't use KDirWatchers
     setShowingDotFiles(true); // Stupid KDirLister API function names
@@ -135,7 +136,7 @@ RemoteLister::_completed()
         else
             m_store->folder->append(it->name().toUtf8(), it->size() / 1024);
 
-        ScanManager::s_files++;
+        m_manager->m_files++;
     }
 
 

@@ -25,13 +25,16 @@
 #include <QtGui/QLabel>
 #include <QtCore/QTimer>
 
+namespace Filelight {
+class ScanManager;
+}
 
 class ProgressBox : public QLabel
 {
     Q_OBJECT
 
 public:
-    ProgressBox(QWidget*, QObject*);
+    ProgressBox(QWidget*, QObject*, Filelight::ScanManager*);
 
     void setText(int);
 
@@ -43,6 +46,7 @@ public slots:
 
 private:
     QTimer m_timer;
+    Filelight::ScanManager* m_manager;
 };
 
 #endif

@@ -80,7 +80,7 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
     m_map = new RadialMap::Widget(widget());
     m_layout->addWidget(m_map);
 
-    m_stateWidget = new ProgressBox(statusBar(), this);
+    m_stateWidget = new ProgressBox(statusBar(), this, m_manager);
     m_layout->addWidget(m_stateWidget);
     m_stateWidget->hide();
 

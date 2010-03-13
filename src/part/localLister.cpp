@@ -47,7 +47,7 @@ namespace Filelight
 QStringList LocalLister::s_remoteMounts;
 QStringList LocalLister::s_localMounts;
 
-LocalLister::LocalLister(const QString &path, Chain<Folder> *cachedTrees, QObject *parent)
+LocalLister::LocalLister(const QString &path, Chain<Folder> *cachedTrees, ScanManager *parent)
         : QThread()
         , m_path(path)
         , m_trees(cachedTrees)
@@ -77,7 +77,7 @@ LocalLister::run()
     //in a sucessful scan the contents would now be transferred to 'tree'
     delete m_trees;
 
-    if (ScanManager::s_abort) //scan was cancelled
+    if (m_parent->m_abort) //scan was cancelled
     {
         kDebug() << "Scan successfully aborted";
         delete tree;
@@ -148,7 +148,7 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
     dirent *ent;
     while ((ent = KDE_readdir(dir)))
     {
-        if (ScanManager::s_abort)
+        if (m_parent->m_abort)
             return cwd;
 
         if (qstrcmp(ent->d_name, ".") == 0 || qstrcmp(ent->d_name, "..") == 0)
@@ -191,7 +191,7 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
                 {
                     kDebug() << "Tree pre-completed: " << (*it)->name();
                     d = it.remove();
-                    ScanManager::s_files += d->children();
+                    m_parent->m_files += d->children();
                     //**** ideally don't have this redundant extra somehow
                     cwd->append(d, new_dirname);
                 }
@@ -202,7 +202,7 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
                     cwd->append(d);
         }
 
-        ++ScanManager::s_files;
+        ++m_parent->m_files;
     }
 
     closedir(dir);

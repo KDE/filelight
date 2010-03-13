@@ -30,12 +30,14 @@ template<class T> class Chain;
 
 namespace Filelight
 {
+class ScanManager;
+
 class LocalLister : public QThread
 {
     Q_OBJECT
 
 public:
-    LocalLister(const QString &path, Chain<Folder> *cachedTrees, QObject *parent);
+    LocalLister(const QString &path, Chain<Folder> *cachedTrees, ScanManager *parent);
 
     static bool readMounts();
 
@@ -45,7 +47,7 @@ signals:
 private:
     QString m_path;
     Chain<Folder> *m_trees;
-    QObject *m_parent;
+    ScanManager *m_parent;
 
 private:
     virtual void run();

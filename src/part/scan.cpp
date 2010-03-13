@@ -31,11 +31,11 @@
 
 namespace Filelight
 {
-bool ScanManager::s_abort = false;
-uint ScanManager::s_files = 0;
 
 ScanManager::ScanManager(QObject *parent)
         : QObject(parent)
+        , m_abort(false)
+        , m_files(0)
         , m_mutex()
         , m_thread(0)
         , m_cache(new Chain<Folder>)
@@ -48,7 +48,7 @@ ScanManager::~ScanManager()
 {
     if (m_thread) {
         kDebug() << "Attempting to abort scan operation..." << endl;
-        s_abort = true;
+        m_abort = true;
         m_thread->wait();
     }
 
@@ -78,8 +78,8 @@ bool ScanManager::start(const KUrl &url)
         return false;
     }
 
-    s_files = 0;
-    s_abort = false;
+    m_files = 0;
+    m_abort = false;
 
     if (url.protocol() == "file")
     {
@@ -166,7 +166,7 @@ bool ScanManager::start(const KUrl &url)
     m_url = url;
     QApplication::setOverrideCursor(Qt::BusyCursor);
     //will start listing straight away
-    Filelight::RemoteLister *remoteLister = new Filelight::RemoteLister(url, (QWidget*)parent());
+    Filelight::RemoteLister *remoteLister = new Filelight::RemoteLister(url, (QWidget*)parent(), this);
     connect(remoteLister, SIGNAL(branchCompleted(Folder*, bool)), this, SLOT(cacheTree(Folder*, bool)), Qt::QueuedConnection);
     remoteLister->setParent(this);
     remoteLister->setObjectName("remote_lister");
@@ -177,7 +177,7 @@ bool ScanManager::start(const KUrl &url)
 bool
 ScanManager::abort()
 {
-    s_abort = true;
+    m_abort = true;
 
     delete findChild<RemoteLister *>("remote_lister");
 
@@ -187,7 +187,7 @@ ScanManager::abort()
 void
 ScanManager::emptyCache()
 {
-    s_abort = true;
+    m_abort = true;
 
     if (m_thread && m_thread->isRunning())
         m_thread->wait();
