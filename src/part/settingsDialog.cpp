@@ -104,7 +104,7 @@ void SettingsDialog::reset()
     m_listBox->addItems(Config::skipList);
     m_listBox->setCurrentRow(0);
 
-    m_removeButton->setEnabled(m_listBox->count() == 0);
+    m_removeButton->setEnabled(m_listBox->count() > 0);
 
     //tab 2
     if (colourSchemeGroup->selected() != Config::scheme) //TODO: This is probably wrong
@@ -162,6 +162,7 @@ void SettingsDialog::addFolder()
         {
             Config::skipList.append(path);
             m_listBox->addItem(path);
+            if (m_listBox->currentItem() == 0) m_listBox->setCurrentRow(0);
             m_removeButton->setEnabled(true);
         }
         else KMessageBox::sorry(this, i18n("That folder is already set to be excluded from scans"));
@@ -177,7 +178,8 @@ void SettingsDialog::removeFolder()
     m_listBox->clear();
     m_listBox->addItems(Config::skipList);
 
-    m_removeButton->setEnabled(m_listBox->count() == 0);
+    m_removeButton->setEnabled(m_listBox->count() > 0);
+    if (m_listBox->count() > 0) m_listBox->setCurrentRow(0);
 }
 
 
