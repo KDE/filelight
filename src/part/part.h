@@ -58,7 +58,7 @@ public:
     virtual bool openFile() {
         return false;    //pure virtual in base class
     }
-    virtual bool closeURL();
+    virtual bool closeUrl();
 
     QString prettyUrl() const {
         return url().protocol() == "file" ? url().path() : url().prettyUrl();
@@ -80,6 +80,7 @@ private:
     KStatusBar *statusBar() {
         return m_statusbar->statusBar();
     }
+    void showSummary();
 
     QLayout            *m_layout;
     QWidget            *m_summary;

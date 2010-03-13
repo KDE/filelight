@@ -110,12 +110,8 @@ Part::postInit()
 {
     if (url().isEmpty()) //if url is not empty openUrl() has been called immediately after ctor, which happens
     {
-        m_summary = new SummaryWidget(widget());
-        m_summary->setObjectName("summaryWidget");
-        connect(m_summary, SIGNAL(activated(const KUrl&)), SLOT(openUrl(const KUrl&)));
         m_map->hide();
-        m_summary->show();
-        m_layout->addWidget(m_summary);
+        showSummary();
 
         //FIXME KXMLGUI is b0rked, it should allow us to set this
         //BEFORE createGUI is called but it doesn't
@@ -175,7 +171,7 @@ Part::openUrl(const KUrl &u)
 }
 
 bool
-Part::closeURL()
+Part::closeUrl()
 {
     if (m_manager->abort())
         statusBar()->showMessage(i18n("Aborting Scan..."));
@@ -183,7 +179,7 @@ Part::closeURL()
     m_map->hide();
     m_stateWidget->hide();
 
-    m_summary->show();
+    showSummary();
 
     setUrl(KUrl());
 
@@ -304,6 +300,19 @@ Part::mapChanged(const Folder *tree)
 
     m_numberOfFiles->setText(QString::number(tree->children()) + " files");
 
+}
+
+void
+Part::showSummary()
+{
+    if (m_summary == 0) {
+        m_summary = new SummaryWidget(widget());
+        m_summary->setObjectName("summaryWidget");
+        connect(m_summary, SIGNAL(activated(const KUrl&)), SLOT(openUrl(const KUrl&)));
+        m_summary->show();
+        m_layout->addWidget(m_summary);
+    } 
+    else m_summary->show();
 }
 
 } //namespace Filelight

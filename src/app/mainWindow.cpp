@@ -233,7 +233,7 @@ bool MainWindow::slotScanUrl(const KUrl &url)
 
 inline void MainWindow::slotAbortScan()
 {
-    if (m_part->closeURL()) action("scan_stop")->setEnabled(false);
+    if (m_part->closeUrl()) action("scan_stop")->setEnabled(false);
 }
 
 inline void MainWindow::scanStarted()
