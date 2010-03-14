@@ -35,6 +35,7 @@
 #include <KMessageBox> //::mousePressEvent()
 #include <KMenu>  //::mousePressEvent()
 #include <KRun>        //::mousePressEvent()
+#include <KToolInvocation>
 #include <KUrl>
 
 #include <QtGui/QApplication> //QApplication::setOverrideCursor()
@@ -174,8 +175,8 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
         const bool isDir = m_focus->file()->isFolder();
 
         // Actions in the right click menu
-        QAction* openKonqueror = 0;
-        QAction* openKonsole = 0;
+        QAction* openFileManager = 0;
+        QAction* openTerminal = 0;
         QAction* centerMap = 0;
         QAction* openFile = 0;
         QAction* copyClipboard = 0;
@@ -187,10 +188,10 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
             popup.addTitle(m_focus->file()->fullPath(m_tree));
 
             if (isDir) {
-                openKonqueror = popup.addAction(KIcon("konqueror"), i18n("Open &Konqueror Here"));
+                openFileManager = popup.addAction(KIcon("system-file-manager"), i18n("Open &File Manager Here"));
 
                 if (url.protocol() == "file")
-                    openKonsole = popup.addAction(KIcon("utilities-terminal"), i18n("Open &Konsole Here"));
+                    openTerminal = popup.addAction(KIcon("utilities-terminal"), i18n("Open &Terminal Here"));
 
                 if (m_focus->file() != m_tree) {
                     popup.addSeparator();
@@ -208,10 +209,10 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
 
             QAction* clicked = popup.exec(e->globalPos(), 0);
 
-            if (openKonqueror && clicked == openKonqueror) {
-                KRun::runCommand(QString("kfmclient openURL \"%1\"").arg(url.url()), this);
-            } else if (openKonsole && clicked == openKonsole) {
-                KRun::runCommand(QString("konsole --workdir \"%1\"").arg(url.path()), this);
+            if (openFileManager && clicked == openFileManager) {
+                KRun::runUrl(url.url(),"inode/directory", this);
+            } else if (openTerminal && clicked == openTerminal) {
+                KToolInvocation::self()->invokeTerminal(QString(),url.path());
             } else if (centerMap && clicked == centerMap) {
                 goto section_two;
             } else if (openFile && clicked == openFile) {
