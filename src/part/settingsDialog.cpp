@@ -156,7 +156,7 @@ void SettingsDialog::addFolder()
 
     if (!url.isEmpty())
     {
-        const QString path = url.path(KUrl::RemoveTrailingSlash);
+        const QString path = url.path(KUrl::AddTrailingSlash);
 
         if (!Config::skipList.contains(path))
         {
