@@ -62,7 +62,6 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
         , m_ext(new BrowserExtension(this))
         , m_statusbar(new StatusBarExtension(this))
         , m_map(0)
-        , m_manager(new ScanManager(this))
         , m_started(false)
 {
     Config::read();
@@ -76,6 +75,8 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
 
     m_layout = new QGridLayout(widget());
     widget()->setLayout(m_layout);
+    
+    m_manager = new ScanManager(widget());
 
     m_map = new RadialMap::Widget(widget());
     m_layout->addWidget(m_map);
