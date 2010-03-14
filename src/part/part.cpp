@@ -182,9 +182,7 @@ Part::closeUrl()
 
     showSummary();
 
-    setUrl(KUrl());
-
-    return true;
+    return ReadOnlyPart::closeUrl();
 }
 
 void
