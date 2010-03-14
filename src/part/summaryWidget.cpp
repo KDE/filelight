@@ -83,11 +83,11 @@ public:
         const RadialMap::Segment *segment = focusSegment();
 
         //we will allow right clicks to the center circle
-        if (segment == rootSegment())
+        if (segment == rootSegment() && e->button() == Qt::RightButton)
             RadialMap::Widget::mousePressEvent(e);
 
         //and clicks to the used segment
-        else if (segment && segment->file()->name() == "Used") {
+        else if (e->button() == Qt::LeftButton ) {
             const QRect rect(e->x() - 20, e->y() - 20, 40, 40);
 //            KIconEffect::visualActivate(this, rect); TODO: Re-enable
             emit activated(url());
