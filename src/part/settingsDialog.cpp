@@ -65,6 +65,12 @@ SettingsDialog::SettingsDialog(QWidget *parent) : KDialog(parent)
     connect(scanAcrossMounts,       SIGNAL(toggled(bool)), SLOT(startTimer()));
     connect(dontScanRemoteMounts,   SIGNAL(toggled(bool)), SLOT(startTimer()));
     connect(dontScanRemovableMedia, SIGNAL(toggled(bool)), SLOT(startTimer()));
+    connect(scanAcrossMounts,       SIGNAL(toggled(bool)),
+            SLOT(toggleScanAcrossMounts(bool)));
+    connect(dontScanRemoteMounts,   SIGNAL(toggled(bool)),
+            SLOT(toggleDontScanRemoteMounts(bool)));
+    connect(dontScanRemovableMedia, SIGNAL(toggled(bool)),
+            SLOT(toggleDontScanRemovableMedia(bool)));
 
     connect(useAntialiasing,    SIGNAL(toggled(bool)), SLOT(toggleUseAntialiasing(bool)));
     connect(varyLabelFontSizes, SIGNAL(toggled(bool)), SLOT(toggleVaryLabelFontSizes(bool)));
