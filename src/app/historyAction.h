@@ -42,7 +42,7 @@ class HistoryAction : KAction
 
 public:
     virtual void setEnabled(bool b = true) {
-        KAction::setEnabled(b ? !m_list.isEmpty() : false);
+        KAction::setEnabled(b && !m_list.isEmpty());
     }
 
     void clear() {
