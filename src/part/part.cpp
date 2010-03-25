@@ -237,7 +237,7 @@ Part::start(const KUrl &url)
         m_started = true;
     }
 
-    m_numberOfFiles->setText("");
+    m_numberOfFiles->setText(QString());
 
     if (m_manager->start(url)) {
         setUrl(url);
@@ -297,8 +297,12 @@ Part::mapChanged(const Folder *tree)
 
     emit setWindowCaption(prettyUrl());
 
-    m_numberOfFiles->setText(QString::number(tree->children()) + " files");
+    const int fileCount = tree->children();
+    const QString text = ( fileCount == 0 ) ?
+        i18n("No files.") :
+        i18np("1 file", "%1 files",fileCount);
 
+    m_numberOfFiles->setText(text);
 }
 
 void
