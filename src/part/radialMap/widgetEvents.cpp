@@ -212,7 +212,7 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
             if (openFileManager && clicked == openFileManager) {
                 KRun::runUrl(url.url(),"inode/directory", this);
             } else if (openTerminal && clicked == openTerminal) {
-                KToolInvocation::self()->invokeTerminal(QString(),url.path());
+                KToolInvocation::invokeTerminal(QString(),url.path());
             } else if (centerMap && clicked == centerMap) {
                 goto section_two;
             } else if (openFile && clicked == openFile) {
