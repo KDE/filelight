@@ -26,11 +26,7 @@
 #include <KLocale>
 #include <KMessageBox>
 
-#include <QtGui/QApplication> //Getting desktop width
-#include <QtGui/QCheckBox>
-#include <QtGui/QPushButton>
 #include <QtGui/QRadioButton>
-#include <QtGui/QVBoxLayout>
 #include <QtGui/QCloseEvent>
 #include <QtCore/QDir>
 
