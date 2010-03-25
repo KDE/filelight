@@ -289,19 +289,6 @@
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="varyLabelFontSizes">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="whatsThis">
-          <string>The font size of exploded labels can be varied relative to the depth of the directories they represent. This helps you spot the important labels more easily. Set a sensible minimum font size.</string>
-         </property>
-         <property name="text">
-          <string>Var&amp;y label font sizes</string>
-         </property>
-        </widget>
-       </item>
-       <item>
         <widget class="QCheckBox" name="useAntialiasing">
          <property name="whatsThis">
           <string>Anti-aliasing the filemap makes it clearer and prettier, unfortunately it also makes rendering very slow.</string>
@@ -318,6 +305,19 @@
          </property>
          <property name="text">
           <string>Show small files</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="varyLabelFontSizes">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="whatsThis">
+          <string>The font size of exploded labels can be varied relative to the depth of the directories they represent. This helps you spot the important labels more easily. Set a sensible minimum font size.</string>
+         </property>
+         <property name="text">
+          <string>Var&amp;y label font sizes</string>
          </property>
         </widget>
        </item>
