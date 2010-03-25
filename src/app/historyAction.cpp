@@ -67,8 +67,8 @@ HistoryCollection::HistoryCollection(KActionCollection *ac, QObject *parent)
 {
     ac->addAction("go_back", m_b);
     ac->addAction("go_forward", m_f);
-    connect(m_b, SIGNAL(activated()), SLOT(pop()));
-    connect(m_f, SIGNAL(activated()), SLOT(pop()));
+    connect(m_b, SIGNAL(triggered(bool)), SLOT(pop()));
+    connect(m_f, SIGNAL(triggered(bool)), SLOT(pop()));
 }
 
 void HistoryCollection::push(const KUrl &url) //slot
