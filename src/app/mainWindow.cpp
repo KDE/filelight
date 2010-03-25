@@ -55,7 +55,7 @@ namespace Filelight {
 
 MainWindow::MainWindow() : KParts::MainWindow(), m_part(0)
 {
-    setXMLFile("filelightui.rc");
+//     setXMLFile("filelightui.rc");
     KPluginFactory *factory = KPluginLoader("filelightpart").factory();
 
     if (!factory) {

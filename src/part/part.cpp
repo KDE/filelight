@@ -49,7 +49,20 @@
 namespace Filelight {
 
 K_PLUGIN_FACTORY(filelightPartFactory, registerPlugin<Part>();)  // produce a factory
-K_EXPORT_PLUGIN(filelightPartFactory("filelightpart"))
+K_EXPORT_PLUGIN(filelightPartFactory(KAboutData(
+               "filelightpart",
+               0,
+               ki18n("Filelight"),
+               APP_VERSION,
+               ki18n("Displays file usage in an easy to understand way."),
+               KAboutData::License_GPL,
+               ki18n("(c) 2002-2004 Max Howell\n\
+                (c) 2008-2009 Martin T. Sandsmark"),
+               KLocalizedString(),
+               "http://iskrembilen.com/",
+               "sandsmark@iskrembilen.com").
+               setProgramIconName("filelight").
+               setCatalogName("filelight")))
 
 BrowserExtension::BrowserExtension(Part *parent)
         : KParts::BrowserExtension(parent)
@@ -65,9 +78,8 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
         , m_started(false)
 {
     Config::read();
-    KGlobal::locale()->insertCatalog("filelight");
     setComponentData(filelightPartFactory::componentData());
-    setXMLFile("filelight_partui.rc");
+    setXMLFile("filelightpartui.rc");
 
     setWidget(new QWidget(parentWidget));
     widget()->setBackgroundRole(QPalette::Base);
@@ -75,7 +87,7 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
 
     m_layout = new QGridLayout(widget());
     widget()->setLayout(m_layout);
-    
+
     m_manager = new ScanManager(widget());
 
     m_map = new RadialMap::Widget(widget());
@@ -209,23 +221,6 @@ Part::configFilelight()
     connect(dialog, SIGNAL(mapIsInvalid()), m_manager, SLOT(emptyCache()));
 
     dialog->show(); //deletes itself
-}
-
-KAboutData*
-Part::createAboutData()
-{
-    return new KAboutData(
-               "filelight",
-               0,
-               ki18n("Filelight"),
-               APP_VERSION,
-               ki18n("Displays file usage in an easy to understand way."),
-               KAboutData::License_GPL,
-               ki18n("(c) 2002-2004 Max Howell\n\
-			    (c) 2008-2009 Martin T. Sandsmark"),
-               KLocalizedString(),
-               "http://iskrembilen.com/",
-               "sandsmark@iskrembilen.com");
 }
 
 bool

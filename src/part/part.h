@@ -64,8 +64,6 @@ public:
         return url().protocol() == "file" ? url().path() : url().prettyUrl();
     }
 
-    static KAboutData *createAboutData();
-
 public slots:
     virtual bool openUrl(const KUrl&);
     void configFilelight();

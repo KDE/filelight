@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui>
-<kpartgui name="filelight_part" version="2">
+<kpartgui name="filelightpart" version="2">
 <MenuBar>
   <Menu name="view">
     <Action name="view_zoom_in" group="view_merge_group"/>
