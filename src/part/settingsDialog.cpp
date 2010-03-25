@@ -74,8 +74,8 @@ SettingsDialog::SettingsDialog(QWidget *parent) : KDialog(parent)
 
     connect(minFontPitch, SIGNAL (valueChanged(int)), SLOT(changeMinFontPitch(int)));
 
-    m_addButton->setIcon(SmallIcon("folder-open"));
-    m_removeButton->setIcon(SmallIcon("list-remove"));
+    m_addButton->setIcon(KIcon("folder-open"));
+    m_removeButton->setIcon(KIcon("list-remove"));
 }
 
 
