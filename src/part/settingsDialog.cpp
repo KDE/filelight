@@ -120,6 +120,7 @@ void SettingsDialog::reset()
     useAntialiasing->setChecked(Config::antialias);
 
     varyLabelFontSizes->setChecked(Config::varyLabelFontSizes);
+    minFontPitchLabel->setEnabled(Config::varyLabelFontSizes);
     minFontPitch->setEnabled(Config::varyLabelFontSizes);
     minFontPitch->setValue(Config::minFontPitch);
     showSmallFiles->setChecked(Config::showSmallFiles);
@@ -207,6 +208,7 @@ void SettingsDialog::toggleUseAntialiasing(bool b)
 void SettingsDialog::toggleVaryLabelFontSizes(bool b)
 {
     Config::varyLabelFontSizes = b;
+    minFontPitchLabel->setEnabled(b);
     minFontPitch->setEnabled(b);
     emit canvasIsDirty(0);
 }
