@@ -66,10 +66,6 @@ void RadialMap::Map::invalidate()
 
 void RadialMap::Map::make(const Folder *tree, bool refresh)
 {
-    //**** determineText seems like pointless optimization
-    //   but is it good to keep the text consistent?
-    //   even if it makes it a lie?
-
     //slow operation so set the wait cursor
     QApplication::setOverrideCursor(Qt::WaitCursor);
 
@@ -82,19 +78,18 @@ void RadialMap::Map::make(const Folder *tree, bool refresh)
     //colour the segments
     colorise();
 
-    //paint the pixmap
-    paint();
-
-    //determine centerText
-    if (!refresh)
-    {
+    if (!refresh) {
+        //determine centerText
         int i;
         for (i = 2; i > 0; --i)
             if (tree->size() > File::DENOMINATOR[i])
                 break;
-
+    
         m_centerText = tree->humanReadableSize((File::UnitPrefix)i);
     }
+    
+    //paint the pixmap
+    paint();
 
     QApplication::restoreOverrideCursor();
 }
