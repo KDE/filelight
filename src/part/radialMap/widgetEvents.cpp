@@ -164,6 +164,15 @@ void RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
     }
 }
 
+void RadialMap::Widget::enterEvent(QEvent *e)
+{
+    if (!m_focus) return;
+
+    setCursor(Qt::PointingHandCursor);
+    emit mouseHover(m_focus->file()->fullPath());
+    update();
+}
+
 void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
 {
     //m_tip is hidden already by event filter

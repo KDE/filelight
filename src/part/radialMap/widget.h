@@ -98,6 +98,7 @@ protected:
     virtual void mousePressEvent(QMouseEvent*);
     virtual void paintEvent(QPaintEvent*);
     virtual void resizeEvent(QResizeEvent*);
+    virtual void enterEvent(QEvent*);
 
 protected:
     const Segment *segmentAt(QPoint&) const; //FIXME const reference for a library others can use

@@ -128,12 +128,12 @@ SegmentTip::eventFilter(QObject*, QEvent *e)
     switch (e->type())
     {
     case QEvent::Leave:
-    case QEvent::KeyPress:
-    case QEvent::KeyRelease:
-    case QEvent::FocusIn:
     case QEvent::FocusOut:
     case QEvent::Wheel:
         hide(); //FALL THROUGH
+    case QEvent::FocusIn:
+    case QEvent::KeyPress:
+    case QEvent::KeyRelease:
     default:
         return false; //allow this event to passed to target
     }
