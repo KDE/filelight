@@ -260,6 +260,13 @@ Part::start(const KUrl &url)
 void
 Part::rescan()
 {
+    if (m_summary && !m_summary->isHidden()) {
+        delete m_summary;
+        m_summary = 0;
+        showSummary();
+        return;
+    }
+
     //FIXME we have to empty the cache because otherwise rescan picks up the old tree..
     m_manager->emptyCache(); //causes canvas to invalidate
     m_map->hide();

@@ -79,6 +79,7 @@
     <Action name="scan_home"/>
     <Action name="scan_root"/>
     <Action name="scan_recent"/>
+    <Action name="scan_rescan"/>
     <Action name="clear_location"/>
     <Action name="location_bar"/>
     <Action name="go"/>
@@ -86,7 +87,6 @@
   </enable>
   <disable>
     <Action name="scan_stop"/>
-    <Action name="scan_rescan"/>
     <Action name="go_up"/>
     <Action name="view_zoom_in"/>
     <Action name="view_zoom_out"/>
