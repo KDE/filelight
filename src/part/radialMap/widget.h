@@ -91,12 +91,13 @@ signals:
     void giveMeTreeFor(const KUrl&);
 
 protected:
-    virtual void paintEvent(QPaintEvent*);
-    virtual void resizeEvent(QResizeEvent*);
-    virtual void mouseMoveEvent(QMouseEvent*);
-    virtual void mousePressEvent(QMouseEvent*);
+    virtual void changeEvent(QEvent*);
     virtual void dragEnterEvent(QDragEnterEvent*);
     virtual void dropEvent(QDropEvent*);
+    virtual void mouseMoveEvent(QMouseEvent*);
+    virtual void mousePressEvent(QMouseEvent*);
+    virtual void paintEvent(QPaintEvent*);
+    virtual void resizeEvent(QResizeEvent*);
 
 protected:
     const Segment *segmentAt(QPoint&) const; //FIXME const reference for a library others can use

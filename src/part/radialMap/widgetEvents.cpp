@@ -294,3 +294,10 @@ void RadialMap::Widget::dragEnterEvent(QDragEnterEvent *e)
     KUrl::List uriList = KUrl::List::fromMimeData(e->mimeData());
     e->setAccepted(!uriList.isEmpty());
 }
+
+void RadialMap::Widget::changeEvent(QEvent *e)
+{
+    if (e->type() == QEvent::ApplicationPaletteChange || 
+        e->type() == QEvent::PaletteChange)
+        m_map.paint();
+}

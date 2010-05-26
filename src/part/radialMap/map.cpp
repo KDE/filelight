@@ -42,7 +42,6 @@ RadialMap::Map::Map(bool summary)
         , m_ringBreadth(MIN_RING_BREADTH)
         , m_innerRadius(0)
         , m_summary(summary)
-        , m_scheme(QPalette::Active, KColorScheme::View)
 {
 
     //FIXME this is all broken. No longer is a maximum depth!
@@ -267,11 +266,13 @@ void RadialMap::Map::colorise()
 
 void RadialMap::Map::paint(bool antialias)
 {
+    KColorScheme scheme(QPalette::Active, KColorScheme::View);
+
     QPainter paint;
     QRect rect = m_rect;
 
     rect.adjust(5, 5, -5, -5);
-    m_pixmap.fill(m_scheme.background().color());
+    m_pixmap.fill(scheme.background().color());
 
     //m_rect.moveRight(1); // Uncommenting this breaks repainting when recreating map from cache
 
@@ -371,8 +372,8 @@ void RadialMap::Map::paint(bool antialias)
 
     //  if(excess > 0) rect.addCoords(excess, excess, 0, 0); //ugly
 
-    paint.setPen(m_scheme.foreground().color());
-    paint.setBrush(m_scheme.background().color());
+    paint.setPen(scheme.foreground().color());
+    paint.setBrush(scheme.background().color());
     paint.drawEllipse(rect);
     paint.drawText(rect, Qt::AlignCenter, m_centerText);
 

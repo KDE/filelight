@@ -74,7 +74,6 @@ private:
     uint         m_innerRadius;  ///radius of inner circle
     QString      m_centerText;
     bool         m_summary;
-    KColorScheme m_scheme;
 
     uint MAP_2MARGIN;
 };
