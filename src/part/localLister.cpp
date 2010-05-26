@@ -26,6 +26,9 @@
 #include "scan.h"
 
 #include <KDebug>
+#include <Solid/StorageVolume>
+#include <Solid/StorageAccess>
+#include <Solid/Device>
 
 #include <QtGui/QApplication> //postEvent()
 #include <QtCore/QFile>
@@ -210,105 +213,36 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
     return cwd;
 }
 
-bool
-LocalLister::readMounts()
+void LocalLister::readMounts()
 {
-#define INFO_PARTITIONS "/proc/partitions"
-#define INFO_MOUNTED_PARTITIONS "/etc/mtab" /* on Linux... */
-
-    ////////////
-    //BIG FAT TODO TODO TODO
-    // Use Solid for this
-
-    //**** SHAMBLES
-    //  ** mtab should have priority as mount points don't have to follow fstab
-    //  ** no removable media detection
-    //  ** no updates if mounts change
-    //  ** you want a KDE extension that handles this for you really
-
-    struct fstab *fstab_ent;
-#ifdef HAVE_MNTENT_H
-    struct mntent *mnt_ent;
-#endif
-    QString str;
-
-
-#ifdef HAVE_MNTENT_H
-    FILE *fp;
-    if (setfsent() == 0 || !(fp = setmntent(INFO_MOUNTED_PARTITIONS, "r")))
-#else
-    if (setfsent() == 0)
-#endif
-        return false;
-
-#define FS_NAME   fstab_ent->fs_spec    // device-name
-#define FS_FILE   fstab_ent->fs_file    // mount-point
-#define FS_TYPE   fstab_ent->fs_vfstype // fs-type
-#define FS_MNTOPS fstab_ent->fs_mntops  // mount-options
-
+    const Solid::StorageAccess *partition;
+    const Solid::StorageVolume *volume;
     QStringList remoteFsTypes;
-    remoteFsTypes << "smbfs" ;
-#ifdef MNTTYPE_NFS
-    remoteFsTypes << MNTTYPE_NFS;
-#else
-    remoteFsTypes << "nfs";
-#endif
-    // What about afs?
+    remoteFsTypes << "smbfs" << "nfs" << "afs"; //TODO: expand
 
-    while ((fstab_ent = getfsent()) != NULL)
-    {
-        str = QString(FS_FILE);
-        if (str == "/") continue;
-        str += '/';
+    foreach (const Solid::Device &device, Solid::Device::listFromType(Solid::DeviceInterface::StorageAccess))
+    { // Iterate over all the partitions available.
+        if (!device.is<Solid::StorageAccess>()) continue; // It happens.
+        if (!device.is<Solid::StorageVolume>()) continue;
 
-        if (remoteFsTypes.contains(FS_TYPE))
-            s_remoteMounts.append(str); //**** NO! can't be sure won't have trailing slash, need to do a check first dummy!!
+        partition = device.as<Solid::StorageAccess>();
+        if (!partition->isAccessible() || partition->filePath() == "/" || partition->filePath().isEmpty()) continue;
 
-        else
-            s_localMounts.append(str); //**** NO! can't be sure won't have trailing slash, need to do a check first dummy!!
-
-        kDebug() << "FSTAB: " << FS_TYPE << "\n";
+        volume = device.as<Solid::StorageVolume>();
+        if (remoteFsTypes.contains(volume->fsType())) {
+                if (!s_remoteMounts.contains(partition->filePath())) {
+                    s_remoteMounts.append(partition->filePath());
+                }
+        } else if (!s_localMounts.contains(partition->filePath())) {
+            s_localMounts.append(partition->filePath());
+        }
     }
 
-    endfsent();  /* close fstab.. */
-
-#undef  FS_NAME
-#undef  FS_FILE
-#undef  FS_TYPE
-#undef  FS_MNTOPS
-
-#define FS_NAME   mnt_ent->mnt_fsname // device-name
-#define FS_FILE   mnt_ent->mnt_dir    // mount-point
-#define FS_TYPE   mnt_ent->mnt_type	  // fs-type
-#define FS_MNTOPS mnt_ent->mnt_opts   // mount-options
-
-    //scan mtab, **** mtab should take priority, but currently it isn't
-
-#ifdef HAVE_MNTENT_H
-    while ((mnt_ent = getmntent(fp)) != NULL)
-    {
-        bool b = false;
-
-        str = QString(FS_FILE);
-        if (str == "/") continue;
-        str += '/';
-
-        if (remoteFsTypes.contains(FS_TYPE))
-            if (b = !s_remoteMounts.contains(str))
-                s_remoteMounts.append(str); //**** NO! can't be sure won't have trailing slash, need to do a check first dummy!!
-
-            else if (b = !s_localMounts.contains(str))
-                s_localMounts.append(str); //**** NO! can't be sure won't have trailing slash, need to do a check first dummy!!
-
-        if (b) kDebug() << "MTAB: " << FS_TYPE << "\n";
-    }
-
-    endmntent(fp); /* Close mtab. */
-#endif
-
-
-    return true;
+    kDebug() << "Found the following remote filesystems: " << s_remoteMounts;
+    kDebug() << "Found the following local filesystems: " << s_localMounts;
 }
-}
+
+}//namespace Filelight
 
 #include "localLister.moc"
+

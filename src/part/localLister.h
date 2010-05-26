@@ -39,7 +39,7 @@ class LocalLister : public QThread
 public:
     LocalLister(const QString &path, Chain<Folder> *cachedTrees, ScanManager *parent);
 
-    static bool readMounts();
+    static void readMounts();
 
 signals:
     void branchCompleted(Folder* tree, bool finished);
