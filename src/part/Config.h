@@ -28,7 +28,7 @@ class KConfig;
 
 namespace Filelight
 {
-enum MapScheme { Rainbow, HighContrast, KDE, FileDensity, ModTime };
+enum MapScheme { Rainbow, KDE, HighContrast, FileDensity, ModTime };
 
 class Config
 {

@@ -39,7 +39,7 @@ SettingsDialog::SettingsDialog(QWidget *parent) : KDialog(parent)
     //colourSchemeGroup->setFrameShape(QFrame::NoFrame);
 
     vbox->addWidget(new QRadioButton(i18n("Rainbow"), this), Filelight::Rainbow);
-    vbox->addWidget(new QRadioButton(i18n("KDE Colors"), this), Filelight::KDE);
+    vbox->addWidget(new QRadioButton(i18n("System Colors"), this), Filelight::KDE);
     vbox->addWidget(new QRadioButton(i18n("High Contrast"), this), Filelight::HighContrast);
 
     colourSchemeGroup->setLayout(vbox);

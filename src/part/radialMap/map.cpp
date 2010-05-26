@@ -217,7 +217,6 @@ void RadialMap::Map::colorise()
                 }
 
                 case Filelight::HighContrast:
-
                     cp.setHsv(0, 0, 0); //values of h, s and v are irrelevant
                     cb.setHsv(180, 0, int(255.0 * contrast));
                     (*it)->setPalette(cp, cb);
