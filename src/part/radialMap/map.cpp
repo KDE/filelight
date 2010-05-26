@@ -280,7 +280,10 @@ void RadialMap::Map::paint(bool antialias)
     //**** best option you can think of is to make the circles slightly less perfect,
     //  ** i.e. slightly eliptic when resizing inbetween
 
-    paint.begin(&m_pixmap);
+    if (!paint.begin(&m_pixmap)) {
+        kWarning() << "Failed to initialize painting, returning...";
+        return;
+    }
 
     if (antialias && Config::antialias) {
         paint.translate(0.7, 0.7);
