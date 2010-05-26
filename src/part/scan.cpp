@@ -59,7 +59,6 @@ ScanManager::~ScanManager()
 
 bool ScanManager::running() const
 {
-    //FIXME not complete
     return m_thread && m_thread->isRunning();
 }
 
@@ -72,10 +71,8 @@ bool ScanManager::start(const KUrl &url)
     kDebug() << "Scan requested for: " << url.prettyUrl() << endl;
 
     if (running()) {
-        //shouldn't happen, but lets prevent mega-disasters just in case eh?
-        kWarning() << "Attempted to run 2 scans concurrently!\n";
-        //TODO give user an error
-        return false;
+        kWarning() << "Tried to launch two concurrent scans, aborting old one...";
+        abort();
     }
 
     m_files = 0;
@@ -181,7 +178,7 @@ ScanManager::abort()
 
     delete findChild<RemoteLister *>("remote_lister");
 
-    return m_thread && m_thread->isRunning();
+    return m_thread && m_thread->wait();
 }
 
 void

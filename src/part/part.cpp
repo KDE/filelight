@@ -204,6 +204,8 @@ Part::updateURL(const KUrl &u)
     emit m_ext->openUrlNotify(); //must be done first
     emit m_ext->setLocationBarUrl(u.prettyUrl());
 
+    if (m_manager->running())
+        m_manager->abort();
 
     if (u == url())
         m_manager->emptyCache(); //same as rescan()
@@ -231,6 +233,9 @@ Part::start(const KUrl &url)
         connect(m_map, SIGNAL(created(const Folder*)), statusBar(), SLOT(clear()));
         m_started = true;
     }
+
+    if (m_manager->running())
+        m_manager->abort();
 
     m_numberOfFiles->setText(QString());
 
