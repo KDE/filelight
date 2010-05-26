@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
     KCmdLineArgs::init(argc, argv, &about);
 
     KCmdLineOptions options;
-    options.add(ki18nc("Path in the file system to scan", "+[path]"), ki18n("Scan 'path'"));
+    options.add(ki18nc("Path in the file system to scan", "+[path]").toString().toLocal8Bit(), ki18n("Scan 'path'"));
     KCmdLineArgs::addCmdLineOptions(options);
 
     KApplication app;
