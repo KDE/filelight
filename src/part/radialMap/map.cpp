@@ -371,8 +371,8 @@ void RadialMap::Map::paint(bool antialias)
 
     //  if(excess > 0) rect.addCoords(excess, excess, 0, 0); //ugly
 
-    paint.setPen(Qt::gray);
-    paint.setBrush(Qt::white);
+    paint.setPen(m_scheme.foreground().color());
+    paint.setBrush(m_scheme.background().color());
     paint.drawEllipse(rect);
     paint.drawText(rect, Qt::AlignCenter, m_centerText);
 
