@@ -50,9 +50,9 @@ struct Disk
     QString mount;
     QString icon;
 
-    int size;
-    int used;
-    int free; //NOTE used+avail != size (clustersize!)
+    qint64 size;
+    qint64 used;
+    qint64 free; //NOTE used+avail != size (clustersize!)
 };
 
 
@@ -114,6 +114,7 @@ void SummaryWidget::createDiskMaps()
     const QByteArray used = i18nc("Used space on the disks/partitions", "Used").toUtf8();
 
     KIconLoader loader;
+    QString text;
 
     for (DiskList::ConstIterator it = disks.constBegin(), end = disks.constEnd(); it != end; ++it)
     {
@@ -131,7 +132,9 @@ void SummaryWidget::createDiskMaps()
         QHBoxLayout* horizontalLayout = new QHBoxLayout(info);
 
         // Create the text and icon under the radialMap.
-        QLabel *label = new QLabel(disk.mount, this);
+        text = "<b>" + disk.mount + i18nc("Percent used disk space on the partition", "</b> (%1% Used)");
+
+        QLabel *label = new QLabel(text.arg(disk.used*100/disk.size), this);
         horizontalLayout->addWidget(label);
         QLabel *icon = new QLabel(this);
         icon->setPixmap(KIcon(disk.icon).pixmap(16,16));
