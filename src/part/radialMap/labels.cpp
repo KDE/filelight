@@ -85,7 +85,7 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
     if (m_focus && m_focus->file() != m_tree) //separate behavior for selected vs unselected segments
     {
         //don't bother with files
-        if (m_focus->file() && !m_focus->file()->isFolder())
+        if (m_focus && m_focus->file() && !m_focus->file()->isFolder())
             return;
 
         //find the range of levels we will be potentially drawing labels for
