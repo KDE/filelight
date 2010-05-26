@@ -9,6 +9,10 @@
     <Action name="options_configure" group="settings_configure"/>
   </Menu>
 </MenuBar>
+<ToolBar name="viewToolBar" hidden="true"><text>View Toolbar</text>
+    <Action name="view_zoom_in"/>
+    <Action name="view_zoom_out"/>
+</ToolBar>
 
 <State name="scan_started">
   <disable>

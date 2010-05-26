@@ -18,7 +18,7 @@
   <Menu name="view" noMerge="1"><text>&amp;View</text></Menu>
 </MenuBar>
 
-<ToolBar name="mainToolBar" noMerge="1"><text>Main Toolbar</text>
+<ToolBar name="mainToolBar"><text>Main Toolbar</text>
     <Action name="go_back"/>
     <Action name="go_forward"/>
     <Action name="go_up"/>
@@ -26,7 +26,7 @@
     <Action name="scan_rescan"/>
     <Action name="scan_stop"/>
 </ToolBar>
-<ToolBar name="locationToolBar" fullWidth="true" noMerge="1"><text>Location Toolbar</text>
+<ToolBar name="locationToolBar" fullWidth="true"><text>Location Toolbar</text>
     <Action name="clear_location"/>
     <Action name="location_bar"/>
     <Action name="go"/>
