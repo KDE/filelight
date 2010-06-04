@@ -91,14 +91,8 @@ LocalLister::run()
     kDebug() << "Thread terminating ...";
 }
 
-// from system.h in GNU coreutils package
-/* Extract or fake data from a `struct stat'.
-ST_NBLOCKS: Number of blocks in the file, including indirect blocks.
-ST_NBLOCKSIZE: Size of blocks used when calculating ST_NBLOCKS.  */
-#define ST_NBLOCKS(statbuf) ((statbuf).st_size / ST_NBLOCKSIZE + ((statbuf).st_size % ST_NBLOCKSIZE != 0))
-
-#ifndef ST_NBLOCKSIZE
-#define ST_NBLOCKSIZE 512
+#ifndef S_BLKSIZE
+#define S_BLKSIZE 512
 #endif
 
 
@@ -177,7 +171,7 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
 
         if (S_ISREG(statbuf.st_mode)) //file
             //using units of KiB as 32bit max is 4GiB and 64bit ints are expensive
-            cwd->append(ent->d_name, (ST_NBLOCKS(statbuf) * ST_NBLOCKSIZE) / 1024);
+            cwd->append(ent->d_name, (statbuf.st_blocks * S_BLKSIZE) / 1024);
 
         else if (S_ISDIR(statbuf.st_mode)) //folder
         {
