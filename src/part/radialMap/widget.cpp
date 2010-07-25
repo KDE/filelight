@@ -158,6 +158,7 @@ RadialMap::Widget::refresh(int filth)
         {
         case 1:
             m_map.make(m_tree, true); //true means refresh only
+            m_focus=0;
             break;
 
         case 2:
