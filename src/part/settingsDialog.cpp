@@ -152,7 +152,7 @@ void SettingsDialog::toggleDontScanRemovableMedia(bool b)
 
 void SettingsDialog::addFolder()
 {
-    const KUrl url = KDirSelectDialog::selectDirectory(KUrl(QDir::rootPath()), false, this, "Select Folder to Scan");
+    const KUrl url = KDirSelectDialog::selectDirectory(KUrl(QDir::rootPath()), false, this, i18n( "Select Folder to Scan" ));
 
     //TODO error handling!
     //TODO wrong protocol handling!
