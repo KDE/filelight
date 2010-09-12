@@ -61,12 +61,12 @@ QString HistoryAction::pop()
 
 HistoryCollection::HistoryCollection(KActionCollection *ac, QObject *parent)
         : QObject(parent)
-        , m_b(new HistoryAction(KIcon("go-previous"), i18nc("Go to the last path viewed", "Back"), ac))
-        , m_f(new HistoryAction(KIcon("go-next"), i18nc("Go to forward in the history of paths viewed", "Forward"), ac))
+        , m_b(new HistoryAction(KIcon(QLatin1String( "go-previous" )), i18nc("Go to the last path viewed", "Back"), ac))
+        , m_f(new HistoryAction(KIcon(QLatin1String( "go-next" )), i18nc("Go to forward in the history of paths viewed", "Forward"), ac))
         , m_receiver(0)
 {
-    ac->addAction("go_back", m_b);
-    ac->addAction("go_forward", m_f);
+    ac->addAction(QLatin1String( "go_back" ), m_b);
+    ac->addAction(QLatin1String( "go_forward" ), m_f);
     connect(m_b, SIGNAL(triggered(bool)), SLOT(pop()));
     connect(m_f, SIGNAL(triggered(bool)), SLOT(pop()));
 }

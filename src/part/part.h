@@ -61,7 +61,7 @@ public:
     virtual bool closeUrl();
 
     QString prettyUrl() const {
-        return url().protocol() == "file" ? url().path() : url().prettyUrl();
+        return url().protocol() == QLatin1String( "file" ) ? url().path() : url().prettyUrl();
     }
 
 public slots:

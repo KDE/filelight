@@ -73,10 +73,10 @@ SegmentTip::updateTip(const File* const file, const Folder* const root)
     uint maxw         = 0;
     uint h            = fontMetrics().height()*2 + 2*MARGIN;
 
-    if (pc > 0) s2 += QString(" (%1%)").arg(loc->formatNumber(pc, 0));
+    if (pc > 0) s2 += QString(QLatin1String( " (%1%)" )).arg(loc->formatNumber(pc, 0));
 
     m_text  = s1;
-    m_text += '\n';
+    m_text += QLatin1Char( '\n' );
     m_text += s2;
 
     if (file->isFolder())
@@ -85,11 +85,11 @@ SegmentTip::updateTip(const File* const file, const Folder* const root)
         const uint pc = uint((100 * files) / (double)root->children());
         QString s3    = i18np("File: %1", "Files: %1", files);
 
-        if (pc > 0) s3 += QString(" (%1%)").arg(loc->formatNumber(pc, 0));
+        if (pc > 0) s3 += QString(QLatin1String( " (%1%)" )).arg(loc->formatNumber(pc, 0));
 
         maxw    = fontMetrics().width(s3);
         h      += fontMetrics().height();
-        m_text += '\n';
+        m_text += QLatin1Char( '\n' );
         m_text += s3;
     }
 

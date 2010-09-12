@@ -56,7 +56,7 @@ namespace Filelight {
 MainWindow::MainWindow() : KParts::MainWindow(), m_part(0)
 {
 //     setXMLFile("filelightui.rc");
-    KPluginFactory *factory = KPluginLoader("filelightpart").factory();
+    KPluginFactory *factory = KPluginLoader(QLatin1String( "filelightpart" )).factory();
 
     if (!factory) {
         KMessageBox::error(this, i18n("Unable to load the Filelight Part.\nPlease make sure Filelight was correctly installed."));
@@ -72,7 +72,7 @@ MainWindow::MainWindow() : KParts::MainWindow(), m_part(0)
         createGUI(m_part);
         setCentralWidget(m_part->widget());
 
-        stateChanged("scan_failed"); //bah! doesn't affect the parts' actions, should I add them to the actionCollection here?
+        stateChanged(QLatin1String( "scan_failed" )); //bah! doesn't affect the parts' actions, should I add them to the actionCollection here?
 
         connect(m_part, SIGNAL(started(KIO::Job*)), SLOT(scanStarted()));
         connect(m_part, SIGNAL(completed()), SLOT(scanCompleted()));
@@ -88,7 +88,7 @@ MainWindow::MainWindow() : KParts::MainWindow(), m_part(0)
         std::exit(1);
     }
 
-    setAutoSaveSettings("window");
+    setAutoSaveSettings(QLatin1String( "window" ));
 }
 
 inline void MainWindow::setupActions() //singleton function
@@ -109,37 +109,37 @@ inline void MainWindow::setupActions() //singleton function
 
     KAction* action;
 
-    action = ac->addAction("scan_home", this, SLOT(slotScanHomeFolder()));
+    action = ac->addAction(QLatin1String( "scan_home" ), this, SLOT(slotScanHomeFolder()));
     action->setText(i18n("Scan &Home Folder"));
-    action->setIcon(KIcon("user-home"));
+    action->setIcon(KIcon(QLatin1String( "user-home" )));
     action->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Home));
 
-    action = ac->addAction("scan_root", this, SLOT(slotScanRootFolder()));
+    action = ac->addAction(QLatin1String( "scan_root" ), this, SLOT(slotScanRootFolder()));
     action->setText(i18n("Scan &Root Folder"));
-    action->setIcon(KIcon("folder-red"));
+    action->setIcon(KIcon(QLatin1String( "folder-red" )));
 
-    action = ac->addAction("scan_rescan", m_part, SLOT(rescan()));
+    action = ac->addAction(QLatin1String( "scan_rescan" ), m_part, SLOT(rescan()));
     action->setText(i18n("Rescan"));
-    action->setIcon(KIcon("view-refresh"));
+    action->setIcon(KIcon(QLatin1String( "view-refresh" )));
     action->setShortcut(KStandardShortcut::reload());
 
 
-    action = ac->addAction("scan_stop", this, SLOT(slotAbortScan()));
+    action = ac->addAction(QLatin1String( "scan_stop" ), this, SLOT(slotAbortScan()));
     action->setText(i18n("Stop"));
-    action->setIcon(KIcon("process-stop"));
+    action->setIcon(KIcon(QLatin1String( "process-stop" )));
     action->setShortcut(Qt::Key_Escape);
 
-    action = ac->addAction("go", m_combo, SIGNAL(returnPressed()));
+    action = ac->addAction(QLatin1String( "go" ), m_combo, SIGNAL(returnPressed()));
     action->setText(i18n("Go"));
-    action->setIcon(KIcon("go-jump-locationbar"));
+    action->setIcon(KIcon(QLatin1String( "go-jump-locationbar" )));
 
-    action = ac->addAction("location_bar", 0, 0);
+    action = ac->addAction(QLatin1String( "location_bar" ), 0, 0);
     action->setText(i18n("Location Bar"));
     action->setDefaultWidget(m_combo);
 
-    action = ac->addAction("scan_folder", this, SLOT(slotScanFolder()));
+    action = ac->addAction(QLatin1String( "scan_folder" ), this, SLOT(slotScanFolder()));
     action->setText(i18n("Scan Folder"));
-    action->setIcon(KIcon("folder"));
+    action->setIcon(KIcon(QLatin1String( "folder" )));
 
     m_recentScans = new KRecentFilesAction(i18n("&Recent Scans"), ac);
     m_recentScans->setMaxItems(8);
@@ -205,7 +205,7 @@ inline void MainWindow::slotComboScan()
     KUrl url = KUrl(path);
 
     if (url.isRelative())
-        path = "~/" + path; // KUrlCompletion completes relative to ~, not CWD
+        path = QLatin1String( "~/" ) + path; // KUrlCompletion completes relative to ~, not CWD
 
     path = KShell::tildeExpand(path);
 
@@ -238,13 +238,13 @@ inline void MainWindow::slotAbortScan()
 
 inline void MainWindow::scanStarted()
 {
-    stateChanged("scan_started");
+    stateChanged(QLatin1String( "scan_started" ));
     m_combo->clearFocus();
 }
 
 inline void MainWindow::scanFailed()
 {
-    stateChanged("scan_failed");
+    stateChanged(QLatin1String( "scan_failed" ));
     setActionMenuTextOnly(qobject_cast<KAction *>(action("go_up")), QString());
     m_combo->lineEdit()->clear();
 }
@@ -254,11 +254,11 @@ void MainWindow::scanCompleted()
     KAction *goUp  = qobject_cast<KAction *>(action("go_up"));
     const KUrl url = m_part->url();
 
-    stateChanged("scan_complete");
+    stateChanged(QLatin1String( "scan_complete" ));
 
     m_combo->lineEdit()->setText(m_part->prettyUrl());
 
-    if (url.path(KUrl::LeaveTrailingSlash) == "/") {
+    if (url.path(KUrl::LeaveTrailingSlash) == QLatin1String( "/" )) {
         goUp->setEnabled(false);
         setActionMenuTextOnly(goUp, QString());
     }
