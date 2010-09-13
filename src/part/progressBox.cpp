@@ -31,13 +31,13 @@
 #include <QtGui/QLabel>
 
 
-ProgressBox::ProgressBox(QWidget *parent, QObject *part, Filelight::ScanManager *m) 
+ProgressBox::ProgressBox(QWidget *parent, QObject *part, Filelight::ScanManager *m)
         : QLabel(parent)
         , m_manager(m)
 {
     hide();
 
-    setObjectName("ProgressBox");
+    setObjectName(QLatin1String( "ProgressBox" ));
 
     setAlignment(Qt::AlignCenter);
     setFont(KGlobalSettings::fixedFont());

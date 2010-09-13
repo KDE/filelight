@@ -212,7 +212,7 @@ void LocalLister::readMounts()
     const Solid::StorageAccess *partition;
     const Solid::StorageVolume *volume;
     QStringList remoteFsTypes;
-    remoteFsTypes << "smbfs" << "nfs" << "afs"; //TODO: expand
+    remoteFsTypes << QLatin1String( "smbfs" ) << QLatin1String( "nfs" ) << QLatin1String( "afs" ); //TODO: expand
 
     foreach (const Solid::Device &device, Solid::Device::listFromType(Solid::DeviceInterface::StorageAccess))
     { // Iterate over all the partitions available.
@@ -220,7 +220,7 @@ void LocalLister::readMounts()
         if (!device.is<Solid::StorageVolume>()) continue;
 
         partition = device.as<Solid::StorageAccess>();
-        if (!partition->isAccessible() || partition->filePath() == "/" || partition->filePath().isEmpty()) continue;
+        if (!partition->isAccessible() || partition->filePath() == QLatin1String( "/" ) || partition->filePath().isEmpty()) continue;
 
         volume = device.as<Solid::StorageVolume>();
         if (remoteFsTypes.contains(volume->fsType())) {

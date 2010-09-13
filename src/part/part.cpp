@@ -61,8 +61,8 @@ K_EXPORT_PLUGIN(filelightPartFactory(KAboutData(
                KLocalizedString(),
                "http://iskrembilen.com/",
                "sandsmark@iskrembilen.com").
-               setProgramIconName("filelight").
-               setCatalogName("filelight")))
+               setProgramIconName(QLatin1String( "filelight" )).
+               setCatalogName( "filelight" )))
 
 BrowserExtension::BrowserExtension(Part *parent)
         : KParts::BrowserExtension(parent)
@@ -79,7 +79,7 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
 {
     Config::read();
     setComponentData(filelightPartFactory::componentData());
-    setXMLFile("filelightpartui.rc");
+    setXMLFile(QLatin1String( "filelightpartui.rc" ));
 
     setWidget(new QWidget(parentWidget));
     widget()->setBackgroundRole(QPalette::Base);
@@ -128,7 +128,7 @@ Part::postInit()
 
         //FIXME KXMLGUI is b0rked, it should allow us to set this
         //BEFORE createGUI is called but it doesn't
-        stateChanged("scan_failed");
+        stateChanged(QLatin1String( "scan_failed" ));
     }
 }
 
@@ -146,7 +146,7 @@ Part::openUrl(const KUrl &u)
     uri.cleanPath(KUrl::SimplifyDirSeparators);
     const QString path = uri.path(KUrl::AddTrailingSlash);
     const QByteArray path8bit = QFile::encodeName(path);
-    const bool isLocal = uri.protocol() == "file";
+    const bool isLocal = uri.protocol() == QLatin1String( "file" );
 
     if (uri.isEmpty())
     {
@@ -156,7 +156,7 @@ Part::openUrl(const KUrl &u)
     {
         KMSG(i18n("The entered URL cannot be parsed; it is invalid."));
     }
-    else if (path[0] != '/')
+    else if (path[0] != QLatin1Char( '/' ))
     {
         KMSG(i18n("Filelight only accepts absolute paths, eg. /%1", path));
     }
@@ -243,7 +243,7 @@ Part::start(const KUrl &url)
         setUrl(url);
 
         const QString s = i18n("Scanning: %1", prettyUrl());
-        stateChanged("scan_started");
+        stateChanged(QLatin1String( "scan_started" ));
         emit started(0); //as a Part, we have to do this
         emit setWindowCaption(s);
         statusBar()->showMessage(s);
@@ -284,10 +284,10 @@ Part::scanCompleted(Folder *tree)
         m_map->show();
         m_map->create(tree);
 
-        stateChanged("scan_complete");
+        stateChanged(QLatin1String( "scan_complete" ));
     }
     else {
-        stateChanged("scan_failed");
+        stateChanged(QLatin1String( "scan_failed" ));
         emit canceled(i18n("Scan failed: %1", prettyUrl()));
         emit setWindowCaption(QString());
 
@@ -317,11 +317,11 @@ Part::showSummary()
 {
     if (m_summary == 0) {
         m_summary = new SummaryWidget(widget());
-        m_summary->setObjectName("summaryWidget");
+        m_summary->setObjectName(QLatin1String( "summaryWidget" ));
         connect(m_summary, SIGNAL(activated(const KUrl&)), SLOT(openUrl(const KUrl&)));
         m_summary->show();
         m_layout->addWidget(m_summary);
-    } 
+    }
     else m_summary->show();
 }
 

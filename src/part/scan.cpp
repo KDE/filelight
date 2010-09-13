@@ -78,7 +78,7 @@ bool ScanManager::start(const KUrl &url)
     m_files = 0;
     m_abort = false;
 
-    if (url.protocol() == "file")
+    if (url.protocol() == QLatin1String( "file" ))
     {
         const QString path = url.path(KUrl::AddTrailingSlash);
 
@@ -102,7 +102,7 @@ bool ScanManager::start(const KUrl &url)
 
                 kDebug() << "Cache-(a)hit: " << cachePath << endl;
 
-                QStringList split = path.mid(cachePath.length()).split('/');
+                QStringList split = path.mid(cachePath.length()).split(QLatin1Char( '/' ));
                 Folder *d = *it;
                 Iterator<File> jt;
 
@@ -112,7 +112,7 @@ bool ScanManager::start(const KUrl &url)
 
                     const Link<File> *end = d->end();
                     QString s = split.first();
-                    s += '/';
+                    s += QLatin1Char( '/' );
 
                     for (d = 0; jt != end; ++jt)
                         if (s == (*jt)->name())
@@ -166,7 +166,7 @@ bool ScanManager::start(const KUrl &url)
     Filelight::RemoteLister *remoteLister = new Filelight::RemoteLister(url, (QWidget*)parent(), this);
     connect(remoteLister, SIGNAL(branchCompleted(Folder*, bool)), this, SLOT(cacheTree(Folder*, bool)), Qt::QueuedConnection);
     remoteLister->setParent(this);
-    remoteLister->setObjectName("remote_lister");
+    remoteLister->setObjectName(QLatin1String( "remote_lister" ));
     remoteLister->openUrl(url);
     return true;
 }
@@ -176,7 +176,7 @@ ScanManager::abort()
 {
     m_abort = true;
 
-    delete findChild<RemoteLister *>("remote_lister");
+    delete findChild<RemoteLister *>(QLatin1String( "remote_lister" ));
 
     return m_thread && m_thread->wait();
 }
@@ -212,7 +212,7 @@ ScanManager::cacheTree(Folder *tree, bool finished)
     if (tree) {
         //we don't cache foreign stuff
         //we don't recache stuff (thus only type 1000 events)
-        if (m_url.protocol() == "file" && finished)
+        if (m_url.protocol() == QLatin1String( "file" ) && finished)
             //TODO sanity check the cache
             m_cache->append(tree);
     }

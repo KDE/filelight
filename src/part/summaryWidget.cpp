@@ -72,7 +72,7 @@ public:
 
     virtual void setCursor(const QCursor &c)
     {
-        if (focusSegment() && focusSegment()->file()->name() == "Used")
+        if (focusSegment() && focusSegment()->file()->name() == QLatin1String( "Used" ))
             RadialMap::Widget::setCursor(c);
         else
             unsetCursor();
@@ -132,7 +132,7 @@ void SummaryWidget::createDiskMaps()
         QHBoxLayout* horizontalLayout = new QHBoxLayout(info);
 
         // Create the text and icon under the radialMap.
-        text = "<b>" + disk.mount + i18nc("Percent used disk space on the partition", "</b> (%1% Used)");
+        text = QLatin1String( "<b>" ) + disk.mount + i18nc("Percent used disk space on the partition", "</b> (%1% Used)");
 
         QLabel *label = new QLabel(text.arg(disk.used*100/disk.size), this);
         horizontalLayout->addWidget(label);
