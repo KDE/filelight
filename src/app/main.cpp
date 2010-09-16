@@ -53,7 +53,9 @@ int main(int argc, char *argv[])
     KCmdLineArgs::init(argc, argv, &about);
 
     KCmdLineOptions options;
-    options.add(ki18nc("Path in the file system to scan", "+[path]").toString().toLocal8Bit(), ki18n("Scan 'path'"));
+    KLocale *tmpLocale = new KLocale("filelight");
+    options.add(ki18nc("Path in the file system to scan", "+[path]").toString(tmpLocale).toLocal8Bit(), ki18n("Scan 'path'"));
+    delete tmpLocale;
     KCmdLineArgs::addCmdLineOptions(options);
 
     KApplication app;
