@@ -132,9 +132,9 @@ void SummaryWidget::createDiskMaps()
         QHBoxLayout* horizontalLayout = new QHBoxLayout(info);
 
         // Create the text and icon under the radialMap.
-        text = QLatin1String( "<b>" ) + disk.mount + i18nc("Percent used disk space on the partition", "</b> (%1% Used)");
+        text = QLatin1String( "<b>" ) + disk.mount + i18nc("Percent used disk space on the partition", "</b> (%1% Used)", disk.used*100/disk.size);
 
-        QLabel *label = new QLabel(text.arg(disk.used*100/disk.size), this);
+        QLabel *label = new QLabel(text, this);
         horizontalLayout->addWidget(label);
         QLabel *icon = new QLabel(this);
         icon->setPixmap(KIcon(disk.icon).pixmap(16,16));
