@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
     KCmdLineArgs::init(argc, argv, &about);
 
     KCmdLineOptions options;
-    KLocale *tmpLocale = new KLocale("filelight");
+    KLocale *tmpLocale = new KLocale(QLatin1String("filelight"));
     options.add(ki18nc("Path in the file system to scan", "+[path]").toString(tmpLocale).toLocal8Bit(), ki18n("Scan 'path'"));
     delete tmpLocale;
     KCmdLineArgs::addCmdLineOptions(options);
