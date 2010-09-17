@@ -15,6 +15,7 @@ Name[pt_BR]=Mapa radial
 Name[sv]=Radiell avbildning
 Name[uk]=Радіальна карта
 Name[x-test]=xxRadial Mapxx
+Name[zh_TW]=放射狀地圖
 MimeType=inode/directory;
 ServiceTypes=KParts/ReadOnlyPart
 X-KDE-Library=filelightpart
