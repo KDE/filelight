@@ -19,10 +19,11 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ***********************************************************************/
 
-#include "part/Config.h"
-#include "part/fileTree.h"
-#include "widget.h"
 #include "builder.h"
+
+#include "widget.h"
+#include <part/Config.h>
+#include <part/fileTree.h>
 
 #include <KGlobal> //locale object
 #include <KLocale>
