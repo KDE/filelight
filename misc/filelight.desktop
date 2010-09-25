@@ -64,4 +64,5 @@ Comment[x-test]=xxView disk usage informationxx
 Comment[zh_TW]=檢視磁碟用量資訊
 Terminal=false
 MimeType=inode/directory;
+X-DocPath=filelight/index.html
 Categories=Qt;KDE;Utility;
