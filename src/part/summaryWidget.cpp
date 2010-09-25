@@ -160,6 +160,7 @@ void SummaryWidget::createDiskMaps()
 DiskList::DiskList()
 {
     const Solid::StorageAccess *partition;
+    QStringList partitions;
 
     foreach (const Solid::Device &device, Solid::Device::listFromType(Solid::DeviceInterface::StorageAccess))
     { // Iterate over all the partitions available.
@@ -168,6 +169,10 @@ DiskList::DiskList()
 
         partition = device.as<Solid::StorageAccess>();
         if (!partition->isAccessible()) continue;
+
+        if (partitions.contains(partition->filePath())) // check for duplicate partitions from Solid
+            continue;
+        partitions.append(partition->filePath());
 
         KDiskFreeSpaceInfo info = KDiskFreeSpaceInfo::freeSpaceInfo(partition->filePath());
         if (!info.isValid()) continue;
