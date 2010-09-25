@@ -164,7 +164,7 @@ void RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
     }
 }
 
-void RadialMap::Widget::enterEvent(QEvent *e)
+void RadialMap::Widget::enterEvent(QEvent *)
 {
     if (!m_focus) return;
 
