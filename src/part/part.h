@@ -29,7 +29,6 @@
 
 #include <QtGui/QLabel>
 
-class KAboutData;
 using KParts::StatusBarExtension;
 namespace RadialMap {
 class Widget;
