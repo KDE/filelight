@@ -20,17 +20,10 @@
 
 project(Filelight)
 
-find_package(KDE4 REQUIRED)
-
-add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 add_definitions( -DQT_NO_CAST_FROM_ASCII )
 add_definitions( -DQT_NO_CAST_TO_ASCII )
 
-include(KDE4Defaults)
-
-include(MacroLibrary)
-
-include_directories(src/ ${KDE4_INCLUDES} ${KDE4_INCLUDE_DIR} ${QT_INCLUDES})
+include_directories(src/)
 
 add_subdirectory(src)
 add_subdirectory(misc)

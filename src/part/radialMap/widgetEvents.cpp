@@ -70,7 +70,7 @@ void RadialMap::Widget::paintEvent(QPaintEvent*)
         paint.drawPixmap(m_offset, m_map.pixmap());
     else
     {
-        paint.drawText(rect(), 0, i18n("We messed up, the user needs to initiate a rescan.", "Internal representation is invalid,\nplease rescan."));
+        paint.drawText(rect(), 0, i18n("We messed up, the user needs to initiate a rescan.", QLatin1String("Internal representation is invalid,\nplease rescan.")));
         return;
     }
 
