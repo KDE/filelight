@@ -59,7 +59,7 @@ K_EXPORT_PLUGIN(filelightPartFactory(KAboutData(
                ki18n("(c) 2002-2004 Max Howell\n\
                 (c) 2008-2009 Martin T. Sandsmark"),
                KLocalizedString(),
-               "http://iskrembilen.com/",
+               "http://utils.kde.org/projects/filelight",
                "sandsmark@iskrembilen.com").
                setProgramIconName(QLatin1String( "filelight" )).
                setCatalogName( "filelight" )))

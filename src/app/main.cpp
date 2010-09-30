@@ -37,7 +37,7 @@ static KAboutData about(
     KAboutData::License_GPL_V3,
     ki18n("(C) 2006 Max Howell\n(C) 2008, 2009 Martin Sandsmark"),
     KLocalizedString(),
-    "http://www.methylblue.com/filelight/");
+    "http://utils.kde.org/projects/filelight");
 
 
 int main(int argc, char *argv[])
