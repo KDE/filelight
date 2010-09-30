@@ -1,5 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+  <!ENTITY package "kdeutils">
   <!ENTITY kappname "&filelight;">
   <!ENTITY filelight "<application>Filelight</application>">
   <!ENTITY % addindex "IGNORE">
@@ -388,23 +389,17 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 
 
 <appendix id="installation">
-   <title>Installation</title>
-   <sect1 id="getting-filelight">
-      <title>How to obtain &filelight;</title>
-      <para>&filelight; is part of the &kde; project's Extragear, it can be found at <ulink url="http://extragear.kde.org/apps/filelight/">http://extragear.kde.org/apps/filelight/</ulink>.</para>
-   </sect1>
-   <sect1 id="compilation">
-      <title>Compilation and Installation</title>
-      <para>In order to compile and install &filelight; on your system, type the following in the base folder of the &filelight; distribution:</para>
-      <screen width="40">
-         <prompt>%</prompt> <userinput>mkdir build</userinput>
-         <prompt>%</prompt> <userinput>cd build</userinput>
-         <prompt>%</prompt> <userinput>cmake ..</userinput>
-         <prompt>%</prompt> <userinput>make</userinput>
-         <prompt>%</prompt> <userinput>make install</userinput>
-      </screen>
-      <para>Since &filelight; uses cmake you should have not trouble compiling it. Should you run into problems please report them to sandsmark@samfundet.no or if you suspect it is a problem with &filelight;, on <ulink url="http://bugs.kde.org">the &kde; bug tracker</ulink>.</para>
-   </sect1>
+    <title>Installation</title>
+
+    <sect1 id="getting-kapp">
+        <title>How to obtain &filelight;</title>
+        &install.intro.documentation;
+    </sect1>
+
+    <sect1 id="Compilation">
+        <title>Compilation and Installation</title>
+        &install.compile.documentation;
+    </sect1>
 </appendix>
 
 &documentation.index;
