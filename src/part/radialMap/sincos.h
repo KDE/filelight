@@ -26,15 +26,17 @@
 
 #if !defined(__GLIBC__) || (__GLIBC__ < 2) ||  (__GLIBC__ == 2 && __GLIBC_MINOR__ < 1)
 
+#include <qmath.h>
+
 void
-sincos(int angleRadians, double *Sin, double *Cos);
+sincos(double angleRadians, double *Sin, double *Cos);
 
 #ifdef SINCOS_H_IMPLEMENTATION
 void
-sincos(int angleRadians, double *Sin, double *Cos)
+sincos(double angleRadians, double *Sin, double *Cos)
 {
-    *Sin = sin(angleRadians);
-    *Cos = cos(angleRadians);
+    *Sin = qSin(angleRadians);
+    *Cos = qCos(angleRadians);
 }
 #endif
 
