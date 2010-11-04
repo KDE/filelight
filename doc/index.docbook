@@ -28,8 +28,8 @@
    <copyright><year>2009</year><holder>Martin Sandsmark</holder></copyright>
    <!-- Translators: put here the copyright notice of the translation -->
    <legalnotice>&FDLNotice;</legalnotice>
-   <date>2009-03-28</date>
-   <releaseinfo>4</releaseinfo>
+   <date>2010-11-04</date>
+   <releaseinfo>1.9 (&kde; 4.6)</releaseinfo>
    <abstract><para>&filelight; creates an interactive map of concentric segmented-rings that helps visualize disk usage on your computer.</para></abstract>
    <!-- These may be used by search engines -->
    <keywordset>
@@ -70,8 +70,10 @@
 </mediaobject>
 </screenshot>
 
-<para>The scanning tab allows you to configure how &filelight; scans folders. The <guilabel> Do not scan these folders:</guilabel> is used to exclude certain folders from your scan. This option is very useful for skipping folders that you may not have permissions to read, or folders that are part of a virtual filesystem, such as /proc. To add a folder to the list, click the <guibutton>Add...</guibutton> button, this will start a dialog where you can choose the folder of your choice from a tree view. To remove a folder simply select the folder of your choice and click the <guibutton>Remove</guibutton> button.</para>
-
+<para>The scanning tab allows you to configure how &filelight; scans folders. The <guilabel> Do not scan these folders</guilabel> is used to exclude certain folders from your scan. This option is very useful for skipping folders that you may not have permissions to read, or folders that are part of a virtual filesystem, such as /proc. To add a folder to the list, click the <guibutton>Add...</guibutton> button, this will start a dialog where you can choose the folder of your choice from a tree view. To remove a folder simply select the folder of your choice and click the <guibutton>Remove</guibutton> button.</para>
+<para>Using <guilabel>Scan across filesystem boundaries</guilabel> allows scans to enter folders that are part of other filesystems. For example, when unchecked, this will usually prevent the contents of <filename class="directory">/mnt</filename> from being scanned if you scan starting from the root folder <filename class="directory">/</filename>. 
+A scan of remote filesystems, &eg; NFS or Samba mounts, can generate high network traffic. To prevent scanning them check <guilabel>Exclude remote filesystems</guilabel>. The next option <guilabel>Exclude removable media</guilabel>
+prevents &filelight; from scanning removable media (&eg; &CD-ROM;s).</para>
 </sect1>
 
 <sect1 id="appearance">
@@ -86,10 +88,11 @@
 </screenshot>
 
 <para>The <guilabel>Appearance</guilabel> tab allows you to configure the way &filelight; looks.</para>
-<para>The <guilabel>Color scheme</guilabel> section is used to choose a color scheme for &filelight;. The color schemes are <guilabel>Rainbow</guilabel>, <guilabel>&kde; Colors</guilabel>, and <guilabel>High Contrast</guilabel>. There is also a <guilabel>Contrast:</guilabel> slider to adjust the contrast of the ring segments for easier viewing.</para>
-<para>The <guilabel>Vary label font sizes</guilabel> check box is useful when you have files or folders with long names. This option will change the size of the font to allow it to fit in the view better. When this option is enabled a <guilabel>Minimum font size:</guilabel> spinbox becomes available for choosing the smallest size font to scale to.</para>
+<para>The <guilabel>Color scheme</guilabel> section is used to choose a color scheme for &filelight;. The color schemes are <guilabel>Rainbow</guilabel>, <guilabel>System Colors</guilabel>, and <guilabel>High Contrast</guilabel>. There is also a <guilabel>Contrast</guilabel> slider to adjust the contrast of the ring segments for easier viewing.</para>
 <para>The <guilabel>Use anti-aliasing</guilabel> check box is used to enable the use of anti-aliasing in the &filelight; view. Selected, this option makes the ring segments have a much cleaner look.</para>
-<para>The <guilabel>Show small files</guilabel> option is disabled by default as small files tend to clutter the &filelight; view. Enable this option if you would like to have your small files included in the &filelight; view.</para>
+<para>The <guilabel>Vary label font sizes</guilabel> check box is useful when you have files or folders with long names. This option will change the size of the font to allow it to fit in the view better. When this option is enabled a <guilabel>Minimum font size</guilabel> spinbox becomes available for choosing the smallest size font to scale to.
+<!-- WhatsThisHelp is different, what is correcct? --></para>
+<para>The <guilabel>Show small files</guilabel> option is disabled by default as small files tend to clutter the &filelight; view. Enable this option if you would like to have your small files included in the &filelight; view. These files are merged all into a single <quote>multi-segment</quote>.</para>
 
 </sect1>
 </chapter>
@@ -138,20 +141,17 @@ Scanning a folder shows it's contents as a filemap. To scan a folder, use the sc
 <sect1 id="exploring-filemaps">
 <title>Exploring Filemaps</title>
 <para>
-Once a scan has completed you will be presented with a filemap that represents the folder you scanned. The filemap is a series of segmented-rings that expand from the center. Brightly colored segments are folders, gray segments are files. Segments are sized in proportion to their filesize. Segments can be nested, so for example, /home/mxcl will be one level outwards and within the bounds of the segment representing /home. Segments are labeled and hovering the mouse over segments will give you more details of that segment and its child segments.
+Once a scan has completed you will be presented with a filemap that represents the folder you scanned. The filemap is a series of segmented-rings that expand from the center. Brightly colored segments are folders, gray segments are files. Segments are sized in proportion to their filesize. Segments can be nested, so for example, <filename class="directory">/home/mxcl</filename> will be one level outwards and within the bounds of the segment representing <filename class="directory">/home</filename>. Segments are labeled and hovering the mouse over segments will give you more details of that segment and its child segments.
 </para>
 <screenshot>
 <screeninfo>Filemap Screenshot</screeninfo>
 <mediaobject>
-<imageobject><imagedata fileref="radial_map.png" format="PNG"/></imageobject>
+<imageobject><imagedata fileref="radial_map_context_menu.png" format="PNG"/></imageobject>
 <textobject><phrase>Screenshot</phrase></textobject>
 </mediaobject>
 </screenshot>
 <para>
-You can open folders with &konqueror; or &konsole; using the context menu for that segment. &MMB; clicks open files by mimetype, &eg; images with <application>Gwenview</application>. You can right click the central circle to get a context menu for the scanned folder. Left clicking segments will re-center the map on that segment.
-</para>
-<para>
-If you want to improve the documentation, I'll happily accept patches. Thanks.
+You can open folders with your default file manager or &konsole; using the context menu for that segment. A &MMB; click opens files by mimetype, &eg; images with <application>Gwenview</application>. You can right click a segment to get a context menu for the scanned folder with actions to copy the folder path to the clipboard or delete the folder ore file. Left clicking segments will re-center the map on that segment.
 </para>
 </sect1>
 
@@ -161,9 +161,8 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 <chapter id="commands">
 <title>Menu and Command Reference</title>
 
-<sect1 id="scan_menu">
-<title>The Scan Menu</title>
 <variablelist>
+<title>The Scan Menu</title>
 <varlistentry>
 <term><menuchoice>
 <shortcut>
@@ -174,7 +173,7 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 </menuchoice></term>
 <listitem><para><action>Offers a folder selection dialog so you can choose a folder to scan.</action></para></listitem>
 </varlistentry>
-
+<!-- shortcut not visible in the menu, why?-->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
@@ -194,14 +193,15 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 <listitem><para><action>Starts a scan of the root folder.</action></para></listitem>
 </varlistentry>
 
-<varlistentry>
+<!--not in 4.6 
+varlistentry>
 <term><menuchoice>
 <guimenu>Scan</guimenu>
 <guimenuitem>Recent Scans</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Provides a list of your most recent scanned folders allowing quick access to these folders.</action></para></listitem>
-</varlistentry>
-<!--item only in menu, when scan history not empty?-->
+</varlistentry-->
+
 <varlistentry>
 <term><menuchoice>
 <shortcut>
@@ -236,12 +236,9 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 </varlistentry>
 
 </variablelist>
-</sect1>
-
-<sect1 id="view-menu">
-<title>The View Menu</title>
 
 <variablelist>
+  <title>The View Menu</title>
     <varlistentry>
     <term><menuchoice>
     <shortcut>
@@ -266,12 +263,9 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
     </listitem>
     </varlistentry>
 </variablelist>
-</sect1>
 
-<sect1 id="go_menu">
-<title>The Go Menu</title>
 <variablelist>
-
+<title>The Go Menu</title>
 <varlistentry>
 <term><menuchoice>
 <shortcut>
@@ -310,28 +304,17 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 </varlistentry>
 
 </variablelist>
-</sect1>
 
-<sect1 id="settings_menu">
-<title>The Settings Menu</title>
 <variablelist>
+<title>The Settings Menu</title>
 
 <varlistentry>
 <term><menuchoice>
 <guimenu>Settings</guimenu>
 <guisubmenu>Toolbars Shown</guisubmenu>
-<guimenuitem>Main Toolbar</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Enables or disable the main application toolbar.</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guisubmenu>Toolbars Shown</guisubmenu>
-<guimenuitem>Location Toolbar</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Enables or disable the location toolbar.</action></para></listitem>
+<listitem><para><action>Enables or disable the <guimenuitem>Main Toolbar</guimenuitem>, 
+<guimenuitem>Location Toolbar</guimenuitem> or <guimenuitem>View Toolbar</guimenuitem>.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -359,14 +342,10 @@ If you want to improve the documentation, I'll happily accept patches. Thanks.
 </varlistentry>
 
 </variablelist>
-</sect1>
 
-<sect1 id="help_menu">
-<title>The Help Menu</title>
+<para>The Help Menu</para>
 
 &help.menu.documentation;
-</sect1>
-
 </chapter>
 
 
