@@ -151,7 +151,7 @@ Once a scan has completed you will be presented with a filemap that represents t
 </mediaobject>
 </screenshot>
 <para>
-You can open folders with your default file manager or &konsole; using the context menu for that segment. A &MMB; click opens files by mimetype, &eg; images with <application>Gwenview</application>. You can right click a segment to get a context menu for the scanned folder with actions to copy the folder path to the clipboard or delete the folder ore file. Left clicking segments will re-center the map on that segment.
+You can open folders with your default file manager or &konsole; using the context menu for that segment. A &MMB; click opens files by mimetype, &eg; images with <application>Gwenview</application>. You can right click a segment to get a context menu for the scanned folder with actions to copy the folder path to the clipboard or delete the folder or file. Left clicking segments will re-center the map on that segment.
 </para>
 </sect1>
 
