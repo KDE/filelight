@@ -18,6 +18,7 @@ Name[sv]=Radiell avbildning
 Name[tr]=Işınsal Harita
 Name[uk]=Радіальна карта
 Name[x-test]=xxRadial Mapxx
+Name[zh_CN]=雷达图
 Name[zh_TW]=放射狀地圖
 MimeType=inode/directory;
 ServiceTypes=KParts/ReadOnlyPart
