@@ -37,7 +37,7 @@
 #include <KMessageBox>  //::start()
 #include <KStandardAction>
 #include <KStatusBar>
-#include <KParts/GenericFactory>
+#include <KPluginFactory>
 
 #include <QtCore/QFile>        //encodeName()
 #include <QtCore/QTimer>       //postInit() hack
