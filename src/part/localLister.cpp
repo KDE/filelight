@@ -36,7 +36,11 @@
 
 #include <kde_file.h>
 #include <dirent.h>
+#ifdef Q_OS_SOLARIS
+#include <sys/vfstab.h>
+#else
 #include <fstab.h>
+#endif
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
