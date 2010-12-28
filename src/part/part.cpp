@@ -42,6 +42,7 @@
 #include <QtCore/QFile>        //encodeName()
 #include <QtCore/QTimer>       //postInit() hack
 #include <QtCore/QByteArray>
+#include <QtCore/QDir>
 
 #include <unistd.h>       //access()
 #include <iostream>
@@ -159,7 +160,7 @@ Part::openUrl(const KUrl &u)
     {
         KMSG(i18n("The entered URL cannot be parsed; it is invalid."));
     }
-    else if (path[0] != QLatin1Char( '/' ))
+    else if ((!isLocal && path[0] != QLatin1Char( '/' )) || (isLocal && !QDir::isAbsolutePath(path)))
     {
         KMSG(i18n("Filelight only accepts absolute paths, eg. /%1", path));
     }
