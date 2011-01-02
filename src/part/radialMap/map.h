@@ -53,7 +53,7 @@ public:
     int width() const {
         return m_rect.width();
     }
-    QPixmap pixmap() {
+    QPixmap pixmap() const {
         return m_pixmap;
     }
 
