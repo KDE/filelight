@@ -2,6 +2,7 @@
 [Desktop Entry]
 Name=Filelight
 Name[ca]=Filelight
+Name[ca@valencia]=Filelight
 Name[da]=Filelight
 Name[de]=Filelight
 Name[en_GB]=Filelight
@@ -35,6 +36,7 @@ Name[zh_TW]=Filelight
 GenericName=Disk Usage Statistics
 GenericName[ast]=Estadístiques d'usu de discu
 GenericName[ca]=Estadístiques d'ús de disc
+GenericName[ca@valencia]=Estadístiques d'ús de disc
 GenericName[da]=Statistik over diskforbrug
 GenericName[de]=Statistiken über Festplattenbelegung
 GenericName[en_GB]=Disk Usage Statistics
@@ -70,6 +72,7 @@ Icon=filelight
 Comment=View disk usage information
 Comment[ast]=Ver infomación d'usu de Discu
 Comment[ca]=Veure la informació d'ús de disc
+Comment[ca@valencia]=Veure la informació d'ús de disc
 Comment[da]=Vis information om diskforbrug
 Comment[de]=Nutzungsinformationen zu Festplatten anzeigen
 Comment[en_GB]=View disk usage information
