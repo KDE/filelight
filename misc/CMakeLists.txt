@@ -20,7 +20,7 @@
 
 install(FILES filelightpart.desktop DESTINATION ${SERVICES_INSTALL_DIR})
 install(PROGRAMS filelight.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
-install(FILES filelightrc DESTINATION ${CMAKE_INSTALL_PREFIX}/share/config)
+install(FILES filelightrc DESTINATION ${CONFIG_INSTALL_DIR})
 install(FILES filelightpartui.rc DESTINATION ${DATA_INSTALL_DIR}/filelightpart)
 install(FILES filelightui.rc DESTINATION ${DATA_INSTALL_DIR}/filelight)
 
