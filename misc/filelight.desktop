@@ -3,6 +3,7 @@
 Name=Filelight
 Name[ca]=Filelight
 Name[ca@valencia]=Filelight
+Name[cs]=Filelight
 Name[da]=Filelight
 Name[de]=Filelight
 Name[en_GB]=Filelight
@@ -39,6 +40,7 @@ GenericName=Disk Usage Statistics
 GenericName[ast]=Estadístiques d'usu de discu
 GenericName[ca]=Estadístiques d'ús de disc
 GenericName[ca@valencia]=Estadístiques d'ús de disc
+GenericName[cs]=Statistika použití disku
 GenericName[da]=Statistik over diskforbrug
 GenericName[de]=Statistiken über Festplattenbelegung
 GenericName[en_GB]=Disk Usage Statistics
