@@ -38,7 +38,7 @@
 #include <dirent.h>
 #ifdef Q_OS_SOLARIS
 #include <sys/vfstab.h>
-#else
+#elif !defined(Q_WS_WIN)
 #include <fstab.h>
 #endif
 #include <sys/stat.h>
@@ -125,8 +125,10 @@ outputError(QByteArray path)
         out("Bad file descriptor");
     case EFAULT:
         out("Bad address");
+#ifndef Q_WS_WIN
     case ELOOP: //NOTE shouldn't ever happen
         out("Too many symbolic links encountered while traversing the path");
+#endif
     case ENAMETOOLONG:
         out("File name too long");
     }
@@ -144,6 +146,14 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
         outputError(path);
         return cwd;
     }
+
+#ifdef _MSC_VER
+//use a wider struct on win for nice handling of files larger than 2 GB
+#undef KDE_struct_stat
+#undef KDE_lstat
+#define KDE_struct_stat struct _stat64
+#define KDE_lstat kdewin32_stat64
+#endif
 
     KDE_struct_stat statbuf;
     dirent *ent;
@@ -175,7 +185,11 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
 
         if (S_ISREG(statbuf.st_mode)) //file
             //using units of KiB as 32bit max is 4GiB and 64bit ints are expensive
+#ifndef Q_WS_WIN
             cwd->append(ent->d_name, (statbuf.st_blocks * S_BLKSIZE) / 1024);
+#else
+            cwd->append(ent->d_name, statbuf.st_size / 1024);
+#endif
 
         else if (S_ISDIR(statbuf.st_mode)) //folder
         {
