@@ -20,15 +20,13 @@
 
 project(Filelight)
 
-if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
-    find_package(KDE4)
-    include( KDE4Defaults )
-    include_directories(${KDE4_INCLUDES})
-endif()
+find_package(KDE4)
+include( KDE4Defaults )
 
 add_definitions( -DQT_NO_CAST_FROM_ASCII )
 add_definitions( -DQT_NO_CAST_TO_ASCII )
 
+include_directories(${KDE4_INCLUDES})
 include_directories(src/)
 
 add_subdirectory(src)
