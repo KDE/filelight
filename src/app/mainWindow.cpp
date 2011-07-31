@@ -76,9 +76,9 @@ MainWindow::MainWindow() : KParts::MainWindow(), m_part(0)
 
         connect(m_part, SIGNAL(started(KIO::Job*)), SLOT(scanStarted()));
         connect(m_part, SIGNAL(completed()), SLOT(scanCompleted()));
-        connect(m_part, SIGNAL(canceled(const QString&)), SLOT(scanFailed()));
+        connect(m_part, SIGNAL(canceled(QString)), SLOT(scanFailed()));
 
-        connect(m_part, SIGNAL(canceled(const QString&)), m_histories, SLOT(stop()));
+        connect(m_part, SIGNAL(canceled(QString)), m_histories, SLOT(stop()));
         connect(BrowserExtension::childObject(m_part), SIGNAL(openUrlNotify()), SLOT(urlAboutToChange()));
 
         const KConfigGroup config = KGlobal::config()->group("general");
@@ -148,9 +148,9 @@ inline void MainWindow::setupActions() //singleton function
 
     m_recentScans->loadEntries(KGlobal::config()->group("general"));
 
-    connect(m_recentScans, SIGNAL(urlSelected(const KUrl&)), SLOT(slotScanUrl(const KUrl&)));
+    connect(m_recentScans, SIGNAL(urlSelected(KUrl)), SLOT(slotScanUrl(KUrl)));
     connect(m_combo, SIGNAL(returnPressed()), SLOT(slotComboScan()));
-    connect(m_histories, SIGNAL(activated(const KUrl&)), SLOT(slotScanUrl(const KUrl&)));
+    connect(m_histories, SIGNAL(activated(KUrl)), SLOT(slotScanUrl(KUrl)));
 }
 
 bool MainWindow::queryExit()

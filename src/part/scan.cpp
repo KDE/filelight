@@ -41,7 +41,7 @@ ScanManager::ScanManager(QObject *parent)
         , m_cache(new Chain<Folder>)
 {
     Filelight::LocalLister::readMounts();
-    connect(this, SIGNAL(branchCompleted(Folder*, bool)), this, SLOT(cacheTree(Folder*, bool)), Qt::QueuedConnection);
+    connect(this, SIGNAL(branchCompleted(Folder*,bool)), this, SLOT(cacheTree(Folder*,bool)), Qt::QueuedConnection);
 }
 
 ScanManager::~ScanManager()
@@ -154,7 +154,7 @@ bool ScanManager::start(const KUrl &url)
         QApplication::setOverrideCursor(Qt::BusyCursor);
         //starts listing by itself
         m_thread = new Filelight::LocalLister(path, trees, this);
-        connect(m_thread, SIGNAL(branchCompleted(Folder*, bool)), this, SLOT(cacheTree(Folder*, bool)), Qt::QueuedConnection);
+        connect(m_thread, SIGNAL(branchCompleted(Folder*,bool)), this, SLOT(cacheTree(Folder*,bool)), Qt::QueuedConnection);
         m_thread->start();
 
         return true;
@@ -164,7 +164,7 @@ bool ScanManager::start(const KUrl &url)
     QApplication::setOverrideCursor(Qt::BusyCursor);
     //will start listing straight away
     Filelight::RemoteLister *remoteLister = new Filelight::RemoteLister(url, (QWidget*)parent(), this);
-    connect(remoteLister, SIGNAL(branchCompleted(Folder*, bool)), this, SLOT(cacheTree(Folder*, bool)), Qt::QueuedConnection);
+    connect(remoteLister, SIGNAL(branchCompleted(Folder*,bool)), this, SLOT(cacheTree(Folder*,bool)), Qt::QueuedConnection);
     remoteLister->setParent(this);
     remoteLister->setObjectName(QLatin1String( "remote_lister" ));
     remoteLister->openUrl(url);

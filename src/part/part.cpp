@@ -110,11 +110,11 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
 
     connect(m_map, SIGNAL(created(const Folder*)), SIGNAL(completed()));
     connect(m_map, SIGNAL(created(const Folder*)), SLOT(mapChanged(const Folder*)));
-    connect(m_map, SIGNAL(activated(const KUrl&)), SLOT(updateURL(const KUrl&)));
+    connect(m_map, SIGNAL(activated(KUrl)), SLOT(updateURL(KUrl)));
 
     // TODO make better system
-    connect(m_map, SIGNAL(giveMeTreeFor(const KUrl&)), SLOT(updateURL(const KUrl&)));
-    connect(m_map, SIGNAL(giveMeTreeFor(const KUrl&)), SLOT(openUrl(const KUrl&)));
+    connect(m_map, SIGNAL(giveMeTreeFor(KUrl)), SLOT(updateURL(KUrl)));
+    connect(m_map, SIGNAL(giveMeTreeFor(KUrl)), SLOT(openUrl(KUrl)));
 
     connect(m_manager, SIGNAL(completed(Folder*)), SLOT(scanCompleted(Folder*)));
     connect(m_manager, SIGNAL(aboutToEmptyCache()), m_map, SLOT(invalidate()));
@@ -233,7 +233,7 @@ bool
 Part::start(const KUrl &url)
 {
     if (!m_started) {
-        connect(m_map, SIGNAL(mouseHover(const QString&)), statusBar(), SLOT(message(const QString&)));
+        connect(m_map, SIGNAL(mouseHover(QString)), statusBar(), SLOT(message(QString)));
         connect(m_map, SIGNAL(created(const Folder*)), statusBar(), SLOT(clear()));
         m_started = true;
     }
@@ -322,7 +322,7 @@ Part::showSummary()
     if (m_summary == 0) {
         m_summary = new SummaryWidget(widget());
         m_summary->setObjectName(QLatin1String( "summaryWidget" ));
-        connect(m_summary, SIGNAL(activated(const KUrl&)), SLOT(openUrl(const KUrl&)));
+        connect(m_summary, SIGNAL(activated(KUrl)), SLOT(openUrl(KUrl)));
         m_summary->show();
         m_layout->addWidget(m_summary);
     }

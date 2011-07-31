@@ -49,7 +49,7 @@ ProgressBox::ProgressBox(QWidget *parent, QObject *part, Filelight::ScanManager 
     connect(&m_timer, SIGNAL(timeout()), SLOT(report()));
     connect(part, SIGNAL(started(KIO::Job*)), SLOT(start()));
     connect(part, SIGNAL(completed()), SLOT(stop()));
-    connect(part, SIGNAL(canceled(const QString&)), SLOT(halt()));
+    connect(part, SIGNAL(canceled(QString)), SLOT(halt()));
 }
 
 void
