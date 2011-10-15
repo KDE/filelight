@@ -50,7 +50,7 @@ File::humanReadableSize(UnitPrefix key /*= mega*/) const //FIXME inline
 }
 
 QString
-File::humanReadableSize(uint size, UnitPrefix key /*= mega*/) //static
+File::humanReadableSize(FileSize size, UnitPrefix key /*= mega*/) //static
 {
     Q_UNUSED( key );
     // TODO: LocalLister::scan() divides by 1024, to be able to use only 32bit for size

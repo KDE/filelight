@@ -255,7 +255,7 @@ public:
     QString humanReadableSize(UnitPrefix key = mega) const;
 
 public:
-    static QString humanReadableSize(uint size, UnitPrefix Key = mega);
+    static QString humanReadableSize(FileSize size, UnitPrefix Key = mega);
 
 protected:
     File(const char *name, FileSize size, Folder *parent) : m_parent(parent), m_name(qstrdup(name)), m_size(size) {}
