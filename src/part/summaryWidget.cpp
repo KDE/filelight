@@ -180,9 +180,9 @@ DiskList::DiskList()
         Disk disk;
         disk.mount = partition->filePath();
         disk.icon = device.icon();
-        disk.size = info.size() / 1024; // All sizes are in 1kb large blocks
-        disk.free = info.available() / 1024;
-        disk.used = info.used() / 1024;
+        disk.size = info.size();
+        disk.free = info.available();
+        disk.used = info.used();
 
         *this += disk;
     }

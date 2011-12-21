@@ -134,7 +134,7 @@ RemoteLister::_completed()
         if (it->isDir())
             m_store->stores += new Store(it->url(), it->name(), m_store);
         else
-            m_store->folder->append(it->name().toUtf8(), it->size() / 1024);
+            m_store->folder->append(it->name().toUtf8(), it->size());
 
         m_manager->m_files++;
     }

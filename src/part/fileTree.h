@@ -29,8 +29,8 @@
 
 //TODO these are pointlessly general purpose now, make them incredibly specific
 
-typedef quint32 FileSize;
-typedef quint32 Dirsize;  //**** currently unused
+typedef quint64 FileSize;
+typedef quint64 Dirsize;  //**** currently unused
 
 template <class T> class Iterator;
 template <class T> class ConstIterator;

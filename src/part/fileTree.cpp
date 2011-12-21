@@ -53,9 +53,8 @@ QString
 File::humanReadableSize(FileSize size, UnitPrefix key /*= mega*/) //static
 {
     Q_UNUSED( key );
-    // TODO: LocalLister::scan() divides by 1024, to be able to use only 32bit for size
     // TODO: ensure again three significant figures
-    return KGlobal::locale()->formatByteSize(1024*(quint64)size);
+    return KGlobal::locale()->formatByteSize(size);
 
 #if 0
     if (size == 0)
