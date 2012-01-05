@@ -43,6 +43,7 @@
 #include <QtCore/QTimer>       //postInit() hack
 #include <QtCore/QByteArray>
 #include <QtCore/QDir>
+#include <QtGui/QScrollArea>
 
 #include <unistd.h>       //access()
 #include <iostream>
@@ -82,16 +83,22 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
     setComponentData(filelightPartFactory::componentData());
     setXMLFile(QLatin1String( "filelightpartui.rc" ));
 
-    setWidget(new QWidget(parentWidget));
-    widget()->setBackgroundRole(QPalette::Base);
-    widget()->setAutoFillBackground(true);
+    QScrollArea *scrollArea = new QScrollArea(parentWidget);
+    scrollArea->setWidgetResizable(true);
+    setWidget(scrollArea);
 
-    m_layout = new QGridLayout(widget());
-    widget()->setLayout(m_layout);
+    QWidget *partWidget = new QWidget(scrollArea);
+    scrollArea->setWidget(partWidget);
 
-    m_manager = new ScanManager(widget());
+    partWidget->setBackgroundRole(QPalette::Base);
+    partWidget->setAutoFillBackground(true);
 
-    m_map = new RadialMap::Widget(widget());
+    m_layout = new QGridLayout();
+    partWidget->setLayout(m_layout);
+
+    m_manager = new ScanManager(partWidget);
+
+    m_map = new RadialMap::Widget(partWidget);
     m_layout->addWidget(m_map);
 
     m_stateWidget = new ProgressBox(statusBar(), this, m_manager);
