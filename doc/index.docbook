@@ -7,9 +7,9 @@
   <!ENTITY % English "INCLUDE"><!-- change language only here -->
 ]>
 
-<book lang="&language;">
+<book id="filelight" lang="&language;">
 
-<bookinfo>
+<book id="filelight"info>
    <title>The &filelight; Handbook</title>
    <authorgroup>
       <author>
