@@ -1,6 +1,6 @@
 /***********************************************************************
 * Copyright 2003-2004  Max Howell <max.howell@methylblue.com>
-* Copyright 2008-2009  Martin Sandsmark <sandsmark@samfundet.no>
+* Copyright 2008-2009  Martin Sandsmark <martin.sandsmark@kde.org>
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public License as
@@ -62,7 +62,7 @@ K_EXPORT_PLUGIN(filelightPartFactory(KAboutData(
                 (c) 2008-2009 Martin T. Sandsmark"),
                KLocalizedString(),
                "http://utils.kde.org/projects/filelight",
-               "sandsmark@iskrembilen.com").
+               "martin.sandsmark@kde.org").
                setProgramIconName(QLatin1String( "filelight" )).
                setCatalogName( "filelight" )))
 

@@ -5,7 +5,7 @@ Entered-date:   5/9/2003
 Description:    Graphical disk usage information
 Keywords:       kde disk usage du filesystem diskspace
 author:         Max Howell <max.howell@methylblue.com>
-Maintained-by:  Martin Sandsmark <sandsmark@iskrembilen.com>
+Maintained-by:  Martin Sandsmark <martin.sandsmark@kde.org>
 Home-page:      http://utils.kde.org/projects/filelight
 Platform:       unix
 Copying-policy: GPL

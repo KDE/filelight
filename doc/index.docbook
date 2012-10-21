@@ -20,7 +20,7 @@
       <author>
         <firstname>Martin</firstname>
         <surname>Sandsmark</surname>
-        <affiliation><address><email>sandsmark@samfundet.no</email></address></affiliation>
+        <affiliation><address><email>martin.sandsmark@kde.org</email></address></affiliation>
       </author>
       <!-- TRANS:ROLES_OF_TRANSLATORS -->
    </authorgroup>
@@ -354,13 +354,13 @@ varlistentry>
    <sect1 id="kapp">
       <title>&filelight;</title>
       <para>Program copyright 2003 Max B. Howell <email>max.howell@methylblue.com</email></para>
-      <para>Program copyright 2009 Martin Sandsmark <email>sandsmark@samfundet.no</email></para>
+      <para>Program copyright 2009 Martin Sandsmark <email>martin.sandsmark@kde.org</email></para>
       &underGPL;
    </sect1>
    <sect1 id="Documentation">
       <title>Documentation</title>
       <para>Documentation copyright 2003 Max B. Howell <email>max.howell@methylblue.com</email></para>
-      <para>Documentation copyright 2009 Martin Sandsmark <email>sandsmark@samfundet.no</email></para>
+      <para>Documentation copyright 2009 Martin Sandsmark <email>martin.sandsmark@kde.org</email></para>
       <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
       &underFDL;
    </sect1>

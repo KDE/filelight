@@ -1,6 +1,6 @@
 /***********************************************************************
 * Copyright 2003-2004  Max Howell <max.howell@methylblue.com>
-* Copyright 2008-2009  Martin Sandsmark <sandsmark@samfundet.no>
+* Copyright 2008-2009  Martin Sandsmark <martin.sandsmark@kde.org>
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public License as
@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 {
     using Filelight::MainWindow;
 
-    about.addAuthor(ki18n("Martin Sandsmark"), ki18n("Maintainer"), "sandsmark@iskrembilen.com", "http://iskrembilen.com/");
+    about.addAuthor(ki18n("Martin Sandsmark"), ki18n("Maintainer"), "martin.sandsmark@kde.org", "http://iskrembilen.com/");
     about.addAuthor(ki18n("Max Howell"),       ki18n("Original author"), "max.howell@methylblue.com", "http://www.methylblue.com/");
     about.addCredit(ki18n("Lukas Appelhans"),  ki18n("Help and support"));
     about.addCredit(ki18n("Steffen Gerlach"),  ki18n("Inspiration"), 0, "http://www.steffengerlach.de/");
