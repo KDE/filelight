@@ -109,9 +109,7 @@ RemoteLister::completed()
 {
     kDebug() << "completed: " << url().prettyUrl() << endl;
 
-    //as usual KDE documentation didn't suggest I needed to do this at all
-    //I had to figure it out myself
-    // -- avoid crash
+    // Delay the call to _completed since it can do a "delete this"
     QTimer::singleShot(0, this, SLOT(_completed()));
 }
 
