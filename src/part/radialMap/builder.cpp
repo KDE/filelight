@@ -152,7 +152,7 @@ RadialMap::Builder::build(const Folder* const dir, const unsigned int depth, uns
         const QString s = i18np("1 file, with an average size of %2",
                                 "%1 files, with an average size of %2",
                                 hiddenFileCount,
-                                File::humanReadableSize(hiddenSize/hiddenFileCount));
+                                KGlobal::locale()->formatByteSize(hiddenSize/hiddenFileCount));
 
         (m_signature + depth)->append(new Segment(new File(s.toUtf8(), hiddenSize), a_start, a_end - a_start, true));
     }

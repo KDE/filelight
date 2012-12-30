@@ -78,13 +78,7 @@ void RadialMap::Map::make(const Folder *tree, bool refresh)
     colorise();
 
     if (!refresh) {
-        //determine centerText
-        int i;
-        for (i = 2; i > 0; --i)
-            if (tree->size() > File::DENOMINATOR[i])
-                break;
-    
-        m_centerText = tree->humanReadableSize((File::UnitPrefix)i);
+        m_centerText = tree->humanReadableSize();
     }
     
     //paint the pixmap

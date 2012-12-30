@@ -24,11 +24,6 @@
 #include <KGlobal>
 #include <KLocale>
 
-//static definitions
-const uint File::DENOMINATOR[4] = { 1<<0, 1<<10, 1<<20, 1<<30 };
-static const char PREFIX[4]   = { 'K', 'M', 'G', 'T' };
-
-
 QString
 File::fullPath(const Folder *root /*= 0*/) const
 {
@@ -41,50 +36,4 @@ File::fullPath(const Folder *root /*= 0*/) const
         path.prepend(d->name());
 
     return path;
-}
-
-QString
-File::humanReadableSize(UnitPrefix key /*= mega*/) const //FIXME inline
-{
-    return humanReadableSize(m_size, key);
-}
-
-QString
-File::humanReadableSize(FileSize size, UnitPrefix key /*= mega*/) //static
-{
-    Q_UNUSED( key );
-    // TODO: ensure again three significant figures
-    return KGlobal::locale()->formatByteSize(size);
-
-#if 0
-    if (size == 0)
-        return "0 B";
-
-    QString s;
-    double prettySize = (double)size / (double)DENOMINATOR[key];
-    const KLocale &locale = *KGlobal::locale();
-
-    if (prettySize >= 0.01)
-    {
-        //use three significant figures
-        if (prettySize < 1)        s = locale.formatNumber(prettySize, 2);
-        else if (prettySize < 100) s = locale.formatNumber(prettySize, 1);
-        else                       s = locale.formatNumber(prettySize, 0);
-
-        s += ' ';
-        s += PREFIX[key];
-        s += 'B';
-    }
-
-    if (prettySize < 0.1)
-    {
-        s += " (";
-        s += locale.formatNumber(size / DENOMINATOR[key - 1], 0);
-        s += ' ';
-        s += PREFIX[key - 1];
-        s += "B)";
-    }
-
-    return s;
-#endif
 }

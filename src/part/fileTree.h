@@ -24,6 +24,8 @@
 
 #include <QtCore/QByteArray> //qstrdup
 #include <QtCore/QFile> //decodeName()
+#include <kglobal.h>
+#include <klocale.h>
 
 #include <stdlib.h>
 
@@ -224,10 +226,6 @@ class File
 public:
     friend class Folder;
 
-    enum UnitPrefix { kilo, mega, giga, tera };
-
-    static const uint DENOMINATOR[4];
-
 public:
     File(const char *name, FileSize size) : m_parent(0), m_name(qstrdup(name)), m_size(size) {}
     virtual ~File() {
@@ -252,10 +250,9 @@ public:
     }
 
     QString fullPath(const Folder* = 0) const;
-    QString humanReadableSize(UnitPrefix key = mega) const;
-
-public:
-    static QString humanReadableSize(FileSize size, UnitPrefix Key = mega);
+    QString humanReadableSize() const {
+        return KGlobal::locale()->formatByteSize(m_size);
+    }
 
 protected:
     File(const char *name, FileSize size, Folder *parent) : m_parent(parent), m_name(qstrdup(name)), m_size(size) {}
