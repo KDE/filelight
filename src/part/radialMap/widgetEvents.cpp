@@ -277,11 +277,8 @@ void RadialMap::Widget::deleteJobFinished(KJob *job)
 {
     QApplication::restoreOverrideCursor();
     if (!job->error() && m_toBeDeleted) {
-        const Folder *dir = m_toBeDeleted->file()->parent();
-        for (Iterator<File> it = dir->iterator(); it != dir->end(); ++it) {
-            if (m_toBeDeleted->file() == (*it))
-                it.remove();
-        }
+        m_toBeDeleted->file()->parent()->remove(m_toBeDeleted->file());
+        delete m_toBeDeleted->file();
         m_map.make(m_tree, true);
         repaint();
 
