@@ -30,7 +30,7 @@
 #undef PRETTYNAME
 
 #define APP_NAME "filelight"
-#define APP_VERSION "1.12"
+#define APP_VERSION "1.13"
 #define APP_PRETTYNAME "Filelight"
 
 #endif

@@ -35,7 +35,7 @@ static KAboutData about(
     APP_VERSION,
     ki18n("Graphical disk-usage information"),
     KAboutData::License_GPL_V3,
-    ki18n("(C) 2006 Max Howell\n(C) 2008, 2009 Martin Sandsmark"),
+    ki18n("(C) 2006 Max Howell\n(C) 2008, 2009, 2012 Martin Sandsmark"),
     KLocalizedString(),
     "http://utils.kde.org/projects/filelight");
 
@@ -49,6 +49,7 @@ int main(int argc, char *argv[])
     about.addCredit(ki18n("Lukas Appelhans"),  ki18n("Help and support"));
     about.addCredit(ki18n("Steffen Gerlach"),  ki18n("Inspiration"), 0, "http://www.steffengerlach.de/");
     about.addCredit(ki18n("Mike Diehl"),       ki18n("Original documentation"), 0, 0);
+    about.addCredit(ki18n("Sune Vuorela"),     ki18n("Icon"), 0, 0);
 
     KCmdLineArgs::init(argc, argv, &about);
 
