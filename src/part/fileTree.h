@@ -24,6 +24,7 @@
 
 #include <QtCore/QByteArray> //qstrdup
 #include <QtCore/QFile> //decodeName()
+#include <QtCore/QDebug>
 #include <kglobal.h>
 #include <klocale.h>
 
@@ -232,7 +233,7 @@ public:
         delete [] m_name;
     }
 
-    const Folder *parent() const {
+    Folder *parent() const {
         return m_parent;
     }
     const char *name8Bit() const {
@@ -296,6 +297,16 @@ public:
     void append(const char *name, FileSize size)
     {
         append(new File(name, size, this));
+    }
+    
+    /// removes a file
+    void remove(const File *f) {
+        for (Iterator<File> it = iterator(); it != end(); ++it)
+            if (f == (*it))
+                it.remove();
+        
+        for (Folder *d = this; d; d = d->parent())
+            d->m_size -= f->size();
     }
 
 private:

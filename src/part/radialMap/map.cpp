@@ -77,9 +77,7 @@ void RadialMap::Map::make(const Folder *tree, bool refresh)
     //colour the segments
     colorise();
 
-    if (!refresh) {
-        m_centerText = tree->humanReadableSize();
-    }
+    m_centerText = tree->humanReadableSize();
     
     //paint the pixmap
     paint();
