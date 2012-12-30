@@ -47,6 +47,7 @@
 #include <QtGui/QResizeEvent>
 #include <QtGui/QMouseEvent>
 #include <QtGui/QDragEnterEvent>
+#include <QtGui/QToolTip>
 
 #include <cmath>         //::segmentAt()
 
@@ -147,17 +148,28 @@ void RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
         {
             setCursor(Qt::PointingHandCursor);
 
-            m_tip->updateTip(m_focus->file(), m_tree);
+            QString string = m_focus->file()->fullPath(m_tree)
+                + QLatin1Char('\n')
+                + m_focus->file()->humanReadableSize()
+                + QLatin1Char('\n');
+                
+            if (m_focus->file()->isFolder()) {
+                int files = static_cast<const Folder*>(m_focus->file())->children();
+                const uint percent = uint((100 * files) / (double)m_tree->children());
+                string += i18np("File: %1", "Files: %1", files);
+                
+                if (percent > 0) string += QString(QLatin1String( " (%1%)" )).arg(KGlobal::locale()->formatNumber(percent, 0));
+            }
+            
+            QToolTip::showText(e->globalPos(), string, this);
 
             emit mouseHover(m_focus->file()->fullPath());
             update();
         }
-        m_tip->moveTo(e->globalPos(), (p.y() < 0));
     }
     else if (oldFocus && oldFocus->file() != m_tree)
     {
         unsetCursor();
-        m_tip->hide();
         update();
 
         emit mouseHover(QString());
@@ -175,7 +187,6 @@ void RadialMap::Widget::enterEvent(QEvent *)
 
 void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
 {
-    //m_tip is hidden already by event filter
     //m_focus is set correctly (I've been strict, I assure you it is correct!)
 
     if (m_focus && !m_focus->isFake())
@@ -255,8 +266,6 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
 
 section_two:
             const QRect rect(e->x() - 20, e->y() - 20, 40, 40);
-
-            m_tip->hide(); // user expects this
 
             if (!isDir || e->button() == Qt::MidButton) {
                 // KIconEffect::visualActivate(this, rect); // TODO: recreate this

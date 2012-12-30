@@ -30,9 +30,9 @@
 #include <QtGui/QMouseEvent>
 #include <QtGui/QPaintEvent>
 #include <QtGui/QResizeEvent>
+#include <QtGui/QWidget>
 #include <QtCore/QTimer>
 
-#include "segmentTip.h"
 #include "map.h"
 
 template <class T> class Chain;
@@ -53,10 +53,6 @@ class Widget : public QWidget
 
 public:
     explicit Widget(QWidget* = 0, bool = false);
-    ~Widget() {
-        delete m_tip;
-    }
-
     QString path() const;
     KUrl url(File const * const = 0) const;
 
@@ -117,7 +113,6 @@ private:
     QPoint           m_offset;
     QTimer           m_timer;
     Map              m_map;
-    SegmentTip       *m_tip;
     Segment          *m_rootSegment;
     const bool       m_isSummary;
     const Segment    *m_toBeDeleted;

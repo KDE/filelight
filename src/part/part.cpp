@@ -59,7 +59,7 @@ K_EXPORT_PLUGIN(filelightPartFactory(KAboutData(
                ki18n("Displays file usage in an easy to understand way."),
                KAboutData::License_GPL,
                ki18n("(c) 2002-2004 Max Howell\n\
-                (c) 2008-2009 Martin T. Sandsmark"),
+                (c) 2008-2013 Martin T. Sandsmark"),
                KLocalizedString(),
                "http://utils.kde.org/projects/filelight",
                "martin.sandsmark@kde.org").

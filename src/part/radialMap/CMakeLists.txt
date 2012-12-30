@@ -23,8 +23,7 @@ set(radialmap_STAT_SRCS
     builder.cpp
     map.cpp
     widgetEvents.cpp
-    labels.cpp
-    segmentTip.cpp)
+    labels.cpp)
 
 kde4_add_library(radialmap STATIC ${radialmap_STAT_SRCS} )
 
