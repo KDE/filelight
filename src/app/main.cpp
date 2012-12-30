@@ -50,6 +50,7 @@ int main(int argc, char *argv[])
     about.addCredit(ki18n("Steffen Gerlach"),  ki18n("Inspiration"), 0, "http://www.steffengerlach.de/");
     about.addCredit(ki18n("Mike Diehl"),       ki18n("Original documentation"), 0, 0);
     about.addCredit(ki18n("Sune Vuorela"),     ki18n("Icon"), 0, 0);
+    about.addCredit(ki18n("Nuno Pinheiro"),    ki18n("Icon"), 0, 0);
 
     KCmdLineArgs::init(argc, argv, &about);
 
