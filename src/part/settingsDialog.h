@@ -33,7 +33,7 @@ class SettingsDialog : public KDialog, public Ui::Dialog
     Q_OBJECT
 
 public:
-    SettingsDialog(QWidget* = 0);
+    explicit SettingsDialog(QWidget* = 0);
 
 protected:
     virtual void closeEvent(QCloseEvent *);

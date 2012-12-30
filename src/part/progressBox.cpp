@@ -92,7 +92,7 @@ ProgressBox::setText(int files)
     
 }
 
-void ProgressBox::paintEvent(QPaintEvent* event )
+void ProgressBox::paintEvent(QPaintEvent*)
 {
     QPainter paint(this);
     paint.setRenderHint(QPainter::Antialiasing);

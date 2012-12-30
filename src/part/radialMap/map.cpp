@@ -299,7 +299,7 @@ void RadialMap::Map::paint(bool antialias)
     {
         int width = rect.width() / 2;
         //clever geometric trick to find largest angle that will give biggest arrow head
-        int a_max = int(acos((double)width / double((width + 5))) * (180*16 / M_PI));
+        uint a_max = int(acos((double)width / double((width + 5))) * (180*16 / M_PI));
 
         for (ConstIterator<Segment> it = m_signature[x].constIterator(); it != m_signature[x].end(); ++it)
         {
@@ -313,7 +313,7 @@ void RadialMap::Map::paint(bool antialias)
                 //draw arrow head to indicate undisplayed files/directories
                 QPolygon pts(3);
                 QPoint pos, cpos = rect.center();
-                int a[3] = { (*it)->start(), (*it)->length(), 0 };
+                uint a[3] = { (*it)->start(), (*it)->length(), 0 };
 
                 a[2] = a[0] + (a[1] / 2); //assign to halfway between
                 if (a[1] > a_max)

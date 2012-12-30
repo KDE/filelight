@@ -48,8 +48,6 @@ RadialMap::Widget::Widget(QWidget *parent, bool isSummary)
     setAcceptDrops(true);
     setMinimumSize(350, 250);
 
-    const QBitmap *cursor = QCursor(Qt::PointingHandCursor).bitmap();
-
     connect(this, SIGNAL(created(const Folder*)), SLOT(sendFakeMouseEvent()));
     connect(this, SIGNAL(created(const Folder*)), SLOT(update()));
     connect(&m_timer, SIGNAL(timeout()), SLOT(resizeTimeout()));

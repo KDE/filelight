@@ -40,7 +40,7 @@ class ScanManager : public QObject
     friend class RemoteLister;
 
 public:
-    ScanManager(QObject *parent);
+    explicit ScanManager(QObject *parent);
     virtual ~ScanManager();
 
     bool start(const KUrl&);

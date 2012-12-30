@@ -43,7 +43,7 @@ class Part;
 class BrowserExtension : public KParts::BrowserExtension
 {
 public:
-    BrowserExtension(Part*);
+    explicit BrowserExtension(Part*);
 };
 
 

@@ -36,7 +36,7 @@ class Segment;
 class Map
 {
 public:
-    Map(bool summary);
+    explicit Map(bool summary);
     ~Map();
 
     void make(const Folder *, bool = false);
