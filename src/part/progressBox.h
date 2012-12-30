@@ -29,7 +29,7 @@ namespace Filelight {
 class ScanManager;
 }
 
-class ProgressBox : public QLabel
+class ProgressBox : public QWidget
 {
     Q_OBJECT
 
@@ -44,9 +44,15 @@ public slots:
     void stop();
     void halt();
 
+protected:
+    void paintEvent(QPaintEvent *event);
+    
 private:
     QTimer m_timer;
     Filelight::ScanManager* m_manager;
+    QString m_text;
+    int m_textWidth;
+    int m_textHeight;
 };
 
 #endif

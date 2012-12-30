@@ -29,22 +29,24 @@
 #include <KLocale>
 
 #include <QtGui/QLabel>
+#include <QPainter>
+#include <QtCore/QDebug>
 
 
 ProgressBox::ProgressBox(QWidget *parent, QObject *part, Filelight::ScanManager *m)
-        : QLabel(parent)
+        : QWidget(parent)
         , m_manager(m)
 {
     hide();
 
     setObjectName(QLatin1String( "ProgressBox" ));
 
-    setAlignment(Qt::AlignCenter);
     setFont(KGlobalSettings::fixedFont());
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
 
     setText(999999);
-    setMinimumWidth(sizeHint().width());
+    setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    setMinimumSize(200, 200);
 
     connect(&m_timer, SIGNAL(timeout()), SLOT(report()));
     connect(part, SIGNAL(started(KIO::Job*)), SLOT(start()));
@@ -64,6 +66,7 @@ void
 ProgressBox::report() //slot
 {
     setText(m_manager->files());
+    repaint();
 }
 
 void
@@ -83,7 +86,32 @@ ProgressBox::halt()
 void
 ProgressBox::setText(int files)
 {
-    QLabel::setText(i18np("%1 File", "%1 Files", files));
+    m_text = i18np("%1 File", "%1 Files", files);
+    m_textWidth = fontMetrics().width(m_text);
+    m_textHeight = fontMetrics().height();
+    
 }
+
+void ProgressBox::paintEvent(QPaintEvent* event )
+{
+    QPainter paint(this);
+    paint.setRenderHint(QPainter::Antialiasing);
+    static int i = 0;
+    i+=16;
+    paint.setBrush(QColor::fromHsv(0, 160, 255));
+    paint.drawPie(QRect(0, 0, 200, 200), 5760-i/2, 300);
+    paint.setBrush(QColor::fromHsv(25, 160, 255));
+    paint.drawPie(QRect(25, 25, 150, 150), 5760+i/1.75, 2000);
+    paint.setBrush(QColor::fromHsv(50, 160, 255));
+    paint.drawPie(QRect(50, 50, 100, 100), i, 200);
+    paint.setBrush(QColor::fromHsv(75, 160, 255));
+    paint.drawPie(QRect(75, 75, 50, 50), 5760-i/3, 2000);
+    paint.setBrush(Qt::white);
+    paint.translate(0.5, 0.5);
+    paint.drawRoundedRect(95-m_textWidth/2, 85-m_textHeight/2, m_textWidth+10, m_textHeight+10, 5, 5);
+    paint.translate(-0.5, -0.5);
+    paint.drawText(100 - m_textWidth / 2, 100-m_textHeight/2, m_text);
+}
+
 
 #include "progressBox.moc"
