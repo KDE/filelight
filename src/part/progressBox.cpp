@@ -89,7 +89,6 @@ ProgressBox::setText(int files)
     m_text = i18np("%1 File", "%1 Files", files);
     m_textWidth = fontMetrics().width(m_text);
     m_textHeight = fontMetrics().height();
-    
 }
 
 void ProgressBox::paintEvent(QPaintEvent*)
@@ -106,11 +105,11 @@ void ProgressBox::paintEvent(QPaintEvent*)
     paint.drawPie(QRect(50, 50, 100, 100), i, 200);
     paint.setBrush(QColor::fromHsv(75, 160, 255));
     paint.drawPie(QRect(75, 75, 50, 50), 5760-i/3, 2000);
-    paint.setBrush(Qt::white);
+    paint.setBrush(QColor(255,255,255,200));
     paint.translate(0.5, 0.5);
-    paint.drawRoundedRect(95-m_textWidth/2, 85-m_textHeight/2, m_textWidth+10, m_textHeight+10, 5, 5);
+    paint.drawRoundedRect(95-m_textWidth/2, 85, m_textWidth+10, m_textHeight+10, 5, 5);
     paint.translate(-0.5, -0.5);
-    paint.drawText(100 - m_textWidth / 2, 100-m_textHeight/2, m_text);
+    paint.drawText(100 - m_textWidth/2, 100, m_text);
 }
 
 
