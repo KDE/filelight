@@ -245,7 +245,7 @@ inline void MainWindow::scanStarted()
 inline void MainWindow::scanFailed()
 {
     stateChanged(QLatin1String( "scan_failed" ));
-    setActionMenuTextOnly(qobject_cast<KAction *>(action("go_up")), QString());
+    qobject_cast<KAction*>(action("go_up"))->setHelpText(QString());
     m_combo->lineEdit()->clear();
 }
 
@@ -260,10 +260,10 @@ void MainWindow::scanCompleted()
 
     if (url.path(KUrl::LeaveTrailingSlash) == QLatin1String( "/" )) {
         goUp->setEnabled(false);
-        setActionMenuTextOnly(goUp, QString());
+        goUp->setHelpText(QString());
     }
     else
-        setActionMenuTextOnly(goUp, url.upUrl().path(KUrl::LeaveTrailingSlash));
+        goUp->setHelpText(url.upUrl().path(KUrl::LeaveTrailingSlash));
 
     m_recentScans->addUrl(url); //FIXME doesn't set the tick
 }
@@ -294,32 +294,5 @@ void MainWindow::readProperties(const KConfigGroup &configgroup) //virtual
 }
 
 } //namespace Filelight
-
-
-
-/// declared in historyAction.h
-
-void setActionMenuTextOnly(KAction *a, QString const &suffix)
-{
-    //TODO: In KDE 4.3, we have KAction::setHelpText(), which can replace this.
-    QString const menu_text = suffix.isEmpty()
-                              ? a->text()
-                              : i18nc("&Up: /home/mxcl", "%1: %2", a->text(), suffix);
-
-    for (int i = 0; i < a->associatedWidgets().count(); ++i) {
-        QWidget *w = a->associatedWidgets().value(i);
-//        int const id = a->itemId(i);
-
-        /*if (w->inherits("QPopupMenu")) //FIXME: This was probably here for a reason!
-            static_cast<Q3PopupMenu*>(w)->changeItem(id, menu_text);
-
-        else */
-        if (w->inherits("KToolBar")) {
-            QWidget *button = static_cast<KToolBar*>(w);
-            if (button->inherits("KToolBarButton"))
-                button->setToolTip(suffix);
-        }
-    }
-}
 
 #include "mainWindow.moc"

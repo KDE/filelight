@@ -43,7 +43,7 @@ void HistoryAction::push(const QString &path)
     if (m_list.isEmpty() || (!m_list.isEmpty() && (m_list.last() != path)))
         m_list.append(path);
 
-    setActionMenuTextOnly(this, path);
+    setHelpText(path);
     setEnabled(true);
 }
 
@@ -51,7 +51,7 @@ QString HistoryAction::pop()
 {
     const QString s = m_list.takeLast();
     if (!m_list.isEmpty())
-        setActionMenuTextOnly(this, m_list.last());
+        setHelpText(m_list.last());
 
     setEnabled();
     return s;
