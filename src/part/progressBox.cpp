@@ -91,35 +91,24 @@ ProgressBox::setText(int files)
     m_textHeight = fontMetrics().height();
 }
 
-static QColor getColor(int angle)
-{
-    angle = abs(angle);
-    angle %= 16 * 360;
-    int h  = int(angle / 16);
-    return QColor::fromHsv(h, 160, 255);
-}
+static const int pieces = 4;
+static const float angleFactor[] = { -0.75, 0.5, 1.0, -0.3 };
+static const int length[] = { 30, 40, 50, 60 };
+static const int angleOffset[] = { 5760, 0, 0, -5760 };
+static const int aLength[] = { 300, 2000, 200, 2000 };
 
 void ProgressBox::paintEvent(QPaintEvent*)
 {
     QPainter paint(this);
     paint.setRenderHint(QPainter::Antialiasing);
-    static int i = 0;
-    i+=16;
+    static int tick = 0;
+    tick+=16;
     
-    int angle = 5760-i/2;
-    paint.setBrush(getColor(angle));
-    paint.drawPie(QRect(15, 15, 175, 175), angle, 300);
-    
-    angle = 5760+i/1.75;
-    paint.setBrush(getColor(angle));
-    paint.drawPie(QRect(25, 25, 150, 150), angle, 2000);
-    
-    paint.setBrush(getColor(i));
-    paint.drawPie(QRect(50, 50, 100, 100), i, 200);
-    
-    angle = 5760-i/3;
-    paint.setBrush(getColor(angle));
-    paint.drawPie(QRect(75, 75, 50, 50), angle, 2000);
+    for (int i=0; i<pieces; i++) {
+        int angle = angleFactor[i] + tick*angleFactor[i];
+        paint.setBrush(QColor::fromHsv(abs(angle/16) % 360 , 160, 255));
+        paint.drawPie(QRect(length[i]/2, length[i]/2, 200- length[i], 200-length[i]), angle, aLength[i]);
+    }
     
     paint.setBrush(QColor(255,255,255,200));
     paint.translate(0.5, 0.5);

@@ -139,6 +139,7 @@ outputError(QByteArray path)
 Folder*
 LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
 {
+    sleep(1);
     Folder *cwd = new Folder(dirname);
     DIR *dir = opendir(path);
 
