@@ -288,6 +288,7 @@ void RadialMap::Widget::deleteJobFinished(KJob *job)
     if (!job->error() && m_toBeDeleted) {
         m_toBeDeleted->file()->parent()->remove(m_toBeDeleted->file());
         delete m_toBeDeleted->file();
+        m_focus = 0;
         m_map.make(m_tree, true);
         repaint();
 

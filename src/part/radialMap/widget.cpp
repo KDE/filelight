@@ -103,6 +103,7 @@ RadialMap::Widget::create(const Folder *tree)
 
     if (tree)
     {
+        m_focus = 0;
         //generate the filemap image
         m_map.make(tree);
 
@@ -154,8 +155,8 @@ RadialMap::Widget::refresh(int filth)
         switch (filth)
         {
         case 1:
-            m_map.make(m_tree, true); //true means refresh only
             m_focus=0;
+            m_map.make(m_tree, true); //true means refresh only
             break;
 
         case 2:
@@ -181,6 +182,7 @@ RadialMap::Widget::zoomIn() //slot
     if (m_map.m_visibleDepth > MIN_RING_DEPTH)
     {
         --m_map.m_visibleDepth;
+        m_focus = 0;
         m_map.make(m_tree);
         Config::defaultRingDepth = m_map.m_visibleDepth;
         update();
@@ -190,6 +192,7 @@ RadialMap::Widget::zoomIn() //slot
 void
 RadialMap::Widget::zoomOut() //slot
 {
+    m_focus = 0;
     ++m_map.m_visibleDepth;
     m_map.make(m_tree);
     if (m_map.m_visibleDepth > Config::defaultRingDepth)
