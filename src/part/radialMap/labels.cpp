@@ -308,20 +308,20 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
 
     //5. Render labels
 
-    for (it = list.begin(); it != list.end(); ++it) {
+    foreach (Label *label, list) {
         if (varySizes) {
             //**** how much overhead in making new QFont each time?
             //     (implicate sharing remember)
             QFont font = paint.font();
-            font.setPointSize(sizes[(*it)->lvl]);
+            font.setPointSize(sizes[label->lvl]);
             paint.setFont(font);
         }
 
-        paint.drawEllipse((*it)->x1 - 3, (*it)->y1 - 3, 6, 6); //**** CPU intensive! better to use a pixmap
-        paint.drawLine((*it)->x1,  (*it)->y1, (*it)->x2, (*it)->y2);
-        paint.drawLine((*it)->x2, (*it)->y2, (*it)->x3, (*it)->y2);
+        paint.drawEllipse(label->x1 - 3, label->y1 - 3, 6, 6); //**** CPU intensive! better to use a pixmap
+        paint.drawLine(label->x1,  label->y1, label->x2, label->y2);
+        paint.drawLine(label->x2, label->y2, label->x3, label->y2);
 
-        paint.drawText((*it)->tx, (*it)->ty, (*it)->qs);
+        paint.drawText(label->tx, label->ty, label->qs);
     }
 
     delete [] sizes;
