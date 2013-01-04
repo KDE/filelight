@@ -91,20 +91,36 @@ ProgressBox::setText(int files)
     m_textHeight = fontMetrics().height();
 }
 
+static QColor getColor(int angle)
+{
+    angle = abs(angle);
+    angle %= 16 * 360;
+    int h  = int(angle / 16);
+    return QColor::fromHsv(h, 160, 255);
+}
+
 void ProgressBox::paintEvent(QPaintEvent*)
 {
     QPainter paint(this);
     paint.setRenderHint(QPainter::Antialiasing);
     static int i = 0;
     i+=16;
-    paint.setBrush(QColor::fromHsv(0, 160, 255));
-    paint.drawPie(QRect(0, 0, 200, 200), 5760-i/2, 300);
-    paint.setBrush(QColor::fromHsv(25, 160, 255));
-    paint.drawPie(QRect(25, 25, 150, 150), 5760+i/1.75, 2000);
-    paint.setBrush(QColor::fromHsv(50, 160, 255));
+    
+    int angle = 5760-i/2;
+    paint.setBrush(getColor(angle));
+    paint.drawPie(QRect(15, 15, 175, 175), angle, 300);
+    
+    angle = 5760+i/1.75;
+    paint.setBrush(getColor(angle));
+    paint.drawPie(QRect(25, 25, 150, 150), angle, 2000);
+    
+    paint.setBrush(getColor(i));
     paint.drawPie(QRect(50, 50, 100, 100), i, 200);
-    paint.setBrush(QColor::fromHsv(75, 160, 255));
-    paint.drawPie(QRect(75, 75, 50, 50), 5760-i/3, 2000);
+    
+    angle = 5760-i/3;
+    paint.setBrush(getColor(angle));
+    paint.drawPie(QRect(75, 75, 50, 50), angle, 2000);
+    
     paint.setBrush(QColor(255,255,255,200));
     paint.translate(0.5, 0.5);
     paint.drawRoundedRect(95-m_textWidth/2, 85, m_textWidth+10, m_textHeight+10, 5, 5);
