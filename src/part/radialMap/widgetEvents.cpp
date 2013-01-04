@@ -142,7 +142,7 @@ void RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
 
     m_focus = segmentAt(p); //NOTE p is passed by non-const reference
 
-    if (m_focus && m_focus->file() != m_tree)
+    if (m_focus)
     {
         if (m_focus != oldFocus) //if not same as last time
         {
@@ -159,6 +159,11 @@ void RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
                 string += i18np("File: %1", "Files: %1", files);
                 
                 if (percent > 0) string += QString(QLatin1String( " (%1%)" )).arg(KGlobal::locale()->formatNumber(percent, 0));
+            }
+            
+            const KUrl url   = Widget::url(m_focus->file());
+            if (m_focus == m_rootSegment && url != url.upUrl()) {
+                string += i18n("\nClick to go up to parent directory");
             }
             
             QToolTip::showText(e->globalPos(), string, this);
@@ -276,7 +281,7 @@ section_two:
                 emit activated(url); //activate first, this will cause UI to prepare itself
                 createFromCache((Folder *)m_focus->file());
             }
-            else
+            else if (url.upUrl() != url)
                 emit giveMeTreeFor(url.upUrl());
         }
     }
