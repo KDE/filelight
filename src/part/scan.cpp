@@ -42,6 +42,7 @@ ScanManager::ScanManager(QObject *parent)
 {
     Filelight::LocalLister::readMounts();
     connect(this, SIGNAL(branchCompleted(Folder*,bool)), this, SLOT(cacheTree(Folder*,bool)), Qt::QueuedConnection);
+    connect(this, SIGNAL(branchCacheHit(Folder*)), this, SLOT(foundCached(Folder*)), Qt::QueuedConnection);
 }
 
 ScanManager::~ScanManager()
@@ -112,6 +113,8 @@ bool ScanManager::start(const KUrl &url)
 
                     const Link<File> *end = d->end();
                     QString s = split.first();
+                    if (s.isEmpty()) //found the dir
+                        break;
                     s += QLatin1Char( '/' );
 
                     for (d = 0; jt != end; ++jt)
@@ -131,7 +134,7 @@ bool ScanManager::start(const KUrl &url)
                     //we found a completed tree, thus no need to scan
                     kDebug() << "Found cache-handle, generating map.." << endl;
 
-                    emit branchCompleted(d, true);
+                    emit branchCacheHit(d);
 
                     return true;
                 }
@@ -221,6 +224,15 @@ ScanManager::cacheTree(Folder *tree, bool finished)
 
     QApplication::restoreOverrideCursor();
 }
+
+void
+ScanManager::foundCached(Folder *tree)
+{
+    emit completed(tree);
+    QApplication::restoreOverrideCursor();
+}
+
+
 }
 
 #include "scan.moc"
