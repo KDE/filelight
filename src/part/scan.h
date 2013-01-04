@@ -54,11 +54,13 @@ public slots:
     bool abort();
     void emptyCache();
     void cacheTree(Folder*, bool);
+    void foundCached(Folder*);
 
 signals:
     void completed(Folder*);
     void aboutToEmptyCache();
     void branchCompleted(Folder* tree, bool finished);
+    void branchCacheHit(Folder* tree);
 
 private:
     bool m_abort;
