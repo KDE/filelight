@@ -87,7 +87,6 @@ RemoteLister::RemoteLister(const KUrl &url, QWidget *parent, ScanManager* manage
         , m_store(m_root)
         , m_manager(manager)
 {
-    setAutoUpdate(false); // Don't use KDirWatchers
     setShowingDotFiles(true); // Stupid KDirLister API function names
     setMainWindow(parent);
 
