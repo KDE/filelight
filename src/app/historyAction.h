@@ -29,11 +29,6 @@
 class KConfigGroup;
 class KActionCollection;
 
-
-/// defined in mainWindow.cpp
-void setActionMenuTextOnly(KAction *a, QString const &suffix);
-
-
 class HistoryAction : KAction
 {
     HistoryAction(const KIcon &icon, const QString &text, KActionCollection *ac);
