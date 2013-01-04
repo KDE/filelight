@@ -32,6 +32,8 @@
 #include <QPainter>
 #include <QtCore/QDebug>
 
+#include <math.h>
+
 
 ProgressBox::ProgressBox(QWidget *parent, QObject *part, Filelight::ScanManager *m)
         : QWidget(parent)
@@ -105,9 +107,14 @@ void ProgressBox::paintEvent(QPaintEvent*)
     tick+=16;
     
     for (int i=0; i<pieces; i++) {
+        const QRect rect(length[i]/2, length[i]/2, 200- length[i], 200-length[i]);
         int angle = angleFactor[i] + tick*angleFactor[i];
-        paint.setBrush(QColor::fromHsv(abs(angle/16) % 360 , 160, 255));
-        paint.drawPie(QRect(length[i]/2, length[i]/2, 200- length[i], 200-length[i]), angle, aLength[i]);
+        QRadialGradient gradient(rect.center(), sin(angle/160.0f) * 100);
+        gradient.setColorAt(0, QColor::fromHsv(abs(angle/16) % 360 , 160, 255));
+        gradient.setColorAt(1, QColor::fromHsv(abs(angle/16) % 360 , 160, 128));
+        QBrush brush(gradient);
+        paint.setBrush(brush);
+        paint.drawPie(QRect(rect), angle, aLength[i]);
     }
     
     paint.setBrush(QColor(255,255,255,200));
