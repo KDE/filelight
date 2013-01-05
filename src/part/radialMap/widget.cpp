@@ -53,6 +53,12 @@ RadialMap::Widget::Widget(QWidget *parent, bool isSummary)
     connect(&m_timer, SIGNAL(timeout()), SLOT(resizeTimeout()));
 }
 
+RadialMap::Widget::~Widget()
+{
+    delete m_rootSegment;
+}
+
+
 QString
 RadialMap::Widget::path() const
 {

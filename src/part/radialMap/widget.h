@@ -53,6 +53,7 @@ class Widget : public QWidget
 
 public:
     explicit Widget(QWidget* = 0, bool = false);
+    virtual ~Widget();
     QString path() const;
     KUrl url(File const * const = 0) const;
 

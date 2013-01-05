@@ -298,12 +298,10 @@ void RadialMap::Widget::deleteJobFinished(KJob *job)
     if (!job->error() && m_toBeDeleted) {
         m_toBeDeleted->file()->parent()->remove(m_toBeDeleted->file());
         delete m_toBeDeleted->file();
+        m_toBeDeleted = 0;
         m_focus = 0;
         m_map.make(m_tree, true);
         repaint();
-
-        //delete m_toBeDeleted->file(); // TODO: this seems to be cleaned up elsewhere? Make sure of it.
-        m_toBeDeleted = 0;
     } else
         KMessageBox::error(this, job->errorString(), i18n("Error while deleting"));
 }

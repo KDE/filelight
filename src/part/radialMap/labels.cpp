@@ -140,7 +140,7 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
     while (pos < list.size() - 1)
     {
         if (list[pos]->tooClose(list[pos+1]->angle))
-            list.removeAt(pos+1);
+            delete list.takeAt(pos+1);
         else
             ++pos;
     }
@@ -331,6 +331,9 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
         paint.drawText(label->tx, label->ty, label->qs);
     }
 
+    foreach(Label *label, list) {
+        delete label;
+    }
     delete [] sizes;
 }
 }
