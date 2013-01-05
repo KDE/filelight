@@ -1,6 +1,6 @@
 /***********************************************************************
 * Copyright 2003-2004  Max Howell <max.howell@methylblue.com>
-* Copyright 2008-2009  Martin Sandsmark <martin.sandsmark@kde.org>
+* Copyright 2008-2013  Martin Sandsmark <martin.sandsmark@kde.org>
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public License as
@@ -54,7 +54,7 @@ K_PLUGIN_FACTORY(filelightPartFactory, registerPlugin<Part>();)  // produce a fa
 K_EXPORT_PLUGIN(filelightPartFactory(KAboutData(
                "filelightpart",
                0,
-               ki18n("Filelight"),
+               ki18n(APP_PRETTYNAME),
                APP_VERSION,
                ki18n("Displays file usage in an easy to understand way."),
                KAboutData::License_GPL,
@@ -63,8 +63,8 @@ K_EXPORT_PLUGIN(filelightPartFactory(KAboutData(
                KLocalizedString(),
                "http://utils.kde.org/projects/filelight",
                "martin.sandsmark@kde.org").
-               setProgramIconName(QLatin1String( "filelight" )).
-               setCatalogName( "filelight" )))
+               setProgramIconName(QLatin1String(APP_NAME)).
+               setCatalogName(APP_NAME)))
 
 BrowserExtension::BrowserExtension(Part *parent)
         : KParts::BrowserExtension(parent)

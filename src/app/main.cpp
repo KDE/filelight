@@ -31,11 +31,12 @@
 static KAboutData about(
     APP_NAME,
     0,
-    ki18n("Filelight"),
+    ki18n(APP_PRETTYNAME),
     APP_VERSION,
     ki18n("Graphical disk-usage information"),
-    KAboutData::License_GPL_V3,
-    ki18n("(C) 2006 Max Howell\n(C) 2008, 2009, 2012 Martin Sandsmark"),
+    KAboutData::License_GPL,
+    ki18n("(C) 2006 Max Howell\n\
+        (C) 2008-2013 Martin Sandsmark"),
     KLocalizedString(),
     "http://utils.kde.org/projects/filelight");
 
@@ -55,7 +56,7 @@ int main(int argc, char *argv[])
     KCmdLineArgs::init(argc, argv, &about);
 
     KCmdLineOptions options;
-    KLocale *tmpLocale = new KLocale(QLatin1String("filelight"));
+    KLocale *tmpLocale = new KLocale(QLatin1String(APP_NAME));
     options.add(ki18nc("Path in the file system to scan", "+[path]").toString(tmpLocale).toLocal8Bit(), ki18n("Scan 'path'"));
     delete tmpLocale;
     KCmdLineArgs::addCmdLineOptions(options);
