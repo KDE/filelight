@@ -192,6 +192,9 @@ void RadialMap::Widget::enterEvent(QEvent *)
 
 void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
 {
+    if (!isEnabled())
+        return;
+    
     //m_focus is set correctly (I've been strict, I assure you it is correct!)
 
     if (m_focus && !m_focus->isFake())
@@ -261,6 +264,7 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
                     job->ui()->setWindow(this);
                     connect(job, SIGNAL(finished(KJob*)), this, SLOT(deleteJobFinished(KJob*)));
                     QApplication::setOverrideCursor(Qt::BusyCursor);
+                    setEnabled(false);
                 }
             } else {
                 //ensure m_focus is set for new mouse position
@@ -290,6 +294,7 @@ section_two:
 void RadialMap::Widget::deleteJobFinished(KJob *job)
 {
     QApplication::restoreOverrideCursor();
+    setEnabled(true);
     if (!job->error() && m_toBeDeleted) {
         m_toBeDeleted->file()->parent()->remove(m_toBeDeleted->file());
         delete m_toBeDeleted->file();
