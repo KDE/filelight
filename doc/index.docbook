@@ -28,8 +28,8 @@
    <copyright><year>2009</year><holder>Martin Sandsmark</holder></copyright>
    <!-- Translators: put here the copyright notice of the translation -->
    <legalnotice>&FDLNotice;</legalnotice>
-   <date>2010-11-04</date>
-   <releaseinfo>1.9 (&kde; 4.6)</releaseinfo>
+   <date>2013-05-25</date>
+   <releaseinfo>1.20 (&kde; 4.11)</releaseinfo>
    <abstract><para>&filelight; creates an interactive map of concentric segmented-rings that helps visualize disk usage on your computer.</para></abstract>
    <!-- These may be used by search engines -->
    <keywordset>
@@ -44,7 +44,7 @@
 <chapter id="introduction">
    <title>Introduction</title>
    <screenshot>
-      <screeninfo>&filelight; 1.9 Screenshot</screeninfo>
+      <screeninfo>&filelight; 1.20 Screenshot</screeninfo>
       <mediaobject>
          <imageobject><imagedata fileref="radial_map.png" format="PNG"/></imageobject>
          <textobject><phrase>Screenshot</phrase></textobject>
@@ -173,7 +173,7 @@ You can open folders with your default file manager or &konsole; using the conte
 </menuchoice></term>
 <listitem><para><action>Offers a folder selection dialog so you can choose a folder to scan.</action></para></listitem>
 </varlistentry>
-<!-- shortcut not visible in the menu, why?-->
+<!--FIXME shortcut not visible in the menu, why?-->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
@@ -193,7 +193,7 @@ You can open folders with your default file manager or &konsole; using the conte
 <listitem><para><action>Starts a scan of the root folder.</action></para></listitem>
 </varlistentry>
 
-<!--not in 4.6 
+<!--not in 4.11 
 varlistentry>
 <term><menuchoice>
 <guimenu>Scan</guimenu>
@@ -305,47 +305,11 @@ varlistentry>
 
 </variablelist>
 
-<variablelist>
-<title>The Settings Menu</title>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guisubmenu>Toolbars Shown</guisubmenu>
-</menuchoice></term>
-<listitem><para><action>Enables or disable the <guimenuitem>Main Toolbar</guimenuitem>, 
-<guimenuitem>Location Toolbar</guimenuitem> or <guimenuitem>View Toolbar</guimenuitem>.</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guimenuitem>Configure Shortcuts...</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Allows you to configure the &filelight; shortcuts.</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guimenuitem>Configure Toolbars...</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Allows you to configure and edit the &filelight; toolbar.</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guimenuitem>Configure Filelight...</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Starts the Configure &filelight; dialog.</action></para></listitem>
-</varlistentry>
-
-</variablelist>
-
-<para>The Help Menu</para>
-
-&help.menu.documentation;
+<para>Additionally &filelight; has the common &kde; <guimenu>Settings</guimenu> and <guimenu>Help</guimenu>
+menu items, for more information read the sections about the <ulink url="help:/fundamentals/ui.html#menus-settings"
+>Settings Menu</ulink> and <ulink url="help:/fundamentals/ui.html#menus-help">Help Menu</ulink>
+of the &kde; Fundamentals.
+</para>
 </chapter>
 
 
@@ -353,8 +317,8 @@ varlistentry>
    <title>Credits and License</title>
    <sect1 id="kapp">
       <title>&filelight;</title>
-      <para>Program copyright 2003 Max B. Howell <email>max.howell@methylblue.com</email></para>
-      <para>Program copyright 2009 Martin Sandsmark <email>martin.sandsmark@kde.org</email></para>
+      <para>Program copyright 2006 Max B. Howell <email>max.howell@methylblue.com</email></para>
+      <para>Program copyright 2008-2013 Martin Sandsmark <email>martin.sandsmark@kde.org</email></para>
       &underGPL;
    </sect1>
    <sect1 id="Documentation">
