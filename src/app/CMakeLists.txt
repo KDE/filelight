@@ -20,6 +20,8 @@
 
 set(filelight_SRCS historyAction.cpp mainWindow.cpp main.cpp)
 
+kde4_add_app_icon(filelight_SRCS "../../misc/hi*-app-filelight.png")
+
 kde4_add_executable(filelight ${filelight_SRCS})
 
 target_link_libraries(filelight ${KDE4_KDECORE_LIBS} ${KDE4_KPARTS_LIBS} ${KDE4_KDEUI_LIBS})
