@@ -25,6 +25,7 @@
 
 #include <KGlobal>
 #include <KGlobalSettings>
+#include <KColorScheme>
 #include <KIO/Job>
 #include <KLocale>
 
@@ -101,11 +102,13 @@ static const int aLength[] = { 300, 2000, 200, 2000 };
 
 void ProgressBox::paintEvent(QPaintEvent*)
 {
+    KColorScheme view = KColorScheme(QPalette::Active, KColorScheme::Tooltip);
+
     QPainter paint(this);
     paint.setRenderHint(QPainter::Antialiasing);
     static int tick = 0;
     tick+=16;
-    
+
     for (int i=0; i<pieces; i++) {
         const QRect rect(length[i]/2, length[i]/2, 200- length[i], 200-length[i]);
         int angle = angleFactor[i] + tick*angleFactor[i];
@@ -116,8 +119,8 @@ void ProgressBox::paintEvent(QPaintEvent*)
         paint.setBrush(brush);
         paint.drawPie(QRect(rect), angle, aLength[i]);
     }
-    
-    paint.setBrush(QColor(255,255,255,200));
+
+    paint.setBrush(view.background(KColorScheme::ActiveBackground));
     paint.translate(0.5, 0.5);
     paint.drawRoundedRect(95-m_textWidth/2, 85, m_textWidth+10, m_textHeight+10, 5, 5);
     paint.translate(-0.5, -0.5);
