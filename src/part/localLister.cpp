@@ -67,10 +67,11 @@ LocalLister::LocalLister(const QString &path, Chain<Folder> *cachedTrees, ScanMa
     if (!Config::scanAcrossMounts) list += s_localMounts;
     if (!Config::scanRemoteMounts) list += s_remoteMounts;
 
-    for (QStringList::ConstIterator it = list.constBegin(); it != list.constEnd(); ++it)
-        if ((*it).startsWith(path))
-            //prevent scanning of these directories
-            m_trees->append(new Folder((*it).toUtf8()));
+    foreach(const QString &ignorePath, list) {
+        if (ignorePath.startsWith(path)) {
+            m_trees->append(new Folder(ignorePath.toLocal8Bit()));
+        }
+    }
 }
 
 void
@@ -195,6 +196,7 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
             Folder *d = 0;
             QByteArray new_dirname = ent->d_name;
             new_dirname += '/';
+            new_path += '/';
 
             //check to see if we've scanned this section already
 
@@ -209,10 +211,6 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
                     cwd->append(d, new_dirname);
                 }
             }
-
-            // do this after the m_trees check since the paths in there
-            // lack a trailing slash
-            new_path += '/';
 
             if (!d) //then scan
                 if ((d = scan(new_path, new_dirname))) //then scan was successful
