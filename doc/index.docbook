@@ -165,9 +165,6 @@ You can open folders with your default file manager or &konsole; using the conte
 <title>The Scan Menu</title>
 <varlistentry>
 <term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>O</keycap></keycombo>
-</shortcut>
 <guimenu>Scan</guimenu>
 <guimenuitem>Scan folder..</guimenuitem>
 </menuchoice></term>
