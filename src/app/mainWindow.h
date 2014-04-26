@@ -68,7 +68,7 @@ private slots:
 protected:
     virtual void saveProperties(KConfigGroup&);
     virtual void readProperties(const KConfigGroup&);
-    virtual bool queryExit();
+    virtual void closeEvent(QCloseEvent *event);
 
 private:
     Filelight::Part *m_part;

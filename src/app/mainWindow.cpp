@@ -153,18 +153,15 @@ inline void MainWindow::setupActions() //singleton function
     connect(m_histories, SIGNAL(activated(KUrl)), SLOT(slotScanUrl(KUrl)));
 }
 
-bool MainWindow::queryExit()
+void MainWindow::closeEvent(QCloseEvent *event)
 {
-    if (!m_part) //apparently std::exit() still calls this function, and abort() causes a crash..
-        return true;
-
     KConfigGroup config = KGlobal::config()->group("general");
 
     m_recentScans->saveEntries(config);
     config.writePathEntry("comboHistory", m_combo->historyItems());
     config.sync();
 
-    return true;
+    KParts::MainWindow::closeEvent(event);
 }
 
 inline void MainWindow::configToolbars() //slot
