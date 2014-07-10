@@ -24,32 +24,32 @@
 #include "historyAction.h"
 
 #include <cstdlib>            //std::exit()
-#include <KApplication>     //setupActions()
+#include <QApplication>     //setupActions()
 #include <KComboBox>        //locationbar
 #include <KHistoryComboBox>
 #include <KRecentFilesAction>
+#include <QFileDialog>
 #include <KConfig>
-#include <KDirSelectDialog> //slotScanFolder
 #include <KEditToolBar>     //for editToolbar dialog
 #include <QLineEdit>
 #include <KStandardShortcut>
-#include <KFileDialog>
-#include <KLibLoader>
-#include <KLocale>
+#include <KPluginFactory>
+#include <KPluginLoader>
 #include <KMessageBox>
 #include <KShell>
-#include <KStatusBar>
+#include <QStatusBar>
 #include <KToolBar>
-#include <KUrl>
+#include <QUrl>
 #include <KUrlCompletion>   //locationbar
 #include <QObject>
 #include <QToolTip>
-#include <KGlobal>
+#include <QPluginLoader>
 #include <KConfigGroup>
 #include <KShortcutsDialog>
 #include <KSharedConfig>
 #include <KStandardAction>
 #include <KActionCollection>
+#include <KIO/Global> // upUrl
 
 namespace Filelight {
 
@@ -59,7 +59,7 @@ MainWindow::MainWindow() : KParts::MainWindow(), m_part(0)
     KPluginFactory *factory = KPluginLoader(QLatin1String( "filelightpart" )).factory();
 
     if (!factory) {
-        KMessageBox::error(this, i18n("Unable to load the Filelight Part.\nPlease make sure Filelight was correctly installed."));
+        KMessageBox::error(this, tr("Unable to load the Filelight Part.\nPlease make sure Filelight was correctly installed."));
         std::exit(1);
         return;
     }
@@ -81,17 +81,17 @@ MainWindow::MainWindow() : KParts::MainWindow(), m_part(0)
         connect(m_part, SIGNAL(canceled(QString)), m_histories, SLOT(stop()));
         connect(BrowserExtension::childObject(m_part), SIGNAL(openUrlNotify()), SLOT(urlAboutToChange()));
 
-        const KConfigGroup config = KGlobal::config()->group("general");
+        const KConfigGroup config = KSharedConfig::openConfig()->group("general");
         m_combo->setHistoryItems(config.readPathEntry("comboHistory", QStringList()));
     } else {
-        KMessageBox::error(this, i18n("Unable to create part widget."));
+        KMessageBox::error(this, tr("Unable to create Filelight part widget.\nPlease ensure that Filelight is correctly installed."));
         std::exit(1);
     }
 
     setAutoSaveSettings(QLatin1String( "window" ));
 }
 
-inline void MainWindow::setupActions() //singleton function
+void MainWindow::setupActions() //singleton function
 {
     KActionCollection *const ac = actionCollection();
 
@@ -107,55 +107,55 @@ inline void MainWindow::setupActions() //singleton function
     KStandardAction::configureToolbars(this, SLOT(configToolbars()), ac);
     KStandardAction::keyBindings(this, SLOT(configKeys()), ac);
 
-    KAction* action;
+    QAction* action;
 
-    action = ac->addAction(QLatin1String( "scan_home" ), this, SLOT(slotScanHomeFolder()));
-    action->setText(i18n("Scan &Home Folder"));
-    action->setIcon(KIcon(QLatin1String( "user-home" )));
+    action = ac->addAction(QLatin1String("scan_home"), this, SLOT(slotScanHomeFolder()));
+    action->setText(tr("Scan &Home Folder"));
+    action->setIcon(QIcon(QLatin1String("user-home")));
     action->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Home));
 
-    action = ac->addAction(QLatin1String( "scan_root" ), this, SLOT(slotScanRootFolder()));
-    action->setText(i18n("Scan &Root Folder"));
-    action->setIcon(KIcon(QLatin1String( "folder-red" )));
+    action = ac->addAction(QLatin1String("scan_root"), this, SLOT(slotScanRootFolder()));
+    action->setText(tr("Scan &Root Folder"));
+    action->setIcon(QIcon(QLatin1String("folder-red")));
 
-    action = ac->addAction(QLatin1String( "scan_rescan" ), m_part, SLOT(rescan()));
-    action->setText(i18n("Rescan"));
-    action->setIcon(KIcon(QLatin1String( "view-refresh" )));
-    action->setShortcut(KStandardShortcut::reload());
+    action = ac->addAction(QLatin1String("scan_rescan"), m_part, SLOT(rescan()));
+    action->setText(tr("Rescan"));
+    action->setIcon(QIcon(QLatin1String("view-refresh")));
+    action->setShortcut(QKeySequence::Refresh);
 
 
-    action = ac->addAction(QLatin1String( "scan_stop" ), this, SLOT(slotAbortScan()));
-    action->setText(i18n("Stop"));
-    action->setIcon(KIcon(QLatin1String( "process-stop" )));
+    action = ac->addAction(QLatin1String("scan_stop"), this, SLOT(slotAbortScan()));
+    action->setText(tr("Stop"));
+    action->setIcon(QIcon(QLatin1String("process-stop")));
     action->setShortcut(Qt::Key_Escape);
 
-    action = ac->addAction(QLatin1String( "go" ), m_combo, SIGNAL(returnPressed()));
-    action->setText(i18n("Go"));
-    action->setIcon(KIcon(QLatin1String( "go-jump-locationbar" )));
-
-    action = ac->addAction(QLatin1String( "location_bar" ), 0, 0);
-    action->setText(i18n("Location Bar"));
-    action->setDefaultWidget(m_combo);
+    action = ac->addAction(QLatin1String("go"), m_combo, SIGNAL(returnPressed()));
+    action->setText(tr("Go"));
+    action->setIcon(QIcon(QLatin1String("go-jump-locationbar")));
 
     action = ac->addAction(QLatin1String( "scan_folder" ), this, SLOT(slotScanFolder()));
-    action->setText(i18n("Scan Folder"));
-    action->setIcon(KIcon(QLatin1String( "folder" )));
+    action->setText(tr("Scan Folder"));
+    action->setIcon(QIcon(QLatin1String( "folder" )));
 
-    m_recentScans = new KRecentFilesAction(i18n("&Recent Scans"), ac);
+    QWidgetAction *locationAction = ac->add<QWidgetAction>(QLatin1String("location_bar"), 0, 0);
+    locationAction->setText(tr("Location Bar"));
+    locationAction->setDefaultWidget(m_combo);
+
+    m_recentScans = new KRecentFilesAction(tr("&Recent Scans"), ac);
     m_recentScans->setMaxItems(8);
 
     m_histories = new HistoryCollection(ac, this);
 
-    m_recentScans->loadEntries(KGlobal::config()->group("general"));
+    m_recentScans->loadEntries(KSharedConfig::openConfig()->group("general"));
 
-    connect(m_recentScans, SIGNAL(urlSelected(KUrl)), SLOT(slotScanUrl(KUrl)));
+    connect(m_recentScans, SIGNAL(urlSelected(QUrl)), SLOT(slotScanUrl(QUrl)));
     connect(m_combo, SIGNAL(returnPressed()), SLOT(slotComboScan()));
-    connect(m_histories, SIGNAL(activated(KUrl)), SLOT(slotScanUrl(KUrl)));
+    connect(m_histories, SIGNAL(activated(QUrl)), SLOT(slotScanUrl(QUrl)));
 }
 
 void MainWindow::closeEvent(QCloseEvent *event)
 {
-    KConfigGroup config = KGlobal::config()->group("general");
+    KConfigGroup config = KSharedConfig::openConfig()->group("general");
 
     m_recentScans->saveEntries(config);
     config.writePathEntry("comboHistory", m_combo->historyItems());
@@ -164,42 +164,42 @@ void MainWindow::closeEvent(QCloseEvent *event)
     KParts::MainWindow::closeEvent(event);
 }
 
-inline void MainWindow::configToolbars() //slot
+void MainWindow::configToolbars() //slot
 {
     KEditToolBar dialog(factory(), this);
 
     if (dialog.exec()) //krazy:exclude=crashy
     {
         createGUI(m_part);
-        applyMainWindowSettings(KGlobal::config()->group("window"));
+        applyMainWindowSettings(KSharedConfig::openConfig()->group("window"));
     }
 }
 
-inline void MainWindow::configKeys() //slot
+void MainWindow::configKeys() //slot
 {
     KShortcutsDialog::configure(actionCollection(), KShortcutsEditor::LetterShortcutsAllowed, this, true);
 }
 
-inline void MainWindow::slotScanFolder()
+void MainWindow::slotScanFolder()
 {
-    slotScanUrl(KFileDialog::getExistingDirectoryUrl(m_part->url(), this, i18n("Select Folder to Scan")));
+    slotScanUrl(QFileDialog::getExistingDirectoryUrl(this, tr("Select Folder to Scan"), m_part->url()));
 }
 
-inline void MainWindow::slotScanHomeFolder() {
+void MainWindow::slotScanHomeFolder() {
     slotScanPath(QDir::homePath());
 }
-inline void MainWindow::slotScanRootFolder() {
+void MainWindow::slotScanRootFolder() {
     slotScanPath(QDir::rootPath());
 }
-inline void MainWindow::slotUp()                {
-    slotScanUrl(m_part->url().upUrl());
+void MainWindow::slotUp()                {
+    slotScanUrl(KIO::upUrl(m_part->url()));
 }
 
-inline void MainWindow::slotComboScan()
+void MainWindow::slotComboScan()
 {
     QString path = m_combo->lineEdit()->text();
 
-    KUrl url = KUrl(path);
+    QUrl url = QUrl::fromUserInput(path);
 
     if (url.isRelative())
         path = QLatin1String( "~/" ) + path; // KUrlCompletion completes relative to ~, not CWD
@@ -210,14 +210,14 @@ inline void MainWindow::slotComboScan()
         m_combo->addToHistory(path);
 }
 
-inline bool MainWindow::slotScanPath(const QString &path)
+bool MainWindow::slotScanPath(const QString &path)
 {
-    return slotScanUrl(KUrl(path));
+    return slotScanUrl(QUrl::fromUserInput(path));
 }
 
-bool MainWindow::slotScanUrl(const KUrl &url)
+bool MainWindow::slotScanUrl(const QUrl &url)
 {
-    const KUrl oldUrl = m_part->url();
+    const QUrl oldUrl = m_part->url();
 
     if (m_part->openUrl(url))
     {
@@ -228,44 +228,47 @@ bool MainWindow::slotScanUrl(const KUrl &url)
         return false;
 }
 
-inline void MainWindow::slotAbortScan()
+void MainWindow::slotAbortScan()
 {
     if (m_part->closeUrl()) action("scan_stop")->setEnabled(false);
 }
 
-inline void MainWindow::scanStarted()
+void MainWindow::scanStarted()
 {
     stateChanged(QLatin1String( "scan_started" ));
     m_combo->clearFocus();
 }
 
-inline void MainWindow::scanFailed()
+void MainWindow::scanFailed()
 {
     stateChanged(QLatin1String( "scan_failed" ));
-    qobject_cast<KAction*>(action("go_up"))->setHelpText(QString());
+    action("go_up")->setStatusTip(QString());
+    action("go_up")->setToolTip(QString());
     m_combo->lineEdit()->clear();
 }
 
 void MainWindow::scanCompleted()
 {
-    KAction *goUp  = qobject_cast<KAction *>(action("go_up"));
-    const KUrl url = m_part->url();
+    const QUrl url = m_part->url();
 
-    stateChanged(QLatin1String( "scan_complete" ));
+    stateChanged(QLatin1String("scan_complete"));
 
     m_combo->lineEdit()->setText(m_part->prettyUrl());
 
-    if (url.path(KUrl::LeaveTrailingSlash) == QLatin1String( "/" )) {
-        goUp->setEnabled(false);
-        goUp->setHelpText(QString());
+    if (url.toLocalFile() == QLatin1String( "/" )) {
+        action("go_up")->setEnabled(false);
+        action("go_up")->setStatusTip(QString());
+        action("go_up")->setToolTip(QString());
     }
-    else
-        goUp->setHelpText(url.upUrl().path(KUrl::LeaveTrailingSlash));
+    else {
+        action("go_up")->setStatusTip(KIO::upUrl(url).toString());
+        action("go_up")->setToolTip(KIO::upUrl(url).toString());
+    }
 
     m_recentScans->addUrl(url); //FIXME doesn't set the tick
 }
 
-inline void MainWindow::urlAboutToChange()
+void MainWindow::urlAboutToChange()
 {
     //called when part's URL is about to change internally
     //the part will then create the Map and emit completed()
