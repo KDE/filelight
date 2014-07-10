@@ -20,10 +20,8 @@
 
 set(filelight_SRCS historyAction.cpp mainWindow.cpp main.cpp)
 
-kde4_add_app_icon(filelight_SRCS "../../misc/hi*-app-filelight.png")
+add_executable(filelight ${filelight_SRCS})
 
-kde4_add_executable(filelight ${filelight_SRCS})
-
-target_link_libraries(filelight ${KDE4_KDECORE_LIBS} ${KDE4_KPARTS_LIBS} ${KDE4_KDEUI_LIBS})
+target_link_libraries(filelight KF5::Parts KF5::XmlGui KF5::KIOWidgets KF5::CoreAddons)
 
 install(TARGETS filelight ${INSTALL_TARGETS_DEFAULT_ARGS})
