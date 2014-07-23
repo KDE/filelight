@@ -25,7 +25,7 @@ install(FILES filelightpartui.rc DESTINATION ${DATA_INSTALL_DIR}/filelightpart)
 install(FILES filelightui.rc DESTINATION ${DATA_INSTALL_DIR}/filelight)
 
 ecm_install_icons(ICONS
-    hi32-actions-view_filelight.png
+    hi32-action-views_filelight.png
     hi16-apps-filelight.png 
     hi22-apps-filelight.png
     hi32-apps-filelight.png

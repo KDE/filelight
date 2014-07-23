@@ -22,9 +22,9 @@
 #ifndef SCAN_H
 #define SCAN_H
 
-#include <KUrl>
-#include <QtCore/QObject>
-#include <QtCore/QMutex>
+#include <QString>
+#include <QObject>
+#include <QMutex>
 
 class QThread;
 class Folder;
@@ -43,7 +43,7 @@ public:
     explicit ScanManager(QObject *parent);
     virtual ~ScanManager();
 
-    bool start(const KUrl&);
+    bool start(const QUrl& path);
     bool running() const;
 
     uint files() const {
@@ -66,7 +66,6 @@ private:
     bool m_abort;
     uint m_files;
 
-    KUrl m_url;
     QMutex m_mutex;
     QThread *m_thread;
     Chain<Folder> *m_cache;

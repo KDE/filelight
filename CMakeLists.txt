@@ -45,8 +45,6 @@ find_package(KF5 REQUIRED
     CoreAddons
 )
 
-set(CMAKE_AUTOMOC ON)
-
 add_definitions(
     -DQT_USE_FAST_CONCATENATION
     -DQT_USE_FAST_OPERATOR_PLUS

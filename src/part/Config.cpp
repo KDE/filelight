@@ -23,9 +23,9 @@
 
 #include <KConfig>
 #include <KConfigGroup>
-#include <KGlobal>
 #include <KSharedConfig>
-#include <KSharedPtr>
+
+#include <QFont>
 
 bool Config::scanAcrossMounts;
 bool Config::scanRemoteMounts;
@@ -42,7 +42,7 @@ QStringList Config::skipList;
 void
 Filelight::Config::read()
 {
-    const KConfigGroup config = KGlobal::config()->group("filelight_part");
+    const KConfigGroup config = KSharedConfig::openConfig()->group("filelight_part");
 
     scanAcrossMounts   = config.readEntry("scanAcrossMounts", false);
     scanRemoteMounts   = config.readEntry("scanRemoteMounts", false);
@@ -61,7 +61,7 @@ Filelight::Config::read()
 void
 Filelight::Config::write()
 {
-    KConfigGroup config = KGlobal::config()->group("filelight_part");
+    KConfigGroup config = KSharedConfig::openConfig()->group("filelight_part");
 
     config.writeEntry("scanAcrossMounts", scanAcrossMounts);
     config.writeEntry("scanRemoteMounts", scanRemoteMounts);

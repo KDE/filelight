@@ -38,6 +38,6 @@ QT5_WRAP_UI(filelight_PART_SRCS dialog.ui)
 
 add_library(filelightpart MODULE ${filelight_PART_SRCS})
 
-target_link_libraries(filelightpart radialmap KF5::Parts KF5::KIOCore KF5::Solid)
+target_link_libraries(filelightpart KF5::Parts KF5::KIOCore KF5::KIOWidgets KF5::Solid KF5::CoreAddons KF5::Service)
 
 install(TARGETS filelightpart DESTINATION ${PLUGIN_INSTALL_DIR})

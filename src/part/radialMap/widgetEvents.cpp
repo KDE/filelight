@@ -25,29 +25,29 @@
 #include "widget.h"
 
 #include <KCursor>     //::mouseMoveEvent()
-#include <KDebug>
-#include <KIconLoader> //::mousePressEvent()
 #include <KJob>
 #include <KIO/Job>     //::mousePressEvent()
-#include <KIO/DeleteJob>
+#include <KIO//DeleteJob>
 #include <KIO/JobUiDelegate>
-#include <KLocale>
 #include <KMessageBox> //::mousePressEvent()
-#include <KMenu>  //::mousePressEvent()
+#include <QMenu>  //::mousePressEvent()
 #include <KRun>        //::mousePressEvent()
 #include <KToolInvocation>
-#include <KUrl>
+#include <KFormat>
+#include <QUrl>
 
-#include <QtGui/QApplication> //QApplication::setOverrideCursor()
-#include <QtGui/QClipboard>
-#include <QtGui/QPainter>
-#include <QtCore/QTimer>      //::resizeEvent()
-#include <QtGui/QDropEvent>
-#include <QtGui/QPaintEvent>
-#include <QtGui/QResizeEvent>
-#include <QtGui/QMouseEvent>
-#include <QtGui/QDragEnterEvent>
-#include <QtGui/QToolTip>
+#include <QApplication> //QApplication::setOverrideCursor()
+#include <QClipboard>
+#include <QPainter>
+#include <QTimer>      //::resizeEvent()
+#include <QDropEvent>
+#include <QPaintEvent>
+#include <QResizeEvent>
+#include <QMouseEvent>
+#include <QDragEnterEvent>
+#include <QToolTip>
+#include <QMimeData>
+#include <KUrlMimeData>
 
 #include <cmath>         //::segmentAt()
 
@@ -71,7 +71,7 @@ void RadialMap::Widget::paintEvent(QPaintEvent*)
         paint.drawPixmap(m_offset, m_map.pixmap());
     else
     {
-        paint.drawText(rect(), 0, i18nc("We messed up, the user needs to initiate a rescan.", "Internal representation is invalid,\nplease rescan."));
+        paint.drawText(rect(), 0, tr("ERROR: Internal representation is invalid,\nplease rescan."));
         return;
     }
 
@@ -156,14 +156,14 @@ void RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
             if (m_focus->file()->isFolder()) {
                 int files = static_cast<const Folder*>(m_focus->file())->children();
                 const uint percent = uint((100 * files) / (double)m_tree->children());
-                string += i18np("File: %1", "Files: %1", files);
+                string += tr("File(s): %1", 0, files);
                 
-                if (percent > 0) string += QString(QLatin1String( " (%1%)" )).arg(KGlobal::locale()->formatNumber(percent, 0));
+                if (percent > 0) string += QString(QLatin1String(" (%1%)")).arg(percent);
             }
             
-            const KUrl url   = Widget::url(m_focus->file());
-            if (m_focus == m_rootSegment && url != url.upUrl()) {
-                string += i18n("\nClick to go up to parent directory");
+            const QUrl url = Widget::url(m_focus->file());
+            if (m_focus == m_rootSegment && url != KIO::upUrl(url)) {
+                string += tr("\nClick to go up to parent directory");
             }
             
             QToolTip::showText(e->globalPos(), string, this);
@@ -199,7 +199,7 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
 
     if (m_focus && !m_focus->isFake())
     {
-        const KUrl url   = Widget::url(m_focus->file());
+        const QUrl url   = Widget::url(m_focus->file());
         const bool isDir = m_focus->file()->isFolder();
 
         // Actions in the right click menu
@@ -212,28 +212,28 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
 
         if (e->button() == Qt::RightButton)
         {
-            KMenu popup;
-            popup.addTitle(m_focus->file()->fullPath(m_tree));
+            QMenu popup;
+            popup.setTitle(m_focus->file()->fullPath(m_tree));
 
             if (isDir) {
-                openFileManager = popup.addAction(KIcon(QLatin1String( "system-file-manager" )), i18n("Open &File Manager Here"));
+                openFileManager = popup.addAction(QIcon(QLatin1String("system-file-manager")), tr("Open &File Manager Here"));
 
-                if (url.protocol() == QLatin1String("file" ))
-                    openTerminal = popup.addAction(KIcon(QLatin1String( "utilities-terminal" )), i18n("Open &Terminal Here"));
+                if (url.scheme() == QLatin1String("file" ))
+                    openTerminal = popup.addAction(QIcon(QLatin1String( "utilities-terminal" )), tr("Open &Terminal Here"));
 
                 if (m_focus->file() != m_tree) {
                     popup.addSeparator();
-                    centerMap = popup.addAction(KIcon(QLatin1String( "zoom-in" )), i18n("&Center Map Here"));
+                    centerMap = popup.addAction(QIcon(QLatin1String( "zoom-in" )), tr("&Center Map Here"));
                 }
             }
             else
-                openFile = popup.addAction(KIcon(QLatin1String( "document-open" )), i18nc("Scan/open the path of the selected element", "&Open"));
+                openFile = popup.addAction(QIcon(QLatin1String("document-open")), tr("Scan/open the path of the selected element", "&Open"));
 
             popup.addSeparator();
-            copyClipboard = popup.addAction(KIcon(QLatin1String( "edit-copy" )), i18n("&Copy to clipboard"));
+            copyClipboard = popup.addAction(QIcon(QLatin1String( "edit-copy" )), tr("&Copy to clipboard"));
 
             popup.addSeparator();
-            deleteItem = popup.addAction(KIcon(QLatin1String( "edit-delete" )), i18n("&Delete"));
+            deleteItem = popup.addAction(QIcon(QLatin1String( "edit-delete" )), tr("&Delete"));
 
             QAction* clicked = popup.exec(e->globalPos(), 0);
 
@@ -247,21 +247,20 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
                 goto section_two;
             } else if (clicked == copyClipboard) {
                 QMimeData* mimedata = new QMimeData();
-                url.populateMimeData(mimedata);
+                mimedata->setUrls(QList<QUrl>() << url);
                 QApplication::clipboard()->setMimeData(mimedata , QClipboard::Clipboard);
             } else if (clicked == deleteItem) {
                 m_toBeDeleted = m_focus;
-                const KUrl url = Widget::url(m_toBeDeleted->file());
+                const QUrl url = Widget::url(m_toBeDeleted->file());
                 const QString message = m_toBeDeleted->file()->isFolder()
-                                        ? i18n("<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</b> deleted.</qt>", url.prettyUrl())
-                                        : i18n("<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>", url.prettyUrl());
+                                        ? tr("<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</b> deleted.</qt>").arg(url.toString())
+                                        : tr("<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>").arg(url.toString());
                 const int userIntention = KMessageBox::warningContinueCancel(
                                               this, message,
-                                              QString(), KGuiItem(i18n("&Delete"), QLatin1String( "edit-delete" )));
+                                              QString(), KGuiItem(tr("&Delete"), QLatin1String("edit-delete")));
 
                 if (userIntention == KMessageBox::Continue) {
                     KIO::Job *job = KIO::del(url);
-                    job->ui()->setWindow(this);
                     connect(job, SIGNAL(finished(KJob*)), this, SLOT(deleteJobFinished(KJob*)));
                     QApplication::setOverrideCursor(Qt::BusyCursor);
                     setEnabled(false);
@@ -285,8 +284,8 @@ section_two:
                 emit activated(url); //activate first, this will cause UI to prepare itself
                 createFromCache((Folder *)m_focus->file());
             }
-            else if (url.upUrl() != url)
-                emit giveMeTreeFor(url.upUrl());
+            else if (KIO::upUrl(url) != url)
+                emit giveMeTreeFor(KIO::upUrl(url));
         }
     }
 }
@@ -303,19 +302,19 @@ void RadialMap::Widget::deleteJobFinished(KJob *job)
         m_map.make(m_tree, true);
         repaint();
     } else
-        KMessageBox::error(this, job->errorString(), i18n("Error while deleting"));
+        KMessageBox::error(this, job->errorString(), tr("Error while deleting"));
 }
 
 void RadialMap::Widget::dropEvent(QDropEvent *e)
 {
-    KUrl::List uriList = KUrl::List::fromMimeData(e->mimeData());
+    QList<QUrl> uriList = KUrlMimeData::urlsFromMimeData(e->mimeData());
     if (!uriList.isEmpty())
         emit giveMeTreeFor(uriList.first());
 }
 
 void RadialMap::Widget::dragEnterEvent(QDragEnterEvent *e)
 {
-    KUrl::List uriList = KUrl::List::fromMimeData(e->mimeData());
+    QList<QUrl> uriList = KUrlMimeData::urlsFromMimeData(e->mimeData());
     e->setAccepted(!uriList.isEmpty());
 }
 

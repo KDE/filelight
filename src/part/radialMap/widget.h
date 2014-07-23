@@ -23,15 +23,15 @@
 #define WIDGET_H
 
 #include <KJob>
-#include <KUrl>
+#include <QUrl>
 
-#include <QtGui/QDragEnterEvent>
-#include <QtGui/QDropEvent>
-#include <QtGui/QMouseEvent>
-#include <QtGui/QPaintEvent>
-#include <QtGui/QResizeEvent>
-#include <QtGui/QWidget>
-#include <QtCore/QTimer>
+#include <QDragEnterEvent>
+#include <QDropEvent>
+#include <QMouseEvent>
+#include <QPaintEvent>
+#include <QResizeEvent>
+#include <QWidget>
+#include <QTimer>
 
 #include "map.h"
 
@@ -41,7 +41,6 @@ class File;
 namespace KIO {
 class Job;
 }
-class KUrl;
 
 namespace RadialMap
 {
@@ -55,7 +54,7 @@ public:
     explicit Widget(QWidget* = 0, bool = false);
     virtual ~Widget();
     QString path() const;
-    KUrl url(File const * const = 0) const;
+    QUrl url(File const * const = 0) const;
 
     bool isValid() const {
         return m_tree != 0;
@@ -81,11 +80,11 @@ private slots:
     void createFromCache(const Folder*);
 
 signals:
-    void activated(const KUrl&);
-    void invalidated(const KUrl&);
+    void activated(const QUrl&);
+    void invalidated(const QUrl&);
     void created(const Folder*);
     void mouseHover(const QString&);
-    void giveMeTreeFor(const KUrl&);
+    void giveMeTreeFor(const QUrl&);
 
 protected:
     virtual void changeEvent(QEvent*);

@@ -22,11 +22,11 @@
 #ifndef FILETREE_H
 #define FILETREE_H
 
-#include <QtCore/QByteArray> //qstrdup
-#include <QtCore/QFile> //decodeName()
-#include <QtCore/QDebug>
-#include <kglobal.h>
-#include <klocale.h>
+#include <QByteArray> //qstrdup
+#include <QFile> //decodeName()
+#include <QDebug>
+#include <QLocale>
+#include <KFormat>
 
 #include <stdlib.h>
 
@@ -252,7 +252,7 @@ public:
 
     QString fullPath(const Folder* = 0) const;
     QString humanReadableSize() const {
-        return KGlobal::locale()->formatByteSize(m_size);
+        return KFormat().formatByteSize(m_size);
     }
 
 protected:

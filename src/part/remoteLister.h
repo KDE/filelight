@@ -34,7 +34,7 @@ class RemoteLister : public KDirLister
 {
     Q_OBJECT
 public:
-    RemoteLister(const KUrl &url, QWidget *parent, ScanManager* manager);
+    RemoteLister(const QUrl &url, QWidget *parent, ScanManager* manager);
     ~RemoteLister();
 
 signals:

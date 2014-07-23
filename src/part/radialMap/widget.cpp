@@ -27,13 +27,13 @@
 #include "map.h"
 
 #include <KCursor>        //ctor
-#include <KUrl>
+#include <QUrl>
 
-#include <QtGui/QApplication>   //sendEvent
-#include <QtGui/QBitmap>        //ctor - finding cursor size
-#include <QtGui/QCursor>        //slotPostMouseEvent()
-#include <QtCore/QTimer>         //member
-#include <QtGui/QWidget>
+#include <QApplication>   //sendEvent
+#include <QBitmap>        //ctor - finding cursor size
+#include <QCursor>        //slotPostMouseEvent()
+#include <QTimer>         //member
+#include <QWidget>
 
 
 RadialMap::Widget::Widget(QWidget *parent, bool isSummary)
@@ -59,20 +59,17 @@ RadialMap::Widget::~Widget()
 }
 
 
-QString
-RadialMap::Widget::path() const
+QString RadialMap::Widget::path() const
 {
     return m_tree->fullPath();
 }
 
-KUrl
-RadialMap::Widget::url(File const * const file) const
+QUrl RadialMap::Widget::url(File const * const file) const
 {
-    return KUrl(file ? file->fullPath() : m_tree->fullPath());
+    return QUrl::fromLocalFile (file ? file->fullPath() : m_tree->fullPath());
 }
 
-void
-RadialMap::Widget::invalidate()
+void RadialMap::Widget::invalidate()
 {
     if (isValid())
     {

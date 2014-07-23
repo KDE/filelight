@@ -53,7 +53,7 @@
 
 namespace Filelight {
 
-MainWindow::MainWindow() : KParts::MainWindow(), m_part(0)
+MainWindow::MainWindow() : KParts::MainWindow(), m_part(0), m_histories(0)
 {
 //     setXMLFile("filelightui.rc");
     KPluginFactory *factory = KPluginLoader(QLatin1String( "filelightpart" )).factory();
@@ -283,6 +283,8 @@ void MainWindow::urlAboutToChange()
 
 void MainWindow::saveProperties(KConfigGroup &configgroup) //virtual
 {
+    if (!m_histories) return;
+
     m_histories->save(configgroup);
     configgroup.writeEntry("currentMap", m_part->url().path());
 }

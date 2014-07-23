@@ -28,6 +28,7 @@
 
 #include <QIcon>
 #include <QAction>
+#include <QDebug>
 
 inline HistoryAction::HistoryAction(const QIcon& icon, const QString& text, KActionCollection* ac)
         : QAction(icon, text, ac)
@@ -113,6 +114,11 @@ void HistoryCollection::save(KConfigGroup &configgroup)
 
 void HistoryCollection::restore(const KConfigGroup &configgroup)
 {
+    if (!m_b || !m_f) {
+        qWarning() << "what the actual fuck";
+        return;
+    }
+
     m_b->m_list = QUrl::fromStringList(configgroup.readPathEntry("backHistory", QStringList()));
     m_f->m_list = QUrl::fromStringList(configgroup.readPathEntry("forwardHistory", QStringList()));
     //TODO texts are not updated - no matter

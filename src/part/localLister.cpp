@@ -25,14 +25,13 @@
 #include "fileTree.h"
 #include "scan.h"
 
-#include <KDebug>
 #include <Solid/StorageVolume>
 #include <Solid/StorageAccess>
 #include <Solid/Device>
 
-#include <QtGui/QApplication> //postEvent()
-#include <QtCore/QFile>
-#include <QtCore/QByteArray>
+#include <QGuiApplication> //postEvent()
+#include <QFile>
+#include <QByteArray>
 
 #include <kde_file.h>
 #include <dirent.h>
@@ -87,13 +86,13 @@ LocalLister::run()
 
     if (m_parent->m_abort) //scan was cancelled
     {
-        kDebug() << "Scan successfully aborted";
+        qDebug() << "Scan successfully aborted";
         delete tree;
         tree = 0;
     }
-    kDebug() << "Emitting signal to cache results ...";
+    qDebug() << "Emitting signal to cache results ...";
     emit branchCompleted(tree, true);
-    kDebug() << "Thread terminating ...";
+    qDebug() << "Thread terminating ...";
 }
 
 #ifndef S_BLKSIZE
@@ -107,7 +106,7 @@ outputError(QByteArray path)
 {
     ///show error message that stat or opendir may give
 
-#define out(s) kError() << s ": " << path; break
+#define out(s) qWarning() << s ": " << path; break
 
     switch (errno) {
     case EACCES:
@@ -204,7 +203,7 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
             {
                 if (new_path == (*it)->name8Bit())
                 {
-                    kDebug() << "Tree pre-completed: " << (*it)->name();
+                    qDebug() << "Tree pre-completed: " << (*it)->name();
                     d = it.remove();
                     m_parent->m_files += d->children();
                     //**** ideally don't have this redundant extra somehow
@@ -250,8 +249,8 @@ void LocalLister::readMounts()
         }
     }
 
-    kDebug() << "Found the following remote filesystems: " << s_remoteMounts;
-    kDebug() << "Found the following local filesystems: " << s_localMounts;
+    qDebug() << "Found the following remote filesystems: " << s_remoteMounts;
+    qDebug() << "Found the following local filesystems: " << s_localMounts;
 }
 
 }//namespace Filelight

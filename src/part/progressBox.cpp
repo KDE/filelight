@@ -23,15 +23,14 @@
 
 #include "scan.h"
 
-#include <KGlobal>
-#include <KGlobalSettings>
 #include <KColorScheme>
 #include <KIO/Job>
-#include <KLocale>
 
-#include <QtGui/QLabel>
+#include <QLabel>
 #include <QPainter>
-#include <QtCore/QDebug>
+#include <QDebug>
+
+#include <QFontDatabase>
 
 #include <math.h>
 
@@ -44,7 +43,7 @@ ProgressBox::ProgressBox(QWidget *parent, QObject *part, Filelight::ScanManager 
 
     setObjectName(QLatin1String( "ProgressBox" ));
 
-    setFont(KGlobalSettings::fixedFont());
+    setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
 
     setText(999999);
@@ -89,7 +88,7 @@ ProgressBox::halt()
 void
 ProgressBox::setText(int files)
 {
-    m_text = i18np("%1 File", "%1 Files", files);
+    m_text = tr("%n file(s)", "files found so far during scan", files);
     m_textWidth = fontMetrics().width(m_text);
     m_textHeight = fontMetrics().height();
 }

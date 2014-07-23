@@ -22,25 +22,39 @@
 #include "settingsDialog.h"
 #include "Config.h"
 
-#include <KDirSelectDialog>
-#include <KLocale>
-#include <KMessageBox>
+#include <QRadioButton>
+#include <QCloseEvent>
+#include <QDir>
+#include <QMessageBox>
+#include <QFileDialog>
+#include <QDialogButtonBox>
+#include <QButtonGroup>
 
-#include <QtGui/QRadioButton>
-#include <QtGui/QCloseEvent>
-#include <QtCore/QDir>
-
-SettingsDialog::SettingsDialog(QWidget *parent) : KDialog(parent)
+SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
 {
-    setButtons(KDialog::Reset | KDialog::Close);
+    QDialogButtonBox *buttons = new QDialogButtonBox;
+    QPushButton *resetButton = buttons->addButton(QDialogButtonBox::Reset);
+    QPushButton *closeButton = buttons->addButton(QDialogButtonBox::Close);
+    layout()->addWidget(buttons);
 
-    setupUi(this->mainWidget());
+    setupUi(this);
     QVBoxLayout *vbox = new QVBoxLayout;
-    //colourSchemeGroup->setFrameShape(QFrame::NoFrame);
+    colourSchemeGroup->setFlat(true);
 
-    vbox->addWidget(new QRadioButton(i18n("Rainbow"), this), Filelight::Rainbow);
-    vbox->addWidget(new QRadioButton(i18n("System Colors"), this), Filelight::KDE);
-    vbox->addWidget(new QRadioButton(i18n("High Contrast"), this), Filelight::HighContrast);
+    m_schemaGroup = new QButtonGroup;
+    QRadioButton *radioButton;
+
+    radioButton = new QRadioButton(tr("Rainbow"));
+    vbox->addWidget(radioButton);
+    m_schemaGroup->addButton(radioButton, Filelight::Rainbow);
+
+    radioButton = new QRadioButton(tr("System colors"));
+    vbox->addWidget(radioButton);
+    m_schemaGroup->addButton(radioButton, Filelight::KDE);
+
+    radioButton = new QRadioButton(tr("High contrast"));
+    vbox->addWidget(radioButton);
+    m_schemaGroup->addButton(radioButton, Filelight::HighContrast);
 
     colourSchemeGroup->setLayout(vbox);
 
@@ -51,8 +65,8 @@ SettingsDialog::SettingsDialog(QWidget *parent) : KDialog(parent)
 
     connect(m_addButton,    SIGNAL(clicked()), SLOT(addFolder()));
     connect(m_removeButton, SIGNAL(clicked()), SLOT(removeFolder()));
-    connect(this,  SIGNAL(resetClicked()), SLOT(reset()));
-    connect(this,  SIGNAL(closeClicked()), SLOT(close()));
+    connect(resetButton,  SIGNAL(clicked()), SLOT(reset()));
+    connect(closeButton,  SIGNAL(clicked()), SLOT(close()));
 
     connect(colourSchemeGroup, SIGNAL(clicked(int)), SLOT(changeScheme(int)));
     connect(contrastSlider, SIGNAL(valueChanged(int)), SLOT(changeContrast(int)));
@@ -74,8 +88,8 @@ SettingsDialog::SettingsDialog(QWidget *parent) : KDialog(parent)
 
     connect(minFontPitch, SIGNAL (valueChanged(int)), SLOT(changeMinFontPitch(int)));
 
-    m_addButton->setIcon(KIcon(QLatin1String( "folder-open" )));
-    m_removeButton->setIcon(KIcon(QLatin1String( "list-remove" )));
+    m_addButton->setIcon(QIcon(QLatin1String("folder-open")));
+    m_removeButton->setIcon(QIcon(QLatin1String("list-remove")));
 }
 
 
@@ -109,13 +123,13 @@ void SettingsDialog::reset()
     m_removeButton->setEnabled(m_listBox->count() > 0);
 
     //tab 2
-    if (colourSchemeGroup->selected() != Config::scheme) //TODO: This is probably wrong
+    if (m_schemaGroup->checkedId() != Config::scheme) //TODO: This is probably wrong
     {
-        qobject_cast<QRadioButton*>(colourSchemeGroup->layout()->itemAt(Config::scheme)->widget())->setChecked(true);
+        m_schemaGroup->button(Config::scheme)->setChecked(true);
         //colourSchemeGroup->setSelected(Config::scheme);
         //setButton doesn't call a single QButtonGroup signal!
         //so we need to call this ourselves (and hence the detection above)
-        changeScheme(Config::scheme);
+//        changeScheme(Config::scheme);
     }
     contrastSlider->setValue(Config::contrast);
 
@@ -152,14 +166,14 @@ void SettingsDialog::toggleDontScanRemovableMedia(bool b)
 
 void SettingsDialog::addFolder()
 {
-    const KUrl url = KDirSelectDialog::selectDirectory(KUrl(QDir::rootPath()), false, this, i18n( "Select Folder to Scan" ));
+    const QUrl url = QFileDialog::getExistingDirectory(this, tr("Select path to ignore"), QDir::rootPath());
 
     //TODO error handling!
     //TODO wrong protocol handling!
 
     if (!url.isEmpty())
     {
-        const QString path = url.path(KUrl::AddTrailingSlash);
+        const QString path = url.toLocalFile();
 
         if (!Config::skipList.contains(path))
         {
@@ -168,7 +182,7 @@ void SettingsDialog::addFolder()
             if (m_listBox->currentItem() == 0) m_listBox->setCurrentRow(0);
             m_removeButton->setEnabled(true);
         }
-        else KMessageBox::sorry(this, i18n("That folder is already set to be excluded from scans"));
+        else QMessageBox::information(this, tr("Folder already ignored"), tr("That folder is already set to be excluded from scans."));
     }
 }
 
@@ -236,7 +250,7 @@ void SettingsDialog::reject()
 {
     //called when escape is pressed
     reset();
-    KDialog::reject();   //**** doesn't change back scheme so far
+    QDialog::reject();   //**** doesn't change back scheme so far
 }
 
 #include "settingsDialog.moc"
