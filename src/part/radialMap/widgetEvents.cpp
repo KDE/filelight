@@ -232,8 +232,10 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
             popup.addSeparator();
             copyClipboard = popup.addAction(KIcon(QLatin1String( "edit-copy" )), i18n("&Copy to clipboard"));
 
-            popup.addSeparator();
-            deleteItem = popup.addAction(KIcon(QLatin1String( "edit-delete" )), i18n("&Delete"));
+            if (m_focus->file() != m_tree) {
+                popup.addSeparator();
+                deleteItem = popup.addAction(KIcon(QLatin1String( "edit-delete" )), i18n("&Delete"));
+            }
 
             QAction* clicked = popup.exec(e->globalPos(), 0);
 
@@ -249,7 +251,7 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
                 QMimeData* mimedata = new QMimeData();
                 url.populateMimeData(mimedata);
                 QApplication::clipboard()->setMimeData(mimedata , QClipboard::Clipboard);
-            } else if (clicked == deleteItem) {
+            } else if (clicked == deleteItem && m_focus->file() != m_tree) {
                 m_toBeDeleted = m_focus;
                 const KUrl url = Widget::url(m_toBeDeleted->file());
                 const QString message = m_toBeDeleted->file()->isFolder()
