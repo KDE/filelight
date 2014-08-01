@@ -33,7 +33,6 @@
 #include <QFile>
 #include <QByteArray>
 
-#include <kde_file.h>
 #include <dirent.h>
 #ifdef Q_OS_SOLARIS
 #include <sys/vfstab.h>
@@ -155,9 +154,9 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
 #define KDE_lstat kdewin32_stat64
 #endif
 
-    KDE_struct_stat statbuf;
+    struct stat statbuf;
     dirent *ent;
-    while ((ent = KDE_readdir(dir)))
+    while ((ent = readdir(dir)))
     {
         if (m_parent->m_abort)
             return cwd;
@@ -169,7 +168,7 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
         new_path += ent->d_name;
 
         //get file information
-        if (KDE_lstat(new_path, &statbuf) == -1) {
+        if (lstat(new_path, &statbuf) == -1) {
             outputError(new_path);
             continue;
         }
