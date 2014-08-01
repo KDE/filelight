@@ -50,13 +50,15 @@
 #include <KStandardAction>
 #include <KActionCollection>
 #include <KIO/Global> // upUrl
+#include <KService>
 
 namespace Filelight {
 
 MainWindow::MainWindow() : KParts::MainWindow(), m_part(0), m_histories(0)
 {
 //     setXMLFile("filelightui.rc");
-    KPluginFactory *factory = KPluginLoader(QLatin1String( "filelightpart" )).factory();
+    KService::Ptr service = KService::serviceByDesktopName(QStringLiteral("filelightpart"));
+    KPluginFactory *factory = KPluginLoader(service->library()).factory();
 
     if (!factory) {
         KMessageBox::error(this, tr("Unable to load the Filelight Part.\nPlease make sure Filelight was correctly installed."));
