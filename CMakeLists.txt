@@ -43,6 +43,7 @@ find_package(KF5 REQUIRED
     Solid
     XmlGui
     CoreAddons
+    DocTools
 )
 
 add_definitions(
@@ -56,6 +57,4 @@ include_directories(src/)
 
 add_subdirectory(src)
 add_subdirectory(misc)
-
-# Disble for now, until I find out what the replacement cmake macro is
-#add_subdirectory(doc)
+add_subdirectory(doc)
