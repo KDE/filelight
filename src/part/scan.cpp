@@ -27,6 +27,7 @@
 
 #include <QGuiApplication>
 #include <QCursor>
+#include <QDir>
 
 namespace Filelight
 {
@@ -66,11 +67,9 @@ bool ScanManager::start(const QUrl &url)
 {
     QMutexLocker locker(&m_mutex); // The m_mutex gets released once locker is destroyed (goes out of scope).
 
-    QString path = url.toLocalFile();
-
     //url is guaranteed clean and safe
 
-    qDebug() << "Scan requested for: " << path << endl;
+    qDebug() << "Scan requested for: " << url << endl;
 
     if (running()) {
         qWarning() << "Tried to launch two concurrent scans, aborting old one...";
@@ -80,73 +79,79 @@ bool ScanManager::start(const QUrl &url)
     m_files = 0;
     m_abort = false;
 
-    Chain<Folder> *trees = new Chain<Folder>;
+    if (url.isLocalFile()) {
+        QString path = url.toLocalFile();
 
-    /* CHECK CACHE
-     *   user wants: /usr/local/
-     *   cached:     /usr/
-     *
-     *   user wants: /usr/
-     *   cached:     /usr/local/, /usr/include/
-     */
+        if (!path.endsWith(QDir::separator())) path += QDir::separator();
 
-    for (Iterator<Folder> it = m_cache->iterator(); it != m_cache->end(); ++it)
-    {
-        QString cachePath = (*it)->name();
+        Chain<Folder> *trees = new Chain<Folder>;
 
-        if (path.startsWith(cachePath)) //then whole tree already scanned
+        /* CHECK CACHE
+         *   user wants: /usr/local/
+         *   cached:     /usr/
+         *
+         *   user wants: /usr/
+         *   cached:     /usr/local/, /usr/include/
+         */
+
+        for (Iterator<Folder> it = m_cache->iterator(); it != m_cache->end(); ++it)
         {
-            //find a pointer to the requested branch
+            QString cachePath = (*it)->name();
 
-            qDebug() << "Cache-(a)hit: " << cachePath << endl;
-
-            QStringList split = path.mid(cachePath.length()).split(QLatin1Char( '/' ));
-            Folder *d = *it;
-            Iterator<File> jt;
-
-            while (!split.isEmpty() && d != NULL) //if NULL we have got lost so abort!!
+            if (path.startsWith(cachePath)) //then whole tree already scanned
             {
-                jt = d->iterator();
+                //find a pointer to the requested branch
 
-                const Link<File> *end = d->end();
-                QString s = split.first();
-                if (s.isEmpty()) //found the dir
-                    break;
-                s += QLatin1Char( '/' );
+                qDebug() << "Cache-(a)hit: " << cachePath << endl;
 
-                for (d = 0; jt != end; ++jt)
-                    if (s == (*jt)->name())
-                    {
-                        d = (Folder*)*jt;
+                QStringList split = path.mid(cachePath.length()).split(QLatin1Char( '/' ));
+                Folder *d = *it;
+                Iterator<File> jt;
+
+                while (!split.isEmpty() && d != NULL) //if NULL we have got lost so abort!!
+                {
+                    jt = d->iterator();
+
+                    const Link<File> *end = d->end();
+                    QString s = split.first();
+                    if (s.isEmpty()) //found the dir
                         break;
-                    }
+                    s += QLatin1Char( '/' );
+
+                    for (d = 0; jt != end; ++jt)
+                        if (s == (*jt)->name())
+                        {
+                            d = (Folder*)*jt;
+                            break;
+                        }
 
                     split.pop_front();
-            }
+                }
 
-            if (d)
+                if (d)
+                {
+                    delete trees;
+
+                    //we found a completed tree, thus no need to scan
+                    qDebug() << "Found cache-handle, generating map.." << endl;
+
+                    emit branchCacheHit(d);
+
+                    return true;
+                }
+                else
+                {
+                    //something went wrong, we couldn't find the folder we were expecting
+                    qWarning() << "Didn't find " << path << " in the cache!\n";
+                    delete it.remove(); //safest to get rid of it
+                    break; //do a full scan
+                }
+            }
+            else if (cachePath.startsWith(path)) //then part of the requested tree is already scanned
             {
-                delete trees;
-
-                //we found a completed tree, thus no need to scan
-                qDebug() << "Found cache-handle, generating map.." << endl;
-
-                emit branchCacheHit(d);
-
-                return true;
+                qDebug() << "Cache-(b)hit: " << cachePath << endl;
+                it.transferTo(*trees);
             }
-            else
-            {
-                //something went wrong, we couldn't find the folder we were expecting
-                qWarning() << "Didn't find " << path << " in the cache!\n";
-                delete it.remove(); //safest to get rid of it
-                break; //do a full scan
-            }
-        }
-        else if (cachePath.startsWith(path)) //then part of the requested tree is already scanned
-        {
-            qDebug() << "Cache-(b)hit: " << cachePath << endl;
-            it.transferTo(*trees);
         }
 
         QGuiApplication::changeOverrideCursor(QCursor(Qt::BusyCursor));

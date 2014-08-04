@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
         MainWindow *mw = new MainWindow();
 
         QStringList args = options.positionalArguments();
-        if (args.count() > 0) mw->scan(args.at(0));
+        if (args.count() > 0) mw->scan(QUrl::fromUserInput(args.at(0)));
 
         mw->show();
     }
