@@ -36,7 +36,7 @@
 #include <dirent.h>
 #ifdef Q_OS_SOLARIS
 #include <sys/vfstab.h>
-#elif !defined(Q_WS_WIN)
+#elif !defined(Q_OS_WIN)
 #include <fstab.h>
 #endif
 #include <sys/stat.h>
@@ -124,7 +124,7 @@ outputError(QByteArray path)
         out("Bad file descriptor");
     case EFAULT:
         out("Bad address");
-#ifndef Q_WS_WIN
+#ifndef Q_OS_WIN
     case ELOOP: //NOTE shouldn't ever happen
         out("Too many symbolic links encountered while traversing the path");
 #endif
@@ -183,7 +183,7 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
         }
 
         if (S_ISREG(statbuf.st_mode)) //file
-#ifndef Q_WS_WIN
+#ifndef Q_OS_WIN
             cwd->append(ent->d_name, (statbuf.st_blocks * S_BLKSIZE));
 #else
             cwd->append(ent->d_name, statbuf.st_size);
