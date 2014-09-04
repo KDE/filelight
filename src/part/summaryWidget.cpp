@@ -147,7 +147,7 @@ void SummaryWidget::createDiskMaps()
 
         map->create(tree); //must be done when visible
 
-        connect(map, SIGNAL(activated(KUrl)), SIGNAL(activated(KUrl)));
+        connect(map, SIGNAL(activated(QUrl)), SIGNAL(activated(QUrl)));
     }
 }
 
