@@ -238,8 +238,8 @@ bool
 Part::start(const QUrl &url)
 {
     if (!m_started) {
-        connect(m_map, SIGNAL(mouseHover(QString)), statusBar(), SLOT(message(QString)));
-        connect(m_map, SIGNAL(created(const Folder*)), statusBar(), SLOT(clear()));
+        connect(m_map, SIGNAL(mouseHover(QString)), statusBar(), SLOT(showMessage(const QString&)));
+        connect(m_map, SIGNAL(created(const Folder*)), statusBar(), SLOT(clearMessage()));
         m_started = true;
     }
 
