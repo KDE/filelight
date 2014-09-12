@@ -32,12 +32,13 @@
 
 SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
 {
+    setupUi(this);
+
     QDialogButtonBox *buttons = new QDialogButtonBox;
     QPushButton *resetButton = buttons->addButton(QDialogButtonBox::Reset);
     QPushButton *closeButton = buttons->addButton(QDialogButtonBox::Close);
     layout()->addWidget(buttons);
 
-    setupUi(this);
     QVBoxLayout *vbox = new QVBoxLayout;
     colourSchemeGroup->setFlat(true);
 
