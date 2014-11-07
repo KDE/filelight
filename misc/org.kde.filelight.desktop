@@ -157,3 +157,4 @@ Terminal=false
 MimeType=inode/directory;
 X-DocPath=filelight/index.html
 Categories=Qt;KDE;Utility;
+X-DBUS-ServiceName=org.kde.filelight

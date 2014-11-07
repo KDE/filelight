@@ -25,7 +25,7 @@
 #include "fileTree.h"
 #include "radialMap/radialMap.h"
 #include "radialMap/widget.h"
-#include "summaryWidget.moc"
+
 
 #include <Solid/Device>
 #include <Solid/StorageAccess>

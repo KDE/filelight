@@ -254,4 +254,4 @@ void SettingsDialog::reject()
     QDialog::reject();   //**** doesn't change back scheme so far
 }
 
-#include "settingsDialog.moc"
+

@@ -167,4 +167,4 @@ RemoteLister::_completed()
 }
 }
 
-#include "remoteLister.moc"
+

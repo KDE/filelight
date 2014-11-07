@@ -234,4 +234,4 @@ ScanManager::foundCached(Folder *tree)
 
 }
 
-#include "scan.moc"
+

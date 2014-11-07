@@ -210,4 +210,4 @@ RadialMap::Segment::~Segment()
         delete m_file; //created by us in Builder::build()
 }
 
-#include "widget.moc"
+

@@ -299,4 +299,4 @@ void MainWindow::readProperties(const KConfigGroup &configgroup) //virtual
 
 } //namespace Filelight
 
-#include "mainWindow.moc"
+
