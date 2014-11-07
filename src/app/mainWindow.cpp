@@ -114,7 +114,7 @@ void MainWindow::setupActions() //singleton function
     action = ac->addAction(QLatin1String("scan_home"), this, SLOT(slotScanHomeFolder()));
     action->setText(tr("Scan &Home Folder"));
     action->setIcon(QIcon(QLatin1String("user-home")));
-    action->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Home));
+    ac->setDefaultShortcut(action, QKeySequence(Qt::CTRL + Qt::Key_Home));
 
     action = ac->addAction(QLatin1String("scan_root"), this, SLOT(slotScanRootFolder()));
     action->setText(tr("Scan &Root Folder"));
@@ -123,13 +123,13 @@ void MainWindow::setupActions() //singleton function
     action = ac->addAction(QLatin1String("scan_rescan"), m_part, SLOT(rescan()));
     action->setText(tr("Rescan"));
     action->setIcon(QIcon(QLatin1String("view-refresh")));
-    action->setShortcut(QKeySequence::Refresh);
+    ac->setDefaultShortcut(action, QKeySequence::Refresh);
 
 
     action = ac->addAction(QLatin1String("scan_stop"), this, SLOT(slotAbortScan()));
     action->setText(tr("Stop"));
     action->setIcon(QIcon(QLatin1String("process-stop")));
-    action->setShortcut(Qt::Key_Escape);
+    ac->setDefaultShortcut(action, Qt::Key_Escape);
 
     action = ac->addAction(QLatin1String("go"), m_combo, SIGNAL(returnPressed()));
     action->setText(tr("Go"));

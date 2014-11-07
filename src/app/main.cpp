@@ -64,7 +64,9 @@ int main(int argc, char *argv[])
     options.addHelpOption();
     options.addVersionOption();
     options.addPositionalArgument(QLatin1String("url"), QObject::tr("Path or URL to scan"), QObject::tr("[url]"));
+    about.setupCommandLine(&options);
     options.process(app);
+    about.processCommandLine(&options);
 
     if (!app.isSessionRestored()) {
         MainWindow *mw = new MainWindow();
