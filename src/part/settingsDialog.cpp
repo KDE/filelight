@@ -41,6 +41,7 @@ SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
 
     QVBoxLayout *vbox = new QVBoxLayout;
     colourSchemeGroup->setFlat(true);
+    colourSchemeGroup->setLayout(vbox);
 
     m_schemaGroup = new QButtonGroup;
     QRadioButton *radioButton;
@@ -69,7 +70,7 @@ SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
     connect(resetButton,  SIGNAL(clicked()), SLOT(reset()));
     connect(closeButton,  SIGNAL(clicked()), SLOT(close()));
 
-    connect(colourSchemeGroup, SIGNAL(clicked(int)), SLOT(changeScheme(int)));
+    connect(m_schemaGroup, SIGNAL(buttonClicked(int)), SLOT(changeScheme(int)));
     connect(contrastSlider, SIGNAL(valueChanged(int)), SLOT(changeContrast(int)));
     connect(contrastSlider, SIGNAL(sliderReleased()), SLOT(slotSliderReleased()));
 
