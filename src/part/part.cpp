@@ -111,7 +111,7 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
     KStandardAction::zoomOut(m_map, SLOT(zoomOut()), actionCollection());
     QAction *action = actionCollection()->addAction(QLatin1String("configure_filelight"));
     action->setText(tr("Configure Filelight..."));
-    action->setIcon(QIcon(QLatin1String("configure")));
+    action->setIcon(QIcon::fromTheme(QLatin1String("configure")));
     connect(action, SIGNAL(triggered()), this, SLOT(configFilelight()));
 
     connect(m_map, SIGNAL(created(const Folder*)), SIGNAL(completed()));

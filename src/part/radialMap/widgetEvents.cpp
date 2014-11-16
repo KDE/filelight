@@ -216,24 +216,24 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
             popup.setTitle(m_focus->file()->fullPath(m_tree));
 
             if (isDir) {
-                openFileManager = popup.addAction(QIcon(QLatin1String("system-file-manager")), tr("Open &File Manager Here"));
+                openFileManager = popup.addAction(QIcon::fromTheme(QLatin1String("system-file-manager")), tr("Open &File Manager Here"));
 
                 if (url.scheme() == QLatin1String("file" ))
-                    openTerminal = popup.addAction(QIcon(QLatin1String( "utilities-terminal" )), tr("Open &Terminal Here"));
+                    openTerminal = popup.addAction(QIcon::fromTheme(QLatin1String( "utilities-terminal" )), tr("Open &Terminal Here"));
 
                 if (m_focus->file() != m_tree) {
                     popup.addSeparator();
-                    centerMap = popup.addAction(QIcon(QLatin1String( "zoom-in" )), tr("&Center Map Here"));
+                    centerMap = popup.addAction(QIcon::fromTheme(QLatin1String( "zoom-in" )), tr("&Center Map Here"));
                 }
             }
             else
-                openFile = popup.addAction(QIcon(QLatin1String("document-open")), tr("Scan/open the path of the selected element", "&Open"));
+                openFile = popup.addAction(QIcon::fromTheme(QLatin1String("document-open")), tr("Scan/open the path of the selected element", "&Open"));
 
             popup.addSeparator();
-            copyClipboard = popup.addAction(QIcon(QLatin1String( "edit-copy" )), tr("&Copy to clipboard"));
+            copyClipboard = popup.addAction(QIcon::fromTheme(QLatin1String( "edit-copy" )), tr("&Copy to clipboard"));
 
             popup.addSeparator();
-            deleteItem = popup.addAction(QIcon(QLatin1String( "edit-delete" )), tr("&Delete"));
+            deleteItem = popup.addAction(QIcon::fromTheme(QLatin1String( "edit-delete" )), tr("&Delete"));
 
             QAction* clicked = popup.exec(e->globalPos(), 0);
 

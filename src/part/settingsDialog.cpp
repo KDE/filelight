@@ -90,8 +90,8 @@ SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
 
     connect(minFontPitch, SIGNAL (valueChanged(int)), SLOT(changeMinFontPitch(int)));
 
-    m_addButton->setIcon(QIcon(QLatin1String("folder-open")));
-    m_removeButton->setIcon(QIcon(QLatin1String("list-remove")));
+    m_addButton->setIcon(QIcon::fromTheme(QLatin1String("folder-open")));
+    m_removeButton->setIcon(QIcon::fromTheme(QLatin1String("list-remove")));
 }
 
 

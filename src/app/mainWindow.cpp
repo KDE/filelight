@@ -113,31 +113,31 @@ void MainWindow::setupActions() //singleton function
 
     action = ac->addAction(QLatin1String("scan_home"), this, SLOT(slotScanHomeFolder()));
     action->setText(tr("Scan &Home Folder"));
-    action->setIcon(QIcon(QLatin1String("user-home")));
+    action->setIcon(QIcon::fromTheme(QLatin1String("user-home")));
     ac->setDefaultShortcut(action, QKeySequence(Qt::CTRL + Qt::Key_Home));
 
     action = ac->addAction(QLatin1String("scan_root"), this, SLOT(slotScanRootFolder()));
     action->setText(tr("Scan &Root Folder"));
-    action->setIcon(QIcon(QLatin1String("folder-red")));
+    action->setIcon(QIcon::fromTheme(QLatin1String("folder-red")));
 
     action = ac->addAction(QLatin1String("scan_rescan"), m_part, SLOT(rescan()));
     action->setText(tr("Rescan"));
-    action->setIcon(QIcon(QLatin1String("view-refresh")));
+    action->setIcon(QIcon::fromTheme(QLatin1String("view-refresh")));
     ac->setDefaultShortcut(action, QKeySequence::Refresh);
 
 
     action = ac->addAction(QLatin1String("scan_stop"), this, SLOT(slotAbortScan()));
     action->setText(tr("Stop"));
-    action->setIcon(QIcon(QLatin1String("process-stop")));
+    action->setIcon(QIcon::fromTheme(QLatin1String("process-stop")));
     ac->setDefaultShortcut(action, Qt::Key_Escape);
 
     action = ac->addAction(QLatin1String("go"), m_combo, SIGNAL(returnPressed()));
     action->setText(tr("Go"));
-    action->setIcon(QIcon(QLatin1String("go-jump-locationbar")));
+    action->setIcon(QIcon::fromTheme(QLatin1String("go-jump-locationbar")));
 
     action = ac->addAction(QLatin1String( "scan_folder" ), this, SLOT(slotScanFolder()));
     action->setText(tr("Scan Folder"));
-    action->setIcon(QIcon(QLatin1String( "folder" )));
+    action->setIcon(QIcon::fromTheme(QLatin1String( "folder" )));
 
     QWidgetAction *locationAction = ac->add<QWidgetAction>(QLatin1String("location_bar"), 0, 0);
     locationAction->setText(tr("Location Bar"));

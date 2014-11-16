@@ -131,7 +131,7 @@ void SummaryWidget::createDiskMaps()
         QLabel *label = new QLabel(text, this);
         horizontalLayout->addWidget(label);
         QLabel *icon = new QLabel(this);
-        icon->setPixmap(QIcon(disk.icon).pixmap(16,16));
+        icon->setPixmap(QIcon::fromTheme(disk.icon).pixmap(16,16));
         horizontalLayout->addWidget(icon);
 
         horizontalLayout->setAlignment(Qt::AlignCenter);
