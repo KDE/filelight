@@ -74,7 +74,7 @@ MainWindow::MainWindow() : KParts::MainWindow(), m_part(0), m_histories(0)
         createGUI(m_part);
         setCentralWidget(m_part->widget());
 
-        stateChanged(QLatin1String( "scan_failed" )); //bah! doesn't affect the parts' actions, should I add them to the actionCollection here?
+        stateChanged(QStringLiteral( "scan_failed" )); //bah! doesn't affect the parts' actions, should I add them to the actionCollection here?
 
         connect(m_part, SIGNAL(started(KIO::Job*)), SLOT(scanStarted()));
         connect(m_part, SIGNAL(completed()), SLOT(scanCompleted()));
@@ -90,7 +90,7 @@ MainWindow::MainWindow() : KParts::MainWindow(), m_part(0), m_histories(0)
         std::exit(1);
     }
 
-    setAutoSaveSettings(QLatin1String( "window" ));
+    setAutoSaveSettings(QStringLiteral( "window" ));
 }
 
 void MainWindow::setupActions() //singleton function
@@ -111,35 +111,35 @@ void MainWindow::setupActions() //singleton function
 
     QAction* action;
 
-    action = ac->addAction(QLatin1String("scan_home"), this, SLOT(slotScanHomeFolder()));
+    action = ac->addAction(QStringLiteral("scan_home"), this, SLOT(slotScanHomeFolder()));
     action->setText(tr("Scan &Home Folder"));
-    action->setIcon(QIcon::fromTheme(QLatin1String("user-home")));
+    action->setIcon(QIcon::fromTheme(QStringLiteral("user-home")));
     ac->setDefaultShortcut(action, QKeySequence(Qt::CTRL + Qt::Key_Home));
 
-    action = ac->addAction(QLatin1String("scan_root"), this, SLOT(slotScanRootFolder()));
+    action = ac->addAction(QStringLiteral("scan_root"), this, SLOT(slotScanRootFolder()));
     action->setText(tr("Scan &Root Folder"));
-    action->setIcon(QIcon::fromTheme(QLatin1String("folder-red")));
+    action->setIcon(QIcon::fromTheme(QStringLiteral("folder-red")));
 
-    action = ac->addAction(QLatin1String("scan_rescan"), m_part, SLOT(rescan()));
+    action = ac->addAction(QStringLiteral("scan_rescan"), m_part, SLOT(rescan()));
     action->setText(tr("Rescan"));
-    action->setIcon(QIcon::fromTheme(QLatin1String("view-refresh")));
+    action->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")));
     ac->setDefaultShortcut(action, QKeySequence::Refresh);
 
 
-    action = ac->addAction(QLatin1String("scan_stop"), this, SLOT(slotAbortScan()));
+    action = ac->addAction(QStringLiteral("scan_stop"), this, SLOT(slotAbortScan()));
     action->setText(tr("Stop"));
-    action->setIcon(QIcon::fromTheme(QLatin1String("process-stop")));
+    action->setIcon(QIcon::fromTheme(QStringLiteral("process-stop")));
     ac->setDefaultShortcut(action, Qt::Key_Escape);
 
-    action = ac->addAction(QLatin1String("go"), m_combo, SIGNAL(returnPressed()));
+    action = ac->addAction(QStringLiteral("go"), m_combo, SIGNAL(returnPressed()));
     action->setText(tr("Go"));
-    action->setIcon(QIcon::fromTheme(QLatin1String("go-jump-locationbar")));
+    action->setIcon(QIcon::fromTheme(QStringLiteral("go-jump-locationbar")));
 
-    action = ac->addAction(QLatin1String( "scan_folder" ), this, SLOT(slotScanFolder()));
+    action = ac->addAction(QStringLiteral( "scan_folder" ), this, SLOT(slotScanFolder()));
     action->setText(tr("Scan Folder"));
-    action->setIcon(QIcon::fromTheme(QLatin1String( "folder" )));
+    action->setIcon(QIcon::fromTheme(QStringLiteral( "folder" )));
 
-    QWidgetAction *locationAction = ac->add<QWidgetAction>(QLatin1String("location_bar"), 0, 0);
+    QWidgetAction *locationAction = ac->add<QWidgetAction>(QStringLiteral("location_bar"), 0, 0);
     locationAction->setText(tr("Location Bar"));
     locationAction->setDefaultWidget(m_combo);
 
@@ -204,7 +204,7 @@ void MainWindow::slotComboScan()
     QUrl url = QUrl::fromUserInput(path);
 
     if (url.isRelative())
-        path = QLatin1String( "~/" ) + path; // KUrlCompletion completes relative to ~, not CWD
+        path = QStringLiteral( "~/" ) + path; // KUrlCompletion completes relative to ~, not CWD
 
     path = KShell::tildeExpand(path);
 
@@ -237,13 +237,13 @@ void MainWindow::slotAbortScan()
 
 void MainWindow::scanStarted()
 {
-    stateChanged(QLatin1String( "scan_started" ));
+    stateChanged(QStringLiteral( "scan_started" ));
     m_combo->clearFocus();
 }
 
 void MainWindow::scanFailed()
 {
-    stateChanged(QLatin1String( "scan_failed" ));
+    stateChanged(QStringLiteral( "scan_failed" ));
     action("go_up")->setStatusTip(QString());
     action("go_up")->setToolTip(QString());
     m_combo->lineEdit()->clear();
@@ -253,7 +253,7 @@ void MainWindow::scanCompleted()
 {
     const QUrl url = m_part->url();
 
-    stateChanged(QLatin1String("scan_complete"));
+    stateChanged(QStringLiteral("scan_complete"));
 
     m_combo->lineEdit()->setText(m_part->prettyUrl());
 

@@ -28,15 +28,15 @@
 #include <QUrl>
 
 static KAboutData about(
-    QLatin1String(APP_NAME),
+    QStringLiteral(APP_NAME),
     QObject::tr(APP_PRETTYNAME),
-    QLatin1String(APP_VERSION),
+    QStringLiteral(APP_VERSION),
     QObject::tr("Graphical disk-usage information"),
     KAboutLicense::GPL,
     QObject::tr("(C) 2006 Max Howell\n\
         (C) 2008-2014 Martin Sandsmark"),
     QString(),
-    QLatin1String("http://utils.kde.org/projects/filelight")
+    QStringLiteral("http://utils.kde.org/projects/filelight")
 );
 
 
@@ -44,26 +44,26 @@ int main(int argc, char *argv[])
 {
     using Filelight::MainWindow;
 
-    about.addAuthor(QObject::tr("Martin Sandsmark"), QObject::tr("Maintainer"), QLatin1String("martin.sandsmark@kde.org"), QLatin1String("http://iskrembilen.com/"));
-    about.addAuthor(QObject::tr("Max Howell"),       QObject::tr("Original author"), QLatin1String("max.howell@methylblue.com"), QLatin1String("http://www.methylblue.com/"));
+    about.addAuthor(QObject::tr("Martin Sandsmark"), QObject::tr("Maintainer"), QStringLiteral("martin.sandsmark@kde.org"), QStringLiteral("http://iskrembilen.com/"));
+    about.addAuthor(QObject::tr("Max Howell"),       QObject::tr("Original author"), QStringLiteral("max.howell@methylblue.com"), QStringLiteral("http://www.methylblue.com/"));
     about.addCredit(QObject::tr("Lukas Appelhans"),  QObject::tr("Help and support"));
-    about.addCredit(QObject::tr("Steffen Gerlach"),  QObject::tr("Inspiration"), QString(), QLatin1String("http://www.steffengerlach.de/"));
+    about.addCredit(QObject::tr("Steffen Gerlach"),  QObject::tr("Inspiration"), QString(), QStringLiteral("http://www.steffengerlach.de/"));
     about.addCredit(QObject::tr("Mike Diehl"),       QObject::tr("Original documentation"));
     about.addCredit(QObject::tr("Sune Vuorela"),     QObject::tr("Icon"));
     about.addCredit(QObject::tr("Nuno Pinheiro"),    QObject::tr("Icon"));
 
     QApplication app(argc, argv);
-    app.setApplicationName(QLatin1String(APP_NAME));
+    app.setApplicationName(QStringLiteral(APP_NAME));
     app.setApplicationDisplayName(QObject::tr(APP_PRETTYNAME));
-    app.setApplicationVersion(QLatin1String(APP_VERSION));
-    app.setOrganizationDomain(QLatin1String("kde.org"));
-    app.setOrganizationName(QLatin1String("KDE"));
+    app.setApplicationVersion(QStringLiteral(APP_VERSION));
+    app.setOrganizationDomain(QStringLiteral("kde.org"));
+    app.setOrganizationName(QStringLiteral("KDE"));
 
     QCommandLineParser options;
     options.setApplicationDescription(QObject::tr("Graphical disk-usage information"));
     options.addHelpOption();
     options.addVersionOption();
-    options.addPositionalArgument(QLatin1String("url"), QObject::tr("Path or URL to scan"), QObject::tr("[url]"));
+    options.addPositionalArgument(QStringLiteral("url"), QObject::tr("Path or URL to scan"), QObject::tr("[url]"));
     about.setupCommandLine(&options);
     options.process(app);
     about.processCommandLine(&options);

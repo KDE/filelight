@@ -76,7 +76,7 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
 {
     //we are a friend of RadialMap::Map
 
-    QList<Label*> list;
+    QVector<Label*> list;
     unsigned int startLevel = 0;
 
 
@@ -157,7 +157,7 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
         paint.setFont(font);
     }
     
-    QList<Label*>::iterator it;
+    QVector<Label*>::iterator it;
 
     do
     {
@@ -331,9 +331,7 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
         paint.drawText(label->tx, label->ty, label->qs);
     }
 
-    foreach(Label *label, list) {
-        delete label;
-    }
+    qDeleteAll(list);
     delete [] sizes;
 }
 }
