@@ -104,7 +104,11 @@ bool ScanManager::start(const QUrl &url)
 
                 qDebug() << "Cache-(a)hit: " << cachePath << endl;
 
+#if QT_VERSION >= 0x050400
+                QStringList split = path.midRef(cachePath.length()).split(QLatin1Char( '/' ));
+#else
                 QStringList split = path.mid(cachePath.length()).split(QLatin1Char( '/' ));
+#endif
                 Folder *d = *it;
                 Iterator<File> jt;
 
