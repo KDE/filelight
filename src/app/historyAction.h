@@ -1,6 +1,6 @@
 /***********************************************************************
 * Copyright 2003-2004  Max Howell <max.howell@methylblue.com>
-* Copyright 2008-2009  Martin Sandsmark <martin.sandsmark@kde.org>
+* Copyright 2008-2014  Martin Sandsmark <martin.sandsmark@kde.org>
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public License as
@@ -22,38 +22,38 @@
 #ifndef HISTORYACTION_H
 #define HISTORYACTION_H
 
-#include <KAction>
+#include <QAction>
 #include <QStringList>
-#include <KUrl>
+#include <QUrl>
 
 class KConfigGroup;
 class KActionCollection;
 
-class HistoryAction : KAction
+class HistoryAction : QAction
 {
-    HistoryAction(const KIcon &icon, const QString &text, KActionCollection *ac);
+    HistoryAction(const QIcon &icon, const QString &text, KActionCollection *ac);
 
     friend class HistoryCollection;
 
 public:
     virtual void setEnabled(bool b = true) {
-        KAction::setEnabled(b && !m_list.isEmpty());
+        QAction::setEnabled(b && !m_list.isEmpty());
     }
 
     void clear() {
         m_list.clear();
         setEnabled(false);
-        KAction::setText(m_text);
+        QAction::setText(m_text);
     }
 
 private:
-    void setText();
+    void setHelpText(const QUrl& url);
 
-    void push(const QString &path);
-    QString pop();
+    void push(const QUrl &url);
+    QUrl pop();
 
     const QString m_text;
-    QStringList m_list;
+    QList<QUrl> m_list;
 };
 
 
@@ -68,13 +68,13 @@ public:
     void restore(const KConfigGroup &configgroup);
 
 public slots:
-    void push(const KUrl&);
+    void push(const QUrl& url);
     void stop() {
         m_receiver = 0;
     }
 
 signals:
-    void activated(const KUrl&);
+    void activated(const QUrl&);
 
 private slots:
     void pop();

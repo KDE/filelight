@@ -25,9 +25,9 @@
 #include <KParts/BrowserExtension>
 #include <KParts/StatusBarExtension>
 #include <KParts/Part>
-#include <KUrl>
+#include <QUrl>
 
-#include <QtGui/QLabel>
+#include <QLabel>
 
 using KParts::StatusBarExtension;
 namespace RadialMap {
@@ -60,11 +60,11 @@ public:
     virtual bool closeUrl();
 
     QString prettyUrl() const {
-        return url().protocol() == QLatin1String( "file" ) ? url().path() : url().prettyUrl();
+        return url().isLocalFile() ? url().toLocalFile() : url().toString();
     }
 
 public slots:
-    virtual bool openUrl(const KUrl&);
+    virtual bool openUrl(const QUrl&);
     void configFilelight();
     void rescan();
 
@@ -74,7 +74,7 @@ private slots:
     void mapChanged(const Folder*);
 
 private:
-    KStatusBar *statusBar() {
+    QStatusBar *statusBar() {
         return m_statusbar->statusBar();
     }
     void showSummary();
@@ -91,10 +91,10 @@ private:
     bool m_started;
 
 private:
-    bool start(const KUrl&);
+    bool start(const QUrl&);
 
 private slots:
-    void updateURL(const KUrl &);
+    void updateURL(const QUrl &);
 };
 }
 

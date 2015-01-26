@@ -25,25 +25,20 @@
 #include "fileTree.h"
 #include "radialMap/radialMap.h"
 #include "radialMap/widget.h"
-#include "summaryWidget.moc"
 
-#include <KDebug>
-#include <KIconEffect> //MyRadialMap::mousePressEvent()
-#include <KIconLoader>
-#include <KIcon>
-#include <KLocale>
 
 #include <Solid/Device>
 #include <Solid/StorageAccess>
 
 #include <KDiskFreeSpaceInfo>
 
-#include <QtGui/QLabel>
-#include <QtGui/QApplication>
-#include <QtCore/QByteArray>
-#include <QtCore/QList>
-#include <QtGui/QMouseEvent>
-#include <QtGui/QLayout>
+#include <QLabel>
+#include <QApplication>
+#include <QIcon>
+#include <QByteArray>
+#include <QList>
+#include <QMouseEvent>
+#include <QLayout>
 
 struct Disk
 {
@@ -110,10 +105,9 @@ void SummaryWidget::createDiskMaps()
 {
     DiskList disks;
 
-    const QByteArray free = i18nc("Free space on the disks/partitions", "Free").toUtf8();
-    const QByteArray used = i18nc("Used space on the disks/partitions", "Used").toUtf8();
+    const QByteArray free = tr("Free", "Free space on the disks/partitions").toUtf8();
+    const QByteArray used = tr("Used", "Used space on the disks/partitions").toUtf8();
 
-    KIconLoader loader;
     QString text;
 
     for (DiskList::ConstIterator it = disks.constBegin(), end = disks.constEnd(); it != end; ++it)
@@ -132,12 +126,12 @@ void SummaryWidget::createDiskMaps()
         QHBoxLayout* horizontalLayout = new QHBoxLayout(info);
 
         // Create the text and icon under the radialMap.
-        text = QLatin1String( "<b>" ) + disk.mount + i18nc("Percent used disk space on the partition", "</b> (%1% Used)", disk.used*100/disk.size);
+        text = tr("<b>%1</b> (%n% Used)", "Percent used disk space on the partition", disk.used*100/disk.size).arg(disk.mount);
 
         QLabel *label = new QLabel(text, this);
         horizontalLayout->addWidget(label);
         QLabel *icon = new QLabel(this);
-        icon->setPixmap(KIcon(disk.icon).pixmap(16,16));
+        icon->setPixmap(QIcon::fromTheme(disk.icon).pixmap(16,16));
         horizontalLayout->addWidget(icon);
 
         horizontalLayout->setAlignment(Qt::AlignCenter);
@@ -153,7 +147,7 @@ void SummaryWidget::createDiskMaps()
 
         map->create(tree); //must be done when visible
 
-        connect(map, SIGNAL(activated(KUrl)), SIGNAL(activated(KUrl)));
+        connect(map, SIGNAL(activated(QUrl)), SIGNAL(activated(QUrl)));
     }
 }
 

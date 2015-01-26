@@ -23,12 +23,11 @@
 #include "fileTree.h"
 #include "scan.h"
 
-#include <KDebug>
 #include <KDirLister>
 
-#include <QtCore/QLinkedList>
-#include <QtCore/QTimer>
-#include <QtGui/QWidget>
+#include <QLinkedList>
+#include <QTimer>
+#include <QWidget>
 
 namespace Filelight
 {
@@ -43,7 +42,7 @@ struct Store {
     typedef QLinkedList<Store*> List;
 
     /// location of the folder
-    const KUrl url;
+    const QUrl url;
     /// the folder on which we are operating
     Folder *folder;
     /// so we can reference the parent store
@@ -52,7 +51,7 @@ struct Store {
     List stores;
 
     Store() : folder(0), parent(0) {}
-    Store(const KUrl &u, const QString &name, Store *s)
+    Store(const QUrl &u, const QString &name, Store *s)
             : url(u), folder(new Folder(name.toUtf8() + '/')), parent(s) {}
 
 
@@ -60,7 +59,7 @@ struct Store {
     {
         /// returns the next store available for scanning
 
-        kDebug() << "propagate: " << url << endl;
+        qDebug() << "propagate: " << url << endl;
 
         if (parent) {
             parent->folder->append(folder);
@@ -81,7 +80,7 @@ private:
 };
 
 
-RemoteLister::RemoteLister(const KUrl &url, QWidget *parent, ScanManager* manager)
+RemoteLister::RemoteLister(const QUrl &url, QWidget *parent, ScanManager* manager)
         : KDirLister(parent)
         , m_root(new Store(url, url.url(), 0))
         , m_store(m_root)
@@ -106,7 +105,7 @@ RemoteLister::~RemoteLister()
 void
 RemoteLister::completed()
 {
-    kDebug() << "completed: " << url().prettyUrl() << endl;
+    qDebug() << "completed: " << url().toString() << endl;
 
     // Delay the call to _completed since it can do a "delete this"
     QTimer::singleShot(0, this, SLOT(_completed()));
@@ -115,7 +114,7 @@ RemoteLister::completed()
 void
 RemoteLister::canceled()
 {
-    kDebug() << "canceled: " << url().prettyUrl() << endl;
+    qDebug() << "canceled: " << url().toString() << endl;
 
     QTimer::singleShot(0, this, SLOT(_completed()));
 }
@@ -145,7 +144,7 @@ RemoteLister::_completed()
     if (!m_store->stores.isEmpty())
     {
         Store::List::Iterator first = m_store->stores.begin();
-        const KUrl url((*first)->url);
+        const QUrl url((*first)->url);
         Store *currentStore = m_store;
 
         //we should operate with this store next time this function is called
@@ -155,11 +154,11 @@ RemoteLister::_completed()
         currentStore->stores.erase(first);
 
         //this returns _immediately_
-        kDebug() << "scanning: " << url << endl;
+        qDebug() << "scanning: " << url << endl;
         openUrl(url);
     }
     else {
-        kDebug() << "I think we're done\n";
+        qDebug() << "I think we're done\n";
 
         Q_ASSERT(m_root == m_store);
 
@@ -168,4 +167,4 @@ RemoteLister::_completed()
 }
 }
 
-#include "remoteLister.moc"
+

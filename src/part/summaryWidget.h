@@ -22,9 +22,9 @@
 #ifndef SUMMARYWIDGET_H
 #define SUMMARYWIDGET_H
 
-#include <KUrl>
+#include <QUrl>
 
-#include <QtGui/QWidget>
+#include <QWidget>
 
 class SummaryWidget : public QWidget
 {
@@ -34,7 +34,7 @@ public:
     explicit SummaryWidget(QWidget *parent);
 
 signals:
-    void activated(const KUrl&);
+    void activated(const QUrl&);
 
 private:
     void createDiskMaps();

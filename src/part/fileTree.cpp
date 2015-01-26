@@ -21,9 +21,6 @@
 
 #include "fileTree.h"
 
-#include <KGlobal>
-#include <KLocale>
-
 QString
 File::fullPath(const Folder *root /*= 0*/) const
 {

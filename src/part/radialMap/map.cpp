@@ -19,15 +19,14 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ***********************************************************************/
 
-#include <QtGui/QApplication>    //make()
-#include <QtGui/QImage>          //make() & paint()
-#include <QtGui/QFont>           //ctor
-#include <QtGui/QFontMetrics>    //ctor
-#include <QtGui/QPainter>
+#include <QApplication>    //make()
+#include <QImage>          //make() & paint()
+#include <QFont>           //ctor
+#include <QFontMetrics>    //ctor
+#include <QPainter>
+#include <QBrush>
 
 #include <KCursor>         //make()
-#include <KDebug>
-#include <KGlobalSettings> //kdeColours
 
 #include "builder.h"
 #include "part/Config.h"
@@ -152,7 +151,8 @@ void RadialMap::Map::colorise()
     double contrast = (double)Config::contrast / (double)100;
     int h, s1, s2, v1, v2;
 
-    QColor kdeColour[2] = { KGlobalSettings::inactiveTitleColor(), KGlobalSettings::activeTitleColor() };
+    QPalette palette;
+    const QColor kdeColour[2] = { palette.windowText().color(), palette.window().color() };
 
     double deltaRed   = (double)(kdeColour[0].red()   - kdeColour[1].red())   / 2880; //2880 for semicircle
     double deltaGreen = (double)(kdeColour[0].green() - kdeColour[1].green()) / 2880;
@@ -276,7 +276,7 @@ void RadialMap::Map::paint(bool antialias)
         return;
 
     if (!paint.begin(&m_pixmap)) {
-        kWarning() << "Failed to initialize painting, returning...";
+        qWarning() << "Filelight::RadialMap Failed to initialize painting, returning...";
         return;
     }
 

@@ -21,22 +21,33 @@
 
 #include "historyAction.h"
 
-#include <KAction>
 #include <KActionCollection>
 #include <KConfig>
 #include <KConfigGroup>
-#include <KLocale>
 #include <KStandardShortcut>
 
-inline HistoryAction::HistoryAction(const KIcon &icon, const QString &text, KActionCollection *ac)
-        : KAction(icon, text, ac)
+#include <QIcon>
+#include <QAction>
+#include <QDebug>
+
+inline HistoryAction::HistoryAction(const QIcon& icon, const QString& text, KActionCollection* ac)
+        : QAction(icon, text, ac)
         , m_text(text)
 {
     // .ui files make this false, but we can't rely on UI file as it isn't compiled in :(
     setEnabled(false);
 }
 
-void HistoryAction::push(const QString &path)
+void HistoryAction::setHelpText(const QUrl& url)
+{
+    QString text = url.path();
+    setStatusTip(text);
+    setToolTip(text);
+    setWhatsThis(text);
+}
+
+
+void HistoryAction::push(const QUrl &path)
 {
     if (path.isEmpty()) return;
 
@@ -47,9 +58,9 @@ void HistoryAction::push(const QString &path)
     setEnabled(true);
 }
 
-QString HistoryAction::pop()
+QUrl HistoryAction::pop()
 {
-    const QString s = m_list.takeLast();
+    const QUrl s = m_list.takeLast();
     if (!m_list.isEmpty())
         setHelpText(m_list.last());
 
@@ -61,8 +72,8 @@ QString HistoryAction::pop()
 
 HistoryCollection::HistoryCollection(KActionCollection *ac, QObject *parent)
         : QObject(parent)
-        , m_b(new HistoryAction(KIcon(QLatin1String( "go-previous" )), i18nc("Go to the last path viewed", "Back"), ac))
-        , m_f(new HistoryAction(KIcon(QLatin1String( "go-next" )), i18nc("Go to forward in the history of paths viewed", "Forward"), ac))
+        , m_b(new HistoryAction(QIcon::fromTheme(QLatin1String( "go-previous" )), tr("Back", "Go to the last path viewed"), ac))
+        , m_f(new HistoryAction(QIcon::fromTheme(QLatin1String( "go-next" )), tr("Forward", "Go to forward in the history of paths viewed"), ac))
         , m_receiver(0)
 {
     ac->addAction(QLatin1String( "go_back" ), m_b);
@@ -71,7 +82,7 @@ HistoryCollection::HistoryCollection(KActionCollection *ac, QObject *parent)
     connect(m_f, SIGNAL(triggered(bool)), SLOT(pop()));
 }
 
-void HistoryCollection::push(const KUrl &url) //slot
+void HistoryCollection::push(const QUrl& url) //slot
 {
     if (!url.isEmpty())
     {
@@ -81,16 +92,14 @@ void HistoryCollection::push(const KUrl &url) //slot
             m_receiver = m_b;
         }
 
-        m_receiver->push(url.path(KUrl::AddTrailingSlash));
+        m_receiver->push(url.path());
     }
     m_receiver = 0;
 }
 
 void HistoryCollection::pop() //slot
 {
-    KUrl url;
-    const QString path = ((HistoryAction*)sender())->pop(); //FIXME here we remove the constness
-    url.setPath(path);
+    QUrl url = ((HistoryAction*)sender())->pop();
 
     m_receiver = (sender() == m_b) ? m_f : m_b;
 
@@ -99,15 +108,20 @@ void HistoryCollection::pop() //slot
 
 void HistoryCollection::save(KConfigGroup &configgroup)
 {
-    configgroup.writePathEntry("backHistory", m_b->m_list);
-    configgroup.writePathEntry("forwardHistory", m_f->m_list);
+    configgroup.writePathEntry("backHistory", QUrl::toStringList(m_b->m_list));
+    configgroup.writePathEntry("forwardHistory", QUrl::toStringList(m_f->m_list));
 }
 
 void HistoryCollection::restore(const KConfigGroup &configgroup)
 {
-    m_b->m_list = configgroup.readPathEntry("backHistory", QStringList());
-    m_f->m_list = configgroup.readPathEntry("forwardHistory", QStringList());
+    if (!m_b || !m_f) {
+        qWarning() << "what the actual fuck";
+        return;
+    }
+
+    m_b->m_list = QUrl::fromStringList(configgroup.readPathEntry("backHistory", QStringList()));
+    m_f->m_list = QUrl::fromStringList(configgroup.readPathEntry("forwardHistory", QStringList()));
     //TODO texts are not updated - no matter
 }
 
-#include "historyAction.moc"
+

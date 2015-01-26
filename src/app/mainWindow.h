@@ -42,7 +42,7 @@ class MainWindow : public KParts::MainWindow
 public:
     MainWindow();
 
-    void scan(const KUrl &u) {
+    void scan(const QUrl &u) {
         slotScanUrl(u);
     }
 
@@ -52,7 +52,7 @@ private slots:
     void slotScanFolder();
     void slotScanHomeFolder();
     void slotScanRootFolder();
-    bool slotScanUrl(const KUrl&);
+    bool slotScanUrl(const QUrl&);
     bool slotScanPath(const QString&);
     void slotAbortScan();
 

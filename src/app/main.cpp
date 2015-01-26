@@ -1,6 +1,6 @@
 /***********************************************************************
 * Copyright 2003-2004  Max Howell <max.howell@methylblue.com>
-* Copyright 2008-2009  Martin Sandsmark <martin.sandsmark@kde.org>
+* Copyright 2008-2014  Martin Sandsmark <martin.sandsmark@kde.org>
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public License as
@@ -23,52 +23,56 @@
 #include "mainWindow.h"
 
 #include <KAboutData>
-#include <KApplication>
-#include <KCmdLineArgs>
-#include <KLocale>
-#include <KUrl>
+#include <QApplication>
+#include <QCommandLineParser>
+#include <QUrl>
 
 static KAboutData about(
-    APP_NAME,
-    0,
-    ki18n(APP_PRETTYNAME),
-    APP_VERSION,
-    ki18n("Graphical disk-usage information"),
-    KAboutData::License_GPL,
-    ki18n("(C) 2006 Max Howell\n\
-        (C) 2008-2013 Martin Sandsmark"),
-    KLocalizedString(),
-    "http://utils.kde.org/projects/filelight");
+    QStringLiteral(APP_NAME),
+    QObject::tr(APP_PRETTYNAME),
+    QStringLiteral(APP_VERSION),
+    QObject::tr("Graphical disk-usage information"),
+    KAboutLicense::GPL,
+    QObject::tr("(C) 2006 Max Howell\n\
+        (C) 2008-2014 Martin Sandsmark"),
+    QString(),
+    QStringLiteral("http://utils.kde.org/projects/filelight")
+);
 
 
 int main(int argc, char *argv[])
 {
     using Filelight::MainWindow;
 
-    about.addAuthor(ki18n("Martin Sandsmark"), ki18n("Maintainer"), "martin.sandsmark@kde.org", "http://iskrembilen.com/");
-    about.addAuthor(ki18n("Max Howell"),       ki18n("Original author"), "max.howell@methylblue.com", "http://www.methylblue.com/");
-    about.addCredit(ki18n("Lukas Appelhans"),  ki18n("Help and support"));
-    about.addCredit(ki18n("Steffen Gerlach"),  ki18n("Inspiration"), 0, "http://www.steffengerlach.de/");
-    about.addCredit(ki18n("Mike Diehl"),       ki18n("Original documentation"), 0, 0);
-    about.addCredit(ki18n("Sune Vuorela"),     ki18n("Icon"), 0, 0);
-    about.addCredit(ki18n("Nuno Pinheiro"),    ki18n("Icon"), 0, 0);
+    about.addAuthor(QObject::tr("Martin Sandsmark"), QObject::tr("Maintainer"), QStringLiteral("martin.sandsmark@kde.org"), QStringLiteral("http://iskrembilen.com/"));
+    about.addAuthor(QObject::tr("Max Howell"),       QObject::tr("Original author"), QStringLiteral("max.howell@methylblue.com"), QStringLiteral("http://www.methylblue.com/"));
+    about.addCredit(QObject::tr("Lukas Appelhans"),  QObject::tr("Help and support"));
+    about.addCredit(QObject::tr("Steffen Gerlach"),  QObject::tr("Inspiration"), QString(), QStringLiteral("http://www.steffengerlach.de/"));
+    about.addCredit(QObject::tr("Mike Diehl"),       QObject::tr("Original documentation"));
+    about.addCredit(QObject::tr("Sune Vuorela"),     QObject::tr("Icon"));
+    about.addCredit(QObject::tr("Nuno Pinheiro"),    QObject::tr("Icon"));
 
-    KCmdLineArgs::init(argc, argv, &about);
+    QApplication app(argc, argv);
+    app.setApplicationName(QStringLiteral(APP_NAME));
+    app.setApplicationDisplayName(QObject::tr(APP_PRETTYNAME));
+    app.setApplicationVersion(QStringLiteral(APP_VERSION));
+    app.setOrganizationDomain(QStringLiteral("kde.org"));
+    app.setOrganizationName(QStringLiteral("KDE"));
 
-    KCmdLineOptions options;
-    KLocale *tmpLocale = new KLocale(QLatin1String(APP_NAME));
-    options.add(ki18nc("Path in the file system to scan", "+[path]").toString(tmpLocale).toLocal8Bit(), ki18n("Scan 'path'"));
-    delete tmpLocale;
-    KCmdLineArgs::addCmdLineOptions(options);
-
-    KApplication app;
+    QCommandLineParser options;
+    options.setApplicationDescription(QObject::tr("Graphical disk-usage information"));
+    options.addHelpOption();
+    options.addVersionOption();
+    options.addPositionalArgument(QStringLiteral("url"), QObject::tr("Path or URL to scan"), QObject::tr("[url]"));
+    about.setupCommandLine(&options);
+    options.process(app);
+    about.processCommandLine(&options);
 
     if (!app.isSessionRestored()) {
         MainWindow *mw = new MainWindow();
 
-        KCmdLineArgs* const args = KCmdLineArgs::parsedArgs();
-        if (args->count() > 0) mw->scan(args->url(0));
-        args->clear();
+        QStringList args = options.positionalArguments();
+        if (args.count() > 0) mw->scan(QUrl::fromUserInput(args.at(0)));
 
         mw->show();
     }

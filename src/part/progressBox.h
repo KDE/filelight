@@ -22,8 +22,8 @@
 #ifndef PROGRESSBOX_H
 #define PROGRESSBOX_H
 
-#include <QtGui/QLabel>
-#include <QtCore/QTimer>
+#include <QLabel>
+#include <QTimer>
 
 namespace Filelight {
 class ScanManager;

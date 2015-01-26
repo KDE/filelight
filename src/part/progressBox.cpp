@@ -23,15 +23,14 @@
 
 #include "scan.h"
 
-#include <KGlobal>
-#include <KGlobalSettings>
 #include <KColorScheme>
 #include <KIO/Job>
-#include <KLocale>
 
-#include <QtGui/QLabel>
+#include <QLabel>
 #include <QPainter>
-#include <QtCore/QDebug>
+#include <QDebug>
+
+#include <QFontDatabase>
 
 #include <math.h>
 
@@ -44,7 +43,7 @@ ProgressBox::ProgressBox(QWidget *parent, QObject *part, Filelight::ScanManager 
 
     setObjectName(QLatin1String( "ProgressBox" ));
 
-    setFont(KGlobalSettings::fixedFont());
+    setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
 
     setText(999999);
@@ -89,12 +88,12 @@ ProgressBox::halt()
 void
 ProgressBox::setText(int files)
 {
-    m_text = i18np("%1 File", "%1 Files", files);
+    m_text = tr("%n file(s)", "files found so far during scan", files);
     m_textWidth = fontMetrics().width(m_text);
     m_textHeight = fontMetrics().height();
 }
 
-static const int pieces = 4;
+#define PIECES_NUM 4
 static const float angleFactor[] = { -0.75, 0.5, 1.0, -0.3 };
 static const int length[] = { 30, 40, 50, 60 };
 static const int angleOffset[] = { 5760, 0, 0, -5760 };
@@ -109,7 +108,7 @@ void ProgressBox::paintEvent(QPaintEvent*)
     static int tick = 0;
     tick+=16;
 
-    for (int i=0; i<pieces; i++) {
+    for (int i=0; i<PIECES_NUM; i++) {
         const QRect rect(length[i]/2, length[i]/2, 200- length[i], 200-length[i]);
         int angle = angleFactor[i] + tick*angleFactor[i];
         QRadialGradient gradient(rect.center(), sin(angle/160.0f) * 100);
@@ -129,4 +128,4 @@ void ProgressBox::paintEvent(QPaintEvent*)
 }
 
 
-#include "progressBox.moc"
+

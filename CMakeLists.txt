@@ -1,5 +1,5 @@
 #######################################################################
-# Copyright 2008-2009  Martin Sandsmark <martin.sandsmark@kde.org>
+# Copyright 2008-2014  Martin Sandsmark <martin.sandsmark@kde.org>
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License as
@@ -20,21 +20,43 @@
 
 project(Filelight)
 
-if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
-    find_package(KDE4)
-    include( KDE4Defaults )
-    include_directories(${KDE4_INCLUDES})
+cmake_minimum_required (VERSION 2.8.12 FATAL_ERROR)
 
-    add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
-    add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
-endif()
+find_package(ECM 1.3.0 REQUIRED NO_MODULE)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
-add_definitions( -DQT_NO_CAST_FROM_ASCII )
-add_definitions( -DQT_NO_CAST_TO_ASCII )
+include(ECMGenerateHeaders)
+include(ECMInstallIcons)
+include(ECMMarkNonGuiExecutable)
+include(ECMOptionalAddSubdirectory)
+include(ECMSetupVersion)
+include(FeatureSummary)
+include(KDEInstallDirs)
+include(KDECMakeSettings)
+include(KDECompilerSettings)
+
+
+find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus Widgets Script Test)
+find_package(KF5 REQUIRED
+    KIO
+    Parts
+    Solid
+    XmlGui
+    CoreAddons
+    DocTools
+)
+
+add_definitions(
+    -DQT_USE_FAST_CONCATENATION
+    -DQT_USE_FAST_OPERATOR_PLUS
+    -DQT_NO_CAST_FROM_ASCII
+    -DQT_NO_CAST_TO_ASCII
+)
+
+add_definitions(-DTRANSLATION_DOMAIN=\"filelight\")
 
 include_directories(src/)
 
 add_subdirectory(src)
 add_subdirectory(misc)
-
 add_subdirectory(doc)

@@ -25,20 +25,18 @@
 #include "fileTree.h"
 #include "scan.h"
 
-#include <KDebug>
 #include <Solid/StorageVolume>
 #include <Solid/StorageAccess>
 #include <Solid/Device>
 
-#include <QtGui/QApplication> //postEvent()
-#include <QtCore/QFile>
-#include <QtCore/QByteArray>
+#include <QGuiApplication> //postEvent()
+#include <QFile>
+#include <QByteArray>
 
-#include <kde_file.h>
 #include <dirent.h>
 #ifdef Q_OS_SOLARIS
 #include <sys/vfstab.h>
-#elif !defined(Q_WS_WIN)
+#elif !defined(Q_OS_WIN)
 #include <fstab.h>
 #endif
 #include <sys/stat.h>
@@ -87,13 +85,13 @@ LocalLister::run()
 
     if (m_parent->m_abort) //scan was cancelled
     {
-        kDebug() << "Scan successfully aborted";
+        qDebug() << "Scan successfully aborted";
         delete tree;
         tree = 0;
     }
-    kDebug() << "Emitting signal to cache results ...";
+    qDebug() << "Emitting signal to cache results ...";
     emit branchCompleted(tree, true);
-    kDebug() << "Thread terminating ...";
+    qDebug() << "Thread terminating ...";
 }
 
 #ifndef S_BLKSIZE
@@ -107,7 +105,7 @@ outputError(QByteArray path)
 {
     ///show error message that stat or opendir may give
 
-#define out(s) kError() << s ": " << path; break
+#define out(s) qWarning() << s ": " << path; break
 
     switch (errno) {
     case EACCES:
@@ -126,7 +124,7 @@ outputError(QByteArray path)
         out("Bad file descriptor");
     case EFAULT:
         out("Bad address");
-#ifndef Q_WS_WIN
+#ifndef Q_OS_WIN
     case ELOOP: //NOTE shouldn't ever happen
         out("Too many symbolic links encountered while traversing the path");
 #endif
@@ -156,9 +154,9 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
 #define KDE_lstat kdewin32_stat64
 #endif
 
-    KDE_struct_stat statbuf;
+    struct stat statbuf;
     dirent *ent;
-    while ((ent = KDE_readdir(dir)))
+    while ((ent = readdir(dir)))
     {
         if (m_parent->m_abort)
             return cwd;
@@ -170,7 +168,7 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
         new_path += ent->d_name;
 
         //get file information
-        if (KDE_lstat(new_path, &statbuf) == -1) {
+        if (lstat(new_path, &statbuf) == -1) {
             outputError(new_path);
             continue;
         }
@@ -185,7 +183,7 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
         }
 
         if (S_ISREG(statbuf.st_mode)) //file
-#ifndef Q_WS_WIN
+#ifndef Q_OS_WIN
             cwd->append(ent->d_name, (statbuf.st_blocks * S_BLKSIZE));
 #else
             cwd->append(ent->d_name, statbuf.st_size);
@@ -195,8 +193,6 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
         {
             Folder *d = 0;
             QByteArray new_dirname = ent->d_name;
-            new_dirname += '/';
-            new_path += '/';
 
             //check to see if we've scanned this section already
 
@@ -204,13 +200,16 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
             {
                 if (new_path == (*it)->name8Bit())
                 {
-                    kDebug() << "Tree pre-completed: " << (*it)->name();
+                    qDebug() << "Tree pre-completed: " << (*it)->name();
                     d = it.remove();
                     m_parent->m_files += d->children();
                     //**** ideally don't have this redundant extra somehow
                     cwd->append(d, new_dirname);
                 }
             }
+
+            new_dirname += '/';
+            new_path += '/';
 
             if (!d) //then scan
                 if ((d = scan(new_path, new_dirname))) //then scan was successful
@@ -230,7 +229,7 @@ void LocalLister::readMounts()
     const Solid::StorageAccess *partition;
     const Solid::StorageVolume *volume;
     QStringList remoteFsTypes;
-    remoteFsTypes << QLatin1String( "smbfs" ) << QLatin1String( "nfs" ) << QLatin1String( "afs" ); //TODO: expand
+    remoteFsTypes << QStringLiteral( "smbfs" ) << QStringLiteral( "nfs" ) << QStringLiteral( "afs" ); //TODO: expand
 
     foreach (const Solid::Device &device, Solid::Device::listFromType(Solid::DeviceInterface::StorageAccess))
     { // Iterate over all the partitions available.
@@ -250,11 +249,11 @@ void LocalLister::readMounts()
         }
     }
 
-    kDebug() << "Found the following remote filesystems: " << s_remoteMounts;
-    kDebug() << "Found the following local filesystems: " << s_localMounts;
+    qDebug() << "Found the following remote filesystems: " << s_remoteMounts;
+    qDebug() << "Found the following local filesystems: " << s_localMounts;
 }
 
 }//namespace Filelight
 
-#include "localLister.moc"
+
 

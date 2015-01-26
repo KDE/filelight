@@ -19,9 +19,16 @@
 #######################################################################
 
 install(FILES filelightpart.desktop DESTINATION ${SERVICES_INSTALL_DIR})
-install(PROGRAMS filelight.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(PROGRAMS org.kde.filelight.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 install(FILES filelightrc DESTINATION ${CONFIG_INSTALL_DIR})
-install(FILES filelightpartui.rc DESTINATION ${DATA_INSTALL_DIR}/filelightpart)
-install(FILES filelightui.rc DESTINATION ${DATA_INSTALL_DIR}/filelight)
+install(FILES filelightpartui.rc DESTINATION ${KXMLGUI_INSTALL_DIR}//filelightpart)
+install(FILES filelightui.rc DESTINATION ${KXMLGUI_INSTALL_DIR}//filelight)
 
-kde4_install_icons(${ICON_INSTALL_DIR})
+ecm_install_icons(ICONS
+    hi32-actions-views_filelight.png
+    hi16-apps-filelight.png 
+    hi22-apps-filelight.png
+    hi32-apps-filelight.png
+    hi48-apps-filelight.png
+    hi64-apps-filelight.png
+    DESTINATION ${ICON_INSTALL_DIR})

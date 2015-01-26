@@ -31,19 +31,18 @@
 #include "summaryWidget.h"
 
 #include <KAboutData>   //::createAboutData()
-#include <KAction>
+#include <QAction>
 #include <KActionCollection>
-#include <KLocale>
 #include <KMessageBox>  //::start()
 #include <KStandardAction>
-#include <KStatusBar>
+#include <QStatusBar>
 #include <KPluginFactory>
 
-#include <QtCore/QFile>        //encodeName()
-#include <QtCore/QTimer>       //postInit() hack
-#include <QtCore/QByteArray>
-#include <QtCore/QDir>
-#include <QtGui/QScrollArea>
+#include <QFile>        //encodeName()
+#include <QTimer>       //postInit() hack
+#include <QByteArray>
+#include <QDir>
+#include <QScrollArea>
 
 #include <unistd.h>       //access()
 #include <iostream>
@@ -51,20 +50,6 @@
 namespace Filelight {
 
 K_PLUGIN_FACTORY(filelightPartFactory, registerPlugin<Part>();)  // produce a factory
-K_EXPORT_PLUGIN(filelightPartFactory(KAboutData(
-               "filelightpart",
-               0,
-               ki18n(APP_PRETTYNAME),
-               APP_VERSION,
-               ki18n("Displays file usage in an easy to understand way."),
-               KAboutData::License_GPL,
-               ki18n("(c) 2002-2004 Max Howell\n\
-                (c) 2008-2013 Martin T. Sandsmark"),
-               KLocalizedString(),
-               "http://utils.kde.org/projects/filelight",
-               "martin.sandsmark@kde.org").
-               setProgramIconName(QLatin1String(APP_NAME)).
-               setCatalogName(APP_NAME)))
 
 BrowserExtension::BrowserExtension(Part *parent)
         : KParts::BrowserExtension(parent)
@@ -80,7 +65,21 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
         , m_started(false)
 {
     Config::read();
-    setComponentData(filelightPartFactory::componentData());
+
+    KAboutData aboutData(
+            QLatin1String("filelightpart"),
+            tr(APP_PRETTYNAME),
+            QLatin1String(APP_VERSION),
+            tr("Displays file usage in an easy to understand way."),
+            KAboutLicense::GPL,
+            tr("(c) 2002-2004 Max Howell\n\
+                (c) 2008-2014 Martin T. Sandsmark"),
+            QString(),
+            QLatin1String("http://utils.kde.org/projects/filelight"),
+            QLatin1String("martin.sandsmark@kde.org"));
+    aboutData.setProgramIconName(QLatin1String(APP_NAME));
+    setComponentData(aboutData);
+
     setXMLFile(QLatin1String( "filelightpartui.rc" ));
 
     QScrollArea *scrollArea = new QScrollArea(parentWidget);
@@ -110,18 +109,18 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
 
     KStandardAction::zoomIn(m_map, SLOT(zoomIn()), actionCollection());
     KStandardAction::zoomOut(m_map, SLOT(zoomOut()), actionCollection());
-    KAction *action = actionCollection()->addAction(QLatin1String("configure_filelight"));
-    action->setText(i18n("Configure Filelight..."));
-    action->setIcon(KIcon(QLatin1String("configure")));
+    QAction *action = actionCollection()->addAction(QLatin1String("configure_filelight"));
+    action->setText(tr("Configure Filelight..."));
+    action->setIcon(QIcon::fromTheme(QLatin1String("configure")));
     connect(action, SIGNAL(triggered()), this, SLOT(configFilelight()));
 
     connect(m_map, SIGNAL(created(const Folder*)), SIGNAL(completed()));
     connect(m_map, SIGNAL(created(const Folder*)), SLOT(mapChanged(const Folder*)));
-    connect(m_map, SIGNAL(activated(KUrl)), SLOT(updateURL(KUrl)));
+    connect(m_map, SIGNAL(activated(QUrl)), SLOT(updateURL(QUrl)));
 
     // TODO make better system
-    connect(m_map, SIGNAL(giveMeTreeFor(KUrl)), SLOT(updateURL(KUrl)));
-    connect(m_map, SIGNAL(giveMeTreeFor(KUrl)), SLOT(openUrl(KUrl)));
+    connect(m_map, SIGNAL(giveMeTreeFor(QUrl)), SLOT(updateURL(QUrl)));
+    connect(m_map, SIGNAL(giveMeTreeFor(QUrl)), SLOT(openUrl(QUrl)));
 
     connect(m_manager, SIGNAL(completed(Folder*)), SLOT(scanCompleted(Folder*)));
     connect(m_manager, SIGNAL(aboutToEmptyCache()), m_map, SLOT(invalidate()));
@@ -144,20 +143,19 @@ Part::postInit()
 }
 
 bool
-Part::openUrl(const KUrl &u)
+Part::openUrl(const QUrl &u)
 {
 
     //TODO everyone hates dialogs, instead render the text in big fonts on the Map
-    //TODO should have an empty KUrl until scan is confirmed successful
+    //TODO should have an empty QUrl until scan is confirmed successful
     //TODO probably should set caption to QString::null while map is unusable
 
 #define KMSG(s) KMessageBox::information(widget(), s)
 
-    KUrl uri = u;
-    uri.cleanPath(KUrl::SimplifyDirSeparators);
-    const QString path = uri.path(KUrl::AddTrailingSlash);
+    QUrl uri = u.adjusted(QUrl::NormalizePathSegments);
+    const QString path = uri.path();
     const QByteArray path8bit = QFile::encodeName(path);
-    const bool isLocal = uri.protocol() == QLatin1String( "file" );
+    const bool isLocal = uri.scheme() == QLatin1String( "file" );
 
     if (uri.isEmpty())
     {
@@ -165,19 +163,19 @@ Part::openUrl(const KUrl &u)
     }
     else if (!uri.isValid())
     {
-        KMSG(i18n("The entered URL cannot be parsed; it is invalid."));
+        KMSG(tr("The entered URL cannot be parsed; it is invalid."));
     }
     else if ((!isLocal && path[0] != QLatin1Char( '/' )) || (isLocal && !QDir::isAbsolutePath(path)))
     {
-        KMSG(i18n("Filelight only accepts absolute paths, eg. /%1", path));
+        KMSG(tr("Filelight only accepts absolute paths, eg. /%1").arg(path));
     }
     else if (isLocal && access(path8bit, F_OK) != 0) //stat(path, &statbuf) == 0
     {
-        KMSG(i18n("Folder not found: %1", path));
+        KMSG(tr("Folder not found: %1").arg(path));
     }
     else if (isLocal && !QDir(path).isReadable()) //access(path8bit, R_OK | X_OK) != 0 doesn't work on win32
     {
-        KMSG(i18n("Unable to enter: %1\nYou do not have access rights to this location.", path));
+        KMSG(tr("Unable to enter: %1\nYou do not have access rights to this location.").arg(path));
     }
     else
     {
@@ -198,7 +196,7 @@ bool
 Part::closeUrl()
 {
     if (m_manager->abort())
-        statusBar()->showMessage(i18n("Aborting Scan..."));
+        statusBar()->showMessage(tr("Aborting Scan..."));
 
     m_map->hide();
     m_stateWidget->hide();
@@ -209,11 +207,11 @@ Part::closeUrl()
 }
 
 void
-Part::updateURL(const KUrl &u)
+Part::updateURL(const QUrl &u)
 {
     //the map has changed internally, update the interface to reflect this
     emit m_ext->openUrlNotify(); //must be done first
-    emit m_ext->setLocationBarUrl(u.prettyUrl());
+    emit m_ext->setLocationBarUrl(u.toString(QUrl::PreferLocalFile));
 
     if (m_manager->running())
         m_manager->abort();
@@ -237,11 +235,11 @@ Part::configFilelight()
 }
 
 bool
-Part::start(const KUrl &url)
+Part::start(const QUrl &url)
 {
     if (!m_started) {
-        connect(m_map, SIGNAL(mouseHover(QString)), statusBar(), SLOT(message(QString)));
-        connect(m_map, SIGNAL(created(const Folder*)), statusBar(), SLOT(clear()));
+        connect(m_map, SIGNAL(mouseHover(QString)), statusBar(), SLOT(showMessage(const QString&)));
+        connect(m_map, SIGNAL(created(const Folder*)), statusBar(), SLOT(clearMessage()));
         m_started = true;
     }
 
@@ -253,7 +251,7 @@ Part::start(const KUrl &url)
     if (m_manager->start(url)) {
         setUrl(url);
 
-        const QString s = i18n("Scanning: %1", prettyUrl());
+        const QString s = tr("Scanning: %1").arg(prettyUrl());
         stateChanged(QLatin1String( "scan_started" ));
         emit started(0); //as a Part, we have to do this
         emit setWindowCaption(s);
@@ -289,7 +287,7 @@ void
 Part::scanCompleted(Folder *tree)
 {
     if (tree) {
-        statusBar()->showMessage(i18n("Scan completed, generating map..."));
+        statusBar()->showMessage(tr("Scan completed, generating map..."));
 
         m_stateWidget->hide();
         m_map->show();
@@ -299,12 +297,12 @@ Part::scanCompleted(Folder *tree)
     }
     else {
         stateChanged(QLatin1String( "scan_failed" ));
-        emit canceled(i18n("Scan failed: %1", prettyUrl()));
+        emit canceled(tr("Scan failed: %1").arg(prettyUrl()));
         emit setWindowCaption(QString());
 
         statusBar()->clearMessage();
 
-        setUrl(KUrl());
+        setUrl(QUrl());
     }
 }
 
@@ -317,8 +315,8 @@ Part::mapChanged(const Folder *tree)
 
     const int fileCount = tree->children();
     const QString text = ( fileCount == 0 ) ?
-        i18n("No files.") :
-        i18np("1 file", "%1 files",fileCount);
+        tr("No files.") :
+        tr("%n file(s)", "number of files found", fileCount);
 
     m_numberOfFiles->setText(text);
 }
@@ -329,7 +327,7 @@ Part::showSummary()
     if (m_summary == 0) {
         m_summary = new SummaryWidget(widget());
         m_summary->setObjectName(QLatin1String( "summaryWidget" ));
-        connect(m_summary, SIGNAL(activated(KUrl)), SLOT(openUrl(KUrl)));
+        connect(m_summary, SIGNAL(activated(QUrl)), SLOT(openUrl(QUrl)));
         m_summary->show();
         m_layout->addWidget(m_summary);
     }

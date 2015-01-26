@@ -18,9 +18,12 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #######################################################################
 
-add_subdirectory(radialMap)
-
 set(filelight_PART_SRCS
+    radialMap/widget.cpp
+    radialMap/builder.cpp
+    radialMap/map.cpp
+    radialMap/widgetEvents.cpp
+    radialMap/labels.cpp
     part.cpp
     scan.cpp
     progressBox.cpp
@@ -31,17 +34,10 @@ set(filelight_PART_SRCS
     remoteLister.cpp
     summaryWidget.cpp)
 
-kde4_add_ui_files(filelight_PART_SRCS dialog.ui)
+QT5_WRAP_UI(filelight_PART_SRCS dialog.ui)
 
-kde4_add_plugin(filelightpart ${filelight_PART_SRCS})
+add_library(filelightpart MODULE ${filelight_PART_SRCS})
 
-target_link_libraries(filelightpart radialmap
-                      ${KDE4_KDECORE_LIBS}
-                      ${KDE4_KPARTS_LIBS}
-                      ${KDE4_KDEUI_LIBS}
-                      ${KDE4_KIO_LIBS}
-                      ${KDE4_KFILE_LIBS}
-                      ${KDE4_SOLID_LIBS})
-
+target_link_libraries(filelightpart KF5::Parts KF5::KIOCore KF5::KIOWidgets KF5::Solid KF5::CoreAddons KF5::Service)
 
 install(TARGETS filelightpart DESTINATION ${PLUGIN_INSTALL_DIR})
