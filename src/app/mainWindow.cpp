@@ -58,6 +58,12 @@ MainWindow::MainWindow() : KParts::MainWindow(), m_part(0), m_histories(0)
 {
 //     setXMLFile("filelightui.rc");
     KService::Ptr service = KService::serviceByDesktopName(QStringLiteral("filelightpart"));
+    if (!service) {
+        KMessageBox::error(this, tr("Unable to locate the Filelight Part.\nPlease make sure Filelight was correctly installed."));
+        std::exit(1);
+        return;
+    }
+
     KPluginFactory *factory = KPluginLoader(service->library()).factory();
 
     if (!factory) {
