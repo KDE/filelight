@@ -28,6 +28,7 @@
 #include <QGuiApplication>
 #include <QCursor>
 #include <QDir>
+#include <QStringBuilder>
 
 namespace Filelight
 {
@@ -105,7 +106,7 @@ bool ScanManager::start(const QUrl &url)
                 qDebug() << "Cache-(a)hit: " << cachePath << endl;
 
 #if QT_VERSION >= 0x050400
-                QStringList split = path.midRef(cachePath.length()).split(QLatin1Char( '/' ));
+                QVector<QStringRef> split = path.midRef(cachePath.length()).split(QLatin1Char( '/' ));
 #else
                 QStringList split = path.mid(cachePath.length()).split(QLatin1Char( '/' ));
 #endif
@@ -117,10 +118,16 @@ bool ScanManager::start(const QUrl &url)
                     jt = d->iterator();
 
                     const Link<File> *end = d->end();
+#if QT_VERSION >= 0x050400
+                    if (split.first().isEmpty()) //found the dir
+                        break;
+                    QString s = split.first() % QLatin1Char( '/' );
+#else
                     QString s = split.first();
                     if (s.isEmpty()) //found the dir
                         break;
                     s += QLatin1Char( '/' );
+#endif
 
                     for (d = 0; jt != end; ++jt)
                         if (s == (*jt)->name())
