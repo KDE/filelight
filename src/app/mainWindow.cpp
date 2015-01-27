@@ -51,6 +51,7 @@
 #include <KActionCollection>
 #include <KIO/Global> // upUrl
 #include <KService>
+#include <KLocalizedString>
 
 namespace Filelight {
 
@@ -59,7 +60,7 @@ MainWindow::MainWindow() : KParts::MainWindow(), m_part(0), m_histories(0)
 //     setXMLFile("filelightui.rc");
     KService::Ptr service = KService::serviceByDesktopName(QStringLiteral("filelightpart"));
     if (!service) {
-        KMessageBox::error(this, tr("Unable to locate the Filelight Part.\nPlease make sure Filelight was correctly installed."));
+        KMessageBox::error(this, i18n("Unable to locate the Filelight Part.\nPlease make sure Filelight was correctly installed."));
         std::exit(1);
         return;
     }
@@ -67,7 +68,7 @@ MainWindow::MainWindow() : KParts::MainWindow(), m_part(0), m_histories(0)
     KPluginFactory *factory = KPluginLoader(service->library()).factory();
 
     if (!factory) {
-        KMessageBox::error(this, tr("Unable to load the Filelight Part.\nPlease make sure Filelight was correctly installed."));
+        KMessageBox::error(this, i18n("Unable to load the Filelight Part.\nPlease make sure Filelight was correctly installed."));
         std::exit(1);
         return;
     }
@@ -92,7 +93,7 @@ MainWindow::MainWindow() : KParts::MainWindow(), m_part(0), m_histories(0)
         const KConfigGroup config = KSharedConfig::openConfig()->group("general");
         m_combo->setHistoryItems(config.readPathEntry("comboHistory", QStringList()));
     } else {
-        KMessageBox::error(this, tr("Unable to create Filelight part widget.\nPlease ensure that Filelight is correctly installed."));
+        KMessageBox::error(this, i18n("Unable to create Filelight part widget.\nPlease ensure that Filelight is correctly installed."));
         std::exit(1);
     }
 
@@ -118,38 +119,38 @@ void MainWindow::setupActions() //singleton function
     QAction* action;
 
     action = ac->addAction(QStringLiteral("scan_home"), this, SLOT(slotScanHomeFolder()));
-    action->setText(tr("Scan &Home Folder"));
+    action->setText(i18n("Scan &Home Folder"));
     action->setIcon(QIcon::fromTheme(QStringLiteral("user-home")));
     ac->setDefaultShortcut(action, QKeySequence(Qt::CTRL + Qt::Key_Home));
 
     action = ac->addAction(QStringLiteral("scan_root"), this, SLOT(slotScanRootFolder()));
-    action->setText(tr("Scan &Root Folder"));
+    action->setText(i18n("Scan &Root Folder"));
     action->setIcon(QIcon::fromTheme(QStringLiteral("folder-red")));
 
     action = ac->addAction(QStringLiteral("scan_rescan"), m_part, SLOT(rescan()));
-    action->setText(tr("Rescan"));
+    action->setText(i18n("Rescan"));
     action->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")));
     ac->setDefaultShortcut(action, QKeySequence::Refresh);
 
 
     action = ac->addAction(QStringLiteral("scan_stop"), this, SLOT(slotAbortScan()));
-    action->setText(tr("Stop"));
+    action->setText(i18n("Stop"));
     action->setIcon(QIcon::fromTheme(QStringLiteral("process-stop")));
     ac->setDefaultShortcut(action, Qt::Key_Escape);
 
     action = ac->addAction(QStringLiteral("go"), m_combo, SIGNAL(returnPressed()));
-    action->setText(tr("Go"));
+    action->setText(i18n("Go"));
     action->setIcon(QIcon::fromTheme(QStringLiteral("go-jump-locationbar")));
 
     action = ac->addAction(QStringLiteral( "scan_folder" ), this, SLOT(slotScanFolder()));
-    action->setText(tr("Scan Folder"));
+    action->setText(i18n("Scan Folder"));
     action->setIcon(QIcon::fromTheme(QStringLiteral( "folder" )));
 
     QWidgetAction *locationAction = ac->add<QWidgetAction>(QStringLiteral("location_bar"), 0, 0);
-    locationAction->setText(tr("Location Bar"));
+    locationAction->setText(i18n("Location Bar"));
     locationAction->setDefaultWidget(m_combo);
 
-    m_recentScans = new KRecentFilesAction(tr("&Recent Scans"), ac);
+    m_recentScans = new KRecentFilesAction(i18n("&Recent Scans"), ac);
     m_recentScans->setMaxItems(8);
 
     m_histories = new HistoryCollection(ac, this);
@@ -190,7 +191,7 @@ void MainWindow::configKeys() //slot
 
 void MainWindow::slotScanFolder()
 {
-    slotScanUrl(QFileDialog::getExistingDirectoryUrl(this, tr("Select Folder to Scan"), m_part->url()));
+    slotScanUrl(QFileDialog::getExistingDirectoryUrl(this, i18n("Select Folder to Scan"), m_part->url()));
 }
 
 void MainWindow::slotScanHomeFolder() {

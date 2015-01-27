@@ -37,6 +37,7 @@
 #include <KStandardAction>
 #include <QStatusBar>
 #include <KPluginFactory>
+#include <KLocalizedString>
 
 #include <QFile>        //encodeName()
 #include <QTimer>       //postInit() hack
@@ -68,11 +69,11 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
 
     KAboutData aboutData(
             QLatin1String("filelightpart"),
-            tr(APP_PRETTYNAME),
+            i18n(APP_PRETTYNAME),
             QLatin1String(APP_VERSION),
-            tr("Displays file usage in an easy to understand way."),
+            i18n("Displays file usage in an easy to understand way."),
             KAboutLicense::GPL,
-            tr("(c) 2002-2004 Max Howell\n\
+            i18n("(c) 2002-2004 Max Howell\n\
                 (c) 2008-2014 Martin T. Sandsmark"),
             QString(),
             QLatin1String("http://utils.kde.org/projects/filelight"),
@@ -110,7 +111,7 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
     KStandardAction::zoomIn(m_map, SLOT(zoomIn()), actionCollection());
     KStandardAction::zoomOut(m_map, SLOT(zoomOut()), actionCollection());
     QAction *action = actionCollection()->addAction(QLatin1String("configure_filelight"));
-    action->setText(tr("Configure Filelight..."));
+    action->setText(i18n("Configure Filelight..."));
     action->setIcon(QIcon::fromTheme(QLatin1String("configure")));
     connect(action, SIGNAL(triggered()), this, SLOT(configFilelight()));
 
@@ -163,19 +164,19 @@ Part::openUrl(const QUrl &u)
     }
     else if (!uri.isValid())
     {
-        KMSG(tr("The entered URL cannot be parsed; it is invalid."));
+        KMSG(i18n("The entered URL cannot be parsed; it is invalid."));
     }
     else if ((!isLocal && path[0] != QLatin1Char( '/' )) || (isLocal && !QDir::isAbsolutePath(path)))
     {
-        KMSG(tr("Filelight only accepts absolute paths, eg. /%1").arg(path));
+        KMSG(i18n("Filelight only accepts absolute paths, eg. /%1", path));
     }
     else if (isLocal && access(path8bit, F_OK) != 0) //stat(path, &statbuf) == 0
     {
-        KMSG(tr("Folder not found: %1").arg(path));
+        KMSG(i18n("Folder not found: %1").arg(path));
     }
     else if (isLocal && !QDir(path).isReadable()) //access(path8bit, R_OK | X_OK) != 0 doesn't work on win32
     {
-        KMSG(tr("Unable to enter: %1\nYou do not have access rights to this location.").arg(path));
+        KMSG(i18n("Unable to enter: %1\nYou do not have access rights to this location.", path));
     }
     else
     {
@@ -196,7 +197,7 @@ bool
 Part::closeUrl()
 {
     if (m_manager->abort())
-        statusBar()->showMessage(tr("Aborting Scan..."));
+        statusBar()->showMessage(i18n("Aborting Scan..."));
 
     m_map->hide();
     m_stateWidget->hide();
@@ -251,7 +252,7 @@ Part::start(const QUrl &url)
     if (m_manager->start(url)) {
         setUrl(url);
 
-        const QString s = tr("Scanning: %1").arg(prettyUrl());
+        const QString s = i18n("Scanning: %1", prettyUrl());
         stateChanged(QLatin1String( "scan_started" ));
         emit started(0); //as a Part, we have to do this
         emit setWindowCaption(s);
@@ -287,7 +288,7 @@ void
 Part::scanCompleted(Folder *tree)
 {
     if (tree) {
-        statusBar()->showMessage(tr("Scan completed, generating map..."));
+        statusBar()->showMessage(i18n("Scan completed, generating map..."));
 
         m_stateWidget->hide();
         m_map->show();
@@ -297,7 +298,7 @@ Part::scanCompleted(Folder *tree)
     }
     else {
         stateChanged(QLatin1String( "scan_failed" ));
-        emit canceled(tr("Scan failed: %1").arg(prettyUrl()));
+        emit canceled(i18n("Scan failed: %1").arg(prettyUrl()));
         emit setWindowCaption(QString());
 
         statusBar()->clearMessage();
@@ -315,8 +316,8 @@ Part::mapChanged(const Folder *tree)
 
     const int fileCount = tree->children();
     const QString text = ( fileCount == 0 ) ?
-        tr("No files.") :
-        tr("%n file(s)", "number of files found", fileCount);
+        i18n("No files.") :
+        i18np("1 file", "%1 files",fileCount);
 
     m_numberOfFiles->setText(text);
 }

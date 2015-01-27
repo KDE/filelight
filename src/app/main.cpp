@@ -25,15 +25,16 @@
 #include <KAboutData>
 #include <QApplication>
 #include <QCommandLineParser>
+#include <KLocalizedString>
 #include <QUrl>
 
 static KAboutData about(
     QStringLiteral(APP_NAME),
-    QObject::tr(APP_PRETTYNAME),
+    i18n(APP_PRETTYNAME),
     QStringLiteral(APP_VERSION),
-    QObject::tr("Graphical disk-usage information"),
+    i18n("Graphical disk-usage information"),
     KAboutLicense::GPL,
-    QObject::tr("(C) 2006 Max Howell\n\
+    i18n("(C) 2006 Max Howell\n\
         (C) 2008-2014 Martin Sandsmark"),
     QString(),
     QStringLiteral("http://utils.kde.org/projects/filelight")
@@ -44,26 +45,26 @@ int main(int argc, char *argv[])
 {
     using Filelight::MainWindow;
 
-    about.addAuthor(QObject::tr("Martin Sandsmark"), QObject::tr("Maintainer"), QStringLiteral("martin.sandsmark@kde.org"), QStringLiteral("http://iskrembilen.com/"));
-    about.addAuthor(QObject::tr("Max Howell"),       QObject::tr("Original author"), QStringLiteral("max.howell@methylblue.com"), QStringLiteral("http://www.methylblue.com/"));
-    about.addCredit(QObject::tr("Lukas Appelhans"),  QObject::tr("Help and support"));
-    about.addCredit(QObject::tr("Steffen Gerlach"),  QObject::tr("Inspiration"), QString(), QStringLiteral("http://www.steffengerlach.de/"));
-    about.addCredit(QObject::tr("Mike Diehl"),       QObject::tr("Original documentation"));
-    about.addCredit(QObject::tr("Sune Vuorela"),     QObject::tr("Icon"));
-    about.addCredit(QObject::tr("Nuno Pinheiro"),    QObject::tr("Icon"));
+    about.addAuthor(i18n("Martin Sandsmark"), i18n("Maintainer"), QStringLiteral("martin.sandsmark@kde.org"), QStringLiteral("http://iskrembilen.com/"));
+    about.addAuthor(i18n("Max Howell"),       i18n("Original author"), QStringLiteral("max.howell@methylblue.com"), QStringLiteral("http://www.methylblue.com/"));
+    about.addCredit(i18n("Lukas Appelhans"),  i18n("Help and support"));
+    about.addCredit(i18n("Steffen Gerlach"),  i18n("Inspiration"), QString(), QStringLiteral("http://www.steffengerlach.de/"));
+    about.addCredit(i18n("Mike Diehl"),       i18n("Original documentation"));
+    about.addCredit(i18n("Sune Vuorela"),     i18n("Icon"));
+    about.addCredit(i18n("Nuno Pinheiro"),    i18n("Icon"));
 
     QApplication app(argc, argv);
     app.setApplicationName(QStringLiteral(APP_NAME));
-    app.setApplicationDisplayName(QObject::tr(APP_PRETTYNAME));
+    app.setApplicationDisplayName(i18n(APP_PRETTYNAME));
     app.setApplicationVersion(QStringLiteral(APP_VERSION));
     app.setOrganizationDomain(QStringLiteral("kde.org"));
     app.setOrganizationName(QStringLiteral("KDE"));
 
     QCommandLineParser options;
-    options.setApplicationDescription(QObject::tr("Graphical disk-usage information"));
+    options.setApplicationDescription(i18n("Graphical disk-usage information"));
     options.addHelpOption();
     options.addVersionOption();
-    options.addPositionalArgument(QStringLiteral("url"), QObject::tr("Path or URL to scan"), QObject::tr("[url]"));
+    options.addPositionalArgument(QStringLiteral("url"), i18n("Path or URL to scan"), i18n("[url]"));
     about.setupCommandLine(&options);
     options.process(app);
     about.processCommandLine(&options);

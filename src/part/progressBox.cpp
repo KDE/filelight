@@ -25,6 +25,7 @@
 
 #include <KColorScheme>
 #include <KIO/Job>
+#include <KLocalizedString>
 
 #include <QLabel>
 #include <QPainter>
@@ -88,7 +89,7 @@ ProgressBox::halt()
 void
 ProgressBox::setText(int files)
 {
-    m_text = tr("%n file(s)", "files found so far during scan", files);
+    m_text = i18np("%1 File", "%1 Files", files);
     m_textWidth = fontMetrics().width(m_text);
     m_textHeight = fontMetrics().height();
 }

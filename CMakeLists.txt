@@ -44,6 +44,7 @@ find_package(KF5 REQUIRED
     XmlGui
     CoreAddons
     DocTools
+    I18n
 )
 
 add_definitions(

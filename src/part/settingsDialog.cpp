@@ -22,6 +22,7 @@
 #include "settingsDialog.h"
 #include "Config.h"
 
+#include <KLocalizedString>
 #include <QRadioButton>
 #include <QCloseEvent>
 #include <QDir>
@@ -46,15 +47,15 @@ SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
     m_schemaGroup = new QButtonGroup;
     QRadioButton *radioButton;
 
-    radioButton = new QRadioButton(tr("Rainbow"));
+    radioButton = new QRadioButton(i18n("Rainbow"));
     vbox->addWidget(radioButton);
     m_schemaGroup->addButton(radioButton, Filelight::Rainbow);
 
-    radioButton = new QRadioButton(tr("System colors"));
+    radioButton = new QRadioButton(i18n("System colors"));
     vbox->addWidget(radioButton);
     m_schemaGroup->addButton(radioButton, Filelight::KDE);
 
-    radioButton = new QRadioButton(tr("High contrast"));
+    radioButton = new QRadioButton(i18n("High contrast"));
     vbox->addWidget(radioButton);
     m_schemaGroup->addButton(radioButton, Filelight::HighContrast);
 
@@ -168,7 +169,7 @@ void SettingsDialog::toggleDontScanRemovableMedia(bool b)
 
 void SettingsDialog::addFolder()
 {
-    const QUrl url = QFileDialog::getExistingDirectory(this, tr("Select path to ignore"), QDir::rootPath());
+    const QUrl url = QFileDialog::getExistingDirectory(this, i18n("Select path to ignore"), QDir::rootPath());
 
     //TODO error handling!
     //TODO wrong protocol handling!
@@ -184,7 +185,7 @@ void SettingsDialog::addFolder()
             if (m_listBox->currentItem() == 0) m_listBox->setCurrentRow(0);
             m_removeButton->setEnabled(true);
         }
-        else QMessageBox::information(this, tr("Folder already ignored"), tr("That folder is already set to be excluded from scans."));
+        else QMessageBox::information(this, i18n("Folder already ignored"), i18n("That folder is already set to be excluded from scans."));
     }
 }
 

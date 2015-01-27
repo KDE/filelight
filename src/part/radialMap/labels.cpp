@@ -151,7 +151,8 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
     int  *sizes = new int [ m_map.m_visibleDepth + 1 ]; //**** make sizes an array of floats I think instead (or doubles)
 
     // If the minimum is larger than the default it fucks up further down
-    if (paint.font().pointSize() < Config::minFontPitch) {
+    if (paint.font().pointSize() < 0 ||
+        paint.font().pointSize() < Config::minFontPitch) {
         QFont font = paint.font();
         font.setPointSize(Config::minFontPitch);
         paint.setFont(font);

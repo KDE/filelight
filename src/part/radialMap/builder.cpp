@@ -25,6 +25,7 @@
 #include <part/Config.h>
 #include <part/fileTree.h>
 #include <KFormat>
+#include <KLocalizedString>
 
 //**** REMOVE NEED FOR the +1 with MAX_RING_DEPTH uses
 //**** add some angle bounds checking (possibly in Segment ctor? can I delete in a ctor?)
@@ -146,9 +147,11 @@ RadialMap::Builder::build(const Folder* const dir, const unsigned int depth, uns
     {
         //append a segment for unrepresented space - a "fake" segment
 
-        const QString s = QObject::tr("%n file(s), with an average size of %1",
-                                      "description of a segment of several smaller files",
-                                      hiddenFileCount).arg(KFormat().formatByteSize(hiddenSize/hiddenFileCount));
+        const QString s = i18np("1 file, with an average size of %2",
+                "%1 files, with an average size of %2",
+                hiddenFileCount,
+                KFormat().formatByteSize(hiddenSize/hiddenFileCount));
+
 
         (m_signature + depth)->append(new Segment(new File(s.toUtf8(), hiddenSize), a_start, a_end - a_start, true));
     }

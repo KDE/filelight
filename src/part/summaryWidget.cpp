@@ -31,6 +31,7 @@
 #include <Solid/StorageAccess>
 
 #include <KDiskFreeSpaceInfo>
+#include <KLocalizedString>
 
 #include <QLabel>
 #include <QApplication>
@@ -105,8 +106,8 @@ void SummaryWidget::createDiskMaps()
 {
     DiskList disks;
 
-    const QByteArray free = tr("Free", "Free space on the disks/partitions").toUtf8();
-    const QByteArray used = tr("Used", "Used space on the disks/partitions").toUtf8();
+    const QByteArray free = i18nc("Free space on the disks/partitions", "Free").toUtf8();
+    const QByteArray used = i18nc("Used space on the disks/partitions", "Used").toUtf8();
 
     QString text;
 
@@ -126,7 +127,7 @@ void SummaryWidget::createDiskMaps()
         QHBoxLayout* horizontalLayout = new QHBoxLayout(info);
 
         // Create the text and icon under the radialMap.
-        text = tr("<b>%1</b> (%n% Used)", "Percent used disk space on the partition", disk.used*100/disk.size).arg(disk.mount);
+        text = i18nc("Percent used disk space on the partition", "<b>%1</b> (%2% Used)").arg(disk.mount).arg(disk.used*100/disk.size);
 
         QLabel *label = new QLabel(text, this);
         horizontalLayout->addWidget(label);
