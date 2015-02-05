@@ -22,11 +22,13 @@
 #include "define.h"
 #include "mainWindow.h"
 
-#include <KAboutData>
 #include <QApplication>
 #include <QCommandLineParser>
-#include <KLocalizedString>
 #include <QUrl>
+
+#include <KAboutData>
+#include <KLocalizedString>
+#include <Kdelibs4ConfigMigrator>
 
 static KAboutData about(
     QStringLiteral(APP_NAME),
@@ -43,6 +45,11 @@ static KAboutData about(
 
 int main(int argc, char *argv[])
 {
+    Kdelibs4ConfigMigrator migrate(QLatin1String("filelight"));
+    migrate.setConfigFiles(QStringList() << QLatin1String("filelightrc"));
+    migrate.setUiFiles(QStringList() << QLatin1String("filelightui.rc"));
+    migrate.migrate();
+
     using Filelight::MainWindow;
 
     about.addAuthor(i18n("Martin Sandsmark"), i18n("Maintainer"), QStringLiteral("martin.sandsmark@kde.org"), QStringLiteral("http://iskrembilen.com/"));
