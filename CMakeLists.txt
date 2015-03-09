@@ -36,7 +36,7 @@ include(KDECMakeSettings)
 include(KDECompilerSettings)
 
 
-find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus Widgets Script Test)
+find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus Widgets Script)
 find_package(KF5 REQUIRED
     KIO
     Parts
@@ -53,6 +53,15 @@ add_definitions(
     -DQT_NO_CAST_FROM_ASCII
     -DQT_NO_CAST_TO_ASCII
 )
+
+find_package(Qt5Test ${QT_MIN_VERSION} CONFIG QUIET)
+set_package_properties(Qt5Test PROPERTIES
+    PURPOSE "Required for tests"
+    TYPE OPTIONAL)
+add_feature_info("Qt5Test" Qt5Test_FOUND "Required for building tests")
+if (NOT Qt5Test_FOUND)
+    set(BUILD_TESTING OFF CACHE BOOL "Build the testing tree.")
+endif()
 
 add_definitions(-DTRANSLATION_DOMAIN=\"filelight\")
 
