@@ -25,10 +25,10 @@ install(FILES filelightpartui.rc DESTINATION ${KXMLGUI_INSTALL_DIR}//filelightpa
 install(FILES filelightui.rc DESTINATION ${KXMLGUI_INSTALL_DIR}//filelight)
 
 ecm_install_icons(ICONS
-    hi32-actions-views_filelight.png
-    hi16-apps-filelight.png 
-    hi22-apps-filelight.png
-    hi32-apps-filelight.png
-    hi48-apps-filelight.png
-    hi64-apps-filelight.png
-    DESTINATION ${ICON_INSTALL_DIR})
+    32-actions-views_filelight.png
+    16-apps-filelight.png 
+    22-apps-filelight.png
+    32-apps-filelight.png
+    48-apps-filelight.png
+    64-apps-filelight.png
+    DESTINATION ${ICON_INSTALL_DIR} THEME hicolor)
