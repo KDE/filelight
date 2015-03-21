@@ -159,13 +159,15 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
     while ((ent = readdir(dir)))
     {
         if (m_parent->m_abort)
+        {
+            closedir(dir);
             return cwd;
+        }
 
         if (qstrcmp(ent->d_name, ".") == 0 || qstrcmp(ent->d_name, "..") == 0)
             continue;
 
-        QByteArray new_path = path;
-        new_path += ent->d_name;
+        QByteArray new_path = path + ent->d_name;
 
         //get file information
         if (lstat(new_path, &statbuf) == -1) {

@@ -42,7 +42,7 @@ ProgressBox::ProgressBox(QWidget *parent, QObject *part, Filelight::ScanManager 
 {
     hide();
 
-    setObjectName(QLatin1String( "ProgressBox" ));
+    setObjectName(QStringLiteral( "ProgressBox" ));
 
     setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
@@ -69,7 +69,7 @@ void
 ProgressBox::report() //slot
 {
     setText(m_manager->files());
-    repaint();
+    update(); //repaint();
 }
 
 void

@@ -68,20 +68,20 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
     Config::read();
 
     KAboutData aboutData(
-            QLatin1String("filelightpart"),
+            QStringLiteral("filelightpart"),
             i18n(APP_PRETTYNAME),
-            QLatin1String(APP_VERSION),
+            QStringLiteral(APP_VERSION),
             i18n("Displays file usage in an easy to understand way."),
             KAboutLicense::GPL,
             i18n("(c) 2002-2004 Max Howell\n\
                 (c) 2008-2014 Martin T. Sandsmark"),
             QString(),
-            QLatin1String("http://utils.kde.org/projects/filelight"),
-            QLatin1String("martin.sandsmark@kde.org"));
-    aboutData.setProgramIconName(QLatin1String(APP_NAME));
+            QStringLiteral("http://utils.kde.org/projects/filelight"),
+            QStringLiteral("martin.sandsmark@kde.org"));
+    aboutData.setProgramIconName(QStringLiteral(APP_NAME));
     setComponentData(aboutData);
 
-    setXMLFile(QLatin1String( "filelightpartui.rc" ));
+    setXMLFile(QStringLiteral( "filelightpartui.rc" ));
 
     QScrollArea *scrollArea = new QScrollArea(parentWidget);
     scrollArea->setWidgetResizable(true);
@@ -110,9 +110,9 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
 
     KStandardAction::zoomIn(m_map, SLOT(zoomIn()), actionCollection());
     KStandardAction::zoomOut(m_map, SLOT(zoomOut()), actionCollection());
-    QAction *action = actionCollection()->addAction(QLatin1String("configure_filelight"));
+    QAction *action = actionCollection()->addAction(QStringLiteral("configure_filelight"));
     action->setText(i18n("Configure Filelight..."));
-    action->setIcon(QIcon::fromTheme(QLatin1String("configure")));
+    action->setIcon(QIcon::fromTheme(QStringLiteral("configure")));
     connect(action, SIGNAL(triggered()), this, SLOT(configFilelight()));
 
     connect(m_map, SIGNAL(created(const Folder*)), SIGNAL(completed()));
@@ -298,7 +298,7 @@ Part::scanCompleted(Folder *tree)
     }
     else {
         stateChanged(QLatin1String( "scan_failed" ));
-        emit canceled(i18n("Scan failed: %1").arg(prettyUrl()));
+        emit canceled(i18n("Scan failed: %1", prettyUrl()));
         emit setWindowCaption(QString());
 
         statusBar()->clearMessage();
@@ -327,7 +327,7 @@ Part::showSummary()
 {
     if (m_summary == 0) {
         m_summary = new SummaryWidget(widget());
-        m_summary->setObjectName(QLatin1String( "summaryWidget" ));
+        m_summary->setObjectName(QStringLiteral( "summaryWidget" ));
         connect(m_summary, SIGNAL(activated(QUrl)), SLOT(openUrl(QUrl)));
         m_summary->show();
         m_layout->addWidget(m_summary);
