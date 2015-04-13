@@ -46,6 +46,8 @@ static KAboutData about(
 
 int main(int argc, char *argv[])
 {
+    QApplication app(argc, argv);
+
     Kdelibs4ConfigMigrator migrate(QLatin1String("filelight"));
     migrate.setConfigFiles(QStringList() << QLatin1String("filelightrc"));
     migrate.setUiFiles(QStringList() << QLatin1String("filelightui.rc"));
@@ -61,7 +63,6 @@ int main(int argc, char *argv[])
     about.addCredit(i18n("Sune Vuorela"),     i18n("Icon"));
     about.addCredit(i18n("Nuno Pinheiro"),    i18n("Icon"));
 
-    QApplication app(argc, argv);
     app.setApplicationName(QStringLiteral(APP_NAME));
     app.setApplicationDisplayName(i18n(APP_PRETTYNAME));
     app.setApplicationVersion(QStringLiteral(APP_VERSION));
