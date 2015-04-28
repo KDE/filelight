@@ -37,8 +37,8 @@ static KAboutData about(
     QStringLiteral(APP_VERSION),
     i18n("Graphical disk-usage information"),
     KAboutLicense::GPL,
-    i18n("(C) 2006 Max Howell\n\
-        (C) 2008-2014 Martin Sandsmark"),
+    i18n("(C) 2006 Max Howell\n"
+         "(C) 2008-2014 Martin Sandsmark"),
     QString(),
     QStringLiteral("http://utils.kde.org/projects/filelight")
 );
