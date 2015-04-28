@@ -73,8 +73,8 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
             QStringLiteral(APP_VERSION),
             i18n("Displays file usage in an easy to understand way."),
             KAboutLicense::GPL,
-            i18n("(c) 2002-2004 Max Howell\n\
-                (c) 2008-2014 Martin T. Sandsmark"),
+            i18n("(c) 2002-2004 Max Howell\n"
+                 "(c) 2008-2014 Martin T. Sandsmark"),
             QString(),
             QStringLiteral("http://utils.kde.org/projects/filelight"),
             QStringLiteral("martin.sandsmark@kde.org"));
