@@ -83,8 +83,7 @@ int main(int argc, char *argv[])
 
         QStringList args = options.positionalArguments();
         if (args.count() > 0) {
-            QUrl cwd = QUrl::fromLocalFile(QDir::currentPath() + QStringLiteral("/"));
-            mw->scan(cwd.resolved(QUrl(args.at(0))));
+            mw->scan(QUrl::fromUserInput(args.at(0), QDir::currentPath(), QUrl::AssumeLocalFile));
         }
 
         mw->show();
