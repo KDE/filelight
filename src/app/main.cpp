@@ -69,6 +69,8 @@ int main(int argc, char *argv[])
     app.setOrganizationDomain(QStringLiteral("kde.org"));
     app.setOrganizationName(QStringLiteral("KDE"));
 
+    KAboutData::setApplicationData(about);
+
     QCommandLineParser options;
     options.setApplicationDescription(i18n("Graphical disk-usage information"));
     options.addHelpOption();
