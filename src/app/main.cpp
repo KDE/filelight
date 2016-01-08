@@ -48,6 +48,8 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
+    KLocalizedString::setApplicationDomain("filelight");
+
     Kdelibs4ConfigMigrator migrate(QLatin1String("filelight"));
     migrate.setConfigFiles(QStringList() << QLatin1String("filelightrc"));
     migrate.setUiFiles(QStringList() << QLatin1String("filelightui.rc"));
