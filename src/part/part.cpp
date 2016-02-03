@@ -172,7 +172,7 @@ Part::openUrl(const QUrl &u)
     }
     else if (isLocal && access(path8bit, F_OK) != 0) //stat(path, &statbuf) == 0
     {
-        KMSG(i18n("Folder not found: %1").arg(path));
+        KMSG(i18n("Folder not found: %1", path));
     }
     else if (isLocal && !QDir(path).isReadable()) //access(path8bit, R_OK | X_OK) != 0 doesn't work on win32
     {
