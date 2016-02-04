@@ -169,7 +169,8 @@ void SettingsDialog::toggleDontScanRemovableMedia(bool b)
 
 void SettingsDialog::addFolder()
 {
-    const QUrl url = QFileDialog::getExistingDirectory(this, i18n("Select path to ignore"), QDir::rootPath());
+    const QString urlString = QFileDialog::getExistingDirectory(this, i18n("Select path to ignore"), QDir::rootPath());
+    const QUrl url = QUrl::fromLocalFile(urlString);
 
     //TODO error handling!
     //TODO wrong protocol handling!
