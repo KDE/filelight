@@ -1,6 +1,5 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
-  <!ENTITY package "kdeutils">
   <!ENTITY kappname "&filelight;">
   <!ENTITY filelight "<application>Filelight</application>">
   <!ENTITY % addindex "IGNORE">
@@ -28,8 +27,8 @@
    <copyright><year>2009</year><holder>Martin Sandsmark</holder></copyright>
    <!-- Translators: put here the copyright notice of the translation -->
    <legalnotice>&FDLNotice;</legalnotice>
-   <date>2013-05-25</date>
-   <releaseinfo>1.20 (&kde; 4.11)</releaseinfo>
+   <date>2015-08-04</date>
+   <releaseinfo>&filelight; 1.21 (Applications 15.08)</releaseinfo>
    <abstract><para>&filelight; creates an interactive map of concentric segmented-rings that helps visualize disk usage on your computer.</para></abstract>
    <!-- These may be used by search engines -->
    <keywordset>
@@ -50,7 +49,7 @@
          <textobject><phrase>Screenshot</phrase></textobject>
       </mediaobject>
    </screenshot>
-   <para>&filelight; allows you to quickly understand exactly where your diskspace is being used by graphically representing your file system as a set of concentric segmented-rings. You can use it to locate hotspots of disk usage and then manipulate those areas using &konqueror;.</para>
+   <para>&filelight; allows you to quickly understand exactly where your diskspace is being used by graphically representing your file system as a set of concentric segmented-rings. You can use it to locate hotspots of disk usage and then manipulate those areas using &dolphin; or &konqueror;.</para>
 </chapter>
 
 
@@ -103,14 +102,12 @@ prevents &filelight; from scanning removable media (&eg; &CD-ROM;s).</para>
 
 <sect1 id="starting">
 <title>Starting &filelight;</title>
-<para>&filelight; can be started from the K-Menu, or from the command-line</para>
+<para>&filelight; can be started from the application launcher, or from the command-line</para>
 
 <sect2 id="starting-from-the-menu">
-<title>From the K-Menu</title>
+<title>From the Application Launcher</title>
 <para>
-Open the &kde; program menu by clicking on the
-<guiicon>big K</guiicon> icon on your
-panel. This will raise the <guimenu>program menu</guimenu>. Move your
+Open the application menu and move your
 cursor up the menu to the <guimenu>Utilities</guimenu> menu item. Choose
 <guimenuitem>&filelight;</guimenuitem>.
 </para>
@@ -170,7 +167,6 @@ You can open folders with your default file manager or &konsole; using the conte
 </menuchoice></term>
 <listitem><para><action>Offers a folder selection dialog so you can choose a folder to scan.</action></para></listitem>
 </varlistentry>
-<!--FIXME shortcut not visible in the menu, why?-->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
@@ -189,15 +185,6 @@ You can open folders with your default file manager or &konsole; using the conte
 </menuchoice></term>
 <listitem><para><action>Starts a scan of the root folder.</action></para></listitem>
 </varlistentry>
-
-<!--not in 4.11 
-varlistentry>
-<term><menuchoice>
-<guimenu>Scan</guimenu>
-<guimenuitem>Recent Scans</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Provides a list of your most recent scanned folders allowing quick access to these folders.</action></para></listitem>
-</varlistentry-->
 
 <varlistentry>
 <term><menuchoice>
@@ -276,11 +263,6 @@ varlistentry>
 
 <varlistentry>
 <term><menuchoice>
-<!--
-<shortcut>
-<keycombo action="simul">&Alt;<keycap>Left</keycap></keycombo>
-</shortcut>
--->
 <guimenu>Go</guimenu>
 <guimenuitem>Back</guimenuitem>
 </menuchoice></term>
@@ -289,11 +271,6 @@ varlistentry>
 
 <varlistentry>
 <term><menuchoice>
-<!--
-<shortcut>
-<keycombo action="simul">&Alt;<keycap>Right</keycap></keycombo>
-</shortcut>
--->
 <guimenu>Go</guimenu>
 <guimenuitem>Forward</guimenuitem>
 </menuchoice></term>
@@ -326,21 +303,6 @@ of the &kde; Fundamentals.
       &underFDL;
    </sect1>
 </chapter>
-
-
-<appendix id="installation">
-    <title>Installation</title>
-
-    <sect1 id="getting-kapp">
-        <title>How to obtain &filelight;</title>
-        &install.intro.documentation;
-    </sect1>
-
-    <sect1 id="Compilation">
-        <title>Compilation and Installation</title>
-        &install.compile.documentation;
-    </sect1>
-</appendix>
 
 &documentation.index;
 
