@@ -34,7 +34,7 @@ set(filelight_PART_SRCS
     remoteLister.cpp
     summaryWidget.cpp)
 
-QT5_WRAP_UI(filelight_PART_SRCS dialog.ui)
+ki18n_wrap_ui(filelight_PART_SRCS dialog.ui)
 
 add_library(filelightpart MODULE ${filelight_PART_SRCS})
 
