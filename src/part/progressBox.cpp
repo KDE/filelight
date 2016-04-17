@@ -123,9 +123,10 @@ void ProgressBox::paintEvent(QPaintEvent*)
     paint.setBrush(view.background(KColorScheme::ActiveBackground));
     paint.setPen(view.foreground().color());
     paint.translate(0.5, 0.5);
-    paint.drawRoundedRect(95-m_textWidth/2, 85, m_textWidth+10, m_textHeight+10, 5, 5);
+    QRectF textRect(100 - m_textWidth/2 - 5, 100 - m_textHeight - 5, m_textWidth + 10, m_textHeight + 10);
+    paint.drawRoundedRect(textRect, 5, 5);
     paint.translate(-0.5, -0.5);
-    paint.drawText(100 - m_textWidth/2, 100, m_text);
+    paint.drawText(textRect, Qt::AlignCenter, m_text);
 }
 
 
