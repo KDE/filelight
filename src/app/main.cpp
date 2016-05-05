@@ -70,6 +70,7 @@ int main(int argc, char *argv[])
     app.setApplicationVersion(QStringLiteral(APP_VERSION));
     app.setOrganizationDomain(QStringLiteral("kde.org"));
     app.setOrganizationName(QStringLiteral("KDE"));
+    app.setWindowIcon(QIcon::fromTheme(QLatin1String(APP_NAME)));
 
     KAboutData::setApplicationData(about);
 

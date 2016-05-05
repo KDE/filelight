@@ -78,7 +78,6 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
             QString(),
             QStringLiteral("http://utils.kde.org/projects/filelight"),
             QStringLiteral("martin.sandsmark@kde.org"));
-    aboutData.setProgramIconName(QStringLiteral(APP_NAME));
     setComponentData(aboutData);
 
     setXMLFile(QStringLiteral( "filelightpartui.rc" ));
