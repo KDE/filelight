@@ -270,8 +270,8 @@ void MainWindow::scanCompleted()
         action("go_up")->setToolTip(QString());
     }
     else {
-        action("go_up")->setStatusTip(KIO::upUrl(url).toString());
-        action("go_up")->setToolTip(KIO::upUrl(url).toString());
+        action("go_up")->setStatusTip(KIO::upUrl(url).path());
+        action("go_up")->setToolTip(KIO::upUrl(url).path());
     }
 
     m_recentScans->addUrl(url); //FIXME doesn't set the tick
