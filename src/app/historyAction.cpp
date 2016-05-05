@@ -94,7 +94,7 @@ void HistoryCollection::push(const QUrl& url) //slot
             m_receiver = m_b;
         }
 
-        m_receiver->push(url.path());
+        m_receiver->push(url);
     }
     m_receiver = 0;
 }
