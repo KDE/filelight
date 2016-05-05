@@ -241,13 +241,16 @@ void LocalLister::readMounts()
         partition = device.as<Solid::StorageAccess>();
         if (!partition->isAccessible() || partition->filePath() == QLatin1String( "/" ) || partition->filePath().isEmpty()) continue;
 
+        QString filePath = partition->filePath();
+        if (!filePath.endsWith(QLatin1String("/")))
+            filePath.append(QLatin1String("/"));
         volume = device.as<Solid::StorageVolume>();
         if (remoteFsTypes.contains(volume->fsType())) {
-                if (!s_remoteMounts.contains(partition->filePath())) {
-                    s_remoteMounts.append(partition->filePath());
+                if (!s_remoteMounts.contains(filePath)) {
+                    s_remoteMounts.append(filePath);
                 }
-        } else if (!s_localMounts.contains(partition->filePath())) {
-            s_localMounts.append(partition->filePath());
+        } else if (!s_localMounts.contains(filePath)) {
+            s_localMounts.append(filePath);
         }
     }
 
