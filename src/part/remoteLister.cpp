@@ -58,7 +58,7 @@ struct Store {
     {
         /// returns the next store available for scanning
 
-        qDebug() << "propagate: " << url << endl;
+        qDebug() << "propagate: " << url;
 
         if (parent) {
             parent->folder->append(folder);
@@ -104,7 +104,7 @@ RemoteLister::~RemoteLister()
 void
 RemoteLister::completed()
 {
-    qDebug() << "completed: " << url().toString() << endl;
+    qDebug() << "completed: " << url().toString();
 
     // Delay the call to _completed since it can do a "delete this"
     QTimer::singleShot(0, this, SLOT(_completed()));
@@ -113,7 +113,7 @@ RemoteLister::completed()
 void
 RemoteLister::canceled()
 {
-    qDebug() << "canceled: " << url().toString() << endl;
+    qDebug() << "canceled: " << url().toString();
 
     QTimer::singleShot(0, this, SLOT(_completed()));
 }
@@ -153,7 +153,7 @@ RemoteLister::_completed()
         currentStore->stores.erase(first);
 
         //this returns _immediately_
-        qDebug() << "scanning: " << url << endl;
+        qDebug() << "scanning: " << url;
         openUrl(url);
     }
     else {
