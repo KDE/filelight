@@ -302,6 +302,11 @@ Part::scanCompleted(Folder *tree)
 
         statusBar()->clearMessage();
 
+        m_map->hide();
+        m_stateWidget->hide();
+
+        showSummary();
+
         setUrl(QUrl());
     }
 }

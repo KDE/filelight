@@ -42,7 +42,6 @@ signals:
 
 private slots:
     void completed();
-    void _completed();
     void canceled();
 
 private:

@@ -95,31 +95,18 @@ RemoteLister::RemoteLister(const QUrl &url, QWidget *parent, ScanManager* manage
 
 RemoteLister::~RemoteLister()
 {
-    Folder *tree = isFinished() ? m_store->folder : 0;
-
-    emit branchCompleted(tree);
     delete m_root;
-}
-
-void
-RemoteLister::completed()
-{
-    qDebug() << "completed: " << url().toString();
-
-    // Delay the call to _completed since it can do a "delete this"
-    QTimer::singleShot(0, this, SLOT(_completed()));
 }
 
 void
 RemoteLister::canceled()
 {
-    qDebug() << "canceled: " << url().toString();
-
-    QTimer::singleShot(0, this, SLOT(_completed()));
+    qDebug() << "Canceled";
+    emit branchCompleted(nullptr);
+    deleteLater();
 }
 
-void
-RemoteLister::_completed()
+void RemoteLister::completed()
 {
     //m_folder is set to the folder we should operate on
 
@@ -167,8 +154,9 @@ RemoteLister::_completed()
         qDebug() << "I think we're done";
 
         Q_ASSERT(m_root == m_store);
+        emit branchCompleted(m_store->folder);
 
-        delete this;
+        deleteLater();
     }
 }
 }
