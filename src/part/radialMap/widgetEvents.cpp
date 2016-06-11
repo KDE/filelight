@@ -199,98 +199,99 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
     
     //m_focus is set correctly (I've been strict, I assure you it is correct!)
 
-    if (m_focus && !m_focus->isFake())
+    if (!m_focus || m_focus->isFake()) {
+        return;
+    }
+
+    const QUrl url   = Widget::url(m_focus->file());
+    const bool isDir = m_focus->file()->isFolder();
+
+    // Actions in the right click menu
+    QAction* openFileManager = 0;
+    QAction* openTerminal = 0;
+    QAction* centerMap = 0;
+    QAction* openFile = 0;
+    QAction* copyClipboard = 0;
+    QAction* deleteItem = 0;
+
+    if (e->button() == Qt::RightButton)
     {
-        const QUrl url   = Widget::url(m_focus->file());
-        const bool isDir = m_focus->file()->isFolder();
+        QMenu popup;
+        popup.setTitle(m_focus->file()->fullPath(m_tree));
 
-        // Actions in the right click menu
-        QAction* openFileManager = 0;
-        QAction* openTerminal = 0;
-        QAction* centerMap = 0;
-        QAction* openFile = 0;
-        QAction* copyClipboard = 0;
-        QAction* deleteItem = 0;
+        if (isDir) {
+            openFileManager = popup.addAction(QIcon::fromTheme(QLatin1String("system-file-manager")), i18n("Open &File Manager Here"));
 
-        if (e->button() == Qt::RightButton)
-        {
-            QMenu popup;
-            popup.setTitle(m_focus->file()->fullPath(m_tree));
-
-            if (isDir) {
-                openFileManager = popup.addAction(QIcon::fromTheme(QLatin1String("system-file-manager")), i18n("Open &File Manager Here"));
-
-                if (url.scheme() == QLatin1String("file" ))
-                    openTerminal = popup.addAction(QIcon::fromTheme(QLatin1String( "utilities-terminal" )), i18n("Open &Terminal Here"));
-
-                if (m_focus->file() != m_tree) {
-                    popup.addSeparator();
-                    centerMap = popup.addAction(QIcon::fromTheme(QLatin1String( "zoom-in" )), i18n("&Center Map Here"));
-                }
-            }
-            else
-                openFile = popup.addAction(QIcon::fromTheme(QLatin1String("document-open")), i18nc("Scan/open the path of the selected element", "&Open"));
-
-            popup.addSeparator();
-            copyClipboard = popup.addAction(QIcon::fromTheme(QLatin1String( "edit-copy" )), i18n("&Copy to clipboard"));
+            if (url.scheme() == QLatin1String("file" ))
+                openTerminal = popup.addAction(QIcon::fromTheme(QLatin1String( "utilities-terminal" )), i18n("Open &Terminal Here"));
 
             if (m_focus->file() != m_tree) {
                 popup.addSeparator();
-                deleteItem = popup.addAction(QIcon::fromTheme(QLatin1String( "edit-delete" )), i18n("&Delete"));
-            }
-
-            QAction* clicked = popup.exec(e->globalPos(), 0);
-
-            if (openFileManager && clicked == openFileManager) {
-                KRun::runUrl(url.url(),QLatin1String( "inode/directory" ), this);
-            } else if (openTerminal && clicked == openTerminal) {
-                KToolInvocation::invokeTerminal(QString(),url.path());
-            } else if (centerMap && clicked == centerMap) {
-                goto section_two;
-            } else if (openFile && clicked == openFile) {
-                goto section_two;
-            } else if (clicked == copyClipboard) {
-                QMimeData* mimedata = new QMimeData();
-                mimedata->setUrls(QList<QUrl>() << url);
-                QApplication::clipboard()->setMimeData(mimedata , QClipboard::Clipboard);
-            } else if (clicked == deleteItem && m_focus->file() != m_tree) {
-                m_toBeDeleted = m_focus;
-                const QUrl url = Widget::url(m_toBeDeleted->file());
-                const QString message = m_toBeDeleted->file()->isFolder()
-                                        ? i18n("<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</b> deleted.</qt>", url.toString())
-                                        : i18n("<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>", url.toString());
-                const int userIntention = KMessageBox::warningContinueCancel(
-                                              this, message,
-                                              QString(), KGuiItem(i18n("&Delete"), QLatin1String("edit-delete")));
-
-                if (userIntention == KMessageBox::Continue) {
-                    KIO::Job *job = KIO::del(url);
-                    connect(job, &KJob::finished, this, &RadialMap::Widget::deleteJobFinished);
-                    QApplication::setOverrideCursor(Qt::BusyCursor);
-                    setEnabled(false);
-                }
-            } else {
-                //ensure m_focus is set for new mouse position
-                sendFakeMouseEvent();
+                centerMap = popup.addAction(QIcon::fromTheme(QLatin1String( "zoom-in" )), i18n("&Center Map Here"));
             }
         }
-        else { // not right mouse button
+        else
+            openFile = popup.addAction(QIcon::fromTheme(QLatin1String("document-open")), i18nc("Scan/open the path of the selected element", "&Open"));
+
+        popup.addSeparator();
+        copyClipboard = popup.addAction(QIcon::fromTheme(QLatin1String( "edit-copy" )), i18n("&Copy to clipboard"));
+
+        if (m_focus->file() != m_tree) {
+            popup.addSeparator();
+            deleteItem = popup.addAction(QIcon::fromTheme(QLatin1String( "edit-delete" )), i18n("&Delete"));
+        }
+
+        QAction* clicked = popup.exec(e->globalPos(), 0);
+
+        if (openFileManager && clicked == openFileManager) {
+            KRun::runUrl(url.url(),QLatin1String( "inode/directory" ), this);
+        } else if (openTerminal && clicked == openTerminal) {
+            KToolInvocation::invokeTerminal(QString(),url.path());
+        } else if (centerMap && clicked == centerMap) {
+            goto section_two;
+        } else if (openFile && clicked == openFile) {
+            goto section_two;
+        } else if (clicked == copyClipboard) {
+            QMimeData* mimedata = new QMimeData();
+            mimedata->setUrls(QList<QUrl>() << url);
+            QApplication::clipboard()->setMimeData(mimedata , QClipboard::Clipboard);
+        } else if (clicked == deleteItem && m_focus->file() != m_tree) {
+            m_toBeDeleted = m_focus;
+            const QUrl url = Widget::url(m_toBeDeleted->file());
+            const QString message = m_toBeDeleted->file()->isFolder()
+                    ? i18n("<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</b> deleted.</qt>", url.toString())
+                    : i18n("<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>", url.toString());
+            const int userIntention = KMessageBox::warningContinueCancel(
+                        this, message,
+                        QString(), KGuiItem(i18n("&Delete"), QLatin1String("edit-delete")));
+
+            if (userIntention == KMessageBox::Continue) {
+                KIO::Job *job = KIO::del(url);
+                connect(job, &KJob::finished, this, &RadialMap::Widget::deleteJobFinished);
+                QApplication::setOverrideCursor(Qt::BusyCursor);
+                setEnabled(false);
+            }
+        } else {
+            //ensure m_focus is set for new mouse position
+            sendFakeMouseEvent();
+        }
+    }
+    else { // not right mouse button
 
 section_two:
-            const QRect rect(e->x() - 20, e->y() - 20, 40, 40);
+        const QRect rect(e->x() - 20, e->y() - 20, 40, 40);
 
-            if (!isDir || e->button() == Qt::MidButton) {
-                // KIconEffect::visualActivate(this, rect); // TODO: recreate this
-                new KRun(url, this, true); //FIXME see above
-            }
-            else if (m_focus->file() != m_tree) { // is left click
-                // KIconEffect::visualActivate(this, rect); // TODO: recreate this
-                emit activated(url); //activate first, this will cause UI to prepare itself
-                createFromCache((Folder *)m_focus->file());
-            }
-            else if (KIO::upUrl(url) != url)
-                emit giveMeTreeFor(KIO::upUrl(url));
+        if (!isDir || e->button() == Qt::MidButton) {
+            // KIconEffect::visualActivate(this, rect); // TODO: recreate this
+            new KRun(url, this, true); //FIXME see above
         }
+        else if (m_focus->file() != m_tree) { // is left click
+            // KIconEffect::visualActivate(this, rect); // TODO: recreate this
+            emit activated(url); //activate first, this will cause UI to prepare itself
+            createFromCache((Folder *)m_focus->file());
+        }
+        else if (KIO::upUrl(url) != url)
+            emit giveMeTreeFor(KIO::upUrl(url));
     }
 }
 
