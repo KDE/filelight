@@ -51,7 +51,7 @@ struct Store {
     List stores;
 
     Store(const QUrl &u, const QString &name, Store *s)
-            : url(u), folder(new Folder(name.toUtf8() + '/')), parent(s) {}
+            : url(u), folder(new Folder(name.toUtf8() + '/')), parent(s) { }
 
 
     Store* propagate()
@@ -135,10 +135,17 @@ RemoteLister::_completed()
     }
 
 
-    if (m_store->stores.isEmpty())
+    if (m_store->stores.isEmpty()) {
         //no directories to scan, so we need to append ourselves to the parent folder
-        //propagate() will return the next ancestor that has stores left to be scanned, or root if we are done
-        m_store = m_store->propagate();
+        //propagate() will return the next ancestor that has stores left to be
+        //scanned, or root if we are done
+        Store *newStore = m_store->propagate();
+        if (newStore != m_store) {
+            // We need to clean up old stores
+            delete m_store;
+            m_store = newStore;
+        }
+    }
 
     if (!m_store->stores.isEmpty())
     {
@@ -157,7 +164,7 @@ RemoteLister::_completed()
         openUrl(url);
     }
     else {
-        qDebug() << "I think we're done\n";
+        qDebug() << "I think we're done";
 
         Q_ASSERT(m_root == m_store);
 
