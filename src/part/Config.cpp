@@ -34,7 +34,7 @@ bool Config::varyLabelFontSizes;
 bool Config::showSmallFiles;
 bool Config::antialias;
 uint Config::contrast;
-uint Config::minFontPitch;
+int Config::minFontPitch;
 uint Config::defaultRingDepth;
 Filelight::MapScheme Config::scheme;
 QStringList Config::skipList;

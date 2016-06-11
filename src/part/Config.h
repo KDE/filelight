@@ -47,7 +47,7 @@ public:
     static bool showSmallFiles;
     static uint contrast;
     static bool antialias;
-    static uint minFontPitch;
+    static int minFontPitch;
     static uint defaultRingDepth;
 
     static MapScheme scheme;
