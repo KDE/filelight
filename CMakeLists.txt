@@ -36,7 +36,7 @@ include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 
 
-find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core Widgets)
+find_package(Qt5 5.4 CONFIG REQUIRED Core Widgets)
 find_package(KF5 REQUIRED
     KIO
     Parts
