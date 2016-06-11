@@ -50,6 +50,7 @@
 #include <KStandardAction>
 #include <KActionCollection>
 #include <KIO/Global> // upUrl
+#include <KIO/Job> // Connection of the Part::started signal
 #include <KService>
 #include <KLocalizedString>
 
@@ -83,12 +84,12 @@ MainWindow::MainWindow() : KParts::MainWindow(), m_part(0), m_histories(0)
 
         stateChanged(QStringLiteral( "scan_failed" )); //bah! doesn't affect the parts' actions, should I add them to the actionCollection here?
 
-        connect(m_part, SIGNAL(started(KIO::Job*)), SLOT(scanStarted()));
-        connect(m_part, SIGNAL(completed()), SLOT(scanCompleted()));
-        connect(m_part, SIGNAL(canceled(QString)), SLOT(scanFailed()));
+        connect(m_part, &KParts::ReadOnlyPart::started, this, &MainWindow::scanStarted);
+        connect(m_part, static_cast<void (KParts::ReadOnlyPart::*)()>(&KParts::ReadOnlyPart::completed), this, &MainWindow::scanCompleted);
+        connect(m_part, &KParts::ReadOnlyPart::canceled, this, &MainWindow::scanFailed);
 
-        connect(m_part, SIGNAL(canceled(QString)), m_histories, SLOT(stop()));
-        connect(BrowserExtension::childObject(m_part), SIGNAL(openUrlNotify()), SLOT(urlAboutToChange()));
+        connect(m_part, &KParts::ReadOnlyPart::canceled, m_histories, &HistoryCollection::stop);
+        connect(BrowserExtension::childObject(m_part), &KParts::BrowserExtension::openUrlNotify, this, &MainWindow::urlAboutToChange);
 
         const KConfigGroup config = KSharedConfig::openConfig()->group("general");
         m_combo->setHistoryItems(config.readPathEntry("comboHistory", QStringList()));
@@ -157,9 +158,9 @@ void MainWindow::setupActions() //singleton function
 
     m_recentScans->loadEntries(KSharedConfig::openConfig()->group("general"));
 
-    connect(m_recentScans, SIGNAL(urlSelected(QUrl)), SLOT(slotScanUrl(QUrl)));
-    connect(m_combo, SIGNAL(returnPressed()), SLOT(slotComboScan()));
-    connect(m_histories, SIGNAL(activated(QUrl)), SLOT(slotScanUrl(QUrl)));
+    connect(m_recentScans, &KRecentFilesAction::urlSelected, this, &MainWindow::slotScanUrl);
+    connect(m_combo, static_cast<void (KHistoryComboBox::*)()>(&KHistoryComboBox::returnPressed), this, &MainWindow::slotComboScan);
+    connect(m_histories, &HistoryCollection::activated, this, &MainWindow::slotScanUrl);
 }
 
 void MainWindow::closeEvent(QCloseEvent *event)
