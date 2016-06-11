@@ -42,7 +42,7 @@ public:
     static void readMounts();
 
 signals:
-    void branchCompleted(Folder* tree, bool finished);
+    void branchCompleted(Folder* tree);
 
 private:
     QString m_path;

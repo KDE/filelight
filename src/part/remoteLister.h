@@ -38,7 +38,7 @@ public:
     ~RemoteLister();
 
 signals:
-    void branchCompleted(Folder* tree, bool finished);
+    void branchCompleted(Folder* tree);
 
 private slots:
     void completed();

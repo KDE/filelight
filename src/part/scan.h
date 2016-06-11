@@ -56,7 +56,7 @@ public:
 public slots:
     bool abort();
     void emptyCache();
-    void cacheTree(Folder*, bool);
+    void cacheTree(Folder*);
     void foundCached(Folder*);
 
 signals:

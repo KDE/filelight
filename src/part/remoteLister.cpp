@@ -97,7 +97,7 @@ RemoteLister::~RemoteLister()
 {
     Folder *tree = isFinished() ? m_store->folder : 0;
 
-    emit branchCompleted(tree, false);
+    emit branchCompleted(tree);
     delete m_root;
 }
 

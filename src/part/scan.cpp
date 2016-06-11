@@ -187,7 +187,7 @@ void ScanManager::emptyCache()
     m_cache->empty();
 }
 
-void ScanManager::cacheTree(Folder *tree, bool finished)
+void ScanManager::cacheTree(Folder *tree)
 {
     QMutexLocker locker(&m_mutex); // This gets released once it is destroyed.
 
@@ -204,10 +204,7 @@ void ScanManager::cacheTree(Folder *tree, bool finished)
     if (tree) {
         //we don't cache foreign stuff
         //we don't recache stuff (thus only type 1000 events)
-        if (finished) {
-            //TODO sanity check the cache
-            m_cache->append(tree);
-        }
+        m_cache->append(tree);
     } else { //scan failed
         m_cache->empty(); //FIXME this is safe but annoying
     }

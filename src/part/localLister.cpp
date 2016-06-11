@@ -90,7 +90,7 @@ LocalLister::run()
         tree = 0;
     }
     qDebug() << "Emitting signal to cache results ...";
-    emit branchCompleted(tree, true);
+    emit branchCompleted(tree);
     qDebug() << "Thread terminating ...";
 }
 
