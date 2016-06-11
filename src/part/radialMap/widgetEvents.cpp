@@ -265,7 +265,7 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
 
                 if (userIntention == KMessageBox::Continue) {
                     KIO::Job *job = KIO::del(url);
-                    connect(job, SIGNAL(finished(KJob*)), this, SLOT(deleteJobFinished(KJob*)));
+                    connect(job, &KJob::finished, this, &RadialMap::Widget::deleteJobFinished);
                     QApplication::setOverrideCursor(Qt::BusyCursor);
                     setEnabled(false);
                 }

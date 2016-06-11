@@ -48,9 +48,8 @@ RadialMap::Widget::Widget(QWidget *parent, bool isSummary)
     setAcceptDrops(true);
     setMinimumSize(350, 250);
 
-    connect(this, SIGNAL(folderCreated(const Folder*)), SLOT(sendFakeMouseEvent()));
-    connect(this, SIGNAL(folderCreated(const Folder*)), SLOT(update()));
-    connect(&m_timer, SIGNAL(timeout()), SLOT(resizeTimeout()));
+    connect(this, &Widget::folderCreated, this, &Widget::sendFakeMouseEvent);
+    connect(&m_timer, &QTimer::timeout, this, &Widget::resizeTimeout);
 }
 
 RadialMap::Widget::~Widget()
@@ -135,6 +134,7 @@ RadialMap::Widget::sendFakeMouseEvent() //slot
 {
     QMouseEvent me(QEvent::MouseMove, mapFromGlobal(QCursor::pos()), Qt::NoButton, Qt::NoButton, Qt::NoModifier);
     QApplication::sendEvent(this, &me);
+    update();
 }
 
 void
