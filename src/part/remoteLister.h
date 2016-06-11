@@ -46,7 +46,7 @@ private slots:
     void canceled();
 
 private:
-    class Store *m_root, *m_store;
+    struct Store *m_root, *m_store;
     ScanManager* m_manager;
 };
 }

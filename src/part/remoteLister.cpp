@@ -44,13 +44,12 @@ struct Store {
     /// location of the folder
     const QUrl url;
     /// the folder on which we are operating
-    Folder *folder;
+    Folder *folder = nullptr;
     /// so we can reference the parent store
-    Store *parent;
+    Store *parent = nullptr;
     /// directories in this folder that need to be scanned before we can propagate()
     List stores;
 
-    Store() : folder(0), parent(0) {}
     Store(const QUrl &u, const QString &name, Store *s)
             : url(u), folder(new Folder(name.toUtf8() + '/')), parent(s) {}
 
