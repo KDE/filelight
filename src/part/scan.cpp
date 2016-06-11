@@ -105,41 +105,38 @@ bool ScanManager::start(const QUrl &url)
          *   cached:     /usr/local/, /usr/include/
          */
 
-    for (Iterator<Folder> it = m_cache->iterator(); it != m_cache->end(); ++it)
-    {
+    for (Iterator<Folder> it = m_cache->iterator(); it != m_cache->end(); ++it) {
         QString cachePath = (*it)->name();
 
-        if (path.startsWith(cachePath)) //then whole tree already scanned
-        {
+        if (path.startsWith(cachePath)) { //then whole tree already scanned
             //find a pointer to the requested branch
 
             qDebug() << "Cache-(a)hit: " << cachePath;
 
-            QVector<QStringRef> split = path.midRef(cachePath.length()).split(QLatin1Char( '/' ));
+            QVector<QStringRef> split = path.midRef(cachePath.length()).split(QLatin1Char('/'));
             Folder *d = *it;
             Iterator<File> jt;
 
-            while (!split.isEmpty() && d != NULL) //if NULL we have got lost so abort!!
-            {
+            while (!split.isEmpty() && d != NULL) { //if NULL we have got lost so abort!!
                 jt = d->iterator();
 
                 const Link<File> *end = d->end();
-                if (split.first().isEmpty()) //found the dir
+                if (split.first().isEmpty()) { //found the dir
                     break;
-                QString s = split.first() % QLatin1Char( '/' );
+                }
+                QString s = split.first() % QLatin1Char('/'); // % is the string concatenation operator for QStringBuilder
 
-                for (d = 0; jt != end; ++jt)
-                    if (s == (*jt)->name())
-                    {
+                for (d = 0; jt != end; ++jt) {
+                    if (s == (*jt)->name()) {
                         d = (Folder*)*jt;
                         break;
                     }
+                }
 
                 split.pop_front();
             }
 
-            if (d)
-            {
+            if (d) {
                 delete trees;
 
                 //we found a completed tree, thus no need to scan
@@ -148,17 +145,13 @@ bool ScanManager::start(const QUrl &url)
                 emit branchCacheHit(d);
 
                 return true;
-            }
-            else
-            {
+            } else {
                 //something went wrong, we couldn't find the folder we were expecting
                 qWarning() << "Didn't find " << path << " in the cache!\n";
                 delete it.remove(); //safest to get rid of it
                 break; //do a full scan
             }
-        }
-        else if (cachePath.startsWith(path)) //then part of the requested tree is already scanned
-        {
+        }  else if (cachePath.startsWith(path)) { //then part of the requested tree is already scanned
             qDebug() << "Cache-(b)hit: " << cachePath;
             it.transferTo(*trees);
         }
@@ -173,8 +166,7 @@ bool ScanManager::start(const QUrl &url)
     return true;
 }
 
-bool
-ScanManager::abort()
+bool ScanManager::abort()
 {
     m_abort = true;
 
@@ -183,21 +175,20 @@ ScanManager::abort()
     return m_thread && m_thread->wait();
 }
 
-void
-ScanManager::emptyCache()
+void ScanManager::emptyCache()
 {
     m_abort = true;
 
-    if (m_thread && m_thread->isRunning())
+    if (m_thread && m_thread->isRunning()) {
         m_thread->wait();
+    }
 
     emit aboutToEmptyCache();
 
     m_cache->empty();
 }
 
-void
-ScanManager::cacheTree(Folder *tree, bool finished)
+void ScanManager::cacheTree(Folder *tree, bool finished)
 {
     QMutexLocker locker(&m_mutex); // This gets released once it is destroyed.
 
@@ -214,18 +205,18 @@ ScanManager::cacheTree(Folder *tree, bool finished)
     if (tree) {
         //we don't cache foreign stuff
         //we don't recache stuff (thus only type 1000 events)
-        if (finished)
+        if (finished) {
             //TODO sanity check the cache
             m_cache->append(tree);
-    }
-    else //scan failed
+        }
+    } else { //scan failed
         m_cache->empty(); //FIXME this is safe but annoying
+    }
 
     QGuiApplication::restoreOverrideCursor();
 }
 
-void
-ScanManager::foundCached(Folder *tree)
+void ScanManager::foundCached(Folder *tree)
 {
     emit completed(tree);
     QGuiApplication::restoreOverrideCursor();
