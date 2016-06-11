@@ -22,6 +22,9 @@ set(filelight_SRCS historyAction.cpp mainWindow.cpp main.cpp)
 
 add_executable(filelight ${filelight_SRCS})
 
-target_link_libraries(filelight KF5::Parts KF5::XmlGui KF5::KIOWidgets KF5::CoreAddons)
+target_link_libraries(filelight
+    KF5::Parts
+    KF5::XmlGui
+)
 
 install(TARGETS filelight ${INSTALL_TARGETS_DEFAULT_ARGS})

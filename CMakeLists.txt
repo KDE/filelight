@@ -38,11 +38,10 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 
 find_package(Qt5 5.4 CONFIG REQUIRED Core Widgets)
 find_package(KF5 REQUIRED
-    KIO
+    XmlGui # For app
+    KIO # For part
+    Solid # For part
     Parts
-    Solid
-    XmlGui
-    CoreAddons
     DocTools
     I18n
 )
