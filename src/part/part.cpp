@@ -112,18 +112,18 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
     QAction *action = actionCollection()->addAction(QStringLiteral("configure_filelight"));
     action->setText(i18n("Configure Filelight..."));
     action->setIcon(QIcon::fromTheme(QStringLiteral("configure")));
-    connect(action, SIGNAL(triggered()), this, SLOT(configFilelight()));
+    connect(action, &QAction::triggered, this, &Part::configFilelight);
 
-    connect(m_map, SIGNAL(created(const Folder*)), SIGNAL(completed()));
-    connect(m_map, SIGNAL(created(const Folder*)), SLOT(mapChanged(const Folder*)));
-    connect(m_map, SIGNAL(activated(QUrl)), SLOT(updateURL(QUrl)));
+    connect(m_map, &RadialMap::Widget::folderCreated, this, static_cast<void (Part::*)()>(&Part::completed));
+    connect(m_map, &RadialMap::Widget::folderCreated, this, &Part::mapChanged);
+    connect(m_map, &RadialMap::Widget::activated, this, &Part::updateURL);
 
     // TODO make better system
-    connect(m_map, SIGNAL(giveMeTreeFor(QUrl)), SLOT(updateURL(QUrl)));
-    connect(m_map, SIGNAL(giveMeTreeFor(QUrl)), SLOT(openUrl(QUrl)));
+    connect(m_map, &RadialMap::Widget::giveMeTreeFor, this, &Part::updateURL);
+    connect(m_map, &RadialMap::Widget::giveMeTreeFor, this, &Part::openUrl);
 
-    connect(m_manager, SIGNAL(completed(Folder*)), SLOT(scanCompleted(Folder*)));
-    connect(m_manager, SIGNAL(aboutToEmptyCache()), m_map, SLOT(invalidate()));
+    connect(m_manager, &ScanManager::completed, this, &Part::scanCompleted);
+    connect(m_manager, &ScanManager::aboutToEmptyCache, m_map, &RadialMap::Widget::invalidate);
 
     QTimer::singleShot(0, this, SLOT(postInit()));
 }
@@ -226,10 +226,10 @@ Part::updateURL(const QUrl &u)
 void
 Part::configFilelight()
 {
-    QWidget *dialog = new SettingsDialog(widget());
+    SettingsDialog *dialog = new SettingsDialog(widget());
 
-    connect(dialog, SIGNAL(canvasIsDirty(int)), m_map, SLOT(refresh(int)));
-    connect(dialog, SIGNAL(mapIsInvalid()), m_manager, SLOT(emptyCache()));
+    connect(dialog, &SettingsDialog::canvasIsDirty, m_map, &RadialMap::Widget::refresh);
+    connect(dialog, &SettingsDialog::mapIsInvalid, m_manager, &ScanManager::emptyCache);
 
     dialog->show(); //deletes itself
 }
@@ -239,7 +239,7 @@ Part::start(const QUrl &url)
 {
     if (!m_started) {
         connect(m_map, SIGNAL(mouseHover(QString)), statusBar(), SLOT(showMessage(const QString&)));
-        connect(m_map, SIGNAL(created(const Folder*)), statusBar(), SLOT(clearMessage()));
+        connect(m_map, &RadialMap::Widget::folderCreated, statusBar(), &QStatusBar::clearMessage);
         m_started = true;
     }
 
@@ -327,7 +327,7 @@ Part::showSummary()
     if (m_summary == 0) {
         m_summary = new SummaryWidget(widget());
         m_summary->setObjectName(QStringLiteral( "summaryWidget" ));
-        connect(m_summary, SIGNAL(activated(QUrl)), SLOT(openUrl(QUrl)));
+        connect(m_summary, &SummaryWidget::activated, this, &Part::openUrl);
         m_summary->show();
         m_layout->addWidget(m_summary);
     }

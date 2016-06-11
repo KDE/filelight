@@ -22,6 +22,7 @@
 #include "progressBox.h"
 
 #include "scan.h"
+#include "part.h"
 
 #include <KColorScheme>
 #include <KIO/Job>
@@ -36,9 +37,9 @@
 #include <math.h>
 
 
-ProgressBox::ProgressBox(QWidget *parent, QObject *part, Filelight::ScanManager *m)
+ProgressBox::ProgressBox(QWidget *parent, Filelight::Part *part, Filelight::ScanManager *scanManager)
         : QWidget(parent)
-        , m_manager(m)
+        , m_manager(scanManager)
 {
     hide();
 
@@ -51,10 +52,10 @@ ProgressBox::ProgressBox(QWidget *parent, QObject *part, Filelight::ScanManager 
     setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     setMinimumSize(200, 200);
 
-    connect(&m_timer, SIGNAL(timeout()), SLOT(report()));
-    connect(part, SIGNAL(started(KIO::Job*)), SLOT(start()));
-    connect(part, SIGNAL(completed()), SLOT(stop()));
-    connect(part, SIGNAL(canceled(QString)), SLOT(halt()));
+    connect(&m_timer, &QTimer::timeout, this, &ProgressBox::report);
+    connect(part, &Filelight::Part::started, this, &ProgressBox::start);
+    connect(part, static_cast<void (Filelight::Part::*)()>(&Filelight::Part::completed), this, &ProgressBox::stop);
+    connect(part, &Filelight::Part::canceled, this, &ProgressBox::halt);
 }
 
 void

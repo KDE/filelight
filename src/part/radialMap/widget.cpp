@@ -48,8 +48,8 @@ RadialMap::Widget::Widget(QWidget *parent, bool isSummary)
     setAcceptDrops(true);
     setMinimumSize(350, 250);
 
-    connect(this, SIGNAL(created(const Folder*)), SLOT(sendFakeMouseEvent()));
-    connect(this, SIGNAL(created(const Folder*)), SLOT(update()));
+    connect(this, SIGNAL(folderCreated(const Folder*)), SLOT(sendFakeMouseEvent()));
+    connect(this, SIGNAL(folderCreated(const Folder*)), SLOT(update()));
     connect(&m_timer, SIGNAL(timeout()), SLOT(resizeTimeout()));
 }
 
@@ -119,7 +119,7 @@ RadialMap::Widget::create(const Folder *tree)
     m_tree = tree;
 
     //tell rest of Filelight
-    emit created(tree);
+    emit folderCreated(tree);
 }
 
 void

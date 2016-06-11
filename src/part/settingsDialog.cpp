@@ -64,32 +64,29 @@ SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
     //read in settings before you make all those nasty connections!
     reset(); //makes dialog reflect global settings
 
-    connect(&m_timer, SIGNAL(timeout()), SIGNAL(mapIsInvalid()));
+    connect(&m_timer, &QTimer::timeout, this, &SettingsDialog::mapIsInvalid);
 
-    connect(m_addButton,    SIGNAL(clicked()), SLOT(addFolder()));
-    connect(m_removeButton, SIGNAL(clicked()), SLOT(removeFolder()));
-    connect(resetButton,  SIGNAL(clicked()), SLOT(reset()));
-    connect(closeButton,  SIGNAL(clicked()), SLOT(close()));
+    connect(m_addButton, &QPushButton::clicked, this, &SettingsDialog::addFolder);
+    connect(m_removeButton, &QPushButton::clicked, this, &SettingsDialog::removeFolder);
+    connect(resetButton, &QPushButton::clicked, this, &SettingsDialog::reset);
+    connect(closeButton, &QPushButton::clicked, this, &SettingsDialog::close);
 
-    connect(m_schemaGroup, SIGNAL(buttonClicked(int)), SLOT(changeScheme(int)));
-    connect(contrastSlider, SIGNAL(valueChanged(int)), SLOT(changeContrast(int)));
-    connect(contrastSlider, SIGNAL(sliderReleased()), SLOT(slotSliderReleased()));
+    connect(m_schemaGroup, static_cast<void (QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked), this, &SettingsDialog::changeScheme);
+    connect(contrastSlider, &QSlider::valueChanged, this, &SettingsDialog::changeContrast);
+    connect(contrastSlider, &QSlider::sliderReleased, this, &SettingsDialog::slotSliderReleased);
 
-    connect(scanAcrossMounts,       SIGNAL(toggled(bool)), SLOT(startTimer()));
-    connect(dontScanRemoteMounts,   SIGNAL(toggled(bool)), SLOT(startTimer()));
-    connect(dontScanRemovableMedia, SIGNAL(toggled(bool)), SLOT(startTimer()));
-    connect(scanAcrossMounts,       SIGNAL(toggled(bool)),
-            SLOT(toggleScanAcrossMounts(bool)));
-    connect(dontScanRemoteMounts,   SIGNAL(toggled(bool)),
-            SLOT(toggleDontScanRemoteMounts(bool)));
-    connect(dontScanRemovableMedia, SIGNAL(toggled(bool)),
-            SLOT(toggleDontScanRemovableMedia(bool)));
+    connect(scanAcrossMounts, &QCheckBox::toggled, this, &SettingsDialog::startTimer);
+    connect(dontScanRemoteMounts, &QCheckBox::toggled, this, &SettingsDialog::startTimer);
+    connect(dontScanRemovableMedia, &QCheckBox::toggled, this, &SettingsDialog::startTimer);
+    connect(scanAcrossMounts, &QCheckBox::toggled, this, &SettingsDialog::toggleScanAcrossMounts);
+    connect(dontScanRemoteMounts, &QCheckBox::toggled, this, &SettingsDialog::toggleDontScanRemoteMounts);
+    connect(dontScanRemovableMedia, &QCheckBox::toggled, this, &SettingsDialog::toggleDontScanRemovableMedia);
 
-    connect(useAntialiasing,    SIGNAL(toggled(bool)), SLOT(toggleUseAntialiasing(bool)));
-    connect(varyLabelFontSizes, SIGNAL(toggled(bool)), SLOT(toggleVaryLabelFontSizes(bool)));
-    connect(showSmallFiles,     SIGNAL(toggled(bool)), SLOT(toggleShowSmallFiles(bool)));
+    connect(useAntialiasing, &QCheckBox::toggled, this, &SettingsDialog::toggleUseAntialiasing);
+    connect(varyLabelFontSizes, &QCheckBox::toggled, this, &SettingsDialog::toggleVaryLabelFontSizes);
+    connect(showSmallFiles, &QCheckBox::toggled, this, &SettingsDialog::toggleShowSmallFiles);
 
-    connect(minFontPitch, SIGNAL (valueChanged(int)), SLOT(changeMinFontPitch(int)));
+    connect(minFontPitch, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &SettingsDialog::changeMinFontPitch);
 
     m_addButton->setIcon(QIcon::fromTheme(QLatin1String("folder-open")));
     m_removeButton->setIcon(QIcon::fromTheme(QLatin1String("list-remove")));

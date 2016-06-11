@@ -41,6 +41,9 @@
 #include <QMouseEvent>
 #include <QLayout>
 
+namespace Filelight
+{
+
 struct Disk
 {
     QString mount;
@@ -148,7 +151,7 @@ void SummaryWidget::createDiskMaps()
 
         map->create(tree); //must be done when visible
 
-        connect(map, SIGNAL(activated(QUrl)), SIGNAL(activated(QUrl)));
+        connect(map, &RadialMap::Widget::activated, this, &SummaryWidget::activated);
     }
 }
 
@@ -181,4 +184,6 @@ DiskList::DiskList()
 
         *this += disk;
     }
+}
+
 }

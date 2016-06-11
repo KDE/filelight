@@ -89,8 +89,8 @@ RemoteLister::RemoteLister(const QUrl &url, QWidget *parent, ScanManager* manage
     setMainWindow(parent);
 
     // Use SIGNAL(result(KIO::Job*)) instead and then use Job::error()
-    connect(this, SIGNAL(completed()), SLOT(completed()));
-    connect(this, SIGNAL(canceled()), SLOT(canceled()));
+    connect(this, &RemoteLister::completed, this, &RemoteLister::completed);
+    connect(this, &RemoteLister::canceled, this, &RemoteLister::canceled);
 }
 
 RemoteLister::~RemoteLister()

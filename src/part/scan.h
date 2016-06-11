@@ -32,6 +32,9 @@ template<class T> class Chain;
 
 namespace Filelight
 {
+
+class LocalLister;
+
 class ScanManager : public QObject
 {
     Q_OBJECT
@@ -66,7 +69,7 @@ private:
     uint m_files;
 
     QMutex m_mutex;
-    QThread *m_thread;
+    LocalLister *m_thread;
     Chain<Folder> *m_cache;
 
 };

@@ -39,6 +39,7 @@ class Folder;
 namespace Filelight
 {
 class Part;
+class SummaryWidget;
 
 class BrowserExtension : public KParts::BrowserExtension
 {
@@ -80,7 +81,7 @@ private:
     void showSummary();
 
     QLayout            *m_layout;
-    QWidget            *m_summary;
+    SummaryWidget      *m_summary;
     BrowserExtension   *m_ext;
     StatusBarExtension *m_statusbar;
     RadialMap::Widget  *m_map;

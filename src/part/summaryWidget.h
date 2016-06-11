@@ -26,6 +26,8 @@
 
 #include <QWidget>
 
+namespace Filelight {
+
 class SummaryWidget : public QWidget
 {
     Q_OBJECT
@@ -39,5 +41,7 @@ signals:
 private:
     void createDiskMaps();
 };
+
+}
 
 #endif

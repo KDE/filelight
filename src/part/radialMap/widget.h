@@ -82,7 +82,7 @@ private slots:
 signals:
     void activated(const QUrl&);
     void invalidated(const QUrl&);
-    void created(const Folder*);
+    void folderCreated(const Folder*);
     void mouseHover(const QString&);
     void giveMeTreeFor(const QUrl&);
 
