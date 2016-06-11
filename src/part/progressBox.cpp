@@ -97,7 +97,6 @@ ProgressBox::setText(int files)
 #define PIECES_NUM 4
 static const float angleFactor[] = { -0.75, 0.5, 1.0, -0.3 };
 static const int length[] = { 30, 40, 50, 60 };
-static const int angleOffset[] = { 5760, 0, 0, -5760 };
 static const int aLength[] = { 300, 2000, 200, 2000 };
 
 void ProgressBox::paintEvent(QPaintEvent*)
