@@ -80,7 +80,7 @@ bool ScanManager::start(const QUrl &url)
     m_abort = false;
 
     if (!url.isLocalFile()) {
-        QGuiApplication::changeOverrideCursor(QCursor(Qt::BusyCursor));
+        QGuiApplication::changeOverrideCursor(Qt::BusyCursor);
         //will start listing straight away
         Filelight::RemoteLister *remoteLister = new Filelight::RemoteLister(url, (QWidget*)parent(), this);
         connect(remoteLister, &Filelight::RemoteLister::branchCompleted, this, &ScanManager::cacheTree, Qt::QueuedConnection);

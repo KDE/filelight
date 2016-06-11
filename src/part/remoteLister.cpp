@@ -89,8 +89,8 @@ RemoteLister::RemoteLister(const QUrl &url, QWidget *parent, ScanManager* manage
     setMainWindow(parent);
 
     // Use SIGNAL(result(KIO::Job*)) instead and then use Job::error()
-    connect(this, &RemoteLister::completed, this, &RemoteLister::completed);
-    connect(this, &RemoteLister::canceled, this, &RemoteLister::canceled);
+    connect(this, static_cast<void (KCoreDirLister::*)()>(&KCoreDirLister::completed), this, &RemoteLister::completed);
+    connect(this, static_cast<void (KCoreDirLister::*)()>(&KCoreDirLister::canceled), this, &RemoteLister::canceled);
 }
 
 RemoteLister::~RemoteLister()
