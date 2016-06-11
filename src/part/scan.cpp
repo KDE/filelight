@@ -80,14 +80,24 @@ bool ScanManager::start(const QUrl &url)
     m_files = 0;
     m_abort = false;
 
-    if (url.isLocalFile()) {
-        QString path = url.toLocalFile();
+    if (!url.isLocalFile()) {
+        QGuiApplication::changeOverrideCursor(QCursor(Qt::BusyCursor));
+        //will start listing straight away
+        Filelight::RemoteLister *remoteLister = new Filelight::RemoteLister(url, (QWidget*)parent(), this);
+        connect(remoteLister, SIGNAL(branchCompleted(Folder*,bool)), this, SLOT(cacheTree(Folder*,bool)), Qt::QueuedConnection);
+        remoteLister->setParent(this);
+        remoteLister->setObjectName(QLatin1String( "remote_lister" ));
+        remoteLister->openUrl(url);
+        return true;
+    }
 
-        if (!path.endsWith(QDir::separator())) path += QDir::separator();
+    QString path = url.toLocalFile();
 
-        Chain<Folder> *trees = new Chain<Folder>;
+    if (!path.endsWith(QDir::separator())) path += QDir::separator();
 
-        /* CHECK CACHE
+    Chain<Folder> *trees = new Chain<Folder>;
+
+    /* CHECK CACHE
          *   user wants: /usr/local/
          *   cached:     /usr/
          *
@@ -95,92 +105,82 @@ bool ScanManager::start(const QUrl &url)
          *   cached:     /usr/local/, /usr/include/
          */
 
-        for (Iterator<Folder> it = m_cache->iterator(); it != m_cache->end(); ++it)
+    for (Iterator<Folder> it = m_cache->iterator(); it != m_cache->end(); ++it)
+    {
+        QString cachePath = (*it)->name();
+
+        if (path.startsWith(cachePath)) //then whole tree already scanned
         {
-            QString cachePath = (*it)->name();
+            //find a pointer to the requested branch
 
-            if (path.startsWith(cachePath)) //then whole tree already scanned
+            qDebug() << "Cache-(a)hit: " << cachePath;
+
+#if QT_VERSION >= 0x050400
+            QVector<QStringRef> split = path.midRef(cachePath.length()).split(QLatin1Char( '/' ));
+#else
+            QStringList split = path.mid(cachePath.length()).split(QLatin1Char( '/' ));
+#endif
+            Folder *d = *it;
+            Iterator<File> jt;
+
+            while (!split.isEmpty() && d != NULL) //if NULL we have got lost so abort!!
             {
-                //find a pointer to the requested branch
+                jt = d->iterator();
 
-                qDebug() << "Cache-(a)hit: " << cachePath;
-
+                const Link<File> *end = d->end();
 #if QT_VERSION >= 0x050400
-                QVector<QStringRef> split = path.midRef(cachePath.length()).split(QLatin1Char( '/' ));
+                if (split.first().isEmpty()) //found the dir
+                    break;
+                QString s = split.first() % QLatin1Char( '/' );
 #else
-                QStringList split = path.mid(cachePath.length()).split(QLatin1Char( '/' ));
-#endif
-                Folder *d = *it;
-                Iterator<File> jt;
-
-                while (!split.isEmpty() && d != NULL) //if NULL we have got lost so abort!!
-                {
-                    jt = d->iterator();
-
-                    const Link<File> *end = d->end();
-#if QT_VERSION >= 0x050400
-                    if (split.first().isEmpty()) //found the dir
-                        break;
-                    QString s = split.first() % QLatin1Char( '/' );
-#else
-                    QString s = split.first();
-                    if (s.isEmpty()) //found the dir
-                        break;
-                    s += QLatin1Char( '/' );
+                QString s = split.first();
+                if (s.isEmpty()) //found the dir
+                    break;
+                s += QLatin1Char( '/' );
 #endif
 
-                    for (d = 0; jt != end; ++jt)
-                        if (s == (*jt)->name())
-                        {
-                            d = (Folder*)*jt;
-                            break;
-                        }
+                for (d = 0; jt != end; ++jt)
+                    if (s == (*jt)->name())
+                    {
+                        d = (Folder*)*jt;
+                        break;
+                    }
 
-                    split.pop_front();
-                }
-
-                if (d)
-                {
-                    delete trees;
-
-                    //we found a completed tree, thus no need to scan
-                    qDebug() << "Found cache-handle, generating map..";
-
-                    emit branchCacheHit(d);
-
-                    return true;
-                }
-                else
-                {
-                    //something went wrong, we couldn't find the folder we were expecting
-                    qWarning() << "Didn't find " << path << " in the cache!\n";
-                    delete it.remove(); //safest to get rid of it
-                    break; //do a full scan
-                }
+                split.pop_front();
             }
-            else if (cachePath.startsWith(path)) //then part of the requested tree is already scanned
+
+            if (d)
             {
-                qDebug() << "Cache-(b)hit: " << cachePath;
-                it.transferTo(*trees);
+                delete trees;
+
+                //we found a completed tree, thus no need to scan
+                qDebug() << "Found cache-handle, generating map..";
+
+                emit branchCacheHit(d);
+
+                return true;
+            }
+            else
+            {
+                //something went wrong, we couldn't find the folder we were expecting
+                qWarning() << "Didn't find " << path << " in the cache!\n";
+                delete it.remove(); //safest to get rid of it
+                break; //do a full scan
             }
         }
-
-        QGuiApplication::changeOverrideCursor(QCursor(Qt::BusyCursor));
-        //starts listing by itself
-        m_thread = new Filelight::LocalLister(path, trees, this);
-        connect(m_thread, SIGNAL(branchCompleted(Folder*,bool)), this, SLOT(cacheTree(Folder*,bool)), Qt::QueuedConnection);
-        m_thread->start();
-
-        return true;
+        else if (cachePath.startsWith(path)) //then part of the requested tree is already scanned
+        {
+            qDebug() << "Cache-(b)hit: " << cachePath;
+            it.transferTo(*trees);
+        }
     }
 
     QGuiApplication::changeOverrideCursor(QCursor(Qt::BusyCursor));
-    //will start listing straight away
-    Filelight::RemoteLister *remoteLister = new Filelight::RemoteLister(url, (QWidget*)parent(), this);
-    connect(remoteLister, SIGNAL(branchCompleted(Folder*,bool)), this, SLOT(cacheTree(Folder*,bool)), Qt::QueuedConnection);
-    remoteLister->setParent(this);
-    remoteLister->setObjectName(QLatin1String( "remote_lister" ));
-    remoteLister->openUrl(url);
+    //starts listing by itself
+    m_thread = new Filelight::LocalLister(path, trees, this);
+    connect(m_thread, SIGNAL(branchCompleted(Folder*,bool)), this, SLOT(cacheTree(Folder*,bool)), Qt::QueuedConnection);
+    m_thread->start();
+
     return true;
 }
 
