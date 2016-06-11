@@ -42,7 +42,6 @@ ScanManager::ScanManager(QObject *parent)
         , m_cache(new Chain<Folder>)
 {
     Filelight::LocalLister::readMounts();
-    connect(this, SIGNAL(branchCompleted(Folder*,bool)), this, SLOT(cacheTree(Folder*,bool)), Qt::QueuedConnection);
     connect(this, SIGNAL(branchCacheHit(Folder*)), this, SLOT(foundCached(Folder*)), Qt::QueuedConnection);
 }
 

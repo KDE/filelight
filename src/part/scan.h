@@ -59,7 +59,6 @@ public slots:
 signals:
     void completed(Folder*);
     void aboutToEmptyCache();
-    void branchCompleted(Folder* tree, bool finished);
     void branchCacheHit(Folder* tree);
 
 private:
