@@ -266,7 +266,7 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
     QAction* clicked = popup.exec(e->globalPos(), 0);
 
     if (openFileManager && clicked == openFileManager) {
-        KRun::runUrl(url.url(),QLatin1String( "inode/directory" ), this);
+        KRun::runUrl(url, QLatin1String( "inode/directory" ), this);
     } else if (openTerminal && clicked == openTerminal) {
         KToolInvocation::invokeTerminal(QString(),url.path());
     } else if (centerMap && clicked == centerMap) {
