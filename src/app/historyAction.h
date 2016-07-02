@@ -31,6 +31,8 @@ class KActionCollection;
 
 class HistoryAction : QAction
 {
+    Q_OBJECT
+
     HistoryAction(const QIcon &icon, const QString &text, KActionCollection *ac);
 
     friend class HistoryCollection;

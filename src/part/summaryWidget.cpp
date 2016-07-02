@@ -63,6 +63,8 @@ struct DiskList : QList<Disk>
 
 class MyRadialMap : public RadialMap::Widget
 {
+    Q_OBJECT
+
 public:
     MyRadialMap(QWidget *parent)
             : RadialMap::Widget(parent, true)
@@ -187,3 +189,5 @@ DiskList::DiskList()
 }
 
 }
+
+#include "summaryWidget.moc"

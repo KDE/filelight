@@ -43,6 +43,8 @@ class SummaryWidget;
 
 class BrowserExtension : public KParts::BrowserExtension
 {
+    Q_OBJECT
+
 public:
     explicit BrowserExtension(Part*);
 };
