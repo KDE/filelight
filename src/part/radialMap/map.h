@@ -57,23 +57,28 @@ public:
         return m_pixmap;
     }
 
-    friend class Builder;
+
     friend class Widget;
 
 private:
     void paint(bool antialias = true);
     void colorise();
     void setRingBreadth();
+    void findVisibleDepth(const Folder *dir, uint currentDepth = 0);
+    bool build(const Folder* const dir, const uint depth =0, uint a_start =0, const uint a_end =5760);
 
     Chain<Segment> *m_signature;
 
-    QRect        m_rect;
-    uint         m_visibleDepth; ///visible level depth of system
-    QPixmap      m_pixmap;
-    uint         m_ringBreadth;  ///ring breadth
-    uint         m_innerRadius;  ///radius of inner circle
-    QString      m_centerText;
-    bool         m_summary;
+    const Folder *m_root;
+    uint m_minSize;
+    QVector<uint> m_limits;
+    QRect m_rect;
+    uint m_visibleDepth; ///visible level depth of system
+    QPixmap m_pixmap;
+    int m_ringBreadth;
+    uint m_innerRadius;  ///radius of inner circle
+    QString m_centerText;
+    bool m_summary;
 
     uint MAP_2MARGIN;
 };

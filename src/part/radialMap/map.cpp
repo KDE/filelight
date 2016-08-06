@@ -27,8 +27,10 @@
 #include <QBrush>
 
 #include <KCursor>         //make()
+#include <KLocalizedString>
 
-#include "builder.h"
+#include "radialMap.h" // defines
+
 #include "part/Config.h"
 #include "part/fileTree.h"
 #define SINCOS_H_IMPLEMENTATION (1)
@@ -67,10 +69,33 @@ void RadialMap::Map::make(const Folder *tree, bool refresh)
     //slow operation so set the wait cursor
     QApplication::setOverrideCursor(Qt::WaitCursor);
 
+    //build a signature of visible components
     {
-        //build a signature of visible components
+        //**** REMOVE NEED FOR the +1 with MAX_RING_DEPTH uses
+        //**** add some angle bounds checking (possibly in Segment ctor? can I delete in a ctor?)
+        //**** this is a mess
+
         delete [] m_signature;
-        Builder builder(this, tree, refresh);
+        m_signature = new Chain<Segment>[m_visibleDepth + 1];
+
+        m_root = tree;
+
+        if (!refresh) {
+            m_minSize = (tree->size() * 3) / (PI * height() - MAP_2MARGIN);
+            findVisibleDepth(tree);
+        }
+
+        setRingBreadth();
+
+        // Calculate ring size limits
+        m_limits.resize(m_visibleDepth + 1);
+        double size3 = m_root->size() * 3;
+        double pi2B   = PI * 2 * m_ringBreadth;
+        for (unsigned int d = 0; d <= m_visibleDepth; ++d) {
+            m_limits[d] = (uint)(size3 / (double)(pi2B * (d + 1))); //min is angle that gives 3px outer diameter for that depth
+        }
+
+        build(tree);
     }
 
     //colour the segments
@@ -89,12 +114,96 @@ void RadialMap::Map::setRingBreadth()
     //FIXME called too many times on creation
 
     m_ringBreadth = (height() - MAP_2MARGIN) / (2 * m_visibleDepth + 4);
+    m_ringBreadth = qBound(MIN_RING_BREADTH, m_ringBreadth, MAX_RING_BREADTH);
+}
 
-    if (m_ringBreadth < MIN_RING_BREADTH)
-        m_ringBreadth = MIN_RING_BREADTH;
+void RadialMap::Map::findVisibleDepth(const Folder *dir, uint currentDepth)
+{
 
-    else if (m_ringBreadth > MAX_RING_BREADTH)
-        m_ringBreadth = MAX_RING_BREADTH;
+    //**** because I don't use the same minimumSize criteria as in the visual function
+    //     this can lead to incorrect visual representation
+    //**** BUT, you can't set those limits until you know m_depth!
+
+    //**** also this function doesn't check to see if anything is actually visible
+    //     it just assumes that when it reaches a new level everything in it is visible
+    //     automatically. This isn't right especially as there might be no files in the
+    //     dir provided to this function!
+
+    static uint stopDepth = 0;
+
+    if (dir == m_root) {
+        stopDepth = m_visibleDepth;
+        m_visibleDepth = 0;
+    }
+
+    if (m_visibleDepth < currentDepth) m_visibleDepth = currentDepth;
+    if (m_visibleDepth >= stopDepth) return;
+
+    for (ConstIterator<File> it = dir->constIterator(); it != dir->end(); ++it) {
+        if ((*it)->isFolder() && (*it)->size() > m_minSize) {
+            findVisibleDepth((Folder *)*it, currentDepth + 1); //if no files greater than min size the depth is still recorded
+        }
+    }
+}
+
+//**** segments currently overlap at edges (i.e. end of first is start of next)
+bool RadialMap::Map::build(const Folder * const dir, const uint depth, uint a_start, const uint a_end)
+{
+    //first iteration: dir == m_root
+
+    if (dir->children() == 0) //we do fileCount rather than size to avoid chance of divide by zero later
+        return false;
+
+    uint hiddenSize = 0, hiddenFileCount = 0;
+
+    for (ConstIterator<File> it = dir->constIterator(); it != dir->end(); ++it)
+    {
+        if ((*it)->size() > m_limits[depth])
+        {
+            unsigned int a_len = (unsigned int)(5760 * ((double)(*it)->size() / (double)m_root->size()));
+
+            Segment *s = new Segment(*it, a_start, a_len);
+
+            (m_signature + depth)->append(s);
+
+            if ((*it)->isFolder())
+            {
+                if (depth != m_visibleDepth)
+                {
+                    //recurse
+                    s->m_hasHiddenChildren = build((Folder*)*it, depth + 1, a_start, a_start + a_len);
+                }
+                else s->m_hasHiddenChildren = true;
+            }
+
+            a_start += a_len; //**** should we add 1?
+
+        } else {
+
+            hiddenSize += (*it)->size();
+
+            if ((*it)->isFolder()) //**** considered virtual, but dir wouldn't count itself!
+                hiddenFileCount += static_cast<const Folder*>(*it)->children(); //need to add one to count the dir as well
+
+            ++hiddenFileCount;
+        }
+    }
+
+    if (hiddenFileCount == dir->children() && !Config::showSmallFiles) {
+        return true;
+    } else if ((Config::showSmallFiles && hiddenSize > m_limits[depth]) || (depth == 0 && (hiddenSize > dir->size()/8))) {
+        //append a segment for unrepresented space - a "fake" segment
+
+        const QString s = i18np("1 file, with an average size of %2",
+                "%1 files, with an average size of %2",
+                hiddenFileCount,
+                KFormat().formatByteSize(hiddenSize/hiddenFileCount));
+
+
+        (m_signature + depth)->append(new Segment(new File(s.toUtf8(), hiddenSize), a_start, a_end - a_start, true));
+    }
+
+    return false;
 }
 
 bool RadialMap::Map::resize(const QRect &rect)
