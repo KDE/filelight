@@ -114,10 +114,9 @@ bool ScanManager::start(const QUrl &url)
 
             QVector<QStringRef> split = path.midRef(cachePath.length()).split(QLatin1Char('/'));
             Folder *d = *it;
-            Iterator<File> jt;
 
             while (!split.isEmpty() && d != NULL) { //if NULL we have got lost so abort!!
-                jt = d->iterator();
+                Iterator<File> jt = d->iterator();
 
                 const Link<File> *end = d->end();
                 if (split.first().isEmpty()) { //found the dir

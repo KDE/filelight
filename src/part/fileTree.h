@@ -76,7 +76,8 @@ template <class T>
 class Iterator
 {
 public:
-    Iterator() : link(0) { } //**** remove this, remove this REMOVE THIS!!! dangerous as your implementation doesn't test for null links, always assumes they can be derefenced
+    Iterator() = delete;
+
     Iterator(Link<T> *p) : link(p) { }
 
     bool operator==(const Iterator<T>& it) const {
