@@ -71,7 +71,7 @@ private:
 
     const Folder *m_root;
     uint m_minSize;
-    QVector<uint> m_limits;
+    QVector<FileSize> m_limits;
     QRect m_rect;
     uint m_visibleDepth; ///visible level depth of system
     QPixmap m_pixmap;

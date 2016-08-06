@@ -89,10 +89,10 @@ void RadialMap::Map::make(const Folder *tree, bool refresh)
 
         // Calculate ring size limits
         m_limits.resize(m_visibleDepth + 1);
-        double size3 = m_root->size() * 3;
-        double pi2B   = PI * 2 * m_ringBreadth;
-        for (unsigned int d = 0; d <= m_visibleDepth; ++d) {
-            m_limits[d] = (uint)(size3 / (double)(pi2B * (d + 1))); //min is angle that gives 3px outer diameter for that depth
+        const double size = m_root->size();
+        const double pi2B  = M_PI * 4 * m_ringBreadth;
+        for (uint depth = 0; depth <= m_visibleDepth; ++depth) {
+            m_limits[depth] = uint(size / double(pi2B * (depth + 1))); //min is angle that gives 3px outer diameter for that depth
         }
 
         build(tree);
@@ -154,46 +154,42 @@ bool RadialMap::Map::build(const Folder * const dir, const uint depth, uint a_st
     if (dir->children() == 0) //we do fileCount rather than size to avoid chance of divide by zero later
         return false;
 
-    uint hiddenSize = 0, hiddenFileCount = 0;
+    FileSize hiddenSize = 0;
+    uint hiddenFileCount = 0;
 
-    for (ConstIterator<File> it = dir->constIterator(); it != dir->end(); ++it)
-    {
-        if ((*it)->size() > m_limits[depth])
-        {
-            unsigned int a_len = (unsigned int)(5760 * ((double)(*it)->size() / (double)m_root->size()));
-
-            Segment *s = new Segment(*it, a_start, a_len);
-
-            (m_signature + depth)->append(s);
-
-            if ((*it)->isFolder())
-            {
-                if (depth != m_visibleDepth)
-                {
-                    //recurse
-                    s->m_hasHiddenChildren = build((Folder*)*it, depth + 1, a_start, a_start + a_len);
-                }
-                else s->m_hasHiddenChildren = true;
-            }
-
-            a_start += a_len; //**** should we add 1?
-
-        } else {
-
+    for (ConstIterator<File> it = dir->constIterator(); it != dir->end(); ++it) {
+        if ((*it)->size() < m_limits[depth] * 6) { // limit is half a degree? we want at least 3 degrees
             hiddenSize += (*it)->size();
-
-            if ((*it)->isFolder()) //**** considered virtual, but dir wouldn't count itself!
+            if ((*it)->isFolder()) { //**** considered virtual, but dir wouldn't count itself!
                 hiddenFileCount += static_cast<const Folder*>(*it)->children(); //need to add one to count the dir as well
-
+            }
             ++hiddenFileCount;
+            continue;
         }
+
+        unsigned int a_len = (unsigned int)(5760 * ((double)(*it)->size() / (double)m_root->size()));
+
+        Segment *s = new Segment(*it, a_start, a_len);
+        m_signature[depth].append(s);
+
+        if ((*it)->isFolder()) {
+            if (depth != m_visibleDepth) {
+                //recurse
+                s->m_hasHiddenChildren = build((Folder*)*it, depth + 1, a_start, a_start + a_len);
+            } else {
+                s->m_hasHiddenChildren = true;
+            }
+        }
+
+        a_start += a_len; //**** should we add 1?
     }
 
     if (hiddenFileCount == dir->children() && !Config::showSmallFiles) {
         return true;
-    } else if ((Config::showSmallFiles && hiddenSize > m_limits[depth]) || (depth == 0 && (hiddenSize > dir->size()/8))) {
-        //append a segment for unrepresented space - a "fake" segment
+    }
 
+    if ((depth == 0 || Config::showSmallFiles) && hiddenSize >= m_limits[depth]) {
+        //append a segment for unrepresented space - a "fake" segment
         const QString s = i18np("1 file, with an average size of %2",
                 "%1 files, with an average size of %2",
                 hiddenFileCount,
