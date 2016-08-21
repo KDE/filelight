@@ -226,6 +226,8 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
 
     closedir(dir);
 
+    std::sort(cwd->files.begin(), cwd->files.end(), [](File *a, File*b) { return a->size() > b->size(); });
+
     return cwd;
 }
 
