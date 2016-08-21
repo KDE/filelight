@@ -76,7 +76,7 @@ void RadialMap::Map::make(const Folder *tree, bool refresh)
         //**** this is a mess
 
         delete [] m_signature;
-        m_signature = new Chain<Segment>[m_visibleDepth + 1];
+        m_signature = new QList<Segment*>[m_visibleDepth + 1];
 
         m_root = tree;
 
@@ -265,10 +265,9 @@ void RadialMap::Map::colorise()
 
     for (uint i = 0; i <= m_visibleDepth; ++i, darkness += 0.04)
     {
-        for (Iterator<Segment> it = m_signature[i].iterator(); it != m_signature[i].end(); ++it)
-        {
+        for (Segment *segment : m_signature[i]) {
             if (m_summary){ // Summary view has its own colors, special cased.
-                if ((*it)->file()->name() == QLatin1String("Used")) {
+                if (segment->file()->name() == QLatin1String("Used")) {
                     cb = QApplication::palette().highlight().color();
                     cb.getHsv(&h, &s1, &v1);
 
@@ -287,7 +286,7 @@ void RadialMap::Map::colorise()
                     cb = Qt::white;
                 }
 
-                (*it)->setPalette(cp, cb);
+                segment->setPalette(cp, cb);
             }
             else
             {
@@ -298,7 +297,7 @@ void RadialMap::Map::colorise()
                     //gradient will work by figuring out rgb delta values for 360 degrees
                     //then each component is angle*delta
 
-                    int a = (*it)->start();
+                    int a = segment->start();
 
                     if (a > 2880) a = 2880 - (a - 2880);
 
@@ -315,11 +314,11 @@ void RadialMap::Map::colorise()
                 case Filelight::HighContrast:
                     cp.setHsv(0, 0, 0); //values of h, s and v are irrelevant
                     cb.setHsv(180, 0, int(255.0 * contrast));
-                    (*it)->setPalette(cp, cb);
+                    segment->setPalette(cp, cb);
                     continue;
 
                 default:
-                    h  = int((*it)->start() / 16);
+                    h  = int(segment->start() / 16);
                     s1 = 160;
                     v1 = (int)(255.0 / darkness); //****doing this more often than once seems daft!
                 }
@@ -329,12 +328,12 @@ void RadialMap::Map::colorise()
 
                 if (s1 < 80) s1 = 80; //can fall too low and makes contrast between the files hard to discern
 
-                if ((*it)->isFake()) //multi-file
+                if (segment->isFake()) //multi-file
                 {
                     cb.setHsv(h, s2, (v2 < 90) ? 90 : v2); //too dark if < 100
                     cp.setHsv(h, 17, v1);
                 }
-                else if (!(*it)->file()->isFolder()) //file
+                else if (!segment->file()->isFolder()) //file
                 {
                     cb.setHsv(h, 17, v1);
                     cp.setHsv(h, 17, v2);
@@ -345,7 +344,7 @@ void RadialMap::Map::colorise()
                     cp.setHsv(h, s2, v2); //v was 225 - delta
                 }
 
-                (*it)->setPalette(cp, cb);
+                segment->setPalette(cp, cb);
 
                 //TODO:
                 //**** may be better to store KDE colours as H and S and vary V as others
@@ -406,19 +405,18 @@ void RadialMap::Map::paint(bool antialias)
         //clever geometric trick to find largest angle that will give biggest arrow head
         uint a_max = int(acos((double)width / double((width + 5))) * (180*16 / M_PI));
 
-        for (ConstIterator<Segment> it = m_signature[x].constIterator(); it != m_signature[x].end(); ++it)
-        {
+        for (Segment *segment : m_signature[x]) {
             //draw the pie segments, most of this code is concerned with drawing the little
             //arrows on the ends of segments when they have hidden files
 
-            paint.setPen((*it)->pen());
+            paint.setPen(segment->pen());
 
-            if ((*it)->hasHiddenChildren())
+            if (segment->hasHiddenChildren())
             {
                 //draw arrow head to indicate undisplayed files/directories
                 QPolygon pts(3);
                 QPoint pos, cpos = rect.center();
-                uint a[3] = { (*it)->start(), (*it)->length(), 0 };
+                uint a[3] = { segment->start(), segment->length(), 0 };
 
                 a[2] = a[0] + (a[1] / 2); //assign to halfway between
                 if (a[1] > a_max)
@@ -441,14 +439,14 @@ void RadialMap::Map::paint(bool antialias)
                     pts.setPoint(i, pos);
                 }
 
-                paint.setBrush((*it)->pen());
+                paint.setBrush(segment->pen());
                 paint.drawPolygon(pts);
             }
 
-            paint.setBrush((*it)->brush());
-            paint.drawPie(rect, (*it)->start(), (*it)->length());
+            paint.setBrush(segment->brush());
+            paint.drawPie(rect, segment->start(), segment->length());
 
-            if ((*it)->hasHiddenChildren())
+            if (segment->hasHiddenChildren())
             {
                 //**** code is bloated!
                 paint.save();
@@ -459,7 +457,7 @@ void RadialMap::Map::paint(bool antialias)
                 QRect rect2 = rect;
                 width /= 2;
                 rect2.adjust(width, width, -width, -width);
-                paint.drawArc(rect2, (*it)->start(), (*it)->length());
+                paint.drawArc(rect2, segment->start(), segment->length());
                 paint.restore();
             }
         }

@@ -121,11 +121,10 @@ const RadialMap::Segment* RadialMap::Widget::segmentAt(QPoint &e) const
                 //acos only understands 0-180 degrees
                 if (e.y() < 0) a = 5760 - a;
 
-#define ring (m_map.m_signature + depth)
-                for (ConstIterator<Segment> it = ring->constIterator(); it != ring->end(); ++it)
-                    if ((*it)->intersects(a))
-                        return *it;
-#undef ring
+                for (Segment *segment : m_map.m_signature[depth]) {
+                    if (segment->intersects(a))
+                        return segment;
+                }
             }
         }
         else return m_rootSegment; //hovering over inner circle

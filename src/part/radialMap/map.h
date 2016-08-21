@@ -67,7 +67,7 @@ private:
     void findVisibleDepth(const Folder *dir, uint currentDepth = 0);
     bool build(const Folder* const dir, const uint depth =0, uint a_start =0, const uint a_end =5760);
 
-    Chain<Segment> *m_signature;
+    QList<Segment*> *m_signature;
 
     const Folder *m_root;
     uint m_minSize;

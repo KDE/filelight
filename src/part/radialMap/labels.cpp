@@ -102,34 +102,26 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
         minAngle = int(m_focus->length() * LABEL_MIN_ANGLE_FACTOR);
 
 
-#define segment (*it)
-#define ring (m_map.m_signature + i)
-
         //**** Levels should be on a scale starting with 0
         //**** range is a useless parameter
         //**** keep a topblock var which is the lowestLevel OR startLevel for identation purposes
-        for (unsigned int i = startLevel; i <= m_map.m_visibleDepth; ++i)
-            for (Iterator<Segment> it = ring->iterator(); it != ring->end(); ++it)
-                if (segment->start() >= start && segment->end() <= end)
+        for (unsigned int i = startLevel; i <= m_map.m_visibleDepth; ++i) {
+            for (const Segment *segment : m_map.m_signature[i]) {
+                if (segment->start() >= start && segment->end() <= end) {
                     if (segment->length() > minAngle) {
                         list.append(new Label(segment, i));
                     }
-
-#undef ring
-#undef segment
-
+                }
+            }
+        }
     } else {
 
-#define ring m_map.m_signature
-
-        for (Iterator<Segment> it = ring->iterator(); it != ring->end(); ++it)
-            if ((*it)->length() > 288) {
-                list.append(new Label((*it), 0));
+        for (Segment *segment : *m_map.m_signature) {
+            if (segment->length() > 288) {
+                list.append(new Label(segment, 0));
                 
             }
-
-#undef ring
-
+        }
     }
     qSort(list.begin(), list.end(), compareAndSortLabels);
     
