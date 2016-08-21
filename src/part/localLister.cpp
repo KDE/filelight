@@ -29,6 +29,7 @@
 #include <Solid/StorageAccess>
 #include <Solid/Device>
 
+#include <QElapsedTimer>
 #include <QGuiApplication> //postEvent()
 #include <QFile>
 #include <QByteArray>
@@ -52,7 +53,7 @@ namespace Filelight
 QStringList LocalLister::s_remoteMounts;
 QStringList LocalLister::s_localMounts;
 
-LocalLister::LocalLister(const QString &path, Chain<Folder> *cachedTrees, ScanManager *parent)
+LocalLister::LocalLister(const QString &path, QList<Folder *> *cachedTrees, ScanManager *parent)
         : QThread()
         , m_path(path)
         , m_trees(cachedTrees)
@@ -75,9 +76,12 @@ LocalLister::LocalLister(const QString &path, Chain<Folder> *cachedTrees, ScanMa
 void
 LocalLister::run()
 {
+    QElapsedTimer timer;
+    timer.start();
     //recursively scan the requested path
     const QByteArray path = QFile::encodeName(m_path);
     Folder *tree = scan(path, path);
+    qDebug() << "Scan completed in" << (timer.elapsed()/1000);
 
     //delete the list of trees useful for this scan,
     //in a sucessful scan the contents would now be transferred to 'tree'
@@ -198,15 +202,14 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
 
             //check to see if we've scanned this section already
 
-            for (Iterator<Folder> it = m_trees->iterator(); it != m_trees->end(); ++it)
+            for (Folder *folder : *m_trees)
             {
-                if (new_path == (*it)->name8Bit())
+                if (new_path == folder->name8Bit())
                 {
-                    qDebug() << "Tree pre-completed: " << (*it)->name();
-                    d = it.remove();
-                    m_parent->m_files += d->children();
-                    //**** ideally don't have this redundant extra somehow
-                    cwd->append(d, new_dirname);
+                    qDebug() << "Tree pre-completed: " << folder->name();
+                    m_trees->removeAll(folder);
+                    m_parent->m_files += folder->children();
+                    cwd->append(folder, new_dirname);
                 }
             }
 

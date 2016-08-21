@@ -91,7 +91,7 @@ bool ScanManager::start(const QUrl &url)
 
     if (!path.endsWith(QDir::separator())) path += QDir::separator();
 
-    Chain<Folder> *trees = new Chain<Folder>;
+    QList<Folder*> *trees = new QList<Folder*>;
 
     /* CHECK CACHE
          *   user wants: /usr/local/
@@ -115,17 +115,17 @@ bool ScanManager::start(const QUrl &url)
             Folder *d = folder;
 
             while (!split.isEmpty() && d != NULL) { //if NULL we have got lost so abort!!
-                Iterator<File> jt = d->iterator();
-
-                const Link<File> *end = d->end();
                 if (split.first().isEmpty()) { //found the dir
                     break;
                 }
                 QString s = split.first() % QLatin1Char('/'); // % is the string concatenation operator for QStringBuilder
 
-                for (d = 0; jt != end; ++jt) {
-                    if (s == (*jt)->name()) {
-                        d = (Folder*)*jt;
+                QListIterator<File*> it(d->files);
+                d = nullptr;
+                while (it.hasNext()) {
+                    File *subfolder = it.next();
+                    if (s == subfolder->name()) {
+                        d = (Folder*)subfolder;
                         break;
                     }
                 }

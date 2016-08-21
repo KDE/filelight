@@ -30,198 +30,10 @@
 
 #include <stdlib.h>
 
-//TODO these are pointlessly general purpose now, make them incredibly specific
-
 typedef quint64 FileSize;
 typedef quint64 Dirsize;  //**** currently unused
 
-template <class T> class Iterator;
-template <class T> class ConstIterator;
-template <class T> class Chain;
-
-template <class T>
-class Link
-{
-public:
-    Link(T* const t) : prev(this), next(this), data(t) {}
-    Link() : prev(this), next(this), data(0) {}
-
-//TODO unlinking is slow and you don't use it very much in this context.
-//  ** Perhaps you can make a faster deletion system that doesn't bother tidying up first
-//  ** and then you MUST call some kind of detach() function when you remove elements otherwise
-    ~Link() {
-        delete data;
-        unlink();
-    }
-
-    friend class Iterator<T>;
-    friend class ConstIterator<T>;
-    friend class Chain<T>;
-
-private:
-    void unlink() {
-        prev->next = next;
-        next->prev = prev;
-        prev = next = this;
-    }
-
-    Link<T>* prev;
-    Link<T>* next;
-
-    T* data; //ensure only iterators have access to this
-};
-
-
-template <class T>
-class Iterator
-{
-public:
-    Iterator() = delete;
-
-    Iterator(Link<T> *p) : link(p) { }
-
-    bool operator==(const Iterator<T>& it) const {
-        return link == it.link;
-    }
-    bool operator!=(const Iterator<T>& it) const {
-        return link != it.link;
-    }
-    bool operator!=(const Link<T> *p) const {
-        return p != link;
-    }
-
-    //here we have a choice, really I should make two classes one const the other not
-    const T* operator*() const {
-        return link->data;
-    }
-    T* operator*() {
-        return link->data;
-    }
-
-    Iterator<T>& operator++() {
-        link = link->next;    //**** does it waste time returning in places where we don't use the retval?
-        return *this;
-    }
-
-    bool isNull() const {
-        return (link == 0);    //REMOVE WITH ABOVE REMOVAL you don't want null iterators to be possible
-    }
-
-    void transferTo(Chain<T> &chain)
-    {
-        chain.append(remove());
-    }
-
-    T* remove() //remove from list, delete Link, data is returned NOT deleted
-
-    {
-        T* const d = link->data;
-        Link<T>* const p = link->prev;
-
-        link->data = 0;
-        delete link;
-        link = p; //make iterator point to previous element, YOU must check this points to an element
-
-        return d;
-    }
-
-private:
-    Link<T> *link;
-};
-
-
-template <class T>
-class ConstIterator
-{
-public:
-    ConstIterator(Link<T> *p) : link(p) { }
-
-    bool operator==(const Iterator<T>& it) const {
-        return link == it.link;
-    }
-    bool operator!=(const Iterator<T>& it) const {
-        return link != it.link;
-    }
-    bool operator!=(const Link<T> *p) const {
-        return p != link;
-    }
-
-    const T* operator*() const {
-        return link->data;
-    }
-
-    ConstIterator<T>& operator++() {
-        link = link->next;
-        return *this;
-    }
-
-private:
-    const Link<T> *link;
-};
-
-
-template <class T>
-class Chain
-{
-public:
-    virtual ~Chain() {
-        empty();
-    }
-
-    void append(T* const data)
-    {
-        Link<T>* const link = new Link<T>(data);
-
-        link->prev = head.prev;
-        link->next = &head;
-
-        head.prev->next = link;
-        head.prev = link;
-    }
-
-    void transferTo(Chain &c)
-    {
-        if (isEmpty()) return;
-
-        Link<T>* const first = head.next;
-        Link<T>* const last  = head.prev;
-
-        head.unlink();
-
-        first->prev = c.head.prev;
-        c.head.prev->next = first;
-
-        last->next = &c.head;
-        c.head.prev = last;
-    }
-
-    void empty() {
-        while (head.next != &head) {
-            delete head.next;
-        }
-    }
-
-    Iterator<T>      iterator()      const {
-        return Iterator<T>(head.next);
-    }
-    ConstIterator<T> constIterator() const {
-        return ConstIterator<T>(head.next);
-    }
-    const Link<T>   *end()           const {
-        return &head;
-    }
-    bool             isEmpty()       const {
-        return head.next == &head;
-    }
-
-private:
-    Link<T> head;
-    void operator=(const Chain&);
-};
-
-
 class Folder;
-class QString;
 
 class File
 {
@@ -269,7 +81,7 @@ private:
 };
 
 
-class Folder : public Chain<File>, public File
+class Folder : public File
 {
 public:
     Folder(const char *name) : File(name, 0), m_children(0) {} //DON'T pass the full path!
@@ -302,20 +114,21 @@ public:
     
     /// removes a file
     void remove(const File *f) {
-        for (Iterator<File> it = iterator(); it != end(); ++it)
-            if (f == (*it))
-                it.remove();
+        files.removeAll(const_cast<File*>(f));
         
-        for (Folder *d = this; d; d = d->parent())
+        for (Folder *d = this; d; d = d->parent()) {
             d->m_size -= f->size();
+        }
     }
+
+    QList<File *> files;
 
 private:
     void append(File *p)
     {
         m_children++;
         m_size += p->size();
-        Chain<File>::append(p);
+        files.append(p);
     }
 
     uint m_children;

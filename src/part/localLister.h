@@ -37,7 +37,7 @@ class LocalLister : public QThread
     Q_OBJECT
 
 public:
-    LocalLister(const QString &path, Chain<Folder> *cachedTrees, ScanManager *parent);
+    LocalLister(const QString &path, QList<Folder*> *cachedTrees, ScanManager *parent);
 
     static void readMounts();
 
@@ -46,7 +46,7 @@ signals:
 
 private:
     QString m_path;
-    Chain<Folder> *m_trees;
+    QList<Folder*> *m_trees;
     ScanManager *m_parent;
 
 private:

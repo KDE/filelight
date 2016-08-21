@@ -139,9 +139,9 @@ void RadialMap::Map::findVisibleDepth(const Folder *dir, uint currentDepth)
     if (m_visibleDepth < currentDepth) m_visibleDepth = currentDepth;
     if (m_visibleDepth >= stopDepth) return;
 
-    for (ConstIterator<File> it = dir->constIterator(); it != dir->end(); ++it) {
-        if ((*it)->isFolder() && (*it)->size() > m_minSize) {
-            findVisibleDepth((Folder *)*it, currentDepth + 1); //if no files greater than min size the depth is still recorded
+    for (File *file : dir->files) {
+        if (file->isFolder() && file->size() > m_minSize) {
+            findVisibleDepth((Folder *)file, currentDepth + 1); //if no files greater than min size the depth is still recorded
         }
     }
 }
@@ -157,25 +157,25 @@ bool RadialMap::Map::build(const Folder * const dir, const uint depth, uint a_st
     FileSize hiddenSize = 0;
     uint hiddenFileCount = 0;
 
-    for (ConstIterator<File> it = dir->constIterator(); it != dir->end(); ++it) {
-        if ((*it)->size() < m_limits[depth] * 6) { // limit is half a degree? we want at least 3 degrees
-            hiddenSize += (*it)->size();
-            if ((*it)->isFolder()) { //**** considered virtual, but dir wouldn't count itself!
-                hiddenFileCount += static_cast<const Folder*>(*it)->children(); //need to add one to count the dir as well
+    for (File *file : dir->files) {
+        if (file->size() < m_limits[depth] * 6) { // limit is half a degree? we want at least 3 degrees
+            hiddenSize += file->size();
+            if (file->isFolder()) { //**** considered virtual, but dir wouldn't count itself!
+                hiddenFileCount += static_cast<const Folder*>(file)->children(); //need to add one to count the dir as well
             }
             ++hiddenFileCount;
             continue;
         }
 
-        unsigned int a_len = (unsigned int)(5760 * ((double)(*it)->size() / (double)m_root->size()));
+        unsigned int a_len = (unsigned int)(5760 * ((double)file->size() / (double)m_root->size()));
 
-        Segment *s = new Segment(*it, a_start, a_len);
+        Segment *s = new Segment(file, a_start, a_len);
         m_signature[depth].append(s);
 
-        if ((*it)->isFolder()) {
+        if (file->isFolder()) {
             if (depth != m_visibleDepth) {
                 //recurse
-                s->m_hasHiddenChildren = build((Folder*)*it, depth + 1, a_start, a_start + a_len);
+                s->m_hasHiddenChildren = build((Folder*)file, depth + 1, a_start, a_start + a_len);
             } else {
                 s->m_hasHiddenChildren = true;
             }
