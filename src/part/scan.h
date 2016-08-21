@@ -25,6 +25,7 @@
 #include <QString>
 #include <QObject>
 #include <QMutex>
+#include <QList>
 
 class QThread;
 class Folder;
@@ -70,8 +71,7 @@ private:
 
     QMutex m_mutex;
     LocalLister *m_thread;
-    Chain<Folder> *m_cache;
-
+    QList<Folder*> m_cache;
 };
 }
 

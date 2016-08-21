@@ -39,7 +39,6 @@ ScanManager::ScanManager(QObject *parent)
         , m_files(0)
         , m_mutex()
         , m_thread(0)
-        , m_cache(new Chain<Folder>)
 {
     Filelight::LocalLister::readMounts();
     connect(this, &ScanManager::branchCacheHit, this, &ScanManager::foundCached, Qt::QueuedConnection);
@@ -52,8 +51,6 @@ ScanManager::~ScanManager()
         m_abort = true;
         m_thread->wait();
     }
-
-    delete m_cache;
 
     //RemoteListers are QObjects and get automatically deleted
 }
@@ -104,8 +101,10 @@ bool ScanManager::start(const QUrl &url)
          *   cached:     /usr/local/, /usr/include/
          */
 
-    for (Iterator<Folder> it = m_cache->iterator(); it != m_cache->end(); ++it) {
-        QString cachePath = (*it)->name();
+    QMutableListIterator<Folder*> it(m_cache);
+    while (it.hasNext()) {
+        Folder *folder = it.next();
+        QString cachePath = folder->name();
 
         if (path.startsWith(cachePath)) { //then whole tree already scanned
             //find a pointer to the requested branch
@@ -113,7 +112,7 @@ bool ScanManager::start(const QUrl &url)
             qDebug() << "Cache-(a)hit: " << cachePath;
 
             QVector<QStringRef> split = path.midRef(cachePath.length()).split(QLatin1Char('/'));
-            Folder *d = *it;
+            Folder *d = folder;
 
             while (!split.isEmpty() && d != NULL) { //if NULL we have got lost so abort!!
                 Iterator<File> jt = d->iterator();
@@ -146,12 +145,14 @@ bool ScanManager::start(const QUrl &url)
             } else {
                 //something went wrong, we couldn't find the folder we were expecting
                 qWarning() << "Didn't find " << path << " in the cache!\n";
-                delete it.remove(); //safest to get rid of it
+                it.remove();
+                delete folder;
                 break; //do a full scan
             }
         }  else if (cachePath.startsWith(path)) { //then part of the requested tree is already scanned
             qDebug() << "Cache-(b)hit: " << cachePath;
-            it.transferTo(*trees);
+            it.remove();
+            trees->append(folder);
         }
     }
 
@@ -183,7 +184,8 @@ void ScanManager::emptyCache()
 
     emit aboutToEmptyCache();
 
-    m_cache->empty();
+    qDeleteAll(m_cache);
+    m_cache.clear();
 }
 
 void ScanManager::cacheTree(Folder *tree)
@@ -203,9 +205,10 @@ void ScanManager::cacheTree(Folder *tree)
     if (tree) {
         //we don't cache foreign stuff
         //we don't recache stuff (thus only type 1000 events)
-        m_cache->append(tree);
+        m_cache.append(tree);
     } else { //scan failed
-        m_cache->empty(); //FIXME this is safe but annoying
+        qDeleteAll(m_cache);
+        m_cache.clear();
     }
 
     QGuiApplication::restoreOverrideCursor();
