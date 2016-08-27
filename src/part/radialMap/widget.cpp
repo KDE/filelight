@@ -78,6 +78,9 @@ void RadialMap::Widget::invalidate()
         //disable mouse tracking
         setMouseTracking(false);
 
+        // Get this before reseting m_tree below
+        QUrl invalidatedUrl(url());
+
         //ensure this class won't think we have a map still
         m_tree  = 0;
         m_focus = 0;
@@ -91,7 +94,7 @@ void RadialMap::Widget::invalidate()
         update();
 
         //tell rest of Filelight
-        emit invalidated(url());
+        emit invalidated(invalidatedUrl);
     }
 }
 
