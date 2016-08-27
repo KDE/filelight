@@ -50,6 +50,8 @@ RadialMap::Widget::Widget(QWidget *parent, bool isSummary)
 
     connect(this, &Widget::folderCreated, this, &Widget::sendFakeMouseEvent);
     connect(&m_timer, &QTimer::timeout, this, &Widget::resizeTimeout);
+    m_tooltip.setFrameShape(QFrame::StyledPanel);
+    m_tooltip.setWindowFlags(Qt::ToolTip | Qt::WindowTransparentForInput);
 }
 
 RadialMap::Widget::~Widget()

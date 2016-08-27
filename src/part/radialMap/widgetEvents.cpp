@@ -144,18 +144,20 @@ void RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
 
     if (m_focus)
     {
+        m_tooltip.move(e->globalX() + 20, e->globalY() + 20);
         if (m_focus != oldFocus) //if not same as last time
         {
             setCursor(Qt::PointingHandCursor);
 
+
             QString string = m_focus->file()->fullPath(m_tree)
                 + QLatin1Char('\n')
-                + m_focus->file()->humanReadableSize()
-                + QLatin1Char('\n');
+                + m_focus->file()->humanReadableSize();
                 
             if (m_focus->file()->isFolder()) {
                 int files = static_cast<const Folder*>(m_focus->file())->children();
                 const uint percent = uint((100 * files) / (double)m_tree->children());
+                string += QLatin1Char('\n');
                 string += i18np("File: %1", "Files: %1", files);
 
                 
@@ -167,7 +169,21 @@ void RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
                 string += i18n("\nClick to go up to parent directory");
             }
             
-            QToolTip::showText(e->globalPos(), string, this);
+            // Calculate a semi-sane size for the tooltip
+            QFontMetrics fontMetrics(font());
+            int tooltipWidth = 0;
+            int tooltipHeight = 0;
+            for (const QString &part : string.split(QLatin1Char('\n'))) {
+                tooltipHeight += fontMetrics.height();
+                tooltipWidth = qMax(tooltipWidth, fontMetrics.width(part));
+            }
+            // Limit it to the window size, probably should find something better
+            tooltipWidth = qMin(tooltipWidth, window()->width());
+            tooltipWidth += 10;
+            tooltipHeight += 10;
+            m_tooltip.resize(tooltipWidth, tooltipHeight);
+            m_tooltip.setText(string);
+            m_tooltip.show();
 
             emit mouseHover(m_focus->file()->fullPath());
             update();
@@ -175,6 +191,7 @@ void RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
     }
     else if (oldFocus && oldFocus->file() != m_tree)
     {
+        m_tooltip.hide();
         unsetCursor();
         update();
 
@@ -189,6 +206,11 @@ void RadialMap::Widget::enterEvent(QEvent *)
     setCursor(Qt::PointingHandCursor);
     emit mouseHover(m_focus->file()->fullPath());
     update();
+}
+
+void RadialMap::Widget::leaveEvent(QEvent *)
+{
+    m_tooltip.hide();
 }
 
 void RadialMap::Widget::mousePressEvent(QMouseEvent *e)

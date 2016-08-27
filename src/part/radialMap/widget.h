@@ -25,6 +25,7 @@
 #include <KJob>
 #include <QUrl>
 
+#include <QLabel>
 #include <QDragEnterEvent>
 #include <QDropEvent>
 #include <QMouseEvent>
@@ -95,6 +96,7 @@ protected:
     virtual void paintEvent(QPaintEvent*);
     virtual void resizeEvent(QResizeEvent*);
     virtual void enterEvent(QEvent*);
+    virtual void leaveEvent(QEvent*);
 
 protected:
     const Segment *segmentAt(QPoint&) const; //FIXME const reference for a library others can use
@@ -116,6 +118,7 @@ private:
     Segment          *m_rootSegment;
     const bool       m_isSummary;
     const Segment    *m_toBeDeleted;
+    QLabel           m_tooltip;
 };
 }
 
