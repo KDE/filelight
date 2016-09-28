@@ -31,19 +31,6 @@
 #include <KLocalizedString>
 #include <Kdelibs4ConfigMigrator>
 
-static KAboutData about(
-    QStringLiteral(APP_NAME),
-    i18n(APP_PRETTYNAME),
-    QStringLiteral(APP_VERSION),
-    i18n("Graphical disk-usage information"),
-    KAboutLicense::GPL,
-    i18n("(C) 2006 Max Howell\n"
-         "(C) 2008-2014 Martin Sandsmark"),
-    QString(),
-    QStringLiteral("http://utils.kde.org/projects/filelight")
-);
-
-
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
@@ -57,6 +44,17 @@ int main(int argc, char *argv[])
 
     using Filelight::MainWindow;
 
+    KAboutData about(
+        QStringLiteral(APP_NAME),
+        i18n(APP_PRETTYNAME),
+        QStringLiteral(APP_VERSION),
+        i18n("Graphical disk-usage information"),
+        KAboutLicense::GPL,
+        i18n("(C) 2006 Max Howell\n"
+             "(C) 2008-2014 Martin Sandsmark"),
+        QString(),
+        QStringLiteral("http://utils.kde.org/projects/filelight")
+    );
     about.addAuthor(i18n("Martin Sandsmark"), i18n("Maintainer"), QStringLiteral("martin.sandsmark@kde.org"), QStringLiteral("http://iskrembilen.com/"));
     about.addAuthor(i18n("Max Howell"),       i18n("Original author"), QStringLiteral("max.howell@methylblue.com"), QStringLiteral("http://www.methylblue.com/"));
     about.addCredit(i18n("Lukas Appelhans"),  i18n("Help and support"));
