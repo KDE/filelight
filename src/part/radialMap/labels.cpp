@@ -22,6 +22,7 @@
 #include <QFont>
 #include <QFontMetrics>
 #include <QPainter>
+#include <QVector>
 
 #include "part/Config.h"
 #include "part/fileTree.h"
@@ -36,18 +37,18 @@ namespace RadialMap
 class Label
 {
 public:
-    Label(const RadialMap::Segment *s, int l) : segment(s), lvl(l), angle(segment->start() + (segment->length() / 2)) { }
+    Label(const RadialMap::Segment *s, int l) : segment(s), level(l), angle(segment->start() + (segment->length() / 2)) { }
 
     bool tooClose(const int otherAngle) const {
         return (angle > otherAngle - LABEL_ANGLE_MARGIN && angle < otherAngle + LABEL_ANGLE_MARGIN);
     }
 
     const RadialMap::Segment *segment;
-    const unsigned int lvl;
+    const unsigned int level;
     const int angle;
 
-    int x1, y1, x2, y2, x3;
-    int tx, ty, tw, th;
+    int targetX, targetY, middleX, startY, startX;
+    int textX, textY, tw, th;
 
     QString qs;
 };
@@ -62,24 +63,23 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
 
     //1. Create list of labels  sorted in the order they will be rendered
 
-    if (m_focus && m_focus->file() != m_tree) //separate behavior for selected vs unselected segments
-    {
+    if (m_focus && m_focus->file() != m_tree) { //separate behavior for selected vs unselected segments
         //don't bother with files
-        if (m_focus && m_focus->file() && !m_focus->file()->isFolder())
+        if (m_focus && m_focus->file() && !m_focus->file()->isFolder()) {
             return;
+        }
 
         //find the range of levels we will be potentially drawing labels for
         //startLevel is the level above whatever m_focus is in
-        for (const Folder *p = (const Folder*)m_focus->file(); p != m_tree; ++startLevel)
+        for (const Folder *p = (const Folder*)m_focus->file(); p != m_tree; ++startLevel) {
             p = p->parent();
+        }
 
         //range=2 means 2 levels to draw labels for
 
-        unsigned int start, end, minAngle;
-
-        start = m_focus->start();
-        end = m_focus->end();  //boundary angles
-        minAngle = int(m_focus->length() * LABEL_MIN_ANGLE_FACTOR);
+        const uint start = m_focus->start();
+        const uint end = m_focus->end();  //boundary angles
+        const uint minAngle = int(m_focus->length() * LABEL_MIN_ANGLE_FACTOR);
 
 
         //**** Levels should be on a scale starting with 0
@@ -95,7 +95,6 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
             }
         }
     } else {
-
         for (Segment *segment : *m_map.m_signature) {
             if (segment->length() > 288) {
                 list.append(new Label(segment, 0));
@@ -112,8 +111,9 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
         int angle2 = (item2)->angle + 1440;
 
         // Also sort by level
-        if (angle1 == angle2)
-                return (item1->lvl > item2->lvl);
+        if (angle1 == angle2) {
+                return (item1->level > item2->level);
+        }
 
         if (angle1 > 5760) angle1 -= 5760;
         if (angle2 > 5760) angle2 -= 5760;
@@ -126,12 +126,12 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
     //   if so, remove it (the least significant labels, since we sort by level too).
 
     int pos = 0;
-    while (pos < list.size() - 1)
-    {
-        if (list[pos]->tooClose(list[pos+1]->angle))
+    while (pos < list.size() - 1) {
+        if (list[pos]->tooClose(list[pos+1]->angle)) {
             delete list.takeAt(pos+1);
-        else
+        } else {
             ++pos;
+        }
     }
 
     //used in next two steps
@@ -149,19 +149,15 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
     
     QVector<Label*>::iterator it;
 
-    do
-    {
+    do {
         //3. Calculate font sizes
 
         {
             //determine current range of levels to draw for
             uint range = 0;
 
-            for (it = list.begin(); it != list.end(); ++it)
-            {
-                uint lvl = (*it)->lvl;
-                if (lvl > range)
-                    range = lvl;
+            for (Label *label : list) {
+                range = qMax(range, label->level);
 
                 //**** better way would just be to assign if nothing is range
             }
@@ -170,129 +166,125 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
 
             varySizes = Config::varyLabelFontSizes && (range != 0);
 
-            if (varySizes)
-            {
+            if (varySizes) {
                 //create an array of font sizes for various levels
                 //will exceed normal font pitch automatically if necessary, but not minPitch
                 //**** this needs to be checked lots
 
                 //**** what if this is negative (min size gtr than default size)
                 uint step = (paint.font().pointSize() - Config::minFontPitch) / range;
-                if (step == 0)
+                if (step == 0) {
                     step = 1;
+                }
 
-                for (uint x = range + startLevel, y = Config::minFontPitch; x >= startLevel; y += step, --x)
+                for (uint x = range + startLevel, y = Config::minFontPitch; x >= startLevel; y += step, --x) {
                     sizes[x] = y;
+                }
             }
         }
 
         //4. determine label co-ordinates
 
-        int x1, y1, x2, y2, x3, tx, ty; //coords
-        double sinra, cosra, ra;  //angles
+        const int cx = m_map.width()  / 2 + m_offset.x();  //centre relative to canvas
+        const int cy = m_map.height() / 2 + m_offset.y();
 
-        int cx = m_map.width()  / 2 + m_offset.x();  //centre relative to canvas
-        int cy = m_map.height() / 2 + m_offset.y();
-
-        int spacer, preSpacer = int(m_map.m_ringBreadth * 0.5) + m_map.m_innerRadius;
-        int fullStrutLength = (m_map.width() - m_map.MAP_2MARGIN) / 2 + LABEL_MAP_SPACER; //full length of a strut from map center
+        const int preSpacer = int(m_map.m_ringBreadth * 0.5) + m_map.m_innerRadius;
+        const int fullStrutLength = (m_map.width() - m_map.MAP_2MARGIN) / 2 + LABEL_MAP_SPACER; //full length of a strut from map center
 
         int prevLeftY  = 0;
         int prevRightY = height();
 
-        bool rightSide;
-
         QFont font;
 
-        for (it = list.begin(); it != list.end(); ++it)
-        {
+        for (it = list.begin(); it != list.end(); ++it) {
+            Label *label = *it;
             //** bear in mind that text is drawn with QPoint param as BOTTOM left corner of text box
-            QString string = (*it)->segment->file()->name();
-            if (varySizes)
-                font.setPointSize(sizes[(*it)->lvl]);
+            QString string = label->segment->file()->name();
+            if (varySizes) {
+                font.setPointSize(sizes[label->level]);
+            }
             QFontMetrics fontMetrics(font);
-            int fontHeight  = fontMetrics.height(); //used to ensure label texts don't overlap
-            int lineSpacing = fontHeight / 4;
+            const int fontHeight  = fontMetrics.height() + LABEL_TEXT_VMARGIN; //used to ensure label texts don't overlap
+            const int lineSpacing = fontHeight / 4;
 
-            fontHeight += LABEL_TEXT_VMARGIN;
+            const bool rightSide = (label->angle < 1440 || label->angle > 4320);
 
-            rightSide = ((*it)->angle < 1440 || (*it)->angle > 4320);
-
-            ra = M_PI/2880 * (*it)->angle; //convert to radians
+            double sinra, cosra;
+            const double ra = M_PI/2880 * label->angle; //convert to radians
             sincos(ra, &sinra, &cosra);
 
 
-            spacer = preSpacer + m_map.m_ringBreadth * (*it)->lvl;
+            const int spacer = preSpacer + m_map.m_ringBreadth * label->level;
 
-            x1 = cx + (int)(cosra * spacer);
-            y1 = cy - (int)(sinra * spacer);
-            y2 = y1 - (int)(sinra * (fullStrutLength - spacer));
+            int targetX = cx + cosra * spacer;
+            int targetY = cy - sinra * spacer;
+            int startY = targetY - sinra * (fullStrutLength - spacer);
 
             if (rightSide) { //righthand side, going upwards
-                if (y2 > prevRightY /*- fmh*/) //then it is too low, needs to be drawn higher
-                    y2 = prevRightY /*- fmh*/;
+                if (startY > prevRightY /*- fmh*/) { //then it is too low, needs to be drawn higher
+                    startY = prevRightY /*- fmh*/;
+                }
+            } else {//lefthand side, going downwards
+                if (startY < prevLeftY/* + fmh*/) { //then we're too high, need to be drawn lower
+                    startY = prevLeftY /*+ fmh*/;
+                }
             }
-            else //lefthand side, going downwards
-                if (y2 < prevLeftY/* + fmh*/) //then we're too high, need to be drawn lower
-                    y2 = prevLeftY /*+ fmh*/;
 
-            x2 = x1 - int(double(y2 - y1) / tan(ra));
-            ty = y2 + lineSpacing;
+            int middleX = targetX - (startY - targetY) / tan(ra);
+            int textY = startY + lineSpacing;
 
 
+            int startX, textX;
             if (rightSide) {
-                if (x2 > width() || ty < fontHeight || x2 < x1) {
+                if (middleX > width() || textY < fontHeight || middleX < targetX) {
                     //skip this strut
                     //**** don't duplicate this code
                     list.erase(it); //will delete the label and set it to list.current() which _should_ be the next ptr
                     break;
                 }
 
-                prevRightY = ty - fontHeight - lineSpacing; //must be after above's "continue"
+                prevRightY = textY - fontHeight - lineSpacing; //must be after above's "continue"
 
-                string = fontMetrics.elidedText(string, Qt::ElideMiddle, width() - x2);
+                string = fontMetrics.elidedText(string, Qt::ElideMiddle, width() - middleX);
 
-                x3 = width() - fontMetrics.width(string)
+                startX = width() - fontMetrics.width(string)
                      - LABEL_HMARGIN //outer margin
                      - LABEL_TEXT_HMARGIN //margin between strut and text
-                     //- ((*it)->lvl - startLevel) * LABEL_HMARGIN; //indentation
+                     //- (label->level - startLevel) * LABEL_HMARGIN; //indentation
                      ;
-                if (x3 < x2) x3 = x2;
-                tx = x3 + LABEL_TEXT_HMARGIN;
-
+                startX = qMax(middleX, startX);
+                textX = startX + LABEL_TEXT_HMARGIN;
             } else {
-
-                if (x2 < 0 || ty > height() || x2 > x1)
-                {
+                if (middleX < 0 || textY > height() || middleX > targetX) {
                     //skip this strut
                     list.erase(it); //will delete the label and set it to list.current() which _should_ be the next ptr
                     break;
                 }
 
-                prevLeftY = ty + fontHeight - lineSpacing;
+                prevLeftY = textY + fontHeight - lineSpacing;
 
-                string = fontMetrics.elidedText(string, Qt::ElideMiddle, x2);
+                string = fontMetrics.elidedText(string, Qt::ElideMiddle, middleX);
 
                 //**** needs a little tweaking:
 
-                tx = fontMetrics.width(string) + LABEL_HMARGIN/* + ((*it)->lvl - startLevel) * LABEL_HMARGIN*/;
-                if (tx > x2) { //text is too long
-                    tx = LABEL_HMARGIN + x2 - tx; //some text will be lost from sight
-                    x3 = x2; //no text margin (right side of text here)
+                textX = fontMetrics.width(string) + LABEL_HMARGIN/* + ((*it)->level - startLevel) * LABEL_HMARGIN*/;
+                if (textX > middleX) { //text is too long
+                    textX = LABEL_HMARGIN + middleX - textX; //some text will be lost from sight
+                    startX = middleX; //no text margin (right side of text here)
                 } else {
-                    x3 = tx + LABEL_TEXT_HMARGIN;
-                    tx = LABEL_HMARGIN /*+ ((*it)->lvl - startLevel) * LABEL_HMARGIN*/;
+                    startX = textX + LABEL_TEXT_HMARGIN;
+                    textX = LABEL_HMARGIN /*+ ((*it)->level - startLevel) * LABEL_HMARGIN*/;
                 }
             }
 
-            (*it)->x1 = x1;
-            (*it)->y1 = y1;
-            (*it)->x2 = x2;
-            (*it)->y2 = y2;
-            (*it)->x3 = x3;
-            (*it)->tx = tx;
-            (*it)->ty = ty;
-            (*it)->qs = string;
+            label->targetX = targetX;
+            label->targetY = targetY;
+            label->middleX = middleX;
+            label->startY = startY;
+            label->startX = startX;
+            label->textX = textX;
+            label->textY = textY;
+            label->qs = string;
         }
 
         //if an element is deleted at this stage, we need to do this whole
@@ -305,20 +297,20 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
 
     //5. Render labels
 
-    foreach (Label *label, list) {
+    QFont font = paint.font();
+    for (Label *label : list) {
         if (varySizes) {
             //**** how much overhead in making new QFont each time?
             //     (implicate sharing remember)
-            QFont font = paint.font();
-            font.setPointSize(sizes[label->lvl]);
+            font.setPointSize(sizes[label->level]);
             paint.setFont(font);
         }
 
-        paint.drawEllipse(label->x1 - 3, label->y1 - 3, 6, 6); //**** CPU intensive! better to use a pixmap
-        paint.drawLine(label->x1,  label->y1, label->x2, label->y2);
-        paint.drawLine(label->x2, label->y2, label->x3, label->y2);
+        paint.drawEllipse(label->targetX - 3, label->targetY - 3, 6, 6); //**** CPU intensive! better to use a pixmap
+        paint.drawLine(label->targetX,  label->targetY, label->middleX, label->startY);
+        paint.drawLine(label->middleX, label->startY, label->startX, label->startY);
 
-        paint.drawText(label->tx, label->ty, label->qs);
+        paint.drawText(label->textX, label->textY, label->qs);
     }
 
     qDeleteAll(list);
