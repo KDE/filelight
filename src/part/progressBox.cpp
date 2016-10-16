@@ -40,6 +40,7 @@
 ProgressBox::ProgressBox(QWidget *parent, Filelight::Part *part, Filelight::ScanManager *scanManager)
         : QWidget(parent)
         , m_manager(scanManager)
+        , m_colorScheme(QPalette::Active, KColorScheme::Tooltip)
 {
     hide();
 
@@ -50,7 +51,7 @@ ProgressBox::ProgressBox(QWidget *parent, Filelight::Part *part, Filelight::Scan
 
     setText(999999);
     setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-    setMinimumSize(200, 200);
+    setMinimumSize(300, 300);
 
     connect(&m_timer, &QTimer::timeout, this, &ProgressBox::report);
     connect(part, &Filelight::Part::started, this, &ProgressBox::start);
@@ -96,21 +97,22 @@ ProgressBox::setText(int files)
 }
 
 #define PIECES_NUM 4
-static const float angleFactor[] = { -0.75, 0.5, 1.0, -0.3 };
-static const int length[] = { 30, 40, 50, 60 };
-static const int aLength[] = { 300, 2000, 200, 2000 };
+static const float angleFactor[] = { -0.25, 0.9, -1.0, 0.3 };
+static const float length[] = { 1.0, 1.0, 1.0, 1.0 };
+static const int aLength[] = { 2000, 2000, 2000, 2000 };
 
 void ProgressBox::paintEvent(QPaintEvent*)
 {
-    KColorScheme view = KColorScheme(QPalette::Active, KColorScheme::Tooltip);
 
     QPainter paint(this);
+    paint.setPen(Qt::transparent);
     paint.setRenderHint(QPainter::Antialiasing);
     static int tick = 0;
     tick+=16;
 
     for (int i=0; i<PIECES_NUM; i++) {
-        const QRect rect(length[i]/2, length[i]/2, 200- length[i], 200-length[i]);
+        const int size = qMin(width(), height()) * length[i];
+        const QRect rect(width() / 2 - size / 2, height() / 2 - size / 2, size, size);
         int angle = angleFactor[i] + tick*angleFactor[i];
         QRadialGradient gradient(rect.center(), sin(angle/160.0f) * 100);
         gradient.setColorAt(0, QColor::fromHsv(abs(angle/16) % 360 , 160, 255));
@@ -120,12 +122,11 @@ void ProgressBox::paintEvent(QPaintEvent*)
         paint.drawPie(QRect(rect), angle, aLength[i]);
     }
 
-    paint.setBrush(view.background(KColorScheme::ActiveBackground));
-    paint.setPen(view.foreground().color());
     paint.translate(0.5, 0.5);
-    QRectF textRect(100 - m_textWidth/2 - 5, 100 - m_textHeight - 5, m_textWidth + 10, m_textHeight + 10);
-    paint.drawRoundedRect(textRect, 5, 5);
+    QRectF textRect(width() / 2 - m_textWidth/2 - 5, width() / 2 - m_textHeight - 5, m_textWidth + 10, m_textHeight + 10);
+    paint.fillRect(textRect, m_colorScheme.background(KColorScheme::ActiveBackground).color());
     paint.translate(-0.5, -0.5);
+    paint.setPen(m_colorScheme.foreground().color());
     paint.drawText(textRect, Qt::AlignCenter, m_text);
 }
 

@@ -24,6 +24,7 @@
 
 #include <QLabel>
 #include <QTimer>
+#include <KColorScheme>
 
 namespace Filelight {
 class ScanManager;
@@ -54,6 +55,7 @@ private:
     QString m_text;
     int m_textWidth;
     int m_textHeight;
+    KColorScheme m_colorScheme;
 };
 
 #endif
