@@ -185,8 +185,6 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
 
         //4. determine label co-ordinates
 
-        const int cx = m_map.width()  / 2 + m_offset.x();  //centre relative to canvas
-        const int cy = m_map.height() / 2 + m_offset.y();
 
         const int preSpacer = int(m_map.m_ringBreadth * 0.5) + m_map.m_innerRadius;
         const int fullStrutLength = (m_map.width() - m_map.MAP_2MARGIN) / 2 + LABEL_MAP_SPACER; //full length of a strut from map center
@@ -204,6 +202,8 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
                 font.setPointSize(sizes[label->level]);
             }
             QFontMetrics fontMetrics(font);
+            const int minTextWidth = fontMetrics.width(QString::fromLatin1("M...")) + LABEL_TEXT_HMARGIN; // Fully elided string
+
             const int fontHeight  = fontMetrics.height() + LABEL_TEXT_VMARGIN; //used to ensure label texts don't overlap
             const int lineSpacing = fontHeight / 4;
 
@@ -216,8 +216,11 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
 
             const int spacer = preSpacer + m_map.m_ringBreadth * label->level;
 
-            int targetX = cx + cosra * spacer;
-            int targetY = cy - sinra * spacer;
+            const int centerX = m_map.width()  / 2 + m_offset.x();  //centre relative to canvas
+            const int centerY = m_map.height() / 2 + m_offset.y();
+            int targetX = centerX + cosra * spacer;
+            int targetY = centerY - sinra * spacer;
+            int startX = targetX + cosra * (fullStrutLength - spacer + m_map.m_ringBreadth / 2);
             int startY = targetY - sinra * (fullStrutLength - spacer);
 
             if (rightSide) { //righthand side, going upwards
@@ -233,10 +236,10 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
             int middleX = targetX - (startY - targetY) / tan(ra);
             int textY = startY + lineSpacing;
 
-
-            int startX, textX;
+            int textX;
+            const int textWidth = fontMetrics.width(string) + LABEL_TEXT_HMARGIN;
             if (rightSide) {
-                if (middleX > width() || textY < fontHeight || middleX < targetX) {
+                if (startX + minTextWidth > width() || textY < fontHeight || middleX < targetX) {
                     //skip this strut
                     //**** don't duplicate this code
                     list.erase(it); //will delete the label and set it to list.current() which _should_ be the next ptr
@@ -245,17 +248,16 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
 
                 prevRightY = textY - fontHeight - lineSpacing; //must be after above's "continue"
 
-                string = fontMetrics.elidedText(string, Qt::ElideMiddle, width() - middleX);
+                if (m_offset.x() + m_map.width() + textWidth < width()) {
+                    startX = m_offset.x() + m_map.width();
+                } else {
+                    startX = qMax(width() - textWidth, startX);
+                    string = fontMetrics.elidedText(string, Qt::ElideMiddle, width() - startX);
+                }
 
-                startX = width() - fontMetrics.width(string)
-                     - LABEL_HMARGIN //outer margin
-                     - LABEL_TEXT_HMARGIN //margin between strut and text
-                     //- (label->level - startLevel) * LABEL_HMARGIN; //indentation
-                     ;
-                startX = qMax(middleX, startX);
                 textX = startX + LABEL_TEXT_HMARGIN;
-            } else {
-                if (middleX < 0 || textY > height() || middleX > targetX) {
+            } else { // left side
+                if (startX - minTextWidth < 0 || textY > height() || middleX > targetX) {
                     //skip this strut
                     list.erase(it); //will delete the label and set it to list.current() which _should_ be the next ptr
                     break;
@@ -263,17 +265,13 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
 
                 prevLeftY = textY + fontHeight - lineSpacing;
 
-                string = fontMetrics.elidedText(string, Qt::ElideMiddle, middleX);
-
-                //**** needs a little tweaking:
-
-                textX = fontMetrics.width(string) + LABEL_HMARGIN/* + ((*it)->level - startLevel) * LABEL_HMARGIN*/;
-                if (textX > middleX) { //text is too long
-                    textX = LABEL_HMARGIN + middleX - textX; //some text will be lost from sight
-                    startX = middleX; //no text margin (right side of text here)
+                if (m_offset.x() - textWidth > 0) {
+                    startX = m_offset.x();
+                    textX = startX - textWidth - LABEL_TEXT_HMARGIN;
                 } else {
-                    startX = textX + LABEL_TEXT_HMARGIN;
-                    textX = LABEL_HMARGIN /*+ ((*it)->level - startLevel) * LABEL_HMARGIN*/;
+                    textX = 0;
+                    string = fontMetrics.elidedText(string, Qt::ElideMiddle, startX);
+                    startX = fontMetrics.width(string) + LABEL_TEXT_HMARGIN;
                 }
             }
 
@@ -297,7 +295,7 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
 
     //5. Render labels
 
-    QFont font = paint.font();
+    QFont font;
     for (Label *label : list) {
         if (varySizes) {
             //**** how much overhead in making new QFont each time?
@@ -306,8 +304,7 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
             paint.setFont(font);
         }
 
-        paint.drawEllipse(label->targetX - 3, label->targetY - 3, 6, 6); //**** CPU intensive! better to use a pixmap
-        paint.drawLine(label->targetX,  label->targetY, label->middleX, label->startY);
+        paint.drawLine(label->targetX, label->targetY, label->middleX, label->startY);
         paint.drawLine(label->middleX, label->startY, label->startX, label->startY);
 
         paint.drawText(label->textX, label->textY, label->qs);
