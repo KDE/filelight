@@ -52,27 +52,7 @@ public:
     QString qs;
 };
 
-int compareAndSortLabels(Label *item1, Label *item2)
-{
-        //you add 1440 to work round the fact that later you want the circle split vertically
-        //and as it is you start at 3 o' clock. It's to do with rightPrevY, stops annoying bug
-
-        int angle1 = (item1)->angle + 1440;
-        int angle2 = (item2)->angle + 1440;
-
-        // Also sort by level
-        if (angle1 == angle2)            
-                return (item1->lvl > item2->lvl);
-
-        if (angle1 > 5760) angle1 -= 5760;
-        if (angle2 > 5760) angle2 -= 5760;
-
-        return (angle1 < angle2);
-
-}
-
-void
-RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
+void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
 {
     //we are a friend of RadialMap::Map
 
@@ -123,7 +103,24 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
             }
         }
     }
-    qSort(list.begin(), list.end(), compareAndSortLabels);
+
+    std::sort(list.begin(), list.end(), [](Label *item1, Label *item2) {
+        //you add 1440 to work round the fact that later you want the circle split vertically
+        //and as it is you start at 3 o' clock. It's to do with rightPrevY, stops annoying bug
+
+        int angle1 = (item1)->angle + 1440;
+        int angle2 = (item2)->angle + 1440;
+
+        // Also sort by level
+        if (angle1 == angle2)
+                return (item1->lvl > item2->lvl);
+
+        if (angle1 > 5760) angle1 -= 5760;
+        if (angle2 > 5760) angle2 -= 5760;
+
+        return (angle1 < angle2);
+
+    });
     
     //2. Check to see if any adjacent labels are too close together
     //   if so, remove it (the least significant labels, since we sort by level too).
