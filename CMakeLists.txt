@@ -40,7 +40,6 @@ find_package(Qt5 5.4 CONFIG REQUIRED Core Widgets)
 find_package(KF5 REQUIRED
     XmlGui # For app
     KIO # For part
-    Solid # For part
     Parts
     DocTools
     I18n

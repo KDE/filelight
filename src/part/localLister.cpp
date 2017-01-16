@@ -25,10 +25,7 @@
 #include "fileTree.h"
 #include "scan.h"
 
-#include <Solid/StorageVolume>
-#include <Solid/StorageAccess>
-#include <Solid/Device>
-
+#include <QStorageInfo>
 #include <QElapsedTimer>
 #include <QGuiApplication> //postEvent()
 #include <QFile>
@@ -233,29 +230,22 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
 
 void LocalLister::readMounts()
 {
-    const Solid::StorageAccess *partition;
-    const Solid::StorageVolume *volume;
-    QStringList remoteFsTypes;
-    remoteFsTypes << QStringLiteral( "smbfs" ) << QStringLiteral( "nfs" ) << QStringLiteral( "afs" ); //TODO: expand
+    static const QSet<QByteArray> remoteFsTypes = { "smbfs", "nfs", "afs" };
 
-    foreach (const Solid::Device &device, Solid::Device::listFromType(Solid::DeviceInterface::StorageAccess))
-    { // Iterate over all the partitions available.
-        if (!device.is<Solid::StorageAccess>()) continue; // It happens.
-        if (!device.is<Solid::StorageVolume>()) continue;
+    for (const QStorageInfo &storage : QStorageInfo::mountedVolumes()) {
+        if (storage.isRoot()) {
+            continue;
+        }
 
-        partition = device.as<Solid::StorageAccess>();
-        if (!partition->isAccessible() || partition->filePath() == QLatin1String( "/" ) || partition->filePath().isEmpty()) continue;
+        QString path = storage.rootPath();
+        if (!path.endsWith(QLatin1Char('/'))) {
+            path += QLatin1Char('/');
+        }
 
-        QString filePath = partition->filePath();
-        if (!filePath.endsWith(QLatin1String("/")))
-            filePath.append(QLatin1String("/"));
-        volume = device.as<Solid::StorageVolume>();
-        if (remoteFsTypes.contains(volume->fsType())) {
-                if (!s_remoteMounts.contains(filePath)) {
-                    s_remoteMounts.append(filePath);
-                }
-        } else if (!s_localMounts.contains(filePath)) {
-            s_localMounts.append(filePath);
+        if (remoteFsTypes.contains(storage.fileSystemType()) && !s_remoteMounts.contains(path)) {
+            s_remoteMounts.append(path);
+        } else if (!s_localMounts.contains(path)) {
+            s_localMounts.append(path);
         }
     }
 

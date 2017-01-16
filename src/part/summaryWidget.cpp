@@ -27,10 +27,7 @@
 #include "radialMap/widget.h"
 
 
-#include <Solid/Device>
-#include <Solid/StorageAccess>
 
-#include <KDiskFreeSpaceInfo>
 #include <KLocalizedString>
 
 #include <QLabel>
@@ -40,6 +37,7 @@
 #include <QList>
 #include <QMouseEvent>
 #include <QLayout>
+#include <QStorageInfo>
 
 namespace Filelight
 {
@@ -47,7 +45,7 @@ namespace Filelight
 struct Disk
 {
     QString mount;
-    QString icon;
+    QString name;
 
     qint64 size;
     qint64 used;
@@ -131,14 +129,16 @@ void SummaryWidget::createDiskMaps()
         info->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
         QHBoxLayout* horizontalLayout = new QHBoxLayout(info);
 
-        // Create the text and icon under the radialMap.
-        text = i18nc("Percent used disk space on the partition", "<b>%1</b> (%2% Used)", disk.mount, disk.used*100/disk.size);
+        // Create the text under the radialMap.
+        if (disk.name.isEmpty()) {
+            text = i18nc("Percent used disk space on the partition", "<b>%1</b><br/>%2% Used", disk.mount, disk.used*100/disk.size);
+        } else {
+            text = i18nc("Percent used disk space on the partition", "<b>%1: %2</b><br/>%3% Used", disk.name, disk.mount, disk.used*100/disk.size);
+        }
 
         QLabel *label = new QLabel(text, this);
+        label->setAlignment(Qt::AlignHCenter);
         horizontalLayout->addWidget(label);
-        QLabel *icon = new QLabel(this);
-        icon->setPixmap(QIcon::fromTheme(disk.icon).pixmap(16,16));
-        horizontalLayout->addWidget(icon);
 
         horizontalLayout->setAlignment(Qt::AlignCenter);
         volumeLayout->addWidget(map);
@@ -159,30 +159,19 @@ void SummaryWidget::createDiskMaps()
 
 DiskList::DiskList()
 {
-    const Solid::StorageAccess *partition;
     QStringList partitions;
 
-    foreach (const Solid::Device &device, Solid::Device::listFromType(Solid::DeviceInterface::StorageAccess))
-    { // Iterate over all the partitions available.
-
-        if (!device.is<Solid::StorageAccess>()) continue; // It happens.
-
-        partition = device.as<Solid::StorageAccess>();
-        if (!partition->isAccessible()) continue;
-
-        if (partitions.contains(partition->filePath())) // check for duplicate partitions from Solid
+    for (const QStorageInfo &storage : QStorageInfo::mountedVolumes()) {
+        if (!storage.isReady() || storage.fileSystemType() == "tmpfs") {
             continue;
-        partitions.append(partition->filePath());
-
-        KDiskFreeSpaceInfo info = KDiskFreeSpaceInfo::freeSpaceInfo(partition->filePath());
-        if (!info.isValid()) continue;
+        }
 
         Disk disk;
-        disk.mount = partition->filePath();
-        disk.icon = device.icon();
-        disk.size = info.size();
-        disk.free = info.available();
-        disk.used = info.used();
+        disk.mount = storage.rootPath();
+        disk.name = storage.name();
+        disk.size = storage.bytesTotal();
+        disk.free = storage.bytesFree();
+        disk.used = disk.size - disk.free;
 
         *this += disk;
     }
