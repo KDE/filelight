@@ -65,7 +65,11 @@ LocalLister::LocalLister(const QString &path, QList<Folder *> *cachedTrees, Scan
 
     foreach(const QString &ignorePath, list) {
         if (ignorePath.startsWith(path)) {
-            m_trees->append(new Folder(ignorePath.toLocal8Bit()));
+            QString folderName = ignorePath;
+            if (!folderName.endsWith(QLatin1Char('/'))) {
+                folderName += QLatin1Char('/');
+            }
+            m_trees->append(new Folder(folderName.toLocal8Bit()));
         }
     }
 }
@@ -196,6 +200,7 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
         {
             Folder *d = 0;
             QByteArray new_dirname = ent->d_name;
+            new_path += '/';
 
             //check to see if we've scanned this section already
 
@@ -204,17 +209,15 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
                 if (new_path == folder->name8Bit())
                 {
                     qDebug() << "Tree pre-completed: " << folder->name();
+                    d = folder;
                     m_trees->removeAll(folder);
                     m_parent->m_files += folder->children();
                     cwd->append(folder, new_dirname);
                 }
             }
 
-            new_dirname += '/';
-            new_path += '/';
-
             if (!d) //then scan
-                if ((d = scan(new_path, new_dirname))) //then scan was successful
+                if ((d = scan(new_path, new_dirname + '/'))) //then scan was successful
                     cwd->append(d);
         }
 
