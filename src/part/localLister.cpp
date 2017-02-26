@@ -68,7 +68,11 @@ LocalLister::LocalLister(const QString &path, QList<Folder *> *cachedTrees, Scan
 
     foreach(const QString &ignorePath, list) {
         if (ignorePath.startsWith(path)) {
-            m_trees->append(new Folder(ignorePath.toLocal8Bit()));
+            QString folderName = ignorePath;
+            if (!folderName.endsWith(QLatin1Char('/'))) {
+                folderName += QLatin1Char('/');
+            }
+            m_trees->append(new Folder(folderName.toLocal8Bit()));
         }
     }
 }
