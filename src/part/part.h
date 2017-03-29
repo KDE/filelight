@@ -57,14 +57,10 @@ class Part : public KParts::ReadOnlyPart
 public:
     Part(QWidget *, QObject *, const QList<QVariant>&);
 
-    virtual bool openFile() {
-        return false;    //pure virtual in base class
-    }
+    virtual bool openFile();
     virtual bool closeUrl();
 
-    QString prettyUrl() const {
-        return url().isLocalFile() ? url().toLocalFile() : url().toString();
-    }
+    QString prettyUrl() const;
 
 public slots:
     virtual bool openUrl(const QUrl&);
@@ -99,6 +95,7 @@ private:
 private slots:
     void updateURL(const QUrl &);
 };
+
 }
 
 #endif

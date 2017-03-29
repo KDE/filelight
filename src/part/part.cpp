@@ -206,6 +206,10 @@ Part::closeUrl()
     return ReadOnlyPart::closeUrl();
 }
 
+QString Part::prettyUrl() const {
+    return url().isLocalFile() ? url().toLocalFile() : url().toString();
+}
+
 void
 Part::updateURL(const QUrl &u)
 {
@@ -337,6 +341,10 @@ Part::showSummary()
         m_layout->addWidget(m_summary);
     }
     else m_summary->show();
+}
+
+bool Filelight::Part::openFile() {
+    return false;    //pure virtual in base class
 }
 
 } //namespace Filelight
