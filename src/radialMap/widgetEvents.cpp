@@ -19,8 +19,8 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ***********************************************************************/
 
-#include "part/fileTree.h"
-#include "part/Config.h"
+#include "fileTree.h"
+#include "Config.h"
 #include "radialMap.h"   //class Segment
 #include "widget.h"
 
@@ -153,22 +153,22 @@ void RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
             QString string = m_focus->file()->fullPath(m_tree)
                 + QLatin1Char('\n')
                 + m_focus->file()->humanReadableSize();
-                
+
             if (m_focus->file()->isFolder()) {
                 int files = static_cast<const Folder*>(m_focus->file())->children();
                 const uint percent = uint((100 * files) / (double)m_tree->children());
                 string += QLatin1Char('\n');
                 string += i18np("File: %1", "Files: %1", files);
 
-                
+
                 if (percent > 0) string += QString(QLatin1String(" (%1%)")).arg(percent);
             }
-            
+
             const QUrl url = Widget::url(m_focus->file());
             if (m_focus == m_rootSegment && url != KIO::upUrl(url)) {
                 string += i18n("\nClick to go up to parent directory");
             }
-            
+
             // Calculate a semi-sane size for the tooltip
             QFontMetrics fontMetrics(font());
             int tooltipWidth = 0;
@@ -217,7 +217,7 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
 {
     if (!isEnabled())
         return;
-    
+
     //m_focus is set correctly (I've been strict, I assure you it is correct!)
 
     if (!m_focus || m_focus->isFake()) {

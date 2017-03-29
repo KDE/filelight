@@ -1,5 +1,5 @@
 #######################################################################
-# Copyright 2008-2014  Martin Sandsmark <martin.sandsmark@kde.org>
+# Copyright 2008-2009  Martin Sandsmark <martin.sandsmark@kde.org>
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License as
@@ -18,5 +18,32 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #######################################################################
 
-add_subdirectory(app)
-add_subdirectory(part)
+set(filelight_SRCS
+    radialMap/widget.cpp
+    radialMap/map.cpp
+    radialMap/widgetEvents.cpp
+    radialMap/labels.cpp
+    part.cpp
+    scan.cpp
+    progressBox.cpp
+    Config.cpp
+    settingsDialog.cpp
+    fileTree.cpp
+    localLister.cpp
+    remoteLister.cpp
+    summaryWidget.cpp
+    historyAction.cpp
+    mainWindow.cpp
+    main.cpp)
+
+message(WARNING "sort srcs")
+ki18n_wrap_ui(filelight_SRCS dialog.ui)
+
+add_executable(filelight ${filelight_SRCS})
+
+target_link_libraries(filelight
+    KF5::Parts
+    KF5::XmlGui
+)
+
+install(TARGETS filelight ${INSTALL_TARGETS_DEFAULT_ARGS})

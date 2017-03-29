@@ -21,8 +21,8 @@
 
 #include "widget.h"
 
-#include "part/Config.h"
-#include "part/fileTree.h"
+#include "Config.h"
+#include "fileTree.h"
 #include "radialMap.h" //constants
 #include "map.h"
 

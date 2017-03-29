@@ -24,8 +24,8 @@
 #include <QPainter>
 #include <QVector>
 
-#include "part/Config.h"
-#include "part/fileTree.h"
+#include "Config.h"
+#include "fileTree.h"
 #include "radialMap.h"
 #include "sincos.h"
 #include "widget.h"
@@ -98,7 +98,7 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
         for (Segment *segment : *m_map.m_signature) {
             if (segment->length() > 288) {
                 list.append(new Label(segment, 0));
-                
+
             }
         }
     }
@@ -121,7 +121,7 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
         return (angle1 < angle2);
 
     });
-    
+
     //2. Check to see if any adjacent labels are too close together
     //   if so, remove it (the least significant labels, since we sort by level too).
 
@@ -146,7 +146,7 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
         font.setPointSize(Config::minFontPitch);
         paint.setFont(font);
     }
-    
+
     QVector<Label*>::iterator it;
 
     do {

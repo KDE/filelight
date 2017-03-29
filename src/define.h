@@ -23,7 +23,7 @@
 #ifndef DEFINE_H
 #define DEFINE_H
 
-#include "part/Config.h"
+#include "Config.h"
 
 #undef VERSION
 #undef PACKAGE

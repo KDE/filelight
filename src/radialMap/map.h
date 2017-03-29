@@ -22,7 +22,7 @@
 #ifndef MAP_H
 #define MAP_H
 
-#include "part/fileTree.h"
+#include "fileTree.h"
 
 #include <KColorScheme>
 

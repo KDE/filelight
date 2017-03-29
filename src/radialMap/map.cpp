@@ -31,8 +31,8 @@
 
 #include "radialMap.h" // defines
 
-#include "part/Config.h"
-#include "part/fileTree.h"
+#include "Config.h"
+#include "fileTree.h"
 #define SINCOS_H_IMPLEMENTATION (1)
 #include "sincos.h"
 #include "widget.h"
@@ -102,7 +102,7 @@ void RadialMap::Map::make(const Folder *tree, bool refresh)
     colorise();
 
     m_centerText = tree->humanReadableSize();
-    
+
     //paint the pixmap
     paint();
 

@@ -20,7 +20,7 @@
 ***********************************************************************/
 
 #include "mainWindow.h"
-#include "part/part.h"
+#include "part.h"
 #include "historyAction.h"
 
 #include <cstdlib>            //std::exit()
