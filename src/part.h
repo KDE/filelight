@@ -29,23 +29,6 @@
 class KJob;
 class QLabel;
 
-// COMPAT
-//using KParts::StatusBarExtension;
-class StatusBarExtension : public QObject
-{
-    Q_OBJECT
-public:
-    StatusBarExtension(QObject *parent = nullptr);
-    ~StatusBarExtension();
-    QStatusBar *statusBar() const;
-
-    void addStatusBarItem(QWidget *widget, int stretch, bool permanent);
-    void removeStatusBarItem(QWidget *widget);
-
-private:
-    QStatusBar *m_statusBar;
-};
-
 namespace RadialMap {
 class Widget;
 }
@@ -105,13 +88,11 @@ private slots:
     void mapChanged(const Folder*);
 
 private:
-    QStatusBar *statusBar();
     void showSummary();
 
     QLayout            *m_layout;
     SummaryWidget      *m_summary;
     BrowserExtension   *m_ext;
-    StatusBarExtension *m_statusbar;
     RadialMap::Widget  *m_map;
     QWidget            *m_stateWidget;
     class ScanManager  *m_manager;

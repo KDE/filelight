@@ -60,7 +60,6 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
     : KXmlGuiWindow(parentWidget)
     , m_summary(nullptr)
     , m_ext(new BrowserExtension(this))
-    , m_statusbar(new StatusBarExtension(this))
     , m_map(nullptr)
     , m_started(false)
     , m_widget(nullptr)
@@ -90,7 +89,7 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
     m_stateWidget->hide();
 
     m_numberOfFiles = new QLabel();
-    m_statusbar->addStatusBarItem(m_numberOfFiles, 0, true);
+    statusBar()->addPermanentWidget(m_numberOfFiles);
 
     KStandardAction::zoomIn(m_map, SLOT(zoomIn()), actionCollection());
     KStandardAction::zoomOut(m_map, SLOT(zoomOut()), actionCollection());
@@ -337,10 +336,6 @@ Part::mapChanged(const Folder *tree)
     m_numberOfFiles->setText(text);
 }
 
-QStatusBar *Part::statusBar() {
-    return m_statusbar->statusBar();
-}
-
 void
 Part::showSummary()
 {
@@ -361,31 +356,3 @@ bool Filelight::Part::openFile() {
 } //namespace Filelight
 
 #include "part.moc"
-
-StatusBarExtension::StatusBarExtension(QObject *parent)
-    : QObject(parent)
-    , m_statusBar(new QStatusBar)
-{
-}
-
-StatusBarExtension::~StatusBarExtension()
-{
-    delete m_statusBar;
-}
-
-QStatusBar *StatusBarExtension::statusBar() const
-{
-    return m_statusBar;
-}
-
-void StatusBarExtension::addStatusBarItem(QWidget *widget, int stretch, bool permanent)
-{
-//    Q_ASSERT(false);
-#warning port
-}
-
-void StatusBarExtension::removeStatusBarItem(QWidget *widget)
-{
-//    Q_ASSERT(false);
-    #warning port
-}
