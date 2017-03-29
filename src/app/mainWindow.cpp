@@ -56,25 +56,13 @@
 
 namespace Filelight {
 
-MainWindow::MainWindow() : KParts::MainWindow(), m_part(0), m_histories(0)
+MainWindow::MainWindow()
+    : KParts::MainWindow()
+    , m_part(0)
+    , m_histories(0)
 {
-//     setXMLFile("filelightui.rc");
-    KService::Ptr service = KService::serviceByDesktopName(QStringLiteral("filelightpart"));
-    if (!service) {
-        KMessageBox::error(this, i18n("Unable to locate the Filelight Part.\nPlease make sure Filelight was correctly installed."));
-        std::exit(1);
-        return;
-    }
-
-    KPluginFactory *factory = KPluginLoader(service->library()).factory();
-
-    if (!factory) {
-        KMessageBox::error(this, i18n("Unable to load the Filelight Part.\nPlease make sure Filelight was correctly installed."));
-        std::exit(1);
-        return;
-    }
-
-    m_part = static_cast<Part *>(factory->create<KParts::ReadOnlyPart>(this));
+//    setXMLFile("filelightui.rc");
+    m_part = static_cast<Part *>(new Part(nullptr, this, QList<QVariant>()));
 
     if (m_part) {
         setStandardToolBarMenuEnabled(true);

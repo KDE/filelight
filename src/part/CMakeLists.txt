@@ -35,7 +35,8 @@ set(filelight_PART_SRCS
 
 ki18n_wrap_ui(filelight_PART_SRCS dialog.ui)
 
-add_library(filelightpart MODULE ${filelight_PART_SRCS})
+add_library(filelightpart STATIC ${filelight_PART_SRCS})
+target_include_directories(filelightpart INTERFACE "$<INSTALL_INTERFACE:${CURRENT_SOURCE_DIR}>")
 
 target_link_libraries(filelightpart
     KF5::Parts
