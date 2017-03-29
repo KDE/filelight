@@ -1,5 +1,6 @@
 #######################################################################
-# Copyright 2008-2009  Martin Sandsmark <martin.sandsmark@kde.org>
+# Copyright 2008-2014  Martin Sandsmark <martin.sandsmark@kde.org>
+# Copyright 2017  Harald Sitter <sitter@kde.org>
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License as
