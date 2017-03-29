@@ -136,7 +136,7 @@ MainWindow::MainWindow()
     createGUI(QStringLiteral("filelightui.rc"));
     setCentralWidget(widget());
 
-    stateChanged(QStringLiteral( "scan_failed" )); //bah! doesn't affect the parts' actions, should I add them to the actionCollection here?
+    stateChanged(QStringLiteral("scan_failed")); //bah! doesn't affect the parts' actions, should I add them to the actionCollection here?
 
     connect(this, &MainWindow::started, this, &MainWindow::scanStarted);
     connect(this, &MainWindow::completed, this, &MainWindow::scanCompleted);
@@ -146,7 +146,7 @@ MainWindow::MainWindow()
     const KConfigGroup config = KSharedConfig::openConfig()->group("general");
     m_combo->setHistoryItems(config.readPathEntry("comboHistory", QStringList()));
 
-    setAutoSaveSettings(QStringLiteral( "window" ));
+    setAutoSaveSettings(QStringLiteral("window"));
 
     QTimer::singleShot(0, this, SLOT(postInit()));
 }
@@ -193,9 +193,9 @@ void MainWindow::setupActions() //singleton function
     action->setText(i18n("Go"));
     action->setIcon(QIcon::fromTheme(QStringLiteral("go-jump-locationbar")));
 
-    action = ac->addAction(QStringLiteral( "scan_folder" ), this, SLOT(slotScanFolder()));
+    action = ac->addAction(QStringLiteral("scan_folder"), this, SLOT(slotScanFolder()));
     action->setText(i18n("Scan Folder"));
-    action->setIcon(QIcon::fromTheme(QStringLiteral( "folder" )));
+    action->setIcon(QIcon::fromTheme(QStringLiteral("folder")));
 
     QWidgetAction *locationAction = ac->add<QWidgetAction>(QStringLiteral("location_bar"), 0, 0);
     locationAction->setText(i18n("Location Bar"));
@@ -245,13 +245,18 @@ void MainWindow::slotScanFolder()
     slotScanUrl(QFileDialog::getExistingDirectoryUrl(this, i18n("Select Folder to Scan"), url()));
 }
 
-void MainWindow::slotScanHomeFolder() {
+void MainWindow::slotScanHomeFolder()
+{
     slotScanPath(QDir::homePath());
 }
-void MainWindow::slotScanRootFolder() {
+
+void MainWindow::slotScanRootFolder()
+{
     slotScanPath(QDir::rootPath());
 }
-void MainWindow::slotUp()                {
+
+void MainWindow::slotUp()
+{
     slotScanUrl(KIO::upUrl(url()));
 }
 
@@ -262,7 +267,7 @@ void MainWindow::slotComboScan()
     QUrl url = QUrl::fromUserInput(path);
 
     if (url.isRelative())
-        path = QStringLiteral( "~/" ) + path; // KUrlCompletion completes relative to ~, not CWD
+        path = QStringLiteral("~/") + path; // KUrlCompletion completes relative to ~, not CWD
 
     path = KShell::tildeExpand(path);
 
@@ -295,13 +300,13 @@ void MainWindow::slotAbortScan()
 
 void MainWindow::scanStarted()
 {
-    stateChanged(QStringLiteral( "scan_started" ));
+    stateChanged(QStringLiteral("scan_started"));
     m_combo->clearFocus();
 }
 
 void MainWindow::scanFailed()
 {
-    stateChanged(QStringLiteral( "scan_failed" ));
+    stateChanged(QStringLiteral("scan_failed"));
     action("go_up")->setStatusTip(QString());
     action("go_up")->setToolTip(QString());
     m_combo->lineEdit()->clear();
@@ -315,7 +320,7 @@ void MainWindow::scanCompleted()
 
     m_combo->lineEdit()->setText(prettyUrl());
 
-    if (url.toLocalFile() == QLatin1String( "/" )) {
+    if (url.toLocalFile() == QLatin1String("/")) {
         action("go_up")->setEnabled(false);
         action("go_up")->setStatusTip(QString());
         action("go_up")->setToolTip(QString());
@@ -355,8 +360,7 @@ void MainWindow::readProperties(const KConfigGroup &configgroup) //virtual
     slotScanPath(configgroup.group("General").readEntry("currentMap", QString()));
 }
 
-void
-MainWindow::postInit()
+void MainWindow::postInit()
 {
     if (url().isEmpty()) //if url is not empty openUrl() has been called immediately after ctor, which happens
     {
@@ -365,12 +369,11 @@ MainWindow::postInit()
 
         //FIXME KXMLGUI is b0rked, it should allow us to set this
         //BEFORE createGUI is called but it doesn't
-        stateChanged(QLatin1String( "scan_failed" ));
+        stateChanged(QLatin1String("scan_failed"));
     }
 }
 
-bool
-MainWindow::openUrl(const QUrl &u)
+bool MainWindow::openUrl(const QUrl &u)
 {
 
     //TODO everyone hates dialogs, instead render the text in big fonts on the Map
@@ -382,7 +385,7 @@ MainWindow::openUrl(const QUrl &u)
     QUrl uri = u.adjusted(QUrl::NormalizePathSegments);
     const QString path = uri.path();
     const QByteArray path8bit = QFile::encodeName(path);
-    const bool isLocal = uri.scheme() == QLatin1String( "file" );
+    const bool isLocal = uri.scheme() == QLatin1String("file");
 
     if (uri.isEmpty())
     {
@@ -392,7 +395,7 @@ MainWindow::openUrl(const QUrl &u)
     {
         KMSG(i18n("The entered URL cannot be parsed; it is invalid."));
     }
-    else if ((!isLocal && path[0] != QLatin1Char( '/' )) || (isLocal && !QDir::isAbsolutePath(path)))
+    else if ((!isLocal && path[0] != QLatin1Char('/')) || (isLocal && !QDir::isAbsolutePath(path)))
     {
         KMSG(i18n("Filelight only accepts absolute paths, eg. /%1", path));
     }
@@ -419,8 +422,7 @@ MainWindow::openUrl(const QUrl &u)
     return false;
 }
 
-bool
-MainWindow::closeUrl()
+bool MainWindow::closeUrl()
 {
     if (m_manager->abort())
         statusBar()->showMessage(i18n("Aborting Scan..."));
@@ -437,8 +439,7 @@ QString MainWindow::prettyUrl() const {
     return url().isLocalFile() ? url().toLocalFile() : url().toString();
 }
 
-void
-MainWindow::updateURL(const QUrl &u)
+void MainWindow::updateURL(const QUrl &u)
 {
     if (m_manager->running())
         m_manager->abort();
@@ -470,8 +471,7 @@ QWidget *MainWindow::widget() const
     return m_widget;
 }
 
-void
-MainWindow::configFilelight()
+void MainWindow::configFilelight()
 {
     SettingsDialog *dialog = new SettingsDialog(widget());
 
@@ -481,8 +481,7 @@ MainWindow::configFilelight()
     dialog->show(); //deletes itself
 }
 
-bool
-MainWindow::start(const QUrl &url)
+bool MainWindow::start(const QUrl &url)
 {
     if (!m_started) {
         connect(m_map, SIGNAL(mouseHover(QString)), statusBar(), SLOT(showMessage(const QString&)));
@@ -499,7 +498,7 @@ MainWindow::start(const QUrl &url)
         setUrl(url);
 
         const QString s = i18n("Scanning: %1", prettyUrl());
-        stateChanged(QLatin1String( "scan_started" ));
+        stateChanged(QLatin1String("scan_started"));
         emit started(); //as a MainWindow, we have to do this
         emit setWindowCaption(s);
         statusBar()->showMessage(s);
@@ -513,8 +512,7 @@ MainWindow::start(const QUrl &url)
     return false;
 }
 
-void
-MainWindow::rescan()
+void MainWindow::rescan()
 {
     if (m_summary && !m_summary->isHidden()) {
         delete m_summary;
@@ -530,8 +528,7 @@ MainWindow::rescan()
     start(url());
 }
 
-void
-MainWindow::folderScanCompleted(Folder *tree)
+void MainWindow::folderScanCompleted(Folder *tree)
 {
     if (tree) {
         statusBar()->showMessage(i18n("Scan completed, generating map..."));
@@ -540,10 +537,10 @@ MainWindow::folderScanCompleted(Folder *tree)
         m_map->show();
         m_map->create(tree);
 
-        stateChanged(QLatin1String( "scan_complete" ));
+        stateChanged(QLatin1String("scan_complete"));
     }
     else {
-        stateChanged(QLatin1String( "scan_failed" ));
+        stateChanged(QLatin1String("scan_failed"));
         emit canceled(i18n("Scan failed: %1", prettyUrl()));
         emit setWindowCaption(QString());
 
@@ -558,27 +555,25 @@ MainWindow::folderScanCompleted(Folder *tree)
     }
 }
 
-void
-MainWindow::mapChanged(const Folder *tree)
+void MainWindow::mapChanged(const Folder *tree)
 {
     //IMPORTANT -> url() has already been set
 
     emit setWindowCaption(prettyUrl());
 
     const int fileCount = tree->children();
-    const QString text = ( fileCount == 0 ) ?
+    const QString text = (fileCount == 0) ?
         i18n("No files.") :
         i18np("1 file", "%1 files",fileCount);
 
     m_numberOfFiles->setText(text);
 }
 
-void
-MainWindow::showSummary()
+void MainWindow::showSummary()
 {
     if (m_summary == 0) {
         m_summary = new SummaryWidget(widget());
-        m_summary->setObjectName(QStringLiteral( "summaryWidget" ));
+        m_summary->setObjectName(QStringLiteral("summaryWidget"));
         connect(m_summary, &SummaryWidget::activated, this, &MainWindow::openUrl);
         m_summary->show();
         m_layout->addWidget(m_summary);
