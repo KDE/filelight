@@ -58,33 +58,28 @@ namespace Filelight {
 
 MainWindow::MainWindow()
     : KParts::MainWindow()
-    , m_part(0)
+    , m_part(new Part(nullptr, this, QList<QVariant>()))
     , m_histories(0)
 {
 //    setXMLFile("filelightui.rc");
     m_part = static_cast<Part *>(new Part(nullptr, this, QList<QVariant>()));
 
-    if (m_part) {
-        setStandardToolBarMenuEnabled(true);
-        setupActions();
-        createGUI(m_part);
-        setCentralWidget(m_part->widget());
+    setStandardToolBarMenuEnabled(true);
+    setupActions();
+    createGUI(m_part);
+    setCentralWidget(m_part->widget());
 
-        stateChanged(QStringLiteral( "scan_failed" )); //bah! doesn't affect the parts' actions, should I add them to the actionCollection here?
+    stateChanged(QStringLiteral( "scan_failed" )); //bah! doesn't affect the parts' actions, should I add them to the actionCollection here?
 
-        connect(m_part, &KParts::ReadOnlyPart::started, this, &MainWindow::scanStarted);
-        connect(m_part, static_cast<void (KParts::ReadOnlyPart::*)()>(&KParts::ReadOnlyPart::completed), this, &MainWindow::scanCompleted);
-        connect(m_part, &KParts::ReadOnlyPart::canceled, this, &MainWindow::scanFailed);
+    connect(m_part, &KParts::ReadOnlyPart::started, this, &MainWindow::scanStarted);
+    connect(m_part, static_cast<void (KParts::ReadOnlyPart::*)()>(&KParts::ReadOnlyPart::completed), this, &MainWindow::scanCompleted);
+    connect(m_part, &KParts::ReadOnlyPart::canceled, this, &MainWindow::scanFailed);
 
-        connect(m_part, &KParts::ReadOnlyPart::canceled, m_histories, &HistoryCollection::stop);
-        connect(BrowserExtension::childObject(m_part), &KParts::BrowserExtension::openUrlNotify, this, &MainWindow::urlAboutToChange);
+    connect(m_part, &KParts::ReadOnlyPart::canceled, m_histories, &HistoryCollection::stop);
+    connect(BrowserExtension::childObject(m_part), &KParts::BrowserExtension::openUrlNotify, this, &MainWindow::urlAboutToChange);
 
-        const KConfigGroup config = KSharedConfig::openConfig()->group("general");
-        m_combo->setHistoryItems(config.readPathEntry("comboHistory", QStringList()));
-    } else {
-        KMessageBox::error(this, i18n("Unable to create Filelight part widget.\nPlease ensure that Filelight is correctly installed."));
-        std::exit(1);
-    }
+    const KConfigGroup config = KSharedConfig::openConfig()->group("general");
+    m_combo->setHistoryItems(config.readPathEntry("comboHistory", QStringList()));
 
     setAutoSaveSettings(QStringLiteral( "window" ));
 }
