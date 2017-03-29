@@ -34,10 +34,10 @@ class Widget;
 }
 class Folder;
 
-
 namespace Filelight
 {
 class Part;
+class ScanManager;
 class SummaryWidget;
 
 class Part : public KXmlGuiWindow
@@ -73,7 +73,7 @@ private:
     SummaryWidget      *m_summary;
     RadialMap::Widget  *m_map;
     QWidget            *m_stateWidget;
-    class ScanManager  *m_manager;
+    ScanManager        *m_manager;
     QLabel             *m_numberOfFiles;
 
     bool m_started;
