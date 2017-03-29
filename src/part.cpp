@@ -246,7 +246,7 @@ Part::start(const QUrl &url)
 
         const QString s = i18n("Scanning: %1", prettyUrl());
         stateChanged(QLatin1String( "scan_started" ));
-        emit started(0); //as a Part, we have to do this
+        emit started(); //as a Part, we have to do this
         emit setWindowCaption(s);
         statusBar()->showMessage(s);
         m_map->hide();

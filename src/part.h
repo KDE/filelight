@@ -27,7 +27,6 @@
 
 #include <KXmlGuiWindow>
 
-class KJob;
 class QLabel;
 
 namespace RadialMap {
@@ -54,7 +53,7 @@ public:
     QString prettyUrl() const;
 
 signals:
-    void started(KJob *);
+    void started(); // FIXME: Could be replaced by direct func call once merged with mainwindow
     void completed();
     void canceled(QString);
     void setWindowCaption(QString);
