@@ -86,10 +86,7 @@ Part::Part()
 
     KStandardAction::zoomIn(m_map, SLOT(zoomIn()), actionCollection());
     KStandardAction::zoomOut(m_map, SLOT(zoomOut()), actionCollection());
-    QAction *action = actionCollection()->addAction(QStringLiteral("configure_filelight"));
-    action->setText(i18n("Configure Filelight..."));
-    action->setIcon(QIcon::fromTheme(QStringLiteral("configure")));
-    connect(action, &QAction::triggered, this, &Part::configFilelight);
+    KStandardAction::preferences(this, &Part::configFilelight, actionCollection());
 
     connect(m_map, &RadialMap::Widget::folderCreated, this, static_cast<void (Part::*)()>(&Part::completed));
     connect(m_map, &RadialMap::Widget::folderCreated, this, &Part::mapChanged);
