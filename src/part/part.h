@@ -29,7 +29,23 @@
 
 #include <QLabel>
 
-using KParts::StatusBarExtension;
+// COMPAT
+//using KParts::StatusBarExtension;
+class StatusBarExtension : public QObject
+{
+    Q_OBJECT
+public:
+    StatusBarExtension(QObject *parent = nullptr);
+    ~StatusBarExtension();
+    QStatusBar *statusBar() const;
+
+    void addStatusBarItem(QWidget *widget, int stretch, bool permanent);
+    void removeStatusBarItem(QWidget *widget);
+
+private:
+    QStatusBar *m_statusBar;
+};
+
 namespace RadialMap {
 class Widget;
 }
@@ -41,16 +57,26 @@ namespace Filelight
 class Part;
 class SummaryWidget;
 
-class BrowserExtension : public KParts::BrowserExtension
+
+// COMPAT
+class BrowserExtension : public
+        // KParts::BrowserExtension
+        QObject
 {
     Q_OBJECT
 
 public:
     explicit BrowserExtension(Part*);
+
+signals:
+    void openUrlNotify();
+    void setLocationBarUrl(QString);
 };
 
 
-class Part : public KParts::ReadOnlyPart
+class Part : public
+//        KParts::ReadOnlyPart
+        QObject
 {
     Q_OBJECT
 
@@ -61,6 +87,12 @@ public:
     virtual bool closeUrl();
 
     QString prettyUrl() const;
+
+signals:
+    void started(KJob *);
+    void completed();
+    void canceled(QString);
+    void setWindowCaption(QString);
 
 public slots:
     virtual bool openUrl(const QUrl&);
@@ -73,9 +105,7 @@ private slots:
     void mapChanged(const Folder*);
 
 private:
-    QStatusBar *statusBar() {
-        return m_statusbar->statusBar();
-    }
+    QStatusBar *statusBar();
     void showSummary();
 
     QLayout            *m_layout;
@@ -94,6 +124,18 @@ private:
 
 private slots:
     void updateURL(const QUrl &);
+
+
+    // Compat
+public:
+    QUrl url() const;
+    QWidget *widget() const;
+private:
+    void setUrl(const QUrl &url);
+    void stateChanged(const QString &state);
+    void setWidget(QWidget *widget);
+    QWidget *m_widget = nullptr;
+    QUrl m_url;
 };
 
 }

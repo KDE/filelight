@@ -57,7 +57,8 @@
 namespace Filelight {
 
 MainWindow::MainWindow()
-    : KParts::MainWindow()
+//    : KParts::MainWindow()
+    : KXmlGuiWindow()
     , m_part(new Part(nullptr, this, QList<QVariant>()))
     , m_histories(0)
 {
@@ -66,7 +67,9 @@ MainWindow::MainWindow()
 
     setStandardToolBarMenuEnabled(true);
     setupActions();
-    createGUI(m_part);
+#warning port
+    setXMLFile(QStringLiteral( "filelightpartui.rc" ));
+//    createGUI(m_part);
     setCentralWidget(m_part->widget());
 
     stateChanged(QStringLiteral( "scan_failed" )); //bah! doesn't affect the parts' actions, should I add them to the actionCollection here?
@@ -76,7 +79,8 @@ MainWindow::MainWindow()
     connect(m_part, &Part::canceled, this, &MainWindow::scanFailed);
 
     connect(m_part, &Part::canceled, m_histories, &HistoryCollection::stop);
-    connect(BrowserExtension::childObject(m_part), &KParts::BrowserExtension::openUrlNotify, this, &MainWindow::urlAboutToChange);
+#warning port
+//    connect(BrowserExtension::childObject(m_part), &KParts::BrowserExtension::openUrlNotify, this, &MainWindow::urlAboutToChange);
 
     const KConfigGroup config = KSharedConfig::openConfig()->group("general");
     m_combo->setHistoryItems(config.readPathEntry("comboHistory", QStringList()));
@@ -154,7 +158,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
     config.writePathEntry("comboHistory", m_combo->historyItems());
     config.sync();
 
-    KParts::MainWindow::closeEvent(event);
+    KXmlGuiWindow::closeEvent(event);
 }
 
 void MainWindow::configToolbars() //slot
@@ -163,7 +167,8 @@ void MainWindow::configToolbars() //slot
 
     if (dialog.exec()) //krazy:exclude=crashy
     {
-        createGUI(m_part);
+#warning port
+//        createGUI(m_part);
         applyMainWindowSettings(KSharedConfig::openConfig()->group("window"));
     }
 }

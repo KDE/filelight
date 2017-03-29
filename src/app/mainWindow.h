@@ -35,7 +35,7 @@ namespace Filelight {
 
 class Part;
 
-class MainWindow : public KParts::MainWindow
+class MainWindow : public KXmlGuiWindow // Maybe use qmainwindow
 {
     Q_OBJECT
 

@@ -50,37 +50,26 @@
 
 namespace Filelight {
 
-K_PLUGIN_FACTORY(filelightPartFactory, registerPlugin<Part>();)  // produce a factory
-
 BrowserExtension::BrowserExtension(Part *parent)
-        : KParts::BrowserExtension(parent)
+//        : KParts::BrowserExtension(parent)
+    : QObject(parent)
 {}
 
 
 Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
-        : ReadOnlyPart(parent)
+//        : ReadOnlyPart(parent)
+    : QObject(parent)
         , m_summary(0)
         , m_ext(new BrowserExtension(this))
         , m_statusbar(new StatusBarExtension(this))
         , m_map(0)
         , m_started(false)
+    , m_widget(nullptr)
 {
     Config::read();
 
-    KAboutData aboutData(
-            QStringLiteral("filelightpart"),
-            i18n(APP_PRETTYNAME),
-            QStringLiteral(APP_VERSION),
-            i18n("Displays file usage in an easy to understand way."),
-            KAboutLicense::GPL,
-            i18n("(c) 2002-2004 Max Howell\n"
-                 "(c) 2008-2014 Martin T. Sandsmark"),
-            QString(),
-            QStringLiteral("http://utils.kde.org/projects/filelight"),
-            QStringLiteral("martin.sandsmark@kde.org"));
-    setComponentData(aboutData);
-
-    setXMLFile(QStringLiteral( "filelightpartui.rc" ));
+//    Q_ASSERT(false); // todo
+//    setXMLFile(QStringLiteral( "filelightpartui.rc" ));
 
     QScrollArea *scrollArea = new QScrollArea(parentWidget);
     scrollArea->setWidgetResizable(true);
@@ -107,12 +96,14 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
     m_numberOfFiles = new QLabel();
     m_statusbar->addStatusBarItem(m_numberOfFiles, 0, true);
 
-    KStandardAction::zoomIn(m_map, SLOT(zoomIn()), actionCollection());
-    KStandardAction::zoomOut(m_map, SLOT(zoomOut()), actionCollection());
-    QAction *action = actionCollection()->addAction(QStringLiteral("configure_filelight"));
-    action->setText(i18n("Configure Filelight..."));
-    action->setIcon(QIcon::fromTheme(QStringLiteral("configure")));
-    connect(action, &QAction::triggered, this, &Part::configFilelight);
+#warning port
+//    Q_ASSERT(false); // todo
+//    KStandardAction::zoomIn(m_map, SLOT(zoomIn()), actionCollection());
+//    KStandardAction::zoomOut(m_map, SLOT(zoomOut()), actionCollection());
+//    QAction *action = actionCollection()->addAction(QStringLiteral("configure_filelight"));
+//    action->setText(i18n("Configure Filelight..."));
+//    action->setIcon(QIcon::fromTheme(QStringLiteral("configure")));
+//    connect(action, &QAction::triggered, this, &Part::configFilelight);
 
     connect(m_map, &RadialMap::Widget::folderCreated, this, static_cast<void (Part::*)()>(&Part::completed));
     connect(m_map, &RadialMap::Widget::folderCreated, this, &Part::mapChanged);
@@ -203,7 +194,9 @@ Part::closeUrl()
 
     showSummary();
 
-    return ReadOnlyPart::closeUrl();
+    Q_ASSERT(false); // todo
+    return false;
+//    return ReadOnlyPart::closeUrl();
 }
 
 QString Part::prettyUrl() const {
@@ -225,6 +218,32 @@ Part::updateURL(const QUrl &u)
 
     //do this last, or it breaks Konqi location bar
     setUrl(u);
+}
+
+QUrl Part::url() const
+{
+    return m_url;
+}
+
+void Part::setUrl(const QUrl &url)
+{
+    m_url = url;
+}
+
+void Part::stateChanged(const QString &state)
+{
+#warning port this calls xmlguiclient::stateChanged in parts
+//    Q_ASSERT(false);
+}
+
+void Part::setWidget(QWidget *widget)
+{
+    m_widget = widget;
+}
+
+QWidget *Part::widget() const
+{
+    return m_widget;
 }
 
 void
@@ -330,6 +349,10 @@ Part::mapChanged(const Folder *tree)
     m_numberOfFiles->setText(text);
 }
 
+QStatusBar *Part::statusBar() {
+    return m_statusbar->statusBar();
+}
+
 void
 Part::showSummary()
 {
@@ -350,3 +373,31 @@ bool Filelight::Part::openFile() {
 } //namespace Filelight
 
 #include "part.moc"
+
+StatusBarExtension::StatusBarExtension(QObject *parent)
+    : QObject(parent)
+    , m_statusBar(new QStatusBar)
+{
+}
+
+StatusBarExtension::~StatusBarExtension()
+{
+    delete m_statusBar;
+}
+
+QStatusBar *StatusBarExtension::statusBar() const
+{
+    return m_statusBar;
+}
+
+void StatusBarExtension::addStatusBarItem(QWidget *widget, int stretch, bool permanent)
+{
+//    Q_ASSERT(false);
+#warning port
+}
+
+void StatusBarExtension::removeStatusBarItem(QWidget *widget)
+{
+//    Q_ASSERT(false);
+    #warning port
+}
