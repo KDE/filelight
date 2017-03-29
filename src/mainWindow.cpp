@@ -21,7 +21,6 @@
 ***********************************************************************/
 
 #include "mainWindow.h"
-#include "part.h"
 #include "historyAction.h"
 
 #include <cstdlib>            //std::exit()
@@ -51,16 +50,87 @@
 #include <KStandardAction>
 #include <KActionCollection>
 #include <KIO/Global> // upUrl
-#include <KIO/Job> // Connection of the Part::started signal
+#include <KIO/Job> // Connection of the MainWindow::started signal
 #include <KService>
 #include <KLocalizedString>
+
+
+#include "Config.h"
+#include "define.h"
+#include "fileTree.h"
+#include "progressBox.h"
+#include "radialMap/widget.h"
+#include "scan.h"
+#include "settingsDialog.h"
+#include "summaryWidget.h"
+
+#include <KActionCollection>
+#include <KMessageBox>  //::start()
+#include <QStatusBar>
+#include <KLocalizedString>
+
+#include <QFile>        //encodeName()
+#include <QTimer>       //postInit() hack
+#include <QByteArray>
+#include <QDir>
+#include <QScrollArea>
+
+#include <unistd.h>       //access()
+#include <iostream>
 
 namespace Filelight {
 
 MainWindow::MainWindow()
-    : Part()
+    : KXmlGuiWindow()
     , m_histories(0)
+    , m_summary(nullptr)
+    , m_map(nullptr)
+    , m_started(false)
+    , m_widget(nullptr)
 {
+    Config::read();
+
+    QScrollArea *scrollArea = new QScrollArea(this);
+    scrollArea->setWidgetResizable(true);
+    setWidget(scrollArea);
+
+    QWidget *partWidget = new QWidget(scrollArea);
+    scrollArea->setWidget(partWidget);
+
+    partWidget->setBackgroundRole(QPalette::Base);
+    partWidget->setAutoFillBackground(true);
+
+    m_layout = new QGridLayout();
+    partWidget->setLayout(m_layout);
+
+    m_manager = new ScanManager(partWidget);
+
+    m_map = new RadialMap::Widget(partWidget);
+    m_layout->addWidget(m_map);
+
+    // FIXME: drop stupid nullptr argument
+    m_stateWidget = new ProgressBox(statusBar(), this, m_manager);
+    m_layout->addWidget(m_stateWidget);
+    m_stateWidget->hide();
+
+    m_numberOfFiles = new QLabel();
+    statusBar()->addPermanentWidget(m_numberOfFiles);
+
+    KStandardAction::zoomIn(m_map, &RadialMap::Widget::zoomIn, actionCollection());
+    KStandardAction::zoomOut(m_map, &RadialMap::Widget::zoomOut, actionCollection());
+    KStandardAction::preferences(this, &MainWindow::configFilelight, actionCollection());
+
+    connect(m_map, &RadialMap::Widget::folderCreated, this, &MainWindow::completed);
+    connect(m_map, &RadialMap::Widget::folderCreated, this, &MainWindow::mapChanged);
+    connect(m_map, &RadialMap::Widget::activated, this, &MainWindow::updateURL);
+
+    // TODO make better system
+    connect(m_map, &RadialMap::Widget::giveMeTreeFor, this, &MainWindow::updateURL);
+    connect(m_map, &RadialMap::Widget::giveMeTreeFor, this, &MainWindow::openUrl);
+
+    connect(m_manager, &ScanManager::completed, this, &MainWindow::folderScanCompleted);
+    connect(m_manager, &ScanManager::aboutToEmptyCache, m_map, &RadialMap::Widget::invalidate);
+
     setStandardToolBarMenuEnabled(true);
     setupActions();
     createGUI(QStringLiteral("filelightui.rc"));
@@ -68,15 +138,17 @@ MainWindow::MainWindow()
 
     stateChanged(QStringLiteral( "scan_failed" )); //bah! doesn't affect the parts' actions, should I add them to the actionCollection here?
 
-    connect(this, &Part::started, this, &MainWindow::scanStarted);
-    connect(this, static_cast<void (Part::*)()>(&Part::completed), this, &MainWindow::scanCompleted);
-    connect(this, &Part::canceled, this, &MainWindow::scanFailed);
-    connect(this, &Part::canceled, m_histories, &HistoryCollection::stop);
+    connect(this, &MainWindow::started, this, &MainWindow::scanStarted);
+    connect(this, &MainWindow::completed, this, &MainWindow::scanCompleted);
+    connect(this, &MainWindow::canceled, this, &MainWindow::scanFailed);
+    connect(this, &MainWindow::canceled, m_histories, &HistoryCollection::stop);
 
     const KConfigGroup config = KSharedConfig::openConfig()->group("general");
     m_combo->setHistoryItems(config.readPathEntry("comboHistory", QStringList()));
 
     setAutoSaveSettings(QStringLiteral( "window" ));
+
+    QTimer::singleShot(0, this, SLOT(postInit()));
 }
 
 void MainWindow::setupActions() //singleton function
@@ -283,6 +355,237 @@ void MainWindow::readProperties(const KConfigGroup &configgroup) //virtual
     slotScanPath(configgroup.group("General").readEntry("currentMap", QString()));
 }
 
+void
+MainWindow::postInit()
+{
+    if (url().isEmpty()) //if url is not empty openUrl() has been called immediately after ctor, which happens
+    {
+        m_map->hide();
+        showSummary();
+
+        //FIXME KXMLGUI is b0rked, it should allow us to set this
+        //BEFORE createGUI is called but it doesn't
+        stateChanged(QLatin1String( "scan_failed" ));
+    }
+}
+
+bool
+MainWindow::openUrl(const QUrl &u)
+{
+
+    //TODO everyone hates dialogs, instead render the text in big fonts on the Map
+    //TODO should have an empty QUrl until scan is confirmed successful
+    //TODO probably should set caption to QString::null while map is unusable
+
+#define KMSG(s) KMessageBox::information(widget(), s)
+
+    QUrl uri = u.adjusted(QUrl::NormalizePathSegments);
+    const QString path = uri.path();
+    const QByteArray path8bit = QFile::encodeName(path);
+    const bool isLocal = uri.scheme() == QLatin1String( "file" );
+
+    if (uri.isEmpty())
+    {
+        //do nothing, chances are the user accidently pressed ENTER
+    }
+    else if (!uri.isValid())
+    {
+        KMSG(i18n("The entered URL cannot be parsed; it is invalid."));
+    }
+    else if ((!isLocal && path[0] != QLatin1Char( '/' )) || (isLocal && !QDir::isAbsolutePath(path)))
+    {
+        KMSG(i18n("Filelight only accepts absolute paths, eg. /%1", path));
+    }
+    else if (isLocal && access(path8bit, F_OK) != 0) //stat(path, &statbuf) == 0
+    {
+        KMSG(i18n("Folder not found: %1", path));
+    }
+    else if (isLocal && !QDir(path).isReadable()) //access(path8bit, R_OK | X_OK) != 0 doesn't work on win32
+    {
+        KMSG(i18n("Unable to enter: %1\nYou do not have access rights to this location.", path));
+    }
+    else
+    {
+        //we don't want to be using the summary screen anymore
+        if (m_summary != 0)
+            m_summary->hide();
+
+        m_stateWidget->show();
+        m_layout->addWidget(m_stateWidget);
+
+        return start(uri);
+    }
+
+    return false;
+}
+
+bool
+MainWindow::closeUrl()
+{
+    if (m_manager->abort())
+        statusBar()->showMessage(i18n("Aborting Scan..."));
+
+    m_map->hide();
+    m_stateWidget->hide();
+
+    showSummary();
+
+    return true;
+}
+
+QString MainWindow::prettyUrl() const {
+    return url().isLocalFile() ? url().toLocalFile() : url().toString();
+}
+
+void
+MainWindow::updateURL(const QUrl &u)
+{
+    if (m_manager->running())
+        m_manager->abort();
+
+    if (u == url())
+        m_manager->emptyCache(); //same as rescan()
+
+    //do this last, or it breaks Konqi location bar
+    setUrl(u);
+}
+
+QUrl MainWindow::url() const
+{
+    return m_url;
+}
+
+void MainWindow::setUrl(const QUrl &url)
+{
+    m_url = url;
+}
+
+void MainWindow::setWidget(QWidget *widget)
+{
+    m_widget = widget;
+}
+
+QWidget *MainWindow::widget() const
+{
+    return m_widget;
+}
+
+void
+MainWindow::configFilelight()
+{
+    SettingsDialog *dialog = new SettingsDialog(widget());
+
+    connect(dialog, &SettingsDialog::canvasIsDirty, m_map, &RadialMap::Widget::refresh);
+    connect(dialog, &SettingsDialog::mapIsInvalid, m_manager, &ScanManager::emptyCache);
+
+    dialog->show(); //deletes itself
+}
+
+bool
+MainWindow::start(const QUrl &url)
+{
+    if (!m_started) {
+        connect(m_map, SIGNAL(mouseHover(QString)), statusBar(), SLOT(showMessage(const QString&)));
+        connect(m_map, &RadialMap::Widget::folderCreated, statusBar(), &QStatusBar::clearMessage);
+        m_started = true;
+    }
+
+    if (m_manager->running())
+        m_manager->abort();
+
+    m_numberOfFiles->setText(QString());
+
+    if (m_manager->start(url)) {
+        setUrl(url);
+
+        const QString s = i18n("Scanning: %1", prettyUrl());
+        stateChanged(QLatin1String( "scan_started" ));
+        emit started(); //as a MainWindow, we have to do this
+        emit setWindowCaption(s);
+        statusBar()->showMessage(s);
+        m_map->hide();
+        m_map->invalidate(); //to maintain ui consistency
+
+
+        return true;
+    }
+
+    return false;
+}
+
+void
+MainWindow::rescan()
+{
+    if (m_summary && !m_summary->isHidden()) {
+        delete m_summary;
+        m_summary = 0;
+        showSummary();
+        return;
+    }
+
+    //FIXME we have to empty the cache because otherwise rescan picks up the old tree..
+    m_manager->emptyCache(); //causes canvas to invalidate
+    m_map->hide();
+    m_stateWidget->show();
+    start(url());
+}
+
+void
+MainWindow::folderScanCompleted(Folder *tree)
+{
+    if (tree) {
+        statusBar()->showMessage(i18n("Scan completed, generating map..."));
+
+        m_stateWidget->hide();
+        m_map->show();
+        m_map->create(tree);
+
+        stateChanged(QLatin1String( "scan_complete" ));
+    }
+    else {
+        stateChanged(QLatin1String( "scan_failed" ));
+        emit canceled(i18n("Scan failed: %1", prettyUrl()));
+        emit setWindowCaption(QString());
+
+        statusBar()->clearMessage();
+
+        m_map->hide();
+        m_stateWidget->hide();
+
+        showSummary();
+
+        setUrl(QUrl());
+    }
+}
+
+void
+MainWindow::mapChanged(const Folder *tree)
+{
+    //IMPORTANT -> url() has already been set
+
+    emit setWindowCaption(prettyUrl());
+
+    const int fileCount = tree->children();
+    const QString text = ( fileCount == 0 ) ?
+        i18n("No files.") :
+        i18np("1 file", "%1 files",fileCount);
+
+    m_numberOfFiles->setText(text);
+}
+
+void
+MainWindow::showSummary()
+{
+    if (m_summary == 0) {
+        m_summary = new SummaryWidget(widget());
+        m_summary->setObjectName(QStringLiteral( "summaryWidget" ));
+        connect(m_summary, &SummaryWidget::activated, this, &MainWindow::openUrl);
+        m_summary->show();
+        m_layout->addWidget(m_summary);
+    }
+    else m_summary->show();
+}
+
 } //namespace Filelight
 
-
+#include "mainWindow.moc"

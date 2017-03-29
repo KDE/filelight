@@ -23,7 +23,6 @@ set(filelight_SRCS
     radialMap/map.cpp
     radialMap/widgetEvents.cpp
     radialMap/labels.cpp
-    part.cpp
     scan.cpp
     progressBox.cpp
     Config.cpp

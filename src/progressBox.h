@@ -28,7 +28,7 @@
 
 namespace Filelight {
 class ScanManager;
-class Part;
+class MainWindow;
 }
 
 class ProgressBox : public QWidget
@@ -36,7 +36,7 @@ class ProgressBox : public QWidget
     Q_OBJECT
 
 public:
-    ProgressBox(QWidget *parent, Filelight::Part *part, Filelight::ScanManager *scanManager);
+    ProgressBox(QWidget *parent, Filelight::MainWindow *mainWindow, Filelight::ScanManager *scanManager);
 
     void setText(int);
 
@@ -48,7 +48,7 @@ public slots:
 
 protected:
     void paintEvent(QPaintEvent *event);
-    
+
 private:
     QTimer m_timer;
     Filelight::ScanManager* m_manager;

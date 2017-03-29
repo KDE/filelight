@@ -23,17 +23,32 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "part.h"
+
+#include <QUrl>
+
+#include <KXmlGuiWindow>
+
+
+class QLabel;
+
+namespace RadialMap {
+class Widget;
+}
+class Folder;
 
 class KSqueezedTextLabel;
 class KHistoryComboBox;
 class KRecentFilesAction;
 
+class ProgressBox;
 class HistoryCollection;
 
 namespace Filelight {
 
-class MainWindow : public Part // Maybe use qmainwindow
+class ScanManager;
+class SummaryWidget;
+
+class MainWindow : public KXmlGuiWindow // Maybe use qmainwindow
 {
     Q_OBJECT
 
@@ -43,6 +58,12 @@ public:
     void scan(const QUrl &u) {
         slotScanUrl(u);
     }
+
+signals:
+    void started(); // FIXME: Could be replaced by direct func call once merged with mainwindow
+    void completed();
+    void canceled(QString);
+    void setWindowCaption(QString);
 
 private slots:
     void slotUp();
@@ -76,6 +97,46 @@ private:
 
     void setupStatusBar();
     void setupActions();
+
+
+
+
+public slots:
+    bool openUrl(const QUrl&);
+    void configFilelight();
+    void rescan();
+
+private slots:
+    void postInit();
+    void folderScanCompleted(Folder*);
+    void mapChanged(const Folder*);
+    void updateURL(const QUrl &);
+
+private:
+    bool closeUrl();
+    QString prettyUrl() const;
+    void showSummary();
+    bool start(const QUrl&);
+
+    QLayout            *m_layout;
+    SummaryWidget      *m_summary;
+    RadialMap::Widget  *m_map;
+    ProgressBox        *m_stateWidget;
+    ScanManager        *m_manager;
+    QLabel             *m_numberOfFiles;
+
+    bool m_started;
+
+
+    // Compat
+public:
+    QUrl url() const;
+    QWidget *widget() const; // Should get ported to centralWidget() I think
+private:
+    void setUrl(const QUrl &url);
+    void setWidget(QWidget *widget);
+    QWidget *m_widget = nullptr;
+    QUrl m_url;
 };
 
 } // namespace Filelight
