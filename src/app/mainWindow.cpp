@@ -71,11 +71,11 @@ MainWindow::MainWindow()
 
     stateChanged(QStringLiteral( "scan_failed" )); //bah! doesn't affect the parts' actions, should I add them to the actionCollection here?
 
-    connect(m_part, &KParts::ReadOnlyPart::started, this, &MainWindow::scanStarted);
-    connect(m_part, static_cast<void (KParts::ReadOnlyPart::*)()>(&KParts::ReadOnlyPart::completed), this, &MainWindow::scanCompleted);
-    connect(m_part, &KParts::ReadOnlyPart::canceled, this, &MainWindow::scanFailed);
+    connect(m_part, &Part::started, this, &MainWindow::scanStarted);
+    connect(m_part, static_cast<void (Part::*)()>(&Part::completed), this, &MainWindow::scanCompleted);
+    connect(m_part, &Part::canceled, this, &MainWindow::scanFailed);
 
-    connect(m_part, &KParts::ReadOnlyPart::canceled, m_histories, &HistoryCollection::stop);
+    connect(m_part, &Part::canceled, m_histories, &HistoryCollection::stop);
     connect(BrowserExtension::childObject(m_part), &KParts::BrowserExtension::openUrlNotify, this, &MainWindow::urlAboutToChange);
 
     const KConfigGroup config = KSharedConfig::openConfig()->group("general");
