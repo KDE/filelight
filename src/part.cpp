@@ -50,8 +50,8 @@
 
 namespace Filelight {
 
-Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
-    : KXmlGuiWindow(parentWidget)
+Part::Part()
+    : KXmlGuiWindow()
     , m_summary(nullptr)
     , m_map(nullptr)
     , m_started(false)
@@ -59,7 +59,7 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
 {
     Config::read();
 
-    QScrollArea *scrollArea = new QScrollArea(parentWidget);
+    QScrollArea *scrollArea = new QScrollArea(this);
     scrollArea->setWidgetResizable(true);
     setWidget(scrollArea);
 

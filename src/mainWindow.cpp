@@ -57,8 +57,7 @@
 namespace Filelight {
 
 MainWindow::MainWindow()
-//    : KParts::MainWindow()
-    : Part(nullptr, nullptr, QList<QVariant>())
+    : Part()
     , m_part(this)
     , m_histories(0)
 {

@@ -40,14 +40,12 @@ namespace Filelight
 class Part;
 class SummaryWidget;
 
-class Part : public
-//        KParts::ReadOnlyPart
-        KXmlGuiWindow
+class Part : public KXmlGuiWindow
 {
     Q_OBJECT
 
 public:
-    Part(QWidget *, QObject *, const QList<QVariant>&);
+    Part();
 
     virtual bool openFile();
     virtual bool closeUrl();
