@@ -149,7 +149,7 @@ void MainWindow::setupActions() //singleton function
     KStandardAction::configureToolbars(this, SLOT(configToolbars()), ac);
     KStandardAction::keyBindings(this, SLOT(configKeys()), ac);
 
-    QAction* action;
+    QAction *action;
 
     action = ac->addAction(QStringLiteral("scan_home"), this, SLOT(slotScanHomeFolder()));
     action->setText(i18n("Scan &Home Folder"));
