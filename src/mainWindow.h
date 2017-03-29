@@ -30,12 +30,13 @@ class KRecentFilesAction;
 
 class HistoryCollection;
 
+#include "part.h"
 
 namespace Filelight {
 
 class Part;
 
-class MainWindow : public KXmlGuiWindow // Maybe use qmainwindow
+class MainWindow : public Part // Maybe use qmainwindow
 {
     Q_OBJECT
 

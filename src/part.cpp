@@ -58,7 +58,7 @@ BrowserExtension::BrowserExtension(Part *parent)
 
 Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
 //        : ReadOnlyPart(parent)
-    : QObject(parent)
+    : KXmlGuiWindow(parentWidget)
         , m_summary(0)
         , m_ext(new BrowserExtension(this))
         , m_statusbar(new StatusBarExtension(this))
@@ -228,12 +228,6 @@ QUrl Part::url() const
 void Part::setUrl(const QUrl &url)
 {
     m_url = url;
-}
-
-void Part::stateChanged(const QString &state)
-{
-#warning port this calls xmlguiclient::stateChanged in parts
-//    Q_ASSERT(false);
 }
 
 void Part::setWidget(QWidget *widget)

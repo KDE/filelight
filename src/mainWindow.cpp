@@ -58,12 +58,11 @@ namespace Filelight {
 
 MainWindow::MainWindow()
 //    : KParts::MainWindow()
-    : KXmlGuiWindow()
-    , m_part(new Part(nullptr, this, QList<QVariant>()))
+    : Part(nullptr, nullptr, QList<QVariant>())
+    , m_part(this)
     , m_histories(0)
 {
 //    setXMLFile("filelightui.rc");
-    m_part = static_cast<Part *>(new Part(nullptr, this, QList<QVariant>()));
 
     setStandardToolBarMenuEnabled(true);
     setupActions();

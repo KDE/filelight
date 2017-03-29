@@ -27,6 +27,8 @@
 #include <KParts/Part>
 #include <QUrl>
 
+#include <KXmlGuiWindow>
+
 #include <QLabel>
 
 // COMPAT
@@ -76,7 +78,7 @@ signals:
 
 class Part : public
 //        KParts::ReadOnlyPart
-        QObject
+        KXmlGuiWindow
 {
     Q_OBJECT
 
@@ -132,7 +134,6 @@ public:
     QWidget *widget() const;
 private:
     void setUrl(const QUrl &url);
-    void stateChanged(const QString &state);
     void setWidget(QWidget *widget);
     QWidget *m_widget = nullptr;
     QUrl m_url;
