@@ -50,16 +50,9 @@
 
 namespace Filelight {
 
-BrowserExtension::BrowserExtension(Part *parent)
-//        : KParts::BrowserExtension(parent)
-    : QObject(parent)
-{}
-
-
 Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
     : KXmlGuiWindow(parentWidget)
     , m_summary(nullptr)
-    , m_ext(new BrowserExtension(this))
     , m_map(nullptr)
     , m_started(false)
     , m_widget(nullptr)
@@ -199,10 +192,6 @@ QString Part::prettyUrl() const {
 void
 Part::updateURL(const QUrl &u)
 {
-    //the map has changed internally, update the interface to reflect this
-    emit m_ext->openUrlNotify(); //must be done first
-    emit m_ext->setLocationBarUrl(u.toString(QUrl::PreferLocalFile));
-
     if (m_manager->running())
         m_manager->abort();
 

@@ -74,8 +74,6 @@ MainWindow::MainWindow()
     connect(m_part, &Part::canceled, this, &MainWindow::scanFailed);
 
     connect(m_part, &Part::canceled, m_histories, &HistoryCollection::stop);
-#warning port
-//    connect(BrowserExtension::childObject(m_part), &KParts::BrowserExtension::openUrlNotify, this, &MainWindow::urlAboutToChange);
 
     const KConfigGroup config = KSharedConfig::openConfig()->group("general");
     m_combo->setHistoryItems(config.readPathEntry("comboHistory", QStringList()));

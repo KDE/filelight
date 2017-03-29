@@ -40,23 +40,6 @@ namespace Filelight
 class Part;
 class SummaryWidget;
 
-
-// COMPAT
-class BrowserExtension : public
-        // KParts::BrowserExtension
-        QObject
-{
-    Q_OBJECT
-
-public:
-    explicit BrowserExtension(Part*);
-
-signals:
-    void openUrlNotify();
-    void setLocationBarUrl(QString);
-};
-
-
 class Part : public
 //        KParts::ReadOnlyPart
         KXmlGuiWindow
@@ -92,7 +75,6 @@ private:
 
     QLayout            *m_layout;
     SummaryWidget      *m_summary;
-    BrowserExtension   *m_ext;
     RadialMap::Widget  *m_map;
     QWidget            *m_stateWidget;
     class ScanManager  *m_manager;
