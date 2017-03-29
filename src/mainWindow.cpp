@@ -59,21 +59,19 @@ namespace Filelight {
 
 MainWindow::MainWindow()
     : Part()
-    , m_part(this)
     , m_histories(0)
 {
     setStandardToolBarMenuEnabled(true);
     setupActions();
     createGUI(QStringLiteral("filelightui.rc"));
-    setCentralWidget(m_part->widget());
+    setCentralWidget(widget());
 
     stateChanged(QStringLiteral( "scan_failed" )); //bah! doesn't affect the parts' actions, should I add them to the actionCollection here?
 
-    connect(m_part, &Part::started, this, &MainWindow::scanStarted);
-    connect(m_part, static_cast<void (Part::*)()>(&Part::completed), this, &MainWindow::scanCompleted);
-    connect(m_part, &Part::canceled, this, &MainWindow::scanFailed);
-
-    connect(m_part, &Part::canceled, m_histories, &HistoryCollection::stop);
+    connect(this, &Part::started, this, &MainWindow::scanStarted);
+    connect(this, static_cast<void (Part::*)()>(&Part::completed), this, &MainWindow::scanCompleted);
+    connect(this, &Part::canceled, this, &MainWindow::scanFailed);
+    connect(this, &Part::canceled, m_histories, &HistoryCollection::stop);
 
     const KConfigGroup config = KSharedConfig::openConfig()->group("general");
     m_combo->setHistoryItems(config.readPathEntry("comboHistory", QStringList()));
@@ -108,7 +106,7 @@ void MainWindow::setupActions() //singleton function
     action->setText(i18n("Scan &Root Folder"));
     action->setIcon(QIcon::fromTheme(QStringLiteral("folder-red")));
 
-    action = ac->addAction(QStringLiteral("scan_rescan"), m_part, SLOT(rescan()));
+    action = ac->addAction(QStringLiteral("scan_rescan"), this, SLOT(rescan()));
     action->setText(i18n("Rescan"));
     action->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")));
     ac->setDefaultShortcut(action, QKeySequence::Refresh);
@@ -160,8 +158,7 @@ void MainWindow::configToolbars() //slot
 
     if (dialog.exec()) //krazy:exclude=crashy
     {
-#warning port
-//        createGUI(m_part);
+        createGUI(QStringLiteral("filelightui.rc"));
         applyMainWindowSettings(KSharedConfig::openConfig()->group("window"));
     }
 }
@@ -173,7 +170,7 @@ void MainWindow::configKeys() //slot
 
 void MainWindow::slotScanFolder()
 {
-    slotScanUrl(QFileDialog::getExistingDirectoryUrl(this, i18n("Select Folder to Scan"), m_part->url()));
+    slotScanUrl(QFileDialog::getExistingDirectoryUrl(this, i18n("Select Folder to Scan"), url()));
 }
 
 void MainWindow::slotScanHomeFolder() {
@@ -183,7 +180,7 @@ void MainWindow::slotScanRootFolder() {
     slotScanPath(QDir::rootPath());
 }
 void MainWindow::slotUp()                {
-    slotScanUrl(KIO::upUrl(m_part->url()));
+    slotScanUrl(KIO::upUrl(url()));
 }
 
 void MainWindow::slotComboScan()
@@ -208,9 +205,9 @@ bool MainWindow::slotScanPath(const QString &path)
 
 bool MainWindow::slotScanUrl(const QUrl &url)
 {
-    const QUrl oldUrl = m_part->url();
+    const QUrl oldUrl = this->url();
 
-    if (m_part->openUrl(url))
+    if (openUrl(url))
     {
         m_histories->push(oldUrl);
         return true;
@@ -221,7 +218,7 @@ bool MainWindow::slotScanUrl(const QUrl &url)
 
 void MainWindow::slotAbortScan()
 {
-    if (m_part->closeUrl()) action("scan_stop")->setEnabled(false);
+    if (closeUrl()) action("scan_stop")->setEnabled(false);
 }
 
 void MainWindow::scanStarted()
@@ -240,11 +237,11 @@ void MainWindow::scanFailed()
 
 void MainWindow::scanCompleted()
 {
-    const QUrl url = m_part->url();
+    const QUrl url = this->url();
 
     stateChanged(QStringLiteral("scan_complete"));
 
-    m_combo->lineEdit()->setText(m_part->prettyUrl());
+    m_combo->lineEdit()->setText(prettyUrl());
 
     if (url.toLocalFile() == QLatin1String( "/" )) {
         action("go_up")->setEnabled(false);
@@ -264,7 +261,7 @@ void MainWindow::urlAboutToChange()
     //called when part's URL is about to change internally
     //the part will then create the Map and emit completed()
 
-    m_histories->push(m_part->url());
+    m_histories->push(url());
 }
 
 
@@ -277,7 +274,7 @@ void MainWindow::saveProperties(KConfigGroup &configgroup) //virtual
     if (!m_histories) return;
 
     m_histories->save(configgroup);
-    configgroup.writeEntry("currentMap", m_part->url().path());
+    configgroup.writeEntry("currentMap", url().path());
 }
 
 void MainWindow::readProperties(const KConfigGroup &configgroup) //virtual

@@ -69,8 +69,6 @@ protected:
     virtual void closeEvent(QCloseEvent *event);
 
 private:
-    Filelight::Part *m_part;
-
     KSqueezedTextLabel *m_status[2];
     KHistoryComboBox   *m_combo;
     HistoryCollection  *m_histories;
