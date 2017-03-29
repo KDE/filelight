@@ -84,8 +84,8 @@ Part::Part()
     m_numberOfFiles = new QLabel();
     statusBar()->addPermanentWidget(m_numberOfFiles);
 
-    KStandardAction::zoomIn(m_map, SLOT(zoomIn()), actionCollection());
-    KStandardAction::zoomOut(m_map, SLOT(zoomOut()), actionCollection());
+    KStandardAction::zoomIn(m_map, &RadialMap::Widget::zoomIn, actionCollection());
+    KStandardAction::zoomOut(m_map, &RadialMap::Widget::zoomOut, actionCollection());
     KStandardAction::preferences(this, &Part::configFilelight, actionCollection());
 
     connect(m_map, &RadialMap::Widget::folderCreated, this, static_cast<void (Part::*)()>(&Part::completed));
