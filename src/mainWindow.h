@@ -22,7 +22,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <kparts/mainwindow.h>
+#include "part.h"
 
 class KSqueezedTextLabel;
 class KHistoryComboBox;
@@ -30,11 +30,7 @@ class KRecentFilesAction;
 
 class HistoryCollection;
 
-#include "part.h"
-
 namespace Filelight {
-
-class Part;
 
 class MainWindow : public Part // Maybe use qmainwindow
 {

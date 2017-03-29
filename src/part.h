@@ -22,14 +22,12 @@
 #ifndef FILELIGHTPART_H
 #define FILELIGHTPART_H
 
-#include <KParts/BrowserExtension>
-#include <KParts/StatusBarExtension>
-#include <KParts/Part>
 #include <QUrl>
 
 #include <KXmlGuiWindow>
 
-#include <QLabel>
+class KJob;
+class QLabel;
 
 // COMPAT
 //using KParts::StatusBarExtension;
