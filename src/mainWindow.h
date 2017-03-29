@@ -120,11 +120,8 @@ private:
     // KPart Compat helper
 public:
     QUrl url() const;
-    QWidget *widget() const; // Should get ported to centralWidget() I think
 private:
     void setUrl(const QUrl &url);
-    void setWidget(QWidget *widget);
-    QWidget *m_widget = nullptr;
     QUrl m_url;
 };
 

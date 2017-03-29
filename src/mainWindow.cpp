@@ -65,13 +65,12 @@ MainWindow::MainWindow()
     , m_summary(nullptr)
     , m_map(nullptr)
     , m_started(false)
-    , m_widget(nullptr)
 {
     Config::read();
 
     QScrollArea *scrollArea = new QScrollArea(this);
     scrollArea->setWidgetResizable(true);
-    setWidget(scrollArea);
+    setCentralWidget(scrollArea);
 
     QWidget *partWidget = new QWidget(scrollArea);
     scrollArea->setWidget(partWidget);
@@ -113,7 +112,6 @@ MainWindow::MainWindow()
     setStandardToolBarMenuEnabled(true);
     setupActions();
     createGUI(QStringLiteral("filelightui.rc"));
-    setCentralWidget(widget());
 
     stateChanged(QStringLiteral("scan_failed")); //bah! doesn't affect the parts' actions, should I add them to the actionCollection here?
 
@@ -442,16 +440,6 @@ QUrl MainWindow::url() const
 void MainWindow::setUrl(const QUrl &url)
 {
     m_url = url;
-}
-
-void MainWindow::setWidget(QWidget *widget)
-{
-    m_widget = widget;
-}
-
-QWidget *MainWindow::widget() const
-{
-    return m_widget;
 }
 
 void MainWindow::configFilelight()
