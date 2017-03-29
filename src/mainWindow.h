@@ -80,39 +80,32 @@ private slots:
 
     void urlAboutToChange();
 
+    bool openUrl(const QUrl&);
+    void configFilelight();
+    void rescan();
+
+    void postInit();
+    void folderScanCompleted(Folder*);
+    void mapChanged(const Folder*);
+    void updateURL(const QUrl &);
+
 protected:
     virtual void saveProperties(KConfigGroup&) Q_DECL_OVERRIDE;
     virtual void readProperties(const KConfigGroup&) Q_DECL_OVERRIDE;
     virtual void closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
 
 private:
-    KSqueezedTextLabel *m_status[2];
-    KHistoryComboBox   *m_combo;
-    HistoryCollection  *m_histories;
-    KRecentFilesAction *m_recentScans;
-
     void setupStatusBar();
     void setupActions();
-
-
-
-
-public slots:
-    bool openUrl(const QUrl&);
-    void configFilelight();
-    void rescan();
-
-private slots:
-    void postInit();
-    void folderScanCompleted(Folder*);
-    void mapChanged(const Folder*);
-    void updateURL(const QUrl &);
-
-private:
     bool closeUrl();
     QString prettyUrl() const;
     void showSummary();
     bool start(const QUrl&);
+
+    KSqueezedTextLabel *m_status[2];
+    KHistoryComboBox   *m_combo;
+    HistoryCollection  *m_histories;
+    KRecentFilesAction *m_recentScans;
 
     QLayout            *m_layout;
     SummaryWidget      *m_summary;
@@ -124,7 +117,7 @@ private:
     bool m_started;
 
 
-    // Compat
+    // KPart Compat helper
 public:
     QUrl url() const;
     QWidget *widget() const; // Should get ported to centralWidget() I think
