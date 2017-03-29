@@ -174,9 +174,7 @@ Part::closeUrl()
 
     showSummary();
 
-    Q_ASSERT(false); // todo
-    return false;
-//    return ReadOnlyPart::closeUrl();
+    return true;
 }
 
 QString Part::prettyUrl() const {
@@ -330,10 +328,6 @@ Part::showSummary()
         m_layout->addWidget(m_summary);
     }
     else m_summary->show();
-}
-
-bool Filelight::Part::openFile() {
-    return false;    //pure virtual in base class
 }
 
 } //namespace Filelight

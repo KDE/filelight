@@ -47,9 +47,7 @@ class Part : public KXmlGuiWindow
 public:
     Part();
 
-    virtual bool openFile();
-    virtual bool closeUrl();
-
+    bool closeUrl();
     QString prettyUrl() const;
 
 signals:
