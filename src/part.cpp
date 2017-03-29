@@ -30,13 +30,9 @@
 #include "settingsDialog.h"
 #include "summaryWidget.h"
 
-#include <KAboutData>   //::createAboutData()
-#include <QAction>
 #include <KActionCollection>
 #include <KMessageBox>  //::start()
-#include <KStandardAction>
 #include <QStatusBar>
-#include <KPluginFactory>
 #include <KLocalizedString>
 
 #include <QFile>        //encodeName()
