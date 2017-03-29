@@ -22,39 +22,6 @@
 
 #include "mainWindow.h"
 #include "historyAction.h"
-
-#include <cstdlib>            //std::exit()
-#include <QApplication>     //setupActions()
-#include <KComboBox>        //locationbar
-#include <KHistoryComboBox>
-#include <KRecentFilesAction>
-#include <QFileDialog>
-#include <KConfig>
-#include <KEditToolBar>     //for editToolbar dialog
-#include <QLineEdit>
-#include <KStandardShortcut>
-#include <KPluginFactory>
-#include <KPluginLoader>
-#include <KMessageBox>
-#include <KShell>
-#include <QStatusBar>
-#include <KToolBar>
-#include <QUrl>
-#include <KUrlCompletion>   //locationbar
-#include <QObject>
-#include <QToolTip>
-#include <QPluginLoader>
-#include <KConfigGroup>
-#include <KShortcutsDialog>
-#include <KSharedConfig>
-#include <KStandardAction>
-#include <KActionCollection>
-#include <KIO/Global> // upUrl
-#include <KIO/Job> // Connection of the MainWindow::started signal
-#include <KService>
-#include <KLocalizedString>
-
-
 #include "Config.h"
 #include "define.h"
 #include "fileTree.h"
@@ -64,19 +31,31 @@
 #include "settingsDialog.h"
 #include "summaryWidget.h"
 
-#include <KActionCollection>
-#include <KMessageBox>  //::start()
-#include <QStatusBar>
-#include <KLocalizedString>
-
-#include <QFile>        //encodeName()
-#include <QTimer>       //postInit() hack
-#include <QByteArray>
-#include <QDir>
-#include <QScrollArea>
-
+#include <cstdlib>            //std::exit()
 #include <unistd.h>       //access()
 #include <iostream>
+
+#include <KActionCollection>
+#include <KConfigGroup>
+#include <KEditToolBar>     //for editToolbar dialog
+#include <KHistoryComboBox>
+#include <KIO/Global> // upUrl
+#include <KLocalizedString>
+#include <KMessageBox>  //::start()
+#include <KShell>
+#include <KShortcutsDialog>
+#include <KStandardAction>
+#include <KUrlCompletion>   //locationbar
+
+#include <QApplication>     //setupActions()
+#include <QByteArray>
+#include <QDir>
+#include <QFileDialog>
+#include <QLineEdit>
+#include <QObject>
+#include <QScrollArea>
+#include <QStatusBar>
+#include <QToolTip>
 
 namespace Filelight {
 
