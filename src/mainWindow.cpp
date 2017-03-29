@@ -125,7 +125,7 @@ MainWindow::MainWindow()
 
     setAutoSaveSettings(QStringLiteral("window"));
 
-    QTimer::singleShot(0, this, SLOT(postInit()));
+    QTimer::singleShot(0, this, &MainWindow::postInit);
 }
 
 void MainWindow::scan(const QUrl &u)
@@ -151,31 +151,32 @@ void MainWindow::setupActions() //singleton function
 
     QAction *action;
 
-    action = ac->addAction(QStringLiteral("scan_home"), this, SLOT(slotScanHomeFolder()));
+    action = ac->addAction(QStringLiteral("scan_home"), this, &MainWindow::slotScanHomeFolder);
     action->setText(i18n("Scan &Home Folder"));
     action->setIcon(QIcon::fromTheme(QStringLiteral("user-home")));
     ac->setDefaultShortcut(action, QKeySequence(Qt::CTRL + Qt::Key_Home));
 
-    action = ac->addAction(QStringLiteral("scan_root"), this, SLOT(slotScanRootFolder()));
+    action = ac->addAction(QStringLiteral("scan_root"), this, &MainWindow::slotScanRootFolder);
     action->setText(i18n("Scan &Root Folder"));
     action->setIcon(QIcon::fromTheme(QStringLiteral("folder-red")));
 
-    action = ac->addAction(QStringLiteral("scan_rescan"), this, SLOT(rescan()));
+    action = ac->addAction(QStringLiteral("scan_rescan"), this, &MainWindow::rescan);
     action->setText(i18n("Rescan"));
     action->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")));
     ac->setDefaultShortcut(action, QKeySequence::Refresh);
 
 
-    action = ac->addAction(QStringLiteral("scan_stop"), this, SLOT(slotAbortScan()));
+    action = ac->addAction(QStringLiteral("scan_stop"), this, &MainWindow::slotAbortScan);
     action->setText(i18n("Stop"));
     action->setIcon(QIcon::fromTheme(QStringLiteral("process-stop")));
     ac->setDefaultShortcut(action, Qt::Key_Escape);
 
-    action = ac->addAction(QStringLiteral("go"), m_combo, SIGNAL(returnPressed()));
+    action = ac->addAction(QStringLiteral("go"), m_combo,
+                           static_cast<void (KHistoryComboBox::*)()>(&KHistoryComboBox::returnPressed));
     action->setText(i18n("Go"));
     action->setIcon(QIcon::fromTheme(QStringLiteral("go-jump-locationbar")));
 
-    action = ac->addAction(QStringLiteral("scan_folder"), this, SLOT(slotScanFolder()));
+    action = ac->addAction(QStringLiteral("scan_folder"), this, &MainWindow::slotScanFolder);
     action->setText(i18n("Scan Folder"));
     action->setIcon(QIcon::fromTheme(QStringLiteral("folder")));
 
@@ -455,7 +456,8 @@ void MainWindow::configFilelight()
 bool MainWindow::start(const QUrl &url)
 {
     if (!m_started) {
-        connect(m_map, SIGNAL(mouseHover(QString)), statusBar(), SLOT(showMessage(const QString&)));
+        connect(m_map, &RadialMap::Widget::mouseHover,
+                [&](const QString &msg) { statusBar()->showMessage(msg); });
         connect(m_map, &RadialMap::Widget::folderCreated, statusBar(), &QStatusBar::clearMessage);
         m_started = true;
     }
