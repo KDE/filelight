@@ -57,19 +57,15 @@ BrowserExtension::BrowserExtension(Part *parent)
 
 
 Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
-//        : ReadOnlyPart(parent)
     : KXmlGuiWindow(parentWidget)
-        , m_summary(0)
-        , m_ext(new BrowserExtension(this))
-        , m_statusbar(new StatusBarExtension(this))
-        , m_map(0)
-        , m_started(false)
+    , m_summary(nullptr)
+    , m_ext(new BrowserExtension(this))
+    , m_statusbar(new StatusBarExtension(this))
+    , m_map(nullptr)
+    , m_started(false)
     , m_widget(nullptr)
 {
     Config::read();
-
-//    Q_ASSERT(false); // todo
-//    setXMLFile(QStringLiteral( "filelightpartui.rc" ));
 
     QScrollArea *scrollArea = new QScrollArea(parentWidget);
     scrollArea->setWidgetResizable(true);
@@ -96,14 +92,12 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
     m_numberOfFiles = new QLabel();
     m_statusbar->addStatusBarItem(m_numberOfFiles, 0, true);
 
-#warning port
-//    Q_ASSERT(false); // todo
-//    KStandardAction::zoomIn(m_map, SLOT(zoomIn()), actionCollection());
-//    KStandardAction::zoomOut(m_map, SLOT(zoomOut()), actionCollection());
-//    QAction *action = actionCollection()->addAction(QStringLiteral("configure_filelight"));
-//    action->setText(i18n("Configure Filelight..."));
-//    action->setIcon(QIcon::fromTheme(QStringLiteral("configure")));
-//    connect(action, &QAction::triggered, this, &Part::configFilelight);
+    KStandardAction::zoomIn(m_map, SLOT(zoomIn()), actionCollection());
+    KStandardAction::zoomOut(m_map, SLOT(zoomOut()), actionCollection());
+    QAction *action = actionCollection()->addAction(QStringLiteral("configure_filelight"));
+    action->setText(i18n("Configure Filelight..."));
+    action->setIcon(QIcon::fromTheme(QStringLiteral("configure")));
+    connect(action, &QAction::triggered, this, &Part::configFilelight);
 
     connect(m_map, &RadialMap::Widget::folderCreated, this, static_cast<void (Part::*)()>(&Part::completed));
     connect(m_map, &RadialMap::Widget::folderCreated, this, &Part::mapChanged);

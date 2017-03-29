@@ -18,15 +18,13 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #######################################################################
 
-install(FILES filelightpart.desktop DESTINATION ${SERVICES_INSTALL_DIR})
 install(PROGRAMS org.kde.filelight.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 install(FILES filelightrc DESTINATION ${CONFIG_INSTALL_DIR})
-install(FILES filelightpartui.rc DESTINATION ${KXMLGUI_INSTALL_DIR}//filelightpart)
 install(FILES filelightui.rc DESTINATION ${KXMLGUI_INSTALL_DIR}//filelight)
 
 ecm_install_icons(ICONS
     32-actions-views_filelight.png
-    16-apps-filelight.png 
+    16-apps-filelight.png
     22-apps-filelight.png
     32-apps-filelight.png
     48-apps-filelight.png

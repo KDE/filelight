@@ -62,13 +62,9 @@ MainWindow::MainWindow()
     , m_part(this)
     , m_histories(0)
 {
-//    setXMLFile("filelightui.rc");
-
     setStandardToolBarMenuEnabled(true);
     setupActions();
-#warning port
-    setXMLFile(QStringLiteral( "filelightpartui.rc" ));
-//    createGUI(m_part);
+    createGUI(QStringLiteral("filelightui.rc"));
     setCentralWidget(m_part->widget());
 
     stateChanged(QStringLiteral( "scan_failed" )); //bah! doesn't affect the parts' actions, should I add them to the actionCollection here?
