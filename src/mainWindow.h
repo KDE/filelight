@@ -53,9 +53,7 @@ class MainWindow : public KXmlGuiWindow // Maybe use qmainwindow
 public:
     MainWindow();
 
-    void scan(const QUrl &u) {
-        slotScanUrl(u);
-    }
+    void scan(const QUrl &u);
 
 signals:
     void started(); // FIXME: Could be replaced by direct func call once merged with mainwindow

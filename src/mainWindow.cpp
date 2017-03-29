@@ -130,6 +130,11 @@ MainWindow::MainWindow()
     QTimer::singleShot(0, this, SLOT(postInit()));
 }
 
+void MainWindow::scan(const QUrl &u)
+{
+    slotScanUrl(u);
+}
+
 void MainWindow::setupActions() //singleton function
 {
     KActionCollection *const ac = actionCollection();
