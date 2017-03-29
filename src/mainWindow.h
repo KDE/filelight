@@ -81,9 +81,9 @@ private slots:
     void urlAboutToChange();
 
 protected:
-    virtual void saveProperties(KConfigGroup&);
-    virtual void readProperties(const KConfigGroup&);
-    virtual void closeEvent(QCloseEvent *event);
+    virtual void saveProperties(KConfigGroup&) Q_DECL_OVERRIDE;
+    virtual void readProperties(const KConfigGroup&) Q_DECL_OVERRIDE;
+    virtual void closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
 
 private:
     KSqueezedTextLabel *m_status[2];
