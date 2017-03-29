@@ -15,7 +15,13 @@
     <Separator/>
     <Action name="file_quit"/>
   </Menu>
-  <Menu name="view" noMerge="1"><text>&amp;View</text></Menu>
+  <Menu name="view" noMerge="1"><text>&amp;View</text>
+    <Action name="view_zoom_in" group="view_merge_group"/>
+    <Action name="view_zoom_out" group="view_merge_group"/>
+  </Menu>
+  <Menu name="settings">
+    <Action name="configure_filelight" group="settings_configure"/>
+  </Menu>
 </MenuBar>
 
 <ToolBar name="mainToolBar"><text>Main Toolbar</text>
@@ -30,6 +36,10 @@
     <Action name="clear_location"/>
     <Action name="location_bar"/>
     <Action name="go"/>
+</ToolBar>
+<ToolBar name="viewToolBar" hidden="true"><text>View Toolbar</text>
+    <Action name="view_zoom_in"/>
+    <Action name="view_zoom_out"/>
 </ToolBar>
 
 <State name="scan_started">
