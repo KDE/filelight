@@ -23,11 +23,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-
 #include <QUrl>
 
 #include <KXmlGuiWindow>
-
 
 class QLabel;
 

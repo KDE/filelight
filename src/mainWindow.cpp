@@ -320,7 +320,6 @@ void MainWindow::urlAboutToChange()
     m_histories->push(url());
 }
 
-
 /**********************************************
   SESSION MANAGEMENT
  **********************************************/
