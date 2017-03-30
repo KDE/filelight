@@ -32,7 +32,6 @@
 #include "summaryWidget.h"
 
 #include <cstdlib>            //std::exit()
-#include <unistd.h>       //access()
 #include <iostream>
 
 #include <KActionCollection>
@@ -366,7 +365,6 @@ bool MainWindow::openUrl(const QUrl &u)
 
     QUrl uri = u.adjusted(QUrl::NormalizePathSegments);
     const QString path = uri.path();
-    const QByteArray path8bit = QFile::encodeName(path);
     const bool isLocal = uri.isLocalFile();
 
     if (uri.isEmpty())
@@ -381,11 +379,11 @@ bool MainWindow::openUrl(const QUrl &u)
     {
         KMSG(i18n("Filelight only accepts absolute paths, eg. /%1", path));
     }
-    else if (isLocal && access(path8bit, F_OK) != 0) //stat(path, &statbuf) == 0
+    else if (isLocal && !QDir(path).exists())
     {
         KMSG(i18n("Folder not found: %1", path));
     }
-    else if (isLocal && !QDir(path).isReadable()) //access(path8bit, R_OK | X_OK) != 0 doesn't work on win32
+    else if (isLocal && !QDir(path).isReadable())
     {
         KMSG(i18n("Unable to enter: %1\nYou do not have access rights to this location.", path));
     }
