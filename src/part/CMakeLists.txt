@@ -30,6 +30,8 @@ set(filelight_PART_SRCS
     settingsDialog.cpp
     fileTree.cpp
     localLister.cpp
+    localListerQt.cpp
+    localListerUnix.cpp
     remoteLister.cpp
     summaryWidget.cpp)
 

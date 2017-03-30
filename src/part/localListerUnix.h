@@ -19,11 +19,12 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ***********************************************************************/
 
-#ifndef LOCALLISTER_H
-#define LOCALLISTER_H
+#ifndef LOCALLISTERUNIX_H
+#define LOCALLISTERUNIX_H
+
+#include "localLister.h"
 
 #include <QtCore/QByteArray>
-#include <QtCore/QThread>
 
 class Folder;
 
@@ -31,31 +32,15 @@ namespace Filelight
 {
 class ScanManager;
 
-class LocalLister : public QThread
+class LocalListerUnix : public LocalLister
 {
     Q_OBJECT
 public:
-    LocalLister(const QString &path, QList<Folder*> *cachedTrees, ScanManager *parent);
-
-    static void readMounts();
-    static QStringList localMounts();
-    static QStringList remoteMounts();
-
-signals:
-    void branchCompleted(Folder *tree);
+    using LocalLister::LocalLister;
 
 protected:
-    virtual Folder *scan(const QByteArray &, const QByteArray &) = 0;
-
-    QString m_path;
-    QList<Folder*> *m_trees;
-    ScanManager *m_parent;
-
-private:
-    virtual void run();
-
-    static QStringList s_localMounts, s_remoteMounts; //TODO namespace
+    Folder *scan(const QByteArray&, const QByteArray&) Q_DECL_OVERRIDE Q_DECL_FINAL;
 };
 }
 
-#endif
+#endif // LOCALLISTERUNIX_H

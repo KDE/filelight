@@ -1,6 +1,5 @@
 /***********************************************************************
-* Copyright 2003-2004  Max Howell <max.howell@methylblue.com>
-* Copyright 2008-2009  Martin Sandsmark <martin.sandsmark@kde.org>
+* Copyright 2017  Harald Sitter <sitter@kde.org>
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public License as
@@ -19,43 +18,23 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ***********************************************************************/
 
-#ifndef LOCALLISTER_H
-#define LOCALLISTER_H
+#ifndef LOCALLISTERQT_H
+#define LOCALLISTERQT_H
 
-#include <QtCore/QByteArray>
-#include <QtCore/QThread>
+#include "localLister.h"
 
-class Folder;
+namespace Filelight {
 
-namespace Filelight
-{
-class ScanManager;
-
-class LocalLister : public QThread
+class LocalListerQt : public LocalLister
 {
     Q_OBJECT
 public:
-    LocalLister(const QString &path, QList<Folder*> *cachedTrees, ScanManager *parent);
-
-    static void readMounts();
-    static QStringList localMounts();
-    static QStringList remoteMounts();
-
-signals:
-    void branchCompleted(Folder *tree);
-
-protected:
-    virtual Folder *scan(const QByteArray &, const QByteArray &) = 0;
-
-    QString m_path;
-    QList<Folder*> *m_trees;
-    ScanManager *m_parent;
+    using LocalLister::LocalLister;
 
 private:
-    virtual void run();
-
-    static QStringList s_localMounts, s_remoteMounts; //TODO namespace
+    Folder *scan(const QByteArray&, const QByteArray&) Q_DECL_OVERRIDE Q_DECL_FINAL;
 };
-}
 
-#endif
+} // namespace Filelight
+
+#endif // LOCALLISTERQT_H

@@ -145,7 +145,7 @@ Part::postInit()
 bool
 Part::openUrl(const QUrl &u)
 {
-
+qWarning() << u;
     //TODO everyone hates dialogs, instead render the text in big fonts on the Map
     //TODO should have an empty QUrl until scan is confirmed successful
     //TODO probably should set caption to QString::null while map is unusable
@@ -153,9 +153,10 @@ Part::openUrl(const QUrl &u)
 #define KMSG(s) KMessageBox::information(widget(), s)
 
     QUrl uri = u.adjusted(QUrl::NormalizePathSegments);
-    const QString path = uri.path();
+    const QString path = uri.toLocalFile();
     const QByteArray path8bit = QFile::encodeName(path);
-    const bool isLocal = uri.scheme() == QLatin1String( "file" );
+    const bool isLocal = uri.isLocalFile();
+    qWarning() << "ACCESS" << isLocal << access(path8bit, F_OK);
 
     if (uri.isEmpty())
     {
@@ -169,7 +170,7 @@ Part::openUrl(const QUrl &u)
     {
         KMSG(i18n("Filelight only accepts absolute paths, eg. /%1", path));
     }
-    else if (isLocal && access(path8bit, F_OK) != 0) //stat(path, &statbuf) == 0
+    else if (isLocal && !QDir(path).exists()) //stat(path, &statbuf) == 0 doesn't work on win32
     {
         KMSG(i18n("Folder not found: %1", path));
     }

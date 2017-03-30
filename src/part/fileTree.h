@@ -111,11 +111,21 @@ public:
     {
         append(new File(name, size, this));
     }
-    
+
+    void append(const QByteArray &name, FileSize size)
+    {
+        append(name.constData(), size);
+    }
+
+    void append(const QString &name, FileSize size)
+    {
+        append(name.toLocal8Bit().constData(), size);
+    }
+
     /// removes a file
     void remove(const File *f) {
         files.removeAll(const_cast<File*>(f));
-        
+
         for (Folder *d = this; d; d = d->parent()) {
             d->m_size -= f->size();
         }

@@ -39,7 +39,6 @@ class ScanManager : public QObject
 {
     Q_OBJECT
 
-    friend class LocalLister;
     friend class RemoteLister;
 
 public:
@@ -52,6 +51,10 @@ public:
     uint files() const {
         return m_files;
     }
+
+    bool isAborting() const;
+
+    uint m_files;
 
 public slots:
     bool abort();
@@ -66,7 +69,6 @@ signals:
 
 private:
     bool m_abort;
-    uint m_files;
 
     QMutex m_mutex;
     LocalLister *m_thread;

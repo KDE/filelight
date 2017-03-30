@@ -23,7 +23,8 @@
 
 #include "remoteLister.h"
 #include "fileTree.h"
-#include "localLister.h"
+#include "localListerQt.h"
+#include "localListerUnix.h"
 
 #include <QGuiApplication>
 #include <QCursor>
@@ -58,6 +59,11 @@ ScanManager::~ScanManager()
 bool ScanManager::running() const
 {
     return m_thread && m_thread->isRunning();
+}
+
+bool ScanManager::isAborting() const
+{
+    return m_abort;
 }
 
 bool ScanManager::start(const QUrl &url)
@@ -158,7 +164,20 @@ bool ScanManager::start(const QUrl &url)
 
     QGuiApplication::changeOverrideCursor(QCursor(Qt::BusyCursor));
     //starts listing by itself
-    m_thread = new Filelight::LocalLister(path, trees, this);
+
+    // unix 12746 14s
+    // qt 12746 15s
+
+    // qt 866276 14s
+    // unix 866276 8s
+
+    if (qEnvironmentVariableIsSet("FL_QT")) {
+        qDebug() << "using Qt lister";
+        m_thread = new Filelight::LocalListerQt(path, trees, this);
+    } else {
+        qDebug() << "using Unix lister";
+        m_thread = new Filelight::LocalListerUnix(path, trees, this);
+    }
     connect(m_thread, &LocalLister::branchCompleted, this, &ScanManager::cacheTree, Qt::QueuedConnection);
     m_thread->start();
 
