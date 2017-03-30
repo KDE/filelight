@@ -367,7 +367,7 @@ bool MainWindow::openUrl(const QUrl &u)
     QUrl uri = u.adjusted(QUrl::NormalizePathSegments);
     const QString path = uri.path();
     const QByteArray path8bit = QFile::encodeName(path);
-    const bool isLocal = uri.scheme() == QLatin1String("file");
+    const bool isLocal = uri.isLocalFile();
 
     if (uri.isEmpty())
     {
