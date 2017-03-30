@@ -36,7 +36,6 @@
 
 #include "map.h"
 
-template <class T> class Chain;
 class Folder;
 class File;
 namespace KIO {

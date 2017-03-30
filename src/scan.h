@@ -29,7 +29,6 @@
 
 class QThread;
 class Folder;
-template<class T> class Chain;
 
 namespace Filelight
 {

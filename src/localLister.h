@@ -26,7 +26,6 @@
 #include <QtCore/QThread>
 
 class Folder;
-template<class T> class Chain;
 
 namespace Filelight
 {
