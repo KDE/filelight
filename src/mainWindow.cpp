@@ -364,7 +364,7 @@ bool MainWindow::openUrl(const QUrl &u)
 #define KMSG(s) KMessageBox::information(widget(), s)
 
     QUrl uri = u.adjusted(QUrl::NormalizePathSegments);
-    const QString path = uri.path();
+    const QString localPath = uri.toLocalFile();
     const bool isLocal = uri.isLocalFile();
 
     if (uri.isEmpty())
@@ -375,17 +375,17 @@ bool MainWindow::openUrl(const QUrl &u)
     {
         KMSG(i18n("The entered URL cannot be parsed; it is invalid."));
     }
-    else if ((!isLocal && path[0] != QLatin1Char('/')) || (isLocal && !QDir::isAbsolutePath(path)))
+    else if ((!isLocal && localPath[0] != QLatin1Char('/')) || (isLocal && !QDir::isAbsolutePath(localPath)))
     {
-        KMSG(i18n("Filelight only accepts absolute paths, eg. /%1", path));
+        KMSG(i18n("Filelight only accepts absolute paths, eg. /%1", localPath));
     }
-    else if (isLocal && !QDir(path).exists())
+    else if (isLocal && !QDir(localPath).exists())
     {
-        KMSG(i18n("Folder not found: %1", path));
+        KMSG(i18n("Folder not found: %1", localPath));
     }
-    else if (isLocal && !QDir(path).isReadable())
+    else if (isLocal && !QDir(localPath).isReadable())
     {
-        KMSG(i18n("Unable to enter: %1\nYou do not have access rights to this location.", path));
+        KMSG(i18n("Unable to enter: %1\nYou do not have access rights to this location.", localPath));
     }
     else
     {
