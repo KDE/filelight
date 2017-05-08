@@ -63,17 +63,11 @@ int main(int argc, char *argv[])
     about.addCredit(i18n("Sune Vuorela"),     i18n("Icon"));
     about.addCredit(i18n("Nuno Pinheiro"),    i18n("Icon"));
 
-    app.setApplicationName(QStringLiteral(APP_NAME));
-    app.setApplicationDisplayName(i18n(APP_PRETTYNAME));
-    app.setApplicationVersion(QStringLiteral(APP_VERSION));
-    app.setOrganizationDomain(QStringLiteral("kde.org"));
+    KAboutData::setApplicationData(about);
     app.setOrganizationName(QStringLiteral("KDE"));
     app.setWindowIcon(QIcon::fromTheme(QLatin1String(APP_NAME)));
 
-    KAboutData::setApplicationData(about);
-
     QCommandLineParser options;
-    options.setApplicationDescription(i18n("Graphical disk-usage information"));
     options.addHelpOption();
     options.addVersionOption();
     options.addPositionalArgument(QStringLiteral("url"), i18n("Path or URL to scan"), i18n("[url]"));
