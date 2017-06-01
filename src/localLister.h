@@ -49,7 +49,7 @@ private:
     ScanManager *m_parent;
 
 private:
-    virtual void run();
+    void run() Q_DECL_OVERRIDE;
     Folder *scan(const QByteArray&, const QByteArray&);
 
 private:

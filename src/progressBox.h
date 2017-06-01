@@ -47,7 +47,7 @@ public slots:
     void halt();
 
 protected:
-    void paintEvent(QPaintEvent *event);
+    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
 
 private:
     QTimer m_timer;

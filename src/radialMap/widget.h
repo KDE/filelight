@@ -87,15 +87,15 @@ signals:
     void giveMeTreeFor(const QUrl&);
 
 protected:
-    virtual void changeEvent(QEvent*);
-    virtual void dragEnterEvent(QDragEnterEvent*);
-    virtual void dropEvent(QDropEvent*);
-    virtual void mouseMoveEvent(QMouseEvent*);
-    virtual void mousePressEvent(QMouseEvent*);
-    virtual void paintEvent(QPaintEvent*);
-    virtual void resizeEvent(QResizeEvent*);
-    virtual void enterEvent(QEvent*);
-    virtual void leaveEvent(QEvent*);
+    void changeEvent(QEvent*) Q_DECL_OVERRIDE;
+    void dragEnterEvent(QDragEnterEvent*) Q_DECL_OVERRIDE;
+    void dropEvent(QDropEvent*) Q_DECL_OVERRIDE;
+    void mouseMoveEvent(QMouseEvent*) Q_DECL_OVERRIDE;
+    void mousePressEvent(QMouseEvent*) Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent*) Q_DECL_OVERRIDE;
+    void resizeEvent(QResizeEvent*) Q_DECL_OVERRIDE;
+    void enterEvent(QEvent*) Q_DECL_OVERRIDE;
+    void leaveEvent(QEvent*) Q_DECL_OVERRIDE;
 
 protected:
     const Segment *segmentAt(QPoint&) const; //FIXME const reference for a library others can use

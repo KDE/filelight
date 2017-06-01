@@ -89,7 +89,7 @@ public:
     uint children() const {
         return m_children;
     }
-    virtual bool isFolder() const {
+    bool isFolder() const Q_DECL_OVERRIDE {
         return true;
     }
 
