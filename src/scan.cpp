@@ -38,7 +38,7 @@ ScanManager::ScanManager(QObject *parent)
         , m_abort(false)
         , m_files(0)
         , m_mutex()
-        , m_thread(0)
+        , m_thread(nullptr)
 {
     Filelight::LocalLister::readMounts();
     connect(this, &ScanManager::branchCacheHit, this, &ScanManager::foundCached, Qt::QueuedConnection);
@@ -114,7 +114,7 @@ bool ScanManager::start(const QUrl &url)
             QVector<QStringRef> split = path.midRef(cachePath.length()).split(QLatin1Char('/'));
             Folder *d = folder;
 
-            while (!split.isEmpty() && d != NULL) { //if NULL we have got lost so abort!!
+            while (!split.isEmpty() && d != nullptr) { //if NULL we have got lost so abort!!
                 if (split.first().isEmpty()) { //found the dir
                     break;
                 }
@@ -197,7 +197,7 @@ void ScanManager::cacheTree(Folder *tree)
         m_thread->wait();
         qDebug() << "Thread terminated!";
         delete m_thread; //note the lister deletes itself
-        m_thread = 0;
+        m_thread = nullptr;
     }
 
     emit completed(tree);

@@ -38,12 +38,12 @@
 
 RadialMap::Widget::Widget(QWidget *parent, bool isSummary)
         : QWidget(parent)
-        , m_tree(0)
-        , m_focus(0)
+        , m_tree(nullptr)
+        , m_focus(nullptr)
         , m_map(isSummary)
-        , m_rootSegment(0) //TODO we don't delete it, *shrug*
+        , m_rootSegment(nullptr) //TODO we don't delete it, *shrug*
         , m_isSummary(isSummary)
-        , m_toBeDeleted(0)
+        , m_toBeDeleted(nullptr)
 {
     setAcceptDrops(true);
     setMinimumSize(350, 250);
@@ -84,11 +84,11 @@ void RadialMap::Widget::invalidate()
         QUrl invalidatedUrl(url());
 
         //ensure this class won't think we have a map still
-        m_tree  = 0;
-        m_focus = 0;
+        m_tree  = nullptr;
+        m_focus = nullptr;
 
         delete m_rootSegment;
-        m_rootSegment = 0;
+        m_rootSegment = nullptr;
 
         //FIXME move this disablement thing no?
         //      it is confusing in other areas, like the whole createFromCache() thing
@@ -110,7 +110,7 @@ RadialMap::Widget::create(const Folder *tree)
 
     if (tree)
     {
-        m_focus = 0;
+        m_focus = nullptr;
         //generate the filemap image
         m_map.make(tree);
 
@@ -147,7 +147,7 @@ RadialMap::Widget::resizeTimeout() //slot
 {
     // the segments are about to erased!
     // this was a horrid bug, and proves the OO programming should be obeyed always!
-    m_focus = 0;
+    m_focus = nullptr;
     if (m_tree)
         m_map.make(m_tree, true);
     update();
@@ -163,7 +163,7 @@ RadialMap::Widget::refresh(int filth)
         switch (filth)
         {
         case 1:
-            m_focus=0;
+            m_focus=nullptr;
             m_map.make(m_tree, true); //true means refresh only
             break;
 
@@ -190,7 +190,7 @@ RadialMap::Widget::zoomIn() //slot
     if (m_map.m_visibleDepth > MIN_RING_DEPTH)
     {
         --m_map.m_visibleDepth;
-        m_focus = 0;
+        m_focus = nullptr;
         m_map.make(m_tree);
         Config::defaultRingDepth = m_map.m_visibleDepth;
         update();
@@ -200,7 +200,7 @@ RadialMap::Widget::zoomIn() //slot
 void
 RadialMap::Widget::zoomOut() //slot
 {
-    m_focus = 0;
+    m_focus = nullptr;
     ++m_map.m_visibleDepth;
     m_map.make(m_tree);
     if (m_map.m_visibleDepth > Config::defaultRingDepth)

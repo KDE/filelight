@@ -72,7 +72,7 @@ public:
 public slots:
     void push(const QUrl& url);
     void stop() {
-        m_receiver = 0;
+        m_receiver = nullptr;
     }
 
 signals:

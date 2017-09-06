@@ -41,7 +41,7 @@ public:
     friend class Folder;
 
 public:
-    File(const char *name, FileSize size) : m_parent(0), m_name(qstrdup(name)), m_size(size) {}
+    File(const char *name, FileSize size) : m_parent(nullptr), m_name(qstrdup(name)), m_size(size) {}
     virtual ~File() {
         delete [] m_name;
     }
@@ -63,7 +63,7 @@ public:
         return false;
     }
 
-    QString fullPath(const Folder* = 0) const;
+    QString fullPath(const Folder* = nullptr) const;
     QString humanReadableSize() const {
         return KFormat().formatByteSize(m_size);
     }
@@ -94,7 +94,7 @@ public:
     }
 
     ///appends a Folder
-    void append(Folder *d, const char *name=0)
+    void append(Folder *d, const char *name=nullptr)
     {
         if (name) {
             delete [] d->m_name;

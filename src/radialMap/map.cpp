@@ -38,7 +38,7 @@
 #include "widget.h"
 
 RadialMap::Map::Map(bool summary)
-        : m_signature(NULL)
+        : m_signature(nullptr)
         , m_visibleDepth(DEFAULT_RING_DEPTH)
         , m_ringBreadth(MIN_RING_BREADTH)
         , m_innerRadius(0)
@@ -59,7 +59,7 @@ RadialMap::Map::~Map()
 void RadialMap::Map::invalidate()
 {
     delete [] m_signature;
-    m_signature = NULL;
+    m_signature = nullptr;
 
     m_visibleDepth = Config::defaultRingDepth;
 }
@@ -232,7 +232,7 @@ bool RadialMap::Map::resize(const QRect &rect)
         //resize the pixmap
         size += MAP_2MARGIN;
 
-        if (m_signature != NULL)
+        if (m_signature != nullptr)
         {
             setRingBreadth();
             paint();

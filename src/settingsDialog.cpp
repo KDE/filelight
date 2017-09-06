@@ -180,7 +180,7 @@ void SettingsDialog::addFolder()
         {
             Config::skipList.append(path);
             m_listBox->addItem(path);
-            if (m_listBox->currentItem() == 0) m_listBox->setCurrentRow(0);
+            if (m_listBox->currentItem() == nullptr) m_listBox->setCurrentRow(0);
             m_removeButton->setEnabled(true);
         }
         else QMessageBox::information(this, i18n("Folder already ignored"), i18n("That folder is already set to be excluded from scans."));

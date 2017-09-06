@@ -76,7 +76,7 @@ HistoryCollection::HistoryCollection(KActionCollection *ac, QObject *parent)
         : QObject(parent)
         , m_b(new HistoryAction(QIcon::fromTheme(QLatin1String( "go-previous" )), i18nc("Go to the last path viewed", "Back"), ac))
         , m_f(new HistoryAction(QIcon::fromTheme(QLatin1String( "go-next" )), i18nc("Go to forward in the history of paths viewed", "Forward"), ac))
-        , m_receiver(0)
+        , m_receiver(nullptr)
 {
     ac->addAction(QLatin1String( "go_back" ), m_b);
     ac->addAction(QLatin1String( "go_forward" ), m_f);
@@ -96,7 +96,7 @@ void HistoryCollection::push(const QUrl& url) //slot
 
         m_receiver->push(url);
     }
-    m_receiver = 0;
+    m_receiver = nullptr;
 }
 
 void HistoryCollection::pop() //slot

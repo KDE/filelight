@@ -43,7 +43,7 @@ public:
     bool resize(const QRect&);
 
     bool isNull() const {
-        return (m_signature == 0);
+        return (m_signature == nullptr);
     }
     void invalidate();
 

@@ -60,7 +60,7 @@ namespace Filelight {
 
 MainWindow::MainWindow()
     : KXmlGuiWindow()
-    , m_histories(0)
+    , m_histories(nullptr)
     , m_summary(nullptr)
     , m_map(nullptr)
     , m_started(false)
@@ -179,7 +179,7 @@ void MainWindow::setupActions() //singleton function
     action->setText(i18n("Scan Folder"));
     action->setIcon(QIcon::fromTheme(QStringLiteral("folder")));
 
-    QWidgetAction *locationAction = ac->add<QWidgetAction>(QStringLiteral("location_bar"), 0, 0);
+    QWidgetAction *locationAction = ac->add<QWidgetAction>(QStringLiteral("location_bar"), nullptr, nullptr);
     locationAction->setText(i18n("Location Bar"));
     locationAction->setDefaultWidget(m_combo);
 
@@ -390,7 +390,7 @@ bool MainWindow::openUrl(const QUrl &u)
     else
     {
         //we don't want to be using the summary screen anymore
-        if (m_summary != 0)
+        if (m_summary != nullptr)
             m_summary->hide();
 
         m_stateWidget->show();
@@ -487,7 +487,7 @@ void MainWindow::rescan()
 {
     if (m_summary && !m_summary->isHidden()) {
         delete m_summary;
-        m_summary = 0;
+        m_summary = nullptr;
         showSummary();
         return;
     }
@@ -542,7 +542,7 @@ void MainWindow::mapChanged(const Folder *tree)
 
 void MainWindow::showSummary()
 {
-    if (m_summary == 0) {
+    if (m_summary == nullptr) {
         m_summary = new SummaryWidget(widget());
         m_summary->setObjectName(QStringLiteral("summaryWidget"));
         connect(m_summary, &SummaryWidget::activated, this, &MainWindow::openUrl);

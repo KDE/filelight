@@ -95,7 +95,7 @@ const RadialMap::Segment* RadialMap::Widget::segmentAt(QPoint &e) const
     e -= m_offset;
 
     if (!m_map.m_signature)
-        return 0;
+        return nullptr;
 
     if (e.x() <= m_map.width() && e.y() <= m_map.height())
     {
@@ -130,7 +130,7 @@ const RadialMap::Segment* RadialMap::Widget::segmentAt(QPoint &e) const
         else return m_rootSegment; //hovering over inner circle
     }
 
-    return 0;
+    return nullptr;
 }
 
 void RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
@@ -251,12 +251,12 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
     }
 
     // Actions in the right click menu
-    QAction* openFileManager = 0;
-    QAction* openTerminal = 0;
-    QAction* centerMap = 0;
-    QAction* openFile = 0;
-    QAction* copyClipboard = 0;
-    QAction* deleteItem = 0;
+    QAction* openFileManager = nullptr;
+    QAction* openTerminal = nullptr;
+    QAction* centerMap = nullptr;
+    QAction* openFile = nullptr;
+    QAction* copyClipboard = nullptr;
+    QAction* deleteItem = nullptr;
 
     QMenu popup;
     popup.setTitle(m_focus->file()->fullPath(m_tree));
@@ -284,7 +284,7 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
         deleteItem = popup.addAction(QIcon::fromTheme(QLatin1String( "edit-delete" )), i18n("&Delete"));
     }
 
-    QAction* clicked = popup.exec(e->globalPos(), 0);
+    QAction* clicked = popup.exec(e->globalPos(), nullptr);
 
     if (openFileManager && clicked == openFileManager) {
         KRun::runUrl(url, QLatin1String( "inode/directory" ), this);
@@ -328,8 +328,8 @@ void RadialMap::Widget::deleteJobFinished(KJob *job)
     if (!job->error() && m_toBeDeleted) {
         m_toBeDeleted->file()->parent()->remove(m_toBeDeleted->file());
         delete m_toBeDeleted->file();
-        m_toBeDeleted = 0;
-        m_focus = 0;
+        m_toBeDeleted = nullptr;
+        m_focus = nullptr;
         m_map.make(m_tree, true);
         repaint();
     } else

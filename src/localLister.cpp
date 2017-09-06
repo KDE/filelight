@@ -92,7 +92,7 @@ LocalLister::run()
     {
         qDebug() << "Scan successfully aborted";
         delete tree;
-        tree = 0;
+        tree = nullptr;
     }
     qDebug() << "Emitting signal to cache results ...";
     emit branchCompleted(tree);
@@ -198,7 +198,7 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
 
         else if (S_ISDIR(statbuf.st_mode)) //folder
         {
-            Folder *d = 0;
+            Folder *d = nullptr;
             QByteArray new_dirname = ent->d_name;
             new_path += '/';
 

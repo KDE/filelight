@@ -81,7 +81,7 @@ private:
 
 RemoteLister::RemoteLister(const QUrl &url, QWidget *parent, ScanManager* manager)
         : KDirLister(parent)
-        , m_root(new Store(url, url.url(), 0))
+        , m_root(new Store(url, url.url(), nullptr))
         , m_store(m_root)
         , m_manager(manager)
 {

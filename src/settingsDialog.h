@@ -35,7 +35,7 @@ class SettingsDialog : public QDialog, public Ui::Dialog
     Q_OBJECT
 
 public:
-    explicit SettingsDialog(QWidget* = 0);
+    explicit SettingsDialog(QWidget* = nullptr);
 
 protected:
     void closeEvent(QCloseEvent *) override;

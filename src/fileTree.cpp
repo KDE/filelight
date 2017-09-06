@@ -27,7 +27,7 @@ File::fullPath(const Folder *root /*= 0*/) const
     QString path;
 
     if (root == this)
-        root = 0; //prevent returning empty string when there is something we could return
+        root = nullptr; //prevent returning empty string when there is something we could return
 
     for (const Folder *d = (Folder*)this; d != root && d; d = d->parent())
         path.prepend(d->name());

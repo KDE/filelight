@@ -51,13 +51,13 @@ class Widget : public QWidget
     Q_OBJECT
 
 public:
-    explicit Widget(QWidget* = 0, bool = false);
+    explicit Widget(QWidget* = nullptr, bool = false);
     ~Widget() override;
     QString path() const;
-    QUrl url(File const * const = 0) const;
+    QUrl url(File const * const = nullptr) const;
 
     bool isValid() const {
-        return m_tree != 0;
+        return m_tree != nullptr;
     }
 
     bool isSummary() const {
