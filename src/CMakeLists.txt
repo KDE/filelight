@@ -37,7 +37,6 @@ set(filelight_SRCS
     main.cpp)
 
 ki18n_wrap_ui(filelight_SRCS dialog.ui)
-
 add_executable(filelight ${filelight_SRCS})
 
 target_link_libraries(filelight
@@ -45,5 +44,9 @@ target_link_libraries(filelight
     KF5::XmlGui
     KF5::KIOWidgets # Only used for KDirLister, may be able to move away from that.
 )
+if (WIN32)
+    find_package(KDEWin REQUIRED)
+    target_link_libraries(filelight kdewin)
+endif()
 
 install(TARGETS filelight ${INSTALL_TARGETS_DEFAULT_ARGS})
