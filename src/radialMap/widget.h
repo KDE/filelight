@@ -52,7 +52,7 @@ class Widget : public QWidget
 
 public:
     explicit Widget(QWidget* = 0, bool = false);
-    virtual ~Widget();
+    ~Widget() override;
     QString path() const;
     QUrl url(File const * const = 0) const;
 
@@ -87,15 +87,15 @@ signals:
     void giveMeTreeFor(const QUrl&);
 
 protected:
-    void changeEvent(QEvent*) Q_DECL_OVERRIDE;
-    void dragEnterEvent(QDragEnterEvent*) Q_DECL_OVERRIDE;
-    void dropEvent(QDropEvent*) Q_DECL_OVERRIDE;
-    void mouseMoveEvent(QMouseEvent*) Q_DECL_OVERRIDE;
-    void mousePressEvent(QMouseEvent*) Q_DECL_OVERRIDE;
-    void paintEvent(QPaintEvent*) Q_DECL_OVERRIDE;
-    void resizeEvent(QResizeEvent*) Q_DECL_OVERRIDE;
-    void enterEvent(QEvent*) Q_DECL_OVERRIDE;
-    void leaveEvent(QEvent*) Q_DECL_OVERRIDE;
+    void changeEvent(QEvent*) override;
+    void dragEnterEvent(QDragEnterEvent*) override;
+    void dropEvent(QDropEvent*) override;
+    void mouseMoveEvent(QMouseEvent*) override;
+    void mousePressEvent(QMouseEvent*) override;
+    void paintEvent(QPaintEvent*) override;
+    void resizeEvent(QResizeEvent*) override;
+    void enterEvent(QEvent*) override;
+    void leaveEvent(QEvent*) override;
 
 protected:
     const Segment *segmentAt(QPoint&) const; //FIXME const reference for a library others can use

@@ -38,8 +38,8 @@ public:
     explicit SettingsDialog(QWidget* = 0);
 
 protected:
-    void closeEvent(QCloseEvent *) Q_DECL_OVERRIDE;
-    void reject() Q_DECL_OVERRIDE;
+    void closeEvent(QCloseEvent *) override;
+    void reject() override;
 
 public slots:
     void addFolder();

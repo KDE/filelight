@@ -44,7 +44,7 @@ class ScanManager : public QObject
 
 public:
     explicit ScanManager(QObject *parent);
-    virtual ~ScanManager();
+    ~ScanManager() override;
 
     bool start(const QUrl& path);
     bool running() const;

@@ -35,7 +35,7 @@ class RemoteLister : public KDirLister
     Q_OBJECT
 public:
     RemoteLister(const QUrl &url, QWidget *parent, ScanManager* manager);
-    ~RemoteLister();
+    ~RemoteLister() override;
 
 signals:
     void branchCompleted(Folder* tree);

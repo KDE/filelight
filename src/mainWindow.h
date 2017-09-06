@@ -90,9 +90,9 @@ private slots:
     void updateURL(const QUrl &);
 
 protected:
-    virtual void saveProperties(KConfigGroup&) Q_DECL_OVERRIDE;
-    virtual void readProperties(const KConfigGroup&) Q_DECL_OVERRIDE;
-    virtual void closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
+    void saveProperties(KConfigGroup&) override;
+    void readProperties(const KConfigGroup&) override;
+    void closeEvent(QCloseEvent *event) override;
 
 private:
     void setupStatusBar();

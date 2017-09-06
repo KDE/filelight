@@ -77,7 +77,7 @@ public:
             unsetCursor();
     }
 
-    void mousePressEvent(QMouseEvent *e) Q_DECL_OVERRIDE
+    void mousePressEvent(QMouseEvent *e) override
     {
         const RadialMap::Segment *segment = focusSegment();
 

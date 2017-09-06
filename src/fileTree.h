@@ -89,7 +89,7 @@ public:
     uint children() const {
         return m_children;
     }
-    bool isFolder() const Q_DECL_OVERRIDE {
+    bool isFolder() const override {
         return true;
     }
 
