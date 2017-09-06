@@ -553,5 +553,3 @@ void MainWindow::showSummary()
 }
 
 } //namespace Filelight
-
-#include "mainWindow.moc"
