@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop-application">
+  <id>org.kde.filelight.desktop</id>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-2.0+</project_license>
+  <name>Filelight</name>
+  <summary>Filelight creates an interactive map of concentric segmented-rings that helps visualize disk usage on your computer</summary>
+  <description>
+    <p>
+      Filelight is an application to visualize the disk usage on your computer
+    </p>
+ <p>Features:</p>
+    <ul>
+      <li>Scan local, remote or removable disks</li>
+      <li>Configurable color schemes</li>
+      <li>File system navigation by mouse clicks</li>
+      <li>Information about files and directories on hovering</li>
+      <li>Files and directories can be copied or removed directly from the context menu</li>
+      <li>Integration into Konqueror and Krusader</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">org.kde.filelight.desktop</launchable>
+  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=filelight</url>
+  <url type="help">http://docs.kde.org/?application=filelight</url>
+  <screenshots>
+    <screenshot type="default">
+      <image width="658" height="418">https://cdn.kde.org/screenshots/filelight/filelight.png</image>
+    </screenshot>
+  </screenshots>
+  <project_group>KDE</project_group>
+  <provides>
+    <binary>filelight</binary>
+  </provides>
+</component>
