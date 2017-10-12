@@ -4,19 +4,74 @@
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>Filelight</name>
+  <name xml:lang="ca">Filelight</name>
+  <name xml:lang="nl">Filelight</name>
+  <name xml:lang="pt">Filelight</name>
+  <name xml:lang="sv">Filelight</name>
+  <name xml:lang="uk">Filelight</name>
+  <name xml:lang="x-test">xxFilelightxx</name>
   <summary>Filelight creates an interactive map of concentric segmented-rings that helps visualize disk usage on your computer</summary>
+  <summary xml:lang="ca">El Filelight crea un mapa interactiu d'anells concèntrics segmentats que ajuden a visualitzar l'ús del disc a l'ordinador</summary>
+  <summary xml:lang="nl">Filelight maakt een interactieve grafiek van concentrische gesegmenteerde ringen die helpen om schijfgebruik op uw computer te visualiseren</summary>
+  <summary xml:lang="pt">O Filelight cria um mapa interactivo com anéis concêntricos segmentados que o ajuda a visualizar a utilização do disco no seu computador</summary>
+  <summary xml:lang="sv">Filelight skapar en interaktiv avbildning av koncentriska segmenterade ringar som hjälper till att åskådliggöra diskanvändning på datorn</summary>
+  <summary xml:lang="uk">Filelight створює інтерактивну карту з концентричних кіл, поділених на сектори, яка допоможе вам візуально контролювати використання дискового простору на вашому комп’ютері</summary>
+  <summary xml:lang="x-test">xxFilelight creates an interactive map of concentric segmented-rings that helps visualize disk usage on your computerxx</summary>
   <description>
     <p>
       Filelight is an application to visualize the disk usage on your computer
     </p>
- <p>Features:</p>
+    <p xml:lang="ca">El Filelight és una aplicació per visualitzar l'ús del disc a l'ordinador</p>
+    <p xml:lang="pt">O Filelight é uma aplicação para visualizar a utilização do disco no seu computador</p>
+    <p xml:lang="sv">Filelight är ett program för att åskådliggöra diskanvändning på datorn</p>
+    <p xml:lang="uk">Filelight — програма для візуалізації використання дискового простору вашого комп'ютера</p>
+    <p xml:lang="x-test">xxFilelight is an application to visualize the disk usage on your computerxx</p>
+    <p>Features:</p>
+    <p xml:lang="ca">Característiques:</p>
+    <p xml:lang="nl">Kenmerken:</p>
+    <p xml:lang="pt">Funcionalidades:</p>
+    <p xml:lang="sv">Funktioner:</p>
+    <p xml:lang="uk">Можливості:</p>
+    <p xml:lang="x-test">xxFeatures:xx</p>
     <ul>
       <li>Scan local, remote or removable disks</li>
+      <li xml:lang="ca">Explora discs locals, remots o extraïbles</li>
+      <li xml:lang="nl">Lokale, op afstand of verwijderbare schijven scannen</li>
+      <li xml:lang="pt">Sondar discos locais, remotos ou removíveis</li>
+      <li xml:lang="sv">Sök igenom lokala diskar, diskar på en annan dator eller flyttbara diskar</li>
+      <li xml:lang="uk">Сканування локальних, віддалених та портативних дисків</li>
+      <li xml:lang="x-test">xxScan local, remote or removable disksxx</li>
       <li>Configurable color schemes</li>
+      <li xml:lang="ca">Esquemes de color configurables</li>
+      <li xml:lang="nl">Te configureren kleurenschema's</li>
+      <li xml:lang="pt">Esquemas de cores configuráveis</li>
+      <li xml:lang="sv">Anpassningsbara färgscheman</li>
+      <li xml:lang="uk">Придатна до налаштовування тема кольорів</li>
+      <li xml:lang="x-test">xxConfigurable color schemesxx</li>
       <li>File system navigation by mouse clicks</li>
+      <li xml:lang="ca">Navegació pel sistema de fitxers amb clics de ratolí</li>
+      <li xml:lang="pt">Navegação pelo sistema de ficheiros com o rato</li>
+      <li xml:lang="sv">Navigering i filsystem med musklick</li>
+      <li xml:lang="uk">Навігація файловою системою за допомогою клацання кнопками миші</li>
+      <li xml:lang="x-test">xxFile system navigation by mouse clicksxx</li>
       <li>Information about files and directories on hovering</li>
+      <li xml:lang="ca">Informació quant a fitxers i directoris en passar-hi per sobre</li>
+      <li xml:lang="pt">Informação sobre os ficheiros e pastas à passagem</li>
+      <li xml:lang="sv">Information om filer och kataloger när musen hålls över dem</li>
+      <li xml:lang="uk">Показ даних щодо файлів і каталогів у відповідь на наведення вказівника миші</li>
+      <li xml:lang="x-test">xxInformation about files and directories on hoveringxx</li>
       <li>Files and directories can be copied or removed directly from the context menu</li>
+      <li xml:lang="ca">Els fitxers i directoris es poden copiar o eliminar directament des del menú contextual</li>
+      <li xml:lang="pt">Poderá copiar ou remover directamente os ficheiros e pastas directamente a partir do menu de contexto</li>
+      <li xml:lang="sv">Filer och kataloger kan kopieras eller tas bort direkt i den sammanhangsberoende menyn</li>
+      <li xml:lang="uk">Можливість копіювання та вилучення файлів і каталогів за допомогою контекстного меню програми</li>
+      <li xml:lang="x-test">xxFiles and directories can be copied or removed directly from the context menuxx</li>
       <li>Integration into Konqueror and Krusader</li>
+      <li xml:lang="ca">Integració en el Konqueror i el Krusader</li>
+      <li xml:lang="pt">Integração com o Konqueror e o Krusader</li>
+      <li xml:lang="sv">Integrerat med Konqueror och Krusader</li>
+      <li xml:lang="uk">Інтеграція з Konqueror та Krusader</li>
+      <li xml:lang="x-test">xxIntegration into Konqueror and Krusaderxx</li>
     </ul>
   </description>
   <launchable type="desktop-id">org.kde.filelight.desktop</launchable>
