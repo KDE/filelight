@@ -6,6 +6,7 @@
   <name>Filelight</name>
   <name xml:lang="ca">Filelight</name>
   <name xml:lang="ca-valencia">Filelight</name>
+  <name xml:lang="de">Filelight</name>
   <name xml:lang="el">Filelight</name>
   <name xml:lang="es">Filelight</name>
   <name xml:lang="nl">Filelight</name>
@@ -21,6 +22,7 @@
   <summary>Filelight creates an interactive map of concentric segmented-rings that helps visualize disk usage on your computer</summary>
   <summary xml:lang="ca">El Filelight crea un mapa interactiu d'anells concèntrics segmentats que ajuden a visualitzar l'ús del disc a l'ordinador</summary>
   <summary xml:lang="ca-valencia">El Filelight crea un mapa interactiu d'anells concèntrics segmentats que ajuden a visualitzar l'ús del disc a l'ordinador</summary>
+  <summary xml:lang="de">Filelight zeigt Diagramme aus konzentrischen Ringen an, die die Belegung von Speichermedien auf ihrem Rechner darstellen</summary>
   <summary xml:lang="el">Το Filelight δημιουργεί ένα διαδραστικό χάρτη ομόκεντρων χωρισμένων σε τομείς δαχτυλίων που βοηθάει στην οπτικοποίηση της χρήσης του δίσκου στον υπολογιστή σας</summary>
   <summary xml:lang="es">Filelight crea un mapa interactivo de segmentos de anillos concéntricos que ayuda a visualizar el uso del disco en su equipo</summary>
   <summary xml:lang="nl">Filelight maakt een interactieve grafiek van concentrische gesegmenteerde ringen die helpen om schijfgebruik op uw computer te visualiseren</summary>
@@ -52,6 +54,7 @@
     <p>Features:</p>
     <p xml:lang="ca">Característiques:</p>
     <p xml:lang="ca-valencia">Característiques:</p>
+    <p xml:lang="de">Funktionen:</p>
     <p xml:lang="el">Χαρακτηριστικά:</p>
     <p xml:lang="es">Funciones:</p>
     <p xml:lang="nl">Kenmerken:</p>
@@ -82,6 +85,7 @@
       <li>Configurable color schemes</li>
       <li xml:lang="ca">Esquemes de color configurables</li>
       <li xml:lang="ca-valencia">Esquemes de color configurables</li>
+      <li xml:lang="de">Einstellbare Farbschemata</li>
       <li xml:lang="el">Διαμορφώσιμα χρωματιστά σχήματα</li>
       <li xml:lang="es">Esquemas de color que se pueden configurar</li>
       <li xml:lang="nl">Te configureren kleurenschema's</li>
@@ -138,6 +142,7 @@
       <li>Integration into Konqueror and Krusader</li>
       <li xml:lang="ca">Integració en el Konqueror i el Krusader</li>
       <li xml:lang="ca-valencia">Integració en el Konqueror i el Krusader</li>
+      <li xml:lang="de">Integration in Konqueror und Krusader</li>
       <li xml:lang="el">Ενσωμάτωση σε Konqueror και Krusader</li>
       <li xml:lang="es">Integración en Konqueror y en Krusader</li>
       <li xml:lang="nl">Integratie in Konqueror en Krusader</li>
