@@ -172,7 +172,11 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
         if (qstrcmp(ent->d_name, ".") == 0 || qstrcmp(ent->d_name, "..") == 0)
             continue;
 
-        QByteArray new_path = path + ent->d_name;
+        // QStringBuilder is used here. It assumes ent->d_name is char[NAME_MAX + 1],
+        // and thus copies only first NAME_MAX + 1 chars.
+        // Actually, while it's not fully POSIX-compatible, current behaviour may return d_name longer than NAME_MAX.
+        // Make full copy of this string.
+        QByteArray new_path = path + static_cast<const char*>(ent->d_name);
 
         //get file information
         if (lstat(new_path, &statbuf) == -1) {
