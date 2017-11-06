@@ -43,6 +43,7 @@
     </p>
     <p xml:lang="ca">El Filelight és una aplicació per visualitzar l'ús del disc a l'ordinador</p>
     <p xml:lang="ca-valencia">El Filelight és una aplicació per visualitzar l'ús del disc a l'ordinador</p>
+    <p xml:lang="de">Filelight zeigt die Belegung von Speichermedien auf ihrem Rechner</p>
     <p xml:lang="el">Το Filelight είναι μια εφαρμογή οπτικοποίησης της χρήσης του δίσκου στον υπολογιστή σας</p>
     <p xml:lang="es">Filelight es una aplicación para visualizar el uso del disco de su equipo</p>
     <p xml:lang="nl">Filelight is een toepassing om het schijfgebruik op uw computer te visualiseren</p>
@@ -78,6 +79,7 @@
       <li>Scan local, remote or removable disks</li>
       <li xml:lang="ca">Explora discs locals, remots o extraïbles</li>
       <li xml:lang="ca-valencia">Explora discs locals, remots o extraïbles</li>
+      <li xml:lang="de">Durchsehen von lokalen oder entfernten Festplatten oder Wechselmedien </li>
       <li xml:lang="el">Σάρωση τοπικών, απομακρυσμένων ή μετακινούμενων δίσκων</li>
       <li xml:lang="es">Explora discos locales, remotos y extraíbles</li>
       <li xml:lang="nl">Lokale, op afstand of verwijderbare schijven scannen</li>
@@ -109,6 +111,7 @@
       <li>File system navigation by mouse clicks</li>
       <li xml:lang="ca">Navegació pel sistema de fitxers amb clics de ratolí</li>
       <li xml:lang="ca-valencia">Navegació pel sistema de fitxers amb clics de ratolí</li>
+      <li xml:lang="de">Navigation im Dateisystem durch Mausklicks</li>
       <li xml:lang="el">Πλοήγηση στο σύστημα αρχείων με κλικ στο ποντίκι</li>
       <li xml:lang="es">Navegación a través del sistema de archivos mediante clics del ratón</li>
       <li xml:lang="nl">Navigatie door bestandssysteem met muisklikken</li>
@@ -124,6 +127,7 @@
       <li>Information about files and directories on hovering</li>
       <li xml:lang="ca">Informació quant a fitxers i directoris en passar-hi per sobre</li>
       <li xml:lang="ca-valencia">Informació quant a fitxers i directoris en passar-hi per sobre</li>
+      <li xml:lang="de">Informationen über Dateien und Ordner beim Überfahren mit dem Mauszeiger</li>
       <li xml:lang="el">Πληροφορίες για αρχεία και καταλόγους με αιώρηση</li>
       <li xml:lang="es">Información sobre archivos y directorios al situar el cursor del ratón sobre ellos</li>
       <li xml:lang="nl">Informatie over bestanden en mappen met er boven zweven</li>
@@ -139,6 +143,7 @@
       <li>Files and directories can be copied or removed directly from the context menu</li>
       <li xml:lang="ca">Els fitxers i directoris es poden copiar o eliminar directament des del menú contextual</li>
       <li xml:lang="ca-valencia">Els fitxers i directoris es poden copiar o eliminar directament des del menú contextual</li>
+      <li xml:lang="de">Dateien und Ordner können direkt aus dem Kontextmenü kopiert oder entfernt werden</li>
       <li xml:lang="el">Αρχεία και κατάλογοι μπορούν να αντιγραφούν ή να αφαιρεθούν απευθείας από το μενού</li>
       <li xml:lang="es">Los archivos y los directorios se pueden copiar o eliminar directamente desde el menú de contexto</li>
       <li xml:lang="nl">Bestanden en mappen kunnen gekopieerd of verwijderd worden direct vanuit het contextmenu</li>
