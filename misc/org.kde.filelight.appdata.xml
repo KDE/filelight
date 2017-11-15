@@ -6,6 +6,7 @@
   <name>Filelight</name>
   <name xml:lang="ca">Filelight</name>
   <name xml:lang="ca-valencia">Filelight</name>
+  <name xml:lang="cs">Filelight</name>
   <name xml:lang="de">Filelight</name>
   <name xml:lang="el">Filelight</name>
   <name xml:lang="es">Filelight</name>
@@ -60,6 +61,7 @@
     <p>Features:</p>
     <p xml:lang="ca">Característiques:</p>
     <p xml:lang="ca-valencia">Característiques:</p>
+    <p xml:lang="cs">Vlastnosti:</p>
     <p xml:lang="de">Funktionen:</p>
     <p xml:lang="el">Χαρακτηριστικά:</p>
     <p xml:lang="es">Funciones:</p>
