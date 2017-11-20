@@ -34,8 +34,16 @@ set(filelight_SRCS
     summaryWidget.cpp
     historyAction.cpp
     mainWindow.cpp
-    main.cpp)
-
+    main.cpp
+)
+set(filelight_ICONS
+    ${CMAKE_CURRENT_SOURCE_DIR}/../misc/16-apps-filelight.png
+    ${CMAKE_CURRENT_SOURCE_DIR}/../misc/32-apps-filelight.png
+    ${CMAKE_CURRENT_SOURCE_DIR}/../misc/48-apps-filelight.png
+    ${CMAKE_CURRENT_SOURCE_DIR}/../misc/64-apps-filelight.png
+)
+ecm_add_app_icon(filelight_SRCS ICONS
+    ${filelight_ICONS})
 ki18n_wrap_ui(filelight_SRCS dialog.ui)
 add_executable(filelight ${filelight_SRCS})
 
