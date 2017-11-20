@@ -21,6 +21,8 @@
 
 #include "fileTree.h"
 
+#include <QUrl>
+
 QString
 File::fullPath(const Folder *root /*= 0*/) const
 {
@@ -32,5 +34,6 @@ File::fullPath(const Folder *root /*= 0*/) const
     for (const Folder *d = (Folder*)this; d != root && d; d = d->parent())
         path.prepend(d->name());
 
-    return path;
+    const QUrl url = QUrl::fromLocalFile(path);
+    return url.toDisplayString(QUrl::PreferLocalFile | QUrl::StripTrailingSlash);
 }
