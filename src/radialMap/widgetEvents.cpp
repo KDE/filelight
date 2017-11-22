@@ -36,6 +36,7 @@
 #include <KFormat>
 #include <QUrl>
 #include <KLocalizedString>
+#include <kio_version.h>
 
 #include <QApplication> //QApplication::setOverrideCursor()
 #include <QClipboard>
@@ -287,7 +288,11 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
     QAction* clicked = popup.exec(e->globalPos(), nullptr);
 
     if (openFileManager && clicked == openFileManager) {
-        KRun::runUrl(url, QLatin1String( "inode/directory" ), this);
+        KRun::runUrl(url, QLatin1String("inode/directory"), this
+             #if KIO_VERSION >= QT_VERSION_CHECK(5, 31, 0)
+                     , KRun::RunFlags()
+             #endif
+                     );
     } else if (openTerminal && clicked == openTerminal) {
         KToolInvocation::invokeTerminal(QString(),url.path());
     } else if (centerMap && clicked == centerMap) {
