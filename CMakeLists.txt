@@ -41,9 +41,9 @@ find_package(Qt5 5.4 CONFIG REQUIRED Core Widgets)
 find_package(KF5 REQUIRED
     XmlGui # For app
     KIO # For part
-    DocTools
     I18n
 )
+find_package(KF5DocTools) # Optional, not needed on Windows for example.
 
 add_definitions(
     -DQT_USE_FAST_CONCATENATION
@@ -59,5 +59,7 @@ include_directories(src/)
 
 add_subdirectory(src)
 add_subdirectory(misc)
-add_subdirectory(doc)
+if (KF5DocTools_FOUND)
+    add_subdirectory(doc)
+endif()
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
