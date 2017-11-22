@@ -24,7 +24,6 @@ install(FILES filelightui.rc DESTINATION ${KXMLGUI_INSTALL_DIR}//filelight)
 install(FILES org.kde.filelight.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 ecm_install_icons(ICONS
-    32-actions-views_filelight.png
     16-apps-filelight.png
     22-apps-filelight.png
     32-apps-filelight.png
