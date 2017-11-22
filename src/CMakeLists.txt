@@ -19,6 +19,10 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #######################################################################
 
+ecm_setup_version(${PROJECT_VERSION}
+    VARIABLE_PREFIX FILELIGHT
+    VERSION_HEADER version.h)
+
 set(filelight_SRCS
     radialMap/widget.cpp
     radialMap/map.cpp

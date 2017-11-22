@@ -19,18 +19,18 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ***********************************************************************/
 
-
 #ifndef DEFINE_H
 #define DEFINE_H
 
 #include "Config.h"
+#include "version.h"
 
 #undef VERSION
 #undef PACKAGE
 #undef PRETTYNAME
 
 #define APP_NAME "filelight"
-#define APP_VERSION "1.21"
+#define APP_VERSION FILELIGHT_VERSION_STRING
 #define APP_PRETTYNAME "Filelight"
 
 #endif

@@ -22,6 +22,14 @@ project(Filelight)
 
 cmake_minimum_required (VERSION 2.8.12 FATAL_ERROR)
 
+# KDE Application Version, managed by release script
+set(KDE_APPLICATIONS_VERSION_MAJOR "17")
+set(KDE_APPLICATIONS_VERSION_MINOR "11")
+set(KDE_APPLICATIONS_VERSION_MICRO "80")
+set(KDE_APPLICATIONS_VERSION "${KDE_APPLICATIONS_VERSION_MAJOR}.${KDE_APPLICATIONS_VERSION_MINOR}.${KDE_APPLICATIONS_VERSION_MICRO}")
+
+set(PROJECT_VERSION ${KDE_APPLICATIONS_VERSION})
+
 find_package(ECM 1.3.0 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
@@ -35,7 +43,6 @@ include(FeatureSummary)
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
-
 
 find_package(Qt5 5.4 CONFIG REQUIRED Core Widgets)
 find_package(KF5 REQUIRED
