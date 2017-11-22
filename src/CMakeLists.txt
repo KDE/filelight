@@ -41,6 +41,7 @@ set(filelight_ICONS
     ${CMAKE_CURRENT_SOURCE_DIR}/../misc/32-apps-filelight.png
     ${CMAKE_CURRENT_SOURCE_DIR}/../misc/48-apps-filelight.png
     ${CMAKE_CURRENT_SOURCE_DIR}/../misc/64-apps-filelight.png
+    ${CMAKE_CURRENT_SOURCE_DIR}/../misc/128-apps-filelight.png
 )
 ecm_add_app_icon(filelight_SRCS ICONS
     ${filelight_ICONS})
