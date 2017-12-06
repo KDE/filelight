@@ -30,4 +30,5 @@ ecm_install_icons(ICONS
     32-apps-filelight.png
     48-apps-filelight.png
     64-apps-filelight.png
+    128-apps-filelight.png
     DESTINATION ${ICON_INSTALL_DIR} THEME hicolor)

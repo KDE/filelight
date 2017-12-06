@@ -223,7 +223,7 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout">
           <item>
-           <widget class="QGroupBox" name="colourSchemeGroup"/>
+           <layout class="QVBoxLayout" name="colorSchemeLayout"/>
           </item>
           <item>
            <layout class="QHBoxLayout">

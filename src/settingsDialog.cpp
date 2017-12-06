@@ -40,26 +40,20 @@ SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
     QPushButton *closeButton = buttons->addButton(QDialogButtonBox::Close);
     layout()->addWidget(buttons);
 
-    QVBoxLayout *vbox = new QVBoxLayout;
-    colourSchemeGroup->setFlat(true);
-    colourSchemeGroup->setLayout(vbox);
-
     m_schemaGroup = new QButtonGroup;
     QRadioButton *radioButton;
 
     radioButton = new QRadioButton(i18n("Rainbow"));
-    vbox->addWidget(radioButton);
+    colorSchemeLayout->addWidget(radioButton);
     m_schemaGroup->addButton(radioButton, Filelight::Rainbow);
 
     radioButton = new QRadioButton(i18n("System colors"));
-    vbox->addWidget(radioButton);
+    colorSchemeLayout->addWidget(radioButton);
     m_schemaGroup->addButton(radioButton, Filelight::KDE);
 
     radioButton = new QRadioButton(i18n("High contrast"));
-    vbox->addWidget(radioButton);
+    colorSchemeLayout->addWidget(radioButton);
     m_schemaGroup->addButton(radioButton, Filelight::HighContrast);
-
-    colourSchemeGroup->setLayout(vbox);
 
     //read in settings before you make all those nasty connections!
     reset(); //makes dialog reflect global settings

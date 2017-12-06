@@ -16,6 +16,7 @@
   <name xml:lang="nl">Filelight</name>
   <name xml:lang="pl">Filelight</name>
   <name xml:lang="pt">Filelight</name>
+  <name xml:lang="pt-BR">Filelight</name>
   <name xml:lang="ru">Filelight</name>
   <name xml:lang="sk">Filelight</name>
   <name xml:lang="sr">Фајлајт</name>
@@ -36,6 +37,7 @@
   <summary xml:lang="nl">Filelight maakt een interactieve grafiek van concentrische gesegmenteerde ringen die helpen om schijfgebruik op uw computer te visualiseren</summary>
   <summary xml:lang="pl">Filelight tworzy interaktywną mapę współśrodkowych, dzielonych pierścieni, co ma na celu zobrazowanie wykorzystania przestrzeni dyskowej na twoim komputerze</summary>
   <summary xml:lang="pt">O Filelight cria um mapa interactivo com anéis concêntricos segmentados que o ajuda a visualizar a utilização do disco no seu computador</summary>
+  <summary xml:lang="sk">Filelight vytvorí interaktívnu mapu koncentrických segmentových prstencov, ktoré pomôžu vizualizovať využitie disku vo vašom počítači</summary>
   <summary xml:lang="sr">Фајлајт прави интерактивну карту концентричних подеоних прстенова за визуелизацију искоришћења диска на рачунару.</summary>
   <summary xml:lang="sr-Latn">Filelight pravi interaktivnu kartu koncentričnih podeonih prstenova za vizuelizaciju iskorišćenja diska na računaru.</summary>
   <summary xml:lang="sr-ijekavian">Фајлајт прави интерактивну карту концентричних подеоних прстенова за визуелизацију искоришћења диска на рачунару.</summary>
@@ -57,6 +59,7 @@
     <p xml:lang="nl">Filelight is een toepassing om het schijfgebruik op uw computer te visualiseren</p>
     <p xml:lang="pl">Filelight jest apikacją do zobrazowania wykorzystania przestrzeni dyskowej na twoim komputerze</p>
     <p xml:lang="pt">O Filelight é uma aplicação para visualizar a utilização do disco no seu computador</p>
+    <p xml:lang="sk">Filelight je aplikácia na vizualizáciu využitia disku vo vašom počítači</p>
     <p xml:lang="sr">Фајлајт је програм за визуелизовање искоришћења диска на рачунару.</p>
     <p xml:lang="sr-Latn">Filelight je program za vizuelizovanje iskorišćenja diska na računaru.</p>
     <p xml:lang="sr-ijekavian">Фајлајт је програм за визуелизовање искоришћења диска на рачунару.</p>
@@ -77,6 +80,7 @@
     <p xml:lang="nl">Kenmerken:</p>
     <p xml:lang="pl">Możliwości:</p>
     <p xml:lang="pt">Funcionalidades:</p>
+    <p xml:lang="pt-BR">Recursos:</p>
     <p xml:lang="ru">Возможности:</p>
     <p xml:lang="sk">Funkcie:</p>
     <p xml:lang="sr">Могућности:</p>
@@ -99,6 +103,7 @@
       <li xml:lang="nl">Lokale, op afstand of verwijderbare schijven scannen</li>
       <li xml:lang="pl">Przeszukiwanie lokalnych, zdalnych, wymiennych dysków</li>
       <li xml:lang="pt">Sondar discos locais, remotos ou removíveis</li>
+      <li xml:lang="sk">Prehľadať miestne, vzdialené alebo vymeniteľné disky</li>
       <li xml:lang="sr">Скенирање локалних, удаљених и уклоњивих дискова.</li>
       <li xml:lang="sr-Latn">Skeniranje lokalnih, udaljenih i uklonjivih diskova.</li>
       <li xml:lang="sr-ijekavian">Скенирање локалних, удаљених и уклоњивих дискова.</li>
@@ -117,6 +122,7 @@
       <li xml:lang="nl">Te configureren kleurenschema's</li>
       <li xml:lang="pl">Zestawy barwne do ustawienia</li>
       <li xml:lang="pt">Esquemas de cores configuráveis</li>
+      <li xml:lang="sk">Nastaviteľné farebné schémy</li>
       <li xml:lang="sr">Подесиве шеме боја.</li>
       <li xml:lang="sr-Latn">Podesive šeme boja.</li>
       <li xml:lang="sr-ijekavian">Подесиве шеме боја.</li>
@@ -135,6 +141,7 @@
       <li xml:lang="nl">Navigatie door bestandssysteem met muisklikken</li>
       <li xml:lang="pl">Poruszanie się po systemie plików poprzez mysz</li>
       <li xml:lang="pt">Navegação pelo sistema de ficheiros com o rato</li>
+      <li xml:lang="sk">Navigácia súborového systému kliknutím myšou</li>
       <li xml:lang="sr">Кретање кроз фајл систем кликтањем миша.</li>
       <li xml:lang="sr-Latn">Kretanje kroz fajl sistem kliktanjem miša.</li>
       <li xml:lang="sr-ijekavian">Кретање кроз фајл систем кликтањем миша.</li>
@@ -153,6 +160,7 @@
       <li xml:lang="nl">Informatie over bestanden en mappen met er boven zweven</li>
       <li xml:lang="pl">Dane o plikach i katalogach po najechaniu myszą</li>
       <li xml:lang="pt">Informação sobre os ficheiros e pastas à passagem</li>
+      <li xml:lang="sk">Informácia o súboroch a adresároch pri prechode</li>
       <li xml:lang="sr">Подаци о фајловима и фасциклама на лебдење.</li>
       <li xml:lang="sr-Latn">Podaci o fajlovima i fasciklama na lebdenje.</li>
       <li xml:lang="sr-ijekavian">Подаци о фајловима и фасциклама на лебдење.</li>
@@ -171,6 +179,7 @@
       <li xml:lang="nl">Bestanden en mappen kunnen gekopieerd of verwijderd worden direct vanuit het contextmenu</li>
       <li xml:lang="pl">Pliki i katalogi można kopiować lub usuwać bezpośrednio z menu podręcznego</li>
       <li xml:lang="pt">Poderá copiar ou remover directamente os ficheiros e pastas directamente a partir do menu de contexto</li>
+      <li xml:lang="sk">Súbory a adresáre sa dajú kopírovať alebo odstrániť priamo cez kontextovú ponuku</li>
       <li xml:lang="sr">Фајлови и фасцикле могу да се копирају и уклањају непосредно из контекстног менија.</li>
       <li xml:lang="sr-Latn">Fajlovi i fascikle mogu da se kopiraju i uklanjaju neposredno iz kontekstnog menija.</li>
       <li xml:lang="sr-ijekavian">Фајлови и фасцикле могу да се копирају и уклањају непосредно из контекстног менија.</li>
@@ -189,6 +198,7 @@
       <li xml:lang="nl">Integratie in Konqueror en Krusader</li>
       <li xml:lang="pl">Integracja z Konqueror i Krusaderem</li>
       <li xml:lang="pt">Integração com o Konqueror e o Krusader</li>
+      <li xml:lang="sk">Integácia do Konquerora a Krusadera</li>
       <li xml:lang="sr">Уклапање у К‑освајач и Крусејдер.</li>
       <li xml:lang="sr-Latn">Uklapanje u K‑osvajač i Krusader.</li>
       <li xml:lang="sr-ijekavian">Уклапање у К‑освајач и Крусејдер.</li>
