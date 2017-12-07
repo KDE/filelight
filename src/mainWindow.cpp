@@ -375,7 +375,7 @@ bool MainWindow::openUrl(const QUrl &u)
     {
         KMSG(i18n("The entered URL cannot be parsed; it is invalid."));
     }
-    else if ((!isLocal && localPath[0] != QLatin1Char('/')) || (isLocal && !QDir::isAbsolutePath(localPath)))
+    else if (isLocal && !QDir::isAbsolutePath(localPath))
     {
         KMSG(i18n("Filelight only accepts absolute paths, eg. /%1", localPath));
     }
