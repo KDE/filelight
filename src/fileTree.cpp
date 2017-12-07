@@ -21,6 +21,7 @@
 
 #include "fileTree.h"
 
+#include <QDir>
 #include <QUrl>
 
 QString
@@ -34,6 +35,9 @@ File::fullPath(const Folder *root /*= 0*/) const
     for (const Folder *d = (Folder*)this; d != root && d; d = d->parent())
         path.prepend(d->name());
 
+    // Use QUrl to sanitize the path for display and then run it throuh
+    // QDir to make sure we use native path seprators.
     const QUrl url = QUrl::fromLocalFile(path);
-    return url.toDisplayString(QUrl::PreferLocalFile | QUrl::StripTrailingSlash);
+    const QString cleanPath = url.toDisplayString(QUrl::PreferLocalFile | QUrl::NormalizePathSegments);
+    return url.isLocalFile() ? QDir::toNativeSeparators(cleanPath) : cleanPath;
 }
