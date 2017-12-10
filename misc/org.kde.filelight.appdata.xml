@@ -106,6 +106,7 @@
       <li xml:lang="sv">Sök igenom lokala diskar, diskar på en annan dator eller flyttbara diskar</li>
       <li xml:lang="uk">Сканування локальних, віддалених та портативних дисків</li>
       <li xml:lang="x-test">xxScan local, remote or removable disksxx</li>
+      <li xml:lang="zh-CN">扫描本地、远程或可移动磁盘</li>
       <li>Configurable color schemes</li>
       <li xml:lang="ca">Esquemes de color configurables</li>
       <li xml:lang="ca-valencia">Esquemes de color configurables</li>
@@ -196,6 +197,7 @@
       <li xml:lang="sv">Integrerat med Konqueror och Krusader</li>
       <li xml:lang="uk">Інтеграція з Konqueror та Krusader</li>
       <li xml:lang="x-test">xxIntegration into Konqueror and Krusaderxx</li>
+      <li xml:lang="zh-CN">与 Konqueror 和 Krusader 的整合</li>
     </ul>
   </description>
   <launchable type="desktop-id">org.kde.filelight.desktop</launchable>
