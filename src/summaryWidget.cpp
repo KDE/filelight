@@ -71,7 +71,7 @@ public:
 
     virtual void setCursor(const QCursor &c)
     {
-        if (focusSegment() && focusSegment()->file()->name() == QLatin1String( "Used" ))
+        if (focusSegment() && focusSegment()->file()->decodedName() == QLatin1String( "Used" ))
             RadialMap::Widget::setCursor(c);
         else
             unsetCursor();

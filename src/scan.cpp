@@ -104,7 +104,7 @@ bool ScanManager::start(const QUrl &url)
     QMutableListIterator<Folder*> it(m_cache);
     while (it.hasNext()) {
         Folder *folder = it.next();
-        QString cachePath = folder->name();
+        QString cachePath = folder->decodedName();
 
         if (path.startsWith(cachePath)) { //then whole tree already scanned
             //find a pointer to the requested branch
@@ -124,7 +124,7 @@ bool ScanManager::start(const QUrl &url)
                 d = nullptr;
                 while (it.hasNext()) {
                     File *subfolder = it.next();
-                    if (s == subfolder->name()) {
+                    if (s == subfolder->decodedName()) {
                         d = (Folder*)subfolder;
                         break;
                     }

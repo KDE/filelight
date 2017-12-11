@@ -212,7 +212,7 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
             {
                 if (new_path == folder->name8Bit())
                 {
-                    qDebug() << "Tree pre-completed: " << folder->name();
+                    qDebug() << "Tree pre-completed: " << folder->decodedName();
                     d = folder;
                     m_trees->removeAll(folder);
                     m_parent->m_files += folder->children();

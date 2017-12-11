@@ -1,6 +1,7 @@
 /***********************************************************************
 * Copyright 2003-2004  Max Howell <max.howell@methylblue.com>
 * Copyright 2008-2009  Martin Sandsmark <martin.sandsmark@kde.org>
+* Copyright 2017  Harald Sitter <sitter@kde.org>
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public License as
@@ -24,20 +25,30 @@
 #include <QDir>
 #include <QUrl>
 
-QString
-File::fullPath(const Folder *root /*= 0*/) const
+QString File::displayName() const {
+    const QString decodedName = QFile::decodeName(m_name);
+    return url().isLocalFile() ? QDir::toNativeSeparators(decodedName) : decodedName;
+}
+
+QString File::displayPath(const Folder *root) const
+{
+    // Use QUrl to sanitize the path for display and then run it throuh
+    // QDir to make sure we use native path seprators.
+    const QUrl url = this->url(root);
+    const QString cleanPath = url.toDisplayString(QUrl::PreferLocalFile | QUrl::NormalizePathSegments);
+    return url.isLocalFile() ? QDir::toNativeSeparators(cleanPath) : cleanPath;
+}
+
+QUrl File::url(const Folder *root) const
 {
     QString path;
 
     if (root == this)
         root = nullptr; //prevent returning empty string when there is something we could return
 
-    for (const Folder *d = (Folder*)this; d != root && d; d = d->parent())
-        path.prepend(d->name());
+    for (const Folder *d = (Folder*)this; d != root && d; d = d->parent()) {
+        path.prepend(QFile::decodeName(d->name8Bit()));
+    }
 
-    // Use QUrl to sanitize the path for display and then run it throuh
-    // QDir to make sure we use native path seprators.
-    const QUrl url = QUrl::fromLocalFile(path);
-    const QString cleanPath = url.toDisplayString(QUrl::PreferLocalFile | QUrl::NormalizePathSegments);
-    return url.isLocalFile() ? QDir::toNativeSeparators(cleanPath) : cleanPath;
+    return QUrl::fromUserInput(path, QString(), QUrl::AssumeLocalFile);
 }
