@@ -197,7 +197,7 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
         for (it = list.begin(); it != list.end(); ++it) {
             Label *label = *it;
             //** bear in mind that text is drawn with QPoint param as BOTTOM left corner of text box
-            QString string = label->segment->file()->name();
+            QString string = label->segment->file()->displayName();
             if (varySizes) {
                 font.setPointSize(sizes[label->level]);
             }

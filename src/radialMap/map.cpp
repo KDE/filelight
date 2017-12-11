@@ -267,7 +267,7 @@ void RadialMap::Map::colorise()
     {
         for (Segment *segment : m_signature[i]) {
             if (m_summary){ // Summary view has its own colors, special cased.
-                if (segment->file()->name() == QLatin1String("Used")) {
+                if (segment->file()->decodedName() == QLatin1String("Used")) {
                     cb = QApplication::palette().highlight().color();
                     cb.getHsv(&h, &s1, &v1);
 

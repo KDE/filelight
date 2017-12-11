@@ -151,7 +151,7 @@ void RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
             setCursor(Qt::PointingHandCursor);
 
 
-            QString string = m_focus->file()->fullPath(m_tree)
+            QString string = m_focus->file()->displayPath()
                 + QLatin1Char('\n')
                 + m_focus->file()->humanReadableSize();
 
@@ -186,7 +186,7 @@ void RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
             m_tooltip.setText(string);
             m_tooltip.show();
 
-            emit mouseHover(m_focus->file()->fullPath());
+            emit mouseHover(m_focus->file()->displayPath());
             update();
         }
     }
@@ -205,7 +205,7 @@ void RadialMap::Widget::enterEvent(QEvent *)
     if (!m_focus) return;
 
     setCursor(Qt::PointingHandCursor);
-    emit mouseHover(m_focus->file()->fullPath());
+    emit mouseHover(m_focus->file()->displayPath());
     update();
 }
 
@@ -260,7 +260,7 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
     QAction* deleteItem = nullptr;
 
     QMenu popup;
-    popup.setTitle(m_focus->file()->fullPath(m_tree));
+    popup.setTitle(m_focus->file()->displayPath(m_tree));
 
     if (isDir) {
         openFileManager = popup.addAction(QIcon::fromTheme(QLatin1String("system-file-manager")), i18n("Open &File Manager Here"));

@@ -1,6 +1,7 @@
 /***********************************************************************
 * Copyright 2003-2004  Max Howell <max.howell@methylblue.com>
 * Copyright 2008-2009  Martin Sandsmark <martin.sandsmark@kde.org>
+* Copyright 2017  Harald Sitter <sitter@kde.org>
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public License as
@@ -49,24 +50,40 @@ public:
     Folder *parent() const {
         return m_parent;
     }
+
+    /** Do not use for user visible strings. Use name instead. */
     const char *name8Bit() const {
         return m_name;
     }
+    /** Decoded name. Use when you need a QString. */
+    QString decodedName() const {
+        return QFile::decodeName(m_name);
+    }
+    /**
+     * Humand readable name (including native seperators where applicable).
+     * Only use for display.
+     */
+    QString displayName() const;
+
     FileSize size() const {
         return m_size;
-    }
-    QString name() const {
-        return QFile::decodeName(m_name);
     }
 
     virtual bool isFolder() const {
         return false;
     }
 
-    QString fullPath(const Folder* = nullptr) const;
+    /**
+     * Human readable path for display (including native separators where applicable.
+     * Only use for display.
+     */
+    QString displayPath(const Folder * = nullptr) const;
     QString humanReadableSize() const {
         return KFormat().formatByteSize(m_size);
     }
+
+    /** Builds a complete QUrl by walking up to root. */
+    QUrl url(const Folder *root = nullptr) const;
 
 protected:
     File(const char *name, FileSize size, Folder *parent) : m_parent(parent), m_name(qstrdup(name)), m_size(size) {}
@@ -111,11 +128,11 @@ public:
     {
         append(new File(name, size, this));
     }
-    
+
     /// removes a file
     void remove(const File *f) {
         files.removeAll(const_cast<File*>(f));
-        
+
         for (Folder *d = this; d; d = d->parent()) {
             d->m_size -= f->size();
         }
