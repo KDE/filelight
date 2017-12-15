@@ -416,7 +416,7 @@ bool MainWindow::closeUrl()
 }
 
 QString MainWindow::prettyUrl() const {
-    return url().isLocalFile() ? url().toLocalFile() : url().toString();
+    return url().isLocalFile() ? QDir::toNativeSeparators(url().toLocalFile()) : url().toString();
 }
 
 void MainWindow::updateURL(const QUrl &u)
