@@ -14,6 +14,7 @@
   <name xml:lang="fi">Filelight</name>
   <name xml:lang="fr">Filelight</name>
   <name xml:lang="gl">Filelight</name>
+  <name xml:lang="ia">Filelight</name>
   <name xml:lang="ko">Filelight</name>
   <name xml:lang="nl">Filelight</name>
   <name xml:lang="pl">Filelight</name>
@@ -84,6 +85,7 @@
     <p xml:lang="fi">Ominaisuudet:</p>
     <p xml:lang="fr">Fonctionnalités :</p>
     <p xml:lang="gl">Funcionalidades:</p>
+    <p xml:lang="ia">Characteristicas:</p>
     <p xml:lang="ko">기능:</p>
     <p xml:lang="nl">Kenmerken:</p>
     <p xml:lang="pl">Możliwości:</p>
