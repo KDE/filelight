@@ -15,6 +15,7 @@
   <name xml:lang="fr">Filelight</name>
   <name xml:lang="ko">Filelight</name>
   <name xml:lang="nl">Filelight</name>
+  <name xml:lang="nn">Filelight</name>
   <name xml:lang="pl">Filelight</name>
   <name xml:lang="pt">Filelight</name>
   <name xml:lang="pt-BR">Filelight</name>
@@ -39,6 +40,7 @@
   <summary xml:lang="fr">Filelight crée une carte interactive en segments d'anneaux concentriques qui aide à visualiser l'utilisation de l'espace disque sur votre ordinateur</summary>
   <summary xml:lang="ko">Filelight는 컴퓨터 디스크 사용량을 인터랙티브 동심원 그래프로 시각화하는 프로그램입니다</summary>
   <summary xml:lang="nl">Filelight maakt een interactieve grafiek van concentrische gesegmenteerde ringen die helpen om schijfgebruik op uw computer te visualiseren</summary>
+  <summary xml:lang="nn">Filelight viser diskbruken på maskina som konsentriske kakestykke som du kan samhandla med</summary>
   <summary xml:lang="pl">Filelight tworzy interaktywną mapę współśrodkowych, dzielonych pierścieni, co ma na celu zobrazowanie wykorzystania przestrzeni dyskowej na twoim komputerze</summary>
   <summary xml:lang="pt">O Filelight cria um mapa interactivo com anéis concêntricos segmentados que o ajuda a visualizar a utilização do disco no seu computador</summary>
   <summary xml:lang="sk">Filelight vytvorí interaktívnu mapu koncentrických segmentových prstencov, ktoré pomôžu vizualizovať využitie disku vo vašom počítači</summary>
@@ -63,6 +65,7 @@
     <p xml:lang="fr">Filelight est une application pour visualiser l'utilisation de l'espace disque sur votre ordinateur</p>
     <p xml:lang="ko">Flielight는 컴퓨터 디스크 사용량을 시각화하는 프로그램입니다</p>
     <p xml:lang="nl">Filelight is een toepassing om het schijfgebruik op uw computer te visualiseren</p>
+    <p xml:lang="nn">Filelight er eit program for å visualisera diskbruken på datamaskina di</p>
     <p xml:lang="pl">Filelight jest apikacją do zobrazowania wykorzystania przestrzeni dyskowej na twoim komputerze</p>
     <p xml:lang="pt">O Filelight é uma aplicação para visualizar a utilização do disco no seu computador</p>
     <p xml:lang="sk">Filelight je aplikácia na vizualizáciu využitia disku vo vašom počítači</p>
@@ -85,6 +88,7 @@
     <p xml:lang="fr">Fonctionnalités :</p>
     <p xml:lang="ko">기능:</p>
     <p xml:lang="nl">Kenmerken:</p>
+    <p xml:lang="nn">Funksjonar:</p>
     <p xml:lang="pl">Możliwości:</p>
     <p xml:lang="pt">Funcionalidades:</p>
     <p xml:lang="pt-BR">Recursos:</p>
@@ -110,6 +114,7 @@
       <li xml:lang="fr">Parcourt les disques locaux, distants ou amovibles</li>
       <li xml:lang="ko">로컬, 원격, 이동식 디스크 검사</li>
       <li xml:lang="nl">Lokale, op afstand of verwijderbare schijven scannen</li>
+      <li xml:lang="nn">Søk gjennom lokale diskar, nettverksdiskar og flyttbare lagringsmedium</li>
       <li xml:lang="pl">Przeszukiwanie lokalnych, zdalnych, wymiennych dysków</li>
       <li xml:lang="pt">Sondar discos locais, remotos ou removíveis</li>
       <li xml:lang="sk">Prehľadať miestne, vzdialené alebo vymeniteľné disky</li>
@@ -132,6 +137,7 @@
       <li xml:lang="fr">Schémas de couleurs configurable</li>
       <li xml:lang="ko">색 배열 설정</li>
       <li xml:lang="nl">Te configureren kleurenschema's</li>
+      <li xml:lang="nn">Støtte for ulike fargeoppsett</li>
       <li xml:lang="pl">Zestawy barwne do ustawienia</li>
       <li xml:lang="pt">Esquemas de cores configuráveis</li>
       <li xml:lang="sk">Nastaviteľné farebné schémy</li>
@@ -153,6 +159,7 @@
       <li xml:lang="fr">Navigation dans le système de fichiers par clic de souris</li>
       <li xml:lang="ko">마우스 클릭으로 파일 시스템 탐색</li>
       <li xml:lang="nl">Navigatie door bestandssysteem met muisklikken</li>
+      <li xml:lang="nn">Navigering av filsystemet med museklikk</li>
       <li xml:lang="pl">Poruszanie się po systemie plików poprzez mysz</li>
       <li xml:lang="pt">Navegação pelo sistema de ficheiros com o rato</li>
       <li xml:lang="sk">Navigácia súborového systému kliknutím myšou</li>
@@ -174,6 +181,7 @@
       <li xml:lang="fr">Informations sur les fichiers et les dossiers lors du survol</li>
       <li xml:lang="ko">지나다닐 때 파일과 디렉터리 정보 표시</li>
       <li xml:lang="nl">Informatie over bestanden en mappen met er boven zweven</li>
+      <li xml:lang="nn">Informasjon om filer og mapper når ein held peikaren over dei</li>
       <li xml:lang="pl">Dane o plikach i katalogach po najechaniu myszą</li>
       <li xml:lang="pt">Informação sobre os ficheiros e pastas à passagem</li>
       <li xml:lang="sk">Informácia o súboroch a adresároch pri prechode</li>
@@ -195,6 +203,7 @@
       <li xml:lang="fr">Les fichiers et dossiers peuvent être copiés ou supprimés directement depuis le menu contextuel</li>
       <li xml:lang="ko">컨텍스트 메뉴에서 파일과 디렉터리 직접 복사 및 삭제</li>
       <li xml:lang="nl">Bestanden en mappen kunnen gekopieerd of verwijderd worden direct vanuit het contextmenu</li>
+      <li xml:lang="nn">Filer og mapper kan kopierast eller flyttast direkte frå høgreklikkmenyen</li>
       <li xml:lang="pl">Pliki i katalogi można kopiować lub usuwać bezpośrednio z menu podręcznego</li>
       <li xml:lang="pt">Poderá copiar ou remover directamente os ficheiros e pastas directamente a partir do menu de contexto</li>
       <li xml:lang="sk">Súbory a adresáre sa dajú kopírovať alebo odstrániť priamo cez kontextovú ponuku</li>
@@ -216,6 +225,7 @@
       <li xml:lang="fr">Intégration dans Konqueror et Krusader</li>
       <li xml:lang="ko">Konqueror 및 Krusader 통합</li>
       <li xml:lang="nl">Integratie in Konqueror en Krusader</li>
+      <li xml:lang="nn">Integrert med filhandsamarane Konqueror og Krusader</li>
       <li xml:lang="pl">Integracja z Konqueror i Krusaderem</li>
       <li xml:lang="pt">Integração com o Konqueror e o Krusader</li>
       <li xml:lang="sk">Integácia do Konquerora a Krusadera</li>
