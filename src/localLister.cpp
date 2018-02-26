@@ -203,7 +203,7 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
         else if (S_ISDIR(statbuf.st_mode)) //folder
         {
             Folder *d = nullptr;
-            QByteArray new_dirname = ent->d_name;
+            const QByteArray new_dirname = ent->d_name + QByteArrayLiteral("/");
             new_path += '/';
 
             //check to see if we've scanned this section already
@@ -221,7 +221,7 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
             }
 
             if (!d) //then scan
-                if ((d = scan(new_path, new_dirname + '/'))) //then scan was successful
+                if ((d = scan(new_path, new_dirname))) //then scan was successful
                     cwd->append(d);
         }
 
