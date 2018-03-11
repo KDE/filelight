@@ -22,8 +22,8 @@
 #ifndef LOCALLISTER_H
 #define LOCALLISTER_H
 
-#include <QtCore/QByteArray>
-#include <QtCore/QThread>
+#include <QByteArray>
+#include <QThread>
 
 class Folder;
 

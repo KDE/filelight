@@ -22,7 +22,7 @@
 #ifndef Config_H
 #define Config_H
 
-#include <QtCore/QStringList>
+#include <QStringList>
 
 class KConfig;
 

@@ -26,9 +26,9 @@
 
 #include <KColorScheme>
 
-#include <QtGui/QPixmap>
-#include <QtCore/QRect>
-#include <QtCore/QString>
+#include <QPixmap>
+#include <QRect>
+#include <QString>
 
 namespace RadialMap {
 class Segment;
