@@ -59,6 +59,7 @@
   <summary xml:lang="sv">Filelight skapar en interaktiv avbildning av koncentriska segmenterade ringar som hjälper till att åskådliggöra diskanvändning på datorn</summary>
   <summary xml:lang="uk">Filelight створює інтерактивну карту з концентричних кіл, поділених на сектори, яка допоможе вам візуально контролювати використання дискового простору на вашому комп’ютері</summary>
   <summary xml:lang="x-test">xxFilelight creates an interactive map of concentric segmented-rings that helps visualize disk usage on your computerxx</summary>
+  <summary xml:lang="zh-CN">Filelight 会建立一个同心分段环状交互式地图，帮助您可视化您计算机上的磁盘使用</summary>
   <description>
     <p>
       Filelight is an application to visualize the disk usage on your computer
@@ -87,6 +88,7 @@
     <p xml:lang="sv">Filelight är ett program för att åskådliggöra diskanvändning på datorn</p>
     <p xml:lang="uk">Filelight — програма для візуалізації використання дискового простору вашого комп'ютера</p>
     <p xml:lang="x-test">xxFilelight is an application to visualize the disk usage on your computerxx</p>
+    <p xml:lang="zh-CN">Filelight 是一个用于可视化您计算机上磁盘使用情况的应用程序</p>
     <p>Features:</p>
     <p xml:lang="ca">Característiques:</p>
     <p xml:lang="ca-valencia">Característiques:</p>
@@ -169,6 +171,7 @@
       <li xml:lang="sv">Anpassningsbara färgscheman</li>
       <li xml:lang="uk">Придатна до налаштовування тема кольорів</li>
       <li xml:lang="x-test">xxConfigurable color schemesxx</li>
+      <li xml:lang="zh-CN">可配置的色彩方案</li>
       <li>File system navigation by mouse clicks</li>
       <li xml:lang="ca">Navegació pel sistema de fitxers amb clics de ratolí</li>
       <li xml:lang="ca-valencia">Navegació pel sistema de fitxers amb clics de ratolí</li>
@@ -194,6 +197,7 @@
       <li xml:lang="sv">Navigering i filsystem med musklick</li>
       <li xml:lang="uk">Навігація файловою системою за допомогою клацання кнопками миші</li>
       <li xml:lang="x-test">xxFile system navigation by mouse clicksxx</li>
+      <li xml:lang="zh-CN">用鼠标点击来浏览文件系统</li>
       <li>Information about files and directories on hovering</li>
       <li xml:lang="ca">Informació quant a fitxers i directoris en passar-hi per sobre</li>
       <li xml:lang="ca-valencia">Informació quant a fitxers i directoris en passar-hi per sobre</li>
@@ -219,6 +223,7 @@
       <li xml:lang="sv">Information om filer och kataloger när musen hålls över dem</li>
       <li xml:lang="uk">Показ даних щодо файлів і каталогів у відповідь на наведення вказівника миші</li>
       <li xml:lang="x-test">xxInformation about files and directories on hoveringxx</li>
+      <li xml:lang="zh-CN">悬停时显示文件和目录信息</li>
       <li>Files and directories can be copied or removed directly from the context menu</li>
       <li xml:lang="ca">Els fitxers i directoris es poden copiar o eliminar directament des del menú contextual</li>
       <li xml:lang="ca-valencia">Els fitxers i directoris es poden copiar o eliminar directament des del menú contextual</li>
@@ -244,6 +249,7 @@
       <li xml:lang="sv">Filer och kataloger kan kopieras eller tas bort direkt i den sammanhangsberoende menyn</li>
       <li xml:lang="uk">Можливість копіювання та вилучення файлів і каталогів за допомогою контекстного меню програми</li>
       <li xml:lang="x-test">xxFiles and directories can be copied or removed directly from the context menuxx</li>
+      <li xml:lang="zh-CN">文件和目录可以在上下文菜单中直接被复制或删除</li>
       <li>Integration into Konqueror and Krusader</li>
       <li xml:lang="ca">Integració en el Konqueror i el Krusader</li>
       <li xml:lang="ca-valencia">Integració en el Konqueror i el Krusader</li>
