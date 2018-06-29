@@ -53,7 +53,6 @@ find_package(KF5 REQUIRED
 find_package(KF5DocTools) # Optional, not needed on Windows for example.
 
 add_definitions(
-    -DQT_USE_FAST_CONCATENATION
     -DQT_USE_FAST_OPERATOR_PLUS
     -DQT_NO_CAST_FROM_ASCII
     -DQT_NO_CAST_TO_ASCII
