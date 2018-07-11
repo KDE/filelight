@@ -159,10 +159,12 @@ void SummaryWidget::createDiskMaps()
 
 DiskList::DiskList()
 {
+    static const QSet<QByteArray> ignoredFsTypes = { "tmpfs", "squashfs" };
+
     QStringList partitions;
 
     for (const QStorageInfo &storage : QStorageInfo::mountedVolumes()) {
-        if (!storage.isReady() || storage.fileSystemType() == "tmpfs") {
+        if (!storage.isReady() || ignoredFsTypes.contains(storage.fileSystemType())) {
             continue;
         }
 
