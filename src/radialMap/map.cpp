@@ -251,6 +251,11 @@ bool RadialMap::Map::resize(const QRect &rect)
 
 void RadialMap::Map::colorise()
 {
+    if (!m_signature || m_signature->isEmpty()) {
+        qDebug() << "no signature yet";
+        return;
+    }
+
     QColor cp, cb;
     double darkness = 1;
     double contrast = (double)Config::contrast / (double)100;
@@ -263,53 +268,55 @@ void RadialMap::Map::colorise()
     double deltaGreen = (double)(kdeColour[0].green() - kdeColour[1].green()) / 2880;
     double deltaBlue  = (double)(kdeColour[0].blue()  - kdeColour[1].blue())  / 2880;
 
+    if (m_summary){ // Summary view has its own colors, special cased.
+        cp = Qt::gray;
+        cb = Qt::white;
+        m_signature[0][0]->setPalette(cp, cb);
+
+        // need to check in case there's no free space
+        if (m_signature[0].size() > 1) {
+            cb = QApplication::palette().highlight().color();
+            cb.getHsv(&h, &s1, &v1);
+
+            if (s1 > 80) {
+                s1 = 80;
+            }
+
+            v2 = v1 - int(contrast * v1);
+            s2 = s1 + int(contrast * (255 - s1));
+
+            cb.setHsv(h, s1, v1);
+            cp.setHsv(h, s2, v2);
+            m_signature[0][1]->setPalette(cp, cb);
+        }
+
+        return;
+    }
+
+
     for (uint i = 0; i <= m_visibleDepth; ++i, darkness += 0.04)
     {
         for (Segment *segment : m_signature[i]) {
-            if (m_summary){ // Summary view has its own colors, special cased.
-                if (segment->file()->decodedName() == QLatin1String("Used")) {
-                    cb = QApplication::palette().highlight().color();
-                    cb.getHsv(&h, &s1, &v1);
-
-                    if (s1 > 80)
-                        s1 = 80;
-
-                    v2 = v1 - int(contrast * v1);
-                    s2 = s1 + int(contrast * (255 - s1));
-
-                    cb.setHsv(h, s1, v1);
-                    cp.setHsv(h, s2, v2);
-                }
-                else
-                {
-                    cp = Qt::gray;
-                    cb = Qt::white;
-                }
-
-                segment->setPalette(cp, cb);
-            }
-            else
+            switch (Config::scheme)
             {
-                switch (Config::scheme)
-                {
                 case Filelight::KDE:
-                {
-                    //gradient will work by figuring out rgb delta values for 360 degrees
-                    //then each component is angle*delta
+                    {
+                        //gradient will work by figuring out rgb delta values for 360 degrees
+                        //then each component is angle*delta
 
-                    int a = segment->start();
+                        int a = segment->start();
 
-                    if (a > 2880) a = 2880 - (a - 2880);
+                        if (a > 2880) a = 2880 - (a - 2880);
 
-                    h  = (int)(deltaRed   * a) + kdeColour[1].red();
-                    s1 = (int)(deltaGreen * a) + kdeColour[1].green();
-                    v1 = (int)(deltaBlue  * a) + kdeColour[1].blue();
+                        h  = (int)(deltaRed   * a) + kdeColour[1].red();
+                        s1 = (int)(deltaGreen * a) + kdeColour[1].green();
+                        v1 = (int)(deltaBlue  * a) + kdeColour[1].blue();
 
-                    cb.setRgb(h, s1, v1);
-                    cb.getHsv(&h, &s1, &v1);
+                        cb.setRgb(h, s1, v1);
+                        cb.getHsv(&h, &s1, &v1);
 
-                    break;
-                }
+                        break;
+                    }
 
                 case Filelight::HighContrast:
                     cp.setHsv(0, 0, 0); //values of h, s and v are irrelevant
@@ -321,41 +328,40 @@ void RadialMap::Map::colorise()
                     h  = int(segment->start() / 16);
                     s1 = 160;
                     v1 = (int)(255.0 / darkness); //****doing this more often than once seems daft!
-                }
-
-                v2 = v1 - int(contrast * v1);
-                s2 = s1 + int(contrast * (255 - s1));
-
-                if (s1 < 80) s1 = 80; //can fall too low and makes contrast between the files hard to discern
-
-                if (segment->isFake()) //multi-file
-                {
-                    cb.setHsv(h, s2, (v2 < 90) ? 90 : v2); //too dark if < 100
-                    cp.setHsv(h, 17, v1);
-                }
-                else if (!segment->file()->isFolder()) //file
-                {
-                    cb.setHsv(h, 17, v1);
-                    cp.setHsv(h, 17, v2);
-                }
-                else //folder
-                {
-                    cb.setHsv(h, s1, v1); //v was 225
-                    cp.setHsv(h, s2, v2); //v was 225 - delta
-                }
-
-                segment->setPalette(cp, cb);
-
-                //TODO:
-                //**** may be better to store KDE colours as H and S and vary V as others
-                //**** perhaps make saturation difference for s2 dependent on contrast too
-                //**** fake segments don't work with highContrast
-                //**** may work better with cp = cb rather than Qt::white
-                //**** you have to ensure the grey of files is sufficient, currently it works only with rainbow (perhaps use contrast there too)
-                //**** change v1,v2 to vp, vb etc.
-                //**** using percentages is not strictly correct as the eye doesn't work like that
-                //**** darkness factor is not done for kde_colour scheme, and also value for files is incorrect really for files in this scheme as it is not set like rainbow one is
             }
+
+            v2 = v1 - int(contrast * v1);
+            s2 = s1 + int(contrast * (255 - s1));
+
+            if (s1 < 80) s1 = 80; //can fall too low and makes contrast between the files hard to discern
+
+            if (segment->isFake()) //multi-file
+            {
+                cb.setHsv(h, s2, (v2 < 90) ? 90 : v2); //too dark if < 100
+                cp.setHsv(h, 17, v1);
+            }
+            else if (!segment->file()->isFolder()) //file
+            {
+                cb.setHsv(h, 17, v1);
+                cp.setHsv(h, 17, v2);
+            }
+            else //folder
+            {
+                cb.setHsv(h, s1, v1); //v was 225
+                cp.setHsv(h, s2, v2); //v was 225 - delta
+            }
+
+            segment->setPalette(cp, cb);
+
+            //TODO:
+            //**** may be better to store KDE colours as H and S and vary V as others
+            //**** perhaps make saturation difference for s2 dependent on contrast too
+            //**** fake segments don't work with highContrast
+            //**** may work better with cp = cb rather than Qt::white
+            //**** you have to ensure the grey of files is sufficient, currently it works only with rainbow (perhaps use contrast there too)
+            //**** change v1,v2 to vp, vb etc.
+            //**** using percentages is not strictly correct as the eye doesn't work like that
+            //**** darkness factor is not done for kde_colour scheme, and also value for files is incorrect really for files in this scheme as it is not set like rainbow one is
         }
     }
 }
