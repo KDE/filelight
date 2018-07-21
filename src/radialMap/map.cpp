@@ -268,7 +268,7 @@ void RadialMap::Map::colorise()
     double deltaGreen = (double)(kdeColour[0].green() - kdeColour[1].green()) / 2880;
     double deltaBlue  = (double)(kdeColour[0].blue()  - kdeColour[1].blue())  / 2880;
 
-    if (m_summary){ // Summary view has its own colors, special cased.
+    if (m_summary) { // Summary view has its own colors, special cased.
         cp = Qt::gray;
         cb = Qt::white;
         m_signature[0][0]->setPalette(cp, cb);
@@ -294,13 +294,10 @@ void RadialMap::Map::colorise()
     }
 
 
-    for (uint i = 0; i <= m_visibleDepth; ++i, darkness += 0.04)
-    {
+    for (uint i = 0; i <= m_visibleDepth; ++i, darkness += 0.04) {
         for (Segment *segment : m_signature[i]) {
-            switch (Config::scheme)
-            {
-                case Filelight::KDE:
-                    {
+            switch (Config::scheme) {
+                case Filelight::KDE: {
                         //gradient will work by figuring out rgb delta values for 360 degrees
                         //then each component is angle*delta
 
@@ -335,18 +332,13 @@ void RadialMap::Map::colorise()
 
             if (s1 < 80) s1 = 80; //can fall too low and makes contrast between the files hard to discern
 
-            if (segment->isFake()) //multi-file
-            {
+            if (segment->isFake()) { //multi-file
                 cb.setHsv(h, s2, (v2 < 90) ? 90 : v2); //too dark if < 100
                 cp.setHsv(h, 17, v1);
-            }
-            else if (!segment->file()->isFolder()) //file
-            {
+            } else if (!segment->file()->isFolder()) { //file
                 cb.setHsv(h, 17, v1);
                 cp.setHsv(h, 17, v2);
-            }
-            else //folder
-            {
+            } else { //folder
                 cb.setHsv(h, s1, v1); //v was 225
                 cp.setHsv(h, s2, v2); //v was 225 - delta
             }
