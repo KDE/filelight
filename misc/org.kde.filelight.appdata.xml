@@ -13,6 +13,7 @@
   <name xml:lang="el">Filelight</name>
   <name xml:lang="en-GB">Filelight</name>
   <name xml:lang="es">Filelight</name>
+  <name xml:lang="eu">Filelight</name>
   <name xml:lang="fi">Filelight</name>
   <name xml:lang="fr">Filelight</name>
   <name xml:lang="gl">Filelight</name>
@@ -43,6 +44,7 @@
   <summary xml:lang="el">Το Filelight δημιουργεί ένα διαδραστικό χάρτη ομόκεντρων χωρισμένων σε τομείς δαχτυλίων που βοηθάει στην οπτικοποίηση της χρήσης του δίσκου στον υπολογιστή σας</summary>
   <summary xml:lang="en-GB">Filelight creates an interactive map of concentric segmented-rings that helps visualise disk usage on your computer</summary>
   <summary xml:lang="es">Filelight crea un mapa interactivo de segmentos de anillos concéntricos que ayuda a visualizar el uso del disco en su equipo</summary>
+  <summary xml:lang="eu">Filelightek eraztun-zati zentrokidez osaturiko mapa elkarreragile bat sortzen du, zure ordenagailuko diskoaren erabilera irudikatzen laguntzen duena</summary>
   <summary xml:lang="fi">Filelight luo vuorovaikutteisen samakeskisten lohkojen kaavion, joka auttaa hahmottaa tietokoneen levytilan käyttöä.</summary>
   <summary xml:lang="fr">Filelight crée une carte interactive en segments d'anneaux concentriques qui aide à visualiser l'utilisation de l'espace disque sur votre ordinateur</summary>
   <summary xml:lang="gl">Filelight crea un mapa interactivo de aneis concéntricos segmentados que axuda a visualizar o uso do disco no computador</summary>
@@ -73,6 +75,7 @@
     <p xml:lang="el">Το Filelight είναι μια εφαρμογή οπτικοποίησης της χρήσης του δίσκου στον υπολογιστή σας</p>
     <p xml:lang="en-GB">Filelight is an application to visualise the disk usage on your computer</p>
     <p xml:lang="es">Filelight es una aplicación para visualizar el uso del disco de su equipo</p>
+    <p xml:lang="eu">Filelight zure ordenagailuko diskoaren erabilera irudikatzeko aplikazio bat da</p>
     <p xml:lang="fi">Filelight on sovellus tietokoneen levynkäytön hahmottamiseksi</p>
     <p xml:lang="fr">Filelight est une application pour visualiser l'utilisation de l'espace disque sur votre ordinateur</p>
     <p xml:lang="gl">Filelight é un aplicativo para visualizar o uso de disco no computador.</p>
@@ -101,6 +104,7 @@
     <p xml:lang="el">Χαρακτηριστικά:</p>
     <p xml:lang="en-GB">Features:</p>
     <p xml:lang="es">Funciones:</p>
+    <p xml:lang="eu">Eginbide:</p>
     <p xml:lang="fi">Ominaisuudet:</p>
     <p xml:lang="fr">Fonctionnalités :</p>
     <p xml:lang="gl">Funcionalidades:</p>
@@ -132,6 +136,7 @@
       <li xml:lang="el">Σάρωση τοπικών, απομακρυσμένων ή μετακινούμενων δίσκων</li>
       <li xml:lang="en-GB">Scan local, remote or removable disks</li>
       <li xml:lang="es">Explora discos locales, remotos y extraíbles</li>
+      <li xml:lang="eu">Aztertu bertako diskoak, urrunekoak edo aldagarriak</li>
       <li xml:lang="fi">Tutkii paikalliset, etä- ja siirrettävät levyt</li>
       <li xml:lang="fr">Parcourt les disques locaux, distants ou amovibles</li>
       <li xml:lang="gl">Examinar discos locais, remotos e retirábeis.</li>
@@ -159,6 +164,7 @@
       <li xml:lang="el">Διαμορφώσιμα χρωματιστά σχήματα</li>
       <li xml:lang="en-GB">Configurable colour schemes</li>
       <li xml:lang="es">Esquemas de color que se pueden configurar</li>
+      <li xml:lang="eu">Kolore antolaerak konfigura daitezke</li>
       <li xml:lang="fi">Mukautettavat värimallit</li>
       <li xml:lang="fr">Schémas de couleurs configurable</li>
       <li xml:lang="gl">Esquema de cores configurábel.</li>
@@ -186,6 +192,7 @@
       <li xml:lang="el">Πλοήγηση στο σύστημα αρχείων με κλικ στο ποντίκι</li>
       <li xml:lang="en-GB">File system navigation by mouse clicks</li>
       <li xml:lang="es">Navegación a través del sistema de archivos mediante clics del ratón</li>
+      <li xml:lang="eu">Fitxategi-sisteman nabigatzea saguaren klik bidez</li>
       <li xml:lang="fi">Tiedostojärjestelmän navigointi hiirellä</li>
       <li xml:lang="fr">Navigation dans le système de fichiers par clic de souris</li>
       <li xml:lang="gl">Navegación polo sistema de ficheiros mediante clics do rato.</li>
@@ -213,6 +220,7 @@
       <li xml:lang="el">Πληροφορίες για αρχεία και καταλόγους με αιώρηση</li>
       <li xml:lang="en-GB">Information about files and directories on hovering</li>
       <li xml:lang="es">Información sobre archivos y directorios al situar el cursor del ratón sobre ellos</li>
+      <li xml:lang="eu">Fitxategi eta direktorioei buruzko informazioak haien gainetik iragatean</li>
       <li xml:lang="fi">Näyttää tiedostojen ja kansioiden tiedot hiiren leijuessa niiden yllä</li>
       <li xml:lang="fr">Informations sur les fichiers et les dossiers lors du survol</li>
       <li xml:lang="gl">Información sobre os ficheiros e directorios ao cubrilos.</li>
@@ -240,6 +248,7 @@
       <li xml:lang="el">Αρχεία και κατάλογοι μπορούν να αντιγραφούν ή να αφαιρεθούν απευθείας από το μενού</li>
       <li xml:lang="en-GB">Files and directories can be copied or removed directly from the context menu</li>
       <li xml:lang="es">Los archivos y los directorios se pueden copiar o eliminar directamente desde el menú de contexto</li>
+      <li xml:lang="eu">Fitxategiak eta direktorioak zuzenean kopiatu edo kendu daitezke testuinguru menutik</li>
       <li xml:lang="fi">Tiedostoja ja kansioita voi kopioida ja poistaa suoraan kontekstivalikosta</li>
       <li xml:lang="fr">Les fichiers et dossiers peuvent être copiés ou supprimés directement depuis le menu contextuel</li>
       <li xml:lang="gl">Os ficheiros e directorios poden copiarse e retirarse directamente desde o menú de contexto.</li>
@@ -267,6 +276,7 @@
       <li xml:lang="el">Ενσωμάτωση σε Konqueror και Krusader</li>
       <li xml:lang="en-GB">Integration into Konqueror and Krusader</li>
       <li xml:lang="es">Integración en Konqueror y en Krusader</li>
+      <li xml:lang="eu">Integrazioa Konquerren eta Krusaderren</li>
       <li xml:lang="fi">Integrointi Konqueroriin ja Krusaderiin</li>
       <li xml:lang="fr">Intégration dans Konqueror et Krusader</li>
       <li xml:lang="gl">Integración con Konqueror e Krusader.</li>
