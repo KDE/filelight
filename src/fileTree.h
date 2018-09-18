@@ -60,7 +60,7 @@ public:
         return QFile::decodeName(m_name);
     }
     /**
-     * Humand readable name (including native seperators where applicable).
+     * Human readable name (including native separators where applicable).
      * Only use for display.
      */
     QString displayName() const;

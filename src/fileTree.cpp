@@ -32,8 +32,8 @@ QString File::displayName() const {
 
 QString File::displayPath(const Folder *root) const
 {
-    // Use QUrl to sanitize the path for display and then run it throuh
-    // QDir to make sure we use native path seprators.
+    // Use QUrl to sanitize the path for display and then run it through
+    // QDir to make sure we use native path separators.
     const QUrl url = this->url(root);
     const QString cleanPath = url.toDisplayString(QUrl::PreferLocalFile | QUrl::NormalizePathSegments);
     return url.isLocalFile() ? QDir::toNativeSeparators(cleanPath) : cleanPath;

@@ -369,7 +369,7 @@ bool MainWindow::openUrl(const QUrl &u)
 
     if (uri.isEmpty())
     {
-        //do nothing, chances are the user accidently pressed ENTER
+        //do nothing, chances are the user accidentally pressed ENTER
     }
     else if (!uri.isValid())
     {

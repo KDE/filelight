@@ -26,7 +26,7 @@
 #include <QRadioButton>
 #include <QCloseEvent>
 #include <QDir>
-#include <QMessageBox>
+#include <KMessageBox>
 #include <QFileDialog>
 #include <QDialogButtonBox>
 #include <QButtonGroup>
@@ -177,7 +177,7 @@ void SettingsDialog::addFolder()
             if (m_listBox->currentItem() == nullptr) m_listBox->setCurrentRow(0);
             m_removeButton->setEnabled(true);
         }
-        else QMessageBox::information(this, i18n("Folder already ignored"), i18n("That folder is already set to be excluded from scans."));
+        else KMessageBox::information(this, i18n("That folder is already set to be excluded from scans."), i18n("Folder already ignored"));
     }
 }
 

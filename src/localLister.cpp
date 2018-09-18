@@ -85,7 +85,7 @@ LocalLister::run()
     qDebug() << "Scan completed in" << (timer.elapsed()/1000);
 
     //delete the list of trees useful for this scan,
-    //in a sucessful scan the contents would now be transferred to 'tree'
+    //in a successful scan the contents would now be transferred to 'tree'
     delete m_trees;
 
     if (m_parent->m_abort) //scan was cancelled
