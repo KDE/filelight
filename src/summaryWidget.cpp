@@ -147,9 +147,9 @@ void SummaryWidget::createDiskMaps()
         //                                                      row (=n/2)           column (0 or 1)
         qobject_cast<QGridLayout*>(layout())->addWidget(volume, layout()->count()/2, layout()->count() % 2);
 
-        Folder *tree = new Folder(disk.mount.toUtf8());
-        tree->append(free, disk.free);
-        tree->append(used, disk.used);
+        Folder *tree = new Folder(disk.mount.toUtf8().constData());
+        tree->append(free.constData(), disk.free);
+        tree->append(used.constData(), disk.used);
 
         map->create(tree); //must be done when visible
 

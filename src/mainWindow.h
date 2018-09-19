@@ -55,13 +55,13 @@ public:
 
     void scan(const QUrl &u);
 
-signals:
+Q_SIGNALS:
     void started(); // FIXME: Could be replaced by direct func call once merged with mainwindow
     void completed();
     void canceled(QString);
     void setWindowCaption(QString);
 
-private slots:
+private Q_SLOTS:
     void slotUp();
     void slotComboScan();
     void slotScanFolder();

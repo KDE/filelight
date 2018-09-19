@@ -66,20 +66,20 @@ public:
 
     friend class Label; //FIXME badness
 
-public slots:
+public Q_SLOTS:
     void zoomIn();
     void zoomOut();
     void create(const Folder*);
     void invalidate();
     void refresh(int);
 
-private slots:
+private Q_SLOTS:
     void resizeTimeout();
     void sendFakeMouseEvent();
     void deleteJobFinished(KJob*);
     void createFromCache(const Folder*);
 
-signals:
+Q_SIGNALS:
     void activated(const QUrl&);
     void invalidated(const QUrl&);
     void folderCreated(const Folder*);

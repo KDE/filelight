@@ -69,7 +69,7 @@ LocalLister::LocalLister(const QString &path, QList<Folder *> *cachedTrees, Scan
             if (!folderName.endsWith(QLatin1Char('/'))) {
                 folderName += QLatin1Char('/');
             }
-            m_trees->append(new Folder(folderName.toLocal8Bit()));
+            m_trees->append(new Folder(folderName.toLocal8Bit().constData()));
         }
     }
 }
@@ -143,8 +143,8 @@ outputError(QByteArray path)
 Folder*
 LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
 {
-    Folder *cwd = new Folder(dirname);
-    DIR *dir = opendir(path);
+    Folder *cwd = new Folder(dirname.constData());
+    DIR *dir = opendir(path.constData());
 
     if (!dir) {
         outputError(path);
@@ -179,7 +179,7 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
         QByteArray new_path = path + static_cast<const char*>(ent->d_name);
 
         //get file information
-        if (lstat(new_path, &statbuf) == -1) {
+        if (lstat(new_path.constData(), &statbuf) == -1) {
             outputError(new_path);
             continue;
         }
@@ -216,7 +216,7 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
                     d = folder;
                     m_trees->removeAll(folder);
                     m_parent->m_files += folder->children();
-                    cwd->append(folder, new_dirname);
+                    cwd->append(folder, new_dirname.constData());
                 }
             }
 

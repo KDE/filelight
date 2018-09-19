@@ -41,7 +41,7 @@ protected:
     void closeEvent(QCloseEvent *) override;
     void reject() override;
 
-public slots:
+public Q_SLOTS:
     void addFolder();
     void removeFolder();
     void toggleScanAcrossMounts(bool);
@@ -57,7 +57,7 @@ public slots:
     void toggleShowSmallFiles(bool);
     void slotSliderReleased();
 
-signals:
+Q_SIGNALS:
     void mapIsInvalid();
     void canvasIsDirty(int);
 

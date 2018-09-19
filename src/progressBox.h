@@ -40,7 +40,7 @@ public:
 
     void setText(int);
 
-public slots:
+public Q_SLOTS:
     void start();
     void report();
     void stop();

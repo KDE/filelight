@@ -69,16 +69,16 @@ public:
     void save(KConfigGroup &configgroup);
     void restore(const KConfigGroup &configgroup);
 
-public slots:
+public Q_SLOTS:
     void push(const QUrl& url);
     void stop() {
         m_receiver = nullptr;
     }
 
-signals:
+Q_SIGNALS:
     void activated(const QUrl&);
 
-private slots:
+private Q_SLOTS:
     void pop();
 
 private:

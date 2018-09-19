@@ -51,7 +51,7 @@ struct Store {
     List stores;
 
     Store(const QUrl &u, const QString &name, Store *s)
-            : url(u), folder(new Folder(name.toUtf8() + '/')), parent(s) { }
+            : url(u), folder(new Folder(name.toUtf8().constData() + '/')), parent(s) { }
 
 
     Store* propagate()
@@ -116,7 +116,7 @@ void RemoteLister::completed()
         if (it->isDir())
             m_store->stores += new Store(it->url(), it->name(), m_store);
         else
-            m_store->folder->append(it->name().toUtf8(), it->size());
+            m_store->folder->append(it->name().toUtf8().constData(), it->size());
 
         m_manager->m_files++;
     }

@@ -53,13 +53,13 @@ public:
         return m_files;
     }
 
-public slots:
+public Q_SLOTS:
     bool abort();
     void emptyCache();
     void cacheTree(Folder*);
     void foundCached(Folder*);
 
-signals:
+Q_SIGNALS:
     void completed(Folder*);
     void aboutToEmptyCache();
     void branchCacheHit(Folder* tree);

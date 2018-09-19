@@ -37,10 +37,10 @@ public:
     RemoteLister(const QUrl &url, QWidget *parent, ScanManager* manager);
     ~RemoteLister() override;
 
-signals:
+Q_SIGNALS:
     void branchCompleted(Folder* tree);
 
-private slots:
+private Q_SLOTS:
     void completed();
     void canceled();
 

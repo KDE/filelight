@@ -40,7 +40,7 @@ public:
 
     static void readMounts();
 
-signals:
+Q_SIGNALS:
     void branchCompleted(Folder* tree);
 
 private:
