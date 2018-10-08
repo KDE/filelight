@@ -51,7 +51,7 @@ struct Store {
     List stores;
 
     Store(const QUrl &u, const QString &name, Store *s)
-            : url(u), folder(new Folder(name.toUtf8().constData() + '/')), parent(s) { }
+            : url(u), folder(new Folder((name + QLatin1Char('/')).toUtf8().constData())), parent(s) { }
 
 
     Store* propagate()
