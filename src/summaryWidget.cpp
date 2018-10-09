@@ -109,9 +109,6 @@ void SummaryWidget::createDiskMaps()
 {
     DiskList disks;
 
-    const QByteArray free = i18nc("Free space on the disks/partitions", "Free").toUtf8();
-    const QByteArray used = i18nc("Used space on the disks/partitions", "Used").toUtf8();
-
     QString text;
 
     for (DiskList::ConstIterator it = disks.constBegin(), end = disks.constEnd(); it != end; ++it)
@@ -148,8 +145,8 @@ void SummaryWidget::createDiskMaps()
         qobject_cast<QGridLayout*>(layout())->addWidget(volume, layout()->count()/2, layout()->count() % 2);
 
         Folder *tree = new Folder(disk.mount.toUtf8().constData());
-        tree->append(free.constData(), disk.free);
-        tree->append(used.constData(), disk.used);
+        tree->append("free", disk.free);
+        tree->append("used", disk.used);
 
         map->create(tree); //must be done when visible
 

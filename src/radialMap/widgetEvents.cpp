@@ -150,24 +150,45 @@ void RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
         {
             setCursor(Qt::PointingHandCursor);
 
+            QString string;
 
-            QString string = m_focus->file()->displayPath()
-                + QLatin1Char('\n')
-                + m_focus->file()->humanReadableSize();
+            if (isSummary()) {
+                if (strcmp("used", m_focus->file()->name8Bit()) == 0) {
+                    string = i18nc("Tooltip of used space on the partition, %1 is path, %2 is size", "%1\nUsed: %2",
+                        m_focus->file()->parent()->displayPath(),
+                        m_focus->file()->humanReadableSize());
+                } else if (strcmp("free", m_focus->file()->name8Bit()) == 0) {
+                    string = i18nc("Tooltip of free space on the partition, %1 is path, %2 is size", "%1\nFree: %2",
+                        m_focus->file()->parent()->displayPath(),
+                        m_focus->file()->humanReadableSize());
+                } else {
+                    string = i18nc("Tooltip of file/folder, %1 is path, %2 is size", "%1\n%2",
+                        m_focus->file()->displayPath(),
+                        m_focus->file()->humanReadableSize());
+                }
+            } else {
+                string = i18nc("Tooltip of file/folder, %1 is path, %2 is size", "%1\n%2",
+                    m_focus->file()->displayPath(),
+                    m_focus->file()->humanReadableSize());
 
-            if (m_focus->file()->isFolder()) {
-                int files = static_cast<const Folder*>(m_focus->file())->children();
-                const uint percent = uint((100 * files) / (double)m_tree->children());
-                string += QLatin1Char('\n');
-                string += i18np("File: %1", "Files: %1", files);
+                if (m_focus->file()->isFolder()) {
+                    int files = static_cast<const Folder*>(m_focus->file())->children();
+                    const uint percent = uint((100 * files) / (double)m_tree->children());
 
+                    string += QLatin1Char('\n');
+                    if (percent > 0) {
+                        string += i18ncp("Tooltip of folder, %1 is number of files",
+                            "%1 File (%2%)", "%1 Files (%2%)", files, percent);
+                    } else {
+                        string += i18ncp("Tooltip of folder, %1 is number of files",
+                            "%1 File", "%1 Files", files);
+                    }
+                }
 
-                if (percent > 0) string += QString(QLatin1String(" (%1%)")).arg(percent);
-            }
-
-            const QUrl url = Widget::url(m_focus->file());
-            if (m_focus == m_rootSegment && url != KIO::upUrl(url)) {
-                string += i18n("\nClick to go up to parent directory");
+                const QUrl url = Widget::url(m_focus->file());
+                if (m_focus == m_rootSegment && url != KIO::upUrl(url)) {
+                    string += i18n("\nClick to go up to parent directory");
+                }
             }
 
             // Calculate a semi-sane size for the tooltip
