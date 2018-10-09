@@ -79,14 +79,11 @@ public:
 
     void mousePressEvent(QMouseEvent *e) override
     {
-        const RadialMap::Segment *segment = focusSegment();
-
-        //we will allow right clicks to the center circle
-        if (segment == rootSegment() && e->button() == Qt::RightButton)
+        if (focusSegment() == rootSegment() && e->button() == Qt::RightButton) {
+            // we will allow right clicks to the center circle
             RadialMap::Widget::mousePressEvent(e);
-
-        //and clicks to the used segment
-        else if (e->button() == Qt::LeftButton ) {
+        } else if (e->button() == Qt::LeftButton) {
+            // and clicks to the used segment
             emit activated(url());
         }
     }
