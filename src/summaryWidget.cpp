@@ -87,8 +87,6 @@ public:
 
         //and clicks to the used segment
         else if (e->button() == Qt::LeftButton ) {
-            const QRect rect(e->x() - 20, e->y() - 20, 40, 40);
-//            KIconEffect::visualActivate(this, rect); TODO: Re-enable
             emit activated(url());
         }
     }
