@@ -41,8 +41,8 @@ Q_SIGNALS:
     void branchCompleted(Folder* tree);
 
 private Q_SLOTS:
-    void completed();
-    void canceled();
+    void onCompleted();
+    void onCanceled();
 
 private:
     struct Store *m_root, *m_store;

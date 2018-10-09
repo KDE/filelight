@@ -89,8 +89,8 @@ RemoteLister::RemoteLister(const QUrl &url, QWidget *parent, ScanManager* manage
     setMainWindow(parent);
 
     // Use SIGNAL(result(KIO::Job*)) instead and then use Job::error()
-    connect(this, static_cast<void (KCoreDirLister::*)()>(&KCoreDirLister::completed), this, &RemoteLister::completed);
-    connect(this, static_cast<void (KCoreDirLister::*)()>(&KCoreDirLister::canceled), this, &RemoteLister::canceled);
+    connect(this, static_cast<void (KCoreDirLister::*)()>(&KCoreDirLister::completed), this, &RemoteLister::onCompleted);
+    connect(this, static_cast<void (KCoreDirLister::*)()>(&KCoreDirLister::canceled), this, &RemoteLister::onCanceled);
 }
 
 RemoteLister::~RemoteLister()
@@ -98,15 +98,14 @@ RemoteLister::~RemoteLister()
     delete m_root;
 }
 
-void
-RemoteLister::canceled()
+void RemoteLister::onCanceled()
 {
     qDebug() << "Canceled";
     emit branchCompleted(nullptr);
     deleteLater();
 }
 
-void RemoteLister::completed()
+void RemoteLister::onCompleted()
 {
     //m_folder is set to the folder we should operate on
 
