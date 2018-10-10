@@ -2,7 +2,6 @@
 [Desktop Entry]
 Name=Filelight
 Name[ar]=الملفّ​الخفيف
-Name[ast]=Filelight
 Name[bs]=Filelight
 Name[ca]=Filelight
 Name[ca@valencia]=Filelight
@@ -56,7 +55,6 @@ Name[zh_CN]=Filelight
 Name[zh_TW]=Filelight
 GenericName=Disk Usage Statistics
 GenericName[ar]=إحصائيّات استخدام القرص
-GenericName[ast]=Estadístiques d'usu de discos
 GenericName[bs]=Statistika upotrebe diska
 GenericName[ca]=Estadístiques d'ús de disc
 GenericName[ca@valencia]=Estadístiques d'ús de disc
@@ -112,7 +110,6 @@ Exec=filelight %f
 Icon=filelight
 Comment=View disk usage information
 Comment[ar]=اعرض معلومات استخدام القرص
-Comment[ast]=Mira la información d'usu de discos
 Comment[bs]=Pogledajte podatke o upotrebi diska
 Comment[ca]=Veure la informació d'ús de disc
 Comment[ca@valencia]=Veure la informació d'ús de disc
