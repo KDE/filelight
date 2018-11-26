@@ -35,23 +35,23 @@ SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
 {
     setupUi(this);
 
-    QDialogButtonBox *buttons = new QDialogButtonBox;
+    QDialogButtonBox *buttons = new QDialogButtonBox(this);
     QPushButton *resetButton = buttons->addButton(QDialogButtonBox::Reset);
     QPushButton *closeButton = buttons->addButton(QDialogButtonBox::Close);
     layout()->addWidget(buttons);
 
-    m_schemaGroup = new QButtonGroup;
+    m_schemaGroup = new QButtonGroup(this);
     QRadioButton *radioButton;
 
-    radioButton = new QRadioButton(i18n("Rainbow"));
+    radioButton = new QRadioButton(i18n("Rainbow"), this);
     colorSchemeLayout->addWidget(radioButton);
     m_schemaGroup->addButton(radioButton, Filelight::Rainbow);
 
-    radioButton = new QRadioButton(i18n("System colors"));
+    radioButton = new QRadioButton(i18n("System colors"), this);
     colorSchemeLayout->addWidget(radioButton);
     m_schemaGroup->addButton(radioButton, Filelight::KDE);
 
-    radioButton = new QRadioButton(i18n("High contrast"));
+    radioButton = new QRadioButton(i18n("High contrast"), this);
     colorSchemeLayout->addWidget(radioButton);
     m_schemaGroup->addButton(radioButton, Filelight::HighContrast);
 
