@@ -40,6 +40,8 @@ set(filelight_SRCS
     mainWindow.cpp
     main.cpp
 )
+ecm_qt_declare_logging_category(filelight_SRCS HEADER filelight_debug.h IDENTIFIER FILELIGHT_LOG CATEGORY_NAME org.kde.filelight)
+
 set(filelight_ICONS
     ${CMAKE_CURRENT_SOURCE_DIR}/../misc/16-apps-filelight.png
     ${CMAKE_CURRENT_SOURCE_DIR}/../misc/32-apps-filelight.png

@@ -24,6 +24,7 @@
 #include "remoteLister.h"
 #include "fileTree.h"
 #include "localLister.h"
+#include "filelight_debug.h"
 
 #include <QGuiApplication>
 #include <QCursor>
@@ -47,7 +48,7 @@ ScanManager::ScanManager(QObject *parent)
 ScanManager::~ScanManager()
 {
     if (m_thread) {
-        qDebug() << "Attempting to abort scan operation...";
+        qCDebug(FILELIGHT_LOG) << "Attempting to abort scan operation...";
         m_abort = true;
         m_thread->wait();
     }
@@ -66,7 +67,7 @@ bool ScanManager::start(const QUrl &url)
 
     //url is guaranteed clean and safe
 
-    qDebug() << "Scan requested for: " << url;
+    qCDebug(FILELIGHT_LOG) << "Scan requested for: " << url;
 
     if (running()) {
         qWarning() << "Tried to launch two concurrent scans, aborting old one...";
@@ -109,7 +110,7 @@ bool ScanManager::start(const QUrl &url)
         if (path.startsWith(cachePath)) { //then whole tree already scanned
             //find a pointer to the requested branch
 
-            qDebug() << "Cache-(a)hit: " << cachePath;
+            qCDebug(FILELIGHT_LOG) << "Cache-(a)hit: " << cachePath;
 
             QVector<QStringRef> split = path.midRef(cachePath.length()).split(QLatin1Char('/'));
             Folder *d = folder;
@@ -137,7 +138,7 @@ bool ScanManager::start(const QUrl &url)
                 delete trees;
 
                 //we found a completed tree, thus no need to scan
-                qDebug() << "Found cache-handle, generating map..";
+                qCDebug(FILELIGHT_LOG) << "Found cache-handle, generating map..";
 
                 emit branchCacheHit(d);
 
@@ -150,7 +151,7 @@ bool ScanManager::start(const QUrl &url)
                 break; //do a full scan
             }
         }  else if (cachePath.startsWith(path)) { //then part of the requested tree is already scanned
-            qDebug() << "Cache-(b)hit: " << cachePath;
+            qCDebug(FILELIGHT_LOG) << "Cache-(b)hit: " << cachePath;
             it.remove();
             trees->append(folder);
         }
@@ -193,9 +194,9 @@ void ScanManager::cacheTree(Folder *tree)
     QMutexLocker locker(&m_mutex); // This gets released once it is destroyed.
 
     if (m_thread) {
-        qDebug() << "Waiting for thread to terminate ...";
+        qCDebug(FILELIGHT_LOG) << "Waiting for thread to terminate ...";
         m_thread->wait();
-        qDebug() << "Thread terminated!";
+        qCDebug(FILELIGHT_LOG) << "Thread terminated!";
         delete m_thread; //note the lister deletes itself
         m_thread = nullptr;
     }

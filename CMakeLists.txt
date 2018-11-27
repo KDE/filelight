@@ -29,7 +29,7 @@ set(KDE_APPLICATIONS_VERSION_MICRO "70")
 set(KDE_APPLICATIONS_VERSION "${KDE_APPLICATIONS_VERSION_MAJOR}.${KDE_APPLICATIONS_VERSION_MINOR}.${KDE_APPLICATIONS_VERSION_MICRO}")
 
 set(PROJECT_VERSION ${KDE_APPLICATIONS_VERSION})
-set(KF5_VERSION "5.23.0")
+set(KF5_VERSION "5.30.0")
 
 find_package(ECM ${KF5_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
@@ -44,8 +44,9 @@ include(FeatureSummary)
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
+include(ECMQtDeclareLoggingCategory)
 
-find_package(Qt5 5.4 CONFIG REQUIRED Core Widgets)
+find_package(Qt5 5.7 CONFIG REQUIRED Core Widgets)
 find_package(KF5 ${KF5_VERSION} REQUIRED
     XmlGui # For app
     KIO # For part
@@ -55,11 +56,14 @@ find_package(KF5DocTools) # Optional, not needed on Windows for example.
 
 add_definitions(-DTRANSLATION_DOMAIN=\"filelight\")
 
-include_directories(src/)
+include_directories(src)
 
 add_subdirectory(src)
 add_subdirectory(misc)
 if (KF5DocTools_FOUND)
     add_subdirectory(doc)
 endif()
+
+install( FILES filelight.categories DESTINATION ${KDE_INSTALL_CONFDIR} )
+
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

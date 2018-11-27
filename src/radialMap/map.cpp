@@ -25,6 +25,7 @@
 #include <QFontMetrics>    //ctor
 #include <QPainter>
 #include <QBrush>
+#include "filelight_debug.h"
 
 #include <KCursor>         //make()
 #include <KLocalizedString>
@@ -252,7 +253,7 @@ bool RadialMap::Map::resize(const QRect &rect)
 void RadialMap::Map::colorise()
 {
     if (!m_signature || m_signature->isEmpty()) {
-        qDebug() << "no signature yet";
+        qCDebug(FILELIGHT_LOG) << "no signature yet";
         return;
     }
 

@@ -25,7 +25,6 @@
 
 #include <QByteArray> //qstrdup
 #include <QFile> //decodeName()
-#include <QDebug>
 #include <QLocale>
 #include <KFormat>
 

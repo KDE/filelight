@@ -30,7 +30,6 @@
 
 #include <QLabel>
 #include <QPainter>
-#include <QDebug>
 
 #include <QFontDatabase>
 

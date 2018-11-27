@@ -24,6 +24,7 @@
 #include "Config.h"
 #include "fileTree.h"
 #include "scan.h"
+#include "filelight_debug.h"
 
 #include <QStorageInfo>
 #include <QElapsedTimer>
@@ -82,7 +83,7 @@ LocalLister::run()
     //recursively scan the requested path
     const QByteArray path = QFile::encodeName(m_path);
     Folder *tree = scan(path, path);
-    qDebug() << "Scan completed in" << (timer.elapsed()/1000);
+    qCDebug(FILELIGHT_LOG) << "Scan completed in" << (timer.elapsed()/1000);
 
     //delete the list of trees useful for this scan,
     //in a successful scan the contents would now be transferred to 'tree'
@@ -90,13 +91,13 @@ LocalLister::run()
 
     if (m_parent->m_abort) //scan was cancelled
     {
-        qDebug() << "Scan successfully aborted";
+        qCDebug(FILELIGHT_LOG) << "Scan successfully aborted";
         delete tree;
         tree = nullptr;
     }
-    qDebug() << "Emitting signal to cache results ...";
+    qCDebug(FILELIGHT_LOG) << "Emitting signal to cache results ...";
     emit branchCompleted(tree);
-    qDebug() << "Thread terminating ...";
+    qCDebug(FILELIGHT_LOG) << "Thread terminating ...";
 }
 
 #ifndef S_BLKSIZE
@@ -212,7 +213,7 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
             {
                 if (new_path == folder->name8Bit())
                 {
-                    qDebug() << "Tree pre-completed: " << folder->decodedName();
+                    qCDebug(FILELIGHT_LOG) << "Tree pre-completed: " << folder->decodedName();
                     d = folder;
                     m_trees->removeAll(folder);
                     m_parent->m_files += folder->children();
@@ -256,8 +257,8 @@ void LocalLister::readMounts()
         }
     }
 
-    qDebug() << "Found the following remote filesystems: " << s_remoteMounts;
-    qDebug() << "Found the following local filesystems: " << s_localMounts;
+    qCDebug(FILELIGHT_LOG) << "Found the following remote filesystems: " << s_remoteMounts;
+    qCDebug(FILELIGHT_LOG) << "Found the following local filesystems: " << s_localMounts;
 }
 
 }//namespace Filelight

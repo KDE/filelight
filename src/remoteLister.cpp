@@ -22,6 +22,7 @@
 #include "remoteLister.h"
 #include "fileTree.h"
 #include "scan.h"
+#include "filelight_debug.h"
 
 #include <KDirLister>
 
@@ -58,7 +59,7 @@ struct Store {
     {
         /// returns the next store available for scanning
 
-        qDebug() << "propagate: " << url;
+        qCDebug(FILELIGHT_LOG) << "propagate: " << url;
 
         if (parent) {
             parent->folder->append(folder);
@@ -100,7 +101,7 @@ RemoteLister::~RemoteLister()
 
 void RemoteLister::onCanceled()
 {
-    qDebug() << "Canceled";
+    qCDebug(FILELIGHT_LOG) << "Canceled";
     emit branchCompleted(nullptr);
     deleteLater();
 }
@@ -146,11 +147,11 @@ void RemoteLister::onCompleted()
         currentStore->stores.erase(first);
 
         //this returns _immediately_
-        qDebug() << "scanning: " << url;
+        qCDebug(FILELIGHT_LOG) << "scanning: " << url;
         openUrl(url);
     }
     else {
-        qDebug() << "I think we're done";
+        qCDebug(FILELIGHT_LOG) << "I think we're done";
 
         Q_ASSERT(m_root == m_store);
         emit branchCompleted(m_store->folder);

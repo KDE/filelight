@@ -20,7 +20,7 @@
 ***********************************************************************/
 
 #include "historyAction.h"
-
+#include "filelight_debug.h"
 #include <KActionCollection>
 #include <KConfig>
 #include <KConfigGroup>
@@ -30,7 +30,6 @@
 
 #include <QIcon>
 #include <QAction>
-#include <QDebug>
 
 inline HistoryAction::HistoryAction(const QIcon& icon, const QString& text, KActionCollection* ac)
         : QAction(icon, text, ac)
@@ -117,7 +116,7 @@ void HistoryCollection::save(KConfigGroup &configgroup)
 void HistoryCollection::restore(const KConfigGroup &configgroup)
 {
     if (!m_b || !m_f) {
-        qWarning() << "what the actual fuck";
+        qCWarning(FILELIGHT_LOG) << "what the actual fuck";
         return;
     }
 
