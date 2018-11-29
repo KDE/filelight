@@ -18,15 +18,18 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #######################################################################
 
-project(Filelight)
-
-cmake_minimum_required (VERSION 2.8.12 FATAL_ERROR)
 
 # KDE Application Version, managed by release script
 set(KDE_APPLICATIONS_VERSION_MAJOR "19")
 set(KDE_APPLICATIONS_VERSION_MINOR "03")
 set(KDE_APPLICATIONS_VERSION_MICRO "70")
 set(KDE_APPLICATIONS_VERSION "${KDE_APPLICATIONS_VERSION_MAJOR}.${KDE_APPLICATIONS_VERSION_MINOR}.${KDE_APPLICATIONS_VERSION_MICRO}")
+set(SPECTACLE_VERSION ${KDE_APPLICATIONS_VERSION})
+# minimum requirements
+
+cmake_minimum_required (VERSION 3.0 FATAL_ERROR)
+# Spectacle project
+project(Filelight VERSION ${SPECTACLE_VERSION})
 
 set(PROJECT_VERSION ${KDE_APPLICATIONS_VERSION})
 set(KF5_VERSION "5.30.0")
@@ -46,7 +49,7 @@ include(KDECMakeSettings)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(ECMQtDeclareLoggingCategory)
 
-find_package(Qt5 5.7 CONFIG REQUIRED Core Widgets)
+find_package(Qt5 5.9 CONFIG REQUIRED Core Widgets)
 find_package(KF5 ${KF5_VERSION} REQUIRED
     XmlGui # For app
     KIO # For part
