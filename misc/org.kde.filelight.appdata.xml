@@ -266,7 +266,7 @@
       <li xml:lang="sv">Filer och kataloger kan kopieras eller tas bort direkt i den sammanhangsberoende menyn</li>
       <li xml:lang="uk">Можливість копіювання та вилучення файлів і каталогів за допомогою контекстного меню програми</li>
       <li xml:lang="x-test">xxFiles and directories can be copied or removed directly from the context menuxx</li>
-      <li xml:lang="zh-CN">文件和目录可以在上下文菜单中直接被复制或删除</li>
+      <li xml:lang="zh-CN">文件和目录可以在右键菜单中直接被复制或删除</li>
       <li>Integration into Konqueror and Krusader</li>
       <li xml:lang="ca">Integració en el Konqueror i el Krusader</li>
       <li xml:lang="ca-valencia">Integració en el Konqueror i el Krusader</li>
