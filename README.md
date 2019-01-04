@@ -15,7 +15,7 @@ segmented-rings.
 
 # Bug Reporting
 
-There are less bugs everyday! Please report bugs at http://bugs.kde.org/
+There are less bugs everyday! Please report bugs at https://bugs.kde.org/
 
 # Enjoy!
 
