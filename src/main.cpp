@@ -53,10 +53,10 @@ int main(int argc, char *argv[])
         i18n("(C) 2006 Max Howell\n"
              "(C) 2008-2014 Martin Sandsmark"),
         QString(),
-        QStringLiteral("http://utils.kde.org/projects/filelight")
+        QStringLiteral("https://utils.kde.org/projects/filelight")
     );
-    about.addAuthor(i18n("Martin Sandsmark"), i18n("Maintainer"), QStringLiteral("martin.sandsmark@kde.org"), QStringLiteral("http://iskrembilen.com/"));
-    about.addAuthor(i18n("Max Howell"),       i18n("Original author"), QStringLiteral("max.howell@methylblue.com"), QStringLiteral("http://www.methylblue.com/"));
+    about.addAuthor(i18n("Martin Sandsmark"), i18n("Maintainer"), QStringLiteral("martin.sandsmark@kde.org"), QStringLiteral("https://iskrembilen.com/"));
+    about.addAuthor(i18n("Max Howell"),       i18n("Original author"), QStringLiteral("max.howell@methylblue.com"), QStringLiteral("https://www.methylblue.com/"));
     about.addCredit(i18n("Lukas Appelhans"),  i18n("Help and support"));
     about.addCredit(i18n("Steffen Gerlach"),  i18n("Inspiration"), QString(), QStringLiteral("http://www.steffengerlach.de/"));
     about.addCredit(i18n("Mike Diehl"),       i18n("Original documentation"));
