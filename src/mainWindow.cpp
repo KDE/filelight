@@ -350,7 +350,7 @@ void MainWindow::postInit()
 
         //FIXME KXMLGUI is b0rked, it should allow us to set this
         //BEFORE createGUI is called but it doesn't
-        stateChanged(QLatin1String("scan_failed"));
+        stateChanged(QStringLiteral("scan_failed"));
     }
 }
 
@@ -469,7 +469,7 @@ bool MainWindow::start(const QUrl &url)
         setUrl(url);
 
         const QString s = i18n("Scanning: %1", prettyUrl());
-        stateChanged(QLatin1String("scan_started"));
+        stateChanged(QStringLiteral("scan_started"));
         emit started(); //as a MainWindow, we have to do this
         emit setWindowCaption(s);
         statusBar()->showMessage(s);
@@ -508,10 +508,10 @@ void MainWindow::folderScanCompleted(Folder *tree)
         m_map->show();
         m_map->create(tree);
 
-        stateChanged(QLatin1String("scan_complete"));
+        stateChanged(QStringLiteral("scan_complete"));
     }
     else {
-        stateChanged(QLatin1String("scan_failed"));
+        stateChanged(QStringLiteral("scan_failed"));
         emit canceled(i18n("Scan failed: %1", prettyUrl()));
         emit setWindowCaption(QString());
 

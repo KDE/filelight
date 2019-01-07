@@ -202,7 +202,7 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
                 font.setPointSize(sizes[label->level]);
             }
             QFontMetrics fontMetrics(font);
-            const int minTextWidth = fontMetrics.width(QString::fromLatin1("M...")) + LABEL_TEXT_HMARGIN; // Fully elided string
+            const int minTextWidth = fontMetrics.width(QStringLiteral("M...")) + LABEL_TEXT_HMARGIN; // Fully elided string
 
             const int fontHeight  = fontMetrics.height() + LABEL_TEXT_VMARGIN; //used to ensure label texts don't overlap
             const int lineSpacing = fontHeight / 4;

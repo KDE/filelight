@@ -83,7 +83,7 @@ bool ScanManager::start(const QUrl &url)
         Filelight::RemoteLister *remoteLister = new Filelight::RemoteLister(url, (QWidget*)parent(), this);
         connect(remoteLister, &Filelight::RemoteLister::branchCompleted, this, &ScanManager::cacheTree, Qt::QueuedConnection);
         remoteLister->setParent(this);
-        remoteLister->setObjectName(QLatin1String( "remote_lister" ));
+        remoteLister->setObjectName(QStringLiteral( "remote_lister" ));
         remoteLister->openUrl(url);
         return true;
     }
@@ -170,7 +170,7 @@ bool ScanManager::abort()
 {
     m_abort = true;
 
-    delete findChild<RemoteLister *>(QLatin1String( "remote_lister" ));
+    delete findChild<RemoteLister *>(QStringLiteral( "remote_lister" ));
 
     return m_thread && m_thread->wait();
 }

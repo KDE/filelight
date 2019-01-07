@@ -82,8 +82,8 @@ SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
 
     connect(minFontPitch, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &SettingsDialog::changeMinFontPitch);
 
-    m_addButton->setIcon(QIcon::fromTheme(QLatin1String("folder-open")));
-    m_removeButton->setIcon(QIcon::fromTheme(QLatin1String("list-remove")));
+    m_addButton->setIcon(QIcon::fromTheme(QStringLiteral("folder-open")));
+    m_removeButton->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
 }
 
 

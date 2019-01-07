@@ -73,12 +73,12 @@ QUrl HistoryAction::pop()
 
 HistoryCollection::HistoryCollection(KActionCollection *ac, QObject *parent)
         : QObject(parent)
-        , m_b(new HistoryAction(QIcon::fromTheme(QLatin1String( "go-previous" )), i18nc("Go to the last path viewed", "Back"), ac))
-        , m_f(new HistoryAction(QIcon::fromTheme(QLatin1String( "go-next" )), i18nc("Go to forward in the history of paths viewed", "Forward"), ac))
+        , m_b(new HistoryAction(QIcon::fromTheme(QStringLiteral( "go-previous" )), i18nc("Go to the last path viewed", "Back"), ac))
+        , m_f(new HistoryAction(QIcon::fromTheme(QStringLiteral( "go-next" )), i18nc("Go to forward in the history of paths viewed", "Forward"), ac))
         , m_receiver(nullptr)
 {
-    ac->addAction(QLatin1String( "go_back" ), m_b);
-    ac->addAction(QLatin1String( "go_forward" ), m_f);
+    ac->addAction(QStringLiteral( "go_back" ), m_b);
+    ac->addAction(QStringLiteral( "go_forward" ), m_f);
     connect(m_b, &QAction::triggered, this, &HistoryCollection::pop);
     connect(m_f, &QAction::triggered, this, &HistoryCollection::pop);
 }

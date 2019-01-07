@@ -290,32 +290,32 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
     popup.setTitle(m_focus->file()->displayPath(m_tree));
 
     if (isDir) {
-        openFileManager = popup.addAction(QIcon::fromTheme(QLatin1String("system-file-manager")), i18n("Open &File Manager Here"));
+        openFileManager = popup.addAction(QIcon::fromTheme(QStringLiteral("system-file-manager")), i18n("Open &File Manager Here"));
 
         if (url.scheme() == QLatin1String("file")) {
-            openTerminal = popup.addAction(QIcon::fromTheme(QLatin1String( "utilities-terminal" )), i18n("Open &Terminal Here"));
+            openTerminal = popup.addAction(QIcon::fromTheme(QStringLiteral( "utilities-terminal" )), i18n("Open &Terminal Here"));
         }
 
         if (m_focus->file() != m_tree) {
             popup.addSeparator();
-            centerMap = popup.addAction(QIcon::fromTheme(QLatin1String( "zoom-in" )), i18n("&Center Map Here"));
+            centerMap = popup.addAction(QIcon::fromTheme(QStringLiteral( "zoom-in" )), i18n("&Center Map Here"));
         }
     } else {
-        openFile = popup.addAction(QIcon::fromTheme(QLatin1String("document-open")), i18nc("Scan/open the path of the selected element", "&Open"));
+        openFile = popup.addAction(QIcon::fromTheme(QStringLiteral("document-open")), i18nc("Scan/open the path of the selected element", "&Open"));
     }
 
     popup.addSeparator();
-    copyClipboard = popup.addAction(QIcon::fromTheme(QLatin1String( "edit-copy" )), i18n("&Copy to clipboard"));
+    copyClipboard = popup.addAction(QIcon::fromTheme(QStringLiteral( "edit-copy" )), i18n("&Copy to clipboard"));
 
     if (m_focus->file() != m_tree) {
         popup.addSeparator();
-        deleteItem = popup.addAction(QIcon::fromTheme(QLatin1String( "edit-delete" )), i18n("&Delete"));
+        deleteItem = popup.addAction(QIcon::fromTheme(QStringLiteral( "edit-delete" )), i18n("&Delete"));
     }
 
     QAction* clicked = popup.exec(e->globalPos(), nullptr);
 
     if (openFileManager && clicked == openFileManager) {
-        KRun::runUrl(url, QLatin1String("inode/directory"), this
+        KRun::runUrl(url, QStringLiteral("inode/directory"), this
              #if KIO_VERSION >= QT_VERSION_CHECK(5, 31, 0)
                      , KRun::RunFlags()
              #endif
@@ -339,7 +339,7 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
                 : i18n("<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>", url.toString());
         const int userIntention = KMessageBox::warningContinueCancel(
                     this, message,
-                    QString(), KGuiItem(i18n("&Delete"), QLatin1String("edit-delete")));
+                    QString(), KGuiItem(i18n("&Delete"), QStringLiteral("edit-delete")));
 
         if (userIntention == KMessageBox::Continue) {
             KIO::Job *job = KIO::del(url);

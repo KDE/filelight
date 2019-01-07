@@ -83,7 +83,7 @@ ProgressBox::halt()
 {
     // canceled by stop button
     m_timer.stop();
-    QTimer::singleShot(2000, this, SLOT(hide()));
+    QTimer::singleShot(2000, this, &QWidget::hide);
 }
 
 void

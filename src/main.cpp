@@ -37,9 +37,9 @@ int main(int argc, char *argv[])
 
     KLocalizedString::setApplicationDomain("filelight");
 
-    Kdelibs4ConfigMigrator migrate(QLatin1String("filelight"));
-    migrate.setConfigFiles(QStringList() << QLatin1String("filelightrc"));
-    migrate.setUiFiles(QStringList() << QLatin1String("filelightui.rc"));
+    Kdelibs4ConfigMigrator migrate(QStringLiteral("filelight"));
+    migrate.setConfigFiles(QStringList() << QStringLiteral("filelightrc"));
+    migrate.setUiFiles(QStringList() << QStringLiteral("filelightui.rc"));
     migrate.migrate();
 
     using Filelight::MainWindow;
@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 
     KAboutData::setApplicationData(about);
     app.setOrganizationName(QStringLiteral("KDE"));
-    app.setWindowIcon(QIcon::fromTheme(QLatin1String(APP_NAME)));
+    app.setWindowIcon(QIcon::fromTheme(QStringLiteral(APP_NAME)));
 
     QCommandLineParser options;
     options.addHelpOption();
