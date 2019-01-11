@@ -107,7 +107,7 @@ LocalLister::run()
 
 #include <errno.h>
 static void
-outputError(QByteArray path)
+outputError(const QByteArray &path)
 {
     ///show error message that stat or opendir may give
 

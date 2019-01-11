@@ -58,8 +58,8 @@ public:
 Q_SIGNALS:
     void started(); // FIXME: Could be replaced by direct func call once merged with mainwindow
     void completed();
-    void canceled(QString);
-    void setWindowCaption(QString);
+    void canceled(const QString&);
+    void setWindowCaption(const QString&);
 
 private Q_SLOTS:
     void slotUp();
