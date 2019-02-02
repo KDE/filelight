@@ -32,11 +32,6 @@
 #include <QByteArray>
 
 #include <dirent.h>
-#ifdef Q_OS_SOLARIS
-#include <sys/vfstab.h>
-#elif !defined(Q_OS_WIN)
-#include <fstab.h>
-#endif
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
