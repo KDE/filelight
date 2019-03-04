@@ -146,6 +146,7 @@ bool ScanManager::start(const QUrl &url)
                 //something went wrong, we couldn't find the folder we were expecting
                 qWarning() << "Didn't find " << path << " in the cache!\n";
                 it.remove();
+                emit aboutToEmptyCache();
                 delete folder;
                 break; //do a full scan
             }
