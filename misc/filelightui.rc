@@ -1,5 +1,5 @@
-<!DOCTYPE kpartgui>
-<kpartgui name="filelight" version="4">
+<!DOCTYPE gui SYSTEM "kpartgui.dtd">
+<gui name="filelight" version="4">
 <MenuBar>
   <Menu name="file" noMerge="1"><text>&amp;Scan</text>
    <Action name="scan_folder"/>
@@ -100,4 +100,4 @@
   </disable>
 </State>
 
-</kpartgui>
+</gui>
