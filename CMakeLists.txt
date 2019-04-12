@@ -58,6 +58,10 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
 find_package(KF5DocTools) # Optional, not needed on Windows for example.
 
 add_definitions(-DTRANSLATION_DOMAIN=\"filelight\")
+if (${KF5Config_VERSION} STRGREATER "5.56.0")
+        add_definitions(-DQT_NO_FOREACH)
+        MESSAGE(STATUS "compile without foreach")
+endif()
 
 include_directories(src)
 

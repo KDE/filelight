@@ -59,7 +59,7 @@ LocalLister::LocalLister(const QString &path, QList<Folder *> *cachedTrees, Scan
     if (!Config::scanAcrossMounts) list += s_localMounts;
     if (!Config::scanRemoteMounts) list += s_remoteMounts;
 
-    foreach(const QString &ignorePath, list) {
+    for (const QString &ignorePath : qAsConst(list)) {
         if (ignorePath.startsWith(path)) {
             QString folderName = ignorePath;
             if (!folderName.endsWith(QLatin1Char('/'))) {
