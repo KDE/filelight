@@ -27,7 +27,6 @@
 #include <QMutex>
 #include <QList>
 
-class QThread;
 class Folder;
 
 namespace Filelight
