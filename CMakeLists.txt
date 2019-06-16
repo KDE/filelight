@@ -58,7 +58,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
 find_package(KF5DocTools) # Optional, not needed on Windows for example.
 
 add_definitions(-DTRANSLATION_DOMAIN=\"filelight\")
-if (${KF5Config_VERSION} STRGREATER "5.56.0")
+if (KF5Config_VERSION VERSION_GREATER "5.56.0")
         add_definitions(-DQT_NO_FOREACH)
         MESSAGE(STATUS "compile without foreach")
 endif()
@@ -71,10 +71,10 @@ if (KF5DocTools_FOUND)
     add_subdirectory(doc)
 endif()
 
-if (${ECM_VERSION} STRGREATER "5.58.0")
-    install(FILES filelight.categories  DESTINATION  ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
+if (ECM_VERSION VERSION_GREATER "5.58.0")
+    install(FILES filelight.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
 else()
-    install(FILES filelight.categories  DESTINATION ${KDE_INSTALL_CONFDIR})
+    install(FILES filelight.categories DESTINATION ${KDE_INSTALL_CONFDIR})
 endif()
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
