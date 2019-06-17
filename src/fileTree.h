@@ -88,8 +88,8 @@ protected:
     File(const char *name, FileSize size, Folder *parent) : m_parent(parent), m_name(qstrdup(name)), m_size(size) {}
 
     Folder *m_parent; //0 if this is treeRoot
-    char      *m_name;
-    FileSize   m_size;   //in units of KiB
+    char *m_name; // partial path name (e.g. 'boot/' or 'foo.svg')
+    FileSize m_size; // in units of bytes; sum of all children's sizes
 
 private:
     File(const File&);
