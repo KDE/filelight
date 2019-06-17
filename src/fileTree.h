@@ -143,6 +143,10 @@ public:
 private:
     void append(File *p)
     {
+        // This is also called by append(Folder), but only once all its children
+        // were scanned. We do not need to forward the size change to our parent
+        // since in turn we too only are added to our parent when we are have
+        // been scanned already.
         m_children++;
         m_size += p->size();
         files.append(p);
