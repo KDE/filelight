@@ -134,6 +134,7 @@ public:
 
         for (Folder *d = this; d; d = d->parent()) {
             d->m_size -= f->size();
+            d->m_children--;
         }
     }
 
