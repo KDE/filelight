@@ -88,8 +88,8 @@ protected:
     File(const char *name, FileSize size, Folder *parent) : m_parent(parent), m_name(qstrdup(name)), m_size(size) {}
 
     Folder *m_parent; //0 if this is treeRoot
-    char      *m_name;
-    FileSize   m_size;   //in units of KiB
+    char *m_name; // partial path name (e.g. 'boot/' or 'foo.svg')
+    FileSize m_size; // in units of bytes; sum of all children's sizes
 
 private:
     File(const File&);
@@ -134,6 +134,7 @@ public:
 
         for (Folder *d = this; d; d = d->parent()) {
             d->m_size -= f->size();
+            d->m_children--;
         }
     }
 
@@ -142,6 +143,10 @@ public:
 private:
     void append(File *p)
     {
+        // This is also called by append(Folder), but only once all its children
+        // were scanned. We do not need to forward the size change to our parent
+        // since in turn we too only are added to our parent when we are have
+        // been scanned already.
         m_children++;
         m_size += p->size();
         files.append(p);
