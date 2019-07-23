@@ -99,6 +99,8 @@ private:
 #define DEFAULT_RING_DEPTH 4 //first level = 0
 #define MIN_RING_DEPTH 0
 
+#define MAP_HIDDEN_TRIANGLE_SIZE 5
+
 #define LABEL_MAP_SPACER 7
 #define LABEL_TEXT_HMARGIN 5
 #define LABEL_TEXT_VMARGIN 0
