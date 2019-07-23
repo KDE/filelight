@@ -366,7 +366,7 @@ void RadialMap::Map::paint(bool antialias)
     QPainter paint;
     QRect rect = m_rect;
 
-    rect.adjust(5, 5, -5, -5);
+    rect.adjust(MAP_HIDDEN_TRIANGLE_SIZE, MAP_HIDDEN_TRIANGLE_SIZE, -MAP_HIDDEN_TRIANGLE_SIZE, -MAP_HIDDEN_TRIANGLE_SIZE);
     m_pixmap.fill(Qt::transparent);
 
     //m_rect.moveRight(1); // Uncommenting this breaks repainting when recreating map from cache
@@ -402,16 +402,18 @@ void RadialMap::Map::paint(bool antialias)
     {
         int width = rect.width() / 2;
         //clever geometric trick to find largest angle that will give biggest arrow head
-        uint a_max = int(acos((double)width / double((width + 5))) * (180*16 / M_PI));
+        uint a_max = int(acos((double)width / double((width + MAP_HIDDEN_TRIANGLE_SIZE))) * (180*16 / M_PI));
 
         for (Segment *segment : m_signature[x]) {
             //draw the pie segments, most of this code is concerned with drawing the little
             //arrows on the ends of segments when they have hidden files
-
             paint.setPen(segment->pen());
 
-            if (segment->hasHiddenChildren())
-            {
+            paint.setPen(segment->pen());
+            paint.setBrush(segment->brush());
+            paint.drawPie(rect, segment->start(), segment->length());
+
+            if (segment->hasHiddenChildren()) {
                 //draw arrow head to indicate undisplayed files/directories
                 QPolygon pts(3);
                 QPoint pos, cpos = rect.center();
@@ -426,12 +428,13 @@ void RadialMap::Map::paint(bool antialias)
 
                 a[1] += a[0];
 
-                for (int i = 0, radius = width; i < 3; ++i)
-                {
+                for (int i = 0, radius = width; i < 3; ++i) {
                     double ra = M_PI/(180*16) * a[i], sinra, cosra;
 
-                    if (i == 2)
-                        radius += 5;
+                    if (i == 2) {
+                        radius += MAP_HIDDEN_TRIANGLE_SIZE;
+                    }
+
                     sincos(ra, &sinra, &cosra);
                     pos.rx() = cpos.x() + static_cast<int>(cosra * radius);
                     pos.ry() = cpos.y() - static_cast<int>(sinra * radius);
@@ -440,12 +443,8 @@ void RadialMap::Map::paint(bool antialias)
 
                 paint.setBrush(segment->pen());
                 paint.drawPolygon(pts);
-            }
 
-            paint.setBrush(segment->brush());
-            paint.drawPie(rect, segment->start(), segment->length());
-
-            if (segment->hasHiddenChildren()) {
+                // Draw outline on the arc for hidden children
                 //**** code is bloated!
                 QPen pen = paint.pen();
                 pen.setCapStyle(Qt::FlatCap);
