@@ -448,6 +448,7 @@ void RadialMap::Map::paint(bool antialias)
             if (segment->hasHiddenChildren()) {
                 //**** code is bloated!
                 QPen pen = paint.pen();
+                pen.setCapStyle(Qt::FlatCap);
                 int width = 2;
                 pen.setWidth(width);
                 paint.setPen(pen);
