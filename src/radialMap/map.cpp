@@ -367,7 +367,7 @@ void RadialMap::Map::paint(bool antialias)
     QRect rect = m_rect;
 
     rect.adjust(5, 5, -5, -5);
-    m_pixmap.fill(scheme.background().color());
+    m_pixmap.fill(Qt::transparent);
 
     //m_rect.moveRight(1); // Uncommenting this breaks repainting when recreating map from cache
 
