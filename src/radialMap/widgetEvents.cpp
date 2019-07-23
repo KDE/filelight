@@ -71,8 +71,7 @@ void RadialMap::Widget::paintEvent(QPaintEvent*)
 
     if (!m_map.isNull())
         paint.drawPixmap(m_offset, m_map.pixmap());
-    else
-    {
+    else {
         paint.drawText(rect(), 0, i18nc("We messed up, the user needs to initiate a rescan.", "Internal representation is invalid,\nplease rescan."));
         return;
     }
@@ -363,7 +362,7 @@ void RadialMap::Widget::deleteJobFinished(KJob *job)
         m_toBeDeleted = nullptr;
         m_focus = nullptr;
         m_map.make(m_tree, true);
-        repaint();
+        update();
     } else
         KMessageBox::error(this, job->errorString(), i18n("Error while deleting"));
 }
