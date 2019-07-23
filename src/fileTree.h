@@ -117,6 +117,10 @@ public:
         return true;
     }
 
+    FileSize hardlinksSize() const {
+        return m_hardlinksSize;
+    }
+
     ///appends a Folder
     void append(Folder *d, const char *name=nullptr)
     {
@@ -143,6 +147,10 @@ public:
         for (Folder *d = this; d; d = d->parent()) {
             d->m_size -= f->size();
             d->m_children--;
+
+            if (f->isHardlink) {
+                d->m_hardlinksSize -= f->size();
+            }
         }
     }
 
@@ -157,10 +165,16 @@ private:
         // been scanned already.
         m_children++;
         m_size += p->size();
+
+        if (p->isHardlink) {
+            m_hardlinksSize += p->size();
+        }
+
         files.append(p);
     }
 
     uint m_children;
+    FileSize m_hardlinksSize = 0; // in units of bytes; sum of all children's sizes
 
 private:
     Folder(const Folder&); //undefined

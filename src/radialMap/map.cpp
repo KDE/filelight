@@ -140,7 +140,7 @@ void RadialMap::Map::findVisibleDepth(const Folder *dir, uint currentDepth)
     if (m_visibleDepth < currentDepth) m_visibleDepth = currentDepth;
     if (m_visibleDepth >= stopDepth) return;
 
-    for (File *file : dir->files) {
+    for (const File *file : dir->files) {
         if (file->isFolder() && file->size() > m_minSize) {
             findVisibleDepth((Folder *)file, currentDepth + 1); //if no files greater than min size the depth is still recorded
         }
@@ -152,11 +152,12 @@ bool RadialMap::Map::build(const Folder * const dir, const uint depth, uint a_st
 {
     //first iteration: dir == m_root
 
-    if (dir->children() == 0) //we do fileCount rather than size to avoid chance of divide by zero later
+    if (dir->children() == 0) { //we do fileCount rather than size to avoid chance of divide by zero later
         return false;
+    }
 
     FileSize hiddenSize = 0;
-    uint hiddenFileCount = 0;
+    uint32_t hiddenFileCount = 0;
 
     for (File *file : dir->files) {
         if (file->size() < m_limits[depth] * 6) { // limit is half a degree? we want at least 3 degrees
@@ -168,15 +169,17 @@ bool RadialMap::Map::build(const Folder * const dir, const uint depth, uint a_st
             continue;
         }
 
-        unsigned int a_len = (unsigned int)(5760 * ((double)file->size() / (double)m_root->size()));
+        uint32_t a_len = 5760u * file->size() / m_root->size();
 
         Segment *s = new Segment(file, a_start, a_len);
         m_signature[depth].append(s);
 
         if (file->isFolder()) {
+            const Folder *folder = static_cast<const Folder*>(file);
+            s->m_hardlinksLength = 5760u * folder->hardlinksSize() / m_root->size();
             if (depth != m_visibleDepth) {
                 //recurse
-                s->m_hasHiddenChildren = build((Folder*)file, depth + 1, a_start, a_start + a_len);
+                s->m_hasHiddenChildren = build(folder, depth + 1, a_start, a_start + a_len);
             } else {
                 s->m_hasHiddenChildren = true;
             }
@@ -197,7 +200,9 @@ bool RadialMap::Map::build(const Folder * const dir, const uint depth, uint a_st
                 KFormat().formatByteSize(hiddenSize/hiddenFileCount));
 
 
-        (m_signature + depth)->append(new Segment(new File(s.toUtf8().constData(), hiddenSize), a_start, a_end - a_start, true)); // todo hardlinks
+        File *fakeFile = new File(s.toUtf8().constData(), hiddenSize);
+
+        (m_signature + depth)->append(new Segment(fakeFile, a_start, a_end - a_start, true)); // todo hardlinks
     }
 
     return false;
@@ -399,6 +404,13 @@ void RadialMap::Map::paint(bool antialias)
             paint.setPen(segment->pen());
             paint.setBrush(segment->brush());
             paint.drawPie(rect, segment->start(), segment->length());
+
+            if (segment->m_hardlinksLength > 0) {
+                QBrush brush(segment->pen());// = segment->brush();
+                brush.setStyle(Qt::FDiagPattern);
+                paint.setBrush(brush);
+                paint.drawPie(rect, segment->start(), segment->m_hardlinksLength);
+            }
 
             if (!segment->hasHiddenChildren()) {
                 continue;

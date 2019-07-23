@@ -78,6 +78,7 @@ private:
         m_brush = b;
     }
 
+    uint m_hardlinksLength = 0;
     const uint m_angleStart, m_angleSegment;
     const File* const m_file;
     QColor m_pen, m_brush;
