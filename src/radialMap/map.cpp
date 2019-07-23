@@ -445,10 +445,8 @@ void RadialMap::Map::paint(bool antialias)
             paint.setBrush(segment->brush());
             paint.drawPie(rect, segment->start(), segment->length());
 
-            if (segment->hasHiddenChildren())
-            {
+            if (segment->hasHiddenChildren()) {
                 //**** code is bloated!
-                paint.save();
                 QPen pen = paint.pen();
                 int width = 2;
                 pen.setWidth(width);
@@ -457,7 +455,6 @@ void RadialMap::Map::paint(bool antialias)
                 width /= 2;
                 rect2.adjust(width, width, -width, -width);
                 paint.drawArc(rect2, segment->start(), segment->length());
-                paint.restore();
             }
         }
 
