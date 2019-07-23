@@ -202,7 +202,7 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
                 font.setPointSize(sizes[label->level]);
             }
             QFontMetrics fontMetrics(font);
-            const int minTextWidth = fontMetrics.width(QStringLiteral("M...")) + LABEL_TEXT_HMARGIN; // Fully elided string
+            const int minTextWidth = fontMetrics.horizontalAdvance(QStringLiteral("M...")) + LABEL_TEXT_HMARGIN; // Fully elided string
 
             const int fontHeight  = fontMetrics.height() + LABEL_TEXT_VMARGIN; //used to ensure label texts don't overlap
             const int lineSpacing = fontHeight / 4;
@@ -237,7 +237,7 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
             int textY = startY + lineSpacing;
 
             int textX;
-            const int textWidth = fontMetrics.width(string) + LABEL_TEXT_HMARGIN;
+            const int textWidth = fontMetrics.horizontalAdvance(string) + LABEL_TEXT_HMARGIN;
             if (rightSide) {
                 if (startX + minTextWidth > width() || textY < fontHeight || middleX < targetX) {
                     //skip this strut
@@ -271,7 +271,7 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
                 } else {
                     textX = 0;
                     string = fontMetrics.elidedText(string, Qt::ElideMiddle, startX);
-                    startX = fontMetrics.width(string) + LABEL_TEXT_HMARGIN;
+                    startX = fontMetrics.horizontalAdvance(string) + LABEL_TEXT_HMARGIN;
                 }
             }
 

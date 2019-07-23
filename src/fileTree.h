@@ -41,7 +41,15 @@ public:
     friend class Folder;
 
 public:
-    File(const char *name, FileSize size) : m_parent(nullptr), m_name(qstrdup(name)), m_size(size) {}
+    const bool isHardlink = false;
+
+    File(const char *name, FileSize size, const bool hardlink = false) :
+        isHardlink(hardlink),
+        m_parent(nullptr),
+        m_name(qstrdup(name)),
+        m_size(size)
+    {}
+
     virtual ~File() {
         delete [] m_name;
     }
@@ -85,7 +93,7 @@ public:
     QUrl url(const Folder *root = nullptr) const;
 
 protected:
-    File(const char *name, FileSize size, Folder *parent) : m_parent(parent), m_name(qstrdup(name)), m_size(size) {}
+    File(const char *name, FileSize size, const bool hardlink, Folder *parent) : isHardlink(hardlink), m_parent(parent), m_name(qstrdup(name)), m_size(size) {}
 
     Folder *m_parent; //0 if this is treeRoot
     char *m_name; // partial path name (e.g. 'boot/' or 'foo.svg')
@@ -100,7 +108,7 @@ private:
 class Folder : public File
 {
 public:
-    Folder(const char *name) : File(name, 0), m_children(0) {} //DON'T pass the full path!
+    Folder(const char *name) : File(name, 0, false), m_children(0) {} //DON'T pass the full path!
 
     uint children() const {
         return m_children;
@@ -123,9 +131,9 @@ public:
     }
 
     ///appends a File
-    void append(const char *name, FileSize size)
+    void append(const char *name, FileSize size, const bool isHardlink = false)
     {
-        append(new File(name, size, this));
+        append(new File(name, size, isHardlink, this));
     }
 
     /// removes a file

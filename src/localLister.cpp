@@ -157,16 +157,15 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
 
     struct stat statbuf;
     dirent *ent;
-    while ((ent = readdir(dir)))
-    {
-        if (m_parent->m_abort)
-        {
+    while ((ent = readdir(dir))) {
+        if (m_parent->m_abort) {
             closedir(dir);
             return cwd;
         }
 
-        if (qstrcmp(ent->d_name, ".") == 0 || qstrcmp(ent->d_name, "..") == 0)
+        if (qstrcmp(ent->d_name, ".") == 0 || qstrcmp(ent->d_name, "..") == 0) {
             continue;
+        }
 
         // QStringBuilder is used here. It assumes ent->d_name is char[NAME_MAX + 1],
         // and thus copies only first NAME_MAX + 1 chars.
@@ -189,25 +188,22 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
             continue;
         }
 
-        if (S_ISREG(statbuf.st_mode)) //file
+        if (S_ISREG(statbuf.st_mode)) { //file
 #ifndef Q_OS_WIN
-            cwd->append(ent->d_name, (statbuf.st_blocks * S_BLKSIZE));
+            const bool isHardlink = statbuf.st_nlink > 1;
+            cwd->append(ent->d_name, (statbuf.st_blocks * S_BLKSIZE), isHardlink);
 #else
             cwd->append(ent->d_name, statbuf.st_size);
 #endif
-
-        else if (S_ISDIR(statbuf.st_mode)) //folder
-        {
+        } else if (S_ISDIR(statbuf.st_mode)) { //folder
             Folder *d = nullptr;
             const QByteArray new_dirname = QByteArray(ent->d_name) + QByteArrayLiteral("/");
             new_path += '/';
 
             //check to see if we've scanned this section already
 
-            for (Folder *folder : *m_trees)
-            {
-                if (new_path == folder->name8Bit())
-                {
+            for (Folder *folder : *m_trees) {
+                if (new_path == folder->name8Bit()) {
                     qCDebug(FILELIGHT_LOG) << "Tree pre-completed: " << folder->decodedName();
                     d = folder;
                     m_trees->removeAll(folder);
@@ -216,9 +212,11 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
                 }
             }
 
-            if (!d) //then scan
-                if ((d = scan(new_path, new_dirname))) //then scan was successful
+            if (!d) {//then scan
+                if ((d = scan(new_path, new_dirname))) {//then scan was successful
                     cwd->append(d);
+                }
+            }
         }
 
         ++m_parent->m_files;
