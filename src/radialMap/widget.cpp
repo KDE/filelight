@@ -137,6 +137,11 @@ RadialMap::Widget::createFromCache(const Folder *tree)
 void
 RadialMap::Widget::sendFakeMouseEvent() //slot
 {
+    // If we're not the focused window (or on another desktop), don't pop up our tooltip
+    if (!qApp->focusWindow()) {
+        return;
+    }
+
     QMouseEvent me(QEvent::MouseMove, mapFromGlobal(QCursor::pos()), Qt::NoButton, Qt::NoButton, Qt::NoModifier);
     QApplication::sendEvent(this, &me);
     update();
