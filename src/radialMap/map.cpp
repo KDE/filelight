@@ -203,51 +203,39 @@ bool RadialMap::Map::build(const Folder * const dir, const uint depth, uint a_st
     return false;
 }
 
-bool RadialMap::Map::resize(const QRect &rect)
+bool RadialMap::Map::resize(const QRect &newRect)
 {
     //there's a MAP_2MARGIN border
 
-#define mw width()
-#define mh height()
-#define cw rect.width()
-#define ch rect.height()
-
-    if (cw < mw || ch < mh || (cw > mw && ch > mh))
-    {
-        uint size = ((cw < ch) ? cw : ch) - MAP_2MARGIN;
-
-        //this also causes uneven sizes to always resize when resizing but map is small in that dimension
-        //size -= size % 2; //even sizes mean less staggered non-antialiased resizing
-
-        {
-            const uint minSize = MIN_RING_BREADTH * 2 * (m_visibleDepth + 2);
-
-            if (size < minSize)
-                size = minSize;
-
-            //this QRect is used by paint()
-            m_rect.setRect(0,0,size,size);
-        }
-        m_pixmap = QPixmap(m_rect.size());
-
-        //resize the pixmap
-        size += MAP_2MARGIN;
-
-        if (m_signature != nullptr)
-        {
-            setRingBreadth();
-            paint();
-        }
-
-        return true;
+    if (newRect.width() < width() && newRect.height() < height() && !newRect.contains(m_rect)) {
+        return false;
     }
 
-#undef mw
-#undef mh
-#undef cw
-#undef ch
+    uint size = qMin(newRect.width(), newRect.height()) - MAP_2MARGIN;
 
-    return false;
+    //this also causes uneven sizes to always resize when resizing but map is small in that dimension
+    //size -= size % 2; //even sizes mean less staggered non-antialiased resizing
+
+    const uint minSize = MIN_RING_BREADTH * 2 * (m_visibleDepth + 2);
+
+    if (size < minSize) {
+        size = minSize;
+    }
+
+    //this QRect is used by paint()
+    m_rect.setRect(0,0,size,size);
+
+    m_pixmap = QPixmap(m_rect.size());
+
+    //resize the pixmap
+    size += MAP_2MARGIN;
+
+    if (m_signature) {
+        setRingBreadth();
+        paint();
+    }
+
+    return true;
 }
 
 void RadialMap::Map::colorise()
@@ -398,8 +386,7 @@ void RadialMap::Map::paint(bool antialias)
     }
 
 
-    for (int x = m_visibleDepth; x >= 0; --x)
-    {
+    for (int x = m_visibleDepth; x >= 0; --x) {
         int width = rect.width() / 2;
         //clever geometric trick to find largest angle that will give biggest arrow head
         uint a_max = int(acos((double)width / double((width + MAP_HIDDEN_TRIANGLE_SIZE))) * (180*16 / M_PI));
@@ -413,49 +400,50 @@ void RadialMap::Map::paint(bool antialias)
             paint.setBrush(segment->brush());
             paint.drawPie(rect, segment->start(), segment->length());
 
-            if (segment->hasHiddenChildren()) {
-                //draw arrow head to indicate undisplayed files/directories
-                QPolygon pts(3);
-                QPoint pos, cpos = rect.center();
-                uint a[3] = { segment->start(), segment->length(), 0 };
-
-                a[2] = a[0] + (a[1] / 2); //assign to halfway between
-                if (a[1] > a_max)
-                {
-                    a[1] = a_max;
-                    a[0] = a[2] - a_max / 2;
-                }
-
-                a[1] += a[0];
-
-                for (int i = 0, radius = width; i < 3; ++i) {
-                    double ra = M_PI/(180*16) * a[i], sinra, cosra;
-
-                    if (i == 2) {
-                        radius += MAP_HIDDEN_TRIANGLE_SIZE;
-                    }
-
-                    sincos(ra, &sinra, &cosra);
-                    pos.rx() = cpos.x() + static_cast<int>(cosra * radius);
-                    pos.ry() = cpos.y() - static_cast<int>(sinra * radius);
-                    pts.setPoint(i, pos);
-                }
-
-                paint.setBrush(segment->pen());
-                paint.drawPolygon(pts);
-
-                // Draw outline on the arc for hidden children
-                //**** code is bloated!
-                QPen pen = paint.pen();
-                pen.setCapStyle(Qt::FlatCap);
-                int width = 2;
-                pen.setWidth(width);
-                paint.setPen(pen);
-                QRect rect2 = rect;
-                width /= 2;
-                rect2.adjust(width, width, -width, -width);
-                paint.drawArc(rect2, segment->start(), segment->length());
+            if (!segment->hasHiddenChildren()) {
+                continue;
             }
+
+            //draw arrow head to indicate undisplayed files/directories
+            QPolygon pts(3);
+            QPoint pos, cpos = rect.center();
+            uint a[3] = { segment->start(), segment->length(), 0 };
+
+            a[2] = a[0] + (a[1] / 2); //assign to halfway between
+            if (a[1] > a_max)
+            {
+                a[1] = a_max;
+                a[0] = a[2] - a_max / 2;
+            }
+
+            a[1] += a[0];
+
+            for (int i = 0, radius = width; i < 3; ++i) {
+                double ra = M_PI/(180*16) * a[i], sinra, cosra;
+
+                if (i == 2) {
+                    radius += MAP_HIDDEN_TRIANGLE_SIZE;
+                }
+
+                sincos(ra, &sinra, &cosra);
+                pos.rx() = cpos.x() + static_cast<int>(cosra * radius);
+                pos.ry() = cpos.y() - static_cast<int>(sinra * radius);
+                pts.setPoint(i, pos);
+            }
+
+            paint.setBrush(segment->pen());
+            paint.drawPolygon(pts);
+
+            // Draw outline on the arc for hidden children
+            QPen pen = paint.pen();
+            pen.setCapStyle(Qt::FlatCap);
+            int width = 2;
+            pen.setWidth(width);
+            paint.setPen(pen);
+            QRect rect2 = rect;
+            width /= 2;
+            rect2.adjust(width, width, -width, -width);
+            paint.drawArc(rect2, segment->start(), segment->length());
         }
 
         if (excess >= 0) { //excess allows us to resize more smoothly (still crud tho)
