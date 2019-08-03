@@ -49,6 +49,8 @@
 #include <QDragEnterEvent>
 #include <QToolTip>
 #include <QMimeData>
+#include <QWindow>
+#include <QScreen>
 #include <KUrlMimeData>
 
 #include <cmath>         //::segmentAt()
@@ -88,7 +90,7 @@ void RadialMap::Widget::paintEvent(QPaintEvent*)
     }
 }
 
-const RadialMap::Segment* RadialMap::Widget::segmentAt(QPoint &e) const
+const RadialMap::Segment* RadialMap::Widget::segmentAt(QPoint e) const
 {
     //determine which segment QPoint e is above
 
@@ -138,92 +140,114 @@ void RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
     //set m_focus to what we hover over, update UI if it's a new segment
 
     Segment const * const oldFocus = m_focus;
-    QPoint p = e->pos();
+    m_focus = segmentAt(e->pos());
 
-    m_focus = segmentAt(p); //NOTE p is passed by non-const reference
-
-    if (m_focus)
-    {
-        m_tooltip.move(e->globalX() + 20, e->globalY() + 20);
-        if (m_focus != oldFocus) //if not same as last time
-        {
-            setCursor(Qt::PointingHandCursor);
-
-            QString string;
-
-            if (isSummary()) {
-                if (strcmp("used", m_focus->file()->name8Bit()) == 0) {
-                    string = i18nc("Tooltip of used space on the partition, %1 is path, %2 is size",
-                                   "%1\nUsed: %2",
-                                   m_focus->file()->parent()->displayPath(),
-                                   m_focus->file()->humanReadableSize());
-                } else if (strcmp("free", m_focus->file()->name8Bit()) == 0) {
-                    string = i18nc("Tooltip of free space on the partition, %1 is path, %2 is size",
-                                   "%1\nFree: %2",
-                                   m_focus->file()->parent()->displayPath(),
-                                   m_focus->file()->humanReadableSize());
-                } else {
-                    string = i18nc("Tooltip of file/folder, %1 is path, %2 is size",
-                                   "%1\n%2",
-                                   m_focus->file()->displayPath(),
-                                   m_focus->file()->humanReadableSize());
-                }
-            } else {
-                string = i18nc("Tooltip of file/folder, %1 is path, %2 is size",
-                               "%1\n%2",
-                               m_focus->file()->displayPath(),
-                               m_focus->file()->humanReadableSize());
-
-                if (m_focus->file()->isFolder()) {
-                    int files = static_cast<const Folder*>(m_focus->file())->children();
-                    const uint percent = uint((100 * files) / (double)m_tree->children());
-
-                    string += QLatin1Char('\n');
-                    if (percent > 0) {
-                        string += i18ncp("Tooltip of folder, %1 is number of files",
-                                         "%1 File (%2%)", "%1 Files (%2%)",
-                                         files, percent);
-                    } else {
-                        string += i18ncp("Tooltip of folder, %1 is number of files",
-                                         "%1 File", "%1 Files",
-                                         files);
-                    }
-                }
-
-                const QUrl url = Widget::url(m_focus->file());
-                if (m_focus == m_rootSegment && url != KIO::upUrl(url)) {
-                    string += i18n("\nClick to go up to parent directory");
-                }
-            }
-
-            // Calculate a semi-sane size for the tooltip
-            QFontMetrics fontMetrics(font());
-            int tooltipWidth = 0;
-            int tooltipHeight = 0;
-            for (const QString &part : string.split(QLatin1Char('\n'))) {
-                tooltipHeight += fontMetrics.height();
-                tooltipWidth = qMax(tooltipWidth, fontMetrics.width(part));
-            }
-            // Limit it to the window size, probably should find something better
-            tooltipWidth = qMin(tooltipWidth, window()->width());
-            tooltipWidth += 10;
-            tooltipHeight += 10;
-            m_tooltip.resize(tooltipWidth, tooltipHeight);
-            m_tooltip.setText(string);
-            m_tooltip.show();
-
-            emit mouseHover(m_focus->file()->displayPath());
+    if (!m_focus) {
+        if (oldFocus && oldFocus->file() != m_tree) {
+            m_tooltip.hide();
+            unsetCursor();
             update();
+
+            emit mouseHover(QString());
+        }
+
+        return;
+    }
+
+    const QRect screenRect = window()->windowHandle()->screen()->availableGeometry();
+
+    QPoint tooltipPosition = e->globalPos() + QPoint(20, 20);
+    QRect tooltipRect(tooltipPosition, m_tooltip.size());
+
+    // Same content as before
+    if (m_focus == oldFocus) {
+        if (tooltipRect.right() > screenRect.right()) {
+            tooltipPosition.setX(screenRect.width() - m_tooltip.width());
+        }
+        if (tooltipRect.bottom() > screenRect.bottom()) {
+            tooltipPosition.setY(screenRect.height() - m_tooltip.height());
+        }
+        m_tooltip.move(tooltipPosition);
+        return;
+    }
+
+    setCursor(Qt::PointingHandCursor);
+
+    QString string;
+
+    if (isSummary()) {
+        if (strcmp("used", m_focus->file()->name8Bit()) == 0) {
+            string = i18nc("Tooltip of used space on the partition, %1 is path, %2 is size",
+                    "%1\nUsed: %2",
+                    m_focus->file()->parent()->displayPath(),
+                    m_focus->file()->humanReadableSize());
+        } else if (strcmp("free", m_focus->file()->name8Bit()) == 0) {
+            string = i18nc("Tooltip of free space on the partition, %1 is path, %2 is size",
+                    "%1\nFree: %2",
+                    m_focus->file()->parent()->displayPath(),
+                    m_focus->file()->humanReadableSize());
+        } else {
+            string = i18nc("Tooltip of file/folder, %1 is path, %2 is size",
+                    "%1\n%2",
+                    m_focus->file()->displayPath(),
+                    m_focus->file()->humanReadableSize());
+        }
+    } else {
+        string = i18nc("Tooltip of file/folder, %1 is path, %2 is size",
+                "%1\n%2",
+                m_focus->file()->displayPath(),
+                m_focus->file()->humanReadableSize());
+
+        if (m_focus->file()->isFolder()) {
+            int files = static_cast<const Folder*>(m_focus->file())->children();
+            const uint percent = uint((100 * files) / (double)m_tree->children());
+
+            string += QLatin1Char('\n');
+            if (percent > 0) {
+                string += i18ncp("Tooltip of folder, %1 is number of files",
+                        "%1 File (%2%)", "%1 Files (%2%)",
+                        files, percent);
+            } else {
+                string += i18ncp("Tooltip of folder, %1 is number of files",
+                        "%1 File", "%1 Files",
+                        files);
+            }
+        }
+
+        const QUrl url = Widget::url(m_focus->file());
+        if (m_focus == m_rootSegment && url != KIO::upUrl(url)) {
+            string += i18n("\nClick to go up to parent directory");
         }
     }
-    else if (oldFocus && oldFocus->file() != m_tree)
-    {
-        m_tooltip.hide();
-        unsetCursor();
-        update();
 
-        emit mouseHover(QString());
+    // Calculate a semi-sane size for the tooltip
+    QFontMetrics fontMetrics(font());
+    int tooltipWidth = 0;
+    int tooltipHeight = 0;
+    for (const QString &part : string.split(QLatin1Char('\n'))) {
+        tooltipHeight += fontMetrics.height();
+        tooltipWidth = qMax(tooltipWidth, fontMetrics.width(part));
     }
+    tooltipWidth += 10;
+    tooltipHeight += 10;
+
+    m_tooltip.resize(tooltipWidth, tooltipHeight);
+    m_tooltip.setText(string);
+
+    // Make sure we're visible on screen
+    tooltipRect.setSize(QSize(tooltipWidth, tooltipHeight));
+    if (tooltipRect.right() > screenRect.right()) {
+        tooltipPosition.setX(screenRect.width() - m_tooltip.width());
+    }
+    if (tooltipRect.bottom() > screenRect.bottom()) {
+        tooltipPosition.setY(screenRect.height() - m_tooltip.height());
+    }
+    m_tooltip.move(tooltipPosition);
+
+    m_tooltip.show();
+
+    emit mouseHover(m_focus->file()->displayPath());
+    update();
 }
 
 void RadialMap::Widget::enterEvent(QEvent *)

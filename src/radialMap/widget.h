@@ -98,7 +98,7 @@ protected:
     void leaveEvent(QEvent*) override;
 
 protected:
-    const Segment *segmentAt(QPoint&) const; //FIXME const reference for a library others can use
+    const Segment *segmentAt(QPoint position) const; //FIXME const reference for a library others can use
     const Segment *rootSegment() const {
         return m_rootSegment;    ///never == 0
     }
