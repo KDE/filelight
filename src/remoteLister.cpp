@@ -27,7 +27,6 @@
 #include <KDirLister>
 
 #include <QLinkedList>
-#include <QTimer>
 #include <QWidget>
 
 namespace Filelight

@@ -47,14 +47,11 @@
 #include <KUrlCompletion>   //locationbar
 
 #include <QApplication>     //setupActions()
-#include <QByteArray>
 #include <QDir>
 #include <QFileDialog>
-#include <QLineEdit>
-#include <QObject>
 #include <QScrollArea>
 #include <QStatusBar>
-#include <QToolTip>
+#include <QLineEdit>
 
 namespace Filelight {
 

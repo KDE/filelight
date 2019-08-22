@@ -28,7 +28,6 @@
 #include <KIO/Job>
 #include <KLocalizedString>
 
-#include <QLabel>
 #include <QPainter>
 
 #include <QFontDatabase>

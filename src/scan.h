@@ -22,7 +22,6 @@
 #ifndef SCAN_H
 #define SCAN_H
 
-#include <QString>
 #include <QObject>
 #include <QMutex>
 #include <QList>

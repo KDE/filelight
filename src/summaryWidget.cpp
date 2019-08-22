@@ -32,7 +32,6 @@
 
 #include <QLabel>
 #include <QApplication>
-#include <QIcon>
 #include <QByteArray>
 #include <QList>
 #include <QMouseEvent>

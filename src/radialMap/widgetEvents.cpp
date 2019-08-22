@@ -33,7 +33,6 @@
 #include <QMenu>  //::mousePressEvent()
 #include <KRun>        //::mousePressEvent()
 #include <KToolInvocation>
-#include <KFormat>
 #include <QUrl>
 #include <KLocalizedString>
 #include <kio_version.h>
@@ -47,11 +46,10 @@
 #include <QResizeEvent>
 #include <QMouseEvent>
 #include <QDragEnterEvent>
-#include <QToolTip>
 #include <QMimeData>
+#include <KUrlMimeData>
 #include <QWindow>
 #include <QScreen>
-#include <KUrlMimeData>
 
 #include <cmath>         //::segmentAt()
 

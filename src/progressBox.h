@@ -22,9 +22,9 @@
 #ifndef PROGRESSBOX_H
 #define PROGRESSBOX_H
 
-#include <QLabel>
 #include <QTimer>
 #include <KColorScheme>
+#include <QWidget>
 
 namespace Filelight {
 class ScanManager;

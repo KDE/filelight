@@ -23,7 +23,6 @@
 #define HISTORYACTION_H
 
 #include <QAction>
-#include <QStringList>
 #include <QUrl>
 
 class KConfigGroup;
