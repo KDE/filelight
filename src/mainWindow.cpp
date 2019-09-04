@@ -246,7 +246,7 @@ void MainWindow::slotComboScan()
     QUrl url = QUrl::fromUserInput(path);
 
     if (url.isRelative())
-        path = QStringLiteral("~/") + path; // KUrlCompletion completes relative to ~, not CWD
+        path = QLatin1String("~/") + path; // KUrlCompletion completes relative to ~, not CWD
 
     path = KShell::tildeExpand(path);
 
