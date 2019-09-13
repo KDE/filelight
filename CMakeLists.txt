@@ -28,7 +28,6 @@ set(FILELIGHT_VERSION ${KDE_APPLICATIONS_VERSION})
 # minimum requirements
 
 cmake_minimum_required (VERSION 3.5 FATAL_ERROR)
-# Spectacle project
 project(Filelight VERSION ${FILELIGHT_VERSION})
 
 set(PROJECT_VERSION ${KDE_APPLICATIONS_VERSION})
