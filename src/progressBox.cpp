@@ -89,7 +89,7 @@ void
 ProgressBox::setText(int files)
 {
     m_text = i18np("%1 File", "%1 Files", files);
-    m_textWidth = fontMetrics().width(m_text);
+    m_textWidth = fontMetrics().boundingRect(m_text).width();
     m_textHeight = fontMetrics().height();
 }
 
