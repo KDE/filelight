@@ -203,7 +203,7 @@ bool RadialMap::Map::build(const Folder * const dir, const uint depth, uint a_st
     return false;
 }
 
-bool RadialMap::Map::resize(const QRect &newRect)
+bool RadialMap::Map::resize(const QRectF &newRect)
 {
     //there's a MAP_2MARGIN border
 
@@ -222,10 +222,11 @@ bool RadialMap::Map::resize(const QRect &newRect)
         size = minSize;
     }
 
-    //this QRect is used by paint()
+    //this QRectF is used by paint()
     m_rect.setRect(0,0,size,size);
 
-    m_pixmap = QPixmap(m_rect.size());
+    m_pixmap = QPixmap(m_rect.width() * m_dpr, m_rect.height() * m_dpr);
+    m_pixmap.setDevicePixelRatio(m_dpr);
 
     //resize the pixmap
     size += MAP_2MARGIN;
@@ -352,7 +353,7 @@ void RadialMap::Map::paint(bool antialias)
     KColorScheme scheme(QPalette::Active, KColorScheme::View);
 
     QPainter paint;
-    QRect rect = m_rect;
+    QRectF rect = m_rect;
 
     rect.adjust(MAP_HIDDEN_TRIANGLE_SIZE, MAP_HIDDEN_TRIANGLE_SIZE, -MAP_HIDDEN_TRIANGLE_SIZE, -MAP_HIDDEN_TRIANGLE_SIZE);
     m_pixmap.fill(Qt::transparent);
@@ -381,7 +382,7 @@ void RadialMap::Map::paint(bool antialias)
 
     //do intelligent distribution of excess to prevent nasty resizing
     if (m_ringBreadth != MAX_RING_BREADTH && m_ringBreadth != MIN_RING_BREADTH) {
-        excess = rect.width() % m_ringBreadth;
+        excess = int(rect.width()) % m_ringBreadth;
         ++step;
     }
 
@@ -405,8 +406,8 @@ void RadialMap::Map::paint(bool antialias)
             }
 
             //draw arrow head to indicate undisplayed files/directories
-            QPolygon pts(3);
-            QPoint pos, cpos = rect.center();
+            QPolygonF pts;
+            QPointF pos, cpos = rect.center();
             uint a[3] = { segment->start(), segment->length(), 0 };
 
             a[2] = a[0] + (a[1] / 2); //assign to halfway between
@@ -426,9 +427,9 @@ void RadialMap::Map::paint(bool antialias)
                 }
 
                 sincos(ra, &sinra, &cosra);
-                pos.rx() = cpos.x() + static_cast<int>(cosra * radius);
-                pos.ry() = cpos.y() - static_cast<int>(sinra * radius);
-                pts.setPoint(i, pos);
+                pos.rx() = cpos.x() + cosra * radius;
+                pos.ry() = cpos.y() - sinra * radius;
+                pts << pos;
             }
 
             paint.setBrush(segment->pen());
@@ -440,7 +441,7 @@ void RadialMap::Map::paint(bool antialias)
             int width = 2;
             pen.setWidth(width);
             paint.setPen(pen);
-            QRect rect2 = rect;
+            QRectF rect2 = rect;
             width /= 2;
             rect2.adjust(width, width, -width, -width);
             paint.drawArc(rect2, segment->start(), segment->length());

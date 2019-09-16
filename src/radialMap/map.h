@@ -27,7 +27,7 @@
 #include <KColorScheme>
 
 #include <QPixmap>
-#include <QRect>
+#include <QRectF>
 #include <QString>
 
 namespace RadialMap {
@@ -40,17 +40,17 @@ public:
     ~Map();
 
     void make(const Folder *, bool = false);
-    bool resize(const QRect&);
+    bool resize(const QRectF&);
 
     bool isNull() const {
         return (m_signature == nullptr);
     }
     void invalidate();
 
-    int height() const {
+    qreal height() const {
         return m_rect.height();
     }
-    int width() const {
+    qreal width() const {
         return m_rect.width();
     }
     QPixmap pixmap() const {
@@ -72,13 +72,14 @@ private:
     const Folder *m_root;
     uint m_minSize;
     QVector<FileSize> m_limits;
-    QRect m_rect;
+    QRectF m_rect;
     uint m_visibleDepth; ///visible level depth of system
     QPixmap m_pixmap;
     int m_ringBreadth;
     uint m_innerRadius;  ///radius of inner circle
     QString m_centerText;
     bool m_summary;
+    qreal m_dpr;
 
     uint MAP_2MARGIN;
 };

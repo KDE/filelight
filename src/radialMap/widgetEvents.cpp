@@ -88,9 +88,9 @@ void RadialMap::Widget::paintEvent(QPaintEvent*)
     }
 }
 
-const RadialMap::Segment* RadialMap::Widget::segmentAt(QPoint e) const
+const RadialMap::Segment* RadialMap::Widget::segmentAt(QPointF e) const
 {
-    //determine which segment QPoint e is above
+    //determine which segment QPointF e is above
 
     e -= m_offset;
 
@@ -152,10 +152,10 @@ void RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
         return;
     }
 
-    const QRect screenRect = window()->windowHandle()->screen()->availableGeometry();
+    const QRectF screenRect = window()->windowHandle()->screen()->availableGeometry();
 
     QPoint tooltipPosition = e->globalPos() + QPoint(20, 20);
-    QRect tooltipRect(tooltipPosition, m_tooltip.size());
+    QRectF tooltipRect(tooltipPosition, m_tooltip.size());
 
     // Same content as before
     if (m_focus == oldFocus) {

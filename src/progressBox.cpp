@@ -108,15 +108,15 @@ void ProgressBox::paintEvent(QPaintEvent*)
     tick+=16;
 
     for (int i=0; i<PIECES_NUM; i++) {
-        const int size = qMin(width(), height()) * length[i];
-        const QRect rect(width() / 2 - size / 2, height() / 2 - size / 2, size, size);
+        const qreal size = qMin(width(), height()) * length[i];
+        const QRectF rect(width() / 2 - size / 2, height() / 2 - size / 2, size, size);
         int angle = angleFactor[i] + tick*angleFactor[i];
         QRadialGradient gradient(rect.center(), sin(angle/160.0f) * 100);
         gradient.setColorAt(0, QColor::fromHsv(abs(angle/16) % 360 , 160, 255));
         gradient.setColorAt(1, QColor::fromHsv(abs(angle/16) % 360 , 160, 128));
         QBrush brush(gradient);
         paint.setBrush(brush);
-        paint.drawPie(QRect(rect), angle, aLength[i]);
+        paint.drawPie(QRectF(rect), angle, aLength[i]);
     }
 
     paint.translate(0.5, 0.5);

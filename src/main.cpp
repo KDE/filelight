@@ -67,6 +67,8 @@ int main(int argc, char *argv[])
     app.setOrganizationName(QStringLiteral("KDE"));
     app.setWindowIcon(QIcon::fromTheme(QStringLiteral(APP_NAME)));
 
+    app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
+
     QCommandLineParser options;
     options.addHelpOption();
     options.addVersionOption();

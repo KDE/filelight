@@ -52,6 +52,7 @@ RadialMap::Widget::Widget(QWidget *parent, bool isSummary)
     connect(&m_timer, &QTimer::timeout, this, &Widget::resizeTimeout);
     m_tooltip.setFrameShape(QFrame::StyledPanel);
     m_tooltip.setWindowFlags(Qt::ToolTip | Qt::WindowTransparentForInput);
+    m_map.m_dpr = devicePixelRatioF();
 }
 
 RadialMap::Widget::~Widget()
