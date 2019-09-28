@@ -33,6 +33,12 @@
 
 int main(int argc, char *argv[])
 {
+    /**
+     * enable high dpi support
+     */
+    QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps, true);
+    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling, true);
+
     QApplication app(argc, argv);
 
     KLocalizedString::setApplicationDomain("filelight");
@@ -66,8 +72,6 @@ int main(int argc, char *argv[])
     KAboutData::setApplicationData(about);
     app.setOrganizationName(QStringLiteral("KDE"));
     app.setWindowIcon(QIcon::fromTheme(QStringLiteral(APP_NAME)));
-
-    app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
 
     QCommandLineParser options;
     options.addHelpOption();
