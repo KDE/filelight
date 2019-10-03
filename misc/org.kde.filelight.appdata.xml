@@ -337,4 +337,7 @@
   <provides>
     <binary>filelight</binary>
   </provides>
+  <custom>
+     <value key="KDE::windows_store">https://www.microsoft.com/store/apps/9pfxcd722m2c</value>
+  </custom>
 </component>
