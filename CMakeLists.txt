@@ -64,6 +64,7 @@ if (KF5Config_VERSION VERSION_GREATER "5.56.0")
 endif()
 if (EXISTS "${CMAKE_SOURCE_DIR}/.git")
    add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
+   add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x060000)
 endif()
 
 include_directories(src)

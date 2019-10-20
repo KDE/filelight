@@ -91,7 +91,7 @@ int main(int argc, char *argv[])
 
         mw->show();
     }
-    else RESTORE(MainWindow);
+    else kRestoreMainWindows<MainWindow>();
 
     return app.exec();
 }
