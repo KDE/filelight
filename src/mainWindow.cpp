@@ -140,6 +140,7 @@ void MainWindow::setupActions() //singleton function
     m_combo->setDuplicatesEnabled(false);
 
     KStandardAction::open(this, SLOT(slotScanFolder()), ac);
+    KStandardAction::save(this, SLOT(slotSaveSvg()), ac)->setEnabled(false);
     KStandardAction::quit(this, SLOT(close()), ac);
     KStandardAction::up(this, SLOT(slotUp()), ac);
     KStandardAction::configureToolbars(this, SLOT(configToolbars()), ac);
@@ -229,6 +230,16 @@ void MainWindow::slotScanHomeFolder()
     slotScanPath(QDir::homePath());
 }
 
+void MainWindow::slotSaveSvg()
+{
+    QString path = QFileDialog::getSaveFileName(this, i18n("Save to SVG"));
+    if (path.isEmpty()) {
+        return;
+    }
+
+    m_map->saveSvg(path);
+}
+
 void MainWindow::slotScanRootFolder()
 {
     slotScanPath(QDir::rootPath());
@@ -296,6 +307,8 @@ void MainWindow::scanCompleted()
     const QUrl url = this->url();
 
     stateChanged(QStringLiteral("scan_complete"));
+
+    action("file_save")->setEnabled(true);
 
     m_combo->lineEdit()->setText(prettyUrl());
 

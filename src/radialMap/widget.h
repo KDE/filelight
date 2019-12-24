@@ -66,6 +66,8 @@ public:
 
     friend class Label; //FIXME badness
 
+    void saveSvg(const QString &path) { m_map.saveSvg(path); }
+
 public Q_SLOTS:
     void zoomIn();
     void zoomOut();

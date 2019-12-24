@@ -25,6 +25,7 @@
 #include <QFontMetrics>    //ctor
 #include <QPainter>
 #include <QBrush>
+#include <QSvgGenerator>
 #include "filelight_debug.h"
 
 #include <KCursor>         //make()
@@ -63,6 +64,13 @@ void RadialMap::Map::invalidate()
     m_signature = nullptr;
 
     m_visibleDepth = Config::defaultRingDepth;
+}
+
+void RadialMap::Map::saveSvg(const QString &path)
+{
+    QSvgGenerator svgGenerator;
+    svgGenerator.setFileName(path);
+    paint(&svgGenerator);
 }
 
 void RadialMap::Map::make(const Folder *tree, bool refresh)
@@ -348,7 +356,7 @@ void RadialMap::Map::colorise()
     }
 }
 
-void RadialMap::Map::paint(bool antialias)
+void RadialMap::Map::paint(QPaintDevice *paintDevice)
 {
     KColorScheme scheme(QPalette::Active, KColorScheme::View);
 
@@ -356,7 +364,14 @@ void RadialMap::Map::paint(bool antialias)
     QRectF rect = m_rect;
 
     rect.adjust(MAP_HIDDEN_TRIANGLE_SIZE, MAP_HIDDEN_TRIANGLE_SIZE, -MAP_HIDDEN_TRIANGLE_SIZE, -MAP_HIDDEN_TRIANGLE_SIZE);
-    m_pixmap.fill(Qt::transparent);
+    if (!paintDevice) {
+        if (m_pixmap.isNull()) {
+            return;
+        }
+
+        m_pixmap.fill(Qt::transparent);
+        paintDevice = &m_pixmap;
+    }
 
     //m_rect.moveRight(1); // Uncommenting this breaks repainting when recreating map from cache
 
@@ -364,15 +379,12 @@ void RadialMap::Map::paint(bool antialias)
     //**** best option you can think of is to make the circles slightly less perfect,
     //  ** i.e. slightly eliptic when resizing inbetween
 
-    if (m_pixmap.isNull())
-        return;
-
-    if (!paint.begin(&m_pixmap)) {
+    if (!paint.begin(paintDevice)) {
         qWarning() << "Filelight::RadialMap Failed to initialize painting, returning...";
         return;
     }
 
-    if (antialias && Config::antialias) {
+    if (Config::antialias) {
         paint.translate(0.7, 0.7);
         paint.setRenderHint(QPainter::Antialiasing);
     }
@@ -384,6 +396,11 @@ void RadialMap::Map::paint(bool antialias)
     if (m_ringBreadth != MAX_RING_BREADTH && m_ringBreadth != MIN_RING_BREADTH) {
         excess = int(rect.width()) % m_ringBreadth;
         ++step;
+    }
+
+    if (!m_signature) {
+        qWarning() << "Map not created yet";
+        return;
     }
 
 
