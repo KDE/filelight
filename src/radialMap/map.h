@@ -57,11 +57,13 @@ public:
         return m_pixmap;
     }
 
+    void saveSvg(const QString &path);
+
 
     friend class Widget;
 
 private:
-    void paint(bool antialias = true);
+    void paint(QPaintDevice *paintDevice = nullptr);
     void colorise();
     void setRingBreadth();
     void findVisibleDepth(const Folder *dir, uint currentDepth = 0);

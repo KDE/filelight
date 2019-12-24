@@ -174,7 +174,7 @@ RadialMap::Widget::refresh(int filth)
             break;
 
         case 2:
-            m_map.paint(true); //antialiased painting
+            m_map.paint();
             break;
 
         case 3:

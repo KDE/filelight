@@ -49,7 +49,7 @@ include(KDECMakeSettings)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(ECMQtDeclareLoggingCategory)
 
-find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Core Widgets)
+find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Core Widgets Svg)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
     XmlGui # For app
     KIO # For part

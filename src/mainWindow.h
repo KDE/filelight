@@ -66,6 +66,7 @@ private Q_SLOTS:
     void slotComboScan();
     void slotScanFolder();
     void slotScanHomeFolder();
+    void slotSaveSvg();
     void slotScanRootFolder();
     bool slotScanUrl(const QUrl&);
     bool slotScanPath(const QString&);
