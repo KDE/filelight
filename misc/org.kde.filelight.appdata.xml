@@ -341,6 +341,7 @@
     <value key="KDE::windows_store">https://www.microsoft.com/store/apps/9pfxcd722m2c</value>
   </custom>
   <releases>
+    <release version="19.12.1" date="2020-01-09"/>
     <release version="19.12.0" date="2019-12-12"/>
   </releases>
 </component>
