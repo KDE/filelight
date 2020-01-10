@@ -368,7 +368,7 @@ void RadialMap::Map::paint(bool antialias)
         return;
 
     if (!paint.begin(&m_pixmap)) {
-        qWarning() << "Filelight::RadialMap Failed to initialize painting, returning...";
+        qCWarning(FILELIGHT_LOG) << "Filelight::RadialMap Failed to initialize painting, returning...";
         return;
     }
 

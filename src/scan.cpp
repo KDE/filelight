@@ -70,7 +70,7 @@ bool ScanManager::start(const QUrl &url)
     qCDebug(FILELIGHT_LOG) << "Scan requested for: " << url;
 
     if (running()) {
-        qWarning() << "Tried to launch two concurrent scans, aborting old one...";
+        qCWarning(FILELIGHT_LOG) << "Tried to launch two concurrent scans, aborting old one...";
         abort();
     }
 
@@ -145,7 +145,7 @@ bool ScanManager::start(const QUrl &url)
                 return true;
             } else {
                 //something went wrong, we couldn't find the folder we were expecting
-                qWarning() << "Didn't find " << path << " in the cache!\n";
+                qCWarning(FILELIGHT_LOG) << "Didn't find " << path << " in the cache!\n";
                 it.remove();
                 emit aboutToEmptyCache();
                 delete folder;
