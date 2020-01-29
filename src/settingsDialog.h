@@ -52,7 +52,7 @@ public Q_SLOTS:
     void toggleUseAntialiasing(bool = true);
     void toggleVaryLabelFontSizes(bool);
     void changeContrast(int);
-    void changeScheme(int);
+    void changeScheme(QAbstractButton *button);
     void changeMinFontPitch(int);
     void toggleShowSmallFiles(bool);
     void slotSliderReleased();

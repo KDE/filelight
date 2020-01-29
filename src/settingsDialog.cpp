@@ -64,8 +64,12 @@ SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
     connect(m_removeButton, &QPushButton::clicked, this, &SettingsDialog::removeFolder);
     connect(resetButton, &QPushButton::clicked, this, &SettingsDialog::reset);
     connect(closeButton, &QPushButton::clicked, this, &SettingsDialog::close);
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+    connect(m_schemaGroup, static_cast<void (QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked), this, &SettingsDialog::changeScheme);
+#else
+    connect(m_schemaGroup, &QButtonGroup::buttonClicked, this, &SettingsDialog::changeScheme);
+#endif
 
-    connect(m_schemaGroup, static_cast<void (QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked), this, &SettingsDialog::changeScheme);
     connect(contrastSlider, &QSlider::valueChanged, this, &SettingsDialog::changeContrast);
     connect(contrastSlider, &QSlider::sliderReleased, this, &SettingsDialog::slotSliderReleased);
 
@@ -201,10 +205,13 @@ void SettingsDialog::startTimer()
     m_timer.start(TIMEOUT);
 }
 
-void SettingsDialog::changeScheme(int s)
+void SettingsDialog::changeScheme(QAbstractButton *button)
 {
-    Config::scheme = (Filelight::MapScheme)s;
-    emit canvasIsDirty(1);
+    if (button) {
+        const int s = m_schemaGroup->id(button);
+        Config::scheme = (Filelight::MapScheme)s;
+        emit canvasIsDirty(1);
+    }
 }
 void SettingsDialog::changeContrast(int c)
 {
