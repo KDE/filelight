@@ -37,6 +37,7 @@
 #include <QMouseEvent>
 #include <QLayout>
 #include <QStorageInfo>
+#include <QMap>
 
 namespace Filelight
 {
@@ -52,7 +53,7 @@ struct Disk
 };
 
 
-struct DiskList : QList<Disk>
+struct DiskList : QMap<QString, Disk>
 {
     DiskList();
 };
@@ -107,7 +108,7 @@ void SummaryWidget::createDiskMaps()
 
     for (DiskList::ConstIterator it = disks.constBegin(), end = disks.constEnd(); it != end; ++it)
     {
-        Disk const &disk = *it;
+        Disk const &disk = it.value();
 
         if (disk.free == 0 && disk.used == 0)
             continue;
@@ -150,9 +151,7 @@ void SummaryWidget::createDiskMaps()
 
 DiskList::DiskList()
 {
-    static const QSet<QByteArray> ignoredFsTypes = { "tmpfs", "squashfs" };
-
-    QStringList partitions;
+    static const QSet<QByteArray> ignoredFsTypes = { "tmpfs", "squashfs", "autofs" };
 
     for (const QStorageInfo &storage : QStorageInfo::mountedVolumes()) {
         if (!storage.isReady() || ignoredFsTypes.contains(storage.fileSystemType())) {
@@ -166,7 +165,8 @@ DiskList::DiskList()
         disk.free = storage.bytesFree();
         disk.used = disk.size - disk.free;
 
-        *this += disk;
+        // if something is mounted over same path, last mounted point would be used since only it is currently reachable.
+        (*this)[disk.mount] = disk;
     }
 }
 
