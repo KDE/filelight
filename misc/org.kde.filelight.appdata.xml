@@ -4,6 +4,7 @@
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>Filelight</name>
+  <name xml:lang="ast">Filelight</name>
   <name xml:lang="ca">Filelight</name>
   <name xml:lang="ca-valencia">Filelight</name>
   <name xml:lang="cs">Filelight</name>
@@ -39,6 +40,7 @@
   <name xml:lang="zh-CN">Filelight</name>
   <name xml:lang="zh-TW">Filelight</name>
   <summary>Filelight creates an interactive map of concentric segmented-rings that helps visualize disk usage on your computer</summary>
+  <summary xml:lang="ast">Filelight crea un mapa interactivu d'aniellos concéntricos y segmentaos qu'ayuda a visualizar l'usu de los discos del ordenador</summary>
   <summary xml:lang="ca">El Filelight crea un mapa interactiu d'anells concèntrics segmentats que ajuden a visualitzar l'ús del disc a l'ordinador</summary>
   <summary xml:lang="ca-valencia">El Filelight crea un mapa interactiu d'anells concèntrics segmentats que ajuden a visualitzar l'ús del disc a l'ordinador</summary>
   <summary xml:lang="da">Filelight opretter et interaktivt kort med koncentriske segmenterede ringe som hjælper med at visualisere diskforbruget på din computer</summary>
@@ -73,6 +75,7 @@
     <p>
       Filelight is an application to visualize the disk usage on your computer
     </p>
+    <p xml:lang="ast">Filelight ye una aplicación pa visualizar l'espaciu en discu del ordenador</p>
     <p xml:lang="ca">El Filelight és una aplicació per visualitzar l'ús del disc a l'ordinador</p>
     <p xml:lang="ca-valencia">El Filelight és una aplicació per visualitzar l'ús del disc a l'ordinador</p>
     <p xml:lang="da">Filelight er et program til at visualisere diskforbruget på din computer</p>
@@ -105,6 +108,7 @@
     <p xml:lang="zh-CN">Filelight 是一个用于可视化您计算机上磁盘使用情况的应用程序</p>
     <p xml:lang="zh-TW">Filelight 是個能將電腦硬碟使用量可視化的應用程式</p>
     <p>Features:</p>
+    <p xml:lang="ast">Carauterístiques:</p>
     <p xml:lang="ca">Característiques:</p>
     <p xml:lang="ca-valencia">Característiques:</p>
     <p xml:lang="cs">Vlastnosti:</p>
@@ -141,6 +145,7 @@
     <p xml:lang="zh-TW">功能：</p>
     <ul>
       <li>Scan local, remote or removable disks</li>
+      <li xml:lang="ast">Escanéu de discos llocalles, remotos o estrayibles</li>
       <li xml:lang="ca">Explora discs locals, remots o extraïbles</li>
       <li xml:lang="ca-valencia">Explora discs locals, remots o extraïbles</li>
       <li xml:lang="da">Skan lokale-, fjern- eller flytbare diske</li>
@@ -173,6 +178,7 @@
       <li xml:lang="zh-CN">扫描本地、远程或可移动磁盘</li>
       <li xml:lang="zh-TW">掃描本機、遠端或卸除式硬碟</li>
       <li>Configurable color schemes</li>
+      <li xml:lang="ast">Esquemes de colores configurables</li>
       <li xml:lang="ca">Esquemes de color configurables</li>
       <li xml:lang="ca-valencia">Esquemes de color configurables</li>
       <li xml:lang="da">Konfigurerbare farveskemaer</li>
@@ -205,6 +211,7 @@
       <li xml:lang="zh-CN">可配置的色彩方案</li>
       <li xml:lang="zh-TW">可設定的配色</li>
       <li>File system navigation by mouse clicks</li>
+      <li xml:lang="ast">Navegación pelos sistemes de ficheros pente calcos del mur</li>
       <li xml:lang="ca">Navegació pel sistema de fitxers amb clics de ratolí</li>
       <li xml:lang="ca-valencia">Navegació pel sistema de fitxers amb clics de ratolí</li>
       <li xml:lang="da">Navigation af filsystemet med museklik</li>
@@ -237,6 +244,7 @@
       <li xml:lang="zh-CN">用鼠标点击来浏览文件系统</li>
       <li xml:lang="zh-TW">按按滑鼠即可瀏覽檔案系統</li>
       <li>Information about files and directories on hovering</li>
+      <li xml:lang="ast">Información tocante a ficheros y direutorios al pasar penriba'l mur</li>
       <li xml:lang="ca">Informació quant a fitxers i directoris en passar-hi per sobre</li>
       <li xml:lang="ca-valencia">Informació quant a fitxers i directoris en passar-hi per sobre</li>
       <li xml:lang="da">Information om filer og mapper når markøren holdes over</li>
@@ -269,6 +277,7 @@
       <li xml:lang="zh-CN">悬停时显示文件和目录信息</li>
       <li xml:lang="zh-TW">停駐時顯示檔案或資料夾的資訊</li>
       <li>Files and directories can be copied or removed directly from the context menu</li>
+      <li xml:lang="ast">Los ficheros y direutorios puen copiase o desaniciase direutamente dende'l menú contestual</li>
       <li xml:lang="ca">Els fitxers i directoris es poden copiar o eliminar directament des del menú contextual</li>
       <li xml:lang="ca-valencia">Els fitxers i directoris es poden copiar o eliminar directament des del menú contextual</li>
       <li xml:lang="da">Filer og mapper kan kopieres eller fjernes direkte fra genvejsmenuen</li>
@@ -301,6 +310,7 @@
       <li xml:lang="zh-CN">文件和目录可以在右键菜单中直接被复制或删除</li>
       <li xml:lang="zh-TW">可透過內容目錄直接複製或移除檔案或資料夾</li>
       <li>Integration into Konqueror and Krusader</li>
+      <li xml:lang="ast">Integración con Konqueror y Krusader</li>
       <li xml:lang="ca">Integració en el Konqueror i el Krusader</li>
       <li xml:lang="ca-valencia">Integració en el Konqueror i el Krusader</li>
       <li xml:lang="da">Integration i Konqueror og Krusader</li>
