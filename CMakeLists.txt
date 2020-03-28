@@ -66,6 +66,8 @@ include_directories(src)
 
 add_subdirectory(src)
 add_subdirectory(misc)
+add_subdirectory(autotests)
+
 if (KF5DocTools_FOUND)
     add_subdirectory(doc)
 endif()
