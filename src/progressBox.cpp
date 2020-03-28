@@ -43,7 +43,6 @@ ProgressBox::ProgressBox(QWidget *parent, Filelight::MainWindow *mainWindow, Fil
 
     setObjectName(QStringLiteral( "ProgressBox" ));
 
-    setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
 
     setText(999999);
