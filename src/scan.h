@@ -51,6 +51,8 @@ public:
         return m_files;
     }
 
+    void invalidateCacheFor(const QUrl &url);
+
 public Q_SLOTS:
     bool abort();
     void emptyCache();

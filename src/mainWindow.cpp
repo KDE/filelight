@@ -422,7 +422,7 @@ void MainWindow::updateURL(const QUrl &u)
         m_manager->abort();
 
     if (u == url())
-        m_manager->emptyCache(); //same as rescan()
+        m_manager->invalidateCacheFor(u); //same as rescan()
 
     //do this last, or it breaks Konqi location bar
     setUrl(u);
@@ -489,8 +489,7 @@ void MainWindow::rescan()
         return;
     }
 
-    //FIXME we have to empty the cache because otherwise rescan picks up the old tree..
-    m_manager->emptyCache(); //causes canvas to invalidate
+    m_manager->invalidateCacheFor(url()); //causes canvas to invalidate
     m_map->hide();
     m_stateWidget->show();
     start(url());
