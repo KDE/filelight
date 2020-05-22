@@ -100,6 +100,11 @@ SummaryWidget::SummaryWidget(QWidget *parent)
     qApp->restoreOverrideCursor();
 }
 
+SummaryWidget::~SummaryWidget()
+{
+    qDeleteAll(m_disksFolders);
+}
+
 void SummaryWidget::createDiskMaps()
 {
     DiskList disks;
@@ -144,6 +149,7 @@ void SummaryWidget::createDiskMaps()
         tree->append("used", disk.used);
 
         map->create(tree); //must be done when visible
+        m_disksFolders.append(tree);
 
         connect(map, &RadialMap::Widget::activated, this, &SummaryWidget::activated);
     }

@@ -94,7 +94,7 @@ const RadialMap::Segment* RadialMap::Widget::segmentAt(QPointF e) const
 
     e -= m_offset;
 
-    if (!m_map.m_signature)
+    if (m_map.m_signature.isEmpty())
         return nullptr;
 
     if (e.x() <= m_map.width() && e.y() <= m_map.height())
@@ -380,7 +380,6 @@ void RadialMap::Widget::deleteJobFinished(KJob *job)
     setEnabled(true);
     if (!job->error() && m_toBeDeleted) {
         m_toBeDeleted->file()->parent()->remove(m_toBeDeleted->file());
-        delete m_toBeDeleted->file();
         m_toBeDeleted = nullptr;
         m_focus = nullptr;
         m_map.make(m_tree, true);

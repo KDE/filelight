@@ -52,6 +52,7 @@ ScanManager::~ScanManager()
         m_abort = true;
         m_thread->wait();
     }
+    qDeleteAll(m_cache);
 
     //RemoteListers are QObjects and get automatically deleted
 }

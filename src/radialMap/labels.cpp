@@ -95,7 +95,7 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
             }
         }
     } else {
-        for (Segment *segment : *m_map.m_signature) {
+        for (Segment *segment : m_map.m_signature[0]) {
             if (segment->length() > 288) {
                 list.append(new Label(segment, 0));
 
@@ -242,7 +242,8 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
                 if (startX + minTextWidth > width() || textY < fontHeight || middleX < targetX) {
                     //skip this strut
                     //**** don't duplicate this code
-                    list.erase(it); //will delete the label and set it to list.current() which _should_ be the next ptr
+                    it = list.erase(it); //will delete the label and set it to list.current() which _should_ be the next ptr
+                    delete label;
                     break;
                 }
 
@@ -259,7 +260,8 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
             } else { // left side
                 if (startX - minTextWidth < 0 || textY > height() || middleX > targetX) {
                     //skip this strut
-                    list.erase(it); //will delete the label and set it to list.current() which _should_ be the next ptr
+                    it = list.erase(it); //will delete the label and set it to list.current() which _should_ be the next ptr
+                    delete label;
                     break;
                 }
 

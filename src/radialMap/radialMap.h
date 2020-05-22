@@ -79,7 +79,7 @@ private:
     }
 
     const uint m_angleStart, m_angleSegment;
-    const File* const m_file;
+    const File* const m_file = nullptr;
     QColor m_pen, m_brush;
     bool m_hasHiddenChildren;
     const bool m_fake;

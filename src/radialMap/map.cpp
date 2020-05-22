@@ -39,8 +39,7 @@
 #include "widget.h"
 
 RadialMap::Map::Map(bool summary)
-        : m_signature(nullptr)
-        , m_visibleDepth(DEFAULT_RING_DEPTH)
+        : m_visibleDepth(DEFAULT_RING_DEPTH)
         , m_ringBreadth(MIN_RING_BREADTH)
         , m_innerRadius(0)
         , m_summary(summary)
@@ -54,13 +53,18 @@ RadialMap::Map::Map(bool summary)
 
 RadialMap::Map::~Map()
 {
-    delete [] m_signature;
+    for (QList<Segment*> &segments : m_signature) {
+        qDeleteAll(segments);
+    }
+    m_signature.clear();
 }
 
 void RadialMap::Map::invalidate()
 {
-    delete [] m_signature;
-    m_signature = nullptr;
+    for (QList<Segment*> &segments : m_signature) {
+        qDeleteAll(segments);
+    }
+    m_signature.clear();
 
     m_visibleDepth = Config::defaultRingDepth;
 }
@@ -76,8 +80,12 @@ void RadialMap::Map::make(const Folder *tree, bool refresh)
         //**** add some angle bounds checking (possibly in Segment ctor? can I delete in a ctor?)
         //**** this is a mess
 
-        delete [] m_signature;
-        m_signature = new QList<Segment*>[m_visibleDepth + 1];
+        for (QList<Segment*> &segments : m_signature) {
+            qDeleteAll(segments);
+        }
+        m_signature.clear();
+
+        m_signature.resize(m_visibleDepth + 1);
 
         m_root = tree;
 
@@ -197,7 +205,7 @@ bool RadialMap::Map::build(const Folder * const dir, const uint depth, uint a_st
                 KFormat().formatByteSize(hiddenSize/hiddenFileCount));
 
 
-        (m_signature + depth)->append(new Segment(new File(QFile::encodeName(s).constData(), hiddenSize), a_start, a_end - a_start, true));
+        m_signature[depth].append(new Segment(new File(QFile::encodeName(s).constData(), hiddenSize), a_start, a_end - a_start, true));
     }
 
     return false;
@@ -231,7 +239,7 @@ bool RadialMap::Map::resize(const QRectF &newRect)
     //resize the pixmap
     size += MAP_2MARGIN;
 
-    if (m_signature) {
+    if (!m_signature.isEmpty()) {
         setRingBreadth();
         paint();
     }
@@ -241,7 +249,7 @@ bool RadialMap::Map::resize(const QRectF &newRect)
 
 void RadialMap::Map::colorise()
 {
-    if (!m_signature || m_signature->isEmpty()) {
+    if (m_signature.isEmpty()) {
         qCDebug(FILELIGHT_LOG) << "no signature yet";
         return;
     }

@@ -101,6 +101,11 @@ class Folder : public File
 public:
     Folder(const char *name) : File(name, 0), m_children(0) {} //DON'T pass the full path!
 
+    ~Folder()
+    {
+        qDeleteAll(files);
+    }
+
     uint children() const {
         return m_children;
     }
@@ -130,9 +135,11 @@ public:
     /// removes a file
     void remove(const File *f) {
         files.removeAll(const_cast<File*>(f));
+        const FileSize childSize = f->size();
+        delete f;
 
         for (Folder *d = this; d; d = d->parent()) {
-            d->m_size -= f->size();
+            d->m_size -= childSize;
             d->m_children--;
         }
     }

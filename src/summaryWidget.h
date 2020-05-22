@@ -26,6 +26,8 @@
 
 #include <QWidget>
 
+class Folder;
+
 namespace Filelight {
 
 class SummaryWidget : public QWidget
@@ -34,12 +36,15 @@ class SummaryWidget : public QWidget
 
 public:
     explicit SummaryWidget(QWidget *parent);
+    ~SummaryWidget();
 
 Q_SIGNALS:
     void activated(const QUrl&);
 
 private:
     void createDiskMaps();
+
+    QList<Folder*> m_disksFolders;
 };
 
 }
