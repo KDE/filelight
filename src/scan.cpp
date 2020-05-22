@@ -177,6 +177,62 @@ bool ScanManager::abort()
     return m_thread && m_thread->wait();
 }
 
+void ScanManager::invalidateCacheFor(const QUrl &url)
+{
+    m_abort = true;
+
+    if (m_thread && m_thread->isRunning()) {
+        m_thread->wait();
+    }
+
+    if (!url.isLocalFile()) {
+        qWarning() << "Remote cache clearing not implemented";
+        return;
+    }
+
+    QString path = url.toLocalFile();
+    if (!path.endsWith(QDir::separator())) path += QDir::separator();
+
+    emit aboutToEmptyCache();
+
+    QMutableListIterator<Folder*> it(m_cache);
+    while (it.hasNext()) {
+        Folder *folder = it.next();
+        QString cachePath = folder->decodedName();
+
+        if (!path.startsWith(cachePath)) {
+            continue;
+        }
+
+        QVector<QStringRef> split = path.midRef(cachePath.length()).split(QLatin1Char('/'));
+        Folder *d = folder;
+
+        while (!split.isEmpty() && d != nullptr) { //if NULL we have got lost so abort!!
+            if (split.first().isEmpty()) { //found the dir
+                break;
+            }
+            QString s = split.first() % QLatin1Char('/'); // % is the string concatenation operator for QStringBuilder
+
+            QListIterator<File*> it(d->files);
+            d = nullptr;
+            while (it.hasNext()) {
+                File *subfolder = it.next();
+                if (s == subfolder->decodedName()) {
+                    d = (Folder*)subfolder;
+                    break;
+                }
+            }
+
+            split.pop_front();
+        }
+
+        if (!d || !d->parent()) {
+            continue;
+        }
+        d->parent()->remove(d);
+    }
+}
+
 void ScanManager::emptyCache()
 {
     m_abort = true;
@@ -208,6 +264,7 @@ void ScanManager::cacheTree(Folder *tree)
     if (tree) {
         //we don't cache foreign stuff
         //we don't recache stuff (thus only type 1000 events)
+        //we always just have one tree cached, so we really don't need a list..
         m_cache.append(tree);
     } else { //scan failed
         qDeleteAll(m_cache);
