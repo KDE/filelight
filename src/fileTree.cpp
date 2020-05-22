@@ -43,10 +43,11 @@ QUrl File::url(const Folder *root) const
 {
     QString path;
 
-    if (root == this)
+    if (root == this) {
         root = nullptr; //prevent returning empty string when there is something we could return
+    }
 
-    for (const Folder *d = (Folder*)this; d != root && d; d = d->parent()) {
+    for (const File *d = this; d != root && d; d = d->parent()) {
         path.prepend(QFile::decodeName(d->name8Bit()));
     }
 
