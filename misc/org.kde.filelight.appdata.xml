@@ -36,7 +36,6 @@
   <name xml:lang="sr-ijekavianlatin">Filelight</name>
   <name xml:lang="sv">Filelight</name>
   <name xml:lang="uk">Filelight</name>
-  <name xml:lang="x-test">xxFilelightxx</name>
   <name xml:lang="zh-CN">Filelight</name>
   <name xml:lang="zh-TW">Filelight</name>
   <summary>Filelight creates an interactive map of concentric segmented-rings that helps visualize disk usage on your computer</summary>
@@ -70,7 +69,6 @@
   <summary xml:lang="sr-ijekavianlatin">Filelight pravi interaktivnu kartu koncentričnih podeonih prstenova za vizuelizaciju iskorišćenja diska na računaru.</summary>
   <summary xml:lang="sv">Filelight skapar en interaktiv avbildning av koncentriska segmenterade ringar som hjälper till att åskådliggöra diskanvändning på datorn</summary>
   <summary xml:lang="uk">Filelight створює інтерактивну карту з концентричних кіл, поділених на сектори, яка допоможе вам візуально контролювати використання дискового простору на вашому комп’ютері</summary>
-  <summary xml:lang="x-test">xxFilelight creates an interactive map of concentric segmented-rings that helps visualize disk usage on your computerxx</summary>
   <summary xml:lang="zh-CN">Filelight 会建立一个同心分段环状交互式地图，帮助您可视化您计算机上的磁盘使用</summary>
   <description>
     <p>
@@ -106,7 +104,6 @@
     <p xml:lang="sr-ijekavianlatin">Filelight je program za vizuelizovanje iskorišćenja diska na računaru.</p>
     <p xml:lang="sv">Filelight är ett program för att åskådliggöra diskanvändning på datorn</p>
     <p xml:lang="uk">Filelight — програма для візуалізації використання дискового простору вашого комп'ютера</p>
-    <p xml:lang="x-test">xxFilelight is an application to visualize the disk usage on your computerxx</p>
     <p xml:lang="zh-CN">Filelight 是一个用于可视化您计算机上磁盘使用情况的应用程序</p>
     <p xml:lang="zh-TW">Filelight 是個能將電腦硬碟使用量可視化的應用程式</p>
     <p>Features:</p>
@@ -142,7 +139,6 @@
     <p xml:lang="sr-ijekavianlatin">Mogućnosti:</p>
     <p xml:lang="sv">Funktioner:</p>
     <p xml:lang="uk">Можливості:</p>
-    <p xml:lang="x-test">xxFeatures:xx</p>
     <p xml:lang="zh-CN">功能：</p>
     <p xml:lang="zh-TW">功能：</p>
     <ul>
@@ -177,7 +173,6 @@
       <li xml:lang="sr-ijekavianlatin">Skeniranje lokalnih, udaljenih i uklonjivih diskova.</li>
       <li xml:lang="sv">Sök igenom lokala diskar, diskar på en annan dator eller flyttbara diskar</li>
       <li xml:lang="uk">Сканування локальних, віддалених та портативних дисків</li>
-      <li xml:lang="x-test">xxScan local, remote or removable disksxx</li>
       <li xml:lang="zh-CN">扫描本地、远程或可移动磁盘</li>
       <li xml:lang="zh-TW">掃描本機、遠端或卸除式硬碟</li>
       <li>Configurable color schemes</li>
@@ -211,7 +206,6 @@
       <li xml:lang="sr-ijekavianlatin">Podesive šeme boja.</li>
       <li xml:lang="sv">Anpassningsbara färgscheman</li>
       <li xml:lang="uk">Придатна до налаштовування тема кольорів</li>
-      <li xml:lang="x-test">xxConfigurable color schemesxx</li>
       <li xml:lang="zh-CN">可配置的色彩方案</li>
       <li xml:lang="zh-TW">可設定的配色</li>
       <li>File system navigation by mouse clicks</li>
@@ -245,7 +239,6 @@
       <li xml:lang="sr-ijekavianlatin">Kretanje kroz fajl sistem kliktanjem miša.</li>
       <li xml:lang="sv">Navigering i filsystem med musklick</li>
       <li xml:lang="uk">Навігація файловою системою за допомогою клацання кнопками миші</li>
-      <li xml:lang="x-test">xxFile system navigation by mouse clicksxx</li>
       <li xml:lang="zh-CN">用鼠标点击来浏览文件系统</li>
       <li xml:lang="zh-TW">按按滑鼠即可瀏覽檔案系統</li>
       <li>Information about files and directories on hovering</li>
@@ -279,7 +272,6 @@
       <li xml:lang="sr-ijekavianlatin">Podaci o fajlovima i fasciklama na lebdenje.</li>
       <li xml:lang="sv">Information om filer och kataloger när musen hålls över dem</li>
       <li xml:lang="uk">Показ даних щодо файлів і каталогів у відповідь на наведення вказівника миші</li>
-      <li xml:lang="x-test">xxInformation about files and directories on hoveringxx</li>
       <li xml:lang="zh-CN">悬停时显示文件和目录信息</li>
       <li xml:lang="zh-TW">停駐時顯示檔案或資料夾的資訊</li>
       <li>Files and directories can be copied or removed directly from the context menu</li>
@@ -313,7 +305,6 @@
       <li xml:lang="sr-ijekavianlatin">Fajlovi i fascikle mogu da se kopiraju i uklanjaju neposredno iz kontekstnog menija.</li>
       <li xml:lang="sv">Filer och kataloger kan kopieras eller tas bort direkt i den sammanhangsberoende menyn</li>
       <li xml:lang="uk">Можливість копіювання та вилучення файлів і каталогів за допомогою контекстного меню програми</li>
-      <li xml:lang="x-test">xxFiles and directories can be copied or removed directly from the context menuxx</li>
       <li xml:lang="zh-CN">文件和目录可以在右键菜单中直接被复制或删除</li>
       <li xml:lang="zh-TW">可透過內容目錄直接複製或移除檔案或資料夾</li>
       <li>Integration into Konqueror and Krusader</li>
@@ -347,7 +338,6 @@
       <li xml:lang="sr-ijekavianlatin">Uklapanje u K‑osvajač i Krusader.</li>
       <li xml:lang="sv">Integrerat med Konqueror och Krusader</li>
       <li xml:lang="uk">Інтеграція з Konqueror та Krusader</li>
-      <li xml:lang="x-test">xxIntegration into Konqueror and Krusaderxx</li>
       <li xml:lang="zh-CN">与 Konqueror 和 Krusader 的整合</li>
       <li xml:lang="zh-TW">可整合進 Konqueror 和 Krusader</li>
     </ul>
