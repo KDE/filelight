@@ -75,6 +75,7 @@ private Q_SLOTS:
     void folderScanCompleted(Folder*);
     void mapChanged(const Folder*);
     void updateURL(const QUrl &);
+    void rescanSingleDir(const QUrl &);
 
 protected:
     void saveProperties(KConfigGroup&) override;

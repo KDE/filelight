@@ -39,6 +39,10 @@ public:
     const char *name8Bit() const {
         return m_name;
     }
+    void setName(const QByteArray &newName) {
+        delete [] m_name;
+        m_name = qstrdup(newName.constData());
+    }
     /** Decoded name. Use when you need a QString. */
     QString decodedName() const {
         return QFile::decodeName(m_name);
@@ -99,6 +103,19 @@ public:
         return true;
     }
 
+    Folder *duplicate() const
+    {
+        Folder *ret = new Folder(m_name);
+        for (const File *child : files) {
+            if (child->isFolder()) {
+                ret->append(((Folder*)child)->duplicate());
+            } else {
+                ret->append(child->name8Bit(), child->size());
+            }
+        }
+        return ret;
+    }
+
     ///appends a Folder
     void append(Folder *d, const char *name=nullptr)
     {
@@ -128,6 +145,18 @@ public:
             d->m_size -= childSize;
             d->m_children--;
         }
+    }
+
+    // Removes a file, but does not delete
+    const File *take(const File *f) {
+        files.removeAll(const_cast<File*>(f));
+        const FileSize childSize = f->size();
+
+        for (Folder *d = this; d; d = d->parent()) {
+            d->m_size -= childSize;
+            d->m_children--;
+        }
+        return f;
     }
 
     QList<File *> files;

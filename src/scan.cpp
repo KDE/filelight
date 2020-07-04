@@ -182,41 +182,56 @@ void ScanManager::invalidateCacheFor(const QUrl &url)
 
     Q_EMIT aboutToEmptyCache();
 
-    QMutableListIterator<Folder*> it(m_cache);
-    while (it.hasNext()) {
-        Folder *folder = it.next();
+    QMutableListIterator<Folder*> cacheIterator(m_cache);
+    QList<Folder*> subCaches;
+    QList<Folder*> oldCache = m_cache;
+    while (cacheIterator.hasNext()) {
+        Folder *folder = cacheIterator.next();
+        cacheIterator.remove();
+
         QString cachePath = folder->decodedName();
 
         if (!path.startsWith(cachePath)) {
             continue;
         }
 
-        QVector<QStringRef> split = path.midRef(cachePath.length()).split(QLatin1Char('/'));
+        QVector<QStringRef> splitPath = path.midRef(cachePath.length()).split(QLatin1Char('/'));
         Folder *d = folder;
 
-        while (!split.isEmpty() && d != nullptr) { //if NULL we have got lost so abort!!
-            if (split.first().isEmpty()) { //found the dir
+        while (!splitPath.isEmpty() && d != nullptr) { //if NULL we have got lost so abort!!
+            if (splitPath.first().isEmpty()) { //found the dir
                 break;
             }
-            QString s = split.first() % QLatin1Char('/'); // % is the string concatenation operator for QStringBuilder
+            QString wantedName = splitPath.takeFirst() % QLatin1Char('/'); // % is the string concatenation operator for QStringBuilder
 
             QListIterator<File*> it(d->files);
             d = nullptr;
             while (it.hasNext()) {
                 File *subfolder = it.next();
-                if (s == subfolder->decodedName()) {
-                    d = (Folder*)subfolder;
-                    break;
+                if (subfolder->decodedName() == wantedName) {
+                    // This is the one we want to remove
+                    continue;
                 }
-            }
+                if (!subfolder->isFolder()) {
+                    continue;
+                }
 
-            split.pop_front();
+                Folder *newFolder = ((Folder*)subfolder)->duplicate();
+                newFolder->setName((cachePath.toLocal8Bit() + subfolder->name8Bit()));
+                subCaches.append(newFolder);
+                d = nullptr;
+            }
         }
 
         if (!d || !d->parent()) {
             continue;
         }
         d->parent()->remove(d);
+    }
+    qDeleteAll(oldCache);
+
+    for (Folder *folder : subCaches) {
+        m_cache.append(folder);
     }
 }
 

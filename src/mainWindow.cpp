@@ -87,6 +87,7 @@ MainWindow::MainWindow()
     // TODO make better system
     connect(m_map, &RadialMap::Widget::giveMeTreeFor, this, &MainWindow::updateURL);
     connect(m_map, &RadialMap::Widget::giveMeTreeFor, this, &MainWindow::openUrl);
+    connect(m_map, &RadialMap::Widget::rescanRequested, this, &MainWindow::rescanSingleDir);
 
     connect(m_manager, &ScanManager::completed, this, &MainWindow::folderScanCompleted);
     connect(m_manager, &ScanManager::aboutToEmptyCache, m_map, &RadialMap::Widget::invalidate);
@@ -400,7 +401,11 @@ bool MainWindow::openUrl(const QUrl &u)
         m_stateWidget->show();
         m_layout->addWidget(m_stateWidget);
 
-        return start(uri);
+        const bool success = start(uri);
+        if (success) {
+            setUrl(uri);
+        }
+        return success;
     }
 
     return false;
@@ -429,10 +434,22 @@ void MainWindow::updateURL(const QUrl &u)
         m_manager->abort();
 
     if (u == url())
-        m_manager->invalidateCacheFor(u); //same as rescan()
+        m_manager->emptyCache(); //same as rescan()
 
     //do this last, or it breaks Konqi location bar
     setUrl(u);
+}
+
+void MainWindow::rescanSingleDir(const QUrl &dirUrl)
+{
+    if (m_manager->running()) {
+        m_manager->abort();
+    }
+
+    m_manager->invalidateCacheFor(dirUrl);
+    m_map->hide();
+    m_stateWidget->show();
+    start(url());
 }
 
 QUrl MainWindow::url() const
@@ -474,8 +491,6 @@ bool MainWindow::start(const QUrl &url)
     m_numberOfFiles->setText(QString());
 
     if (m_manager->start(url)) {
-        setUrl(url);
-
         const QString s = i18n("Scanning: %1", prettyUrl());
         stateChanged(QStringLiteral("scan_started"));
         Q_EMIT started(); //as a MainWindow, we have to do this

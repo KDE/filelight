@@ -74,6 +74,7 @@ Q_SIGNALS:
     void folderCreated(const Folder*);
     void mouseHover(const QString&);
     void giveMeTreeFor(const QUrl&);
+    void rescanRequested(const QUrl&);
 
 protected:
     void changeEvent(QEvent*) override;

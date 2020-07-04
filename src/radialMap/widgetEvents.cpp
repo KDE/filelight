@@ -296,6 +296,7 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
     QAction* copyClipboard = nullptr;
     QAction* deleteItem = nullptr;
     QAction* doNotScanItem = nullptr;
+    QAction* rescanAction = nullptr;
 
     QMenu popup;
     popup.setTitle(m_focus->file()->displayPath(m_tree));
@@ -314,6 +315,7 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
         
         popup.addSeparator();
         doNotScanItem = popup.addAction(QIcon::fromTheme(QStringLiteral("list-remove")), i18n("Add to Do &Not Scan List"));
+        rescanAction = popup.addAction(QIcon::fromTheme(QStringLiteral("view-refresh")), i18n("&Rescan"));
     } else {
         openFile = popup.addAction(QIcon::fromTheme(QStringLiteral("document-open")), i18nc("Scan/open the path of the selected element", "&Open"));
     }
@@ -332,6 +334,8 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
             KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url, QStringLiteral("inode/directory"), this);
             job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, window()));
             job->start();
+    } else if (rescanAction && clicked == rescanAction) {
+        Q_EMIT rescanRequested(url);
     } else if (openTerminal && clicked == openTerminal) {
         KToolInvocation::invokeTerminal(QString(), QStringList(), url.path());
     } else if (centerMap && clicked == centerMap) {
