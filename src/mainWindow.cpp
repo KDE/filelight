@@ -304,7 +304,7 @@ void MainWindow::scanCompleted()
 
     action("file_save")->setEnabled(true);
 
-    m_combo->lineEdit()->setText(prettyUrl());
+    m_combo->lineEdit()->setText(prettyUrl(url));
 
     if (url.toLocalFile() == QLatin1String("/")) {
         action("go_up")->setEnabled(false);
@@ -424,8 +424,8 @@ bool MainWindow::closeUrl()
     return true;
 }
 
-QString MainWindow::prettyUrl() const {
-    return url().isLocalFile() ? QDir::toNativeSeparators(url().toLocalFile()) : url().toString();
+QString MainWindow::prettyUrl(const QUrl &url) const {
+    return url.isLocalFile() ? QDir::toNativeSeparators(url.toLocalFile()) : url.toString();
 }
 
 void MainWindow::updateURL(const QUrl &u)
@@ -491,7 +491,7 @@ bool MainWindow::start(const QUrl &url)
     m_numberOfFiles->setText(QString());
 
     if (m_manager->start(url)) {
-        const QString s = i18n("Scanning: %1", prettyUrl());
+        const QString s = i18n("Scanning: %1", prettyUrl(url));
         stateChanged(QStringLiteral("scan_started"));
         Q_EMIT started(); //as a MainWindow, we have to do this
         Q_EMIT setWindowCaption(s);
@@ -534,7 +534,7 @@ void MainWindow::folderScanCompleted(Folder *tree)
     }
     else {
         stateChanged(QStringLiteral("scan_failed"));
-        Q_EMIT canceled(i18n("Scan failed: %1", prettyUrl()));
+        Q_EMIT canceled(i18n("Scan failed: %1", prettyUrl(url())));
         Q_EMIT setWindowCaption(QString());
 
         statusBar()->clearMessage();
@@ -552,7 +552,7 @@ void MainWindow::mapChanged(const Folder *tree)
 {
     //IMPORTANT -> url() has already been set
 
-    Q_EMIT setWindowCaption(prettyUrl());
+    Q_EMIT setWindowCaption(prettyUrl(url()));
 
     const int fileCount = tree->children();
     const QString text = (fileCount == 0) ?

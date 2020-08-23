@@ -85,7 +85,7 @@ protected:
 private:
     void setupActions();
     bool closeUrl();
-    QString prettyUrl() const;
+    QString prettyUrl(const QUrl &url) const;
     void showSummary();
     bool start(const QUrl&);
 
