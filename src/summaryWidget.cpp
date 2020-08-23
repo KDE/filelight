@@ -115,8 +115,9 @@ void SummaryWidget::createDiskMaps()
     {
         Disk const &disk = it.value();
 
-        if (disk.free == 0 && disk.used == 0)
+        if (disk.free == 0 && disk.used == 0) {
             continue;
+        }
 
         QWidget *volume = new QWidget(this);
         QVBoxLayout *volumeLayout = new QVBoxLayout(volume);
@@ -158,7 +159,11 @@ void SummaryWidget::createDiskMaps()
 
 DiskList::DiskList()
 {
-    static const QSet<QByteArray> ignoredFsTypes = { "tmpfs", "squashfs", "autofs" };
+    QSet<QByteArray> ignoredFsTypes = { "tmpfs", "squashfs", "autofs" };
+
+    if (!Config::scanRemoteMounts) {
+        ignoredFsTypes += Config::remoteFsTypes;
+    }
 
     for (const QStorageInfo &storage : QStorageInfo::mountedVolumes()) {
         if (!storage.isReady() || ignoredFsTypes.contains(storage.fileSystemType())) {
