@@ -51,7 +51,6 @@ public:
 
     static bool scanAcrossMounts;
     static bool scanRemoteMounts;
-    static bool scanRemovableMedia;
     static bool varyLabelFontSizes;
     static bool showSmallFiles;
     static uint contrast;

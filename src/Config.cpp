@@ -29,7 +29,6 @@
 
 bool Config::scanAcrossMounts;
 bool Config::scanRemoteMounts;
-bool Config::scanRemovableMedia;
 bool Config::varyLabelFontSizes;
 bool Config::showSmallFiles;
 bool Config::antialias;
@@ -47,7 +46,6 @@ Filelight::Config::read()
 
     scanAcrossMounts   = config.readEntry("scanAcrossMounts", false);
     scanRemoteMounts   = config.readEntry("scanRemoteMounts", false);
-    scanRemovableMedia = config.readEntry("scanRemovableMedia", false);
     varyLabelFontSizes = config.readEntry("varyLabelFontSizes", true);
     showSmallFiles     = config.readEntry("showSmallFiles", false);
     contrast           = config.readEntry("contrast", 75);
@@ -66,7 +64,6 @@ Filelight::Config::write()
 
     config.writeEntry("scanAcrossMounts", scanAcrossMounts);
     config.writeEntry("scanRemoteMounts", scanRemoteMounts);
-    config.writeEntry("scanRemovableMedia", scanRemovableMedia);
     config.writeEntry("varyLabelFontSizes", varyLabelFontSizes);
     config.writeEntry("showSmallFiles", showSmallFiles);
     config.writeEntry("contrast", contrast);

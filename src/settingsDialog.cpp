@@ -70,10 +70,8 @@ SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
 
     connect(scanAcrossMounts, &QCheckBox::toggled, this, &SettingsDialog::startTimer);
     connect(dontScanRemoteMounts, &QCheckBox::toggled, this, &SettingsDialog::startTimer);
-    connect(dontScanRemovableMedia, &QCheckBox::toggled, this, &SettingsDialog::startTimer);
     connect(scanAcrossMounts, &QCheckBox::toggled, this, &SettingsDialog::toggleScanAcrossMounts);
     connect(dontScanRemoteMounts, &QCheckBox::toggled, this, &SettingsDialog::toggleDontScanRemoteMounts);
-    connect(dontScanRemovableMedia, &QCheckBox::toggled, this, &SettingsDialog::toggleDontScanRemovableMedia);
 
     connect(useAntialiasing, &QCheckBox::toggled, this, &SettingsDialog::toggleUseAntialiasing);
     connect(varyLabelFontSizes, &QCheckBox::toggled, this, &SettingsDialog::toggleVaryLabelFontSizes);
@@ -104,10 +102,8 @@ void SettingsDialog::reset()
     //tab 1
     scanAcrossMounts->setChecked(Config::scanAcrossMounts);
     dontScanRemoteMounts->setChecked(!Config::scanRemoteMounts);
-    dontScanRemovableMedia->setChecked(!Config::scanRemovableMedia);
 
     dontScanRemoteMounts->setEnabled(Config::scanAcrossMounts);
-    //  dontScanRemovableMedia.setEnabled(Config::scanAcrossMounts);
 
     m_listBox->clear();
     m_listBox->addItems(Config::skipList);
@@ -142,17 +138,11 @@ void SettingsDialog::toggleScanAcrossMounts(bool b)
     Config::scanAcrossMounts = b;
 
     dontScanRemoteMounts->setEnabled(b);
-    //dontScanRemovableMedia.setEnabled(b);
 }
 
 void SettingsDialog::toggleDontScanRemoteMounts(bool b)
 {
     Config::scanRemoteMounts = !b;
-}
-
-void SettingsDialog::toggleDontScanRemovableMedia(bool b)
-{
-    Config::scanRemovableMedia = !b;
 }
 
 

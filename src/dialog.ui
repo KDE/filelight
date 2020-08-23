@@ -185,22 +185,6 @@
            </property>
           </widget>
          </item>
-         <item row="2" column="1">
-          <widget class="QCheckBox" name="dontScanRemovableMedia">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="toolTip">
-            <string/>
-           </property>
-           <property name="whatsThis">
-            <string>Prevents Filelight from scanning removable media (eg. CD-ROMs).</string>
-           </property>
-           <property name="text">
-            <string>E&amp;xclude removable media</string>
-           </property>
-          </widget>
-         </item>
         </layout>
        </item>
       </layout>
@@ -403,7 +387,6 @@
   <tabstop>m_addButton</tabstop>
   <tabstop>scanAcrossMounts</tabstop>
   <tabstop>dontScanRemoteMounts</tabstop>
-  <tabstop>dontScanRemovableMedia</tabstop>
  </tabstops>
  <resources/>
  <connections/>

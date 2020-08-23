@@ -48,7 +48,6 @@ public Q_SLOTS:
     void removeFolder();
     void toggleScanAcrossMounts(bool);
     void toggleDontScanRemoteMounts(bool);
-    void toggleDontScanRemovableMedia(bool);
     void reset();
     void startTimer();
     void toggleUseAntialiasing(bool = true);
