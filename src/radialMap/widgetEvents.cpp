@@ -53,6 +53,10 @@
 
 #include <cmath>         //::segmentAt()
 
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0)
+#include <KIO/OpenUrlJob>
+#endif
+
 void RadialMap::Widget::resizeEvent(QResizeEvent*)
 {
     if (m_map.resize(rect()))
@@ -341,8 +345,17 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
     QAction* clicked = popup.exec(e->globalPos(), nullptr);
 
     if (openFileManager && clicked == openFileManager) {
-        auto *job = new KIO::OpenUrlJob(url, QStringLiteral("inode/directory"), this);
-        job->start();
+        #if KIO_VERSION < QT_VERSION_CHECK(5, 71, 0)
+            KRun::runUrl(url, QStringLiteral("inode/directory"), this
+                 #if KIO_VERSION >= QT_VERSION_CHECK(5, 31, 0)
+                         , KRun::RunFlags()
+                 #endif
+                         );
+        #else // KIO 5.71
+            KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url, QStringLiteral("inode/directory"), this);
+            job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, window()));
+            job->start();
+        #endif
     } else if (openTerminal && clicked == openTerminal) {
         KToolInvocation::invokeTerminal(QString(),url.path());
     } else if (centerMap && clicked == centerMap) {
