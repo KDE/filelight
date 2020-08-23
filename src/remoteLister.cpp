@@ -26,7 +26,7 @@
 
 #include <KDirLister>
 
-#include <QLinkedList>
+#include <QList>
 #include <QWidget>
 
 namespace Filelight
@@ -39,7 +39,7 @@ namespace Filelight
 
 struct Store {
 
-    typedef QLinkedList<Store*> List;
+    typedef QList<Store*> List;
 
     /// location of the folder
     const QUrl url;
