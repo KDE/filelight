@@ -23,6 +23,7 @@
 #define Config_H
 
 #include <QStringList>
+#include <QSet>
 
 class KConfig;
 
@@ -60,6 +61,8 @@ public:
 
     static MapScheme scheme;
     static QStringList skipList;
+
+    static const QSet<QByteArray> remoteFsTypes;
 };
 }
 

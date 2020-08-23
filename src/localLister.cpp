@@ -233,8 +233,6 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
 
 void LocalLister::readMounts()
 {
-    static const QSet<QByteArray> remoteFsTypes = { "smbfs", "nfs", "afs" };
-
     for (const QStorageInfo &storage : QStorageInfo::mountedVolumes()) {
         if (storage.isRoot()) {
             continue;
@@ -245,7 +243,7 @@ void LocalLister::readMounts()
             path += QLatin1Char('/');
         }
 
-        if (remoteFsTypes.contains(storage.fileSystemType()) && !s_remoteMounts.contains(path)) {
+        if (Config::remoteFsTypes.contains(storage.fileSystemType()) && !s_remoteMounts.contains(path)) {
             s_remoteMounts.append(path);
         } else if (!s_localMounts.contains(path)) {
             s_localMounts.append(path);

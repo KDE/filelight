@@ -38,6 +38,7 @@ int Config::minFontPitch;
 uint Config::defaultRingDepth;
 Filelight::MapScheme Config::scheme;
 QStringList Config::skipList;
+const QSet<QByteArray> Config::remoteFsTypes = { "smbfs", "nfs", "afs" };
 
 void
 Filelight::Config::read()
