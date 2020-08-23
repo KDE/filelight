@@ -121,6 +121,7 @@ void SummaryWidget::createDiskMaps()
         QWidget *volume = new QWidget(this);
         QVBoxLayout *volumeLayout = new QVBoxLayout(volume);
         RadialMap::Widget *map = new MyRadialMap(this);
+        connect(this, &SummaryWidget::canvasDirtied, map, &RadialMap::Widget::refresh);
 
         QWidget *info = new QWidget(this);
         info->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);

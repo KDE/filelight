@@ -460,6 +460,10 @@ void MainWindow::configFilelight()
     connect(dialog, &SettingsDialog::canvasIsDirty, m_map, &RadialMap::Widget::refresh);
     connect(dialog, &SettingsDialog::mapIsInvalid, m_manager, &ScanManager::emptyCache);
 
+    if (m_summary) {
+        connect(dialog, &SettingsDialog::canvasIsDirty, m_summary, &SummaryWidget::canvasDirtied);
+    }
+
     dialog->show(); //deletes itself
 }
 

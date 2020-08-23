@@ -22,8 +22,9 @@
 #ifndef SUMMARYWIDGET_H
 #define SUMMARYWIDGET_H
 
-#include <QUrl>
+#include "Config.h" // dirty
 
+#include <QUrl>
 #include <QWidget>
 
 class Folder;
@@ -40,6 +41,7 @@ public:
 
 Q_SIGNALS:
     void activated(const QUrl&);
+    void canvasDirtied(const Dirty dirt);
 
 private:
     void createDiskMaps();
