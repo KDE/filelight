@@ -24,20 +24,6 @@
 
 #include <QColor>
 
-enum class Dirty
-{
-    Other = 0,
-
-    LayoutChanged = 1,
-
-    // Antialias on or off, contrast changed
-    RepaintNeeded = 2,
-
-    ColorsChanged = 3,
-
-    RepaintNeeded2 = 4,
-};
-
 class File;
 
 namespace RadialMap

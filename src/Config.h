@@ -26,6 +26,14 @@
 
 class KConfig;
 
+enum class Dirty
+{
+    Layout = 1,
+    AntiAliasing = 2,
+    Colors = 3,
+    Font
+};
+
 namespace Filelight
 {
 enum MapScheme { Rainbow, KDE, HighContrast, FileDensity, ModTime };

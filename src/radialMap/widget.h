@@ -35,7 +35,7 @@
 #include <QTimer>
 
 #include "map.h"
-#include "radialMap.h" // Dirty
+#include "Config.h" // Dirty
 
 class Folder;
 class File;

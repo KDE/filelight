@@ -32,6 +32,7 @@
 #include <QApplication>   //sendEvent
 #include <QBitmap>        //ctor - finding cursor size
 #include <QCursor>        //slotPostMouseEvent()
+#include <QDebug>
 #include <QTimer>         //member
 #include <QWidget>
 
@@ -168,21 +169,27 @@ RadialMap::Widget::refresh(const Dirty filth)
     {
         switch (filth)
         {
-        case Dirty::LayoutChanged:
-            m_focus=nullptr;
+        case Dirty::Layout:
+            m_focus = nullptr;
             m_map.make(m_tree, true); //true means refresh only
             break;
 
-        case Dirty::RepaintNeeded:
+        case Dirty::AntiAliasing:
             m_map.paint();
             break;
 
-        case Dirty::ColorsChanged:
-            m_map.colorise(); //FALL THROUGH!
-        case Dirty::RepaintNeeded2:
+        case Dirty::Colors:
+            m_map.colorise();
             m_map.paint();
+            break;
+
+        // At the time of writing only used by the exploded labels
+        // which is redrawn with each paintEvent(), so just need an update()
+        case Dirty::Font:
+            break;
 
         default:
+            qWarning() << "Unhandled filth type" << int(filth);
             break;
         }
 

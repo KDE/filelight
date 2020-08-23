@@ -67,7 +67,6 @@ SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
     connect(m_schemaGroup, static_cast<void (QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked), this, &SettingsDialog::changeScheme);
 
     connect(contrastSlider, &QSlider::valueChanged, this, &SettingsDialog::changeContrast);
-    connect(contrastSlider, &QSlider::sliderReleased, this, &SettingsDialog::slotSliderReleased);
 
     connect(scanAcrossMounts, &QCheckBox::toggled, this, &SettingsDialog::startTimer);
     connect(dontScanRemoteMounts, &QCheckBox::toggled, this, &SettingsDialog::startTimer);
@@ -206,43 +205,36 @@ void SettingsDialog::changeScheme(QAbstractButton *button)
     if (button) {
         const int s = m_schemaGroup->id(button);
         Config::scheme = (Filelight::MapScheme)s;
-        Q_EMIT canvasIsDirty(Dirty::LayoutChanged);
+        Q_EMIT canvasIsDirty(Dirty::Colors);
     }
 }
 void SettingsDialog::changeContrast(int c)
 {
     Config::contrast = c;
-    Q_EMIT  canvasIsDirty(Dirty::ColorsChanged);
+    Q_EMIT canvasIsDirty(Dirty::Colors);
 }
 void SettingsDialog::toggleUseAntialiasing(bool b)
 {
     Config::antialias = b;
-    Q_EMIT  canvasIsDirty(Dirty::RepaintNeeded);
+    Q_EMIT canvasIsDirty(Dirty::AntiAliasing);
 }
 void SettingsDialog::toggleVaryLabelFontSizes(bool b)
 {
     Config::varyLabelFontSizes = b;
     minFontPitchLabel->setEnabled(b);
     minFontPitch->setEnabled(b);
-    Q_EMIT canvasIsDirty(Dirty::Other);
+    Q_EMIT canvasIsDirty(Dirty::Font);
 }
 void SettingsDialog::changeMinFontPitch(int p)
 {
     Config::minFontPitch = p;
-    Q_EMIT canvasIsDirty(Dirty::Other);
+    Q_EMIT canvasIsDirty(Dirty::Font);
 }
 void SettingsDialog::toggleShowSmallFiles(bool b)
 {
     Config::showSmallFiles = b;
-    Q_EMIT canvasIsDirty(Dirty::LayoutChanged);
+    Q_EMIT canvasIsDirty(Dirty::Layout);
 }
-
-
-void SettingsDialog::slotSliderReleased()
-{
-    Q_EMIT canvasIsDirty(Dirty::RepaintNeeded);
-}
-
 
 void SettingsDialog::reject()
 {
