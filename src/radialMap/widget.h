@@ -35,6 +35,7 @@
 #include <QTimer>
 
 #include "map.h"
+#include "radialMap.h" // Dirty
 
 class Folder;
 class File;
@@ -73,7 +74,7 @@ public Q_SLOTS:
     void zoomOut();
     void create(const Folder*);
     void invalidate();
-    void refresh(int);
+    void refresh(const Dirty filth);
 
 private Q_SLOTS:
     void resizeTimeout();

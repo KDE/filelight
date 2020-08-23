@@ -160,7 +160,7 @@ RadialMap::Widget::resizeTimeout() //slot
 }
 
 void
-RadialMap::Widget::refresh(int filth)
+RadialMap::Widget::refresh(const Dirty filth)
 {
     //TODO consider a more direct connection
 
@@ -168,18 +168,18 @@ RadialMap::Widget::refresh(int filth)
     {
         switch (filth)
         {
-        case 1:
+        case Dirty::LayoutChanged:
             m_focus=nullptr;
             m_map.make(m_tree, true); //true means refresh only
             break;
 
-        case 2:
+        case Dirty::RepaintNeeded:
             m_map.paint();
             break;
 
-        case 3:
+        case Dirty::ColorsChanged:
             m_map.colorise(); //FALL THROUGH!
-        case 4:
+        case Dirty::RepaintNeeded2:
             m_map.paint();
 
         default:

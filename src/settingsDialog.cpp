@@ -206,41 +206,41 @@ void SettingsDialog::changeScheme(QAbstractButton *button)
     if (button) {
         const int s = m_schemaGroup->id(button);
         Config::scheme = (Filelight::MapScheme)s;
-        Q_EMIT canvasIsDirty(1);
+        Q_EMIT canvasIsDirty(Dirty::LayoutChanged);
     }
 }
 void SettingsDialog::changeContrast(int c)
 {
     Config::contrast = c;
-    Q_EMIT canvasIsDirty(3);
+    Q_EMIT  canvasIsDirty(Dirty::ColorsChanged);
 }
 void SettingsDialog::toggleUseAntialiasing(bool b)
 {
     Config::antialias = b;
-    Q_EMIT canvasIsDirty(2);
+    Q_EMIT  canvasIsDirty(Dirty::RepaintNeeded);
 }
 void SettingsDialog::toggleVaryLabelFontSizes(bool b)
 {
     Config::varyLabelFontSizes = b;
     minFontPitchLabel->setEnabled(b);
     minFontPitch->setEnabled(b);
-    Q_EMIT canvasIsDirty(0);
+    Q_EMIT canvasIsDirty(Dirty::Other);
 }
 void SettingsDialog::changeMinFontPitch(int p)
 {
     Config::minFontPitch = p;
-    Q_EMIT canvasIsDirty(0);
+    Q_EMIT canvasIsDirty(Dirty::Other);
 }
 void SettingsDialog::toggleShowSmallFiles(bool b)
 {
     Config::showSmallFiles = b;
-    Q_EMIT canvasIsDirty(1);
+    Q_EMIT canvasIsDirty(Dirty::LayoutChanged);
 }
 
 
 void SettingsDialog::slotSliderReleased()
 {
-    Q_EMIT canvasIsDirty(2);
+    Q_EMIT canvasIsDirty(Dirty::RepaintNeeded);
 }
 
 
