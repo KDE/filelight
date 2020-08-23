@@ -189,13 +189,15 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
             continue;
         }
 
-        if (S_ISREG(statbuf.st_mode)) //file
+        if (S_ISREG(statbuf.st_mode)) { //file
 #ifndef Q_OS_WIN
-            cwd->append(ent->d_name, (statbuf.st_blocks * S_BLKSIZE));
+            const size_t size = (statbuf.st_blocks * S_BLKSIZE);
 #else
-            cwd->append(ent->d_name, statbuf.st_size);
+            const size_t size = statbuf.st_size;
 #endif
-
+            cwd->append(ent->d_name, size);
+            m_parent->m_totalSize += size;
+        }
         else if (S_ISDIR(statbuf.st_mode)) //folder
         {
             Folder *d = nullptr;

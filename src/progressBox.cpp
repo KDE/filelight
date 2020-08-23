@@ -25,6 +25,7 @@
 #include "mainWindow.h"
 
 #include <KColorScheme>
+#include <KFormat>
 #include <KIO/Job>
 #include <KLocalizedString>
 
@@ -45,7 +46,7 @@ ProgressBox::ProgressBox(QWidget *parent, Filelight::MainWindow *mainWindow, Fil
 
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-    setText(999999);
+    setText(999999, 0);
     setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     setMinimumSize(300, 300);
 
@@ -66,7 +67,7 @@ ProgressBox::start() //slot
 void
 ProgressBox::report() //slot
 {
-    setText(m_manager->files());
+    setText(m_manager->files(), m_manager->totalSize());
     update(); //repaint();
 }
 
@@ -85,9 +86,9 @@ ProgressBox::halt()
 }
 
 void
-ProgressBox::setText(int files)
+ProgressBox::setText(int files, size_t totalSize)
 {
-    m_text = i18np("%1 File", "%1 Files", files);
+    m_text = i18ncp("Scanned number of files and size so far", "%1 File, %2", "%1 Files, %2", files, KFormat().formatByteSize(totalSize));
     m_textWidth = fontMetrics().boundingRect(m_text).width();
     m_textHeight = fontMetrics().height();
 }

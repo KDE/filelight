@@ -47,8 +47,11 @@ public:
     bool start(const QUrl& path);
     bool running() const;
 
-    uint files() const {
-        return m_files;
+    int files() const {
+        return m_files.loadRelaxed();
+    }
+    size_t totalSize() const {
+        return m_totalSize.loadRelaxed();
     }
 
     void invalidateCacheFor(const QUrl &url);
@@ -66,7 +69,8 @@ Q_SIGNALS:
 
 private:
     bool m_abort;
-    uint m_files;
+    QAtomicInt m_files;
+    QAtomicInteger<size_t> m_totalSize;
 
     QMutex m_mutex;
     LocalLister *m_thread;

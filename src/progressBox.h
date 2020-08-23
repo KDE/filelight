@@ -38,7 +38,7 @@ class ProgressBox : public QWidget
 public:
     ProgressBox(QWidget *parent, Filelight::MainWindow *mainWindow, Filelight::ScanManager *scanManager);
 
-    void setText(int);
+    void setText(int files, size_t totalSize);
 
 public Q_SLOTS:
     void start();

@@ -112,10 +112,12 @@ void RemoteLister::onCompleted()
     const KFileItemList items = KDirLister::items();
     for (KFileItemList::ConstIterator it = items.begin(), end = items.end(); it != end; ++it)
     {
-        if (it->isDir())
+        if (it->isDir()) {
             m_store->stores += new Store(it->url(), it->name(), m_store);
-        else
+        } else {
             m_store->folder->append(it->name().toUtf8().constData(), it->size());
+            m_manager->m_totalSize += it->size();
+        }
 
         m_manager->m_files++;
     }
