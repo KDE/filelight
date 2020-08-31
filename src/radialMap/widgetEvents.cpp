@@ -277,7 +277,7 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
     const bool isDir = m_focus->file()->isFolder();
 
     // Open file
-    if (e->button() == Qt::MidButton || (e->button() == Qt::LeftButton && !isDir)) {
+    if (e->button() == Qt::MiddleButton || (e->button() == Qt::LeftButton && !isDir)) {
         new KRun(url, this, true);
 
         return;
