@@ -345,14 +345,16 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
                      , KRun::RunFlags()
              #endif
                      );
-    } else if (doNotScanItem && clicked == doNotScanItem) {
-        Config::skipList.append(Widget::url(m_focus->file()).toLocalFile());
-        Config::write();
     } else if (openTerminal && clicked == openTerminal) {
         KToolInvocation::invokeTerminal(QString(),url.path());
     } else if (centerMap && clicked == centerMap) {
         Q_EMIT activated(url); //activate first, this will cause UI to prepare itself
         createFromCache((Folder *)m_focus->file());
+    } else if (doNotScanItem && clicked == doNotScanItem) {
+        if (!Config::skipList.contains(Widget::url(m_focus->file()).toLocalFile())) {
+            Config::skipList.append(Widget::url(m_focus->file()).toLocalFile());
+            Config::write();
+        }
     } else if (openFile && clicked == openFile) {
         new KRun(url, this, true);
     } else if (clicked == copyClipboard) {
