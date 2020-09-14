@@ -306,6 +306,7 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
     QAction* openFile = nullptr;
     QAction* copyClipboard = nullptr;
     QAction* deleteItem = nullptr;
+    QAction* doNotScanItem = nullptr;
 
     QMenu popup;
     popup.setTitle(m_focus->file()->displayPath(m_tree));
@@ -321,6 +322,9 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
             popup.addSeparator();
             centerMap = popup.addAction(QIcon::fromTheme(QStringLiteral( "zoom-in" )), i18n("&Center Map Here"));
         }
+        
+        popup.addSeparator();
+        doNotScanItem = popup.addAction(QIcon::fromTheme(QStringLiteral("list-remove")), i18n("Do &Not Scan This Folder"));
     } else {
         openFile = popup.addAction(QIcon::fromTheme(QStringLiteral("document-open")), i18nc("Scan/open the path of the selected element", "&Open"));
     }
@@ -341,6 +345,9 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
                      , KRun::RunFlags()
              #endif
                      );
+    } else if (doNotScanItem && clicked == doNotScanItem) {
+        Config::skipList.append(Widget::url(m_focus->file()).toLocalFile());
+        Config::write();
     } else if (openTerminal && clicked == openTerminal) {
         KToolInvocation::invokeTerminal(QString(),url.path());
     } else if (centerMap && clicked == centerMap) {
