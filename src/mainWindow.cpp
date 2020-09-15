@@ -467,8 +467,8 @@ bool MainWindow::start(const QUrl &url)
 
         const QString s = i18n("Scanning: %1", prettyUrl());
         stateChanged(QStringLiteral("scan_started"));
-        emit started(); //as a MainWindow, we have to do this
-        emit setWindowCaption(s);
+        Q_EMIT started(); //as a MainWindow, we have to do this
+        Q_EMIT setWindowCaption(s);
         statusBar()->showMessage(s);
         m_map->hide();
         m_map->invalidate(); //to maintain ui consistency
@@ -508,8 +508,8 @@ void MainWindow::folderScanCompleted(Folder *tree)
     }
     else {
         stateChanged(QStringLiteral("scan_failed"));
-        emit canceled(i18n("Scan failed: %1", prettyUrl()));
-        emit setWindowCaption(QString());
+        Q_EMIT canceled(i18n("Scan failed: %1", prettyUrl()));
+        Q_EMIT setWindowCaption(QString());
 
         statusBar()->clearMessage();
 
@@ -526,7 +526,7 @@ void MainWindow::mapChanged(const Folder *tree)
 {
     //IMPORTANT -> url() has already been set
 
-    emit setWindowCaption(prettyUrl());
+    Q_EMIT setWindowCaption(prettyUrl());
 
     const int fileCount = tree->children();
     const QString text = (fileCount == 0) ?

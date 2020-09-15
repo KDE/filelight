@@ -141,14 +141,14 @@ bool ScanManager::start(const QUrl &url)
                 //we found a completed tree, thus no need to scan
                 qCDebug(FILELIGHT_LOG) << "Found cache-handle, generating map..";
 
-                emit branchCacheHit(d);
+                Q_EMIT branchCacheHit(d);
 
                 return true;
             } else {
                 //something went wrong, we couldn't find the folder we were expecting
                 qCWarning(FILELIGHT_LOG) << "Didn't find " << path << " in the cache!\n";
                 it.remove();
-                emit aboutToEmptyCache();
+                Q_EMIT aboutToEmptyCache();
                 delete folder;
                 break; //do a full scan
             }
@@ -193,7 +193,7 @@ void ScanManager::invalidateCacheFor(const QUrl &url)
     QString path = url.toLocalFile();
     if (!path.endsWith(QDir::separator())) path += QDir::separator();
 
-    emit aboutToEmptyCache();
+    Q_EMIT aboutToEmptyCache();
 
     QMutableListIterator<Folder*> it(m_cache);
     while (it.hasNext()) {
@@ -241,7 +241,7 @@ void ScanManager::emptyCache()
         m_thread->wait();
     }
 
-    emit aboutToEmptyCache();
+    Q_EMIT aboutToEmptyCache();
 
     qDeleteAll(m_cache);
     m_cache.clear();
@@ -259,7 +259,7 @@ void ScanManager::cacheTree(Folder *tree)
         m_thread = nullptr;
     }
 
-    emit completed(tree);
+    Q_EMIT completed(tree);
 
     if (tree) {
         //we don't cache foreign stuff
@@ -276,7 +276,7 @@ void ScanManager::cacheTree(Folder *tree)
 
 void ScanManager::foundCached(Folder *tree)
 {
-    emit completed(tree);
+    Q_EMIT completed(tree);
     QGuiApplication::restoreOverrideCursor();
 }
 

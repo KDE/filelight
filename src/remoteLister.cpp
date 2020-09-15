@@ -101,7 +101,7 @@ RemoteLister::~RemoteLister()
 void RemoteLister::onCanceled()
 {
     qCDebug(FILELIGHT_LOG) << "Canceled";
-    emit branchCompleted(nullptr);
+    Q_EMIT branchCompleted(nullptr);
     deleteLater();
 }
 
@@ -153,7 +153,7 @@ void RemoteLister::onCompleted()
         qCDebug(FILELIGHT_LOG) << "I think we're done";
 
         Q_ASSERT(m_root == m_store);
-        emit branchCompleted(m_store->folder);
+        Q_EMIT branchCompleted(m_store->folder);
 
         deleteLater();
     }

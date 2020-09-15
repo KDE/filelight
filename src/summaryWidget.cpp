@@ -84,7 +84,7 @@ public:
             RadialMap::Widget::mousePressEvent(e);
         } else if (e->button() == Qt::LeftButton) {
             // and clicks to the used segment
-            emit activated(url());
+            Q_EMIT activated(url());
         }
     }
 };

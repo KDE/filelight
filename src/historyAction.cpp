@@ -104,7 +104,7 @@ void HistoryCollection::pop() //slot
 
     m_receiver = (sender() == m_b) ? m_f : m_b;
 
-    emit activated(url);
+    Q_EMIT activated(url);
 }
 
 void HistoryCollection::save(KConfigGroup &configgroup)

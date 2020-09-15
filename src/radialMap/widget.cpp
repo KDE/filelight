@@ -97,7 +97,7 @@ void RadialMap::Widget::invalidate()
         update();
 
         //tell rest of Filelight
-        emit invalidated(invalidatedUrl);
+        Q_EMIT invalidated(invalidatedUrl);
     }
 }
 
@@ -124,7 +124,7 @@ RadialMap::Widget::create(const Folder *tree)
     m_tree = tree;
 
     //tell rest of Filelight
-    emit folderCreated(tree);
+    Q_EMIT folderCreated(tree);
 }
 
 void

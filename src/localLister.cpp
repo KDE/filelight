@@ -91,7 +91,7 @@ LocalLister::run()
         tree = nullptr;
     }
     qCDebug(FILELIGHT_LOG) << "Emitting signal to cache results ...";
-    emit branchCompleted(tree);
+    Q_EMIT branchCompleted(tree);
     qCDebug(FILELIGHT_LOG) << "Thread terminating ...";
 }
 

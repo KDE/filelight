@@ -146,7 +146,7 @@ void RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
             unsetCursor();
             update();
 
-            emit mouseHover(QString());
+            Q_EMIT mouseHover(QString());
         }
 
         return;
@@ -244,7 +244,7 @@ void RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
 
     m_tooltip.show();
 
-    emit mouseHover(m_focus->file()->displayPath());
+    Q_EMIT mouseHover(m_focus->file()->displayPath());
     update();
 }
 
@@ -253,7 +253,7 @@ void RadialMap::Widget::enterEvent(QEvent *)
     if (!m_focus) return;
 
     setCursor(Qt::PointingHandCursor);
-    emit mouseHover(m_focus->file()->displayPath());
+    Q_EMIT mouseHover(m_focus->file()->displayPath());
     update();
 }
 
@@ -285,10 +285,10 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
 
     if (e->button() == Qt::LeftButton) {
         if (m_focus->file() != m_tree) {
-            emit activated(url); //activate first, this will cause UI to prepare itself
+            Q_EMIT activated(url); //activate first, this will cause UI to prepare itself
             createFromCache((Folder *)m_focus->file());
         } else if (KIO::upUrl(url) != url) {
-            emit giveMeTreeFor(KIO::upUrl(url));
+            Q_EMIT giveMeTreeFor(KIO::upUrl(url));
         }
 
         return;
@@ -344,7 +344,7 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
     } else if (openTerminal && clicked == openTerminal) {
         KToolInvocation::invokeTerminal(QString(),url.path());
     } else if (centerMap && clicked == centerMap) {
-        emit activated(url); //activate first, this will cause UI to prepare itself
+        Q_EMIT activated(url); //activate first, this will cause UI to prepare itself
         createFromCache((Folder *)m_focus->file());
     } else if (openFile && clicked == openFile) {
         new KRun(url, this, true);
@@ -392,7 +392,7 @@ void RadialMap::Widget::dropEvent(QDropEvent *e)
 {
     QList<QUrl> uriList = KUrlMimeData::urlsFromMimeData(e->mimeData());
     if (!uriList.isEmpty())
-        emit giveMeTreeFor(uriList.first());
+        Q_EMIT giveMeTreeFor(uriList.first());
 }
 
 void RadialMap::Widget::dragEnterEvent(QDragEnterEvent *e)

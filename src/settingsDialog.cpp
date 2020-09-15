@@ -206,41 +206,41 @@ void SettingsDialog::changeScheme(QAbstractButton *button)
     if (button) {
         const int s = m_schemaGroup->id(button);
         Config::scheme = (Filelight::MapScheme)s;
-        emit canvasIsDirty(1);
+        Q_EMIT canvasIsDirty(1);
     }
 }
 void SettingsDialog::changeContrast(int c)
 {
     Config::contrast = c;
-    emit canvasIsDirty(3);
+    Q_EMIT canvasIsDirty(3);
 }
 void SettingsDialog::toggleUseAntialiasing(bool b)
 {
     Config::antialias = b;
-    emit canvasIsDirty(2);
+    Q_EMIT canvasIsDirty(2);
 }
 void SettingsDialog::toggleVaryLabelFontSizes(bool b)
 {
     Config::varyLabelFontSizes = b;
     minFontPitchLabel->setEnabled(b);
     minFontPitch->setEnabled(b);
-    emit canvasIsDirty(0);
+    Q_EMIT canvasIsDirty(0);
 }
 void SettingsDialog::changeMinFontPitch(int p)
 {
     Config::minFontPitch = p;
-    emit canvasIsDirty(0);
+    Q_EMIT canvasIsDirty(0);
 }
 void SettingsDialog::toggleShowSmallFiles(bool b)
 {
     Config::showSmallFiles = b;
-    emit canvasIsDirty(1);
+    Q_EMIT canvasIsDirty(1);
 }
 
 
 void SettingsDialog::slotSliderReleased()
 {
-    emit canvasIsDirty(2);
+    Q_EMIT canvasIsDirty(2);
 }
 
 
