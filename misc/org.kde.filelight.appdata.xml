@@ -74,6 +74,7 @@
   <summary xml:lang="uk">Filelight створює інтерактивну карту з концентричних кіл, поділених на сектори, яка допоможе вам візуально контролювати використання дискового простору на вашому комп’ютері</summary>
   <summary xml:lang="x-test">xxFilelight creates an interactive map of concentric segmented-rings that helps visualize disk usage on your computerxx</summary>
   <summary xml:lang="zh-CN">Filelight 会建立一个同心分段环状交互式地图，帮助您可视化您计算机上的磁盘使用</summary>
+  <summary xml:lang="zh-TW">Filelight 建立同心圓式的互動地圖，有助於可視化您電腦上的磁碟使用狀況</summary>
   <description>
     <p>
       Filelight is an application to visualize the disk usage on your computer
