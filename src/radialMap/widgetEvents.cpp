@@ -28,12 +28,12 @@
 #include <KJob>
 #include <KIO/Job>     //::mousePressEvent()
 #include <KIO//DeleteJob>
-#include <KIO/JobUiDelegate>
 #include <KMessageBox> //::mousePressEvent()
 #include <QMenu>  //::mousePressEvent()
-#include <KRun>        //::mousePressEvent()
 #include <KToolInvocation>
 #include <QUrl>
+#include <KIO/JobUiDelegate>
+#include <KIO/OpenUrlJob>
 #include <KLocalizedString>
 #include <kio_version.h>
 
@@ -278,8 +278,9 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
 
     // Open file
     if (e->button() == Qt::MiddleButton || (e->button() == Qt::LeftButton && !isDir)) {
-        new KRun(url, this, true);
-
+        auto *job = new KIO::OpenUrlJob(QUrl(url));
+        job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+        job->start();
         return;
     }
 
@@ -340,11 +341,8 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
     QAction* clicked = popup.exec(e->globalPos(), nullptr);
 
     if (openFileManager && clicked == openFileManager) {
-        KRun::runUrl(url, QStringLiteral("inode/directory"), this
-             #if KIO_VERSION >= QT_VERSION_CHECK(5, 31, 0)
-                     , KRun::RunFlags()
-             #endif
-                     );
+        auto *job = new KIO::OpenUrlJob(url, QStringLiteral("inode/directory"), this);
+        job->start();
     } else if (openTerminal && clicked == openTerminal) {
         KToolInvocation::invokeTerminal(QString(),url.path());
     } else if (centerMap && clicked == centerMap) {
@@ -356,7 +354,9 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
             Config::write();
         }
     } else if (openFile && clicked == openFile) {
-        new KRun(url, this, true);
+        auto *job = new KIO::OpenUrlJob(url);
+        job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+        job->start();
     } else if (clicked == copyClipboard) {
         QMimeData* mimedata = new QMimeData();
         mimedata->setUrls(QList<QUrl>() << url);
