@@ -232,7 +232,9 @@ void MainWindow::slotScanHomeFolder()
 
 void MainWindow::slotSaveSvg()
 {
-    QString path = QFileDialog::getSaveFileName(this, i18n("Save to SVG"));
+    const QString path = QFileDialog::getSaveFileName(
+        this, i18nc("@title:window", "Save as SVG"), QString(),
+        i18nc("filedialog type filter", "SVG Files (*.svg);;All Files(*)"));
     if (path.isEmpty()) {
         return;
     }
