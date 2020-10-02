@@ -181,6 +181,10 @@ void MainWindow::setupActions() //singleton function
     locationAction->setText(i18n("Location Bar"));
     locationAction->setDefaultWidget(m_combo);
 
+    action = ac->action(QStringLiteral("file_save"));
+    action->setText(i18n("Save as SVG..."));
+    action->setToolTip(i18n("Save the current view as an SVG file"));
+
     m_recentScans = new KRecentFilesAction(i18n("&Recent Scans"), ac);
     m_recentScans->setMaxItems(8);
 
