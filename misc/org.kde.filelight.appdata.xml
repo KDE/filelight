@@ -28,6 +28,7 @@
   <name xml:lang="pl">Filelight</name>
   <name xml:lang="pt">Filelight</name>
   <name xml:lang="pt-BR">Filelight</name>
+  <name xml:lang="ro">Filelight</name>
   <name xml:lang="ru">Filelight</name>
   <name xml:lang="sk">Filelight</name>
   <name xml:lang="sl">Filelight</name>
@@ -63,6 +64,7 @@
   <summary xml:lang="pl">Filelight tworzy interaktywną mapę współśrodkowych, dzielonych pierścieni, co ma na celu zobrazowanie wykorzystania przestrzeni dyskowej na twoim komputerze</summary>
   <summary xml:lang="pt">O Filelight cria um mapa interactivo com anéis concêntricos segmentados que o ajuda a visualizar a utilização do disco no seu computador</summary>
   <summary xml:lang="pt-BR">O Filelight cria um mapa interativo de anéis concêntricos em segmentos, que o ajuda a visualizar a utilização do disco no seu computador</summary>
+  <summary xml:lang="ro">Filelight creează o hartă interactivă de inele segmentate concentrice ce vă ajută să vizualizați folosirea discului din calculator</summary>
   <summary xml:lang="ru">Программа Filelight наглядно отображает использование дискового пространства, представляя его в виде интерактивной карты из концентрических колец, разделённых на сегменты.</summary>
   <summary xml:lang="sk">Filelight vytvára interaktívnu mapu sústredných prstencov, ktoré vám pomôžu vizualizovať použitie disku na vašom počítači</summary>
   <summary xml:lang="sl">Filelight ustvari interaktivni zemljevid koncentričnih krožnih izsekov, ki pomagajo prikazati porabo diska na vašem računalniku</summary>
@@ -100,6 +102,7 @@
     <p xml:lang="pl">Filelight jest apikacją do zobrazowania wykorzystania przestrzeni dyskowej na twoim komputerze</p>
     <p xml:lang="pt">O Filelight é uma aplicação para visualizar a utilização do disco no seu computador</p>
     <p xml:lang="pt-BR">O Filelight é um aplicativo para visualizar a utilização do disco no seu computador</p>
+    <p xml:lang="ro">Filelight e o aplicație pentru vizualizarea folosirii discului din calculator</p>
     <p xml:lang="ru">Программа Filelight наглядно отображает использование дискового пространства</p>
     <p xml:lang="sk">Filelight je aplikácia na vizualizovanie využitia disku na počítači</p>
     <p xml:lang="sl">Filelight je program za vidno predstavitev porabe diska na vašem računalniku</p>
@@ -137,6 +140,7 @@
     <p xml:lang="pl">Możliwości:</p>
     <p xml:lang="pt">Funcionalidades:</p>
     <p xml:lang="pt-BR">Funcionalidades:</p>
+    <p xml:lang="ro">Caracteristici:</p>
     <p xml:lang="ru">Возможности:</p>
     <p xml:lang="sk">Funkcie:</p>
     <p xml:lang="sl">Zmožnosti:</p>
@@ -173,6 +177,7 @@
       <li xml:lang="pl">Przeszukiwanie lokalnych, zdalnych, wymiennych dysków</li>
       <li xml:lang="pt">Sondar discos locais, remotos ou removíveis</li>
       <li xml:lang="pt-BR">Verifica em discos locais, remotos ou removíveis</li>
+      <li xml:lang="ro">Scanează discuri locale, distante sau amovibile</li>
       <li xml:lang="ru">Сканирование локальных, сетевых сменных дисков;</li>
       <li xml:lang="sk">Skenovať lokálne, vzdialené alebo odoberateľné disky</li>
       <li xml:lang="sl">Preiščite krajevne, oddaljene ali odstranljive diske</li>
@@ -208,6 +213,7 @@
       <li xml:lang="pl">Zestawy barwne do ustawienia</li>
       <li xml:lang="pt">Esquemas de cores configuráveis</li>
       <li xml:lang="pt-BR">Esquemas de cores configuráveis</li>
+      <li xml:lang="ro">Scheme de culori configurabile</li>
       <li xml:lang="ru">Настраиваемые цветовые схемы;</li>
       <li xml:lang="sk">Konfigurovateľné farebné schémy</li>
       <li xml:lang="sl">Nastavljive barvne sheme</li>
@@ -243,6 +249,7 @@
       <li xml:lang="pl">Poruszanie się po systemie plików poprzez mysz</li>
       <li xml:lang="pt">Navegação pelo sistema de ficheiros com o rato</li>
       <li xml:lang="pt-BR">Navegação pelo sistema de arquivos com cliques do mouse</li>
+      <li xml:lang="ro">Navigare prin sistemul de fișiere cu clicuri de maus</li>
       <li xml:lang="ru">Навигация по файловой системе с использованием мыши;</li>
       <li xml:lang="sk">Navigácia v súborovom systéme pomocou myši</li>
       <li xml:lang="sl">Krmarjenje po datotečnem sistemu z miško</li>
@@ -278,6 +285,7 @@
       <li xml:lang="pl">Dane o plikach i katalogach po najechaniu myszą</li>
       <li xml:lang="pt">Informação sobre os ficheiros e pastas à passagem</li>
       <li xml:lang="pt-BR">Informação sobre os arquivos e pastas ao passar o ponteiro do mouse</li>
+      <li xml:lang="ro">Informații despre fișiere și dosare la planare</li>
       <li xml:lang="ru">Всплывающие подсказки с данными о файлах и папках;</li>
       <li xml:lang="sk">Informácie o súboroch a priečinkoch prechodom myši ponad položky</li>
       <li xml:lang="sl">Podrobnosti o datotekah in mapah ob prehodu miške</li>
@@ -313,6 +321,7 @@
       <li xml:lang="pl">Pliki i katalogi można kopiować lub usuwać bezpośrednio z menu podręcznego</li>
       <li xml:lang="pt">Poderá copiar ou remover directamente os ficheiros e pastas directamente a partir do menu de contexto</li>
       <li xml:lang="pt-BR">Os arquivos e pastas podem ser copiados ou removidos diretamente a partir do menu de contexto</li>
+      <li xml:lang="ro">Fișierele și dosarele pot fi copiate sau eliminate direct din meniul contextual</li>
       <li xml:lang="ru">Возможность копировать и удалять файлы и папки из контекстного меню;</li>
       <li xml:lang="sk">Súbory a priečinky môžu byť kopírované alebo odstránené priamo z kontextovej ponuky</li>
       <li xml:lang="sl">Datoteke in mape lahko kopirate ali odstranite neposredno preko vsebinskega menija</li>
@@ -348,6 +357,7 @@
       <li xml:lang="pl">Integracja z Konqueror i Krusaderem</li>
       <li xml:lang="pt">Integração com o Konqueror e o Krusader</li>
       <li xml:lang="pt-BR">Integração com o Konqueror e o Krusader</li>
+      <li xml:lang="ro">Integrare în Konqueror și Krusader</li>
       <li xml:lang="ru">Встраивание в Konqueror и Krusader</li>
       <li xml:lang="sk">Integrácia do Konqueror a Krusader</li>
       <li xml:lang="sl">Vključitev v Konqueror in Krusader</li>
