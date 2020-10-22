@@ -29,7 +29,6 @@
 
 
 #include <QIcon>
-#include <QAction>
 
 inline HistoryAction::HistoryAction(const QIcon& icon, const QString& text, KActionCollection* ac)
         : QAction(icon, text, ac)

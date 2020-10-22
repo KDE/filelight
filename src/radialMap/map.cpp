@@ -34,7 +34,6 @@
 #include "radialMap.h" // defines
 
 #include "Config.h"
-#include "fileTree.h"
 #define SINCOS_H_IMPLEMENTATION (1)
 #include "sincos.h"
 #include "widget.h"

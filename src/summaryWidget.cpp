@@ -21,7 +21,6 @@
 
 #include "summaryWidget.h"
 
-#include "Config.h"
 #include "fileTree.h"
 #include "radialMap/radialMap.h"
 #include "radialMap/widget.h"

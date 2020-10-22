@@ -24,7 +24,6 @@
 #include "scan.h"
 #include "mainWindow.h"
 
-#include <KColorScheme>
 #include <KFormat>
 #include <KIO/Job>
 #include <KLocalizedString>

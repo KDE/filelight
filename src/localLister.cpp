@@ -30,7 +30,6 @@
 #include <QElapsedTimer>
 #include <QGuiApplication> //postEvent()
 #include <QFile>
-#include <QByteArray>
 
 #include <dirent.h>
 #include <sys/stat.h>

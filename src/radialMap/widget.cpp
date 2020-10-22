@@ -21,20 +21,16 @@
 
 #include "widget.h"
 
-#include "Config.h"
 #include "fileTree.h"
 #include "radialMap.h" //constants
-#include "map.h"
 
 #include <KCursor>        //ctor
-#include <QUrl>
 
 #include <QApplication>   //sendEvent
 #include <QBitmap>        //ctor - finding cursor size
 #include <QCursor>        //slotPostMouseEvent()
 #include <QDebug>
 #include <QTimer>         //member
-#include <QWidget>
 
 
 RadialMap::Widget::Widget(QWidget *parent, bool isSummary)

@@ -20,11 +20,9 @@
 ***********************************************************************/
 
 #include "settingsDialog.h"
-#include "Config.h"
 
 #include <KLocalizedString>
 #include <QRadioButton>
-#include <QCloseEvent>
 #include <QDir>
 #include <KMessageBox>
 #include <QFileDialog>

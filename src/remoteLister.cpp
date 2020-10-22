@@ -20,11 +20,9 @@
 ***********************************************************************/
 
 #include "remoteLister.h"
-#include "fileTree.h"
 #include "scan.h"
 #include "filelight_debug.h"
 
-#include <KDirLister>
 
 #include <QList>
 #include <QWidget>
