@@ -164,10 +164,10 @@ void RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
     // Same content as before
     if (m_focus == oldFocus) {
         if (tooltipRect.right() > screenRect.right()) {
-            tooltipPosition.setX(screenRect.width() - m_tooltip.width());
+            tooltipPosition.setX(screenRect.x() + screenRect.width() - m_tooltip.width());
         }
         if (tooltipRect.bottom() > screenRect.bottom()) {
-            tooltipPosition.setY(screenRect.height() - m_tooltip.height());
+            tooltipPosition.setY(screenRect.y() + screenRect.height() - m_tooltip.height());
         }
         m_tooltip.move(tooltipPosition);
         return;
@@ -239,10 +239,10 @@ void RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
     // Make sure we're visible on screen
     tooltipRect.setSize(QSize(tooltipWidth, tooltipHeight));
     if (tooltipRect.right() > screenRect.right()) {
-        tooltipPosition.setX(screenRect.width() - m_tooltip.width());
+        tooltipPosition.setX(screenRect.x() + screenRect.width() - m_tooltip.width());
     }
     if (tooltipRect.bottom() > screenRect.bottom()) {
-        tooltipPosition.setY(screenRect.height() - m_tooltip.height());
+        tooltipPosition.setY(screenRect.y() + screenRect.height() - m_tooltip.height());
     }
     m_tooltip.move(tooltipPosition);
 
