@@ -56,6 +56,7 @@
   <summary xml:lang="fi">Filelight luo vuorovaikutteisen samakeskisten lohkojen kaavion, joka auttaa hahmottaa tietokoneen levytilan käyttöä.</summary>
   <summary xml:lang="fr">Filelight crée une carte interactive en segments d'anneaux concentriques qui aide à visualiser l'utilisation de l'espace disque sur votre ordinateur</summary>
   <summary xml:lang="gl">Filelight crea un mapa interactivo de aneis concéntricos segmentados que axuda a visualizar o uso do disco no computador</summary>
+  <summary xml:lang="ia">Filelight crea un mappa interactive de anillos segmentate concentric que adjuta a visualisar usage de discos sur tu computator</summary>
   <summary xml:lang="id">Filelight menciptakan peta interaktif cincin tersegmentasi konsentris yang membantu memvisualisasikan penggunaan disk di komputermu</summary>
   <summary xml:lang="it">Filelight crea una mappa interattiva di anelli segmentati concentrici che aiuta a visualizzare l'uso del disco nel tuo computer</summary>
   <summary xml:lang="ko">Filelight는 컴퓨터 디스크 사용량을 인터랙티브 동심원 그래프로 시각화하는 프로그램입니다</summary>
@@ -95,6 +96,7 @@
     <p xml:lang="fi">Filelight on sovellus tietokoneen levynkäytön hahmottamiseksi</p>
     <p xml:lang="fr">Filelight est une application pour visualiser l'utilisation de l'espace disque sur votre ordinateur</p>
     <p xml:lang="gl">Filelight é unha aplicación para visualizar o uso de disco no computador</p>
+    <p xml:lang="ia">Filelight es un application per visualisar le usage de disco sur tu computator</p>
     <p xml:lang="id">Filelight adalah aplikasi untuk memvisualisasikan penggunaan disk di komputermu</p>
     <p xml:lang="it">Filelight è un'applicazione per visualizzare l'uso del disco nel tuo computer</p>
     <p xml:lang="ko">Flielight는 컴퓨터 디스크 사용량을 시각화하는 프로그램입니다</p>
@@ -170,6 +172,7 @@
       <li xml:lang="fi">Tutkii paikalliset, etä- ja siirrettävät levyt</li>
       <li xml:lang="fr">Parcourt les disques locaux, distants ou amovibles</li>
       <li xml:lang="gl">Examinar discos locais, remotos e retirábeis.</li>
+      <li xml:lang="ia">Scander discos local, remote o removabile</li>
       <li xml:lang="id">Scan lokal, jarak jauh atau disk yang dapat dilepas</li>
       <li xml:lang="it">Analizza dischi locali, remoti e rimovibili</li>
       <li xml:lang="ko">로컬, 원격, 이동식 디스크 검사</li>
@@ -206,6 +209,7 @@
       <li xml:lang="fi">Mukautettavat värimallit</li>
       <li xml:lang="fr">Schémas de couleurs configurable</li>
       <li xml:lang="gl">Esquema de cores configurábel.</li>
+      <li xml:lang="ia">Schemas de color configurabile</li>
       <li xml:lang="id">Skema warna yang dapat dikonfigurasi</li>
       <li xml:lang="it">Schemi di colori configurabili</li>
       <li xml:lang="ko">색 배열 설정</li>
@@ -242,6 +246,7 @@
       <li xml:lang="fi">Tiedostojärjestelmän navigointi hiirellä</li>
       <li xml:lang="fr">Navigation dans le système de fichiers par clic de souris</li>
       <li xml:lang="gl">Navegación polo sistema de ficheiros mediante clics do rato.</li>
+      <li xml:lang="ia">Navigation de systema de file per clicks de mus</li>
       <li xml:lang="id">Navigasi sistem file dengan klik mouse</li>
       <li xml:lang="it">Navigazione del file system a clic di mouse</li>
       <li xml:lang="ko">마우스 클릭으로 파일 시스템 탐색</li>
@@ -278,6 +283,7 @@
       <li xml:lang="fi">Näyttää tiedostojen ja kansioiden tiedot hiiren leijuessa niiden yllä</li>
       <li xml:lang="fr">Informations sur les fichiers et les dossiers lors du survol</li>
       <li xml:lang="gl">Información sobre os ficheiros e directorios ao cubrilos.</li>
+      <li xml:lang="ia">Information re files e directorios sur planar</li>
       <li xml:lang="id">Informasi tentang file dan direktori saat melintasi</li>
       <li xml:lang="it">Informazioni su file e cartelle al passaggio del mouse</li>
       <li xml:lang="ko">지나다닐 때 파일과 디렉터리 정보 표시</li>
@@ -314,6 +320,7 @@
       <li xml:lang="fi">Tiedostoja ja kansioita voi kopioida ja poistaa suoraan kontekstivalikosta</li>
       <li xml:lang="fr">Les fichiers et dossiers peuvent être copiés ou supprimés directement depuis le menu contextuel</li>
       <li xml:lang="gl">Os ficheiros e directorios poden copiarse e retirarse directamente desde o menú de contexto.</li>
+      <li xml:lang="ia">Files e directorios pote esser copiate o removite directemente ex le menu de contexto</li>
       <li xml:lang="id">File dan direktori yang bisa disalin atau dihapus secara langsung dari menu konteks</li>
       <li xml:lang="it">I file e le cartelle possono essere copiati o rimossi direttamente dal menu contestuale</li>
       <li xml:lang="ko">콘텍스트 메뉴에서 파일과 디렉터리 직접 복사 및 삭제</li>
@@ -350,6 +357,7 @@
       <li xml:lang="fi">Integrointi Konqueroriin ja Krusaderiin</li>
       <li xml:lang="fr">Intégration dans Konqueror et Krusader</li>
       <li xml:lang="gl">Integración con Konqueror e Krusader.</li>
+      <li xml:lang="ia">Integration in Konqueror e Krusader</li>
       <li xml:lang="id">Integrasi ke dalam Konqueror dan Krusader</li>
       <li xml:lang="it">Integrazione in Konqueror e in Krusader</li>
       <li xml:lang="ko">Konqueror 및 Krusader 통합</li>
