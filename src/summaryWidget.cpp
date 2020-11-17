@@ -173,7 +173,7 @@ DiskList::DiskList()
         disk.mount = storage.rootPath();
         disk.name = storage.name();
         disk.size = storage.bytesTotal();
-        disk.free = storage.bytesFree();
+        disk.free = storage.bytesAvailable();
         disk.used = disk.size - disk.free;
 
         // if something is mounted over same path, last mounted point would be used since only it is currently reachable.
