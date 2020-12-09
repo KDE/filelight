@@ -151,7 +151,7 @@ void MainWindow::setupActions() //singleton function
     action = ac->addAction(QStringLiteral("scan_home"), this, &MainWindow::slotScanHomeFolder);
     action->setText(i18n("Scan &Home Folder"));
     action->setIcon(QIcon::fromTheme(QStringLiteral("user-home")));
-    ac->setDefaultShortcut(action, QKeySequence(Qt::CTRL + Qt::Key_Home));
+    ac->setDefaultShortcut(action, QKeySequence(Qt::CTRL | Qt::Key_Home));
 
     action = ac->addAction(QStringLiteral("scan_root"), this, &MainWindow::slotScanRootFolder);
     action->setText(i18n("Scan &Root Folder"));
