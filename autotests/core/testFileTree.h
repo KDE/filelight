@@ -23,7 +23,7 @@
 
 #include "fileTree.h"
 
-#include <QtTest>
+#include <QTest>
 
 class TestFileTree : public QObject
 {
