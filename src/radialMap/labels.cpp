@@ -233,7 +233,7 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
                 }
             }
 
-            int middleX = targetX - (startY - targetY) / tan(ra);
+            int middleX = targetX - (tan(ra) > 0 ? (startY - targetY) / tan(ra) : 0);
             int textY = startY + lineSpacing;
 
             int textX;
