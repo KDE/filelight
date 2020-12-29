@@ -69,6 +69,5 @@ if (KF5DocTools_FOUND)
     add_subdirectory(doc)
 endif()
 
-install(FILES filelight.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

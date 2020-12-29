@@ -40,7 +40,7 @@ set(filelight_SRCS
     mainWindow.cpp
     main.cpp
 )
-ecm_qt_declare_logging_category(filelight_SRCS HEADER filelight_debug.h IDENTIFIER FILELIGHT_LOG CATEGORY_NAME org.kde.filelight)
+ecm_qt_declare_logging_category(filelight_SRCS HEADER filelight_debug.h IDENTIFIER FILELIGHT_LOG CATEGORY_NAME org.kde.filelight DESCRIPTION "filelight" EXPORT FILELIGHT)
 
 set(filelight_ICONS
     ${CMAKE_CURRENT_SOURCE_DIR}/../misc/16-apps-filelight.png
@@ -66,3 +66,9 @@ if (WIN32)
 endif()
 
 install(TARGETS filelight ${INSTALL_TARGETS_DEFAULT_ARGS})
+ecm_qt_install_logging_categories(
+        EXPORT FILELIGHT
+        FILE filelight.categories
+        DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
+        )
+
