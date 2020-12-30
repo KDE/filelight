@@ -41,8 +41,6 @@ enum MapScheme { Rainbow, KDE, HighContrast, FileDensity, ModTime };
 
 class Config
 {
-    static KConfig& kconfig();
-
 public:
     static void read();
     static void write();
