@@ -55,7 +55,7 @@
   <summary xml:lang="et">Filelight loob kontsentrilise segmenditud ringidega interaktiivse kaardi, mis aitab visuaalselt ette kujutada kettakasutust arvutis</summary>
   <summary xml:lang="eu">Filelightek eraztun-zati zentrokidez osaturiko mapa elkarreragile bat sortzen du, zure ordenagailuko diskoaren erabilera irudikatzen laguntzen duena</summary>
   <summary xml:lang="fi">Filelight luo vuorovaikutteisen samakeskisten lohkojen kaavion, joka auttaa hahmottaa tietokoneen levytilan käyttöä.</summary>
-  <summary xml:lang="fr">Filelight crée une carte interactive en segments d'anneaux concentriques qui aide à visualiser l'utilisation de l'espace disque sur votre ordinateur</summary>
+  <summary xml:lang="fr">Filelight crée une carte interactive en segments d'anneaux concentriques qui aide à afficher l'utilisation de l'espace disque sur votre ordinateur.</summary>
   <summary xml:lang="gl">Filelight crea un mapa interactivo de aneis concéntricos segmentados que axuda a visualizar o uso do disco no computador</summary>
   <summary xml:lang="hu">A Filelight egy koncentrikus körszeletekből álló interaktív térkép segítségével vizualizálja a lemezhasználati adatokat</summary>
   <summary xml:lang="ia">Filelight crea un mappa interactive de anillos segmentate concentric que adjuta a visualisar usage de discos sur tu computator</summary>
@@ -96,7 +96,7 @@
     <p xml:lang="et">Filelight on rakendus arvuti kettakasutuse visuaalseks esitamiseks</p>
     <p xml:lang="eu">Filelight zure ordenagailuko diskoaren erabilera irudikatzeko aplikazio bat da</p>
     <p xml:lang="fi">Filelight on sovellus tietokoneen levynkäytön hahmottamiseksi</p>
-    <p xml:lang="fr">Filelight est une application pour visualiser l'utilisation de l'espace disque sur votre ordinateur</p>
+    <p xml:lang="fr">Filelight est une application pour afficher l'utilisation de l'espace disque sur votre ordinateur.</p>
     <p xml:lang="gl">Filelight é unha aplicación para visualizar o uso de disco no computador</p>
     <p xml:lang="hu">A Filelight egy vizuális lemezhasználati alkalmazás</p>
     <p xml:lang="ia">Filelight es un application per visualisar le usage de disco sur tu computator</p>
