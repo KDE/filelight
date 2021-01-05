@@ -96,7 +96,6 @@ protected:
     void closeEvent(QCloseEvent *event) override;
 
 private:
-    void setupStatusBar();
     void setupActions();
     bool closeUrl();
     QString prettyUrl() const;
