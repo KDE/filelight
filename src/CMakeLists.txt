@@ -65,7 +65,7 @@ if (WIN32)
     target_link_libraries(filelight kdewin)
 endif()
 
-install(TARGETS filelight ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS filelight ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 ecm_qt_install_logging_categories(
         EXPORT FILELIGHT
         FILE filelight.categories

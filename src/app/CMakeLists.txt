@@ -26,4 +26,4 @@ target_link_libraries(filelight
     KF5::XmlGui
 )
 
-install(TARGETS filelight ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS filelight ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
