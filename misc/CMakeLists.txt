@@ -18,9 +18,9 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #######################################################################
 
-install(PROGRAMS org.kde.filelight.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
-install(FILES filelightrc DESTINATION ${CONFIG_INSTALL_DIR})
-install(FILES filelightui.rc DESTINATION ${KXMLGUI_INSTALL_DIR}//filelight)
+install(PROGRAMS org.kde.filelight.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+install(FILES filelightrc DESTINATION ${KDE_INSTALL_CONFDIR})
+install(FILES filelightui.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}//filelight)
 install(FILES org.kde.filelight.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 ecm_install_icons(ICONS
@@ -30,4 +30,4 @@ ecm_install_icons(ICONS
     48-apps-filelight.png
     64-apps-filelight.png
     128-apps-filelight.png
-    DESTINATION ${ICON_INSTALL_DIR} THEME hicolor)
+    DESTINATION ${KDE_INSTALL_ICONDIR} THEME hicolor)
