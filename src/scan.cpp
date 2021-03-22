@@ -62,6 +62,7 @@ bool ScanManager::start(const QUrl &url)
     }
 
     m_files = 0;
+    m_totalSize = 0;
     m_abort = false;
 
     if (!url.isLocalFile()) {
