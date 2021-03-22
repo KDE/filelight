@@ -39,8 +39,9 @@ private:
     QTimer m_timer;
     Filelight::ScanManager* m_manager;
     QString m_text;
-    int m_textWidth;
-    int m_textHeight;
+    int m_textWidth = 0;
+    int m_textHeight = 0;
+    int m_tick = 0;
     KColorScheme m_colorScheme;
 };
 
