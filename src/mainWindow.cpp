@@ -179,7 +179,7 @@ void MainWindow::setupActions() //singleton function
     m_recentScans->loadEntries(KSharedConfig::openConfig()->group("general"));
 
     connect(m_recentScans, &KRecentFilesAction::urlSelected, this, &MainWindow::slotScanUrl);
-    connect(m_combo, static_cast<void (KHistoryComboBox::*)()>(&KHistoryComboBox::returnPressed), this, &MainWindow::slotComboScan);
+    connect(m_combo, QOverload<const QString &>::of(&KHistoryComboBox::returnPressed), this, &MainWindow::slotComboScan);
     connect(m_histories, &HistoryCollection::activated, this, &MainWindow::slotScanUrl);
 }
 
