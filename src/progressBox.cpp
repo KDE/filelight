@@ -20,7 +20,7 @@
 #include <QFontDatabase>
 
 #include <math.h>
-#include <limits.h>
+#include <limits>
 
 ProgressBox::ProgressBox(QWidget *parent, Filelight::MainWindow *mainWindow, Filelight::ScanManager *scanManager)
         : QWidget(parent)
@@ -32,7 +32,7 @@ ProgressBox::ProgressBox(QWidget *parent, Filelight::MainWindow *mainWindow, Fil
     setObjectName(QStringLiteral( "ProgressBox" ));
 
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    setText(INT_MAX, SSIZE_MAX);
+    setText(std::numeric_limits<int>::max(), std::numeric_limits<size_t>::max());
 
     setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     const int textSize = qMax(m_textWidth + LABEL_TEXT_HMARGIN, m_textHeight + LABEL_TEXT_VMARGIN);
