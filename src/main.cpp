@@ -16,6 +16,8 @@
 #include <KAboutData>
 #include <KLocalizedString>
 #include <Kdelibs4ConfigMigrator>
+#include <KSharedConfig>
+#include <KConfigGroup>
 
 int main(int argc, char *argv[])
 {
@@ -33,6 +35,14 @@ int main(int argc, char *argv[])
     migrate.setConfigFiles(QStringList() << QStringLiteral("filelightrc"));
     migrate.setUiFiles(QStringList() << QStringLiteral("filelightui.rc"));
     migrate.migrate();
+
+    auto config = KSharedConfig::openConfig();
+    auto stateConfig = KSharedConfig::openStateConfig();
+    if (config->hasGroup("general")) {
+        auto grp = stateConfig->group("general");
+        config->group("general").copyTo(&grp);
+        config->deleteGroup("general");
+    }
 
     using Filelight::MainWindow;
 

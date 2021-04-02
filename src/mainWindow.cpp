@@ -102,7 +102,7 @@ MainWindow::MainWindow()
     connect(this, &MainWindow::canceled, this, &MainWindow::scanFailed);
     connect(this, &MainWindow::canceled, m_histories, &HistoryCollection::stop);
 
-    const KConfigGroup config = KSharedConfig::openConfig()->group("general");
+    const KConfigGroup config = KSharedConfig::openStateConfig()->group("general");
     m_combo->setHistoryItems(config.readPathEntry("comboHistory", QStringList()));
 
     setAutoSaveSettings(QStringLiteral("window"));
@@ -176,7 +176,7 @@ void MainWindow::setupActions() //singleton function
 
     m_histories = new HistoryCollection(ac, this);
 
-    m_recentScans->loadEntries(KSharedConfig::openConfig()->group("general"));
+    m_recentScans->loadEntries(KSharedConfig::openStateConfig()->group("general"));
 
     connect(m_recentScans, &KRecentFilesAction::urlSelected, this, &MainWindow::slotScanUrl);
     connect(m_combo, QOverload<const QString &>::of(&KHistoryComboBox::returnPressed), this, &MainWindow::slotComboScan);
@@ -185,7 +185,7 @@ void MainWindow::setupActions() //singleton function
 
 void MainWindow::closeEvent(QCloseEvent *event)
 {
-    KConfigGroup config = KSharedConfig::openConfig()->group("general");
+    KConfigGroup config = KSharedConfig::openStateConfig()->group("general");
 
     m_recentScans->saveEntries(config);
     config.writePathEntry("comboHistory", m_combo->historyItems());
