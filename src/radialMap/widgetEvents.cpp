@@ -343,7 +343,7 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
             job->start();
         #endif
     } else if (openTerminal && clicked == openTerminal) {
-        KToolInvocation::invokeTerminal(QString(),url.path());
+        KToolInvocation::invokeTerminal(QString(), QStringList(), url.path());
     } else if (centerMap && clicked == centerMap) {
         Q_EMIT activated(url); //activate first, this will cause UI to prepare itself
         createFromCache((Folder *)m_focus->file());
