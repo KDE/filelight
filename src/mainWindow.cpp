@@ -310,6 +310,7 @@ void MainWindow::scanCompleted()
         action("go_up")->setToolTip(QString());
     }
     else {
+        action("go_up")->setEnabled(true);
         action("go_up")->setStatusTip(KIO::upUrl(url).path());
         action("go_up")->setToolTip(KIO::upUrl(url).path());
     }
