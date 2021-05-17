@@ -154,8 +154,9 @@ void MainWindow::setupActions() //singleton function
     action->setIcon(QIcon::fromTheme(QStringLiteral("process-stop")));
     ac->setDefaultShortcut(action, Qt::Key_Escape);
 
-    action = ac->addAction(QStringLiteral("go"), m_combo,
-                           static_cast<void (KHistoryComboBox::*)()>(&KHistoryComboBox::returnPressed));
+    action = ac->addAction(QStringLiteral("go"), m_combo, [this]() {
+        m_combo->returnPressed(QString());
+    });
     action->setText(i18n("Go"));
     action->setIcon(QIcon::fromTheme(QStringLiteral("go-jump-locationbar")));
 
