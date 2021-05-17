@@ -13,12 +13,12 @@ set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_
 set(FILELIGHT_VERSION ${RELEASE_SERVICE_VERSION})
 # minimum requirements
 
-cmake_minimum_required (VERSION 3.5 FATAL_ERROR)
+cmake_minimum_required (VERSION 3.16 FATAL_ERROR)
 project(Filelight VERSION ${FILELIGHT_VERSION})
 
 set(PROJECT_VERSION ${RELEASE_SERVICE_VERSION})
-set(KF5_MIN_VERSION "5.71.0")
-set(QT_REQUIRED_VERSION "5.12.0")
+set(KF5_MIN_VERSION "5.83.0")
+set(QT_REQUIRED_VERSION "5.15.0")
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
@@ -45,6 +45,9 @@ find_package(KF5DocTools) # Optional, not needed on Windows for example.
 
 add_definitions(-DTRANSLATION_DOMAIN=\"filelight\")
 add_definitions(-DQT_NO_FOREACH)
+add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050f00)
+add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055300)
+
 include_directories(src)
 
 add_subdirectory(src)
