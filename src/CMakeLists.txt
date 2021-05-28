@@ -44,7 +44,7 @@ target_link_libraries(filelight
     KF5::I18n
     KF5::XmlGui
     KF5::KIOWidgets # Only used for KDirLister, may be able to move away from that.
-    Qt5::Svg
+    Qt::Svg
 )
 if (WIN32)
     find_package(KDEWin REQUIRED)

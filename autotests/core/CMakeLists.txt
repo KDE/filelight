@@ -6,6 +6,6 @@ SET(FILENAME_TEST_SRCS
 ecm_add_test(
     ${FILENAME_TEST_SRCS}
     TEST_NAME "filetree_test"
-    LINK_LIBRARIES  Qt5::Test 
+    LINK_LIBRARIES  Qt::Test 
     KF5::CoreAddons
 )
