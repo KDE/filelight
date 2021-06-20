@@ -31,6 +31,7 @@
 #include <KShortcutsDialog>
 #include <KStandardAction>
 #include <KUrlCompletion>   //locationbar
+#include <kxmlgui_version.h>
 
 #include <QApplication>     //setupActions()
 #include <QDir>
@@ -209,8 +210,11 @@ void MainWindow::configToolbars() //slot
 
 void MainWindow::configKeys() //slot
 {
-    KShortcutsDialog::configure(actionCollection(), KShortcutsEditor::LetterShortcutsAllowed, true /*isModal*/, this);
-
+#if KXMLGUI_VERSION < QT_VERSION_CHECK(5,83,0)
+    KShortcutsDialog::configure(actionCollection(), KShortcutsEditor::LetterShortcutsAllowed, this, true);
+#else
+    KShortcutsDialog::showDialog(actionCollection(), KShortcutsEditor::LetterShortcutsAllowed, true /*isModal*/, this);
+#endif
 }
 
 void MainWindow::slotScanFolder()
