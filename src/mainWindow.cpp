@@ -209,7 +209,8 @@ void MainWindow::configToolbars() //slot
 
 void MainWindow::configKeys() //slot
 {
-    KShortcutsDialog::configure(actionCollection(), KShortcutsEditor::LetterShortcutsAllowed, this, true);
+    KShortcutsDialog::configure(actionCollection(), KShortcutsEditor::LetterShortcutsAllowed, true /*isModal*/, this);
+
 }
 
 void MainWindow::slotScanFolder()
