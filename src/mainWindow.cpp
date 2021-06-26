@@ -213,7 +213,7 @@ void MainWindow::configKeys() //slot
 #if KXMLGUI_VERSION < QT_VERSION_CHECK(5,84,0)
     KShortcutsDialog::configure(actionCollection(), KShortcutsEditor::LetterShortcutsAllowed, this, true);
 #else
-    KShortcutsDialog::showDialog(actionCollection(), KShortcutsEditor::LetterShortcutsAllowed, true /*isModal*/, this);
+    KShortcutsDialog::showDialog(actionCollection(), KShortcutsEditor::LetterShortcutsAllowed, this);
 #endif
 }
 
