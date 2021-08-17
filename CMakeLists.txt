@@ -17,7 +17,7 @@ cmake_minimum_required (VERSION 3.16 FATAL_ERROR)
 project(Filelight VERSION ${FILELIGHT_VERSION})
 
 set(PROJECT_VERSION ${RELEASE_SERVICE_VERSION})
-set(KF5_MIN_VERSION "5.83.0")
+set(KF5_MIN_VERSION "5.85.0")
 set(QT_REQUIRED_VERSION "5.15.0")
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
@@ -32,7 +32,7 @@ include(ECMSetupVersion)
 include(FeatureSummary)
 include(KDEInstallDirs)
 include(KDECMakeSettings)
-include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
+include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMQtDeclareLoggingCategory)
 
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Core Widgets Svg)
