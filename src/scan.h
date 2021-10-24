@@ -12,6 +12,8 @@
 #include <QMutex>
 #include <QList>
 
+#include <atomic>
+
 class Folder;
 
 namespace Filelight
@@ -54,7 +56,7 @@ Q_SIGNALS:
     void branchCacheHit(Folder* tree);
 
 private:
-    bool m_abort;
+    std::atomic_bool m_abort;
     QAtomicInt m_files;
     QAtomicInteger<size_t> m_totalSize;
 

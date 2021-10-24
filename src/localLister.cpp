@@ -16,6 +16,8 @@
 #include <QElapsedTimer>
 #include <QGuiApplication> //postEvent()
 #include <QFile>
+#include <QThreadPool>
+#include <QSemaphore>
 
 #include <dirent.h>
 #include <sys/stat.h>
@@ -140,6 +142,8 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
 #define KDE_lstat kdewin32_stat64
 #endif
 
+    QVector<QPair<QByteArray, QByteArray>> subDirectories;
+
     struct stat statbuf;
     dirent *ent;
     while ((ent = readdir(dir)))
@@ -150,8 +154,9 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
             return cwd;
         }
 
-        if (qstrcmp(ent->d_name, ".") == 0 || qstrcmp(ent->d_name, "..") == 0)
+        if (qstrcmp(ent->d_name, ".") == 0 || qstrcmp(ent->d_name, "..") == 0) {
             continue;
+        }
 
         // QStringBuilder is used here. It assumes ent->d_name is char[NAME_MAX + 1],
         // and thus copies only first NAME_MAX + 1 chars.
@@ -191,6 +196,7 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
 
             //check to see if we've scanned this section already
 
+            QMutexLocker lock(&m_treeMutex);
             for (Folder *folder : *m_trees)
             {
                 if (new_path == folder->name8Bit())
@@ -202,16 +208,38 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
                     cwd->append(folder, new_dirname.constData());
                 }
             }
+            lock.unlock();
 
-            if (!d) //then scan
-                if ((d = scan(new_path, new_dirname))) //then scan was successful
-                    cwd->append(d);
+            if (!d) { //then scan
+                subDirectories.append({new_path, new_dirname});
+            }
         }
 
         ++m_parent->m_files;
     }
 
     closedir(dir);
+
+    // Scan all subdirectories, either in separate threads or immediately,
+    // depending on how many free threads there are in the threadpool.
+    // Yes, it isn't optimal, but it's better than nothing and pretty simple.
+    QVector<Folder*> returnedCwds(subDirectories.count());
+    QSemaphore semaphore;
+    for (int i=0; i<subDirectories.count(); i++) {
+        std::function<void()> scanSubdir = [this, i, &subDirectories, &semaphore, &returnedCwds]() {
+            returnedCwds[i] = scan(subDirectories[i].first, subDirectories[i].second);
+            semaphore.release(1);
+        };
+        if (!QThreadPool::globalInstance()->tryStart(scanSubdir)) {
+            scanSubdir();
+        }
+    }
+    semaphore.acquire(subDirectories.count());
+    for (Folder *d : returnedCwds) {
+        if (d) { //then scan was successful
+            cwd->append(d);
+        }
+    }
 
     std::sort(cwd->files.begin(), cwd->files.end(), [](File *a, File*b) { return a->size() > b->size(); });
 

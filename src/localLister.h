@@ -10,6 +10,7 @@
 
 #include <QByteArray>
 #include <QThread>
+#include <QMutex>
 
 class Folder;
 
@@ -31,6 +32,7 @@ Q_SIGNALS:
 
 private:
     QString m_path;
+    QMutex m_treeMutex;
     QList<Folder*> *m_trees;
     ScanManager *m_parent;
 
