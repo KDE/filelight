@@ -23,7 +23,7 @@ class SummaryWidget : public QWidget
 
 public:
     explicit SummaryWidget(QWidget *parent);
-    ~SummaryWidget();
+    ~SummaryWidget() override;
 
 Q_SIGNALS:
     void activated(const QUrl&);

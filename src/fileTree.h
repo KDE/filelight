@@ -91,7 +91,7 @@ class Folder : public File
 public:
     Folder(const char *name) : File(name, 0), m_children(0) {} //DON'T pass the full path!
 
-    ~Folder()
+    ~Folder() override
     {
         qDeleteAll(files);
     }

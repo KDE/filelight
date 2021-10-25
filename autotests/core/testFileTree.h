@@ -17,7 +17,7 @@ class TestFileTree : public QObject
 
 public:
     TestFileTree();
-   ~TestFileTree(); 
+   ~TestFileTree() override;
     
 private:
     void testFileName();
