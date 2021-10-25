@@ -235,7 +235,7 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
         }
     }
     semaphore.acquire(subDirectories.count());
-    for (Folder *d : returnedCwds) {
+    for (Folder *d : std::as_const(returnedCwds)) {
         if (d) { //then scan was successful
             cwd->append(d);
         }
