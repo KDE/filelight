@@ -11,7 +11,6 @@
 #include <QStringList>
 #include <QSet>
 
-class KConfig;
 
 enum class Dirty
 {
