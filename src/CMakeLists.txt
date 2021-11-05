@@ -26,6 +26,21 @@ target_sources(filelight PRIVATE
     historyAction.cpp
     mainWindow.cpp
     main.cpp
+    settingsDialog.h
+    fileTree.h
+    radialMap/map.h
+    radialMap/radialMap.h
+    radialMap/sincos.h
+    radialMap/widget.h
+    scan.h
+    define.h
+    localLister.h
+    remoteLister.h
+    historyAction.h
+    Config.h
+    mainWindow.h
+    progressBox.h
+    summaryWidget.h
 )
 ecm_qt_declare_logging_category(filelight HEADER filelight_debug.h IDENTIFIER FILELIGHT_LOG CATEGORY_NAME org.kde.filelight DESCRIPTION "filelight" EXPORT FILELIGHT)
 
