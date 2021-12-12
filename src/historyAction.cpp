@@ -14,6 +14,7 @@
 #include <KLocalizedString>
 
 
+#include <QGuiApplication>
 #include <QIcon>
 
 inline HistoryAction::HistoryAction(const QIcon& icon, const QString& text, KActionCollection* ac)
@@ -58,8 +59,8 @@ QUrl HistoryAction::pop()
 
 HistoryCollection::HistoryCollection(KActionCollection *ac, QObject *parent)
         : QObject(parent)
-        , m_b(new HistoryAction(QIcon::fromTheme(QStringLiteral( "go-previous" )), i18nc("Go to the last path viewed", "Back"), ac))
-        , m_f(new HistoryAction(QIcon::fromTheme(QStringLiteral( "go-next" )), i18nc("Go to forward in the history of paths viewed", "Forward"), ac))
+        , m_b(new HistoryAction(QIcon::fromTheme(QGuiApplication::layoutDirection() == Qt::LeftToRight ? QStringLiteral("go-previous") : QStringLiteral("go-previous-symbolic-rtl")), i18nc("Go to the last path viewed", "Back"), ac))
+        , m_f(new HistoryAction(QIcon::fromTheme(QGuiApplication::layoutDirection() == Qt::LeftToRight ? QStringLiteral("go-next") : QStringLiteral("go-next-symbolic-rtl")), i18nc("Go to forward in the history of paths viewed", "Forward"), ac))
         , m_receiver(nullptr)
 {
     ac->addAction(QStringLiteral( "go_back" ), m_b);
