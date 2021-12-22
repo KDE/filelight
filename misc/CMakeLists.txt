@@ -6,7 +6,7 @@
 
 install(PROGRAMS org.kde.filelight.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES filelightrc DESTINATION ${KDE_INSTALL_CONFDIR})
-install(FILES filelightui.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}//filelight)
+install(FILES filelightui.rc DESTINATION ${KDE_INSTALL_KXMLGUIDIR}/filelight)
 install(FILES org.kde.filelight.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 ecm_install_icons(ICONS

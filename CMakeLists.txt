@@ -17,7 +17,7 @@ cmake_minimum_required (VERSION 3.16 FATAL_ERROR)
 project(Filelight VERSION ${FILELIGHT_VERSION})
 
 set(PROJECT_VERSION ${RELEASE_SERVICE_VERSION})
-set(KF5_MIN_VERSION "5.85.0")
+set(KF5_MIN_VERSION "5.89.0")
 set(QT_REQUIRED_VERSION "5.15.0")
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
@@ -35,7 +35,10 @@ include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMQtDeclareLoggingCategory)
 
-find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Core Widgets Svg)
+find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Core Widgets Svg)
+if (QT_MAJOR_VERSION STREQUAL "6")
+    find_package(Qt6Core5Compat)
+endif()
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
     XmlGui # For app
     KIO # For part
