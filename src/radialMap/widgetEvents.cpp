@@ -16,12 +16,11 @@
 #include <KIO//DeleteJob>
 #include <KMessageBox> //::mousePressEvent()
 #include <QMenu>  //::mousePressEvent()
-#include <KToolInvocation>
+#include <KTerminalLauncherJob>
 #include <QUrl>
 #include <KIO/JobUiDelegate>
 #include <KIO/OpenUrlJob>
 #include <KLocalizedString>
-#include <kio_version.h>
 
 #include <QApplication> //QApplication::setOverrideCursor()
 #include <QClipboard>
@@ -235,8 +234,11 @@ void RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
     Q_EMIT mouseHover(m_focus->file()->displayPath());
     update();
 }
-
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+void RadialMap::Widget::enterEvent(QEnterEvent *event)
+#else
 void RadialMap::Widget::enterEvent(QEvent *)
+#endif
 {
     if (!m_focus) return;
 
@@ -337,7 +339,10 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
     } else if (rescanAction && clicked == rescanAction) {
         Q_EMIT rescanRequested(url);
     } else if (openTerminal && clicked == openTerminal) {
-        KToolInvocation::invokeTerminal(QString(), QStringList(), url.path());
+        KTerminalLauncherJob *job = new KTerminalLauncherJob(QString(), this);
+        job->setUiDelegate(new KDialogJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+        job->setWorkingDirectory(url.path());
+        job->start();
     } else if (centerMap && clicked == centerMap) {
         Q_EMIT activated(url); //activate first, this will cause UI to prepare itself
         createFromCache((Folder *)m_focus->file());

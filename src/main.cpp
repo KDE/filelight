@@ -21,21 +21,22 @@
 
 int main(int argc, char *argv[])
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     /**
      * enable high dpi support
      */
     QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps, true);
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling, true);
-
+#endif
     QApplication app(argc, argv);
 
     KLocalizedString::setApplicationDomain("filelight");
-
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Kdelibs4ConfigMigrator migrate(QStringLiteral("filelight"));
     migrate.setConfigFiles(QStringList() << QStringLiteral("filelightrc"));
     migrate.setUiFiles(QStringList() << QStringLiteral("filelightui.rc"));
     migrate.migrate();
-
+#endif
     auto config = KSharedConfig::openConfig();
     auto stateConfig = KSharedConfig::openStateConfig();
     if (config->hasGroup("general")) {

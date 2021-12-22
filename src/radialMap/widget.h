@@ -84,7 +84,11 @@ protected:
     void mousePressEvent(QMouseEvent*) override;
     void paintEvent(QPaintEvent*) override;
     void resizeEvent(QResizeEvent*) override;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    void enterEvent(QEnterEvent *event) override;
+#else
     void enterEvent(QEvent*) override;
+#endif
     void leaveEvent(QEvent*) override;
 
 protected:
