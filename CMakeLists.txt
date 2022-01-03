@@ -36,9 +36,6 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMQtDeclareLoggingCategory)
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Core Widgets Svg)
-if (QT_MAJOR_VERSION STREQUAL "6")
-    find_package(Qt6Core5Compat)
-endif()
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
     XmlGui # For app
     KIO # For part
