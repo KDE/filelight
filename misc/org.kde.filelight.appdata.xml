@@ -420,7 +420,7 @@
   <url type="donation">https://www.kde.org/community/donations/?app=filelight&amp;source=appdata</url>
   <screenshots>
     <screenshot type="default">
-      <image width="658" height="418">https://cdn.kde.org/screenshots/filelight/filelight.png</image>
+      <image>https://cdn.kde.org/screenshots/filelight/filelight.png</image>
     </screenshot>
   </screenshots>
   <project_group>KDE</project_group>
