@@ -175,6 +175,7 @@ Comment[wa]=Vey les informåcions so l' eployaedje del deure plake
 Comment[x-test]=xxView disk usage informationxx
 Comment[zh_CN]=查看磁盘使用信息
 Comment[zh_TW]=檢視磁碟用量資訊
+Keywords=disk;space;storage;usage;
 Terminal=false
 MimeType=inode/directory;
 X-DocPath=filelight/index.html
