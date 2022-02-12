@@ -192,6 +192,7 @@ Keywords[sl]=disk;pogon;prostor;shranjevanje;uporaba;raba;
 Keywords[sv]=disk;drivenhet;utrymme;lagring;användning;
 Keywords[uk]=disk;drive;space;storage;usage;диск;пристрій;місце;зберігання;сховище;використання;вжиток;
 Keywords[x-test]=xxdiskxx;xxdrivexx;xxspacexx;xxstoragexx;xxusagexx;
+Keywords[zh_CN]=disk;drive;space;storage;usage;磁盘;驱动器;存储;空间;占用;使用情况;空间占用;剩余空间;
 Terminal=false
 MimeType=inode/directory;
 X-DocPath=filelight/index.html
