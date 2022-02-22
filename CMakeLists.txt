@@ -17,7 +17,7 @@ cmake_minimum_required (VERSION 3.16 FATAL_ERROR)
 project(Filelight VERSION ${FILELIGHT_VERSION})
 
 set(PROJECT_VERSION ${RELEASE_SERVICE_VERSION})
-set(KF5_MIN_VERSION "5.90.0")
+set(KF5_MIN_VERSION "5.91.0")
 set(QT_REQUIRED_VERSION "5.15.0")
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
@@ -34,6 +34,7 @@ include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMQtDeclareLoggingCategory)
+include(ECMDeprecationSettings)
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Core Widgets Svg)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
@@ -44,9 +45,11 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
 find_package(KF5DocTools) # Optional, not needed on Windows for example.
 
 add_definitions(-DTRANSLATION_DOMAIN=\"filelight\")
-add_definitions(-DQT_NO_FOREACH)
-add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050f00)
-add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055800)
+
+ecm_set_disabled_deprecation_versions(QT 5.15.2
+    KF 5.91
+)
+
 
 include_directories(src)
 
