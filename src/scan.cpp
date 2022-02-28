@@ -78,7 +78,14 @@ bool ScanManager::start(const QUrl &url)
 
     QString path = url.toLocalFile();
 
-    if (!path.endsWith(QDir::separator())) path += QDir::separator();
+    // Cross-platform consideration: we get the path from a URL and in there the
+    // separator is always the portable slash, as such toLocalFile will also get us a slash
+    // separator, not the native one. i.e. on windows this is C:forwardslash not C:backslash
+    // do not use QDir::separator!
+    // https://bugs.kde.org/show_bug.cgi?id=450863
+    if (!path.endsWith(QLatin1Char('/'))) {
+        path += QLatin1Char('/');
+    }
 
     QList<Folder*> *trees = new QList<Folder*>;
 
@@ -178,7 +185,10 @@ void ScanManager::invalidateCacheFor(const QUrl &url)
     }
 
     QString path = url.toLocalFile();
-    if (!path.endsWith(QDir::separator())) path += QDir::separator();
+    // Do not use QDir::separator! The path is using / even on windows.
+    if (!path.endsWith(QLatin1Char('/'))) {
+        path += QLatin1Char('/');
+    }
 
     Q_EMIT aboutToEmptyCache();
 
