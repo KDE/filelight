@@ -79,7 +79,7 @@
   <summary xml:lang="sv">Filelight skapar en interaktiv avbildning av koncentriska segmenterade ringar som hjälper till att åskådliggöra diskanvändning på datorn</summary>
   <summary xml:lang="uk">Filelight створює інтерактивну карту з концентричних кіл, поділених на сектори, яка допоможе вам візуально контролювати використання дискового простору на вашому комп’ютері</summary>
   <summary xml:lang="x-test">xxFilelight creates an interactive map of concentric segmented-rings that helps visualize disk usage on your computerxx</summary>
-  <summary xml:lang="zh-CN">Filelight 会建立一个同心分段环状交互式地图，帮助您可视化您计算机上的磁盘使用</summary>
+  <summary xml:lang="zh-CN">Filelight 可以显示一个分段式同心圆环交互地图，帮助您掌握计算机的磁盘使用情况</summary>
   <summary xml:lang="zh-TW">Filelight 建立同心圓式的互動地圖，有助於可視化您電腦上的磁碟使用狀況</summary>
   <description>
     <p>
@@ -120,7 +120,7 @@
     <p xml:lang="sv">Filelight är ett program för att åskådliggöra diskanvändning på datorn</p>
     <p xml:lang="uk">Filelight — програма для візуалізації використання дискового простору вашого комп'ютера</p>
     <p xml:lang="x-test">xxFilelight is an application to visualize the disk usage on your computerxx</p>
-    <p xml:lang="zh-CN">Filelight 是一个用于可视化您计算机上磁盘使用情况的应用程序</p>
+    <p xml:lang="zh-CN">Filelight 是一款图形化显示本机磁盘使用情况的应用程序</p>
     <p xml:lang="zh-TW">Filelight 是個能將電腦硬碟使用量可視化的應用程式</p>
     <p>Features:</p>
     <p xml:lang="ast">Carauterístiques:</p>
@@ -237,7 +237,7 @@
       <li xml:lang="sv">Anpassningsbara färgscheman</li>
       <li xml:lang="uk">Придатна до налаштовування тема кольорів</li>
       <li xml:lang="x-test">xxConfigurable color schemesxx</li>
-      <li xml:lang="zh-CN">可配置的色彩方案</li>
+      <li xml:lang="zh-CN">可自定义的配色方案</li>
       <li xml:lang="zh-TW">可設定的配色</li>
       <li>File system navigation by mouse clicks</li>
       <li xml:lang="ast">Navegación pelos sistemes de ficheros pente calcos del mur</li>
@@ -275,7 +275,7 @@
       <li xml:lang="sv">Navigering i filsystem med musklick</li>
       <li xml:lang="uk">Навігація файловою системою за допомогою клацання кнопками миші</li>
       <li xml:lang="x-test">xxFile system navigation by mouse clicksxx</li>
-      <li xml:lang="zh-CN">用鼠标点击来浏览文件系统</li>
+      <li xml:lang="zh-CN">通过点击鼠标浏览文件系统</li>
       <li xml:lang="zh-TW">按按滑鼠即可瀏覽檔案系統</li>
       <li>Information about files and directories on hovering</li>
       <li xml:lang="ast">Información tocante a ficheros y direutorios al pasar penriba'l mur</li>
@@ -313,7 +313,7 @@
       <li xml:lang="sv">Information om filer och kataloger när musen hålls över dem</li>
       <li xml:lang="uk">Показ даних щодо файлів і каталогів у відповідь на наведення вказівника миші</li>
       <li xml:lang="x-test">xxInformation about files and directories on hoveringxx</li>
-      <li xml:lang="zh-CN">悬停时显示文件和目录信息</li>
+      <li xml:lang="zh-CN">鼠标悬停时显示文件和目录信息</li>
       <li xml:lang="zh-TW">停駐時顯示檔案或資料夾的資訊</li>
       <li>Files and directories can be copied or removed directly from the context menu</li>
       <li xml:lang="ast">Los ficheros y direutorios puen copiase o desaniciase direutamente dende'l menú contestual</li>
@@ -351,7 +351,7 @@
       <li xml:lang="sv">Filer och kataloger kan kopieras eller tas bort direkt i den sammanhangsberoende menyn</li>
       <li xml:lang="uk">Можливість копіювання та вилучення файлів і каталогів за допомогою контекстного меню програми</li>
       <li xml:lang="x-test">xxFiles and directories can be copied or removed directly from the context menuxx</li>
-      <li xml:lang="zh-CN">文件和目录可以在右键菜单中直接被复制或删除</li>
+      <li xml:lang="zh-CN">文件和目录可通过右键菜单直接复制或删除</li>
       <li xml:lang="zh-TW">可透過內容目錄直接複製或移除檔案或資料夾</li>
       <li>Integration into Konqueror and Krusader</li>
       <li xml:lang="ast">Integración con Konqueror y Krusader</li>
@@ -390,7 +390,7 @@
       <li xml:lang="sv">Integrerat med Konqueror och Krusader</li>
       <li xml:lang="uk">Інтеграція з Konqueror та Krusader</li>
       <li xml:lang="x-test">xxIntegration into Konqueror and Krusaderxx</li>
-      <li xml:lang="zh-CN">与 Konqueror 和 Krusader 的整合</li>
+      <li xml:lang="zh-CN">与 Konqueror 和 Krusader 进行整合</li>
       <li xml:lang="zh-TW">可整合進 Konqueror 和 Krusader</li>
     </ul>
   </description>
