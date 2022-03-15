@@ -1,6 +1,7 @@
 /***********************************************************************
 * SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
 * SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
+* SPDX-FileCopyrightText: 2022 Harald Sitter <sitter@kde.org>
 *
 * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 ***********************************************************************/
@@ -134,14 +135,6 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
         return cwd;
     }
 
-#ifdef _MSC_VER
-//use a wider struct on win for nice handling of files larger than 2 GB
-#undef KDE_struct_stat
-#undef KDE_lstat
-#define KDE_struct_stat struct _stat64
-#define KDE_lstat kdewin32_stat64
-#endif
-
     QVector<QPair<QByteArray, QByteArray>> subDirectories;
 
     struct stat statbuf;
@@ -164,32 +157,54 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
         // Make full copy of this string.
         QByteArray new_path = path + static_cast<const char*>(ent->d_name);
 
-        //get file information
+        // get file information. Split this per-OS. File attributes on windows/ntfs are special and not properly
+        // represented through its _stat-like API.
+
+#ifdef Q_OS_WINDOWS
+        // https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getfileattributesexa
+        FILE_BASIC_INFO basicInfo;
+        WIN32_FILE_ATTRIBUTE_DATA fileAttributeData;
+        BOOL result =
+            GetFileAttributesExA(new_path.constData(), GetFileExInfoStandard,
+                                 (LPVOID)&fileAttributeData);
+        if (result == 0) {
+            qWarning() << "failed to get attributes for" << new_path;
+            continue;
+        }
+
+        const auto attributes = fileAttributeData.dwFileAttributes;
+        // Reparse points are symlinks or NTFS junctions.
+        const bool isSkipable = attributes & FILE_ATTRIBUTE_REPARSE_POINT || attributes & FILE_ATTRIBUTE_TEMPORARY;
+        const bool isDir = attributes & FILE_ATTRIBUTE_DIRECTORY;
+        const bool isFile = !isSkipable && !isDir; // fileness is implicit in win32 api
+        ULARGE_INTEGER ulargeInt;
+        ulargeInt.HighPart = fileAttributeData.nFileSizeHigh;
+        ulargeInt.LowPart = fileAttributeData.nFileSizeLow;
+        const auto size = ulargeInt.QuadPart;
+#else
         if (lstat(new_path.constData(), &statbuf) == -1) {
             outputError(new_path);
             continue;
         }
 
-        if (S_ISLNK(statbuf.st_mode) ||
+        const bool isSkipable = S_ISLNK(statbuf.st_mode) ||
                 S_ISCHR(statbuf.st_mode) ||
                 S_ISBLK(statbuf.st_mode) ||
                 S_ISFIFO(statbuf.st_mode)||
-                S_ISSOCK(statbuf.st_mode))
-        {
+                S_ISSOCK(statbuf.st_mode);
+        const bool isDir = S_ISDIR(statbuf.st_mode);
+        const bool isFile =S_ISREG(statbuf.st_mode);
+        const auto size = statbuf.st_blocks * S_BLKSIZE;
+#endif
+
+        if (isSkipable) {
             continue;
         }
 
-        if (S_ISREG(statbuf.st_mode)) { //file
-#ifndef Q_OS_WIN
-            const size_t size = (statbuf.st_blocks * S_BLKSIZE);
-#else
-            const size_t size = statbuf.st_size;
-#endif
+        if (isFile) {
             cwd->append(ent->d_name, size);
             m_parent->m_totalSize += size;
-        }
-        else if (S_ISDIR(statbuf.st_mode)) //folder
-        {
+        } else if (isDir) {
             Folder *d = nullptr;
             const QByteArray new_dirname = QByteArray(ent->d_name) + QByteArrayLiteral("/");
             new_path += '/';
@@ -270,6 +285,3 @@ void LocalLister::readMounts()
 }
 
 }//namespace Filelight
-
-
-
