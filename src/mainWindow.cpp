@@ -161,6 +161,13 @@ void MainWindow::setupActions() //singleton function
     action->setText(i18n("Go"));
     action->setIcon(QIcon::fromTheme(QStringLiteral("go-jump-locationbar")));
 
+    action = ac->addAction(QStringLiteral("go_overview"), m_combo, [this]() {
+        slotAbortScan();
+        showSummary();
+    });
+    action->setText(i18nc("@action go to overview page, listing browsable mount points", "Overview"));
+    action->setIcon(QIcon::fromTheme(QStringLiteral("go-jump-locationbar")));
+
     action = ac->addAction(QStringLiteral("scan_folder"), this, &MainWindow::slotScanFolder);
     action->setText(i18n("Scan Folder"));
     action->setIcon(QIcon::fromTheme(QStringLiteral("folder")));
@@ -395,8 +402,7 @@ bool MainWindow::openUrl(const QUrl &u)
     else
     {
         //we don't want to be using the summary screen anymore
-        if (m_summary != nullptr)
-            m_summary->hide();
+        hideSummary();
 
         m_stateWidget->show();
         m_layout->addWidget(m_stateWidget);
@@ -570,8 +576,16 @@ void MainWindow::showSummary()
         connect(m_summary, &SummaryWidget::activated, this, &MainWindow::openUrl);
         m_summary->show();
         m_layout->addWidget(m_summary);
+    } else {
+        m_summary->show();
     }
-    else m_summary->show();
+}
+
+void MainWindow::hideSummary()
+{
+    if (m_summary != nullptr) {
+        m_summary->hide();
+    }
 }
 
 } //namespace Filelight

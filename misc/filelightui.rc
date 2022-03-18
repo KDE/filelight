@@ -1,5 +1,5 @@
 <!DOCTYPE gui SYSTEM "kpartgui.dtd">
-<gui name="filelight" version="5">
+<gui name="filelight" version="6">
 <MenuBar>
   <Menu name="file" noMerge="1"><text>&amp;Scan</text>
    <Action name="scan_folder"/>
@@ -22,6 +22,7 @@
 </MenuBar>
 
 <ToolBar name="mainToolBar"><text>Main Toolbar</text>
+    <Action name="go_overview"/>
     <Action name="go_back"/>
     <Action name="go_forward"/>
     <Action name="go_up"/>

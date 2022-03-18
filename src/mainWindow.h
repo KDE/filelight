@@ -87,6 +87,7 @@ private:
     bool closeUrl();
     QString prettyUrl(const QUrl &url) const;
     void showSummary();
+    void hideSummary();
     bool start(const QUrl&);
 
     KSqueezedTextLabel *m_status[2];
