@@ -288,7 +288,7 @@
       <li xml:lang="ast">Información tocante a ficheros y direutorios al pasar penriba'l mur</li>
       <li xml:lang="az">Kursor üzərində dayandıqda fayllar və qovluqlar haqqında məlumat</li>
       <li xml:lang="ca">Informació quant a fitxers i directoris en passar-hi per sobre</li>
-      <li xml:lang="ca-valencia">Informació quant a fitxers i directoris en passar-hi per sobre</li>
+      <li xml:lang="ca-valencia">Informació quant a fitxers i directoris en passar-hi per damunt</li>
       <li xml:lang="da">Information om filer og mapper når markøren holdes over</li>
       <li xml:lang="de">Informationen über Dateien und Ordner beim Überfahren mit dem Mauszeiger</li>
       <li xml:lang="el">Πληροφορίες για αρχεία και καταλόγους με αιώρηση</li>
@@ -366,7 +366,7 @@
       <li xml:lang="ast">Integración con Konqueror y Krusader</li>
       <li xml:lang="az">Dolphin, Konqueror və Krusader-ə inteqrasiya</li>
       <li xml:lang="ca">Integració en el Konqueror i el Krusader</li>
-      <li xml:lang="ca-valencia">Integració en el Konqueror i el Krusader</li>
+      <li xml:lang="ca-valencia">Integració en Konqueror i el Krusader</li>
       <li xml:lang="cs">Integrace do Konqueroru a Krusaderu</li>
       <li xml:lang="da">Integration i Konqueror og Krusader</li>
       <li xml:lang="de">Integration in Konqueror und Krusader</li>
