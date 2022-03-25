@@ -235,7 +235,7 @@ void RadialMap::Widget::mouseMoveEvent(QMouseEvent *e)
     update();
 }
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-void RadialMap::Widget::enterEvent(QEnterEvent *event)
+void RadialMap::Widget::enterEvent(QEnterEvent *)
 #else
 void RadialMap::Widget::enterEvent(QEvent *)
 #endif
