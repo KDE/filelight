@@ -155,6 +155,17 @@ DiskList::DiskList()
             continue;
         }
 
+        // https://docs.flatpak.org/en/latest/sandbox-permissions.html
+        // /var and friends are not useful paths. /var has some stuff mounted that isn't useful either
+        static const bool inSandbox =
+            !(QStandardPaths::locate(QStandardPaths::RuntimeLocation, QLatin1String("flatpak-info")).isEmpty() ||
+              qEnvironmentVariableIsSet("SNAP"));
+        const QString flatpakAppVar = QDir::homePath() + QLatin1String("/.var/app/");
+        if ((inSandbox && (storage.isReadOnly())) || storage.rootPath().startsWith(QLatin1String("/var/")) ||
+            storage.rootPath().startsWith(flatpakAppVar)) {
+            continue;
+        }
+
         Disk disk;
         disk.mount = storage.rootPath();
         disk.name = storage.name();
