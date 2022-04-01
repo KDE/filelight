@@ -17,8 +17,8 @@ cmake_minimum_required (VERSION 3.16 FATAL_ERROR)
 project(Filelight VERSION ${FILELIGHT_VERSION})
 
 set(PROJECT_VERSION ${RELEASE_SERVICE_VERSION})
-set(KF5_MIN_VERSION "5.91.0")
-set(QT_REQUIRED_VERSION "5.15.0")
+set(KF5_MIN_VERSION "5.92.0")
+set(QT_REQUIRED_VERSION "5.15.2")
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
@@ -47,7 +47,7 @@ find_package(KF5DocTools) # Optional, not needed on Windows for example.
 add_definitions(-DTRANSLATION_DOMAIN=\"filelight\")
 
 ecm_set_disabled_deprecation_versions(QT 5.15.2
-    KF 5.91
+    KF 5.92
 )
 
 
