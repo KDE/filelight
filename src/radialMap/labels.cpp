@@ -10,6 +10,8 @@
 #include <QPainter>
 #include <QVector>
 
+#include <KLocalizedString>
+
 #include "Config.h"
 #include "fileTree.h"
 #include "radialMap.h"
@@ -295,7 +297,10 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
         paint.drawLine(label->targetX, label->targetY, label->middleX, label->startY);
         paint.drawLine(label->middleX, label->startY, label->startX, label->startY);
 
-        paint.drawText(label->textX, label->textY, label->qs);
+        QString text = label->qs;
+        if (isSummary() && text == QLatin1String("free")) text = i18nc("Free as in part of the disk that is free", "free");
+        else if (isSummary() && text == QLatin1String("used")) text = i18nc("Used as in part of the disk that is used", "used");
+        paint.drawText(label->textX, label->textY, text);
     }
 
     qDeleteAll(list);
