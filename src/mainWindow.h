@@ -30,7 +30,7 @@ class HistoryCollection;
 namespace Filelight {
 
 class ScanManager;
-class SummaryWidget;
+class OverviewWidget;
 
 class MainWindow : public KXmlGuiWindow // Maybe use qmainwindow
 {
@@ -86,8 +86,8 @@ private:
     void setupActions();
     bool closeUrl();
     QString prettyUrl(const QUrl &url) const;
-    void showSummary();
-    void hideSummary();
+    void showOverview();
+    void hideOverview();
     bool start(const QUrl&);
 
     KSqueezedTextLabel *m_status[2];
@@ -96,7 +96,7 @@ private:
     KRecentFilesAction *m_recentScans;
 
     QLayout            *m_layout;
-    SummaryWidget      *m_summary;
+    OverviewWidget *m_overviewWidget;
     RadialMap::Widget  *m_map;
     ProgressBox        *m_stateWidget;
     ScanManager        *m_manager;

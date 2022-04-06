@@ -41,6 +41,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
     XmlGui # For app
     KIO # For part
     I18n
+    IconThemes
 )
 find_package(KF5DocTools) # Optional, not needed on Windows for example.
 

@@ -15,7 +15,6 @@
 #include "radialMap/widget.h"
 #include "scan.h"
 #include "settingsDialog.h"
-#include "summaryWidget.h"
 
 #include <cstdlib>            //std::exit()
 #include <iostream>
@@ -39,12 +38,14 @@
 #include <QStatusBar>
 #include <QLineEdit>
 
+#include "overviewWidget.h"
+
 namespace Filelight {
 
 MainWindow::MainWindow()
     : KXmlGuiWindow()
     , m_histories(nullptr)
-    , m_summary(nullptr)
+    , m_overviewWidget(nullptr)
     , m_map(nullptr)
     , m_started(false)
 {
@@ -142,7 +143,7 @@ void MainWindow::setupActions() //singleton function
 
     action = ac->addAction(QStringLiteral("scan_root"), this, &MainWindow::slotScanRootFolder);
     action->setText(i18n("Scan &Root Folder"));
-    action->setIcon(QIcon::fromTheme(QStringLiteral("folder-red")));
+    action->setIcon(QIcon::fromTheme(QStringLiteral("folder-root")));
 
     action = ac->addAction(QStringLiteral("scan_rescan"), this, &MainWindow::rescan);
     action->setText(i18n("Rescan"));
@@ -163,7 +164,7 @@ void MainWindow::setupActions() //singleton function
 
     action = ac->addAction(QStringLiteral("go_overview"), m_combo, [this]() {
         slotAbortScan();
-        showSummary();
+        showOverview();
     });
     action->setText(i18nc("@action go to overview page, listing browsable mount points", "Overview"));
     action->setIcon(QIcon::fromTheme(QStringLiteral("go-jump-locationbar")));
@@ -358,7 +359,7 @@ void MainWindow::postInit()
     if (url().isEmpty()) //if url is not empty openUrl() has been called immediately after ctor, which happens
     {
         m_map->hide();
-        showSummary();
+        showOverview();
 
         //FIXME KXMLGUI is b0rked, it should allow us to set this
         //BEFORE createGUI is called but it doesn't
@@ -401,8 +402,8 @@ bool MainWindow::openUrl(const QUrl &u)
     }
     else
     {
-        //we don't want to be using the summary screen anymore
-        hideSummary();
+        //we don't want to be using the overview screen anymore
+        hideOverview();
 
         m_stateWidget->show();
         m_layout->addWidget(m_stateWidget);
@@ -425,7 +426,7 @@ bool MainWindow::closeUrl()
     m_map->hide();
     m_stateWidget->hide();
 
-    showSummary();
+    showOverview();
 
     return true;
 }
@@ -475,10 +476,6 @@ void MainWindow::configFilelight()
     connect(dialog, &SettingsDialog::canvasIsDirty, m_map, &RadialMap::Widget::refresh);
     connect(dialog, &SettingsDialog::mapIsInvalid, m_manager, &ScanManager::emptyCache);
 
-    if (m_summary) {
-        connect(dialog, &SettingsDialog::canvasIsDirty, m_summary, &SummaryWidget::canvasDirtied);
-    }
-
     dialog->show(); //deletes itself
 }
 
@@ -514,10 +511,10 @@ bool MainWindow::start(const QUrl &url)
 
 void MainWindow::rescan()
 {
-    if (m_summary && !m_summary->isHidden()) {
-        delete m_summary;
-        m_summary = nullptr;
-        showSummary();
+    if (m_overviewWidget && !m_overviewWidget->isHidden()) {
+        delete m_overviewWidget;
+        m_overviewWidget = nullptr;
+        showOverview();
         return;
     }
 
@@ -548,7 +545,7 @@ void MainWindow::folderScanCompleted(Folder *tree)
         m_map->hide();
         m_stateWidget->hide();
 
-        showSummary();
+        showOverview();
 
         setUrl(QUrl());
     }
@@ -568,23 +565,22 @@ void MainWindow::mapChanged(const Folder *tree)
     m_numberOfFiles->setText(text);
 }
 
-void MainWindow::showSummary()
+void MainWindow::showOverview()
 {
-    if (m_summary == nullptr) {
-        m_summary = new SummaryWidget(widget());
-        m_summary->setObjectName(QStringLiteral("summaryWidget"));
-        connect(m_summary, &SummaryWidget::activated, this, &MainWindow::openUrl);
-        m_summary->show();
-        m_layout->addWidget(m_summary);
+    if (m_overviewWidget == nullptr) {
+        m_overviewWidget = new OverviewWidget(actionCollection(), widget());
+        m_overviewWidget->setObjectName(QStringLiteral("OverviewWidget"));
+        m_overviewWidget->show();
+        m_layout->addWidget(m_overviewWidget);
     } else {
-        m_summary->show();
+        m_overviewWidget->show();
     }
 }
 
-void MainWindow::hideSummary()
+void MainWindow::hideOverview()
 {
-    if (m_summary != nullptr) {
-        m_summary->hide();
+    if (m_overviewWidget != nullptr) {
+        m_overviewWidget->hide();
     }
 }
 

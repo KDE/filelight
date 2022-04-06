@@ -24,11 +24,10 @@
 #include "sincos.h"
 #include "widget.h"
 
-RadialMap::Map::Map(bool summary)
+RadialMap::Map::Map()
         : m_visibleDepth(DEFAULT_RING_DEPTH)
         , m_ringBreadth(MIN_RING_BREADTH)
         , m_innerRadius(0)
-        , m_summary(summary)
 {
 
     //FIXME this is all broken. No longer is a maximum depth!
@@ -258,32 +257,6 @@ void RadialMap::Map::colorise()
     double deltaRed   = (double)(kdeColour[0].red()   - kdeColour[1].red())   / 2880; //2880 for semicircle
     double deltaGreen = (double)(kdeColour[0].green() - kdeColour[1].green()) / 2880;
     double deltaBlue  = (double)(kdeColour[0].blue()  - kdeColour[1].blue())  / 2880;
-
-    if (m_summary) { // Summary view has its own colors, special cased.
-        cp = Qt::gray;
-        cb = Qt::white;
-        m_signature[0][0]->setPalette(cp, cb);
-
-        // need to check in case there's no free space
-        if (m_signature[0].size() > 1) {
-            cb = QApplication::palette().highlight().color();
-            cb.getHsv(&h, &s1, &v1);
-
-            if (s1 > 80) {
-                s1 = 80;
-            }
-
-            v2 = v1 - int(contrast * v1);
-            s2 = s1 + int(contrast * (255 - s1));
-
-            cb.setHsv(h, s1, v1);
-            cp.setHsv(h, s2, v2);
-            m_signature[0][1]->setPalette(cp, cb);
-        }
-
-        return;
-    }
-
 
     for (uint i = 0; i <= m_visibleDepth; ++i, darkness += 0.04) {
         for (Segment *segment : m_signature[i]) {

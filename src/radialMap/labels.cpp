@@ -298,8 +298,6 @@ void RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
         paint.drawLine(label->middleX, label->startY, label->startX, label->startY);
 
         QString text = label->qs;
-        if (isSummary() && text == QLatin1String("free")) text = i18nc("Free as in part of the disk that is free", "free");
-        else if (isSummary() && text == QLatin1String("used")) text = i18nc("Used as in part of the disk that is used", "used");
         paint.drawText(label->textX, label->textY, text);
     }
 

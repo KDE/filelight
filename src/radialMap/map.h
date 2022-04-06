@@ -22,7 +22,7 @@ class Segment;
 class Map
 {
 public:
-    explicit Map(bool summary);
+    Map();
     ~Map();
 
     void make(const Folder *, bool = false);
@@ -66,7 +66,6 @@ private:
     int m_ringBreadth;
     uint m_innerRadius;  ///radius of inner circle
     QString m_centerText;
-    bool m_summary;
     qreal m_dpr;
 
     uint MAP_2MARGIN;

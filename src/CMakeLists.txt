@@ -15,6 +15,7 @@ target_sources(filelight PRIVATE
     radialMap/map.cpp
     radialMap/widgetEvents.cpp
     radialMap/labels.cpp
+    overviewWidget.cpp
     scan.cpp
     progressBox.cpp
     Config.cpp
@@ -22,7 +23,6 @@ target_sources(filelight PRIVATE
     fileTree.cpp
     localLister.cpp
     remoteLister.cpp
-    summaryWidget.cpp
     historyAction.cpp
     mainWindow.cpp
     main.cpp
@@ -40,7 +40,6 @@ target_sources(filelight PRIVATE
     Config.h
     mainWindow.h
     progressBox.h
-    summaryWidget.h
 )
 ecm_qt_declare_logging_category(filelight HEADER filelight_debug.h IDENTIFIER FILELIGHT_LOG CATEGORY_NAME org.kde.filelight DESCRIPTION "filelight" EXPORT FILELIGHT)
 
@@ -59,6 +58,7 @@ target_link_libraries(filelight
     KF5::I18n
     KF5::XmlGui
     KF5::KIOWidgets # Only used for KDirLister, may be able to move away from that.
+    KF5::IconThemes
     Qt${QT_MAJOR_VERSION}::Svg
 )
 if (WIN32)
