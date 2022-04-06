@@ -1,6 +1,7 @@
 /***********************************************************************
 * SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
 * SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
+* SPDX-FileCopyrightText: 2022 Harald Sitter <sitter@kde.org>
 *
 * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 ***********************************************************************/
@@ -28,6 +29,8 @@ class ScanManager : public QObject
     friend class LocalLister;
     friend class RemoteLister;
 
+    Q_PROPERTY(bool running READ running NOTIFY runningChanged)
+
 public:
     explicit ScanManager(QObject *parent);
     ~ScanManager() override;
@@ -35,10 +38,10 @@ public:
     bool start(const QUrl& path);
     bool running() const;
 
-    int files() const {
+    Q_INVOKABLE int files() const {
         return m_files.loadRelaxed();
     }
-    size_t totalSize() const {
+    Q_INVOKABLE size_t totalSize() const {
         return m_totalSize.loadRelaxed();
     }
 
@@ -53,7 +56,9 @@ public Q_SLOTS:
 Q_SIGNALS:
     void completed(Folder*);
     void aboutToEmptyCache();
-    void branchCacheHit(Folder* tree);
+    void branchCacheHit(Folder *tree);
+    void runningChanged();
+    void aborted();
 
 private:
     std::atomic_bool m_abort;

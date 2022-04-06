@@ -1,6 +1,7 @@
 /***********************************************************************
 * SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
 * SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
+* SPDX-FileCopyrightText: 2022 Harald Sitter <sitter@kde.org>
 *
 * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 ***********************************************************************/
@@ -47,9 +48,11 @@ public:
 
 
     friend class Widget;
+    friend class Item;
 
 private:
     void paint(QPaintDevice *paintDevice = nullptr);
+    void paint(QPainter *painter);
     void colorise();
     void setRingBreadth();
     void findVisibleDepth(const Folder *dir, uint currentDepth = 0);
@@ -66,7 +69,7 @@ private:
     int m_ringBreadth;
     uint m_innerRadius;  ///radius of inner circle
     QString m_centerText;
-    qreal m_dpr;
+    qreal m_dpr = 1.0;
 
     uint MAP_2MARGIN;
 };

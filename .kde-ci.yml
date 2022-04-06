@@ -9,5 +9,6 @@ Dependencies:
     'frameworks/kdoctools': '@stable'
     'frameworks/kxmlgui': '@stable'
     'frameworks/kcrash': '@stable'
-    'frameworks/kio': '@stable'  
+    'frameworks/kio': '@stable'
+    'frameworks/kdeclarative': '@stable'
 

@@ -1,6 +1,7 @@
 /***********************************************************************
 * SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
 * SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
+* SPDX-FileCopyrightText: 2022 Harald Sitter <sitter@kde.org>
 *
 * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 ***********************************************************************/
@@ -29,6 +30,8 @@ ScanManager::ScanManager(QObject *parent)
 {
     Filelight::LocalLister::readMounts();
     connect(this, &ScanManager::branchCacheHit, this, &ScanManager::foundCached, Qt::QueuedConnection);
+    // Bit aggressive this. Completed is emitted per folder I think.
+    connect(this, &ScanManager::completed, this, &ScanManager::runningChanged, Qt::QueuedConnection);
 }
 
 ScanManager::~ScanManager()
@@ -162,6 +165,8 @@ bool ScanManager::start(const QUrl &url)
     connect(m_thread, &LocalLister::branchCompleted, this, &ScanManager::cacheTree, Qt::QueuedConnection);
     m_thread->start();
 
+    Q_EMIT runningChanged();
+
     return true;
 }
 
@@ -171,7 +176,11 @@ bool ScanManager::abort()
 
     delete findChild<RemoteLister *>(QStringLiteral( "remote_lister" ));
 
-    return m_thread && m_thread->wait();
+    const bool ret = m_thread && m_thread->wait();
+    Q_EMIT runningChanged();
+
+    Q_EMIT aborted();
+    return ret;
 }
 
 void ScanManager::invalidateCacheFor(const QUrl &url)

@@ -1,12 +1,12 @@
 /***********************************************************************
 * SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
 * SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
+* SPDX-FileCopyrightText: 2022 Harald Sitter <sitter@kde.org>
 *
 * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 ***********************************************************************/
 
-#ifndef WIDGET_H
-#define WIDGET_H
+#pragma once
 
 #include <KJob>
 #include <QUrl>
@@ -19,6 +19,7 @@
 #include <QResizeEvent>
 #include <QWidget>
 #include <QTimer>
+#include <QQuickPaintedItem>
 
 #include "map.h"
 #include "Config.h" // Dirty
@@ -27,87 +28,79 @@ class Folder;
 class File;
 namespace KIO {
 class Job;
-}
+} // namespace KIO
 
 namespace RadialMap
 {
 class Segment;
 
-class Widget : public QWidget
+class Item : public QQuickPaintedItem
 {
     Q_OBJECT
 
+    Q_PROPERTY(bool valid READ isValid NOTIFY validChanged)
 public:
-    explicit Widget(QWidget* = nullptr);
-    ~Widget() override;
+    explicit Item(QQuickItem *parent = nullptr);
+    ~Item() override;
     QString path() const;
-    QUrl url(File const * const = nullptr) const;
+    QUrl url(File const * = nullptr) const;
 
-    bool isValid() const {
+    Q_SIGNAL void validChanged();
+    Q_INVOKABLE bool isValid() const {
         return m_tree != nullptr;
     }
-
     friend class Label; //FIXME badness
 
-    void saveSvg(const QString &path) { m_map.saveSvg(path); }
+    void paint(QPainter *painter) override;
+
+    Q_INVOKABLE void saveSVG();
 
 public Q_SLOTS:
     void zoomIn();
     void zoomOut();
-    void create(const Folder*);
+    void create(Folder*);
     void invalidate();
-    void refresh(const Dirty filth);
+    void refresh(Dirty filth);
 
 private Q_SLOTS:
     void resizeTimeout();
     void sendFakeMouseEvent();
     void deleteJobFinished(KJob*);
-    void createFromCache(const Folder*);
+    void createFromCache(Folder*);
 
 Q_SIGNALS:
     void activated(const QUrl&);
     void invalidated(const QUrl&);
-    void folderCreated(const Folder*);
+    void folderCreated(Folder*);
     void mouseHover(const QString&);
     void giveMeTreeFor(const QUrl&);
     void rescanRequested(const QUrl&);
 
 protected:
-    void changeEvent(QEvent*) override;
-    void dragEnterEvent(QDragEnterEvent*) override;
-    void dropEvent(QDropEvent*) override;
-    void mouseMoveEvent(QMouseEvent*) override;
-    void mousePressEvent(QMouseEvent*) override;
-    void paintEvent(QPaintEvent*) override;
-    void resizeEvent(QResizeEvent*) override;
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-    void enterEvent(QEnterEvent *event) override;
-#else
-    void enterEvent(QEvent*) override;
-#endif
-    void leaveEvent(QEvent*) override;
+    bool event(QEvent *event) override;
+    void dragEnterEvent(QDragEnterEvent *event) override;
+    void dropEvent(QDropEvent *event) override;
+    void hoverMoveEvent(QHoverEvent *event) override;
+    void mousePressEvent(QMouseEvent *event) override;
+    void hoverEnterEvent(QHoverEvent *event) override;
+    void hoverLeaveEvent(QHoverEvent *event) override;
 
 protected:
     const Segment *segmentAt(QPointF position) const; //FIXME const reference for a library others can use
-    const Segment *rootSegment() const {
-        return m_rootSegment;    ///never == 0
-    }
-    const Segment *focusSegment() const {
-        return m_focus;    ///0 == nothing in focus
-    }
+    const Segment *rootSegment() const;
+    const Segment *focusSegment() const;
 
 private:
     void paintExplodedLabels(QPainter&) const;
 
-    const Folder *m_tree;
-    const Segment   *m_focus;
-    QPointF           m_offset;
-    QTimer           m_timer;
-    Map              m_map;
-    Segment          *m_rootSegment;
-    const Segment    *m_toBeDeleted;
-    QLabel           m_tooltip;
+    const Folder *m_tree = nullptr;
+    const Segment *m_focus = nullptr;
+    QPointF m_offset;
+    QTimer m_timer;
+    Map m_map;
+    Segment *m_rootSegment = nullptr;
+    const Segment *m_toBeDeleted = nullptr;
+    QLabel m_tooltip;
 };
-}
 
-#endif
+} // namespace RadialMap

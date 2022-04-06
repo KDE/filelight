@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 #######################################################################
 
-set(filelight_SRCS historyAction.cpp mainWindow.cpp main.cpp)
+set(filelight_SRCS historyAction.cpp mainContext.cpp main.cpp)
 
 add_executable(filelight ${filelight_SRCS})
 

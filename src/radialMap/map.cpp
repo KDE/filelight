@@ -1,6 +1,7 @@
 /***********************************************************************
 * SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
 * SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
+* SPDX-FileCopyrightText: 2022 Harald Sitter <sitter@kde.org>
 *
 * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 ***********************************************************************/
@@ -22,7 +23,7 @@
 #include "Config.h"
 #define SINCOS_H_IMPLEMENTATION (1)
 #include "sincos.h"
-#include "widget.h"
+#include "map.h"
 
 RadialMap::Map::Map()
         : m_visibleDepth(DEFAULT_RING_DEPTH)
@@ -137,7 +138,10 @@ void RadialMap::Map::findVisibleDepth(const Folder *dir, uint currentDepth)
         m_visibleDepth = 0;
     }
 
-    if (m_visibleDepth < currentDepth) m_visibleDepth = currentDepth;
+    if (m_visibleDepth < currentDepth) {
+        qDebug() << "changing visual depth" << m_visibleDepth << currentDepth;
+        m_visibleDepth = currentDepth;
+    }
     if (m_visibleDepth >= stopDepth) return;
 
     for (File *file : dir->files) {
@@ -211,7 +215,7 @@ bool RadialMap::Map::resize(const QRectF &newRect)
         return false;
     }
 
-    uint size = qMin(newRect.width(), newRect.height()) - MAP_2MARGIN;
+    qreal size = qMin(newRect.width(), newRect.height()) - MAP_2MARGIN;
 
     //this also causes uneven sizes to always resize when resizing but map is small in that dimension
     //size -= size % 2; //even sizes mean less staggered non-antialiased resizing
@@ -324,12 +328,8 @@ void RadialMap::Map::colorise()
 
 void RadialMap::Map::paint(QPaintDevice *paintDevice)
 {
-    KColorScheme scheme(QPalette::Active, KColorScheme::View);
-
     QPainter paint;
-    QRectF rect = m_rect;
 
-    rect.adjust(MAP_HIDDEN_TRIANGLE_SIZE, MAP_HIDDEN_TRIANGLE_SIZE, -MAP_HIDDEN_TRIANGLE_SIZE, -MAP_HIDDEN_TRIANGLE_SIZE);
     if (!paintDevice) {
         if (m_pixmap.isNull()) {
             return;
@@ -350,6 +350,19 @@ void RadialMap::Map::paint(QPaintDevice *paintDevice)
         return;
     }
 
+    this->paint(&paint);
+
+    paint.end();
+}
+void RadialMap::Map::paint(QPainter *painter)
+{
+
+    KColorScheme scheme(QPalette::Active, KColorScheme::View);
+    QRectF rect = m_rect;
+
+    rect.adjust(MAP_HIDDEN_TRIANGLE_SIZE, MAP_HIDDEN_TRIANGLE_SIZE, -MAP_HIDDEN_TRIANGLE_SIZE, -MAP_HIDDEN_TRIANGLE_SIZE);
+
+    QPainter &paint = *painter;
     if (Config::antialias) {
         paint.translate(0.7, 0.7);
         paint.setRenderHint(QPainter::Antialiasing);
@@ -448,5 +461,4 @@ void RadialMap::Map::paint(QPaintDevice *paintDevice)
 
     m_innerRadius = rect.width() / 2; //rect.width should be multiple of 2
 
-    paint.end();
 }

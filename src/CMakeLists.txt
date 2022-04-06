@@ -11,35 +11,30 @@ ecm_setup_version(${PROJECT_VERSION}
 
 add_executable(filelight)
 target_sources(filelight PRIVATE
-    radialMap/widget.cpp
+    radialMap/item.cpp
     radialMap/map.cpp
-    radialMap/widgetEvents.cpp
-    radialMap/labels.cpp
-    overviewWidget.cpp
+    radialMap/radialMap.cpp
     scan.cpp
-    progressBox.cpp
     Config.cpp
     settingsDialog.cpp
     fileTree.cpp
     localLister.cpp
     remoteLister.cpp
     historyAction.cpp
-    mainWindow.cpp
+    mainContext.cpp
     main.cpp
     settingsDialog.h
     fileTree.h
     radialMap/map.h
     radialMap/radialMap.h
     radialMap/sincos.h
-    radialMap/widget.h
     scan.h
     define.h
     localLister.h
     remoteLister.h
     historyAction.h
     Config.h
-    mainWindow.h
-    progressBox.h
+    qml/qml.qrc
 )
 ecm_qt_declare_logging_category(filelight HEADER filelight_debug.h IDENTIFIER FILELIGHT_LOG CATEGORY_NAME org.kde.filelight DESCRIPTION "filelight" EXPORT FILELIGHT)
 
@@ -59,7 +54,9 @@ target_link_libraries(filelight
     KF5::XmlGui
     KF5::KIOWidgets # Only used for KDirLister, may be able to move away from that.
     KF5::IconThemes
+    KF5::Declarative
     Qt${QT_MAJOR_VERSION}::Svg
+    Qt${QT_MAJOR_VERSION}::Quick
 )
 if (WIN32)
     find_package(KDEWin REQUIRED)

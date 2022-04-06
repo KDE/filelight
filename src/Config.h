@@ -1,6 +1,7 @@
 /***********************************************************************
 * SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
 * SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
+* SPDX-FileCopyrightText: 2022 Harald Sitter <sitter@kde.org>
 *
 * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 ***********************************************************************/
@@ -8,17 +9,17 @@
 #ifndef Config_H
 #define Config_H
 
-#include <QStringList>
+#include <QObject>
 #include <QSet>
+#include <QStringList>
 
-
-enum class Dirty
-{
+enum class Dirty {
     Layout = 1,
     AntiAliasing = 2,
     Colors = 3,
-    Font
+    Font,
 };
+Q_DECLARE_METATYPE(Dirty);
 
 namespace Filelight
 {

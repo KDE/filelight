@@ -1,7 +1,7 @@
 /***********************************************************************
 * SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
 * SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
-* SPDX-FileCopyrightText: 2017 Harald Sitter <sitter@kde.org>
+* SPDX-FileCopyrightText: 2017-2022 Harald Sitter <sitter@kde.org>
 *
 * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 ***********************************************************************/
@@ -20,10 +20,11 @@ typedef quint64 Dirsize;  //**** currently unused
 
 class Folder;
 
-class File
+class File : public QObject
 {
 public:
     friend class Folder;
+    Q_OBJECT
 
 public:
     File(const char *name, FileSize size) : m_parent(nullptr), m_name(qstrdup(name)), m_size(size) {}
@@ -88,6 +89,8 @@ private:
 
 class Folder : public File
 {
+    Q_OBJECT
+    Q_PROPERTY(uint children MEMBER m_children CONSTANT)
 public:
     Folder(const char *name) : File(name, 0), m_children(0) {} //DON'T pass the full path!
 

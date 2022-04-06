@@ -36,12 +36,13 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
 
-find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Core Widgets Svg)
+find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Core Widgets Svg Quick)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
     XmlGui # For app
     KIO # For part
     I18n
     IconThemes
+    Declarative
 )
 find_package(KF5DocTools) # Optional, not needed on Windows for example.
 
