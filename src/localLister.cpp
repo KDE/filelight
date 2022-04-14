@@ -25,10 +25,6 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#ifdef HAVE_MNTENT_H
-#include <mntent.h>
-#endif
-
 namespace Filelight
 {
 QStringList LocalLister::s_remoteMounts;
