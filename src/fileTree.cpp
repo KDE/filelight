@@ -12,7 +12,7 @@
 #include <QUrl>
 
 QString File::displayName() const {
-    const QString decodedName = QFile::decodeName(m_name);
+    const QString decodedName = QString::fromUtf8(m_name);
     return url().isLocalFile() ? QDir::toNativeSeparators(decodedName) : decodedName;
 }
 
@@ -34,7 +34,7 @@ QUrl File::url(const Folder *root) const
     }
 
     for (const File *d = this; d != root && d; d = d->parent()) {
-        path.prepend(QFile::decodeName(d->name8Bit()));
+        path.prepend(QString::fromUtf8(d->name8Bit()));
     }
 
     return QUrl::fromUserInput(path, QString(), QUrl::AssumeLocalFile);

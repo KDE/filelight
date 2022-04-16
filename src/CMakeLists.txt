@@ -9,6 +9,17 @@ ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX FILELIGHT
     VERSION_HEADER version.h)
 
+add_library(filelightInternal STATIC fileTree.cpp directoryIterator.cpp)
+if (WIN32)
+    target_sources(filelightInternal PRIVATE windowsWalker.cpp)
+else()
+    target_sources(filelightInternal PRIVATE posixWalker.cpp)
+endif()
+target_link_libraries(filelightInternal
+    Qt${QT_MAJOR_VERSION}::Core
+    KF5::CoreAddons
+)
+
 add_executable(filelight)
 target_sources(filelight PRIVATE
     radialMap/widget.cpp
@@ -19,7 +30,6 @@ target_sources(filelight PRIVATE
     progressBox.cpp
     Config.cpp
     settingsDialog.cpp
-    fileTree.cpp
     localLister.cpp
     remoteLister.cpp
     summaryWidget.cpp
@@ -60,6 +70,7 @@ target_link_libraries(filelight
     KF5::XmlGui
     KF5::KIOWidgets # Only used for KDirLister, may be able to move away from that.
     Qt${QT_MAJOR_VERSION}::Svg
+    filelightInternal
 )
 if (WIN32)
     find_package(KDEWin REQUIRED)
