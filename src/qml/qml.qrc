@@ -9,5 +9,7 @@
         <file>MapPage.qml</file>
         <file>Action.qml</file>
         <file>AboutPage.qml</file>
+        <file>ActionMenuItem.qml</file>
+        <file>GlobalMenu.qml</file>
     </qresource>
 </RCC>

@@ -8,6 +8,8 @@ import org.kde.kirigami 2.19 as Kirigami
 
 import org.kde.filelight 1.0
 
+import Qt.labs.platform 1.1 as Platform
+
 Kirigami.ApplicationWindow {
     id: appWindow
 
@@ -16,59 +18,60 @@ Kirigami.ApplicationWindow {
     property var mapItem: null
     property var mapPage: null
 
-    menuBar: QQC2.MenuBar {
-        Kirigami.Theme.inherit: false
-        Kirigami.Theme.colorSet: Kirigami.Theme.Header
-
-        QQC2.Menu {
-            title: i18nc("@item:inmenu", "Scan")
-            Kirigami.Action {
-                iconName: "document-open-folder"
-                text: i18nc("@action", "Scan Folder")
-                onTriggered: appWindow.slotScanFolder()
-            }
-
-            QQC2.MenuSeparator { }
-            Kirigami.Action {
-                iconName: "user-home"
-                text: i18nc("@action", "Scan Home Folder")
-                onTriggered: appWindow.slotScanHomeFolder()
-            }
-            Kirigami.Action {
-                iconName: "folder-root"
-                text: i18nc("@action", "Scan Root Folder")
-                onTriggered: appWindow.slotScanRootFolder()
-            }
-            QQC2.MenuSeparator { }
-            Kirigami.Action {
-                iconName: "application-exit"
-                text: i18nc("@action", "Quit")
-                onTriggered: Qt.quit()
-            }
-        }
-        QQC2.Menu {
-            title: i18nc("@item:inmenu", "Settings")
-            Kirigami.Action {
-                iconName: "configure"
-                text: i18nc("@action", "Configure Filelight…")
-                onTriggered: MainContext.configFilelight()
-                shortcut: "Ctrl+Shift+,"
-            }
-        }
-        QQC2.Menu {
-            title: i18nc("@item:inmenu", "Help")
-            Kirigami.Action {
-                iconName: "help-browser"
-                text: i18nc("@action", "Filelight Handbook")
-                onTriggered: { Qt.openUrlExternally("help:/filelight") }
-            }
-            Kirigami.Action {
-                iconName: "filelight"
-                text: i18nc("@action", "About Filelight")
-                onTriggered: { pageStack.layers.push("qrc:/ui/AboutPage.qml") }
-            }
-        }
+    Kirigami.Action {
+        id: scanFolderAction
+        iconName: "folder"
+        text: i18nc("@action", "Scan Folder")
+        onTriggered: appWindow.slotScanFolder()
     }
+
+    Kirigami.Action {
+        id: scanHomeAction
+        iconName: "user-home"
+        text: i18nc("@action", "Scan Home Folder")
+        onTriggered: appWindow.slotScanHomeFolder()
+    }
+
+    Kirigami.Action {
+        id: scanRootAction
+        iconName: "folder-root"
+        text: i18nc("@action", "Scan Root Folder")
+        onTriggered: appWindow.slotScanRootFolder()
+    }
+
+    Kirigami.Action {
+        id: quitAction
+        iconName: "application-exit"
+        text: i18nc("@action", "Quit")
+        onTriggered: Qt.quit()
+    }
+
+    Kirigami.Action {
+        id: configureAction
+        displayHint: Kirigami.Action.AlwaysHide
+        iconName: "configure"
+        text: i18nc("@action configure app", "Configure…")
+        onTriggered: MainContext.configFilelight()
+        shortcut: "Ctrl+Shift+,"
+    }
+
+    Kirigami.Action {
+        id: helpAction
+        displayHint: Kirigami.Action.AlwaysHide
+        iconName: "help-browser"
+        text: i18nc("@action", "Open Handbook")
+        onTriggered: { Qt.openUrlExternally("help:/filelight") }
+    }
+
+    Kirigami.Action {
+        id: aboutAction
+        displayHint: Kirigami.Action.AlwaysHide
+        iconName: "filelight"
+        text: i18nc("@action opens about app page", "About")
+        onTriggered: { pageStack.layers.push("qrc:/ui/AboutPage.qml") }
+    }
+
+    GlobalMenu {}
 
     footer: QQC2.Control { // gives us padding and whatnot
         background: Rectangle {

@@ -14,6 +14,12 @@ Kirigami.Page {
 
     title: i18nc("@title", "Overview")
 
+    contextualActions: [
+        configureAction,
+        helpAction,
+        aboutAction
+    ]
+
     ColumnLayout {
         spacing: Kirigami.Units.gridUnit
         width: parent.width - (Kirigami.Units.largeSpacing * 4)
@@ -38,33 +44,21 @@ Kirigami.Page {
                 icon.width: Kirigami.Units.iconSizes.huge
                 icon.height: Kirigami.Units.iconSizes.huge
                 display: QQC2.AbstractButton.TextUnderIcon
-                action: Kirigami.Action {
-                    iconName: "folder"
-                    text: i18nc("@action", "Scan Folder")
-                    onTriggered: appWindow.slotScanFolder()
-                }
+                action: scanFolderAction
             }
             QQC2.ToolButton {
                 id: button2
                 icon.width: Kirigami.Units.iconSizes.huge
                 icon.height: Kirigami.Units.iconSizes.huge
                 display: QQC2.AbstractButton.TextUnderIcon
-                action: Kirigami.Action {
-                    iconName: "user-home"
-                    text: i18nc("@action", "Scan Home Folder")
-                    onTriggered: appWindow.slotScanHomeFolder()
-                }
+                action: scanHomeAction
             }
             QQC2.ToolButton {
                 id: button3
                 icon.width: Kirigami.Units.iconSizes.huge
                 icon.height: Kirigami.Units.iconSizes.huge
                 display: QQC2.AbstractButton.TextUnderIcon
-                action: Kirigami.Action {
-                    iconName: "folder-root"
-                    text: i18nc("@action", "Scan Root Folder")
-                    onTriggered: appWindow.slotScanRootFolder()
-                }
+                action: scanRootAction
             }
         }
 

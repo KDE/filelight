@@ -74,7 +74,10 @@ Kirigami.Page {
         stopAction,
         zoomInAction,
         zoomOutAction,
-        saveSVGAction
+        saveSVGAction,
+        configureAction,
+        helpAction,
+        aboutAction
     ])
 
     RowLayout {
