@@ -1,9 +1,9 @@
 #######################################################################
 # SPDX-FileCopyrightText: 2008-2014 Martin Sandsmark <martin.sandsmark@kde.org>
+# SPDX-FileCopyrightText: 2022 Harald Sitter <sitter@kde.org>
 #
 # SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 #######################################################################
-
 
 # KDE Application Version, managed by release script
 set(RELEASE_SERVICE_VERSION_MAJOR "22")
@@ -35,6 +35,8 @@ include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
+include(KDEClangFormat)
+include(KDEGitCommitHooks)
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Core Widgets Svg Quick)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
@@ -52,7 +54,6 @@ ecm_set_disabled_deprecation_versions(QT 5.15.2
     KF 5.92
 )
 
-
 include_directories(src)
 
 add_subdirectory(src)
@@ -67,4 +68,10 @@ ki18n_install(po)
 if (KF5DocTools_FOUND)
     kdoctools_install(po)
 endif()
+
+# add clang-format target for all our real source files
+file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)
+kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
+kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
+
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
