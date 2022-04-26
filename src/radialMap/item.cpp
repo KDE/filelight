@@ -808,12 +808,12 @@ void RadialMap::Item::hoverMoveEvent(QHoverEvent *e)
         string += i18n("\nClick to go up to parent directory");
     }
     // Calculate a semi-sane size for the tooltip
-    QFontMetrics fontMetrics(QGuiApplication::font());
+    QFontMetrics fontMetrics(m_tooltip.fontMetrics());
     int tooltipWidth = 0;
     int tooltipHeight = 0;
     for (const QString &part : string.split(QLatin1Char('\n'))) {
         tooltipHeight += fontMetrics.height();
-        tooltipWidth = qMax(tooltipWidth, fontMetrics.boundingRect(part).width());
+        tooltipWidth = qMax(tooltipWidth, fontMetrics.horizontalAdvance(part));
     }
     tooltipWidth += 10;
     tooltipHeight += 10;
