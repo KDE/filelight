@@ -143,7 +143,7 @@ Kirigami.ApplicationWindow {
     }
 
     function openURL(url) {
-        MainWiundow.openURL(url)
+        MainContext.openURL(url)
     }
 
     function folderScanCompleted(tree) {

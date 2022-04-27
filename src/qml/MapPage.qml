@@ -138,7 +138,7 @@ Kirigami.Page {
 
 
     Connections {
-        target: MainWindow
+        target: MainContext
         onCanvasIsDirty: (filth) => {
             mapItem.refresh(filth)
         }
