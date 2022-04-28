@@ -1,9 +1,9 @@
 /***********************************************************************
-* SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
-* SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
-*
-* SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
-***********************************************************************/
+ * SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
+ * SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
+ *
+ * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
+ ***********************************************************************/
 
 #ifndef RADIALMAP_H
 #define RADIALMAP_H
@@ -14,44 +14,55 @@ class File;
 
 namespace RadialMap
 {
-class Segment //all angles are in 16ths of degrees
+class Segment // all angles are in 16ths of degrees
 {
 public:
     Segment(const File *f, uint s, uint l, bool isFake = false)
-            : m_angleStart(s)
-            , m_angleSegment(l)
-            , m_file(f)
-            , m_hasHiddenChildren(false)
-            , m_fake(isFake) {}
+        : m_angleStart(s)
+        , m_angleSegment(l)
+        , m_file(f)
+        , m_hasHiddenChildren(false)
+        , m_fake(isFake)
+    {
+    }
     ~Segment();
 
-    uint          start() const {
+    uint start() const
+    {
         return m_angleStart;
     }
-    uint         length() const {
+    uint length() const
+    {
         return m_angleSegment;
     }
-    uint            end() const {
+    uint end() const
+    {
         return m_angleStart + m_angleSegment;
     }
-    const File    *file() const {
+    const File *file() const
+    {
         return m_file;
     }
-    const QColor&   pen() const {
+    const QColor &pen() const
+    {
         return m_pen;
     }
-    const QColor& brush() const {
+    const QColor &brush() const
+    {
         return m_brush;
     }
 
-    bool isFake() const {
+    bool isFake() const
+    {
         return m_fake;
     }
-    bool hasHiddenChildren() const {
+    bool hasHiddenChildren() const
+    {
         return m_hasHiddenChildren;
     }
 
-    bool intersects(uint a) const {
+    bool intersects(uint a) const
+    {
         return ((a >= start()) && (a < end()));
     }
 
@@ -59,19 +70,19 @@ public:
     friend class Builder;
 
 private:
-    void setPalette(const QColor &p, const QColor &b) {
+    void setPalette(const QColor &p, const QColor &b)
+    {
         m_pen = p;
         m_brush = b;
     }
 
     const uint m_angleStart, m_angleSegment;
-    const File* const m_file = nullptr;
+    const File *const m_file = nullptr;
     QColor m_pen, m_brush;
     bool m_hasHiddenChildren;
     const bool m_fake;
 };
 }
-
 
 #ifndef PI
 #define PI 3.141592653589793
@@ -82,7 +93,7 @@ private:
 
 #define MIN_RING_BREADTH 20
 #define MAX_RING_BREADTH 60
-#define DEFAULT_RING_DEPTH 4 //first level = 0
+#define DEFAULT_RING_DEPTH 4 // first level = 0
 #define MIN_RING_DEPTH 0
 
 #define MAP_HIDDEN_TRIANGLE_SIZE 5

@@ -1,21 +1,22 @@
 /***********************************************************************
-* SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
-* SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
-*
-* SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
-***********************************************************************/
+ * SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
+ * SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
+ *
+ * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
+ ***********************************************************************/
 
 #include "settingsDialog.h"
 
 #include <KLocalizedString>
-#include <QRadioButton>
-#include <QDir>
 #include <KMessageBox>
-#include <QFileDialog>
-#include <QDialogButtonBox>
 #include <QButtonGroup>
+#include <QDialogButtonBox>
+#include <QDir>
+#include <QFileDialog>
+#include <QRadioButton>
 
-SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
+SettingsDialog::SettingsDialog(QWidget *parent)
+    : QDialog(parent)
 {
     setupUi(this);
 
@@ -39,8 +40,8 @@ SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
     colorSchemeLayout->addWidget(radioButton);
     m_schemaGroup->addButton(radioButton, Filelight::HighContrast);
 
-    //read in settings before you make all those nasty connections!
-    reset(); //makes dialog reflect global settings
+    // read in settings before you make all those nasty connections!
+    reset(); // makes dialog reflect global settings
 
     connect(&m_timer, &QTimer::timeout, this, &SettingsDialog::mapIsInvalid);
 
@@ -67,23 +68,22 @@ SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
     m_removeButton->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
 }
 
-
-void SettingsDialog::closeEvent(QCloseEvent*)
+void SettingsDialog::closeEvent(QCloseEvent *)
 {
-    //if an invalidation is pending, force it now!
-    if (m_timer.isActive()) m_timer.setInterval(0);
+    // if an invalidation is pending, force it now!
+    if (m_timer.isActive())
+        m_timer.setInterval(0);
 
     Config::write();
 
     deleteLater();
 }
 
-
 void SettingsDialog::reset()
 {
     Config::read();
 
-    //tab 1
+    // tab 1
     scanAcrossMounts->setChecked(Config::scanAcrossMounts);
     dontScanRemoteMounts->setChecked(!Config::scanRemoteMounts);
 
@@ -95,14 +95,14 @@ void SettingsDialog::reset()
 
     m_removeButton->setEnabled(m_listBox->count() > 0);
 
-    //tab 2
-    if (m_schemaGroup->checkedId() != Config::scheme) //TODO: This is probably wrong
+    // tab 2
+    if (m_schemaGroup->checkedId() != Config::scheme) // TODO: This is probably wrong
     {
         m_schemaGroup->button(Config::scheme)->setChecked(true);
-        //colourSchemeGroup->setSelected(Config::scheme);
-        //setButton doesn't call a single QButtonGroup signal!
-        //so we need to call this ourselves (and hence the detection above)
-//        changeScheme(Config::scheme);
+        // colourSchemeGroup->setSelected(Config::scheme);
+        // setButton doesn't call a single QButtonGroup signal!
+        // so we need to call this ourselves (and hence the detection above)
+        //        changeScheme(Config::scheme);
     }
     contrastSlider->setValue(Config::contrast);
 
@@ -114,8 +114,6 @@ void SettingsDialog::reset()
     minFontPitch->setValue(Config::minFontPitch);
     showSmallFiles->setChecked(Config::showSmallFiles);
 }
-
-
 
 void SettingsDialog::toggleScanAcrossMounts(bool b)
 {
@@ -129,44 +127,40 @@ void SettingsDialog::toggleDontScanRemoteMounts(bool b)
     Config::scanRemoteMounts = !b;
 }
 
-
-
 void SettingsDialog::addFolder()
 {
     const QString urlString = QFileDialog::getExistingDirectory(this, i18n("Select path to ignore"), QDir::rootPath());
     const QUrl url = QUrl::fromLocalFile(urlString);
 
-    //TODO error handling!
-    //TODO wrong protocol handling!
+    // TODO error handling!
+    // TODO wrong protocol handling!
 
-    if (!url.isEmpty())
-    {
+    if (!url.isEmpty()) {
         const QString path = url.toLocalFile();
 
-        if (!Config::skipList.contains(path))
-        {
+        if (!Config::skipList.contains(path)) {
             Config::skipList.append(path);
             m_listBox->addItem(path);
-            if (m_listBox->currentItem() == nullptr) m_listBox->setCurrentRow(0);
+            if (m_listBox->currentItem() == nullptr)
+                m_listBox->setCurrentRow(0);
             m_removeButton->setEnabled(true);
-        }
-        else KMessageBox::information(this, i18n("That folder is already set to be excluded from scans."), i18n("Folder already ignored"));
+        } else
+            KMessageBox::information(this, i18n("That folder is already set to be excluded from scans."), i18n("Folder already ignored"));
     }
 }
 
-
 void SettingsDialog::removeFolder()
 {
-    Config::skipList.removeAll(m_listBox->currentItem()->text()); //removes all entries that match
+    Config::skipList.removeAll(m_listBox->currentItem()->text()); // removes all entries that match
 
-    //safest method to ensure consistency
+    // safest method to ensure consistency
     m_listBox->clear();
     m_listBox->addItems(Config::skipList);
 
     m_removeButton->setEnabled(m_listBox->count() > 0);
-    if (m_listBox->count() > 0) m_listBox->setCurrentRow(0);
+    if (m_listBox->count() > 0)
+        m_listBox->setCurrentRow(0);
 }
-
 
 void SettingsDialog::startTimer()
 {
@@ -212,9 +206,7 @@ void SettingsDialog::toggleShowSmallFiles(bool b)
 
 void SettingsDialog::reject()
 {
-    //called when escape is pressed
+    // called when escape is pressed
     reset();
-    QDialog::reject();   //**** doesn't change back scheme so far
+    QDialog::reject(); //**** doesn't change back scheme so far
 }
-
-

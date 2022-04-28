@@ -1,17 +1,18 @@
 /***********************************************************************
-* SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
-* SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
-* SPDX-FileCopyrightText: 2017 Harald Sitter <sitter@kde.org>
-*
-* SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
-***********************************************************************/
+ * SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
+ * SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
+ * SPDX-FileCopyrightText: 2017 Harald Sitter <sitter@kde.org>
+ *
+ * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
+ ***********************************************************************/
 
 #include "fileTree.h"
 
 #include <QDir>
 #include <QUrl>
 
-QString File::displayName() const {
+QString File::displayName() const
+{
     const QString decodedName = QString::fromUtf8(m_name);
     return url().isLocalFile() ? QDir::toNativeSeparators(decodedName) : decodedName;
 }
@@ -30,7 +31,7 @@ QUrl File::url(const Folder *root) const
     QString path;
 
     if (root == this) {
-        root = nullptr; //prevent returning empty string when there is something we could return
+        root = nullptr; // prevent returning empty string when there is something we could return
     }
 
     for (const File *d = this; d != root && d; d = d->parent()) {

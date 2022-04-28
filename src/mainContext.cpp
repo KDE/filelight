@@ -1,10 +1,10 @@
 /***********************************************************************
-* SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
-* SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
-* SPDX-FileCopyrightText: 2017-2022 Harald Sitter <sitter@kde.org>
-*
-* SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
-***********************************************************************/
+ * SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
+ * SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
+ * SPDX-FileCopyrightText: 2017-2022 Harald Sitter <sitter@kde.org>
+ *
+ * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
+ ***********************************************************************/
 
 #include "mainContext.h"
 
@@ -88,10 +88,10 @@ void MainContext::scan(const QUrl &u)
     slotScanUrl(u);
 }
 
-void MainContext::setupActions(QQmlApplicationEngine *engine) //singleton function
+void MainContext::setupActions(QQmlApplicationEngine *engine) // singleton function
 {
     // Only here to satisfy the HistoryCollection. TODO: revise historycollection
-    auto ac= new KActionCollection(this, QStringLiteral("dummycollection"));
+    auto ac = new KActionCollection(this, QStringLiteral("dummycollection"));
 
     m_histories = new HistoryCollection(ac, this);
 
@@ -155,8 +155,8 @@ bool MainContext::slotScanUrl(const QUrl &url)
 
 void MainContext::urlAboutToChange()
 {
-    //called when part's URL is about to change internally
-    //the part will then create the Map and emit completed()
+    // called when part's URL is about to change internally
+    // the part will then create the Map and emit completed()
 
     m_histories->push(url());
 }
@@ -207,10 +207,10 @@ void MainContext::updateURL(const QUrl &u)
     }
 
     if (u == url()) {
-        m_manager->emptyCache(); //same as rescan()
+        m_manager->emptyCache(); // same as rescan()
     }
 
-    //do this last, or it breaks Konqi location bar
+    // do this last, or it breaks Konqi location bar
     setUrl(u);
 }
 
@@ -242,7 +242,7 @@ void MainContext::configFilelight()
     connect(dialog, &SettingsDialog::canvasIsDirty, this, &MainContext::canvasIsDirty);
     connect(dialog, &SettingsDialog::mapIsInvalid, m_manager, &ScanManager::emptyCache);
 
-    dialog->show(); //deletes itself
+    dialog->show(); // deletes itself
 }
 
 bool MainContext::start(const QUrl &url) const

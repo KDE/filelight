@@ -1,9 +1,9 @@
 /***********************************************************************
-* SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
-* SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
-*
-* SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
-***********************************************************************/
+ * SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
+ * SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
+ *
+ * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
+ ***********************************************************************/
 
 #ifndef SETTINGSDIALOG_H
 #define SETTINGSDIALOG_H
@@ -12,9 +12,9 @@
 
 #include "Config.h" // Dirty
 
-#include <QTimer>
 #include <QCloseEvent>
 #include <QDialog>
+#include <QTimer>
 
 class QButtonGroup;
 
@@ -23,7 +23,7 @@ class SettingsDialog : public QDialog, public Ui::Dialog
     Q_OBJECT
 
 public:
-    explicit SettingsDialog(QWidget* = nullptr);
+    explicit SettingsDialog(QWidget * = nullptr);
 
 protected:
     void closeEvent(QCloseEvent *) override;
@@ -50,7 +50,7 @@ Q_SIGNALS:
 private:
     QTimer m_timer;
 
-    static const uint TIMEOUT=1000;
+    static const uint TIMEOUT = 1000;
 
     QButtonGroup *m_schemaGroup;
 };

@@ -1,9 +1,9 @@
 /***********************************************************************
-* SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
-* SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
-*
-* SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
-***********************************************************************/
+ * SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
+ * SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
+ *
+ * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
+ ***********************************************************************/
 
 #pragma once
 
@@ -22,9 +22,15 @@ namespace RadialMap
 class Label
 {
 public:
-    Label(const RadialMap::Segment *s, int l) : segment(s), level(l), angle(segment->start() + (segment->length() / 2)) { }
+    Label(const RadialMap::Segment *s, int l)
+        : segment(s)
+        , level(l)
+        , angle(segment->start() + (segment->length() / 2))
+    {
+    }
 
-    bool tooClose(const int otherAngle) const {
+    bool tooClose(const int otherAngle) const
+    {
         return (angle > otherAngle - LABEL_ANGLE_MARGIN && angle < otherAngle + LABEL_ANGLE_MARGIN);
     }
 
@@ -39,4 +45,3 @@ public:
 };
 
 } // namespace RadialMap
-

@@ -7,9 +7,9 @@ static void outputError(const QByteArray &path)
 {
     /// show error message that stat or opendir may give
 
-#define out(s)                                                                                                         \
-qWarning() << s ": " << path;                                                                                      \
-break
+#define out(s)                                                                                                                                                 \
+    qWarning() << s ": " << path;                                                                                                                              \
+    break
 
     switch (errno) {
     case EACCES:
@@ -95,8 +95,8 @@ void POSIXWalker::next()
             return;
         }
 
-        m_entry.isSkipable = S_ISLNK(statbuf.st_mode) || S_ISCHR(statbuf.st_mode) || S_ISBLK(statbuf.st_mode) ||
-            S_ISFIFO(statbuf.st_mode) || S_ISSOCK(statbuf.st_mode);
+        m_entry.isSkipable =
+            S_ISLNK(statbuf.st_mode) || S_ISCHR(statbuf.st_mode) || S_ISBLK(statbuf.st_mode) || S_ISFIFO(statbuf.st_mode) || S_ISSOCK(statbuf.st_mode);
         m_entry.isDir = S_ISDIR(statbuf.st_mode);
         m_entry.isFile = S_ISREG(statbuf.st_mode);
         m_entry.size = statbuf.st_blocks * S_BLKSIZE;

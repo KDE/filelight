@@ -102,7 +102,6 @@ private Q_SLOTS:
         qDebug() << entries.keys();
     }
 
-
     // During development there were some bugs with iterating C:/, make sure this finishes eventually and has some entries.
     void testCDrive()
     {
@@ -113,7 +112,6 @@ private Q_SLOTS:
         }
         QVERIFY(entries.size() > 3); // windows, programs, users
     }
-
 
     void testBadPath()
     {

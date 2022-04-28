@@ -1,23 +1,23 @@
 /***********************************************************************
-* SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
-* SPDX-FileCopyrightText: 2008-2014 Martin Sandsmark <martin.sandsmark@kde.org>
-* SPDX-FileCopyrightText: 2022 Harald Sitter <sitter@kde.org>
-*
-* SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
-***********************************************************************/
+ * SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
+ * SPDX-FileCopyrightText: 2008-2014 Martin Sandsmark <martin.sandsmark@kde.org>
+ * SPDX-FileCopyrightText: 2022 Harald Sitter <sitter@kde.org>
+ *
+ * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
+ ***********************************************************************/
 
 #include "define.h"
 #include "mainContext.h"
 
 #include <QApplication>
 #include <QCommandLineParser>
-#include <QUrl>
 #include <QDir>
+#include <QUrl>
 
 #include <KAboutData>
+#include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
-#include <KConfigGroup>
 
 int main(int argc, char *argv[])
 {
@@ -39,26 +39,24 @@ int main(int argc, char *argv[])
         config->deleteGroup("general");
     }
 
-    KAboutData about(
-        QStringLiteral(APP_NAME),
-        i18n(APP_PRETTYNAME),
-        QStringLiteral(APP_VERSION),
-        i18n("Graphical disk-usage information"),
-        KAboutLicense::GPL,
-        i18n("(C) 2006 Max Howell\n"
-             "(C) 2008-2014 Martin Sandsmark\n"
-             "(C) 2017-2022 Harald Sitter"),
-        QString(),
-        QStringLiteral("https://utils.kde.org/projects/filelight")
-    );
+    KAboutData about(QStringLiteral(APP_NAME),
+                     i18n(APP_PRETTYNAME),
+                     QStringLiteral(APP_VERSION),
+                     i18n("Graphical disk-usage information"),
+                     KAboutLicense::GPL,
+                     i18n("(C) 2006 Max Howell\n"
+                          "(C) 2008-2014 Martin Sandsmark\n"
+                          "(C) 2017-2022 Harald Sitter"),
+                     QString(),
+                     QStringLiteral("https://utils.kde.org/projects/filelight"));
     about.addAuthor(i18n("Martin Sandsmark"), i18n("Maintainer"), QStringLiteral("martin.sandsmark@kde.org"), QStringLiteral("https://iskrembilen.com/"));
     about.addAuthor(i18n("Harald Sitter"), i18n("QtQuick Port"), QStringLiteral("sitter@kde.org"));
-    about.addAuthor(i18n("Max Howell"),       i18n("Original author"), QStringLiteral("max.howell@methylblue.com"), QStringLiteral("https://www.methylblue.com/"));
-    about.addCredit(i18n("Lukas Appelhans"),  i18n("Help and support"));
-    about.addCredit(i18n("Steffen Gerlach"),  i18n("Inspiration"), QString(), QStringLiteral("http://www.steffengerlach.de/"));
-    about.addCredit(i18n("Mike Diehl"),       i18n("Original documentation"));
-    about.addCredit(i18n("Sune Vuorela"),     i18n("Icon"));
-    about.addCredit(i18n("Nuno Pinheiro"),    i18n("Icon"));
+    about.addAuthor(i18n("Max Howell"), i18n("Original author"), QStringLiteral("max.howell@methylblue.com"), QStringLiteral("https://www.methylblue.com/"));
+    about.addCredit(i18n("Lukas Appelhans"), i18n("Help and support"));
+    about.addCredit(i18n("Steffen Gerlach"), i18n("Inspiration"), QString(), QStringLiteral("http://www.steffengerlach.de/"));
+    about.addCredit(i18n("Mike Diehl"), i18n("Original documentation"));
+    about.addCredit(i18n("Sune Vuorela"), i18n("Icon"));
+    about.addCredit(i18n("Nuno Pinheiro"), i18n("Icon"));
 
     KAboutData::setApplicationData(about);
     app.setOrganizationName(QStringLiteral("KDE"));

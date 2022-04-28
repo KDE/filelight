@@ -64,7 +64,6 @@ void WindowsWalker::next()
         updateEntry();
         return;
     }
-
 }
 
 QString WindowsWalker::GetLastErrorAsString(DWORD error)
@@ -72,16 +71,17 @@ QString WindowsWalker::GetLastErrorAsString(DWORD error)
     Q_ASSERT(error != NO_ERROR && error != ERROR_SUCCESS);
 
     LPWSTR buffer = nullptr;
-    auto freeBuffer = qScopeGuard([buffer] { LocalFree(buffer); });
+    auto freeBuffer = qScopeGuard([buffer] {
+        LocalFree(buffer);
+    });
 
-    size_t size =
-        FormatMessageW(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
-                       nullptr,
-                       error,
-                       MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
-                       (LPWSTR)&buffer,
-                       0,
-                       nullptr);
+    size_t size = FormatMessageW(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
+                                 nullptr,
+                                 error,
+                                 MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
+                                 (LPWSTR)&buffer,
+                                 0,
+                                 nullptr);
 
     return QString::fromWCharArray(buffer);
 }

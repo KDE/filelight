@@ -21,11 +21,11 @@ public:
 
     HANDLE m_handle = INVALID_HANDLE_VALUE;
     const QByteArray m_path;
-    DirectoryEntry m_entry {};
-    WIN32_FIND_DATAW m_fileinfo {};
+    DirectoryEntry m_entry{};
+    WIN32_FIND_DATAW m_fileinfo{};
 
 private:
-    //Returns the last Win32 error, in string format. Returns an empty string if there is no error.
+    // Returns the last Win32 error, in string format. Returns an empty string if there is no error.
     QString GetLastErrorAsString(DWORD error);
     void updateEntry();
     void close();

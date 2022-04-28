@@ -6,11 +6,11 @@
 #include "directoryEntry.h"
 
 #ifdef Q_OS_WINDOWS
-    #include "windowsWalker.h"
-    template<class T = WindowsWalker>
+#include "windowsWalker.h"
+template<class T = WindowsWalker>
 #else
-    #include "posixWalker.h"
-    template<class T = POSIXWalker>
+#include "posixWalker.h"
+template<class T = POSIXWalker>
 #endif
 class DirectoryIterator
 {
@@ -40,7 +40,6 @@ public:
 
     std::shared_ptr<T> m_walker = std::make_shared<T>(QByteArray()); // always have a valid walker to simplify accessing into it
 private:
-
     friend bool operator==(const DirectoryIterator &lhs, const DirectoryIterator &rhs) noexcept
     {
         return lhs.m_walker->m_entry.name == rhs.m_walker->m_entry.name;

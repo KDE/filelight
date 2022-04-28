@@ -1,76 +1,76 @@
 /***********************************************************************
-* SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
-* SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
-* SPDX-FileCopyrightText: 2022 Harald Sitter <sitter@kde.org>
-*
-* SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
-***********************************************************************/
+ * SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
+ * SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
+ * SPDX-FileCopyrightText: 2022 Harald Sitter <sitter@kde.org>
+ *
+ * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
+ ***********************************************************************/
 
 #include "item.h"
 
 #include "fileTree.h"
 #include "radialMap.h" //constants
 
-#include <KCursor>        //ctor
+#include <KCursor> //ctor
 
-#include <QApplication>   //sendEvent
-#include <QBitmap>        //ctor - finding cursor size
-#include <QCursor>        //slotPostMouseEvent()
-#include <QDebug>
-#include <QTimer>         //member
-#include <QPainter>
 #include <KLocalizedString>
-#include <QWindow>
-#include <QScreen>
+#include <QApplication> //sendEvent
+#include <QBitmap> //ctor - finding cursor size
+#include <QCursor> //slotPostMouseEvent()
+#include <QDebug>
+#include <QPainter>
 #include <QQuickWindow>
+#include <QScreen>
+#include <QTimer> //member
+#include <QWindow>
 
 #include <KIO/JobUiDelegate>
 #include <KIO/OpenUrlJob>
 
 #include "labels.h"
 
-#include "fileTree.h"
 #include "Config.h"
-#include "radialMap.h"   //class Segment
+#include "fileTree.h"
+#include "radialMap.h" //class Segment
 
-#include <KCursor>     //::mouseMoveEvent()
-#include <KJob>
-#include <KIO/Job>     //::mousePressEvent()
-#include <KIO//DeleteJob>
-#include <KMessageBox> //::mousePressEvent()
-#include <QMenu>  //::mousePressEvent()
-#include <KTerminalLauncherJob>
-#include <QUrl>
+#include <KCursor> //::mouseMoveEvent()
+#include <KIO/DeleteJob>
+#include <KIO/Job> //::mousePressEvent()
 #include <KIO/JobUiDelegate>
 #include <KIO/OpenUrlJob>
+#include <KJob>
 #include <KLocalizedString>
+#include <KMessageBox> //::mousePressEvent()
+#include <KTerminalLauncherJob>
+#include <QMenu> //::mousePressEvent()
+#include <QUrl>
 
+#include <KUrlMimeData>
 #include <QApplication> //QApplication::setOverrideCursor()
 #include <QClipboard>
-#include <QPainter>
-#include <QTimer>      //::resizeEvent()
-#include <QDropEvent>
-#include <QPaintEvent>
-#include <QResizeEvent>
-#include <QMouseEvent>
 #include <QDragEnterEvent>
-#include <QMimeData>
-#include <KUrlMimeData>
-#include <QWindow>
-#include <QScreen>
+#include <QDropEvent>
 #include <QFileDialog>
+#include <QMimeData>
+#include <QMouseEvent>
+#include <QPaintEvent>
+#include <QPainter>
+#include <QResizeEvent>
+#include <QScreen>
+#include <QTimer> //::resizeEvent()
+#include <QWindow>
 
-#include <cmath>         //::segmentAt()
+#include <cmath> //::segmentAt()
 
 #include <KIO/OpenUrlJob>
 
 RadialMap::Item::Item(QQuickItem *parent)
-        : QQuickPaintedItem(parent)
-        , m_tree(nullptr)
-        , m_focus(nullptr)
-        , m_map()
-        , m_rootSegment(nullptr) //TODO we don't delete it, *shrug*
-        , m_toBeDeleted(nullptr)
+    : QQuickPaintedItem(parent)
+    , m_tree(nullptr)
+    , m_focus(nullptr)
+    , m_map()
+    , m_rootSegment(nullptr) // TODO we don't delete it, *shrug*
+    , m_toBeDeleted(nullptr)
 {
     // setAcceptDrops(true);
     // setMinimumSize(350, 250);
@@ -120,57 +120,55 @@ QString RadialMap::Item::path() const
     return m_tree->displayPath();
 }
 
-QUrl RadialMap::Item::url(File const * const file) const
+QUrl RadialMap::Item::url(File const *const file) const
 {
     return file ? file->url() : m_tree->url();
 }
 
 void RadialMap::Item::invalidate()
 {
-    if (isValid())
-    {
+    if (isValid()) {
         //**** have to check that only way to invalidate is this function frankly
         //**** otherwise you may get bugs..
 
-        //disable mouse tracking
-        // setMouseTracking(false);
+        // disable mouse tracking
+        //  setMouseTracking(false);
 
         // Get this before reseting m_tree below
         QUrl invalidatedUrl(url());
 
-        //ensure this class won't think we have a map still
-        m_tree  = nullptr;
+        // ensure this class won't think we have a map still
+        m_tree = nullptr;
         Q_EMIT validChanged();
         m_focus = nullptr;
 
         delete m_rootSegment;
         m_rootSegment = nullptr;
 
-        //FIXME move this disablement thing no?
-        //      it is confusing in other areas, like the whole createFromCache() thing
+        // FIXME move this disablement thing no?
+        //       it is confusing in other areas, like the whole createFromCache() thing
         m_map.invalidate();
         update();
 
-        //tell rest of Filelight
+        // tell rest of Filelight
         Q_EMIT invalidated(invalidatedUrl);
     }
 }
 
 void RadialMap::Item::create(Folder *tree)
 {
-    //it is not the responsibility of create() to invalidate first
-    //skip invalidation at your own risk
+    // it is not the responsibility of create() to invalidate first
+    // skip invalidation at your own risk
 
-    //FIXME make it the responsibility of create to invalidate first
+    // FIXME make it the responsibility of create to invalidate first
 
-    if (tree)
-    {
+    if (tree) {
         m_focus = nullptr;
-        //generate the filemap image
+        // generate the filemap image
         m_map.make(tree);
 
-        //this is the inner circle in the center
-        m_rootSegment = new Segment(tree, 0, 16*360);
+        // this is the inner circle in the center
+        m_rootSegment = new Segment(tree, 0, 16 * 360);
 
         // setMouseTracking(true);
     }
@@ -183,19 +181,18 @@ void RadialMap::Item::create(Folder *tree)
     Q_EMIT folderCreated(tree);
 }
 
-
 void RadialMap::Item::mousePressEvent(QMouseEvent *e)
 {
     if (!isEnabled())
         return;
 
-    //m_focus is set correctly (I've been strict, I assure you it is correct!)
+    // m_focus is set correctly (I've been strict, I assure you it is correct!)
 
     if (!m_focus || m_focus->isFake()) {
         return;
     }
 
-    const QUrl url   = Item::url(m_focus->file());
+    const QUrl url = Item::url(m_focus->file());
     const bool isDir = m_focus->file()->isFolder();
 
     // Open file
@@ -208,7 +205,7 @@ void RadialMap::Item::mousePressEvent(QMouseEvent *e)
 
     if (e->button() == Qt::LeftButton) {
         if (m_focus->file() != m_tree) {
-            Q_EMIT activated(url); //activate first, this will cause UI to prepare itself
+            Q_EMIT activated(url); // activate first, this will cause UI to prepare itself
             createFromCache((Folder *)m_focus->file());
         } else if (KIO::upUrl(url) != url) {
             Q_EMIT giveMeTreeFor(KIO::upUrl(url));
@@ -223,14 +220,14 @@ void RadialMap::Item::mousePressEvent(QMouseEvent *e)
     }
 
     // Actions in the right click menu
-    QAction* openFileManager = nullptr;
-    QAction* openTerminal = nullptr;
-    QAction* centerMap = nullptr;
-    QAction* openFile = nullptr;
-    QAction* copyClipboard = nullptr;
-    QAction* deleteItem = nullptr;
-    QAction* doNotScanItem = nullptr;
-    QAction* rescanAction = nullptr;
+    QAction *openFileManager = nullptr;
+    QAction *openTerminal = nullptr;
+    QAction *centerMap = nullptr;
+    QAction *openFile = nullptr;
+    QAction *copyClipboard = nullptr;
+    QAction *deleteItem = nullptr;
+    QAction *doNotScanItem = nullptr;
+    QAction *rescanAction = nullptr;
 
     QMenu popup;
     popup.setTitle(m_focus->file()->displayPath(m_tree));
@@ -239,12 +236,12 @@ void RadialMap::Item::mousePressEvent(QMouseEvent *e)
         openFileManager = popup.addAction(QIcon::fromTheme(QStringLiteral("system-file-manager")), i18n("Open &File Manager Here"));
 
         if (url.scheme() == QLatin1String("file")) {
-            openTerminal = popup.addAction(QIcon::fromTheme(QStringLiteral( "utilities-terminal" )), i18n("Open &Terminal Here"));
+            openTerminal = popup.addAction(QIcon::fromTheme(QStringLiteral("utilities-terminal")), i18n("Open &Terminal Here"));
         }
 
         if (m_focus->file() != m_tree) {
             popup.addSeparator();
-            centerMap = popup.addAction(QIcon::fromTheme(QStringLiteral( "zoom-in" )), i18n("&Center Map Here"));
+            centerMap = popup.addAction(QIcon::fromTheme(QStringLiteral("zoom-in")), i18n("&Center Map Here"));
         }
 
         popup.addSeparator();
@@ -255,19 +252,19 @@ void RadialMap::Item::mousePressEvent(QMouseEvent *e)
     }
 
     popup.addSeparator();
-    copyClipboard = popup.addAction(QIcon::fromTheme(QStringLiteral( "edit-copy" )), i18n("&Copy to clipboard"));
+    copyClipboard = popup.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("&Copy to clipboard"));
 
     if (m_focus->file() != m_tree) {
         popup.addSeparator();
-        deleteItem = popup.addAction(QIcon::fromTheme(QStringLiteral( "edit-delete" )), i18n("&Delete"));
+        deleteItem = popup.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("&Delete"));
     }
 
-    QAction* clicked = popup.exec(e->globalPos(), nullptr);
+    QAction *clicked = popup.exec(e->globalPos(), nullptr);
 
     if (openFileManager && clicked == openFileManager) {
-            KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url, QStringLiteral("inode/directory"), nullptr);
-            job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
-            job->start();
+        KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url, QStringLiteral("inode/directory"), nullptr);
+        job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
+        job->start();
     } else if (rescanAction && clicked == rescanAction) {
         Q_EMIT rescanRequested(url);
     } else if (openTerminal && clicked == openTerminal) {
@@ -276,7 +273,7 @@ void RadialMap::Item::mousePressEvent(QMouseEvent *e)
         job->setWorkingDirectory(url.path());
         job->start();
     } else if (centerMap && clicked == centerMap) {
-        Q_EMIT activated(url); //activate first, this will cause UI to prepare itself
+        Q_EMIT activated(url); // activate first, this will cause UI to prepare itself
         createFromCache((Folder *)m_focus->file());
     } else if (doNotScanItem && clicked == doNotScanItem) {
         if (!Config::skipList.contains(Item::url(m_focus->file()).toLocalFile())) {
@@ -288,18 +285,16 @@ void RadialMap::Item::mousePressEvent(QMouseEvent *e)
         job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
         job->start();
     } else if (clicked == copyClipboard) {
-        QMimeData* mimedata = new QMimeData();
+        QMimeData *mimedata = new QMimeData();
         mimedata->setUrls(QList<QUrl>() << url);
-        QApplication::clipboard()->setMimeData(mimedata , QClipboard::Clipboard);
+        QApplication::clipboard()->setMimeData(mimedata, QClipboard::Clipboard);
     } else if (clicked == deleteItem && m_focus->file() != m_tree) {
         m_toBeDeleted = m_focus;
         const QUrl url = Item::url(m_toBeDeleted->file());
         const QString message = m_toBeDeleted->file()->isFolder()
-                ? i18n("<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</b> deleted.</qt>", url.toString())
-                : i18n("<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>", url.toString());
-        const int userIntention = KMessageBox::warningContinueCancel(
-                    nullptr, message,
-                    QString(), KGuiItem(i18n("&Delete"), QStringLiteral("edit-delete")));
+            ? i18n("<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</b> deleted.</qt>", url.toString())
+            : i18n("<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>", url.toString());
+        const int userIntention = KMessageBox::warningContinueCancel(nullptr, message, QString(), KGuiItem(i18n("&Delete"), QStringLiteral("edit-delete")));
 
         if (userIntention == KMessageBox::Continue) {
             KIO::Job *job = KIO::del(url);
@@ -308,11 +303,10 @@ void RadialMap::Item::mousePressEvent(QMouseEvent *e)
             setEnabled(false);
         }
     } else {
-        //ensure m_focus is set for new mouse position
+        // ensure m_focus is set for new mouse position
         sendFakeMouseEvent();
     }
 }
-
 
 void RadialMap::Item::deleteJobFinished(KJob *job)
 {
@@ -328,10 +322,9 @@ void RadialMap::Item::deleteJobFinished(KJob *job)
         KMessageBox::error(nullptr, job->errorString(), i18n("Error while deleting"));
 }
 
-
 void RadialMap::Item::createFromCache(Folder *tree)
 {
-    //no scan was necessary, use cached tree, however we MUST still emit invalidate
+    // no scan was necessary, use cached tree, however we MUST still emit invalidate
     invalidate();
     create(tree);
 }
@@ -360,15 +353,13 @@ void RadialMap::Item::resizeTimeout() // slot
 
 void RadialMap::Item::refresh(const Dirty filth)
 {
-    //TODO consider a more direct connection
+    // TODO consider a more direct connection
 
-    if (!m_map.isNull())
-    {
-        switch (filth)
-        {
+    if (!m_map.isNull()) {
+        switch (filth) {
         case Dirty::Layout:
             m_focus = nullptr;
-            m_map.make(m_tree, true); //true means refresh only
+            m_map.make(m_tree, true); // true means refresh only
             break;
 
         case Dirty::AntiAliasing:
@@ -396,8 +387,7 @@ void RadialMap::Item::refresh(const Dirty filth)
 
 void RadialMap::Item::zoomIn() // slot
 {
-    if (m_map.m_visibleDepth > MIN_RING_DEPTH)
-    {
+    if (m_map.m_visibleDepth > MIN_RING_DEPTH) {
         --m_map.m_visibleDepth;
         m_focus = nullptr;
         m_map.make(m_tree);
@@ -421,20 +411,21 @@ void RadialMap::Item::paint(QPainter *painter)
     m_map.m_dpr = painter->device()->devicePixelRatioF();
 
     if (!m_map.isNull()) {
-        m_map.paint((QPaintDevice*)nullptr);
+        m_map.paint((QPaintDevice *)nullptr);
         painter->drawPixmap(m_offset, m_map.pixmap());
         // m_map.paint(painter);
     } else {
-        painter->drawText(QRectF(x(), y(), width(), height()), 0, i18nc("We messed up, the user needs to initiate a rescan.", "Internal representation is invalid,\nplease rescan."));
+        painter->drawText(QRectF(x(), y(), width(), height()),
+                          0,
+                          i18nc("We messed up, the user needs to initiate a rescan.", "Internal representation is invalid,\nplease rescan."));
         return;
     }
 
-    //exploded labels
-    if (!m_map.isNull() && !m_timer.isActive())
-    {
+    // exploded labels
+    if (!m_map.isNull() && !m_timer.isActive()) {
         if (Config::antialias) {
             painter->setRenderHint(QPainter::Antialiasing);
-            //make lines appear on pixel boundaries
+            // make lines appear on pixel boundaries
             painter->translate(0.5, 0.5);
         }
         paintExplodedLabels(*painter);
@@ -443,32 +434,30 @@ void RadialMap::Item::paint(QPainter *painter)
 
 void RadialMap::Item::paintExplodedLabels(QPainter &paint) const
 {
-    //we are a friend of RadialMap::Map
+    // we are a friend of RadialMap::Map
 
-    QVector<Label*> list;
+    QVector<Label *> list;
     unsigned int startLevel = 0;
 
+    // 1. Create list of labels  sorted in the order they will be rendered
 
-    //1. Create list of labels  sorted in the order they will be rendered
-
-    if (m_focus && m_focus->file() != m_tree) { //separate behavior for selected vs unselected segments
-        //don't bother with files
+    if (m_focus && m_focus->file() != m_tree) { // separate behavior for selected vs unselected segments
+        // don't bother with files
         if (m_focus && m_focus->file() && !m_focus->file()->isFolder()) {
             return;
         }
 
-        //find the range of levels we will be potentially drawing labels for
-        //startLevel is the level above whatever m_focus is in
-        for (const Folder *p = (const Folder*)m_focus->file(); p != m_tree; ++startLevel) {
+        // find the range of levels we will be potentially drawing labels for
+        // startLevel is the level above whatever m_focus is in
+        for (const Folder *p = (const Folder *)m_focus->file(); p != m_tree; ++startLevel) {
             p = p->parent();
         }
 
-        //range=2 means 2 levels to draw labels for
+        // range=2 means 2 levels to draw labels for
 
         const uint start = m_focus->start();
-        const uint end = m_focus->end();  //boundary angles
+        const uint end = m_focus->end(); // boundary angles
         const uint minAngle = int(m_focus->length() * LABEL_MIN_ANGLE_FACTOR);
-
 
         //**** Levels should be on a scale starting with 0
         //**** range is a useless parameter
@@ -486,62 +475,61 @@ void RadialMap::Item::paintExplodedLabels(QPainter &paint) const
         for (Segment *segment : m_map.m_signature[0]) {
             if (segment->length() > 288) {
                 list.append(new Label(segment, 0));
-
             }
         }
     }
 
     std::sort(list.begin(), list.end(), [](Label *item1, Label *item2) {
-        //you add 1440 to work round the fact that later you want the circle split vertically
-        //and as it is you start at 3 o' clock. It's to do with rightPrevY, stops annoying bug
+        // you add 1440 to work round the fact that later you want the circle split vertically
+        // and as it is you start at 3 o' clock. It's to do with rightPrevY, stops annoying bug
 
         int angle1 = (item1)->angle + 1440;
         int angle2 = (item2)->angle + 1440;
 
         // Also sort by level
         if (angle1 == angle2) {
-                return (item1->level > item2->level);
+            return (item1->level > item2->level);
         }
 
-        if (angle1 > 5760) angle1 -= 5760;
-        if (angle2 > 5760) angle2 -= 5760;
+        if (angle1 > 5760)
+            angle1 -= 5760;
+        if (angle2 > 5760)
+            angle2 -= 5760;
 
         return (angle1 < angle2);
-
     });
 
-    //2. Check to see if any adjacent labels are too close together
-    //   if so, remove it (the least significant labels, since we sort by level too).
+    // 2. Check to see if any adjacent labels are too close together
+    //    if so, remove it (the least significant labels, since we sort by level too).
 
     int pos = 0;
     while (pos < list.size() - 1) {
-        if (list[pos]->tooClose(list[pos+1]->angle)) {
-            delete list.takeAt(pos+1);
+        if (list[pos]->tooClose(list[pos + 1]->angle)) {
+            delete list.takeAt(pos + 1);
         } else {
             ++pos;
         }
     }
 
-    //used in next two steps
+    // used in next two steps
     bool varySizes;
     //**** should perhaps use doubles
-    int  *sizes = new int [ m_map.m_visibleDepth + 1 ]; //**** make sizes an array of floats I think instead (or doubles)
+    int *sizes = new int[m_map.m_visibleDepth + 1]; //**** make sizes an array of floats I think instead (or doubles)
 
     // If the minimum is larger than the default it fucks up further down
-    if (paint.font().pointSize() < 0 ||
-        paint.font().pointSize() < Config::minFontPitch) {
+    if (paint.font().pointSize() < 0 || paint.font().pointSize() < Config::minFontPitch) {
         QFont font = paint.font();
         font.setPointSize(Config::minFontPitch);
         paint.setFont(font);
     }
 
-    QVector<Label*>::iterator it;
+    QVector<Label *>::iterator it;
 
     do {
-        //3. Calculate font sizes
+        // 3. Calculate font sizes
 
         {
-            //determine current range of levels to draw for
+            // determine current range of levels to draw for
             uint range = 0;
 
             for (Label *label : list) {
@@ -550,13 +538,13 @@ void RadialMap::Item::paintExplodedLabels(QPainter &paint) const
                 //**** better way would just be to assign if nothing is range
             }
 
-            range -= startLevel; //range 0 means 1 level of labels
+            range -= startLevel; // range 0 means 1 level of labels
 
             varySizes = Config::varyLabelFontSizes && (range != 0);
 
             if (varySizes) {
-                //create an array of font sizes for various levels
-                //will exceed normal font pitch automatically if necessary, but not minPitch
+                // create an array of font sizes for various levels
+                // will exceed normal font pitch automatically if necessary, but not minPitch
                 //**** this needs to be checked lots
 
                 //**** what if this is negative (min size gtr than default size)
@@ -571,13 +559,12 @@ void RadialMap::Item::paintExplodedLabels(QPainter &paint) const
             }
         }
 
-        //4. determine label co-ordinates
-
+        // 4. determine label co-ordinates
 
         const int preSpacer = int(m_map.m_ringBreadth * 0.5) + m_map.m_innerRadius;
-        const int fullStrutLength = (m_map.width() - m_map.MAP_2MARGIN) / 2 + LABEL_MAP_SPACER; //full length of a strut from map center
+        const int fullStrutLength = (m_map.width() - m_map.MAP_2MARGIN) / 2 + LABEL_MAP_SPACER; // full length of a strut from map center
 
-        int prevLeftY  = 0;
+        int prevLeftY = 0;
         int prevRightY = height();
 
         QFont font;
@@ -592,31 +579,30 @@ void RadialMap::Item::paintExplodedLabels(QPainter &paint) const
             QFontMetrics fontMetrics(font);
             const int minTextWidth = fontMetrics.boundingRect(QStringLiteral("M...")).width() + LABEL_TEXT_HMARGIN; // Fully elided string
 
-            const int fontHeight  = fontMetrics.height() + LABEL_TEXT_VMARGIN; //used to ensure label texts don't overlap
+            const int fontHeight = fontMetrics.height() + LABEL_TEXT_VMARGIN; // used to ensure label texts don't overlap
             const int lineSpacing = fontHeight / 4;
 
             const bool rightSide = (label->angle < 1440 || label->angle > 4320);
 
             double sinra, cosra;
-            const double ra = M_PI/2880 * label->angle; //convert to radians
+            const double ra = M_PI / 2880 * label->angle; // convert to radians
             sincos(ra, &sinra, &cosra);
-
 
             const int spacer = preSpacer + m_map.m_ringBreadth * label->level;
 
-            const int centerX = m_map.width()  / 2 + m_offset.x();  //centre relative to canvas
+            const int centerX = m_map.width() / 2 + m_offset.x(); // centre relative to canvas
             const int centerY = m_map.height() / 2 + m_offset.y();
             int targetX = centerX + cosra * spacer;
             int targetY = centerY - sinra * spacer;
             int startX = targetX + cosra * (fullStrutLength - spacer + m_map.m_ringBreadth / 2);
             int startY = targetY - sinra * (fullStrutLength - spacer);
 
-            if (rightSide) { //righthand side, going upwards
-                if (startY > prevRightY /*- fmh*/) { //then it is too low, needs to be drawn higher
+            if (rightSide) { // righthand side, going upwards
+                if (startY > prevRightY /*- fmh*/) { // then it is too low, needs to be drawn higher
                     startY = prevRightY /*- fmh*/;
                 }
-            } else {//lefthand side, going downwards
-                if (startY < prevLeftY/* + fmh*/) { //then we're too high, need to be drawn lower
+            } else { // lefthand side, going downwards
+                if (startY < prevLeftY /* + fmh*/) { // then we're too high, need to be drawn lower
                     startY = prevLeftY /*+ fmh*/;
                 }
             }
@@ -628,14 +614,14 @@ void RadialMap::Item::paintExplodedLabels(QPainter &paint) const
             const int textWidth = fontMetrics.boundingRect(string).width() + LABEL_TEXT_HMARGIN;
             if (rightSide) {
                 if (startX + minTextWidth > width() || textY < fontHeight || middleX < targetX) {
-                    //skip this strut
+                    // skip this strut
                     //**** don't duplicate this code
-                    it = list.erase(it); //will delete the label and set it to list.current() which _should_ be the next ptr
+                    it = list.erase(it); // will delete the label and set it to list.current() which _should_ be the next ptr
                     delete label;
                     break;
                 }
 
-                prevRightY = textY - fontHeight - lineSpacing; //must be after above's "continue"
+                prevRightY = textY - fontHeight - lineSpacing; // must be after above's "continue"
 
                 if (m_offset.x() + m_map.width() + textWidth < width()) {
                     startX = m_offset.x() + m_map.width();
@@ -647,8 +633,8 @@ void RadialMap::Item::paintExplodedLabels(QPainter &paint) const
                 textX = startX + LABEL_TEXT_HMARGIN;
             } else { // left side
                 if (startX - minTextWidth < 0 || textY > height() || middleX > targetX) {
-                    //skip this strut
-                    it = list.erase(it); //will delete the label and set it to list.current() which _should_ be the next ptr
+                    // skip this strut
+                    it = list.erase(it); // will delete the label and set it to list.current() which _should_ be the next ptr
                     delete label;
                     break;
                 }
@@ -675,15 +661,14 @@ void RadialMap::Item::paintExplodedLabels(QPainter &paint) const
             label->qs = string;
         }
 
-        //if an element is deleted at this stage, we need to do this whole
-        //iteration again, thus the following loop
+        // if an element is deleted at this stage, we need to do this whole
+        // iteration again, thus the following loop
         //**** in rare case that deleted label was last label in top level
-        //     and last in labelList too, this will not work as expected (not critical)
+        //      and last in labelList too, this will not work as expected (not critical)
 
     } while (it != list.end());
 
-
-    //5. Render labels
+    // 5. Render labels
 
     QFont font;
     for (Label *label : list) {
@@ -701,19 +686,18 @@ void RadialMap::Item::paintExplodedLabels(QPainter &paint) const
     }
 
     qDeleteAll(list);
-    delete [] sizes;
+    delete[] sizes;
 }
-
 
 void RadialMap::Item::hoverEnterEvent(QHoverEvent *)
 {
-    if (!m_focus) return;
+    if (!m_focus)
+        return;
 
     setCursor(Qt::PointingHandCursor);
     Q_EMIT mouseHover(m_focus->file()->displayPath());
     update();
 }
-
 
 void RadialMap::Item::hoverLeaveEvent(QHoverEvent *)
 {
@@ -736,18 +720,16 @@ void RadialMap::Item::dragEnterEvent(QDragEnterEvent *e)
 
 bool RadialMap::Item::event(QEvent *e)
 {
-    if (e->type() == QEvent::ApplicationPaletteChange ||
-        e->type() == QEvent::PaletteChange)
+    if (e->type() == QEvent::ApplicationPaletteChange || e->type() == QEvent::PaletteChange)
         m_map.paint();
     return QQuickPaintedItem::event(e);
 }
 
-
 void RadialMap::Item::hoverMoveEvent(QHoverEvent *e)
 {
-    //set m_focus to what we hover over, update UI if it's a new segment
+    // set m_focus to what we hover over, update UI if it's a new segment
 
-    Segment const * const oldFocus = m_focus;
+    Segment const *const oldFocus = m_focus;
     m_focus = segmentAt(e->pos());
 
     if (!m_focus) {
@@ -782,24 +764,17 @@ void RadialMap::Item::hoverMoveEvent(QHoverEvent *e)
 
     setCursor(Qt::PointingHandCursor);
 
-    QString string = i18nc("Tooltip of file/folder, %1 is path, %2 is size",
-                           "%1\n%2",
-                           m_focus->file()->displayPath(),
-                           m_focus->file()->humanReadableSize());
+    QString string = i18nc("Tooltip of file/folder, %1 is path, %2 is size", "%1\n%2", m_focus->file()->displayPath(), m_focus->file()->humanReadableSize());
 
     if (m_focus->file()->isFolder()) {
-        int files = static_cast<const Folder*>(m_focus->file())->children();
+        int files = static_cast<const Folder *>(m_focus->file())->children();
         const uint percent = uint((100 * files) / (double)m_tree->children());
 
         string += QLatin1Char('\n');
         if (percent > 0) {
-            string += i18ncp("Tooltip of folder, %1 is number of files",
-                    "%1 File (%2%)", "%1 Files (%2%)",
-                    files, percent);
+            string += i18ncp("Tooltip of folder, %1 is number of files", "%1 File (%2%)", "%1 Files (%2%)", files, percent);
         } else {
-            string += i18ncp("Tooltip of folder, %1 is number of files",
-                    "%1 File", "%1 Files",
-                    files);
+            string += i18ncp("Tooltip of folder, %1 is number of files", "%1 File", "%1 Files", files);
         }
     }
 
@@ -837,47 +812,46 @@ void RadialMap::Item::hoverMoveEvent(QHoverEvent *e)
     update();
 }
 
-
-const RadialMap::Segment* RadialMap::Item::segmentAt(QPointF e) const
+const RadialMap::Segment *RadialMap::Item::segmentAt(QPointF e) const
 {
-    //determine which segment QPointF e is above
+    // determine which segment QPointF e is above
 
     e -= m_offset;
 
     if (m_map.m_signature.isEmpty())
         return nullptr;
 
-    if (e.x() <= m_map.width() && e.y() <= m_map.height())
-    {
-        //transform to cartesian coords
-        e.rx() -= m_map.width() / 2; //should be an int
-        e.ry()  = m_map.height() / 2 - e.y();
+    if (e.x() <= m_map.width() && e.y() <= m_map.height()) {
+        // transform to cartesian coords
+        e.rx() -= m_map.width() / 2; // should be an int
+        e.ry() = m_map.height() / 2 - e.y();
 
         double length = hypot(e.x(), e.y());
 
-        if (length >= m_map.m_innerRadius) //not hovering over inner circle
+        if (length >= m_map.m_innerRadius) // not hovering over inner circle
         {
-            uint depth  = ((int)length - m_map.m_innerRadius) / m_map.m_ringBreadth;
+            uint depth = ((int)length - m_map.m_innerRadius) / m_map.m_ringBreadth;
 
             if (depth <= m_map.m_visibleDepth) //**** do earlier since you can //** check not outside of range
             {
-                //vector calculation, reduces to simple trigonometry
-                //cos angle = (aibi + ajbj) / albl
-                //ai = x, bi=1, aj=y, bj=0
-                //cos angle = x / (length)
+                // vector calculation, reduces to simple trigonometry
+                // cos angle = (aibi + ajbj) / albl
+                // ai = x, bi=1, aj=y, bj=0
+                // cos angle = x / (length)
 
-                uint a  = (uint)(acos((double)e.x() / length) * 916.736);  //916.7324722 = #radians in circle * 16
+                uint a = (uint)(acos((double)e.x() / length) * 916.736); // 916.7324722 = #radians in circle * 16
 
-                //acos only understands 0-180 degrees
-                if (e.y() < 0) a = 5760 - a;
+                // acos only understands 0-180 degrees
+                if (e.y() < 0)
+                    a = 5760 - a;
 
                 for (Segment *segment : m_map.m_signature[depth]) {
                     if (segment->intersects(a))
                         return segment;
                 }
             }
-        }
-        else return m_rootSegment; //hovering over inner circle
+        } else
+            return m_rootSegment; // hovering over inner circle
     }
 
     return nullptr;
@@ -885,11 +859,10 @@ const RadialMap::Segment* RadialMap::Item::segmentAt(QPointF e) const
 
 void RadialMap::Item::saveSVG()
 {
-    const QString path =
-        QFileDialog::getSaveFileName(nullptr,
-                                     i18nc("@title:window", "Save as SVG"),
-                                     QString(),
-                                     i18nc("filedialog type filter", "SVG Files (*.svg);;All Files(*)"));
+    const QString path = QFileDialog::getSaveFileName(nullptr,
+                                                      i18nc("@title:window", "Save as SVG"),
+                                                      QString(),
+                                                      i18nc("filedialog type filter", "SVG Files (*.svg);;All Files(*)"));
     if (!path.isEmpty()) {
         m_map.saveSvg(path);
     }

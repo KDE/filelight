@@ -1,10 +1,10 @@
 /***********************************************************************
-* SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
-* SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
-* SPDX-FileCopyrightText: 2017-2022 Harald Sitter <sitter@kde.org>
-*
-* SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
-***********************************************************************/
+ * SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
+ * SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
+ * SPDX-FileCopyrightText: 2017-2022 Harald Sitter <sitter@kde.org>
+ *
+ * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
+ ***********************************************************************/
 
 #pragma once
 
@@ -17,13 +17,15 @@
 class QLabel;
 class QQmlApplicationEngine;
 
-namespace RadialMap {
+namespace RadialMap
+{
 class Item;
 } // namespace RadialMap
 class Folder;
 class HistoryCollection;
 
-namespace Filelight {
+namespace Filelight
+{
 
 class ScanManager;
 
@@ -54,12 +56,12 @@ public Q_SLOTS:
     void slotScanFolder();
     void slotScanHomeFolder();
     void slotScanRootFolder();
-    bool slotScanUrl(const QUrl&);
-    bool slotScanPath(const QString&);
+    bool slotScanUrl(const QUrl &);
+    bool slotScanPath(const QString &);
 
     void urlAboutToChange();
 
-    bool openUrl(const QUrl&);
+    bool openUrl(const QUrl &);
     void configFilelight();
 
     void updateURL(const QUrl &);
@@ -67,11 +69,12 @@ public Q_SLOTS:
 
 private:
     void setupActions(QQmlApplicationEngine *engine);
+
 public:
     Q_INVOKABLE QString prettyUrl(const QUrl &url) const;
-    Q_INVOKABLE bool start(const QUrl&) const;
+    Q_INVOKABLE bool start(const QUrl &) const;
 
-    HistoryCollection  *m_histories;
+    HistoryCollection *m_histories;
     ScanManager *m_manager;
 
 public:
