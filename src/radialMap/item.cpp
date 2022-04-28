@@ -8,32 +8,29 @@
 
 #include "item.h"
 
-#include "fileTree.h"
-#include "radialMap.h" //constants
+#include <cmath> //::segmentAt()
 
-#include <KCursor> //ctor
-
-#include <KLocalizedString>
 #include <QApplication> //sendEvent
 #include <QBitmap> //ctor - finding cursor size
+#include <QClipboard>
 #include <QCursor> //slotPostMouseEvent()
 #include <QDebug>
+#include <QDragEnterEvent>
+#include <QDropEvent>
+#include <QFileDialog>
+#include <QMenu> //::mousePressEvent()
+#include <QMimeData>
+#include <QMouseEvent>
+#include <QPaintEvent>
 #include <QPainter>
 #include <QQuickWindow>
+#include <QResizeEvent>
 #include <QScreen>
-#include <QTimer> //member
+#include <QTimer>
+#include <QUrl>
 #include <QWindow>
 
-#include <KIO/JobUiDelegate>
-#include <KIO/OpenUrlJob>
-
-#include "labels.h"
-
-#include "Config.h"
-#include "fileTree.h"
-#include "radialMap.h" //class Segment
-
-#include <KCursor> //::mouseMoveEvent()
+#include <KCursor>
 #include <KIO/DeleteJob>
 #include <KIO/Job> //::mousePressEvent()
 #include <KIO/JobUiDelegate>
@@ -42,27 +39,12 @@
 #include <KLocalizedString>
 #include <KMessageBox> //::mousePressEvent()
 #include <KTerminalLauncherJob>
-#include <QMenu> //::mousePressEvent()
-#include <QUrl>
-
 #include <KUrlMimeData>
-#include <QApplication> //QApplication::setOverrideCursor()
-#include <QClipboard>
-#include <QDragEnterEvent>
-#include <QDropEvent>
-#include <QFileDialog>
-#include <QMimeData>
-#include <QMouseEvent>
-#include <QPaintEvent>
-#include <QPainter>
-#include <QResizeEvent>
-#include <QScreen>
-#include <QTimer> //::resizeEvent()
-#include <QWindow>
 
-#include <cmath> //::segmentAt()
-
-#include <KIO/OpenUrlJob>
+#include "Config.h"
+#include "fileTree.h"
+#include "labels.h"
+#include "radialMap.h"
 
 RadialMap::Item::Item(QQuickItem *parent)
     : QQuickPaintedItem(parent)
