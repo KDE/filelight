@@ -11,7 +11,6 @@
 #include <cmath> //::segmentAt()
 
 #include <QApplication> //sendEvent
-#include <QBitmap> //ctor - finding cursor size
 #include <QClipboard>
 #include <QCursor> //slotPostMouseEvent()
 #include <QDebug>
@@ -26,11 +25,8 @@
 #include <QQuickWindow>
 #include <QResizeEvent>
 #include <QScreen>
-#include <QTimer>
-#include <QUrl>
 #include <QWindow>
 
-#include <KCursor>
 #include <KIO/DeleteJob>
 #include <KIO/Job> //::mousePressEvent()
 #include <KIO/JobUiDelegate>

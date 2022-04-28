@@ -11,8 +11,6 @@
 
 #include "fileTree.h"
 
-#include <KColorScheme>
-
 #include <QPixmap>
 #include <QRectF>
 #include <QString>

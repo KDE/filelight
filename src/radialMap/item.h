@@ -8,21 +8,18 @@
 
 #pragma once
 
-#include <KJob>
-#include <QUrl>
-
-#include <QDragEnterEvent>
-#include <QDropEvent>
 #include <QLabel>
-#include <QMouseEvent>
-#include <QPaintEvent>
 #include <QQuickPaintedItem>
-#include <QResizeEvent>
 #include <QTimer>
-#include <QWidget>
+#include <QUrl>
 
 #include "Config.h" // Dirty
 #include "map.h"
+
+class QMouseEvent;
+class QDropEvent;
+class KJob;
+class QDragEnterEvent;
 
 class Folder;
 class File;

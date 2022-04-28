@@ -7,6 +7,7 @@
  ***********************************************************************/
 
 #include "filelight_debug.h"
+
 #include <QApplication> //make()
 #include <QBrush>
 #include <QFont> //ctor
@@ -15,14 +16,13 @@
 #include <QPainter>
 #include <QSvgGenerator>
 
-#include <KCursor> //make()
+#include <KColorScheme>
 #include <KLocalizedString>
 
-#include "radialMap.h" // defines
-
-#include "Config.h"
 #define SINCOS_H_IMPLEMENTATION (1)
+#include "Config.h"
 #include "map.h"
+#include "radialMap.h" // defines
 #include "sincos.h"
 
 RadialMap::Map::Map()
