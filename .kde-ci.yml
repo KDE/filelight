@@ -12,3 +12,5 @@ Dependencies:
     'frameworks/kio': '@stable'
     'frameworks/kdeclarative': '@stable'
 
+Options:
+  require-passing-tests-on: [ 'Linux', 'FreeBSD', 'Windows' ]
