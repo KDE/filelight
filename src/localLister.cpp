@@ -96,9 +96,7 @@ Folder *LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
         } else if (entry.isDir) {
             Folder *d = nullptr;
             const QByteArray new_dirname = entry.name + QByteArrayLiteral("/");
-            qDebug() << new_dirname;
             const QByteArray new_path = path + entry.name + '/';
-            qDebug() << new_path;
 
             // check to see if we've scanned this section already
 
