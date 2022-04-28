@@ -10,7 +10,6 @@
 #define FILETREE_H
 
 #include <QByteArray> //qstrdup
-#include <QFile> //decodeName()
 #include <KFormat>
 
 #include <stdlib.h>
@@ -46,7 +45,7 @@ public:
     }
     /** Decoded name. Use when you need a QString. */
     QString decodedName() const {
-        return QFile::decodeName(m_name);
+        return QString::fromUtf8(m_name);
     }
     /**
      * Human readable name (including native separators where applicable).

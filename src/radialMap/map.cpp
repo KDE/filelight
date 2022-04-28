@@ -201,7 +201,7 @@ bool RadialMap::Map::build(const Folder * const dir, const uint depth, uint a_st
                 KFormat().formatByteSize(hiddenSize/hiddenFileCount));
 
 
-        m_signature[depth].append(new Segment(new File(QFile::encodeName(s).constData(), hiddenSize), a_start, a_end - a_start, true));
+        m_signature[depth].append(new Segment(new File(s.toUtf8().constData(), hiddenSize), a_start, a_end - a_start, true));
     }
 
     return false;

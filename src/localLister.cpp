@@ -16,26 +16,19 @@
 #include <QStorageInfo>
 #include <QElapsedTimer>
 #include <QGuiApplication> //postEvent()
-#include <QFile>
 #include <QThreadPool>
 #include <QSemaphore>
 
-#include <dirent.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <unistd.h>
+#include "directoryIterator.h"
 
 namespace Filelight
 {
 QStringList LocalLister::s_remoteMounts;
 QStringList LocalLister::s_localMounts;
 
-LocalLister::LocalLister(const QString &path, QList<Folder *> *cachedTrees, ScanManager *parent)
-        : QThread()
-        , m_path(path)
-        , m_trees(cachedTrees)
-        , m_parent(parent)
-{
+LocalLister::LocalLister(const QString &path, QList<Folder *> *cachedTrees,
+                         ScanManager *parent)
+    : QThread(), m_path(path), m_trees(cachedTrees), m_parent(parent) {
     //add empty directories for any mount points that are in the path
     //TODO empty directories is not ideal as adds to fileCount incorrectly
 
@@ -60,7 +53,7 @@ LocalLister::run()
     QElapsedTimer timer;
     timer.start();
     //recursively scan the requested path
-    const QByteArray path = QFile::encodeName(m_path);
+    const QByteArray path = m_path.toUtf8();
     Folder *tree = scan(path, path);
     qCDebug(FILELIGHT_LOG) << "Scan completed in" << (timer.elapsed()/1000);
 
@@ -79,140 +72,36 @@ LocalLister::run()
     qCDebug(FILELIGHT_LOG) << "Thread terminating ...";
 }
 
-#ifndef S_BLKSIZE
-#define S_BLKSIZE 512
-#endif
-
-
-#include <errno.h>
-static void
-outputError(const QByteArray &path)
+Folder* LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
 {
-    ///show error message that stat or opendir may give
-
-#define out(s) qWarning() << s ": " << path; break
-
-    switch (errno) {
-    case EACCES:
-        out("Inadequate access permissions");
-    case EMFILE:
-        out("Too many file descriptors in use by Filelight");
-    case ENFILE:
-        out("Too many files are currently open in the system");
-    case ENOENT:
-        out("A component of the path does not exist, or the path is an empty string");
-    case ENOMEM:
-        out("Insufficient memory to complete the operation");
-    case ENOTDIR:
-        out("A component of the path is not a folder");
-    case EBADF:
-        out("Bad file descriptor");
-    case EFAULT:
-        out("Bad address");
-#ifndef Q_OS_WIN
-    case ELOOP: //NOTE shouldn't ever happen
-        out("Too many symbolic links encountered while traversing the path");
-#endif
-    case ENAMETOOLONG:
-        out("File name too long");
-    }
-
-#undef out
-}
-
-Folder*
-LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
-{
-    Folder *cwd = new Folder(dirname.constData());
-    DIR *dir = opendir(path.constData());
-
-    if (!dir) {
-        outputError(path);
-        return cwd;
-    }
-
+    auto cwd = new Folder(dirname.constData());
     QVector<QPair<QByteArray, QByteArray>> subDirectories;
 
-    struct stat statbuf;
-    dirent *ent;
-    while ((ent = readdir(dir)))
-    {
-        if (m_parent->m_abort)
-        {
-            closedir(dir);
+    for (const auto &entry : DirectoryIterator(path)) {
+        if (m_parent->m_abort) {
             return cwd;
         }
 
-        if (qstrcmp(ent->d_name, ".") == 0 || qstrcmp(ent->d_name, "..") == 0) {
+        if (entry.isSkipable) {
             continue;
         }
 
-        // QStringBuilder is used here. It assumes ent->d_name is char[NAME_MAX + 1],
-        // and thus copies only first NAME_MAX + 1 chars.
-        // Actually, while it's not fully POSIX-compatible, current behaviour may return d_name longer than NAME_MAX.
-        // Make full copy of this string.
-        QByteArray new_path = path + static_cast<const char*>(ent->d_name);
-
-        // get file information. Split this per-OS. File attributes on windows/ntfs are special and not properly
-        // represented through its _stat-like API.
-
-#ifdef Q_OS_WINDOWS
-        // https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getfileattributesexa
-        FILE_BASIC_INFO basicInfo;
-        WIN32_FILE_ATTRIBUTE_DATA fileAttributeData;
-        BOOL result =
-            GetFileAttributesExA(new_path.constData(), GetFileExInfoStandard,
-                                 (LPVOID)&fileAttributeData);
-        if (result == 0) {
-            qWarning() << "failed to get attributes for" << new_path;
-            continue;
-        }
-
-        const auto attributes = fileAttributeData.dwFileAttributes;
-        // Reparse points are symlinks or NTFS junctions.
-        const bool isSkipable = attributes & FILE_ATTRIBUTE_REPARSE_POINT || attributes & FILE_ATTRIBUTE_TEMPORARY;
-        const bool isDir = attributes & FILE_ATTRIBUTE_DIRECTORY;
-        const bool isFile = !isSkipable && !isDir; // fileness is implicit in win32 api
-        ULARGE_INTEGER ulargeInt;
-        ulargeInt.HighPart = fileAttributeData.nFileSizeHigh;
-        ulargeInt.LowPart = fileAttributeData.nFileSizeLow;
-        const auto size = ulargeInt.QuadPart;
-#else
-        if (lstat(new_path.constData(), &statbuf) == -1) {
-            outputError(new_path);
-            continue;
-        }
-
-        const bool isSkipable = S_ISLNK(statbuf.st_mode) ||
-                S_ISCHR(statbuf.st_mode) ||
-                S_ISBLK(statbuf.st_mode) ||
-                S_ISFIFO(statbuf.st_mode)||
-                S_ISSOCK(statbuf.st_mode);
-        const bool isDir = S_ISDIR(statbuf.st_mode);
-        const bool isFile =S_ISREG(statbuf.st_mode);
-        const auto size = statbuf.st_blocks * S_BLKSIZE;
-#endif
-
-        if (isSkipable) {
-            continue;
-        }
-
-        if (isFile) {
-            cwd->append(ent->d_name, size);
-            m_parent->m_totalSize += size;
-        } else if (isDir) {
+        if (entry.isFile) {
+            cwd->append(entry.name.constData(), entry.size);
+            m_parent->m_totalSize += entry.size;
+        } else if (entry.isDir) {
             Folder *d = nullptr;
-            const QByteArray new_dirname = QByteArray(ent->d_name) + QByteArrayLiteral("/");
-            new_path += '/';
+            const QByteArray new_dirname = entry.name + QByteArrayLiteral("/");
+            qDebug() << new_dirname;
+            const QByteArray new_path = path + entry.name + '/';
+            qDebug() << new_path;
 
-            //check to see if we've scanned this section already
+            // check to see if we've scanned this section already
 
             QMutexLocker lock(&m_treeMutex);
-            for (Folder *folder : *m_trees)
-            {
-                if (new_path == folder->name8Bit())
-                {
-                    qCDebug(FILELIGHT_LOG) << "Tree pre-completed: " << folder->decodedName();
+            for (Folder *folder : std::as_const(*m_trees)) {
+                if (new_path == folder->name8Bit()) {
+                    qDebug() << "Tree pre-completed: " << folder->decodedName();
                     d = folder;
                     m_trees->removeAll(folder);
                     m_parent->m_files += folder->children();
@@ -221,15 +110,14 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
             }
             lock.unlock();
 
-            if (!d) { //then scan
+            if (!d) { // then scan
+                // qDebug() << "Tree fresh" <<new_path << new_dirname;
                 subDirectories.append({new_path, new_dirname});
             }
         }
 
         ++m_parent->m_files;
     }
-
-    closedir(dir);
 
     // Scan all subdirectories, either in separate threads or immediately,
     // depending on how many free threads there are in the threadpool.
@@ -242,7 +130,7 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
             semaphore.release(1);
         };
         if (!QThreadPool::globalInstance()->tryStart(scanSubdir)) {
-            scanSubdir();
+                scanSubdir();
         }
     }
     semaphore.acquire(subDirectories.count());

@@ -9,6 +9,17 @@ ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX FILELIGHT
     VERSION_HEADER version.h)
 
+add_library(filelightInternal STATIC fileTree.cpp directoryIterator.cpp)
+if (WIN32)
+    target_sources(filelightInternal PRIVATE windowsWalker.cpp)
+else()
+    target_sources(filelightInternal PRIVATE posixWalker.cpp)
+endif()
+target_link_libraries(filelightInternal
+    Qt${QT_MAJOR_VERSION}::Core
+    KF5::CoreAddons
+)
+
 add_executable(filelight)
 target_sources(filelight PRIVATE
     radialMap/item.cpp
@@ -17,7 +28,6 @@ target_sources(filelight PRIVATE
     scan.cpp
     Config.cpp
     settingsDialog.cpp
-    fileTree.cpp
     localLister.cpp
     remoteLister.cpp
     historyAction.cpp
@@ -57,6 +67,7 @@ target_link_libraries(filelight
     KF5::Declarative
     Qt${QT_MAJOR_VERSION}::Svg
     Qt${QT_MAJOR_VERSION}::Quick
+    filelightInternal
 )
 if (WIN32)
     find_package(KDEWin REQUIRED)
