@@ -37,6 +37,7 @@ include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
 include(KDEClangFormat)
 include(KDEGitCommitHooks)
+include(ECMFindQmlModule)
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Core Widgets Svg Quick)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
@@ -47,6 +48,9 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
     Declarative
 )
 find_package(KF5DocTools) # Optional, not needed on Windows for example.
+
+ecm_find_qmlmodule(org.kde.kirigami 2.19)
+ecm_find_qmlmodule(org.kde.quickcharts 1.0)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"filelight\")
 
