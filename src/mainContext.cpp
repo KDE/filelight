@@ -20,6 +20,7 @@
 #include <QFileDialog>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QStandardPaths>
 
 #include "Config.h"
 #include "define.h"
@@ -67,6 +68,11 @@ MainContext::MainContext(QObject *parent)
     qmlRegisterSingletonInstance("org.kde.filelight", 1, 0, "About", about);
     qmlRegisterSingletonInstance("org.kde.filelight", 1, 0, "ScanManager", m_manager);
     qmlRegisterSingletonInstance("org.kde.filelight", 1, 0, "MainContext", this);
+
+    engine->setInitialProperties({
+        {QStringLiteral("inSandbox"),
+         !QStandardPaths::locate(QStandardPaths::RuntimeLocation, QStringLiteral("flatpak-info")).isEmpty() || qEnvironmentVariableIsSet("SNAP")},
+    });
 
     const QUrl mainUrl(QStringLiteral("qrc:/ui/main.qml"));
     QObject::connect(

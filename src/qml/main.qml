@@ -13,6 +13,8 @@ import Qt.labs.platform 1.1 as Platform
 Kirigami.ApplicationWindow {
     id: appWindow
 
+    required property bool inSandbox
+
     property string status
     property int numberOfFiles
     property var mapItem: null

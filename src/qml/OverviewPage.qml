@@ -38,7 +38,7 @@ Kirigami.Page {
         Flow {
             Layout.alignment: Qt.AlignHCenter
             Layout.maximumWidth: parent.width
-            Layout.preferredWidth: button1.implicitWidth + spacing + button2.implicitWidth + spacing + button3.implicitWidth
+            Layout.preferredWidth: button1.implicitWidth + spacing + button2.implicitWidth + (button3.visible ? spacing + button3.implicitWidth : 0)
             QQC2.ToolButton {
                 id: button1
                 icon.width: Kirigami.Units.iconSizes.huge
@@ -55,6 +55,7 @@ Kirigami.Page {
             }
             QQC2.ToolButton {
                 id: button3
+                visible: !inSandbox
                 icon.width: Kirigami.Units.iconSizes.huge
                 icon.height: Kirigami.Units.iconSizes.huge
                 display: QQC2.AbstractButton.TextUnderIcon
