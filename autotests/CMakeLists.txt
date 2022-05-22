@@ -1,3 +1,7 @@
+if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_CURRENT_BINARY_DIR)
+    message(FATAL_ERROR "Building tests in-source is not supported, please use a separate build dir or -DBUILD_TESTING=OFF.")
+endif()
+
 include(ECMAddTests)
 
 find_package(Qt${QT_MAJOR_VERSION}Test ${QT_MIN_VERSION} REQUIRED Test)
