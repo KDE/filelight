@@ -4,6 +4,10 @@
 #include "posixWalker.h"
 #include <QDebug>
 
+#ifdef Q_OS_LINUX
+#include <sys/param.h>
+#endif
+
 static void outputError(const QByteArray &path)
 {
     /// show error message that stat or opendir may give
@@ -113,7 +117,12 @@ void POSIXWalker::next()
         }
         m_entry.isDir = S_ISDIR(statbuf.st_mode);
         m_entry.isFile = S_ISREG(statbuf.st_mode);
+
+#ifdef Q_OS_LINUX
+        m_entry.size = statbuf.st_blocks * DEV_BSIZE;
+#else
         m_entry.size = statbuf.st_blocks * S_BLKSIZE;
+#endif
         break;
     }
 }

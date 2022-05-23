@@ -5,6 +5,10 @@
 #include <QProcess>
 #include <QTest>
 
+#ifdef Q_OS_LINUX
+#include <sys/param.h>
+#endif
+
 #include "directoryIterator.h"
 #include "test-config.h"
 
@@ -62,7 +66,7 @@ private Q_SLOTS:
 #elif defined(Q_OS_FREEBSD)
         QCOMPARE(file.size, 1 * S_BLKSIZE);
 #else
-        QCOMPARE(file.size, 16 * S_BLKSIZE);
+        QCOMPARE(file.size, 16 * DEV_BSIZE);
 #endif
 
         if (withSymlink) {
@@ -89,7 +93,7 @@ private Q_SLOTS:
             QVERIFY(symlink.isDuplicate || file.isDuplicate);
             // Now make sure only one is a duplicate also
             QVERIFY(symlink.isDuplicate != file.isDuplicate);
-            QCOMPARE(symlink.size, 16 * S_BLKSIZE);
+            QCOMPARE(symlink.size, 16 * DEV_BSIZE);
 #endif
         }
     }
