@@ -9,6 +9,12 @@ ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX FILELIGHT
     VERSION_HEADER version.h)
 
+include(CheckCXXSymbolExists)
+check_cxx_symbol_exists(sincos "math.h" HAVE_SINCOS)
+if (HAVE_SINCOS)
+    add_definitions(-DHAVE_SINCOS)
+endif()
+
 add_library(filelightInternal STATIC fileTree.cpp directoryIterator.cpp)
 if (WIN32)
     target_sources(filelightInternal PRIVATE windowsWalker.cpp)

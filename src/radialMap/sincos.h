@@ -9,18 +9,14 @@
 
 #include <math.h>
 
-#if !defined(__GLIBC__) || (__GLIBC__ < 2) || (__GLIBC__ == 2 && __GLIBC_MINOR__ < 1)
+#ifndef HAVE_SINCOS
 
 #include <qmath.h>
 
-void sincos(double angleRadians, double *Sin, double *Cos);
-
-#ifdef SINCOS_H_IMPLEMENTATION
-void sincos(double angleRadians, double *Sin, double *Cos)
+static inline void sincos(double angleRadians, double *Sin, double *Cos)
 {
     *Sin = qSin(angleRadians);
     *Cos = qCos(angleRadians);
 }
-#endif
 
 #endif
