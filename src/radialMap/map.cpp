@@ -8,6 +8,11 @@
 
 #include "filelight_debug.h"
 
+#ifdef Q_OS_WINDOWS
+#include <winrt/Windows.UI.ViewManagement.h>
+#pragma comment(lib, "windowsapp")
+#endif
+
 #include <QApplication> //make()
 #include <QBrush>
 #include <QFont> //ctor
@@ -254,7 +259,13 @@ void RadialMap::Map::colorise()
     int h, s1, s2, v1, v2;
 
     QPalette palette;
+#ifdef Q_OS_WINDOWS
+    winrt::Windows::UI::ViewManagement::UISettings settings;
+    winrt::Windows::UI::Color color = settings.GetColorValue(winrt::Windows::UI::ViewManagement::UIColorType::Accent);
+    const QColor kdeColour[2] = {palette.window().color(), QColor(color.R, color.G, color.B, color.A)};
+#else
     const QColor kdeColour[2] = {palette.windowText().color(), palette.window().color()};
+#endif
 
     double deltaRed = (double)(kdeColour[0].red() - kdeColour[1].red()) / 2880; // 2880 for semicircle
     double deltaGreen = (double)(kdeColour[0].green() - kdeColour[1].green()) / 2880;
