@@ -724,8 +724,7 @@ void RadialMap::Item::hoverMoveEvent(QHoverEvent *e)
 
     const QRectF screenRect = window()->screen()->availableGeometry();
 
-    // QPoint tooltipPosition = e->globalPos() + QPoint(20, 20);
-    QPoint tooltipPosition = e->pos() + QPoint(20, 20);
+    QPoint tooltipPosition = window()->mapToGlobal(e->pos()) + QPoint(20, 20);
     QRectF tooltipRect(tooltipPosition, m_tooltip.size());
 
     // Same content as before
