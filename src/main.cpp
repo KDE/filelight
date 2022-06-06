@@ -12,6 +12,7 @@
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QDir>
+#include <QQuickStyle>
 #include <QUrl>
 
 #include <KAboutData>
@@ -29,6 +30,10 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling, true);
 #endif
     QApplication app(argc, argv);
+
+    if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
+        QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
+    }
 
     KLocalizedString::setApplicationDomain("filelight");
     auto config = KSharedConfig::openConfig();

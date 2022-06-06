@@ -1,6 +1,6 @@
 #######################################################################
 # SPDX-FileCopyrightText: 2008-2014 Martin Sandsmark <martin.sandsmark@kde.org>
-# SPDX-FileCopyrightText: 2017 Harald Sitter <sitter@kde.org>
+# SPDX-FileCopyrightText: 2017-2022 Harald Sitter <sitter@kde.org>
 #
 # SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 #######################################################################
@@ -67,6 +67,7 @@ target_link_libraries(filelight
     KF5::Declarative
     Qt${QT_MAJOR_VERSION}::Svg
     Qt${QT_MAJOR_VERSION}::Quick
+    Qt${QT_MAJOR_VERSION}::QuickControls2
     filelightInternal
 )
 if (WIN32)

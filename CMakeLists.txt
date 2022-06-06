@@ -39,7 +39,7 @@ include(KDEClangFormat)
 include(KDEGitCommitHooks)
 include(ECMFindQmlModule)
 
-find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Core Widgets Svg Quick)
+find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Core Widgets Svg Quick QuickControls2)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
     XmlGui # For app
     KIO # For part
@@ -48,6 +48,9 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
     Declarative
 )
 find_package(KF5DocTools) # Optional, not needed on Windows for example.
+
+find_package(KF5QQC2DesktopStyle ${KF5_MIN_VERSION})
+set_package_properties(KF5QQC2DesktopStyle PROPERTIES TYPE RUNTIME)
 
 ecm_find_qmlmodule(org.kde.kirigami 2.19)
 ecm_find_qmlmodule(org.kde.quickcharts 1.0)
