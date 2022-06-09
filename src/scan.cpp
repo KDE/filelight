@@ -48,7 +48,7 @@ ScanManager::~ScanManager()
 
 bool ScanManager::running() const
 {
-    return m_thread && m_thread->isRunning();
+    return (m_thread && m_thread->isRunning()) || (m_remoteLister && !m_remoteLister->isFinished());
 }
 
 bool ScanManager::start(const QUrl &url)
@@ -71,11 +71,12 @@ bool ScanManager::start(const QUrl &url)
     if (!url.isLocalFile()) {
         QGuiApplication::changeOverrideCursor(Qt::BusyCursor);
         // will start listing straight away
-        Filelight::RemoteLister *remoteLister = new Filelight::RemoteLister(url, (QWidget *)parent(), this);
-        connect(remoteLister, &Filelight::RemoteLister::branchCompleted, this, &ScanManager::cacheTree, Qt::QueuedConnection);
-        remoteLister->setParent(this);
-        remoteLister->setObjectName(QStringLiteral("remote_lister"));
-        remoteLister->openUrl(url);
+        m_remoteLister = std::make_unique<Filelight::RemoteLister>(url, this, this);
+        connect(m_remoteLister.get(), &Filelight::RemoteLister::branchCompleted, this, &ScanManager::cacheTree, Qt::QueuedConnection);
+        connect(m_remoteLister.get(), &Filelight::RemoteLister::completed, this, &ScanManager::runningChanged);
+        m_remoteLister->setObjectName(QStringLiteral("remote_lister"));
+        m_remoteLister->openUrl(url);
+        Q_EMIT runningChanged();
         return true;
     }
 
@@ -174,8 +175,8 @@ bool ScanManager::abort()
 {
     m_abort = true;
 
-    delete findChild<RemoteLister *>(QStringLiteral("remote_lister"));
-
+    m_remoteLister->stop();
+    m_remoteLister = nullptr;
     const bool ret = m_thread && m_thread->wait();
     Q_EMIT runningChanged();
 

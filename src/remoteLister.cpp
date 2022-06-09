@@ -1,6 +1,7 @@
 /***********************************************************************
  * SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
  * SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
+ * SPDX-FileCopyrightText: 2022 Harald Sitter <sitter@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
  ***********************************************************************/
@@ -62,14 +63,13 @@ private:
     Store &operator=(const Store &);
 };
 
-RemoteLister::RemoteLister(const QUrl &url, QWidget *parent, ScanManager *manager)
+RemoteLister::RemoteLister(const QUrl &url, ScanManager *manager, QObject *parent)
     : KDirLister(parent)
     , m_root(new Store(url, url.url(), nullptr))
     , m_store(m_root)
     , m_manager(manager)
 {
     setShowingDotFiles(true); // Stupid KDirLister API function names
-    setMainWindow(parent);
 
     // Use SIGNAL(result(KIO::Job*)) instead and then use Job::error()
     connect(this, static_cast<void (KCoreDirLister::*)()>(&KCoreDirLister::completed), this, &RemoteLister::onCompleted);

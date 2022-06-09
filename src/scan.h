@@ -9,6 +9,8 @@
 #ifndef SCAN_H
 #define SCAN_H
 
+#include <memory>
+
 #include <QList>
 #include <QMutex>
 #include <QObject>
@@ -21,6 +23,7 @@ namespace Filelight
 {
 
 class LocalLister;
+class RemoteLister;
 
 class ScanManager : public QObject
 {
@@ -70,6 +73,7 @@ private:
     QMutex m_mutex;
     LocalLister *m_thread;
     QList<Folder *> m_cache;
+    std::unique_ptr<RemoteLister> m_remoteLister;
 };
 }
 
