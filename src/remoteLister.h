@@ -8,19 +8,22 @@
 
 #pragma once
 
-#include "fileTree.h"
+#include <memory>
+
 #include <KDirLister>
+
+#include "fileTree.h"
 
 namespace Filelight
 {
 class ScanManager;
+struct Store;
 
 class RemoteLister : public KDirLister
 {
     Q_OBJECT
 public:
-    RemoteLister(const QUrl &url, ScanManager *manager, QObject *parent = nullptr);
-    ~RemoteLister() override;
+    RemoteLister(const QUrl &url, ScanManager *parent);
 
 Q_SIGNALS:
     void branchCompleted(Folder *tree);
@@ -30,10 +33,8 @@ private Q_SLOTS:
     void onCanceled();
 
 private:
-    struct Store *m_root;
-    struct Store *m_store;
+    std::shared_ptr<Store> m_root;
+    std::shared_ptr<Store> m_store;
     ScanManager *m_manager;
-
-    Q_DISABLE_COPY_MOVE(RemoteLister)
 };
 } // namespace Filelight

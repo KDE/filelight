@@ -70,10 +70,16 @@ bool ScanManager::start(const QUrl &url)
     if (!url.isLocalFile()) {
         QGuiApplication::changeOverrideCursor(Qt::BusyCursor);
         // will start listing straight away
-        m_remoteLister = std::make_unique<Filelight::RemoteLister>(url, this, this);
+        m_remoteLister = std::make_unique<Filelight::RemoteLister>(url, this);
         connect(m_remoteLister.get(), &Filelight::RemoteLister::branchCompleted, this, &ScanManager::cacheTree, Qt::QueuedConnection);
-        connect(m_remoteLister.get(), &Filelight::RemoteLister::completed, this, &ScanManager::runningChanged);
-        m_remoteLister->setObjectName(QStringLiteral("remote_lister"));
+        auto updateRunning = [this] {
+            if (m_remoteLister && m_remoteLister->isFinished()) {
+                m_remoteLister = nullptr;
+                Q_EMIT runningChanged();
+            }
+        };
+        connect(m_remoteLister.get(), &Filelight::RemoteLister::completed, this, updateRunning);
+        connect(m_remoteLister.get(), &Filelight::RemoteLister::canceled, this, updateRunning);
         m_remoteLister->openUrl(url);
         Q_EMIT runningChanged();
         return true;

@@ -16,58 +16,52 @@
 namespace Filelight
 {
 
-// TODO: delete all this stuff!
-
 // You need to use a single DirLister.
 // One per folder breaks KIO (seemingly) and also uses un-godly amounts of memory!
 
 struct Store {
-    using List = QList<Store *>;
-
     /// location of the folder
     const QUrl url;
     /// the folder on which we are operating
-    Folder *folder = nullptr;
+    Folder *folder;
     /// so we can reference the parent store
-    Store *parent = nullptr;
+    const std::shared_ptr<Store> parent = nullptr;
     /// directories in this folder that need to be scanned before we can propagate()
-    List stores;
+    QList<std::shared_ptr<Store>> stores;
 
-    Store(const QUrl &u, const QString &name, Store *s)
-        : url(u)
+    Store(const QUrl &url_, const QString &name, const std::shared_ptr<Store> &parentStore)
+        : url(url_)
         , folder(new Folder((name + QLatin1Char('/')).toUtf8().constData()))
-        , parent(s)
+        , parent(parentStore)
     {
     }
     ~Store() = default;
-
-    Store *propagate()
-    {
-        /// returns the next store available for scanning
-
-        qCDebug(FILELIGHT_LOG) << "propagate: " << url;
-
-        if (parent) {
-            parent->folder->append(folder);
-            if (parent->stores.isEmpty()) {
-                return parent->propagate();
-            }
-            return parent;
-        }
-
-        // we reached the root, let's get our next folder scanned
-        return this;
-    }
 
 private:
     Q_DISABLE_COPY_MOVE(Store)
 };
 
-RemoteLister::RemoteLister(const QUrl &url, ScanManager *manager, QObject *parent)
+std::shared_ptr<Store> propagate(Store *store, const std::shared_ptr<Store> &root)
+{
+    /// returns the next store available for scanning (or the root itself)
+
+    while (store->parent) {
+        qCDebug(FILELIGHT_LOG) << "propagate: " << store->url;
+        store->parent->folder->append(store->folder);
+        if (!store->parent->stores.isEmpty()) {
+            return store->parent;
+        }
+        store = store->parent.get();
+    }
+
+    return root;
+}
+
+RemoteLister::RemoteLister(const QUrl &url, ScanManager *parent)
     : KDirLister(parent)
-    , m_root(new Store(url, url.url(), nullptr))
+    , m_root(std::make_shared<Store>(url, url.url(), nullptr))
     , m_store(m_root)
-    , m_manager(manager)
+    , m_manager(parent)
 {
     setShowingDotFiles(true); // Stupid KDirLister API function names
 
@@ -76,16 +70,10 @@ RemoteLister::RemoteLister(const QUrl &url, ScanManager *manager, QObject *paren
     connect(this, static_cast<void (KCoreDirLister::*)()>(&KCoreDirLister::canceled), this, &RemoteLister::onCanceled);
 }
 
-RemoteLister::~RemoteLister()
-{
-    delete m_root;
-}
-
 void RemoteLister::onCanceled()
 {
     qCDebug(FILELIGHT_LOG) << "Canceled";
     Q_EMIT branchCompleted(nullptr);
-    deleteLater();
 }
 
 void RemoteLister::onCompleted()
@@ -95,7 +83,7 @@ void RemoteLister::onCompleted()
     const KFileItemList items = KDirLister::items();
     for (const auto &item : items) {
         if (item.isDir()) {
-            m_store->stores += new Store(item.url(), item.name(), m_store);
+            m_store->stores << std::make_shared<Store>(item.url(), item.name(), m_store);
         } else {
             m_store->folder->append(item.name().toUtf8().constData(), item.size());
             m_manager->m_totalSize += item.size();
@@ -108,35 +96,24 @@ void RemoteLister::onCompleted()
         // no directories to scan, so we need to append ourselves to the parent folder
         // propagate() will return the next ancestor that has stores left to be
         // scanned, or root if we are done
-        Store *newStore = m_store->propagate();
-        if (newStore != m_store) {
+        if (auto newStore = propagate(m_store.get(), m_root); newStore != m_store) {
             // We need to clean up old stores
-            delete m_store;
             m_store = newStore;
         }
     }
 
     if (!m_store->stores.isEmpty()) {
-        Store::List::Iterator first = m_store->stores.begin();
-        const QUrl url((*first)->url);
-        Store *currentStore = m_store;
-
         // we should operate with this store next time this function is called
-        m_store = *first;
+        m_store = m_store->stores.takeFirst();
 
-        // we don't want to handle this store again
-        currentStore->stores.erase(first);
-
-        // this returns _immediately_
+        const auto url = m_store->url;
         qCDebug(FILELIGHT_LOG) << "scanning: " << url;
         openUrl(url);
-    } else {
-        qCDebug(FILELIGHT_LOG) << "I think we're done";
-
-        Q_ASSERT(m_root == m_store);
-        Q_EMIT branchCompleted(m_store->folder);
-
-        deleteLater();
+        return;
     }
+
+    qCDebug(FILELIGHT_LOG) << "I think we're done";
+    Q_ASSERT(m_root == m_store);
+    Q_EMIT branchCompleted(m_store->folder);
 }
-}
+} // namespace Filelight
