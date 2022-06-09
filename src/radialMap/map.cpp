@@ -8,6 +8,8 @@
 
 #include "filelight_debug.h"
 
+#include <utility>
+
 #ifdef Q_OS_WINDOWS
 #include <winrt/Windows.UI.ViewManagement.h>
 #pragma comment(lib, "windowsapp")
@@ -145,12 +147,13 @@ void RadialMap::Map::findVisibleDepth(const Folder *dir, uint currentDepth)
         qDebug() << "changing visual depth" << m_visibleDepth << currentDepth;
         m_visibleDepth = currentDepth;
     }
-    if (m_visibleDepth >= stopDepth)
+    if (m_visibleDepth >= stopDepth) {
         return;
+    }
 
     for (File *file : dir->files) {
         if (file->isFolder() && file->size() > m_minSize) {
-            findVisibleDepth((Folder *)file, currentDepth + 1); // if no files greater than min size the depth is still recorded
+            findVisibleDepth(dynamic_cast<Folder *>(file), currentDepth + 1); // if no files greater than min size the depth is still recorded
         }
     }
 }
@@ -160,8 +163,9 @@ bool RadialMap::Map::build(const Folder *const dir, const uint depth, uint a_sta
 {
     // first iteration: dir == m_root
 
-    if (dir->children() == 0) // we do fileCount rather than size to avoid chance of divide by zero later
+    if (dir->children() == 0) { // we do fileCount rather than size to avoid chance of divide by zero later
         return false;
+    }
 
     FileSize hiddenSize = 0;
     uint hiddenFileCount = 0;
@@ -170,21 +174,21 @@ bool RadialMap::Map::build(const Folder *const dir, const uint depth, uint a_sta
         if (file->size() < m_limits[depth] * 6) { // limit is half a degree? we want at least 3 degrees
             hiddenSize += file->size();
             if (file->isFolder()) { //**** considered virtual, but dir wouldn't count itself!
-                hiddenFileCount += static_cast<const Folder *>(file)->children(); // need to add one to count the dir as well
+                hiddenFileCount += dynamic_cast<const Folder *>(file)->children(); // need to add one to count the dir as well
             }
             ++hiddenFileCount;
             continue;
         }
 
-        unsigned int a_len = (unsigned int)(5760 * ((double)file->size() / (double)m_root->size()));
+        auto a_len = (unsigned int)(5760 * ((double)file->size() / (double)m_root->size()));
 
-        Segment *s = new Segment(file, a_start, a_len);
+        auto *s = new Segment(file, a_start, a_len);
         m_signature[depth].append(s);
 
         if (file->isFolder()) {
             if (depth != m_visibleDepth) {
                 // recurse
-                s->m_hasHiddenChildren = build((Folder *)file, depth + 1, a_start, a_start + a_len);
+                s->m_hasHiddenChildren = build(dynamic_cast<Folder *>(file), depth + 1, a_start, a_start + a_len);
             } else {
                 s->m_hasHiddenChildren = true;
             }
@@ -253,10 +257,15 @@ void RadialMap::Map::colorise()
         return;
     }
 
-    QColor cp, cb;
+    QColor cp;
+    QColor cb;
     double darkness = 1;
     double contrast = (double)Config::contrast / (double)100;
-    int h, s1, s2, v1, v2;
+    int h = 0;
+    int s1 = 0;
+    int s2 = 0;
+    int v1 = 0;
+    int v2 = 0;
 
     QPalette palette;
 #ifdef Q_OS_WINDOWS
@@ -272,7 +281,7 @@ void RadialMap::Map::colorise()
     double deltaBlue = (double)(kdeColour[0].blue() - kdeColour[1].blue()) / 2880;
 
     for (uint i = 0; i <= m_visibleDepth; ++i, darkness += 0.04) {
-        for (Segment *segment : m_signature[i]) {
+        for (const auto &segment : std::as_const(m_signature[i])) {
             switch (Config::scheme) {
             case Filelight::KDE: {
                 // gradient will work by figuring out rgb delta values for 360 degrees
@@ -280,8 +289,9 @@ void RadialMap::Map::colorise()
 
                 int a = segment->start();
 
-                if (a > 2880)
+                if (a > 2880) {
                     a = 2880 - (a - 2880);
+                }
 
                 h = (int)(deltaRed * a) + kdeColour[1].red();
                 s1 = (int)(deltaGreen * a) + kdeColour[1].green();
@@ -308,8 +318,9 @@ void RadialMap::Map::colorise()
             v2 = v1 - int(contrast * v1);
             s2 = s1 + int(contrast * (255 - s1));
 
-            if (s1 < 80)
+            if (s1 < 80) {
                 s1 = 80; // can fall too low and makes contrast between the files hard to discern
+            }
 
             if (segment->isFake()) { // multi-file
                 cb.setHsv(h, s2, (v2 < 90) ? 90 : v2); // too dark if < 100
@@ -397,7 +408,7 @@ void RadialMap::Map::paint(QPainter *painter)
         // clever geometric trick to find largest angle that will give biggest arrow head
         uint a_max = int(acos((double)width / double((width + MAP_HIDDEN_TRIANGLE_SIZE))) * (180 * 16 / M_PI));
 
-        for (Segment *segment : m_signature[x]) {
+        for (const auto segment : std::as_const(m_signature[x])) {
             // draw the pie segments, most of this code is concerned with drawing the little
             // arrows on the ends of segments when they have hidden files
             paint.setPen(segment->pen());
@@ -412,8 +423,9 @@ void RadialMap::Map::paint(QPainter *painter)
 
             // draw arrow head to indicate undisplayed files/directories
             QPolygonF pts;
-            QPointF pos, cpos = rect.center();
-            uint a[3] = {segment->start(), segment->length(), 0};
+            QPointF pos;
+            QPointF cpos = rect.center();
+            std::array<uint, 3> a{segment->start(), segment->length(), 0};
 
             a[2] = a[0] + (a[1] / 2); // assign to halfway between
             if (a[1] > a_max) {
@@ -424,12 +436,13 @@ void RadialMap::Map::paint(QPainter *painter)
             a[1] += a[0];
 
             for (int i = 0, radius = width; i < 3; ++i) {
-                double ra = M_PI / (180 * 16) * a[i], sinra, cosra;
-
                 if (i == 2) {
                     radius += MAP_HIDDEN_TRIANGLE_SIZE;
                 }
 
+                double ra = M_PI / (180 * 16) * a[i];
+                double sinra = 0.0;
+                double cosra = 0.0;
                 sincos(ra, &sinra, &cosra);
                 pos.rx() = cpos.x() + cosra * radius;
                 pos.ry() = cpos.y() - sinra * radius;
@@ -452,8 +465,9 @@ void RadialMap::Map::paint(QPainter *painter)
         }
 
         if (excess >= 0) { // excess allows us to resize more smoothly (still crud tho)
-            if (excess < 2) // only decrease rect by more if even number of excesses left
+            if (excess < 2) { // only decrease rect by more if even number of excesses left
                 --step;
+            }
             excess -= 2;
         }
 

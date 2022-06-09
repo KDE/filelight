@@ -5,8 +5,7 @@
  * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
  ***********************************************************************/
 
-#ifndef HISTORYACTION_H
-#define HISTORYACTION_H
+#pragma once
 
 #include <QAction>
 #include <QUrl>
@@ -71,5 +70,3 @@ private Q_SLOTS:
 private:
     HistoryAction *m_b, *m_f, *m_receiver;
 };
-
-#endif

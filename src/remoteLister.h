@@ -6,8 +6,7 @@
  * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
  ***********************************************************************/
 
-#ifndef REMOTELISTER_H
-#define REMOTELISTER_H
+#pragma once
 
 #include "fileTree.h"
 #include <KDirLister>
@@ -31,9 +30,10 @@ private Q_SLOTS:
     void onCanceled();
 
 private:
-    struct Store *m_root, *m_store;
+    struct Store *m_root;
+    struct Store *m_store;
     ScanManager *m_manager;
-};
-}
 
-#endif
+    Q_DISABLE_COPY_MOVE(RemoteLister)
+};
+} // namespace Filelight

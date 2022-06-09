@@ -9,6 +9,7 @@
 #include "item.h"
 
 #include <cmath> //::segmentAt()
+#include <utility>
 
 #include <QApplication> //sendEvent
 #include <QClipboard>
@@ -44,16 +45,8 @@
 
 RadialMap::Item::Item(QQuickItem *parent)
     : QQuickPaintedItem(parent)
-    , m_tree(nullptr)
-    , m_focus(nullptr)
-    , m_map()
-    , m_rootSegment(nullptr) // TODO we don't delete it, *shrug*
-    , m_toBeDeleted(nullptr)
+
 {
-    // setAcceptDrops(true);
-    // setMinimumSize(350, 250);
-    // setImplicitWidth(350);
-    // setImplicitHeight(250);
     setAcceptedMouseButtons(Qt::LeftButton | Qt::RightButton);
     setAcceptHoverEvents(true);
     setFlag(QQuickItem::ItemAcceptsDrops, true);
@@ -161,8 +154,9 @@ void RadialMap::Item::create(Folder *tree)
 
 void RadialMap::Item::mousePressEvent(QMouseEvent *e)
 {
-    if (!isEnabled())
+    if (!isEnabled()) {
         return;
+    }
 
     // m_focus is set correctly (I've been strict, I assure you it is correct!)
 
@@ -240,13 +234,13 @@ void RadialMap::Item::mousePressEvent(QMouseEvent *e)
     QAction *clicked = popup.exec(e->globalPos(), nullptr);
 
     if (openFileManager && clicked == openFileManager) {
-        KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url, QStringLiteral("inode/directory"), nullptr);
+        auto *job = new KIO::OpenUrlJob(url, QStringLiteral("inode/directory"), nullptr);
         job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
         job->start();
     } else if (rescanAction && clicked == rescanAction) {
         Q_EMIT rescanRequested(url);
     } else if (openTerminal && clicked == openTerminal) {
-        KTerminalLauncherJob *job = new KTerminalLauncherJob(QString(), this);
+        auto *job = new KTerminalLauncherJob(QString(), this);
         job->setUiDelegate(new KDialogJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
         job->setWorkingDirectory(url.path());
         job->start();
@@ -263,7 +257,7 @@ void RadialMap::Item::mousePressEvent(QMouseEvent *e)
         job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
         job->start();
     } else if (clicked == copyClipboard) {
-        QMimeData *mimedata = new QMimeData();
+        auto *mimedata = new QMimeData();
         mimedata->setUrls(QList<QUrl>() << url);
         QApplication::clipboard()->setMimeData(mimedata, QClipboard::Clipboard);
     } else if (clicked == deleteItem && m_focus->file() != m_tree) {
@@ -296,8 +290,9 @@ void RadialMap::Item::deleteJobFinished(KJob *job)
         m_focus = nullptr;
         m_map.make(m_tree, true);
         update();
-    } else
+    } else {
         KMessageBox::error(nullptr, job->errorString(), i18n("Error while deleting"));
+    }
 }
 
 void RadialMap::Item::createFromCache(Folder *tree)
@@ -324,8 +319,9 @@ void RadialMap::Item::resizeTimeout() // slot
     // the segments are about to erased!
     // this was a horrid bug, and proves the OO programming should be obeyed always!
     m_focus = nullptr;
-    if (m_tree)
+    if (m_tree) {
         m_map.make(m_tree, true);
+    }
     update();
 }
 
@@ -379,8 +375,9 @@ void RadialMap::Item::zoomOut() // slot
     m_focus = nullptr;
     ++m_map.m_visibleDepth;
     m_map.make(m_tree);
-    if (m_map.m_visibleDepth > Config::defaultRingDepth)
+    if (m_map.m_visibleDepth > Config::defaultRingDepth) {
         Config::defaultRingDepth = m_map.m_visibleDepth;
+    }
     update();
 }
 
@@ -469,10 +466,12 @@ void RadialMap::Item::paintExplodedLabels(QPainter &paint) const
             return (item1->level > item2->level);
         }
 
-        if (angle1 > 5760)
+        if (angle1 > 5760) {
             angle1 -= 5760;
-        if (angle2 > 5760)
+        }
+        if (angle2 > 5760) {
             angle2 -= 5760;
+        }
 
         return (angle1 < angle2);
     });
@@ -490,7 +489,7 @@ void RadialMap::Item::paintExplodedLabels(QPainter &paint) const
     }
 
     // used in next two steps
-    bool varySizes;
+    bool varySizes = 0;
     //**** should perhaps use doubles
     int *sizes = new int[m_map.m_visibleDepth + 1]; //**** make sizes an array of floats I think instead (or doubles)
 
@@ -510,7 +509,7 @@ void RadialMap::Item::paintExplodedLabels(QPainter &paint) const
             // determine current range of levels to draw for
             uint range = 0;
 
-            for (Label *label : list) {
+            for (const auto &label : std::as_const(list)) {
                 range = qMax(range, label->level);
 
                 //**** better way would just be to assign if nothing is range
@@ -562,7 +561,8 @@ void RadialMap::Item::paintExplodedLabels(QPainter &paint) const
 
             const bool rightSide = (label->angle < 1440 || label->angle > 4320);
 
-            double sinra, cosra;
+            double sinra;
+            double cosra;
             const double ra = M_PI / 2880 * label->angle; // convert to radians
             sincos(ra, &sinra, &cosra);
 
@@ -588,7 +588,7 @@ void RadialMap::Item::paintExplodedLabels(QPainter &paint) const
             int middleX = targetX - (tan(ra) > 0 ? (startY - targetY) / tan(ra) : 0);
             int textY = startY + lineSpacing;
 
-            int textX;
+            int textX = 0;
             const int textWidth = fontMetrics.boundingRect(string).width() + LABEL_TEXT_HMARGIN;
             if (rightSide) {
                 if (startX + minTextWidth > width() || textY < fontHeight || middleX < targetX) {
@@ -649,7 +649,7 @@ void RadialMap::Item::paintExplodedLabels(QPainter &paint) const
     // 5. Render labels
 
     QFont font;
-    for (Label *label : list) {
+    for (const auto &label : std::as_const(list)) {
         if (varySizes) {
             //**** how much overhead in making new QFont each time?
             //     (implicate sharing remember)
@@ -667,25 +667,27 @@ void RadialMap::Item::paintExplodedLabels(QPainter &paint) const
     delete[] sizes;
 }
 
-void RadialMap::Item::hoverEnterEvent(QHoverEvent *)
+void RadialMap::Item::hoverEnterEvent(QHoverEvent * /*event*/)
 {
-    if (!m_focus)
+    if (!m_focus) {
         return;
+    }
 
     setCursor(Qt::PointingHandCursor);
     Q_EMIT mouseHover(m_focus->file()->displayPath());
     update();
 }
 
-void RadialMap::Item::hoverLeaveEvent(QHoverEvent *)
+void RadialMap::Item::hoverLeaveEvent(QHoverEvent * /*event*/)
 {
 }
 
 void RadialMap::Item::dropEvent(QDropEvent *e)
 {
     QList<QUrl> uriList = KUrlMimeData::urlsFromMimeData(e->mimeData());
-    if (!uriList.isEmpty())
+    if (!uriList.isEmpty()) {
         Q_EMIT giveMeTreeFor(uriList.first());
+    }
 }
 
 void RadialMap::Item::dragEnterEvent(QDragEnterEvent *e)
@@ -698,8 +700,9 @@ void RadialMap::Item::dragEnterEvent(QDragEnterEvent *e)
 
 bool RadialMap::Item::event(QEvent *e)
 {
-    if (e->type() == QEvent::ApplicationPaletteChange || e->type() == QEvent::PaletteChange)
+    if (e->type() == QEvent::ApplicationPaletteChange || e->type() == QEvent::PaletteChange) {
         m_map.paint();
+    }
     return QQuickPaintedItem::event(e);
 }
 
@@ -763,7 +766,8 @@ void RadialMap::Item::hoverMoveEvent(QHoverEvent *e)
     QFontMetrics fontMetrics(m_tooltip.fontMetrics());
     int tooltipWidth = 0;
     int tooltipHeight = 0;
-    for (const QString &part : string.split(QLatin1Char('\n'))) {
+    const auto parts = string.split(QLatin1Char('\n'));
+    for (const QString &part : parts) {
         tooltipHeight += fontMetrics.height();
         tooltipWidth = qMax(tooltipWidth, fontMetrics.horizontalAdvance(part));
     }
@@ -795,8 +799,9 @@ const RadialMap::Segment *RadialMap::Item::segmentAt(QPointF e) const
 
     e -= m_offset;
 
-    if (m_map.m_signature.isEmpty())
+    if (m_map.m_signature.isEmpty()) {
         return nullptr;
+    }
 
     if (e.x() <= m_map.width() && e.y() <= m_map.height()) {
         // transform to cartesian coords
@@ -819,16 +824,19 @@ const RadialMap::Segment *RadialMap::Item::segmentAt(QPointF e) const
                 uint a = (uint)(acos((double)e.x() / length) * 916.736); // 916.7324722 = #radians in circle * 16
 
                 // acos only understands 0-180 degrees
-                if (e.y() < 0)
+                if (e.y() < 0) {
                     a = 5760 - a;
+                }
 
                 for (Segment *segment : m_map.m_signature[depth]) {
-                    if (segment->intersects(a))
+                    if (segment->intersects(a)) {
                         return segment;
+                    }
                 }
             }
-        } else
+        } else {
             return m_rootSegment; // hovering over inner circle
+        }
     }
 
     return nullptr;

@@ -38,8 +38,15 @@ public:
     const unsigned int level;
     const int angle;
 
-    int targetX, targetY, middleX, startY, startX;
-    int textX, textY, tw, th;
+    int targetX = 0;
+    int targetY = 0;
+    int middleX = 0;
+    int startY = 0;
+    int startX = 0;
+    int textX = 0;
+    int textY = 0;
+    int tw = 0;
+    int th = 0;
 
     QString qs;
 };

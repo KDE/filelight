@@ -6,16 +6,16 @@
  * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
  ***********************************************************************/
 
-#ifndef FILETREE_H
-#define FILETREE_H
+#pragma once
+
+#include <cstdlib>
 
 #include <KFormat>
+
 #include <QByteArray> //qstrdup
 
-#include <stdlib.h>
-
-typedef quint64 FileSize;
-typedef quint64 Dirsize; //**** currently unused
+using FileSize = quint64;
+using DirSize = quint64; //**** currently unused
 
 class Folder;
 
@@ -32,7 +32,7 @@ public:
         , m_size(size)
     {
     }
-    virtual ~File()
+    ~File() override
     {
         delete[] m_name;
     }
@@ -99,8 +99,7 @@ protected:
     FileSize m_size; // in units of bytes; sum of all children's sizes
 
 private:
-    File(const File &);
-    void operator=(const File &);
+    Q_DISABLE_COPY_MOVE(File)
 };
 
 class Folder : public File
@@ -108,9 +107,8 @@ class Folder : public File
     Q_OBJECT
     Q_PROPERTY(uint children MEMBER m_children CONSTANT)
 public:
-    Folder(const char *name)
+    explicit Folder(const char *name)
         : File(name, 0)
-        , m_children(0)
     {
     } // DON'T pass the full path!
 
@@ -130,7 +128,7 @@ public:
 
     Folder *duplicate() const
     {
-        Folder *ret = new Folder(m_name);
+        auto ret = new Folder(m_name);
         for (const File *child : files) {
             if (child->isFolder()) {
                 ret->append(((Folder *)child)->duplicate());
@@ -200,11 +198,8 @@ private:
         files.append(p);
     }
 
-    uint m_children;
+    uint m_children = 0;
 
 private:
-    Folder(const Folder &); // undefined
-    void operator=(const Folder &); // undefined
+    Q_DISABLE_COPY_MOVE(Folder)
 };
-
-#endif

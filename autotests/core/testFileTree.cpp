@@ -7,8 +7,8 @@
 #include "testFileTree.h"
 
 TestFileTree::TestFileTree()
+    : fl(new File("./autotests/core/dummy.txt", 20))
 {
-    fl = new File("./autotests/core/dummy.txt", 20);
 }
 
 TestFileTree::~TestFileTree()

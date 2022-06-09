@@ -5,8 +5,7 @@
  * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
  ***********************************************************************/
 
-#ifndef LOCALLISTER_H
-#define LOCALLISTER_H
+#pragma once
 
 #include <QByteArray>
 #include <QMutex>
@@ -41,8 +40,7 @@ private:
     Folder *scan(const QByteArray &, const QByteArray &);
 
 private:
-    static QStringList s_localMounts, s_remoteMounts; // TODO namespace
+    static QStringList s_localMounts;
+    static QStringList s_remoteMounts; // TODO namespace
 };
-}
-
-#endif
+} // namespace Filelight

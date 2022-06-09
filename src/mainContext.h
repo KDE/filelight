@@ -59,13 +59,13 @@ public Q_SLOTS:
     bool slotScanUrl(const QUrl &);
     bool slotScanPath(const QString &);
 
-    void urlAboutToChange();
+    void urlAboutToChange() const;
 
     bool openUrl(const QUrl &);
-    void configFilelight();
+    void configFilelight() const;
 
     void updateURL(const QUrl &);
-    void rescanSingleDir(const QUrl &);
+    void rescanSingleDir(const QUrl &) const;
 
 private:
     void setupActions(QQmlApplicationEngine *engine);

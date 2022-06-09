@@ -5,8 +5,7 @@
  * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
  ***********************************************************************/
 
-#ifndef SINCOS_H
-#define SINCOS_H
+#pragma once
 
 #include <math.h>
 
@@ -22,8 +21,6 @@ void sincos(double angleRadians, double *Sin, double *Cos)
     *Sin = qSin(angleRadians);
     *Cos = qCos(angleRadians);
 }
-#endif
-
 #endif
 
 #endif

@@ -6,8 +6,7 @@
  * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
  ***********************************************************************/
 
-#ifndef SCAN_H
-#define SCAN_H
+#pragma once
 
 #include <memory>
 
@@ -74,7 +73,7 @@ private:
     LocalLister *m_thread;
     QList<Folder *> m_cache;
     std::unique_ptr<RemoteLister> m_remoteLister;
-};
-}
 
-#endif
+    Q_DISABLE_COPY_MOVE(ScanManager)
+};
+} // namespace Filelight

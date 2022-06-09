@@ -17,16 +17,16 @@
 
 SettingsDialog::SettingsDialog(QWidget *parent)
     : QDialog(parent)
+    , m_schemaGroup(new QButtonGroup(this))
 {
     setupUi(this);
 
-    QDialogButtonBox *buttons = new QDialogButtonBox(this);
+    auto *buttons = new QDialogButtonBox(this);
     QPushButton *resetButton = buttons->addButton(QDialogButtonBox::Reset);
     QPushButton *closeButton = buttons->addButton(QDialogButtonBox::Close);
     layout()->addWidget(buttons);
 
-    m_schemaGroup = new QButtonGroup(this);
-    QRadioButton *radioButton;
+    QRadioButton *radioButton = nullptr;
 
     radioButton = new QRadioButton(i18n("Rainbow"), this);
     colorSchemeLayout->addWidget(radioButton);
@@ -68,11 +68,12 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     m_removeButton->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
 }
 
-void SettingsDialog::closeEvent(QCloseEvent *)
+void SettingsDialog::closeEvent(QCloseEvent * /*unused*/)
 {
     // if an invalidation is pending, force it now!
-    if (m_timer.isActive())
+    if (m_timer.isActive()) {
         m_timer.setInterval(0);
+    }
 
     Config::write();
 
@@ -141,11 +142,13 @@ void SettingsDialog::addFolder()
         if (!Config::skipList.contains(path)) {
             Config::skipList.append(path);
             m_listBox->addItem(path);
-            if (m_listBox->currentItem() == nullptr)
+            if (m_listBox->currentItem() == nullptr) {
                 m_listBox->setCurrentRow(0);
+            }
             m_removeButton->setEnabled(true);
-        } else
+        } else {
             KMessageBox::information(this, i18n("That folder is already set to be excluded from scans."), i18n("Folder already ignored"));
+        }
     }
 }
 
@@ -158,8 +161,9 @@ void SettingsDialog::removeFolder()
     m_listBox->addItems(Config::skipList);
 
     m_removeButton->setEnabled(m_listBox->count() > 0);
-    if (m_listBox->count() > 0)
+    if (m_listBox->count() > 0) {
         m_listBox->setCurrentRow(0);
+    }
 }
 
 void SettingsDialog::startTimer()

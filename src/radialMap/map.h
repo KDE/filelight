@@ -6,8 +6,7 @@
  * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
  ***********************************************************************/
 
-#ifndef MAP_H
-#define MAP_H
+#pragma once
 
 #include "fileTree.h"
 
@@ -62,8 +61,8 @@ private:
 
     QVector<QList<Segment *>> m_signature;
 
-    const Folder *m_root;
-    uint m_minSize;
+    const Folder *m_root{};
+    uint m_minSize{};
     QVector<FileSize> m_limits;
     QRectF m_rect;
     uint m_visibleDepth; /// visible level depth of system
@@ -74,7 +73,7 @@ private:
     qreal m_dpr = 1.0;
 
     uint MAP_2MARGIN;
-};
-}
 
-#endif
+    Q_DISABLE_COPY_MOVE(Map);
+};
+} // namespace RadialMap

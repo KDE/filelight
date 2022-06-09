@@ -25,7 +25,6 @@ ScanManager::ScanManager(QObject *parent)
     : QObject(parent)
     , m_abort(false)
     , m_files(0)
-    , m_mutex()
     , m_thread(nullptr)
 {
     Filelight::LocalLister::readMounts();
@@ -91,7 +90,7 @@ bool ScanManager::start(const QUrl &url)
         path += QLatin1Char('/');
     }
 
-    QList<Folder *> *trees = new QList<Folder *>;
+    auto *trees = new QList<Folder *>;
 
     /* CHECK CACHE
      *   user wants: /usr/local/
@@ -145,15 +144,14 @@ bool ScanManager::start(const QUrl &url)
                 Q_EMIT branchCacheHit(d);
 
                 return true;
-            } else {
-                // something went wrong, we couldn't find the folder we were expecting
-                qCWarning(FILELIGHT_LOG) << "Didn't find " << path << " in the cache!\n";
-                it.remove();
-                Q_EMIT aboutToEmptyCache();
-                delete folder;
-                break; // do a full scan
-            }
-        } else if (cachePath.startsWith(path)) { // then part of the requested tree is already scanned
+            } // something went wrong, we couldn't find the folder we were expecting
+            qCWarning(FILELIGHT_LOG) << "Didn't find " << path << " in the cache!\n";
+            it.remove();
+            Q_EMIT aboutToEmptyCache();
+            delete folder;
+            break; // do a full scan
+        }
+        if (cachePath.startsWith(path)) { // then part of the requested tree is already scanned
             qCDebug(FILELIGHT_LOG) << "Cache-(b)hit: " << cachePath;
             it.remove();
             trees->append(folder);

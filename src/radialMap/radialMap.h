@@ -5,8 +5,7 @@
  * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
  ***********************************************************************/
 
-#ifndef RADIALMAP_H
-#define RADIALMAP_H
+#pragma once
 
 #include <QColor>
 
@@ -21,7 +20,6 @@ public:
         : m_angleStart(s)
         , m_angleSegment(l)
         , m_file(f)
-        , m_hasHiddenChildren(false)
         , m_fake(isFake)
     {
     }
@@ -76,13 +74,16 @@ private:
         m_brush = b;
     }
 
-    const uint m_angleStart, m_angleSegment;
+    const uint m_angleStart;
+    const uint m_angleSegment;
     const File *const m_file = nullptr;
     QColor m_pen, m_brush;
-    bool m_hasHiddenChildren;
+    bool m_hasHiddenChildren = false;
     const bool m_fake;
+
+    Q_DISABLE_COPY_MOVE(Segment)
 };
-}
+} // namespace RadialMap
 
 #ifndef PI
 #define PI 3.141592653589793
@@ -104,5 +105,3 @@ private:
 #define LABEL_ANGLE_MARGIN 32
 #define LABEL_MIN_ANGLE_FACTOR 0.05
 #define LABEL_MAX_CHARS 30
-
-#endif

@@ -34,11 +34,13 @@ void HistoryAction::setHelpText(const QUrl &url)
 
 void HistoryAction::push(const QUrl &path)
 {
-    if (path.isEmpty())
+    if (path.isEmpty()) {
         return;
+    }
 
-    if (m_list.isEmpty() || (!m_list.isEmpty() && (m_list.last() != path)))
+    if (m_list.isEmpty() || (!m_list.isEmpty() && (m_list.last() != path))) {
         m_list.append(path);
+    }
 
     setHelpText(path);
     setEnabled(true);
@@ -47,8 +49,9 @@ void HistoryAction::push(const QUrl &path)
 QUrl HistoryAction::pop()
 {
     const QUrl s = m_list.takeLast();
-    if (!m_list.isEmpty())
+    if (!m_list.isEmpty()) {
         setHelpText(m_list.last());
+    }
 
     setEnabled();
     return s;

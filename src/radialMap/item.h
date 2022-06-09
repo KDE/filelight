@@ -100,6 +100,8 @@ private:
     Segment *m_rootSegment = nullptr;
     const Segment *m_toBeDeleted = nullptr;
     QLabel m_tooltip;
+
+    Q_DISABLE_COPY_MOVE(Item)
 };
 
 } // namespace RadialMap

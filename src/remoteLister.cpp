@@ -22,7 +22,7 @@ namespace Filelight
 // One per folder breaks KIO (seemingly) and also uses un-godly amounts of memory!
 
 struct Store {
-    typedef QList<Store *> List;
+    using List = QList<Store *>;
 
     /// location of the folder
     const QUrl url;
@@ -39,6 +39,7 @@ struct Store {
         , parent(s)
     {
     }
+    ~Store() = default;
 
     Store *propagate()
     {
@@ -50,8 +51,8 @@ struct Store {
             parent->folder->append(folder);
             if (parent->stores.isEmpty()) {
                 return parent->propagate();
-            } else
-                return parent;
+            }
+            return parent;
         }
 
         // we reached the root, let's get our next folder scanned
@@ -59,8 +60,7 @@ struct Store {
     }
 
 private:
-    Store(Store &);
-    Store &operator=(const Store &);
+    Q_DISABLE_COPY_MOVE(Store)
 };
 
 RemoteLister::RemoteLister(const QUrl &url, ScanManager *manager, QObject *parent)
@@ -93,12 +93,12 @@ void RemoteLister::onCompleted()
     // m_folder is set to the folder we should operate on
 
     const KFileItemList items = KDirLister::items();
-    for (KFileItemList::ConstIterator it = items.begin(), end = items.end(); it != end; ++it) {
-        if (it->isDir()) {
-            m_store->stores += new Store(it->url(), it->name(), m_store);
+    for (const auto &item : items) {
+        if (item.isDir()) {
+            m_store->stores += new Store(item.url(), item.name(), m_store);
         } else {
-            m_store->folder->append(it->name().toUtf8().constData(), it->size());
-            m_manager->m_totalSize += it->size();
+            m_store->folder->append(item.name().toUtf8().constData(), item.size());
+            m_manager->m_totalSize += item.size();
         }
 
         m_manager->m_files++;

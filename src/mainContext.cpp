@@ -159,7 +159,7 @@ bool MainContext::slotScanUrl(const QUrl &url)
     return false;
 }
 
-void MainContext::urlAboutToChange()
+void MainContext::urlAboutToChange() const
 {
     // called when part's URL is about to change internally
     // the part will then create the Map and emit completed()
@@ -220,7 +220,7 @@ void MainContext::updateURL(const QUrl &u)
     setUrl(u);
 }
 
-void MainContext::rescanSingleDir(const QUrl &dirUrl)
+void MainContext::rescanSingleDir(const QUrl &dirUrl) const
 {
     if (m_manager->running()) {
         m_manager->abort();
@@ -241,7 +241,7 @@ void MainContext::setUrl(const QUrl &url)
     Q_EMIT urlChanged();
 }
 
-void MainContext::configFilelight()
+void MainContext::configFilelight() const
 {
     auto dialog = new SettingsDialog(nullptr);
 

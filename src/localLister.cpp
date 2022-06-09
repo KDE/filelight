@@ -27,8 +27,7 @@ QStringList LocalLister::s_remoteMounts;
 QStringList LocalLister::s_localMounts;
 
 LocalLister::LocalLister(const QString &path, QList<Folder *> *cachedTrees, ScanManager *parent)
-    : QThread()
-    , m_path(path)
+    : m_path(path)
     , m_trees(cachedTrees)
     , m_parent(parent)
 {
@@ -36,10 +35,12 @@ LocalLister::LocalLister(const QString &path, QList<Folder *> *cachedTrees, Scan
     // TODO empty directories is not ideal as adds to fileCount incorrectly
 
     QStringList list(Config::skipList);
-    if (!Config::scanAcrossMounts)
+    if (!Config::scanAcrossMounts) {
         list += s_localMounts;
-    if (!Config::scanRemoteMounts)
+    }
+    if (!Config::scanRemoteMounts) {
         list += s_remoteMounts;
+    }
 
     for (const QString &ignorePath : std::as_const(list)) {
         if (ignorePath.startsWith(path)) {
@@ -151,7 +152,8 @@ Folder *LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
 
 void LocalLister::readMounts()
 {
-    for (const QStorageInfo &storage : QStorageInfo::mountedVolumes()) {
+    const auto volumes = QStorageInfo::mountedVolumes();
+    for (const QStorageInfo &storage : volumes) {
         if (storage.isRoot()) {
             continue;
         }
