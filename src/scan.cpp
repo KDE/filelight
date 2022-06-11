@@ -179,7 +179,9 @@ bool ScanManager::abort()
 {
     m_abort = true;
 
-    m_remoteLister->stop();
+    if (m_remoteLister) {
+        m_remoteLister->stop();
+    }
     m_remoteLister = nullptr;
     const bool ret = m_thread && m_thread->wait();
     Q_EMIT runningChanged();

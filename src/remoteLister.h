@@ -24,6 +24,7 @@ class RemoteLister : public KDirLister
     Q_OBJECT
 public:
     RemoteLister(const QUrl &url, ScanManager *parent);
+    ~RemoteLister() override;
 
 Q_SIGNALS:
     void branchCompleted(Folder *tree);
@@ -36,5 +37,6 @@ private:
     std::shared_ptr<Store> m_root;
     std::shared_ptr<Store> m_store;
     ScanManager *m_manager;
+    Q_DISABLE_COPY_MOVE(RemoteLister);
 };
 } // namespace Filelight

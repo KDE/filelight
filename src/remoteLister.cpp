@@ -116,4 +116,10 @@ void RemoteLister::onCompleted()
     Q_ASSERT(m_root == m_store);
     Q_EMIT branchCompleted(m_store->folder);
 }
+
+RemoteLister::~RemoteLister()
+{
+    stop();
+}
+
 } // namespace Filelight
