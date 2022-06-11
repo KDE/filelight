@@ -13,10 +13,15 @@
 #include <KFormat>
 
 #include <QByteArray>
+#include <QDebug>
 
 using FileSize = quint64;
 
 class Folder;
+namespace RadialMap
+{
+class Segment;
+} // namespace RadialMap
 
 class File
 {
@@ -34,6 +39,17 @@ public:
     File &operator=(const File &) = default;
     File(File &&) = default;
     File &operator=(File &&) = default;
+
+    QString segment() const
+    {
+        return m_segment;
+    }
+
+    void setSegment(const QString &segment)
+    {
+        Q_ASSERT(m_segment.isEmpty() || segment.isEmpty());
+        m_segment = segment;
+    }
 
     Folder *parent() const
     {
@@ -94,6 +110,8 @@ protected:
     Folder *m_parent; // 0 if this is treeRoot; this is a non-owning pointer, the parent owns "us"
     QByteArray m_name; // partial path name (e.g. 'boot/' or 'foo.svg')
     FileSize m_size; // in units of bytes; sum of all children's sizes
+
+    QString m_segment;
 };
 
 class Folder : public File
@@ -145,7 +163,7 @@ public:
     }
 
     /// removes a file
-    void remove(const std::shared_ptr<Folder> &f)
+    void remove(const std::shared_ptr<File> &f)
     {
         files.removeAll(f);
         const FileSize childSize = f->size();

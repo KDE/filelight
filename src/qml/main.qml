@@ -8,19 +8,15 @@ import org.kde.kirigami 2.19 as Kirigami
 
 import org.kde.filelight 1.0
 
-import Qt.labs.platform 1.1 as Platform
-
 Kirigami.ApplicationWindow {
     id: appWindow
 
     required property bool inSandbox
 
     property string status
-    property int numberOfFiles
-    property var mapItem: null
     property var mapPage: null
 
-    onMapItemChanged: MainContext.connectMapItem(mapItem)
+    title: pageStack.currentItem.url !== undefined ? pageStack.currentItem.url : ''
 
     Kirigami.Action {
         id: scanFolderAction
@@ -91,14 +87,15 @@ Kirigami.ApplicationWindow {
                 elide: Text.ElideLeft
             }
             QQC2.Label {
-                text: (appWindow.numberOfFiles == 0) ?
+                text: (RadialMap.numberOfChildren == 0) ?
                         i18nc("@info:status", "No files.") :
-                        i18ncp("@info:status", "1 file", "%1 files", appWindow.numberOfFiles)
+                        i18ncp("@info:status", "1 file", "%1 files", RadialMap.numberOfChildren)
             }
         }
     }
 
     minimumWidth: Kirigami.Settings.isMobile ? 0 : Kirigami.Units.gridUnit * 22
+    onMinimumWidthChanged: console.log("Kirigami.Units.gridUnit * 22 " + Kirigami.Units.gridUnit * 22)
     minimumHeight: Kirigami.Settings.isMobile ? 0 : Kirigami.Units.gridUnit * 22
 
     pageStack.initialPage: "qrc:/ui/OverviewPage.qml"
@@ -142,7 +139,6 @@ Kirigami.ApplicationWindow {
 
     function mapChanged() {
         title = MainContext.prettyUrl(MainContext.url);
-        numberOfFiles = mapItem.treeChildren
     }
 
     function updateURL(url) {
@@ -159,6 +155,9 @@ Kirigami.ApplicationWindow {
     }
 
     function closeURL() {
+        mapPage = null
+        pageStack.clear()
+        pageStack.push(pageStack.initialPage)
         if (ScanManager.abort()) {
             appWindow.status = i18nc("@info:status", "Aborting Scan...")
         }

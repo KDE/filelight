@@ -58,11 +58,7 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     connect(scanAcrossMounts, &QCheckBox::toggled, this, &SettingsDialog::toggleScanAcrossMounts);
     connect(dontScanRemoteMounts, &QCheckBox::toggled, this, &SettingsDialog::toggleDontScanRemoteMounts);
 
-    connect(useAntialiasing, &QCheckBox::toggled, this, &SettingsDialog::toggleUseAntialiasing);
-    connect(varyLabelFontSizes, &QCheckBox::toggled, this, &SettingsDialog::toggleVaryLabelFontSizes);
     connect(showSmallFiles, &QCheckBox::toggled, this, &SettingsDialog::toggleShowSmallFiles);
-
-    connect(minFontPitch, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &SettingsDialog::changeMinFontPitch);
 
     m_addButton->setIcon(QIcon::fromTheme(QStringLiteral("folder-open")));
     m_removeButton->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
@@ -107,12 +103,6 @@ void SettingsDialog::reset()
     }
     contrastSlider->setValue(Config::contrast);
 
-    useAntialiasing->setChecked(Config::antialias);
-
-    varyLabelFontSizes->setChecked(Config::varyLabelFontSizes);
-    minFontPitchLabel->setEnabled(Config::varyLabelFontSizes);
-    minFontPitch->setEnabled(Config::varyLabelFontSizes);
-    minFontPitch->setValue(Config::minFontPitch);
     showSmallFiles->setChecked(Config::showSmallFiles);
 }
 
@@ -185,23 +175,7 @@ void SettingsDialog::changeContrast(int c)
     Config::contrast = c;
     Q_EMIT canvasIsDirty(Dirty::Colors);
 }
-void SettingsDialog::toggleUseAntialiasing(bool b)
-{
-    Config::antialias = b;
-    Q_EMIT canvasIsDirty(Dirty::AntiAliasing);
-}
-void SettingsDialog::toggleVaryLabelFontSizes(bool b)
-{
-    Config::varyLabelFontSizes = b;
-    minFontPitchLabel->setEnabled(b);
-    minFontPitch->setEnabled(b);
-    Q_EMIT canvasIsDirty(Dirty::Font);
-}
-void SettingsDialog::changeMinFontPitch(int p)
-{
-    Config::minFontPitch = p;
-    Q_EMIT canvasIsDirty(Dirty::Font);
-}
+
 void SettingsDialog::toggleShowSmallFiles(bool b)
 {
     Config::showSmallFiles = b;

@@ -40,31 +40,43 @@ RadialMap::Map::Map()
     const int fmh = QFontMetrics(QFont()).height();
     const int fmhD4 = fmh / 4;
     MAP_2MARGIN = 2 * (fmh - (fmhD4 - LABEL_MAP_SPACER)); // margin is dependent on fitting in labels at top and bottom
+    // Initialize breadth
+    resize(QRectF());
+
+    connect(qGuiApp, &QGuiApplication::paletteChanged, this, [this] {
+        colorise();
+    });
 }
+
+namespace
+{
+enum class Delete { Now = true, Later = false };
+void deleteAllSegments(QVector<QList<RadialMap::Segment *>> &signature, Delete del = Delete::Later)
+{
+    for (auto &segments : signature) {
+        for (const auto &segment : segments) {
+            if (segment->file()) {
+                Q_ASSERT(segment->file()->segment() == segment->uuid());
+                segment->file()->setSegment({});
+            }
+            del == Delete::Now ? delete segment : segment->deleteLater();
+        }
+    }
+    signature.clear();
+}
+} // namespace
 
 RadialMap::Map::~Map()
 {
-    for (QList<Segment *> &segments : m_signature) {
-        qDeleteAll(segments);
-    }
-    m_signature.clear();
+    deleteAllSegments(m_signature, Delete::Now);
 }
 
 void RadialMap::Map::invalidate()
 {
-    for (QList<Segment *> &segments : m_signature) {
-        qDeleteAll(segments);
-    }
-    m_signature.clear();
+    deleteAllSegments(m_signature);
+    Q_EMIT signatureChanged();
 
     m_visibleDepth = Config::defaultRingDepth;
-}
-
-void RadialMap::Map::saveSvg(const QString &path)
-{
-    QSvgGenerator svgGenerator;
-    svgGenerator.setFileName(path);
-    paint(&svgGenerator);
 }
 
 void RadialMap::Map::make(const std::shared_ptr<Folder> &tree, bool refresh)
@@ -78,14 +90,15 @@ void RadialMap::Map::make(const std::shared_ptr<Folder> &tree, bool refresh)
         //**** add some angle bounds checking (possibly in Segment ctor? can I delete in a ctor?)
         //**** this is a mess
 
-        for (QList<Segment *> &segments : m_signature) {
-            qDeleteAll(segments);
-        }
-        m_signature.clear();
-
+        deleteAllSegments(m_signature);
         m_signature.resize(m_visibleDepth + 1);
+        Q_EMIT signatureChanged();
 
         m_root = tree;
+        if (m_rootSegment && m_rootSegment->file()) {
+            m_rootSegment->file()->setSegment({});
+        }
+        m_rootSegment = std::make_unique<Segment>(tree, 0, MAX_DEGREE);
 
         if (!refresh) {
             m_minSize = (tree->size() * 3) / (PI * height() - MAP_2MARGIN);
@@ -107,11 +120,6 @@ void RadialMap::Map::make(const std::shared_ptr<Folder> &tree, bool refresh)
 
     // colour the segments
     colorise();
-
-    m_centerText = tree->humanReadableSize();
-
-    // paint the pixmap
-    paint();
 
     QApplication::restoreOverrideCursor();
 }
@@ -179,7 +187,7 @@ bool RadialMap::Map::build(const std::shared_ptr<Folder> &dir, const uint depth,
             continue;
         }
 
-        auto a_len = (unsigned int)(5760 * ((double)file->size() / (double)m_root->size()));
+        auto a_len = (unsigned int)(MAX_DEGREE * ((double)file->size() / (double)m_root->size()));
 
         auto *s = new Segment(file, a_start, a_len);
         m_signature[depth].append(s);
@@ -195,6 +203,9 @@ bool RadialMap::Map::build(const std::shared_ptr<Folder> &dir, const uint depth,
 
         a_start += a_len; //**** should we add 1?
     }
+    if (depth == 0) {
+        Q_EMIT signatureChanged();
+    }
 
     if (hiddenFileCount == dir->children() && !Config::showSmallFiles) {
         return true;
@@ -208,6 +219,7 @@ bool RadialMap::Map::build(const std::shared_ptr<Folder> &dir, const uint depth,
                                 KFormat().formatByteSize(hiddenSize / hiddenFileCount));
 
         m_signature[depth].append(new Segment(std::make_shared<File>(s.toUtf8().constData(), hiddenSize), a_start, a_end - a_start, true));
+        Q_EMIT signatureChanged();
     }
 
     return false;
@@ -234,16 +246,13 @@ bool RadialMap::Map::resize(const QRectF &newRect)
 
     // this QRectF is used by paint()
     m_rect.setRect(0, 0, size, size);
-
-    m_pixmap = QPixmap(m_rect.width() * m_dpr, m_rect.height() * m_dpr);
-    m_pixmap.setDevicePixelRatio(m_dpr);
+    Q_EMIT rectChanged();
 
     // resize the pixmap
     size += MAP_2MARGIN;
 
     if (!m_signature.isEmpty()) {
         setRingBreadth();
-        paint();
     }
 
     return true;
@@ -266,7 +275,7 @@ void RadialMap::Map::colorise()
     int v1 = 0;
     int v2 = 0;
 
-    QPalette palette;
+    QPalette palette = qGuiApp->palette();
 #ifdef Q_OS_WINDOWS
     winrt::Windows::UI::ViewManagement::UISettings settings;
     winrt::Windows::UI::Color color = settings.GetColorValue(winrt::Windows::UI::ViewManagement::UIColorType::Accent);
@@ -309,7 +318,7 @@ void RadialMap::Map::colorise()
                 continue;
 
             default:
-                h = int(segment->start() / 16);
+                h = int(segment->start() / DEGREE_FACTOR);
                 s1 = 160;
                 v1 = (int)(255.0 / darkness); //****doing this more often than once seems daft!
             }
@@ -348,137 +357,75 @@ void RadialMap::Map::colorise()
     }
 }
 
-void RadialMap::Map::paint(QPaintDevice *paintDevice)
+QList<QVariant> RadialMap::Map::signature()
 {
-    QPainter paint;
+    QList<QVariant> ret;
 
-    if (!paintDevice) {
-        if (m_pixmap.isNull()) {
-            return;
+    for (auto &list : m_signature) {
+        QList<QObject *> r;
+
+        for (auto &element : list) {
+            r << element;
         }
-
-        m_pixmap.fill(Qt::transparent);
-        paintDevice = &m_pixmap;
+        ret << QVariant::fromValue(r);
+        // break;
     }
-
-    // m_rect.moveRight(1); // Uncommenting this breaks repainting when recreating map from cache
-
-    //**** best option you can think of is to make the circles slightly less perfect,
-    //  ** i.e. slightly eliptic when resizing inbetween
-
-    if (!paint.begin(paintDevice)) {
-        qWarning() << "Filelight::RadialMap Failed to initialize painting, returning...";
-        return;
-    }
-
-    this->paint(&paint);
-
-    paint.end();
+    return ret;
 }
-void RadialMap::Map::paint(QPainter *painter)
+
+void RadialMap::Map::zoomIn() // slot
 {
-    KColorScheme scheme(QPalette::Active, KColorScheme::View);
-    QRectF rect = m_rect;
-
-    rect.adjust(MAP_HIDDEN_TRIANGLE_SIZE, MAP_HIDDEN_TRIANGLE_SIZE, -MAP_HIDDEN_TRIANGLE_SIZE, -MAP_HIDDEN_TRIANGLE_SIZE);
-
-    QPainter &paint = *painter;
-    if (Config::antialias) {
-        paint.translate(0.7, 0.7);
-        paint.setRenderHint(QPainter::Antialiasing);
+    if (m_visibleDepth > MIN_RING_DEPTH) {
+        --m_visibleDepth;
+        make(m_root);
+        Config::defaultRingDepth = m_visibleDepth;
     }
+}
 
-    int step = m_ringBreadth;
-    int excess = -1;
-
-    // do intelligent distribution of excess to prevent nasty resizing
-    if (m_ringBreadth != MAX_RING_BREADTH && m_ringBreadth != MIN_RING_BREADTH) {
-        excess = int(rect.width()) % m_ringBreadth;
-        ++step;
+void RadialMap::Map::zoomOut() // slot
+{
+    ++m_visibleDepth;
+    make(m_root);
+    if (m_visibleDepth > Config::defaultRingDepth) {
+        Config::defaultRingDepth = m_visibleDepth;
     }
+}
 
-    if (m_signature.isEmpty()) {
-        qWarning() << "Map not created yet";
-        return;
-    }
+void RadialMap::Map::refresh(const Dirty filth)
+{
+    // TODO consider a more direct connection
 
-    for (int x = m_visibleDepth; x >= 0; --x) {
-        int width = rect.width() / 2;
-        // clever geometric trick to find largest angle that will give biggest arrow head
-        uint a_max = int(acos((double)width / double((width + MAP_HIDDEN_TRIANGLE_SIZE))) * (180 * 16 / M_PI));
-
-        for (const auto segment : std::as_const(m_signature[x])) {
-            // draw the pie segments, most of this code is concerned with drawing the little
-            // arrows on the ends of segments when they have hidden files
-            paint.setPen(segment->pen());
-
-            paint.setPen(segment->pen());
-            paint.setBrush(segment->brush());
-            paint.drawPie(rect, segment->start(), segment->length());
-
-            if (!segment->hasHiddenChildren()) {
-                continue;
-            }
-
-            // draw arrow head to indicate undisplayed files/directories
-            QPolygonF pts;
-            QPointF pos;
-            QPointF cpos = rect.center();
-            std::array<uint, 3> a{segment->start(), segment->length(), 0};
-
-            a[2] = a[0] + (a[1] / 2); // assign to halfway between
-            if (a[1] > a_max) {
-                a[1] = a_max;
-                a[0] = a[2] - a_max / 2;
-            }
-
-            a[1] += a[0];
-
-            for (int i = 0, radius = width; i < 3; ++i) {
-                if (i == 2) {
-                    radius += MAP_HIDDEN_TRIANGLE_SIZE;
-                }
-
-                double ra = M_PI / (180 * 16) * a[i];
-                double sinra = 0.0;
-                double cosra = 0.0;
-                sincos(ra, &sinra, &cosra);
-                pos.rx() = cpos.x() + cosra * radius;
-                pos.ry() = cpos.y() - sinra * radius;
-                pts << pos;
-            }
-
-            paint.setBrush(segment->pen());
-            paint.drawPolygon(pts);
-
-            // Draw outline on the arc for hidden children
-            QPen pen = paint.pen();
-            pen.setCapStyle(Qt::FlatCap);
-            int width = 2;
-            pen.setWidth(width);
-            paint.setPen(pen);
-            QRectF rect2 = rect;
-            width /= 2;
-            rect2.adjust(width, width, -width, -width);
-            paint.drawArc(rect2, segment->start(), segment->length());
+    if (!isNull()) {
+        switch (filth) {
+        case Dirty::Layout:
+            make(m_root, true); // true means refresh only
+            break;
+        case Dirty::Colors:
+            colorise();
+            break;
         }
-
-        if (excess >= 0) { // excess allows us to resize more smoothly (still crud tho)
-            if (excess < 2) { // only decrease rect by more if even number of excesses left
-                --step;
-            }
-            excess -= 2;
-        }
-
-        rect.adjust(step, step, -step, -step);
     }
+}
 
-    //  if(excess > 0) rect.addCoords(excess, excess, 0, 0); //ugly
+void RadialMap::Map::createFromCache(const std::shared_ptr<Folder> &tree)
+{
+    qCDebug(FILELIGHT_LOG) << "Creating cached tree";
+    // no scan was necessary, use cached tree, however we MUST still emit invalidate
+    invalidate();
+    make(tree);
+}
 
-    paint.setPen(scheme.foreground().color());
-    paint.setBrush(scheme.background().color());
-    paint.drawEllipse(rect);
-    paint.drawText(rect, Qt::AlignCenter, m_centerText);
+void RadialMap::Map::createFromCacheObject(RadialMap::Segment *segment)
+{
+    createFromCache(std::dynamic_pointer_cast<Folder>(segment->file()));
+}
 
-    m_innerRadius = rect.width() / 2; // rect.width should be multiple of 2
+QUrl RadialMap::Map::rootUrl() const
+{
+    return m_root ? m_root->url() : QUrl();
+}
+
+QObject *RadialMap::Map::rootSegment() const
+{
+    return m_rootSegment.get();
 }

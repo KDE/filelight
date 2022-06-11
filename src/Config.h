@@ -14,9 +14,7 @@
 
 enum class Dirty {
     Layout = 1,
-    AntiAliasing = 2,
     Colors = 3,
-    Font,
 };
 Q_DECLARE_METATYPE(Dirty);
 
@@ -34,7 +32,6 @@ public:
 
     static bool scanAcrossMounts;
     static bool scanRemoteMounts;
-    static bool varyLabelFontSizes;
     static bool showSmallFiles;
     static uint contrast;
     static bool antialias;

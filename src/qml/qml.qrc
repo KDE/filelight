@@ -11,5 +11,7 @@
         <file>AboutPage.qml</file>
         <file>ActionMenuItem.qml</file>
         <file>GlobalMenu.qml</file>
+        <file>SegmentShape.qml</file>
+        <file>CenterShape.qml</file>
     </qresource>
 </RCC>

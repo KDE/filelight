@@ -28,7 +28,6 @@ target_link_libraries(filelightInternal
 
 add_executable(filelight)
 target_sources(filelight PRIVATE
-    radialMap/item.cpp
     radialMap/map.cpp
     radialMap/radialMap.cpp
     scan.cpp
@@ -51,6 +50,9 @@ target_sources(filelight PRIVATE
     historyAction.h
     Config.h
     qml/qml.qrc
+    contextMenuContext.cpp
+    fileModel.cpp
+    dropperItem.cpp
 )
 ecm_qt_declare_logging_category(filelight HEADER filelight_debug.h IDENTIFIER FILELIGHT_LOG CATEGORY_NAME org.kde.filelight DESCRIPTION "filelight" EXPORT FILELIGHT)
 

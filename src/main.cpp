@@ -21,6 +21,7 @@
 #include <KLocalizedString>
 #include <KSharedConfig>
 
+#include "fileCleaner.h"
 #include "fileTree.h"
 
 int main(int argc, char *argv[])
@@ -36,6 +37,8 @@ int main(int argc, char *argv[])
 
     qRegisterMetaType<std::shared_ptr<File>>("std::shared_ptr<File>");
     qRegisterMetaType<std::shared_ptr<Folder>>("std::shared_ptr<Folder>");
+
+    std::ignore = FileCleaner::instance(); // make sure the cleaner is up and running early so it is definitely up by the time shutdown happens
 
     if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
         QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));

@@ -20,9 +20,13 @@
 #include <QQmlContext>
 #include <QStandardPaths>
 
+#include "contextMenuContext.h"
 #include "define.h"
+#include "dropperItem.h"
+#include "fileModel.h"
 #include "historyAction.h"
-#include "radialMap/item.h"
+#include "radialMap/map.h"
+#include "radialMap/radialMap.h"
 #include "scan.h"
 #include "settingsDialog.h"
 
@@ -60,10 +64,38 @@ MainContext::MainContext(QObject *parent)
 
     auto about = new About(this);
     qRegisterMetaType<size_t>("size_t");
-    qmlRegisterType<RadialMap::Item>("org.kde.filelight", 1, 0, "RadialMapItem");
+    qmlRegisterType<DropperItem>("org.kde.filelight", 1, 0, "DropperItem");
     qmlRegisterSingletonInstance("org.kde.filelight", 1, 0, "About", about);
     qmlRegisterSingletonInstance("org.kde.filelight", 1, 0, "ScanManager", m_manager);
     qmlRegisterSingletonInstance("org.kde.filelight", 1, 0, "MainContext", this);
+    auto fileModel = new FileModel(this);
+    qmlRegisterSingletonInstance("org.kde.filelight", 1, 0, "FileModel", fileModel);
+
+    auto contextMenuContext = new ContextMenuContext(this);
+    qmlRegisterSingletonInstance("org.kde.filelight", 1, 0, "ContextMenuContext", contextMenuContext);
+    qmlRegisterUncreatableType<RadialMap::Segment>("org.kde.filelight", 1, 0, "Segment", QStringLiteral("only consumed, never created"));
+
+    // Do not initialize the map too early. It causes crashes on exit. Unclear why, probably a lifetime problem deep inside the retrofitted map. May be fixable
+    // with enough brain juice.
+    qmlRegisterSingletonType<RadialMap::Map>("org.kde.filelight", 1, 0, "RadialMap", [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
+        Q_UNUSED(engine)
+        Q_UNUSED(scriptEngine)
+        QQmlEngine::setObjectOwnership(RadialMap::Map::instance(), QQmlEngine::CppOwnership);
+        return RadialMap::Map::instance();
+    });
+
+    connect(m_manager, &ScanManager::completed, RadialMap::Map::instance(), [](const auto &tree) {
+        if (tree) {
+            RadialMap::Map::instance()->make(tree);
+        }
+    });
+
+    connect(RadialMap::Map::instance(), &RadialMap::Map::signatureChanged, fileModel, [fileModel]() {
+        const auto tree = RadialMap::Map::instance()->root();
+        if (tree) {
+            fileModel->setTree(tree);
+        }
+    });
 
     engine->setInitialProperties({
         {QStringLiteral("inSandbox"),
@@ -268,16 +300,6 @@ void MainContext::addHistoryAction(QObject *action)
     Q_EMIT historyActionsChanged();
 }
 
-void MainContext::connectMapItem(QObject *mapItem) const
-{ // we transfer shared_ptrs around, let's not do it via qml, we can't check if it is nullptr there
-    auto item = qobject_cast<RadialMap::Item *>(mapItem);
-    Q_ASSERT(item);
-    connect(m_manager, &ScanManager::completed, item, [item](const auto &tree) {
-        if (tree) {
-            item->create(tree);
-        }
-    });
-}
 } // namespace Filelight
 
 #include "mainContext.moc"

@@ -9,3 +9,23 @@
 #include "radialMap.h"
 
 #include "fileTree.h"
+
+#include <QUuid>
+
+RadialMap::Segment::Segment(const std::shared_ptr<File> &f, uint s, uint l, bool isFake)
+    : m_angleStart(s)
+    , m_angleSegment(l)
+    , m_file(f)
+    , m_fake(isFake)
+    , m_uuid(isFake ? QStringLiteral("fake") : QUuid::createUuid().toString())
+{
+    QQmlEngine::setObjectOwnership(this, QQmlEngine::CppOwnership);
+    f->setSegment(m_uuid);
+}
+
+RadialMap::Segment::~Segment()
+{
+    if (m_file->segment() == m_uuid) {
+        m_file->setSegment({});
+    }
+}

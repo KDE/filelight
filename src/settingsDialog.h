@@ -35,11 +35,8 @@ public Q_SLOTS:
     void toggleDontScanRemoteMounts(bool);
     void reset();
     void startTimer();
-    void toggleUseAntialiasing(bool = true);
-    void toggleVaryLabelFontSizes(bool);
     void changeContrast(int);
     void changeScheme(QAbstractButton *button);
-    void changeMinFontPitch(int);
     void toggleShowSmallFiles(bool);
 
 Q_SIGNALS:
