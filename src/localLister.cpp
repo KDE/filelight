@@ -60,7 +60,9 @@ void LocalLister::run()
     // recursively scan the requested path
     const QByteArray path = m_path.toUtf8();
     Folder *tree = scan(path, path);
-    qCDebug(FILELIGHT_LOG) << "Scan completed in" << (timer.elapsed() / 1000);
+
+    static constexpr auto msToS = 1000; // not worth using std::chrono for this single line
+    qCDebug(FILELIGHT_LOG) << "Scan completed in" << (timer.elapsed() / msToS);
 
     // delete the list of trees useful for this scan,
     // in a successful scan the contents would now be transferred to 'tree'
