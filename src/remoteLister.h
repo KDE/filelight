@@ -37,6 +37,6 @@ private:
     std::shared_ptr<Store> m_root;
     std::shared_ptr<Store> m_store;
     ScanManager *m_manager;
-    Q_DISABLE_COPY_MOVE(RemoteLister);
+    Q_DISABLE_COPY_MOVE(RemoteLister)
 };
 } // namespace Filelight

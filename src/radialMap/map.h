@@ -74,6 +74,6 @@ private:
 
     uint MAP_2MARGIN;
 
-    Q_DISABLE_COPY_MOVE(Map);
+    Q_DISABLE_COPY_MOVE(Map)
 };
 } // namespace RadialMap
