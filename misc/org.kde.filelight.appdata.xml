@@ -39,6 +39,7 @@
   <name xml:lang="sr-ijekavian">Фајлајт</name>
   <name xml:lang="sr-ijekavianlatin">Filelight</name>
   <name xml:lang="sv">Filelight</name>
+  <name xml:lang="ta">ஃபைல்-லைட்</name>
   <name xml:lang="tr">Filelight</name>
   <name xml:lang="uk">Filelight</name>
   <name xml:lang="x-test">xxFilelightxx</name>
@@ -163,6 +164,7 @@
     <p xml:lang="sr-ijekavian">Могућности:</p>
     <p xml:lang="sr-ijekavianlatin">Mogućnosti:</p>
     <p xml:lang="sv">Funktioner:</p>
+    <p xml:lang="ta">அம்சங்கள்:</p>
     <p xml:lang="tr">Özellikler:</p>
     <p xml:lang="uk">Можливості:</p>
     <p xml:lang="x-test">xxFeatures:xx</p>
