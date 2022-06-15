@@ -22,7 +22,6 @@
 #include <QQmlContext>
 #include <QStandardPaths>
 
-#include "Config.h"
 #include "define.h"
 #include "historyAction.h"
 #include "radialMap/item.h"

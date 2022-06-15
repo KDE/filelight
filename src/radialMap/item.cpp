@@ -38,7 +38,6 @@
 #include <KTerminalLauncherJob>
 #include <KUrlMimeData>
 
-#include "Config.h"
 #include "fileTree.h"
 #include "labels.h"
 #include "radialMap.h"
