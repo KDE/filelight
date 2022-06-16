@@ -26,7 +26,7 @@ namespace Filelight
 QStringList LocalLister::s_remoteMounts;
 QStringList LocalLister::s_localMounts;
 
-LocalLister::LocalLister(const QString &path, QList<Folder *> *cachedTrees, ScanManager *parent)
+LocalLister::LocalLister(const QString &path, QList<std::shared_ptr<Folder>> *cachedTrees, ScanManager *parent)
     : m_path(path)
     , m_trees(cachedTrees)
     , m_parent(parent)
@@ -48,7 +48,7 @@ LocalLister::LocalLister(const QString &path, QList<Folder *> *cachedTrees, Scan
             if (!folderName.endsWith(QLatin1Char('/'))) {
                 folderName += QLatin1Char('/');
             }
-            m_trees->append(new Folder(folderName.toLocal8Bit().constData()));
+            m_trees->append(std::make_shared<Folder>(folderName.toLocal8Bit().constData()));
         }
     }
 }
@@ -59,7 +59,7 @@ void LocalLister::run()
     timer.start();
     // recursively scan the requested path
     const QByteArray path = m_path.toUtf8();
-    Folder *tree = scan(path, path);
+    auto tree = scan(path, path);
 
     static constexpr auto msToS = 1000; // not worth using std::chrono for this single line
     qCDebug(FILELIGHT_LOG) << "Scan completed in" << (timer.elapsed() / msToS);
@@ -71,7 +71,6 @@ void LocalLister::run()
     if (m_parent->m_abort) // scan was cancelled
     {
         qCDebug(FILELIGHT_LOG) << "Scan successfully aborted";
-        delete tree;
         tree = nullptr;
     }
     qCDebug(FILELIGHT_LOG) << "Emitting signal to cache results ...";
@@ -79,9 +78,9 @@ void LocalLister::run()
     qCDebug(FILELIGHT_LOG) << "Thread terminating ...";
 }
 
-Folder *LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
+std::shared_ptr<Folder> LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
 {
-    auto cwd = new Folder(dirname.constData());
+    auto cwd = std::make_shared<Folder>(dirname.constData());
     QVector<QPair<QByteArray, QByteArray>> subDirectories;
 
     for (const auto &entry : DirectoryIterator(path)) {
@@ -97,16 +96,16 @@ Folder *LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
             cwd->append(entry.name.constData(), entry.size);
             m_parent->m_totalSize += entry.size;
         } else if (entry.isDir) {
-            Folder *d = nullptr;
+            std::shared_ptr<Folder> d = nullptr;
             const QByteArray new_dirname = entry.name + QByteArrayLiteral("/");
             const QByteArray new_path = path + entry.name + '/';
 
             // check to see if we've scanned this section already
 
             QMutexLocker lock(&m_treeMutex);
-            for (Folder *folder : std::as_const(*m_trees)) {
+            for (const auto /* hold the folder, we delete it below! */ folder : std::as_const(*m_trees)) {
                 if (new_path == folder->name8Bit()) {
-                    qDebug() << "Tree pre-completed: " << folder->decodedName();
+                    qCDebug(FILELIGHT_LOG) << "Tree pre-completed: " << folder->decodedName() << folder.get();
                     d = folder;
                     m_trees->removeAll(folder);
                     m_parent->m_files += folder->children();
@@ -116,7 +115,7 @@ Folder *LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
             lock.unlock();
 
             if (!d) { // then scan
-                // qDebug() << "Tree fresh" <<new_path << new_dirname;
+                qCDebug(FILELIGHT_LOG) << "Tree fresh" << new_path << new_dirname;
                 subDirectories.append({new_path, new_dirname});
             }
         }
@@ -127,7 +126,7 @@ Folder *LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
     // Scan all subdirectories, either in separate threads or immediately,
     // depending on how many free threads there are in the threadpool.
     // Yes, it isn't optimal, but it's better than nothing and pretty simple.
-    QVector<Folder *> returnedCwds(subDirectories.count());
+    QVector<std::shared_ptr<Folder>> returnedCwds(subDirectories.count());
     QSemaphore semaphore;
     for (int i = 0; i < subDirectories.count(); i++) {
         std::function<void()> scanSubdir = [this, i, &subDirectories, &semaphore, &returnedCwds]() {
@@ -139,13 +138,13 @@ Folder *LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
         }
     }
     semaphore.acquire(subDirectories.count());
-    for (Folder *d : std::as_const(returnedCwds)) {
+    for (const auto &d : std::as_const(returnedCwds)) {
         if (d) { // then scan was successful
             cwd->append(d);
         }
     }
 
-    std::sort(cwd->files.begin(), cwd->files.end(), [](File *a, File *b) {
+    std::sort(cwd->files.begin(), cwd->files.end(), [](const auto &a, const auto &b) {
         return a->size() > b->size();
     });
 

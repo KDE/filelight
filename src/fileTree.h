@@ -12,30 +12,28 @@
 
 #include <KFormat>
 
-#include <QByteArray> //qstrdup
+#include <QByteArray>
 
 using FileSize = quint64;
-using DirSize = quint64; //**** currently unused
 
 class Folder;
 
-class File : public QObject
+class File
 {
-public:
     friend class Folder;
-    Q_OBJECT
 
 public:
     File(const char *name, FileSize size)
         : m_parent(nullptr)
-        , m_name(qstrdup(name))
+        , m_name(name)
         , m_size(size)
     {
     }
-    ~File() override
-    {
-        delete[] m_name;
-    }
+    virtual ~File() = default;
+    File(const File &) = default;
+    File &operator=(const File &) = default;
+    File(File &&) = default;
+    File &operator=(File &&) = default;
 
     Folder *parent() const
     {
@@ -45,12 +43,11 @@ public:
     /** Do not use for user visible strings. Use name instead. */
     const char *name8Bit() const
     {
-        return m_name;
+        return m_name.constData();
     }
     void setName(const QByteArray &newName)
     {
-        delete[] m_name;
-        m_name = qstrdup(newName.constData());
+        m_name = newName;
     }
     /** Decoded name. Use when you need a QString. */
     QString decodedName() const
@@ -77,45 +74,41 @@ public:
      * Human readable path for display (including native separators where applicable.
      * Only use for display.
      */
-    QString displayPath(const Folder * = nullptr) const;
+    QString displayPath(const std::shared_ptr<Folder> &root = {}) const;
     QString humanReadableSize() const
     {
         return KFormat().formatByteSize(m_size);
     }
 
     /** Builds a complete QUrl by walking up to root. */
-    QUrl url(const Folder *root = nullptr) const;
+    QUrl url(const std::shared_ptr<Folder> &root = {}) const;
 
 protected:
     File(const char *name, FileSize size, Folder *parent)
         : m_parent(parent)
-        , m_name(qstrdup(name))
+        , m_name(name)
         , m_size(size)
     {
     }
 
-    Folder *m_parent; // 0 if this is treeRoot
-    char *m_name; // partial path name (e.g. 'boot/' or 'foo.svg')
+    Folder *m_parent; // 0 if this is treeRoot; this is a non-owning pointer, the parent owns "us"
+    QByteArray m_name; // partial path name (e.g. 'boot/' or 'foo.svg')
     FileSize m_size; // in units of bytes; sum of all children's sizes
-
-private:
-    Q_DISABLE_COPY_MOVE(File)
 };
 
 class Folder : public File
 {
-    Q_OBJECT
-    Q_PROPERTY(uint children MEMBER m_children CONSTANT)
 public:
     explicit Folder(const char *name)
         : File(name, 0)
     {
     } // DON'T pass the full path!
 
-    ~Folder() override
-    {
-        qDeleteAll(files);
-    }
+    ~Folder();
+    Folder(const Folder &) = default;
+    Folder &operator=(const Folder &) = default;
+    Folder(Folder &&) = default;
+    Folder &operator=(Folder &&) = default;
 
     uint children() const
     {
@@ -126,45 +119,36 @@ public:
         return true;
     }
 
-    Folder *duplicate() const
+    std::shared_ptr<Folder> duplicate() const
     {
-        auto ret = new Folder(m_name);
-        for (const File *child : files) {
-            if (child->isFolder()) {
-                ret->append(((Folder *)child)->duplicate());
-            } else {
-                ret->append(child->name8Bit(), child->size());
-            }
-        }
-        return ret;
+        return std::make_shared<Folder>(*this);
     }
 
     /// appends a Folder
-    void append(Folder *d, const char *name = nullptr)
+    void append(const std::shared_ptr<Folder> &d, const char *name = nullptr)
     {
         if (name) {
-            delete[] d->m_name;
-            d->m_name = qstrdup(name);
+            d->m_name = name;
         } // directories that had a fullpath copy just their names this way
 
         m_children += d->children(); // doesn't include the dir itself
+        Q_ASSERT(d->m_parent == this || d->m_parent == nullptr);
         d->m_parent = this;
-        append((File *)d); // will add 1 to filecount for the dir itself
+
+        appendFile(d); // will add 1 to filecount for the dir itself
     }
 
     /// appends a File
     void append(const char *name, FileSize size)
     {
-        append(new File(name, size, this));
+        appendFile(std::shared_ptr<File>(new File(name, size, this)));
     }
 
     /// removes a file
-    void remove(const File *f)
+    void remove(const std::shared_ptr<Folder> &f)
     {
-        files.removeAll(const_cast<File *>(f));
+        files.removeAll(f);
         const FileSize childSize = f->size();
-        delete f;
-
         for (Folder *d = this; d; d = d->parent()) {
             d->m_size -= childSize;
             d->m_children--;
@@ -172,11 +156,10 @@ public:
     }
 
     // Removes a file, but does not delete
-    const File *take(const File *f)
+    std::shared_ptr<Folder> take(const std::shared_ptr<Folder> &f)
     {
-        files.removeAll(const_cast<File *>(f));
+        files.removeAll(f);
         const FileSize childSize = f->size();
-
         for (Folder *d = this; d; d = d->parent()) {
             d->m_size -= childSize;
             d->m_children--;
@@ -184,10 +167,10 @@ public:
         return f;
     }
 
-    QList<File *> files;
+    QList<std::shared_ptr<File>> files;
 
 private:
-    void append(File *p)
+    void appendFile(const std::shared_ptr<File> &p)
     {
         // This is also called by append(Folder), but only once all its children
         // were scanned. We do not need to forward the size change to our parent
@@ -199,7 +182,4 @@ private:
     }
 
     uint m_children = 0;
-
-private:
-    Q_DISABLE_COPY_MOVE(Folder)
 };

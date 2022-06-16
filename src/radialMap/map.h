@@ -24,7 +24,7 @@ public:
     Map();
     ~Map();
 
-    void make(const Folder *, bool = false);
+    void make(const std::shared_ptr<Folder> &tree, bool = false);
     bool resize(const QRectF &);
 
     bool isNull() const
@@ -56,12 +56,12 @@ private:
     void paint(QPainter *painter);
     void colorise();
     void setRingBreadth();
-    void findVisibleDepth(const Folder *dir, uint currentDepth = 0);
-    bool build(const Folder *const dir, const uint depth = 0, uint a_start = 0, const uint a_end = 5760);
+    void findVisibleDepth(const std::shared_ptr<Folder> &dir, uint currentDepth = 0);
+    bool build(const std::shared_ptr<Folder> &dir, const uint depth = 0, uint a_start = 0, const uint a_end = 5760);
 
     QVector<QList<Segment *>> m_signature;
 
-    const Folder *m_root{};
+    std::shared_ptr<Folder> m_root;
     uint m_minSize{};
     QVector<FileSize> m_limits;
     QRectF m_rect;

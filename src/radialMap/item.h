@@ -8,6 +8,8 @@
 
 #pragma once
 
+#include <memory>
+
 #include <QLabel>
 #include <QQuickPaintedItem>
 #include <QTimer>
@@ -15,6 +17,7 @@
 
 #include "Config.h" // Dirty
 #include "map.h"
+#include "radialMap.h"
 
 class QMouseEvent;
 class QDropEvent;
@@ -37,11 +40,14 @@ class Item : public QQuickPaintedItem
     Q_OBJECT
 
     Q_PROPERTY(bool valid READ isValid NOTIFY validChanged)
+    Q_PROPERTY(uint treeChildren READ treeChildren NOTIFY treeChildrenChanged)
+    Q_SIGNAL void treeChildrenChanged();
+    uint treeChildren();
+
 public:
     explicit Item(QQuickItem *parent = nullptr);
-    ~Item() override;
     QString path() const;
-    QUrl url(File const * = nullptr) const;
+    QUrl url(const std::shared_ptr<File> &file = {}) const;
 
     Q_SIGNAL void validChanged();
     Q_INVOKABLE bool isValid() const
@@ -57,7 +63,7 @@ public:
 public Q_SLOTS:
     void zoomIn();
     void zoomOut();
-    void create(Folder *);
+    void create(std::shared_ptr<Folder> tree);
     void invalidate();
     void refresh(Dirty filth);
 
@@ -65,12 +71,12 @@ private Q_SLOTS:
     void resizeTimeout();
     void sendFakeMouseEvent();
     void deleteJobFinished(KJob *);
-    void createFromCache(Folder *);
+    void createFromCache(const std::shared_ptr<Folder> &tree);
 
 Q_SIGNALS:
     void activated(const QUrl &);
     void invalidated(const QUrl &);
-    void folderCreated(Folder *);
+    void folderCreated();
     void mouseHover(const QString &);
     void giveMeTreeFor(const QUrl &);
     void rescanRequested(const QUrl &);
@@ -92,16 +98,14 @@ protected:
 private:
     void paintExplodedLabels(QPainter &) const;
 
-    const Folder *m_tree = nullptr;
+    std::shared_ptr<Folder> m_tree = nullptr;
     const Segment *m_focus = nullptr;
     QPointF m_offset;
     QTimer m_timer;
     Map m_map;
-    Segment *m_rootSegment = nullptr;
+    std::unique_ptr<Segment> m_rootSegment;
     const Segment *m_toBeDeleted = nullptr;
     QLabel m_tooltip;
-
-    Q_DISABLE_COPY_MOVE(Item)
 };
 
 } // namespace RadialMap

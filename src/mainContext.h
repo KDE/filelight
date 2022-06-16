@@ -66,6 +66,7 @@ public Q_SLOTS:
 
     void updateURL(const QUrl &);
     void rescanSingleDir(const QUrl &) const;
+    void connectMapItem(QObject *mapItem) const;
 
 private:
     void setupActions(QQmlApplicationEngine *engine);

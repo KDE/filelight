@@ -39,8 +39,8 @@
 #include <KUrlMimeData>
 
 #include "fileTree.h"
+#include "filelight_debug.h"
 #include "labels.h"
-#include "radialMap.h"
 
 RadialMap::Item::Item(QQuickItem *parent)
     : QQuickPaintedItem(parent)
@@ -80,17 +80,12 @@ RadialMap::Item::Item(QQuickItem *parent)
     });
 }
 
-RadialMap::Item::~Item()
-{
-    delete m_rootSegment;
-}
-
 QString RadialMap::Item::path() const
 {
     return m_tree->displayPath();
 }
 
-QUrl RadialMap::Item::url(File const *const file) const
+QUrl RadialMap::Item::url(const std::shared_ptr<File> &file) const
 {
     return file ? file->url() : m_tree->url();
 }
@@ -112,7 +107,6 @@ void RadialMap::Item::invalidate()
         Q_EMIT validChanged();
         m_focus = nullptr;
 
-        delete m_rootSegment;
         m_rootSegment = nullptr;
 
         // FIXME move this disablement thing no?
@@ -125,7 +119,7 @@ void RadialMap::Item::invalidate()
     }
 }
 
-void RadialMap::Item::create(Folder *tree)
+void RadialMap::Item::create(std::shared_ptr<Folder> tree)
 {
     // it is not the responsibility of create() to invalidate first
     // skip invalidation at your own risk
@@ -138,7 +132,7 @@ void RadialMap::Item::create(Folder *tree)
         m_map.make(tree);
 
         // this is the inner circle in the center
-        m_rootSegment = new Segment(tree, 0, 16 * 360);
+        m_rootSegment = std::make_unique<Segment>(tree, 0, 16 * 360);
 
         // setMouseTracking(true);
     }
@@ -147,8 +141,9 @@ void RadialMap::Item::create(Folder *tree)
     Q_EMIT validChanged();
 
     // tell rest of Filelight
-    qDebug() << "emitting folder created" << tree;
-    Q_EMIT folderCreated(tree);
+    qCDebug(FILELIGHT_LOG) << "emitting folder created" << tree.get();
+    Q_EMIT folderCreated();
+    Q_EMIT treeChildrenChanged();
 }
 
 void RadialMap::Item::mousePressEvent(QMouseEvent *e)
@@ -177,7 +172,7 @@ void RadialMap::Item::mousePressEvent(QMouseEvent *e)
     if (e->button() == Qt::LeftButton) {
         if (m_focus->file() != m_tree) {
             Q_EMIT activated(url); // activate first, this will cause UI to prepare itself
-            createFromCache((Folder *)m_focus->file());
+            createFromCache(std::dynamic_pointer_cast<Folder>(m_focus->file()));
         } else if (KIO::upUrl(url) != url) {
             Q_EMIT giveMeTreeFor(KIO::upUrl(url));
         }
@@ -245,7 +240,7 @@ void RadialMap::Item::mousePressEvent(QMouseEvent *e)
         job->start();
     } else if (centerMap && clicked == centerMap) {
         Q_EMIT activated(url); // activate first, this will cause UI to prepare itself
-        createFromCache((Folder *)m_focus->file());
+        createFromCache(std::dynamic_pointer_cast<Folder>(m_focus->file()));
     } else if (doNotScanItem && clicked == doNotScanItem) {
         if (!Config::skipList.contains(Item::url(m_focus->file()).toLocalFile())) {
             Config::skipList.append(Item::url(m_focus->file()).toLocalFile());
@@ -284,7 +279,7 @@ void RadialMap::Item::deleteJobFinished(KJob *job)
     QApplication::restoreOverrideCursor();
     setEnabled(true);
     if (!job->error() && m_toBeDeleted) {
-        m_toBeDeleted->file()->parent()->remove(m_toBeDeleted->file());
+        m_toBeDeleted->file()->parent()->remove(std::dynamic_pointer_cast<Folder>(m_toBeDeleted->file()));
         m_toBeDeleted = nullptr;
         m_focus = nullptr;
         m_map.make(m_tree, true);
@@ -294,8 +289,9 @@ void RadialMap::Item::deleteJobFinished(KJob *job)
     }
 }
 
-void RadialMap::Item::createFromCache(Folder *tree)
+void RadialMap::Item::createFromCache(const std::shared_ptr<Folder> &tree)
 {
+    qCDebug(FILELIGHT_LOG) << "Creating cached tree";
     // no scan was necessary, use cached tree, however we MUST still emit invalidate
     invalidate();
     create(tree);
@@ -423,7 +419,7 @@ void RadialMap::Item::paintExplodedLabels(QPainter &paint) const
 
         // find the range of levels we will be potentially drawing labels for
         // startLevel is the level above whatever m_focus is in
-        for (const Folder *p = (const Folder *)m_focus->file(); p != m_tree; ++startLevel) {
+        for (const Folder *p = dynamic_cast<const Folder *>(m_focus->file().get()); p != m_tree.get(); ++startLevel) {
             p = p->parent();
         }
 
@@ -746,7 +742,7 @@ void RadialMap::Item::hoverMoveEvent(QHoverEvent *e)
     QString string = i18nc("Tooltip of file/folder, %1 is path, %2 is size", "%1\n%2", m_focus->file()->displayPath(), m_focus->file()->humanReadableSize());
 
     if (m_focus->file()->isFolder()) {
-        int files = static_cast<const Folder *>(m_focus->file())->children();
+        int files = std::dynamic_pointer_cast<Folder>(m_focus->file())->children();
         const uint percent = uint((100 * files) / (double)m_tree->children());
 
         string += QLatin1Char('\n');
@@ -758,7 +754,7 @@ void RadialMap::Item::hoverMoveEvent(QHoverEvent *e)
     }
 
     const QUrl url = Item::url(m_focus->file());
-    if (m_focus == m_rootSegment && url != KIO::upUrl(url)) {
+    if (m_focus == m_rootSegment.get() && url != KIO::upUrl(url)) {
         string += i18n("\nClick to go up to parent directory");
     }
     // Calculate a semi-sane size for the tooltip
@@ -834,7 +830,7 @@ const RadialMap::Segment *RadialMap::Item::segmentAt(QPointF e) const
                 }
             }
         } else {
-            return m_rootSegment; // hovering over inner circle
+            return m_rootSegment.get(); // hovering over inner circle
         }
     }
 
@@ -859,5 +855,10 @@ const RadialMap::Segment *RadialMap::Item::focusSegment() const
 
 const RadialMap::Segment *RadialMap::Item::rootSegment() const
 {
-    return m_rootSegment; /// never == 0
+    return m_rootSegment.get(); /// never == 0
+}
+
+uint RadialMap::Item::treeChildren()
+{
+    return m_tree->children();
 }

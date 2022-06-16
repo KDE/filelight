@@ -68,7 +68,7 @@ void RadialMap::Map::saveSvg(const QString &path)
     paint(&svgGenerator);
 }
 
-void RadialMap::Map::make(const Folder *tree, bool refresh)
+void RadialMap::Map::make(const std::shared_ptr<Folder> &tree, bool refresh)
 {
     // slow operation so set the wait cursor
     QApplication::setOverrideCursor(Qt::WaitCursor);
@@ -125,7 +125,7 @@ void RadialMap::Map::setRingBreadth()
     m_ringBreadth = qBound(MIN_RING_BREADTH, m_ringBreadth, MAX_RING_BREADTH);
 }
 
-void RadialMap::Map::findVisibleDepth(const Folder *dir, uint currentDepth)
+void RadialMap::Map::findVisibleDepth(const std::shared_ptr<Folder> &dir, uint currentDepth)
 {
     //**** because I don't use the same minimumSize criteria as in the visual function
     //     this can lead to incorrect visual representation
@@ -144,22 +144,22 @@ void RadialMap::Map::findVisibleDepth(const Folder *dir, uint currentDepth)
     }
 
     if (m_visibleDepth < currentDepth) {
-        qDebug() << "changing visual depth" << m_visibleDepth << currentDepth;
+        qCDebug(FILELIGHT_LOG) << "changing visual depth" << m_visibleDepth << currentDepth;
         m_visibleDepth = currentDepth;
     }
     if (m_visibleDepth >= stopDepth) {
         return;
     }
 
-    for (File *file : dir->files) {
+    for (const auto &file : dir->files) {
         if (file->isFolder() && file->size() > m_minSize) {
-            findVisibleDepth(dynamic_cast<Folder *>(file), currentDepth + 1); // if no files greater than min size the depth is still recorded
+            findVisibleDepth(std::dynamic_pointer_cast<Folder>(file), currentDepth + 1); // if no files greater than min size the depth is still recorded
         }
     }
 }
 
 //**** segments currently overlap at edges (i.e. end of first is start of next)
-bool RadialMap::Map::build(const Folder *const dir, const uint depth, uint a_start, const uint a_end)
+bool RadialMap::Map::build(const std::shared_ptr<Folder> &dir, const uint depth, uint a_start, const uint a_end)
 {
     // first iteration: dir == m_root
 
@@ -170,11 +170,11 @@ bool RadialMap::Map::build(const Folder *const dir, const uint depth, uint a_sta
     FileSize hiddenSize = 0;
     uint hiddenFileCount = 0;
 
-    for (File *file : dir->files) {
+    for (const auto &file : dir->files) {
         if (file->size() < m_limits[depth] * 6) { // limit is half a degree? we want at least 3 degrees
             hiddenSize += file->size();
             if (file->isFolder()) { //**** considered virtual, but dir wouldn't count itself!
-                hiddenFileCount += dynamic_cast<const Folder *>(file)->children(); // need to add one to count the dir as well
+                hiddenFileCount += std::dynamic_pointer_cast<Folder>(file)->children(); // need to add one to count the dir as well
             }
             ++hiddenFileCount;
             continue;
@@ -188,7 +188,7 @@ bool RadialMap::Map::build(const Folder *const dir, const uint depth, uint a_sta
         if (file->isFolder()) {
             if (depth != m_visibleDepth) {
                 // recurse
-                s->m_hasHiddenChildren = build(dynamic_cast<Folder *>(file), depth + 1, a_start, a_start + a_len);
+                s->m_hasHiddenChildren = build(std::dynamic_pointer_cast<Folder>(file), depth + 1, a_start, a_start + a_len);
             } else {
                 s->m_hasHiddenChildren = true;
             }
@@ -208,7 +208,7 @@ bool RadialMap::Map::build(const Folder *const dir, const uint depth, uint a_sta
                                 hiddenFileCount,
                                 KFormat().formatByteSize(hiddenSize / hiddenFileCount));
 
-        m_signature[depth].append(new Segment(new File(s.toUtf8().constData(), hiddenSize), a_start, a_end - a_start, true));
+        m_signature[depth].append(new Segment(std::make_shared<File>(s.toUtf8().constData(), hiddenSize), a_start, a_end - a_start, true));
     }
 
     return false;

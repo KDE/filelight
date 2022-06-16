@@ -15,7 +15,7 @@ if (HAVE_SINCOS)
     add_definitions(-DHAVE_SINCOS)
 endif()
 
-add_library(filelightInternal STATIC fileTree.cpp directoryIterator.cpp)
+add_library(filelightInternal STATIC fileTree.cpp directoryIterator.cpp fileCleaner.cpp)
 if (WIN32)
     target_sources(filelightInternal PRIVATE windowsWalker.cpp)
 else()

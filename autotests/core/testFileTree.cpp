@@ -7,13 +7,8 @@
 #include "testFileTree.h"
 
 TestFileTree::TestFileTree()
-    : fl(new File("./autotests/core/dummy.txt", 20))
+    : fl(std::make_unique<File>("./autotests/core/dummy.txt", 20))
 {
-}
-
-TestFileTree::~TestFileTree()
-{
-    delete fl;
 }
 
 void TestFileTree::testFileName()
@@ -30,7 +25,7 @@ void TestFileTree::testFileSize()
 
 void TestFileTree::testFilePath()
 {
-    const Folder *folder = new Folder("./autotests/core/");
+    auto folder = std::make_shared<Folder>("./autotests/core/");
     const QString fpath = fl->displayPath(folder);
     QVERIFY(!fpath.isEmpty());
 }

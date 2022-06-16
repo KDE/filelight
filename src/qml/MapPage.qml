@@ -90,9 +90,9 @@ Kirigami.Page {
             Layout.minimumHeight: Kirigami.Units.gridUnit
             Layout.minimumWidth: Kirigami.Units.gridUnit
 
-            onFolderCreated: (tree) => {
+            onFolderCreated: {
                 appWindow.completed()
-                appWindow.mapChanged(tree)
+                appWindow.mapChanged()
                 appWindow.status = ""
             }
             onActivated: (url) => {

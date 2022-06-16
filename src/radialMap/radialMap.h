@@ -1,11 +1,14 @@
 /***********************************************************************
  * SPDX-FileCopyrightText: 2003-2004 Max Howell <max.howell@methylblue.com>
  * SPDX-FileCopyrightText: 2008-2009 Martin Sandsmark <martin.sandsmark@kde.org>
+ * SPDX-FileCopyrightText: 2022 Harald Sitter <sitter@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
  ***********************************************************************/
 
 #pragma once
+
+#include <memory>
 
 #include <QColor>
 
@@ -16,14 +19,13 @@ namespace RadialMap
 class Segment // all angles are in 16ths of degrees
 {
 public:
-    Segment(const File *f, uint s, uint l, bool isFake = false)
+    Segment(const std::shared_ptr<File> &f, uint s, uint l, bool isFake = false)
         : m_angleStart(s)
         , m_angleSegment(l)
         , m_file(f)
         , m_fake(isFake)
     {
     }
-    ~Segment();
 
     uint start() const
     {
@@ -37,7 +39,7 @@ public:
     {
         return m_angleStart + m_angleSegment;
     }
-    const File *file() const
+    const std::shared_ptr<File> file() const
     {
         return m_file;
     }
@@ -76,12 +78,10 @@ private:
 
     const uint m_angleStart;
     const uint m_angleSegment;
-    const File *const m_file = nullptr;
+    const std::shared_ptr<File> m_file = nullptr;
     QColor m_pen, m_brush;
     bool m_hasHiddenChildren = false;
     const bool m_fake;
-
-    Q_DISABLE_COPY_MOVE(Segment)
 };
 } // namespace RadialMap
 

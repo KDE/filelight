@@ -264,6 +264,16 @@ void MainContext::addHistoryAction(QObject *action)
     Q_EMIT historyActionsChanged();
 }
 
+void MainContext::connectMapItem(QObject *mapItem) const
+{ // we transfer shared_ptrs around, let's not do it via qml, we can't check if it is nullptr there
+    auto item = qobject_cast<RadialMap::Item *>(mapItem);
+    Q_ASSERT(item);
+    connect(m_manager, &ScanManager::completed, item, [item](const auto &tree) {
+        if (tree) {
+            item->create(tree);
+        }
+    });
+}
 } // namespace Filelight
 
 #include "mainContext.moc"

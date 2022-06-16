@@ -1,11 +1,14 @@
 /***********************************************************************
  * SPDX-FileCopyrightText: 2020 Shubham <aryan100jangid@gmail.com>
+ * SPDX-FileCopyrightText: 2022 Harald Sitter <sitter@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
  ***********************************************************************/
 
 #ifndef TESTFILETREE_H
 #define TESTFILETREE_H
+
+#include <memory>
 
 #include "fileTree.h"
 
@@ -17,7 +20,6 @@ class TestFileTree : public QObject
 
 public:
     TestFileTree();
-    ~TestFileTree() override;
 
 private:
     void testFileName();
@@ -25,7 +27,7 @@ private:
     void testFilePath();
 
 private:
-    File *fl;
+    std::unique_ptr<File> fl;
 };
 
 #endif

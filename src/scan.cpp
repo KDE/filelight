@@ -40,7 +40,6 @@ ScanManager::~ScanManager()
         m_abort = true;
         m_thread->wait();
     }
-    qDeleteAll(m_cache);
 
     // RemoteListers are QObjects and get automatically deleted
 }
@@ -96,7 +95,7 @@ bool ScanManager::start(const QUrl &url)
         path += QLatin1Char('/');
     }
 
-    auto *trees = new QList<Folder *>;
+    auto *trees = new QList<std::shared_ptr<Folder>>;
 
     /* CHECK CACHE
      *   user wants: /usr/local/
@@ -106,10 +105,10 @@ bool ScanManager::start(const QUrl &url)
      *   cached:     /usr/local/, /usr/include/
      */
 
-    QMutableListIterator<Folder *> it(m_cache);
+    QMutableListIterator<std::shared_ptr<Folder>> it(m_cache);
     while (it.hasNext()) {
-        Folder *folder = it.next();
-        QString cachePath = folder->decodedName();
+        auto folder = it.next();
+        const QString cachePath = folder->decodedName();
 
         if (path.startsWith(cachePath)) { // then whole tree already scanned
             // find a pointer to the requested branch
@@ -120,7 +119,7 @@ bool ScanManager::start(const QUrl &url)
 #else
             QVector<QStringView> split = QStringView(path).mid(cachePath.length()).split(QLatin1Char('/'));
 #endif
-            Folder *d = folder;
+            std::shared_ptr<Folder> d = folder;
 
             while (!split.isEmpty() && d != nullptr) { // if NULL we have got lost so abort!!
                 if (split.first().isEmpty()) { // found the dir
@@ -128,12 +127,12 @@ bool ScanManager::start(const QUrl &url)
                 }
                 QString s = split.first() % QLatin1Char('/'); // % is the string concatenation operator for QStringBuilder
 
-                QListIterator<File *> it(d->files);
+                QListIterator<std::shared_ptr<File>> it(d->files);
                 d = nullptr;
                 while (it.hasNext()) {
-                    File *subfolder = it.next();
+                    auto subfolder = it.next();
                     if (s == subfolder->decodedName()) {
-                        d = (Folder *)subfolder;
+                        d = std::dynamic_pointer_cast<Folder>(subfolder);
                         break;
                     }
                 }
@@ -154,7 +153,6 @@ bool ScanManager::start(const QUrl &url)
             qCWarning(FILELIGHT_LOG) << "Didn't find " << path << " in the cache!\n";
             it.remove();
             Q_EMIT aboutToEmptyCache();
-            delete folder;
             break; // do a full scan
         }
         if (cachePath.startsWith(path)) { // then part of the requested tree is already scanned
@@ -166,8 +164,8 @@ bool ScanManager::start(const QUrl &url)
 
     QGuiApplication::changeOverrideCursor(QCursor(Qt::BusyCursor));
     // starts listing by itself
-    m_thread = new Filelight::LocalLister(path, trees, this);
-    connect(m_thread, &LocalLister::branchCompleted, this, &ScanManager::cacheTree, Qt::QueuedConnection);
+    m_thread = std::make_unique<Filelight::LocalLister>(path, trees, this);
+    connect(m_thread.get(), &LocalLister::branchCompleted, this, &ScanManager::cacheTree, Qt::QueuedConnection);
     m_thread->start();
 
     Q_EMIT runningChanged();
@@ -211,11 +209,11 @@ void ScanManager::invalidateCacheFor(const QUrl &url)
 
     Q_EMIT aboutToEmptyCache();
 
-    QMutableListIterator<Folder *> cacheIterator(m_cache);
-    QList<Folder *> subCaches;
-    QList<Folder *> oldCache = m_cache;
+    QMutableListIterator<std::shared_ptr<Folder>> cacheIterator(m_cache);
+    QList<std::shared_ptr<Folder>> subCaches;
+    QList<std::shared_ptr<Folder>> oldCache = m_cache;
     while (cacheIterator.hasNext()) {
-        Folder *folder = cacheIterator.next();
+        auto folder = cacheIterator.next();
         cacheIterator.remove();
 
         QString cachePath = folder->decodedName();
@@ -228,7 +226,7 @@ void ScanManager::invalidateCacheFor(const QUrl &url)
 #else
         QVector<QStringView> splitPath = QStringView(path).mid(cachePath.length()).split(QLatin1Char('/'));
 #endif
-        Folder *d = folder;
+        auto d = folder;
 
         while (!splitPath.isEmpty() && d != nullptr) { // if NULL we have got lost so abort!!
             if (splitPath.first().isEmpty()) { // found the dir
@@ -236,10 +234,10 @@ void ScanManager::invalidateCacheFor(const QUrl &url)
             }
             QString wantedName = splitPath.takeFirst() % QLatin1Char('/'); // % is the string concatenation operator for QStringBuilder
 
-            QListIterator<File *> it(d->files);
+            QListIterator<std::shared_ptr<File>> it(d->files);
             d = nullptr;
             while (it.hasNext()) {
-                File *subfolder = it.next();
+                auto subfolder = it.next();
                 if (subfolder->decodedName() == wantedName) {
                     // This is the one we want to remove
                     continue;
@@ -248,7 +246,7 @@ void ScanManager::invalidateCacheFor(const QUrl &url)
                     continue;
                 }
 
-                Folder *newFolder = ((Folder *)subfolder)->duplicate();
+                auto newFolder = std::dynamic_pointer_cast<Folder>(subfolder)->duplicate();
                 newFolder->setName((cachePath.toLocal8Bit() + subfolder->name8Bit()));
                 subCaches.append(newFolder);
                 d = nullptr;
@@ -260,9 +258,8 @@ void ScanManager::invalidateCacheFor(const QUrl &url)
         }
         d->parent()->remove(d);
     }
-    qDeleteAll(oldCache);
 
-    for (Folder *folder : subCaches) {
+    for (const auto &folder : subCaches) {
         m_cache.append(folder);
     }
 }
@@ -277,11 +274,10 @@ void ScanManager::emptyCache()
 
     Q_EMIT aboutToEmptyCache();
 
-    qDeleteAll(m_cache);
     m_cache.clear();
 }
 
-void ScanManager::cacheTree(Folder *tree)
+void ScanManager::cacheTree(std::shared_ptr<Folder> tree)
 {
     QMutexLocker locker(&m_mutex); // This gets released once it is destroyed.
 
@@ -289,7 +285,6 @@ void ScanManager::cacheTree(Folder *tree)
         qCDebug(FILELIGHT_LOG) << "Waiting for thread to terminate ...";
         m_thread->wait();
         qCDebug(FILELIGHT_LOG) << "Thread terminated!";
-        delete m_thread; // note the lister deletes itself
         m_thread = nullptr;
     }
 
@@ -301,14 +296,13 @@ void ScanManager::cacheTree(Folder *tree)
         // we always just have one tree cached, so we really don't need a list..
         m_cache.append(tree);
     } else { // scan failed
-        qDeleteAll(m_cache);
         m_cache.clear();
     }
 
     QGuiApplication::restoreOverrideCursor();
 }
 
-void ScanManager::foundCached(Folder *tree)
+void ScanManager::foundCached(std::shared_ptr<Folder> tree)
 {
     Q_EMIT completed(tree);
     QGuiApplication::restoreOverrideCursor();

@@ -8,13 +8,14 @@
 
 #pragma once
 
+#include <atomic>
 #include <memory>
 
 #include <QList>
 #include <QMutex>
 #include <QObject>
 
-#include <atomic>
+#include "localLister.h"
 
 class Folder;
 
@@ -54,13 +55,13 @@ public:
 public Q_SLOTS:
     bool abort();
     void emptyCache();
-    void cacheTree(Folder *);
-    void foundCached(Folder *);
+    void cacheTree(std::shared_ptr<Folder> folder);
+    void foundCached(std::shared_ptr<Folder> folder);
 
 Q_SIGNALS:
-    void completed(Folder *);
+    void completed(std::shared_ptr<Folder> folder);
     void aboutToEmptyCache();
-    void branchCacheHit(Folder *tree);
+    void branchCacheHit(std::shared_ptr<Folder> tree);
     void runningChanged();
     void aborted();
 
@@ -70,8 +71,8 @@ private:
     QAtomicInteger<size_t> m_totalSize;
 
     QMutex m_mutex;
-    LocalLister *m_thread;
-    QList<Folder *> m_cache;
+    std::unique_ptr<LocalLister> m_thread;
+    QList<std::shared_ptr<Folder>> m_cache;
     std::unique_ptr<RemoteLister> m_remoteLister;
 
     Q_DISABLE_COPY_MOVE(ScanManager)

@@ -27,7 +27,7 @@ public:
     ~RemoteLister() override;
 
 Q_SIGNALS:
-    void branchCompleted(Folder *tree);
+    void branchCompleted(std::shared_ptr<Folder> tree);
 
 private Q_SLOTS:
     void onCompleted();

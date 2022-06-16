@@ -20,6 +20,8 @@
 #include <KLocalizedString>
 #include <KSharedConfig>
 
+#include "fileTree.h"
+
 int main(int argc, char *argv[])
 {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
@@ -30,6 +32,9 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling, true);
 #endif
     QApplication app(argc, argv);
+
+    qRegisterMetaType<std::shared_ptr<File>>("std::shared_ptr<File>");
+    qRegisterMetaType<std::shared_ptr<Folder>>("std::shared_ptr<Folder>");
 
     if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
         QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));

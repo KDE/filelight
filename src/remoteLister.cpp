@@ -23,7 +23,7 @@ struct Store {
     /// location of the folder
     const QUrl url;
     /// the folder on which we are operating
-    Folder *folder;
+    std::shared_ptr<Folder> folder;
     /// so we can reference the parent store
     const std::shared_ptr<Store> parent = nullptr;
     /// directories in this folder that need to be scanned before we can propagate()
@@ -31,7 +31,7 @@ struct Store {
 
     Store(const QUrl &url_, const QString &name, const std::shared_ptr<Store> &parentStore)
         : url(url_)
-        , folder(new Folder((name + QLatin1Char('/')).toUtf8().constData()))
+        , folder(std::make_shared<Folder>((name + QLatin1Char('/')).toUtf8().constData()))
         , parent(parentStore)
     {
     }

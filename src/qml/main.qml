@@ -20,6 +20,8 @@ Kirigami.ApplicationWindow {
     property var mapItem: null
     property var mapPage: null
 
+    onMapItemChanged: MainContext.connectMapItem(mapItem)
+
     Kirigami.Action {
         id: scanFolderAction
         iconName: "folder"
@@ -138,9 +140,9 @@ Kirigami.ApplicationWindow {
         MainContext.slotUp()
     }
 
-    function mapChanged(tree) {
+    function mapChanged() {
         title = MainContext.prettyUrl(MainContext.url);
-        numberOfFiles = tree.children
+        numberOfFiles = mapItem.treeChildren
     }
 
     function updateURL(url) {
@@ -149,16 +151,6 @@ Kirigami.ApplicationWindow {
 
     function openURL(url) {
         MainContext.openURL(url)
-    }
-
-    function folderScanCompleted(tree) {
-        if (tree !== null) {
-            status = i18nc("@info:status", "Scan completed, generating map...")
-            mapItem.create(tree);
-        } else {
-            title = ""
-            status = ""
-        }
     }
 
     function rescan() {
@@ -178,11 +170,14 @@ Kirigami.ApplicationWindow {
 
     Connections {
         target: ScanManager
-        onCompleted: (tree) => appWindow.folderScanCompleted(tree)
         onRunningChanged: { // for when the url was set through the c++ side, e.g. as cmdline arg
             if (ScanManager.running) {
                 makeMap()
             }
+        }
+        onAborted: {
+            appWindow.title = ""
+            appWindow.status = ""
         }
     }
 }
