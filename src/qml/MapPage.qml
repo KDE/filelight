@@ -87,6 +87,8 @@ Kirigami.Page {
             visible: page.state === ""
             Layout.fillWidth: true
             Layout.fillHeight: true
+            Layout.minimumHeight: Kirigami.Units.gridUnit
+            Layout.minimumWidth: Kirigami.Units.gridUnit
 
             onFolderCreated: (tree) => {
                 appWindow.completed()
