@@ -433,18 +433,10 @@
     <value key="KDE::windows_store">https://www.microsoft.com/store/apps/9pfxcd722m2c</value>
   </custom>
   <releases>
+    <release version="22.04.3" date="2022-07-07"/>
     <release version="22.04.2" date="2022-06-09"/>
     <release version="22.04.1" date="2022-05-12"/>
     <release version="22.04.0" date="2022-04-21"/>
-    <release version="21.12.3" date="2022-03-03">
-      <artifacts>
-        <artifact type="binary" platform="win64">
-          <location>https://download.kde.org/stable/release-service/21.12.3/windows/filelight-21.12.3-915-windows-msvc2019_64-cl.exe</location>
-          <checksum type="sha256">86719ea027adafe7e3e8f3b8fb6b186b0c1aec274b713b18a351d76f4cc11dc8</checksum>
-          <size type="download">43319136</size>
-        </artifact>
-      </artifacts>
-    </release>
   </releases>
   <content_rating type="oars-1.1"/>
 </component>
