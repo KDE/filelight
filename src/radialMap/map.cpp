@@ -8,6 +8,7 @@
 
 #include "filelight_debug.h"
 
+#include <array>
 #include <utility>
 
 #ifdef Q_OS_WINDOWS
