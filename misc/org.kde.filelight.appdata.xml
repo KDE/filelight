@@ -126,6 +126,7 @@
     <p xml:lang="sr-ijekavian">Фајлајт је програм за визуелизовање искоришћења диска на рачунару.</p>
     <p xml:lang="sr-ijekavianlatin">Filelight je program za vizuelizovanje iskorišćenja diska na računaru.</p>
     <p xml:lang="sv">Filelight är ett program för att åskådliggöra diskanvändning på datorn</p>
+    <p xml:lang="ta">ஃபைல்-லைட், உங்கள் கணினியின் வட்டுச்சேமிப்பக பயன்பாட்டை காண உதவும் சேயலி ஆகும்</p>
     <p xml:lang="tr">Filelight, bilgisayarınızdaki disk kullanımını görselleştirmek için bir uygulamadır</p>
     <p xml:lang="uk">Filelight — програма для візуалізації використання дискового простору вашого комп'ютера</p>
     <p xml:lang="x-test">xxFilelight is an application to visualize the disk usage on your computerxx</p>
@@ -211,6 +212,7 @@
       <li xml:lang="sr-ijekavian">Скенирање локалних, удаљених и уклоњивих дискова.</li>
       <li xml:lang="sr-ijekavianlatin">Skeniranje lokalnih, udaljenih i uklonjivih diskova.</li>
       <li xml:lang="sv">Sök igenom lokala diskar, diskar på en annan dator eller flyttbara diskar</li>
+      <li xml:lang="ta">உள்ளமைந்த, தொலை, மற்றும் கழற்றக்கூடிய வட்டுகளைக் காணுங்கள்</li>
       <li xml:lang="tr">Yerel, uzak veya çıkarılabilir diskleri tarayın</li>
       <li xml:lang="uk">Сканування локальних, віддалених та портативних дисків</li>
       <li xml:lang="x-test">xxScan local, remote or removable disksxx</li>
@@ -253,6 +255,7 @@
       <li xml:lang="sr-ijekavian">Подесиве шеме боја.</li>
       <li xml:lang="sr-ijekavianlatin">Podesive šeme boja.</li>
       <li xml:lang="sv">Anpassningsbara färgscheman</li>
+      <li xml:lang="ta">மாற்றியமைக்க‍க்கூடிய நிறத்திட்டங்கள்</li>
       <li xml:lang="tr">Yapılandırılabilir renk şemaları</li>
       <li xml:lang="uk">Придатна до налаштовування тема кольорів</li>
       <li xml:lang="x-test">xxConfigurable color schemesxx</li>
@@ -294,6 +297,7 @@
       <li xml:lang="sr-ijekavian">Кретање кроз фајл систем кликтањем миша.</li>
       <li xml:lang="sr-ijekavianlatin">Kretanje kroz fajl sistem kliktanjem miša.</li>
       <li xml:lang="sv">Navigering i filsystem med musklick</li>
+      <li xml:lang="ta">சுட்டியின் மூலம் கோப்பு முறைமையில் உலாவலாம்</li>
       <li xml:lang="tr">Fare tıklamaları ile dosya sistemi dolaşımı</li>
       <li xml:lang="uk">Навігація файловою системою за допомогою клацання кнопками миші</li>
       <li xml:lang="x-test">xxFile system navigation by mouse clicksxx</li>
@@ -335,6 +339,7 @@
       <li xml:lang="sr-ijekavian">Подаци о фајловима и фасциклама на лебдење.</li>
       <li xml:lang="sr-ijekavianlatin">Podaci o fajlovima i fasciklama na lebdenje.</li>
       <li xml:lang="sv">Information om filer och kataloger när musen hålls över dem</li>
+      <li xml:lang="ta">சுட்டியை மேல்வைக்கும்போதே கோப்புகளையும் அடைவுகளையும் பற்றிய விவரங்கள்</li>
       <li xml:lang="tr">Üzerine gelerek dosyalar ve dizinler hakkında bilgi alma</li>
       <li xml:lang="uk">Показ даних щодо файлів і каталогів у відповідь на наведення вказівника миші</li>
       <li xml:lang="x-test">xxInformation about files and directories on hoveringxx</li>
@@ -376,6 +381,7 @@
       <li xml:lang="sr-ijekavian">Фајлови и фасцикле могу да се копирају и уклањају непосредно из контекстног менија.</li>
       <li xml:lang="sr-ijekavianlatin">Fajlovi i fascikle mogu da se kopiraju i uklanjaju neposredno iz kontekstnog menija.</li>
       <li xml:lang="sv">Filer och kataloger kan kopieras eller tas bort direkt i den sammanhangsberoende menyn</li>
+      <li xml:lang="ta">வலது-க்ளிக் பட்டியிலிருந்தே கோப்புகளையும் அடைவுகளையும் நகர்த்தலாம் அல்லது நகலெடுக்கலாம்</li>
       <li xml:lang="tr">Dosyalar veya dizinler, bağlam menüsünden doğrudan kopyalanabilir veya kaldırılabilir</li>
       <li xml:lang="uk">Можливість копіювання та вилучення файлів і каталогів за допомогою контекстного меню програми</li>
       <li xml:lang="x-test">xxFiles and directories can be copied or removed directly from the context menuxx</li>
