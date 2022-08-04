@@ -139,7 +139,14 @@ void MainContext::slotScanRootFolder()
 
 void MainContext::slotUp()
 {
-    slotScanUrl(KIO::upUrl(url()));
+    const auto downUrl = url();
+    auto upUrl = KIO::upUrl(downUrl);
+#ifdef Q_OS_WINDOWS
+    if (upUrl.path() == QLatin1Char('/')) { // root means nothing on windows
+        upUrl = downUrl;
+    }
+#endif
+    slotScanUrl(upUrl);
 }
 
 bool MainContext::slotScanPath(const QString &path)
