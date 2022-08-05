@@ -24,6 +24,7 @@
   <name xml:lang="hu">Filelight</name>
   <name xml:lang="ia">Filelight</name>
   <name xml:lang="id">Filelight</name>
+  <name xml:lang="is">Filelight</name>
   <name xml:lang="it">Filelight</name>
   <name xml:lang="ko">Filelight</name>
   <name xml:lang="nl">Filelight</name>
@@ -66,6 +67,7 @@
   <summary xml:lang="hu">A Filelight egy koncentrikus körszeletekből álló interaktív térkép segítségével vizualizálja a lemezhasználati adatokat</summary>
   <summary xml:lang="ia">Filelight crea un mappa interactive de anillos segmentate concentric que adjuta a visualisar usage de discos sur tu computator</summary>
   <summary xml:lang="id">Filelight menciptakan peta interaktif cincin tersegmentasi konsentris yang membantu memvisualisasikan penggunaan disk di komputermu</summary>
+  <summary xml:lang="is">Filelight útbýr gagnvirkt kort með sammiðju-hringgeirum sem hjálpa til við að skoða notkun diska/geymslumiðla á tölvunni þinni</summary>
   <summary xml:lang="it">Filelight crea una mappa interattiva di anelli segmentati concentrici che aiuta a visualizzare l'uso del disco nel tuo computer</summary>
   <summary xml:lang="ko">Filelight는 컴퓨터 디스크 사용량을 인터랙티브 동심원 그래프로 시각화하는 프로그램입니다</summary>
   <summary xml:lang="nl">Filelight maakt een interactieve grafiek van concentrische gesegmenteerde ringen die helpen om schijfgebruik op uw computer te visualiseren</summary>
@@ -110,6 +112,7 @@
     <p xml:lang="hu">A Filelight egy vizuális lemezhasználati alkalmazás</p>
     <p xml:lang="ia">Filelight es un application per visualisar le usage de disco sur tu computator</p>
     <p xml:lang="id">Filelight adalah aplikasi untuk memvisualisasikan penggunaan disk di komputermu</p>
+    <p xml:lang="is">Filelight er forrit til að skoða myndrænt diskapláss á tölvunni þinni</p>
     <p xml:lang="it">Filelight è un'applicazione per visualizzare l'uso del disco nel tuo computer</p>
     <p xml:lang="ko">Flielight는 컴퓨터 디스크 사용량을 시각화하는 프로그램입니다</p>
     <p xml:lang="nl">Filelight is een toepassing om het schijfgebruik op uw computer te visualiseren</p>
@@ -153,6 +156,7 @@
     <p xml:lang="hu">Szolgáltatások:</p>
     <p xml:lang="ia">Characteristicas:</p>
     <p xml:lang="id">Fitur:</p>
+    <p xml:lang="is">Eiginleikar:</p>
     <p xml:lang="it">Funzionalità:</p>
     <p xml:lang="ko">기능:</p>
     <p xml:lang="nl">Kenmerken:</p>
@@ -196,6 +200,7 @@
       <li xml:lang="hu">Helyi, távoli és cserélhető eszközök olvasása</li>
       <li xml:lang="ia">Scander discos local, remote o removabile</li>
       <li xml:lang="id">Scan lokal, jarak jauh atau disk yang dapat dilepas</li>
+      <li xml:lang="is">Skannaðu staðværa, fjartengda eða útskiptanlega diska</li>
       <li xml:lang="it">Analizza dischi locali, remoti e rimovibili</li>
       <li xml:lang="ko">로컬, 원격, 이동식 디스크 검사</li>
       <li xml:lang="nl">Lokale, op afstand of verwijderbare schijven scannen</li>
@@ -239,6 +244,7 @@
       <li xml:lang="hu">Testre szabható színsémák</li>
       <li xml:lang="ia">Schemas de color configurabile</li>
       <li xml:lang="id">Skema warna yang dapat dikonfigurasi</li>
+      <li xml:lang="is">Stillanleg litastef</li>
       <li xml:lang="it">Schemi di colori configurabili</li>
       <li xml:lang="ko">색 배열 설정</li>
       <li xml:lang="nl">Te configureren kleurenschema's</li>
@@ -281,6 +287,7 @@
       <li xml:lang="hu">Navigáció a fájlrendszerben egérkattintással</li>
       <li xml:lang="ia">Navigation de systema de file per clicks de mus</li>
       <li xml:lang="id">Navigasi sistem file dengan klik mouse</li>
+      <li xml:lang="is">Flakk um skráakerfi með músarsmellum</li>
       <li xml:lang="it">Navigazione del file system a clic di mouse</li>
       <li xml:lang="ko">마우스 클릭으로 파일 시스템 탐색</li>
       <li xml:lang="nl">Navigatie door bestandssysteem met muisklikken</li>
@@ -323,6 +330,7 @@
       <li xml:lang="hu">Információ a fájlokról és mappálról rámutatással</li>
       <li xml:lang="ia">Information re files e directorios sur planar</li>
       <li xml:lang="id">Informasi tentang file dan direktori saat melintasi</li>
+      <li xml:lang="is">Upplýsingar um skrár og möppur við yfirsvif bendils</li>
       <li xml:lang="it">Informazioni su file e cartelle al passaggio del mouse</li>
       <li xml:lang="ko">지나다닐 때 파일과 디렉터리 정보 표시</li>
       <li xml:lang="nl">Informatie over bestanden en mappen met er boven zweven</li>
@@ -365,6 +373,7 @@
       <li xml:lang="hu">Fájlok és mappák másolása vagy törlése közvetlenül a helyi menüből</li>
       <li xml:lang="ia">Files e directorios pote esser copiate o removite directemente ex le menu de contexto</li>
       <li xml:lang="id">File dan direktori yang bisa disalin atau dihapus secara langsung dari menu konteks</li>
+      <li xml:lang="is">Hægt er að afrita eða fjarlægja skrár og möppur beint í samhengisvalmynd</li>
       <li xml:lang="it">I file e le cartelle possono essere copiati o rimossi direttamente dal menu contestuale</li>
       <li xml:lang="ko">콘텍스트 메뉴에서 파일과 디렉터리 직접 복사 및 삭제</li>
       <li xml:lang="nl">Bestanden en mappen kunnen gekopieerd of verwijderd worden direct vanuit het contextmenu</li>
@@ -408,6 +417,7 @@
       <li xml:lang="hu">Konqueror és Krusader integráció</li>
       <li xml:lang="ia">Integration in Konqueror e Krusader</li>
       <li xml:lang="id">Integrasi ke dalam Konqueror dan Krusader</li>
+      <li xml:lang="is">Samþætting inn í Konqueror og Krusader</li>
       <li xml:lang="it">Integrazione in Konqueror e in Krusader</li>
       <li xml:lang="ko">Konqueror 및 Krusader 통합</li>
       <li xml:lang="nl">Integratie in Konqueror en Krusader</li>
