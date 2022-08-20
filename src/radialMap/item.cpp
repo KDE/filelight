@@ -30,6 +30,10 @@
 
 #include <KIO/DeleteJob>
 #include <KIO/Job> //::mousePressEvent()
+#include <kio_version.h>
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
+#include <KIO/JobUiDelegateFactory>
+#endif
 #include <KIO/JobUiDelegate>
 #include <KIO/OpenUrlJob>
 #include <KJob>
@@ -164,7 +168,11 @@ void RadialMap::Item::mousePressEvent(QMouseEvent *e)
     // Open file
     if (e->button() == Qt::MiddleButton || (e->button() == Qt::LeftButton && !isDir)) {
         auto *job = new KIO::OpenUrlJob(QUrl(url));
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
+        job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
+#else
         job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
+#endif
         job->start();
         return;
     }
@@ -229,7 +237,11 @@ void RadialMap::Item::mousePressEvent(QMouseEvent *e)
 
     if (openFileManager && clicked == openFileManager) {
         auto *job = new KIO::OpenUrlJob(url, QStringLiteral("inode/directory"), nullptr);
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
+        job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
+#else
         job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
+#endif
         job->start();
     } else if (rescanAction && clicked == rescanAction) {
         Q_EMIT rescanRequested(url);
@@ -248,7 +260,11 @@ void RadialMap::Item::mousePressEvent(QMouseEvent *e)
         }
     } else if (openFile && clicked == openFile) {
         auto *job = new KIO::OpenUrlJob(url);
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
+        job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
+#else
         job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
+#endif
         job->start();
     } else if (clicked == copyClipboard) {
         auto *mimedata = new QMimeData();
