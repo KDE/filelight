@@ -511,6 +511,10 @@ void RadialMap::Item::paintExplodedLabels(QPainter &paint) const
         paint.setFont(font);
     }
 
+    const auto scheme = QGuiApplication::palette();
+    paint.setPen(scheme.color(QPalette::WindowText));
+    paint.setBrush(scheme.color(QPalette::Window));
+
     QVector<Label *>::iterator it;
 
     do {
