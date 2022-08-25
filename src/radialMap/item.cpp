@@ -82,6 +82,10 @@ RadialMap::Item::Item(QQuickItem *parent)
         m_offset.rx() = (width() - m_map.width()) / 2;
         m_offset.ry() = (height() - m_map.height()) / 2;
     });
+
+    connect(qGuiApp, &QGuiApplication::paletteChanged, this, [this] {
+        update();
+    });
 }
 
 QString RadialMap::Item::path() const
