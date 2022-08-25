@@ -402,9 +402,12 @@ void RadialMap::Item::paint(QPainter *painter)
     // exploded labels
     if (!m_map.isNull() && !m_timer.isActive()) {
         if (Config::antialias) {
+            setAntialiasing(true);
             painter->setRenderHint(QPainter::Antialiasing);
             // make lines appear on pixel boundaries
             painter->translate(0.5, 0.5);
+        } else {
+            setAntialiasing(false);
         }
         paintExplodedLabels(*painter);
     }
