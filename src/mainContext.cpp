@@ -129,27 +129,22 @@ void MainContext::slotScanFolder()
 {
     auto path = QFileDialog::getExistingDirectoryUrl(nullptr, i18n("Select Folder to Scan"), url());
     qDebug() << path;
-    if (m_inSandbox) {
+    if (KSandbox::isFlatpak()) {
         // FIXME handle not local urls
         OrgFreedesktopPortalDocumentsInterface documents_iface(QStringLiteral("org.freedesktop.portal.Documents"),
                                                                QStringLiteral("/org/freedesktop/portal/documents"),
                                                                QDBusConnection::sessionBus());
-        auto mountPoint = QString::fromUtf8(documents_iface.GetMountPoint());
-        // if (!path.startsWith(mountPoint)) {
-        //         return QUrl::fromLocalFile(path);
-        //     }
-        // }
-        qDebug() << mountPoint;
-        // QByteArray localFilePath = documents_iface.Info(QFileInfo(path.toLocalFile()).fileName());
-        // qDebug() << localFilePath;
-
+        // FIXME mountpoint static
+        // FIXME expose mountpoint as prop so we can strip it when displaying
+        const auto mountPoint = QString::fromUtf8(documents_iface.GetMountPoint());
         if (path.toLocalFile().startsWith(mountPoint)) {
-            // slotScanUrl(QUrl::fromLocalFile(QLatin1String("/run/host/") + QString::fromUtf8(localFilePath)));
-            qDebug() << path.toLocalFile().remove(mountPoint);
             auto stripped = path.toLocalFile().remove(mountPoint).split(QLatin1Char('/'));
-            qDebug() << stripped;
-            slotScanUrl(QUrl::fromLocalFile(QLatin1String("/run/host/") + stripped[2]));
-            return;
+            const QString hostPath = QLatin1String("/run/host/") + stripped[2]; // FIXME the split is a bit fishy
+            qDebug() << "Exists" << QFileInfo(hostPath).exists() << hostPath;
+            if (QFileInfo(hostPath).exists()) {
+                slotScanUrl(QUrl::fromLocalFile(hostPath));
+                return;
+            }
         }
     }
 
