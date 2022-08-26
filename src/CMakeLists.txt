@@ -26,8 +26,13 @@ target_link_libraries(filelightInternal
     KF5::CoreAddons
 )
 
+set_source_files_properties(../misc/org.freedesktop.portal.Documents.xml PROPERTIES NO_NAMESPACE TRUE)
+qt_add_dbus_interface(xdg_document_portal_dbus_srcs ../misc/org.freedesktop.portal.Documents.xml documents_interface)
+
+
 add_executable(filelight)
 target_sources(filelight PRIVATE
+    ${xdg_document_portal_dbus_srcs}
     radialMap/item.cpp
     radialMap/map.cpp
     radialMap/radialMap.cpp

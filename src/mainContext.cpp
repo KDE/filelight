@@ -15,6 +15,7 @@
 #include <KIO/Global> // upUrl
 #include <KLocalizedString>
 #include <KMessageBox> //::start()
+#include <KSandbox>
 
 #include <QDir>
 #include <QFileDialog>
@@ -27,6 +28,8 @@
 #include "radialMap/item.h"
 #include "scan.h"
 #include "settingsDialog.h"
+
+#include "documents_interface.h"
 
 namespace Filelight
 {
@@ -124,7 +127,33 @@ void MainContext::setupActions(QQmlApplicationEngine *engine) // singleton funct
 
 void MainContext::slotScanFolder()
 {
-    slotScanUrl(QFileDialog::getExistingDirectoryUrl(nullptr, i18n("Select Folder to Scan"), url()));
+    auto path = QFileDialog::getExistingDirectoryUrl(nullptr, i18n("Select Folder to Scan"), url());
+    qDebug() << path;
+    if (m_inSandbox) {
+        // FIXME handle not local urls
+        OrgFreedesktopPortalDocumentsInterface documents_iface(QStringLiteral("org.freedesktop.portal.Documents"),
+                                                               QStringLiteral("/org/freedesktop/portal/documents"),
+                                                               QDBusConnection::sessionBus());
+        auto mountPoint = QString::fromUtf8(documents_iface.GetMountPoint());
+        // if (!path.startsWith(mountPoint)) {
+        //         return QUrl::fromLocalFile(path);
+        //     }
+        // }
+        qDebug() << mountPoint;
+        // QByteArray localFilePath = documents_iface.Info(QFileInfo(path.toLocalFile()).fileName());
+        // qDebug() << localFilePath;
+
+        if (path.toLocalFile().startsWith(mountPoint)) {
+            // slotScanUrl(QUrl::fromLocalFile(QLatin1String("/run/host/") + QString::fromUtf8(localFilePath)));
+            qDebug() << path.toLocalFile().remove(mountPoint);
+            auto stripped = path.toLocalFile().remove(mountPoint).split(QLatin1Char('/'));
+            qDebug() << stripped;
+            slotScanUrl(QUrl::fromLocalFile(QLatin1String("/run/host/") + stripped[2]));
+            return;
+        }
+    }
+
+    slotScanUrl(path);
 }
 
 void MainContext::slotScanHomeFolder()
@@ -209,6 +238,9 @@ bool MainContext::openUrl(const QUrl &u)
 
 QString MainContext::prettyUrl(const QUrl &url) const
 {
+    if (KSandbox::isInside()) {
+        return url.toLocalFile().remove(QLatin1String("/run/host"));
+    }
     return url.isLocalFile() ? QDir::toNativeSeparators(url.toLocalFile()) : url.toString();
 }
 

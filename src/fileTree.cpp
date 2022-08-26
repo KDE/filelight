@@ -8,6 +8,7 @@
 
 #include "fileTree.h"
 
+#include <KSandbox>
 #include <QDir>
 #include <QUrl>
 
@@ -27,7 +28,10 @@ Folder::~Folder()
 
 QString File::displayName() const
 {
-    const QString decodedName = QString::fromUtf8(m_name);
+    QString decodedName = QString::fromUtf8(m_name);
+    if (KSandbox::isInside()) {
+        return decodedName.remove(QLatin1String("/run/host"));
+    }
     return url().isLocalFile() ? QDir::toNativeSeparators(decodedName) : decodedName;
 }
 
@@ -36,7 +40,10 @@ QString File::displayPath(const std::shared_ptr<Folder> &root) const
     // Use QUrl to sanitize the path for display and then run it through
     // QDir to make sure we use native path separators.
     const QUrl url = this->url(root);
-    const QString cleanPath = url.toDisplayString(QUrl::PreferLocalFile | QUrl::NormalizePathSegments);
+    QString cleanPath = url.toDisplayString(QUrl::PreferLocalFile | QUrl::NormalizePathSegments);
+    if (KSandbox::isInside()) {
+        return cleanPath.remove(QLatin1String("/run/host"));
+    }
     return url.isLocalFile() ? QDir::toNativeSeparators(cleanPath) : cleanPath;
 }
 

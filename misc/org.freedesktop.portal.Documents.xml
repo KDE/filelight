@@ -1,0 +1,18 @@
+<!DOCTYPE node PUBLIC
+"-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<!--
+  SPDX-License-Identifier: CC0-1.0
+  SPDX-FileCopyrightText: none
+-->
+<node name="/" xmlns:doc="http://www.freedesktop.org/dbus/1.0/doc.dtd">
+  <interface name='org.freedesktop.portal.Documents'>
+    <method name="GetMountPoint">
+      <arg type='ay' name='path' direction='out'/>
+    </method>
+    <method name="Info">
+      <arg type='s' name='doc_id' direction='in'/>
+      <arg type='ay' name='path' direction='out'/>
+    </method>
+  </interface>
+</node>
