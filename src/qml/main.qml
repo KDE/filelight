@@ -150,7 +150,7 @@ Kirigami.ApplicationWindow {
     }
 
     function openURL(url) {
-        MainContext.openURL(url)
+        MainContext.openUrl(url)
     }
 
     function rescan() {
