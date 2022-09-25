@@ -12,6 +12,7 @@
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QDir>
+#include <QIcon>
 #include <QQuickStyle>
 #include <QUrl>
 

@@ -4,6 +4,7 @@
 #pragma once
 
 #include "directoryEntry.h"
+#include <memory>
 
 #ifdef Q_OS_WINDOWS
 #include "windowsWalker.h"

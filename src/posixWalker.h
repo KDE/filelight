@@ -11,8 +11,6 @@
 
 #include <cerrno>
 
-#include <QDebug>
-
 #include "directoryEntry.h"
 
 class POSIXWalker

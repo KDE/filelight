@@ -10,7 +10,6 @@
 
 #include <KAboutData>
 #include <KActionCollection>
-#include <KConfigGroup>
 #include <KDeclarative/KDeclarative>
 #include <KIO/Global> // upUrl
 #include <KLocalizedString>

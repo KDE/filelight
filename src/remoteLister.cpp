@@ -11,7 +11,6 @@
 #include "scan.h"
 
 #include <QList>
-#include <QWidget>
 
 namespace Filelight
 {

@@ -2,6 +2,7 @@
 // SPDX-FileCopyrightText: 2022 Harald Sitter <sitter@kde.org>
 
 #include "posixWalker.h"
+#include <QDebug>
 
 static void outputError(const QByteArray &path)
 {

@@ -3,8 +3,6 @@
 
 #include "windowsWalker.h"
 
-#include <QScopeGuard>
-
 WindowsWalker::WindowsWalker(const QByteArray &path)
     : m_path(path)
     , m_pathW(QString::fromUtf8(m_path).toStdWString())

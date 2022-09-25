@@ -8,9 +8,6 @@
 #pragma once
 
 #include <QFont>
-#include <QFontMetrics>
-#include <QPainter>
-#include <QVector>
 
 #include "Config.h"
 #include "fileTree.h"

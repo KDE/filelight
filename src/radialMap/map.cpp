@@ -17,7 +17,6 @@
 #endif
 
 #include <QApplication> //make()
-#include <QBrush>
 #include <QFont> //ctor
 #include <QFontMetrics> //ctor
 #include <QImage> //make() & paint()

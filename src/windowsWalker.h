@@ -6,8 +6,6 @@
 #include <windows.h>
 
 #include <QByteArray>
-#include <QDebug>
-#include <QStringList>
 
 #include "directoryEntry.h"
 

@@ -10,8 +10,6 @@
 
 #include <QUrl>
 
-#include <KXmlGuiWindow>
-
 #include "Config.h"
 
 class QLabel;

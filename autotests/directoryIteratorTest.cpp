@@ -2,7 +2,6 @@
 // SPDX-FileCopyrightText: 2022 Harald Sitter <sitter@kde.org>
 
 #include <QDebug>
-#include <QFileInfo>
 #include <QTest>
 
 #include "directoryIterator.h"
