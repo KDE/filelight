@@ -2,6 +2,7 @@
 // SPDX-FileCopyrightText: 2022 Harald Sitter <sitter@kde.org>
 
 #include "windowsWalker.h"
+#include <QDebug>
 #include <QScopeGuard>
 #include <QString>
 
