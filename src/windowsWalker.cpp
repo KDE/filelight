@@ -3,6 +3,7 @@
 
 #include "windowsWalker.h"
 #include <QScopeGuard>
+#include <QString>
 
 WindowsWalker::WindowsWalker(const QByteArray &path)
     : m_path(path)
