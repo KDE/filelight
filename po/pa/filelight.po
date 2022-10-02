@@ -1,0 +1,786 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# A S Alam <aalam@users.sf.net>, 2009, 2010, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:49+0000\n"
+"PO-Revision-Date: 2019-02-09 14:23-0800\n"
+"Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
+"Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
+"Language: pa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 2.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ (A S Alam)"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "aalam@users.sf.net"
+
+#. i18n: ectx: Menu (file)
+#: misc/filelightui.rc:4
+#, kde-format
+msgid "&Scan"
+msgstr "ਸਕੈਨ(&S)"
+
+#. i18n: ectx: Menu (view)
+#: misc/filelightui.rc:18
+#, kde-format
+msgid "&View"
+msgstr "ਵੇਖੋ(&V)"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: misc/filelightui.rc:24
+#, kde-format
+msgid "Main Toolbar"
+msgstr "ਮੁੱਖ ਟੂਲਬਾਰ"
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: misc/filelightui.rc:33
+#, kde-format
+msgid "Location Toolbar"
+msgstr "ਟਿਕਾਣਾ ਟੂਲਬਾਰ"
+
+#. i18n: ectx: ToolBar (viewToolBar)
+#: misc/filelightui.rc:38
+#, kde-format
+msgid "View Toolbar"
+msgstr "ਟੂਲਬਾਰ ਵੇਖੋ"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, Dialog)
+#: src/dialog.ui:14
+#, kde-format
+msgid "Settings - Filelight"
+msgstr "ਸੈਟਿੰਗ - ਫਾਇਲਲਾਈਟ"
+
+#. i18n: ectx: attribute (title), widget (QWidget, Widget2)
+#: src/dialog.ui:33
+#, kde-format
+msgid "Scannin&g"
+msgstr "ਸਕੈਨ ਜਾਰੀ(&g)"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: src/dialog.ui:45
+#, kde-format
+msgid "Do &not scan these folders:"
+msgstr "ਇਹ ਫੋਲਡਰਾਂ ਨੂੰ ਸਕੈਨ ਨਾ ਕਰੋ(&n):"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_removeButton)
+#: src/dialog.ui:85
+#, kde-format
+msgid "R&emove"
+msgstr "ਹਟਾਓ(&e)"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_addButton)
+#: src/dialog.ui:95
+#, kde-format
+msgid "&Add..."
+msgstr "ਸ਼ਾਮਲ(&A)..."
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScanRemoteMounts)
+#: src/dialog.ui:171
+#, kde-format
+msgid ""
+"Prevents scanning of filesystems that are not on this computer, e.g. NFS or "
+"Samba mounts."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, dontScanRemoteMounts)
+#: src/dialog.ui:174
+#, kde-format
+msgid "Exclude remote files&ystems"
+msgstr "ਰਿਮੋਟ ਫਾਇਲ ਸਿਸਟਮ ਨਾ ਵਰਤੋਂ(&y)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, scanAcrossMounts)
+#: src/dialog.ui:181
+#, kde-format
+msgid ""
+"Allows scans to enter directories that are part of other filesystems. For "
+"example, when unchecked, this will usually prevent the contents of <b>/mnt</"
+"b> from being scanned if you scan <b>/</b>."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, scanAcrossMounts)
+#: src/dialog.ui:184
+#, kde-format
+msgid "Scan across filesystem &boundaries"
+msgstr ""
+
+#. i18n: ectx: attribute (title), widget (QWidget, Widget3)
+#: src/dialog.ui:194
+#, kde-format
+msgid "&Appearance"
+msgstr "ਦਿੱਖ(&A)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: src/dialog.ui:206
+#, kde-format
+msgid "Color scheme"
+msgstr "ਰੰਗ ਸਕੀਮ"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: src/dialog.ui:232
+#, kde-format
+msgid "Co&ntrast"
+msgstr "ਕਨਟਰਾਸਟ(&n)"
+
+#. i18n: ectx: property (whatsThis), widget (QSlider, contrastSlider)
+#: src/dialog.ui:254
+#, kde-format
+msgid "Here you can vary the contrast of the filemap in realtime."
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, useAntialiasing)
+#: src/dialog.ui:275
+#, kde-format
+msgid ""
+"Anti-aliasing the filemap makes it clearer and prettier, unfortunately it "
+"also makes rendering very slow."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, useAntialiasing)
+#: src/dialog.ui:278
+#, kde-format
+msgid "&Use anti-aliasing"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, showSmallFiles)
+#: src/dialog.ui:285
+#, kde-format
+msgid ""
+"Some files are too small to be rendered on the filemap. Selecting this "
+"option makes these files visible by merging them all into a single \"multi-"
+"segment\"."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, showSmallFiles)
+#: src/dialog.ui:288
+#, kde-format
+msgid "Show small files"
+msgstr "ਛੋਟੀਆਂ ਫਾਇਲਾਂ ਵੇਖੋ"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, varyLabelFontSizes)
+#: src/dialog.ui:298
+#, kde-format
+msgid ""
+"The font size of exploded labels can be varied relative to the depth of the "
+"directories they represent. This helps you spot the important labels more "
+"easily. Set a sensible minimum font size."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, varyLabelFontSizes)
+#: src/dialog.ui:301
+#, kde-format
+msgid "Var&y label font sizes"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, minFontPitchLabel)
+#: src/dialog.ui:338
+#, kde-format
+msgid "The smallest font size Filelight can use to render labels."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, minFontPitchLabel)
+#: src/dialog.ui:341
+#, kde-format
+msgid "Minimum font si&ze:"
+msgstr "ਘੱਟੋ-ਘੱਟ ਫੋਂਟ ਸਾਈਜ਼(&z):"
+
+#: src/historyAction.cpp:64
+#, kde-format
+msgctxt "Go to the last path viewed"
+msgid "Back"
+msgstr "ਪਿੱਛੇ"
+
+#: src/historyAction.cpp:68
+#, kde-format
+msgctxt "Go to forward in the history of paths viewed"
+msgid "Forward"
+msgstr "ਅੱਗੇ"
+
+#: src/main.cpp:56
+#, kde-format
+msgid "Graphical disk-usage information"
+msgstr "ਗਰਾਫਿਕਸ ਡਿਸਕ-ਵਰਤੋਂ ਜਾਣਕਾਰੀ"
+
+#: src/main.cpp:58
+#, fuzzy, kde-format
+#| msgid ""
+#| "(C) 2006 Max Howell\n"
+#| "(C) 2008, 2009 Martin Sandsmark"
+msgid ""
+"(C) 2006 Max Howell\n"
+"(C) 2008-2014 Martin Sandsmark\n"
+"(C) 2017-2022 Harald Sitter"
+msgstr ""
+"(C) ੨੦੦੬ Max Howell\n"
+"(C) ੨੦੦੮, ੨੦੦੯ Martin Sandsmark"
+
+#: src/main.cpp:63
+#, kde-format
+msgid "Martin Sandsmark"
+msgstr "ਮਾਰਟੀਨ ਸੈਂਡਸਮਾਰਕ"
+
+#: src/main.cpp:63
+#, kde-format
+msgid "Maintainer"
+msgstr "ਪਰਬੰਧਕ"
+
+#: src/main.cpp:64
+#, kde-format
+msgid "Harald Sitter"
+msgstr ""
+
+#: src/main.cpp:64
+#, kde-format
+msgid "QtQuick Port"
+msgstr ""
+
+#: src/main.cpp:65
+#, kde-format
+msgid "Max Howell"
+msgstr "ਮੈਕਸ ਹੋਵਿਲ"
+
+#: src/main.cpp:65
+#, kde-format
+msgid "Original author"
+msgstr "ਅਸਲੀ ਲੇਖਕ"
+
+#: src/main.cpp:66
+#, kde-format
+msgid "Lukas Appelhans"
+msgstr ""
+
+#: src/main.cpp:66
+#, kde-format
+msgid "Help and support"
+msgstr "ਮਦਦ ਅਤੇ ਸਹਿਯੋਗ"
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Steffen Gerlach"
+msgstr ""
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Inspiration"
+msgstr ""
+
+#: src/main.cpp:68
+#, kde-format
+msgid "Mike Diehl"
+msgstr "ਮਾਈਕ ਡਿਈਹਲ"
+
+#: src/main.cpp:68
+#, kde-format
+msgid "Original documentation"
+msgstr "ਅਸਲੀ ਡੌਕੂਮੈਂਟੇਸ਼ਨ"
+
+#: src/main.cpp:69
+#, kde-format
+msgid "Sune Vuorela"
+msgstr ""
+
+#: src/main.cpp:69 src/main.cpp:70
+#, kde-format
+msgid "Icon"
+msgstr ""
+
+#: src/main.cpp:70
+#, kde-format
+msgid "Nuno Pinheiro"
+msgstr ""
+
+#: src/main.cpp:77
+#, kde-format
+msgid "Path or URL to scan"
+msgstr ""
+
+#: src/main.cpp:77
+#, kde-format
+msgid "[url]"
+msgstr ""
+
+#: src/mainContext.cpp:126
+#, kde-format
+msgid "Select Folder to Scan"
+msgstr "ਸਕੈਨ ਕਰਨ ਲਈ ਫੋਲਡਰ ਚੁਣੋ"
+
+#: src/mainContext.cpp:190
+#, kde-format
+msgid "The entered URL cannot be parsed; it is invalid."
+msgstr "ਦਿੱਤਾ URL ਪਾਰਸ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ; ਇਹ ਅਢੁੱਕਵਾਂ ਹੈ।"
+
+#: src/mainContext.cpp:192
+#, kde-format
+msgid "Filelight only accepts absolute paths, eg. /%1"
+msgstr "ਫਾਇਲਲਾਇਟ  ਕੇਵਲ ਅਸਲ ਪਾਥ ਹੀ ਵਰਤਦੀ ਹੈ, ਜਿਵੇਂ /%1"
+
+#: src/mainContext.cpp:194
+#, kde-format
+msgid "Folder not found: %1"
+msgstr "ਫੋਲਡਰ ਨਹੀਂ ਲੱਭਿਆ: %1"
+
+#: src/mainContext.cpp:196
+#, kde-format
+msgid ""
+"Unable to enter: %1\n"
+"You do not have access rights to this location."
+msgstr ""
+"%1: ਦਾਖਲ ਹੋਣ ਵਿੱਚ ਫੇਲ੍ਹ ਹੈ।\n"
+"ਇਸ ਟਿਕਾਣੇ ਨੂੰ ਖੋਲ੍ਹਣ ਲਈ ਤੁਹਾਡੇ ਕੋਲ ਅਧਿਕਾਰ ਨਹੀਂ ਹਨ।"
+
+#: src/qml/GlobalMenu.qml:10
+#, fuzzy, kde-format
+#| msgid "&Scan"
+msgctxt "@item:inmenu"
+msgid "Scan"
+msgstr "ਸਕੈਨ(&S)"
+
+#: src/qml/GlobalMenu.qml:21
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Settings"
+msgstr ""
+
+#: src/qml/GlobalMenu.qml:27
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Help"
+msgstr ""
+
+#: src/qml/main.qml:28
+#, fuzzy, kde-format
+#| msgid "Scan Folder"
+msgctxt "@action"
+msgid "Scan Folder"
+msgstr "ਫੋਲਡਰ ਸਕੈਨ"
+
+#: src/qml/main.qml:35
+#, fuzzy, kde-format
+#| msgid "Scan &Home Folder"
+msgctxt "@action"
+msgid "Scan Home Folder"
+msgstr "ਘਰ ਫੋਲਡਰ ਸਕੈਨ ਕਰੋ(&H)"
+
+#: src/qml/main.qml:42
+#, fuzzy, kde-format
+#| msgid "Scan &Root Folder"
+msgctxt "@action"
+msgid "Scan Root Folder"
+msgstr "ਰੂਟ ਫੋਲਡਰ ਸਕੈਨ ਕਰੋ(&R)"
+
+#: src/qml/main.qml:49
+#, kde-format
+msgctxt "@action"
+msgid "Quit"
+msgstr ""
+
+#: src/qml/main.qml:57
+#, kde-format
+msgctxt "@action configure app"
+msgid "Configure…"
+msgstr ""
+
+#: src/qml/main.qml:66
+#, kde-format
+msgctxt "@action"
+msgid "Open Handbook"
+msgstr ""
+
+#: src/qml/main.qml:74
+#, kde-format
+msgctxt "@action opens about app page"
+msgid "About"
+msgstr ""
+
+#: src/qml/main.qml:95
+#, fuzzy, kde-format
+#| msgid "No files."
+msgctxt "@info:status"
+msgid "No files."
+msgstr "ਫਾਇਲਾਂ ਨਹੀਂ।"
+
+#: src/qml/main.qml:96
+#, fuzzy, kde-format
+#| msgid "1 file"
+#| msgid_plural "%1 files"
+msgctxt "@info:status"
+msgid "1 file"
+msgid_plural "%1 files"
+msgstr[0] "੧ ਫਾਇਲ"
+msgstr[1] "%1 ਫਾਇਲਾਂ"
+
+#: src/qml/main.qml:163
+#, fuzzy, kde-format
+#| msgid "Aborting Scan..."
+msgctxt "@info:status"
+msgid "Aborting Scan..."
+msgstr "...ਸਕੈਨ ਕਰਨਾ ਅਧੂਰਾ ਛੱਡੋ"
+
+#: src/qml/MapPage.qml:19
+#, kde-format
+msgctxt "@action"
+msgid "Up"
+msgstr ""
+
+#: src/qml/MapPage.qml:28
+#, fuzzy, kde-format
+#| msgid "Rescan"
+msgctxt "@action"
+msgid "Rescan"
+msgstr "ਮੁੜ-ਸਕੈਨ"
+
+#: src/qml/MapPage.qml:37
+#, fuzzy, kde-format
+#| msgid "Stop"
+msgctxt "@action"
+msgid "Stop"
+msgstr "ਰੋਕੋ"
+
+#: src/qml/MapPage.qml:45
+#, kde-format
+msgctxt "@action"
+msgid "Save as SVG"
+msgstr ""
+
+#: src/qml/MapPage.qml:46
+#, kde-format
+msgid "Save the current view as an SVG file"
+msgstr ""
+
+#: src/qml/MapPage.qml:55
+#, kde-format
+msgctxt "@action"
+msgid "Zoom In"
+msgstr ""
+
+#: src/qml/MapPage.qml:65
+#, kde-format
+msgctxt "@action"
+msgid "Zoom Out"
+msgstr ""
+
+#: src/qml/MapPage.qml:127
+#, fuzzy, kde-format
+#| msgctxt "Tooltip of folder, %1 is number of files"
+#| msgid "%1 File (%2%)"
+#| msgid_plural "%1 Files (%2%)"
+msgctxt "Scanned number of files and size so far"
+msgid "%1 File, %2"
+msgid_plural "%1 Files, %2"
+msgstr[0] "%1 ਫਾਇਲ (%2%)"
+msgstr[1] "%1 ਫਾਇਲਾਂ (%2%)"
+
+#: src/qml/MapPage.qml:136
+#, kde-format
+msgid "No data available"
+msgstr ""
+
+#: src/qml/OverviewPage.qml:15
+#, kde-format
+msgctxt "@title"
+msgid "Overview"
+msgstr ""
+
+#: src/qml/OverviewPage.qml:35
+#, fuzzy, kde-format
+#| msgid "Filelight"
+msgctxt "@title"
+msgid "Welcome to Filelight"
+msgstr "ਫਾਇਲਲਾਇਟ"
+
+#: src/radialMap/item.cpp:214
+#, kde-format
+msgid "Open &File Manager Here"
+msgstr "ਫਾਇਲ ਮੈਨੇਜਰ ਇੱਥੇ ਖੋਲ੍ਹੋ(&F)"
+
+#: src/radialMap/item.cpp:217
+#, kde-format
+msgid "Open &Terminal Here"
+msgstr "ਟਰਮੀਨਲ ਇੱਥੇ ਖੋਲ੍ਹੋ(&T)"
+
+#: src/radialMap/item.cpp:222
+#, kde-format
+msgid "&Center Map Here"
+msgstr "ਨਕਸ਼ਾ ਇੱਥੇ ਕੇਂਦਰਿਤ ਕਰੋ(&C)"
+
+#: src/radialMap/item.cpp:226
+#, kde-format
+msgid "Add to Do &Not Scan List"
+msgstr ""
+
+#: src/radialMap/item.cpp:227
+#, fuzzy, kde-format
+#| msgid "Rescan"
+msgid "&Rescan"
+msgstr "ਮੁੜ-ਸਕੈਨ"
+
+#: src/radialMap/item.cpp:229
+#, kde-format
+msgctxt "Scan/open the path of the selected element"
+msgid "&Open"
+msgstr "ਖੋਲ੍ਹੋ(&O)"
+
+#: src/radialMap/item.cpp:233
+#, kde-format
+msgid "&Copy to clipboard"
+msgstr "ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕਰੋ(&C)"
+
+#: src/radialMap/item.cpp:237 src/radialMap/item.cpp:283
+#, kde-format
+msgid "&Delete"
+msgstr "ਹਟਾਓ(&D)"
+
+#: src/radialMap/item.cpp:281
+#, kde-format
+msgid ""
+"<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
+"b> deleted.</qt>"
+msgstr ""
+
+#: src/radialMap/item.cpp:282
+#, kde-format
+msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
+msgstr ""
+
+#: src/radialMap/item.cpp:308
+#, kde-format
+msgid "Error while deleting"
+msgstr "ਹਟਾਉਣ ਦੌਰਾਨ ਗਲਤੀ"
+
+#: src/radialMap/item.cpp:410
+#, kde-format
+msgctxt "We messed up, the user needs to initiate a rescan."
+msgid ""
+"Internal representation is invalid,\n"
+"please rescan."
+msgstr ""
+"ਅੰਦਰੂਨੀ ਪਰਦਰਸ਼ਨ ਗਲਤ ਹੈ,\n"
+"ਮੁੜ-ਸਕੈਨ ਕਰੋ ਜੀ।"
+
+#: src/radialMap/item.cpp:769
+#, kde-format
+msgctxt "Tooltip of file/folder, %1 is path, %2 is size"
+msgid ""
+"%1\n"
+"%2"
+msgstr ""
+"%1\n"
+"%2"
+
+#: src/radialMap/item.cpp:777
+#, kde-format
+msgctxt "Tooltip of folder, %1 is number of files"
+msgid "%1 File (%2%)"
+msgid_plural "%1 Files (%2%)"
+msgstr[0] "%1 ਫਾਇਲ (%2%)"
+msgstr[1] "%1 ਫਾਇਲਾਂ (%2%)"
+
+#: src/radialMap/item.cpp:779
+#, kde-format
+msgctxt "Tooltip of folder, %1 is number of files"
+msgid "%1 File"
+msgid_plural "%1 Files"
+msgstr[0] "%1 ਫਾਇਲ"
+msgstr[1] "%1 ਫਾਇਲਾਂ"
+
+#: src/radialMap/item.cpp:785
+#, kde-format
+msgid ""
+"\n"
+"Click to go up to parent directory"
+msgstr ""
+
+#: src/radialMap/item.cpp:870
+#, kde-format
+msgctxt "@title:window"
+msgid "Save as SVG"
+msgstr ""
+
+#: src/radialMap/item.cpp:872
+#, kde-format
+msgctxt "filedialog type filter"
+msgid "SVG Files (*.svg);;All Files(*)"
+msgstr ""
+
+#: src/radialMap/map.cpp:205
+#, kde-format
+msgid "1 file, with an average size of %2"
+msgid_plural "%1 files, with an average size of %2"
+msgstr[0] "੧ ਫਾਇਲ, %2 ਦੇ ਔਸਤ ਸਾਈਜ਼ ਨਾਲ"
+msgstr[1] "%1 ਫਾਇਲਾਂ, %2 ਦੇ ਔਸਤ ਸਾਈਜ਼ ਨਾਲ"
+
+#: src/settingsDialog.cpp:31
+#, kde-format
+msgid "Rainbow"
+msgstr "ਇੰਦਰਧਨੁੱਖ"
+
+#: src/settingsDialog.cpp:35
+#, kde-format
+msgid "System colors"
+msgstr "ਸਿਸਟਮ ਰੰਗ"
+
+#: src/settingsDialog.cpp:39
+#, kde-format
+msgid "High contrast"
+msgstr "ਵੱਧ ਕਨਟਰਾਸਟ"
+
+#: src/settingsDialog.cpp:133
+#, kde-format
+msgid "Select path to ignore"
+msgstr ""
+
+#: src/settingsDialog.cpp:150
+#, kde-format
+msgid "That folder is already set to be excluded from scans."
+msgstr "ਉਹ ਫੋਲਡਰ ਨੂੰ ਪਹਿਲਾਂ ਹੀ ਸਕੈਨ ਤੋਂ ਅੱਡ ਕੀਤਾ ਗਿਆ ਹੈ।"
+
+#: src/settingsDialog.cpp:150
+#, kde-format
+msgid "Folder already ignored"
+msgstr ""
+
+#, fuzzy
+#~| msgid "Scan completed, generating map..."
+#~ msgctxt "@info:status"
+#~ msgid "Scan completed, generating map..."
+#~ msgstr "ਸਕੈਨ ਪੂਰਾ ਹੋਇਆ, ਨਕਸ਼ਾ ਤਿਆਰ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ..."
+
+#~ msgid "Go"
+#~ msgstr "ਜਾਓ"
+
+#~ msgid "Location Bar"
+#~ msgstr "ਟਿਕਾਣਾ ਪੱਟੀ"
+
+#~ msgid "&Recent Scans"
+#~ msgstr "ਤਾਜ਼ਾ ਸਕੈਨ(&R)"
+
+#~ msgid "Scanning: %1"
+#~ msgstr "ਸਕੈਨ ਜਾਰੀ: %1"
+
+#~ msgid "Scan failed: %1"
+#~ msgstr "ਸਕੈਨ ਫੇਲ੍ਹ: %1"
+
+#~ msgctxt "Tooltip of used space on the partition, %1 is path, %2 is size"
+#~ msgid ""
+#~ "%1\n"
+#~ "Used: %2"
+#~ msgstr ""
+#~ "%1\n"
+#~ "ਵਰਤੀ: %2"
+
+#~ msgctxt "Tooltip of free space on the partition, %1 is path, %2 is size"
+#~ msgid ""
+#~ "%1\n"
+#~ "Free: %2"
+#~ msgstr ""
+#~ "%1\n"
+#~ "ਖਾਲੀ: %2"
+
+#~ msgctxt "Percent used disk space on the partition"
+#~ msgid "<b>%1</b><br/>%2% Used"
+#~ msgstr "<b>%1</b><br/>%2% ਵਰਤੀ"
+
+#~ msgctxt "Percent used disk space on the partition"
+#~ msgid "<b>%1: %2</b><br/>%3% Used"
+#~ msgstr "<b>%1: %2</b><br/>%3% ਵਰਤੀ"
+
+#~ msgid "E&xclude removable media"
+#~ msgstr "ਹਟਾਉਣਯੋਗ ਮੀਡਿਆ ਨਾ ਵਰਤੋਂ(&x)"
+
+#~ msgid "%1 File"
+#~ msgid_plural "%1 Files"
+#~ msgstr[0] "%1 ਫਾਇਲ"
+#~ msgstr[1] "%1 ਫਾਇਲਾਂ"
+
+#~ msgid "File: %1"
+#~ msgid_plural "Files: %1"
+#~ msgstr[0] "ਫਾਇਲ: %1"
+#~ msgstr[1] "ਫਾਇਲਾਂ: %1"
+
+#~ msgctxt "Free space on the disks/partitions"
+#~ msgid "Free"
+#~ msgstr "ਖਾਲੀ"
+
+#~ msgctxt "Used space on the disks/partitions"
+#~ msgid "Used"
+#~ msgstr "ਵਰਤੀ"
+
+#, fuzzy
+#~| msgid ""
+#~| "Unable to load the Filelight Part.\n"
+#~| "Please make sure Filelight was correctly installed."
+#~ msgid ""
+#~ "Unable to locate the Filelight Part.\n"
+#~ "Please make sure Filelight was correctly installed."
+#~ msgstr ""
+#~ "ਫਾਇਲਲਾਇਟ ਪਾਰਟ ਲੋਡ ਕਰਨ ਲਈ ਅਸਮਰੱਥ ਹੈ।\n"
+#~ "ਯਕੀਨੀ ਬਣਾਉ ਕਿ ਫਾਇਲਲਾਇਟ ਠੀਕ ਤਰ੍ਹਾਂ ਇੰਸਟਾਲ ਕਰੋ।"
+
+#~ msgid ""
+#~ "Unable to load the Filelight Part.\n"
+#~ "Please make sure Filelight was correctly installed."
+#~ msgstr ""
+#~ "ਫਾਇਲਲਾਇਟ ਪਾਰਟ ਲੋਡ ਕਰਨ ਲਈ ਅਸਮਰੱਥ ਹੈ।\n"
+#~ "ਯਕੀਨੀ ਬਣਾਉ ਕਿ ਫਾਇਲਲਾਇਟ ਠੀਕ ਤਰ੍ਹਾਂ ਇੰਸਟਾਲ ਕਰੋ।"
+
+#, fuzzy
+#~| msgid ""
+#~| "Unable to load the Filelight Part.\n"
+#~| "Please make sure Filelight was correctly installed."
+#~ msgid ""
+#~ "Unable to create Filelight part widget.\n"
+#~ "Please ensure that Filelight is correctly installed."
+#~ msgstr ""
+#~ "ਫਾਇਲਲਾਇਟ ਪਾਰਟ ਲੋਡ ਕਰਨ ਲਈ ਅਸਮਰੱਥ ਹੈ।\n"
+#~ "ਯਕੀਨੀ ਬਣਾਉ ਕਿ ਫਾਇਲਲਾਇਟ ਠੀਕ ਤਰ੍ਹਾਂ ਇੰਸਟਾਲ ਕਰੋ।"
+
+#~ msgid "Displays file usage in an easy to understand way."
+#~ msgstr "ਫਾਇਲ ਵਰਤੋਂ ਨੂੰ ਵੇਖਣ ਸਮਝਣ ਲਈ ਸੌਖਾ ਹੈ।"
+
+#, fuzzy
+#~| msgid ""
+#~| "(c) 2002-2004 Max Howell\n"
+#~| "                (c) 2008-2009 Martin T. Sandsmark"
+#~ msgid ""
+#~ "(c) 2002-2004 Max Howell\n"
+#~ "(c) 2008-2014 Martin T. Sandsmark"
+#~ msgstr ""
+#~ "(c) ੨੦੦੨-੨੦੦੪ Max Howell\n"
+#~ "      (c) ੨੦੦੮-੨੦੦੯ Martin T. Sandsmark"
+
+#~ msgid "Configure Filelight..."
+#~ msgstr "ਫਾਇਲਲਾਈਟ ਸੰਰਚਨਾ..."
+
+#~ msgctxt "Path in the file system to scan"
+#~ msgid "+[path]"
+#~ msgstr "+[path]"
+
+#~ msgid "Scan 'path'"
+#~ msgstr "'path' ਸਕੈਨ ਕਰੋ"
+
+#~ msgid "Unable to create part widget."
+#~ msgstr "ਪਾਰਟ ਵਿਦਜੈੱਟ ਬਣਾਉਣ ਲਈ ਅਸਮਰੱਥ ਹੈ।"
+
+#~ msgid "Please report bugs."
+#~ msgstr "ਬੱਗ ਰਿਪੋਰਟ ਦਿਓ ਜੀ।"
+
+#~ msgid "&Reset"
+#~ msgstr "ਮੁੜ-ਸੈੱਟ(&R)"
+
+#~ msgid "&Close"
+#~ msgstr "ਬੰਦ ਕਰੋ(&C)"
+
+#~ msgid "Scan Directory"
+#~ msgstr "ਡਾਇਰੈਕਟਰੀ ਸਕੈਨ"

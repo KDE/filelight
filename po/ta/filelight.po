@@ -1,0 +1,641 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the filelight package.
+#
+# Kishore G <kishore96@gmail.com>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: filelight\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:49+0000\n"
+"PO-Revision-Date: 2022-07-21 19:52+0530\n"
+"Last-Translator: Kishore G <kishore96@gmail.com>\n"
+"Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 22.04.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "கோ. கிஷோர்"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "Kde-l10n-ta@kde.org"
+
+#. i18n: ectx: Menu (file)
+#: misc/filelightui.rc:4
+#, kde-format
+msgid "&Scan"
+msgstr "&ஆராய்"
+
+#. i18n: ectx: Menu (view)
+#: misc/filelightui.rc:18
+#, kde-format
+msgid "&View"
+msgstr "&பார்வை"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: misc/filelightui.rc:24
+#, kde-format
+msgid "Main Toolbar"
+msgstr "பிரதான கருவிப்பட்டை"
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: misc/filelightui.rc:33
+#, kde-format
+msgid "Location Toolbar"
+msgstr "இடக் கருவிப்பட்டை"
+
+#. i18n: ectx: ToolBar (viewToolBar)
+#: misc/filelightui.rc:38
+#, kde-format
+msgid "View Toolbar"
+msgstr "காட்சி கருவிப்பட்டை"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, Dialog)
+#: src/dialog.ui:14
+#, kde-format
+msgid "Settings - Filelight"
+msgstr "அமைப்புகள் — ஃபைல்-லைட்"
+
+#. i18n: ectx: attribute (title), widget (QWidget, Widget2)
+#: src/dialog.ui:33
+#, kde-format
+msgid "Scannin&g"
+msgstr "&ஆராய்வது"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: src/dialog.ui:45
+#, kde-format
+msgid "Do &not scan these folders:"
+msgstr "&இவ்வடைவுகளை ஆராயாதே:"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_removeButton)
+#: src/dialog.ui:85
+#, kde-format
+msgid "R&emove"
+msgstr "&நீக்கு"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_addButton)
+#: src/dialog.ui:95
+#, kde-format
+msgid "&Add..."
+msgstr "&சேர்..."
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScanRemoteMounts)
+#: src/dialog.ui:171
+#, kde-format
+msgid ""
+"Prevents scanning of filesystems that are not on this computer, e.g. NFS or "
+"Samba mounts."
+msgstr ""
+"இக்கணினியில் இல்லாத கோப்பு முறைமைகள் (எ.கா. NFS அல்லது சம்பா பகிர்வுகள்) ஆராயப்படுவதைத் "
+"தடுக்கும்."
+
+#. i18n: ectx: property (text), widget (QCheckBox, dontScanRemoteMounts)
+#: src/dialog.ui:174
+#, kde-format
+msgid "Exclude remote files&ystems"
+msgstr "தொலை கோப்புமுறைமைகளை ஆராயாதே"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, scanAcrossMounts)
+#: src/dialog.ui:181
+#, kde-format
+msgid ""
+"Allows scans to enter directories that are part of other filesystems. For "
+"example, when unchecked, this will usually prevent the contents of <b>/mnt</"
+"b> from being scanned if you scan <b>/</b>."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, scanAcrossMounts)
+#: src/dialog.ui:184
+#, kde-format
+msgid "Scan across filesystem &boundaries"
+msgstr "&கோப்புமுறைமைகளின் எல்லைகளைத் தாண்டி ஆராய்"
+
+#. i18n: ectx: attribute (title), widget (QWidget, Widget3)
+#: src/dialog.ui:194
+#, kde-format
+msgid "&Appearance"
+msgstr "&தோற்றம்"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: src/dialog.ui:206
+#, kde-format
+msgid "Color scheme"
+msgstr "நிறத்திட்டம்"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: src/dialog.ui:232
+#, kde-format
+msgid "Co&ntrast"
+msgstr "&நிறமாறுபாடு"
+
+#. i18n: ectx: property (whatsThis), widget (QSlider, contrastSlider)
+#: src/dialog.ui:254
+#, kde-format
+msgid "Here you can vary the contrast of the filemap in realtime."
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, useAntialiasing)
+#: src/dialog.ui:275
+#, kde-format
+msgid ""
+"Anti-aliasing the filemap makes it clearer and prettier, unfortunately it "
+"also makes rendering very slow."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, useAntialiasing)
+#: src/dialog.ui:278
+#, kde-format
+msgid "&Use anti-aliasing"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, showSmallFiles)
+#: src/dialog.ui:285
+#, kde-format
+msgid ""
+"Some files are too small to be rendered on the filemap. Selecting this "
+"option makes these files visible by merging them all into a single \"multi-"
+"segment\"."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, showSmallFiles)
+#: src/dialog.ui:288
+#, kde-format
+msgid "Show small files"
+msgstr "சிறிய கோப்புகளைக் காட்டு"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, varyLabelFontSizes)
+#: src/dialog.ui:298
+#, kde-format
+msgid ""
+"The font size of exploded labels can be varied relative to the depth of the "
+"directories they represent. This helps you spot the important labels more "
+"easily. Set a sensible minimum font size."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, varyLabelFontSizes)
+#: src/dialog.ui:301
+#, kde-format
+msgid "Var&y label font sizes"
+msgstr "&பெயர்களின் எழுத்துரு அளவை மாற்று"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, minFontPitchLabel)
+#: src/dialog.ui:338
+#, kde-format
+msgid "The smallest font size Filelight can use to render labels."
+msgstr "பெயர்களைக் காட்ட ஃபைல்-லைட் பயன்படுத்தக்கூடய எழுத்துருவின் குறைந்தபட்ச அளவு."
+
+#. i18n: ectx: property (text), widget (QLabel, minFontPitchLabel)
+#: src/dialog.ui:341
+#, kde-format
+msgid "Minimum font si&ze:"
+msgstr "&குறைந்தபட்ச எழுத்துரு அளவு:"
+
+#: src/historyAction.cpp:64
+#, kde-format
+msgctxt "Go to the last path viewed"
+msgid "Back"
+msgstr "முந்தையது"
+
+#: src/historyAction.cpp:68
+#, kde-format
+msgctxt "Go to forward in the history of paths viewed"
+msgid "Forward"
+msgstr "அடுத்த‍து"
+
+#: src/main.cpp:56
+#, kde-format
+msgid "Graphical disk-usage information"
+msgstr "வரைமுறையில் வட்டுப் பயன்பாட்டு விவரங்கள்"
+
+#: src/main.cpp:58
+#, kde-format
+msgid ""
+"(C) 2006 Max Howell\n"
+"(C) 2008-2014 Martin Sandsmark\n"
+"(C) 2017-2022 Harald Sitter"
+msgstr ""
+"(C) 2006 மாக்ஸ் ஹொவெள்\n"
+"(C) 2008-2014 மார்ட்டின் சாண்டுஸ்மார்கு\n"
+"(C) 2017-2022 ஹரால்டு சிட்டர்"
+
+#: src/main.cpp:63
+#, kde-format
+msgid "Martin Sandsmark"
+msgstr "மார்ட்டின் சான்டுஸ்மார்க்"
+
+#: src/main.cpp:63
+#, kde-format
+msgid "Maintainer"
+msgstr "பராமரிப்பாளர்"
+
+#: src/main.cpp:64
+#, kde-format
+msgid "Harald Sitter"
+msgstr "ஹரால்டு சிட்டர்"
+
+#: src/main.cpp:64
+#, kde-format
+msgid "QtQuick Port"
+msgstr ""
+
+#: src/main.cpp:65
+#, kde-format
+msgid "Max Howell"
+msgstr "மாக்சு ஹொவல்"
+
+#: src/main.cpp:65
+#, kde-format
+msgid "Original author"
+msgstr "முதிலில் இயற்றியவர்"
+
+#: src/main.cpp:66
+#, kde-format
+msgid "Lukas Appelhans"
+msgstr ""
+
+#: src/main.cpp:66
+#, kde-format
+msgid "Help and support"
+msgstr "உதவியும் ஆதரவம்"
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Steffen Gerlach"
+msgstr ""
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Inspiration"
+msgstr ""
+
+#: src/main.cpp:68
+#, kde-format
+msgid "Mike Diehl"
+msgstr ""
+
+#: src/main.cpp:68
+#, kde-format
+msgid "Original documentation"
+msgstr "முதல் கையேடு"
+
+#: src/main.cpp:69
+#, kde-format
+msgid "Sune Vuorela"
+msgstr ""
+
+#: src/main.cpp:69 src/main.cpp:70
+#, kde-format
+msgid "Icon"
+msgstr "சின்னம்"
+
+#: src/main.cpp:70
+#, kde-format
+msgid "Nuno Pinheiro"
+msgstr ""
+
+#: src/main.cpp:77
+#, kde-format
+msgid "Path or URL to scan"
+msgstr "ஆராய வேண்டிய பாதை அல்லது முகவரி"
+
+#: src/main.cpp:77
+#, kde-format
+msgid "[url]"
+msgstr "[url]"
+
+#: src/mainContext.cpp:126
+#, kde-format
+msgid "Select Folder to Scan"
+msgstr "ஆராய வேண்டிய அடைவைத் தேர்ந்தெடுத்தல்"
+
+#: src/mainContext.cpp:190
+#, kde-format
+msgid "The entered URL cannot be parsed; it is invalid."
+msgstr "உள்ளிடப்பட்ட முகவரியை கையாள முடியவில்லை; அது முறையற்றதாகும்."
+
+#: src/mainContext.cpp:192
+#, kde-format
+msgid "Filelight only accepts absolute paths, eg. /%1"
+msgstr "முழுமையான பாதைகளை மட்டுமே ஃபைல்-லைட் ஏற்கும், எ.கா. /%1"
+
+#: src/mainContext.cpp:194
+#, kde-format
+msgid "Folder not found: %1"
+msgstr "அடைவை கண்டுபிடிக்க முடியவில்லை: %1"
+
+#: src/mainContext.cpp:196
+#, kde-format
+msgid ""
+"Unable to enter: %1\n"
+"You do not have access rights to this location."
+msgstr ""
+"நுழைய முடியவில்லை: %1\n"
+"இவ்விடத்தில் நுழைவதற்கான அனுமதி உங்களுக்கு இல்லை."
+
+#: src/qml/GlobalMenu.qml:10
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Scan"
+msgstr "ஆராய்"
+
+#: src/qml/GlobalMenu.qml:21
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Settings"
+msgstr "அமைப்புகள்"
+
+#: src/qml/GlobalMenu.qml:27
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Help"
+msgstr "உதவி"
+
+#: src/qml/main.qml:28
+#, kde-format
+msgctxt "@action"
+msgid "Scan Folder"
+msgstr "அடைவை ஆராய்"
+
+#: src/qml/main.qml:35
+#, kde-format
+msgctxt "@action"
+msgid "Scan Home Folder"
+msgstr "முகப்பு அடைவை ஆராய்"
+
+#: src/qml/main.qml:42
+#, kde-format
+msgctxt "@action"
+msgid "Scan Root Folder"
+msgstr "ரூட் அடைவை ஆராய்"
+
+#: src/qml/main.qml:49
+#, kde-format
+msgctxt "@action"
+msgid "Quit"
+msgstr "வெளியேறு"
+
+#: src/qml/main.qml:57
+#, kde-format
+msgctxt "@action configure app"
+msgid "Configure…"
+msgstr "அமை..."
+
+#: src/qml/main.qml:66
+#, kde-format
+msgctxt "@action"
+msgid "Open Handbook"
+msgstr "கையேட்டைத் திற"
+
+#: src/qml/main.qml:74
+#, kde-format
+msgctxt "@action opens about app page"
+msgid "About"
+msgstr "இதுபற்றி"
+
+#: src/qml/main.qml:95
+#, kde-format
+msgctxt "@info:status"
+msgid "No files."
+msgstr "கோப்புகள் இல்லை."
+
+#: src/qml/main.qml:96
+#, kde-format
+msgctxt "@info:status"
+msgid "1 file"
+msgid_plural "%1 files"
+msgstr[0] "1 கோப்பு"
+msgstr[1] "%1 கோப்புகள்"
+
+#: src/qml/main.qml:163
+#, kde-format
+msgctxt "@info:status"
+msgid "Aborting Scan..."
+msgstr "ஆராய்தல் கைவிடப்படுகிறது…"
+
+#: src/qml/MapPage.qml:19
+#, kde-format
+msgctxt "@action"
+msgid "Up"
+msgstr "மேலே"
+
+#: src/qml/MapPage.qml:28
+#, kde-format
+msgctxt "@action"
+msgid "Rescan"
+msgstr "மீள ஆராய்"
+
+#: src/qml/MapPage.qml:37
+#, kde-format
+msgctxt "@action"
+msgid "Stop"
+msgstr "நிறுத்து"
+
+#: src/qml/MapPage.qml:45
+#, kde-format
+msgctxt "@action"
+msgid "Save as SVG"
+msgstr "SVGயாக சேமி"
+
+#: src/qml/MapPage.qml:46
+#, kde-format
+msgid "Save the current view as an SVG file"
+msgstr "தற்போதைய காட்சியை SVG கோப்பாக சேமிக்கும்"
+
+#: src/qml/MapPage.qml:55
+#, kde-format
+msgctxt "@action"
+msgid "Zoom In"
+msgstr "பெரிதாக்கு"
+
+#: src/qml/MapPage.qml:65
+#, kde-format
+msgctxt "@action"
+msgid "Zoom Out"
+msgstr "சிறிதாக்கு"
+
+#: src/qml/MapPage.qml:127
+#, kde-format
+msgctxt "Scanned number of files and size so far"
+msgid "%1 File, %2"
+msgid_plural "%1 Files, %2"
+msgstr[0] "%1 கோப்பு, %2"
+msgstr[1] "%1 கோப்புகள், %2"
+
+#: src/qml/MapPage.qml:136
+#, kde-format
+msgid "No data available"
+msgstr "விவரங்கள் கிடைக்கவில்லை"
+
+#: src/qml/OverviewPage.qml:15
+#, kde-format
+msgctxt "@title"
+msgid "Overview"
+msgstr "மேலோட்டம்"
+
+#: src/qml/OverviewPage.qml:35
+#, kde-format
+msgctxt "@title"
+msgid "Welcome to Filelight"
+msgstr "ஃபைல்-லைட்டுக்கு நல்வரவு"
+
+#: src/radialMap/item.cpp:214
+#, kde-format
+msgid "Open &File Manager Here"
+msgstr "&கோப்பு உலாவியை இங்கு திற"
+
+#: src/radialMap/item.cpp:217
+#, kde-format
+msgid "Open &Terminal Here"
+msgstr "&முனையத்தை இங்கு திற"
+
+#: src/radialMap/item.cpp:222
+#, kde-format
+msgid "&Center Map Here"
+msgstr "இங்கு நடுப்படுத்து"
+
+#: src/radialMap/item.cpp:226
+#, kde-format
+msgid "Add to Do &Not Scan List"
+msgstr "ஆராயக்கூடாத‍தன் பட்டியலில் சேர்"
+
+#: src/radialMap/item.cpp:227
+#, kde-format
+msgid "&Rescan"
+msgstr "&மீள ஆராய்"
+
+#: src/radialMap/item.cpp:229
+#, kde-format
+msgctxt "Scan/open the path of the selected element"
+msgid "&Open"
+msgstr "&திற"
+
+#: src/radialMap/item.cpp:233
+#, kde-format
+msgid "&Copy to clipboard"
+msgstr "&பிடிப்புப்பலகைக்கு நகலெடு"
+
+#: src/radialMap/item.cpp:237 src/radialMap/item.cpp:283
+#, kde-format
+msgid "&Delete"
+msgstr "&நீக்கு"
+
+#: src/radialMap/item.cpp:281
+#, kde-format
+msgid ""
+"<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
+"b> deleted.</qt>"
+msgstr ""
+"<qt><i>'%1'</i> எனும் அடைவும், <b>அதிலுள்ளவையும்</b> <b>நிரந்தரமாக</b> அழிக்கப்படும்."
+"</qt>"
+
+#: src/radialMap/item.cpp:282
+#, kde-format
+msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
+msgstr "<qt><i>'%1'</i> <b>நிரந்தரமாக</b> அழிக்கப்படும்.</qt>"
+
+#: src/radialMap/item.cpp:308
+#, kde-format
+msgid "Error while deleting"
+msgstr "நீக்கும்போது சிக்கல்"
+
+#: src/radialMap/item.cpp:410
+#, kde-format
+msgctxt "We messed up, the user needs to initiate a rescan."
+msgid ""
+"Internal representation is invalid,\n"
+"please rescan."
+msgstr ""
+"உள்ளக உருவகிப்பு முறையற்றது,\n"
+"மீள ஆராயுங்கள்"
+
+#: src/radialMap/item.cpp:769
+#, kde-format
+msgctxt "Tooltip of file/folder, %1 is path, %2 is size"
+msgid ""
+"%1\n"
+"%2"
+msgstr ""
+"%1\n"
+"%2"
+
+#: src/radialMap/item.cpp:777
+#, kde-format
+msgctxt "Tooltip of folder, %1 is number of files"
+msgid "%1 File (%2%)"
+msgid_plural "%1 Files (%2%)"
+msgstr[0] "%1 கோப்பு (%2%)"
+msgstr[1] "%1 கோப்புகள் (%2%)"
+
+#: src/radialMap/item.cpp:779
+#, kde-format
+msgctxt "Tooltip of folder, %1 is number of files"
+msgid "%1 File"
+msgid_plural "%1 Files"
+msgstr[0] "%1 கோப்பு"
+msgstr[1] "%1 கோப்புகள்"
+
+#: src/radialMap/item.cpp:785
+#, kde-format
+msgid ""
+"\n"
+"Click to go up to parent directory"
+msgstr ""
+"\n"
+"தாய் அடைவுக்குச் செல்ல கிளிக் செய்யவும்"
+
+#: src/radialMap/item.cpp:870
+#, kde-format
+msgctxt "@title:window"
+msgid "Save as SVG"
+msgstr "SVGயாக சேமி"
+
+#: src/radialMap/item.cpp:872
+#, kde-format
+msgctxt "filedialog type filter"
+msgid "SVG Files (*.svg);;All Files(*)"
+msgstr "SVG கோப்புகள் (*.svg);;அனைத்துக் கோப்புகள்(*)"
+
+#: src/radialMap/map.cpp:205
+#, kde-format
+msgid "1 file, with an average size of %2"
+msgid_plural "%1 files, with an average size of %2"
+msgstr[0] "1 கோப்பு, சராசரியாக %2 அளவில்"
+msgstr[1] "%1 கோப்புகள், சராசரியாக %2 அளவில்"
+
+#: src/settingsDialog.cpp:31
+#, kde-format
+msgid "Rainbow"
+msgstr "வானவில்"
+
+#: src/settingsDialog.cpp:35
+#, kde-format
+msgid "System colors"
+msgstr "கணினித் திட்டத்தின் நிறங்கள்"
+
+#: src/settingsDialog.cpp:39
+#, kde-format
+msgid "High contrast"
+msgstr "அதிக நிறமாறுபாடு"
+
+#: src/settingsDialog.cpp:133
+#, kde-format
+msgid "Select path to ignore"
+msgstr "பொருட்படுத்தக் கூடாத பாதையைத் தேர்ந்தெடுப்பது"
+
+#: src/settingsDialog.cpp:150
+#, kde-format
+msgid "That folder is already set to be excluded from scans."
+msgstr "பொருட்படுத்தக்கூடாதவற்றின் பட்டியலில் அவ்வடைவு ஏற்கனவே உள்ளது."
+
+#: src/settingsDialog.cpp:150
+#, kde-format
+msgid "Folder already ignored"
+msgstr "அடைவு ஏற்கனவே பொருட்படுத்தப்படாத‍து"

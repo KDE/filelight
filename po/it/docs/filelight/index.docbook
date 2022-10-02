@@ -1,0 +1,604 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY filelight "<application
+>Filelight</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Italian "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="filelight" lang="&language;">
+
+<bookinfo>
+   <title
+>Manuale di &filelight;</title>
+   <authorgroup>
+      <author
+><firstname
+>Max</firstname
+> <surname
+>Howell</surname
+> <affiliation
+><address
+><email
+>max.howell@methylblue.com</email
+></address
+></affiliation>
+      </author>
+      <author
+><firstname
+>Martin</firstname
+> <surname
+>Sandsmark</surname
+> <affiliation
+><address
+><email
+>martin.sandsmark@kde.org</email
+></address
+></affiliation>
+      </author>
+      <othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Traduzione della documentazione</contrib
+></othercredit
+> 
+   </authorgroup>
+   <copyright
+><year
+>2006</year
+><holder
+>Max Howell</holder
+></copyright>
+   <copyright
+><year
+>2009</year
+><holder
+>Martin Sandsmark</holder
+></copyright>
+   <!-- Translators: put here the copyright notice of the translation -->
+   <legalnotice
+>&FDLNotice;</legalnotice>
+   <date
+>04/08/2015</date>
+   <releaseinfo
+>&filelight; 1.21 (Applications 15.08)</releaseinfo>
+   <abstract
+><para
+>&filelight; crea una mappa interattiva di anelli segmentati concentrici che aiuta a visualizzare l'uso del disco sul computer.</para
+></abstract>
+   <!-- These may be used by search engines -->
+   <keywordset>
+      <keyword
+>KDE</keyword>
+      <keyword
+>Filelight</keyword>
+      <keyword
+>du</keyword>
+      <keyword
+>uso del disco</keyword>
+   </keywordset>
+</bookinfo>
+
+
+<chapter id="introduction">
+   <title
+>Introduzione</title>
+   <screenshot>
+      <screeninfo
+>Schermata di &filelight; 1.20</screeninfo>
+      <mediaobject>
+         <imageobject
+><imagedata fileref="radial_map.png" format="PNG"/></imageobject>
+         <textobject
+><phrase
+>Schermata</phrase
+></textobject>
+      </mediaobject>
+   </screenshot>
+   <para
+>&filelight; permette di capire facilmente e con esattezza dove viene usato lo spazio su disco, rappresentando graficamente il file system come una serie di anelli concentrici segmentati. È possibile utilizzarlo per localizzare punti di alto uso del disco, e quindi manipolare quelle aree usando &dolphin; o &konqueror;.</para>
+</chapter>
+
+
+<chapter id="configuring">
+<title
+>Configurare &filelight;</title>
+
+<para
+>La finestra delle impostazioni di &filelight; ha due schede per configurare le opzioni di &filelight;. Le due schede sono <guilabel
+>Scansione</guilabel
+> e <guilabel
+>Aspetto</guilabel
+>. Sotto c'è una descrizione delle schede delle impostazioni. La finestra delle impostazioni di &filelight; si trova facendo clic su <menuchoice
+><guimenu
+>Impostazioni</guimenu
+> <guimenuitem
+>Configura Filelight</guimenuitem
+></menuchoice
+>.</para>
+
+<sect1 id="scanning">
+<title
+>Scansione</title>
+
+<screenshot>
+<screeninfo
+>Schermata di Scansione</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_scan.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Schermata</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>La scheda Scansione ti permette di configurare come &filelight; scansiona le cartelle. La casella <guilabel
+>Non scansionare queste cartelle</guilabel
+> si usa per escludere certe cartelle dalla scansione. Questa opzione è molto utile per saltare le cartelle su cui tu potresti non avere il permesso di leggere, o cartelle che fanno parte di filesystem virtuali, come /proc. Per aggiungere una cartella all'elenco, fai clic sul pulsante <guibutton
+>Aggiungi...</guibutton
+>; ciò avvierà una finestra dove puoi scegliere la cartella da una vista ad albero. Per rimuovere una cartella, selezionala e fai clic sul pulsante <guibutton
+>Rimuovi</guibutton
+>.</para>
+<para
+>Usare <guilabel
+>Scansiona oltre i limiti dei filesystem</guilabel
+> permette alle scansioni di entrare in cartelle che fanno parte di altri filesystem. Per esempio, se non è attivato, i contenuti di <filename class="directory"
+>/mnt</filename
+> non verranno scansionati quando si parte dalla cartella radice <filename class="directory"
+>/</filename
+>. Una scansione di filesystem remoti, per esempio partizioni NFS o Samba, può generare molto traffico di rete. Per evitare di scansionarle, spunta <guilabel
+>Escludi filesystem remoti</guilabel
+>. L'opzione successiva, <guilabel
+>Escludi supporti rimovibili</guilabel
+>, impedisce a &filelight; di scansionare i supporti rimovibili (per esempio i &CD-ROM;).</para>
+</sect1>
+
+<sect1 id="appearance">
+<title
+>Aspetto</title>
+
+<screenshot>
+<screeninfo
+>Schermata di Aspetto</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_appear.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Schermata</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>La scheda <guilabel
+>Aspetto</guilabel
+> di permette di configurare l'aspetto di &filelight;.</para>
+<para
+>La sezione <guilabel
+>Schema di colori</guilabel
+> è usata per scegliere uno schema di colori per &filelight;. Gli schemi di colori sono <guilabel
+>Arcobaleno</guilabel
+>, <guilabel
+>Colori di sistema</guilabel
+> e <guilabel
+>Alto contrasto</guilabel
+>. C'è anche un cursore del <guilabel
+>Contrasto</guilabel
+> per regolare il contrasto dei segmenti degli anelli per una visualizzazione più facile.</para>
+<para
+>La casella <guilabel
+>Usa l'antialiasing</guilabel
+> si usa per abilitare l'uso dell'antialiasing nella visualizzazione di &filelight;. Selezionata, questa opzione dà ai segmenti degli anelli un aspetto molto più pulito.</para>
+<para
+>La casella <guilabel
+>Varia le dimensioni dei caratteri delle etichette</guilabel
+> è utile quando hai file o cartelle con nomi lunghi. Questa opzione cambierà le dimensioni dei caratteri per fare in modo che stiano meglio nella visualizzazione. Quando questa opzione è abilitata appare una casella numerica, <guilabel
+>Dimensione minima dei caratteri</guilabel
+>, per scegliere la dimensione più piccola a cui riscalare i caratteri. </para>
+<para
+>L'opzione <guilabel
+>Mostra i file piccoli</guilabel
+> è disattivata come impostazione predefinita perché i file piccoli tendono a intasare la visualizzazione di &filelight;. Abilita questa opzione se vuoi che i file piccoli siano inclusi nella visualizzazione di &filelight;. Questi file vengono tutti fusi in un solo <quote
+>multisegmento</quote
+>.</para>
+
+</sect1>
+</chapter>
+
+
+<chapter id="using">
+<title
+>Usare &filelight;</title>
+
+<sect1 id="starting">
+<title
+>Avviare &filelight;</title>
+<para
+>&filelight; può essere avviato dal lanciatore delle applicazioni, oppure da riga di comando</para>
+
+<sect2 id="starting-from-the-menu">
+<title
+>Dal lanciatore delle applicazioni</title>
+<para
+>Aprire il menu delle applicazioni e spostare il puntatore sull'elemento di menu <guimenu
+>Accessori</guimenu
+>, quindi scegliere <guimenuitem
+>&filelight;</guimenuitem
+>. </para>
+</sect2>
+
+<sect2 id="starting-from-the-command-line">
+<title
+>Dalla riga di comando</title>
+<para
+>Puoi avviare &filelight; digitandone il nome sulla riga di comando. Se passi il nome di una cartella, come nell'esempio sotto, scansionerà quella cartella. </para>
+<informalexample>
+<screen
+><prompt
+>%</prompt
+><userinput
+><command
+>filelight</command
+> <option
+><replaceable
+>/home</replaceable
+></option
+></userinput
+>
+</screen>
+</informalexample>
+</sect2>
+
+</sect1>
+
+<sect1 id="scanning-folders">
+<title
+>Scansionare le cartelle</title>
+<para
+>Scansionare una cartella mostra i suoi contenuti come una mappa di file. Per scansionare una cartella, usa il menu di scansione, o scrivi un &URL; direttamente nella barra dell'indirizzo. </para>
+</sect1>
+
+<sect1 id="exploring-filemaps">
+<title
+>Esplorare le mappe di file</title>
+<para
+>Una volta che la scansione è completata, ti sarà presentata una mappa di file che rappresenta la cartella che hai scansionato. La mappa di file è una serie di anelli segmentati che si espandono dal centro. I segmenti colorati vivacemente sono cartelle, quelli grigi sono file. I segmenti sono dimensionati in proporzione alla dimensione del file. I segmenti possono essere annidati, quindi, per esempio, <filename class="directory"
+>/home/mxcl</filename
+> sarà un livello al di fuori e all'interno dei limiti che rappresentano <filename class="directory"
+>/home</filename
+>. I segmenti sono etichettati, e passare il mouse sopra di loro ti darà maggiori dettagli su quel segmento e i suoi segmenti figli. </para>
+<screenshot>
+<screeninfo
+>Schermata di una mappa di file</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="radial_map_context_menu.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Schermata</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+<para
+>Puoi aprire le cartelle con il gestore dei file predefinito o &konsole; usando il menu contestuale per un segmento. Un clic col &MMB; apre i file secondo il loro tipo, per esempio le immagini con <application
+>Gwenview</application
+>. Puoi fare clic destro su un segmento per ottenere un menu contestuale per la cartella scansionata con azioni per copiarla negli appunti o eliminarla. Fare clic sinistro sui segmenti centrerà la mappa su quel segmento. </para>
+</sect1>
+
+</chapter>
+
+
+<chapter id="commands">
+<title
+>Guida ai menu e ai comandi</title>
+
+<variablelist>
+<title
+>Il menu Scansiona</title>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Scansiona</guimenu
+> <guimenuitem
+>Scansiona cartella</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Offre una finestra di selezione delle cartelle per poter scegliere una cartella da scansionare.</action
+></para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keysym
+>Home</keysym
+></keycombo
+> </shortcut
+> <guimenu
+>Scansiona</guimenu
+> <guimenuitem
+>Scansiona la cartella Home</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Avvia una scansione della cartella Home dell'utente.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Scansiona</guimenu
+> <guimenuitem
+>Scansiona la cartella radice</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Avvia una scansione della cartella radice.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycap
+>F5</keycap
+> </shortcut
+> <guimenu
+>Scansiona</guimenu
+> <guimenuitem
+>Riscansiona</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Avvia una nuova scansione della cartella di lavoro attuale; è utile quando si sono apportati cambiamenti al filesystem.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+>&Esc;</shortcut
+> <guimenu
+>Scansiona</guimenu
+> <guimenuitem
+>Interrompi</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Interrompe la scansione attuale.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Scansiona</guimenu
+> <guimenuitem
+>Esci</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Esce da &filelight;</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist>
+  <title
+>Il menu Visualizza</title>
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>+</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Visualizza</guimenu
+> <guimenuitem
+>Ingrandisci</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Ingrandisci la visualizzazione della mappa dei file.</action
+></para>
+    </listitem>
+    </varlistentry>
+
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>-</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Visualizza</guimenu
+> <guimenuitem
+>Rimpicciolisci</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Rimpicciolisci la visualizzazione della mappa dei file.</action
+></para>
+    </listitem>
+    </varlistentry>
+</variablelist>
+
+<variablelist>
+<title
+>Il menu Vai</title>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Alt;<keycap
+>↑</keycap
+></keycombo
+></shortcut
+><guimenu
+>Vai</guimenu
+><guimenuitem
+>Su</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Si sposta in alto nel filesystem, nella cartella madre.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Vai</guimenu
+> <guimenuitem
+>Indietro</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Si sposta un passo indietro nella cronologia della navigazione del filesystem.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Vai</guimenu
+> <guimenuitem
+>Avanti</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Si sposta un passo avanti nella cronologia della navigazione del filesystem.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Inoltre, &filelight; ha i normali elementi dei menu di &kde; <guimenu
+>Impostazioni</guimenu
+> e <guimenu
+>Aiuto</guimenu
+>; per maggiori informazioni leggi le sezioni sul <ulink url="help:/fundamentals/menus.html#menus-settings"
+>menu Impostazioni</ulink
+> e sul <ulink url="help:/fundamentals/menus.html#menus-help"
+>menu Aiuto</ulink
+> dei Fondamentali di &kde;. </para>
+</chapter>
+
+
+<chapter id="credits">
+   <title
+>Riconoscimenti e licenza</title>
+   <sect1 id="kapp">
+      <title
+>&filelight;</title>
+      <para
+>Copyright del programma 2006 di Max B. Howell <email
+>max.howell@methylblue.com</email
+></para>
+      <para
+>Copyright del programma 2008-2013 di Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+></para
+>&underGPL; </sect1>
+   <sect1 id="Documentation">
+      <title
+>Documentazione</title>
+      <para
+>Copyright della documentazione 2003 di Max B. Howell <email
+>max.howell@methylblue.com</email
+></para>
+      <para
+>Copyright della documentazione 2009 di Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+></para>
+      <para
+>Traduzione di Federico Zenith<email
+>federico.zenith@member.fsf.org</email
+></para
+> &underFDL; </sect1>
+</chapter>
+
+&documentation.index;
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

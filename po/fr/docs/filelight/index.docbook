@@ -1,0 +1,612 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY filelight "<application
+>Filelight</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % French "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="filelight" lang="&language;">
+
+<bookinfo>
+   <title
+>Manuel utilisateur de &filelight;</title>
+   <authorgroup>
+      <author
+><firstname
+>Max</firstname
+> <surname
+>Howell</surname
+> <affiliation
+><address
+><email
+>max.howell@methylblue.com</email
+></address
+></affiliation>
+      </author>
+      <author
+><firstname
+>Martin</firstname
+> <surname
+>Sandsmark</surname
+> <affiliation
+><address
+><email
+>martin.sandsmark@kde.org</email
+></address
+></affiliation>
+      </author>
+      &traducteurJoelleCornavin; <othercredit role="translator"
+><firstname
+>Kévin</firstname
+><surname
+>Drouault</surname
+><affiliation
+><address
+><email
+>kevindrou@gmail.com</email
+></address
+></affiliation
+><contrib
+>Traduction française&nbsp;</contrib
+></othercredit
+> 
+   </authorgroup>
+   <copyright
+><year
+>2006</year
+><holder
+>Max Howell</holder
+></copyright>
+   <copyright
+><year
+>2009</year
+><holder
+>Martin Sandsmark</holder
+></copyright>
+   <!-- Translators: put here the copyright notice of the translation -->
+   <legalnotice
+>&FDLNotice;</legalnotice>
+   <date
+>04-08-2015</date>
+   <releaseinfo
+>&filelight; 1.21 (Applications 15.08)</releaseinfo>
+   <abstract
+><para
+>&filelight; crée une cartographie interactive d'anneaux segmentés de façon concentrique qui aide à afficher l'utilisation du disque sur votre ordinateur.</para
+></abstract>
+   <!-- These may be used by search engines -->
+   <keywordset>
+      <keyword
+>KDE</keyword>
+      <keyword
+>Filelight</keyword>
+      <keyword
+>du</keyword>
+      <keyword
+>utilisation du disque</keyword>
+   </keywordset>
+</bookinfo>
+
+
+<chapter id="introduction">
+   <title
+>Introduction</title>
+   <screenshot>
+      <screeninfo
+>Capture d'écran de &filelight; 1.20</screeninfo>
+      <mediaobject>
+         <imageobject
+><imagedata fileref="radial_map.png" format="PNG"/></imageobject>
+         <textobject
+><phrase
+>Capture d'écran</phrase
+></textobject>
+      </mediaobject>
+   </screenshot>
+   <para
+>&filelight; permet de comprendre rapidement et exactement où votre espace disque est utilisé en ce moment, en représentant graphiquement votre système de fichiers sous la forme d'un ensemble d'anneaux segmentés de façon concentrique. On peut l'employer pour repérer les points névralgiques de l'utilisation du disque et ensuite de manipuler ces zones à l'aide de &dolphin; ou de &konqueror;.</para>
+</chapter>
+
+
+<chapter id="configuring">
+<title
+>Configuration de &filelight;</title>
+
+<para
+>La boîte de dialogue de configuration de &filelight; comporte deux onglets permettant de configurer les options de &filelight;. Les deux onglets sont <guilabel
+>Analyse en cours</guilabel
+> et <guilabel
+>Apparence</guilabel
+>. Au-dessous se trouve une description des onglets de configuration. On accède à la boîte de dialogue de configuration de &filelight; en cliquant sur <menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+>Configurer Filelight</guimenuitem
+></menuchoice
+>.</para>
+
+<sect1 id="scanning">
+<title
+>Analyse</title>
+
+<screenshot>
+<screeninfo
+>Capture d'écran d'une analyse</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_scan.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Capture d'écran</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>L'onglet <quote
+>Analyse en cours</quote
+> permet de configurer la manière dont &filelight; analyse des dossiers. L'option <guilabel
+>Ne pas analyser ces dossiers</guilabel
+> sert à exclure certains dossiers de votre analyse. Elle est très utile pour ignorer les dossiers sur lesquels vous ne disposez pas des droits de lecture ou les dossiers qui font partie d'un système de fichiers virtuel, tels que /proc. Pour ajouter un dossier à la liste, cliquez sur le bouton <guibutton
+>Ajouter...</guibutton
+>. Cette action ouvre une boîte de dialogue où vous pouvez choisir le dossier de votre choix depuis une vue arborescente. Pour supprimer un dossier, sélectionnez simplement le dossier en question et cliquez sur le bouton <guibutton
+>Supprimer</guibutton
+>.</para>
+<para
+>L'utilisation de l'option <guilabel
+>Analyser d'un bout à l'autre des limites du système de fichiers</guilabel
+> permet d'analyser des dossiers faisant partie d'autres systèmes de fichiers. Par exemple, ne pas cocher cette option empêchera habituellement l'analyse du contenu de <filename class="directory"
+>/mnt</filename
+> si vous procédez en partant du dossier racine <filename class="directory"
+>/</filename
+>. Une analyse de systèmes de fichiers distants, &pex; des montages NFS ou Samba, peut générer un trafic réseau important. Pour éviter de les analyser, cochez <guilabel
+>Exclure les systèmes de fichiers distants</guilabel
+>. L'option suivante <guilabel
+>Exclure les média amovibles</guilabel
+> empêche &filelight; d'analyser les média amovibles (&pex; les &CD-ROM;).</para>
+</sect1>
+
+<sect1 id="appearance">
+<title
+>Apparence</title>
+
+<screenshot>
+<screeninfo
+>Capture d'écran de l'apparence</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_appear.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Capture d'écran</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>L'onglet <guilabel
+>Apparence</guilabel
+> permet de configurer l'apparence de &filelight;.</para>
+<para
+>La section <guilabel
+>Schéma de couleurs</guilabel
+> sert à choisir un schéma de couleurs pour &filelight;. Les schémas de couleurs sont <guilabel
+>Arc-en-ciel</guilabel
+>, <guilabel
+>Couleurs système</guilabel
+> et <guilabel
+>Contraste élevé</guilabel
+>. Il existe également un curseur <guilabel
+>Contraste</guilabel
+> pour ajuster le contraste des segments en anneaux pour une meilleure visibilité.</para>
+<para
+>La case <guilabel
+>Utiliser l'anticrénelage</guilabel
+> sert à activer l'emploi de l'anticrénelage dans la vue de &filelight;. Lorsqu'elle est cochée, cette option donne un aspect beaucoup plus esthétique.</para>
+<para
+>La case à cocher <guilabel
+>Faire varier la taille de police des étiquettes</guilabel
+> est utile lorsqu'on a des fichiers ou des dossiers portant des noms longs. Cette option va changer la taille de la police lui permettre de mieux s'intégrer dans la vue. Quand cette option est cochée, un bouton fléché <guilabel
+>Taille minimale de police</guilabel
+> devient disponible pour choisir la plus petite taille de police à laquelle s'adapter. </para>
+<para
+>L'option <guilabel
+>Afficher les petits fichiers</guilabel
+> est désactivée par défaut car les petits fichiers ont tendance à encombrer la vue de &filelight;. Cochez cette option si vous souhaitez voir vos petits fichiers inclus dans la vue de &filelight;. Ces fichiers sont fusionnés en un seul <quote
+>multi-segment</quote
+>.</para>
+
+</sect1>
+</chapter>
+
+
+<chapter id="using">
+<title
+>Utilisation de &filelight;</title>
+
+<sect1 id="starting">
+<title
+>Démarrage de &filelight;</title>
+<para
+>&filelight; peut être lancé depuis le lanceur d'applications ou depuis la ligne de commande</para>
+
+<sect2 id="starting-from-the-menu">
+<title
+>Depuis le lanceur d'applications</title>
+<para
+>Ouvrez le menu des applications de &kde; et déplacez votre pointeur jusqu'à l'élément de menu <guimenu
+>Utilitaires</guimenu
+>. Choisissez <guimenuitem
+>&filelight;</guimenuitem
+>. </para>
+</sect2>
+
+<sect2 id="starting-from-the-command-line">
+<title
+>Depuis la ligne de commande</title>
+<para
+>Il est possible de démarrer &filelight; en saisissant son nom sur la ligne de commande. Si vous lui indiquez une nom de dossier, comme dans l'exemple ci-dessous, il analysera ce dossier. </para>
+<informalexample>
+<screen
+><prompt
+>%</prompt
+><userinput
+><command
+>filelight</command
+> <option
+><replaceable
+>/home</replaceable
+></option
+></userinput
+>
+</screen>
+</informalexample>
+</sect2>
+
+</sect1>
+
+<sect1 id="scanning-folders">
+<title
+>Analyse de dossiers</title>
+<para
+>L'analyse d'un dossier affiche son contenu sous la forme d'une cartographie de fichiers. Pour analyser un dossier, utilisez le menu d'analyse ou saisissez une &URL; directement dans la barre d'emplacement. </para>
+</sect1>
+
+<sect1 id="exploring-filemaps">
+<title
+>Exploration des cartographies de fichiers</title>
+<para
+>Dès qu'une analyse est terminée, une cartographie des fichiers représentant le dossier que vous avez analysé s'affiche. La cartographie des fichiers est une série d'anneaux segmentés qui s'étendent depuis le centre. Les segments présentant des couleurs vives sont les dossiers, les segments gris sont les fichiers. Les segments sont dimensionnés proportionnellement à leur taille de fichier. Ils peuvent être imbriqués, ainsi par exemple, <filename class="directory"
+>/home/mxcl</filename
+> sera d'un niveau en dehors et à l'intérieur des limites du segment représentant <filename class="directory"
+>/home</filename
+>. Les segments sont étiquetés et, en faisant passer la souris dessus, vous obtiendrez plus de détails sur ce segment et ses sous-segments. </para>
+<screenshot>
+<screeninfo
+>Capture d'écran de la cartographie des fichiers</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="radial_map_context_menu.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Capture d'écran</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+<para
+>On peut ouvrir des dossiers avec le gestionnaire de fichiers par défaut ou &konsole; à l'aide du menu contextuel réservé à ce segment. Un clic avec le &BCS; ouvre les fichiers par type MIME, &pex; des images avec <application
+>Gwenview</application
+>. Il est possible de cliquer avec le bouton droit sur un segment pour obtenir un menu contextuel pour le dossier analysé avec des actions pour copier l'emplacement du dossier dans le presse-papiers ou encore supprimer le dossier ou le fichier. Un clic gauche sur les segments recentrera la cartographie sur ce segment. </para>
+</sect1>
+
+</chapter>
+
+
+<chapter id="commands">
+<title
+>Références des menus et des commandes</title>
+
+<variablelist>
+<title
+>Le menu <quote
+>Analyse</quote
+></title>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Analyse</guimenu
+> <guimenuitem
+>Analyser le dossier...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Offre une boîte de dialogue de sélection de dossier, ainsi vous pouvez choisir un dossier à analyser.</action
+></para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keysym
+>Début</keysym
+></keycombo
+> </shortcut
+> <guimenu
+>Analyse</guimenu
+> <guimenuitem
+>Analyser le dossier personnel</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Démarre une analyse du dossier personnel de l'utilisateur.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Analyse</guimenu
+> <guimenuitem
+>Analyser le dossier racine</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Démarre une analyse du dossier racine.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycap
+>F5</keycap
+> </shortcut
+> <guimenu
+>Analyse</guimenu
+> <guimenuitem
+>Analyser à nouveau</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Démarre une nouvelle analyse du dossier de travail actuel. Cette fonction est utile lorsque des changements ont été apportés au système de fichiers.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+>&Echap; </shortcut
+> <guimenu
+>Analyse</guimenu
+> <guimenuitem
+>Arrêter</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Arrête l'analyse en cours.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Analyse</guimenu
+> <guimenuitem
+>Quitter</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Quitte &filelight;.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist>
+  <title
+>Le menu <quote
+>Affichage</quote
+></title>
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>+</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Affichage</guimenu
+> <guimenuitem
+>Zoom avant</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Agrandit la vue de la cartographie des fichiers.</action
+></para>
+    </listitem>
+    </varlistentry>
+
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>-</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Affichage</guimenu
+> <guimenuitem
+>Zoom arrière</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Réduit la vue de la cartographie des fichiers.</action
+></para>
+    </listitem>
+    </varlistentry>
+</variablelist>
+
+<variablelist>
+<title
+>Le menu <quote
+>Aller</quote
+></title>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>Haut</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Aller</guimenu
+> <guimenuitem
+>Haut</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Remonte d'un niveau dans le système de fichiers vers le dossier parent.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Aller</guimenu
+> <guimenuitem
+>Précédent</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Recule d'un niveau dans votre historique de navigation du système de fichiers.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Aller</guimenu
+> <guimenuitem
+>Suivant</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Avance d'un niveau dans votre historique de navigation du système de fichiers.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>De plus, &filelight; possède des éléments communs de menu &kde; <guimenu
+>Configuration</guimenu
+> et <guimenu
+>Aide</guimenu
+>. Pour plus d'informations, veuillez consulter les sections <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menu de configuration</ulink
+> et <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menu d'aide</ulink
+> des fondamentaux de &kde;. </para>
+</chapter>
+
+
+<chapter id="credits">
+   <title
+>Remerciements et licence</title>
+   <sect1 id="kapp">
+      <title
+>&filelight;</title>
+      <para
+>Programme sous copyright 2006 Max B. Howell <email
+>max.howell@methylblue.com</email
+></para>
+      <para
+>Programme sous copyright 2008-2013 Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+></para
+>&underGPL; </sect1>
+   <sect1 id="Documentation">
+      <title
+>Documentation</title>
+      <para
+>Documentation sous copyright 2003 Max B. Howell <email
+>max.howell@methylblue.com</email
+></para>
+      <para
+>Documentation sous copyright 2009 Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+></para>
+      <para
+>Traduction française par &JoelleCornavin; et Kévin Drouault <email
+>kevindrou@gmail.com</email
+>.</para
+> &underFDL; </sect1>
+</chapter>
+
+&documentation.index;
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

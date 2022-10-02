@@ -1,0 +1,605 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY filelight "<application
+>Filelight</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Portuguese "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="filelight" lang="&language;">
+
+<bookinfo>
+   <title
+>O Manual do &filelight;</title>
+   <authorgroup>
+      <author
+><firstname
+>Max</firstname
+> <surname
+>Howell</surname
+> <affiliation
+><address
+><email
+>max.howell@methylblue.com</email
+></address
+></affiliation>
+      </author>
+      <author
+><firstname
+>Martin</firstname
+> <surname
+>Sandsmark</surname
+> <affiliation
+><address
+><email
+>martin.sandsmark@kde.org</email
+></address
+></affiliation>
+      </author>
+      <othercredit role="translator"
+><firstname
+>José</firstname
+><surname
+>Pires</surname
+><affiliation
+><address
+><email
+>zepires@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+   </authorgroup>
+   <copyright
+><year
+>2006</year
+><holder
+>Max Howell</holder
+></copyright>
+   <copyright
+><year
+>2009</year
+><holder
+>Martin Sandsmark</holder
+></copyright>
+   <!-- Translators: put here the copyright notice of the translation -->
+   <legalnotice
+>&FDLNotice;</legalnotice>
+   <date
+>2015-08-04</date>
+   <releaseinfo
+>&filelight; 1.21 (Aplicações 15.08)</releaseinfo>
+   <abstract
+><para
+>O &filelight; cria um mapa interactivo de anéis concêntricos em segmentos, que o ajuda a visualizar a utilização do disco no seu computador.</para
+></abstract>
+   <!-- These may be used by search engines -->
+   <keywordset>
+      <keyword
+>KDE</keyword>
+      <keyword
+>Filelight</keyword>
+      <keyword
+>du</keyword>
+      <keyword
+>utilização de disco</keyword>
+   </keywordset>
+</bookinfo>
+
+
+<chapter id="introduction">
+   <title
+>Introdução</title>
+   <screenshot>
+      <screeninfo
+>Imagem do &filelight; 1.20</screeninfo>
+      <mediaobject>
+         <imageobject
+><imagedata fileref="radial_map.png" format="PNG"/></imageobject>
+         <textobject
+><phrase
+>Imagem</phrase
+></textobject>
+      </mediaobject>
+   </screenshot>
+   <para
+>O &filelight; permite-lhe compreender exacta e rapidamente onde é que o seu espaço em disco está a ser usado, representando graficamente o seu sistema de ficheiros como um conjunto de anéis concêntricos segmentados. Pode usá-lo para localizar os pontos críticos de espaço em disco e manipular essas áreas com o &dolphin; ou o &konqueror;.</para>
+</chapter>
+
+
+<chapter id="configuring">
+<title
+>Configurar o &filelight;</title>
+
+<para
+>A janela de configuração do &filelight; tem duas páginas para configurar as opções do &filelight;. As duas páginas são a <guimenuitem
+>Analisar</guimenuitem
+> e a <guimenuitem
+>Aparência</guimenuitem
+>. Por baixo, está uma descrição das páginas de configuração. Esta janela pode ser acedida se carregar em <menuchoice
+><guimenu
+>Configuração</guimenu
+><guimenuitem
+>Configurar o Filelight</guimenuitem
+></menuchoice
+>.</para>
+
+<sect1 id="scanning">
+<title
+>Digitalização</title>
+
+<screenshot>
+<screeninfo
+>Imagem da Procura</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_scan.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Imagem</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>A página de procura permite-lhe configurar a forma como o &filelight; analisa as pastas. O item <guilabel
+> Não analisar estas pastas</guilabel
+> é usado para excluir certas pastas da sua pesquisa. Esta opção é muito útil para ignorar as pastas nas quais você possa não ter permissões de leitura ou pastas que façam parte de um sistema de ficheiros virtual, como o '/proc'. Para adicionar uma pasta à lista, carregue no botão <guibutton
+>Adicionar...</guibutton
+>, o que irá iniciar uma janela onde poderá escolher uma pasta à sua escolha na árvore que aparece. Para remover uma pasta, basta seleccionar a pasta que deseja e carregar no botão <guibutton
+>Remover</guibutton
+>.</para>
+<para
+>Se usar a opção <guilabel
+>Analisar além dos limites do sistema de ficheiros</guilabel
+> poderá entrar dentro de pastas que façam parte de outros sistemas de ficheiros. Por exemplo, quando está desligada, irá evitar que o conteúdo do <filename class="directory"
+>/mnt</filename
+> seja analisado se começar a procurar a partir da pasta de raiz <filename class="directory"
+>/</filename
+>. Uma análise dos sistemas de ficheiros remotos, &eg; as partilhas de NFS ou Samba, poderão gerar bastante tráfego na rede. Para evitar a sondagem destas, assinale a opção <guilabel
+>Excluir os sistemas de ficheiros remotos</guilabel
+>. A opção seguinte <guilabel
+>Excluir os dispositivos removíveis</guilabel
+> evita que o &filelight; analise os dispositivos removíveis (&eg; &CD-ROM;s).</para>
+</sect1>
+
+<sect1 id="appearance">
+<title
+>Aparência</title>
+
+<screenshot>
+<screeninfo
+>Imagem da Aparência</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_appear.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Imagem</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>A página de <guimenuitem
+>Aparência</guimenuitem
+> permite-lhe configurar a forma como aparece o &filelight;.</para>
+<para
+>A secção do <guimenuitem
+>Esquema de cores</guimenuitem
+> é usada para escolher um esquema de cores para o &filelight;. Os esquemas de cores são o <guilabel
+>Arco-Íris</guilabel
+>, as <guilabel
+>Cores do Sistema</guilabel
+> e o <guilabel
+>Alto Contraste</guilabel
+>. Existe também uma barra de <guilabel
+>Contraste</guilabel
+> para ajustar o contraste dos segmentos dos anéis e facilitar a visualização.</para>
+<para
+>A opção <guimenuitem
+>Usar a suavização</guimenuitem
+> é usada para activar a utilização do 'anti-aliasing' (suavização) na janela do &filelight;. Se for seleccionada, esta opção faz com que os segmentos dos anéis tenham um aspecto mais limpo.</para>
+<para
+>A opção <guimenuitem
+>Variar os tamanhos de letra das legendas</guimenuitem
+> é útil quando você tiver ficheiros ou pastas com nomes compridos. Esta opção irá alterar o tamanho da letra, de modo a permitir que esta caiba melhor na janela. Quando esta opção estiver activa, ficará disponível uma opção <guimenuitem
+>Tamanho mínimo da letra</guimenuitem
+> para escolher o tamanho de letra mais pequeno a ajustar. </para>
+<para
+>A opção <guilabel
+>Mostrar os ficheiros pequenos</guilabel
+> está desactivada por omissão, dado que os ficheiros pequenos tendem a sobrecarregar a janela do &filelight;. Active esta opção se quiser ter também incluídos os seus ficheiros pequenos na janela do &filelight;. Estes ficheiros são todos reunidos numa único <quote
+>multi-segmento</quote
+>.</para>
+
+</sect1>
+</chapter>
+
+
+<chapter id="using">
+<title
+>Utilizar o &filelight;</title>
+
+<sect1 id="starting">
+<title
+>Iniciar o &filelight;</title>
+<para
+>O &filelight; pode ser iniciado a partir do lançador de aplicações ou a partir da linha de comandos</para>
+
+<sect2 id="starting-from-the-menu">
+<title
+>A Partir do Lançador de Aplicações</title>
+<para
+>Abra o menu de aplicações e mova o seu cursor para cima do menu com o item <guimenu
+>Utilitários</guimenu
+>. Escolha o <guimenuitem
+>&filelight;</guimenuitem
+>. </para>
+</sect2>
+
+<sect2 id="starting-from-the-command-line">
+<title
+>A Partir da Linha de Comandos</title>
+<para
+>Poderá também iniciar o &filelight;, escrevendo o seu nome na linha de comandos. Se lhe atribuir um nome de uma pasta, como no exemplo abaixo, ele irá percorrer essa pasta. </para>
+<informalexample>
+<screen
+><prompt
+>%</prompt
+><userinput
+><command
+>filelight</command
+> <option
+><replaceable
+>/home</replaceable
+></option
+></userinput
+>
+</screen>
+</informalexample>
+</sect2>
+
+</sect1>
+
+<sect1 id="scanning-folders">
+<title
+>Procurar em pastas</title>
+<para
+>Se procurar numa pasta, irá mostrar o seu conteúdo como um mapa de ficheiros. Para pesquisar uma pasta, use o menu de procura ou indique um &URL; directamente na barra de localização. </para>
+</sect1>
+
+<sect1 id="exploring-filemaps">
+<title
+>Explorar Mapas de Ficheiros</title>
+<para
+>Logo que tenha terminado uma análise, ser-lhe-á apresentado um mapa de ficheiros que representa a pasta analisada. O mapa é uma série de anéis segmentados que se expandem a partir do centro. Os segmentos mais claros são pastas, enquanto os segmentos a cinzento são ficheiros. Os segmentos são dimensionados de acordo com o tamanho dos ficheiros. Estes segmentos poderão estar encadeados como, por exemplo, o <filename class="directory"
+>/home/mxcl</filename
+> que estará um nível para fora e dentro dos limites do segmento que representa a <filename class="directory"
+>/home</filename
+>. Os segmentos estão legendados e, se passar o rato por cima dos segmentos, irá obter mais detalhes sobre esse segmento e sobre os seus filhos. </para>
+<screenshot>
+<screeninfo
+>Imagem do Mapa de Ficheiros</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="radial_map_context_menu.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Imagem</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+<para
+>Você poderá abrir as pastas com o seu gestor de ficheiros predefinido ou o &konsole; com o menu de contexto para esse segmento. O &MMB; abre os ficheiros de acordo com o seu tipo MIME, &eg; as imagens com o <application
+>Gwenview</application
+>. Você poderá carregar com o botão direito no círculo central para obter um menu de contexto para a pasta pesquisada. Se carregar com o botão esquerdo nos segmentos irá centrar o mapa nesse segmento. </para>
+</sect1>
+
+</chapter>
+
+
+<chapter id="commands">
+<title
+>Referência do Menu e dos Comandos</title>
+
+<variablelist>
+<title
+>O Menu Analisar</title>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Analisar</guimenu
+> <guimenuitem
+>Analisar a pasta...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Mostra uma janela de selecção de pastas, para que possa escolher a pasta a analisar.</action
+></para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>Home</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Analisar</guimenu
+> <guimenuitem
+>Analisar a Pasta Pessoal</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Inicia uma pesquisa na pasta pessoal do utilizador.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Analisar</guimenu
+> <guimenuitem
+>Analisar a Pasta de Raiz</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Inicia uma pesquisa na pasta de topo (ou de raiz).</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycap
+>F5</keycap
+> </shortcut
+> <guimenu
+>Analisar</guimenu
+> <guimenuitem
+>Analisar de Novo</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Inicia uma nova análise sobre a pasta de trabalho actual, o que poderá ser útil se tiverem sido feitas algumas alterações ao sistema de ficheiros.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> &Esc; </shortcut
+> <guimenu
+>Procurar</guimenu
+> <guimenuitem
+>Parar</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Interrompe a análise actual.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Analisar</guimenu
+> <guimenuitem
+>Sair</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Sai do &filelight;.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist>
+  <title
+>O Menu Ver</title>
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>+</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Ver</guimenu
+> <guimenuitem
+>Ampliar</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Aumenta a área do mapa de ficheiros.</action
+></para>
+    </listitem>
+    </varlistentry>
+
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>-</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Ver</guimenu
+> <guimenuitem
+>Reduzir</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Diminui a área do mapa de ficheiros.</action
+></para>
+    </listitem>
+    </varlistentry>
+</variablelist>
+
+<variablelist>
+<title
+>O Menu Ir</title>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>Cima</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Ir</guimenu
+> <guimenuitem
+>Subir</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Sobe um nível no sistema de ficheiros, para a pasta-mãe.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ir</guimenu
+> <guimenuitem
+>Recuar</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Fá-lo andar um passo para trás no seu histórico de navegação no sistema de ficheiros.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ir</guimenu
+> <guimenuitem
+>Avançar</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Fá-lo andar um passo para a frente no seu histórico de navegação no sistema de ficheiros.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Para além disso, o &filelight; tem os menus de <guimenu
+>Configuração</guimenu
+> e <guimenu
+>Ajuda</guimenu
+> normais do &kde;; para mais informações, leia as secções acerca dos menus de <ulink url="help:/fundamentals/ui.html#menus-settings"
+>Configuração</ulink
+> e <ulink url="help:/fundamentals/ui.html#menus-help"
+>Ajuda</ulink
+> dos Fundamentos do &kde;. </para>
+</chapter>
+
+
+<chapter id="credits">
+   <title
+>Créditos e Licença</title>
+   <sect1 id="kapp">
+      <title
+>&filelight;</title>
+      <para
+>Programa copyright 2006 Max B. Howell <email
+>max.howell@methylblue.com</email
+></para>
+      <para
+>Programa com 'copyright' 2008-2013 de Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+></para>
+&underGPL; </sect1>
+   <sect1 id="Documentation">
+      <title
+>Documentação</title>
+      <para
+>Documentação copyright 2003 Max B. Howell <email
+>max.howell@methylblue.com</email
+></para>
+      <para
+>Documentação com 'copyright' 2009 de Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+></para>
+      <para
+>Tradução de José Nuno Pires <email
+>zepires@gmail.com</email
+></para
+> 
+&underFDL; </sect1>
+</chapter>
+
+&documentation.index;
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

@@ -1,0 +1,693 @@
+# Translation of filelight into Japanese.
+# Yukiko Bando <ybando@k6.dion.ne.jp>, 2009, 2010.
+# Fumiaki Okushi <okushi@kde.gr.jp>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: filelight\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:49+0000\n"
+"PO-Revision-Date: 2014-09-21 00:35-0700\n"
+"Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
+"Language-Team: Japanese <kde-jp@kde.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Yukiko Bando"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "ybando@k6.dion.ne.jp"
+
+#. i18n: ectx: Menu (file)
+#: misc/filelightui.rc:4
+#, kde-format
+msgid "&Scan"
+msgstr "スキャン(&S)"
+
+#. i18n: ectx: Menu (view)
+#: misc/filelightui.rc:18
+#, kde-format
+msgid "&View"
+msgstr "表示(&V)"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: misc/filelightui.rc:24
+#, kde-format
+msgid "Main Toolbar"
+msgstr "メインツールバー"
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: misc/filelightui.rc:33
+#, kde-format
+msgid "Location Toolbar"
+msgstr "場所ツールバー"
+
+#. i18n: ectx: ToolBar (viewToolBar)
+#: misc/filelightui.rc:38
+#, kde-format
+msgid "View Toolbar"
+msgstr "ツールバーを表示"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, Dialog)
+#: src/dialog.ui:14
+#, kde-format
+msgid "Settings - Filelight"
+msgstr "設定 - Filelight"
+
+#. i18n: ectx: attribute (title), widget (QWidget, Widget2)
+#: src/dialog.ui:33
+#, kde-format
+msgid "Scannin&g"
+msgstr "スキャン(&G)"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: src/dialog.ui:45
+#, kde-format
+msgid "Do &not scan these folders:"
+msgstr "スキャンから除外するフォルダ(&N):"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_removeButton)
+#: src/dialog.ui:85
+#, kde-format
+msgid "R&emove"
+msgstr "削除(&E)"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_addButton)
+#: src/dialog.ui:95
+#, kde-format
+msgid "&Add..."
+msgstr "追加(&A)..."
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScanRemoteMounts)
+#: src/dialog.ui:171
+#, kde-format
+msgid ""
+"Prevents scanning of filesystems that are not on this computer, e.g. NFS or "
+"Samba mounts."
+msgstr ""
+"このコンピュータ上にないファイルシステム (例: NFS や Samba マウント) をスキャ"
+"ンしません。"
+
+#. i18n: ectx: property (text), widget (QCheckBox, dontScanRemoteMounts)
+#: src/dialog.ui:174
+#, kde-format
+msgid "Exclude remote files&ystems"
+msgstr "リモートファイルシステムを除外する(&Y)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, scanAcrossMounts)
+#: src/dialog.ui:181
+#, kde-format
+msgid ""
+"Allows scans to enter directories that are part of other filesystems. For "
+"example, when unchecked, this will usually prevent the contents of <b>/mnt</"
+"b> from being scanned if you scan <b>/</b>."
+msgstr ""
+"スキャンが他のファイルシステムに属するディレクトリに入るのを許可します。この"
+"オプションを無効にすると、通常は <b>/</b> をスキャンしたときに <b>/mnt</b> 以"
+"下はスキャンされません。"
+
+#. i18n: ectx: property (text), widget (QCheckBox, scanAcrossMounts)
+#: src/dialog.ui:184
+#, kde-format
+msgid "Scan across filesystem &boundaries"
+msgstr "ファイルシステムの境界を越えてスキャンする(&B)"
+
+#. i18n: ectx: attribute (title), widget (QWidget, Widget3)
+#: src/dialog.ui:194
+#, kde-format
+msgid "&Appearance"
+msgstr "外観(&A)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: src/dialog.ui:206
+#, kde-format
+msgid "Color scheme"
+msgstr "色スキーム"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: src/dialog.ui:232
+#, kde-format
+msgid "Co&ntrast"
+msgstr "コントラスト(&N)"
+
+#. i18n: ectx: property (whatsThis), widget (QSlider, contrastSlider)
+#: src/dialog.ui:254
+#, kde-format
+msgid "Here you can vary the contrast of the filemap in realtime."
+msgstr "ファイルマップのコントラストをリアルタイムで変更できます。"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, useAntialiasing)
+#: src/dialog.ui:275
+#, kde-format
+msgid ""
+"Anti-aliasing the filemap makes it clearer and prettier, unfortunately it "
+"also makes rendering very slow."
+msgstr ""
+"アンチエイリアシングを使うとファイルマップがよりクリアで美しくなります。ただ"
+"し、レンダリングが遅くなります。"
+
+#. i18n: ectx: property (text), widget (QCheckBox, useAntialiasing)
+#: src/dialog.ui:278
+#, kde-format
+msgid "&Use anti-aliasing"
+msgstr "アンチエイリアシングを使う(&U)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, showSmallFiles)
+#: src/dialog.ui:285
+#, kde-format
+msgid ""
+"Some files are too small to be rendered on the filemap. Selecting this "
+"option makes these files visible by merging them all into a single \"multi-"
+"segment\"."
+msgstr ""
+"このオプションを有効にすると、小さすぎてファイルマップに描画できないファイル"
+"を一つの「マルチセグメント」に統合して表示します。"
+
+#. i18n: ectx: property (text), widget (QCheckBox, showSmallFiles)
+#: src/dialog.ui:288
+#, kde-format
+msgid "Show small files"
+msgstr "小さいファイルを表示する"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, varyLabelFontSizes)
+#: src/dialog.ui:298
+#, kde-format
+msgid ""
+"The font size of exploded labels can be varied relative to the depth of the "
+"directories they represent. This helps you spot the important labels more "
+"easily. Set a sensible minimum font size."
+msgstr ""
+"ラベルのフォントサイズをディレクトリの深さに応じて変えます。これを有効にする"
+"と重要なラベルが見つけやすくなります。適切な最小フォントサイズを設定してくだ"
+"さい。"
+
+#. i18n: ectx: property (text), widget (QCheckBox, varyLabelFontSizes)
+#: src/dialog.ui:301
+#, kde-format
+msgid "Var&y label font sizes"
+msgstr "ラベルのフォントサイズを変える(&Y)"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, minFontPitchLabel)
+#: src/dialog.ui:338
+#, kde-format
+msgid "The smallest font size Filelight can use to render labels."
+msgstr "ラベルの表示に使用する最小フォントサイズを設定します。"
+
+#. i18n: ectx: property (text), widget (QLabel, minFontPitchLabel)
+#: src/dialog.ui:341
+#, kde-format
+msgid "Minimum font si&ze:"
+msgstr "最小フォントサイズ(&Z):"
+
+#: src/historyAction.cpp:64
+#, kde-format
+msgctxt "Go to the last path viewed"
+msgid "Back"
+msgstr "戻る"
+
+#: src/historyAction.cpp:68
+#, kde-format
+msgctxt "Go to forward in the history of paths viewed"
+msgid "Forward"
+msgstr "進む"
+
+#: src/main.cpp:56
+#, kde-format
+msgid "Graphical disk-usage information"
+msgstr "ディスクの使用状況をグラフィカルに表示します"
+
+#: src/main.cpp:58
+#, fuzzy, kde-format
+#| msgid ""
+#| "(C) 2006 Max Howell\n"
+#| "(C) 2008, 2009 Martin Sandsmark"
+msgid ""
+"(C) 2006 Max Howell\n"
+"(C) 2008-2014 Martin Sandsmark\n"
+"(C) 2017-2022 Harald Sitter"
+msgstr ""
+"(C) 2006 Max Howell\n"
+"(C) 2008, 2009 Martin Sandsmark"
+
+#: src/main.cpp:63
+#, kde-format
+msgid "Martin Sandsmark"
+msgstr "Martin Sandsmark"
+
+#: src/main.cpp:63
+#, kde-format
+msgid "Maintainer"
+msgstr "メンテナ"
+
+#: src/main.cpp:64
+#, kde-format
+msgid "Harald Sitter"
+msgstr ""
+
+#: src/main.cpp:64
+#, kde-format
+msgid "QtQuick Port"
+msgstr ""
+
+#: src/main.cpp:65
+#, kde-format
+msgid "Max Howell"
+msgstr "Max Howell"
+
+#: src/main.cpp:65
+#, kde-format
+msgid "Original author"
+msgstr "オリジナルの作者"
+
+#: src/main.cpp:66
+#, kde-format
+msgid "Lukas Appelhans"
+msgstr "Lukas Appelhans"
+
+#: src/main.cpp:66
+#, kde-format
+msgid "Help and support"
+msgstr "ヘルプとサポート"
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Steffen Gerlach"
+msgstr "Steffen Gerlach"
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Inspiration"
+msgstr "着想"
+
+#: src/main.cpp:68
+#, kde-format
+msgid "Mike Diehl"
+msgstr "Mike Diehl"
+
+#: src/main.cpp:68
+#, kde-format
+msgid "Original documentation"
+msgstr "オリジナルのドキュメンテーション"
+
+#: src/main.cpp:69
+#, kde-format
+msgid "Sune Vuorela"
+msgstr ""
+
+#: src/main.cpp:69 src/main.cpp:70
+#, kde-format
+msgid "Icon"
+msgstr ""
+
+#: src/main.cpp:70
+#, kde-format
+msgid "Nuno Pinheiro"
+msgstr ""
+
+#: src/main.cpp:77
+#, kde-format
+msgid "Path or URL to scan"
+msgstr ""
+
+#: src/main.cpp:77
+#, kde-format
+msgid "[url]"
+msgstr ""
+
+#: src/mainContext.cpp:126
+#, kde-format
+msgid "Select Folder to Scan"
+msgstr "スキャンするフォルダを選択"
+
+#: src/mainContext.cpp:190
+#, kde-format
+msgid "The entered URL cannot be parsed; it is invalid."
+msgstr "入力された URL を解析できません。無効な URL です。"
+
+#: src/mainContext.cpp:192
+#, kde-format
+msgid "Filelight only accepts absolute paths, eg. /%1"
+msgstr "Filelight は絶対パス (例: /%1) しか受け付けません。"
+
+#: src/mainContext.cpp:194
+#, kde-format
+msgid "Folder not found: %1"
+msgstr "フォルダが見つかりません: %1"
+
+#: src/mainContext.cpp:196
+#, kde-format
+msgid ""
+"Unable to enter: %1\n"
+"You do not have access rights to this location."
+msgstr ""
+"次に入ることができません: %1\n"
+"この場所にアクセスする権限がありません。"
+
+#: src/qml/GlobalMenu.qml:10
+#, fuzzy, kde-format
+#| msgid "&Scan"
+msgctxt "@item:inmenu"
+msgid "Scan"
+msgstr "スキャン(&S)"
+
+#: src/qml/GlobalMenu.qml:21
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Settings"
+msgstr ""
+
+#: src/qml/GlobalMenu.qml:27
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Help"
+msgstr ""
+
+#: src/qml/main.qml:28
+#, fuzzy, kde-format
+#| msgid "Scan Folder"
+msgctxt "@action"
+msgid "Scan Folder"
+msgstr "フォルダをスキャン"
+
+#: src/qml/main.qml:35
+#, fuzzy, kde-format
+#| msgid "Scan &Home Folder"
+msgctxt "@action"
+msgid "Scan Home Folder"
+msgstr "ホームフォルダをスキャン(&H)"
+
+#: src/qml/main.qml:42
+#, fuzzy, kde-format
+#| msgid "Scan &Root Folder"
+msgctxt "@action"
+msgid "Scan Root Folder"
+msgstr "ルートフォルダをスキャン(&R)"
+
+#: src/qml/main.qml:49
+#, kde-format
+msgctxt "@action"
+msgid "Quit"
+msgstr ""
+
+#: src/qml/main.qml:57
+#, kde-format
+msgctxt "@action configure app"
+msgid "Configure…"
+msgstr ""
+
+#: src/qml/main.qml:66
+#, kde-format
+msgctxt "@action"
+msgid "Open Handbook"
+msgstr ""
+
+#: src/qml/main.qml:74
+#, kde-format
+msgctxt "@action opens about app page"
+msgid "About"
+msgstr ""
+
+#: src/qml/main.qml:95
+#, fuzzy, kde-format
+#| msgid "1 file"
+#| msgid_plural "%1 files"
+msgctxt "@info:status"
+msgid "No files."
+msgstr "%1 ファイル"
+
+#: src/qml/main.qml:96
+#, fuzzy, kde-format
+#| msgid "1 file"
+#| msgid_plural "%1 files"
+msgctxt "@info:status"
+msgid "1 file"
+msgid_plural "%1 files"
+msgstr[0] "%1 ファイル"
+msgstr[1] "%1 ファイル"
+
+#: src/qml/main.qml:163
+#, fuzzy, kde-format
+#| msgid "Aborting Scan..."
+msgctxt "@info:status"
+msgid "Aborting Scan..."
+msgstr "スキャンを中止します..."
+
+#: src/qml/MapPage.qml:19
+#, kde-format
+msgctxt "@action"
+msgid "Up"
+msgstr ""
+
+#: src/qml/MapPage.qml:28
+#, fuzzy, kde-format
+#| msgid "Rescan"
+msgctxt "@action"
+msgid "Rescan"
+msgstr "再スキャン"
+
+#: src/qml/MapPage.qml:37
+#, fuzzy, kde-format
+#| msgid "Stop"
+msgctxt "@action"
+msgid "Stop"
+msgstr "停止"
+
+#: src/qml/MapPage.qml:45
+#, kde-format
+msgctxt "@action"
+msgid "Save as SVG"
+msgstr ""
+
+#: src/qml/MapPage.qml:46
+#, kde-format
+msgid "Save the current view as an SVG file"
+msgstr ""
+
+#: src/qml/MapPage.qml:55
+#, kde-format
+msgctxt "@action"
+msgid "Zoom In"
+msgstr ""
+
+#: src/qml/MapPage.qml:65
+#, kde-format
+msgctxt "@action"
+msgid "Zoom Out"
+msgstr ""
+
+#: src/qml/MapPage.qml:127
+#, fuzzy, kde-format
+#| msgid "%1 File"
+#| msgid_plural "%1 Files"
+msgctxt "Scanned number of files and size so far"
+msgid "%1 File, %2"
+msgid_plural "%1 Files, %2"
+msgstr[0] "%1 ファイル"
+msgstr[1] "%1 ファイル"
+
+#: src/qml/MapPage.qml:136
+#, kde-format
+msgid "No data available"
+msgstr ""
+
+#: src/qml/OverviewPage.qml:15
+#, kde-format
+msgctxt "@title"
+msgid "Overview"
+msgstr ""
+
+#: src/qml/OverviewPage.qml:35
+#, fuzzy, kde-format
+#| msgid "Settings - Filelight"
+msgctxt "@title"
+msgid "Welcome to Filelight"
+msgstr "設定 - Filelight"
+
+#: src/radialMap/item.cpp:214
+#, kde-format
+msgid "Open &File Manager Here"
+msgstr "ここをファイルマネージャで開く(&F)"
+
+#: src/radialMap/item.cpp:217
+#, kde-format
+msgid "Open &Terminal Here"
+msgstr "ここをターミナルで開く(&T)"
+
+#: src/radialMap/item.cpp:222
+#, kde-format
+msgid "&Center Map Here"
+msgstr "ここをマップの中心にする(&C)"
+
+#: src/radialMap/item.cpp:226
+#, kde-format
+msgid "Add to Do &Not Scan List"
+msgstr ""
+
+#: src/radialMap/item.cpp:227
+#, fuzzy, kde-format
+#| msgid "Rescan"
+msgid "&Rescan"
+msgstr "再スキャン"
+
+#: src/radialMap/item.cpp:229
+#, kde-format
+msgctxt "Scan/open the path of the selected element"
+msgid "&Open"
+msgstr "開く(&O)"
+
+#: src/radialMap/item.cpp:233
+#, kde-format
+msgid "&Copy to clipboard"
+msgstr "クリップボードにコピー(&C)"
+
+#: src/radialMap/item.cpp:237 src/radialMap/item.cpp:283
+#, kde-format
+msgid "&Delete"
+msgstr "削除(&D)"
+
+#: src/radialMap/item.cpp:281
+#, kde-format
+msgid ""
+"<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
+"b> deleted.</qt>"
+msgstr "<qt>フォルダ ‘%1’ とその内容は「再帰的かつ完全に」削除されます。</qt>"
+
+#: src/radialMap/item.cpp:282
+#, kde-format
+msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
+msgstr "<qt>‘%1’ は「完全に」削除されます。</qt>"
+
+#: src/radialMap/item.cpp:308
+#, kde-format
+msgid "Error while deleting"
+msgstr "削除中にエラー"
+
+#: src/radialMap/item.cpp:410
+#, fuzzy, kde-format
+#| msgid ""
+#| "Internal representation is invalid,\n"
+#| "please reload."
+msgctxt "We messed up, the user needs to initiate a rescan."
+msgid ""
+"Internal representation is invalid,\n"
+"please rescan."
+msgstr ""
+"内部表現が無効です。\n"
+"再読み込みしてください。"
+
+#: src/radialMap/item.cpp:769
+#, kde-format
+msgctxt "Tooltip of file/folder, %1 is path, %2 is size"
+msgid ""
+"%1\n"
+"%2"
+msgstr ""
+
+#: src/radialMap/item.cpp:777
+#, fuzzy, kde-format
+#| msgid "%1 File"
+#| msgid_plural "%1 Files"
+msgctxt "Tooltip of folder, %1 is number of files"
+msgid "%1 File (%2%)"
+msgid_plural "%1 Files (%2%)"
+msgstr[0] "%1 ファイル"
+msgstr[1] "%1 ファイル"
+
+#: src/radialMap/item.cpp:779
+#, fuzzy, kde-format
+#| msgid "%1 File"
+#| msgid_plural "%1 Files"
+msgctxt "Tooltip of folder, %1 is number of files"
+msgid "%1 File"
+msgid_plural "%1 Files"
+msgstr[0] "%1 ファイル"
+msgstr[1] "%1 ファイル"
+
+#: src/radialMap/item.cpp:785
+#, kde-format
+msgid ""
+"\n"
+"Click to go up to parent directory"
+msgstr ""
+
+#: src/radialMap/item.cpp:870
+#, kde-format
+msgctxt "@title:window"
+msgid "Save as SVG"
+msgstr ""
+
+#: src/radialMap/item.cpp:872
+#, kde-format
+msgctxt "filedialog type filter"
+msgid "SVG Files (*.svg);;All Files(*)"
+msgstr ""
+
+#: src/radialMap/map.cpp:205
+#, kde-format
+msgid "1 file, with an average size of %2"
+msgid_plural "%1 files, with an average size of %2"
+msgstr[0] "1 ファイル (平均サイズ %2)"
+msgstr[1] "%1 ファイル (平均サイズ %2)"
+
+#: src/settingsDialog.cpp:31
+#, kde-format
+msgid "Rainbow"
+msgstr "レインボー"
+
+#: src/settingsDialog.cpp:35
+#, fuzzy, kde-format
+#| msgid "System Colors"
+msgid "System colors"
+msgstr "システムカラー"
+
+#: src/settingsDialog.cpp:39
+#, fuzzy, kde-format
+#| msgid "High Contrast"
+msgid "High contrast"
+msgstr "ハイコントラスト"
+
+#: src/settingsDialog.cpp:133
+#, kde-format
+msgid "Select path to ignore"
+msgstr ""
+
+#: src/settingsDialog.cpp:150
+#, fuzzy, kde-format
+#| msgid "That folder is already set to be excluded from scans"
+msgid "That folder is already set to be excluded from scans."
+msgstr "そのフォルダは既にスキャン対象から除外されています。"
+
+#: src/settingsDialog.cpp:150
+#, kde-format
+msgid "Folder already ignored"
+msgstr ""
+
+#, fuzzy
+#~| msgid "Scan completed, generating map..."
+#~ msgctxt "@info:status"
+#~ msgid "Scan completed, generating map..."
+#~ msgstr "スキャン完了、マップを生成中..."
+
+#~ msgid "Go"
+#~ msgstr "移動"
+
+#~ msgid "Location Bar"
+#~ msgstr "場所バー"
+
+#~ msgid "&Recent Scans"
+#~ msgstr "最近のスキャン(&R)"
+
+#~ msgid "Scanning: %1"
+#~ msgstr "スキャン中: %1"
+
+#~ msgid "Scan failed: %1"
+#~ msgstr "スキャン失敗: %1"

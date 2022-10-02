@@ -1,0 +1,615 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY filelight "<application
+>Filelight</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Russian "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="filelight" lang="&language;">
+
+<bookinfo>
+   <title
+>Руководство пользователя &filelight;</title>
+   <authorgroup>
+      <author
+><firstname
+>Max</firstname
+> <surname
+>Howell</surname
+> <affiliation
+><address
+><email
+>max.howell@methylblue.com</email
+></address
+></affiliation>
+      </author>
+      <author
+><firstname
+>Martin</firstname
+> <surname
+>Sandsmark</surname
+> <affiliation
+><address
+><email
+>martin.sandsmark@kde.org</email
+></address
+></affiliation>
+      </author>
+      <othercredit role="translator"
+><firstname
+>Олеся</firstname
+><surname
+>Герасименко</surname
+><affiliation
+><address
+><email
+>gammaray@basealt.ru</email
+></address
+></affiliation
+><contrib
+>Перевод на русский язык</contrib
+></othercredit
+> <othercredit role="reviewer"
+><firstname
+>Александр</firstname
+><surname
+>Яворский</surname
+><contrib
+>Рецензирование</contrib
+></othercredit
+> 
+   </authorgroup>
+   <copyright
+><year
+>2006</year
+><holder
+>Max Howell</holder
+></copyright>
+   <copyright
+><year
+>2009</year
+><holder
+>Martin Sandsmark</holder
+></copyright>
+   <!-- Translators: put here the copyright notice of the translation -->
+   <legalnotice
+>&FDLNotice;</legalnotice>
+   <date
+>4 августа 2015 г.</date>
+   <releaseinfo
+>&filelight; 1.21 (Приложения KDE 15.08)</releaseinfo>
+   <abstract
+><para
+>Программа &filelight; наглядно отображает использование дискового пространства, представляя его в виде интерактивной карты из концентрических колец, разделённых на сегменты.</para
+></abstract>
+   <!-- These may be used by search engines -->
+   <keywordset>
+      <keyword
+>KDE</keyword>
+      <keyword
+>Filelight</keyword>
+      <keyword
+>du</keyword>
+      <keyword
+>использование дискового пространства</keyword>
+   </keywordset>
+</bookinfo>
+
+
+<chapter id="introduction">
+   <title
+>Введение</title>
+   <screenshot>
+      <screeninfo
+>Снимок экрана окна приложения &filelight; версии 1.20</screeninfo>
+      <mediaobject>
+         <imageobject
+><imagedata fileref="radial_map.png" format="PNG"/></imageobject>
+         <textobject
+><phrase
+>Снимок экрана</phrase
+></textobject>
+      </mediaobject>
+   </screenshot>
+   <para
+>Программа &filelight; наглядно отображает использование дискового пространства, представляя файловую систему в виде концентрических колец, разделённых на сегменты. Такое представление позволяет выявить расположения, занимающие значительные объёмы дискового пространства и проверить их содержимое при помощи диспетчера файлов &dolphin; или браузера &konqueror;.</para>
+</chapter>
+
+
+<chapter id="configuring">
+<title
+>Настройка параметров &filelight;</title>
+
+<para
+>Диалоговое окно настройки параметров &filelight; вызывается выбором соответствующего пункта в меню: <menuchoice
+><guimenu
+>Настройка</guimenu
+><guimenuitem
+>Настроить Filelight…</guimenuitem
+></menuchoice
+>. Окно настройки содержит две вкладки: <guilabel
+>Сканирование</guilabel
+> и <guilabel
+>Внешний вид</guilabel
+>. Описание параметров, расположенных на этих вкладках, приведено далее.</para>
+
+<sect1 id="scanning">
+<title
+>Сканирование</title>
+
+<screenshot>
+<screeninfo
+>Снимок экрана диалогового окна настройки, вкладка «Сканирование»</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_scan.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Снимок экрана</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Вкладка <guilabel
+>Сканирование</guilabel
+> содержит параметры сканирования папок. Параметр <guilabel
+> Не сканировать следующие папки</guilabel
+> используется для исключения определённых папок из процесса сканирования. Он позволяет исключить папки, разрешение на чтение которых отсутствует у пользователя, или папки виртуальной файловой системы, например «/proc». Чтобы добавить папку в список, нажмите кнопку <guibutton
+>Добавить...</guibutton
+> и в открывшемся диалоговом окне выберите нужную папку. Чтобы удалить папку, выберите её в списке и нажмите кнопку <guibutton
+>Удалить</guibutton
+>.</para>
+<para
+>Параметр <guilabel
+>Разрешить выход за рамки файловой системы при сканировании</guilabel
+> включает в процесс сканирования папки из других файловых систем. Например, если запускается сканирование корневой папки <filename class="directory"
+>/</filename
+> и флажок не отмечен, содержимое каталога <filename class="directory"
+>/mnt</filename
+> не сканируется. При сканировании сетевых файловых систем, таких как NFS или Samba, возможна передача значительного объёма данных по сети. Для исключения этих систем из процесса сканирования отметьте флажок <guilabel
+>Исключить удалённые файловые системы</guilabel
+>. Следующий параметр, <guilabel
+>Исключить съёмные диски</guilabel
+>, запрещает программе &filelight; сканировать съёмные диски (например, &CD-ROM;).</para>
+</sect1>
+
+<sect1 id="appearance">
+<title
+>Внешний вид</title>
+
+<screenshot>
+<screeninfo
+>Снимок экрана диалогового окна настройки, вкладка «Внешний вид»</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_appear.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Снимок экрана</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Вкладка <guilabel
+>Внешний вид</guilabel
+> служит для настройки внешнего вида программы &filelight;.</para>
+<para
+>Группа параметров <guilabel
+>Цвета</guilabel
+> служит для выбора цветовой схемы программы &filelight;. Доступны следующие цветовые схемы: <guilabel
+>Радуга</guilabel
+>, <guilabel
+>Системные цвета</guilabel
+> и <guilabel
+>Контрастные цвета</guilabel
+>. Чтобы снизить нагрузку на зрение, используйте ползунок <guilabel
+>Контраст</guilabel
+> для регулировки контрастности сегментов колец.</para>
+<para
+>Параметр <guilabel
+>Сглаживать изображение</guilabel
+> служит для включения сглаживания в области просмотра &filelight;. При отмеченном флажке сегменты колец выглядят гораздо более чёткими.</para>
+<para
+>Параметр <guilabel
+>Использовать шрифты разных размеров</guilabel
+> полезен при наличии файлов или папок с длинными названиями: при его использовании размер шрифта изменяется таким образом, чтобы названия помещались в область просмотра. При отмеченном флажке доступно поле <guilabel
+>Минимальный размер шрифта</guilabel
+>, которое позволяет задать наименьший размер шрифта, который может быть использован. </para>
+<para
+>Параметр <guilabel
+>Показывать маленькие файлы</guilabel
+> по умолчанию не используется: файлы небольшого размера визуально перегружают окно &filelight;. При необходимости просмотра файлов небольшого размера в окне &filelight; следует отметить данный флажок. Небольшие файлы объединяются в единый <quote
+>мультисегмент</quote
+>.</para>
+
+</sect1>
+</chapter>
+
+
+<chapter id="using">
+<title
+>Использование &filelight;</title>
+
+<sect1 id="starting">
+<title
+>Запуск &filelight;</title>
+<para
+>Запуск программы &filelight; выполняется из меню запуска приложений или из командной строки.</para>
+
+<sect2 id="starting-from-the-menu">
+<title
+>Запуск из меню запуска приложений</title>
+<para
+>Откройте меню запуска приложений и выберите раздел <guimenu
+>Служебные</guimenu
+>, затем выберите <guimenuitem
+>&filelight;</guimenuitem
+>. </para>
+</sect2>
+
+<sect2 id="starting-from-the-command-line">
+<title
+>Запуск из командной строки</title>
+<para
+>Для запуска &filelight; введите имя программы в командной строке. Если указать имя папки, как в следующем примере, программа выполнит сканирование этой папки. </para>
+<informalexample>
+<screen
+><prompt
+>%</prompt
+><userinput
+><command
+>filelight</command
+> <option
+><replaceable
+>/home</replaceable
+></option
+></userinput
+>
+</screen>
+</informalexample>
+</sect2>
+
+</sect1>
+
+<sect1 id="scanning-folders">
+<title
+>Сканирование папок</title>
+<para
+>После сканирования папки её содержимое отображается в виде файловой карты. Чтобы выполнить сканирование папки, воспользуйтесь меню сканирования или введите &URL; прямо в строку адреса. </para>
+</sect1>
+
+<sect1 id="exploring-filemaps">
+<title
+>Просмотр файловых карт</title>
+<para
+>По завершении сканирования папки появляется файловая карта этой папки. Файловая карта — это последовательность разбитых на сегменты колец, которые расширяются от центра. Сегменты ярких цветов соответствуют папкам, сегменты серого цвета — файлам. Размер сегмента пропорционален объёму дискового пространства, который он занимает. Сегменты могут быть вложенными. Например, папка <filename class="directory"
+>/home/mxcl</filename
+> вложена в сегмент, представляющий папку <filename class="directory"
+>/home</filename
+>. Сегменты подписаны. Кроме того, при наведении указателя мыши на какой-либо сегмент отобразятся более подробные сведения о нём и соответствующих вложенных сегментах. </para>
+<screenshot>
+<screeninfo
+>Снимок экрана основного окна приложения — файловая карта</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="radial_map_context_menu.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Снимок экрана</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+<para
+>Контекстное меню сегмента позволяет открывать папки в установленном по умолчанию диспетчере файлов или эмуляторе терминала &konsole;. Щелчок средней кнопкой мыши открывает файлы по типам MIME: например, файлы изображений открываются в программе <application
+>Gwenview</application
+>. Щелчок правой кнопкой мыши по сегменту вызывает контекстное меню просканированной папки, в котором доступны действия копирования пути к папке в буфер обмена или удаления этой папки или файла. Щелчок левой кнопки мыши помещает сегмент в центр карты. </para>
+</sect1>
+
+</chapter>
+
+
+<chapter id="commands">
+<title
+>Список команд</title>
+
+<variablelist>
+<title
+>Меню «Сканирование»</title>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Сканирование</guimenu
+> <guimenuitem
+>Сканировать папку</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Открывает диалог выбора папки для сканирования.</action
+></para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keysym
+>Home</keysym
+></keycombo
+> </shortcut
+> <guimenu
+>Сканирование</guimenu
+> <guimenuitem
+>Сканировать домашнюю папку</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Запускает сканирование домашней папки пользователя.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Сканирование</guimenu
+> <guimenuitem
+>Сканировать корневую папку</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Запускает сканирование корневой папки.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycap
+>F5</keycap
+> </shortcut
+> <guimenu
+>Сканирование</guimenu
+> <guimenuitem
+>Обновить</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Запускает повторное сканирование текущей рабочей папки. Можно воспользоваться этой функцией, если в файловой системе произошли изменения.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> &Esc; </shortcut
+> <guimenu
+>Сканирование</guimenu
+> <guimenuitem
+>Остановить</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Останавливает текущее сканирование.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Сканирование</guimenu
+> <guimenuitem
+>Выход</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Завершает работу &filelight;.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist>
+  <title
+>Меню «Вид»</title>
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>+</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Вид</guimenu
+> <guimenuitem
+>Увеличить</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Увеличивает масштаб файловой карты.</action
+></para>
+    </listitem>
+    </varlistentry>
+
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>-</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Вид</guimenu
+> <guimenuitem
+>Уменьшить</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Уменьшает масштаб файловой карты.</action
+></para>
+    </listitem>
+    </varlistentry>
+</variablelist>
+
+<variablelist>
+<title
+>Меню «Переход»</title>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>Up</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Переход</guimenu
+> <guimenuitem
+>Вверх</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Выполняет переход в родительскую папку (на один уровень выше в файловой системе).</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Переход</guimenu
+> <guimenuitem
+>Назад</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Выполняет переход в папку, предшествующую текущей в истории просмотра папок файловой системы.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Переход</guimenu
+> <guimenuitem
+>Вперёд</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Выполняет переход в папку, следующую за текущей в истории просмотра папок файловой системы.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Кроме того, в программе &filelight; присутствуют стандартные меню &kde;: <guimenu
+>Настройка</guimenu
+> и <guimenu
+>Справка</guimenu
+>. Дополнительные сведения доступны в разделе справки «Основы &kde;» (подразделы <ulink url="help:/fundamentals/ui.html#menus-settings"
+>Меню «Настройка»</ulink
+> и <ulink url="help:/fundamentals/ui.html#menus-help"
+>Меню «Справка»</ulink
+>). </para>
+</chapter>
+
+
+<chapter id="credits">
+   <title
+>Авторские права и лицензия</title>
+   <sect1 id="kapp">
+      <title
+>&filelight;</title>
+      <para
+>Авторские права на программу: © Max B. Howell <email
+>max.howell@methylblue.com</email
+>, 2006</para>
+      <para
+>Авторские права на программу: © Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+>, 2008—2013</para>
+&underGPL; </sect1>
+   <sect1 id="Documentation">
+      <title
+>Документация</title>
+      <para
+>Авторские права на документацию: © Max B. Howell <email
+>max.howell@methylblue.com</email
+>, 2003</para>
+      <para
+>Авторские права на документацию: © Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+>, 2009</para>
+      <para
+>Олеся Герасименко<email
+>gammaray@basealt.ru</email
+></para
+> 
+&underFDL; </sect1>
+</chapter>
+
+&documentation.index;
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

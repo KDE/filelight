@@ -1,0 +1,949 @@
+# translation of filelight.po to Italian
+#
+# Federico Zenith <federico.zenith@member.fsf.org>, 2005, 2006, 2009, 2010, 2013, 2015.
+# Paolo Zamponi <zapaolo@email.it>, 2017, 2018, 2020, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: filelight\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:49+0000\n"
+"PO-Revision-Date: 2022-06-08 22:10+0200\n"
+"Last-Translator: Paolo Zamponi <zapaolo@email.it>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 22.04.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Federico Zenith"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "federico.zenith@member.fsf.org"
+
+#. i18n: ectx: Menu (file)
+#: misc/filelightui.rc:4
+#, kde-format
+msgid "&Scan"
+msgstr "&Scansiona"
+
+#. i18n: ectx: Menu (view)
+#: misc/filelightui.rc:18
+#, kde-format
+msgid "&View"
+msgstr "&Visualizza"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: misc/filelightui.rc:24
+#, kde-format
+msgid "Main Toolbar"
+msgstr "Barra degli strumenti principale"
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: misc/filelightui.rc:33
+#, kde-format
+msgid "Location Toolbar"
+msgstr "Barra degli indirizzi"
+
+#. i18n: ectx: ToolBar (viewToolBar)
+#: misc/filelightui.rc:38
+#, kde-format
+msgid "View Toolbar"
+msgstr "Barra di visualizzazione"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, Dialog)
+#: src/dialog.ui:14
+#, kde-format
+msgid "Settings - Filelight"
+msgstr "Impostazioni - Filelight"
+
+#. i18n: ectx: attribute (title), widget (QWidget, Widget2)
+#: src/dialog.ui:33
+#, kde-format
+msgid "Scannin&g"
+msgstr "Scansion&e"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: src/dialog.ui:45
+#, kde-format
+msgid "Do &not scan these folders:"
+msgstr "&Non scansionare queste cartelle:"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_removeButton)
+#: src/dialog.ui:85
+#, kde-format
+msgid "R&emove"
+msgstr "R&imuovi"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_addButton)
+#: src/dialog.ui:95
+#, kde-format
+msgid "&Add..."
+msgstr "&Aggiungi..."
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScanRemoteMounts)
+#: src/dialog.ui:171
+#, kde-format
+msgid ""
+"Prevents scanning of filesystems that are not on this computer, e.g. NFS or "
+"Samba mounts."
+msgstr ""
+"Impedisce la scansione di filesystem che non sono su questa macchina, per "
+"esempio delle unità NFS o Samba."
+
+#. i18n: ectx: property (text), widget (QCheckBox, dontScanRemoteMounts)
+#: src/dialog.ui:174
+#, kde-format
+msgid "Exclude remote files&ystems"
+msgstr "Escludi i filesystem &remoti"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, scanAcrossMounts)
+#: src/dialog.ui:181
+#, kde-format
+msgid ""
+"Allows scans to enter directories that are part of other filesystems. For "
+"example, when unchecked, this will usually prevent the contents of <b>/mnt</"
+"b> from being scanned if you scan <b>/</b>."
+msgstr ""
+"Permette alle scansioni di entrare in cartelle che fanno parte di altri "
+"filesystem. Per esempio, se non è segnato, ciò normalmente impedirà la "
+"scansione di <b>/mnt</b> se scansioni <b>/</b>."
+
+#. i18n: ectx: property (text), widget (QCheckBox, scanAcrossMounts)
+#: src/dialog.ui:184
+#, kde-format
+msgid "Scan across filesystem &boundaries"
+msgstr "Scansiona oltre i &limiti dei filesystem"
+
+#. i18n: ectx: attribute (title), widget (QWidget, Widget3)
+#: src/dialog.ui:194
+#, kde-format
+msgid "&Appearance"
+msgstr "&Aspetto"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: src/dialog.ui:206
+#, kde-format
+msgid "Color scheme"
+msgstr "Schema di colori"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: src/dialog.ui:232
+#, kde-format
+msgid "Co&ntrast"
+msgstr "Co&ntrasto"
+
+#. i18n: ectx: property (whatsThis), widget (QSlider, contrastSlider)
+#: src/dialog.ui:254
+#, kde-format
+msgid "Here you can vary the contrast of the filemap in realtime."
+msgstr "Qui puoi variare il contrasto della mappa dei file in tempo reale."
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, useAntialiasing)
+#: src/dialog.ui:275
+#, kde-format
+msgid ""
+"Anti-aliasing the filemap makes it clearer and prettier, unfortunately it "
+"also makes rendering very slow."
+msgstr ""
+"L'anti-aliasing della mappa dei file la rende più chiara e più carina, "
+"sfortunatamente rende anche la resa molto lenta."
+
+#. i18n: ectx: property (text), widget (QCheckBox, useAntialiasing)
+#: src/dialog.ui:278
+#, kde-format
+msgid "&Use anti-aliasing"
+msgstr "&Usa l'anti-aliasing"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, showSmallFiles)
+#: src/dialog.ui:285
+#, kde-format
+msgid ""
+"Some files are too small to be rendered on the filemap. Selecting this "
+"option makes these files visible by merging them all into a single \"multi-"
+"segment\"."
+msgstr ""
+"Alcuni file sono troppo piccoli per essere resi sulla mappa dei file. "
+"Selezionare questa opzione rende questi file visibili, fondendoli tutti in "
+"un «multi-segmento» singolo."
+
+#. i18n: ectx: property (text), widget (QCheckBox, showSmallFiles)
+#: src/dialog.ui:288
+#, kde-format
+msgid "Show small files"
+msgstr "Mostra i file piccoli"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, varyLabelFontSizes)
+#: src/dialog.ui:298
+#, kde-format
+msgid ""
+"The font size of exploded labels can be varied relative to the depth of the "
+"directories they represent. This helps you spot the important labels more "
+"easily. Set a sensible minimum font size."
+msgstr ""
+"La dimensione dei caratteri delle etichette espanse può essere variata "
+"relativamente alla profondità delle cartelle che esse rappresentano. Ciò ti "
+"aiuta a notare le etichette importanti più facilmente. Imposta una "
+"dimensione minima dei caratteri leggibile."
+
+#. i18n: ectx: property (text), widget (QCheckBox, varyLabelFontSizes)
+#: src/dialog.ui:301
+#, kde-format
+msgid "Var&y label font sizes"
+msgstr "Var&ia le dimensioni dei caratteri delle etichette"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, minFontPitchLabel)
+#: src/dialog.ui:338
+#, kde-format
+msgid "The smallest font size Filelight can use to render labels."
+msgstr "Il più piccolo carattere con cui Filelight può rendere le etichette."
+
+#. i18n: ectx: property (text), widget (QLabel, minFontPitchLabel)
+#: src/dialog.ui:341
+#, kde-format
+msgid "Minimum font si&ze:"
+msgstr "Dimensione &minima dei caratteri:"
+
+#: src/historyAction.cpp:64
+#, kde-format
+msgctxt "Go to the last path viewed"
+msgid "Back"
+msgstr "Indietro"
+
+#: src/historyAction.cpp:68
+#, kde-format
+msgctxt "Go to forward in the history of paths viewed"
+msgid "Forward"
+msgstr "Avanti"
+
+#: src/main.cpp:56
+#, kde-format
+msgid "Graphical disk-usage information"
+msgstr "Informazioni grafiche sull'uso del disco"
+
+#: src/main.cpp:58
+#, kde-format
+msgid ""
+"(C) 2006 Max Howell\n"
+"(C) 2008-2014 Martin Sandsmark\n"
+"(C) 2017-2022 Harald Sitter"
+msgstr ""
+"© 2006 Max Howell\n"
+"© 2008-2014 Martin Sandsmark\n"
+"© 2017-2022 Harald Sitter"
+
+#: src/main.cpp:63
+#, kde-format
+msgid "Martin Sandsmark"
+msgstr "Martin Sandsmark"
+
+#: src/main.cpp:63
+#, kde-format
+msgid "Maintainer"
+msgstr "Responsabile"
+
+#: src/main.cpp:64
+#, kde-format
+msgid "Harald Sitter"
+msgstr "Harald Sitter"
+
+#: src/main.cpp:64
+#, kde-format
+msgid "QtQuick Port"
+msgstr "Conversione a QtQuick"
+
+#: src/main.cpp:65
+#, kde-format
+msgid "Max Howell"
+msgstr "Max Howell"
+
+#: src/main.cpp:65
+#, kde-format
+msgid "Original author"
+msgstr "Autore originale"
+
+#: src/main.cpp:66
+#, kde-format
+msgid "Lukas Appelhans"
+msgstr "Lukas Appelhans"
+
+#: src/main.cpp:66
+#, kde-format
+msgid "Help and support"
+msgstr "Aiuto e supporto"
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Steffen Gerlach"
+msgstr "Steffen Gerlach"
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Inspiration"
+msgstr "Ispirazione"
+
+#: src/main.cpp:68
+#, kde-format
+msgid "Mike Diehl"
+msgstr "Mike Diehl"
+
+#: src/main.cpp:68
+#, kde-format
+msgid "Original documentation"
+msgstr "Documentazione originale"
+
+#: src/main.cpp:69
+#, kde-format
+msgid "Sune Vuorela"
+msgstr "Sune Vuorela"
+
+#: src/main.cpp:69 src/main.cpp:70
+#, kde-format
+msgid "Icon"
+msgstr "Icona"
+
+#: src/main.cpp:70
+#, kde-format
+msgid "Nuno Pinheiro"
+msgstr "Nuno Pinheiro"
+
+#: src/main.cpp:77
+#, kde-format
+msgid "Path or URL to scan"
+msgstr "Percorso o URL da scansionare"
+
+#: src/main.cpp:77
+#, kde-format
+msgid "[url]"
+msgstr "[URL]"
+
+#: src/mainContext.cpp:126
+#, kde-format
+msgid "Select Folder to Scan"
+msgstr "Seleziona cartella da scansionare"
+
+#: src/mainContext.cpp:190
+#, kde-format
+msgid "The entered URL cannot be parsed; it is invalid."
+msgstr "L'URL inserito non può essere analizzato; non è valido."
+
+#: src/mainContext.cpp:192
+#, kde-format
+msgid "Filelight only accepts absolute paths, eg. /%1"
+msgstr "Filelight accetta solo percorsi assoluti, per esempio /%1"
+
+#: src/mainContext.cpp:194
+#, kde-format
+msgid "Folder not found: %1"
+msgstr "Cartella non trovata: %1"
+
+#: src/mainContext.cpp:196
+#, kde-format
+msgid ""
+"Unable to enter: %1\n"
+"You do not have access rights to this location."
+msgstr ""
+"Impossibile entrare in: %1\n"
+"Non hai diritti di accesso a questa posizione."
+
+#: src/qml/GlobalMenu.qml:10
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Scan"
+msgstr "Scansiona"
+
+#: src/qml/GlobalMenu.qml:21
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: src/qml/GlobalMenu.qml:27
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Help"
+msgstr "Aiuto"
+
+#: src/qml/main.qml:28
+#, kde-format
+msgctxt "@action"
+msgid "Scan Folder"
+msgstr "Scansiona cartella"
+
+#: src/qml/main.qml:35
+#, kde-format
+msgctxt "@action"
+msgid "Scan Home Folder"
+msgstr "Scansiona la cartella Home"
+
+#: src/qml/main.qml:42
+#, kde-format
+msgctxt "@action"
+msgid "Scan Root Folder"
+msgstr "Scansiona la cartella radice"
+
+#: src/qml/main.qml:49
+#, kde-format
+msgctxt "@action"
+msgid "Quit"
+msgstr "Esci"
+
+#: src/qml/main.qml:57
+#, kde-format
+msgctxt "@action configure app"
+msgid "Configure…"
+msgstr "Configura…"
+
+#: src/qml/main.qml:66
+#, kde-format
+msgctxt "@action"
+msgid "Open Handbook"
+msgstr "Apri il manuale"
+
+#: src/qml/main.qml:74
+#, kde-format
+msgctxt "@action opens about app page"
+msgid "About"
+msgstr "Informazioni su"
+
+#: src/qml/main.qml:95
+#, kde-format
+msgctxt "@info:status"
+msgid "No files."
+msgstr "Nessun file."
+
+#: src/qml/main.qml:96
+#, kde-format
+msgctxt "@info:status"
+msgid "1 file"
+msgid_plural "%1 files"
+msgstr[0] "1 file"
+msgstr[1] "%1 file"
+
+#: src/qml/main.qml:163
+#, kde-format
+msgctxt "@info:status"
+msgid "Aborting Scan..."
+msgstr "Interruzione della scansione..."
+
+#: src/qml/MapPage.qml:19
+#, kde-format
+msgctxt "@action"
+msgid "Up"
+msgstr "Su"
+
+#: src/qml/MapPage.qml:28
+#, kde-format
+msgctxt "@action"
+msgid "Rescan"
+msgstr "Nuova scansione"
+
+#: src/qml/MapPage.qml:37
+#, kde-format
+msgctxt "@action"
+msgid "Stop"
+msgstr "Interrompi"
+
+#: src/qml/MapPage.qml:45
+#, kde-format
+msgctxt "@action"
+msgid "Save as SVG"
+msgstr "Salva come SVG"
+
+#: src/qml/MapPage.qml:46
+#, kde-format
+msgid "Save the current view as an SVG file"
+msgstr "Salva la vista corrente come file SVG"
+
+#: src/qml/MapPage.qml:55
+#, kde-format
+msgctxt "@action"
+msgid "Zoom In"
+msgstr "Ingrandisci"
+
+#: src/qml/MapPage.qml:65
+#, kde-format
+msgctxt "@action"
+msgid "Zoom Out"
+msgstr "Rimpicciolisci"
+
+#: src/qml/MapPage.qml:127
+#, kde-format
+msgctxt "Scanned number of files and size so far"
+msgid "%1 File, %2"
+msgid_plural "%1 Files, %2"
+msgstr[0] "un file, %2"
+msgstr[1] "%1 file, %2"
+
+#: src/qml/MapPage.qml:136
+#, kde-format
+msgid "No data available"
+msgstr "Nessun dato disponibile"
+
+#: src/qml/OverviewPage.qml:15
+#, kde-format
+msgctxt "@title"
+msgid "Overview"
+msgstr "Panoramica"
+
+#: src/qml/OverviewPage.qml:35
+#, kde-format
+msgctxt "@title"
+msgid "Welcome to Filelight"
+msgstr "Benvenuto in Filelight"
+
+#: src/radialMap/item.cpp:214
+#, kde-format
+msgid "Open &File Manager Here"
+msgstr "Apri il gestore dei &file qui"
+
+#: src/radialMap/item.cpp:217
+#, kde-format
+msgid "Open &Terminal Here"
+msgstr "Apri il &terminale qui"
+
+#: src/radialMap/item.cpp:222
+#, kde-format
+msgid "&Center Map Here"
+msgstr "&Centra la mappa qui"
+
+#: src/radialMap/item.cpp:226
+#, kde-format
+msgid "Add to Do &Not Scan List"
+msgstr "Aggiungi a elenco da &non scansionare"
+
+#: src/radialMap/item.cpp:227
+#, kde-format
+msgid "&Rescan"
+msgstr "&Nuova scansione"
+
+#: src/radialMap/item.cpp:229
+#, kde-format
+msgctxt "Scan/open the path of the selected element"
+msgid "&Open"
+msgstr "&Apri"
+
+#: src/radialMap/item.cpp:233
+#, kde-format
+msgid "&Copy to clipboard"
+msgstr "&Copia negli appunti"
+
+#: src/radialMap/item.cpp:237 src/radialMap/item.cpp:283
+#, kde-format
+msgid "&Delete"
+msgstr "&Elimina"
+
+#: src/radialMap/item.cpp:281
+#, kde-format
+msgid ""
+"<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
+"b> deleted.</qt>"
+msgstr ""
+"<qt>La cartella in <i>«%1»</i> sarà eliminata <b>ricorsivamente</b> e "
+"<b>permanentemente</b>.</qt>"
+
+#: src/radialMap/item.cpp:282
+#, kde-format
+msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
+msgstr "<qt><i>«%1»</i> sarà eliminato <b>permanentemente</b>.</qt>"
+
+#: src/radialMap/item.cpp:308
+#, kde-format
+msgid "Error while deleting"
+msgstr "Errore nell'eliminazione"
+
+#: src/radialMap/item.cpp:410
+#, kde-format
+msgctxt "We messed up, the user needs to initiate a rescan."
+msgid ""
+"Internal representation is invalid,\n"
+"please rescan."
+msgstr ""
+"La rappresentazione interna non è valida,\n"
+"scansiona di nuovo."
+
+#: src/radialMap/item.cpp:769
+#, kde-format
+msgctxt "Tooltip of file/folder, %1 is path, %2 is size"
+msgid ""
+"%1\n"
+"%2"
+msgstr ""
+"%1\n"
+"%2"
+
+#: src/radialMap/item.cpp:777
+#, kde-format
+msgctxt "Tooltip of folder, %1 is number of files"
+msgid "%1 File (%2%)"
+msgid_plural "%1 Files (%2%)"
+msgstr[0] "un file (%2%)"
+msgstr[1] "%1 file (%2%)"
+
+#: src/radialMap/item.cpp:779
+#, kde-format
+msgctxt "Tooltip of folder, %1 is number of files"
+msgid "%1 File"
+msgid_plural "%1 Files"
+msgstr[0] "Un file"
+msgstr[1] "%1 file"
+
+#: src/radialMap/item.cpp:785
+#, kde-format
+msgid ""
+"\n"
+"Click to go up to parent directory"
+msgstr ""
+"\n"
+"Fai clic per salire alla cartella madre"
+
+#: src/radialMap/item.cpp:870
+#, kde-format
+msgctxt "@title:window"
+msgid "Save as SVG"
+msgstr "Salva come SVG"
+
+#: src/radialMap/item.cpp:872
+#, kde-format
+msgctxt "filedialog type filter"
+msgid "SVG Files (*.svg);;All Files(*)"
+msgstr "File SVG (*.svg);;Tutti i file(*)"
+
+#: src/radialMap/map.cpp:205
+#, kde-format
+msgid "1 file, with an average size of %2"
+msgid_plural "%1 files, with an average size of %2"
+msgstr[0] "1 file, di dimensione media %2"
+msgstr[1] "%1 file, di dimensione media %2"
+
+#: src/settingsDialog.cpp:31
+#, kde-format
+msgid "Rainbow"
+msgstr "Arcobaleno"
+
+#: src/settingsDialog.cpp:35
+#, kde-format
+msgid "System colors"
+msgstr "Colori di sistema"
+
+#: src/settingsDialog.cpp:39
+#, kde-format
+msgid "High contrast"
+msgstr "Alto contrasto"
+
+#: src/settingsDialog.cpp:133
+#, kde-format
+msgid "Select path to ignore"
+msgstr "Seleziona percorso da ignorare"
+
+#: src/settingsDialog.cpp:150
+#, kde-format
+msgid "That folder is already set to be excluded from scans."
+msgstr "Quella cartella è già impostata come esclusa dalle scansioni."
+
+#: src/settingsDialog.cpp:150
+#, kde-format
+msgid "Folder already ignored"
+msgstr "Cartella già ignorata"
+
+#~ msgctxt "@info:status"
+#~ msgid "Scan completed, generating map..."
+#~ msgstr "Scansione completa, generazione della mappa..."
+
+#~ msgid "Go"
+#~ msgstr "Vai"
+
+#~ msgid "Location Bar"
+#~ msgstr "Barra degli indirizzi"
+
+#~ msgid "Save as SVG..."
+#~ msgstr "Salva come SVG..."
+
+#~ msgid "&Recent Scans"
+#~ msgstr "Scansioni &recenti"
+
+#~ msgid "Scanning: %1"
+#~ msgstr "Scansione: %1"
+
+#~ msgid "Scan failed: %1"
+#~ msgstr "Scansione non riuscita: %1"
+
+#~ msgctxt "Tooltip of used space on the partition, %1 is path, %2 is size"
+#~ msgid ""
+#~ "%1\n"
+#~ "Used: %2"
+#~ msgstr ""
+#~ "%1\n"
+#~ "Usato: %2"
+
+#~ msgctxt "Tooltip of free space on the partition, %1 is path, %2 is size"
+#~ msgid ""
+#~ "%1\n"
+#~ "Free: %2"
+#~ msgstr ""
+#~ "%1\n"
+#~ "Libero: %2"
+
+#~ msgctxt "Percent used disk space on the partition"
+#~ msgid "<b>%1</b><br/>%2% Used"
+#~ msgstr "<b>%1</b><br/>%2% in uso"
+
+#~ msgctxt "Percent used disk space on the partition"
+#~ msgid "<b>%1: %2</b><br/>%3% Used"
+#~ msgstr "<b>%1: %2</b><br/>%3% in uso"
+
+#~ msgid "Prevents Filelight from scanning removable media (eg. CD-ROMs)."
+#~ msgstr ""
+#~ "Impedisce che Filelight scansioni i supporti rimovibili (per esempio i CD-"
+#~ "ROM)."
+
+#~ msgid "E&xclude removable media"
+#~ msgstr "E&scludi i supporti rimovibili"
+
+#~ msgid "%1 File"
+#~ msgid_plural "%1 Files"
+#~ msgstr[0] "%1 file"
+#~ msgstr[1] "%1 file"
+
+#~ msgid "File: %1"
+#~ msgid_plural "Files: %1"
+#~ msgstr[0] "File: %1"
+#~ msgstr[1] "File: %1"
+
+#~ msgctxt "Free space on the disks/partitions"
+#~ msgid "Free"
+#~ msgstr "Libero"
+
+#~ msgctxt "Used space on the disks/partitions"
+#~ msgid "Used"
+#~ msgstr "Usato"
+
+#~ msgid ""
+#~ "Unable to locate the Filelight Part.\n"
+#~ "Please make sure Filelight was correctly installed."
+#~ msgstr ""
+#~ "Impossibile localizzare il componente Filelight.\n"
+#~ "Assicurati di aver installato Filelight correttamente."
+
+#~ msgid ""
+#~ "Unable to load the Filelight Part.\n"
+#~ "Please make sure Filelight was correctly installed."
+#~ msgstr ""
+#~ "Impossibile caricare il componente Filelight.\n"
+#~ "Assicurati di aver installato Filelight correttamente."
+
+#~ msgid ""
+#~ "Unable to create Filelight part widget.\n"
+#~ "Please ensure that Filelight is correctly installed."
+#~ msgstr ""
+#~ "Impossibile creare l'oggetto grafico di Filelight.\n"
+#~ "Assicurati di aver installato Filelight correttamente."
+
+#~ msgid "Displays file usage in an easy to understand way."
+#~ msgstr "Visualizza l'uso dei file in un modo facile da capire."
+
+#~ msgid ""
+#~ "(c) 2002-2004 Max Howell\n"
+#~ "(c) 2008-2014 Martin T. Sandsmark"
+#~ msgstr ""
+#~ "© 2002-2004 Max Howell\n"
+#~ "© 2008-2014 Martin T. Sandsmark"
+
+#~ msgid "Configure Filelight..."
+#~ msgstr "Configura Filelight..."
+
+#~ msgctxt "Path in the file system to scan"
+#~ msgid "+[path]"
+#~ msgstr "+[percorso]"
+
+#~ msgid "Scan 'path'"
+#~ msgstr "Scansiona «percorso»"
+
+#~ msgid "Unable to create part widget."
+#~ msgstr "Impossibile creare l'oggetto del componente."
+
+#~ msgid "Please report bugs."
+#~ msgstr "Per piacere segnala gli errori."
+
+#~ msgid "Reset any changes you have made since you opened this dialog."
+#~ msgstr ""
+#~ "Reimposta qualsiasi cambiamento che hai fatto da quando hai aperto questa "
+#~ "finestra."
+
+#~ msgid "&Reset"
+#~ msgstr "&Reimposta"
+
+#~ msgid "&Close"
+#~ msgstr "&Chiudi"
+
+#~ msgid "Scan Directory"
+#~ msgstr "Scansiona cartella"
+
+#~ msgid ""
+#~ "Filelight will not scan these directories unless you specifically request "
+#~ "them."
+#~ msgstr ""
+#~ "Filelight non scansionerà queste cartelle a meno che tu lo richieda "
+#~ "specificamente."
+
+#~ msgid "Scheme"
+#~ msgstr "Schema"
+
+#~ msgid "&Go"
+#~ msgstr "&Vai"
+
+#~ msgid ""
+#~ "Filelight has crashed! :(\n"
+#~ "\n"
+#~ "But, all is not lost! Information about the crash is embedded in this "
+#~ "mail, so just click send, and we'll do what we can to fix the crash.\n"
+#~ "\n"
+#~ "Many thanks :)\n"
+#~ "\n"
+#~ "\n"
+#~ "\n"
+#~ "\n"
+#~ "\n"
+#~ "\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Filelight è andato in crash! :(\n"
+#~ "\n"
+#~ "Però non tutto è perduto! Le informazioni sul crash sono incorporate in "
+#~ "questa mail, quindi basta che fai clic su Invia, e faremo il possibile "
+#~ "per correggere il problema.\n"
+#~ "\n"
+#~ "Grazie mille :)\n"
+#~ "\n"
+#~ "\n"
+#~ "\n"
+#~ "\n"
+#~ "\n"
+#~ "\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "The information below is to help the developers identify the problem, "
+#~ "please do not modify it.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Le informazioni sotto aiutano gli sviluppatori a identificare il "
+#~ "problema, per piacere non modificarle.\n"
+#~ "\n"
+
+#~ msgid "Internationalization"
+#~ msgstr "Internazionalizzazione"
+
+#~ msgid "Bravery in the face of unreadable code"
+#~ msgstr "Sprezzo del pericolo di fronte a codice illeggibile"
+
+#~ msgid ""
+#~ "KDE could not find the Filelight Part, or the Filelight Part could not be "
+#~ "started. Did you make install?"
+#~ msgstr ""
+#~ "KDE non ha potuto trovare il componente Filelight, o non è stato "
+#~ "possibile avviare il componente Filelight. Hai eseguito un make install?"
+
+#~ msgid ""
+#~ "Filelight doesn't seem to be installed properly, consequently its menus "
+#~ "and toolbars will appear reduced or even empty"
+#~ msgstr ""
+#~ "Filelight non sembra essere installato correttamente, perciò i suoi menu "
+#~ "e barre appariranno ridotti o vuoti"
+
+#~ msgid "Clear Location Bar"
+#~ msgstr "Pulisci la barra di posizione"
+
+#~ msgid ""
+#~ "_: &Up: /home/mxcl\n"
+#~ "%1: %2"
+#~ msgstr "%1: %2"
+
+#~ msgid ""
+#~ "_n: %n File\n"
+#~ "%n Files"
+#~ msgstr ""
+#~ "%n File\n"
+#~ "%n File"
+
+#~ msgid "Delete Confirmation"
+#~ msgstr "Conferma eliminazione"
+
+#~ msgid "&Abort"
+#~ msgstr "&Interrompi"
+
+#~ msgid ""
+#~ "_: There cannot ever be only 1 file\n"
+#~ "%1 files, each about %2"
+#~ msgstr "%1 file, ciascuno circa %2"
+
+#~ msgid ""
+#~ "_: NAME OF TRANSLATORS\n"
+#~ "Your names"
+#~ msgstr "Federico Zenith,Luciano Montanaro"
+
+#~ msgid ""
+#~ "_: EMAIL OF TRANSLATORS\n"
+#~ "Your emails"
+#~ msgstr "federico.zenith@member.fsf.org"
+
+#~ msgid "Me"
+#~ msgstr "Io"
+
+#~ msgid "\"Girlfriend usability-testing\""
+#~ msgstr "\"Prova di usabilità su fidanzata\""
+
+#~ msgid "Welsh Translation"
+#~ msgstr "Traduzione gallese"
+
+#~ msgid "German Translation, testing, bug reports and suggestions"
+#~ msgstr "Traduzione tedesca, prove, segnalazioni di errori e suggerimenti"
+
+#~ msgid "Slovak Translation"
+#~ msgstr "Traduzione slovacca"
+
+#~ msgid "Polish Translation"
+#~ msgstr "Traduzione polacca"
+
+#~ msgid "Spanish Translation"
+#~ msgstr "Traduzione spagnola"
+
+#~ msgid "French Translation"
+#~ msgstr "Traduzione francese"
+
+#~ msgid "Russian Translation"
+#~ msgstr "Traduzione russa"
+
+#~ msgid "Dutch Translation"
+#~ msgstr "Traduzione olandese"
+
+#~ msgid "Alt+Y"
+#~ msgstr "Alt+Y"
+
+#~ msgid "Alt+B"
+#~ msgstr "Alt+B"
+
+#~ msgid "Alt+X"
+#~ msgstr "Alt+X"
+
+#~ msgid ""
+#~ "Called: %1\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Chiamato: %1\n"
+#~ "\n"
+
+#~ msgid "could not execute %1"
+#~ msgstr "impossibile eseguire %1"
+
+#~ msgid "Use the Scan-menu to begin..."
+#~ msgstr "Usa il menu Scansiona per cominciare..."
+
+#~ msgid "Up: %1"
+#~ msgstr "Su: %1"

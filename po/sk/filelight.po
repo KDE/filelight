@@ -1,0 +1,786 @@
+# translation of filelight.po to Slovak
+# Richard Fric <Richard.Fric@kdemail.net>, 2010.
+# Michal Sulek <misurel@gmail.com>, 2011.
+# Roman Paholík <wizzardsk@gmail.com>, 2013, 2015, 2017, 2022.
+# Mthw <jari_45@hotmail.com>, 2019.
+# Matej Mrenica <matejm98mthw@gmail.com>, 2020, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: filelight\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:49+0000\n"
+"PO-Revision-Date: 2022-07-19 10:05+0200\n"
+"Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
+"Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 22.07.80\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Michal Šulek"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "misurel@gmail.com"
+
+#. i18n: ectx: Menu (file)
+#: misc/filelightui.rc:4
+#, kde-format
+msgid "&Scan"
+msgstr "Pre&hľadať"
+
+#. i18n: ectx: Menu (view)
+#: misc/filelightui.rc:18
+#, kde-format
+msgid "&View"
+msgstr "&Zobraziť"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: misc/filelightui.rc:24
+#, kde-format
+msgid "Main Toolbar"
+msgstr "Hlavný panel nástrojov"
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: misc/filelightui.rc:33
+#, kde-format
+msgid "Location Toolbar"
+msgstr "Panel umiestenia"
+
+#. i18n: ectx: ToolBar (viewToolBar)
+#: misc/filelightui.rc:38
+#, kde-format
+msgid "View Toolbar"
+msgstr "Panel nástrojov Zobraziť"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, Dialog)
+#: src/dialog.ui:14
+#, kde-format
+msgid "Settings - Filelight"
+msgstr "Nastavenie - Filelight"
+
+#. i18n: ectx: attribute (title), widget (QWidget, Widget2)
+#: src/dialog.ui:33
+#, kde-format
+msgid "Scannin&g"
+msgstr "Pre&hľadávanie"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: src/dialog.ui:45
+#, kde-format
+msgid "Do &not scan these folders:"
+msgstr "&Neprehľadávať tieto priečinky:"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_removeButton)
+#: src/dialog.ui:85
+#, kde-format
+msgid "R&emove"
+msgstr "&Odstrániť"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_addButton)
+#: src/dialog.ui:95
+#, kde-format
+msgid "&Add..."
+msgstr "&Pridať..."
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScanRemoteMounts)
+#: src/dialog.ui:171
+#, kde-format
+msgid ""
+"Prevents scanning of filesystems that are not on this computer, e.g. NFS or "
+"Samba mounts."
+msgstr ""
+"Zabraňuje prehľadávaniu súborových systémov, ktoré nie sú na tomto počítači "
+"napr. NFS alebo Samba."
+
+#. i18n: ectx: property (text), widget (QCheckBox, dontScanRemoteMounts)
+#: src/dialog.ui:174
+#, kde-format
+msgid "Exclude remote files&ystems"
+msgstr "Vylúčiť &vzdialené súborové systémy"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, scanAcrossMounts)
+#: src/dialog.ui:181
+#, kde-format
+msgid ""
+"Allows scans to enter directories that are part of other filesystems. For "
+"example, when unchecked, this will usually prevent the contents of <b>/mnt</"
+"b> from being scanned if you scan <b>/</b>."
+msgstr ""
+"Umožňuje pri prehľadávaní vstupovať do adresárov, ktoré sú súčasťou iných "
+"súborových systémov. Napríklad, ak nie je začiarknutá táto možnosť, pri "
+"prehľadávaní cesty <b>/</b> sa vylúči obsah adresára <b>/mnt</b>."
+
+#. i18n: ectx: property (text), widget (QCheckBox, scanAcrossMounts)
+#: src/dialog.ui:184
+#, kde-format
+msgid "Scan across filesystem &boundaries"
+msgstr "Prehľadávať &cez hranice súborového systému"
+
+#. i18n: ectx: attribute (title), widget (QWidget, Widget3)
+#: src/dialog.ui:194
+#, kde-format
+msgid "&Appearance"
+msgstr "&Vzhľad"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: src/dialog.ui:206
+#, kde-format
+msgid "Color scheme"
+msgstr "Farebná schéma"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: src/dialog.ui:232
+#, kde-format
+msgid "Co&ntrast"
+msgstr "&Kontrast"
+
+#. i18n: ectx: property (whatsThis), widget (QSlider, contrastSlider)
+#: src/dialog.ui:254
+#, kde-format
+msgid "Here you can vary the contrast of the filemap in realtime."
+msgstr "Tu môžete zmeniť kontrast grafu v reálnom čase."
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, useAntialiasing)
+#: src/dialog.ui:275
+#, kde-format
+msgid ""
+"Anti-aliasing the filemap makes it clearer and prettier, unfortunately it "
+"also makes rendering very slow."
+msgstr ""
+"Vyhladzovanie hrán vyčistí a zjemní obrysy grafu, bohužiaľ to tiež veľmi "
+"spomalí vykresľovanie."
+
+#. i18n: ectx: property (text), widget (QCheckBox, useAntialiasing)
+#: src/dialog.ui:278
+#, kde-format
+msgid "&Use anti-aliasing"
+msgstr "Po&užiť vyhladzovanie hrán"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, showSmallFiles)
+#: src/dialog.ui:285
+#, kde-format
+msgid ""
+"Some files are too small to be rendered on the filemap. Selecting this "
+"option makes these files visible by merging them all into a single \"multi-"
+"segment\"."
+msgstr ""
+"Niektoré súbory sú príliš malé k vykresleniu na grafe. Ak vyberiete túto "
+"možnosť, zobrazia sa všetky tieto súbory spojené do jedného \"multi-segmentu"
+"\"."
+
+#. i18n: ectx: property (text), widget (QCheckBox, showSmallFiles)
+#: src/dialog.ui:288
+#, kde-format
+msgid "Show small files"
+msgstr "Zobraziť malé súbory"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, varyLabelFontSizes)
+#: src/dialog.ui:298
+#, kde-format
+msgid ""
+"The font size of exploded labels can be varied relative to the depth of the "
+"directories they represent. This helps you spot the important labels more "
+"easily. Set a sensible minimum font size."
+msgstr ""
+"Veľkosť písma štítkov sa môže líšiť relatívne k hĺbke priečinkov, ktoré "
+"reprezentujú. Toto vám pomôže ľahšie nájsť dôležité štítky. Minimálnu "
+"veľkosť písma nastavte na rozumnú hodnotu."
+
+#. i18n: ectx: property (text), widget (QCheckBox, varyLabelFontSizes)
+#: src/dialog.ui:301
+#, kde-format
+msgid "Var&y label font sizes"
+msgstr "Meniť &veľkosti písma štítkov"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, minFontPitchLabel)
+#: src/dialog.ui:338
+#, kde-format
+msgid "The smallest font size Filelight can use to render labels."
+msgstr ""
+"Najmenšia veľkosť písma, ktorú môže Filelight použiť na vykreslenie štítkov."
+
+#. i18n: ectx: property (text), widget (QLabel, minFontPitchLabel)
+#: src/dialog.ui:341
+#, kde-format
+msgid "Minimum font si&ze:"
+msgstr "&Minimálna veľkosť písma:"
+
+#: src/historyAction.cpp:64
+#, kde-format
+msgctxt "Go to the last path viewed"
+msgid "Back"
+msgstr "Späť"
+
+#: src/historyAction.cpp:68
+#, kde-format
+msgctxt "Go to forward in the history of paths viewed"
+msgid "Forward"
+msgstr "Dopredu"
+
+#: src/main.cpp:56
+#, kde-format
+msgid "Graphical disk-usage information"
+msgstr "Grafické informácie o využití disku"
+
+#: src/main.cpp:58
+#, kde-format
+msgid ""
+"(C) 2006 Max Howell\n"
+"(C) 2008-2014 Martin Sandsmark\n"
+"(C) 2017-2022 Harald Sitter"
+msgstr ""
+"(C) 2006 Max Howell\n"
+"(C) 2008-2014 Martin Sandsmark\n"
+"(C) 2017-2022 Harald Sitter"
+
+#: src/main.cpp:63
+#, kde-format
+msgid "Martin Sandsmark"
+msgstr "Martin Sandsmark"
+
+#: src/main.cpp:63
+#, kde-format
+msgid "Maintainer"
+msgstr "Správca"
+
+#: src/main.cpp:64
+#, kde-format
+msgid "Harald Sitter"
+msgstr "Harald Sitter"
+
+#: src/main.cpp:64
+#, kde-format
+msgid "QtQuick Port"
+msgstr "QtQuick Port"
+
+#: src/main.cpp:65
+#, kde-format
+msgid "Max Howell"
+msgstr "Max Howell"
+
+#: src/main.cpp:65
+#, kde-format
+msgid "Original author"
+msgstr "Pôvodný autor"
+
+#: src/main.cpp:66
+#, kde-format
+msgid "Lukas Appelhans"
+msgstr "Lukas Appelhans"
+
+#: src/main.cpp:66
+#, kde-format
+msgid "Help and support"
+msgstr "Pomocník a podpora"
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Steffen Gerlach"
+msgstr "Steffen Gerlach"
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Inspiration"
+msgstr "Inšpirácia"
+
+#: src/main.cpp:68
+#, kde-format
+msgid "Mike Diehl"
+msgstr "Mike Diehl"
+
+#: src/main.cpp:68
+#, kde-format
+msgid "Original documentation"
+msgstr "Pôvodná dokumentácia"
+
+#: src/main.cpp:69
+#, kde-format
+msgid "Sune Vuorela"
+msgstr "Sune Vuorela"
+
+#: src/main.cpp:69 src/main.cpp:70
+#, kde-format
+msgid "Icon"
+msgstr "Ikona"
+
+#: src/main.cpp:70
+#, kde-format
+msgid "Nuno Pinheiro"
+msgstr "Nuno Pinheiro"
+
+#: src/main.cpp:77
+#, kde-format
+msgid "Path or URL to scan"
+msgstr "Cesta alebo URL na prehľadanie"
+
+#: src/main.cpp:77
+#, kde-format
+msgid "[url]"
+msgstr "[url]"
+
+#: src/mainContext.cpp:126
+#, kde-format
+msgid "Select Folder to Scan"
+msgstr "Vyberte priečinok, ktorý chcete prehľadať"
+
+#: src/mainContext.cpp:190
+#, kde-format
+msgid "The entered URL cannot be parsed; it is invalid."
+msgstr "Zadanú URL adresu sa nepodarilo spracovať, pretože je neplatná."
+
+#: src/mainContext.cpp:192
+#, kde-format
+msgid "Filelight only accepts absolute paths, eg. /%1"
+msgstr "Filelight akceptuje iba absolútne cesty, napr. /%1"
+
+#: src/mainContext.cpp:194
+#, kde-format
+msgid "Folder not found: %1"
+msgstr "Priečinok sa nenašiel: %1"
+
+#: src/mainContext.cpp:196
+#, kde-format
+msgid ""
+"Unable to enter: %1\n"
+"You do not have access rights to this location."
+msgstr ""
+"Nepodarilo sa vstúpiť do: %1\n"
+"K tomuto umiestneniu nemáte prístupové práva."
+
+#: src/qml/GlobalMenu.qml:10
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Scan"
+msgstr "Prehľadať"
+
+#: src/qml/GlobalMenu.qml:21
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Settings"
+msgstr "Nastavenia"
+
+#: src/qml/GlobalMenu.qml:27
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Help"
+msgstr "Pomocník"
+
+#: src/qml/main.qml:28
+#, kde-format
+msgctxt "@action"
+msgid "Scan Folder"
+msgstr "Prehľadať priečinok"
+
+#: src/qml/main.qml:35
+#, kde-format
+msgctxt "@action"
+msgid "Scan Home Folder"
+msgstr "Prehľadať domovský priečinok"
+
+#: src/qml/main.qml:42
+#, kde-format
+msgctxt "@action"
+msgid "Scan Root Folder"
+msgstr "Prehľadať koreňový priečinok"
+
+#: src/qml/main.qml:49
+#, kde-format
+msgctxt "@action"
+msgid "Quit"
+msgstr "Ukončiť"
+
+#: src/qml/main.qml:57
+#, kde-format
+msgctxt "@action configure app"
+msgid "Configure…"
+msgstr "Nastaviť..."
+
+#: src/qml/main.qml:66
+#, kde-format
+msgctxt "@action"
+msgid "Open Handbook"
+msgstr "Otvoriť príručku"
+
+#: src/qml/main.qml:74
+#, kde-format
+msgctxt "@action opens about app page"
+msgid "About"
+msgstr "O aplikácii"
+
+#: src/qml/main.qml:95
+#, kde-format
+msgctxt "@info:status"
+msgid "No files."
+msgstr "Žiadne súbory."
+
+#: src/qml/main.qml:96
+#, kde-format
+msgctxt "@info:status"
+msgid "1 file"
+msgid_plural "%1 files"
+msgstr[0] "1 Súbor"
+msgstr[1] "%1 súbory"
+msgstr[2] "%1 súbory"
+
+#: src/qml/main.qml:163
+#, kde-format
+msgctxt "@info:status"
+msgid "Aborting Scan..."
+msgstr "Ruší sa prehľadávanie..."
+
+#: src/qml/MapPage.qml:19
+#, kde-format
+msgctxt "@action"
+msgid "Up"
+msgstr "Hore"
+
+#: src/qml/MapPage.qml:28
+#, kde-format
+msgctxt "@action"
+msgid "Rescan"
+msgstr "Znovu prehľadať"
+
+#: src/qml/MapPage.qml:37
+#, kde-format
+msgctxt "@action"
+msgid "Stop"
+msgstr "Zastaviť"
+
+#: src/qml/MapPage.qml:45
+#, kde-format
+msgctxt "@action"
+msgid "Save as SVG"
+msgstr "Uložiť ako SVG"
+
+#: src/qml/MapPage.qml:46
+#, kde-format
+msgid "Save the current view as an SVG file"
+msgstr "Uložiť aktuálne zobrazenie ako súbor SVG"
+
+#: src/qml/MapPage.qml:55
+#, kde-format
+msgctxt "@action"
+msgid "Zoom In"
+msgstr "Priblížiť"
+
+#: src/qml/MapPage.qml:65
+#, kde-format
+msgctxt "@action"
+msgid "Zoom Out"
+msgstr "Oddialiť"
+
+#: src/qml/MapPage.qml:127
+#, kde-format
+msgctxt "Scanned number of files and size so far"
+msgid "%1 File, %2"
+msgid_plural "%1 Files, %2"
+msgstr[0] "%1 Súbor, %2"
+msgstr[1] "%1 Súbory, %2"
+msgstr[2] "%1 Súborov, %2"
+
+#: src/qml/MapPage.qml:136
+#, kde-format
+msgid "No data available"
+msgstr "Údaje nedostupné"
+
+#: src/qml/OverviewPage.qml:15
+#, kde-format
+msgctxt "@title"
+msgid "Overview"
+msgstr "Prehľad"
+
+#: src/qml/OverviewPage.qml:35
+#, kde-format
+msgctxt "@title"
+msgid "Welcome to Filelight"
+msgstr "Vitajte vo Filelight"
+
+#: src/radialMap/item.cpp:214
+#, kde-format
+msgid "Open &File Manager Here"
+msgstr "Tu otvoriť &správcu súborov"
+
+#: src/radialMap/item.cpp:217
+#, kde-format
+msgid "Open &Terminal Here"
+msgstr "Tu otvoriť &terminál"
+
+#: src/radialMap/item.cpp:222
+#, kde-format
+msgid "&Center Map Here"
+msgstr "Tu vycentrovať &mapu"
+
+#: src/radialMap/item.cpp:226
+#, kde-format
+msgid "Add to Do &Not Scan List"
+msgstr "Pridať do zoznamu Neskenovať"
+
+#: src/radialMap/item.cpp:227
+#, kde-format
+msgid "&Rescan"
+msgstr "Znovu prehľadať"
+
+#: src/radialMap/item.cpp:229
+#, kde-format
+msgctxt "Scan/open the path of the selected element"
+msgid "&Open"
+msgstr "&Otvoriť"
+
+#: src/radialMap/item.cpp:233
+#, kde-format
+msgid "&Copy to clipboard"
+msgstr "&Kopírovať do schránky"
+
+#: src/radialMap/item.cpp:237 src/radialMap/item.cpp:283
+#, kde-format
+msgid "&Delete"
+msgstr "O&dstrániť"
+
+#: src/radialMap/item.cpp:281
+#, kde-format
+msgid ""
+"<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
+"b> deleted.</qt>"
+msgstr ""
+"<qt>Priečinok <i>'%1'</i> bude <b>rekurzívne</b> a <b>nenávratne</b> "
+"odstránený.</qt>"
+
+#: src/radialMap/item.cpp:282
+#, kde-format
+msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
+msgstr "<qt><i>'%1'</i> bude <b>nenávratne</b> odstránený.</qt>"
+
+#: src/radialMap/item.cpp:308
+#, kde-format
+msgid "Error while deleting"
+msgstr "Chyba pri odstraňovaní"
+
+#: src/radialMap/item.cpp:410
+#, kde-format
+msgctxt "We messed up, the user needs to initiate a rescan."
+msgid ""
+"Internal representation is invalid,\n"
+"please rescan."
+msgstr ""
+"Interná reprezentácia je neplatná,\n"
+"prosím, znovu prehľadajte."
+
+#: src/radialMap/item.cpp:769
+#, kde-format
+msgctxt "Tooltip of file/folder, %1 is path, %2 is size"
+msgid ""
+"%1\n"
+"%2"
+msgstr ""
+"%1\n"
+"%2"
+
+#: src/radialMap/item.cpp:777
+#, kde-format
+msgctxt "Tooltip of folder, %1 is number of files"
+msgid "%1 File (%2%)"
+msgid_plural "%1 Files (%2%)"
+msgstr[0] "%1 Súbor (%2%)"
+msgstr[1] "%1 Súbory (%2%)"
+msgstr[2] "%1 Súborov (%2%)"
+
+#: src/radialMap/item.cpp:779
+#, kde-format
+msgctxt "Tooltip of folder, %1 is number of files"
+msgid "%1 File"
+msgid_plural "%1 Files"
+msgstr[0] "%1 Súbor"
+msgstr[1] "%1 Súbory"
+msgstr[2] "%1 Súborov"
+
+#: src/radialMap/item.cpp:785
+#, kde-format
+msgid ""
+"\n"
+"Click to go up to parent directory"
+msgstr ""
+"\n"
+"Kliknite na prechod do nadradeného adresára"
+
+#: src/radialMap/item.cpp:870
+#, kde-format
+msgctxt "@title:window"
+msgid "Save as SVG"
+msgstr "Uložiť ako SVG"
+
+#: src/radialMap/item.cpp:872
+#, kde-format
+msgctxt "filedialog type filter"
+msgid "SVG Files (*.svg);;All Files(*)"
+msgstr "Súbory SVG (*.svg);;Všetky súbory(*)"
+
+#: src/radialMap/map.cpp:205
+#, kde-format
+msgid "1 file, with an average size of %2"
+msgid_plural "%1 files, with an average size of %2"
+msgstr[0] "1 súbor s priemernou veľkosťou %2"
+msgstr[1] "%1 súbory s priemernou veľkosťou %2"
+msgstr[2] "%1 súborov s priemernou veľkosťou %2"
+
+#: src/settingsDialog.cpp:31
+#, kde-format
+msgid "Rainbow"
+msgstr "Dúha"
+
+#: src/settingsDialog.cpp:35
+#, kde-format
+msgid "System colors"
+msgstr "Systémové farby"
+
+#: src/settingsDialog.cpp:39
+#, kde-format
+msgid "High contrast"
+msgstr "Vysoký kontrast"
+
+#: src/settingsDialog.cpp:133
+#, kde-format
+msgid "Select path to ignore"
+msgstr "Vyberte cestu na vylúčenie"
+
+#: src/settingsDialog.cpp:150
+#, kde-format
+msgid "That folder is already set to be excluded from scans."
+msgstr "Tento priečinok už je vylúčený z prehľadávania."
+
+#: src/settingsDialog.cpp:150
+#, kde-format
+msgid "Folder already ignored"
+msgstr "Priečinok je už ignorovaný"
+
+#, fuzzy
+#~| msgid "Scan completed, generating map..."
+#~ msgctxt "@info:status"
+#~ msgid "Scan completed, generating map..."
+#~ msgstr "Prehľadávanie dokončené, generuje sa mapa..."
+
+#~ msgid "Go"
+#~ msgstr "Prejsť"
+
+#~ msgid "Location Bar"
+#~ msgstr "Panel umiestenia"
+
+#~ msgid "Save as SVG..."
+#~ msgstr "Uložiť ako SVG..."
+
+#~ msgid "&Recent Scans"
+#~ msgstr "&Nedávno prehľadávané"
+
+#~ msgid "Scanning: %1"
+#~ msgstr "Prehľadáva sa: %1"
+
+#~ msgid "Scan failed: %1"
+#~ msgstr "Prehľadávanie zlyhalo: %1"
+
+#~ msgctxt "Free as in part of the disk that is free"
+#~ msgid "free"
+#~ msgstr "voľné"
+
+#~ msgctxt "Used as in part of the disk that is used"
+#~ msgid "used"
+#~ msgstr "využité"
+
+#~ msgctxt "Tooltip of used space on the partition, %1 is path, %2 is size"
+#~ msgid ""
+#~ "%1\n"
+#~ "Used: %2"
+#~ msgstr ""
+#~ "%1\n"
+#~ "Použité: %2"
+
+#~ msgctxt "Tooltip of free space on the partition, %1 is path, %2 is size"
+#~ msgid ""
+#~ "%1\n"
+#~ "Free: %2"
+#~ msgstr ""
+#~ "%1\n"
+#~ "Voľné: %2"
+
+#~ msgctxt "Percent used disk space on the partition"
+#~ msgid "<b>%1</b><br/>%2% Used"
+#~ msgstr "<b>%1</b><br/>%2% použité"
+
+#~ msgctxt "Percent used disk space on the partition"
+#~ msgid "<b>%1: %2</b><br/>%3% Used"
+#~ msgstr "<b>%1: %2</b><br/>%3% použité"
+
+#~ msgid "Prevents Filelight from scanning removable media (eg. CD-ROMs)."
+#~ msgstr "Zabraňuje prehľadávaniu vymeniteľných médií (napr. CD-ROM)."
+
+#~ msgid "E&xclude removable media"
+#~ msgstr "Vylúčiť vymeniteľné &médiá"
+
+#~ msgid "%1 File"
+#~ msgid_plural "%1 Files"
+#~ msgstr[0] "%1 súbor"
+#~ msgstr[1] "%1 súbory"
+#~ msgstr[2] "%1 súborov"
+
+#~ msgid "File: %1"
+#~ msgid_plural "Files: %1"
+#~ msgstr[0] "Súbor: %1"
+#~ msgstr[1] "Súbory: %1"
+#~ msgstr[2] "Súborov: %1"
+
+#~ msgctxt "Free space on the disks/partitions"
+#~ msgid "Free"
+#~ msgstr "Voľné"
+
+#~ msgctxt "Used space on the disks/partitions"
+#~ msgid "Used"
+#~ msgstr "Použité"
+
+#~ msgid ""
+#~ "Unable to locate the Filelight Part.\n"
+#~ "Please make sure Filelight was correctly installed."
+#~ msgstr ""
+#~ "Nepodarilo sa nájsť komponent Filelight.\n"
+#~ "Prosím, overte, či je Filelight správne nainštalovaný."
+
+#~ msgid ""
+#~ "Unable to load the Filelight Part.\n"
+#~ "Please make sure Filelight was correctly installed."
+#~ msgstr ""
+#~ "Nepodarilo sa načítať komponent Filelight.\n"
+#~ "Prosím, overte, či je je Filelight správne nainštalovaný."
+
+#~ msgid ""
+#~ "Unable to create Filelight part widget.\n"
+#~ "Please ensure that Filelight is correctly installed."
+#~ msgstr ""
+#~ "Nepodarilo sa vytvoriť komponent Filelight.\n"
+#~ "Prosím, overte, či je Filelight správne nainštalovaný."
+
+#~ msgid "Displays file usage in an easy to understand way."
+#~ msgstr "Zobrazuje využitie súborov v zrozumiteľnej podobe."
+
+#~ msgid ""
+#~ "(c) 2002-2004 Max Howell\n"
+#~ "(c) 2008-2014 Martin T. Sandsmark"
+#~ msgstr ""
+#~ "(c) 2002-2004 Max Howell\n"
+#~ "(c) 2008-2014 Martin T. Sandsmark"
+
+#~ msgid "Configure Filelight..."
+#~ msgstr "Nastaviť Filelight..."
+
+#~ msgctxt "Path in the file system to scan"
+#~ msgid "+[path]"
+#~ msgstr "+[cesta]"
+
+#~ msgid "Scan 'path'"
+#~ msgstr "Prehľadať 'cestu'"
+
+#~ msgid "Unable to create part widget."
+#~ msgstr "Nepodarilo sa vytvoriť komponent prvkov."

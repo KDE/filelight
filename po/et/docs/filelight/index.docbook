@@ -1,0 +1,646 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY package "kdeutils">
+  <!ENTITY kappname "&filelight;">
+  <!ENTITY filelight "<application
+>Filelight</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Estonian  "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="filelight" lang="&language;">
+
+<bookinfo>
+   <title
+>&filelight;i käsiraamat</title>
+   <authorgroup>
+      <author
+><firstname
+>Max</firstname
+> <surname
+>Howell</surname
+> <affiliation
+><address
+><email
+>max.howell@methylblue.com</email
+></address
+></affiliation>
+      </author>
+      <author
+><firstname
+>Martin</firstname
+> <surname
+>Sandsmark</surname
+> <affiliation
+><address
+><email
+>martin.sandsmark@kde.org</email
+></address
+></affiliation>
+      </author>
+      <othercredit role="translator"
+><firstname
+>Marek</firstname
+><surname
+>Laane</surname
+><affiliation
+><address
+><email
+>bald@smail.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+   </authorgroup>
+   <copyright
+><year
+>2006</year
+><holder
+>Max Howell</holder
+></copyright>
+   <copyright
+><year
+>2009</year
+><holder
+>Martin Sandsmark</holder
+></copyright>
+   <!-- Translators: put here the copyright notice of the translation -->
+   <legalnotice
+>&FDLNotice;</legalnotice>
+   <date
+>2013-05-25</date>
+   <releaseinfo
+>1.20 (&kde; 4.11)</releaseinfo>
+   <abstract
+><para
+>&filelight; loob kontentrilistest segmenteeritud ringidest interaktiivse kaardi, mis visualiseerib sinu arvuti kettakasutust.</para
+></abstract>
+   <!-- These may be used by search engines -->
+   <keywordset>
+      <keyword
+>KDE</keyword>
+      <keyword
+>Filelight</keyword>
+      <keyword
+>du</keyword>
+      <keyword
+>kettakasutus</keyword>
+   </keywordset>
+</bookinfo>
+
+
+<chapter id="introduction">
+   <title
+>Sissejuhatus</title>
+   <screenshot>
+      <screeninfo
+>&filelight; 1.20 pilt</screeninfo>
+      <mediaobject>
+         <imageobject
+><imagedata fileref="radial_map.png" format="PNG"/></imageobject>
+         <textobject
+><phrase
+>Pilt</phrase
+></textobject>
+      </mediaobject>
+   </screenshot>
+   <para
+>&filelight;i abil saab hõlpsasti ülevaate oma kettaruumi jagunemisest. Rakendus näitab failisüsteemi graafiliselt kontsentriliste lõigustatud ringidena. Nii saad kergesti tuvastada suurimad ketast kasutavad failid või kataloogid ja seejärel soovi korral nendega midagi &konqueror;is ette võtta.</para>
+</chapter>
+
+
+<chapter id="configuring">
+<title
+>&filelight;i seadistamine</title>
+
+<para
+>&filelight;i seadistustedialoogis on &filelight;i seadistamiseks kaks kaarti: <guilabel
+>Skaneerimine</guilabel
+> ja <guilabel
+>Välimus</guilabel
+>. Alljärgnevalt kirjeldame mõlemat kaarti. &filelight;i seadistustedialoogi saab avada menüükäsuga <menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>Filelighti seadistamine</guimenuitem
+></menuchoice
+>.</para>
+
+<sect1 id="scanning">
+<title
+>Skaneerimine</title>
+
+<screenshot>
+<screeninfo
+>Skaneerimise pilt</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_scan.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Pilt</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Skaneerimiskaardil saab määrata, kuidas &filelight; katalooge skaneerib. Kastis <guilabel
+>Ei skaneerita katalooge</guilabel
+> saab valida kataloogid, mis jäetakse skaneerimisel arvestamata. See on üsna kasulik kataloogide korral, milles sul puudub lugemisõigus, või kataloogide puhul, mis kuuluvad virtuaalsesse failisüsteemi (näiteks /proc). Kataloogi lisamiseks nimekirja klõpsa nupule <guibutton
+>Lisa...</guibutton
+> See avab dialoogi, kus saad kataloogipuust valida vajaliku kataloogi. Kataloogi eemaldamiseks vali see nimekirjast ja klõpsa nupule <guibutton
+>Eemalda</guibutton
+>.</para>
+<para
+><guilabel
+>Skaneerimine üle failisüsteemi piiride</guilabel
+> võimaldab uurimisel siseneda kataloogidesse, mis kuuluvad mõnda muusse failisüsteemi. Kui see on märkimata, siis näiteks ei skaneerita enamasti kataloogi <filename class="directory"
+>/mnt</filename
+> sisu, kui alustad skaneerimist juurkataloogist <filename class="directory"
+>/</filename
+>. Võrgufailisüsteemide, näiteks NFS-i või Samba ressursside, skaneerimine võib tekitada väga suure võrguliikluse. Nende välistamiseks tuleb märkida valik <guilabel
+>Välja arvatud võrgufailisüsteemid</guilabel
+>. Teine valik <guilabel
+>Välja arvatud eemaldatavad andmekandjad</guilabel
+> takistab &filelight;ilt skaneerimast eemaldatavaid andmekandjaid (nt. &CD-ROM;-id).</para>
+</sect1>
+
+<sect1 id="appearance">
+<title
+>Välimus</title>
+
+<screenshot>
+<screeninfo
+>Välimuse pilt</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_appear.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Pilt</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Kaardil <guilabel
+>Välimus</guilabel
+> saab kohandada &filelight;i väljanägemist.</para>
+<para
+>Sektsioonis <guilabel
+>Värviskeem</guilabel
+> saab valida &filelight;i värviskeemi. Valikuteks on <guilabel
+>vikerkaar</guilabel
+>, <guilabel
+>süsteemi värvid</guilabel
+> ja <guilabel
+>kõrge kontrast</guilabel
+>. Liuguriga <guilabel
+>Kontrast</guilabel
+> saab muuta lõikude kontrasti, et need paremini näha oleks.</para>
+<para
+>Märkekastiga <guilabel
+>Antialiase kasutamine</guilabel
+> saab lubada või keelata antialiase kasutamise &filelight;i aknas. Märkimise korral on lõigud üldiselt märksa selgemini näha.</para>
+<para
+>Kasti <guilabel
+>Muutuvad pealdisefondi suurused</guilabel
+> märkimisest on kasu eriti siis, kui sul on pikkade nimetustega faile või katalooge. Selle märkimisel muudetakse fondi suurust, et nimetused paremini ära mahuksid. Sisselülitamisel saab kasutada ka kerimiskasti <guilabel
+>Minimaalne fondisuurus</guilabel
+>, mis võimaldab valida väikseima kasutatava fondisuuruse. </para>
+<para
+><guilabel
+>Väikeste failide näitamine</guilabel
+> on vaikimisi keelatud, sest need kipuvad enamasti &filelight;i vaate liiga kirjuks muutma. Kui aga soovid, et &filelight; näitaks ka väikseid faile, lülita see sisse. Need failid ühendatakse ühtsesse <quote
+>mitmiklõiku</quote
+>.</para>
+
+</sect1>
+</chapter>
+
+
+<chapter id="using">
+<title
+>&filelight;i kasutamine</title>
+
+<sect1 id="starting">
+<title
+>&filelight;i käivitamine</title>
+<para
+>&filelight;i võib käivitada K-menüüst või käsurealt.</para>
+
+<sect2 id="starting-from-the-menu">
+<title
+>K-menüüst</title>
+<para
+>Ava &kde; programmide menüü klõpsuga paneeli paiknevale <guiicon
+>suure K</guiicon
+> ikoonile. See avab <guimenu
+>programmide menüü</guimenu
+>. Vii hiir kirje <guimenu
+>Utiliidid</guimenu
+> peale ja vali avanevast alammenüüst <guimenuitem
+>&filelight;</guimenuitem
+>. </para>
+</sect2>
+
+<sect2 id="starting-from-the-command-line">
+<title
+>Käsurealt</title>
+<para
+>&filelight;i saab käivitada lihtsalt selle nime käsureal andes. Kui lisada ka kataloogi nimi, nagu alltoodud näites, hakkab rakendus kohe skaneerima määratud kataloogi. </para>
+<informalexample>
+<screen
+><prompt
+>%</prompt
+><userinput
+><command
+>filelight</command
+> <option
+><replaceable
+>/home</replaceable
+></option
+></userinput
+>
+</screen>
+</informalexample>
+</sect2>
+
+</sect1>
+
+<sect1 id="scanning-folders">
+<title
+>Kataloogide uurimine</title>
+<para
+>Kataloogi skaneerimisel näidatakse selle sisu failikaardina. Kataloogi skaneerimiseks kasuta menüüd Skaneerimine või kirjuta vajalik &URL; otse asukohareale. </para>
+</sect1>
+
+<sect1 id="exploring-filemaps">
+<title
+>Failikaardi uurimine</title>
+<para
+>Kui skaneerimine on lõppenud, näidatakse skaneeritud kataloogi failikaardina. See kujutab endast mitut kontsentrilist lõikudeks jagatud ringi. Värvilised lõigud on kataloogid, hallid lõigud failid. Lõikude suurus vastab failide suurusele. Lõigud võivad olla pesastatud, see tähendab, et näiteks <filename class="directory"
+>/home/marek</filename
+> on üks tase väljapool lõiku <filename class="directory"
+>/home</filename
+>, kuid selle raames. Lõikudele on lisatud nimi ning hiire viimisel lõigu kohale näed antud lõigu ja selle alamlõikude üksikasju. </para>
+<screenshot>
+<screeninfo
+>Failikaardi pilt</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="radial_map_context_menu.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Pilt</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+<para
+>Katalooge saab avada vaikimisi failihaladuris või &konsole;s, kasutades vastava lõigu kontekstimenüüd. Klõps &HKNga; avab failid MIME tüübi järgi, nt. pildid rakendusega <application
+>Gwenview</application
+>. Lõigul paremklõpsu tehes avaneb skaneeritud kataloogi kontekstimenüü käskudega kopeerida kataloogi asukoht lõikepuhvrisse või kustutada kataloog või fail. Klõps hiire vasaku nupuga lõigule keskendab vaate just sellele lõigule. </para>
+</sect1>
+
+</chapter>
+
+
+<chapter id="commands">
+<title
+>Menüüde ja käskude seletused</title>
+
+<variablelist>
+<title
+>Menüü Skaneerimine</title>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Skaneerimine</guimenu
+> <guimenuitem
+>Skaneeri kataloogi...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Avab kataloogi valimise dialoogi, kus saab valida skaneeritava kataloogi.</action
+></para
+></listitem>
+</varlistentry>
+<!--FIXME shortcut not visible in the menu, why?-->
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keysym
+>Home</keysym
+></keycombo
+> </shortcut
+> <guimenu
+>Skaneerimine</guimenu
+> <guimenuitem
+>Skaneeri kodukataloogi</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Käivitab kasutaja kodukataloogi skaneerimise.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Skaneerimine</guimenu
+> <guimenuitem
+>Skaneeri juurkataloogi</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Käivitab juurkataloogi skaneerimise.</action
+></para
+></listitem>
+</varlistentry>
+
+<!--not in 4.11 
+varlistentry>
+<term
+><menuchoice>
+<guimenu
+>Scan</guimenu>
+<guimenuitem
+>Recent Scans</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para
+><action
+>Provides a list of your most recent scanned folders allowing quick access to these folders.</action
+></para
+></listitem>
+</varlistentry-->
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycap
+>F5</keycap
+> </shortcut
+> <guimenu
+>Skaneerimine</guimenu
+> <guimenuitem
+>Skaneeri uuesti</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Käivitab skaneeritud kataloogi uue skaneerimise, mis on kasulik juhul, kui vahepeal on failisüsteemis midagi muudetud.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> &Esc; </shortcut
+> <guimenu
+>Skaneerimine</guimenu
+> <guimenuitem
+>Peata</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Peatab käimasoleva skaneerimise.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Skaneerimine</guimenu
+> <guimenuitem
+>Välju</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Lõpetab &filelight;i töö.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist>
+  <title
+>Menüü Vaade</title>
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>+</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Vaade</guimenu
+> <guimenuitem
+>Suurenda</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Suurendab failikaardi vaadet.</action
+></para>
+    </listitem>
+    </varlistentry>
+
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>-</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Vaade</guimenu
+> <guimenuitem
+>Vähenda</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Vähendab failikaardi vaadet.</action
+></para>
+    </listitem>
+    </varlistentry>
+</variablelist>
+
+<variablelist>
+<title
+>Menüü Liikumine</title>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>Nool üles</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Liikumine</guimenu
+> <guimenuitem
+>Üles</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Liigub failisüsteemis ühe taseme võrra ülespoole.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Liikumine</guimenu
+> <guimenuitem
+>Tagasi</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Liigub failisüsteemi sirvimise ajaloos ühe sammu tagasi.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Liikumine</guimenu
+> <guimenuitem
+>Edasi</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Liigub failisüsteemi sirvimise ajaloos ühe sammu edasi.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Lisaks on &filelight;il tavapärased &kde; <guimenu
+>seadistuste</guimenu
+> ja <guimenu
+>abi</guimenu
+>menüü elemendid, mille kohta leiab rohkem teavet &kde; põhialuste käsiraamatu osadest <ulink url="help:/fundamentals/ui.html#menus-settings"
+>Menüü Seadistused</ulink
+> ja <ulink url="help:/fundamentals/ui.html#menus-help"
+>Menüü Abi</ulink
+>. </para>
+</chapter>
+
+
+<chapter id="credits">
+   <title
+>Autorid ja litsents</title>
+   <sect1 id="kapp">
+      <title
+>&filelight;</title>
+      <para
+>Rakenduse autoriõigus 2006: Max B. Howell <email
+>max.howell@methylblue.com</email
+></para>
+      <para
+>Rakenduse autoriõigus 2008-2013: Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+></para>
+&underGPL; </sect1>
+   <sect1 id="Documentation">
+      <title
+>Dokumentatsioon</title>
+      <para
+>Dokumentatsiooni autoriõigus 2003: Max B. Howell <email
+>max.howell@methylblue.com</email
+></para>
+      <para
+>Dokumentatsiooni autoriõigus 2009: Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+></para>
+      <para
+>Tõlge eesti keelde: Marek Laane <email
+>bald@smail.ee</email
+></para
+> 
+&underFDL; </sect1>
+</chapter>
+
+
+<appendix id="installation">
+    <title
+>Paigaldamine</title>
+
+    <sect1 id="getting-kapp">
+        <title
+>&filelight;i hankimine</title>
+&install.intro.documentation; </sect1>
+
+    <sect1 id="Compilation">
+        <title
+>Kompileerimine ja paigaldamine</title>
+&install.compile.documentation; </sect1>
+</appendix>
+
+&documentation.index;
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

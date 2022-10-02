@@ -1,0 +1,783 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Michał Zając <michal.zajac@gmail.com>, 2010.
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Marta Rybczyńska <kde-i18n@rybczynska.net>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:49+0000\n"
+"PO-Revision-Date: 2022-06-27 20:08+0200\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
+"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 22.03.70\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Michał Zając, Łukasz Wojniłowicz"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "michal.zajac@gmail.com, lukasz.wojnilowicz@gmail.com"
+
+#. i18n: ectx: Menu (file)
+#: misc/filelightui.rc:4
+#, kde-format
+msgid "&Scan"
+msgstr "&Przelicz"
+
+#. i18n: ectx: Menu (view)
+#: misc/filelightui.rc:18
+#, kde-format
+msgid "&View"
+msgstr "&Widok"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: misc/filelightui.rc:24
+#, kde-format
+msgid "Main Toolbar"
+msgstr "Główny pasek narzędzi"
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: misc/filelightui.rc:33
+#, kde-format
+msgid "Location Toolbar"
+msgstr "Pasek narzędzi miejsc"
+
+#. i18n: ectx: ToolBar (viewToolBar)
+#: misc/filelightui.rc:38
+#, kde-format
+msgid "View Toolbar"
+msgstr "Pasek narzędzi widoku"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, Dialog)
+#: src/dialog.ui:14
+#, kde-format
+msgid "Settings - Filelight"
+msgstr "Ustawienia Filelight"
+
+#. i18n: ectx: attribute (title), widget (QWidget, Widget2)
+#: src/dialog.ui:33
+#, kde-format
+msgid "Scannin&g"
+msgstr "&Przeliczanie"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: src/dialog.ui:45
+#, kde-format
+msgid "Do &not scan these folders:"
+msgstr "&Nie przeliczaj następujących katalogów:"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_removeButton)
+#: src/dialog.ui:85
+#, kde-format
+msgid "R&emove"
+msgstr "U&suń"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_addButton)
+#: src/dialog.ui:95
+#, kde-format
+msgid "&Add..."
+msgstr "&Dodaj..."
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScanRemoteMounts)
+#: src/dialog.ui:171
+#, kde-format
+msgid ""
+"Prevents scanning of filesystems that are not on this computer, e.g. NFS or "
+"Samba mounts."
+msgstr ""
+"Zapobiega przeliczaniu systemów plików, które nie znajdują się na tym "
+"komputerze, np. NFS lub punktów montowania Samby"
+
+#. i18n: ectx: property (text), widget (QCheckBox, dontScanRemoteMounts)
+#: src/dialog.ui:174
+#, kde-format
+msgid "Exclude remote files&ystems"
+msgstr "Nie przeliczaj &zdalnych systemów plików"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, scanAcrossMounts)
+#: src/dialog.ui:181
+#, kde-format
+msgid ""
+"Allows scans to enter directories that are part of other filesystems. For "
+"example, when unchecked, this will usually prevent the contents of <b>/mnt</"
+"b> from being scanned if you scan <b>/</b>."
+msgstr ""
+"Pozwala na przeliczenie katalogów, które wchodzą w skład innych systemów "
+"plików. Na przykład, gdy opcja zostanie odznaczona to katalog <b>/mnt</b> "
+"nie zostanie przeliczony podczas przeliczania <b>/</b>."
+
+#. i18n: ectx: property (text), widget (QCheckBox, scanAcrossMounts)
+#: src/dialog.ui:184
+#, kde-format
+msgid "Scan across filesystem &boundaries"
+msgstr "&Przechodź pomiędzy systemami plików"
+
+#. i18n: ectx: attribute (title), widget (QWidget, Widget3)
+#: src/dialog.ui:194
+#, kde-format
+msgid "&Appearance"
+msgstr "&Wygląd"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: src/dialog.ui:206
+#, kde-format
+msgid "Color scheme"
+msgstr "Zestaw barw"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: src/dialog.ui:232
+#, kde-format
+msgid "Co&ntrast"
+msgstr "&Kontrast"
+
+#. i18n: ectx: property (whatsThis), widget (QSlider, contrastSlider)
+#: src/dialog.ui:254
+#, kde-format
+msgid "Here you can vary the contrast of the filemap in realtime."
+msgstr "Tutaj można zmieniać kontrast mapy plików."
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, useAntialiasing)
+#: src/dialog.ui:275
+#, kde-format
+msgid ""
+"Anti-aliasing the filemap makes it clearer and prettier, unfortunately it "
+"also makes rendering very slow."
+msgstr ""
+"Wygładzanie krawędzi może uczynić mapę plików ładniejszą i bardziej "
+"przejrzystą, niestety sprawia, że wyświetlanie staje się wolne. "
+
+#. i18n: ectx: property (text), widget (QCheckBox, useAntialiasing)
+#: src/dialog.ui:278
+#, kde-format
+msgid "&Use anti-aliasing"
+msgstr "&Wygładzaj krawędzie"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, showSmallFiles)
+#: src/dialog.ui:285
+#, kde-format
+msgid ""
+"Some files are too small to be rendered on the filemap. Selecting this "
+"option makes these files visible by merging them all into a single \"multi-"
+"segment\"."
+msgstr ""
+"Niektóre pliki mogą być zbyt małe aby pokazać je na mapie plików. Wybranie "
+"tej opcji spowoduje wyświetlenie tych plików tworząc z nich jeden segment"
+
+#. i18n: ectx: property (text), widget (QCheckBox, showSmallFiles)
+#: src/dialog.ui:288
+#, kde-format
+msgid "Show small files"
+msgstr "Pokaż także małe pliki"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, varyLabelFontSizes)
+#: src/dialog.ui:298
+#, kde-format
+msgid ""
+"The font size of exploded labels can be varied relative to the depth of the "
+"directories they represent. This helps you spot the important labels more "
+"easily. Set a sensible minimum font size."
+msgstr ""
+"Rozmiar czcionki rozwijanych etykiet może zależeć od głębokości na jakiej "
+"leży katalog, który ta etykieta przedstawia. To pomaga łatwiej zauważyć "
+"ważne etykiety. Ustaw rozsądnie najmniejszy rozmiar czcionki."
+
+#. i18n: ectx: property (text), widget (QCheckBox, varyLabelFontSizes)
+#: src/dialog.ui:301
+#, kde-format
+msgid "Var&y label font sizes"
+msgstr "Różnicuj rozmiar&y etykiet"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, minFontPitchLabel)
+#: src/dialog.ui:338
+#, kde-format
+msgid "The smallest font size Filelight can use to render labels."
+msgstr "Najmniejszy rozmiar czcionki używany do wyświetlania etykiet."
+
+#. i18n: ectx: property (text), widget (QLabel, minFontPitchLabel)
+#: src/dialog.ui:341
+#, kde-format
+msgid "Minimum font si&ze:"
+msgstr "Rozmiar najmniejs&zej czcionki:"
+
+#: src/historyAction.cpp:64
+#, kde-format
+msgctxt "Go to the last path viewed"
+msgid "Back"
+msgstr "Wstecz"
+
+#: src/historyAction.cpp:68
+#, kde-format
+msgctxt "Go to forward in the history of paths viewed"
+msgid "Forward"
+msgstr "Naprzód"
+
+#: src/main.cpp:56
+#, kde-format
+msgid "Graphical disk-usage information"
+msgstr "Graficzne przedstawienie informacji o użyciu dysku"
+
+#: src/main.cpp:58
+#, kde-format
+msgid ""
+"(C) 2006 Max Howell\n"
+"(C) 2008-2014 Martin Sandsmark\n"
+"(C) 2017-2022 Harald Sitter"
+msgstr ""
+"(C) 2006 Max Howell\n"
+"(C) 2008-2014 Martin Sandsmark\n"
+"(C) 2017-2022 Harald Sitter"
+
+#: src/main.cpp:63
+#, kde-format
+msgid "Martin Sandsmark"
+msgstr "Martin Sandsmark"
+
+#: src/main.cpp:63
+#, kde-format
+msgid "Maintainer"
+msgstr "Opiekun"
+
+#: src/main.cpp:64
+#, kde-format
+msgid "Harald Sitter"
+msgstr "Harald Sitter"
+
+#: src/main.cpp:64
+#, kde-format
+msgid "QtQuick Port"
+msgstr "Przeniesienie na QtQuick"
+
+#: src/main.cpp:65
+#, kde-format
+msgid "Max Howell"
+msgstr "Max Howell"
+
+#: src/main.cpp:65
+#, kde-format
+msgid "Original author"
+msgstr "Autor pierwszej wersji"
+
+#: src/main.cpp:66
+#, kde-format
+msgid "Lukas Appelhans"
+msgstr "Lukas Appelhans"
+
+#: src/main.cpp:66
+#, kde-format
+msgid "Help and support"
+msgstr "Pomoc i wsparcie"
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Steffen Gerlach"
+msgstr "Steffen Gerlach"
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Inspiration"
+msgstr "Inspiracja"
+
+#: src/main.cpp:68
+#, kde-format
+msgid "Mike Diehl"
+msgstr "Mike Diehl"
+
+#: src/main.cpp:68
+#, kde-format
+msgid "Original documentation"
+msgstr "Dokumentacja"
+
+#: src/main.cpp:69
+#, kde-format
+msgid "Sune Vuorela"
+msgstr "Sune Vuorela"
+
+#: src/main.cpp:69 src/main.cpp:70
+#, kde-format
+msgid "Icon"
+msgstr "Ikona"
+
+#: src/main.cpp:70
+#, kde-format
+msgid "Nuno Pinheiro"
+msgstr "Nuno Pinheiro"
+
+#: src/main.cpp:77
+#, kde-format
+msgid "Path or URL to scan"
+msgstr "Ścieżka lub adres URL do skanowania"
+
+#: src/main.cpp:77
+#, kde-format
+msgid "[url]"
+msgstr "[url]"
+
+#: src/mainContext.cpp:126
+#, kde-format
+msgid "Select Folder to Scan"
+msgstr "Wybierz katalog do przeliczenia"
+
+#: src/mainContext.cpp:190
+#, kde-format
+msgid "The entered URL cannot be parsed; it is invalid."
+msgstr "Nie można przetworzyć podanego adresu URL; jest on nieprawidłowy."
+
+#: src/mainContext.cpp:192
+#, kde-format
+msgid "Filelight only accepts absolute paths, eg. /%1"
+msgstr "Filelight przyjmuje tylko ścieżki absolutne, np. /%1"
+
+#: src/mainContext.cpp:194
+#, kde-format
+msgid "Folder not found: %1"
+msgstr "Nie znaleziono katalogu %1"
+
+#: src/mainContext.cpp:196
+#, kde-format
+msgid ""
+"Unable to enter: %1\n"
+"You do not have access rights to this location."
+msgstr ""
+"Brak dostępu do %1\n"
+"Nie posiadasz uprawień dostępu do tego miejsca."
+
+#: src/qml/GlobalMenu.qml:10
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Scan"
+msgstr "Przelicz"
+
+#: src/qml/GlobalMenu.qml:21
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Settings"
+msgstr "Ustawienia"
+
+#: src/qml/GlobalMenu.qml:27
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Help"
+msgstr "Pomoc"
+
+#: src/qml/main.qml:28
+#, kde-format
+msgctxt "@action"
+msgid "Scan Folder"
+msgstr "Przelicz katalog"
+
+#: src/qml/main.qml:35
+#, kde-format
+msgctxt "@action"
+msgid "Scan Home Folder"
+msgstr "Przelicz katalog domowy"
+
+#: src/qml/main.qml:42
+#, kde-format
+msgctxt "@action"
+msgid "Scan Root Folder"
+msgstr "Przelicz katalog główny"
+
+#: src/qml/main.qml:49
+#, kde-format
+msgctxt "@action"
+msgid "Quit"
+msgstr "Zakończ"
+
+#: src/qml/main.qml:57
+#, kde-format
+msgctxt "@action configure app"
+msgid "Configure…"
+msgstr "Ustawienia…"
+
+#: src/qml/main.qml:66
+#, kde-format
+msgctxt "@action"
+msgid "Open Handbook"
+msgstr "Otwórz podręcznik"
+
+#: src/qml/main.qml:74
+#, kde-format
+msgctxt "@action opens about app page"
+msgid "About"
+msgstr "O programie"
+
+#: src/qml/main.qml:95
+#, kde-format
+msgctxt "@info:status"
+msgid "No files."
+msgstr "Brak plików."
+
+#: src/qml/main.qml:96
+#, kde-format
+msgctxt "@info:status"
+msgid "1 file"
+msgid_plural "%1 files"
+msgstr[0] "1 plik"
+msgstr[1] "%1 pliki"
+msgstr[2] "%1 plików"
+
+#: src/qml/main.qml:163
+#, kde-format
+msgctxt "@info:status"
+msgid "Aborting Scan..."
+msgstr "Przerywanie przeliczania..."
+
+#: src/qml/MapPage.qml:19
+#, kde-format
+msgctxt "@action"
+msgid "Up"
+msgstr "W górę"
+
+#: src/qml/MapPage.qml:28
+#, kde-format
+msgctxt "@action"
+msgid "Rescan"
+msgstr "Przelicz ponownie"
+
+#: src/qml/MapPage.qml:37
+#, kde-format
+msgctxt "@action"
+msgid "Stop"
+msgstr "Zatrzymaj"
+
+#: src/qml/MapPage.qml:45
+#, kde-format
+msgctxt "@action"
+msgid "Save as SVG"
+msgstr "Zapisz jako SVG"
+
+#: src/qml/MapPage.qml:46
+#, kde-format
+msgid "Save the current view as an SVG file"
+msgstr "Zapisz bieżący widok jako plik SVG"
+
+#: src/qml/MapPage.qml:55
+#, kde-format
+msgctxt "@action"
+msgid "Zoom In"
+msgstr "Powiększ"
+
+#: src/qml/MapPage.qml:65
+#, kde-format
+msgctxt "@action"
+msgid "Zoom Out"
+msgstr "Pomniejsz"
+
+#: src/qml/MapPage.qml:127
+#, kde-format
+msgctxt "Scanned number of files and size so far"
+msgid "%1 File, %2"
+msgid_plural "%1 Files, %2"
+msgstr[0] "%1 plik, %2"
+msgstr[1] "%1 pliki, %2"
+msgstr[2] "%1 plików, %2"
+
+#: src/qml/MapPage.qml:136
+#, kde-format
+msgid "No data available"
+msgstr "Brak danych"
+
+#: src/qml/OverviewPage.qml:15
+#, kde-format
+msgctxt "@title"
+msgid "Overview"
+msgstr "Przegląd"
+
+#: src/qml/OverviewPage.qml:35
+#, kde-format
+msgctxt "@title"
+msgid "Welcome to Filelight"
+msgstr "Witaj w Filelight"
+
+#: src/radialMap/item.cpp:214
+#, kde-format
+msgid "Open &File Manager Here"
+msgstr "Otwórz przeglądarkę plików &tutaj"
+
+#: src/radialMap/item.cpp:217
+#, kde-format
+msgid "Open &Terminal Here"
+msgstr "Otwórz &terminal tutaj"
+
+#: src/radialMap/item.cpp:222
+#, kde-format
+msgid "&Center Map Here"
+msgstr "Wyśrodkuj &mapę tutaj"
+
+#: src/radialMap/item.cpp:226
+#, kde-format
+msgid "Add to Do &Not Scan List"
+msgstr "Dodaj do spisu &nieprzeliczanych"
+
+#: src/radialMap/item.cpp:227
+#, kde-format
+msgid "&Rescan"
+msgstr "P&rzelicz ponownie"
+
+#: src/radialMap/item.cpp:229
+#, kde-format
+msgctxt "Scan/open the path of the selected element"
+msgid "&Open"
+msgstr "&Otwórz"
+
+#: src/radialMap/item.cpp:233
+#, kde-format
+msgid "&Copy to clipboard"
+msgstr "Skopiuj do s&chowka"
+
+#: src/radialMap/item.cpp:237 src/radialMap/item.cpp:283
+#, kde-format
+msgid "&Delete"
+msgstr "&Usuń"
+
+#: src/radialMap/item.cpp:281
+#, kde-format
+msgid ""
+"<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
+"b> deleted.</qt>"
+msgstr ""
+"<qt>Katalog <i>'%1'</i> zostanie przeliczony <b>wgłąb</b> i <b>trwale</b> "
+"usunięty.</qt>"
+
+#: src/radialMap/item.cpp:282
+#, kde-format
+msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
+msgstr "<qt><i>'%1'</i> zostanie <b>trwale</b> usunięty.</qt>"
+
+#: src/radialMap/item.cpp:308
+#, kde-format
+msgid "Error while deleting"
+msgstr "Wystąpił błąd podczas usuwania"
+
+#: src/radialMap/item.cpp:410
+#, kde-format
+msgctxt "We messed up, the user needs to initiate a rescan."
+msgid ""
+"Internal representation is invalid,\n"
+"please rescan."
+msgstr ""
+"Wewnętrzna reprezentacja jest nieprawidłowa,\n"
+"proszę przeliczyć ponownie."
+
+#: src/radialMap/item.cpp:769
+#, kde-format
+msgctxt "Tooltip of file/folder, %1 is path, %2 is size"
+msgid ""
+"%1\n"
+"%2"
+msgstr ""
+"%1\n"
+"%2"
+
+#: src/radialMap/item.cpp:777
+#, kde-format
+msgctxt "Tooltip of folder, %1 is number of files"
+msgid "%1 File (%2%)"
+msgid_plural "%1 Files (%2%)"
+msgstr[0] "%1 Plik (%2%)"
+msgstr[1] "%1 Pliki (%2%)"
+msgstr[2] "%1 Plików (%2%)"
+
+#: src/radialMap/item.cpp:779
+#, kde-format
+msgctxt "Tooltip of folder, %1 is number of files"
+msgid "%1 File"
+msgid_plural "%1 Files"
+msgstr[0] "%1 Plik"
+msgstr[1] "%1 Pliki"
+msgstr[2] "%1 Plików"
+
+#: src/radialMap/item.cpp:785
+#, kde-format
+msgid ""
+"\n"
+"Click to go up to parent directory"
+msgstr ""
+"\n"
+"Naciśnij, aby przejść do katalogu nadrzędnego"
+
+#: src/radialMap/item.cpp:870
+#, kde-format
+msgctxt "@title:window"
+msgid "Save as SVG"
+msgstr "Zapisz jako plik SVG"
+
+#: src/radialMap/item.cpp:872
+#, kde-format
+msgctxt "filedialog type filter"
+msgid "SVG Files (*.svg);;All Files(*)"
+msgstr "Pliki SVG (*.svg);;Wszystkie pliki(*)"
+
+#: src/radialMap/map.cpp:205
+#, kde-format
+msgid "1 file, with an average size of %2"
+msgid_plural "%1 files, with an average size of %2"
+msgstr[0] "1 plik o średnim rozmiarze %2"
+msgstr[1] "%1 pliki o średnim rozmiarze %2"
+msgstr[2] "%1 plików o średnim rozmiarze %2"
+
+#: src/settingsDialog.cpp:31
+#, kde-format
+msgid "Rainbow"
+msgstr "Barwy tęczy"
+
+#: src/settingsDialog.cpp:35
+#, kde-format
+msgid "System colors"
+msgstr "Barwy systemu"
+
+#: src/settingsDialog.cpp:39
+#, kde-format
+msgid "High contrast"
+msgstr "Barwy o wysokim kontraście"
+
+#: src/settingsDialog.cpp:133
+#, kde-format
+msgid "Select path to ignore"
+msgstr "Wybierz ścieżkę do pomijania"
+
+#: src/settingsDialog.cpp:150
+#, kde-format
+msgid "That folder is already set to be excluded from scans."
+msgstr "Ten katalog jest już wykluczony z przeliczania."
+
+#: src/settingsDialog.cpp:150
+#, kde-format
+msgid "Folder already ignored"
+msgstr "Katalog jest już pomijany"
+
+#~ msgctxt "@info:status"
+#~ msgid "Scan completed, generating map..."
+#~ msgstr "Zakończono przeliczanie, trwa tworzenie mapy..."
+
+#~ msgid "Go"
+#~ msgstr "Przejdź"
+
+#~ msgid "Location Bar"
+#~ msgstr "Pasek miejsca"
+
+#~ msgid "Save as SVG..."
+#~ msgstr "Zapisz jako SVG..."
+
+#~ msgid "&Recent Scans"
+#~ msgstr "Ostatnie p&rzeliczenia"
+
+#~ msgid "Scanning: %1"
+#~ msgstr "Przeliczanie: %1"
+
+#~ msgid "Scan failed: %1"
+#~ msgstr "Nie można było przeliczyć: %1"
+
+#~ msgctxt "Free as in part of the disk that is free"
+#~ msgid "free"
+#~ msgstr "niezajęta"
+
+#~ msgctxt "Used as in part of the disk that is used"
+#~ msgid "used"
+#~ msgstr "zajęta"
+
+#~ msgctxt "Tooltip of used space on the partition, %1 is path, %2 is size"
+#~ msgid ""
+#~ "%1\n"
+#~ "Used: %2"
+#~ msgstr ""
+#~ "%1\n"
+#~ "Zajętych: %2"
+
+#~ msgctxt "Tooltip of free space on the partition, %1 is path, %2 is size"
+#~ msgid ""
+#~ "%1\n"
+#~ "Free: %2"
+#~ msgstr ""
+#~ "%1\n"
+#~ "Niezajętych: %2"
+
+#~ msgctxt "Percent used disk space on the partition"
+#~ msgid "<b>%1</b><br/>%2% Used"
+#~ msgstr "<b>%1</b><br/>%2% używane"
+
+#~ msgctxt "Percent used disk space on the partition"
+#~ msgid "<b>%1: %2</b><br/>%3% Used"
+#~ msgstr "<b>%1: %2</b><br/>%3% używane"
+
+#~ msgid "Prevents Filelight from scanning removable media (eg. CD-ROMs)."
+#~ msgstr "Zapobiega przeliczaniu nośników wymiennych (takich jak płyty CD)."
+
+#~ msgid "E&xclude removable media"
+#~ msgstr "Nie przeliczaj nośników &wymiennych"
+
+#~ msgid "%1 File"
+#~ msgid_plural "%1 Files"
+#~ msgstr[0] "%1 Plik"
+#~ msgstr[1] "%1 Pliki"
+#~ msgstr[2] "%1 Plików"
+
+#~ msgid "File: %1"
+#~ msgid_plural "Files: %1"
+#~ msgstr[0] "%1 plik"
+#~ msgstr[1] "%1 pliki"
+#~ msgstr[2] "%1 plików"
+
+#~ msgctxt "Free space on the disks/partitions"
+#~ msgid "Free"
+#~ msgstr "Wolne"
+
+#~ msgctxt "Used space on the disks/partitions"
+#~ msgid "Used"
+#~ msgstr "Używane"
+
+#~ msgid ""
+#~ "Unable to locate the Filelight Part.\n"
+#~ "Please make sure Filelight was correctly installed."
+#~ msgstr ""
+#~ "Nie można ustalić położenia modułu Filelight.\n"
+#~ "Proszę się upewnić że Filelight zostało poprawnie wgrane."
+
+#~ msgid ""
+#~ "Unable to load the Filelight Part.\n"
+#~ "Please make sure Filelight was correctly installed."
+#~ msgstr ""
+#~ "Nie można wczytać modułu Filelight.\n"
+#~ "Proszę się upewnić że Filelight zostało poprawnie wgrane."
+
+#~ msgid ""
+#~ "Unable to create Filelight part widget.\n"
+#~ "Please ensure that Filelight is correctly installed."
+#~ msgstr ""
+#~ "Nie można utworzyć elementu interfejsu modułu Filelight\n"
+#~ "Proszę się upewnić że Filelight zostało poprawnie wgrane."
+
+#~ msgid "Displays file usage in an easy to understand way."
+#~ msgstr "Wyświetla zużycie miejsca przez pliki w prosty sposób."
+
+#~ msgid ""
+#~ "(c) 2002-2004 Max Howell\n"
+#~ "(c) 2008-2014 Martin T. Sandsmark"
+#~ msgstr ""
+#~ "(c) 2002-2004 Max Howell\n"
+#~ "(c) 2008-2014 Martin T. Sandsmark"
+
+#~ msgid "Configure Filelight..."
+#~ msgstr "Ustawienia Filelight..."
+
+#~ msgctxt "Path in the file system to scan"
+#~ msgid "+[path]"
+#~ msgstr "+[ścieżka]"
+
+#~ msgid "Scan 'path'"
+#~ msgstr "Skanuj 'ścieżkę'"
+
+#~ msgid "Unable to create part widget."
+#~ msgstr "Nie można utworzyć elementu interfejsu."

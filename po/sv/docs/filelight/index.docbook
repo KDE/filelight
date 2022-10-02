@@ -1,0 +1,606 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY filelight "<application
+>Filelight</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Swedish "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="filelight" lang="&language;">
+
+<bookinfo>
+   <title
+>Handbok &filelight;</title>
+   <authorgroup>
+      <author
+><firstname
+>Max</firstname
+> <surname
+>Howell</surname
+> <affiliation
+><address
+><email
+>max.howell@methylblue.com</email
+></address
+></affiliation>
+      </author>
+      <author
+><firstname
+>Martin</firstname
+> <surname
+>Sandsmark</surname
+> <affiliation
+><address
+><email
+>martin.sandsmark@kde.org</email
+></address
+></affiliation>
+      </author>
+      <othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+   </authorgroup>
+   <copyright
+><year
+>2006</year
+><holder
+>Max Howell</holder
+></copyright>
+   <copyright
+><year
+>2009</year
+><holder
+>Martin Sandsmark</holder
+></copyright>
+   <!-- Translators: put here the copyright notice of the translation -->
+   <legalnotice
+>&FDLNotice;</legalnotice>
+   <date
+>2015-08-04</date>
+   <releaseinfo
+>&filelight; 1.21 (program 15.08)</releaseinfo>
+   <abstract
+><para
+>&filelight; skapar en interaktiv avbildning med koncentriska cirkelsegment som hjälper till att åskådliggöra diskanvändning på datorn.</para
+></abstract>
+   <!-- These may be used by search engines -->
+   <keywordset>
+      <keyword
+>KDE</keyword>
+      <keyword
+>Filelight</keyword>
+      <keyword
+>du</keyword>
+      <keyword
+>diskanvändning</keyword>
+   </keywordset>
+</bookinfo>
+
+
+<chapter id="introduction">
+   <title
+>Inledning</title>
+   <screenshot>
+      <screeninfo
+>Skärmbild av &filelight; 1.20</screeninfo>
+      <mediaobject>
+         <imageobject
+><imagedata fileref="radial_map.png" format="PNG"/></imageobject>
+         <textobject
+><phrase
+>Skärmbild</phrase
+></textobject>
+      </mediaobject>
+   </screenshot>
+   <para
+>&filelight; låter dig snabbt förstå exakt var ditt diskutrymme används genom att representera filsystemet grafiskt som en uppsättning koncentriska cirkelsegment. Du kan använda det för att lokalisera ansamlingar av diskanvändning och hantera dessa områden med &dolphin; eller &konqueror;.</para>
+</chapter>
+
+
+<chapter id="configuring">
+<title
+>Anpassa &filelight;</title>
+
+<para
+>&filelight;s inställningsdialogruta har två flikar för att ställa in &filelight;s alternativ. De två flikarna är <guilabel
+>Avsökning</guilabel
+> och <guilabel
+>Utseende</guilabel
+>. Nedanför finns en beskrivning av inställningsflikarna. &filelight;s inställningsdialogruta hittas genom att klicka på <menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guimenuitem
+>Anpassa Filelight</guimenuitem
+></menuchoice
+>.</para>
+
+<sect1 id="scanning">
+<title
+>Söker</title>
+
+<screenshot>
+<screeninfo
+>Skärmbild av Avsökning</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_scan.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Skärmbild</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Avsökningsfliken låter dig anpassa hur &filelight; söker igenom kataloger. <guilabel
+>Avsök inte följande kataloger</guilabel
+> används för att undanta vissa kataloger från ansökningen. Alternativet är mycket användbart för att hoppa över kataloger som du kanske inte har rättighet att läsa, eller kataloger som är en del av ett virtuellt filsystem, såsom /proc. Klicka på knappen <guibutton
+>Lägg till...</guibutton
+> för att lägga till en katalog i listan. Det visar en dialogruta där du kan välja katalogen du vill ha i en trädvy. För att ta bort en katalog, markera helt enkelt den du vill ta bort och klicka på knappen <guibutton
+>Ta bort</guibutton
+>.</para>
+<para
+>Genom att använda <guilabel
+>Avsök över filsystemgränser</guilabel
+> tillåts sökningar att gå in i kataloger som ingår i andra filsystem. Om det är avmarkerat, förhindras exempelvis oftast att innehållet i <filename class="directory"
+>/mnt</filename
+> söks igenom, om sökningen börjar i rotkatalogen <filename class="directory"
+>/</filename
+>. En sökning i fjärrfilsystem, t.ex. monterade med NFS eller Samba, kan skapa mycket nätverkstrafik. För att förhindra att de söks igenom, markera t.ex.<guilabel
+>Undanta fjärrfilsystem</guilabel
+>. Nästa alternativ <guilabel
+>Undanta flyttbara media</guilabel
+> förhindrar &filelight; från att söka på flyttbara media (t.ex. cd-rom).</para>
+</sect1>
+
+<sect1 id="appearance">
+<title
+>Utseende</title>
+
+<screenshot>
+<screeninfo
+>Skärmbild av Utseende</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_appear.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Skärmbild</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Fliken <guilabel
+>Utseende</guilabel
+> låter dig anpassa hur &filelight; ser ut.</para>
+<para
+>Avdelningen <guilabel
+>Färgschema</guilabel
+> används för att välja ett färgschema för &filelight;. Färgscheman är <guilabel
+>Regnbåge</guilabel
+>, <guilabel
+>Systemfärger</guilabel
+> och <guilabel
+>Hög kontrast</guilabel
+>. Det finns också ett skjutreglage, <guilabel
+>Kontrast</guilabel
+>, för att justera cirkelsegmentens kontrast, så de är lättare att se.</para>
+<para
+>Kryssrutan <guilabel
+>Använd kantutjämning</guilabel
+> används för att aktivera användning av kantutjämning i &filelight;s vy. Att markera alternativet gör att segmenten får ett mycket renare utseende.</para>
+<para
+>Kryssrutan <guilabel
+>Variera teckenstorlek för namn</guilabel
+> är användbar när du har filer eller kataloger med långa namn. Alternativet minskar teckensnittets storlek för att låta det bättre passa in i vyn. När alternativet är aktiverat, blir nummerrutan <guilabel
+>Minimal teckenstorlek</guilabel
+> tillgänglig för att välja den minsta teckenstorlek som ska skalas till. </para>
+<para
+>Alternativet <guilabel
+>Visa små filer</guilabel
+> är normalt inaktiverat eftersom små filer brukar skräpa ner &filelight;s vy. Aktivera alternativet om du vill att små filer ska ingå i &filelight;s vy. Alla filerna sammanfogas i ett enda <quote
+>multisegment</quote
+>.</para>
+
+</sect1>
+</chapter>
+
+
+<chapter id="using">
+<title
+>Använda &filelight;</title>
+
+<sect1 id="starting">
+<title
+>Starta &filelight;</title>
+<para
+>&filelight; kan startas från Starta program eller från kommandoraden.</para>
+
+<sect2 id="starting-from-the-menu">
+<title
+>Från Starta program</title>
+<para
+>Öppna programmenyn och flytta markören uppåt i menyn till menyalternativet <guimenu
+>Tillbehör</guimenu
+>. Välj <guimenuitem
+>&filelight;</guimenuitem
+>. </para>
+</sect2>
+
+<sect2 id="starting-from-the-command-line">
+<title
+>Från kommandoraden</title>
+<para
+>Du kan starta &filelight; genom att skriva in dess namn på kommandoraden. Om du anger ett katalognamn, som i exemplet ovan, söks den katalogen igenom. </para>
+<informalexample>
+<screen
+><prompt
+>%</prompt
+><userinput
+><command
+>filelight</command
+> <option
+><replaceable
+>/home</replaceable
+></option
+></userinput
+>
+</screen>
+</informalexample>
+</sect2>
+
+</sect1>
+
+<sect1 id="scanning-folders">
+<title
+>Avsöka kataloger</title>
+<para
+>Att söka igenom en katalog visar dess innehåll som en filavbildning. Använd menyn Avsök för att söka igenom en katalog, eller skriv in en webbadress direkt i platsraden. </para>
+</sect1>
+
+<sect1 id="exploring-filemaps">
+<title
+>Utforska filavbildningar</title>
+<para
+>Så fort en sökning är färdig visas en filavbildning som motsvarar katalogerna som du sökt igenom. Filavbildningen är en serie cirkelsegment som expanderas från centrum. Starkt färgade segment är kataloger, medan grå segment är filer. Segment har en storlek som är proportionell mot deras filstorlek. Segment kan vara hierarkiska, alltså är till exempel <filename class="directory"
+>/home/mxcl</filename
+> en nivå ut och inom gränserna för segmentet som representerar <filename class="directory"
+>/home</filename
+>. Segment har namn, och att hålla musen stilla över ett segment ger mer information om segmentet och underliggande segment. </para>
+<screenshot>
+<screeninfo
+>Skärmbild av filavbildning</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="radial_map_context_menu.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Skärmbild</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+<para
+>Du kan öppna kataloger med &konqueror; eller i en terminal via segmentets sammanhangsberoende meny. Att klicka med mittenknappen öppnar filer enligt Mime-typ, t.ex. bilder med <application
+>Gwenview</application
+>. Du kan högerklicka på ett segment för att visa en sammanhangsberoende meny för katalogen som sökts igenom, med alternativ för att kopiera katalogens sökväg till klippbordet eller ta bort katalogen eller filen. Att vänsterklicka på segment centrerar om bilden på det segmentet. </para>
+</sect1>
+
+</chapter>
+
+
+<chapter id="commands">
+<title
+>Meny och kommandoreferens</title>
+
+<variablelist>
+<title
+>Menyn Avsök</title>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Avsök</guimenu
+> <guimenuitem
+>Avsök katalog...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Erbjuder en dialogruta för katalogval så att du kan välja en katalog att söka igenom.</action
+></para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Home</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Avsök</guimenu
+> <guimenuitem
+>Avsök hemkatalog</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Startar en sökning i användarens hemkatalog.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Avsök</guimenu
+> <guimenuitem
+>Avsök rotkatalog</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Startar en sökning i rotkatalogen.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycap
+>F5</keycap
+> </shortcut
+> <guimenu
+>Avsök</guimenu
+> <guimenuitem
+>Avsök igen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Startar en ny sökning av aktuell arbetskatalog. Det är användbart när ändringar har gjorts i filsystemet.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycap
+>Esc</keycap
+> </shortcut
+> <guimenu
+>Avsök</guimenu
+> <guimenuitem
+>Stoppa</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Stoppar nuvarande sökning.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Avsök</guimenu
+> <guimenuitem
+>Avsluta</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Avslutar &filelight;</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist>
+  <title
+>Menyn Visa</title>
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>+</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Visa</guimenu
+> <guimenuitem
+>Zooma in</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Ökar filkartans vy.</action
+></para>
+    </listitem>
+    </varlistentry>
+
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>-</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Visa</guimenu
+> <guimenuitem
+>Zooma ut</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Minskar filkartans vy.</action
+></para>
+    </listitem>
+    </varlistentry>
+</variablelist>
+
+<variablelist>
+<title
+>Menyn Gå</title>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>Upp</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Gå</guimenu
+> <guimenuitem
+>Upp</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Går ett steg uppåt i filsystemet till överliggande katalog.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Gå</guimenu
+> <guimenuitem
+>Tillbaka</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Går ett steg bakåt i historiken när du bläddrar i filsystemet.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Gå</guimenu
+> <guimenuitem
+>Framåt</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Går ett steg framåt i historiken när du bläddrar i filsystemet.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Dessutom har &filelight; de vanliga menyalternativen <guimenu
+>Inställningar</guimenu
+> och <guimenu
+>Hjälp</guimenu
+> i &kde;. För mer information, läs avsnitten <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menyn Inställningar</ulink
+> och <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menyn Hjälp</ulink
+> i &kde;:s Grunder. </para>
+</chapter>
+
+
+<chapter id="credits">
+   <title
+>Tack till och licens</title>
+   <sect1 id="kapp">
+      <title
+>&filelight;</title>
+      <para
+>Program copyright 2006 Max B. Howell <email
+>max.howell@methylblue.com</email
+></para>
+      <para
+>Program copyright 2008-2013 Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+></para
+>&underGPL; </sect1>
+   <sect1 id="Documentation">
+      <title
+>Dokumentation</title>
+      <para
+>Dokumentation copyright 2003 Max B. Howell <email
+>max.howell@methylblue.com</email
+></para>
+      <para
+>Dokumentation copyright 2009 Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+></para>
+      <para
+>Översättning Stefan Asserhäll <email
+>stefan.asserhall@bredband.net</email
+></para
+> &underFDL; </sect1>
+</chapter>
+
+&documentation.index;
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

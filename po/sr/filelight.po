@@ -1,0 +1,611 @@
+# Translation of filelight.po into Serbian.
+# Chusslove Illich <caslav.ilic@gmx.net>, 2010, 2013, 2015, 2016, 2017.
+# Dalibor Djuric <daliborddjuric@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: filelight\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-05-31 18:18+0200\n"
+"PO-Revision-Date: 2017-09-28 18:00+0200\n"
+"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Часлав Илић"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "caslav.ilic@gmx.net"
+
+#. i18n: ectx: Menu (file)
+#: misc/filelightui.rc:4
+#, kde-format
+msgid "&Scan"
+msgstr "&Скенирај"
+
+#. i18n: ectx: Menu (view)
+#: misc/filelightui.rc:18
+#, kde-format
+msgid "&View"
+msgstr "При&каз"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: misc/filelightui.rc:24
+#, kde-format
+msgid "Main Toolbar"
+msgstr "Главна трака"
+
+#. i18n: ectx: ToolBar (locationToolBar)
+#: misc/filelightui.rc:32
+#, kde-format
+msgid "Location Toolbar"
+msgstr "Трака локације"
+
+#. i18n: ectx: ToolBar (viewToolBar)
+#: misc/filelightui.rc:37
+#, kde-format
+msgid "View Toolbar"
+msgstr "Трака приказа"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, Dialog)
+#: src/dialog.ui:14
+#, kde-format
+msgid "Settings - Filelight"
+msgstr "Поставке — Фајлајт"
+
+#. i18n: ectx: attribute (title), widget (QWidget, Widget2)
+#: src/dialog.ui:33
+#, kde-format
+msgid "Scannin&g"
+msgstr "&Скенирање"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: src/dialog.ui:45
+#, kde-format
+msgid "Do &not scan these folders:"
+msgstr "&Не скенирај ове фасцикле:"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_removeButton)
+#: src/dialog.ui:85
+#, kde-format
+msgid "R&emove"
+msgstr "&Уклони"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_addButton)
+#: src/dialog.ui:95
+#, kde-format
+msgid "&Add..."
+msgstr "&Додај..."
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScanRemoteMounts)
+#: src/dialog.ui:171
+#, kde-format
+msgid ""
+"Prevents scanning of filesystems that are not on this computer, e.g. NFS or "
+"Samba mounts."
+msgstr ""
+"Спречава скенирање фајл система који нису на овом рачунар, нпр. НФС или "
+"самба монтирања."
+
+#. i18n: ectx: property (text), widget (QCheckBox, dontScanRemoteMounts)
+#: src/dialog.ui:174
+#, kde-format
+msgid "Exclude remote files&ystems"
+msgstr "Искључи удаљене &фајл системе"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, scanAcrossMounts)
+#: src/dialog.ui:181
+#, kde-format
+msgid ""
+"Allows scans to enter directories that are part of other filesystems. For "
+"example, when unchecked, this will usually prevent the contents of <b>/mnt</"
+"b> from being scanned if you scan <b>/</b>."
+msgstr ""
+"Омогућава скенирање фасцикли на другим фајл системима. На пример, ако је "
+"искључено, вероватно ће бити прескочен садржај <tt>/mnt</tt> када задате "
+"скенирање над <tt>/</tt>."
+
+#. i18n: ectx: property (text), widget (QCheckBox, scanAcrossMounts)
+#: src/dialog.ui:184
+#, kde-format
+msgid "Scan across filesystem &boundaries"
+msgstr "Скенирај преко &граница фајл система"
+
+# rewrite-msgid: /Filelight from//
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScanRemovableMedia)
+#: src/dialog.ui:197
+#, kde-format
+msgid "Prevents Filelight from scanning removable media (eg. CD-ROMs)."
+msgstr "Спречава скенирање уклоњивих медијума (нпр. ЦД‑ова)."
+
+#. i18n: ectx: property (text), widget (QCheckBox, dontScanRemovableMedia)
+#: src/dialog.ui:200
+#, kde-format
+msgid "E&xclude removable media"
+msgstr "Искључи уклоњиве &медијуме"
+
+#. i18n: ectx: attribute (title), widget (QWidget, Widget3)
+#: src/dialog.ui:210
+#, kde-format
+msgid "&Appearance"
+msgstr "&Изглед"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: src/dialog.ui:222
+#, kde-format
+msgid "Color scheme"
+msgstr "Шема боја"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: src/dialog.ui:248
+#, kde-format
+msgid "Co&ntrast"
+msgstr "&Контраст"
+
+#. i18n: ectx: property (whatsThis), widget (QSlider, contrastSlider)
+#: src/dialog.ui:270
+#, kde-format
+msgid "Here you can vary the contrast of the filemap in realtime."
+msgstr "Овде можете мењати контраст мапе фајлова у стварном времену."
+
+# rewrite-msgid: /rendering/drawing/
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, useAntialiasing)
+#: src/dialog.ui:291
+#, kde-format
+msgid ""
+"Anti-aliasing the filemap makes it clearer and prettier, unfortunately it "
+"also makes rendering very slow."
+msgstr ""
+"Омекшавање чини мапу фајлова чистијом и лепшом, али нажалост и јако успорава "
+"исцртавање."
+
+#. i18n: ectx: property (text), widget (QCheckBox, useAntialiasing)
+#: src/dialog.ui:294
+#, kde-format
+msgid "&Use anti-aliasing"
+msgstr "Примени &омекшавање"
+
+# well-spelled: мултисегмент
+# rewrite-msgid: /rendered/drawn/
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, showSmallFiles)
+#: src/dialog.ui:301
+#, kde-format
+msgid ""
+"Some files are too small to be rendered on the filemap. Selecting this "
+"option makes these files visible by merging them all into a single \"multi-"
+"segment\"."
+msgstr ""
+"Неки фајлови су премали да би се исцртали на мапи фајлова. Ова опција чини "
+"такве фајлове видљивим тако што се сви стопе у јединствени „мултисегмент“."
+
+#. i18n: ectx: property (text), widget (QCheckBox, showSmallFiles)
+#: src/dialog.ui:304
+#, kde-format
+msgid "Show small files"
+msgstr "Прикажи мале фајлове"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, varyLabelFontSizes)
+#: src/dialog.ui:314
+#, kde-format
+msgid ""
+"The font size of exploded labels can be varied relative to the depth of the "
+"directories they represent. This helps you spot the important labels more "
+"easily. Set a sensible minimum font size."
+msgstr ""
+"Величина фонта раширених етикета може бити променљива, према дубини фасцикли "
+"које представљају. Ово олакшава брзо уочавање важних етикета. Пазите да "
+"поставите разумну најмању величину."
+
+#. i18n: ectx: property (text), widget (QCheckBox, varyLabelFontSizes)
+#: src/dialog.ui:317
+#, kde-format
+msgid "Var&y label font sizes"
+msgstr "Мењај &величину фонта етикета"
+
+# rewrite-msgid: /Filelight can/to/
+# rewrite-msgid: /render/draw/
+#. i18n: ectx: property (whatsThis), widget (QLabel, minFontPitchLabel)
+#: src/dialog.ui:354
+#, kde-format
+msgid "The smallest font size Filelight can use to render labels."
+msgstr "Најмања величина фонта којом ће се исцртавати етикете."
+
+#. i18n: ectx: property (text), widget (QLabel, minFontPitchLabel)
+#: src/dialog.ui:357
+#, kde-format
+msgid "Minimum font si&ze:"
+msgstr "Нај&мања величина фонта:"
+
+#: src/historyAction.cpp:76
+#, kde-format
+msgctxt "Go to the last path viewed"
+msgid "Back"
+msgstr "Назад"
+
+#: src/historyAction.cpp:77
+#, kde-format
+msgctxt "Go to forward in the history of paths viewed"
+msgid "Forward"
+msgstr "Напред"
+
+#: src/main.cpp:57
+#, kde-format
+msgid "Graphical disk-usage information"
+msgstr "Графичка представа попуњености диска"
+
+#: src/main.cpp:59
+#, kde-format
+msgid ""
+"(C) 2006 Max Howell\n"
+"(C) 2008-2014 Martin Sandsmark"
+msgstr ""
+"© 2006, Макс Хауел\n"
+"© 2008–2014, Мартин Сандсмарк"
+
+#: src/main.cpp:64
+#, kde-format
+msgid "Martin Sandsmark"
+msgstr "Мартин Сандсмарк"
+
+#: src/main.cpp:64
+#, kde-format
+msgid "Maintainer"
+msgstr "Одржавалац"
+
+#: src/main.cpp:65
+#, kde-format
+msgid "Max Howell"
+msgstr "Макс Хауел"
+
+#: src/main.cpp:65
+#, kde-format
+msgid "Original author"
+msgstr "Првобитни аутор"
+
+#: src/main.cpp:66
+#, kde-format
+msgid "Lukas Appelhans"
+msgstr "Лукас Апелханс"
+
+#: src/main.cpp:66
+#, kde-format
+msgid "Help and support"
+msgstr "Помоћ и подршка"
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Steffen Gerlach"
+msgstr "Штефен Герлах"
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Inspiration"
+msgstr "Инспирација"
+
+#: src/main.cpp:68
+#, kde-format
+msgid "Mike Diehl"
+msgstr "Мајк Дил"
+
+#: src/main.cpp:68
+#, kde-format
+msgid "Original documentation"
+msgstr "Првобитна документација"
+
+#: src/main.cpp:69
+#, kde-format
+msgid "Sune Vuorela"
+msgstr "Суне Вуорела"
+
+#: src/main.cpp:69 src/main.cpp:70
+#, kde-format
+msgid "Icon"
+msgstr "Иконица"
+
+#: src/main.cpp:70
+#, kde-format
+msgid "Nuno Pinheiro"
+msgstr "Нуно Пињеиро"
+
+#: src/main.cpp:77
+#, kde-format
+msgid "Path or URL to scan"
+msgstr "Путања или УРЛ за скенирање"
+
+#: src/main.cpp:77
+#, kde-format
+msgid "[url]"
+msgstr "[УРЛ]"
+
+#: src/mainWindow.cpp:151
+#, kde-format
+msgid "Scan &Home Folder"
+msgstr "Скенирај &домаћу фасциклу"
+
+#: src/mainWindow.cpp:156
+#, kde-format
+msgid "Scan &Root Folder"
+msgstr "Скенирај &корену фасциклу"
+
+#: src/mainWindow.cpp:160
+#, kde-format
+msgid "Rescan"
+msgstr "Скенирај поново"
+
+#: src/mainWindow.cpp:166
+#, kde-format
+msgid "Stop"
+msgstr "Заустави"
+
+#: src/mainWindow.cpp:172
+#, kde-format
+msgid "Go"
+msgstr "Крени"
+
+#: src/mainWindow.cpp:176
+#, kde-format
+msgid "Scan Folder"
+msgstr "Скенирај фасциклу"
+
+#: src/mainWindow.cpp:180
+#, kde-format
+msgid "Location Bar"
+msgstr "Трака локације"
+
+#: src/mainWindow.cpp:183
+#, kde-format
+msgid "&Recent Scans"
+msgstr "&Недавна скенирања"
+
+# >> @title:window
+#: src/mainWindow.cpp:224
+#, kde-format
+msgid "Select Folder to Scan"
+msgstr "Избор фасцикле за скенирање"
+
+#: src/mainWindow.cpp:373
+#, kde-format
+msgid "The entered URL cannot be parsed; it is invalid."
+msgstr "Унесени УРЛ не може да се рашчлани (лош је)."
+
+#: src/mainWindow.cpp:377
+#, kde-format
+msgid "Filelight only accepts absolute paths, eg. /%1"
+msgstr "Фајлајт прихвата само апсолутне путање, нпр. /%1"
+
+#: src/mainWindow.cpp:381
+#, kde-format
+msgid "Folder not found: %1"
+msgstr "Фасцикла није нађена: %1"
+
+#: src/mainWindow.cpp:385
+#, kde-format
+msgid ""
+"Unable to enter: %1\n"
+"You do not have access rights to this location."
+msgstr ""
+"Не могу да уђем у ‘%1’.\n"
+"Немате права приступа за ову локацију."
+
+#: src/mainWindow.cpp:405
+#, kde-format
+msgid "Aborting Scan..."
+msgstr "Обустављам скенирање..."
+
+#: src/mainWindow.cpp:468
+#, kde-format
+msgid "Scanning: %1"
+msgstr "Скенирам: %1"
+
+#: src/mainWindow.cpp:502
+#, kde-format
+msgid "Scan completed, generating map..."
+msgstr "Скенирање довршено, генеришем мапу..."
+
+#: src/mainWindow.cpp:512
+#, kde-format
+msgid "Scan failed: %1"
+msgstr "Скенирање пропало: %1"
+
+#: src/mainWindow.cpp:534
+#, kde-format
+msgid "No files."
+msgstr "Нема фајлова."
+
+#: src/mainWindow.cpp:535
+#, kde-format
+msgid "1 file"
+msgid_plural "%1 files"
+msgstr[0] "%1 фајл"
+msgstr[1] "%1 фајла"
+msgstr[2] "%1 фајлова"
+msgstr[3] "%1 фајл"
+
+#: src/progressBox.cpp:90
+#, kde-format
+msgid "%1 File"
+msgid_plural "%1 Files"
+msgstr[0] "%1 фајл"
+msgstr[1] "%1 фајла"
+msgstr[2] "%1 фајлова"
+msgstr[3] "%1 фајл"
+
+#: src/radialMap/map.cpp:202
+#, kde-format
+msgid "1 file, with an average size of %2"
+msgid_plural "%1 files, with an average size of %2"
+msgstr[0] "%1 фајл, просечне величине %2"
+msgstr[1] "%1 фајла, просечне величине %2"
+msgstr[2] "%1 фајлова, просечне величине %2"
+msgstr[3] "%1 фајл, просечне величине %2"
+
+#: src/radialMap/widgetEvents.cpp:75
+#, kde-format
+msgctxt "We messed up, the user needs to initiate a rescan."
+msgid ""
+"Internal representation is invalid,\n"
+"please rescan."
+msgstr "Лоша унутрашња представа, скенирајте поново."
+
+#: src/radialMap/widgetEvents.cpp:179
+#, kde-format
+msgctxt "Tooltip of used space on the partition, %1 is path, %2 is size"
+msgid ""
+"%1\n"
+"Used: %2"
+msgstr ""
+
+#: src/radialMap/widgetEvents.cpp:184
+#, kde-format
+msgctxt "Tooltip of free space on the partition, %1 is path, %2 is size"
+msgid ""
+"%1\n"
+"Free: %2"
+msgstr ""
+
+#: src/radialMap/widgetEvents.cpp:189 src/radialMap/widgetEvents.cpp:195
+#, kde-format
+msgctxt "Tooltip of file/folder, %1 is path, %2 is size"
+msgid ""
+"%1\n"
+"%2"
+msgstr ""
+
+#: src/radialMap/widgetEvents.cpp:206
+#, fuzzy, kde-format
+#| msgid "%1 File"
+#| msgid_plural "%1 Files"
+msgctxt "Tooltip of folder, %1 is number of files"
+msgid "%1 File (%2%)"
+msgid_plural "%1 Files (%2%)"
+msgstr[0] "%1 фајл"
+msgstr[1] "%1 фајла"
+msgstr[2] "%1 фајлова"
+msgstr[3] "%1 фајл"
+
+#: src/radialMap/widgetEvents.cpp:210
+#, fuzzy, kde-format
+#| msgid "%1 File"
+#| msgid_plural "%1 Files"
+msgctxt "Tooltip of folder, %1 is number of files"
+msgid "%1 File"
+msgid_plural "%1 Files"
+msgstr[0] "%1 фајл"
+msgstr[1] "%1 фајла"
+msgstr[2] "%1 фајлова"
+msgstr[3] "%1 фајл"
+
+#: src/radialMap/widgetEvents.cpp:217
+#, kde-format
+msgid ""
+"\n"
+"Click to go up to parent directory"
+msgstr ""
+"\n"
+"Кликните за одлазак на родитељску фасциклу"
+
+#: src/radialMap/widgetEvents.cpp:314
+#, kde-format
+msgid "Open &File Manager Here"
+msgstr "Отвори &менаџер фајлова овде"
+
+#: src/radialMap/widgetEvents.cpp:317
+#, kde-format
+msgid "Open &Terminal Here"
+msgstr "Отвори &терминал овде"
+
+#: src/radialMap/widgetEvents.cpp:322
+#, kde-format
+msgid "&Center Map Here"
+msgstr "&Центрирај мапу овде"
+
+#: src/radialMap/widgetEvents.cpp:325
+#, kde-format
+msgctxt "Scan/open the path of the selected element"
+msgid "&Open"
+msgstr "&Отвори"
+
+#: src/radialMap/widgetEvents.cpp:329
+#, kde-format
+msgid "&Copy to clipboard"
+msgstr "&Копирај у клипборд"
+
+#: src/radialMap/widgetEvents.cpp:333 src/radialMap/widgetEvents.cpp:363
+#, kde-format
+msgid "&Delete"
+msgstr "&Обриши"
+
+#: src/radialMap/widgetEvents.cpp:359
+#, kde-format
+msgid ""
+"<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
+"b> deleted.</qt>"
+msgstr ""
+"<qt>Фасцикла <tt>%1</tt> бићем <b>дубински</b> и <b>трајно</b> обрисана.</qt>"
+
+# >> %1 is a file name (not folder)
+#: src/radialMap/widgetEvents.cpp:360
+#, kde-format
+msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
+msgstr "<qt><tt>%1</tt> ће бити <b>трајно</b> обрисан.</qt>"
+
+#: src/radialMap/widgetEvents.cpp:388
+#, kde-format
+msgid "Error while deleting"
+msgstr "Грешка при брисању"
+
+#: src/settingsDialog.cpp:46
+#, kde-format
+msgid "Rainbow"
+msgstr "Дуга"
+
+#: src/settingsDialog.cpp:50
+#, kde-format
+msgid "System colors"
+msgstr "Системске боје"
+
+#: src/settingsDialog.cpp:54
+#, kde-format
+msgid "High contrast"
+msgstr "Високи контраст"
+
+# >> @title:window
+#: src/settingsDialog.cpp:163
+#, kde-format
+msgid "Select path to ignore"
+msgstr "Избор путање за игнорисање"
+
+#: src/settingsDialog.cpp:180
+#, kde-format
+msgid "That folder is already set to be excluded from scans."
+msgstr "Ова фасцикла је већ искључена из скенирања."
+
+# >> @title:window
+#: src/settingsDialog.cpp:180
+#, kde-format
+msgid "Folder already ignored"
+msgstr "Фасцикла се већ игнорише"
+
+#: src/summaryWidget.cpp:131
+#, kde-format
+msgctxt "Percent used disk space on the partition"
+msgid "<b>%1</b><br/>%2% Used"
+msgstr "<b>%1</b><br/>%2% попуњено"
+
+#: src/summaryWidget.cpp:133
+#, kde-format
+msgctxt "Percent used disk space on the partition"
+msgid "<b>%1: %2</b><br/>%3% Used"
+msgstr "<b>%1: %2</b><br/>%3% попуњено"

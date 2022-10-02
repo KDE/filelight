@@ -1,0 +1,588 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY filelight "<application
+>Filelight</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Catalan  "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="filelight" lang="&language;">
+
+<bookinfo>
+   <title
+>El manual del &filelight;</title>
+   <authorgroup>
+      <author
+><firstname
+>Max</firstname
+> <surname
+>Howell</surname
+> <affiliation
+><address
+><email
+>max.howell@methylblue.com</email
+></address
+></affiliation>
+      </author>
+      <author
+><firstname
+>Martin</firstname
+> <surname
+>Sandsmark</surname
+> <affiliation
+><address
+><email
+>martin.sandsmark@kde.org</email
+></address
+></affiliation>
+      </author>
+      &traductor.JosepMa.Ferrer; 
+   </authorgroup>
+   <copyright
+><year
+>2006</year
+><holder
+>Max Howell</holder
+></copyright>
+   <copyright
+><year
+>2009</year
+><holder
+>Martin Sandsmark</holder
+></copyright>
+   <!-- Translators: put here the copyright notice of the translation -->
+   <legalnotice
+>&FDLNotice;</legalnotice>
+   <date
+>4 d'agost de 2015</date>
+   <releaseinfo
+>&filelight; 1.21 (Aplicacions 15.08)</releaseinfo>
+   <abstract
+><para
+>El &filelight; crea un mapa interactiu d'anells concèntrics segmentats que ajuden a visualitzar l'ús del disc a l'ordinador.</para
+></abstract>
+   <!-- These may be used by search engines -->
+   <keywordset>
+      <keyword
+>KDE</keyword>
+      <keyword
+>Filelight</keyword>
+      <keyword
+>du</keyword>
+      <keyword
+>ús del disc</keyword>
+   </keywordset>
+</bookinfo>
+
+
+<chapter id="introduction">
+   <title
+>Introducció</title>
+   <screenshot>
+      <screeninfo
+>Captura de pantalla del &filelight; 1.20</screeninfo>
+      <mediaobject>
+         <imageobject
+><imagedata fileref="radial_map.png" format="PNG"/></imageobject>
+         <textobject
+><phrase
+>Captura de pantalla</phrase
+></textobject>
+      </mediaobject>
+   </screenshot>
+   <para
+>El &filelight; permet entendre ràpidament on s'està utilitzant exactament l'espai del disc representant gràficament el vostre sistema de fitxers com un conjunt d'anells segmentats concèntrics. El podeu utilitzar per localitzar les zones sensibles de l'ús del disc i després manipular aquestes àrees utilitzant el &dolphin; o el &konqueror;.</para>
+</chapter>
+
+
+<chapter id="configuring">
+<title
+>Configuració del &filelight;</title>
+
+<para
+>El diàleg de configuració del &filelight; té dues pestanyes per configurar les opcions del &filelight;. Les dues pestanyes són <guilabel
+>Exploració</guilabel
+> i <guilabel
+>Aparença</guilabel
+>. A continuació es mostra una descripció de les pestanyes de configuració. El diàleg de configuració del &filelight; es pot trobar fent clic a <menuchoice
+><guimenu
+>Arranjament</guimenu
+><guimenuitem
+>Configura el Filelight</guimenuitem
+></menuchoice
+>.</para>
+
+<sect1 id="scanning">
+<title
+>Exploració</title>
+
+<screenshot>
+<screeninfo
+>Captura de pantalla de l'exploració</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_scan.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Captura de pantalla</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>La pestanya d'exploració permet configurar com explora les carpetes el &filelight;. <guilabel
+> No exploris aquestes carpetes</guilabel
+> s'utilitza per excloure certes carpetes de l'exploració. Aquesta opció és molt útil per ometre carpetes que potser no teniu permisos per llegir, o carpetes que formen part d'un sistema de fitxers virtual, com /proc. Per afegir una carpeta a la llista, feu clic al botó <guibutton
+>Afegeix...</guibutton
+>, això iniciarà un diàleg on podreu triar la carpeta de la vostra elecció a partir d'una vista en arbre. Per eliminar una carpeta simplement seleccioneu la carpeta de la vostra elecció i feu clic al botó <guibutton
+>Elimina</guibutton
+>.</para>
+<para
+>Usant <guilabel
+>Explora a través dels límits dels sistemes de fitxers</guilabel
+> permet que les exploracions s'introdueixin en carpetes que formen part d'altres sistemes de fitxers. Per exemple, quan no està activada, això normalment evitarà que s'explori el contingut de <filename class="directory"
+>/mnt</filename
+> si s'inicia l'exploració des de la carpeta arrel <filename class="directory"
+>/</filename
+>. Una exploració de sistemes de fitxers remots, &pex; muntatges d'NFS o Samba, pot generar un trànsit alt de xarxa. Per evitar l'exploració activeu <guilabel
+>Exclou els sistemes de fitxers remots</guilabel
+>. L'opció següent <guilabel
+>Exclou els suports extraïbles</guilabel
+> evita que el &filelight; explori els suports extraïbles (&pex;, els &CD-ROM;).</para>
+</sect1>
+
+<sect1 id="appearance">
+<title
+>Aparença</title>
+
+<screenshot>
+<screeninfo
+>Captura de pantalla de l'aparença</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_appear.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Captura de pantalla</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>La pestanya <guilabel
+>Aparença</guilabel
+> permet configurar la manera com es veu el &filelight;.</para>
+<para
+>La secció <guilabel
+>Esquema de color</guilabel
+> s'utilitza per triar un esquema de color per al &filelight;. Els esquemes de color són <guilabel
+>Arc de Sant Martí</guilabel
+>, <guilabel
+>Colors del sistema</guilabel
+>, i <guilabel
+>Contrast alt</guilabel
+>. També hi ha un control lliscant <guilabel
+>Contrast</guilabel
+> per ajustar el contrast dels segments de l'anell per facilitar la visualització.</para>
+<para
+>La casella de selecció <guilabel
+>Usa antialiàsing</guilabel
+> s'utilitza per activar l'ús de l'antialiàsing a la vista del &filelight;. Si se selecciona, aquesta opció fa que els segments dels anells tinguin un aspecte molt més net.</para>
+<para
+>La casella de selecció <guilabel
+>Varia la mida del tipus de lletra de les etiquetes</guilabel
+> és útil quan teniu fitxers o carpetes amb noms llargs. Aquesta opció canviarà la mida del tipus de lletra per permetre que s'ajusti millor a la vista. Quan aquesta opció està activada, esdevé disponible el botó de selecció de valors <guilabel
+>Mida mínima del tipus de lletra</guilabel
+> per triar el tipus de lletra de mida més petita a escalar. </para>
+<para
+>L'opció <guilabel
+>Mostra els fitxers petits</guilabel
+> està desactivada de manera predeterminada, ja que els fitxers petits tendeixen a desordenar la visualització del &filelight;. Activeu aquesta opció si voleu incloure els fitxers petits a la visualització del &filelight;. Aquests fitxers es fusionen en un <quote
+>multisegment</quote
+> únic.</para>
+
+</sect1>
+</chapter>
+
+
+<chapter id="using">
+<title
+>Ús del &filelight;</title>
+
+<sect1 id="starting">
+<title
+>Inici del &filelight;</title>
+<para
+>El &filelight; es pot iniciar des del llançador d'aplicacions, o des de la línia d'ordres</para>
+
+<sect2 id="starting-from-the-menu">
+<title
+>Des del llançador d'aplicacions</title>
+<para
+>Obriu el menú d'aplicacions i moveu el cursor fins a l'element de menú <guimenu
+>Utilitats</guimenu
+>. Trieu el <guimenuitem
+>&filelight;</guimenuitem
+>. </para>
+</sect2>
+
+<sect2 id="starting-from-the-command-line">
+<title
+>Des de la línia d'ordres</title>
+<para
+>Podeu iniciar el &filelight; escrivint el seu nom a la línia d'ordres. Si li doneu un nom de carpeta, com en l'exemple següent, explorarà aquesta carpeta. </para>
+<informalexample>
+<screen
+><prompt
+>%</prompt
+><userinput
+><command
+>filelight</command
+> <option
+><replaceable
+>/home</replaceable
+></option
+></userinput
+>
+</screen>
+</informalexample>
+</sect2>
+
+</sect1>
+
+<sect1 id="scanning-folders">
+<title
+>Exploració de les carpetes</title>
+<para
+>L'exploració d'una carpeta mostra el seu contingut com un mapa de fitxers. Per explorar una carpeta, utilitzeu el menú d'exploració, o escriviu un &URL; directament a la barra de localització. </para>
+</sect1>
+
+<sect1 id="exploring-filemaps">
+<title
+>Examinar els mapes de fitxers</title>
+<para
+>Una vegada que s'hagi completat l'exploració es presentarà un mapa de fitxers que representa la carpeta que s'ha explorat. El mapa de fitxers és una sèrie d'anells segmentats que s'expandeixen des del centre. Els segments de colors brillants són carpetes, els segments grisos són fitxers. Els segments tenen la mida en proporció a la mida dels seus fitxers. Els segments es poden niar, per exemple, <filename class="directory"
+>/home/mxcl</filename
+> serà un nivell cap a fora i dins dels límits del segment que representa <filename class="directory"
+>/home</filename
+>. Els segments estan etiquetats i en passar el ratolí per sobre dels segments es donaran més detalls d'aquest segment i dels seus segments fills. </para>
+<screenshot>
+<screeninfo
+>Captura de pantalla del mapa de fitxers</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="radial_map_context_menu.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Captura de pantalla</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+<para
+>Podeu obrir carpetes amb el gestor de fitxers predeterminat o el &konsole; utilitzant el menú contextual per a aquest segment. Un clic del &BMR; obre fitxers pel tipus MIME, &pex;, imatges amb el <application
+>Gwenview</application
+>. Podeu fer clic dret en un segment per obtenir un menú contextual per a la carpeta explorada amb accions per copiar el camí de la carpeta al porta-retalls o suprimir la carpeta o el fitxer. En fer clic esquerre en els segments es tornaran a centrar en el mapa d'aquest segment. </para>
+</sect1>
+
+</chapter>
+
+
+<chapter id="commands">
+<title
+>Menús i referència d'ordres</title>
+
+<variablelist>
+<title
+>El menú Explora</title>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Explora</guimenu
+> <guimenuitem
+>Exploració de carpetes</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Ofereix un diàleg de selecció de carpetes de manera que podreu triar una carpeta per explorar.</action
+></para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Inici</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Explora</guimenu
+> <guimenuitem
+>Explora la carpeta d'inici</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Inicia una exploració de la carpeta d'inici de l'usuari.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Explora</guimenu
+> <guimenuitem
+>Explora la carpeta arrel</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Inicia una exploració de la carpeta arrel.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycap
+>F5</keycap
+> </shortcut
+> <guimenu
+>Explora</guimenu
+> <guimenuitem
+>Torna a explorar</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Inicia una exploració nova de la carpeta de treball actual, això és útil quan s'han fet canvis al sistema de fitxers.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> &Esc; </shortcut
+> <guimenu
+>Explora</guimenu
+> <guimenuitem
+>Atura</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Atura l'exploració actual.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Explora</guimenu
+> <guimenuitem
+>Surt</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Surt del &filelight;.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist>
+  <title
+>El menú Visualitza</title>
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>+</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Visualitza</guimenu
+> <guimenuitem
+>Amplia</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Augmenta la vista del mapa de fitxers.</action
+></para>
+    </listitem>
+    </varlistentry>
+
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>-</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Visualitza</guimenu
+> <guimenuitem
+>Redueix</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Redueix la vista del mapa de fitxers.</action
+></para>
+    </listitem>
+    </varlistentry>
+</variablelist>
+
+<variablelist>
+<title
+>El menú Ves</title>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keysym
+>Fletxa amunt</keysym
+></keycombo
+> </shortcut
+> <guimenu
+>Ves</guimenu
+> <guimenuitem
+>Amunt</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Mou un pas amunt en el sistema de fitxers a la carpeta pare.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ves</guimenu
+> <guimenuitem
+>Enrere</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Mou un pas enrere en l'historial de navegació del sistema de fitxers.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ves</guimenu
+><guimenuitem
+>Endavant</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Mou un pas endavant en l'historial de navegació del sistema de fitxers.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Addicionalment, el &filelight; té els elements de menú comuns del &kde; <guimenu
+>Arranjament</guimenu
+> i <guimenu
+>Ajuda</guimenu
+>. Per a més informació llegiu les seccions sobre el <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menú de configuració</ulink
+> i <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menú d'ajuda</ulink
+> dels Fonaments del &kde;. </para>
+</chapter>
+
+
+<chapter id="credits">
+   <title
+>Crèdits i llicència</title>
+   <sect1 id="kapp">
+      <title
+>&filelight;</title>
+      <para
+>Copyright del programa 2006 Max B. Howell <email
+>max.howell@methylblue.com</email
+></para>
+      <para
+>Copyright del programa 2008-2013 Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+></para
+>&underGPL; </sect1>
+   <sect1 id="Documentation">
+      <title
+>Documentació</title>
+      <para
+>Copyright de la documentació 2003 Max B. Howell <email
+>max.howell@methylblue.com</email
+></para>
+      <para
+>Copyright de la documentació 2009 Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+></para>
+      <para
+>Traductor de la documentació: &credits.JosepMa.Ferrer;</para
+> &underFDL; </sect1>
+</chapter>
+
+&documentation.index;
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

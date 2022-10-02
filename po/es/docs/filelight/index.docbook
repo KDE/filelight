@@ -1,0 +1,602 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY filelight "<application
+>Filelight</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Spanish "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="filelight" lang="&language;">
+
+<bookinfo>
+   <title
+>Manual de &filelight;</title>
+   <authorgroup>
+      <author
+><firstname
+>Max</firstname
+> <surname
+>Howell</surname
+> <affiliation
+><address
+><email
+>max.howell@methylblue.com</email
+></address
+></affiliation>
+      </author>
+      <author
+><firstname
+>Martin</firstname
+> <surname
+>Sandsmark</surname
+> <affiliation
+><address
+><email
+>martin.sandsmark@kde.org</email
+></address
+></affiliation>
+      </author>
+      <othercredit role="translator"
+><firstname
+>Kira </firstname
+><surname
+>J. Fernández</surname
+> <affiliation
+><address
+><email
+>kirajfdez@gmail.com </email
+></address
+></affiliation
+> <contrib
+>Traductora</contrib
+></othercredit
+> 
+   </authorgroup>
+   <copyright
+><year
+>2006</year
+><holder
+>Max Howell</holder
+></copyright>
+   <copyright
+><year
+>2009</year
+><holder
+>Martin Sandsmark</holder
+></copyright>
+   <!-- Translators: put here the copyright notice of the translation -->
+   <legalnotice
+>&FDLNotice;</legalnotice>
+   <date
+>2015-08-04</date>
+   <releaseinfo
+>&filelight; 1.21 (Aplicaciones 15.08)</releaseinfo>
+   <abstract
+><para
+>&filelight; crea un mapa interactivo de anillos concéntricos segmentados que le ayudan a visualizar el uso del disco de su máquina.</para
+></abstract>
+   <!-- These may be used by search engines -->
+   <keywordset>
+      <keyword
+>KDE</keyword>
+      <keyword
+>Filelight</keyword>
+      <keyword
+>du</keyword>
+      <keyword
+>uso del disco</keyword>
+   </keywordset>
+</bookinfo>
+
+
+<chapter id="introduction">
+   <title
+>Introducción</title>
+   <screenshot>
+      <screeninfo
+>Captura de pantalla de &filelight; 1.20</screeninfo>
+      <mediaobject>
+         <imageobject
+><imagedata fileref="radial_map.png" format="PNG"/></imageobject>
+         <textobject
+><phrase
+>Captura de pantalla</phrase
+></textobject>
+      </mediaobject>
+   </screenshot>
+   <para
+>&filelight; le permite entender rápidamente en qué se está usando el espacio del disco, representando gráficamente el sistema de archivos como un conjunto de segmentos de anillos concéntricos. Puede usarlo para localizar puntos conflictivos en el uso del disco y después modificar dichas áreas usando &dolphin; o &konqueror;.</para>
+</chapter>
+
+
+<chapter id="configuring">
+<title
+>Configurando &filelight;</title>
+
+<para
+>El diálogo de configuración de &filelight; tiene dos pestañas para configurar las opciones de &filelight;. Las dos pestañas son <guilabel
+>Explorar</guilabel
+> y <guilabel
+>Apariencia</guilabel
+>. Debajo hay una descripción de las pestañas de configuración. El diálogo de configuración de &filelight; se puede encontrar haciendo click en <menuchoice
+><guimenu
+>Configuración</guimenu
+><guimenuitem
+> Configurar Filelight</guimenuitem
+></menuchoice
+>.</para>
+
+<sect1 id="scanning">
+<title
+>Explorar</title>
+
+<screenshot>
+<screeninfo
+>Captura de pantalla de «Explorar»</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_scan.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Captura de pantalla</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>La pestaña de exploración le permite configurar cómo analizará &filelight; las carpetas. <guilabel
+>No inspeccionar estas carpetas</guilabel
+> sirve para excluir ciertas carpetas de la exploración. Esta opción resulta muy útil para omitir carpetas para las que es posible que no tenga permiso de lectura, o carpetas que forman parte de un sistema de archivos virtual, como /proc. Para añadir una carpeta a la lista, pulse el botón <guibutton
+>Añadir...</guibutton
+>. Esto le mostrará un diálogo donde puede seleccionar una carpeta en una vista de árbol. Para eliminar una carpeta de la lista, selecciónela y pulse el botón<guibutton
+>Eliminar</guibutton
+>.</para>
+<para
+>El uso de <guilabel
+>Explorar más allá de los límites del sistema de archivos</guilabel
+> permite que los análisis entren en las carpetas que son parte de otros sistemas de archivos. Por ejemplo, si no se marcha dicha opción, normalmente no se analizará el contenido de <filename class="directory"
+>/mnt</filename
+> si comienza la exploración desde la carpeta raíz <filename class="directory"
+>/</filename
+>. Una exploración de sistemas de archivos remotos, &eg;, montajes NFS o Samba, puede generar un alto tráfico de red. Para evitar estas exploraciones, marque <guilabel
+>Excluir sistemas de archivos remotos</guilabel
+>. La siguiente opción, <guilabel
+>Excluir medios extraíbles</guilabel
+>, evita que &filelight; explore medios extraíbles (&eg;, &CD-ROM;).</para>
+</sect1>
+
+<sect1 id="appearance">
+<title
+>Apariencia</title>
+
+<screenshot>
+<screeninfo
+>Captura de pantalla de «Apariencia»</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_appear.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Captura de pantalla</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>La pestaña <guilabel
+>Apariencia</guilabel
+> le permite configurar el aspecto de &filelight;.</para>
+<para
+>La sección <guilabel
+>Esquema de color</guilabel
+> se utiliza para elegir un esquema de color para &filelight;. Los esquemas de color disponibles son: <guilabel
+>Arco iris</guilabel
+>, <guilabel
+>Colores del sistema</guilabel
+> y <guilabel
+>Alto contraste</guilabel
+>. También hay un deslizador de <guilabel
+>Contraste</guilabel
+> para ajustar el contraste de los segmentos del anillo para una visualización más cómoda.</para>
+<para
+>La casilla de verificación <guilabel
+>Usar suavizado de bordes</guilabel
+> se utiliza para habilitar el uso del suavizado de bordes en la vista de &filelight;. Seleccionada, esta opción hace que los segmentos de los anillos tengan un aspecto mucho más limpio.</para>
+<para
+>La casilla de verificación <guilabel
+>Variar tamaño del tipo de letra de las etiquetas</guilabel
+> resulta útil cuando tiene archivos o carpetas con nombres largos. Esta opción cambiará el tamaño del tipo de letra para que se ajuste mejor a la vista. Cuando se habilita esta opción, se vuelve disponible el área de selección numérica <guilabel
+>Tamaño mínimo de letra</guilabel
+> para elegir el tamaño mínimo del tipo de letra al que se ajustará la escala. </para>
+<para
+>La opción <guilabel
+>Mostrar archivos pequeños</guilabel
+> está deshabilitada por omisión, ya que los archivos pequeños tienden a abarrotar la vista de &filelight;. Habilite esta opción si desea incluir los archivos pequeños en la vista de &filelight;. Estos archivos aparecerán mezclados en un único «segmento múltiple».</para>
+
+</sect1>
+</chapter>
+
+
+<chapter id="using">
+<title
+>Usando &filelight;</title>
+
+<sect1 id="starting">
+<title
+>Iniciando &filelight;</title>
+<para
+>Puede iniciar &filelight; desde el lanzador de aplicaciones o desde la línea de órdenes.</para>
+
+<sect2 id="starting-from-the-menu">
+<title
+>Desde el lanzador de aplicaciones</title>
+<para
+>Abra el menú de programas y vaya hasta la opción del menú <guimenu
+>Utilidades</guimenu
+>. Elija <guimenuitem
+>&filelight;</guimenuitem
+>. </para>
+</sect2>
+
+<sect2 id="starting-from-the-command-line">
+<title
+>Desde la línea de órdenes</title>
+<para
+>Puede iniciar &filelight; tecleando su nombre en la línea de órdenes. Si le proporciona el nombre de una carpeta, como en el ejemplo de más abajo, se examinará dicha carpeta. </para>
+<informalexample>
+<screen
+><prompt
+>%</prompt
+><userinput
+><command
+>filelight</command
+> <option
+><replaceable
+>/home</replaceable
+></option
+></userinput
+>
+</screen>
+</informalexample>
+</sect2>
+
+</sect1>
+
+<sect1 id="scanning-folders">
+<title
+>Explorando carpetas</title>
+<para
+>Explorar una carpeta le mostrará su contenido como un mapa de archivos. Para examinar una carpeta, utilice el menú «Examinar», o teclee una &URL; directamente en la barra de direcciones. </para>
+</sect1>
+
+<sect1 id="exploring-filemaps">
+<title
+>Explorando mapas de archivos</title>
+<para
+>Una vez que la exploración se haya completado, se le mostrará un mapa de archivos que representa la carpeta que se ha analizado. El mapa de archivos consiste en una serie de anillos segmentados que se expanden desde el centro. Los segmentos con colores brillantes son carpetas, y los segmentos grises son archivos. Los segmentos tienen un tamaño proporcional a su tamaño de archivo. Los segmentos pueden estar anidados. Por ejemplo, <filename class="directory"
+>/home/mxcl</filename
+> estará un nivel hacia afuera y dentro de los límites del segmento que representa <filename class="directory"
+>/home</filename
+>. Los segmentos están etiquetados, y pasar el ratón sobre ellos se le mostrarán más detalles sobre los mismos y también sobre los segmentos-hijos que contiene. </para>
+<screenshot>
+<screeninfo
+>Captura de pantalla del mapa de archivos</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="radial_map_context_menu.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Captura de pantalla</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+<para
+>Puede abrir carpetas con su gestor de archivos predeterminado o con &konsole; usando el menú contextual para ese segmento. Un clic con el &MMB; abre archivos según su tipo MIME; &eg;, imágenes con <application
+>Gwenview</application
+>. Puede hacer clic con el botón derecho en un segmento para presentar un menú de contexto para la carpeta explorada con acciones para copiar la ruta de la carpeta en el portapapeles o para eliminar la carpeta o el archivo. Si hace un clic con el botón izquierdo sobre un segmento se centrará el mapa en dicho segmento. </para>
+</sect1>
+
+</chapter>
+
+
+<chapter id="commands">
+<title
+>Referencia del menú y de las órdenes</title>
+
+<variablelist>
+<title
+>El menú «Explorar»</title>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Explorar</guimenu
+> <guimenuitem
+>Explorar carpeta...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Ofrece un diálogo de selección de carpetas para que puede escoger qué carpeta explorar.</action
+></para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keysym
+>Home</keysym
+></keycombo
+> </shortcut
+> <guimenu
+>Explorar</guimenu
+> <guimenuitem
+>Explorar la carpeta /Home</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Inicia la exploración de la carpeta /home del usuario.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Explorar</guimenu
+> <guimenuitem
+>Explorar carpeta root</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Inicia la exploración de la carpeta «root».</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycap
+>F5</keycap
+> </shortcut
+> <guimenu
+>Explorar</guimenu
+> <guimenuitem
+>Re-explorar</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Inicia una nueva exploración de la carpeta actual. Esto es útil cuando se han hecho cambios en el sistema de archivos.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> &Esc; </shortcut
+> <guimenu
+>Explorar</guimenu
+><guimenuitem
+>Detener</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Detiene la exploración actual.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Explorar</guimenu
+> <guimenuitem
+>Salir</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Sale de &filelight;.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist>
+  <title
+>El menú «Ver»</title>
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>+</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Ver</guimenu
+> <guimenuitem
+>Acercar zoom</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Aumenta la vista del mapa de archivos.</action
+></para>
+    </listitem>
+    </varlistentry>
+
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>-</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Ver</guimenu
+> <guimenuitem
+>Disminuir zoom</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Reduce la vista del mapa de archivos.</action
+></para>
+    </listitem>
+    </varlistentry>
+</variablelist>
+
+<variablelist>
+<title
+>El menú «Ir»</title>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>Arriba</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Ir</guimenu
+> <guimenuitem
+>Arriba</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Mueve un escalón hacia arriba en el sistema de archivos hasta la carpeta raíz.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ir</guimenu
+> <guimenuitem
+>Atrás</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Mueve un escalón hacia atrás en su historial de navegación por el sistema de archivos.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ir</guimenu
+> <guimenuitem
+>Adelante</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Mueve un escalón hacia adelante en su historial de exploración por el sistema de archivos.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>De forma adicional, &filelight; posee los elementos de menú comunes de &kde; <guimenu
+>Preferencias</guimenu
+> y <guimenu
+>Ayuda</guimenu
+>. Para más información, lea las secciones sobre el <ulink url="help:/fundamentals/menus.html#menus-settings"
+>menú Preferencias</ulink
+> y el <ulink url="help:/fundamentals/menus.html#menus-help"
+>menú Ayuda</ulink
+> de los principios fundamentales de &kde;. </para>
+</chapter>
+
+
+<chapter id="credits">
+   <title
+>Créditos y licencia</title>
+   <sect1 id="kapp">
+      <title
+>&filelight;</title>
+      <para
+>Copyright del programa 2006 Max B. Howell <email
+>max.howell@methylblue.com</email
+></para>
+      <para
+>Copyright del programa 2008-2013 Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+></para
+>&underGPL; </sect1>
+   <sect1 id="Documentation">
+      <title
+>Documentación</title>
+      <para
+>Copyright de la documentación 2003 Max B. Howell <email
+>max.howell@methylblue.com</email
+></para>
+      <para
+>Copyright de la documentación 2009 Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+></para>
+      <para
+>Traducido por Kira J. Fernández <email
+>kirajfdez@gmail.com</email
+>. </para
+> &underFDL; </sect1>
+</chapter>
+
+&documentation.index;
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

@@ -1,0 +1,586 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY filelight "<application
+>Filelight</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Dutch "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="filelight" lang="&language;">
+
+<bookinfo>
+   <title
+>Het handboek van &filelight;</title>
+   <authorgroup>
+      <author
+><firstname
+>Max</firstname
+> <surname
+>Howell</surname
+> <affiliation
+><address
+><email
+>max.howell@methylblue.com</email
+></address
+></affiliation>
+      </author>
+      <author
+><firstname
+>Martin</firstname
+> <surname
+>Sandsmark</surname
+> <affiliation
+><address
+><email
+>martin.sandsmark@kde.org</email
+></address
+></affiliation>
+      </author>
+      &Freek.de.Kruijf; 
+   </authorgroup>
+   <copyright
+><year
+>2006</year
+><holder
+>Max Howell</holder
+></copyright>
+   <copyright
+><year
+>2009</year
+><holder
+>Martin Sandsmark</holder
+></copyright>
+   <!-- Translators: put here the copyright notice of the translation -->
+   <legalnotice
+>&FDLNotice;</legalnotice>
+   <date
+>2015-08-04</date>
+   <releaseinfo
+>&filelight; 1.21 (Applications 15.08)</releaseinfo>
+   <abstract
+><para
+>&filelight; maakt een interactieve grafiek van concentrische gesegmenteerde ringen die helpen om schijfgebruik op uw computer te visualiseren.</para
+></abstract>
+   <!-- These may be used by search engines -->
+   <keywordset>
+      <keyword
+>KDE</keyword>
+      <keyword
+>Filelight</keyword>
+      <keyword
+>du</keyword>
+      <keyword
+>diskgebruik</keyword>
+   </keywordset>
+</bookinfo>
+
+
+<chapter id="introduction">
+   <title
+>Inleiding</title>
+   <screenshot>
+      <screeninfo
+>&filelight; 1.20 Schermafdruk</screeninfo>
+      <mediaobject>
+         <imageobject
+><imagedata fileref="radial_map.png" format="PNG"/></imageobject>
+         <textobject
+><phrase
+>Schermafdruk</phrase
+></textobject>
+      </mediaobject>
+   </screenshot>
+   <para
+>&filelight; stelt u in staat om snel te zien waar precies uw schijfruimte voor wordt gebruikt door grafisch uw bestandssysteem weer te geven als een set concentrische ringen. U kunt het gebruiken om hotspots van uw schijfgebruik te lokaliseren en deze gebieden met &dolphin; of &konqueror; te manipuleren.</para>
+</chapter>
+
+
+<chapter id="configuring">
+<title
+>&filelight; instellen</title>
+
+<para
+>De instellingendialoog van &filelight; heeft twee tabbladen voor het instellen van opties van &filelight;. De twee tabbladen zijn <guilabel
+>Scannen</guilabel
+> en <guilabel
+>Uiterlijk</guilabel
+>. Hieronder is een beschrijving van deze tabbladen. De instellingendialoog van &filelight; is te vinden door op <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Filelight instellen</guimenuitem
+></menuchoice
+> te klikken.</para>
+
+<sect1 id="scanning">
+<title
+>Scannen</title>
+
+<screenshot>
+<screeninfo
+>Schermafdruk van scannen</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_scan.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Schermafdruk</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Het tabblad scannen biedt u de mogelijkheid om in te stellen hoe &filelight; mappen scant. De optie <guilabel
+>Deze mappen niet scannen</guilabel
+> wordt gebruikt om bepaalde mappen van uw scan uit te sluiten. Deze optie is erg nuttig om mappen over te slaan waarvoor u rechten hebt om ze te lezen of mappen die onderdeel zijn van een virtueel bestandssysteem, zoals /proc. Om een map aan de lijst toe te voegen klikt u op de knop <guibutton
+>Toevoegen...</guibutton
+>, deze start een dialoog waarin u kunt de map kunt kiezen uit een boomstructuur. Om een map te verwijderen selecteert u eenvoudig de map van uw keuze en klikt op de knop <guibutton
+>Verwijderen</guibutton
+>.</para>
+<para
+>Met <guilabel
+>Andere bestandssystemen meenemen bij scannen</guilabel
+> kunt u bij het scannen mappen in gaan die onderdeel zijn van andere bestandssystemen. Bijvoorbeeld, wanneer niet geactiveerd, voorkomt dit dat de inhoud van <filename class="directory"
+>/mnt</filename
+> wordt gescand als u de scan start vanaf de hoofdmap <filename class="directory"
+>/</filename
+>. Een scan van bestandssystemen op afstand, &eg; NFS of Samba koppelingen, kunnen zeer veel netwerkverkeer genereren. Om het scannen hiervan te voorkomen activeert u <guilabel
+>Externe bestandssystemen uitsluiten</guilabel
+>. De volgende optie <guilabel
+>verwijderbare media uitsluiten</guilabel
+> voorkomt dat &filelight; verwijderbare media (&eg; &CD-ROM;'s) gaat scannen.</para>
+</sect1>
+
+<sect1 id="appearance">
+<title
+>Uiterlijk</title>
+
+<screenshot>
+<screeninfo
+>Schermafdruk van Uiterlijk</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_appear.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Schermafdruk</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Het tabblad <guilabel
+>Uiterlijk</guilabel
+> stelt u in staat om de manier zoals &filelight; er uitziet in te stellen.</para>
+<para
+>De sectie <guilabel
+>Kleurschema</guilabel
+> wordt gebruikt om een kleurschema voor &filelight; te keizen. De kleurschema's zijn <guilabel
+>Regenboog</guilabel
+>, <guilabel
+>Systeemkleuren</guilabel
+> en <guilabel
+>Hoog contrast</guilabel
+>. Er is ook een schuifregelaar <guilabel
+>Contrast</guilabel
+> om het contrast van de ringsegmenten aan te passen een betere weergave.</para>
+<para
+>Het keuzevakje <guilabel
+>Anti-aliasing gebruiken</guilabel
+> wordt gebruikt om het gebruik van anti-aliasing in de weergave van &filelight; in te schakelen. Deze optie activeren zorgt er voor dat de ringsegmenten er netter uitzien.</para>
+<para
+>Het keuzevakje <guilabel
+>Variabele tekengrootte voor beschrijvingen</guilabel
+> is nuttig wanneer u bestanden of mappen hebt met lange namen. Deze optie wijzigt de grootte van het lettertype om de weergave te verbeteren. Wanneer deze optie is geactiveerd dan komt er een afrolmenu <guilabel
+>Minimale tekengrootte</guilabel
+> beschikbaar voor het kiezen van de kleinste tekengrootte om naar te schalen. </para>
+<para
+>De optie <guilabel
+>Kleine bestanden tonen</guilabel
+> is standaard uitgeschakeld omdat kleine bestanden de weergave van &filelight; onleesbaar maakt. Schakel deze optie in als u kleine bestanden in de weergave van &filelight; wilt hebben. Deze bestanden worden allemaal in een enkel <quote
+>multi-segment</quote
+> samengevat.</para>
+
+</sect1>
+</chapter>
+
+
+<chapter id="using">
+<title
+>&filelight; gebruiken</title>
+
+<sect1 id="starting">
+<title
+>&filelight; opstarten</title>
+<para
+>&filelight; kan worden opgestart vanuit de programmastarter of vanaf de commandoregel</para>
+
+<sect2 id="starting-from-the-menu">
+<title
+>Vanaf de programmastarter</title>
+<para
+>Open het programmamenu en verplaats uw cursor in het menu naar het menu naar het menu-item <guimenu
+>Programma's</guimenu
+>. Kies <guimenuitem
+>&filelight;</guimenuitem
+>. </para>
+</sect2>
+
+<sect2 id="starting-from-the-command-line">
+<title
+>Vanaf de commandoregel</title>
+<para
+>U kunt &filelight; starten door de naam op de commandoregel in te typen. Als u een mapnaam als argument meegeeft zoals in onderstaande voorbeeld, dan zal deze map gescand worden. </para>
+<informalexample>
+<screen
+><prompt
+>%</prompt
+><userinput
+><command
+>filelight</command
+> <option
+><replaceable
+>/home</replaceable
+></option
+></userinput
+>
+</screen>
+</informalexample>
+</sect2>
+
+</sect1>
+
+<sect1 id="scanning-folders">
+<title
+>Mappen scannen</title>
+<para
+>Een map scannen toont zijn inhoud als een bestandenmap. Om een map te scannen, gebruikt u het scanmenu of typt u een &URL; recht-toe-recht-aan in de locatiebalk. </para>
+</sect1>
+
+<sect1 id="exploring-filemaps">
+<title
+>Bestandenmappen bekijken</title>
+<para
+>Nadat een scan gereed is krijgt u een bestandenmap te zien die de gescande map representeert. De bestandenmap is een serie gesegmenteerde ringen die vanuit een centrum lopen. Helder gekleurde segmenten zijn mappen, grijze segmenten zijn bestanden. De grootte van segmenten zijn in verhouding van hun bestandsgrootte. Segmenten kunnen genest zijn, dus bijvoorbeeld, <filename class="directory"
+>/home/mxcl</filename
+> zal één niveau buitenwaarts gaan en binnen de grenzen van het segment dat <filename class="directory"
+>/home</filename
+> representeert. Segmenten zijn gelabeld en met de muis over segmenten gaan geeft u meer details over dat segment en de onderliggende segmenten. </para>
+<screenshot>
+<screeninfo
+>Schermafdruk van bestandenmap</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="radial_map_context_menu.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Schermafdruk</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+<para
+>U kunt mappen openen met uw standaard bestandsbeheerder of &konsole; met het contextmenu voor dat segment. Een klik met de &MMB; opent bestanden bij mimetype, &eg; afbeeldingen met <application
+>Gwenview</application
+>. U kunt rechts klikken op een segment om een contextmenu te krijgen voor de gescande map met acties om het pad van de map naar het klembord te kopiëren of verwijder de map of bestand. Links klikken op segmenten zet de map in dat segment in het centrum. </para>
+</sect1>
+
+</chapter>
+
+
+<chapter id="commands">
+<title
+>Menu- en commandoreferentie</title>
+
+<variablelist>
+<title
+>Het menu Scan</title>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Scan</guimenu
+> <guimenuitem
+>Map scannen...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Biedt een dialoog voor het selecteren van een map zodat u een map kunt kiezen om te scannen.</action
+></para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keysym
+>Home</keysym
+></keycombo
+> </shortcut
+> <guimenu
+>Scan</guimenu
+> <guimenuitem
+>Persoonlijke map scannen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Start een scan van de persoonlijke map van de gebruiker.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Scan</guimenu
+> <guimenuitem
+>Hoofdmap scannen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Start een scan van de hoofdmap.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycap
+>F5</keycap
+> </shortcut
+> <guimenu
+>Scan</guimenu
+> <guimenuitem
+>Opnieuw scannen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Start een nieuwe scan van de huidige werkmap, dit is nuttig wanneer er wijzigingen zijn in het bestandssysteem.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> &Esc; </shortcut
+> <guimenu
+>Scan</guimenu
+> <guimenuitem
+>Stoppen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Stopt de huidige scan.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Scan</guimenu
+> <guimenuitem
+>Afsluiten</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Sluit &filelight; af.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist>
+  <title
+>Het menu Beeld</title>
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl; <keycap
+>+</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Beeld</guimenu
+> <guimenuitem
+>Inzoomen</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Vergroot de weergave van de map met bestanden.</action
+></para>
+    </listitem>
+    </varlistentry>
+
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl; <keycap
+>-</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Beeld</guimenu
+> <guimenuitem
+>Uitzoomen</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Verklein de weergave van de map met bestanden.</action
+></para>
+    </listitem>
+    </varlistentry>
+</variablelist>
+
+<variablelist>
+<title
+>Het menu Ga naar</title>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Alt;<keycap
+>Omhoog</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Ga naar</guimenu
+> <guimenuitem
+>Omhoog</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Verplaats u een stap omhoog in het bestandssysteem naar de beginmap.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ga naar</guimenu
+> <guimenuitem
+>Terug</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Verplaats u een stap achterwaarts in uw bladergeschiedenis in het bestandssysteem.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ga naar</guimenu
+> <guimenuitem
+>Verder</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Verplaats u een stap voorwaarts in uw bladergeschiedenis in het bestandssysteem.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Bovendien heeft &filelight; de gezamenlijke menu-items van &kde; <guimenu
+>Instellingen</guimenu
+> en <guimenu
+>Help</guimenu
+>, voor meer informatie lees de secties over de <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menu-instellingen</ulink
+> en <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menu Help</ulink
+> van &kde;-fundamentals. </para>
+</chapter>
+
+
+<chapter id="credits">
+   <title
+>Dankbetuigingen en licentie</title>
+   <sect1 id="kapp">
+      <title
+>&filelight;</title>
+      <para
+>Programma copyright 2006 Max B. Howell <email
+>max.howell@methylblue.com</email
+></para>
+      <para
+>Programma copyright 2008-2013 Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+></para
+>&underGPL; </sect1>
+   <sect1 id="Documentation">
+      <title
+>Documentatie</title>
+      <para
+>Documentatie copyright 2003 Max B. Howell <email
+>max.howell@methylblue.com</email
+></para>
+      <para
+>Documentatie copyright 2009 Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+></para>
+      &meld.fouten;&vertaling.freek; &underFDL; </sect1>
+</chapter>
+
+&documentation.index;
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

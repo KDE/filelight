@@ -1,0 +1,618 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY filelight "<application
+>Filelight</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % German "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="filelight" lang="&language;">
+
+<bookinfo>
+   <title
+>Das Handbuch zu &filelight;</title>
+   <authorgroup>
+      <author
+><firstname
+>Max</firstname
+> <surname
+>Howell</surname
+> <affiliation
+><address
+><email
+>max.howell@methylblue.com</email
+></address
+></affiliation>
+      </author>
+      <author
+><firstname
+>Martin</firstname
+> <surname
+>Sandsmark</surname
+> <affiliation
+><address
+><email
+>martin.sandsmark@kde.org</email
+></address
+></affiliation>
+      </author>
+      <othercredit role="translator"
+><firstname
+>Felix</firstname
+><surname
+>Schweighofer</surname
+><affiliation
+><address
+><email
+>felix.schweighofer@googlemail.com</email
+></address
+></affiliation
+><contrib
+>Übersetzung</contrib
+></othercredit
+> 
+   </authorgroup>
+   <copyright
+><year
+>2006</year
+><holder
+>Max Howell</holder
+></copyright>
+   <copyright
+><year
+>2009</year
+><holder
+>Martin Sandsmark</holder
+></copyright>
+   <!-- Translators: put here the copyright notice of the translation -->
+   <legalnotice
+>&FDLNotice;</legalnotice>
+   <date
+>2015-08-04</date>
+   <releaseinfo
+>&filelight; 1.21 (Anwendungen 15.08)</releaseinfo>
+   <abstract
+><para
+>&filelight; zeigt Diagramme aus konzentrischen Ringen an, die die Belegung von Speichermedien auf ihrem Rechner darstellen.</para
+></abstract>
+   <!-- These may be used by search engines -->
+   <keywordset>
+      <keyword
+>KDE</keyword>
+      <keyword
+>Filelight</keyword>
+      <keyword
+>du</keyword>
+      <keyword
+>Festplattenbelegung</keyword>
+   </keywordset>
+</bookinfo>
+
+
+<chapter id="introduction">
+   <title
+>Einführung</title>
+   <screenshot>
+      <screeninfo
+>Bildschirmfoto &filelight; 1.20</screeninfo>
+      <mediaobject>
+         <imageobject
+><imagedata fileref="radial_map.png" format="PNG"/></imageobject>
+         <textobject
+><phrase
+>Bildschirmfoto</phrase
+></textobject>
+      </mediaobject>
+   </screenshot>
+   <para
+>&filelight; ermöglicht Ihnen einen schnellen Überblick über den Speicherbedarf der Dateien und Ordner auf Ihrem Rechner, indem es das Dateisystem mit konzentrischen Ringsegmenten abbildet. Damit können Sie Dateien und Ordner mit hohem Speicherbedarf ausfindig machen, um diese anschließend beispielsweise mit &dolphin; oder &konqueror; zu bearbeiten.</para>
+</chapter>
+
+
+<chapter id="configuring">
+<title
+>&filelight; einrichten</title>
+
+<para
+>Der Einrichtungsdialog von &filelight; besteht aus zwei Karteikarten, <guilabel
+>Einlesen</guilabel
+> und <guilabel
+>Erscheinungsbild</guilabel
+>, auf denen Sie Einstellungen vornehmen können. Im Folgenden werden diese Karteikarten erläutert. Zum Öffnen des Einrichtungsdialogs klicken Sie auf den Eintrag <menuchoice
+><guimenu
+>Einstellungen</guimenu
+><guimenuitem
+>&filelight; einrichten ...</guimenuitem
+></menuchoice
+>.</para>
+
+<sect1 id="scanning">
+<title
+>Einlesen</title>
+
+<screenshot>
+<screeninfo
+>Bildschirmfoto der Karteikarte „Einlesen“</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_scan.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Bildschirmfoto</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Auf der Karteikarte „Einlesen“ können Sie Optionen zum Einlesen von Ordnern in &filelight; festlegen. In der Liste der <guilabel
+>Ausgeschlossenen Ordner</guilabel
+> können Sie einstellen, welche Ordner beim Einlesen ignoriert werden. Dies ist nützlich, um Ordner zu überspringen, auf die Sie keinen Lesezugriff haben oder die zu einem virtuellen Dateisystem, wie z. B. /proc gehören. Verwenden Sie die Knöpfe <guibutton
+>Hinzufügen ...</guibutton
+> bzw. <guibutton
+>Entfernen</guibutton
+> um Ordner mithilfe eines Dateiauswahldialogs zur Liste hinzuzufügen oder ausgewählte Ordner aus ihr zu entfernen.</para>
+<para
+>Die Option <guilabel
+>Über Dateisystemgrenzen hinaus einlesen</guilabel
+> ermöglicht das Einlesen von Ordnern, die zu anderen Dateisystemen gehören. Beispielsweise wird im Normalfall der Inhalt des Ordners <filename class="directory"
+>/mnt</filename
+> nicht eingelesen, wenn &filelight; den Basisordner <filename class="directory"
+>/</filename
+> einliest. Das Einlesen entfernter Dateisysteme über NFS oder Samba kann eine hohe Netzwerkauslastung verursachen. Um das Einlesen solcher Dateisysteme zu verhindern, aktivieren Sie das Ankreuzfeld <guilabel
+>Netzwerk-Dateisysteme ausschließen</guilabel
+>. Die Option <guilabel
+>Wechselmedien ausschließen</guilabel
+> verhindert das Einlesen von Wechselmedien wie z. B. &CD-ROM;s.</para>
+</sect1>
+
+<sect1 id="appearance">
+<title
+>Erscheinungsbild</title>
+
+<screenshot>
+<screeninfo
+>Bildschirmfoto „Erscheinungsbild“</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_appear.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Bildschirmfoto</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Auf der Karteikarte <guilabel
+>Erscheinungsbild</guilabel
+> können Sie das Aussehen von &filelight; anpassen.</para>
+<para
+>Im Bereich <guilabel
+>Farbschema</guilabel
+> können Sie ein Farbschema für &filelight; festlegen. Sie können zwischen <guilabel
+>Regenbogen</guilabel
+>, <guilabel
+>Systemfarben</guilabel
+> und <guilabel
+>Hoher Kontrast</guilabel
+> wählen. Mit dem Schieberegler <guilabel
+>Kontrast</guilabel
+> können Sie den Kontrast der Ringsegmente anpassen, um die Unterscheidung der Farben zu erleichtern.</para>
+<para
+>Aktivieren Sie das Ankreuzfeld <guilabel
+>Kantenglättung</guilabel
+>, um die Kantenglättung für &filelight; zu aktivieren. Dadurch werden die Ringsegmente in Diagrammen deutlich klarer dargestellt.</para>
+<para
+>Falls Sie Dateien oder Ordner mit langen Namen besitzen, kann die Option <guilabel
+>Angepasste Schriftgröße für Beschriftungen</guilabel
+> nützlich sein. Ist diese aktiviert, wird die Schriftgröße an den Platz angepasst, der für die Anzeige zur Verfügung steht. Im Auswahlfeld <guilabel
+>Minimale Schriftgröße</guilabel
+> können Sie festlegen, wie groß die Beschriftungen mindestens angezeigt werden. </para>
+<para
+>Die Option <guilabel
+>Kleine Dateien anzeigen</guilabel
+> ist standardmäßig deaktiviert, da die Anzeige durch kleine Dateien leicht unübersichtlich wird. Aktivieren Sie das Ankreuzfeld, um im Diagramm ein <quote
+>gemeinsames Ringsegment</quote
+> für alle kleinen Dateien anzuzeigen.</para>
+
+</sect1>
+</chapter>
+
+
+<chapter id="using">
+<title
+>&filelight; benutzen</title>
+
+<sect1 id="starting">
+<title
+>&filelight; starten</title>
+<para
+>&filelight; kann aus dem Anwendungsstarter-Menü oder von der Befehlszeile gestartet werden</para>
+
+<sect2 id="starting-from-the-menu">
+<title
+>Vom Anwendungsstarter-Menü</title>
+<para
+>Öffnen Sie das Anwendungsstarter-Menü und klicken Sie im Menü <guimenu
+>Dienstprogramme</guimenu
+> auf den Eintrag <guimenuitem
+>&filelight;</guimenuitem
+>. </para>
+</sect2>
+
+<sect2 id="starting-from-the-command-line">
+<title
+>Von der Befehlszeile</title>
+<para
+>Sie können &filelight; auch starten, indem Sie den Programmnamen in einer Befehlszeile eingeben. Wenn Sie, wie im folgenden Beispiel, einen Ordnernamen als Argument eingeben, wird der entsprechende Ordner eingelesen. </para>
+<informalexample>
+<screen
+><prompt
+>%</prompt
+><userinput
+><command
+>filelight</command
+> <option
+><replaceable
+>/home</replaceable
+></option
+></userinput
+>
+</screen>
+</informalexample>
+</sect2>
+
+</sect1>
+
+<sect1 id="scanning-folders">
+<title
+>Ordner einlesen</title>
+<para
+>Beim Einlesen eines Ordners wird sein Inhalt als Diagramm dargestellt. Um einen Ordner einzulesen, verwenden Sie das Menü <guilabel
+>Einlesen</guilabel
+> oder geben Sie einen Pfad (&URL;) direkt in die Adressleiste ein. </para>
+</sect1>
+
+<sect1 id="exploring-filemaps">
+<title
+>Verwendung von Ordner-Diagrammen</title>
+<para
+>Nach dem Einlesen eines Ordners wird ein Diagramm angezeigt, das den Inhalt des Ordners darstellt. Das Diagramm besteht aus unterteilten Ringen, die sich von der Mitte nach außen ausbreiten. Ordner werden farbig dargestellt, Dateien grau. Die Größe der Ringsegmente ergibt sich aus der Größe der entsprechenden Dateien. Die Segmente können verschachtelt sein. Beispielsweise wird <filename class="directory"
+>/home/mxcl</filename
+> eine Ebene weiter außen angezeigt als <filename class="directory"
+>/home</filename
+> und einen Winkel einnehmen, der höchstens so groß ist wie der des Ringsegments für <filename class="directory"
+>/home</filename
+>, da <filename class="directory"
+>/home/mxcl</filename
+> ein Unterordner von <filename class="directory"
+>/home</filename
+> ist und damit nicht größer als <filename class="directory"
+>/home</filename
+> sein kann. Die Segmente sind beschriftet und beim Überfahren mit der Maus werden detailliertere Informationen angezeigt. </para>
+<screenshot>
+<screeninfo
+>Bildschirmfoto eines Ordner-Diagramms</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="radial_map_context_menu.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Bildschirmfoto</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+<para
+>Sie können Ordner mit der Standardanwendung zur Dateiverwaltung oder &konsole; öffnen, indem Sie den entsprechenden Eintrag im Kontextmenü des Ringsegments anklicken. Ein Klick mit der &MMBn; öffnet Dateien mit einer Anwendung, die dem entsprechenden MIME-Typ zugeordnet ist, z. B. Bilder mit <application
+>Gwenview</application
+>. Klicken Sie mit der &RMBn; auf ein Segment, um ein Kontextmenü zu öffnen. Dort finden Sie Einträge zum Kopieren des Pfades in die Zwischenablage sowie zum Löschen des Ordners bzw. der Datei. Klicken Sie mit der &LMBn; auf ein Ringsegment, um die Ansicht darauf zu zentrieren. </para>
+</sect1>
+
+</chapter>
+
+
+<chapter id="commands">
+<title
+>Menü- und Befehlsreferenz</title>
+
+<variablelist>
+<title
+>Das Menü Einlesen</title>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Einlesen</guimenu
+> <guimenuitem
+>Ordner einlesen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Öffnet einen Dialog, in dem Sie einen Ordner zum Einlesen auswählen können.</action
+></para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keysym
+>Pos1</keysym
+></keycombo
+> </shortcut
+> <guimenu
+>Einlesen</guimenu
+> <guimenuitem
+>Persönlichen Ordner einlesen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Liest Ihren Persönlichen Ordner ein.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Einlesen</guimenu
+> <guimenuitem
+>Basisordner einlesen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Liest den Basisordner ein.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycap
+>F5</keycap
+> </shortcut
+> <guimenu
+>Einlesen</guimenu
+> <guimenuitem
+>Erneut einlesen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Liest den aktuellen Ordner neu ein. Dies ist sinnvoll, wenn Änderungen im Dateisystem vorgenommen wurden, wie z. B. das Löschen von Dateien.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> &Esc; </shortcut
+> <guimenu
+>Einlesen</guimenu
+> <guimenuitem
+>Anhalten</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Bricht das Einlesen ab.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Einlesen</guimenu
+> <guimenuitem
+>Beenden</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Beendet &filelight;.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist>
+  <title
+>Das Menü <quote
+>Ansicht</quote
+></title>
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>+</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Ansicht</guimenu
+> <guimenuitem
+>Vergrößern</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Vergrößert die Ansicht.</action
+></para>
+    </listitem>
+    </varlistentry>
+
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>-</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Ansicht</guimenu
+> <guimenuitem
+>Verkleinern</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Verkleinert die Ansicht.</action
+></para>
+    </listitem>
+    </varlistentry>
+</variablelist>
+
+<variablelist>
+<title
+>Das Menü <quote
+>Gehe zu</quote
+></title>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>Pfeil hoch</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Gehe zu</guimenu
+> <guimenuitem
+>Nach oben</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Öffnet den Ordner, der dem aktuellen übergeordnet ist.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Gehe zu</guimenu
+> <guimenuitem
+>Zurück</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Geht einen Schritt im Verlauf zurück.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Gehe zu</guimenu
+> <guimenuitem
+>Weiter</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Geht einen Schritt im Verlauf vor.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Zusätzlich hat &filelight; die bekannten &kde;-Einträge im Menü <guimenu
+>Einstellungen</guimenu
+> und <guimenu
+>Hilfe</guimenu
+>, weitere Informationen dazu finden Sie in den Abschnitten über die Menüs <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Einstellungen</ulink
+> und <ulink url="help:/fundamentals/menus.html#menus-help"
+>Hilfe</ulink
+> der &kde;-Grundlagen. </para>
+</chapter>
+
+
+<chapter id="credits">
+   <title
+>Danksagungen und Lizenz</title>
+   <sect1 id="kapp">
+      <title
+>&filelight;</title>
+      <para
+>Programm Copyright 2006 Max B. Howell <email
+>max.howell@methylblue.com</email
+></para>
+      <para
+>Copyright des Programms 2008-2013 Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+></para
+>&underGPL; </sect1>
+   <sect1 id="Documentation">
+      <title
+>Dokumentation</title>
+      <para
+>Dokumentation Copyright 2003 Max B. Howell <email
+>max.howell@methylblue.com</email
+></para>
+      <para
+>Copyright der Dokumentation 2009 Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+></para>
+      <para
+>Übersetzung Felix Schweighofer <email
+>felix.schweighofer@googlemail.com</email
+></para
+> &underFDL; </sect1>
+</chapter>
+
+&documentation.index;
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

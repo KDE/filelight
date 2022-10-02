@@ -1,0 +1,609 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY filelight "<application
+>Filelight</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Ukrainian "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="filelight" lang="&language;">
+
+<bookinfo>
+   <title
+>Підручник з &filelight;</title>
+   <authorgroup>
+      <author
+><firstname
+>Max</firstname
+> <surname
+>Howell</surname
+> <affiliation
+><address
+><email
+>max.howell@methylblue.com</email
+></address
+></affiliation>
+      </author>
+      <author
+><firstname
+>Martin</firstname
+> <surname
+>Sandsmark</surname
+> <affiliation
+><address
+><email
+>martin.sandsmark@kde.org</email
+></address
+></affiliation>
+      </author>
+      <othercredit role="translator"
+><firstname
+>Юрій</firstname
+><surname
+>Чорноіван</surname
+><affiliation
+><address
+><email
+>yurchor@ukr.net</email
+></address
+></affiliation
+><contrib
+>Переклад українською</contrib
+></othercredit
+> 
+   </authorgroup>
+   <copyright
+><year
+>2006</year
+><holder
+>Max Howell</holder
+></copyright>
+   <copyright
+><year
+>2009</year
+><holder
+>Martin Sandsmark</holder
+></copyright>
+   <!-- Translators: put here the copyright notice of the translation -->
+   <legalnotice
+>&FDLNotice;</legalnotice>
+   <date
+>4 серпня 2015 року</date>
+   <releaseinfo
+>&filelight; 1.21 (Програми 15.08)</releaseinfo>
+   <abstract
+><para
+>&filelight; створює інтерактивну карту з концентричних кіл, поділених на сектори, яка допоможе вам візуально контролювати використання дискового простору на вашому комп’ютері.</para
+></abstract>
+   <!-- These may be used by search engines -->
+   <keywordset>
+      <keyword
+>KDE</keyword>
+      <keyword
+>Filelight</keyword>
+      <keyword
+>du</keyword>
+      <keyword
+>використання диска</keyword>
+   </keywordset>
+</bookinfo>
+
+
+<chapter id="introduction">
+   <title
+>Вступ</title>
+   <screenshot>
+      <screeninfo
+>Знімок вікна &filelight; 1.20</screeninfo>
+      <mediaobject>
+         <imageobject
+><imagedata fileref="radial_map.png" format="PNG"/></imageobject>
+         <textobject
+><phrase
+>Знімок вікна</phrase
+></textobject>
+      </mediaobject>
+   </screenshot>
+   <para
+>За допомогою &filelight; ви зможете швидко визначити, на що витрачено простір на диску. Програма покаже вам у графічному вигляді файлову систему, представлену набором концентричних кіл, поділених на сектори. Ви можете скористатися побаченим для виявлення нераціонального використання дискового простору і усування проблем за допомогою &dolphin; або &konqueror;.</para>
+</chapter>
+
+
+<chapter id="configuring">
+<title
+>Налаштування &filelight;</title>
+
+<para
+>Діалогове вікно параметрів &filelight; поділено на дві вкладки, призначені для налаштування параметрів &filelight;. Цими двома вкладками є вкладки <guilabel
+>Сканування</guilabel
+> і <guilabel
+>Вигляд</guilabel
+>. Нижче наведено опис цих вкладок параметрів. Діалогове вікно параметрів &filelight; можна відкрити за допомогою пункту <menuchoice
+><guimenu
+>Параметри</guimenu
+> <guimenuitem
+>Налаштувати Filelight</guimenuitem
+></menuchoice
+>.</para>
+
+<sect1 id="scanning">
+<title
+>Сканування</title>
+
+<screenshot>
+<screeninfo
+>Знімок вікна під час сканування</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_scan.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Знімок вікна</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>За допомогою вкладки <guimenuitem
+>Сканування</guimenuitem
+> ви зможете налаштувати спосіб, у який &filelight; скануватиме теки. Пункт <guilabel
+>Не сканувати ці каталоги</guilabel
+> можна вимкнути сканування певних каталогів. Цей пункт дуже корисний для того, щоб наказати програмі пропустити теки, на читання яких у вас немає прав доступу, або тек, які є частиною віртуальної файлової системи, зокрема /proc. Щоб додати теку до списку, натисніть кнопку <guibutton
+>Додати...</guibutton
+>, — програма відкриє діалогове вікно, за допомогою якого ви зможете обрати потрібну теку з ієрархії тек. Щоб вилучити теку, позначте відповідний пункт у списку і натисніть кнопку <guibutton
+>Вилучити</guibutton
+>.</para>
+<para
+>Якщо буде позначено пункт <guilabel
+>Сканувати за межами поточної файлової системи</guilabel
+>, програма скануватиме теки, які є частиною інших файлових систем. Наприклад, якщо пункт не позначено, програма не скануватиме вміст тек <filename class="directory"
+>/mnt</filename
+>, якщо сканування починається з кореневої теки <filename class="directory"
+>/</filename
+>. Сканування файлових систем на інших комп’ютерах, наприклад теках спільних ресурсів NFS або Samba може призвести до значного навантаження на мережу. Щоб запобігти такому скануванню позначте пункт <guilabel
+>Виключити віддалені файлові системи</guilabel
+>. За допомогою наступного пункту, <guilabel
+>Виключити змінні носії</guilabel
+> забороняє &filelight; сканувати портативні носії (наприклад компакт-диски).</para>
+</sect1>
+
+<sect1 id="appearance">
+<title
+>Вигляд</title>
+
+<screenshot>
+<screeninfo
+>Знімок вікна налаштування вигляду</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_appear.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Знімок вікна</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>За допомогою вкладки <guilabel
+>Вигляд</guilabel
+> ви зможете налаштувати зовнішній вигляд вікна &filelight;.</para>
+<para
+>Розділ <guilabel
+>Схема кольорів</guilabel
+> призначено для вибору схеми кольорів, яку використовуватиме &filelight;. Можливими варіантами схем кольорів є <guilabel
+>Райдуга</guilabel
+>, <guilabel
+>Системні кольори</guilabel
+> і <guilabel
+>Висока контрастність</guilabel
+>. Крім того, передбачено повзунок <guilabel
+>Контрастність:</guilabel
+>, за допомогою якого ви зможете налаштувати контрастність секторів кілець так, щоб їх легше було переглядати.</para>
+<para
+>За допомогою пункту <guilabel
+>Використовувати згладжування</guilabel
+> ви можете увімкнути згладжування у області перегляду &filelight;. Якщо позначити цей пункт, лінії секторів кільця виглядатимуть плавнішими.</para>
+<para
+>Пункт <guilabel
+>Змінювати розмір шрифту міток</guilabel
+> буде корисним, якщо у вашій системі є файли або теки з довгими назвами. За допомогою цього пункту можна змінити розмір шрифту цих міток так, щоб мітки вміщалися у область перегляду. Якщо ви позначите цей пункт, ви зможете отримати доступ до лічильника <guilabel
+>Мінімальний розмір шрифту</guilabel
+>, за допомогою цього лічильника ви зможете обрати найменший розмір символів шрифту, який можна використовувати програмі. </para>
+<para
+>Пункт <guilabel
+>Показувати малі файли</guilabel
+> типово не буде позначено, оскільки показ малих файлів засмічує область перегляду &filelight;. Позначте цей пункт, якщо ви бажаєте, щоб малі файли було показано у області перегляду &filelight;. Ці файли буде об’єднано у один «сегмент».</para>
+
+</sect1>
+</chapter>
+
+
+<chapter id="using">
+<title
+>Користування &filelight;</title>
+
+<sect1 id="starting">
+<title
+>Запуск &filelight;</title>
+<para
+>&filelight; можна запустити за допомогою меню запуску програм або командного рядка.</para>
+
+<sect2 id="starting-from-the-menu">
+<title
+>За допомогою меню запуску програм</title>
+<para
+>Відкрийте меню програм пересуньте вказівник миші на пункт меню <guimenu
+>Інструменти</guimenu
+>. Виберіть у меню пункт <guimenuitem
+>&filelight;</guimenuitem
+>. </para>
+</sect2>
+
+<sect2 id="starting-from-the-command-line">
+<title
+>За допомогою командного рядка</title>
+<para
+>Ви можете запустити &filelight; виконанням відповідної команди у командному рядку. Якщо ви вкажете як параметр команди назву теки, як у наведеному нижче прикладі, &filelight; виконає сканування вказаної вами теки. </para>
+<informalexample>
+<screen
+><prompt
+>%</prompt
+><userinput
+><command
+>filelight</command
+> <option
+><replaceable
+>/home</replaceable
+></option
+></userinput
+>
+</screen>
+</informalexample>
+</sect2>
+
+</sect1>
+
+<sect1 id="scanning-folders">
+<title
+>Сканування тек</title>
+<para
+>Після сканування теки програма покаже її вміст у вигляді карти файлів. Щоб наказати програмі виконати сканування теки, скористайтеся меню <guimenuitem
+>Сканування</guimenuitem
+> або просто введіть адресу теки на панелі адреси. </para>
+</sect1>
+
+<sect1 id="exploring-filemaps">
+<title
+>Навігація картами файлів</title>
+<para
+>Після завершення сканування програма покаже карту файлів, яка відповідатиме теці, яку було проскановано. Карта файлів — це послідовність розбитих на сектори кілець. Сектори розфарбовані у світлі кольори позначають теки, сірі сектори — файли. Розмір секторів буде пропорційним до місця на диску, яке вони займають. Сектори може бути розбито на підсектори, отже, наприклад, теку <filename class="directory"
+>/home/yurchor</filename
+> буде показано ззовні теки <filename class="directory"
+>/home</filename
+>, в межах сектора <filename class="directory"
+>/home</filename
+>. Сектори буде позначено мітками. Після наведення вказівника миші на сектор програма показуватиме панель з докладнішими відомостями про відповідний елемент файлової системи та його дочірні елементи. </para>
+<screenshot>
+<screeninfo
+>Знімок вікна карти файлів</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="radial_map_context_menu.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Знімок вікна</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+<para
+>За допомогою контекстного меню сектора ви зможете відкривати відповідні теки у типовій програмі для перегляду файлової системи або &konsole;. Наведення вказівника миші на позначки файлів з наступним клацанням середньою кнопкою миші відкриватиме ці файли за допомогою програми, пов’язаної з відповідним типом MIME, отже зображення буде відкрито у <application
+>Gwenview</application
+>. Доступ до контекстного меню сканованої теки з пунктами дій з копіювання адреси теки до буфера обміну даними або вилучення теки чи файла. Наведення вказівника миші на сектор з наступним клацанням лівою кнопкою миші призведе до показу карти файлів для відповідної теки. </para>
+</sect1>
+
+</chapter>
+
+
+<chapter id="commands">
+<title
+>Довідка щодо меню і команд</title>
+
+<variablelist>
+<title
+>Меню «Сканування»</title>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Scan</guimenu
+> <guimenuitem
+>Сканувати теку...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Відкриває діалогове вікно, за допомогою якого ви зможете обрати теку для сканування.</action
+></para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keysym
+>Home</keysym
+></keycombo
+> </shortcut
+> <guimenu
+>Сканування</guimenu
+> <guimenuitem
+>Сканувати домашній каталог</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Наказати програмі розпочати сканування домашньої теки користувача.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Scan</guimenu
+> <guimenuitem
+>Сканувати кореневий каталог</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Наказати програмі розпочати сканування кореневої теки системи.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycap
+>F5</keycap
+> </shortcut
+> <guimenu
+>Сканування</guimenu
+> <guimenuitem
+>Пересканувати</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Розпочати нове сканування поточної робочої теки, корисно, якщо до файлової системи було внесено зміни.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> &Esc; </shortcut
+> <guimenu
+>Сканування</guimenu
+> <guimenuitem
+>Зупинити</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Зупинити поточне сканування.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Сканування</guimenu
+> <guimenuitem
+>Вийти</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Завершити роботу &filelight;.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist>
+  <title
+>Меню «Перегляд»</title>
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>+</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Перегляд</guimenu
+> <guimenuitem
+>Збільшити</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Збільшити масштаб перегляду карти файлів.</action
+></para>
+    </listitem>
+    </varlistentry>
+
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>-</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Перегляд</guimenu
+> <guimenuitem
+>Зменшити</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Зменшити масштаб перегляду карти файлів.</action
+></para>
+    </listitem>
+    </varlistentry>
+</variablelist>
+
+<variablelist>
+<title
+>Меню «Перехід»</title>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>Стрілка вгору</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Перехід</guimenu
+> <guimenuitem
+>Вгору</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Перейти на один крок вгору ієрархією тек до батьківської теки.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Перехід</guimenu
+> <guimenuitem
+>Назад</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Повернутися на один крок назад у журналі перегляду файлової системи.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Перехід</guimenu
+> <guimenuitem
+>Вперед</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Перейти на один крок вниз ієрархією тек файлової системи.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Крім того, у &filelight; передбачено типові для &kde; пункти меню <guimenu
+>Параметри</guimenu
+> і <guimenu
+>Довідка</guimenu
+>. Щоб дізнатися більше, ознайомтеся з розділами щодо <ulink url="help:/fundamentals/menus.html#menus-settings"
+>меню «Параметри»</ulink
+> та <ulink url="help:/fundamentals/menus.html#menus-help"
+>меню «Довідка»</ulink
+> підручника з основ роботи у &kde;. </para>
+</chapter>
+
+
+<chapter id="credits">
+   <title
+>Подяки і ліцензія</title>
+   <sect1 id="kapp">
+      <title
+>&filelight;</title>
+      <para
+>Авторські права на програму належать Max B. Howell <email
+>max.howell@methylblue.com</email
+>, 2006</para>
+      <para
+>Авторські права на програму належать Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+>, 2008–2013</para>
+&underGPL; </sect1>
+   <sect1 id="Documentation">
+      <title
+>Документація</title>
+      <para
+>Авторські права на документацію до програми належать 2003 Max B. Howell <email
+>max.howell@methylblue.com</email
+>, ©2003</para>
+      <para
+>Авторські права на документацію до програми належать Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+>, 2009</para>
+      <para
+>Переклад українською: Юрій Чорноіван <email
+>yurchor@ukr.net</email
+></para
+> 
+&underFDL; </sect1>
+</chapter>
+
+&documentation.index;
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->
