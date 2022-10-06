@@ -41,7 +41,7 @@ msgstr "&Explora"
 #: misc/filelightui.rc:18
 #, kde-format
 msgid "&View"
-msgstr "&Visualitza"
+msgstr "Vi&sualitza"
 
 #. i18n: ectx: ToolBar (mainToolBar)
 #: misc/filelightui.rc:24
@@ -89,7 +89,7 @@ msgstr "&Elimina"
 #: src/dialog.ui:95
 #, kde-format
 msgid "&Add..."
-msgstr "&Afig..."
+msgstr "Afi&g..."
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScanRemoteMounts)
 #: src/dialog.ui:171
@@ -163,7 +163,7 @@ msgstr ""
 #: src/dialog.ui:278
 #, kde-format
 msgid "&Use anti-aliasing"
-msgstr "&Utilitza antialiàsing"
+msgstr "Utilit&za antialiàsing"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, showSmallFiles)
 #: src/dialog.ui:285
@@ -508,7 +508,7 @@ msgstr "Us donem la benvinguda a Filelight"
 #: src/radialMap/item.cpp:214
 #, kde-format
 msgid "Open &File Manager Here"
-msgstr "Obri un gestor de &fitxers ací"
+msgstr "Obri un gestor de fi&txers ací"
 
 #: src/radialMap/item.cpp:217
 #, kde-format
@@ -534,7 +534,7 @@ msgstr "Torna a explo&rar"
 #, kde-format
 msgctxt "Scan/open the path of the selected element"
 msgid "&Open"
-msgstr "&Obri"
+msgstr "O&bri"
 
 #: src/radialMap/item.cpp:233
 #, kde-format
