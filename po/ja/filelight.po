@@ -670,24 +670,3 @@ msgstr "そのフォルダは既にスキャン対象から除外されていま
 #, kde-format
 msgid "Folder already ignored"
 msgstr ""
-
-#, fuzzy
-#~| msgid "Scan completed, generating map..."
-#~ msgctxt "@info:status"
-#~ msgid "Scan completed, generating map..."
-#~ msgstr "スキャン完了、マップを生成中..."
-
-#~ msgid "Go"
-#~ msgstr "移動"
-
-#~ msgid "Location Bar"
-#~ msgstr "場所バー"
-
-#~ msgid "&Recent Scans"
-#~ msgstr "最近のスキャン(&R)"
-
-#~ msgid "Scanning: %1"
-#~ msgstr "スキャン中: %1"
-
-#~ msgid "Scan failed: %1"
-#~ msgstr "スキャン失敗: %1"
