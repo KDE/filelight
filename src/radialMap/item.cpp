@@ -38,7 +38,6 @@
 #include <KMessageBox> //::mousePressEvent()
 #include <KTerminalLauncherJob>
 #include <KUrlMimeData>
-#include <kio_version.h>
 
 #include "fileTree.h"
 #include "filelight_debug.h"
