@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-26 00:49+0000\n"
+"POT-Creation-Date: 2022-10-08 09:41+0000\n"
 "PO-Revision-Date: 2022-06-01 18:29+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -517,48 +517,48 @@ msgctxt "@title"
 msgid "Welcome to Filelight"
 msgstr "Filelight"
 
-#: src/radialMap/item.cpp:214
+#: src/radialMap/item.cpp:207
 #, kde-format
 msgid "Open &File Manager Here"
 msgstr "Deschide gestionarul de &fișiere aici"
 
-#: src/radialMap/item.cpp:217
+#: src/radialMap/item.cpp:210
 #, kde-format
 msgid "Open &Terminal Here"
 msgstr "Deschide un &terminal aici"
 
-#: src/radialMap/item.cpp:222
+#: src/radialMap/item.cpp:215
 #, kde-format
 msgid "&Center Map Here"
 msgstr "&Centrează harta aici"
 
-#: src/radialMap/item.cpp:226
+#: src/radialMap/item.cpp:219
 #, kde-format
 msgid "Add to Do &Not Scan List"
 msgstr "Adaugă la lista de ig&norat"
 
-#: src/radialMap/item.cpp:227
+#: src/radialMap/item.cpp:220
 #, kde-format
 msgid "&Rescan"
 msgstr "&Recitește"
 
-#: src/radialMap/item.cpp:229
+#: src/radialMap/item.cpp:222
 #, kde-format
 msgctxt "Scan/open the path of the selected element"
 msgid "&Open"
 msgstr "&Deschide"
 
-#: src/radialMap/item.cpp:233
+#: src/radialMap/item.cpp:226
 #, kde-format
 msgid "&Copy to clipboard"
 msgstr "&Copiază în clipboard"
 
-#: src/radialMap/item.cpp:237 src/radialMap/item.cpp:283
+#: src/radialMap/item.cpp:230 src/radialMap/item.cpp:268
 #, kde-format
 msgid "&Delete"
 msgstr "Ș&terge"
 
-#: src/radialMap/item.cpp:281
+#: src/radialMap/item.cpp:266
 #, kde-format
 msgid ""
 "<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
@@ -567,17 +567,17 @@ msgstr ""
 "<qt>Dosarul de la <i>„%1”</i> va fi șters <b>recursiv</b> și <b>permanent</"
 "b>.</qt>"
 
-#: src/radialMap/item.cpp:282
+#: src/radialMap/item.cpp:267
 #, kde-format
 msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
 msgstr "<qt><i>„%1”</i> va fi șters <b>permanent</b>.</qt>"
 
-#: src/radialMap/item.cpp:308
+#: src/radialMap/item.cpp:293
 #, kde-format
 msgid "Error while deleting"
 msgstr "Eroare la ștergere"
 
-#: src/radialMap/item.cpp:410
+#: src/radialMap/item.cpp:395
 #, kde-format
 msgctxt "We messed up, the user needs to initiate a rescan."
 msgid ""
@@ -587,7 +587,7 @@ msgstr ""
 "Reprezentarea internă nu este validă,\n"
 "rescanați."
 
-#: src/radialMap/item.cpp:769
+#: src/radialMap/item.cpp:754
 #, kde-format
 msgctxt "Tooltip of file/folder, %1 is path, %2 is size"
 msgid ""
@@ -597,7 +597,7 @@ msgstr ""
 "%1\n"
 "%2"
 
-#: src/radialMap/item.cpp:777
+#: src/radialMap/item.cpp:762
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -606,7 +606,7 @@ msgstr[0] "%1 fișier (%2%)"
 msgstr[1] "%1 fișiere (%2%)"
 msgstr[2] "%1 de fișiere (%2%)"
 
-#: src/radialMap/item.cpp:779
+#: src/radialMap/item.cpp:764
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -615,7 +615,7 @@ msgstr[0] "%1 fișier"
 msgstr[1] "%1 fișiere"
 msgstr[2] "%1 de fișiere"
 
-#: src/radialMap/item.cpp:785
+#: src/radialMap/item.cpp:770
 #, kde-format
 msgid ""
 "\n"
@@ -624,13 +624,13 @@ msgstr ""
 "\n"
 "Apăsați pentru a merge în sus la dosarul-părinte "
 
-#: src/radialMap/item.cpp:870
+#: src/radialMap/item.cpp:855
 #, kde-format
 msgctxt "@title:window"
 msgid "Save as SVG"
 msgstr "Salvează ca SVG"
 
-#: src/radialMap/item.cpp:872
+#: src/radialMap/item.cpp:857
 #, kde-format
 msgctxt "filedialog type filter"
 msgid "SVG Files (*.svg);;All Files(*)"

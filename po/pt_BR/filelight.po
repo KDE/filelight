@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-26 00:49+0000\n"
+"POT-Creation-Date: 2022-10-08 09:41+0000\n"
 "PO-Revision-Date: 2022-07-14 09:32-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -504,48 +504,48 @@ msgctxt "@title"
 msgid "Welcome to Filelight"
 msgstr "Bem-vindo ao Filelight"
 
-#: src/radialMap/item.cpp:214
+#: src/radialMap/item.cpp:207
 #, kde-format
 msgid "Open &File Manager Here"
 msgstr "Abrir o &gerenciador de arquivos aqui"
 
-#: src/radialMap/item.cpp:217
+#: src/radialMap/item.cpp:210
 #, kde-format
 msgid "Open &Terminal Here"
 msgstr "Abrir o &terminal aqui"
 
-#: src/radialMap/item.cpp:222
+#: src/radialMap/item.cpp:215
 #, kde-format
 msgid "&Center Map Here"
 msgstr "&Centralizar o mapa aqui"
 
-#: src/radialMap/item.cpp:226
+#: src/radialMap/item.cpp:219
 #, kde-format
 msgid "Add to Do &Not Scan List"
 msgstr "Adicionar à lista de &não examinar"
 
-#: src/radialMap/item.cpp:227
+#: src/radialMap/item.cpp:220
 #, kde-format
 msgid "&Rescan"
 msgstr "&Reexaminar"
 
-#: src/radialMap/item.cpp:229
+#: src/radialMap/item.cpp:222
 #, kde-format
 msgctxt "Scan/open the path of the selected element"
 msgid "&Open"
 msgstr "&Abrir"
 
-#: src/radialMap/item.cpp:233
+#: src/radialMap/item.cpp:226
 #, kde-format
 msgid "&Copy to clipboard"
 msgstr "&Copiar para a área de transferência"
 
-#: src/radialMap/item.cpp:237 src/radialMap/item.cpp:283
+#: src/radialMap/item.cpp:230 src/radialMap/item.cpp:268
 #, kde-format
 msgid "&Delete"
 msgstr "E&xcluir"
 
-#: src/radialMap/item.cpp:281
+#: src/radialMap/item.cpp:266
 #, kde-format
 msgid ""
 "<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
@@ -554,17 +554,17 @@ msgstr ""
 "<qt>A pasta em <i>'%1'</i> será <b>recursivamente</b> e <b>permanentemente</"
 "b> excluída.</qt>"
 
-#: src/radialMap/item.cpp:282
+#: src/radialMap/item.cpp:267
 #, kde-format
 msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
 msgstr "<qt><i>'%1'</i> será <b>permanentemente</b> excluído.</qt>"
 
-#: src/radialMap/item.cpp:308
+#: src/radialMap/item.cpp:293
 #, kde-format
 msgid "Error while deleting"
 msgstr "Erro ao excluir"
 
-#: src/radialMap/item.cpp:410
+#: src/radialMap/item.cpp:395
 #, kde-format
 msgctxt "We messed up, the user needs to initiate a rescan."
 msgid ""
@@ -574,7 +574,7 @@ msgstr ""
 "A representação interna é inválida,\n"
 "Reexamine."
 
-#: src/radialMap/item.cpp:769
+#: src/radialMap/item.cpp:754
 #, kde-format
 msgctxt "Tooltip of file/folder, %1 is path, %2 is size"
 msgid ""
@@ -584,7 +584,7 @@ msgstr ""
 "%1\n"
 "%2"
 
-#: src/radialMap/item.cpp:777
+#: src/radialMap/item.cpp:762
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -592,7 +592,7 @@ msgid_plural "%1 Files (%2%)"
 msgstr[0] "%1 arquivo (%2%)"
 msgstr[1] "%1 arquivos (%2%)"
 
-#: src/radialMap/item.cpp:779
+#: src/radialMap/item.cpp:764
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -600,7 +600,7 @@ msgid_plural "%1 Files"
 msgstr[0] "%1 arquivo"
 msgstr[1] "%1 arquivos"
 
-#: src/radialMap/item.cpp:785
+#: src/radialMap/item.cpp:770
 #, kde-format
 msgid ""
 "\n"
@@ -609,13 +609,13 @@ msgstr ""
 "\n"
 "Clique para ir à pasta-mãe"
 
-#: src/radialMap/item.cpp:870
+#: src/radialMap/item.cpp:855
 #, kde-format
 msgctxt "@title:window"
 msgid "Save as SVG"
 msgstr "Salvar como SVG"
 
-#: src/radialMap/item.cpp:872
+#: src/radialMap/item.cpp:857
 #, kde-format
 msgctxt "filedialog type filter"
 msgid "SVG Files (*.svg);;All Files(*)"
