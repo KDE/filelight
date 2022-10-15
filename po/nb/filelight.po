@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-26 00:49+0000\n"
+"POT-Creation-Date: 2022-10-08 09:41+0000\n"
 "PO-Revision-Date: 2013-01-19 20:23+0100\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -495,48 +495,48 @@ msgctxt "@title"
 msgid "Welcome to Filelight"
 msgstr ""
 
-#: src/radialMap/item.cpp:214
+#: src/radialMap/item.cpp:207
 #, kde-format
 msgid "Open &File Manager Here"
 msgstr "Åpne &filbehandler her"
 
-#: src/radialMap/item.cpp:217
+#: src/radialMap/item.cpp:210
 #, kde-format
 msgid "Open &Terminal Here"
 msgstr "Åpne &terminal her"
 
-#: src/radialMap/item.cpp:222
+#: src/radialMap/item.cpp:215
 #, kde-format
 msgid "&Center Map Here"
 msgstr "&Sentrer kart her"
 
-#: src/radialMap/item.cpp:226
+#: src/radialMap/item.cpp:219
 #, kde-format
 msgid "Add to Do &Not Scan List"
 msgstr ""
 
-#: src/radialMap/item.cpp:227
+#: src/radialMap/item.cpp:220
 #, kde-format
 msgid "&Rescan"
 msgstr ""
 
-#: src/radialMap/item.cpp:229
+#: src/radialMap/item.cpp:222
 #, kde-format
 msgctxt "Scan/open the path of the selected element"
 msgid "&Open"
 msgstr "&Åpne"
 
-#: src/radialMap/item.cpp:233
+#: src/radialMap/item.cpp:226
 #, kde-format
 msgid "&Copy to clipboard"
 msgstr "&Kopier til utklippstavla"
 
-#: src/radialMap/item.cpp:237 src/radialMap/item.cpp:283
+#: src/radialMap/item.cpp:230 src/radialMap/item.cpp:268
 #, kde-format
 msgid "&Delete"
 msgstr "&Slett"
 
-#: src/radialMap/item.cpp:281
+#: src/radialMap/item.cpp:266
 #, kde-format
 msgid ""
 "<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
@@ -545,17 +545,17 @@ msgstr ""
 "<qt>Mappa ved <i>«%1»</i> vil bli <b>rekursivt</b> og <b>permanent</b> "
 "slettet!</qt>"
 
-#: src/radialMap/item.cpp:282
+#: src/radialMap/item.cpp:267
 #, kde-format
 msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
 msgstr "<qt><i>«%1»</i> vil bli <b>permanent</b> slettet.</qt>"
 
-#: src/radialMap/item.cpp:308
+#: src/radialMap/item.cpp:293
 #, kde-format
 msgid "Error while deleting"
 msgstr "Feil ved sletting"
 
-#: src/radialMap/item.cpp:410
+#: src/radialMap/item.cpp:395
 #, kde-format
 msgctxt "We messed up, the user needs to initiate a rescan."
 msgid ""
@@ -565,7 +565,7 @@ msgstr ""
 "Intern representasjon er ugyldig,\n"
 "skann på nytt."
 
-#: src/radialMap/item.cpp:769
+#: src/radialMap/item.cpp:754
 #, kde-format
 msgctxt "Tooltip of file/folder, %1 is path, %2 is size"
 msgid ""
@@ -573,7 +573,7 @@ msgid ""
 "%2"
 msgstr ""
 
-#: src/radialMap/item.cpp:777
+#: src/radialMap/item.cpp:762
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -581,7 +581,7 @@ msgid_plural "%1 Files (%2%)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/radialMap/item.cpp:779
+#: src/radialMap/item.cpp:764
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -589,7 +589,7 @@ msgid_plural "%1 Files"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/radialMap/item.cpp:785
+#: src/radialMap/item.cpp:770
 #, kde-format
 msgid ""
 "\n"
@@ -598,13 +598,13 @@ msgstr ""
 "\n"
 "Trykk for å gå til foreldremappa"
 
-#: src/radialMap/item.cpp:870
+#: src/radialMap/item.cpp:855
 #, kde-format
 msgctxt "@title:window"
 msgid "Save as SVG"
 msgstr ""
 
-#: src/radialMap/item.cpp:872
+#: src/radialMap/item.cpp:857
 #, kde-format
 msgctxt "filedialog type filter"
 msgid "SVG Files (*.svg);;All Files(*)"
