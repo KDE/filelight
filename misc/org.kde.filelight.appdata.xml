@@ -5,7 +5,6 @@
   <project_license>GPL-2.0+</project_license>
   <name>Filelight</name>
   <name xml:lang="ar">كشاف الملفات</name>
-  <name xml:lang="ast">Filelight</name>
   <name xml:lang="az">Filelight</name>
   <name xml:lang="bg">Filelight</name>
   <name xml:lang="ca">Filelight</name>
@@ -50,7 +49,6 @@
   <name xml:lang="zh-TW">Filelight</name>
   <summary>Filelight creates an interactive map of concentric segmented-rings that helps visualize disk usage on your computer</summary>
   <summary xml:lang="ar">ينشئ كشاف الملفات خريطة تفاعلية من حلقات مجزأة متحدة المركز  تساعد على تصور استخدام القرص على حاسوبك</summary>
-  <summary xml:lang="ast">Filelight crea un mapa interactivu d'aniellos concéntricos y segmentaos qu'ayuda a visualizar l'usu de los discos del ordenador</summary>
   <summary xml:lang="az">Filelight kompüterinizdə disk istifadəsini vizuallaşdırmağa kömək edən konsentrik seqmentli halqalardan ibarət interaktiv xəritə yaradır</summary>
   <summary xml:lang="bg">Filelight създава интерактивна карта от концентрични сегментирани пръстени, които помагат за визуализиране на използването на диска на вашия компютър</summary>
   <summary xml:lang="ca">El Filelight crea un mapa interactiu d'anells concèntrics segmentats que ajuden a visualitzar l'ús del disc a l'ordinador</summary>
@@ -96,7 +94,6 @@
       Filelight is an application to visualize the disk usage on your computer
     </p>
     <p xml:lang="ar">كشاف الملفات هو تطبيق لتصور استخدام القرص على حاسوبك</p>
-    <p xml:lang="ast">Filelight ye una aplicación pa visualizar l'espaciu en discu del ordenador</p>
     <p xml:lang="az">Filelight komouterinizdəki diskin istifadəsini vizuallaşdıran tətbiqdir</p>
     <p xml:lang="bg">Filelight е приложение за визуализиране на използването на диска на вашия компютър</p>
     <p xml:lang="ca">El Filelight és una aplicació per a visualitzar l'ús del disc a l'ordinador</p>
@@ -140,7 +137,6 @@
     <p xml:lang="zh-TW">Filelight 是個能將電腦硬碟使用量可視化的應用程式</p>
     <p>Features:</p>
     <p xml:lang="ar">الميزات:</p>
-    <p xml:lang="ast">Carauterístiques:</p>
     <p xml:lang="az">İmkanlar:</p>
     <p xml:lang="bg">Функции:</p>
     <p xml:lang="ca">Característiques:</p>
@@ -186,7 +182,6 @@
     <ul>
       <li>Scan local, remote or removable disks</li>
       <li xml:lang="ar">امسح الأقراص المحلية و البعيدة وقابلة للإزالة</li>
-      <li xml:lang="ast">Escanéu de discos llocales, remotos o estrayibles</li>
       <li xml:lang="az">Lokal, şəbəkədəki və ya çıxarıla bilən disklərin analizi</li>
       <li xml:lang="bg">Сканира локални, отдалечени и сменяеми дискови устройства</li>
       <li xml:lang="ca">Explora discs locals, remots o extraïbles</li>
@@ -230,7 +225,6 @@
       <li xml:lang="zh-TW">掃描本機、遠端或卸除式硬碟</li>
       <li>Configurable color schemes</li>
       <li xml:lang="ar">تشكيلات ألوان قابلة للضبط</li>
-      <li xml:lang="ast">Esquemes de colores configurables</li>
       <li xml:lang="az">Ayarlana bilən rəng sxemləri</li>
       <li xml:lang="bg">С възможност за настройване на цветови схеми</li>
       <li xml:lang="ca">Esquemes de color configurables</li>
@@ -275,7 +269,6 @@
       <li xml:lang="zh-TW">可設定的配色</li>
       <li>File system navigation by mouse clicks</li>
       <li xml:lang="ar">التنقل في نظام الملفات عن طريق نقرات الفارة</li>
-      <li xml:lang="ast">Navegación pelos sistemes de ficheros pente calcos del mur</li>
       <li xml:lang="az">Siçan düyməsinin klikləri ilə fayl sistemi üzrə naviqasiya</li>
       <li xml:lang="bg">Навигация във файловата система с мишката</li>
       <li xml:lang="ca">Navegació pel sistema de fitxers amb clics de ratolí</li>
@@ -319,7 +312,6 @@
       <li xml:lang="zh-TW">按按滑鼠即可瀏覽檔案系統</li>
       <li>Information about files and directories on hovering</li>
       <li xml:lang="ar">معلومات حول الملفات والأدلة عند التحويم عليها</li>
-      <li xml:lang="ast">Información tocante a ficheros y direutorios al pasar penriba'l mur</li>
       <li xml:lang="az">Kursor üzərində dayandıqda fayllar və qovluqlar haqqında məlumat</li>
       <li xml:lang="bg">Информация за файлове и директории при посочване с мишката</li>
       <li xml:lang="ca">Informació quant a fitxers i directoris en passar-hi per sobre</li>
@@ -363,7 +355,6 @@
       <li xml:lang="zh-TW">停駐時顯示檔案或資料夾的資訊</li>
       <li>Files and directories can be copied or removed directly from the context menu</li>
       <li xml:lang="ar">يمكن نسخ الملفات والأدلة أو إزالتها مباشرة من قائمة السياق</li>
-      <li xml:lang="ast">Los ficheros y direutorios puen copiase o desaniciase direutamente dende'l menú contestual</li>
       <li xml:lang="az">Fayllar və qovluqlar birbaşa kontekst menyudan kopyalana və silinə bilər</li>
       <li xml:lang="bg">Файловете и директориите могат да бъдат копирани или премахнати директно от контекстното меню</li>
       <li xml:lang="ca">Els fitxers i directoris es poden copiar o eliminar directament des del menú contextual</li>
@@ -407,7 +398,6 @@
       <li xml:lang="zh-TW">可透過內容目錄直接複製或移除檔案或資料夾</li>
       <li>Integration into Konqueror and Krusader</li>
       <li xml:lang="ar">تكامل مع كونكيور وكروسادر</li>
-      <li xml:lang="ast">Integración con Konqueror y Krusader</li>
       <li xml:lang="az">Dolphin, Konqueror və Krusader-ə inteqrasiya</li>
       <li xml:lang="bg">Директно интегриране в Konqueror и Krusader</li>
       <li xml:lang="ca">Integració en el Konqueror i el Krusader</li>
