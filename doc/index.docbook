@@ -28,7 +28,7 @@
    <legalnotice>&FDLNotice;</legalnotice>
    <date>2015-08-04</date>
    <releaseinfo>&filelight; 1.21 (Applications 15.08)</releaseinfo>
-   <abstract><para>&filelight; creates an interactive map of concentric segmented-rings that helps visualize disk usage on your computer.</para></abstract>
+   <abstract><para>Show disk usage and delete unused files.</para></abstract>
    <!-- These may be used by search engines -->
    <keywordset>
       <keyword>KDE</keyword>
