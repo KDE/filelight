@@ -2,7 +2,6 @@
 [Desktop Entry]
 Name=Filelight
 Name[ar]=كشاف الملفات
-Name[ast]=Filelight
 Name[az]=Filelight
 Name[bg]=Filelight
 Name[bs]=Filelight
@@ -62,7 +61,6 @@ Name[zh_CN]=Filelight 磁盘占用查看器
 Name[zh_TW]=Filelight
 GenericName=Disk Usage Statistics
 GenericName[ar]=إحصائيّات استخدام القرص
-GenericName[ast]=Estadístiques del usu de discos
 GenericName[az]=Disk İstifadəsi Statistikaları
 GenericName[bg]=Статистика на използване на диска
 GenericName[bs]=Statistika upotrebe diska
@@ -123,7 +121,6 @@ Exec=filelight %u
 Icon=filelight
 Comment=View disk usage information
 Comment[ar]=اعرض معلومات استخدام القرص
-Comment[ast]=Visualiza la información d'usu de los discos
 Comment[az]=Disk istifadəsi məlumatlarına baxış
 Comment[bg]=Преглед на използването на диска
 Comment[bs]=Pogledajte podatke o upotrebi diska
