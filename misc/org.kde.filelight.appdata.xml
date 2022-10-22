@@ -48,10 +48,18 @@
   <name xml:lang="zh-CN">Filelight 磁盘占用查看器</name>
   <name xml:lang="zh-TW">Filelight</name>
   <summary>Show disk usage and delete unused files</summary>
+  <summary xml:lang="bg">Показване на използването на диска и изтриване на неизползвани файлове</summary>
+  <summary xml:lang="ca">Mostra l'ús del disc i suprimeix les no usades</summary>
+  <summary xml:lang="uk">Показ даних щодо використання диска і вилучення зайвих файлів</summary>
+  <summary xml:lang="x-test">xxShow disk usage and delete unused filesxx</summary>
   <description>
     <p>
       Filelight is an application to visualize the disk usage on your computer by showing folders using an easy-to-understand view of concentric rings. Filelight makes it simple to free up space!
     </p>
+    <p xml:lang="bg">Filelight е приложение за визуализиране на използването на диска на вашия компютър като изобразява папките с лесен за разбиране изглед от концентрични пръстени. Filelight улеснява освобождаването на място на диска!</p>
+    <p xml:lang="ca">El Filelight és una aplicació per a visualitzar l'ús del disc a l'ordinador que mostra l'ús de les carpetes amb una visualització d'anells concèntrics fàcil d'entendre. El Filelight facilita alliberar espai!</p>
+    <p xml:lang="uk">Filelight — програма для візуалізації використання дискового простору вашого комп'ютера. Ця програма здатна показувати вміст тек у легко зрозумілому форматі концентричних кіл. За допомогою Filelight ви без проблем зможете звільняти місце на диску!</p>
+    <p xml:lang="x-test">xxFilelight is an application to visualize the disk usage on your computer by showing folders using an easy-to-understand view of concentric rings. Filelight makes it simple to free up space!xx</p>
     <p>Features:</p>
     <p xml:lang="ar">الميزات:</p>
     <p xml:lang="az">İmkanlar:</p>
@@ -98,9 +106,25 @@
     <p xml:lang="zh-TW">功能：</p>
     <ul>
       <li>Scan local, remote, or removable disks</li>
+      <li xml:lang="bg">Сканира не локални, отдалечени и сменяеми дискови устройства</li>
+      <li xml:lang="ca">Explora discs locals, remots o extraïbles</li>
+      <li xml:lang="uk">Сканування локальних, віддалених та портативних дисків</li>
+      <li xml:lang="x-test">xxScan local, remote, or removable disksxx</li>
       <li>View detailed information about files and folders</li>
+      <li xml:lang="bg">Подробна информация за файлове и папки</li>
+      <li xml:lang="ca">Visualització d'informació detallada quant a fitxers i carpetes</li>
+      <li xml:lang="uk">Перегляд докладних відомостей щодо файлів і тек</li>
+      <li xml:lang="x-test">xxView detailed information about files and foldersxx</li>
       <li>Delete files or folders that are taking up too much space</li>
+      <li xml:lang="bg">Изтриване на файлове и папки, които заемат твърде много място на диска</li>
+      <li xml:lang="ca">Supressió de fitxer o carpetes que ocupen massa espai</li>
+      <li xml:lang="uk">Вилучення файлів і тек, які займають надто багато місця</li>
+      <li xml:lang="x-test">xxDelete files or folders that are taking up too much spacexx</li>
       <li>Integration into the Dolphin, Konqueror, and Krusader file managers</li>
+      <li xml:lang="bg">Интегриране в Dolphin, Konqueror и Krusader</li>
+      <li xml:lang="ca">Integració en els gestors de fitxers Dolphin, Konqueror i Krusader</li>
+      <li xml:lang="uk">Інтеграція з програмами для керування файлами — Dolphin, Konqueror і Krusader</li>
+      <li xml:lang="x-test">xxIntegration into the Dolphin, Konqueror, and Krusader file managersxx</li>
       <li>Configurable color schemes</li>
       <li xml:lang="ar">تشكيلات ألوان قابلة للضبط</li>
       <li xml:lang="az">Ayarlana bilən rəng sxemləri</li>
