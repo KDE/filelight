@@ -61,7 +61,7 @@
 >&filelight; 1.21 (Aplicacions 15.08)</releaseinfo>
    <abstract
 ><para
->El &filelight; crea un mapa interactiu d'anells concèntrics segmentats que ajuden a visualitzar l'ús del disc a l'ordinador.</para
+>Mostra l'ús del disc i suprimeix les no usades.</para
 ></abstract>
    <!-- These may be used by search engines -->
    <keywordset>

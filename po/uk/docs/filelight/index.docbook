@@ -75,7 +75,7 @@
 >&filelight; 1.21 (Програми 15.08)</releaseinfo>
    <abstract
 ><para
->&filelight; створює інтерактивну карту з концентричних кіл, поділених на сектори, яка допоможе вам візуально контролювати використання дискового простору на вашому комп’ютері.</para
+>Показ даних щодо використання диска і вилучення зайвих файлів.</para
 ></abstract>
    <!-- These may be used by search engines -->
    <keywordset>
@@ -573,8 +573,8 @@
       <para
 >Авторські права на програму належать Martin Sandsmark <email
 >martin.sandsmark@kde.org</email
->, 2008–2013</para>
-&underGPL; </sect1>
+>, 2008–2013</para
+>&underGPL; </sect1>
    <sect1 id="Documentation">
       <title
 >Документація</title>
@@ -590,8 +590,7 @@
 >Переклад українською: Юрій Чорноіван <email
 >yurchor@ukr.net</email
 ></para
-> 
-&underFDL; </sect1>
+> &underFDL; </sect1>
 </chapter>
 
 &documentation.index;
