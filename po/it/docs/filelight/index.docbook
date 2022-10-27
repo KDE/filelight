@@ -75,7 +75,7 @@
 >&filelight; 1.21 (Applications 15.08)</releaseinfo>
    <abstract
 ><para
->&filelight; crea una mappa interattiva di anelli segmentati concentrici che aiuta a visualizzare l'uso del disco sul computer.</para
+>Mostra l'utilizzo del disco ed elimina i file inutilizzati.</para
 ></abstract>
    <!-- These may be used by search engines -->
    <keywordset>
