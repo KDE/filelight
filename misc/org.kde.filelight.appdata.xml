@@ -53,6 +53,7 @@
   <summary xml:lang="ca">Mostra l'ús del disc i suprimeix els fitxers sense ús</summary>
   <summary xml:lang="ca-valencia">Mostra l'ús del disc i suprimix els fitxers sense ús</summary>
   <summary xml:lang="es">Mostrar el uso del disco y borrar archivos no usados</summary>
+  <summary xml:lang="eu">Diskoaren erabilera erakustea eta erabili gabeko fitxategiak ezabatzea</summary>
   <summary xml:lang="fr">Afficher l'utilisation du disque et supprimer les fichiers non utilisés</summary>
   <summary xml:lang="ka">დისკის გამოყენების ჩვენება და გამოუყენებელი ფაილებს წაშლა</summary>
   <summary xml:lang="nl">Schijfgebruik tonen en ongebruikte bestanden verwijderen</summary>
@@ -71,6 +72,7 @@
     <p xml:lang="ca">El Filelight és una aplicació per a visualitzar l'ús del disc a l'ordinador que mostra l'ús de les carpetes amb una visualització d'anells concèntrics fàcil d'entendre. El Filelight facilita alliberar espai!</p>
     <p xml:lang="ca-valencia">Filelight és una aplicació per a visualitzar l'ús del disc a l'ordinador que mostra l'ús de les carpetes amb una visualització d'anells concèntrics fàcil d'entendre. Filelight facilita alliberar espai!</p>
     <p xml:lang="es">Filelight es una aplicación para visualizar el uso del disco de su equipo que muestra carpetas en una vista de anillos concéntricos fácil de entender. Filelight hace que sea fácil liberar espacio.</p>
+    <p xml:lang="eu">Filelight zure ordenagailuko diskoaren erabilera, karpetak, eraztun zentrokideen ikuspegi ulerterraz bat erabiliz irudikatzeko aplikazio bat da. Filelight-ek lekua hustea errazten du!</p>
     <p xml:lang="fr">Filelight est une application pour l'affichage de l’utilisation du disque sur votre ordinateur. Elle affiche les dossiers en utilisant une vue facile à comprendre en anneaux concentriques. Filelight permet de libérer simplement de l’espace !</p>
     <p xml:lang="nl">Filelight is een toepassing om het schijfgebruik op uw computer te visualiseren door mappen te tonen met een gemakkelijk te begrijpen beeld met concentrische ringen. Filelight maakt het gemakkelijk om ruimte vrij te maken!</p>
     <p xml:lang="pt">O Filelight é uma aplicação para visualizar a utilização do disco no seu computador, mostrando as pastas com uma vista fácil de entender num formato em anéis concêntricos. O Filelight facilita a libertação de espaço!</p>
@@ -130,6 +132,7 @@
       <li xml:lang="ca">Explora discs locals, remots o extraïbles</li>
       <li xml:lang="ca-valencia">Explora discs locals, remots o extraïbles</li>
       <li xml:lang="es">Explora discos locales, remotos y extraíbles</li>
+      <li xml:lang="eu">Aztertu disko lokalak, urrunekoak edo aldagarriak</li>
       <li xml:lang="fr">Analyser les disques locaux, distants ou amovibles</li>
       <li xml:lang="ka">ლოკალური, მოხსნადი და დაშორებული დისკების სკანირება</li>
       <li xml:lang="nl">Lokale, op afstand of verwijderbare schijven scannen</li>
@@ -145,6 +148,7 @@
       <li xml:lang="ca">Visualització d'informació detallada quant a fitxers i carpetes</li>
       <li xml:lang="ca-valencia">Visualització d'informació detallada quant a fitxers i carpetes</li>
       <li xml:lang="es">Mostrar información detallada sobre archivos y carpetas</li>
+      <li xml:lang="eu">Ikusi fitxategiei eta karpetei buruzko informazio zehatza</li>
       <li xml:lang="fr">Afficher des informations détaillées sur les fichiers et les dossiers</li>
       <li xml:lang="ka">დეტალებური ინფორმაცია ფაილებისა და საქაღალდეების შესახებ</li>
       <li xml:lang="nl">Gedetailleerde informatie over bestanden en mappen bekijken</li>
@@ -160,6 +164,7 @@
       <li xml:lang="ca">Supressió de fitxer o carpetes que ocupen massa espai</li>
       <li xml:lang="ca-valencia">Supressió de fitxer o carpetes que ocupen massa espai</li>
       <li xml:lang="es">Borrar archivos o carpetas que están ocupando demasiado espacio</li>
+      <li xml:lang="eu">Ezabatu leku gehiegi hartzen ari diren fitxategiak edo karpetak</li>
       <li xml:lang="fr">Supprimer des fichiers ou des dossiers prenant trop de place</li>
       <li xml:lang="ka">წაშალეთ ფაილები და საქაღალდეები, რომლებიც მეტისმეტად ბევრ ადგილს ხარჯავენ</li>
       <li xml:lang="nl">Bestanden of mappen verwijderen die te veel ruimte innemen</li>
@@ -175,6 +180,7 @@
       <li xml:lang="ca">Integració en els gestors de fitxers Dolphin, Konqueror i Krusader</li>
       <li xml:lang="ca-valencia">Integració en els gestors de fitxers Dolphin, Konqueror i Krusader</li>
       <li xml:lang="es">Integración con los gestores de archivos Dolphin Konqueror y Krusader</li>
+      <li xml:lang="eu">Dolphin, Konqueror eta Krusader fitxategi-kudeatzailetan bateratzea</li>
       <li xml:lang="fr">Intégration dans les gestionnaires de fichiers Dolphin, Konqueror et Krusader</li>
       <li xml:lang="ka">ინტეგრაცია Dolphin-ში, Konqueror-ში და Krusader-ში</li>
       <li xml:lang="nl">Integratie in bestandsbeheerders Dolphin, Konqueror en Krusader</li>
