@@ -10,7 +10,6 @@
 
 #include <KAboutData>
 #include <KActionCollection>
-#include <KDeclarative/KDeclarative>
 #include <KIO/Global> // upUrl
 #include <KLocalizedString>
 #include <KMessageBox> //::start()
@@ -58,7 +57,6 @@ MainContext::MainContext(QObject *parent)
     static auto l10nContext = new KLocalizedContext(engine);
     l10nContext->setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));
     engine->rootContext()->setContextObject(l10nContext);
-    KDeclarative::KDeclarative::setupEngine(engine);
 
     auto about = new About(this);
     qRegisterMetaType<size_t>("size_t");

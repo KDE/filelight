@@ -10,7 +10,6 @@ Dependencies:
     'frameworks/kxmlgui': '@stable'
     'frameworks/kcrash': '@stable'
     'frameworks/kio': '@stable'
-    'frameworks/kdeclarative': '@stable'
 
 Options:
   require-passing-tests-on: [ 'Linux', 'FreeBSD', 'Windows' ]
