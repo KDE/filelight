@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-08 09:41+0000\n"
+"POT-Creation-Date: 2022-10-30 00:49+0000\n"
 "PO-Revision-Date: 2022-07-14 09:32-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -329,27 +329,27 @@ msgstr "Caminho ou URL a verificar"
 msgid "[url]"
 msgstr "[URL]"
 
-#: src/mainContext.cpp:126
+#: src/mainContext.cpp:124
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Selecionar pasta para examinar"
 
-#: src/mainContext.cpp:190
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "The entered URL cannot be parsed; it is invalid."
 msgstr "A URL informada não pode ser analisada porque é inválida."
 
-#: src/mainContext.cpp:192
+#: src/mainContext.cpp:190
 #, kde-format
 msgid "Filelight only accepts absolute paths, eg. /%1"
 msgstr "O Filelight aceita apenas caminhos absolutos, por ex. /%1"
 
-#: src/mainContext.cpp:194
+#: src/mainContext.cpp:192
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Pasta não encontrada: %1"
 
-#: src/mainContext.cpp:196
+#: src/mainContext.cpp:194
 #, kde-format
 msgid ""
 "Unable to enter: %1\n"

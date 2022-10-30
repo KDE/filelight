@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-08 09:41+0000\n"
+"POT-Creation-Date: 2022-10-30 00:49+0000\n"
 "PO-Revision-Date: 2022-04-06 11:31+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -321,27 +321,27 @@ msgstr "Cesta nebo URL pro prozkoumání"
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:126
+#: src/mainContext.cpp:124
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Zvolte složku pro zkoumání"
 
-#: src/mainContext.cpp:190
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "The entered URL cannot be parsed; it is invalid."
 msgstr "Vloženou URL nelze analyzovat; je neplatná."
 
-#: src/mainContext.cpp:192
+#: src/mainContext.cpp:190
 #, kde-format
 msgid "Filelight only accepts absolute paths, eg. /%1"
 msgstr "Filelight přijímá pouze úplné cesty, např. /%1"
 
-#: src/mainContext.cpp:194
+#: src/mainContext.cpp:192
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Složka nenalezena: %1"
 
-#: src/mainContext.cpp:196
+#: src/mainContext.cpp:194
 #, kde-format
 msgid ""
 "Unable to enter: %1\n"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-08 09:41+0000\n"
+"POT-Creation-Date: 2022-10-30 00:49+0000\n"
 "PO-Revision-Date: 2022-09-26 09:42+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -307,27 +307,27 @@ msgstr "დასასკანერებელი ბილიკი ან 
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:126
+#: src/mainContext.cpp:124
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "აირჩიეთ დასასკანერებელი საქაღალდეები"
 
-#: src/mainContext.cpp:190
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "The entered URL cannot be parsed; it is invalid."
 msgstr "შეყვანილი URL-ის დამუშავების შეცდომა. ის არასწორია."
 
-#: src/mainContext.cpp:192
+#: src/mainContext.cpp:190
 #, kde-format
 msgid "Filelight only accepts absolute paths, eg. /%1"
 msgstr "Filelight მხოლოდ აბსოლუტურ ბილიკებს ამუშავებს. მაგ: /%1"
 
-#: src/mainContext.cpp:194
+#: src/mainContext.cpp:192
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "საქაღალდე ვერ ვიპოვე: %1"
 
-#: src/mainContext.cpp:196
+#: src/mainContext.cpp:194
 #, kde-format
 msgid ""
 "Unable to enter: %1\n"

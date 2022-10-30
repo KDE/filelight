@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-08 09:41+0000\n"
+"POT-Creation-Date: 2022-10-30 00:49+0000\n"
 "PO-Revision-Date: 2022-06-09 00:19+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -329,27 +329,27 @@ msgstr "Pad naar te scannen URL"
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:126
+#: src/mainContext.cpp:124
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Te scannen map selecteren..."
 
-#: src/mainContext.cpp:190
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "The entered URL cannot be parsed; it is invalid."
 msgstr "Het opgegeven URL-adres kon niet worden ontleedt. Het is ongeldig."
 
-#: src/mainContext.cpp:192
+#: src/mainContext.cpp:190
 #, kde-format
 msgid "Filelight only accepts absolute paths, eg. /%1"
 msgstr "Filelight accepteert alleen absolute paden, zoals /%1"
 
-#: src/mainContext.cpp:194
+#: src/mainContext.cpp:192
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Map niet gevonden: %1"
 
-#: src/mainContext.cpp:196
+#: src/mainContext.cpp:194
 #, kde-format
 msgid ""
 "Unable to enter: %1\n"

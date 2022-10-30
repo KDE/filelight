@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-08 09:41+0000\n"
+"POT-Creation-Date: 2022-10-30 00:49+0000\n"
 "PO-Revision-Date: 2014-09-21 00:35-0700\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -323,27 +323,27 @@ msgstr ""
 msgid "[url]"
 msgstr ""
 
-#: src/mainContext.cpp:126
+#: src/mainContext.cpp:124
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "スキャンするフォルダを選択"
 
-#: src/mainContext.cpp:190
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "The entered URL cannot be parsed; it is invalid."
 msgstr "入力された URL を解析できません。無効な URL です。"
 
-#: src/mainContext.cpp:192
+#: src/mainContext.cpp:190
 #, kde-format
 msgid "Filelight only accepts absolute paths, eg. /%1"
 msgstr "Filelight は絶対パス (例: /%1) しか受け付けません。"
 
-#: src/mainContext.cpp:194
+#: src/mainContext.cpp:192
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "フォルダが見つかりません: %1"
 
-#: src/mainContext.cpp:196
+#: src/mainContext.cpp:194
 #, kde-format
 msgid ""
 "Unable to enter: %1\n"
