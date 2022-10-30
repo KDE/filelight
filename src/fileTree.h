@@ -122,7 +122,7 @@ public:
     {
     } // DON'T pass the full path!
 
-    ~Folder();
+    ~Folder() override;
     Folder(const Folder &) = default;
     Folder &operator=(const Folder &) = default;
     Folder(Folder &&) = default;
