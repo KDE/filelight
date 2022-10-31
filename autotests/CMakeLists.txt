@@ -21,3 +21,7 @@ file(CREATE_LINK ${CMAKE_CURRENT_BINARY_DIR}/iterator-tree/bar ${CMAKE_CURRENT_B
 configure_file(test-config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/test-config.h)
 
 ecm_add_test(directoryIteratorTest.cpp TEST_NAME directoryIteratorTest LINK_LIBRARIES Qt::Test filelightInternal)
+if(CMAKE_SYSTEM_NAME MATCHES "Linux")
+    # Fails on freebsd for unknown reasons -> only run it on linux.
+    ecm_add_test(localListerTest.cpp TEST_NAME localListerTest LINK_LIBRARIES Qt::Test filelightInternal)
+endif()

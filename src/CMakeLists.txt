@@ -15,26 +15,33 @@ if (HAVE_SINCOS)
     add_definitions(-DHAVE_SINCOS)
 endif()
 
-add_library(filelightInternal STATIC fileTree.cpp directoryIterator.cpp fileCleaner.cpp)
+add_library(filelightInternal STATIC
+    fileTree.cpp
+    directoryIterator.cpp
+    fileCleaner.cpp
+    scan.cpp
+    Config.cpp
+    localLister.cpp
+    remoteLister.cpp
+)
+ecm_qt_declare_logging_category(filelightInternal HEADER filelight_debug.h IDENTIFIER FILELIGHT_LOG CATEGORY_NAME org.kde.filelight DESCRIPTION "filelight" EXPORT FILELIGHT)
 if (WIN32)
     target_sources(filelightInternal PRIVATE windowsWalker.cpp)
 else()
     target_sources(filelightInternal PRIVATE posixWalker.cpp)
 endif()
 target_link_libraries(filelightInternal
-    Qt${QT_MAJOR_VERSION}::Core
+    Qt${QT_MAJOR_VERSION}::Gui
     KF5::CoreAddons
+    KF5::ConfigCore
+    KF5::KIOWidgets # Only used for KDirLister, may be able to move away from that.
 )
 
 add_executable(filelight)
 target_sources(filelight PRIVATE
     radialMap/map.cpp
     radialMap/radialMap.cpp
-    scan.cpp
-    Config.cpp
     settingsDialog.cpp
-    localLister.cpp
-    remoteLister.cpp
     historyAction.cpp
     mainContext.cpp
     main.cpp
@@ -54,7 +61,6 @@ target_sources(filelight PRIVATE
     fileModel.cpp
     dropperItem.cpp
 )
-ecm_qt_declare_logging_category(filelight HEADER filelight_debug.h IDENTIFIER FILELIGHT_LOG CATEGORY_NAME org.kde.filelight DESCRIPTION "filelight" EXPORT FILELIGHT)
 
 set(filelight_ICONS
     ${CMAKE_CURRENT_SOURCE_DIR}/../misc/16-apps-filelight.png
@@ -70,7 +76,6 @@ ki18n_wrap_ui(filelight dialog.ui)
 target_link_libraries(filelight
     KF5::I18n
     KF5::XmlGui
-    KF5::KIOWidgets # Only used for KDirLister, may be able to move away from that.
     Qt${QT_MAJOR_VERSION}::Svg
     Qt${QT_MAJOR_VERSION}::Quick
     Qt${QT_MAJOR_VERSION}::QuickControls2
