@@ -3,6 +3,8 @@
 
 #include "fileCleaner.h"
 
+#include <mutex>
+
 #include <QScopeGuard>
 #include <QThread>
 
@@ -27,11 +29,11 @@ FileCleaner *FileCleaner::instance()
         threadPtr->wait();
     });
 
-    static bool started = false;
-    if (!started) {
+    static std::once_flag once;
+    std::call_once(once, [] {
         cleaner->moveToThread(&thread);
         thread.start(QThread::IdlePriority);
-    }
+    });
     return cleaner;
 }
 
