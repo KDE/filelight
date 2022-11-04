@@ -57,6 +57,7 @@
   <summary xml:lang="eu">Diskoaren erabilera erakustea eta erabili gabeko fitxategiak ezabatzea</summary>
   <summary xml:lang="fi">Näytä levynkäyttö ja poista käyttämättömiä tiedostoja</summary>
   <summary xml:lang="fr">Afficher l'utilisation du disque et supprimer les fichiers non utilisés</summary>
+  <summary xml:lang="ia">Monstra usage de disco e dele files non usate</summary>
   <summary xml:lang="ie">Monstrar li usage de disco e remover ínnecessi files</summary>
   <summary xml:lang="ka">დისკის გამოყენების ჩვენება და გამოუყენებელი ფაილებს წაშლა</summary>
   <summary xml:lang="nl">Schijfgebruik tonen en ongebruikte bestanden verwijderen</summary>
@@ -141,6 +142,7 @@
       <li xml:lang="eu">Aztertu disko lokalak, urrunekoak edo aldagarriak</li>
       <li xml:lang="fi">Tutkii paikalliset, etä- ja siirrettävät levyt</li>
       <li xml:lang="fr">Analyser les disques locaux, distants ou amovibles</li>
+      <li xml:lang="ia">Scander discos local, remote o removabile</li>
       <li xml:lang="ie">Analisar local, lontan o removibil discos</li>
       <li xml:lang="ka">ლოკალური, მოხსნადი და დაშორებული დისკების სკანირება</li>
       <li xml:lang="nl">Lokale, op afstand of verwijderbare schijven scannen</li>
@@ -159,6 +161,7 @@
       <li xml:lang="eu">Ikusi fitxategiei eta karpetei buruzko informazio zehatza</li>
       <li xml:lang="fi">Näyttää tiedostojen ja kansioiden tiedot</li>
       <li xml:lang="fr">Afficher des informations détaillées sur les fichiers et les dossiers</li>
+      <li xml:lang="ia">Vide Information detaliate  re files e directorios</li>
       <li xml:lang="ie">Vider detalliat information pri files e fólderes</li>
       <li xml:lang="ka">დეტალებური ინფორმაცია ფაილებისა და საქაღალდეების შესახებ</li>
       <li xml:lang="nl">Gedetailleerde informatie over bestanden en mappen bekijken</li>
@@ -195,6 +198,7 @@
       <li xml:lang="eu">Dolphin, Konqueror eta Krusader fitxategi-kudeatzailetan bateratzea</li>
       <li xml:lang="fi">Integrointi Dolphin-, Konqueror- ja Krusader-tiedostonhallintaohjelmiin</li>
       <li xml:lang="fr">Intégration dans les gestionnaires de fichiers Dolphin, Konqueror et Krusader</li>
+      <li xml:lang="ia">Integration in gerente de files Dolphin, Konqueror e Krusader</li>
       <li xml:lang="ie">Integration con gerentes de file Dolphin, Konqueror e Krusader</li>
       <li xml:lang="ka">ინტეგრაცია Dolphin-ში, Konqueror-ში და Krusader-ში</li>
       <li xml:lang="nl">Integratie in bestandsbeheerders Dolphin, Konqueror en Krusader</li>
