@@ -8,13 +8,13 @@
 
 #include "filelight_debug.h"
 
-#include <array>
-#include <utility>
-
 #ifdef Q_OS_WINDOWS
 #include <winrt/Windows.UI.ViewManagement.h>
 #pragma comment(lib, "windowsapp")
 #endif
+
+#include <array>
+#include <utility>
 
 #include <QApplication> //make()
 #include <QFont> //ctor
