@@ -658,7 +658,3 @@ msgstr "Ja s'ha indicat que aquesta carpeta s'exclogui de les exploracions."
 #, kde-format
 msgid "Folder already ignored"
 msgstr "Carpeta ja ignorada"
-
-#~ msgctxt "@info:status"
-#~ msgid "Scan completed, generating map..."
-#~ msgstr "S'ha completat l'exploració, s'està generant el mapa..."
