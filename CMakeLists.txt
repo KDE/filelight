@@ -56,7 +56,7 @@ ecm_find_qmlmodule(org.kde.quickcharts 1.0)
 add_definitions(-DTRANSLATION_DOMAIN=\"filelight\")
 
 ecm_set_disabled_deprecation_versions(QT 5.15.2
-    KF 5.92
+    KF 5.100
 )
 
 include_directories(src)
