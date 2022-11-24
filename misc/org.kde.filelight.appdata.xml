@@ -63,6 +63,7 @@
   <summary xml:lang="it">Mostra l'uso del disco ed elimina i file non utilizzati</summary>
   <summary xml:lang="ka">დისკის გამოყენების ჩვენება და გამოუყენებელი ფაილებს წაშლა</summary>
   <summary xml:lang="nl">Schijfgebruik tonen en ongebruikte bestanden verwijderen</summary>
+  <summary xml:lang="pl">Pokaż wykorzystanie dysku i usuń nieużywane pliki</summary>
   <summary xml:lang="pt">Mostra a utilização do disco e apagar ficheiros não usados</summary>
   <summary xml:lang="sl">Prikazuje rabo diska in briše neuporabljene datoteke</summary>
   <summary xml:lang="ta">வட்டுப் பயன்பாட்டைக் காட்டி, தேவையில்லாத கோப்புகளை அகற்ற உதவும்</summary>
@@ -86,6 +87,7 @@
     <p xml:lang="ie">Filelight visualisa li usage de disco de vor computator, monstrante fólderes in un vise comprensibil de concentric anelles. Filelight facilisa li liberation de spacie!</p>
     <p xml:lang="it">Filelight è un'applicazione per visualizzare l'uso del disco nel tuo computer, che mostra le cartelle in una vista ad anelli concentrici di semplice interpretazione. Filelight rende semplice liberare dello spazio!</p>
     <p xml:lang="nl">Filelight is een toepassing om het schijfgebruik op uw computer te visualiseren door mappen te tonen met een gemakkelijk te begrijpen beeld met concentrische ringen. Filelight maakt het gemakkelijk om ruimte vrij te maken!</p>
+    <p xml:lang="pl">Filelight jest aplikacją do obrazowania wykorzystania przestrzeni dyskowej na twoim komputerze za pomocą łatwych do zrozumienia współśrodkowych pierścieni. Filelight ułatwia zwalnianie miejsca!</p>
     <p xml:lang="pt">O Filelight é uma aplicação para visualizar a utilização do disco no seu computador, mostrando as pastas com uma vista fácil de entender num formato em anéis concêntricos. O Filelight facilita a libertação de espaço!</p>
     <p xml:lang="sl">FIlelight je aplikacija za vizualizacijo porabe diska na vašem računalniku, tako da prikazuje mape v preprosto razumljivih koncentričnih krogih. Filelight poenostavi sproščanje prostora na disku!</p>
     <p xml:lang="ta">உங்கள் கணினியிலுள்ள அடைவுகளின் அளவுகளை நீங்கள் எளிதில் புரிந்துகொள்ளும் வகையில் ஃபைல்-லைட் காட்டும். தேவையில்லாதவற்றை சுலபமாக அகற்றி இடத்தை காலி செய்யலாம்!</p>
@@ -154,6 +156,7 @@
       <li xml:lang="it">Analizza i dischi locali, quelli remoti e quelli rimovibili</li>
       <li xml:lang="ka">ლოკალური, მოხსნადი და დაშორებული დისკების სკანირება</li>
       <li xml:lang="nl">Lokale, op afstand of verwijderbare schijven scannen</li>
+      <li xml:lang="pl">Przeszukiwanie miejscowych, zdalnych, wymiennych dysków</li>
       <li xml:lang="pt">Sondar discos locais, remotos ou removíveis</li>
       <li xml:lang="sl">Preišči krajevne, oddaljene ali odstranljive diske</li>
       <li xml:lang="ta">உள்ளமை, தொலை, மற்றும் கழற்றக்கூடிய வட்டுகளை ஆராயும்</li>
@@ -176,6 +179,7 @@
       <li xml:lang="it">Visualizza informazioni dettagliate su file e cartelle</li>
       <li xml:lang="ka">დეტალებური ინფორმაცია ფაილებისა და საქაღალდეების შესახებ</li>
       <li xml:lang="nl">Gedetailleerde informatie over bestanden en mappen bekijken</li>
+      <li xml:lang="pl">Oglądanie szczegółowych danych o plikach i katalogach</li>
       <li xml:lang="pt">Ver informações detalhadas sobre os ficheiros e pastas</li>
       <li xml:lang="sl">Pogled podrobnih informacij o datotekah in mapah</li>
       <li xml:lang="ta">கோப்புகளின் மற்றும் அடைவுகளின் விவரங்களைக் காட்டும்</li>
@@ -197,6 +201,7 @@
       <li xml:lang="it">Elimina i file o le cartelle che occupano troppo spazio</li>
       <li xml:lang="ka">წაშალეთ ფაილები და საქაღალდეები, რომლებიც მეტისმეტად ბევრ ადგილს ხარჯავენ</li>
       <li xml:lang="nl">Bestanden of mappen verwijderen die te veel ruimte innemen</li>
+      <li xml:lang="pl">Usuwanie plików i katalogów, które zajmują za dużo miejsca</li>
       <li xml:lang="pt">Apagar os ficheiros ou pastas que ocupam demasiado espaço</li>
       <li xml:lang="sl">Briši datoteke ali mape, ki zavzemajo preveč prostora</li>
       <li xml:lang="ta">மிகப்பெரிய கோப்புகளையும் அடைவுகளையும் எளிதில் அகற்ற உதவும்</li>
@@ -219,6 +224,7 @@
       <li xml:lang="it">Integrazione nei gestore di file Dolphin, Konqueror e Krusader</li>
       <li xml:lang="ka">ინტეგრაცია Dolphin-ში, Konqueror-ში და Krusader-ში</li>
       <li xml:lang="nl">Integratie in bestandsbeheerders Dolphin, Konqueror en Krusader</li>
+      <li xml:lang="pl">Integracja z przeglądarkami plików takimi jak: Dolphin, Konqueror i Krusader</li>
       <li xml:lang="pt">Integração com os gestores de ficheiros Dolphin, Konqueror e Krusader</li>
       <li xml:lang="sl">Vključitev v upravljalnike datotek Dolphin, Konqueror in Krusader</li>
       <li xml:lang="ta">டால்பின், கான்கொரர், குரூசெடர் போன்ற கோப்பு உலாவிகளுடனான ஒருங்கிணைப்பு</li>
