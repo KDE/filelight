@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-30 00:49+0000\n"
+"POT-Creation-Date: 2022-11-25 00:50+0000\n"
 "PO-Revision-Date: 2009-11-15 12:06+0100\n"
 "Last-Translator: Axel Rousseau <axel@esperanto-jeunes.org>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -56,6 +56,28 @@ msgstr "Lokobreto"
 #| msgid "Main Toolbar"
 msgid "View Toolbar"
 msgstr "Ĉefa ilobreto"
+
+#: src/contextMenuContext.cpp:63
+#, kde-format
+msgid ""
+"<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
+"b> deleted.</qt>"
+msgstr ""
+
+#: src/contextMenuContext.cpp:64
+#, kde-format
+msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
+msgstr ""
+
+#: src/contextMenuContext.cpp:65
+#, kde-format
+msgid "&Delete"
+msgstr "&Forigi"
+
+#: src/contextMenuContext.cpp:92
+#, kde-format
+msgid "Error while deleting"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Dialog)
 #: src/dialog.ui:14
@@ -142,22 +164,8 @@ msgstr ""
 msgid "Here you can vary the contrast of the filemap in realtime."
 msgstr ""
 
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, useAntialiasing)
-#: src/dialog.ui:275
-#, kde-format
-msgid ""
-"Anti-aliasing the filemap makes it clearer and prettier, unfortunately it "
-"also makes rendering very slow."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, useAntialiasing)
-#: src/dialog.ui:278
-#, kde-format
-msgid "&Use anti-aliasing"
-msgstr ""
-
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, showSmallFiles)
-#: src/dialog.ui:285
+#: src/dialog.ui:275
 #, kde-format
 msgid ""
 "Some files are too small to be rendered on the filemap. Selecting this "
@@ -166,36 +174,9 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, showSmallFiles)
-#: src/dialog.ui:288
+#: src/dialog.ui:278
 #, kde-format
 msgid "Show small files"
-msgstr ""
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, varyLabelFontSizes)
-#: src/dialog.ui:298
-#, kde-format
-msgid ""
-"The font size of exploded labels can be varied relative to the depth of the "
-"directories they represent. This helps you spot the important labels more "
-"easily. Set a sensible minimum font size."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, varyLabelFontSizes)
-#: src/dialog.ui:301
-#, kde-format
-msgid "Var&y label font sizes"
-msgstr ""
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, minFontPitchLabel)
-#: src/dialog.ui:338
-#, kde-format
-msgid "The smallest font size Filelight can use to render labels."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, minFontPitchLabel)
-#: src/dialog.ui:341
-#, kde-format
-msgid "Minimum font si&ze:"
 msgstr ""
 
 #: src/historyAction.cpp:64
@@ -210,12 +191,12 @@ msgctxt "Go to forward in the history of paths viewed"
 msgid "Forward"
 msgstr "Antaŭen"
 
-#: src/main.cpp:56
+#: src/main.cpp:59
 #, kde-format
 msgid "Graphical disk-usage information"
 msgstr ""
 
-#: src/main.cpp:58
+#: src/main.cpp:61
 #, kde-format
 msgid ""
 "(C) 2006 Max Howell\n"
@@ -223,112 +204,112 @@ msgid ""
 "(C) 2017-2022 Harald Sitter"
 msgstr ""
 
-#: src/main.cpp:63
+#: src/main.cpp:66
 #, kde-format
 msgid "Martin Sandsmark"
 msgstr "Martin Sandsmark"
 
-#: src/main.cpp:63
+#: src/main.cpp:66
 #, kde-format
 msgid "Maintainer"
 msgstr "Prizorganto"
 
-#: src/main.cpp:64
+#: src/main.cpp:67
 #, kde-format
 msgid "Harald Sitter"
 msgstr ""
 
-#: src/main.cpp:64
+#: src/main.cpp:67
 #, kde-format
 msgid "QtQuick Port"
 msgstr ""
 
-#: src/main.cpp:65
+#: src/main.cpp:68
 #, kde-format
 msgid "Max Howell"
 msgstr "Max Howell"
 
-#: src/main.cpp:65
+#: src/main.cpp:68
 #, kde-format
 msgid "Original author"
 msgstr "Origina aŭtoro"
 
-#: src/main.cpp:66
+#: src/main.cpp:69
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr "Lukas Appelhans"
 
-#: src/main.cpp:66
+#: src/main.cpp:69
 #, kde-format
 msgid "Help and support"
 msgstr ""
 
-#: src/main.cpp:67
+#: src/main.cpp:70
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr "Steffen Gerlach"
 
-#: src/main.cpp:67
+#: src/main.cpp:70
 #, kde-format
 msgid "Inspiration"
 msgstr ""
 
-#: src/main.cpp:68
+#: src/main.cpp:71
 #, kde-format
 msgid "Mike Diehl"
 msgstr "Mike Diehl"
 
-#: src/main.cpp:68
+#: src/main.cpp:71
 #, kde-format
 msgid "Original documentation"
 msgstr ""
 
-#: src/main.cpp:69
+#: src/main.cpp:72
 #, kde-format
 msgid "Sune Vuorela"
 msgstr ""
 
-#: src/main.cpp:69 src/main.cpp:70
+#: src/main.cpp:72 src/main.cpp:73
 #, kde-format
 msgid "Icon"
 msgstr ""
 
-#: src/main.cpp:70
+#: src/main.cpp:73
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr ""
 
-#: src/main.cpp:77
+#: src/main.cpp:80
 #, kde-format
 msgid "Path or URL to scan"
 msgstr ""
 
-#: src/main.cpp:77
+#: src/main.cpp:80
 #, kde-format
 msgid "[url]"
 msgstr ""
 
-#: src/mainContext.cpp:124
+#: src/mainContext.cpp:156
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr ""
 
-#: src/mainContext.cpp:188
+#: src/mainContext.cpp:220
 #, kde-format
 msgid "The entered URL cannot be parsed; it is invalid."
 msgstr ""
 
-#: src/mainContext.cpp:190
+#: src/mainContext.cpp:222
 #, kde-format
 msgid "Filelight only accepts absolute paths, eg. /%1"
 msgstr ""
 
-#: src/mainContext.cpp:192
+#: src/mainContext.cpp:224
 #, kde-format
 msgid "Folder not found: %1"
 msgstr ""
 
-#: src/mainContext.cpp:194
+#: src/mainContext.cpp:226
 #, kde-format
 msgid ""
 "Unable to enter: %1\n"
@@ -354,58 +335,58 @@ msgctxt "@item:inmenu"
 msgid "Help"
 msgstr ""
 
-#: src/qml/main.qml:28
+#: src/qml/main.qml:24
 #, fuzzy, kde-format
 #| msgid "Scan Folder"
 msgctxt "@action"
 msgid "Scan Folder"
 msgstr "Serĉi dosierujon"
 
-#: src/qml/main.qml:35
+#: src/qml/main.qml:31
 #, fuzzy, kde-format
 #| msgid "Scan Folder"
 msgctxt "@action"
 msgid "Scan Home Folder"
 msgstr "Serĉi dosierujon"
 
-#: src/qml/main.qml:42
+#: src/qml/main.qml:38
 #, fuzzy, kde-format
 #| msgid "Scan Folder"
 msgctxt "@action"
 msgid "Scan Root Folder"
 msgstr "Serĉi dosierujon"
 
-#: src/qml/main.qml:49
+#: src/qml/main.qml:45
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr ""
 
-#: src/qml/main.qml:57
+#: src/qml/main.qml:53
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr ""
 
-#: src/qml/main.qml:66
+#: src/qml/main.qml:62
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr ""
 
-#: src/qml/main.qml:74
+#: src/qml/main.qml:70
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr ""
 
-#: src/qml/main.qml:95
+#: src/qml/main.qml:91
 #, kde-format
 msgctxt "@info:status"
 msgid "No files."
 msgstr ""
 
-#: src/qml/main.qml:96
+#: src/qml/main.qml:92
 #, kde-format
 msgctxt "@info:status"
 msgid "1 file"
@@ -413,42 +394,31 @@ msgid_plural "%1 files"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/qml/main.qml:163
+#: src/qml/main.qml:162
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
 msgstr ""
 
-#: src/qml/MapPage.qml:19
+#: src/qml/MapPage.qml:29
 #, kde-format
 msgctxt "@action"
 msgid "Up"
 msgstr ""
 
-#: src/qml/MapPage.qml:28
+#: src/qml/MapPage.qml:38
 #, fuzzy, kde-format
 #| msgid "Rescan"
 msgctxt "@action"
 msgid "Rescan"
 msgstr "Reserĉi"
 
-#: src/qml/MapPage.qml:37
+#: src/qml/MapPage.qml:47
 #, fuzzy, kde-format
 #| msgid "Stop"
 msgctxt "@action"
 msgid "Stop"
 msgstr "Halti"
-
-#: src/qml/MapPage.qml:45
-#, kde-format
-msgctxt "@action"
-msgid "Save as SVG"
-msgstr ""
-
-#: src/qml/MapPage.qml:46
-#, kde-format
-msgid "Save the current view as an SVG file"
-msgstr ""
 
 #: src/qml/MapPage.qml:55
 #, kde-format
@@ -462,7 +432,75 @@ msgctxt "@action"
 msgid "Zoom Out"
 msgstr ""
 
-#: src/qml/MapPage.qml:127
+#: src/qml/MapPage.qml:95 src/qml/MapPage.qml:213
+#, fuzzy, kde-format
+#| msgctxt "Scan/open the path of the selected element"
+#| msgid "&Open"
+msgctxt "@action Open file or directory from context menu"
+msgid "Open"
+msgstr "&Malfermu"
+
+#: src/qml/MapPage.qml:103 src/qml/MapPage.qml:221
+#, kde-format
+msgctxt "@action"
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/qml/MapPage.qml:111
+#, kde-format
+msgctxt "@action focuses the filelight view on a given map segment"
+msgid "Center Map Here"
+msgstr ""
+
+#: src/qml/MapPage.qml:122 src/qml/MapPage.qml:229
+#, kde-format
+msgctxt "@action"
+msgid "Add to Do Not Scan List"
+msgstr ""
+
+#: src/qml/MapPage.qml:130
+#, fuzzy, kde-format
+#| msgid "Rescan"
+msgctxt "@action rescan filelight map"
+msgid "Rescan"
+msgstr "Reserĉi"
+
+#: src/qml/MapPage.qml:137 src/qml/MapPage.qml:236
+#, kde-format
+msgctxt "@action"
+msgid "Copy to clipboard"
+msgstr ""
+
+#: src/qml/MapPage.qml:144 src/qml/MapPage.qml:243
+#, fuzzy, kde-format
+#| msgid "&Delete"
+msgctxt "@action delete file or folder"
+msgid "Delete"
+msgstr "&Forigi"
+
+#: src/qml/MapPage.qml:295
+#, kde-format
+msgctxt "Tooltip of folder, %1 is number of files"
+msgid "%1 File (%2%)"
+msgid_plural "%1 Files (%2%)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/qml/MapPage.qml:297
+#, kde-format
+msgctxt "Tooltip of folder, %1 is number of files"
+msgid "%1 File"
+msgid_plural "%1 Files"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/qml/MapPage.qml:301
+#, kde-format
+msgctxt "part of tooltip indicating that the item under the mouse is clickable"
+msgid "Click to go up to parent directory"
+msgstr ""
+
+#: src/qml/MapPage.qml:491
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -470,7 +508,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/qml/MapPage.qml:136
+#: src/qml/MapPage.qml:500
 #, kde-format
 msgid "No data available"
 msgstr ""
@@ -488,117 +526,7 @@ msgctxt "@title"
 msgid "Welcome to Filelight"
 msgstr "Filelight"
 
-#: src/radialMap/item.cpp:207
-#, kde-format
-msgid "Open &File Manager Here"
-msgstr ""
-
-#: src/radialMap/item.cpp:210
-#, kde-format
-msgid "Open &Terminal Here"
-msgstr ""
-
-#: src/radialMap/item.cpp:215
-#, kde-format
-msgid "&Center Map Here"
-msgstr ""
-
-#: src/radialMap/item.cpp:219
-#, kde-format
-msgid "Add to Do &Not Scan List"
-msgstr ""
-
-#: src/radialMap/item.cpp:220
-#, fuzzy, kde-format
-#| msgid "Rescan"
-msgid "&Rescan"
-msgstr "Reserĉi"
-
-#: src/radialMap/item.cpp:222
-#, kde-format
-msgctxt "Scan/open the path of the selected element"
-msgid "&Open"
-msgstr "&Malfermu"
-
-#: src/radialMap/item.cpp:226
-#, kde-format
-msgid "&Copy to clipboard"
-msgstr ""
-
-#: src/radialMap/item.cpp:230 src/radialMap/item.cpp:268
-#, kde-format
-msgid "&Delete"
-msgstr "&Forigi"
-
-#: src/radialMap/item.cpp:266
-#, kde-format
-msgid ""
-"<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
-"b> deleted.</qt>"
-msgstr ""
-
-#: src/radialMap/item.cpp:267
-#, kde-format
-msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
-msgstr ""
-
-#: src/radialMap/item.cpp:293
-#, kde-format
-msgid "Error while deleting"
-msgstr ""
-
-#: src/radialMap/item.cpp:395
-#, kde-format
-msgctxt "We messed up, the user needs to initiate a rescan."
-msgid ""
-"Internal representation is invalid,\n"
-"please rescan."
-msgstr ""
-
-#: src/radialMap/item.cpp:754
-#, kde-format
-msgctxt "Tooltip of file/folder, %1 is path, %2 is size"
-msgid ""
-"%1\n"
-"%2"
-msgstr ""
-
-#: src/radialMap/item.cpp:762
-#, kde-format
-msgctxt "Tooltip of folder, %1 is number of files"
-msgid "%1 File (%2%)"
-msgid_plural "%1 Files (%2%)"
-msgstr[0] ""
-msgstr[1] ""
-
-#: src/radialMap/item.cpp:764
-#, kde-format
-msgctxt "Tooltip of folder, %1 is number of files"
-msgid "%1 File"
-msgid_plural "%1 Files"
-msgstr[0] ""
-msgstr[1] ""
-
-#: src/radialMap/item.cpp:770
-#, kde-format
-msgid ""
-"\n"
-"Click to go up to parent directory"
-msgstr ""
-
-#: src/radialMap/item.cpp:855
-#, kde-format
-msgctxt "@title:window"
-msgid "Save as SVG"
-msgstr ""
-
-#: src/radialMap/item.cpp:857
-#, kde-format
-msgctxt "filedialog type filter"
-msgid "SVG Files (*.svg);;All Files(*)"
-msgstr ""
-
-#: src/radialMap/map.cpp:205
+#: src/radialMap/map.cpp:216
 #, kde-format
 msgid "1 file, with an average size of %2"
 msgid_plural "%1 files, with an average size of %2"
@@ -620,20 +548,25 @@ msgstr ""
 msgid "High contrast"
 msgstr ""
 
-#: src/settingsDialog.cpp:133
+#: src/settingsDialog.cpp:123
 #, kde-format
 msgid "Select path to ignore"
 msgstr ""
 
-#: src/settingsDialog.cpp:150
+#: src/settingsDialog.cpp:140
 #, kde-format
 msgid "That folder is already set to be excluded from scans."
 msgstr ""
 
-#: src/settingsDialog.cpp:150
+#: src/settingsDialog.cpp:140
 #, kde-format
 msgid "Folder already ignored"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Rescan"
+#~ msgid "&Rescan"
+#~ msgstr "Reserĉi"
 
 #~ msgid "Go"
 #~ msgstr "Ek"

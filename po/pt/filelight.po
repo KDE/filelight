@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-30 00:49+0000\n"
+"POT-Creation-Date: 2022-11-25 00:50+0000\n"
 "PO-Revision-Date: 2022-06-15 19:03+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -60,6 +60,30 @@ msgstr "Barra de Localização"
 #, kde-format
 msgid "View Toolbar"
 msgstr "Ver a Barra de Ferramentas"
+
+#: src/contextMenuContext.cpp:63
+#, kde-format
+msgid ""
+"<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
+"b> deleted.</qt>"
+msgstr ""
+"<qt>A pasta <i>'%1'</i> será apagada de forma <b>recursiva</b> e "
+"<b>permanente</b>.</qt>"
+
+#: src/contextMenuContext.cpp:64
+#, kde-format
+msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
+msgstr "<qt>O <i>'%1'</i> será pagado de forma <b>permanente</b>.</qt>"
+
+#: src/contextMenuContext.cpp:65
+#, kde-format
+msgid "&Delete"
+msgstr "&Apagar"
+
+#: src/contextMenuContext.cpp:92
+#, kde-format
+msgid "Error while deleting"
+msgstr "Erro na remoção"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Dialog)
 #: src/dialog.ui:14
@@ -150,24 +174,8 @@ msgid "Here you can vary the contrast of the filemap in realtime."
 msgstr ""
 "Aqui você poderá variar o contraste do mapa dos ficheiros em tempo-real."
 
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, useAntialiasing)
-#: src/dialog.ui:275
-#, kde-format
-msgid ""
-"Anti-aliasing the filemap makes it clearer and prettier, unfortunately it "
-"also makes rendering very slow."
-msgstr ""
-"Se aplicar o 'anti-aliasing' ao mapa dos ficheiros torná-lo-á mais claro e "
-"mais bonito, mas tornando o desenho muito mais lento."
-
-#. i18n: ectx: property (text), widget (QCheckBox, useAntialiasing)
-#: src/dialog.ui:278
-#, kde-format
-msgid "&Use anti-aliasing"
-msgstr "&Usar a suavização"
-
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, showSmallFiles)
-#: src/dialog.ui:285
+#: src/dialog.ui:275
 #, kde-format
 msgid ""
 "Some files are too small to be rendered on the filemap. Selecting this "
@@ -179,41 +187,10 @@ msgstr ""
 "uni-los todos num único \"multi-segmento\"."
 
 #. i18n: ectx: property (text), widget (QCheckBox, showSmallFiles)
-#: src/dialog.ui:288
+#: src/dialog.ui:278
 #, kde-format
 msgid "Show small files"
 msgstr "Mostrar os ficheiros pequenos"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, varyLabelFontSizes)
-#: src/dialog.ui:298
-#, kde-format
-msgid ""
-"The font size of exploded labels can be varied relative to the depth of the "
-"directories they represent. This helps you spot the important labels more "
-"easily. Set a sensible minimum font size."
-msgstr ""
-"O tamanho da letra das legendas expandidas pode ser variado de acordo com a "
-"profundidade das pastas que estas representam. Isto ajuda-o a localizar as "
-"legendas mais importantes com maior facilidade. Defina um tamanho de letra "
-"mínimo aceitável."
-
-#. i18n: ectx: property (text), widget (QCheckBox, varyLabelFontSizes)
-#: src/dialog.ui:301
-#, kde-format
-msgid "Var&y label font sizes"
-msgstr "&Variar os tamanhos de letra das legendas"
-
-#. i18n: ectx: property (whatsThis), widget (QLabel, minFontPitchLabel)
-#: src/dialog.ui:338
-#, kde-format
-msgid "The smallest font size Filelight can use to render labels."
-msgstr "O tamanho de letra mais pequeno a usar para representar as legendas."
-
-#. i18n: ectx: property (text), widget (QLabel, minFontPitchLabel)
-#: src/dialog.ui:341
-#, kde-format
-msgid "Minimum font si&ze:"
-msgstr "Tamanho de &letra mínimo:"
 
 #: src/historyAction.cpp:64
 #, kde-format
@@ -227,12 +204,12 @@ msgctxt "Go to forward in the history of paths viewed"
 msgid "Forward"
 msgstr "Avançar"
 
-#: src/main.cpp:56
+#: src/main.cpp:59
 #, kde-format
 msgid "Graphical disk-usage information"
 msgstr "Informação gráfica de utilização de disco"
 
-#: src/main.cpp:58
+#: src/main.cpp:61
 #, kde-format
 msgid ""
 "(C) 2006 Max Howell\n"
@@ -243,112 +220,112 @@ msgstr ""
 "(C) 2008-2014 Martin Sandsmark\n"
 "(C) 2017-2022 Harald Sitter"
 
-#: src/main.cpp:63
+#: src/main.cpp:66
 #, kde-format
 msgid "Martin Sandsmark"
 msgstr "Martin Sandsmark"
 
-#: src/main.cpp:63
+#: src/main.cpp:66
 #, kde-format
 msgid "Maintainer"
 msgstr "Manutenção"
 
-#: src/main.cpp:64
+#: src/main.cpp:67
 #, kde-format
 msgid "Harald Sitter"
 msgstr "Harald Sitter"
 
-#: src/main.cpp:64
+#: src/main.cpp:67
 #, kde-format
 msgid "QtQuick Port"
 msgstr "Migração para o QtQuick"
 
-#: src/main.cpp:65
+#: src/main.cpp:68
 #, kde-format
 msgid "Max Howell"
 msgstr "Max Howell"
 
-#: src/main.cpp:65
+#: src/main.cpp:68
 #, kde-format
 msgid "Original author"
 msgstr "Autor original"
 
-#: src/main.cpp:66
+#: src/main.cpp:69
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr "Lukas Appelhans"
 
-#: src/main.cpp:66
+#: src/main.cpp:69
 #, kde-format
 msgid "Help and support"
 msgstr "Ajuda e suporte"
 
-#: src/main.cpp:67
+#: src/main.cpp:70
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr "Steffen Gerlach"
 
-#: src/main.cpp:67
+#: src/main.cpp:70
 #, kde-format
 msgid "Inspiration"
 msgstr "Inspiração"
 
-#: src/main.cpp:68
+#: src/main.cpp:71
 #, kde-format
 msgid "Mike Diehl"
 msgstr "Mike Diehl"
 
-#: src/main.cpp:68
+#: src/main.cpp:71
 #, kde-format
 msgid "Original documentation"
 msgstr "Documentação original"
 
-#: src/main.cpp:69
+#: src/main.cpp:72
 #, kde-format
 msgid "Sune Vuorela"
 msgstr "Sune Vuorela"
 
-#: src/main.cpp:69 src/main.cpp:70
+#: src/main.cpp:72 src/main.cpp:73
 #, kde-format
 msgid "Icon"
 msgstr "Ícone"
 
-#: src/main.cpp:70
+#: src/main.cpp:73
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr "Nuno Pinheiro"
 
-#: src/main.cpp:77
+#: src/main.cpp:80
 #, kde-format
 msgid "Path or URL to scan"
 msgstr "Localização ou URL a sondar"
 
-#: src/main.cpp:77
+#: src/main.cpp:80
 #, kde-format
 msgid "[url]"
 msgstr "[URL]"
 
-#: src/mainContext.cpp:124
+#: src/mainContext.cpp:156
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Seleccionar a Pasta a Analisar"
 
-#: src/mainContext.cpp:188
+#: src/mainContext.cpp:220
 #, kde-format
 msgid "The entered URL cannot be parsed; it is invalid."
 msgstr "Não é possível processar o URL indicado; é inválido."
 
-#: src/mainContext.cpp:190
+#: src/mainContext.cpp:222
 #, kde-format
 msgid "Filelight only accepts absolute paths, eg. /%1"
 msgstr "O Filelight só aceita pastas absolutas, p.ex., /%1"
 
-#: src/mainContext.cpp:192
+#: src/mainContext.cpp:224
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Pasta não encontrada: %1"
 
-#: src/mainContext.cpp:194
+#: src/mainContext.cpp:226
 #, kde-format
 msgid ""
 "Unable to enter: %1\n"
@@ -375,55 +352,55 @@ msgctxt "@item:inmenu"
 msgid "Help"
 msgstr "Ajuda"
 
-#: src/qml/main.qml:28
+#: src/qml/main.qml:24
 #, kde-format
 msgctxt "@action"
 msgid "Scan Folder"
 msgstr "Analisar a Pasta"
 
-#: src/qml/main.qml:35
+#: src/qml/main.qml:31
 #, kde-format
 msgctxt "@action"
 msgid "Scan Home Folder"
 msgstr "Analisar a Pasta Pessoal"
 
-#: src/qml/main.qml:42
+#: src/qml/main.qml:38
 #, kde-format
 msgctxt "@action"
 msgid "Scan Root Folder"
 msgstr "Analisar a Pasta de Raiz"
 
-#: src/qml/main.qml:49
+#: src/qml/main.qml:45
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr "Sair"
 
-#: src/qml/main.qml:57
+#: src/qml/main.qml:53
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "Configurar…"
 
-#: src/qml/main.qml:66
+#: src/qml/main.qml:62
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "Abrir o Manual"
 
-#: src/qml/main.qml:74
+#: src/qml/main.qml:70
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr "Acerca"
 
-#: src/qml/main.qml:95
+#: src/qml/main.qml:91
 #, kde-format
 msgctxt "@info:status"
 msgid "No files."
 msgstr "Sem ficheiros."
 
-#: src/qml/main.qml:96
+#: src/qml/main.qml:92
 #, kde-format
 msgctxt "@info:status"
 msgid "1 file"
@@ -431,40 +408,29 @@ msgid_plural "%1 files"
 msgstr[0] "1 ficheiro"
 msgstr[1] "%1 ficheiros"
 
-#: src/qml/main.qml:163
+#: src/qml/main.qml:162
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
 msgstr "A Interromper a Análise..."
 
-#: src/qml/MapPage.qml:19
+#: src/qml/MapPage.qml:29
 #, kde-format
 msgctxt "@action"
 msgid "Up"
 msgstr "Subir"
 
-#: src/qml/MapPage.qml:28
+#: src/qml/MapPage.qml:38
 #, kde-format
 msgctxt "@action"
 msgid "Rescan"
 msgstr "Analisar de Novo"
 
-#: src/qml/MapPage.qml:37
+#: src/qml/MapPage.qml:47
 #, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "Parar"
-
-#: src/qml/MapPage.qml:45
-#, kde-format
-msgctxt "@action"
-msgid "Save as SVG"
-msgstr "Gravar como SVG"
-
-#: src/qml/MapPage.qml:46
-#, kde-format
-msgid "Save the current view as an SVG file"
-msgstr "Gravar a janela actual como um ficheiro SVG"
 
 #: src/qml/MapPage.qml:55
 #, kde-format
@@ -478,7 +444,85 @@ msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Reduzir"
 
-#: src/qml/MapPage.qml:127
+#: src/qml/MapPage.qml:95 src/qml/MapPage.qml:213
+#, fuzzy, kde-format
+#| msgctxt "Scan/open the path of the selected element"
+#| msgid "&Open"
+msgctxt "@action Open file or directory from context menu"
+msgid "Open"
+msgstr "&Abrir"
+
+#: src/qml/MapPage.qml:103 src/qml/MapPage.qml:221
+#, fuzzy, kde-format
+#| msgid "Open &Terminal Here"
+msgctxt "@action"
+msgid "Open Terminal Here"
+msgstr "Abrir o &Terminal Aqui"
+
+#: src/qml/MapPage.qml:111
+#, fuzzy, kde-format
+#| msgid "&Center Map Here"
+msgctxt "@action focuses the filelight view on a given map segment"
+msgid "Center Map Here"
+msgstr "&Centrar o Mapa Aqui"
+
+#: src/qml/MapPage.qml:122 src/qml/MapPage.qml:229
+#, fuzzy, kde-format
+#| msgid "Add to Do &Not Scan List"
+msgctxt "@action"
+msgid "Add to Do Not Scan List"
+msgstr "Adicionar às Exclusões de A&nálise"
+
+#: src/qml/MapPage.qml:130
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Rescan"
+msgctxt "@action rescan filelight map"
+msgid "Rescan"
+msgstr "Analisar de Novo"
+
+#: src/qml/MapPage.qml:137 src/qml/MapPage.qml:236
+#, fuzzy, kde-format
+#| msgid "&Copy to clipboard"
+msgctxt "@action"
+msgid "Copy to clipboard"
+msgstr "&Copiar para a área de transferência"
+
+#: src/qml/MapPage.qml:144 src/qml/MapPage.qml:243
+#, fuzzy, kde-format
+#| msgid "&Delete"
+msgctxt "@action delete file or folder"
+msgid "Delete"
+msgstr "&Apagar"
+
+#: src/qml/MapPage.qml:295
+#, kde-format
+msgctxt "Tooltip of folder, %1 is number of files"
+msgid "%1 File (%2%)"
+msgid_plural "%1 Files (%2%)"
+msgstr[0] "%1 Ficheiro (%2%)"
+msgstr[1] "%1 Ficheiros (%2%)"
+
+#: src/qml/MapPage.qml:297
+#, kde-format
+msgctxt "Tooltip of folder, %1 is number of files"
+msgid "%1 File"
+msgid_plural "%1 Files"
+msgstr[0] "%1 Ficheiro"
+msgstr[1] "%1 Ficheiros"
+
+#: src/qml/MapPage.qml:301
+#, fuzzy, kde-format
+#| msgid ""
+#| "\n"
+#| "Click to go up to parent directory"
+msgctxt "part of tooltip indicating that the item under the mouse is clickable"
+msgid "Click to go up to parent directory"
+msgstr ""
+"\n"
+"Carregue para ir para a pasta-mãe"
+
+#: src/qml/MapPage.qml:491
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -486,7 +530,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 Ficheiro, %2"
 msgstr[1] "%1 Ficheiros, %2"
 
-#: src/qml/MapPage.qml:136
+#: src/qml/MapPage.qml:500
 #, kde-format
 msgid "No data available"
 msgstr "Sem dados disponíveis"
@@ -503,124 +547,7 @@ msgctxt "@title"
 msgid "Welcome to Filelight"
 msgstr "Bem-vindo ao Filelight"
 
-#: src/radialMap/item.cpp:207
-#, kde-format
-msgid "Open &File Manager Here"
-msgstr "Abrir o Gestor de &Ficheiros Aqui"
-
-#: src/radialMap/item.cpp:210
-#, kde-format
-msgid "Open &Terminal Here"
-msgstr "Abrir o &Terminal Aqui"
-
-#: src/radialMap/item.cpp:215
-#, kde-format
-msgid "&Center Map Here"
-msgstr "&Centrar o Mapa Aqui"
-
-#: src/radialMap/item.cpp:219
-#, kde-format
-msgid "Add to Do &Not Scan List"
-msgstr "Adicionar às Exclusões de A&nálise"
-
-#: src/radialMap/item.cpp:220
-#, kde-format
-msgid "&Rescan"
-msgstr "Pesquisa&r de Novo"
-
-#: src/radialMap/item.cpp:222
-#, kde-format
-msgctxt "Scan/open the path of the selected element"
-msgid "&Open"
-msgstr "&Abrir"
-
-#: src/radialMap/item.cpp:226
-#, kde-format
-msgid "&Copy to clipboard"
-msgstr "&Copiar para a área de transferência"
-
-#: src/radialMap/item.cpp:230 src/radialMap/item.cpp:268
-#, kde-format
-msgid "&Delete"
-msgstr "&Apagar"
-
-#: src/radialMap/item.cpp:266
-#, kde-format
-msgid ""
-"<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
-"b> deleted.</qt>"
-msgstr ""
-"<qt>A pasta <i>'%1'</i> será apagada de forma <b>recursiva</b> e "
-"<b>permanente</b>.</qt>"
-
-#: src/radialMap/item.cpp:267
-#, kde-format
-msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
-msgstr "<qt>O <i>'%1'</i> será pagado de forma <b>permanente</b>.</qt>"
-
-#: src/radialMap/item.cpp:293
-#, kde-format
-msgid "Error while deleting"
-msgstr "Erro na remoção"
-
-#: src/radialMap/item.cpp:395
-#, kde-format
-msgctxt "We messed up, the user needs to initiate a rescan."
-msgid ""
-"Internal representation is invalid,\n"
-"please rescan."
-msgstr ""
-"A representação interna é inválida;\n"
-"por favor, volte a carregá-la."
-
-#: src/radialMap/item.cpp:754
-#, kde-format
-msgctxt "Tooltip of file/folder, %1 is path, %2 is size"
-msgid ""
-"%1\n"
-"%2"
-msgstr ""
-"%1\n"
-"%2"
-
-#: src/radialMap/item.cpp:762
-#, kde-format
-msgctxt "Tooltip of folder, %1 is number of files"
-msgid "%1 File (%2%)"
-msgid_plural "%1 Files (%2%)"
-msgstr[0] "%1 Ficheiro (%2%)"
-msgstr[1] "%1 Ficheiros (%2%)"
-
-#: src/radialMap/item.cpp:764
-#, kde-format
-msgctxt "Tooltip of folder, %1 is number of files"
-msgid "%1 File"
-msgid_plural "%1 Files"
-msgstr[0] "%1 Ficheiro"
-msgstr[1] "%1 Ficheiros"
-
-#: src/radialMap/item.cpp:770
-#, kde-format
-msgid ""
-"\n"
-"Click to go up to parent directory"
-msgstr ""
-"\n"
-"Carregue para ir para a pasta-mãe"
-
-#: src/radialMap/item.cpp:855
-#, kde-format
-msgctxt "@title:window"
-msgid "Save as SVG"
-msgstr "Gravar como SVG"
-
-#: src/radialMap/item.cpp:857
-#, kde-format
-msgctxt "filedialog type filter"
-msgid "SVG Files (*.svg);;All Files(*)"
-msgstr "Ficheiros SVG (*.svg);;Todos os Ficheiros(*)"
-
-#: src/radialMap/map.cpp:205
+#: src/radialMap/map.cpp:216
 #, kde-format
 msgid "1 file, with an average size of %2"
 msgid_plural "%1 files, with an average size of %2"
@@ -642,20 +569,87 @@ msgstr "Cores do sistema"
 msgid "High contrast"
 msgstr "Alto contraste"
 
-#: src/settingsDialog.cpp:133
+#: src/settingsDialog.cpp:123
 #, kde-format
 msgid "Select path to ignore"
 msgstr "Seleccionar a localização a ignorar"
 
-#: src/settingsDialog.cpp:150
+#: src/settingsDialog.cpp:140
 #, kde-format
 msgid "That folder is already set to be excluded from scans."
 msgstr "Essa pasta já está a ser excluída das análises."
 
-#: src/settingsDialog.cpp:150
+#: src/settingsDialog.cpp:140
 #, kde-format
 msgid "Folder already ignored"
 msgstr "A pasta já é ignorada"
+
+#~ msgid ""
+#~ "Anti-aliasing the filemap makes it clearer and prettier, unfortunately it "
+#~ "also makes rendering very slow."
+#~ msgstr ""
+#~ "Se aplicar o 'anti-aliasing' ao mapa dos ficheiros torná-lo-á mais claro "
+#~ "e mais bonito, mas tornando o desenho muito mais lento."
+
+#~ msgid "&Use anti-aliasing"
+#~ msgstr "&Usar a suavização"
+
+#~ msgid ""
+#~ "The font size of exploded labels can be varied relative to the depth of "
+#~ "the directories they represent. This helps you spot the important labels "
+#~ "more easily. Set a sensible minimum font size."
+#~ msgstr ""
+#~ "O tamanho da letra das legendas expandidas pode ser variado de acordo com "
+#~ "a profundidade das pastas que estas representam. Isto ajuda-o a localizar "
+#~ "as legendas mais importantes com maior facilidade. Defina um tamanho de "
+#~ "letra mínimo aceitável."
+
+#~ msgid "Var&y label font sizes"
+#~ msgstr "&Variar os tamanhos de letra das legendas"
+
+#~ msgid "The smallest font size Filelight can use to render labels."
+#~ msgstr ""
+#~ "O tamanho de letra mais pequeno a usar para representar as legendas."
+
+#~ msgid "Minimum font si&ze:"
+#~ msgstr "Tamanho de &letra mínimo:"
+
+#~ msgctxt "@action"
+#~ msgid "Save as SVG"
+#~ msgstr "Gravar como SVG"
+
+#~ msgid "Save the current view as an SVG file"
+#~ msgstr "Gravar a janela actual como um ficheiro SVG"
+
+#~ msgid "Open &File Manager Here"
+#~ msgstr "Abrir o Gestor de &Ficheiros Aqui"
+
+#~ msgid "&Rescan"
+#~ msgstr "Pesquisa&r de Novo"
+
+#~ msgctxt "We messed up, the user needs to initiate a rescan."
+#~ msgid ""
+#~ "Internal representation is invalid,\n"
+#~ "please rescan."
+#~ msgstr ""
+#~ "A representação interna é inválida;\n"
+#~ "por favor, volte a carregá-la."
+
+#~ msgctxt "Tooltip of file/folder, %1 is path, %2 is size"
+#~ msgid ""
+#~ "%1\n"
+#~ "%2"
+#~ msgstr ""
+#~ "%1\n"
+#~ "%2"
+
+#~ msgctxt "@title:window"
+#~ msgid "Save as SVG"
+#~ msgstr "Gravar como SVG"
+
+#~ msgctxt "filedialog type filter"
+#~ msgid "SVG Files (*.svg);;All Files(*)"
+#~ msgstr "Ficheiros SVG (*.svg);;Todos os Ficheiros(*)"
 
 #~ msgctxt "@info:status"
 #~ msgid "Scan completed, generating map..."
