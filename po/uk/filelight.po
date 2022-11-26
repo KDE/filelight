@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-25 00:50+0000\n"
-"PO-Revision-Date: 2022-06-07 08:47+0300\n"
+"PO-Revision-Date: 2022-11-25 09:32+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -446,55 +446,46 @@ msgid "Zoom Out"
 msgstr "Зменшити"
 
 #: src/qml/MapPage.qml:95 src/qml/MapPage.qml:213
-#, fuzzy, kde-format
-#| msgctxt "Scan/open the path of the selected element"
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
-msgstr "&Відкрити"
+msgstr "Відкрити"
 
 #: src/qml/MapPage.qml:103 src/qml/MapPage.qml:221
-#, fuzzy, kde-format
-#| msgid "Open &Terminal Here"
+#, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
-msgstr "Відкрити у &терміналі"
+msgstr "Викликати термінал тут"
 
 #: src/qml/MapPage.qml:111
-#, fuzzy, kde-format
-#| msgid "&Center Map Here"
+#, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
-msgstr "&Розташувати тут центр карти"
+msgstr "Розташувати тут центр карти"
 
 #: src/qml/MapPage.qml:122 src/qml/MapPage.qml:229
-#, fuzzy, kde-format
-#| msgid "Add to Do &Not Scan List"
+#, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
-msgstr "Додати до списку «&Не сканувати»"
+msgstr "Додати до списку «Не сканувати»"
 
 #: src/qml/MapPage.qml:130
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Пересканувати"
 
 #: src/qml/MapPage.qml:137 src/qml/MapPage.qml:236
-#, fuzzy, kde-format
-#| msgid "&Copy to clipboard"
+#, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
-msgstr "&Копіювати до буфера"
+msgstr "Копіювати до буфера"
 
 #: src/qml/MapPage.qml:144 src/qml/MapPage.qml:243
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
-msgstr "&Вилучити"
+msgstr "Вилучити"
 
 #: src/qml/MapPage.qml:295
 #, kde-format
@@ -517,15 +508,10 @@ msgstr[2] "%1 файлів"
 msgstr[3] "%1 файл"
 
 #: src/qml/MapPage.qml:301
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Click to go up to parent directory"
+#, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
-msgstr ""
-"\n"
-"Натисніть, щоб перейти до батьківського каталогу"
+msgstr "Натисніть, щоб перейти до батьківського каталогу"
 
 #: src/qml/MapPage.qml:491
 #, kde-format

@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdeutils-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-25 00:50+0000\n"
-"PO-Revision-Date: 2022-11-24 17:00+0300\n"
+"PO-Revision-Date: 2022-11-25 19:14+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -446,55 +446,46 @@ msgid "Zoom Out"
 msgstr "Uzaklaştır"
 
 #: src/qml/MapPage.qml:95 src/qml/MapPage.qml:213
-#, fuzzy, kde-format
-#| msgctxt "Scan/open the path of the selected element"
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
-msgstr "&Aç"
+msgstr "Aç"
 
 #: src/qml/MapPage.qml:103 src/qml/MapPage.qml:221
-#, fuzzy, kde-format
-#| msgid "Open &Terminal Here"
+#, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
-msgstr "&Burada Uçbirim Aç"
+msgstr "Burada Uçbirim Aç"
 
 #: src/qml/MapPage.qml:111
-#, fuzzy, kde-format
-#| msgid "&Center Map Here"
+#, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
-msgstr "&Buraya Haritayı Ortala"
+msgstr "Haritayı Burada Ortala"
 
 #: src/qml/MapPage.qml:122 src/qml/MapPage.qml:229
-#, fuzzy, kde-format
-#| msgid "Add to Do &Not Scan List"
+#, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
-msgstr "Taranmayacaklar Listesine &Ekle"
+msgstr "Taranmayacaklar Listesine Ekle"
 
 #: src/qml/MapPage.qml:130
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Yeniden Tara"
 
 #: src/qml/MapPage.qml:137 src/qml/MapPage.qml:236
-#, fuzzy, kde-format
-#| msgid "&Copy to clipboard"
+#, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
-msgstr "Panoya ko&pyala"
+msgstr "Panoya kopyala"
 
 #: src/qml/MapPage.qml:144 src/qml/MapPage.qml:243
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
-msgstr "&Sil"
+msgstr "Sil"
 
 #: src/qml/MapPage.qml:295
 #, kde-format
@@ -513,15 +504,10 @@ msgstr[0] "%1 Dosya"
 msgstr[1] "%1 Dosya"
 
 #: src/qml/MapPage.qml:301
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Click to go up to parent directory"
+#, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
-msgstr ""
-"\n"
-"Üst dizine gitmek için tıklayın"
+msgstr "Üst dizine gitmek için tıklayın"
 
 #: src/qml/MapPage.qml:491
 #, kde-format
