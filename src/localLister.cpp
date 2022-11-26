@@ -34,11 +34,11 @@ LocalLister::LocalLister(const QString &path, QList<std::shared_ptr<Folder>> *ca
     // add empty directories for any mount points that are in the path
     // TODO empty directories is not ideal as adds to fileCount incorrectly
 
-    QStringList list(Config::skipList);
-    if (!Config::scanAcrossMounts) {
+    QStringList list(Config::instance()->skipList);
+    if (!Config::instance()->scanAcrossMounts) {
         list += s_localMounts;
     }
-    if (!Config::scanRemoteMounts) {
+    if (!Config::instance()->scanRemoteMounts) {
         list += s_remoteMounts;
     }
 
@@ -164,7 +164,7 @@ void LocalLister::readMounts()
             path += QLatin1Char('/');
         }
 
-        if (Config::remoteFsTypes.contains(storage.fileSystemType()) && !s_remoteMounts.contains(path)) {
+        if (Config::instance()->remoteFsTypes.contains(storage.fileSystemType()) && !s_remoteMounts.contains(path)) {
             s_remoteMounts.append(path);
         } else if (!s_localMounts.contains(path)) {
             s_localMounts.append(path);

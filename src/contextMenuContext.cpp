@@ -39,9 +39,9 @@ void ContextMenuContext::doNotScan(RadialMap::Segment *segment)
 
 void ContextMenuContext::doNotScan(const QUrl &url)
 {
-    if (!Config::skipList.contains(url.toLocalFile())) {
-        Config::skipList.append(url.toLocalFile());
-        Config::write();
+    if (!Config::instance()->skipList.contains(url.toLocalFile())) {
+        Config::instance()->skipList.append(url.toLocalFile());
+        Config::instance()->write();
     }
 }
 

@@ -91,7 +91,7 @@ void RadialMap::Map::invalidate()
     deleteAllSegments(m_signature);
     Q_EMIT signatureChanged();
 
-    m_visibleDepth = Config::defaultRingDepth;
+    m_visibleDepth = Config::instance()->defaultRingDepth;
 }
 
 void RadialMap::Map::make(const std::shared_ptr<Folder> &tree, bool refresh)
@@ -222,11 +222,11 @@ bool RadialMap::Map::build(const std::shared_ptr<Folder> &dir, const uint depth,
         Q_EMIT signatureChanged();
     }
 
-    if (hiddenFileCount == dir->children() && !Config::showSmallFiles) {
+    if (hiddenFileCount == dir->children() && !Config::instance()->showSmallFiles) {
         return true;
     }
 
-    if ((depth == 0 || Config::showSmallFiles) && hiddenSize >= m_limits[depth] && hiddenFileCount > 0) {
+    if ((depth == 0 || Config::instance()->showSmallFiles) && hiddenSize >= m_limits[depth] && hiddenFileCount > 0) {
         m_signature[depth].append(new Segment(std::make_shared<FilesGroup>(hiddenFileCount, hiddenSize, dir.get()), a_start, a_end - a_start, true));
         Q_EMIT signatureChanged();
     }
@@ -277,7 +277,7 @@ void RadialMap::Map::colorise()
     QColor cp;
     QColor cb;
     double darkness = 1;
-    double contrast = (double)Config::contrast / (double)100;
+    double contrast = (double)Config::instance()->contrast / (double)100;
     int h = 0;
     int s1 = 0;
     int s2 = 0;
@@ -299,7 +299,7 @@ void RadialMap::Map::colorise()
 
     for (uint i = 0; i <= m_visibleDepth; ++i, darkness += 0.04) {
         for (const auto &segment : std::as_const(m_signature[i])) {
-            switch (Config::scheme) {
+            switch (Config::instance()->scheme) {
             case Filelight::KDE: {
                 // gradient will work by figuring out rgb delta values for 360 degrees
                 // then each component is angle*delta
@@ -387,7 +387,7 @@ void RadialMap::Map::zoomIn() // slot
     if (m_visibleDepth > MIN_RING_DEPTH) {
         --m_visibleDepth;
         make(m_root);
-        Config::defaultRingDepth = m_visibleDepth;
+        Config::instance()->defaultRingDepth = m_visibleDepth;
     }
 }
 
@@ -395,21 +395,21 @@ void RadialMap::Map::zoomOut() // slot
 {
     ++m_visibleDepth;
     make(m_root);
-    if (m_visibleDepth > Config::defaultRingDepth) {
-        Config::defaultRingDepth = m_visibleDepth;
+    if (m_visibleDepth > Config::instance()->defaultRingDepth) {
+        Config::instance()->defaultRingDepth = m_visibleDepth;
     }
 }
 
-void RadialMap::Map::refresh(const Dirty filth)
+void RadialMap::Map::refresh(const Filelight::Dirty filth)
 {
     // TODO consider a more direct connection
 
     if (!isNull()) {
         switch (filth) {
-        case Dirty::Layout:
+        case Filelight::Dirty::Layout:
             make(m_root, true); // true means refresh only
             break;
-        case Dirty::Colors:
+        case Filelight::Dirty::Colors:
             colorise();
             break;
         }

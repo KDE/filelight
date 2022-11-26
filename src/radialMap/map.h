@@ -105,7 +105,7 @@ public:
 public Q_SLOTS:
     void zoomIn();
     void zoomOut();
-    void refresh(Dirty filth);
+    void refresh(Filelight::Dirty filth);
     void createFromCacheObject(RadialMap::Segment *segment);
 
 Q_SIGNALS:

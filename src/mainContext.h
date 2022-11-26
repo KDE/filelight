@@ -47,7 +47,7 @@ public:
 
 Q_SIGNALS:
     void canceled(const QString &);
-    void canvasIsDirty(Dirty filth);
+    void canvasIsDirty(Filelight::Dirty filth);
 
 public Q_SLOTS:
     void slotUp();
@@ -60,7 +60,6 @@ public Q_SLOTS:
     void urlAboutToChange() const;
 
     bool openUrl(const QUrl &);
-    void configFilelight() const;
 
     void updateURL(const QUrl &);
     void rescanSingleDir(const QUrl &) const;

@@ -28,7 +28,6 @@
 #include "radialMap/map.h"
 #include "radialMap/radialMap.h"
 #include "scan.h"
-#include "settingsDialog.h"
 
 namespace Filelight
 {
@@ -51,7 +50,7 @@ MainContext::MainContext(QObject *parent)
     , m_histories(nullptr)
     , m_manager(new ScanManager(this))
 {
-    Config::read();
+    Config::instance()->read();
 
     auto engine = new QQmlApplicationEngine(this);
 
@@ -61,6 +60,8 @@ MainContext::MainContext(QObject *parent)
     static auto l10nContext = new KLocalizedContext(engine);
     l10nContext->setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));
     engine->rootContext()->setContextObject(l10nContext);
+
+    qmlRegisterUncreatableMetaObject(Filelight::staticMetaObject, "org.kde.filelight", 1, 0, "Filelight", QStringLiteral("Access to enums & flags only"));
 
     auto about = new About(this);
     qRegisterMetaType<size_t>("size_t");
@@ -82,6 +83,12 @@ MainContext::MainContext(QObject *parent)
         Q_UNUSED(scriptEngine)
         QQmlEngine::setObjectOwnership(RadialMap::Map::instance(), QQmlEngine::CppOwnership);
         return RadialMap::Map::instance();
+    });
+    qmlRegisterSingletonType<Config>("org.kde.filelight", 1, 0, "Config", [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
+        Q_UNUSED(engine)
+        Q_UNUSED(scriptEngine)
+        QQmlEngine::setObjectOwnership(Config::instance(), QQmlEngine::CppOwnership);
+        return Config::instance();
     });
 
     connect(m_manager, &ScanManager::completed, RadialMap::Map::instance(), [](const auto &tree) {
@@ -274,16 +281,6 @@ void MainContext::setUrl(const QUrl &url)
 {
     m_url = url;
     Q_EMIT urlChanged();
-}
-
-void MainContext::configFilelight() const
-{
-    auto dialog = new SettingsDialog(nullptr);
-
-    connect(dialog, &SettingsDialog::canvasIsDirty, this, &MainContext::canvasIsDirty);
-    connect(dialog, &SettingsDialog::mapIsInvalid, m_manager, &ScanManager::emptyCache);
-
-    dialog->show(); // deletes itself
 }
 
 bool MainContext::start(const QUrl &url) const

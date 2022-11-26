@@ -51,7 +51,15 @@ Kirigami.ApplicationWindow {
         displayHint: Kirigami.Action.AlwaysHide
         iconName: "configure"
         text: i18nc("@action configure app", "Configure…")
-        onTriggered: MainContext.configFilelight()
+        onTriggered: {
+            const openDialogWindow = pageStack.pushDialogLayer("qrc:/ui/SettingsPage.qml", {
+                width: appWindow.width
+            }, {
+                title: i18nc("@title:window", "Configure"),
+                width: Kirigami.Units.gridUnit * 30,
+                height: Kirigami.Units.gridUnit * 25
+            });
+        }
         shortcut: "Ctrl+Shift+,"
     }
 

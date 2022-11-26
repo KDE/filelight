@@ -34,6 +34,7 @@ target_link_libraries(filelightInternal
     Qt${QT_MAJOR_VERSION}::Gui
     KF5::CoreAddons
     KF5::ConfigCore
+    KF5::I18n
     KF5::KIOWidgets # Only used for KDirLister, may be able to move away from that.
 )
 
@@ -41,11 +42,9 @@ add_executable(filelight)
 target_sources(filelight PRIVATE
     radialMap/map.cpp
     radialMap/radialMap.cpp
-    settingsDialog.cpp
     historyAction.cpp
     mainContext.cpp
     main.cpp
-    settingsDialog.h
     fileTree.h
     radialMap/map.h
     radialMap/radialMap.h
@@ -71,7 +70,6 @@ set(filelight_ICONS
 )
 ecm_add_app_icon(filelight ICONS
     ${filelight_ICONS})
-ki18n_wrap_ui(filelight dialog.ui)
 
 target_link_libraries(filelight
     KF5::I18n

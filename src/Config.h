@@ -12,35 +12,50 @@
 #include <QSet>
 #include <QStringList>
 
+namespace Filelight
+{
+Q_NAMESPACE
 enum class Dirty {
     Layout = 1,
     Colors = 3,
 };
-Q_DECLARE_METATYPE(Dirty);
+Q_ENUM_NS(Dirty);
 
-namespace Filelight
-{
 enum MapScheme { Rainbow, KDE, HighContrast };
+Q_ENUM_NS(MapScheme)
+} // namespace Filelight
 
-class Config
+Q_DECLARE_METATYPE(Filelight::Dirty);
+
+class Config : public QObject
 {
+    Q_OBJECT
+    Q_PROPERTY(bool scanAcrossMounts MEMBER scanAcrossMounts NOTIFY changed)
+    Q_PROPERTY(bool scanRemoteMounts MEMBER scanRemoteMounts NOTIFY changed)
+    Q_PROPERTY(bool showSmallFiles MEMBER showSmallFiles NOTIFY changed)
+    Q_PROPERTY(uint contrast MEMBER contrast NOTIFY changed)
+    Q_PROPERTY(uint defaultRingDepth MEMBER defaultRingDepth NOTIFY changed)
+    Q_PROPERTY(Filelight::MapScheme scheme MEMBER scheme NOTIFY changed)
+    Q_PROPERTY(QStringList skipList MEMBER skipList NOTIFY changed)
 public:
-    static void read();
-    static void write();
+    static Config *instance();
+    void read();
+    Q_INVOKABLE void write() const;
+    Q_SIGNAL void changed();
+
+    Q_INVOKABLE void addFolder();
+    Q_INVOKABLE void removeFolder(const QString &url);
 
     // keep everything positive, avoid using DON'T, NOT or NO
 
-    static bool scanAcrossMounts;
-    static bool scanRemoteMounts;
-    static bool showSmallFiles;
-    static uint contrast;
-    static uint defaultRingDepth;
+    bool scanAcrossMounts;
+    bool scanRemoteMounts;
+    bool showSmallFiles;
+    uint contrast;
+    uint defaultRingDepth = 4;
 
-    static MapScheme scheme;
-    static QStringList skipList;
+    Filelight::MapScheme scheme;
+    QStringList skipList;
 
-    static const QSet<QByteArray> remoteFsTypes;
+    const QSet<QByteArray> remoteFsTypes = {"smbfs", "nfs", "afs"};
 };
-} // namespace Filelight
-
-using Filelight::Config;

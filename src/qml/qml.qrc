@@ -13,5 +13,8 @@
         <file>GlobalMenu.qml</file>
         <file>SegmentShape.qml</file>
         <file>CenterShape.qml</file>
+        <file>SettingsPage.qml</file>
+        <file>SettingsPageScanning.qml</file>
+        <file>SettingsPageAppearance.qml</file>
     </qresource>
 </RCC>
