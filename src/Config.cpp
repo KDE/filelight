@@ -17,7 +17,6 @@ bool Config::scanAcrossMounts;
 bool Config::scanRemoteMounts;
 bool Config::showSmallFiles;
 uint Config::contrast;
-int Config::minFontPitch;
 uint Config::defaultRingDepth;
 Filelight::MapScheme Config::scheme;
 QStringList Config::skipList;

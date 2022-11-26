@@ -20,7 +20,7 @@ Q_DECLARE_METATYPE(Dirty);
 
 namespace Filelight
 {
-enum MapScheme { Rainbow, KDE, HighContrast, FileDensity, ModTime };
+enum MapScheme { Rainbow, KDE, HighContrast };
 
 class Config
 {
@@ -34,8 +34,6 @@ public:
     static bool scanRemoteMounts;
     static bool showSmallFiles;
     static uint contrast;
-    static bool antialias;
-    static int minFontPitch;
     static uint defaultRingDepth;
 
     static MapScheme scheme;
