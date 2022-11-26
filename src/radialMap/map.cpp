@@ -48,6 +48,21 @@ RadialMap::Map::Map()
     });
 }
 
+// Helps to represent a group of files like a single segment on the map
+class FilesGroup : public File
+{
+public:
+    FilesGroup(int fileCount, FileSize totalSize, Folder *parent)
+        : File("", totalSize, parent)
+    {
+        const QString fakeName = i18np("\n%1 file, with an average size of %2",
+                                       "\n%1 files, with an average size of %2",
+                                       fileCount,
+                                       KFormat().formatByteSize(totalSize / fileCount));
+        m_name = fakeName.toUtf8().constData();
+    };
+};
+
 namespace
 {
 enum class Delete { Now = true, Later = false };
@@ -212,13 +227,7 @@ bool RadialMap::Map::build(const std::shared_ptr<Folder> &dir, const uint depth,
     }
 
     if ((depth == 0 || Config::showSmallFiles) && hiddenSize >= m_limits[depth] && hiddenFileCount > 0) {
-        // append a segment for unrepresented space - a "fake" segment
-        const QString s = i18np("1 file, with an average size of %2",
-                                "%1 files, with an average size of %2",
-                                hiddenFileCount,
-                                KFormat().formatByteSize(hiddenSize / hiddenFileCount));
-
-        m_signature[depth].append(new Segment(std::make_shared<File>(s.toUtf8().constData(), hiddenSize), a_start, a_end - a_start, true));
+        m_signature[depth].append(new Segment(std::make_shared<FilesGroup>(hiddenFileCount, hiddenSize, dir.get()), a_start, a_end - a_start, true));
         Q_EMIT signatureChanged();
     }
 
