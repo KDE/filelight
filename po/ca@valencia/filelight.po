@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-25 00:50+0000\n"
-"PO-Revision-Date: 2022-06-08 14:12+0200\n"
+"PO-Revision-Date: 2022-11-25 13:39+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -445,55 +445,46 @@ msgid "Zoom Out"
 msgstr "Allunya"
 
 #: src/qml/MapPage.qml:95 src/qml/MapPage.qml:213
-#, fuzzy, kde-format
-#| msgctxt "Scan/open the path of the selected element"
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
-msgstr "O&bri"
+msgstr "Obri"
 
 #: src/qml/MapPage.qml:103 src/qml/MapPage.qml:221
-#, fuzzy, kde-format
-#| msgid "Open &Terminal Here"
+#, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
-msgstr "Obri un &terminal ací"
+msgstr "Obri un terminal ací"
 
 #: src/qml/MapPage.qml:111
-#, fuzzy, kde-format
-#| msgid "&Center Map Here"
+#, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
-msgstr "&Centra el mapa ací"
+msgstr "Centra el mapa ací"
 
 #: src/qml/MapPage.qml:122 src/qml/MapPage.qml:229
-#, fuzzy, kde-format
-#| msgid "Add to Do &Not Scan List"
+#, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
-msgstr "Afig a la llista de &no explorar"
+msgstr "Afig a la llista de no explorar"
 
 #: src/qml/MapPage.qml:130
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Torna a explorar"
 
 #: src/qml/MapPage.qml:137 src/qml/MapPage.qml:236
-#, fuzzy, kde-format
-#| msgid "&Copy to clipboard"
+#, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
-msgstr "&Copia al porta-retalls"
+msgstr "Copia al porta-retalls"
 
 #: src/qml/MapPage.qml:144 src/qml/MapPage.qml:243
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
-msgstr "Sup&rimix"
+msgstr "Suprimix"
 
 #: src/qml/MapPage.qml:295
 #, kde-format
@@ -512,15 +503,10 @@ msgstr[0] "%1 fitxer"
 msgstr[1] "%1 fitxers"
 
 #: src/qml/MapPage.qml:301
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Click to go up to parent directory"
+#, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
-msgstr ""
-"\n"
-"Cliqueu per a pujar al directori superior"
+msgstr "Feu-hi clic per a pujar al directori superior"
 
 #: src/qml/MapPage.qml:491
 #, kde-format
@@ -583,71 +569,3 @@ msgstr "Ja s'ha indicat que esta carpeta s'excloga de les exploracions."
 #, kde-format
 msgid "Folder already ignored"
 msgstr "Carpeta ja ignorada"
-
-#~ msgid ""
-#~ "Anti-aliasing the filemap makes it clearer and prettier, unfortunately it "
-#~ "also makes rendering very slow."
-#~ msgstr ""
-#~ "L'antialiàsing del mapa de fitxers fa que siga més clar i bonic. "
-#~ "Desafortunadament fa més lenta la seua representació."
-
-#~ msgid "&Use anti-aliasing"
-#~ msgstr "Utilit&za antialiàsing"
-
-#~ msgid ""
-#~ "The font size of exploded labels can be varied relative to the depth of "
-#~ "the directories they represent. This helps you spot the important labels "
-#~ "more easily. Set a sensible minimum font size."
-#~ msgstr ""
-#~ "La mida del tipus de lletra de les etiquetes expandides es pot variar en "
-#~ "funció de la profunditat dels directoris que representen. Açò ajuda a "
-#~ "reconéixer amb més facilitat les etiquetes més importants. Establiu una "
-#~ "mida mínima per al tipus de lletra."
-
-#~ msgid "Var&y label font sizes"
-#~ msgstr "&Varia la mida del tipus de lletra de les etiquetes"
-
-#~ msgid "The smallest font size Filelight can use to render labels."
-#~ msgstr ""
-#~ "La mida més xicoteta del tipus de lletra que Filelight pot utilitzar per "
-#~ "a representar les etiquetes."
-
-#~ msgid "Minimum font si&ze:"
-#~ msgstr "M&ida mínima del tipus de lletra:"
-
-#~ msgctxt "@action"
-#~ msgid "Save as SVG"
-#~ msgstr "Anomena i guarda SVG"
-
-#~ msgid "Save the current view as an SVG file"
-#~ msgstr "Guarda la vista actual com un fitxer SVG"
-
-#~ msgid "Open &File Manager Here"
-#~ msgstr "Obri un gestor de fi&txers ací"
-
-#~ msgid "&Rescan"
-#~ msgstr "Torna a explo&rar"
-
-#~ msgctxt "We messed up, the user needs to initiate a rescan."
-#~ msgid ""
-#~ "Internal representation is invalid,\n"
-#~ "please rescan."
-#~ msgstr ""
-#~ "La representació interna no és vàlida,\n"
-#~ "torneu a explorar."
-
-#~ msgctxt "Tooltip of file/folder, %1 is path, %2 is size"
-#~ msgid ""
-#~ "%1\n"
-#~ "%2"
-#~ msgstr ""
-#~ "%1\n"
-#~ "%2"
-
-#~ msgctxt "@title:window"
-#~ msgid "Save as SVG"
-#~ msgstr "Anomena i guarda SVG"
-
-#~ msgctxt "filedialog type filter"
-#~ msgid "SVG Files (*.svg);;All Files(*)"
-#~ msgstr "Fitxers SVG (*.svg);;Tots els fitxers (*)"

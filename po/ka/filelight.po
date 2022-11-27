@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-25 00:50+0000\n"
-"PO-Revision-Date: 2022-09-26 09:42+0200\n"
+"PO-Revision-Date: 2022-11-26 07:49+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -64,6 +64,8 @@ msgid ""
 "<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
 "b> deleted.</qt>"
 msgstr ""
+"<qt>საქაღალდე მისამართზე <i>'%1'</i> <b>რეკურსიულად</b> და <b>სამუდამოდ</b> "
+"წაიშლება.</qt>"
 
 #: src/contextMenuContext.cpp:64
 #, kde-format
@@ -117,6 +119,7 @@ msgid ""
 "Prevents scanning of filesystems that are not on this computer, e.g. NFS or "
 "Samba mounts."
 msgstr ""
+"ამ კომპიუტერზე არმყოფი ფაილური სისტემები არ დასკანირდება (მაგ: NFS და Samba)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, dontScanRemoteMounts)
 #: src/dialog.ui:174
@@ -132,12 +135,15 @@ msgid ""
 "example, when unchecked, this will usually prevent the contents of <b>/mnt</"
 "b> from being scanned if you scan <b>/</b>."
 msgstr ""
+"ამ კომპიუტერზე არმყოფი ფაილური სისტემების სკანირების დაშვება. მაგალითად, თუ "
+"გამორთულია, ეს ჩვეულებრივ ხელს უშლის <b>/mnt</b>-ის სკანირებას, თუ <b>/</b>-"
+"ს ასკანირებთ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, scanAcrossMounts)
 #: src/dialog.ui:184
 #, kde-format
 msgid "Scan across filesystem &boundaries"
-msgstr ""
+msgstr "ფაილური სისტემის &საზღვრებში სკანრება"
 
 #. i18n: ectx: attribute (title), widget (QWidget, Widget3)
 #: src/dialog.ui:194
@@ -161,7 +167,7 @@ msgstr "&კონტრასტი"
 #: src/dialog.ui:254
 #, kde-format
 msgid "Here you can vary the contrast of the filemap in realtime."
-msgstr ""
+msgstr "აქ filemap-ის კონტრასტის რეალურ დროში ცვლილება შეგიძლიათ."
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, showSmallFiles)
 #: src/dialog.ui:275
@@ -171,6 +177,9 @@ msgid ""
 "option makes these files visible by merging them all into a single \"multi-"
 "segment\"."
 msgstr ""
+"ზოგიერთი ფაილი filemap-ში დასარენდერებლად მეტისმეტად პატარაა. ამ პარამეტრის "
+"ჩართვით ასეთი ტიპის ფაილებს ხილულს გახდით, მათ ერთ \"მრავალსეგმენტიანში\" "
+"გაერთიანებით."
 
 #. i18n: ectx: property (text), widget (QCheckBox, showSmallFiles)
 #: src/dialog.ui:278
@@ -193,7 +202,7 @@ msgstr "წინ"
 #: src/main.cpp:59
 #, kde-format
 msgid "Graphical disk-usage information"
-msgstr ""
+msgstr "გრაფიკული დისკზე-ადგილის ინფორმაცია"
 
 #: src/main.cpp:61
 #, kde-format
@@ -202,6 +211,9 @@ msgid ""
 "(C) 2008-2014 Martin Sandsmark\n"
 "(C) 2017-2022 Harald Sitter"
 msgstr ""
+"(C) 2006 Max Howell\n"
+"(C) 2008-2014 Martin Sandsmark\n"
+"(C) 2017-2022 Harald Sitter"
 
 #: src/main.cpp:66
 #, kde-format
@@ -314,6 +326,8 @@ msgid ""
 "Unable to enter: %1\n"
 "You do not have access rights to this location."
 msgstr ""
+"%1-ში შესვლის შეცდომა\n"
+"ამ მდებარეობასთან წვდომა არ გაგაჩნიათ."
 
 #: src/qml/GlobalMenu.qml:10
 #, kde-format
@@ -426,55 +440,46 @@ msgid "Zoom Out"
 msgstr "და_პატარავება"
 
 #: src/qml/MapPage.qml:95 src/qml/MapPage.qml:213
-#, fuzzy, kde-format
-#| msgctxt "Scan/open the path of the selected element"
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
-msgstr "&გახსნა"
+msgstr "გახსნა"
 
 #: src/qml/MapPage.qml:103 src/qml/MapPage.qml:221
-#, fuzzy, kde-format
-#| msgid "Open &Terminal Here"
+#, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
-msgstr "&ტერმინალის აქ გასნა"
+msgstr "ტერმინალის აქ გასნა"
 
 #: src/qml/MapPage.qml:111
-#, fuzzy, kde-format
-#| msgid "&Center Map Here"
+#, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
-msgstr "&რუკის აქ დაცენტრება"
+msgstr "რუკის აქ დაცენტრება"
 
 #: src/qml/MapPage.qml:122 src/qml/MapPage.qml:229
-#, fuzzy, kde-format
-#| msgid "Add to Do &Not Scan List"
+#, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "&არ-სკანირების სიაში ჩამატება"
 
 #: src/qml/MapPage.qml:130
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "თავიდან სკანირება"
 
 #: src/qml/MapPage.qml:137 src/qml/MapPage.qml:236
-#, fuzzy, kde-format
-#| msgid "&Copy to clipboard"
+#, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "&ბუფერში კოპირება"
 
 #: src/qml/MapPage.qml:144 src/qml/MapPage.qml:243
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
-msgstr "&წაშლა"
+msgstr "წაშლა"
 
 #: src/qml/MapPage.qml:295
 #, kde-format
@@ -496,7 +501,7 @@ msgstr[1] "%1 ფაილი"
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
-msgstr ""
+msgstr "დააწკაპუნეთ მშობელ საქაღალდეზე გადასასვლელად"
 
 #: src/qml/MapPage.qml:491
 #, kde-format
@@ -553,7 +558,7 @@ msgstr "აირჩიეთ დასაიგნორებელი ბი�
 #: src/settingsDialog.cpp:140
 #, kde-format
 msgid "That folder is already set to be excluded from scans."
-msgstr ""
+msgstr "ეს საქაღალდე სკანირებიდან უკვე ამოღებულია."
 
 #: src/settingsDialog.cpp:140
 #, kde-format
