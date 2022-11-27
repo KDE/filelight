@@ -53,6 +53,7 @@
   <summary xml:lang="bg">Показване на използването на диска и изтриване на неизползвани файлове</summary>
   <summary xml:lang="ca">Mostra l'ús del disc i suprimeix els fitxers sense ús</summary>
   <summary xml:lang="ca-valencia">Mostra l'ús del disc i suprimix els fitxers sense ús</summary>
+  <summary xml:lang="en-GB">Show disk usage and delete unused files</summary>
   <summary xml:lang="es">Mostrar el uso del disco y borrar archivos no usados</summary>
   <summary xml:lang="eu">Diskoaren erabilera erakustea eta erabili gabeko fitxategiak ezabatzea</summary>
   <summary xml:lang="fi">Näytä levynkäyttö ja poista käyttämättömiä tiedostoja</summary>
@@ -79,6 +80,7 @@
     <p xml:lang="bg">Filelight е приложение за визуализиране на използването на диска на вашия компютър като изобразява папките с лесен за разбиране изглед от концентрични пръстени. Filelight улеснява освобождаването на място на диска!</p>
     <p xml:lang="ca">El Filelight és una aplicació per a visualitzar l'ús del disc a l'ordinador que mostra l'ús de les carpetes amb una visualització d'anells concèntrics fàcil d'entendre. El Filelight facilita alliberar espai!</p>
     <p xml:lang="ca-valencia">Filelight és una aplicació per a visualitzar l'ús del disc en l'ordinador que mostra l'ús de les carpetes amb una visualització d'anells concèntrics fàcil d'entendre. Filelight facilita alliberar espai!</p>
+    <p xml:lang="en-GB">Filelight is an application to visualise the disk usage on your computer by showing folders using an easy-to-understand view of concentric rings. Filelight makes it simple to free up space!</p>
     <p xml:lang="es">Filelight es una aplicación para visualizar el uso del disco de su equipo que muestra carpetas en una vista de anillos concéntricos fácil de entender. Filelight hace que sea fácil liberar espacio.</p>
     <p xml:lang="eu">Filelight zure ordenagailuko diskoaren erabilera, karpetak, eraztun zentrokideen ikuspegi ulerterraz bat erabiliz irudikatzeko aplikazio bat da. Filelight-ek lekua hustea errazten du!</p>
     <p xml:lang="fi">Filelight on sovellus tietokoneen levynkäytön hahmottamiseksi. Se näyttää kansiot helposti ymmärrettävinä renkaina. Filelight auttaa vapauttamaan levytilaa.</p>
@@ -86,6 +88,7 @@
     <p xml:lang="id">Filelight adalah sebuah aplikasi untuk memvisualkan penggunaan disk pada komputermu dengan menampilkan folder menggunakan sebuah tampilan lingkaran konsentris yang mudah dimengerti. Filelight memudahkan dalam pembebasan ruang!</p>
     <p xml:lang="ie">Filelight visualisa li usage de disco de vor computator, monstrante fólderes in un vise comprensibil de concentric anelles. Filelight facilisa li liberation de spacie!</p>
     <p xml:lang="it">Filelight è un'applicazione per visualizzare l'uso del disco nel tuo computer, che mostra le cartelle in una vista ad anelli concentrici di semplice interpretazione. Filelight rende semplice liberare dello spazio!</p>
+    <p xml:lang="ka">Filelight აპლიკაციაა თქვენს კომპიუტერში დისკის გამოყენების ვიზუალიზაციისთვის. ის საქაღალდეებს ადვილად-გასაგებ ხედში გაჩვენებთ. Filelight -ი აადვილებს დისკის გათავისუფლებას!</p>
     <p xml:lang="nl">Filelight is een toepassing om het schijfgebruik op uw computer te visualiseren door mappen te tonen met een gemakkelijk te begrijpen beeld met concentrische ringen. Filelight maakt het gemakkelijk om ruimte vrij te maken!</p>
     <p xml:lang="pl">Filelight jest aplikacją do obrazowania wykorzystania przestrzeni dyskowej na twoim komputerze za pomocą łatwych do zrozumienia współśrodkowych pierścieni. Filelight ułatwia zwalnianie miejsca!</p>
     <p xml:lang="pt">O Filelight é uma aplicação para visualizar a utilização do disco no seu computador, mostrando as pastas com uma vista fácil de entender num formato em anéis concêntricos. O Filelight facilita a libertação de espaço!</p>
@@ -146,6 +149,7 @@
       <li xml:lang="bg">Сканира не локални, отдалечени и сменяеми дискови устройства</li>
       <li xml:lang="ca">Explora discs locals, remots o extraïbles</li>
       <li xml:lang="ca-valencia">Explora discs locals, remots o extraïbles</li>
+      <li xml:lang="en-GB">Scan local, remote, or removable disks</li>
       <li xml:lang="es">Explora discos locales, remotos y extraíbles</li>
       <li xml:lang="eu">Aztertu disko lokalak, urrunekoak edo aldagarriak</li>
       <li xml:lang="fi">Tutkii paikalliset, etä- ja siirrettävät levyt</li>
@@ -169,6 +173,7 @@
       <li xml:lang="bg">Подробна информация за файлове и папки</li>
       <li xml:lang="ca">Visualització d'informació detallada quant a fitxers i carpetes</li>
       <li xml:lang="ca-valencia">Visualització d'informació detallada quant a fitxers i carpetes</li>
+      <li xml:lang="en-GB">View detailed information about files and folders</li>
       <li xml:lang="es">Mostrar información detallada sobre archivos y carpetas</li>
       <li xml:lang="eu">Ikusi fitxategiei eta karpetei buruzko informazio zehatza</li>
       <li xml:lang="fi">Näyttää tiedostojen ja kansioiden tiedot</li>
@@ -192,6 +197,7 @@
       <li xml:lang="bg">Изтриване на файлове и папки, които заемат твърде много място на диска</li>
       <li xml:lang="ca">Supressió de fitxer o carpetes que ocupen massa espai</li>
       <li xml:lang="ca-valencia">Supressió de fitxer o carpetes que ocupen massa espai</li>
+      <li xml:lang="en-GB">Delete files or folders that are taking up too much space</li>
       <li xml:lang="es">Borrar archivos o carpetas que están ocupando demasiado espacio</li>
       <li xml:lang="eu">Ezabatu leku gehiegi hartzen ari diren fitxategiak edo karpetak</li>
       <li xml:lang="fi">Tilaa vievien tiedostojen ja kansioiden poisto</li>
@@ -214,6 +220,7 @@
       <li xml:lang="bg">Интегриране в Dolphin, Konqueror и Krusader</li>
       <li xml:lang="ca">Integració en els gestors de fitxers Dolphin, Konqueror i Krusader</li>
       <li xml:lang="ca-valencia">Integració en els gestors de fitxers Dolphin, Konqueror i Krusader</li>
+      <li xml:lang="en-GB">Integration into the Dolphin, Konqueror, and Krusader file managers</li>
       <li xml:lang="es">Integración con los gestores de archivos Dolphin Konqueror y Krusader</li>
       <li xml:lang="eu">Dolphin, Konqueror eta Krusader fitxategi-kudeatzailetan bateratzea</li>
       <li xml:lang="fi">Integrointi Dolphin-, Konqueror- ja Krusader-tiedostonhallintaohjelmiin</li>
