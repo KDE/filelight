@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-30 00:49+0000\n"
-"PO-Revision-Date: 2022-09-26 09:42+0200\n"
+"PO-Revision-Date: 2022-11-26 07:30+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -95,6 +95,7 @@ msgid ""
 "Prevents scanning of filesystems that are not on this computer, e.g. NFS or "
 "Samba mounts."
 msgstr ""
+"ამ კომპიუტერზე არმყოფი ფაილური სისტემები არ დასკანირდება (მაგ: NFS და Samba)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, dontScanRemoteMounts)
 #: src/dialog.ui:174
@@ -110,12 +111,15 @@ msgid ""
 "example, when unchecked, this will usually prevent the contents of <b>/mnt</"
 "b> from being scanned if you scan <b>/</b>."
 msgstr ""
+"ამ კომპიუტერზე არმყოფი ფაილური სისტემების სკანირების დაშვება. მაგალითად, თუ "
+"გამორთულია, ეს ჩვეულებრივ ხელს უშლის <b>/mnt</b>-ის სკანირებას, თუ <b>/</b>-"
+"ს ასკანირებთ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, scanAcrossMounts)
 #: src/dialog.ui:184
 #, kde-format
 msgid "Scan across filesystem &boundaries"
-msgstr ""
+msgstr "ფაილური სისტემის &საზღვრებში სკანრება"
 
 #. i18n: ectx: attribute (title), widget (QWidget, Widget3)
 #: src/dialog.ui:194
@@ -139,7 +143,7 @@ msgstr "&კონტრასტი"
 #: src/dialog.ui:254
 #, kde-format
 msgid "Here you can vary the contrast of the filemap in realtime."
-msgstr ""
+msgstr "აქ filemap-ის კონტრასტის რეალურ დროში ცვლილება შეგიძლიათ."
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, useAntialiasing)
 #: src/dialog.ui:275
@@ -148,6 +152,7 @@ msgid ""
 "Anti-aliasing the filemap makes it clearer and prettier, unfortunately it "
 "also makes rendering very slow."
 msgstr ""
+"მომრგვალება filemap-ში ძალიან ალამაზებს მას, მაგრამ ასევე, ძალიან ანელებს."
 
 #. i18n: ectx: property (text), widget (QCheckBox, useAntialiasing)
 #: src/dialog.ui:278
@@ -163,6 +168,9 @@ msgid ""
 "option makes these files visible by merging them all into a single \"multi-"
 "segment\"."
 msgstr ""
+"ზოგიერთი ფაილი filemap-ში დასარენდერებლად მეტისმეტად პატარაა. ამ პარამეტრის "
+"ჩართვით ასეთი ტიპის ფაილებს ხილულს გახდით, მათ ერთ \"მრავალსეგმენტიანში\" "
+"გაერთიანებით."
 
 #. i18n: ectx: property (text), widget (QCheckBox, showSmallFiles)
 #: src/dialog.ui:288
@@ -178,6 +186,9 @@ msgid ""
 "directories they represent. This helps you spot the important labels more "
 "easily. Set a sensible minimum font size."
 msgstr ""
+"ფონტის ზომა აფეთქებულ ჭდეებში იცვლება გამომხატავი საქაღალდეების სიღრმესთან "
+"ერთად. ეს გეხმარებათ, მნიშვნელოვანი ჭდეები, უფრო ადვილად შეამჩნიოთ. დააყენეთ "
+"მინიმალური ფონტის ზომა, რომელსაც აზრი აქვს."
 
 #. i18n: ectx: property (text), widget (QCheckBox, varyLabelFontSizes)
 #: src/dialog.ui:301
@@ -189,7 +200,7 @@ msgstr "&ფონტის სხვადასხვა ხაზების
 #: src/dialog.ui:338
 #, kde-format
 msgid "The smallest font size Filelight can use to render labels."
-msgstr ""
+msgstr "ჭდეების რენდერისთვის გამოყენებული ყველაზე პატარა ფონტის ზომა."
 
 #. i18n: ectx: property (text), widget (QLabel, minFontPitchLabel)
 #: src/dialog.ui:341
@@ -212,7 +223,7 @@ msgstr "წინ"
 #: src/main.cpp:56
 #, kde-format
 msgid "Graphical disk-usage information"
-msgstr ""
+msgstr "გრაფიკული დისკზე-ადგილის ინფორმაცია"
 
 #: src/main.cpp:58
 #, kde-format
@@ -221,6 +232,9 @@ msgid ""
 "(C) 2008-2014 Martin Sandsmark\n"
 "(C) 2017-2022 Harald Sitter"
 msgstr ""
+"(C) 2006 Max Howell\n"
+"(C) 2008-2014 Martin Sandsmark\n"
+"(C) 2017-2022 Harald Sitter"
 
 #: src/main.cpp:63
 #, kde-format
@@ -333,6 +347,8 @@ msgid ""
 "Unable to enter: %1\n"
 "You do not have access rights to this location."
 msgstr ""
+"%1-ში შესვლის შეცდომა\n"
+"ამ მდებარეობასთან წვდომა არ გაგაჩნიათ."
 
 #: src/qml/GlobalMenu.qml:10
 #, kde-format
@@ -527,6 +543,8 @@ msgid ""
 "<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
 "b> deleted.</qt>"
 msgstr ""
+"<qt>საქაღალდე მისამართზე <i>'%1'</i> <b>რეკურსიულად</b> და <b>სამუდამოდ</b> "
+"წაიშლება.</qt>"
 
 #: src/radialMap/item.cpp:267
 #, kde-format
@@ -545,6 +563,8 @@ msgid ""
 "Internal representation is invalid,\n"
 "please rescan."
 msgstr ""
+"შიდა გამოხატულება არასწორია.\n"
+"სკანირება თავიდან გაუშვით."
 
 #: src/radialMap/item.cpp:754
 #, kde-format
@@ -578,6 +598,8 @@ msgid ""
 "\n"
 "Click to go up to parent directory"
 msgstr ""
+"\n"
+"დააწკაპუნეთ მშობელ საქაღალდეზე გადასასვლელად"
 
 #: src/radialMap/item.cpp:855
 #, kde-format
@@ -621,7 +643,7 @@ msgstr "აირჩიეთ დასაიგნორებელი ბი�
 #: src/settingsDialog.cpp:150
 #, kde-format
 msgid "That folder is already set to be excluded from scans."
-msgstr ""
+msgstr "ეს საქაღალდე სკანირებიდან უკვე ამოღებულია."
 
 #: src/settingsDialog.cpp:150
 #, kde-format
