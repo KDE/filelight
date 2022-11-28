@@ -75,7 +75,7 @@
 >&filelight; 1.21 (program 15.08)</releaseinfo>
    <abstract
 ><para
->&filelight; skapar en interaktiv avbildning med koncentriska cirkelsegment som hjälper till att åskådliggöra diskanvändning på datorn.</para
+>Visa diskanvändning och ta bort oanvända filer.</para
 ></abstract>
    <!-- These may be used by search engines -->
    <keywordset>
