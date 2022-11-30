@@ -267,7 +267,7 @@ Kirigami.Page {
             Layout.margins: Kirigami.Units.gridUnit
             antialiasing: true
             layer.enabled: true
-            layer.samples: 4
+            layer.samples: 32
 
             property var zOrderedShapes: []
             property bool hasShapes: zOrderedShapes.length > 0
