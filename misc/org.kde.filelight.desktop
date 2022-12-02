@@ -143,6 +143,7 @@ Comment[sl]=Prikazuje rabo diska in briše neuporabljene datoteke
 Comment[tr]=Disk kullanımına bakın ve kullanılmayan dosyaları silin
 Comment[uk]=Показ даних щодо використання диска і вилучення зайвих файлів
 Comment[x-test]=xxShow disk usage and delete unused filesxx
+Comment[zh_CN]=显示磁盘使用情况并删除未使用的文件
 Comment[zh_TW]=顯示磁碟用量、刪除不需要的檔案
 Keywords=disk;drive;space;storage;usage;
 Keywords[ar]=قرص;مساحة;تخزين;استعمال;متبقي;حر;دسك;
