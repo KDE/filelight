@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-25 00:50+0000\n"
-"PO-Revision-Date: 2022-06-29 22:47+0200\n"
+"POT-Creation-Date: 2022-12-02 00:52+0000\n"
+"PO-Revision-Date: 2022-12-02 00:05+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.04.2\n"
+"X-Generator: Lokalize 22.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -441,55 +441,46 @@ msgid "Zoom Out"
 msgstr "Намаляване"
 
 #: src/qml/MapPage.qml:95 src/qml/MapPage.qml:213
-#, fuzzy, kde-format
-#| msgctxt "Scan/open the path of the selected element"
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
-msgstr "&Отваряне"
+msgstr "Отваряне"
 
 #: src/qml/MapPage.qml:103 src/qml/MapPage.qml:221
-#, fuzzy, kde-format
-#| msgid "Open &Terminal Here"
+#, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
-msgstr "Отваряне на &терминал тук"
+msgstr "Отваряне на терминал тук"
 
 #: src/qml/MapPage.qml:111
-#, fuzzy, kde-format
-#| msgid "&Center Map Here"
+#, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
-msgstr "&Центриране на картата"
+msgstr "Центриране на картата"
 
 #: src/qml/MapPage.qml:122 src/qml/MapPage.qml:229
-#, fuzzy, kde-format
-#| msgid "Add to Do &Not Scan List"
+#, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "Добавяне към списък \"Да не се претърсва\""
 
 #: src/qml/MapPage.qml:130
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Повторно претърсване"
 
 #: src/qml/MapPage.qml:137 src/qml/MapPage.qml:236
-#, fuzzy, kde-format
-#| msgid "&Copy to clipboard"
+#, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
-msgstr "&Копиране в системния буфер"
+msgstr "Копиране в клипборда"
 
 #: src/qml/MapPage.qml:144 src/qml/MapPage.qml:243
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
-msgstr "&Изтриване"
+msgstr "Изтриване"
 
 #: src/qml/MapPage.qml:295
 #, kde-format
@@ -508,15 +499,10 @@ msgstr[0] "%1 файл"
 msgstr[1] "%1 файла"
 
 #: src/qml/MapPage.qml:301
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Click to go up to parent directory"
+#, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
-msgstr ""
-"\n"
-"Натиснете за отиване към горна директория"
+msgstr "Натиснете за отиване към горна директория"
 
 #: src/qml/MapPage.qml:491
 #, kde-format
@@ -543,10 +529,16 @@ msgctxt "@title"
 msgid "Welcome to Filelight"
 msgstr "Добре дошли в Filelight"
 
-#: src/radialMap/map.cpp:216
-#, kde-format
-msgid "1 file, with an average size of %2"
-msgid_plural "%1 files, with an average size of %2"
+#: src/radialMap/map.cpp:58
+#, fuzzy, kde-format
+#| msgid "1 file, with an average size of %2"
+#| msgid_plural "%1 files, with an average size of %2"
+msgid ""
+"\n"
+"%1 file, with an average size of %2"
+msgid_plural ""
+"\n"
+"%1 files, with an average size of %2"
 msgstr[0] "1 файл със средна големина %2"
 msgstr[1] "%1 файла със средна големина %2"
 

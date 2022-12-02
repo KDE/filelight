@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-25 00:50+0000\n"
+"POT-Creation-Date: 2022-12-02 00:52+0000\n"
 "PO-Revision-Date: 2019-03-03 20:01+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
@@ -560,10 +560,16 @@ msgctxt "@title"
 msgid "Welcome to Filelight"
 msgstr "Filelight"
 
-#: src/radialMap/map.cpp:216
-#, kde-format
-msgid "1 file, with an average size of %2"
-msgid_plural "%1 files, with an average size of %2"
+#: src/radialMap/map.cpp:58
+#, fuzzy, kde-format
+#| msgid "1 file, with an average size of %2"
+#| msgid_plural "%1 files, with an average size of %2"
+msgid ""
+"\n"
+"%1 file, with an average size of %2"
+msgid_plural ""
+"\n"
+"%1 files, with an average size of %2"
 msgstr[0] "1 ficheiro, cun tamaño medio de %2"
 msgstr[1] "%1 ficheiros, cun tamaño medio de %2"
 

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-25 00:50+0000\n"
-"PO-Revision-Date: 2022-11-19 14:48\n"
+"POT-Creation-Date: 2022-12-02 00:52+0000\n"
+"PO-Revision-Date: 2022-12-01 06:51\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -438,55 +438,46 @@ msgid "Zoom Out"
 msgstr "缩小"
 
 #: src/qml/MapPage.qml:95 src/qml/MapPage.qml:213
-#, fuzzy, kde-format
-#| msgctxt "Scan/open the path of the selected element"
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
-msgstr "打开(&O)"
+msgstr "打开"
 
 #: src/qml/MapPage.qml:103 src/qml/MapPage.qml:221
-#, fuzzy, kde-format
-#| msgid "Open &Terminal Here"
+#, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
-msgstr "在此打开终端(&T)"
+msgstr "在此位置打开终端"
 
 #: src/qml/MapPage.qml:111
-#, fuzzy, kde-format
-#| msgid "&Center Map Here"
+#, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
-msgstr "在此居中图示(&C)"
+msgstr "在此居中图示"
 
 #: src/qml/MapPage.qml:122 src/qml/MapPage.qml:229
-#, fuzzy, kde-format
-#| msgid "Add to Do &Not Scan List"
+#, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
-msgstr "添加到不扫描列表(&N)"
+msgstr "添加到不扫描列表"
 
 #: src/qml/MapPage.qml:130
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "重新扫描"
 
 #: src/qml/MapPage.qml:137 src/qml/MapPage.qml:236
-#, fuzzy, kde-format
-#| msgid "&Copy to clipboard"
+#, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
-msgstr "复制到剪贴板(&C)"
+msgstr "复制到剪贴板"
 
 #: src/qml/MapPage.qml:144 src/qml/MapPage.qml:243
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
-msgstr "删除(&D)"
+msgstr "删除"
 
 #: src/qml/MapPage.qml:295
 #, kde-format
@@ -503,15 +494,10 @@ msgid_plural "%1 Files"
 msgstr[0] "%1 个文件"
 
 #: src/qml/MapPage.qml:301
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Click to go up to parent directory"
+#, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
-msgstr ""
-"\n"
-"点击转到上一级目录"
+msgstr "点击转到上一级目录"
 
 #: src/qml/MapPage.qml:491
 #, kde-format
@@ -537,10 +523,16 @@ msgctxt "@title"
 msgid "Welcome to Filelight"
 msgstr "欢迎使用 Filelight"
 
-#: src/radialMap/map.cpp:216
-#, kde-format
-msgid "1 file, with an average size of %2"
-msgid_plural "%1 files, with an average size of %2"
+#: src/radialMap/map.cpp:58
+#, fuzzy, kde-format
+#| msgid "1 file, with an average size of %2"
+#| msgid_plural "%1 files, with an average size of %2"
+msgid ""
+"\n"
+"%1 file, with an average size of %2"
+msgid_plural ""
+"\n"
+"%1 files, with an average size of %2"
 msgstr[0] "%1 个文件，平均大小为 %2"
 
 #: src/settingsDialog.cpp:31
@@ -572,65 +564,3 @@ msgstr "该文件夹已被设置为排除扫描。"
 #, kde-format
 msgid "Folder already ignored"
 msgstr "文件夹已被忽略"
-
-#~ msgid ""
-#~ "Anti-aliasing the filemap makes it clearer and prettier, unfortunately it "
-#~ "also makes rendering very slow."
-#~ msgstr "抗锯齿让文件图示更加清晰美观，但也会拖慢画面绘制速度。"
-
-#~ msgid "&Use anti-aliasing"
-#~ msgstr "使用抗锯齿(&U)"
-
-#~ msgid ""
-#~ "The font size of exploded labels can be varied relative to the depth of "
-#~ "the directories they represent. This helps you spot the important labels "
-#~ "more easily. Set a sensible minimum font size."
-#~ msgstr ""
-#~ "勾选此项后，文件图示的标签字体大小按照对象目录的相对深度而变化。这可以让您"
-#~ "更容易看清重要的标签。请设置一个合理的最小字体大小。"
-
-#~ msgid "Var&y label font sizes"
-#~ msgstr "标签字体大小可变(&Y)"
-
-#~ msgid "The smallest font size Filelight can use to render labels."
-#~ msgstr "Filelight 绘制标签时的最小字体大小。"
-
-#~ msgid "Minimum font si&ze:"
-#~ msgstr "最小字体大小(&Z)："
-
-#~ msgctxt "@action"
-#~ msgid "Save as SVG"
-#~ msgstr "保存为 SVG"
-
-#~ msgid "Save the current view as an SVG file"
-#~ msgstr "将当前视图保存为 SVG 文件"
-
-#~ msgid "Open &File Manager Here"
-#~ msgstr "在此打开文件管理器(&F)"
-
-#~ msgid "&Rescan"
-#~ msgstr "重新扫描(&R)"
-
-#~ msgctxt "We messed up, the user needs to initiate a rescan."
-#~ msgid ""
-#~ "Internal representation is invalid,\n"
-#~ "please rescan."
-#~ msgstr ""
-#~ "内部表示无效，\n"
-#~ "请重新扫描。"
-
-#~ msgctxt "Tooltip of file/folder, %1 is path, %2 is size"
-#~ msgid ""
-#~ "%1\n"
-#~ "%2"
-#~ msgstr ""
-#~ "%1\n"
-#~ "%2"
-
-#~ msgctxt "@title:window"
-#~ msgid "Save as SVG"
-#~ msgstr "保存为 SVG"
-
-#~ msgctxt "filedialog type filter"
-#~ msgid "SVG Files (*.svg);;All Files(*)"
-#~ msgstr "SVG 文件 (*.svg);;所有文件 (*)"

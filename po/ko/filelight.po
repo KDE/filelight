@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-25 00:50+0000\n"
+"POT-Creation-Date: 2022-12-02 00:52+0000\n"
 "PO-Revision-Date: 2022-07-13 15:18+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -538,10 +538,16 @@ msgctxt "@title"
 msgid "Welcome to Filelight"
 msgstr "Filelight에 오신 것을 환영합니다"
 
-#: src/radialMap/map.cpp:216
-#, kde-format
-msgid "1 file, with an average size of %2"
-msgid_plural "%1 files, with an average size of %2"
+#: src/radialMap/map.cpp:58
+#, fuzzy, kde-format
+#| msgid "1 file, with an average size of %2"
+#| msgid_plural "%1 files, with an average size of %2"
+msgid ""
+"\n"
+"%1 file, with an average size of %2"
+msgid_plural ""
+"\n"
+"%1 files, with an average size of %2"
 msgstr[0] "파일 %1개, 평균 크기 %2"
 
 #: src/settingsDialog.cpp:31
