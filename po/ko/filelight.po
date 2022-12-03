@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-02 00:52+0000\n"
+"POT-Creation-Date: 2022-12-03 00:50+0000\n"
 "PO-Revision-Date: 2022-07-13 15:18+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -58,6 +58,21 @@ msgstr "위치 도구 모음"
 msgid "View Toolbar"
 msgstr "보기 도구 모음"
 
+#: src/Config.cpp:58
+#, kde-format
+msgid "Select path to ignore"
+msgstr "무시할 경로 선택"
+
+#: src/Config.cpp:71
+#, kde-format
+msgid "That folder is already set to be excluded from scans."
+msgstr "이 폴더는 이미 검사에서 제외되었습니다."
+
+#: src/Config.cpp:71
+#, kde-format
+msgid "Folder already ignored"
+msgstr "폴더가 이미 무시됨"
+
 #: src/contextMenuContext.cpp:63
 #, kde-format
 msgid ""
@@ -81,111 +96,6 @@ msgstr "삭제(&D)"
 #, kde-format
 msgid "Error while deleting"
 msgstr "삭제 오류"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, Dialog)
-#: src/dialog.ui:14
-#, kde-format
-msgid "Settings - Filelight"
-msgstr "설정 - Filelight"
-
-#. i18n: ectx: attribute (title), widget (QWidget, Widget2)
-#: src/dialog.ui:33
-#, kde-format
-msgid "Scannin&g"
-msgstr "검사(&G)"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: src/dialog.ui:45
-#, kde-format
-msgid "Do &not scan these folders:"
-msgstr "다음 폴더 검사하지 않기(&N):"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_removeButton)
-#: src/dialog.ui:85
-#, kde-format
-msgid "R&emove"
-msgstr "삭제(&E)"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_addButton)
-#: src/dialog.ui:95
-#, kde-format
-msgid "&Add..."
-msgstr "추가(&A)..."
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScanRemoteMounts)
-#: src/dialog.ui:171
-#, kde-format
-msgid ""
-"Prevents scanning of filesystems that are not on this computer, e.g. NFS or "
-"Samba mounts."
-msgstr ""
-"NFS나 삼바 마운트와 같은 이 컴퓨터에 있지 않은 파일 시스템을 검사하지 않습니"
-"다."
-
-#. i18n: ectx: property (text), widget (QCheckBox, dontScanRemoteMounts)
-#: src/dialog.ui:174
-#, kde-format
-msgid "Exclude remote files&ystems"
-msgstr "원격 파일 시스템 제외하기(&Y)"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, scanAcrossMounts)
-#: src/dialog.ui:181
-#, kde-format
-msgid ""
-"Allows scans to enter directories that are part of other filesystems. For "
-"example, when unchecked, this will usually prevent the contents of <b>/mnt</"
-"b> from being scanned if you scan <b>/</b>."
-msgstr ""
-"다른 파일 시스템에 있는 디렉터리도 검사합니다. 예를 들어 이 옵션을 선택하지 "
-"않으면 <b>/</b> 폴더를 검사할 때 <b>/mnt</b> 폴더 아래에 있는 내용을 검사하"
-"지 않습니다."
-
-#. i18n: ectx: property (text), widget (QCheckBox, scanAcrossMounts)
-#: src/dialog.ui:184
-#, kde-format
-msgid "Scan across filesystem &boundaries"
-msgstr "다른 파일 시스템도 검사하기(&B)"
-
-#. i18n: ectx: attribute (title), widget (QWidget, Widget3)
-#: src/dialog.ui:194
-#, kde-format
-msgid "&Appearance"
-msgstr "모양(&A)"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: src/dialog.ui:206
-#, kde-format
-msgid "Color scheme"
-msgstr "색 배열"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel3)
-#: src/dialog.ui:232
-#, kde-format
-msgid "Co&ntrast"
-msgstr "명암(&N):"
-
-#. i18n: ectx: property (whatsThis), widget (QSlider, contrastSlider)
-#: src/dialog.ui:254
-#, kde-format
-msgid "Here you can vary the contrast of the filemap in realtime."
-msgstr "파일 맵의 명암을 실시간으로 변경할 수 있습니다."
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, showSmallFiles)
-#: src/dialog.ui:275
-#, kde-format
-msgid ""
-"Some files are too small to be rendered on the filemap. Selecting this "
-"option makes these files visible by merging them all into a single \"multi-"
-"segment\"."
-msgstr ""
-"일부 파일은 맵에 나타내기 매우 작습니다. 이 옵션을 선택하면 이러한 파일을 하"
-"나로 합쳐서 '여러 파일'로 나타냅니다."
-
-#. i18n: ectx: property (text), widget (QCheckBox, showSmallFiles)
-#: src/dialog.ui:278
-#, kde-format
-msgid "Show small files"
-msgstr "작은 파일 보기"
 
 #: src/historyAction.cpp:64
 #, kde-format
@@ -300,27 +210,27 @@ msgstr "검색할 경로나 URL"
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:156
+#: src/mainContext.cpp:163
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "검사할 폴더 선택"
 
-#: src/mainContext.cpp:220
+#: src/mainContext.cpp:227
 #, kde-format
 msgid "The entered URL cannot be parsed; it is invalid."
 msgstr "입력한 URL을 해석할 수 없습니다. 잘못된 URL입니다."
 
-#: src/mainContext.cpp:222
+#: src/mainContext.cpp:229
 #, kde-format
 msgid "Filelight only accepts absolute paths, eg. /%1"
 msgstr "Filelight는 절대 경로만 받아들입니다. 예: /%1"
 
-#: src/mainContext.cpp:224
+#: src/mainContext.cpp:231
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "폴더를 찾을 수 없음: %1"
 
-#: src/mainContext.cpp:226
+#: src/mainContext.cpp:233
 #, kde-format
 msgid ""
 "Unable to enter: %1\n"
@@ -377,32 +287,40 @@ msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "설정"
 
-#: src/qml/main.qml:62
+#: src/qml/main.qml:58
+#, fuzzy, kde-format
+#| msgctxt "@action configure app"
+#| msgid "Configure…"
+msgctxt "@title:window"
+msgid "Configure"
+msgstr "설정"
+
+#: src/qml/main.qml:70
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "도움말 열기"
 
-#: src/qml/main.qml:70
+#: src/qml/main.qml:78
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr "정보"
 
-#: src/qml/main.qml:91
+#: src/qml/main.qml:99
 #, kde-format
 msgctxt "@info:status"
 msgid "No files."
 msgstr "파일이 없습니다."
 
-#: src/qml/main.qml:92
+#: src/qml/main.qml:100
 #, kde-format
 msgctxt "@info:status"
 msgid "1 file"
 msgid_plural "%1 files"
 msgstr[0] "파일 %1개"
 
-#: src/qml/main.qml:162
+#: src/qml/main.qml:170
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
@@ -538,6 +456,96 @@ msgctxt "@title"
 msgid "Welcome to Filelight"
 msgstr "Filelight에 오신 것을 환영합니다"
 
+#: src/qml/SettingsPage.qml:24
+#, fuzzy, kde-format
+#| msgid "Scannin&g"
+msgctxt "@title"
+msgid "Scanning"
+msgstr "검사(&G)"
+
+#: src/qml/SettingsPage.qml:27
+#, fuzzy, kde-format
+#| msgid "&Appearance"
+msgctxt "@title"
+msgid "Appearance"
+msgstr "모양(&A)"
+
+#: src/qml/SettingsPageAppearance.qml:16
+#, fuzzy, kde-format
+#| msgid "Color scheme"
+msgctxt "@title:group"
+msgid "Color Scheme"
+msgstr "색 배열"
+
+#: src/qml/SettingsPageAppearance.qml:25
+#, fuzzy, kde-format
+#| msgid "Rainbow"
+msgctxt "@option:radio a color scheme variant"
+msgid "Rainbow"
+msgstr "무지개색"
+
+#: src/qml/SettingsPageAppearance.qml:34
+#, fuzzy, kde-format
+#| msgid "System colors"
+msgctxt "@option:radio a color scheme variant"
+msgid "System colors"
+msgstr "시스템 색상"
+
+#: src/qml/SettingsPageAppearance.qml:43
+#, fuzzy, kde-format
+#| msgid "High contrast"
+msgctxt "@option:radio a color scheme variant"
+msgid "High contrast"
+msgstr "고대비"
+
+#: src/qml/SettingsPageAppearance.qml:52
+#, fuzzy, kde-format
+#| msgid "Co&ntrast"
+msgctxt "@label:slider"
+msgid "Contrast"
+msgstr "명암(&N):"
+
+#: src/qml/SettingsPageAppearance.qml:69
+#, fuzzy, kde-format
+#| msgid "Show small files"
+msgctxt "@checkbox"
+msgid "Show small files"
+msgstr "작은 파일 보기"
+
+#: src/qml/SettingsPageScanning.qml:23
+#, fuzzy, kde-format
+#| msgid "Do &not scan these folders:"
+msgctxt "@label"
+msgid "Do not scan these folders:"
+msgstr "다음 폴더 검사하지 않기(&N):"
+
+#: src/qml/SettingsPageScanning.qml:48
+#, fuzzy, kde-format
+#| msgid "R&emove"
+msgctxt "@action:button remove list entry"
+msgid "Remove"
+msgstr "삭제(&E)"
+
+#: src/qml/SettingsPageScanning.qml:63
+#, kde-format
+msgctxt "@action:button remove list entry"
+msgid "Add…"
+msgstr ""
+
+#: src/qml/SettingsPageScanning.qml:75
+#, fuzzy, kde-format
+#| msgid "Scan across filesystem &boundaries"
+msgctxt "@checkbox"
+msgid "Scan across filesystem boundaries"
+msgstr "다른 파일 시스템도 검사하기(&B)"
+
+#: src/qml/SettingsPageScanning.qml:86
+#, fuzzy, kde-format
+#| msgid "Exclude remote files&ystems"
+msgctxt "@checkbox"
+msgid "Exclude remote filesystems"
+msgstr "원격 파일 시스템 제외하기(&Y)"
+
 #: src/radialMap/map.cpp:58
 #, fuzzy, kde-format
 #| msgid "1 file, with an average size of %2"
@@ -550,35 +558,38 @@ msgid_plural ""
 "%1 files, with an average size of %2"
 msgstr[0] "파일 %1개, 평균 크기 %2"
 
-#: src/settingsDialog.cpp:31
-#, kde-format
-msgid "Rainbow"
-msgstr "무지개색"
+#~ msgid "Settings - Filelight"
+#~ msgstr "설정 - Filelight"
 
-#: src/settingsDialog.cpp:35
-#, kde-format
-msgid "System colors"
-msgstr "시스템 색상"
+#~ msgid "&Add..."
+#~ msgstr "추가(&A)..."
 
-#: src/settingsDialog.cpp:39
-#, kde-format
-msgid "High contrast"
-msgstr "고대비"
+#~ msgid ""
+#~ "Prevents scanning of filesystems that are not on this computer, e.g. NFS "
+#~ "or Samba mounts."
+#~ msgstr ""
+#~ "NFS나 삼바 마운트와 같은 이 컴퓨터에 있지 않은 파일 시스템을 검사하지 않습"
+#~ "니다."
 
-#: src/settingsDialog.cpp:123
-#, kde-format
-msgid "Select path to ignore"
-msgstr "무시할 경로 선택"
+#~ msgid ""
+#~ "Allows scans to enter directories that are part of other filesystems. For "
+#~ "example, when unchecked, this will usually prevent the contents of <b>/"
+#~ "mnt</b> from being scanned if you scan <b>/</b>."
+#~ msgstr ""
+#~ "다른 파일 시스템에 있는 디렉터리도 검사합니다. 예를 들어 이 옵션을 선택하"
+#~ "지 않으면 <b>/</b> 폴더를 검사할 때 <b>/mnt</b> 폴더 아래에 있는 내용을 검"
+#~ "사하지 않습니다."
 
-#: src/settingsDialog.cpp:140
-#, kde-format
-msgid "That folder is already set to be excluded from scans."
-msgstr "이 폴더는 이미 검사에서 제외되었습니다."
+#~ msgid "Here you can vary the contrast of the filemap in realtime."
+#~ msgstr "파일 맵의 명암을 실시간으로 변경할 수 있습니다."
 
-#: src/settingsDialog.cpp:140
-#, kde-format
-msgid "Folder already ignored"
-msgstr "폴더가 이미 무시됨"
+#~ msgid ""
+#~ "Some files are too small to be rendered on the filemap. Selecting this "
+#~ "option makes these files visible by merging them all into a single "
+#~ "\"multi-segment\"."
+#~ msgstr ""
+#~ "일부 파일은 맵에 나타내기 매우 작습니다. 이 옵션을 선택하면 이러한 파일을 "
+#~ "하나로 합쳐서 '여러 파일'로 나타냅니다."
 
 #~ msgid ""
 #~ "Anti-aliasing the filemap makes it clearer and prettier, unfortunately it "

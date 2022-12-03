@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-02 00:52+0000\n"
+"POT-Creation-Date: 2022-12-03 00:50+0000\n"
 "PO-Revision-Date: 2022-08-13 23:10+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -65,6 +65,21 @@ msgstr "Строка ввода пути"
 msgid "View Toolbar"
 msgstr "Панель инструментов просмотра"
 
+#: src/Config.cpp:58
+#, kde-format
+msgid "Select path to ignore"
+msgstr "Выбор игнорируемой папки"
+
+#: src/Config.cpp:71
+#, kde-format
+msgid "That folder is already set to be excluded from scans."
+msgstr "Папка уже исключена из сканируемых."
+
+#: src/Config.cpp:71
+#, kde-format
+msgid "Folder already ignored"
+msgstr "Папка уже игнорируется"
+
 #: src/contextMenuContext.cpp:63
 #, kde-format
 msgid ""
@@ -87,111 +102,6 @@ msgstr "&Удалить"
 #, kde-format
 msgid "Error while deleting"
 msgstr "При попытке удаления произошла ошибка"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, Dialog)
-#: src/dialog.ui:14
-#, kde-format
-msgid "Settings - Filelight"
-msgstr "Настройка — Filelight"
-
-#. i18n: ectx: attribute (title), widget (QWidget, Widget2)
-#: src/dialog.ui:33
-#, kde-format
-msgid "Scannin&g"
-msgstr "С&канирование"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: src/dialog.ui:45
-#, kde-format
-msgid "Do &not scan these folders:"
-msgstr "&Не сканировать следующие папки:"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_removeButton)
-#: src/dialog.ui:85
-#, kde-format
-msgid "R&emove"
-msgstr "&Удалить"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_addButton)
-#: src/dialog.ui:95
-#, kde-format
-msgid "&Add..."
-msgstr "&Добавить..."
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScanRemoteMounts)
-#: src/dialog.ui:171
-#, kde-format
-msgid ""
-"Prevents scanning of filesystems that are not on this computer, e.g. NFS or "
-"Samba mounts."
-msgstr ""
-"Не сканировать файловые системы, не находящиеся на данном компьютере, "
-"например NFS или монтирования Samba."
-
-#. i18n: ectx: property (text), widget (QCheckBox, dontScanRemoteMounts)
-#: src/dialog.ui:174
-#, kde-format
-msgid "Exclude remote files&ystems"
-msgstr "Исключить удалённые файловые системы"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, scanAcrossMounts)
-#: src/dialog.ui:181
-#, kde-format
-msgid ""
-"Allows scans to enter directories that are part of other filesystems. For "
-"example, when unchecked, this will usually prevent the contents of <b>/mnt</"
-"b> from being scanned if you scan <b>/</b>."
-msgstr ""
-"Позволяет сканировать папки, хранящиеся в других файловых системах. "
-"Например, если не отмечено, при сканировании папки <b>/</b> просканировать "
-"папку <b>/mnt</b> не удастся."
-
-#. i18n: ectx: property (text), widget (QCheckBox, scanAcrossMounts)
-#: src/dialog.ui:184
-#, kde-format
-msgid "Scan across filesystem &boundaries"
-msgstr "Разрешить выход за рамки файловой системы при сканировании"
-
-#. i18n: ectx: attribute (title), widget (QWidget, Widget3)
-#: src/dialog.ui:194
-#, kde-format
-msgid "&Appearance"
-msgstr "&Внешний вид"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: src/dialog.ui:206
-#, kde-format
-msgid "Color scheme"
-msgstr "Цвета"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel3)
-#: src/dialog.ui:232
-#, kde-format
-msgid "Co&ntrast"
-msgstr "&Контраст"
-
-#. i18n: ectx: property (whatsThis), widget (QSlider, contrastSlider)
-#: src/dialog.ui:254
-#, kde-format
-msgid "Here you can vary the contrast of the filemap in realtime."
-msgstr "Здесь вы можете изменять контраст файловой карты в реальном времени."
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, showSmallFiles)
-#: src/dialog.ui:275
-#, kde-format
-msgid ""
-"Some files are too small to be rendered on the filemap. Selecting this "
-"option makes these files visible by merging them all into a single \"multi-"
-"segment\"."
-msgstr ""
-"Некоторые файлы слишком малы для прорисовки на файловой карте. Выбор этого "
-"параметра объединяет такие файлы в «мультисегмент»."
-
-#. i18n: ectx: property (text), widget (QCheckBox, showSmallFiles)
-#: src/dialog.ui:278
-#, kde-format
-msgid "Show small files"
-msgstr "Показывать маленькие файлы"
 
 #: src/historyAction.cpp:64
 #, kde-format
@@ -306,27 +216,27 @@ msgstr "Путь или адрес URL для сканирования"
 msgid "[url]"
 msgstr "[адрес]"
 
-#: src/mainContext.cpp:156
+#: src/mainContext.cpp:163
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Выбор папки для сканирования"
 
-#: src/mainContext.cpp:220
+#: src/mainContext.cpp:227
 #, kde-format
 msgid "The entered URL cannot be parsed; it is invalid."
 msgstr "Введён недопустимый адрес."
 
-#: src/mainContext.cpp:222
+#: src/mainContext.cpp:229
 #, kde-format
 msgid "Filelight only accepts absolute paths, eg. /%1"
 msgstr "Filelight понимает только абсолютные пути, например, /%1"
 
-#: src/mainContext.cpp:224
+#: src/mainContext.cpp:231
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Папка не найдена: %1"
 
-#: src/mainContext.cpp:226
+#: src/mainContext.cpp:233
 #, kde-format
 msgid ""
 "Unable to enter: %1\n"
@@ -383,25 +293,33 @@ msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "Настроить…"
 
-#: src/qml/main.qml:62
+#: src/qml/main.qml:58
+#, fuzzy, kde-format
+#| msgctxt "@action configure app"
+#| msgid "Configure…"
+msgctxt "@title:window"
+msgid "Configure"
+msgstr "Настроить…"
+
+#: src/qml/main.qml:70
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "Открыть руководство пользователя"
 
-#: src/qml/main.qml:70
+#: src/qml/main.qml:78
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr "О программе"
 
-#: src/qml/main.qml:91
+#: src/qml/main.qml:99
 #, kde-format
 msgctxt "@info:status"
 msgid "No files."
 msgstr "Нет файлов."
 
-#: src/qml/main.qml:92
+#: src/qml/main.qml:100
 #, kde-format
 msgctxt "@info:status"
 msgid "1 file"
@@ -411,7 +329,7 @@ msgstr[1] "%1 файла"
 msgstr[2] "%1 файлов"
 msgstr[3] "%1 файл"
 
-#: src/qml/main.qml:162
+#: src/qml/main.qml:170
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
@@ -556,6 +474,96 @@ msgctxt "@title"
 msgid "Welcome to Filelight"
 msgstr "Добро пожаловать в Filelight"
 
+#: src/qml/SettingsPage.qml:24
+#, fuzzy, kde-format
+#| msgid "Scannin&g"
+msgctxt "@title"
+msgid "Scanning"
+msgstr "С&канирование"
+
+#: src/qml/SettingsPage.qml:27
+#, fuzzy, kde-format
+#| msgid "&Appearance"
+msgctxt "@title"
+msgid "Appearance"
+msgstr "&Внешний вид"
+
+#: src/qml/SettingsPageAppearance.qml:16
+#, fuzzy, kde-format
+#| msgid "Color scheme"
+msgctxt "@title:group"
+msgid "Color Scheme"
+msgstr "Цвета"
+
+#: src/qml/SettingsPageAppearance.qml:25
+#, fuzzy, kde-format
+#| msgid "Rainbow"
+msgctxt "@option:radio a color scheme variant"
+msgid "Rainbow"
+msgstr "Радуга"
+
+#: src/qml/SettingsPageAppearance.qml:34
+#, fuzzy, kde-format
+#| msgid "System colors"
+msgctxt "@option:radio a color scheme variant"
+msgid "System colors"
+msgstr "Системные цвета"
+
+#: src/qml/SettingsPageAppearance.qml:43
+#, fuzzy, kde-format
+#| msgid "High contrast"
+msgctxt "@option:radio a color scheme variant"
+msgid "High contrast"
+msgstr "Контрастные цвета"
+
+#: src/qml/SettingsPageAppearance.qml:52
+#, fuzzy, kde-format
+#| msgid "Co&ntrast"
+msgctxt "@label:slider"
+msgid "Contrast"
+msgstr "&Контраст"
+
+#: src/qml/SettingsPageAppearance.qml:69
+#, fuzzy, kde-format
+#| msgid "Show small files"
+msgctxt "@checkbox"
+msgid "Show small files"
+msgstr "Показывать маленькие файлы"
+
+#: src/qml/SettingsPageScanning.qml:23
+#, fuzzy, kde-format
+#| msgid "Do &not scan these folders:"
+msgctxt "@label"
+msgid "Do not scan these folders:"
+msgstr "&Не сканировать следующие папки:"
+
+#: src/qml/SettingsPageScanning.qml:48
+#, fuzzy, kde-format
+#| msgid "R&emove"
+msgctxt "@action:button remove list entry"
+msgid "Remove"
+msgstr "&Удалить"
+
+#: src/qml/SettingsPageScanning.qml:63
+#, kde-format
+msgctxt "@action:button remove list entry"
+msgid "Add…"
+msgstr ""
+
+#: src/qml/SettingsPageScanning.qml:75
+#, fuzzy, kde-format
+#| msgid "Scan across filesystem &boundaries"
+msgctxt "@checkbox"
+msgid "Scan across filesystem boundaries"
+msgstr "Разрешить выход за рамки файловой системы при сканировании"
+
+#: src/qml/SettingsPageScanning.qml:86
+#, fuzzy, kde-format
+#| msgid "Exclude remote files&ystems"
+msgctxt "@checkbox"
+msgid "Exclude remote filesystems"
+msgstr "Исключить удалённые файловые системы"
+
 #: src/radialMap/map.cpp:58
 #, fuzzy, kde-format
 #| msgid "1 file, with an average size of %2"
@@ -571,35 +579,39 @@ msgstr[1] "%1 файла, средний размер файла %2"
 msgstr[2] "%1 файлов, средний размер файла %2"
 msgstr[3] "%1 файл, средний размер файла %2"
 
-#: src/settingsDialog.cpp:31
-#, kde-format
-msgid "Rainbow"
-msgstr "Радуга"
+#~ msgid "Settings - Filelight"
+#~ msgstr "Настройка — Filelight"
 
-#: src/settingsDialog.cpp:35
-#, kde-format
-msgid "System colors"
-msgstr "Системные цвета"
+#~ msgid "&Add..."
+#~ msgstr "&Добавить..."
 
-#: src/settingsDialog.cpp:39
-#, kde-format
-msgid "High contrast"
-msgstr "Контрастные цвета"
+#~ msgid ""
+#~ "Prevents scanning of filesystems that are not on this computer, e.g. NFS "
+#~ "or Samba mounts."
+#~ msgstr ""
+#~ "Не сканировать файловые системы, не находящиеся на данном компьютере, "
+#~ "например NFS или монтирования Samba."
 
-#: src/settingsDialog.cpp:123
-#, kde-format
-msgid "Select path to ignore"
-msgstr "Выбор игнорируемой папки"
+#~ msgid ""
+#~ "Allows scans to enter directories that are part of other filesystems. For "
+#~ "example, when unchecked, this will usually prevent the contents of <b>/"
+#~ "mnt</b> from being scanned if you scan <b>/</b>."
+#~ msgstr ""
+#~ "Позволяет сканировать папки, хранящиеся в других файловых системах. "
+#~ "Например, если не отмечено, при сканировании папки <b>/</b> "
+#~ "просканировать папку <b>/mnt</b> не удастся."
 
-#: src/settingsDialog.cpp:140
-#, kde-format
-msgid "That folder is already set to be excluded from scans."
-msgstr "Папка уже исключена из сканируемых."
+#~ msgid "Here you can vary the contrast of the filemap in realtime."
+#~ msgstr ""
+#~ "Здесь вы можете изменять контраст файловой карты в реальном времени."
 
-#: src/settingsDialog.cpp:140
-#, kde-format
-msgid "Folder already ignored"
-msgstr "Папка уже игнорируется"
+#~ msgid ""
+#~ "Some files are too small to be rendered on the filemap. Selecting this "
+#~ "option makes these files visible by merging them all into a single "
+#~ "\"multi-segment\"."
+#~ msgstr ""
+#~ "Некоторые файлы слишком малы для прорисовки на файловой карте. Выбор "
+#~ "этого параметра объединяет такие файлы в «мультисегмент»."
 
 #~ msgid ""
 #~ "Anti-aliasing the filemap makes it clearer and prettier, unfortunately it "

@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-02 00:52+0000\n"
-"PO-Revision-Date: 2022-11-25 13:39+0100\n"
+"POT-Creation-Date: 2022-12-03 00:50+0000\n"
+"PO-Revision-Date: 2022-12-02 11:34+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -61,6 +61,21 @@ msgstr "Barra d'eines de localització"
 msgid "View Toolbar"
 msgstr "Barra d'eines de visualització"
 
+#: src/Config.cpp:58
+#, kde-format
+msgid "Select path to ignore"
+msgstr "Seleccioneu els camins a ignorar"
+
+#: src/Config.cpp:71
+#, kde-format
+msgid "That folder is already set to be excluded from scans."
+msgstr "Ja s'ha indicat que aquesta carpeta s'exclogui de les exploracions."
+
+#: src/Config.cpp:71
+#, kde-format
+msgid "Folder already ignored"
+msgstr "Carpeta ja ignorada"
+
 #: src/contextMenuContext.cpp:63
 #, kde-format
 msgid ""
@@ -84,112 +99,6 @@ msgstr "Su&primeix"
 #, kde-format
 msgid "Error while deleting"
 msgstr "Error en suprimir"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, Dialog)
-#: src/dialog.ui:14
-#, kde-format
-msgid "Settings - Filelight"
-msgstr "Configuració - Filelight"
-
-#. i18n: ectx: attribute (title), widget (QWidget, Widget2)
-#: src/dialog.ui:33
-#, kde-format
-msgid "Scannin&g"
-msgstr "E&xploració"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: src/dialog.ui:45
-#, kde-format
-msgid "Do &not scan these folders:"
-msgstr "&No exploris aquestes carpetes:"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_removeButton)
-#: src/dialog.ui:85
-#, kde-format
-msgid "R&emove"
-msgstr "&Elimina"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_addButton)
-#: src/dialog.ui:95
-#, kde-format
-msgid "&Add..."
-msgstr "&Afegeix..."
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScanRemoteMounts)
-#: src/dialog.ui:171
-#, kde-format
-msgid ""
-"Prevents scanning of filesystems that are not on this computer, e.g. NFS or "
-"Samba mounts."
-msgstr ""
-"Evita l'exploració de sistemes de fitxers que no estan en aquest ordinador, "
-"p. ex. muntatges NFS o Samba."
-
-#. i18n: ectx: property (text), widget (QCheckBox, dontScanRemoteMounts)
-#: src/dialog.ui:174
-#, kde-format
-msgid "Exclude remote files&ystems"
-msgstr "Exclou els s&istemes de fitxers remots"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, scanAcrossMounts)
-#: src/dialog.ui:181
-#, kde-format
-msgid ""
-"Allows scans to enter directories that are part of other filesystems. For "
-"example, when unchecked, this will usually prevent the contents of <b>/mnt</"
-"b> from being scanned if you scan <b>/</b>."
-msgstr ""
-"Permet que les exploracions entrin en els directoris que formen part d'un "
-"altre sistema de fitxers. Per exemple, quan no està activat, això normalment "
-"evitarà que s'explori el contingut de <b>/mnt</b> si exploreu <b>/</b>."
-
-#. i18n: ectx: property (text), widget (QCheckBox, scanAcrossMounts)
-#: src/dialog.ui:184
-#, kde-format
-msgid "Scan across filesystem &boundaries"
-msgstr "Explora a través dels &límits dels sistemes de fitxers"
-
-#. i18n: ectx: attribute (title), widget (QWidget, Widget3)
-#: src/dialog.ui:194
-#, kde-format
-msgid "&Appearance"
-msgstr "Aparen&ça"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: src/dialog.ui:206
-#, kde-format
-msgid "Color scheme"
-msgstr "Esquema de color"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel3)
-#: src/dialog.ui:232
-#, kde-format
-msgid "Co&ntrast"
-msgstr "Co&ntrast"
-
-#. i18n: ectx: property (whatsThis), widget (QSlider, contrastSlider)
-#: src/dialog.ui:254
-#, kde-format
-msgid "Here you can vary the contrast of the filemap in realtime."
-msgstr "Aquí podeu variar el contrast del mapa de fitxers en temps real."
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, showSmallFiles)
-#: src/dialog.ui:275
-#, kde-format
-msgid ""
-"Some files are too small to be rendered on the filemap. Selecting this "
-"option makes these files visible by merging them all into a single \"multi-"
-"segment\"."
-msgstr ""
-"Alguns fitxers són massa petits perquè es representin en el mapa de fitxers. "
-"Seleccionant aquesta opció fa visibles aquests fitxers barrejant-los tots en "
-"un únic «multisegment»."
-
-#. i18n: ectx: property (text), widget (QCheckBox, showSmallFiles)
-#: src/dialog.ui:278
-#, kde-format
-msgid "Show small files"
-msgstr "Mostra els fitxers petits"
 
 #: src/historyAction.cpp:64
 #, kde-format
@@ -304,28 +213,28 @@ msgstr "Camí o URL a explorar"
 msgid "[url]"
 msgstr "[URL]"
 
-#: src/mainContext.cpp:156
+#: src/mainContext.cpp:163
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Seleccioneu la carpeta a explorar"
 
-#: src/mainContext.cpp:220
+#: src/mainContext.cpp:227
 #, kde-format
 msgid "The entered URL cannot be parsed; it is invalid."
 msgstr "L'URL introduït no es pot analitzar; no és vàlid."
 
-#: src/mainContext.cpp:222
+#: src/mainContext.cpp:229
 #, kde-format
 msgid "Filelight only accepts absolute paths, eg. /%1"
 msgstr "El Filelight només accepta camins absoluts, p. ex. /%1"
 
-#: src/mainContext.cpp:224
+#: src/mainContext.cpp:231
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "No s'ha trobat la carpeta: %1"
 
 # skip-rule: ff-enter
-#: src/mainContext.cpp:226
+#: src/mainContext.cpp:233
 #, kde-format
 msgid ""
 "Unable to enter: %1\n"
@@ -382,25 +291,33 @@ msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "Configura…"
 
-#: src/qml/main.qml:62
+#: src/qml/main.qml:58
+#, fuzzy, kde-format
+#| msgctxt "@action configure app"
+#| msgid "Configure…"
+msgctxt "@title:window"
+msgid "Configure"
+msgstr "Configura…"
+
+#: src/qml/main.qml:70
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "Obre el manual"
 
-#: src/qml/main.qml:70
+#: src/qml/main.qml:78
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr "Quant al"
 
-#: src/qml/main.qml:91
+#: src/qml/main.qml:99
 #, kde-format
 msgctxt "@info:status"
 msgid "No files."
 msgstr "Sense fitxers."
 
-#: src/qml/main.qml:92
+#: src/qml/main.qml:100
 #, kde-format
 msgctxt "@info:status"
 msgid "1 file"
@@ -408,7 +325,7 @@ msgid_plural "%1 files"
 msgstr[0] "1 fitxer"
 msgstr[1] "%1 fitxers"
 
-#: src/qml/main.qml:162
+#: src/qml/main.qml:170
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
@@ -533,45 +450,142 @@ msgctxt "@title"
 msgid "Welcome to Filelight"
 msgstr "Us donem la benvinguda al Filelight"
 
-#: src/radialMap/map.cpp:58
+#: src/qml/SettingsPage.qml:24
 #, fuzzy, kde-format
-#| msgid "1 file, with an average size of %2"
-#| msgid_plural "%1 files, with an average size of %2"
+#| msgid "Scannin&g"
+msgctxt "@title"
+msgid "Scanning"
+msgstr "E&xploració"
+
+#: src/qml/SettingsPage.qml:27
+#, fuzzy, kde-format
+#| msgid "&Appearance"
+msgctxt "@title"
+msgid "Appearance"
+msgstr "Aparen&ça"
+
+#: src/qml/SettingsPageAppearance.qml:16
+#, fuzzy, kde-format
+#| msgid "Color scheme"
+msgctxt "@title:group"
+msgid "Color Scheme"
+msgstr "Esquema de color"
+
+#: src/qml/SettingsPageAppearance.qml:25
+#, fuzzy, kde-format
+#| msgid "Rainbow"
+msgctxt "@option:radio a color scheme variant"
+msgid "Rainbow"
+msgstr "Arc de Sant Martí"
+
+#: src/qml/SettingsPageAppearance.qml:34
+#, fuzzy, kde-format
+#| msgid "System colors"
+msgctxt "@option:radio a color scheme variant"
+msgid "System colors"
+msgstr "Colors del sistema"
+
+#: src/qml/SettingsPageAppearance.qml:43
+#, fuzzy, kde-format
+#| msgid "High contrast"
+msgctxt "@option:radio a color scheme variant"
+msgid "High contrast"
+msgstr "Contrast alt"
+
+#: src/qml/SettingsPageAppearance.qml:52
+#, fuzzy, kde-format
+#| msgid "Co&ntrast"
+msgctxt "@label:slider"
+msgid "Contrast"
+msgstr "Co&ntrast"
+
+#: src/qml/SettingsPageAppearance.qml:69
+#, fuzzy, kde-format
+#| msgid "Show small files"
+msgctxt "@checkbox"
+msgid "Show small files"
+msgstr "Mostra els fitxers petits"
+
+#: src/qml/SettingsPageScanning.qml:23
+#, fuzzy, kde-format
+#| msgid "Do &not scan these folders:"
+msgctxt "@label"
+msgid "Do not scan these folders:"
+msgstr "&No exploris aquestes carpetes:"
+
+#: src/qml/SettingsPageScanning.qml:48
+#, fuzzy, kde-format
+#| msgid "R&emove"
+msgctxt "@action:button remove list entry"
+msgid "Remove"
+msgstr "&Elimina"
+
+#: src/qml/SettingsPageScanning.qml:63
+#, kde-format
+msgctxt "@action:button remove list entry"
+msgid "Add…"
+msgstr ""
+
+#: src/qml/SettingsPageScanning.qml:75
+#, fuzzy, kde-format
+#| msgid "Scan across filesystem &boundaries"
+msgctxt "@checkbox"
+msgid "Scan across filesystem boundaries"
+msgstr "Explora a través dels &límits dels sistemes de fitxers"
+
+#: src/qml/SettingsPageScanning.qml:86
+#, fuzzy, kde-format
+#| msgid "Exclude remote files&ystems"
+msgctxt "@checkbox"
+msgid "Exclude remote filesystems"
+msgstr "Exclou els s&istemes de fitxers remots"
+
+#: src/radialMap/map.cpp:58
+#, kde-format
 msgid ""
 "\n"
 "%1 file, with an average size of %2"
 msgid_plural ""
 "\n"
 "%1 files, with an average size of %2"
-msgstr[0] "1 fitxer, amb una mida mitjana de %2"
-msgstr[1] "%1 fitxers, amb una mida mitjana de %2"
+msgstr[0] ""
+"\n"
+"%1 fitxer, amb una mida mitjana de %2"
+msgstr[1] ""
+"\n"
+"%1 fitxers, amb una mida mitjana de %2"
 
-#: src/settingsDialog.cpp:31
-#, kde-format
-msgid "Rainbow"
-msgstr "Arc de Sant Martí"
+#~ msgid "Settings - Filelight"
+#~ msgstr "Configuració - Filelight"
 
-#: src/settingsDialog.cpp:35
-#, kde-format
-msgid "System colors"
-msgstr "Colors del sistema"
+#~ msgid "&Add..."
+#~ msgstr "&Afegeix..."
 
-#: src/settingsDialog.cpp:39
-#, kde-format
-msgid "High contrast"
-msgstr "Contrast alt"
+#~ msgid ""
+#~ "Prevents scanning of filesystems that are not on this computer, e.g. NFS "
+#~ "or Samba mounts."
+#~ msgstr ""
+#~ "Evita l'exploració de sistemes de fitxers que no estan en aquest "
+#~ "ordinador, p. ex. muntatges NFS o Samba."
 
-#: src/settingsDialog.cpp:123
-#, kde-format
-msgid "Select path to ignore"
-msgstr "Seleccioneu els camins a ignorar"
+#~ msgid ""
+#~ "Allows scans to enter directories that are part of other filesystems. For "
+#~ "example, when unchecked, this will usually prevent the contents of <b>/"
+#~ "mnt</b> from being scanned if you scan <b>/</b>."
+#~ msgstr ""
+#~ "Permet que les exploracions entrin en els directoris que formen part d'un "
+#~ "altre sistema de fitxers. Per exemple, quan no està activat, això "
+#~ "normalment evitarà que s'explori el contingut de <b>/mnt</b> si exploreu "
+#~ "<b>/</b>."
 
-#: src/settingsDialog.cpp:140
-#, kde-format
-msgid "That folder is already set to be excluded from scans."
-msgstr "Ja s'ha indicat que aquesta carpeta s'exclogui de les exploracions."
+#~ msgid "Here you can vary the contrast of the filemap in realtime."
+#~ msgstr "Aquí podeu variar el contrast del mapa de fitxers en temps real."
 
-#: src/settingsDialog.cpp:140
-#, kde-format
-msgid "Folder already ignored"
-msgstr "Carpeta ja ignorada"
+#~ msgid ""
+#~ "Some files are too small to be rendered on the filemap. Selecting this "
+#~ "option makes these files visible by merging them all into a single "
+#~ "\"multi-segment\"."
+#~ msgstr ""
+#~ "Alguns fitxers són massa petits perquè es representin en el mapa de "
+#~ "fitxers. Seleccionant aquesta opció fa visibles aquests fitxers barrejant-"
+#~ "los tots en un únic «multisegment»."

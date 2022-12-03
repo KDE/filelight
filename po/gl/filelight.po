@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-02 00:52+0000\n"
+"POT-Creation-Date: 2022-12-03 00:50+0000\n"
 "PO-Revision-Date: 2019-03-03 20:01+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
@@ -62,6 +62,21 @@ msgstr "Barra de ferramentas de localización"
 msgid "View Toolbar"
 msgstr "Ver a barra de ferramentas"
 
+#: src/Config.cpp:58
+#, kde-format
+msgid "Select path to ignore"
+msgstr "Seleccionar unha ruta para ignorar"
+
+#: src/Config.cpp:71
+#, kde-format
+msgid "That folder is already set to be excluded from scans."
+msgstr "Ese cartafol xa está configurado para excluírse dos exames."
+
+#: src/Config.cpp:71
+#, kde-format
+msgid "Folder already ignored"
+msgstr "Ese cartafol xa se está a ignorar"
+
 #: src/contextMenuContext.cpp:63
 #, kde-format
 msgid ""
@@ -85,111 +100,6 @@ msgstr "&Eliminar"
 #, kde-format
 msgid "Error while deleting"
 msgstr "Ocorreu un erro ao eliminar"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, Dialog)
-#: src/dialog.ui:14
-#, kde-format
-msgid "Settings - Filelight"
-msgstr "Configuración de Filelight"
-
-#. i18n: ectx: attribute (title), widget (QWidget, Widget2)
-#: src/dialog.ui:33
-#, kde-format
-msgid "Scannin&g"
-msgstr "E&xame"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: src/dialog.ui:45
-#, kde-format
-msgid "Do &not scan these folders:"
-msgstr "&Non examinar estes cartafoles:"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_removeButton)
-#: src/dialog.ui:85
-#, kde-format
-msgid "R&emove"
-msgstr "&Retirar"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_addButton)
-#: src/dialog.ui:95
-#, kde-format
-msgid "&Add..."
-msgstr "E&ngadir…"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, dontScanRemoteMounts)
-#: src/dialog.ui:171
-#, kde-format
-msgid ""
-"Prevents scanning of filesystems that are not on this computer, e.g. NFS or "
-"Samba mounts."
-msgstr ""
-"Evita que se examinen os sistemas de ficheiros que non estean neste "
-"computador, p.ex. montaxes NFS ou Samba."
-
-#. i18n: ectx: property (text), widget (QCheckBox, dontScanRemoteMounts)
-#: src/dialog.ui:174
-#, kde-format
-msgid "Exclude remote files&ystems"
-msgstr "E&xcluír os sistemas de ficheiros remotos"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, scanAcrossMounts)
-#: src/dialog.ui:181
-#, kde-format
-msgid ""
-"Allows scans to enter directories that are part of other filesystems. For "
-"example, when unchecked, this will usually prevent the contents of <b>/mnt</"
-"b> from being scanned if you scan <b>/</b>."
-msgstr ""
-"Permite que os exames entren en directorios que son parte doutros sistemas "
-"de ficheiros. Por exemplo, cando se desmarca, isto xeralmente evita que o "
-"contido de <b>/mnt</b> se examine cando se estea a examinar <b>/</b>."
-
-#. i18n: ectx: property (text), widget (QCheckBox, scanAcrossMounts)
-#: src/dialog.ui:184
-#, kde-format
-msgid "Scan across filesystem &boundaries"
-msgstr "Examinar a través dos &límites dos sistemas de ficheiros"
-
-#. i18n: ectx: attribute (title), widget (QWidget, Widget3)
-#: src/dialog.ui:194
-#, kde-format
-msgid "&Appearance"
-msgstr "&Aparencia"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: src/dialog.ui:206
-#, kde-format
-msgid "Color scheme"
-msgstr "Esquema de cores"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel3)
-#: src/dialog.ui:232
-#, kde-format
-msgid "Co&ntrast"
-msgstr "Co&ntraste"
-
-#. i18n: ectx: property (whatsThis), widget (QSlider, contrastSlider)
-#: src/dialog.ui:254
-#, kde-format
-msgid "Here you can vary the contrast of the filemap in realtime."
-msgstr "Aquí pode modificar en tempo real o contraste do mapa de ficheiros."
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, showSmallFiles)
-#: src/dialog.ui:275
-#, kde-format
-msgid ""
-"Some files are too small to be rendered on the filemap. Selecting this "
-"option makes these files visible by merging them all into a single \"multi-"
-"segment\"."
-msgstr ""
-"Algúns ficheiros son pequenos de máis para poderen debuxarse no mapa. Se "
-"escolle esta opción faranse visíbeis xuntándose nun único «multisegmento»."
-
-#. i18n: ectx: property (text), widget (QCheckBox, showSmallFiles)
-#: src/dialog.ui:278
-#, kde-format
-msgid "Show small files"
-msgstr "Mostrar os ficheiros pequenos"
 
 #: src/historyAction.cpp:64
 #, kde-format
@@ -306,27 +216,27 @@ msgstr "Ruta ou URL que examinar"
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:156
+#: src/mainContext.cpp:163
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Seleccione o cartafol que quere examinar"
 
-#: src/mainContext.cpp:220
+#: src/mainContext.cpp:227
 #, kde-format
 msgid "The entered URL cannot be parsed; it is invalid."
 msgstr "O URL que inseriu non se pode procesar; é incorrecto."
 
-#: src/mainContext.cpp:222
+#: src/mainContext.cpp:229
 #, kde-format
 msgid "Filelight only accepts absolute paths, eg. /%1"
 msgstr "Filelight só acepta rutas absolutas, p.ex. /%1"
 
-#: src/mainContext.cpp:224
+#: src/mainContext.cpp:231
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Non se atopou o cartafol: %1"
 
-#: src/mainContext.cpp:226
+#: src/mainContext.cpp:233
 #, kde-format
 msgid ""
 "Unable to enter: %1\n"
@@ -387,26 +297,32 @@ msgctxt "@action configure app"
 msgid "Configure…"
 msgstr ""
 
-#: src/qml/main.qml:62
+#: src/qml/main.qml:58
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure"
+msgstr ""
+
+#: src/qml/main.qml:70
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr ""
 
-#: src/qml/main.qml:70
+#: src/qml/main.qml:78
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr ""
 
-#: src/qml/main.qml:91
+#: src/qml/main.qml:99
 #, fuzzy, kde-format
 #| msgid "No files."
 msgctxt "@info:status"
 msgid "No files."
 msgstr "Non hai ficheiros."
 
-#: src/qml/main.qml:92
+#: src/qml/main.qml:100
 #, fuzzy, kde-format
 #| msgid "1 file"
 #| msgid_plural "%1 files"
@@ -416,7 +332,7 @@ msgid_plural "%1 files"
 msgstr[0] "1 ficheiro"
 msgstr[1] "%1 ficheiros"
 
-#: src/qml/main.qml:162
+#: src/qml/main.qml:170
 #, fuzzy, kde-format
 #| msgid "Aborting Scan..."
 msgctxt "@info:status"
@@ -560,6 +476,96 @@ msgctxt "@title"
 msgid "Welcome to Filelight"
 msgstr "Filelight"
 
+#: src/qml/SettingsPage.qml:24
+#, fuzzy, kde-format
+#| msgid "Scannin&g"
+msgctxt "@title"
+msgid "Scanning"
+msgstr "E&xame"
+
+#: src/qml/SettingsPage.qml:27
+#, fuzzy, kde-format
+#| msgid "&Appearance"
+msgctxt "@title"
+msgid "Appearance"
+msgstr "&Aparencia"
+
+#: src/qml/SettingsPageAppearance.qml:16
+#, fuzzy, kde-format
+#| msgid "Color scheme"
+msgctxt "@title:group"
+msgid "Color Scheme"
+msgstr "Esquema de cores"
+
+#: src/qml/SettingsPageAppearance.qml:25
+#, fuzzy, kde-format
+#| msgid "Rainbow"
+msgctxt "@option:radio a color scheme variant"
+msgid "Rainbow"
+msgstr "Arco-da-vella"
+
+#: src/qml/SettingsPageAppearance.qml:34
+#, fuzzy, kde-format
+#| msgid "System colors"
+msgctxt "@option:radio a color scheme variant"
+msgid "System colors"
+msgstr "Cores do sistema"
+
+#: src/qml/SettingsPageAppearance.qml:43
+#, fuzzy, kde-format
+#| msgid "High contrast"
+msgctxt "@option:radio a color scheme variant"
+msgid "High contrast"
+msgstr "Contraste alto"
+
+#: src/qml/SettingsPageAppearance.qml:52
+#, fuzzy, kde-format
+#| msgid "Co&ntrast"
+msgctxt "@label:slider"
+msgid "Contrast"
+msgstr "Co&ntraste"
+
+#: src/qml/SettingsPageAppearance.qml:69
+#, fuzzy, kde-format
+#| msgid "Show small files"
+msgctxt "@checkbox"
+msgid "Show small files"
+msgstr "Mostrar os ficheiros pequenos"
+
+#: src/qml/SettingsPageScanning.qml:23
+#, fuzzy, kde-format
+#| msgid "Do &not scan these folders:"
+msgctxt "@label"
+msgid "Do not scan these folders:"
+msgstr "&Non examinar estes cartafoles:"
+
+#: src/qml/SettingsPageScanning.qml:48
+#, fuzzy, kde-format
+#| msgid "R&emove"
+msgctxt "@action:button remove list entry"
+msgid "Remove"
+msgstr "&Retirar"
+
+#: src/qml/SettingsPageScanning.qml:63
+#, kde-format
+msgctxt "@action:button remove list entry"
+msgid "Add…"
+msgstr ""
+
+#: src/qml/SettingsPageScanning.qml:75
+#, fuzzy, kde-format
+#| msgid "Scan across filesystem &boundaries"
+msgctxt "@checkbox"
+msgid "Scan across filesystem boundaries"
+msgstr "Examinar a través dos &límites dos sistemas de ficheiros"
+
+#: src/qml/SettingsPageScanning.qml:86
+#, fuzzy, kde-format
+#| msgid "Exclude remote files&ystems"
+msgctxt "@checkbox"
+msgid "Exclude remote filesystems"
+msgstr "E&xcluír os sistemas de ficheiros remotos"
+
 #: src/radialMap/map.cpp:58
 #, fuzzy, kde-format
 #| msgid "1 file, with an average size of %2"
@@ -573,35 +579,39 @@ msgid_plural ""
 msgstr[0] "1 ficheiro, cun tamaño medio de %2"
 msgstr[1] "%1 ficheiros, cun tamaño medio de %2"
 
-#: src/settingsDialog.cpp:31
-#, kde-format
-msgid "Rainbow"
-msgstr "Arco-da-vella"
+#~ msgid "Settings - Filelight"
+#~ msgstr "Configuración de Filelight"
 
-#: src/settingsDialog.cpp:35
-#, kde-format
-msgid "System colors"
-msgstr "Cores do sistema"
+#~ msgid "&Add..."
+#~ msgstr "E&ngadir…"
 
-#: src/settingsDialog.cpp:39
-#, kde-format
-msgid "High contrast"
-msgstr "Contraste alto"
+#~ msgid ""
+#~ "Prevents scanning of filesystems that are not on this computer, e.g. NFS "
+#~ "or Samba mounts."
+#~ msgstr ""
+#~ "Evita que se examinen os sistemas de ficheiros que non estean neste "
+#~ "computador, p.ex. montaxes NFS ou Samba."
 
-#: src/settingsDialog.cpp:123
-#, kde-format
-msgid "Select path to ignore"
-msgstr "Seleccionar unha ruta para ignorar"
+#~ msgid ""
+#~ "Allows scans to enter directories that are part of other filesystems. For "
+#~ "example, when unchecked, this will usually prevent the contents of <b>/"
+#~ "mnt</b> from being scanned if you scan <b>/</b>."
+#~ msgstr ""
+#~ "Permite que os exames entren en directorios que son parte doutros "
+#~ "sistemas de ficheiros. Por exemplo, cando se desmarca, isto xeralmente "
+#~ "evita que o contido de <b>/mnt</b> se examine cando se estea a examinar "
+#~ "<b>/</b>."
 
-#: src/settingsDialog.cpp:140
-#, kde-format
-msgid "That folder is already set to be excluded from scans."
-msgstr "Ese cartafol xa está configurado para excluírse dos exames."
+#~ msgid "Here you can vary the contrast of the filemap in realtime."
+#~ msgstr "Aquí pode modificar en tempo real o contraste do mapa de ficheiros."
 
-#: src/settingsDialog.cpp:140
-#, kde-format
-msgid "Folder already ignored"
-msgstr "Ese cartafol xa se está a ignorar"
+#~ msgid ""
+#~ "Some files are too small to be rendered on the filemap. Selecting this "
+#~ "option makes these files visible by merging them all into a single "
+#~ "\"multi-segment\"."
+#~ msgstr ""
+#~ "Algúns ficheiros son pequenos de máis para poderen debuxarse no mapa. Se "
+#~ "escolle esta opción faranse visíbeis xuntándose nun único «multisegmento»."
 
 #~ msgid ""
 #~ "Anti-aliasing the filemap makes it clearer and prettier, unfortunately it "
