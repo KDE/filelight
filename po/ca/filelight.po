@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-03 00:50+0000\n"
-"PO-Revision-Date: 2022-12-02 11:34+0100\n"
+"PO-Revision-Date: 2022-12-03 12:25+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -292,12 +292,10 @@ msgid "Configure…"
 msgstr "Configura…"
 
 #: src/qml/main.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@action configure app"
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr "Configura…"
+msgstr "Configura"
 
 #: src/qml/main.qml:70
 #, kde-format
@@ -451,94 +449,82 @@ msgid "Welcome to Filelight"
 msgstr "Us donem la benvinguda al Filelight"
 
 #: src/qml/SettingsPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Scannin&g"
+#, kde-format
 msgctxt "@title"
 msgid "Scanning"
-msgstr "E&xploració"
+msgstr "Exploració"
 
 #: src/qml/SettingsPage.qml:27
-#, fuzzy, kde-format
-#| msgid "&Appearance"
+#, kde-format
 msgctxt "@title"
 msgid "Appearance"
-msgstr "Aparen&ça"
+msgstr "Aparença"
 
 #: src/qml/SettingsPageAppearance.qml:16
-#, fuzzy, kde-format
-#| msgid "Color scheme"
+#, kde-format
 msgctxt "@title:group"
 msgid "Color Scheme"
 msgstr "Esquema de color"
 
 #: src/qml/SettingsPageAppearance.qml:25
-#, fuzzy, kde-format
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "Rainbow"
 msgstr "Arc de Sant Martí"
 
 #: src/qml/SettingsPageAppearance.qml:34
-#, fuzzy, kde-format
-#| msgid "System colors"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "System colors"
 msgstr "Colors del sistema"
 
 #: src/qml/SettingsPageAppearance.qml:43
-#, fuzzy, kde-format
-#| msgid "High contrast"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "High contrast"
 msgstr "Contrast alt"
 
 #: src/qml/SettingsPageAppearance.qml:52
-#, fuzzy, kde-format
-#| msgid "Co&ntrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Contrast"
-msgstr "Co&ntrast"
+msgstr "Contrast"
 
 #: src/qml/SettingsPageAppearance.qml:69
-#, fuzzy, kde-format
-#| msgid "Show small files"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "Mostra els fitxers petits"
 
 #: src/qml/SettingsPageScanning.qml:23
-#, fuzzy, kde-format
-#| msgid "Do &not scan these folders:"
+#, kde-format
 msgctxt "@label"
 msgid "Do not scan these folders:"
-msgstr "&No exploris aquestes carpetes:"
+msgstr "No exploris aquestes carpetes:"
 
 #: src/qml/SettingsPageScanning.qml:48
-#, fuzzy, kde-format
-#| msgid "R&emove"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
-msgstr "&Elimina"
+msgstr "Elimina"
 
 #: src/qml/SettingsPageScanning.qml:63
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
-msgstr ""
+msgstr "Afegeix…"
 
 #: src/qml/SettingsPageScanning.qml:75
-#, fuzzy, kde-format
-#| msgid "Scan across filesystem &boundaries"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
-msgstr "Explora a través dels &límits dels sistemes de fitxers"
+msgstr "Explora a través dels límits dels sistemes de fitxers"
 
 #: src/qml/SettingsPageScanning.qml:86
-#, fuzzy, kde-format
-#| msgid "Exclude remote files&ystems"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
-msgstr "Exclou els s&istemes de fitxers remots"
+msgstr "Exclou els sistemes de fitxers remots"
 
 #: src/radialMap/map.cpp:58
 #, kde-format

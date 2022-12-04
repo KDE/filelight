@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-03 00:50+0000\n"
-"PO-Revision-Date: 2022-12-02 08:37+0200\n"
-"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"PO-Revision-Date: 2022-12-03 14:52+0200\n"
+"Last-Translator: Fracture dept <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
@@ -290,12 +290,10 @@ msgid "Configure…"
 msgstr "Налаштувати…"
 
 #: src/qml/main.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@action configure app"
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr "Налаштувати…"
+msgstr "Налаштовування"
 
 #: src/qml/main.qml:70
 #, kde-format
@@ -457,91 +455,79 @@ msgid "Welcome to Filelight"
 msgstr "Вітаємо у Filelight"
 
 #: src/qml/SettingsPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Scannin&g"
+#, kde-format
 msgctxt "@title"
 msgid "Scanning"
-msgstr "Скан&ування"
+msgstr "Сканування"
 
 #: src/qml/SettingsPage.qml:27
-#, fuzzy, kde-format
-#| msgid "&Appearance"
+#, kde-format
 msgctxt "@title"
 msgid "Appearance"
-msgstr "&Вигляд"
+msgstr "Вигляд"
 
 #: src/qml/SettingsPageAppearance.qml:16
-#, fuzzy, kde-format
-#| msgid "Color scheme"
+#, kde-format
 msgctxt "@title:group"
 msgid "Color Scheme"
 msgstr "Схема кольорів"
 
 #: src/qml/SettingsPageAppearance.qml:25
-#, fuzzy, kde-format
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "Rainbow"
 msgstr "Райдуга"
 
 #: src/qml/SettingsPageAppearance.qml:34
-#, fuzzy, kde-format
-#| msgid "System colors"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "System colors"
 msgstr "Системні кольори"
 
 #: src/qml/SettingsPageAppearance.qml:43
-#, fuzzy, kde-format
-#| msgid "High contrast"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "High contrast"
 msgstr "Висока контрастність"
 
 #: src/qml/SettingsPageAppearance.qml:52
-#, fuzzy, kde-format
-#| msgid "Co&ntrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Contrast"
-msgstr "Ко&нтрастність"
+msgstr "Контрастність"
 
 #: src/qml/SettingsPageAppearance.qml:69
-#, fuzzy, kde-format
-#| msgid "Show small files"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "Показувати малі файли"
 
 #: src/qml/SettingsPageScanning.qml:23
-#, fuzzy, kde-format
-#| msgid "Do &not scan these folders:"
+#, kde-format
 msgctxt "@label"
 msgid "Do not scan these folders:"
 msgstr "Не сканувати ці теки:"
 
 #: src/qml/SettingsPageScanning.qml:48
-#, fuzzy, kde-format
-#| msgid "R&emove"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
-msgstr "Ви&лучити"
+msgstr "Вилучити"
 
 #: src/qml/SettingsPageScanning.qml:63
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
-msgstr ""
+msgstr "Додати…"
 
 #: src/qml/SettingsPageScanning.qml:75
-#, fuzzy, kde-format
-#| msgid "Scan across filesystem &boundaries"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
-msgstr "Сканувати за &межами поточної файлової системи"
+msgstr "Сканувати за межами поточної файлової системи"
 
 #: src/qml/SettingsPageScanning.qml:86
-#, fuzzy, kde-format
-#| msgid "Exclude remote files&ystems"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
 msgstr "Виключити віддалені файлові с&истеми"

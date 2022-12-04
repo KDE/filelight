@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdeutils-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-03 00:50+0000\n"
-"PO-Revision-Date: 2022-12-02 19:01+0300\n"
+"PO-Revision-Date: 2022-12-03 18:59+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -157,7 +157,7 @@ msgstr "Max Howell"
 #: src/main.cpp:68
 #, kde-format
 msgid "Original author"
-msgstr "İlk yazar"
+msgstr "Özgün yazar"
 
 #: src/main.cpp:69
 #, kde-format
@@ -292,12 +292,10 @@ msgid "Configure…"
 msgstr "Yapılandır…"
 
 #: src/qml/main.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@action configure app"
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr "Yapılandır…"
+msgstr "Yapılandır"
 
 #: src/qml/main.qml:70
 #, kde-format
@@ -451,94 +449,82 @@ msgid "Welcome to Filelight"
 msgstr "Filelight'a Hoş Geldiniz"
 
 #: src/qml/SettingsPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Scannin&g"
+#, kde-format
 msgctxt "@title"
 msgid "Scanning"
-msgstr "Ta&rama"
+msgstr "Tarama"
 
 #: src/qml/SettingsPage.qml:27
-#, fuzzy, kde-format
-#| msgid "&Appearance"
+#, kde-format
 msgctxt "@title"
 msgid "Appearance"
-msgstr "&Görünüş"
+msgstr "Görünüş"
 
 #: src/qml/SettingsPageAppearance.qml:16
-#, fuzzy, kde-format
-#| msgid "Color scheme"
+#, kde-format
 msgctxt "@title:group"
 msgid "Color Scheme"
-msgstr "Renk şeması"
+msgstr "Renk Şeması"
 
 #: src/qml/SettingsPageAppearance.qml:25
-#, fuzzy, kde-format
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "Rainbow"
 msgstr "Gökkuşağı"
 
 #: src/qml/SettingsPageAppearance.qml:34
-#, fuzzy, kde-format
-#| msgid "System colors"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "System colors"
 msgstr "Sistem renkleri"
 
 #: src/qml/SettingsPageAppearance.qml:43
-#, fuzzy, kde-format
-#| msgid "High contrast"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "High contrast"
 msgstr "Yüksek karşıtlık"
 
 #: src/qml/SettingsPageAppearance.qml:52
-#, fuzzy, kde-format
-#| msgid "Co&ntrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Contrast"
-msgstr "Ka&rşıtlık"
+msgstr "Karşıtlık"
 
 #: src/qml/SettingsPageAppearance.qml:69
-#, fuzzy, kde-format
-#| msgid "Show small files"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "Küçük dosyaları göster"
 
 #: src/qml/SettingsPageScanning.qml:23
-#, fuzzy, kde-format
-#| msgid "Do &not scan these folders:"
+#, kde-format
 msgctxt "@label"
 msgid "Do not scan these folders:"
-msgstr "Bu klasörleri tara&manın dışında tut:"
+msgstr "Bu klasörleri taramanın dışında tut:"
 
 #: src/qml/SettingsPageScanning.qml:48
-#, fuzzy, kde-format
-#| msgid "R&emove"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
-msgstr "&Kaldır"
+msgstr "Kaldır"
 
 #: src/qml/SettingsPageScanning.qml:63
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
-msgstr ""
+msgstr "Ekle…"
 
 #: src/qml/SettingsPageScanning.qml:75
-#, fuzzy, kde-format
-#| msgid "Scan across filesystem &boundaries"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
-msgstr "&Dosya sistemi sınırları içinde tarama yap"
+msgstr "Dosya sistemi sınırları arasında tarama yap"
 
 #: src/qml/SettingsPageScanning.qml:86
-#, fuzzy, kde-format
-#| msgid "Exclude remote files&ystems"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
-msgstr "&Uzak dosya sistemlerini hariç tut"
+msgstr "Uzak dosya sistemlerini dışarıda tut"
 
 #: src/radialMap/map.cpp:58
 #, kde-format

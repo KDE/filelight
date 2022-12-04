@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-03 00:50+0000\n"
-"PO-Revision-Date: 2022-11-26 07:49+0100\n"
+"PO-Revision-Date: 2022-12-03 07:00+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -288,12 +288,10 @@ msgid "Configure…"
 msgstr "მორგება…"
 
 #: src/qml/main.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@action configure app"
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr "მორგება…"
+msgstr "მორგება"
 
 #: src/qml/main.qml:70
 #, kde-format
@@ -447,107 +445,97 @@ msgid "Welcome to Filelight"
 msgstr "მოგესალმებით Firelight-ში"
 
 #: src/qml/SettingsPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Scannin&g"
+#, kde-format
 msgctxt "@title"
 msgid "Scanning"
-msgstr "&სკანირება"
+msgstr "სკანირება"
 
 #: src/qml/SettingsPage.qml:27
-#, fuzzy, kde-format
-#| msgid "&Appearance"
+#, kde-format
 msgctxt "@title"
 msgid "Appearance"
-msgstr "&გარეგნობა"
+msgstr "გარეგნობა"
 
 #: src/qml/SettingsPageAppearance.qml:16
-#, fuzzy, kde-format
-#| msgid "Color scheme"
+#, kde-format
 msgctxt "@title:group"
 msgid "Color Scheme"
 msgstr "ფერების სქემა"
 
 #: src/qml/SettingsPageAppearance.qml:25
-#, fuzzy, kde-format
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "Rainbow"
 msgstr "ცისარტყელა"
 
 #: src/qml/SettingsPageAppearance.qml:34
-#, fuzzy, kde-format
-#| msgid "System colors"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "System colors"
 msgstr "სისტემის ფერები"
 
 #: src/qml/SettingsPageAppearance.qml:43
-#, fuzzy, kde-format
-#| msgid "High contrast"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "High contrast"
 msgstr "მაღალი კონტრასტი"
 
 #: src/qml/SettingsPageAppearance.qml:52
-#, fuzzy, kde-format
-#| msgid "Co&ntrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Contrast"
-msgstr "&კონტრასტი"
+msgstr "კონტრასტი"
 
 #: src/qml/SettingsPageAppearance.qml:69
-#, fuzzy, kde-format
-#| msgid "Show small files"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "პატარა ფაილების ჩვენება"
 
 #: src/qml/SettingsPageScanning.qml:23
-#, fuzzy, kde-format
-#| msgid "Do &not scan these folders:"
+#, kde-format
 msgctxt "@label"
 msgid "Do not scan these folders:"
-msgstr "ეს საქაღალდეები &არ დასკანირდება:"
+msgstr "ეს საქაღალდეები არ დასკანირდება:"
 
 #: src/qml/SettingsPageScanning.qml:48
-#, fuzzy, kde-format
-#| msgid "R&emove"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
-msgstr "&წაშლა"
+msgstr "წაშლა"
 
 #: src/qml/SettingsPageScanning.qml:63
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
-msgstr ""
+msgstr "დამატება…"
 
 #: src/qml/SettingsPageScanning.qml:75
-#, fuzzy, kde-format
-#| msgid "Scan across filesystem &boundaries"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
-msgstr "ფაილური სისტემის &საზღვრებში სკანრება"
+msgstr "ფაილური სისტემის საზღვრებში სკანირება"
 
 #: src/qml/SettingsPageScanning.qml:86
-#, fuzzy, kde-format
-#| msgid "Exclude remote files&ystems"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
 msgstr "დაშორებული ფაილური სისტემების გამორიცხვა"
 
 #: src/radialMap/map.cpp:58
-#, fuzzy, kde-format
-#| msgid "1 file, with an average size of %2"
-#| msgid_plural "%1 files, with an average size of %2"
+#, kde-format
 msgid ""
 "\n"
 "%1 file, with an average size of %2"
 msgid_plural ""
 "\n"
 "%1 files, with an average size of %2"
-msgstr[0] "1 ფაილი. საშუალო ზომით %2"
-msgstr[1] "%1 ფაილი. საშუალო ზომით %2"
+msgstr[0] ""
+"\n"
+"%1 ფაილი. საშუალო ზომით %2"
+msgstr[1] ""
+"\n"
+"%1 ფაილი. საშუალო ზომით %2"
 
 #~ msgid "Settings - Filelight"
 #~ msgstr "Filelight - მორგება"

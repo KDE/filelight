@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-03 00:50+0000\n"
-"PO-Revision-Date: 2022-11-25 20:17+0100\n"
+"PO-Revision-Date: 2022-12-03 18:50+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -29,7 +29,7 @@ msgstr "Iñigo Salvador Azurmendi,Hizkuntza Politikarako Sailburuordetza"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "xalba@euskalnet.net,hizpol@ej-gv.es"
+msgstr "xalba@ni.eus,hizpol@ej-gv.es"
 
 #. i18n: ectx: Menu (file)
 #: misc/filelightui.rc:4
@@ -291,12 +291,10 @@ msgid "Configure…"
 msgstr "Konfiguratu…"
 
 #: src/qml/main.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@action configure app"
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr "Konfiguratu…"
+msgstr "Konfiguratu"
 
 #: src/qml/main.qml:70
 #, kde-format
@@ -450,107 +448,97 @@ msgid "Welcome to Filelight"
 msgstr "Ongi etorri Filelight-era"
 
 #: src/qml/SettingsPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Scannin&g"
+#, kde-format
 msgctxt "@title"
 msgid "Scanning"
-msgstr "Aztertze&n"
+msgstr "Aztertzen"
 
 #: src/qml/SettingsPage.qml:27
-#, fuzzy, kde-format
-#| msgid "&Appearance"
+#, kde-format
 msgctxt "@title"
 msgid "Appearance"
-msgstr "&Itxura"
+msgstr "Itxura"
 
 #: src/qml/SettingsPageAppearance.qml:16
-#, fuzzy, kde-format
-#| msgid "Color scheme"
+#, kde-format
 msgctxt "@title:group"
 msgid "Color Scheme"
-msgstr "Kolore-eskema"
+msgstr "Kolore-antolaera"
 
 #: src/qml/SettingsPageAppearance.qml:25
-#, fuzzy, kde-format
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "Rainbow"
 msgstr "Ostadarra"
 
 #: src/qml/SettingsPageAppearance.qml:34
-#, fuzzy, kde-format
-#| msgid "System colors"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "System colors"
 msgstr "Sistemaren koloreak"
 
 #: src/qml/SettingsPageAppearance.qml:43
-#, fuzzy, kde-format
-#| msgid "High contrast"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "High contrast"
 msgstr "Kontraste handia"
 
 #: src/qml/SettingsPageAppearance.qml:52
-#, fuzzy, kde-format
-#| msgid "Co&ntrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Contrast"
-msgstr "&Kontrastea"
+msgstr "Kontrastea"
 
 #: src/qml/SettingsPageAppearance.qml:69
-#, fuzzy, kde-format
-#| msgid "Show small files"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "Erakutsi fitxategi txikiak"
 
 #: src/qml/SettingsPageScanning.qml:23
-#, fuzzy, kde-format
-#| msgid "Do &not scan these folders:"
+#, kde-format
 msgctxt "@label"
 msgid "Do not scan these folders:"
-msgstr "E&z aztertu karpeta hauek:"
+msgstr "Ez aztertu karpeta hauek:"
 
 #: src/qml/SettingsPageScanning.qml:48
-#, fuzzy, kde-format
-#| msgid "R&emove"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
-msgstr "&Kendu"
+msgstr "Kendu"
 
 #: src/qml/SettingsPageScanning.qml:63
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
-msgstr ""
+msgstr "Gehitu…"
 
 #: src/qml/SettingsPageScanning.qml:75
-#, fuzzy, kde-format
-#| msgid "Scan across filesystem &boundaries"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
-msgstr "Aztertu fitxategi-sistemen &mugetatik harago"
+msgstr "Aztertu fitxategi-sistemen mugetatik haratago"
 
 #: src/qml/SettingsPageScanning.qml:86
-#, fuzzy, kde-format
-#| msgid "Exclude remote files&ystems"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
-msgstr "Baztertu urruneko fitxategi-&sistemak"
+msgstr "Baztertu urrutiko fitxategi-sistemak"
 
 #: src/radialMap/map.cpp:58
-#, fuzzy, kde-format
-#| msgid "1 file, with an average size of %2"
-#| msgid_plural "%1 files, with an average size of %2"
+#, kde-format
 msgid ""
 "\n"
 "%1 file, with an average size of %2"
 msgid_plural ""
 "\n"
 "%1 files, with an average size of %2"
-msgstr[0] "fitxategi 1, %2 batez besteko neurrikoa"
-msgstr[1] "%1 fitxategi, %2 batez besteko neurrikoa"
+msgstr[0] ""
+"\n"
+"fitxategi %1, %2ko batezbesteko neurrikoa"
+msgstr[1] ""
+"\n"
+"%1 fitxategi, %2ko batezbesteko neurrikoa"
 
 #~ msgid "Settings - Filelight"
 #~ msgstr "Ezarpenak - Filelight"
