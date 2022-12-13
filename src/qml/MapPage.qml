@@ -268,6 +268,7 @@ Kirigami.Page {
             antialiasing: true
             layer.enabled: true
             layer.samples: 32
+            layer.smooth: true
 
             property var zOrderedShapes: []
             property bool hasShapes: zOrderedShapes.length > 0
