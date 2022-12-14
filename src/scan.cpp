@@ -10,7 +10,6 @@
 
 #include "fileTree.h"
 #include "filelight_debug.h"
-#include "localLister.h"
 #include "remoteLister.h"
 
 #include <QCursor>

@@ -8,8 +8,6 @@
 
 #include "radialMap.h"
 
-#include "fileTree.h"
-
 #include <QUuid>
 
 RadialMap::Segment::Segment(const std::shared_ptr<File> &f, uint s, uint l, bool isFake)

@@ -26,7 +26,6 @@
 #include <KColorScheme>
 #include <KLocalizedString>
 
-#include "Config.h"
 #include "map.h"
 #include "radialMap.h" // defines
 #include "sincos.h"
