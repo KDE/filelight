@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-03 00:50+0000\n"
+"POT-Creation-Date: 2022-12-14 00:50+0000\n"
 "PO-Revision-Date: 2021-09-03 14:02+0200\n"
 "Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -417,7 +417,7 @@ msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "&Törlés"
 
-#: src/qml/MapPage.qml:295
+#: src/qml/MapPage.qml:296
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -425,7 +425,7 @@ msgid_plural "%1 Files (%2%)"
 msgstr[0] "%1 fájl (%2%)"
 msgstr[1] "%1 fájl (%2%)"
 
-#: src/qml/MapPage.qml:297
+#: src/qml/MapPage.qml:298
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -433,7 +433,7 @@ msgid_plural "%1 Files"
 msgstr[0] "%1 fájl"
 msgstr[1] "%1 fájl"
 
-#: src/qml/MapPage.qml:301
+#: src/qml/MapPage.qml:302
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -444,7 +444,7 @@ msgstr ""
 "\n"
 "Kattintson a szülő könyvtárba ugráshoz"
 
-#: src/qml/MapPage.qml:491
+#: src/qml/MapPage.qml:492
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -452,7 +452,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 fájl, %2"
 msgstr[1] "%1 fájl, %2"
 
-#: src/qml/MapPage.qml:500
+#: src/qml/MapPage.qml:501
 #, kde-format
 msgid "No data available"
 msgstr ""

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-03 00:50+0000\n"
-"PO-Revision-Date: 2022-12-01 06:51\n"
+"POT-Creation-Date: 2022-12-14 00:50+0000\n"
+"PO-Revision-Date: 2022-12-13 12:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -290,12 +290,10 @@ msgid "Configure…"
 msgstr "配置…"
 
 #: src/qml/main.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@action configure app"
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr "配置…"
+msgstr ""
 
 #: src/qml/main.qml:70
 #, kde-format
@@ -400,34 +398,34 @@ msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "删除"
 
-#: src/qml/MapPage.qml:295
+#: src/qml/MapPage.qml:296
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
 msgid_plural "%1 Files (%2%)"
 msgstr[0] "%1 个文件 (%2%)"
 
-#: src/qml/MapPage.qml:297
+#: src/qml/MapPage.qml:298
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
 msgid_plural "%1 Files"
 msgstr[0] "%1 个文件"
 
-#: src/qml/MapPage.qml:301
+#: src/qml/MapPage.qml:302
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "点击转到上一级目录"
 
-#: src/qml/MapPage.qml:491
+#: src/qml/MapPage.qml:492
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
 msgid_plural "%1 Files, %2"
 msgstr[0] "%1 个文件，%2"
 
-#: src/qml/MapPage.qml:500
+#: src/qml/MapPage.qml:501
 #, kde-format
 msgid "No data available"
 msgstr "无可用数据"
@@ -445,74 +443,64 @@ msgid "Welcome to Filelight"
 msgstr "欢迎使用 Filelight"
 
 #: src/qml/SettingsPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Scannin&g"
+#, kde-format
 msgctxt "@title"
 msgid "Scanning"
-msgstr "扫描(&G)"
+msgstr ""
 
 #: src/qml/SettingsPage.qml:27
-#, fuzzy, kde-format
-#| msgid "&Appearance"
+#, kde-format
 msgctxt "@title"
 msgid "Appearance"
-msgstr "外观(&A)"
+msgstr ""
 
 #: src/qml/SettingsPageAppearance.qml:16
-#, fuzzy, kde-format
-#| msgid "Color scheme"
+#, kde-format
 msgctxt "@title:group"
 msgid "Color Scheme"
-msgstr "配色方案"
+msgstr ""
 
 #: src/qml/SettingsPageAppearance.qml:25
-#, fuzzy, kde-format
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "Rainbow"
 msgstr "彩虹色"
 
 #: src/qml/SettingsPageAppearance.qml:34
-#, fuzzy, kde-format
-#| msgid "System colors"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "System colors"
 msgstr "系统颜色"
 
 #: src/qml/SettingsPageAppearance.qml:43
-#, fuzzy, kde-format
-#| msgid "High contrast"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "High contrast"
 msgstr "高对比度"
 
 #: src/qml/SettingsPageAppearance.qml:52
-#, fuzzy, kde-format
-#| msgid "Co&ntrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Contrast"
-msgstr "对比度(&N)"
+msgstr ""
 
 #: src/qml/SettingsPageAppearance.qml:69
-#, fuzzy, kde-format
-#| msgid "Show small files"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "显示小文件"
 
 #: src/qml/SettingsPageScanning.qml:23
-#, fuzzy, kde-format
-#| msgid "Do &not scan these folders:"
+#, kde-format
 msgctxt "@label"
 msgid "Do not scan these folders:"
-msgstr "不扫描这些文件夹(&N)："
+msgstr ""
 
 #: src/qml/SettingsPageScanning.qml:48
-#, fuzzy, kde-format
-#| msgid "R&emove"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
-msgstr "移除(&E)"
+msgstr ""
 
 #: src/qml/SettingsPageScanning.qml:63
 #, kde-format
@@ -521,57 +509,23 @@ msgid "Add…"
 msgstr ""
 
 #: src/qml/SettingsPageScanning.qml:75
-#, fuzzy, kde-format
-#| msgid "Scan across filesystem &boundaries"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
-msgstr "跨文件系统范围扫描(&B)"
+msgstr ""
 
 #: src/qml/SettingsPageScanning.qml:86
-#, fuzzy, kde-format
-#| msgid "Exclude remote files&ystems"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
-msgstr "排除远程文件系统(&Y)"
+msgstr ""
 
 #: src/radialMap/map.cpp:58
-#, fuzzy, kde-format
-#| msgid "1 file, with an average size of %2"
-#| msgid_plural "%1 files, with an average size of %2"
+#, kde-format
 msgid ""
 "\n"
 "%1 file, with an average size of %2"
 msgid_plural ""
 "\n"
 "%1 files, with an average size of %2"
-msgstr[0] "%1 个文件，平均大小为 %2"
-
-#~ msgid "Settings - Filelight"
-#~ msgstr "设置 - Filelight"
-
-#~ msgid "&Add..."
-#~ msgstr "添加(&A)..."
-
-#~ msgid ""
-#~ "Prevents scanning of filesystems that are not on this computer, e.g. NFS "
-#~ "or Samba mounts."
-#~ msgstr "禁止扫描不位于本机的文件系统，例如挂载的 NFS 或 Samba 位置。"
-
-#~ msgid ""
-#~ "Allows scans to enter directories that are part of other filesystems. For "
-#~ "example, when unchecked, this will usually prevent the contents of <b>/"
-#~ "mnt</b> from being scanned if you scan <b>/</b>."
-#~ msgstr ""
-#~ "允许进入位于其他文件系统的目录扫描。例如，当未选中时，<b>/mnt</b> 的内容会"
-#~ "在您扫描 <b>/</b> 时被排除在外。"
-
-#~ msgid "Here you can vary the contrast of the filemap in realtime."
-#~ msgstr "您可在此实时调整文件图示的对比度。"
-
-#~ msgid ""
-#~ "Some files are too small to be rendered on the filemap. Selecting this "
-#~ "option makes these files visible by merging them all into a single "
-#~ "\"multi-segment\"."
-#~ msgstr ""
-#~ "某些文件太小，无法在文件图示中显示。勾选此项后，这些小文件将被合并为一个整"
-#~ "体片段显示。"
+msgstr[0] ""

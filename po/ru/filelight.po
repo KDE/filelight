@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-03 00:50+0000\n"
+"POT-Creation-Date: 2022-12-14 00:50+0000\n"
 "PO-Revision-Date: 2022-08-13 23:10+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -416,7 +416,7 @@ msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "&Удалить"
 
-#: src/qml/MapPage.qml:295
+#: src/qml/MapPage.qml:296
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -426,7 +426,7 @@ msgstr[1] "%1 файла (%2%)"
 msgstr[2] "%1 файлов (%2%)"
 msgstr[3] "один файл (%1%)"
 
-#: src/qml/MapPage.qml:297
+#: src/qml/MapPage.qml:298
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -436,7 +436,7 @@ msgstr[1] "%1 файла"
 msgstr[2] "%1 файлов"
 msgstr[3] "один файл"
 
-#: src/qml/MapPage.qml:301
+#: src/qml/MapPage.qml:302
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -447,7 +447,7 @@ msgstr ""
 "\n"
 "Нажмите для перехода к родительскому каталогу"
 
-#: src/qml/MapPage.qml:491
+#: src/qml/MapPage.qml:492
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -457,7 +457,7 @@ msgstr[1] "%1 файла (%2%)"
 msgstr[2] "%1 файлов (%2%)"
 msgstr[3] "один файл (%1%)"
 
-#: src/qml/MapPage.qml:500
+#: src/qml/MapPage.qml:501
 #, kde-format
 msgid "No data available"
 msgstr "Нет данных"
