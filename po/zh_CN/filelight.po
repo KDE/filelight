@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-14 00:50+0000\n"
+"POT-Creation-Date: 2022-12-15 00:51+0000\n"
 "PO-Revision-Date: 2022-12-13 12:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -520,7 +520,7 @@ msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
 msgstr ""
 
-#: src/radialMap/map.cpp:58
+#: src/radialMap/map.cpp:57
 #, kde-format
 msgid ""
 "\n"

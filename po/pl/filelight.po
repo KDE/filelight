@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-14 00:50+0000\n"
+"POT-Creation-Date: 2022-12-15 00:51+0000\n"
 "PO-Revision-Date: 2022-12-10 11:18+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -528,7 +528,7 @@ msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
 msgstr "Nie przeliczaj zdalnych systemów plików"
 
-#: src/radialMap/map.cpp:58
+#: src/radialMap/map.cpp:57
 #, kde-format
 msgid ""
 "\n"
