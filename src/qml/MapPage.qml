@@ -23,6 +23,14 @@ Kirigami.Page {
     bottomPadding: 0
 
     Kirigami.Action {
+        id: goToOverviewAction
+        enabled: page.state === ""
+        iconName: "go-home"
+        text: i18nc("@action", "Go to Overview")
+        onTriggered: pageStack.currentIndex = 0
+    }
+
+    Kirigami.Action {
         id: goUpAction
         enabled: page.state === ""
         iconName: "go-up"
@@ -70,6 +78,7 @@ Kirigami.Page {
 
     contextualActions: MainContext.historyActions.concat([
         goUpAction,
+        goToOverviewAction,
         rescanAction,
         stopAction,
         zoomInAction,

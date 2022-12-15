@@ -17,6 +17,12 @@ Kirigami.ApplicationWindow {
     property var mapPage: null
 
     title: pageStack.currentItem.url !== undefined ? pageStack.currentItem.url : ''
+    pageStack.globalToolBar.showNavigationButtons: {
+        if (pageStack.currentItem instanceof MapPage) {
+            return Kirigami.ApplicationHeaderStyle.NoNavigationButtons
+        }
+        return (Kirigami.ApplicationHeaderStyle.ShowBackButton | Kirigami.ApplicationHeaderStyle.ShowForwardButton)
+    }
 
     Kirigami.Action {
         id: scanFolderAction
