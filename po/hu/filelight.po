@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-15 00:51+0000\n"
+"POT-Creation-Date: 2022-12-16 00:54+0000\n"
 "PO-Revision-Date: 2021-09-03 14:02+0200\n"
 "Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -260,65 +260,65 @@ msgctxt "@item:inmenu"
 msgid "Help"
 msgstr ""
 
-#: src/qml/main.qml:24
+#: src/qml/main.qml:30
 #, fuzzy, kde-format
 #| msgid "Scan Folder"
 msgctxt "@action"
 msgid "Scan Folder"
 msgstr "Mappa"
 
-#: src/qml/main.qml:31
+#: src/qml/main.qml:37
 #, fuzzy, kde-format
 #| msgid "Scan &Home Folder"
 msgctxt "@action"
 msgid "Scan Home Folder"
 msgstr "Sa&ját mappa"
 
-#: src/qml/main.qml:38
+#: src/qml/main.qml:44
 #, fuzzy, kde-format
 #| msgid "Scan &Root Folder"
 msgctxt "@action"
 msgid "Scan Root Folder"
 msgstr "Gyöké&rkönyvtár"
 
-#: src/qml/main.qml:45
+#: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr ""
 
-#: src/qml/main.qml:53
+#: src/qml/main.qml:59
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr ""
 
-#: src/qml/main.qml:58
+#: src/qml/main.qml:64
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr ""
 
-#: src/qml/main.qml:70
+#: src/qml/main.qml:76
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr ""
 
-#: src/qml/main.qml:78
+#: src/qml/main.qml:84
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr ""
 
-#: src/qml/main.qml:99
+#: src/qml/main.qml:105
 #, fuzzy, kde-format
 #| msgid "No files."
 msgctxt "@info:status"
 msgid "No files."
 msgstr "Nincsenek fájlok."
 
-#: src/qml/main.qml:100
+#: src/qml/main.qml:106
 #, fuzzy, kde-format
 #| msgid "1 file"
 #| msgid_plural "%1 files"
@@ -328,7 +328,7 @@ msgid_plural "%1 files"
 msgstr[0] "1 fájl"
 msgstr[1] "%1 fájl"
 
-#: src/qml/main.qml:170
+#: src/qml/main.qml:176
 #, fuzzy, kde-format
 #| msgid "Aborting Scan..."
 msgctxt "@info:status"
@@ -338,36 +338,42 @@ msgstr "Keresés megszakítása…"
 #: src/qml/MapPage.qml:29
 #, kde-format
 msgctxt "@action"
+msgid "Go to Overview"
+msgstr ""
+
+#: src/qml/MapPage.qml:37
+#, kde-format
+msgctxt "@action"
 msgid "Up"
 msgstr ""
 
-#: src/qml/MapPage.qml:38
+#: src/qml/MapPage.qml:46
 #, fuzzy, kde-format
 #| msgid "Rescan"
 msgctxt "@action"
 msgid "Rescan"
 msgstr "Újraolvasás"
 
-#: src/qml/MapPage.qml:47
+#: src/qml/MapPage.qml:55
 #, fuzzy, kde-format
 #| msgid "Stop"
 msgctxt "@action"
 msgid "Stop"
 msgstr "Leállítás"
 
-#: src/qml/MapPage.qml:55
+#: src/qml/MapPage.qml:63
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr ""
 
-#: src/qml/MapPage.qml:65
+#: src/qml/MapPage.qml:73
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr ""
 
-#: src/qml/MapPage.qml:95 src/qml/MapPage.qml:213
+#: src/qml/MapPage.qml:104 src/qml/MapPage.qml:222
 #, fuzzy, kde-format
 #| msgctxt "Scan/open the path of the selected element"
 #| msgid "&Open"
@@ -375,49 +381,49 @@ msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "Megny&itás"
 
-#: src/qml/MapPage.qml:103 src/qml/MapPage.qml:221
+#: src/qml/MapPage.qml:112 src/qml/MapPage.qml:230
 #, fuzzy, kde-format
 #| msgid "Open &Terminal Here"
 msgctxt "@action"
 msgid "Open Terminal Here"
 msgstr "&Terminál megnyitása itt"
 
-#: src/qml/MapPage.qml:111
+#: src/qml/MapPage.qml:120
 #, fuzzy, kde-format
 #| msgid "&Center Map Here"
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "Gra&fikon középpontját ide"
 
-#: src/qml/MapPage.qml:122 src/qml/MapPage.qml:229
+#: src/qml/MapPage.qml:131 src/qml/MapPage.qml:238
 #, fuzzy, kde-format
 #| msgid "Add to Do &Not Scan List"
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "Hozzáadás a kihagy&ni kívántak listájához"
 
-#: src/qml/MapPage.qml:130
+#: src/qml/MapPage.qml:139
 #, fuzzy, kde-format
 #| msgid "Rescan"
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Újraolvasás"
 
-#: src/qml/MapPage.qml:137 src/qml/MapPage.qml:236
+#: src/qml/MapPage.qml:146 src/qml/MapPage.qml:245
 #, fuzzy, kde-format
 #| msgid "&Copy to clipboard"
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "Másolás a &vágólapra"
 
-#: src/qml/MapPage.qml:144 src/qml/MapPage.qml:243
+#: src/qml/MapPage.qml:153 src/qml/MapPage.qml:252
 #, fuzzy, kde-format
 #| msgid "&Delete"
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "&Törlés"
 
-#: src/qml/MapPage.qml:296
+#: src/qml/MapPage.qml:305
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -425,7 +431,7 @@ msgid_plural "%1 Files (%2%)"
 msgstr[0] "%1 fájl (%2%)"
 msgstr[1] "%1 fájl (%2%)"
 
-#: src/qml/MapPage.qml:298
+#: src/qml/MapPage.qml:307
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -433,7 +439,7 @@ msgid_plural "%1 Files"
 msgstr[0] "%1 fájl"
 msgstr[1] "%1 fájl"
 
-#: src/qml/MapPage.qml:302
+#: src/qml/MapPage.qml:311
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -444,7 +450,7 @@ msgstr ""
 "\n"
 "Kattintson a szülő könyvtárba ugráshoz"
 
-#: src/qml/MapPage.qml:492
+#: src/qml/MapPage.qml:501
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -452,7 +458,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 fájl, %2"
 msgstr[1] "%1 fájl, %2"
 
-#: src/qml/MapPage.qml:501
+#: src/qml/MapPage.qml:510
 #, kde-format
 msgid "No data available"
 msgstr ""

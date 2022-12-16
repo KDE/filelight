@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-15 00:51+0000\n"
+"POT-Creation-Date: 2022-12-16 00:54+0000\n"
 "PO-Revision-Date: 2022-07-03 14:28+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -256,37 +256,37 @@ msgctxt "@item:inmenu"
 msgid "Help"
 msgstr "Kömək"
 
-#: src/qml/main.qml:24
+#: src/qml/main.qml:30
 #, kde-format
 msgctxt "@action"
 msgid "Scan Folder"
 msgstr "Qovluğu analiz edin"
 
-#: src/qml/main.qml:31
+#: src/qml/main.qml:37
 #, kde-format
 msgctxt "@action"
 msgid "Scan Home Folder"
 msgstr "Ev qovluğunu analiz edin"
 
-#: src/qml/main.qml:38
+#: src/qml/main.qml:44
 #, kde-format
 msgctxt "@action"
 msgid "Scan Root Folder"
 msgstr "Kök qovluğunu analiz edin"
 
-#: src/qml/main.qml:45
+#: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr "Çıxış"
 
-#: src/qml/main.qml:53
+#: src/qml/main.qml:59
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "Tənzimləyin..."
 
-#: src/qml/main.qml:58
+#: src/qml/main.qml:64
 #, fuzzy, kde-format
 #| msgctxt "@action configure app"
 #| msgid "Configure…"
@@ -294,25 +294,25 @@ msgctxt "@title:window"
 msgid "Configure"
 msgstr "Tənzimləyin..."
 
-#: src/qml/main.qml:70
+#: src/qml/main.qml:76
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "Sorğu kitabçasını açın"
 
-#: src/qml/main.qml:78
+#: src/qml/main.qml:84
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr "Haqqında"
 
-#: src/qml/main.qml:99
+#: src/qml/main.qml:105
 #, kde-format
 msgctxt "@info:status"
 msgid "No files."
 msgstr "Fayllar yoxdur.."
 
-#: src/qml/main.qml:100
+#: src/qml/main.qml:106
 #, kde-format
 msgctxt "@info:status"
 msgid "1 file"
@@ -320,43 +320,51 @@ msgid_plural "%1 files"
 msgstr[0] "%1 fayl"
 msgstr[1] "%1 fayl"
 
-#: src/qml/main.qml:170
+#: src/qml/main.qml:176
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
 msgstr "Analiz ləğv edilir..."
 
 #: src/qml/MapPage.qml:29
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Overview"
+msgctxt "@action"
+msgid "Go to Overview"
+msgstr "sÜmumi baxış"
+
+#: src/qml/MapPage.qml:37
 #, kde-format
 msgctxt "@action"
 msgid "Up"
 msgstr "Yuxarı"
 
-#: src/qml/MapPage.qml:38
+#: src/qml/MapPage.qml:46
 #, kde-format
 msgctxt "@action"
 msgid "Rescan"
 msgstr "Təkrar analiz edin"
 
-#: src/qml/MapPage.qml:47
+#: src/qml/MapPage.qml:55
 #, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "Dayandırın"
 
-#: src/qml/MapPage.qml:55
+#: src/qml/MapPage.qml:63
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "Yaxınlaşdırın"
 
-#: src/qml/MapPage.qml:65
+#: src/qml/MapPage.qml:73
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Uzaqlaşdırın"
 
-#: src/qml/MapPage.qml:95 src/qml/MapPage.qml:213
+#: src/qml/MapPage.qml:104 src/qml/MapPage.qml:222
 #, fuzzy, kde-format
 #| msgctxt "Scan/open the path of the selected element"
 #| msgid "&Open"
@@ -364,28 +372,28 @@ msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "&Açmaq"
 
-#: src/qml/MapPage.qml:103 src/qml/MapPage.qml:221
+#: src/qml/MapPage.qml:112 src/qml/MapPage.qml:230
 #, fuzzy, kde-format
 #| msgid "Open &Terminal Here"
 msgctxt "@action"
 msgid "Open Terminal Here"
 msgstr "&Terminalı bu qovluqda açmaq"
 
-#: src/qml/MapPage.qml:111
+#: src/qml/MapPage.qml:120
 #, fuzzy, kde-format
 #| msgid "&Center Map Here"
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "&Seçilmiş qovluğa keçid"
 
-#: src/qml/MapPage.qml:122 src/qml/MapPage.qml:229
+#: src/qml/MapPage.qml:131 src/qml/MapPage.qml:238
 #, fuzzy, kde-format
 #| msgid "Add to Do &Not Scan List"
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "\"Axtarmamaq\" siyahısına əlavə etmək"
 
-#: src/qml/MapPage.qml:130
+#: src/qml/MapPage.qml:139
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Rescan"
@@ -393,21 +401,21 @@ msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Təkrar analiz edin"
 
-#: src/qml/MapPage.qml:137 src/qml/MapPage.qml:236
+#: src/qml/MapPage.qml:146 src/qml/MapPage.qml:245
 #, fuzzy, kde-format
 #| msgid "&Copy to clipboard"
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "&Mübadilə buferinə kopyalamaq"
 
-#: src/qml/MapPage.qml:144 src/qml/MapPage.qml:243
+#: src/qml/MapPage.qml:153 src/qml/MapPage.qml:252
 #, fuzzy, kde-format
 #| msgid "&Delete"
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "&silin"
 
-#: src/qml/MapPage.qml:296
+#: src/qml/MapPage.qml:305
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -415,7 +423,7 @@ msgid_plural "%1 Files (%2%)"
 msgstr[0] "%1 Fayl (%2%)"
 msgstr[1] "%1 Fayl (%2%)"
 
-#: src/qml/MapPage.qml:298
+#: src/qml/MapPage.qml:307
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -423,7 +431,7 @@ msgid_plural "%1 Files"
 msgstr[0] "%1 Fayl"
 msgstr[1] "%1 Fayl"
 
-#: src/qml/MapPage.qml:302
+#: src/qml/MapPage.qml:311
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -434,7 +442,7 @@ msgstr ""
 "\n"
 "Ana qovluğa keçid üçün vurun"
 
-#: src/qml/MapPage.qml:492
+#: src/qml/MapPage.qml:501
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -442,7 +450,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 Fayl, %2"
 msgstr[1] "%1 Fayl, %2"
 
-#: src/qml/MapPage.qml:501
+#: src/qml/MapPage.qml:510
 #, kde-format
 msgid "No data available"
 msgstr "Əlçatan məlumat yoxdur"

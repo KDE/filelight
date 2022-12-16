@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-15 00:51+0000\n"
+"POT-Creation-Date: 2022-12-16 00:54+0000\n"
 "PO-Revision-Date: 2022-12-04 07:39+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -260,61 +260,61 @@ msgctxt "@item:inmenu"
 msgid "Help"
 msgstr "Pomoč"
 
-#: src/qml/main.qml:24
+#: src/qml/main.qml:30
 #, kde-format
 msgctxt "@action"
 msgid "Scan Folder"
 msgstr "Preišči mapo"
 
-#: src/qml/main.qml:31
+#: src/qml/main.qml:37
 #, kde-format
 msgctxt "@action"
 msgid "Scan Home Folder"
 msgstr "Preišči domačo mapo"
 
-#: src/qml/main.qml:38
+#: src/qml/main.qml:44
 #, kde-format
 msgctxt "@action"
 msgid "Scan Root Folder"
 msgstr "Preišči korensko mapo"
 
-#: src/qml/main.qml:45
+#: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr "Zapusti"
 
-#: src/qml/main.qml:53
+#: src/qml/main.qml:59
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "Konfiguriraj…"
 
-#: src/qml/main.qml:58
+#: src/qml/main.qml:64
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "Konfiguriraj"
 
-#: src/qml/main.qml:70
+#: src/qml/main.qml:76
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "Odpri priročnik"
 
-#: src/qml/main.qml:78
+#: src/qml/main.qml:84
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr "O programu"
 
-#: src/qml/main.qml:99
+#: src/qml/main.qml:105
 #, kde-format
 msgctxt "@info:status"
 msgid "No files."
 msgstr "Ni datotek."
 
-#: src/qml/main.qml:100
+#: src/qml/main.qml:106
 #, kde-format
 msgctxt "@info:status"
 msgid "1 file"
@@ -324,85 +324,93 @@ msgstr[1] "%1 datoteki"
 msgstr[2] "%1 datoteke"
 msgstr[3] "%1 datotek"
 
-#: src/qml/main.qml:170
+#: src/qml/main.qml:176
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
 msgstr "Prekinjanje preiskovanja..."
 
 #: src/qml/MapPage.qml:29
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Overview"
+msgctxt "@action"
+msgid "Go to Overview"
+msgstr "Pregled"
+
+#: src/qml/MapPage.qml:37
 #, kde-format
 msgctxt "@action"
 msgid "Up"
 msgstr "Gor"
 
-#: src/qml/MapPage.qml:38
+#: src/qml/MapPage.qml:46
 #, kde-format
 msgctxt "@action"
 msgid "Rescan"
 msgstr "Znova preišči"
 
-#: src/qml/MapPage.qml:47
+#: src/qml/MapPage.qml:55
 #, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "Zaustavi"
 
-#: src/qml/MapPage.qml:55
+#: src/qml/MapPage.qml:63
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "Povečaj"
 
-#: src/qml/MapPage.qml:65
+#: src/qml/MapPage.qml:73
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Pomanjšaj"
 
-#: src/qml/MapPage.qml:95 src/qml/MapPage.qml:213
+#: src/qml/MapPage.qml:104 src/qml/MapPage.qml:222
 #, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "Odpri"
 
-#: src/qml/MapPage.qml:103 src/qml/MapPage.qml:221
+#: src/qml/MapPage.qml:112 src/qml/MapPage.qml:230
 #, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
 msgstr "Tu odpri terminal"
 
-#: src/qml/MapPage.qml:111
+#: src/qml/MapPage.qml:120
 #, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "Tu usredini mapo"
 
-#: src/qml/MapPage.qml:122 src/qml/MapPage.qml:229
+#: src/qml/MapPage.qml:131 src/qml/MapPage.qml:238
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "Dodaj na seznam Ne skeniraj"
 
-#: src/qml/MapPage.qml:130
+#: src/qml/MapPage.qml:139
 #, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Znova preišči"
 
-#: src/qml/MapPage.qml:137 src/qml/MapPage.qml:236
+#: src/qml/MapPage.qml:146 src/qml/MapPage.qml:245
 #, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "Kopiraj na odložišče"
 
-#: src/qml/MapPage.qml:144 src/qml/MapPage.qml:243
+#: src/qml/MapPage.qml:153 src/qml/MapPage.qml:252
 #, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "Izbriši"
 
-#: src/qml/MapPage.qml:296
+#: src/qml/MapPage.qml:305
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -412,7 +420,7 @@ msgstr[1] "%1 Datoteki (%2%)"
 msgstr[2] "%1 Datoteke (%2%)"
 msgstr[3] "%1 Datotek (%2%)"
 
-#: src/qml/MapPage.qml:298
+#: src/qml/MapPage.qml:307
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -422,13 +430,13 @@ msgstr[1] "%1 datoteki"
 msgstr[2] "%1 datoteke"
 msgstr[3] "%1 datotek"
 
-#: src/qml/MapPage.qml:302
+#: src/qml/MapPage.qml:311
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "Kliknite za premik v nadrejeno mapo"
 
-#: src/qml/MapPage.qml:492
+#: src/qml/MapPage.qml:501
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -438,7 +446,7 @@ msgstr[1] "%1 Datoteki %2%"
 msgstr[2] "%1 Datoteke %2%"
 msgstr[3] "%1 Datotek %2%"
 
-#: src/qml/MapPage.qml:501
+#: src/qml/MapPage.qml:510
 #, kde-format
 msgid "No data available"
 msgstr "Podatkov ni na voljo"

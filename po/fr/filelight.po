@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-15 00:51+0000\n"
+"POT-Creation-Date: 2022-12-16 00:54+0000\n"
 "PO-Revision-Date: 2022-12-04 18:26+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -266,61 +266,61 @@ msgctxt "@item:inmenu"
 msgid "Help"
 msgstr "Aide"
 
-#: src/qml/main.qml:24
+#: src/qml/main.qml:30
 #, kde-format
 msgctxt "@action"
 msgid "Scan Folder"
 msgstr "Analyser un dossier"
 
-#: src/qml/main.qml:31
+#: src/qml/main.qml:37
 #, kde-format
 msgctxt "@action"
 msgid "Scan Home Folder"
 msgstr "Analyser le dossier personnel"
 
-#: src/qml/main.qml:38
+#: src/qml/main.qml:44
 #, kde-format
 msgctxt "@action"
 msgid "Scan Root Folder"
 msgstr "Analyser le dossier racine"
 
-#: src/qml/main.qml:45
+#: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr "Quitter"
 
-#: src/qml/main.qml:53
+#: src/qml/main.qml:59
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "Configurer..."
 
-#: src/qml/main.qml:58
+#: src/qml/main.qml:64
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "Configurer"
 
-#: src/qml/main.qml:70
+#: src/qml/main.qml:76
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "Ouvrir un manuel utilisateur "
 
-#: src/qml/main.qml:78
+#: src/qml/main.qml:84
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr "À propos"
 
-#: src/qml/main.qml:99
+#: src/qml/main.qml:105
 #, kde-format
 msgctxt "@info:status"
 msgid "No files."
 msgstr "Aucun fichier."
 
-#: src/qml/main.qml:100
+#: src/qml/main.qml:106
 #, kde-format
 msgctxt "@info:status"
 msgid "1 file"
@@ -328,85 +328,93 @@ msgid_plural "%1 files"
 msgstr[0] "1 fichier"
 msgstr[1] "%1 fichiers"
 
-#: src/qml/main.qml:170
+#: src/qml/main.qml:176
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
 msgstr "Annulation de l'analyse en cours..."
 
 #: src/qml/MapPage.qml:29
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Overview"
+msgctxt "@action"
+msgid "Go to Overview"
+msgstr "Vue d'ensemble"
+
+#: src/qml/MapPage.qml:37
 #, kde-format
 msgctxt "@action"
 msgid "Up"
 msgstr "Haut"
 
-#: src/qml/MapPage.qml:38
+#: src/qml/MapPage.qml:46
 #, kde-format
 msgctxt "@action"
 msgid "Rescan"
 msgstr "Analyser à nouveau"
 
-#: src/qml/MapPage.qml:47
+#: src/qml/MapPage.qml:55
 #, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "Arrêter"
 
-#: src/qml/MapPage.qml:55
+#: src/qml/MapPage.qml:63
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "Zoom avant"
 
-#: src/qml/MapPage.qml:65
+#: src/qml/MapPage.qml:73
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Zoom arrière"
 
-#: src/qml/MapPage.qml:95 src/qml/MapPage.qml:213
+#: src/qml/MapPage.qml:104 src/qml/MapPage.qml:222
 #, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "Ouvrir"
 
-#: src/qml/MapPage.qml:103 src/qml/MapPage.qml:221
+#: src/qml/MapPage.qml:112 src/qml/MapPage.qml:230
 #, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
 msgstr "Ouvrir le terminal ici"
 
-#: src/qml/MapPage.qml:111
+#: src/qml/MapPage.qml:120
 #, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "Centrer la carte ici"
 
-#: src/qml/MapPage.qml:122 src/qml/MapPage.qml:229
+#: src/qml/MapPage.qml:131 src/qml/MapPage.qml:238
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "Ajouter à la liste des éléments à ne pas balayer"
 
-#: src/qml/MapPage.qml:130
+#: src/qml/MapPage.qml:139
 #, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Analyser à nouveau"
 
-#: src/qml/MapPage.qml:137 src/qml/MapPage.qml:236
+#: src/qml/MapPage.qml:146 src/qml/MapPage.qml:245
 #, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "Copier dans le presse-papier"
 
-#: src/qml/MapPage.qml:144 src/qml/MapPage.qml:243
+#: src/qml/MapPage.qml:153 src/qml/MapPage.qml:252
 #, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "Supprimer"
 
-#: src/qml/MapPage.qml:296
+#: src/qml/MapPage.qml:305
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -414,7 +422,7 @@ msgid_plural "%1 Files (%2%)"
 msgstr[0] "%1 fichier (%2 %)"
 msgstr[1] "%1 fichiers (%2 %)"
 
-#: src/qml/MapPage.qml:298
+#: src/qml/MapPage.qml:307
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -422,13 +430,13 @@ msgid_plural "%1 Files"
 msgstr[0] "%1 fichier"
 msgstr[1] "%1 fichiers"
 
-#: src/qml/MapPage.qml:302
+#: src/qml/MapPage.qml:311
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "Cliquez pour remonter au dossier parent"
 
-#: src/qml/MapPage.qml:492
+#: src/qml/MapPage.qml:501
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -436,7 +444,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 fichier, %2 %"
 msgstr[1] "%1 fichiers, %2"
 
-#: src/qml/MapPage.qml:501
+#: src/qml/MapPage.qml:510
 #, kde-format
 msgid "No data available"
 msgstr "Aucune donnée disponible"

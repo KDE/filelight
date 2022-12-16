@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-15 00:51+0000\n"
+"POT-Creation-Date: 2022-12-16 00:54+0000\n"
 "PO-Revision-Date: 2022-12-06 19:56+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -256,61 +256,61 @@ msgctxt "@item:inmenu"
 msgid "Help"
 msgstr "உதவி"
 
-#: src/qml/main.qml:24
+#: src/qml/main.qml:30
 #, kde-format
 msgctxt "@action"
 msgid "Scan Folder"
 msgstr "அடைவை ஆராய்"
 
-#: src/qml/main.qml:31
+#: src/qml/main.qml:37
 #, kde-format
 msgctxt "@action"
 msgid "Scan Home Folder"
 msgstr "முகப்பு அடைவை ஆராய்"
 
-#: src/qml/main.qml:38
+#: src/qml/main.qml:44
 #, kde-format
 msgctxt "@action"
 msgid "Scan Root Folder"
 msgstr "ரூட் அடைவை ஆராய்"
 
-#: src/qml/main.qml:45
+#: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr "வெளியேறு"
 
-#: src/qml/main.qml:53
+#: src/qml/main.qml:59
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "அமை..."
 
-#: src/qml/main.qml:58
+#: src/qml/main.qml:64
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "அமைப்புகள்"
 
-#: src/qml/main.qml:70
+#: src/qml/main.qml:76
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "கையேட்டைத் திற"
 
-#: src/qml/main.qml:78
+#: src/qml/main.qml:84
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr "இதுபற்றி"
 
-#: src/qml/main.qml:99
+#: src/qml/main.qml:105
 #, kde-format
 msgctxt "@info:status"
 msgid "No files."
 msgstr "கோப்புகள் இல்லை."
 
-#: src/qml/main.qml:100
+#: src/qml/main.qml:106
 #, kde-format
 msgctxt "@info:status"
 msgid "1 file"
@@ -318,85 +318,93 @@ msgid_plural "%1 files"
 msgstr[0] "1 கோப்பு"
 msgstr[1] "%1 கோப்புகள்"
 
-#: src/qml/main.qml:170
+#: src/qml/main.qml:176
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
 msgstr "ஆராய்தல் கைவிடப்படுகிறது…"
 
 #: src/qml/MapPage.qml:29
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Overview"
+msgctxt "@action"
+msgid "Go to Overview"
+msgstr "மேலோட்டம்"
+
+#: src/qml/MapPage.qml:37
 #, kde-format
 msgctxt "@action"
 msgid "Up"
 msgstr "மேலே"
 
-#: src/qml/MapPage.qml:38
+#: src/qml/MapPage.qml:46
 #, kde-format
 msgctxt "@action"
 msgid "Rescan"
 msgstr "மீள ஆராய்"
 
-#: src/qml/MapPage.qml:47
+#: src/qml/MapPage.qml:55
 #, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "நிறுத்து"
 
-#: src/qml/MapPage.qml:55
+#: src/qml/MapPage.qml:63
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "பெரிதாக்கு"
 
-#: src/qml/MapPage.qml:65
+#: src/qml/MapPage.qml:73
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "சிறிதாக்கு"
 
-#: src/qml/MapPage.qml:95 src/qml/MapPage.qml:213
+#: src/qml/MapPage.qml:104 src/qml/MapPage.qml:222
 #, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "திற"
 
-#: src/qml/MapPage.qml:103 src/qml/MapPage.qml:221
+#: src/qml/MapPage.qml:112 src/qml/MapPage.qml:230
 #, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
 msgstr "முனையத்தை இங்கு திற"
 
-#: src/qml/MapPage.qml:111
+#: src/qml/MapPage.qml:120
 #, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "வரைபடத்தை இங்கு நடுப்படுத்து"
 
-#: src/qml/MapPage.qml:122 src/qml/MapPage.qml:229
+#: src/qml/MapPage.qml:131 src/qml/MapPage.qml:238
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "ஆராயக்கூடாவற்றின் பட்டியலில் சேர்"
 
-#: src/qml/MapPage.qml:130
+#: src/qml/MapPage.qml:139
 #, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "மீள ஆராய்"
 
-#: src/qml/MapPage.qml:137 src/qml/MapPage.qml:236
+#: src/qml/MapPage.qml:146 src/qml/MapPage.qml:245
 #, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "பிடிப்புப்பலகைக்கு நகலெடு"
 
-#: src/qml/MapPage.qml:144 src/qml/MapPage.qml:243
+#: src/qml/MapPage.qml:153 src/qml/MapPage.qml:252
 #, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "அழி"
 
-#: src/qml/MapPage.qml:296
+#: src/qml/MapPage.qml:305
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -404,7 +412,7 @@ msgid_plural "%1 Files (%2%)"
 msgstr[0] "%1 கோப்பு (%2%)"
 msgstr[1] "%1 கோப்புகள் (%2%)"
 
-#: src/qml/MapPage.qml:298
+#: src/qml/MapPage.qml:307
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -412,13 +420,13 @@ msgid_plural "%1 Files"
 msgstr[0] "%1 கோப்பு"
 msgstr[1] "%1 கோப்புகள்"
 
-#: src/qml/MapPage.qml:302
+#: src/qml/MapPage.qml:311
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "தாய் அடைவுக்குச் செல்ல கிளிக் செய்யவும்"
 
-#: src/qml/MapPage.qml:492
+#: src/qml/MapPage.qml:501
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -426,7 +434,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 கோப்பு, %2"
 msgstr[1] "%1 கோப்புகள், %2"
 
-#: src/qml/MapPage.qml:501
+#: src/qml/MapPage.qml:510
 #, kde-format
 msgid "No data available"
 msgstr "விவரங்கள் கிடைக்கவில்லை"
