@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-16 00:54+0000\n"
-"PO-Revision-Date: 2022-12-03 12:25+0100\n"
+"PO-Revision-Date: 2022-12-16 14:31+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -330,12 +330,10 @@ msgid "Aborting Scan..."
 msgstr "S'està interrompent l'exploració..."
 
 #: src/qml/MapPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Overview"
+#, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
-msgstr "Vista general"
+msgstr "Ves a la vista general"
 
 #: src/qml/MapPage.qml:37
 #, kde-format
@@ -548,38 +546,3 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 fitxers, amb una mida mitjana de %2"
-
-#~ msgid "Settings - Filelight"
-#~ msgstr "Configuració - Filelight"
-
-#~ msgid "&Add..."
-#~ msgstr "&Afegeix..."
-
-#~ msgid ""
-#~ "Prevents scanning of filesystems that are not on this computer, e.g. NFS "
-#~ "or Samba mounts."
-#~ msgstr ""
-#~ "Evita l'exploració de sistemes de fitxers que no estan en aquest "
-#~ "ordinador, p. ex. muntatges NFS o Samba."
-
-#~ msgid ""
-#~ "Allows scans to enter directories that are part of other filesystems. For "
-#~ "example, when unchecked, this will usually prevent the contents of <b>/"
-#~ "mnt</b> from being scanned if you scan <b>/</b>."
-#~ msgstr ""
-#~ "Permet que les exploracions entrin en els directoris que formen part d'un "
-#~ "altre sistema de fitxers. Per exemple, quan no està activat, això "
-#~ "normalment evitarà que s'explori el contingut de <b>/mnt</b> si exploreu "
-#~ "<b>/</b>."
-
-#~ msgid "Here you can vary the contrast of the filemap in realtime."
-#~ msgstr "Aquí podeu variar el contrast del mapa de fitxers en temps real."
-
-#~ msgid ""
-#~ "Some files are too small to be rendered on the filemap. Selecting this "
-#~ "option makes these files visible by merging them all into a single "
-#~ "\"multi-segment\"."
-#~ msgstr ""
-#~ "Alguns fitxers són massa petits perquè es representin en el mapa de "
-#~ "fitxers. Seleccionant aquesta opció fa visibles aquests fitxers barrejant-"
-#~ "los tots en un únic «multisegment»."
