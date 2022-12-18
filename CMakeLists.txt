@@ -50,6 +50,7 @@ find_package(KF5DocTools) # Optional, not needed on Windows for example.
 find_package(KF5QQC2DesktopStyle ${KF5_MIN_VERSION})
 set_package_properties(KF5QQC2DesktopStyle PROPERTIES TYPE RUNTIME)
 
+ecm_find_qmlmodule(org.kde.kcoreaddons 1.0)
 ecm_find_qmlmodule(org.kde.kirigami 2.19)
 ecm_find_qmlmodule(org.kde.quickcharts 1.0)
 
