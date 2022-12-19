@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-16 00:54+0000\n"
-"PO-Revision-Date: 2022-08-13 23:10+0300\n"
+"PO-Revision-Date: 2022-12-18 11:12+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.04.3\n"
+"X-Generator: Lokalize 21.08.3\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -28,12 +28,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Александр Поташев"
+msgstr "Александр Поташев, Павел Чернышов"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "aspotashev@gmail.com"
+msgstr "aspotashev@gmail.com, farline99@yandex.ru"
 
 #. i18n: ectx: Menu (file)
 #: misc/filelightui.rc:4
@@ -294,12 +294,10 @@ msgid "Configure…"
 msgstr "Настроить…"
 
 #: src/qml/main.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@action configure app"
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr "Настроить…"
+msgstr "Настройка"
 
 #: src/qml/main.qml:76
 #, kde-format
@@ -336,12 +334,10 @@ msgid "Aborting Scan..."
 msgstr "Остановка сканирования…"
 
 #: src/qml/MapPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Overview"
+#, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
-msgstr "Обзор"
+msgstr "Перейти на главную страницу"
 
 #: src/qml/MapPage.qml:37
 #, kde-format
@@ -374,55 +370,46 @@ msgid "Zoom Out"
 msgstr "Уменьшить масштаб"
 
 #: src/qml/MapPage.qml:104 src/qml/MapPage.qml:222
-#, fuzzy, kde-format
-#| msgctxt "Scan/open the path of the selected element"
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
-msgstr "&Открыть"
+msgstr "Открыть"
 
 #: src/qml/MapPage.qml:112 src/qml/MapPage.qml:230
-#, fuzzy, kde-format
-#| msgid "Open &Terminal Here"
+#, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
 msgstr "Открыть терминал в этой папке"
 
 #: src/qml/MapPage.qml:120
-#, fuzzy, kde-format
-#| msgid "&Center Map Here"
+#, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
-msgstr "&Перейти в выбранную папку"
+msgstr "Перейти в выбранную папку"
 
 #: src/qml/MapPage.qml:131 src/qml/MapPage.qml:238
-#, fuzzy, kde-format
-#| msgid "Add to Do &Not Scan List"
+#, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "Добавить в список исключений"
 
 #: src/qml/MapPage.qml:139
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Обновить"
 
 #: src/qml/MapPage.qml:146 src/qml/MapPage.qml:245
-#, fuzzy, kde-format
-#| msgid "&Copy to clipboard"
+#, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
-msgstr "&Копировать"
+msgstr "Копировать в буфер обмена"
 
 #: src/qml/MapPage.qml:153 src/qml/MapPage.qml:252
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
-msgstr "&Удалить"
+msgstr "Удалить"
 
 #: src/qml/MapPage.qml:305
 #, kde-format
@@ -445,15 +432,10 @@ msgstr[2] "%1 файлов"
 msgstr[3] "один файл"
 
 #: src/qml/MapPage.qml:311
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Click to go up to parent directory"
+#, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
-msgstr ""
-"\n"
-"Нажмите для перехода к родительскому каталогу"
+msgstr "Нажмите для перехода к родительскому каталогу"
 
 #: src/qml/MapPage.qml:501
 #, kde-format
@@ -483,109 +465,103 @@ msgid "Welcome to Filelight"
 msgstr "Добро пожаловать в Filelight"
 
 #: src/qml/SettingsPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Scannin&g"
+#, kde-format
 msgctxt "@title"
 msgid "Scanning"
-msgstr "С&канирование"
+msgstr "Сканирование"
 
 #: src/qml/SettingsPage.qml:27
-#, fuzzy, kde-format
-#| msgid "&Appearance"
+#, kde-format
 msgctxt "@title"
 msgid "Appearance"
-msgstr "&Внешний вид"
+msgstr "Внешний вид"
 
 #: src/qml/SettingsPageAppearance.qml:16
-#, fuzzy, kde-format
-#| msgid "Color scheme"
+#, kde-format
 msgctxt "@title:group"
 msgid "Color Scheme"
-msgstr "Цвета"
+msgstr "Цветовое оформление"
 
 #: src/qml/SettingsPageAppearance.qml:25
-#, fuzzy, kde-format
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "Rainbow"
 msgstr "Радуга"
 
 #: src/qml/SettingsPageAppearance.qml:34
-#, fuzzy, kde-format
-#| msgid "System colors"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "System colors"
-msgstr "Системные цвета"
+msgstr "Как в системе"
 
 #: src/qml/SettingsPageAppearance.qml:43
-#, fuzzy, kde-format
-#| msgid "High contrast"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "High contrast"
-msgstr "Контрастные цвета"
+msgstr "Высококонтрастное"
 
 #: src/qml/SettingsPageAppearance.qml:52
-#, fuzzy, kde-format
-#| msgid "Co&ntrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Contrast"
-msgstr "&Контраст"
+msgstr "Контрастность"
 
 #: src/qml/SettingsPageAppearance.qml:69
-#, fuzzy, kde-format
-#| msgid "Show small files"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "Показывать маленькие файлы"
 
 #: src/qml/SettingsPageScanning.qml:23
-#, fuzzy, kde-format
-#| msgid "Do &not scan these folders:"
+#, kde-format
 msgctxt "@label"
 msgid "Do not scan these folders:"
-msgstr "&Не сканировать следующие папки:"
+msgstr "Исключить следующие папки:"
 
 #: src/qml/SettingsPageScanning.qml:48
-#, fuzzy, kde-format
-#| msgid "R&emove"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
-msgstr "&Удалить"
+msgstr "Убрать из списка"
 
 #: src/qml/SettingsPageScanning.qml:63
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
-msgstr ""
+msgstr "Добавить папку…"
 
 #: src/qml/SettingsPageScanning.qml:75
-#, fuzzy, kde-format
-#| msgid "Scan across filesystem &boundaries"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
 msgstr "Разрешить выход за рамки файловой системы при сканировании"
 
 #: src/qml/SettingsPageScanning.qml:86
-#, fuzzy, kde-format
-#| msgid "Exclude remote files&ystems"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
 msgstr "Исключить удалённые файловые системы"
 
 #: src/radialMap/map.cpp:57
-#, fuzzy, kde-format
-#| msgid "1 file, with an average size of %2"
-#| msgid_plural "%1 files, with an average size of %2"
+#, kde-format
 msgid ""
 "\n"
 "%1 file, with an average size of %2"
 msgid_plural ""
 "\n"
 "%1 files, with an average size of %2"
-msgstr[0] "%1 файл, средний размер файла %2"
-msgstr[1] "%1 файла, средний размер файла %2"
-msgstr[2] "%1 файлов, средний размер файла %2"
-msgstr[3] "%1 файл, средний размер файла %2"
+msgstr[0] ""
+"\n"
+"%1 файл, средний размер файла %2"
+msgstr[1] ""
+"\n"
+"%1 файла, средний размер файла %2"
+msgstr[2] ""
+"\n"
+"%1 файлов, средний размер файла %2"
+msgstr[3] ""
+"\n"
+"%1 файл, средний размер файла %2"
 
 #~ msgid "Settings - Filelight"
 #~ msgstr "Настройка — Filelight"
