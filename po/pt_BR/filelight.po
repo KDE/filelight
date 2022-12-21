@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-30 00:49+0000\n"
-"PO-Revision-Date: 2022-07-14 09:32-0300\n"
+"PO-Revision-Date: 2022-12-20 11:06-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -512,7 +512,7 @@ msgstr "Abrir o &gerenciador de arquivos aqui"
 #: src/radialMap/item.cpp:210
 #, kde-format
 msgid "Open &Terminal Here"
-msgstr "Abrir o &terminal aqui"
+msgstr "Abrir &terminal aqui"
 
 #: src/radialMap/item.cpp:215
 #, kde-format
