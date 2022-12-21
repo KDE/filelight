@@ -66,6 +66,7 @@
   <summary xml:lang="nl">Schijfgebruik tonen en ongebruikte bestanden verwijderen</summary>
   <summary xml:lang="pl">Pokaż wykorzystanie dysku i usuń nieużywane pliki</summary>
   <summary xml:lang="pt">Mostra a utilização do disco e apagar ficheiros não usados</summary>
+  <summary xml:lang="pt-BR">Mostra o uso do disco e exclui arquivos não utilizados</summary>
   <summary xml:lang="ru">Просмотр сведений об использовании дискового пространства и удаление неиспользуемых файлов</summary>
   <summary xml:lang="sk">Zobraziť využitie disku a vymazať nepoužité súbory</summary>
   <summary xml:lang="sl">Prikazuje rabo diska in briše neuporabljene datoteke</summary>
@@ -251,6 +252,7 @@
       <li xml:lang="nl">Integratie in bestandsbeheerders Dolphin, Konqueror en Krusader</li>
       <li xml:lang="pl">Integracja z przeglądarkami plików takimi jak: Dolphin, Konqueror i Krusader</li>
       <li xml:lang="pt">Integração com os gestores de ficheiros Dolphin, Konqueror e Krusader</li>
+      <li xml:lang="pt-BR">Integração com os gerenciadores de arquivo Dolphin, Konqueror e Krusader</li>
       <li xml:lang="ru">Встраивание в диспетчеры файлов Dolphin, Konqueror и Krusader;</li>
       <li xml:lang="sk">Integrácia do správcov súborov Dolphin, Konqueror a Krusader</li>
       <li xml:lang="sl">Vključitev v upravljalnike datotek Dolphin, Konqueror in Krusader</li>
