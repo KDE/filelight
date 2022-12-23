@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-16 00:54+0000\n"
-"PO-Revision-Date: 2022-11-26 11:15+0400\n"
+"PO-Revision-Date: 2022-12-22 12:35+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -286,12 +286,10 @@ msgid "Configure…"
 msgstr "اضبط…"
 
 #: src/qml/main.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@action configure app"
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr "اضبط…"
+msgstr "اضبط"
 
 #: src/qml/main.qml:76
 #, kde-format
@@ -330,12 +328,10 @@ msgid "Aborting Scan..."
 msgstr "أجهض المسح..."
 
 #: src/qml/MapPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Overview"
+#, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
-msgstr "نظرة عامة"
+msgstr "انتقل إلى نظرة عامة"
 
 #: src/qml/MapPage.qml:37
 #, kde-format
@@ -469,111 +465,109 @@ msgid "Welcome to Filelight"
 msgstr "أهلا وسهلا في كشاف الملفات"
 
 #: src/qml/SettingsPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Scannin&g"
+#, kde-format
 msgctxt "@title"
 msgid "Scanning"
-msgstr "ي&كتشف..."
+msgstr "يكتشف"
 
 #: src/qml/SettingsPage.qml:27
-#, fuzzy, kde-format
-#| msgid "&Appearance"
+#, kde-format
 msgctxt "@title"
 msgid "Appearance"
-msgstr "الم&ظهر"
+msgstr "المظهر"
 
 #: src/qml/SettingsPageAppearance.qml:16
-#, fuzzy, kde-format
-#| msgid "Color scheme"
+#, kde-format
 msgctxt "@title:group"
 msgid "Color Scheme"
 msgstr "مخطّط الألوان"
 
 #: src/qml/SettingsPageAppearance.qml:25
-#, fuzzy, kde-format
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "Rainbow"
 msgstr "قوس قزح"
 
 #: src/qml/SettingsPageAppearance.qml:34
-#, fuzzy, kde-format
-#| msgid "System colors"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "System colors"
 msgstr "ألوان النظام"
 
 #: src/qml/SettingsPageAppearance.qml:43
-#, fuzzy, kde-format
-#| msgid "High contrast"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "High contrast"
 msgstr "تباين عالٍ"
 
 #: src/qml/SettingsPageAppearance.qml:52
-#, fuzzy, kde-format
-#| msgid "Co&ntrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Contrast"
-msgstr "ال&تباين"
+msgstr "التباين"
 
 #: src/qml/SettingsPageAppearance.qml:69
-#, fuzzy, kde-format
-#| msgid "Show small files"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "أعرض الملفات الصغيرة"
 
 #: src/qml/SettingsPageScanning.qml:23
-#, fuzzy, kde-format
-#| msgid "Do &not scan these folders:"
+#, kde-format
 msgctxt "@label"
 msgid "Do not scan these folders:"
-msgstr "لا &تمسح هذه الملفَات أو المجلَدات:"
+msgstr "لا تمسح هذه الملفَات أو المجلَدات:"
 
 #: src/qml/SettingsPageScanning.qml:48
-#, fuzzy, kde-format
-#| msgid "R&emove"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
-msgstr "أ&زل"
+msgstr "أزل"
 
 #: src/qml/SettingsPageScanning.qml:63
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
-msgstr ""
+msgstr "أضف…"
 
 #: src/qml/SettingsPageScanning.qml:75
-#, fuzzy, kde-format
-#| msgid "Scan across filesystem &boundaries"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
-msgstr "امسح &عابراً حدود نظام الملفات"
+msgstr "امسح عابراً حدود نظام الملفات"
 
 #: src/qml/SettingsPageScanning.qml:86
-#, fuzzy, kde-format
-#| msgid "Exclude remote files&ystems"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
-msgstr "استثنِ أنظمة الملفات ال&بعيدة"
+msgstr "استثنِ أنظمة الملفات البعيدة"
 
 #: src/radialMap/map.cpp:57
-#, fuzzy, kde-format
-#| msgid "1 file, with an average size of %2"
-#| msgid_plural "%1 files, with an average size of %2"
+#, kde-format
 msgid ""
 "\n"
 "%1 file, with an average size of %2"
 msgid_plural ""
 "\n"
 "%1 files, with an average size of %2"
-msgstr[0] "لا يوجد ملف، بحجم متوسط %2"
-msgstr[1] "ملف واحد، بحجم متوسط %2"
-msgstr[2] "ملفان، بحجم متوسط %2"
-msgstr[3] "%1 ملفات، بحجم متوسط %2"
-msgstr[4] "%1 ملفا، بحجم متوسط %2"
-msgstr[5] "%1 ملف، بحجم متوسط %2"
+msgstr[0] ""
+"\n"
+"لا يوجد ملف، بحجم متوسط %2"
+msgstr[1] ""
+"\n"
+"ملف واحد، بحجم متوسط %2"
+msgstr[2] ""
+"\n"
+"ملفان، بحجم متوسط %2"
+msgstr[3] ""
+"\n"
+"%1 ملفات، بحجم متوسط %2"
+msgstr[4] ""
+"\n"
+"%1 ملفا، بحجم متوسط %2"
+msgstr[5] ""
+"\n"
+"%1 ملف، بحجم متوسط %2"
 
 #~ msgid "Settings - Filelight"
 #~ msgstr "إعدادات - كشاف الملفات"
