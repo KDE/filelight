@@ -145,7 +145,7 @@ public:
     }
 
     /// removes a file
-    void remove(const std::shared_ptr<Folder> &f)
+    void remove(const std::shared_ptr<File> &f)
     {
         files.removeAll(f);
         const FileSize childSize = f->size();

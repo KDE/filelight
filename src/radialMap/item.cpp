@@ -284,7 +284,7 @@ void RadialMap::Item::deleteJobFinished(KJob *job)
     QApplication::restoreOverrideCursor();
     setEnabled(true);
     if (!job->error() && m_toBeDeleted) {
-        m_toBeDeleted->file()->parent()->remove(std::dynamic_pointer_cast<Folder>(m_toBeDeleted->file()));
+        m_toBeDeleted->file()->parent()->remove(std::dynamic_pointer_cast<File>(m_toBeDeleted->file()));
         m_toBeDeleted = nullptr;
         m_focus = nullptr;
         m_map.make(m_tree, true);
