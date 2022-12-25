@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-16 00:54+0000\n"
-"PO-Revision-Date: 2022-12-13 12:20\n"
+"PO-Revision-Date: 2022-12-24 11:42\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -327,12 +327,10 @@ msgid "Aborting Scan..."
 msgstr "正在中止扫描..."
 
 #: src/qml/MapPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Overview"
+#, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
-msgstr "概览"
+msgstr ""
 
 #: src/qml/MapPage.qml:37
 #, kde-format
