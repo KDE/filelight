@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-16 00:54+0000\n"
-"PO-Revision-Date: 2022-07-05 17:24+0900\n"
+"PO-Revision-Date: 2022-12-26 02:52+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
 "Language: zh_TW\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 22.04.2\n"
+"X-Generator: Lokalize 22.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -289,12 +289,10 @@ msgid "Configure…"
 msgstr "設定…"
 
 #: src/qml/main.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@action configure app"
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr "設定…"
+msgstr "設定"
 
 #: src/qml/main.qml:76
 #, kde-format
@@ -312,7 +310,7 @@ msgstr "關於"
 #, kde-format
 msgctxt "@info:status"
 msgid "No files."
-msgstr "No files."
+msgstr "沒有檔案。"
 
 #: src/qml/main.qml:106
 #, kde-format
@@ -328,9 +326,7 @@ msgid "Aborting Scan..."
 msgstr "正在取消掃描…"
 
 #: src/qml/MapPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Overview"
+#, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
 msgstr "概覽"
@@ -366,55 +362,46 @@ msgid "Zoom Out"
 msgstr "縮小"
 
 #: src/qml/MapPage.qml:104 src/qml/MapPage.qml:222
-#, fuzzy, kde-format
-#| msgctxt "Scan/open the path of the selected element"
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
-msgstr "開啟(&O)"
+msgstr "開啟"
 
 #: src/qml/MapPage.qml:112 src/qml/MapPage.qml:230
-#, fuzzy, kde-format
-#| msgid "Open &Terminal Here"
+#, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
-msgstr "在這裡開啟終端機(&T)"
+msgstr "在此開啟終端機"
 
 #: src/qml/MapPage.qml:120
-#, fuzzy, kde-format
-#| msgid "&Center Map Here"
+#, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
-msgstr "將地圖置中(&C)"
+msgstr "將地圖置中至此"
 
 #: src/qml/MapPage.qml:131 src/qml/MapPage.qml:238
-#, fuzzy, kde-format
-#| msgid "Add to Do &Not Scan List"
+#, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
-msgstr "新增到不要掃描清單(&N)"
+msgstr "新增到不要掃描清單"
 
 #: src/qml/MapPage.qml:139
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "重新掃描"
 
 #: src/qml/MapPage.qml:146 src/qml/MapPage.qml:245
-#, fuzzy, kde-format
-#| msgid "&Copy to clipboard"
+#, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
-msgstr "複製到剪貼簿(&C)"
+msgstr "複製到剪貼簿"
 
 #: src/qml/MapPage.qml:153 src/qml/MapPage.qml:252
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
-msgstr "刪除(&D)"
+msgstr "刪除"
 
 #: src/qml/MapPage.qml:305
 #, kde-format
@@ -431,15 +418,10 @@ msgid_plural "%1 Files"
 msgstr[0] "%1 個檔案"
 
 #: src/qml/MapPage.qml:311
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Click to go up to parent directory"
+#, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
-msgstr ""
-"\n"
-"按一下回到上層目錄"
+msgstr "按一下回到上層目錄"
 
 #: src/qml/MapPage.qml:501
 #, kde-format
@@ -466,106 +448,94 @@ msgid "Welcome to Filelight"
 msgstr "歡迎使用 Filelight"
 
 #: src/qml/SettingsPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Scannin&g"
+#, kde-format
 msgctxt "@title"
 msgid "Scanning"
-msgstr "掃瞄中(&G)"
+msgstr "掃瞄中"
 
 #: src/qml/SettingsPage.qml:27
-#, fuzzy, kde-format
-#| msgid "&Appearance"
+#, kde-format
 msgctxt "@title"
 msgid "Appearance"
-msgstr "外觀(&A)"
+msgstr "外觀"
 
 #: src/qml/SettingsPageAppearance.qml:16
-#, fuzzy, kde-format
-#| msgid "Color scheme"
+#, kde-format
 msgctxt "@title:group"
 msgid "Color Scheme"
 msgstr "配色"
 
 #: src/qml/SettingsPageAppearance.qml:25
-#, fuzzy, kde-format
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "Rainbow"
 msgstr "彩虹"
 
 #: src/qml/SettingsPageAppearance.qml:34
-#, fuzzy, kde-format
-#| msgid "System colors"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "System colors"
 msgstr "系統顏色"
 
 #: src/qml/SettingsPageAppearance.qml:43
-#, fuzzy, kde-format
-#| msgid "High contrast"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "High contrast"
 msgstr "高對比"
 
 #: src/qml/SettingsPageAppearance.qml:52
-#, fuzzy, kde-format
-#| msgid "Co&ntrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Contrast"
-msgstr "對比(&N)"
+msgstr "對比"
 
 #: src/qml/SettingsPageAppearance.qml:69
-#, fuzzy, kde-format
-#| msgid "Show small files"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "顯示小檔案"
 
 #: src/qml/SettingsPageScanning.qml:23
-#, fuzzy, kde-format
-#| msgid "Do &not scan these folders:"
+#, kde-format
 msgctxt "@label"
 msgid "Do not scan these folders:"
-msgstr "不要掃描這些資料夾(&N)："
+msgstr "不要掃描這些資料夾："
 
 #: src/qml/SettingsPageScanning.qml:48
-#, fuzzy, kde-format
-#| msgid "R&emove"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
-msgstr "移除(&E)"
+msgstr "移除"
 
 #: src/qml/SettingsPageScanning.qml:63
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
-msgstr ""
+msgstr "新增…"
 
 #: src/qml/SettingsPageScanning.qml:75
-#, fuzzy, kde-format
-#| msgid "Scan across filesystem &boundaries"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
-msgstr "允許掃描跨越檔案系統(&B)"
+msgstr "允許掃描跨越檔案系統"
 
 #: src/qml/SettingsPageScanning.qml:86
-#, fuzzy, kde-format
-#| msgid "Exclude remote files&ystems"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
-msgstr "排除遠端檔案系統(&Y)"
+msgstr "排除遠端檔案系統"
 
 #: src/radialMap/map.cpp:57
-#, fuzzy, kde-format
-#| msgid "1 file, with an average size of %2"
-#| msgid_plural "%1 files, with an average size of %2"
+#, kde-format
 msgid ""
 "\n"
 "%1 file, with an average size of %2"
 msgid_plural ""
 "\n"
 "%1 files, with an average size of %2"
-msgstr[0] "%1 個檔案，平均大小為 %2"
+msgstr[0] ""
+"\n"
+"%1 個檔案，平均大小為 %2"
 
 #~ msgid "Settings - Filelight"
 #~ msgstr "設定 - Filelight"
