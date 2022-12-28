@@ -25,3 +25,4 @@ if(CMAKE_SYSTEM_NAME MATCHES "Linux")
     # Fails on freebsd for unknown reasons -> only run it on linux.
     ecm_add_test(localListerTest.cpp TEST_NAME localListerTest LINK_LIBRARIES Qt::Test filelightInternal)
 endif()
+ecm_add_test(scanManagerTest.cpp TEST_NAME scanManagerTest LINK_LIBRARIES Qt::Test filelightInternal)
