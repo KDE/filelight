@@ -21,7 +21,7 @@ class TestFileTree : public QObject
 public:
     TestFileTree();
 
-private:
+private Q_SLOTS:
     void testFileName();
     void testFileSize();
     void testFilePath();
