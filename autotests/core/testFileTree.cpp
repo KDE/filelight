@@ -30,4 +30,22 @@ void TestFileTree::testFilePath()
     QVERIFY(!fpath.isEmpty());
 }
 
+void TestFileTree::testDuplicate()
+{
+    auto foo = std::make_shared<Folder>("foo/");
+    auto bar = std::make_shared<Folder>("bar/");
+    auto file = std::make_shared<Folder>("file/");
+    auto light = std::make_shared<Folder>("light/");
+    bar->append("onion", 1024);
+    light->append("torch", 128);
+    file->append(light);
+    foo->append(bar);
+    foo->append(file);
+    foo->append("shallot", 512);
+    auto other = foo->duplicate();
+    qDebug() << other->size();
+    QCOMPARE(other->size(), foo->size());
+    QCOMPARE(other->children(), foo->children());
+}
+
 QTEST_MAIN(TestFileTree)
