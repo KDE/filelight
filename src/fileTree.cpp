@@ -12,6 +12,7 @@
 #include <QUrl>
 
 #include "fileCleaner.h"
+#include "filelight_debug.h"
 
 Folder::~Folder()
 {
@@ -51,4 +52,45 @@ QUrl File::url(const std::shared_ptr<Folder> &root) const
     }
 
     return QUrl::fromUserInput(path, QString(), QUrl::AssumeLocalFile);
+}
+
+void Folder::clone(const Folder *that, std::shared_ptr<Folder> other)
+{
+    struct Clone {
+        const Folder *source;
+        std::shared_ptr<Folder> target;
+        std::shared_ptr<Folder> parent;
+    };
+    QList<Clone> completedClones;
+    QList<Clone> clones({{that, other, nullptr}});
+    while (!clones.isEmpty()) {
+        const auto &clone = clones.takeLast();
+        for (const auto &file : clone.source->files) {
+            if (file->isFolder()) {
+                auto folder = std::dynamic_pointer_cast<Folder>(file);
+                clones.append(Clone{folder.get(), std::make_shared<Folder>(folder->m_name.constData()), clone.target});
+            } else {
+                clone.target->append(file->m_name.constData(), file->m_size);
+            }
+        }
+        completedClones.append(clone);
+    }
+    for (auto it = completedClones.rbegin(); it != completedClones.rend(); ++it) {
+        // Appending forwards the size data, it must only happen after all duplicating is done so the sizes are known.
+        // And obviously in reverse order of existence in the tree.
+        auto clone = *it;
+        if (clone.parent) {
+            clone.parent->append(clone.target);
+        }
+    }
+}
+
+std::shared_ptr<Folder> Folder::duplicate() const
+{
+    // We completely detach the subtree upon duplication, otherwise we'd have parent pointers pointing back into
+    // the old tree causing major headaches when trying to keep clean object states. This does take longer
+    // because we need to create additional objects, but is safer overall.
+    auto other = std::make_shared<Folder>(m_name.constData());
+    clone(this, other);
+    return other;
 }

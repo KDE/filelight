@@ -25,6 +25,7 @@ private:
     void testFileName();
     void testFileSize();
     void testFilePath();
+    void testDuplicate();
 
 private:
     std::unique_ptr<File> fl;

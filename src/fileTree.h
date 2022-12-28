@@ -119,10 +119,10 @@ public:
         return true;
     }
 
-    std::shared_ptr<Folder> duplicate() const
-    {
-        return std::make_shared<Folder>(*this);
-    }
+    // Separate **static** function so we don't risk using this when we should be using clone.source!
+    static void clone(const Folder *that, std::shared_ptr<Folder> other);
+
+    std::shared_ptr<Folder> duplicate() const;
 
     /// appends a Folder
     void append(const std::shared_ptr<Folder> &d, const char *name = nullptr)
