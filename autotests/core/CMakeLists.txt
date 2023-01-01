@@ -1,3 +1,7 @@
+if(NOT UNIX)
+    return()
+endif()
+
 SET(FILENAME_TEST_SRCS
     testFileTree.cpp
 )
