@@ -133,7 +133,12 @@ std::shared_ptr<Folder> LocalLister::scan(const QByteArray &path, const QByteArr
             returnedCwds[i] = scan(subDirectories[i].first, subDirectories[i].second);
             semaphore.release(1);
         };
-        if (!QThreadPool::globalInstance()->tryStart(scanSubdir)) {
+        // Workaround! Do not pass the function to tryStart and have it internally create a runnable.
+        // The runnable will have incorrect ref counting resulting in failed assertions inside QThreadPool.
+        // Instead create the runnable ourselves to hit the code paths with correct ref counting.
+        // https://bugs.kde.org/show_bug.cgi?id=449688
+        auto runnable = QRunnable::create(scanSubdir);
+        if (!QThreadPool::globalInstance()->tryStart(runnable)) {
             scanSubdir();
         }
     }
