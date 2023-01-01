@@ -28,7 +28,7 @@ private Q_SLOTS:
     void testDuplicate();
 
 private:
-    std::unique_ptr<File> fl;
+    const std::unique_ptr<const File> m_file;
 };
 
 #endif

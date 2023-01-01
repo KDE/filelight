@@ -7,26 +7,26 @@
 #include "testFileTree.h"
 
 TestFileTree::TestFileTree()
-    : fl(std::make_unique<File>("./autotests/core/dummy.txt", 20))
+    : m_file(std::make_unique<File>(qUtf8Printable(QFINDTESTDATA("dummy.txt")), 20))
 {
 }
 
 void TestFileTree::testFileName()
 {
-    const QString fname = fl->displayName();
-    QCOMPARE(QStringLiteral("./autotests/core/dummy.txt"), fname);
+    const QString fname = m_file->displayName();
+    QCOMPARE(QFINDTESTDATA("dummy.txt"), fname);
 }
 
 void TestFileTree::testFileSize()
 {
-    const quint64 fsize = fl->size();
+    const quint64 fsize = m_file->size();
     QVERIFY(fsize > 0);
 }
 
 void TestFileTree::testFilePath()
 {
     auto folder = std::make_shared<Folder>("./autotests/core/");
-    const QString fpath = fl->displayPath(folder);
+    const QString fpath = m_file->displayPath(folder);
     QVERIFY(!fpath.isEmpty());
 }
 
