@@ -53,6 +53,7 @@
   <summary xml:lang="bg">Показване на използването на диска и изтриване на неизползвани файлове</summary>
   <summary xml:lang="ca">Mostra l'ús del disc i suprimeix els fitxers sense ús</summary>
   <summary xml:lang="ca-valencia">Mostra l'ús del disc i suprimix els fitxers sense ús</summary>
+  <summary xml:lang="de">Festplattenbelegung anzeigen und ungenutzte Dateien löschen</summary>
   <summary xml:lang="en-GB">Show disk usage and delete unused files</summary>
   <summary xml:lang="es">Mostrar el uso del disco y borrar archivos no usados</summary>
   <summary xml:lang="eu">Diskoaren erabilera erakustea eta erabili gabeko fitxategiak ezabatzea</summary>
@@ -157,6 +158,7 @@
       <li xml:lang="bg">Сканира не локални, отдалечени и сменяеми дискови устройства</li>
       <li xml:lang="ca">Explora discs locals, remots o extraïbles</li>
       <li xml:lang="ca-valencia">Explora discs locals, remots o extraïbles</li>
+      <li xml:lang="de">Durchsehen von lokalen oder entfernten Festplatten oder Wechselmedien</li>
       <li xml:lang="en-GB">Scan local, remote, or removable disks</li>
       <li xml:lang="es">Explora discos locales, remotos y extraíbles</li>
       <li xml:lang="eu">Aztertu disko lokalak, urrunekoak edo aldagarriak</li>
@@ -185,6 +187,7 @@
       <li xml:lang="bg">Подробна информация за файлове и папки</li>
       <li xml:lang="ca">Visualització d'informació detallada quant a fitxers i carpetes</li>
       <li xml:lang="ca-valencia">Visualització d'informació detallada quant a fitxers i carpetes</li>
+      <li xml:lang="de">Detaillierte Informationen über Dateien und Ordner beim Überfahren mit dem Mauszeiger anzeigen</li>
       <li xml:lang="en-GB">View detailed information about files and folders</li>
       <li xml:lang="es">Mostrar información detallada sobre archivos y carpetas</li>
       <li xml:lang="eu">Ikusi fitxategiei eta karpetei buruzko informazio zehatza</li>
@@ -212,6 +215,7 @@
       <li xml:lang="bg">Изтриване на файлове и папки, които заемат твърде много място на диска</li>
       <li xml:lang="ca">Supressió de fitxer o carpetes que ocupen massa espai</li>
       <li xml:lang="ca-valencia">Supressió de fitxer o carpetes que ocupen massa espai</li>
+      <li xml:lang="de">Dateien oder Ordner löschen, die zu viel Speicherplatz belegen</li>
       <li xml:lang="en-GB">Delete files or folders that are taking up too much space</li>
       <li xml:lang="es">Borrar archivos o carpetas que están ocupando demasiado espacio</li>
       <li xml:lang="eu">Ezabatu leku gehiegi hartzen ari diren fitxategiak edo karpetak</li>
@@ -239,6 +243,7 @@
       <li xml:lang="bg">Интегриране в Dolphin, Konqueror и Krusader</li>
       <li xml:lang="ca">Integració en els gestors de fitxers Dolphin, Konqueror i Krusader</li>
       <li xml:lang="ca-valencia">Integració en els gestors de fitxers Dolphin, Konqueror i Krusader</li>
+      <li xml:lang="de">Integration in die Dateiverwaltungen Dolphin, Konqueror und Krusader</li>
       <li xml:lang="en-GB">Integration into the Dolphin, Konqueror, and Krusader file managers</li>
       <li xml:lang="es">Integración con los gestores de archivos Dolphin Konqueror y Krusader</li>
       <li xml:lang="eu">Dolphin, Konqueror eta Krusader fitxategi-kudeatzailetan bateratzea</li>
