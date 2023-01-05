@@ -1,22 +1,22 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Vít Pelčák <vit@pelcak.org>, 2010, 2011, 2013, 2014, 2015, 2017, 2018, 2020.
-# Vit Pelcak <vit@pelcak.org>, 2021, 2022.
+# Vit Pelcak <vit@pelcak.org>, 2021, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-30 00:49+0000\n"
-"PO-Revision-Date: 2022-04-06 11:31+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"PO-Revision-Date: 2023-01-04 10:16+0100\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -235,6 +235,9 @@ msgid ""
 "(C) 2008-2014 Martin Sandsmark\n"
 "(C) 2017-2022 Harald Sitter"
 msgstr ""
+"(C) 2006 Max Howell\n"
+"(C) 2008-2014 Martin Sandsmark\n"
+"(C) 2017-2022 Harald Sitter"
 
 #: src/main.cpp:63
 #, kde-format
@@ -254,7 +257,7 @@ msgstr "Harald Sitter"
 #: src/main.cpp:64
 #, kde-format
 msgid "QtQuick Port"
-msgstr ""
+msgstr "Port do QtQuick"
 
 #: src/main.cpp:65
 #, kde-format
@@ -354,37 +357,37 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Scan"
-msgstr ""
+msgstr "Vyhledat"
 
 #: src/qml/GlobalMenu.qml:21
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Settings"
-msgstr ""
+msgstr "Nastavení"
 
 #: src/qml/GlobalMenu.qml:27
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Help"
-msgstr ""
+msgstr "Nápověda"
 
 #: src/qml/main.qml:28
 #, kde-format
 msgctxt "@action"
 msgid "Scan Folder"
-msgstr ""
+msgstr "Prozkoumat složku"
 
 #: src/qml/main.qml:35
 #, kde-format
 msgctxt "@action"
 msgid "Scan Home Folder"
-msgstr ""
+msgstr "Prozkoumat Domovskou složku"
 
 #: src/qml/main.qml:42
 #, kde-format
 msgctxt "@action"
 msgid "Scan Root Folder"
-msgstr ""
+msgstr "Prozkoumat Kořenovou složku"
 
 #: src/qml/main.qml:49
 #, kde-format
@@ -396,40 +399,40 @@ msgstr "Ukončit"
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
-msgstr ""
+msgstr "Nastavit…"
 
 #: src/qml/main.qml:66
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
-msgstr ""
+msgstr "Otevře příručku"
 
 #: src/qml/main.qml:74
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
-msgstr ""
+msgstr "O aplikaci"
 
 #: src/qml/main.qml:95
 #, kde-format
 msgctxt "@info:status"
 msgid "No files."
-msgstr ""
+msgstr "Žádné soubory."
 
 #: src/qml/main.qml:96
 #, kde-format
 msgctxt "@info:status"
 msgid "1 file"
 msgid_plural "%1 files"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "1 soubor"
+msgstr[1] "%1 soubory"
+msgstr[2] "%1 souborů"
 
 #: src/qml/main.qml:163
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
-msgstr ""
+msgstr "Přerušuje se zkoumání..."
 
 #: src/qml/MapPage.qml:19
 #, kde-format
@@ -441,7 +444,7 @@ msgstr "Nahoru"
 #, kde-format
 msgctxt "@action"
 msgid "Rescan"
-msgstr ""
+msgstr "Znovu prozkoumat"
 
 #: src/qml/MapPage.qml:37
 #, kde-format
@@ -453,7 +456,7 @@ msgstr "Stop"
 #, kde-format
 msgctxt "@action"
 msgid "Save as SVG"
-msgstr ""
+msgstr "Uložit jako SVG"
 
 #: src/qml/MapPage.qml:46
 #, kde-format
@@ -490,13 +493,13 @@ msgstr "Nejsou dostupná žádná data"
 #, kde-format
 msgctxt "@title"
 msgid "Overview"
-msgstr ""
+msgstr "Přehled"
 
 #: src/qml/OverviewPage.qml:35
 #, kde-format
 msgctxt "@title"
 msgid "Welcome to Filelight"
-msgstr ""
+msgstr "Vítejte ve Filelight"
 
 #: src/radialMap/item.cpp:207
 #, kde-format
@@ -532,7 +535,7 @@ msgstr "&Otevřít"
 #: src/radialMap/item.cpp:226
 #, kde-format
 msgid "&Copy to clipboard"
-msgstr "&Kopírovat do schránky"
+msgstr "Z&kopírovat do schránky"
 
 #: src/radialMap/item.cpp:230 src/radialMap/item.cpp:268
 #, kde-format
