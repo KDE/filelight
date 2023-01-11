@@ -26,7 +26,6 @@ ScanManager::ScanManager(QObject *parent)
     , m_files(0)
     , m_thread(nullptr)
 {
-    Filelight::LocalLister::readMounts();
     connect(this, &ScanManager::branchCacheHit, this, &ScanManager::foundCached, Qt::QueuedConnection);
     // Bit aggressive this. Completed is emitted per folder I think.
     connect(this, &ScanManager::completed, this, &ScanManager::runningChanged, Qt::QueuedConnection);
@@ -51,6 +50,9 @@ bool ScanManager::running() const
 bool ScanManager::start(const QUrl &url)
 {
     QMutexLocker locker(&m_mutex); // The m_mutex gets released once locker is destroyed (goes out of scope).
+
+    // Refresh mounts on each scan in case some have been mounted or unmounted, etc.
+    Filelight::LocalLister::readMounts();
 
     // url is guaranteed clean and safe
 
