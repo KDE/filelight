@@ -8,6 +8,7 @@
 struct DirectoryEntry {
     QByteArray name;
     bool isSkipable = true;
+    bool isDuplicate = false; // Only set once we have counted specific inode
     bool isDir = false;
     bool isFile = false;
     size_t size = 0;

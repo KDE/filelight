@@ -84,6 +84,10 @@ private Q_SLOTS:
 #elif defined(Q_OS_FREEBSD)
             QCOMPARE(file.size, 1 * S_BLKSIZE);
 #else
+            // We don't know the order, but one should be a duplicate
+            QVERIFY(symlink.isDuplicate || file.isDuplicate);
+            // Now make sure only one is a duplicate also
+            QVERIFY(symlink.isDuplicate != file.isDuplicate);
             QCOMPARE(symlink.size, 16 * S_BLKSIZE);
 #endif
         }

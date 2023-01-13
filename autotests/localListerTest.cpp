@@ -33,9 +33,9 @@ private Q_SLOTS:
         const auto root = arguments.at(0).value<std::shared_ptr<Folder>>();
 
         QVERIFY(root);
-        QCOMPARE(root->children(), 4);
+        QCOMPARE(root->children(), 3);
 #ifdef Q_OS_LINUX
-        QCOMPARE(root->size(), 16384);
+        QCOMPARE(root->size(), 8192);
 #endif
     }
 };

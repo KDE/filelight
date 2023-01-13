@@ -98,6 +98,19 @@ void POSIXWalker::next()
 
         m_entry.isSkipable =
             S_ISLNK(statbuf.st_mode) || S_ISCHR(statbuf.st_mode) || S_ISBLK(statbuf.st_mode) || S_ISFIFO(statbuf.st_mode) || S_ISSOCK(statbuf.st_mode);
+
+        auto links = statbuf.st_nlink;
+        // Only count as hard link if it's not already being skipped
+        if (links > 1 && !m_entry.isSkipable) {
+            ino_t inode = statbuf.st_ino;
+            // If we already counted this inode, skip it
+            if (m_countedHardlinks.find(inode) != m_countedHardlinks.end()) {
+                m_entry.isDuplicate = true;
+            } else {
+                // Only add to counted hard links if we are going to count it
+                m_countedHardlinks.insert(inode);
+            }
+        }
         m_entry.isDir = S_ISDIR(statbuf.st_mode);
         m_entry.isFile = S_ISREG(statbuf.st_mode);
         if (Q_UNLIKELY(statbuf.st_blocks == 0 && statbuf.st_size != 0)) { // some fuse implementations don't return blocks; fall back to size
