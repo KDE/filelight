@@ -65,6 +65,7 @@
   <summary xml:lang="it">Mostra l'uso del disco ed elimina i file non utilizzati</summary>
   <summary xml:lang="ka">დისკის გამოყენების ჩვენება და გამოუყენებელი ფაილებს წაშლა</summary>
   <summary xml:lang="nl">Schijfgebruik tonen en ongebruikte bestanden verwijderen</summary>
+  <summary xml:lang="nn">Visualiser diskbruk og slett ubrukte filer</summary>
   <summary xml:lang="pl">Pokaż wykorzystanie dysku i usuń nieużywane pliki</summary>
   <summary xml:lang="pt">Mostra a utilização do disco e apagar ficheiros não usados</summary>
   <summary xml:lang="pt-BR">Mostra o uso do disco e exclui arquivos não utilizados</summary>
@@ -95,6 +96,7 @@
     <p xml:lang="it">Filelight è un'applicazione per visualizzare l'uso del disco nel tuo computer, che mostra le cartelle in una vista ad anelli concentrici di semplice interpretazione. Filelight rende semplice liberare dello spazio!</p>
     <p xml:lang="ka">Filelight აპლიკაციაა თქვენს კომპიუტერში დისკის გამოყენების ვიზუალიზაციისთვის. ის საქაღალდეებს ადვილად-გასაგებ ხედში გაჩვენებთ. Filelight -ი აადვილებს დისკის გათავისუფლებას!</p>
     <p xml:lang="nl">Filelight is een toepassing om het schijfgebruik op uw computer te visualiseren door mappen te tonen met een gemakkelijk te begrijpen beeld met concentrische ringen. Filelight maakt het gemakkelijk om ruimte vrij te maken!</p>
+    <p xml:lang="nn">Filelight er eit program for å visualisera diskbruken på datamaskina di ved å visa mappene som konsentriske sirklar i eit plassbruk­diagram. Programmet gjer det lett for deg å frigjera diskplass.</p>
     <p xml:lang="pl">Filelight jest aplikacją do obrazowania wykorzystania przestrzeni dyskowej na twoim komputerze za pomocą łatwych do zrozumienia współśrodkowych pierścieni. Filelight ułatwia zwalnianie miejsca!</p>
     <p xml:lang="pt">O Filelight é uma aplicação para visualizar a utilização do disco no seu computador, mostrando as pastas com uma vista fácil de entender num formato em anéis concêntricos. O Filelight facilita a libertação de espaço!</p>
     <p xml:lang="ru">Filelight — приложение для визуализации использования дискового пространства, использующее наглядное отображение размеров папок в виде концентрических колец. Filelight позволяет просто находить большие файлы и помогает освобождать место на дисках.</p>
@@ -168,6 +170,7 @@
       <li xml:lang="it">Analizza i dischi locali, quelli remoti e quelli rimovibili</li>
       <li xml:lang="ka">ლოკალური, მოხსნადი და დაშორებული დისკების სკანირება</li>
       <li xml:lang="nl">Lokale, op afstand of verwijderbare schijven scannen</li>
+      <li xml:lang="nn">Søk gjennom lokale diskar, nettverksdiskar og flyttbare lagringsmedium</li>
       <li xml:lang="pl">Przeszukiwanie miejscowych, zdalnych, wymiennych dysków</li>
       <li xml:lang="pt">Sondar discos locais, remotos ou removíveis</li>
       <li xml:lang="pt-BR">Verifica em discos locais, remotos ou removíveis</li>
@@ -196,6 +199,7 @@
       <li xml:lang="it">Visualizza informazioni dettagliate su file e cartelle</li>
       <li xml:lang="ka">დეტალებური ინფორმაცია ფაილებისა და საქაღალდეების შესახებ</li>
       <li xml:lang="nl">Gedetailleerde informatie over bestanden en mappen bekijken</li>
+      <li xml:lang="nn">Vis detaljert informasjon om filer og mapper</li>
       <li xml:lang="pl">Oglądanie szczegółowych danych o plikach i katalogach</li>
       <li xml:lang="pt">Ver informações detalhadas sobre os ficheiros e pastas</li>
       <li xml:lang="ru">Подробные сведения о файлах и папках;</li>
@@ -223,6 +227,7 @@
       <li xml:lang="it">Elimina i file o le cartelle che occupano troppo spazio</li>
       <li xml:lang="ka">წაშალეთ ფაილები და საქაღალდეები, რომლებიც მეტისმეტად ბევრ ადგილს ხარჯავენ</li>
       <li xml:lang="nl">Bestanden of mappen verwijderen die te veel ruimte innemen</li>
+      <li xml:lang="nn">Slett filer og mapper som tek opp for mykje plass</li>
       <li xml:lang="pl">Usuwanie plików i katalogów, które zajmują za dużo miejsca</li>
       <li xml:lang="pt">Apagar os ficheiros ou pastas que ocupam demasiado espaço</li>
       <li xml:lang="ru">Удаление файлов или папок, занимающих слишком много места;</li>
@@ -250,6 +255,7 @@
       <li xml:lang="it">Integrazione nei gestore di file Dolphin, Konqueror e Krusader</li>
       <li xml:lang="ka">ინტეგრაცია Dolphin-ში, Konqueror-ში და Krusader-ში</li>
       <li xml:lang="nl">Integratie in bestandsbeheerders Dolphin, Konqueror en Krusader</li>
+      <li xml:lang="nn">Integrert med filhandsamarane Dolphin, Konqueror og Krusader</li>
       <li xml:lang="pl">Integracja z przeglądarkami plików takimi jak: Dolphin, Konqueror i Krusader</li>
       <li xml:lang="pt">Integração com os gestores de ficheiros Dolphin, Konqueror e Krusader</li>
       <li xml:lang="pt-BR">Integração com os gerenciadores de arquivo Dolphin, Konqueror e Krusader</li>
