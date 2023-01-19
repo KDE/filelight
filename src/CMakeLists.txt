@@ -23,6 +23,13 @@ add_library(filelightInternal STATIC
     Config.cpp
     localLister.cpp
     remoteLister.cpp
+    fileTree.h
+    directoryIterator.h
+    fileCleaner.h
+    scan.h
+    Config.h
+    localLister.h
+    remoteLister.h
 )
 ecm_qt_declare_logging_category(filelightInternal HEADER filelight_debug.h IDENTIFIER FILELIGHT_LOG CATEGORY_NAME org.kde.filelight DESCRIPTION "filelight" EXPORT FILELIGHT)
 if (WIN32)
@@ -43,7 +50,9 @@ target_sources(filelight PRIVATE
     radialMap/map.cpp
     radialMap/radialMap.cpp
     historyAction.cpp
+    historyAction.h
     mainContext.cpp
+    mainContext.h
     main.cpp
     fileTree.h
     radialMap/map.h
@@ -57,8 +66,11 @@ target_sources(filelight PRIVATE
     Config.h
     qml/qml.qrc
     contextMenuContext.cpp
+    contextMenuContext.h
     fileModel.cpp
+    fileModel.h
     dropperItem.cpp
+    dropperItem.h
 )
 
 set(filelight_ICONS
