@@ -17,10 +17,10 @@ cmake_minimum_required (VERSION 3.16 FATAL_ERROR)
 project(Filelight VERSION ${FILELIGHT_VERSION})
 
 set(PROJECT_VERSION ${RELEASE_SERVICE_VERSION})
-set(KF5_MIN_VERSION "5.98.0")
+set(KF_MIN_VERSION "5.98.0")
 set(QT_REQUIRED_VERSION "5.15.2")
 
-find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
+find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
 
 include(ECMAddAppIcon)
@@ -40,14 +40,14 @@ include(KDEGitCommitHooks)
 include(ECMFindQmlModule)
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Core Widgets Svg Quick QuickControls2)
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
+find_package(KF5 ${KF_MIN_VERSION} REQUIRED
     XmlGui # For app
     KIO # For part
     I18n
 )
 find_package(KF5DocTools) # Optional, not needed on Windows for example.
 
-find_package(KF5QQC2DesktopStyle ${KF5_MIN_VERSION})
+find_package(KF5QQC2DesktopStyle ${KF_MIN_VERSION})
 set_package_properties(KF5QQC2DesktopStyle PROPERTIES TYPE RUNTIME)
 
 ecm_find_qmlmodule(org.kde.kcoreaddons 1.0)
