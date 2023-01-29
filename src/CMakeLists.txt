@@ -39,10 +39,10 @@ else()
 endif()
 target_link_libraries(filelightInternal
     Qt${QT_MAJOR_VERSION}::Gui
-    KF5::CoreAddons
-    KF5::ConfigCore
-    KF5::I18n
-    KF5::KIOWidgets # Only used for KDirLister, may be able to move away from that.
+    KF${KF_MAJOR_VERSION}::CoreAddons
+    KF${KF_MAJOR_VERSION}::ConfigCore
+    KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::KIOWidgets # Only used for KDirLister, may be able to move away from that.
 )
 
 add_executable(filelight)
@@ -84,8 +84,8 @@ ecm_add_app_icon(filelight ICONS
     ${filelight_ICONS})
 
 target_link_libraries(filelight
-    KF5::I18n
-    KF5::XmlGui
+    KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::XmlGui
     Qt${QT_MAJOR_VERSION}::Svg
     Qt${QT_MAJOR_VERSION}::Quick
     Qt${QT_MAJOR_VERSION}::QuickControls2

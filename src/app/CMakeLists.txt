@@ -9,7 +9,7 @@ set(filelight_SRCS historyAction.cpp mainContext.cpp main.cpp)
 add_executable(filelight ${filelight_SRCS})
 
 target_link_libraries(filelight
-    KF5::XmlGui
+    KF${KF_MAJOR_VERSION}::XmlGui
 )
 
 install(TARGETS filelight ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
