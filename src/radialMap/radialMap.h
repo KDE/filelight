@@ -34,7 +34,7 @@ public:
 
     Segment(const std::shared_ptr<File> &f, uint s, uint l, bool isFake = false);
     ~Segment() override;
-    Q_DISABLE_COPY_MOVE(Segment);
+    Q_DISABLE_COPY_MOVE(Segment)
 
     Q_INVOKABLE uint start() const
     {
