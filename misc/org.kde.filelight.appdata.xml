@@ -43,7 +43,7 @@
   <name xml:lang="sr-ijekavianlatin">Filelight</name>
   <name xml:lang="sv">Filelight</name>
   <name xml:lang="ta">ஃபைல்-லைட்</name>
-  <name xml:lang="tr">Filelight</name>
+  <name xml:lang="tr">Dosya Feneri</name>
   <name xml:lang="uk">Filelight</name>
   <name xml:lang="x-test">xxFilelightxx</name>
   <name xml:lang="zh-CN">Filelight 磁盘占用查看器</name>
@@ -104,7 +104,7 @@
     <p xml:lang="ru">Filelight — приложение для визуализации использования дискового пространства, использующее наглядное отображение размеров папок в виде концентрических колец. Filelight позволяет просто находить большие файлы и помогает освобождать место на дисках.</p>
     <p xml:lang="sl">FIlelight je aplikacija za vizualizacijo porabe diska na vašem računalniku, tako da prikazuje mape v preprosto razumljivih koncentričnih krogih. Filelight poenostavi sproščanje prostora na disku!</p>
     <p xml:lang="ta">உங்கள் கணினியிலுள்ள அடைவுகளின் அளவுகளை நீங்கள் எளிதில் புரிந்துகொள்ளும் வகையில் ஃபைல்-லைட் காட்டும். தேவையில்லாதவற்றை சுலபமாக அகற்றி இடத்தை காலி செய்யலாம்!</p>
-    <p xml:lang="tr">Filelight, bilgisayarınızdaki disk kullanımını, anlaması kolay eşmerkezli halkalar görünümü kullanarak görselleştiren bir uygulamadır. Filelight ile, bilgisayarınızı kolaylıkla temizleyebilirsiniz!</p>
+    <p xml:lang="tr">Dosya Feneri, bilgisayarınızdaki disk kullanımını, anlaması kolay eşmerkezli halkalar görünümü kullanarak görselleştiren bir uygulamadır. Dosya Feneri ile, bilgisayarınızı kolaylıkla temizleyebilirsiniz!</p>
     <p xml:lang="uk">Filelight — програма для візуалізації використання дискового простору вашого комп'ютера. Ця програма здатна показувати вміст тек у легко зрозумілому форматі концентричних кіл. За допомогою Filelight ви без проблем зможете звільняти місце на диску!</p>
     <p xml:lang="x-test">xxFilelight is an application to visualize the disk usage on your computer by showing folders using an easy-to-understand view of concentric rings. Filelight makes it simple to free up space!xx</p>
     <p xml:lang="zh-CN">Filelight 是一个可视化电脑磁盘使用情况的应用程序，其使用易读的多层饼图来显示文件夹结构。Filelight 让释放空间变得简单！</p>
