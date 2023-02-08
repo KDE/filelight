@@ -107,7 +107,7 @@
     <p xml:lang="tr">Dosya Feneri, bilgisayarınızdaki disk kullanımını, anlaması kolay eşmerkezli halkalar görünümü kullanarak görselleştiren bir uygulamadır. Dosya Feneri ile, bilgisayarınızı kolaylıkla temizleyebilirsiniz!</p>
     <p xml:lang="uk">Filelight — програма для візуалізації використання дискового простору вашого комп'ютера. Ця програма здатна показувати вміст тек у легко зрозумілому форматі концентричних кіл. За допомогою Filelight ви без проблем зможете звільняти місце на диску!</p>
     <p xml:lang="x-test">xxFilelight is an application to visualize the disk usage on your computer by showing folders using an easy-to-understand view of concentric rings. Filelight makes it simple to free up space!xx</p>
-    <p xml:lang="zh-CN">Filelight 是一个可视化电脑磁盘使用情况的应用程序，其使用易读的多层饼图来显示文件夹结构。Filelight 让释放空间变得简单！</p>
+    <p xml:lang="zh-CN">Filelight 是一款以图形化方式显示电脑磁盘使用情况的应用程序。它通过多层同心圆示意图来显示文件夹结构，易于理解。Filelight 让释放存储空间变得简单易行！</p>
     <p xml:lang="zh-TW">Filelight 是以視覺化方式顯示您的電腦的磁碟用量的應用程式，資料夾以容易理解的同心圓方式呈現。Filelight 讓清理空間變得簡單！</p>
     <p>Features:</p>
     <p xml:lang="ar">الميزات:</p>
@@ -212,7 +212,7 @@
       <li xml:lang="tr">Dosyalar ve klasörler hakkında bilgi alın</li>
       <li xml:lang="uk">Перегляд докладних відомостей щодо файлів і тек</li>
       <li xml:lang="x-test">xxView detailed information about files and foldersxx</li>
-      <li xml:lang="zh-CN">查看关于文件和文件夹的详细信息</li>
+      <li xml:lang="zh-CN">查看文件和文件夹的详细信息</li>
       <li xml:lang="zh-TW">檢視檔案或資料夾的詳細資訊</li>
       <li>Delete files or folders that are taking up too much space</li>
       <li xml:lang="ar">حذف ملفات والمجلدات التي تأخذ مساحة كبيرة</li>
@@ -242,7 +242,7 @@
       <li xml:lang="tr">Çok fazla yer kaplayan dosyaları veya klasörleri silin</li>
       <li xml:lang="uk">Вилучення файлів і тек, які займають надто багато місця</li>
       <li xml:lang="x-test">xxDelete files or folders that are taking up too much spacexx</li>
-      <li xml:lang="zh-CN">删除占用太多空间的文件 (夹)</li>
+      <li xml:lang="zh-CN">删除占用过多存储空间的文件和文件夹</li>
       <li xml:lang="zh-TW">刪除佔用太多空間的檔案或資料夾</li>
       <li>Integration into the Dolphin, Konqueror, and Krusader file managers</li>
       <li xml:lang="ar">تكامل مع مديرو الملفات كونكيور وكروسادر</li>
@@ -272,7 +272,7 @@
       <li xml:lang="tr">Dolphin, Krusader ve Konqueror dosya yöneticileri tümleşimi</li>
       <li xml:lang="uk">Інтеграція з програмами для керування файлами — Dolphin, Konqueror і Krusader</li>
       <li xml:lang="x-test">xxIntegration into the Dolphin, Konqueror, and Krusader file managersxx</li>
-      <li xml:lang="zh-CN">集成到 Dolphin、Konqueror 和 Krusader 等文件管理器中</li>
+      <li xml:lang="zh-CN">与 Dolphin、Konqueror 和 Krusader 等文件管理器集成使用</li>
       <li xml:lang="zh-TW">與 Dolphin、Konqueror 和 Krusader 等檔案管理員的整合</li>
       <li>Configurable color schemes</li>
       <li xml:lang="ar">تشكيلات ألوان قابلة للضبط</li>
