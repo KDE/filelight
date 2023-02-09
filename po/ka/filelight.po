@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-30 00:49+0000\n"
-"PO-Revision-Date: 2022-11-26 07:30+0100\n"
+"PO-Revision-Date: 2023-02-08 12:00+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -38,7 +38,7 @@ msgstr "&სკანირება"
 #: misc/filelightui.rc:18
 #, kde-format
 msgid "&View"
-msgstr "_ხედი"
+msgstr "&ხედი"
 
 #. i18n: ectx: ToolBar (mainToolBar)
 #: misc/filelightui.rc:24
@@ -304,7 +304,7 @@ msgstr "Sune Vuorela"
 #: src/main.cpp:69 src/main.cpp:70
 #, kde-format
 msgid "Icon"
-msgstr "_ხატულა"
+msgstr "ხატულა"
 
 #: src/main.cpp:70
 #, kde-format
@@ -469,7 +469,7 @@ msgstr "გადიდება"
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
-msgstr "და_პატარავება"
+msgstr "გადიდება"
 
 #: src/qml/MapPage.qml:127
 #, kde-format
