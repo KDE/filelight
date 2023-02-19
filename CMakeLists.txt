@@ -60,6 +60,7 @@ set_package_properties(KF5QQC2DesktopStyle PROPERTIES TYPE RUNTIME)
 ecm_find_qmlmodule(org.kde.kcoreaddons 1.0)
 ecm_find_qmlmodule(org.kde.kirigami 2.19)
 ecm_find_qmlmodule(org.kde.quickcharts 1.0)
+ecm_find_qmlmodule(Qt.labs.platform 1.1)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"filelight\")
 
