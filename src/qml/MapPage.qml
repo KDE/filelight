@@ -338,8 +338,8 @@ Kirigami.Page {
                     delegate: SegmentShape {
                         // Qt doc: Note: model, index, and modelData roles are not accessible if the delegate contains required properties, unless it has also required properties with matching names.
                         required property var modelData
-                        property bool segmentHover: hoveredSegment === segment.uuid || (segment.fake && hoveredSegment === "fake")
 
+                        readonly property bool segmentHover: hoveredSegment === segment.uuid || (segment.fake && hoveredSegment === "fake")
 
                         z: (instantiator.model.length - idx) // reverse order such that more central levels are above. this gives us segment appearance without having to actually paint segments (instead we stack full cicles)
                         segment: modelData
@@ -400,7 +400,7 @@ Kirigami.Page {
                 color: Kirigami.Theme.textColor
                 horizontalAlignment: Text.AlignHCenter
                 // The diagonal of the circle is the hypotenuse of the largest square
-                property var dimension: (2  * centerShape.radius) / Math.sqrt(2)
+                readonly property var dimension: (2  * centerShape.radius) / Math.sqrt(2)
                 width: dimension
                 height: dimension
                 anchors.centerIn: parent
