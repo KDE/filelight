@@ -524,12 +524,14 @@ Kirigami.Page {
 
     Connections {
         target: ScanManager
-        onAboutToEmptyCache: RadialMap.invalidate()
+        function onAboutToEmptyCache() {
+            RadialMap.invalidate()
+        }
     }
 
     Connections {
         target: MainContext
-        onCanvasIsDirty: (filth) => {
+        function onCanvasIsDirty(filth) {
             RadialMap.refresh(filth)
         }
     }

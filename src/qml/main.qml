@@ -183,12 +183,15 @@ Kirigami.ApplicationWindow {
 
     Connections {
         target: ScanManager
-        onRunningChanged: { // for when the url was set through the c++ side, e.g. as cmdline arg
+
+        function onRunningChanged() {
+            // for when the url was set through the c++ side, e.g. as cmdline arg
             if (ScanManager.running) {
                 makeMap()
             }
         }
-        onAborted: {
+
+        function onAborted() {
             appWindow.title = ""
             appWindow.status = ""
         }
