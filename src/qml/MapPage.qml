@@ -14,7 +14,7 @@ Kirigami.Page {
     id: page
 
     property url url: RadialMap.rootUrl
-    property var contextMenu: undefined
+    property QQC2.Menu contextMenu
 
     enabled: !ContextMenuContext.deleting
     topPadding: 0
@@ -92,11 +92,13 @@ Kirigami.Page {
         id: contextMenuComponent
         QQC2.Menu {
             id: contextMenu
-            property var segment: undefined
+
+            required property Segment segment
+
             title: segment.displayName()
 
             onAboutToShow: page.contextMenu = this
-            onAboutToHide: page.contextMenu = undefined
+            onAboutToHide: page.contextMenu = null
 
             QQC2.MenuItem {
                 action: Kirigami.Action {
@@ -106,7 +108,7 @@ Kirigami.Page {
                 onTriggered: Qt.openUrlExternally(contextMenu.segment.url())
             }
             QQC2.MenuItem {
-                visible: segment.isFolder() && segment.url().toString().startsWith("file:")
+                visible: contextMenu.segment.isFolder() && contextMenu.segment.url().toString().startsWith("file:")
                 action: Kirigami.Action {
                     iconName: "utilities-terminal"
                     text: i18nc("@action", "Open Terminal Here")
@@ -114,7 +116,7 @@ Kirigami.Page {
                 }
             }
             QQC2.MenuItem {
-                visible: segment.isFolder()
+                visible: contextMenu.segment.isFolder()
                 action: Kirigami.Action {
                     iconName: "zoom-in"
                     text: i18nc("@action focuses the filelight view on a given map segment", "Center Map Here")
@@ -125,7 +127,7 @@ Kirigami.Page {
                 }
             }
             QQC2.MenuItem {
-                visible: segment.isFolder()
+                visible: contextMenu.segment.isFolder()
                 action: Kirigami.Action {
                     iconName: "list-remove"
                     text: i18nc("@action", "Add to Do Not Scan List")
@@ -133,7 +135,7 @@ Kirigami.Page {
                 }
             }
             QQC2.MenuItem {
-                visible: segment.isFolder()
+                visible: contextMenu.segment.isFolder()
                 action: Kirigami.Action {
                     iconName: "view-refresh"
                     text: i18nc("@action rescan filelight map", "Rescan")
@@ -157,8 +159,8 @@ Kirigami.Page {
         }
     }
 
-    property var mouseyX: -1
-    property var mouseyY: -1
+    property real mouseyX: -1
+    property real mouseyY: -1
     property var hoveredSegment: undefined
     property bool hoveringListItem: false
 
@@ -322,14 +324,14 @@ Kirigami.Page {
                 Instantiator {
                     // FIXME weird
                     Component.onCompleted: idx = index // lock index by breaking the binding
-                    property var idx: index
-                    readonly property var signatureRadius: {
+                    property int idx: index
+                    readonly property real signatureRadius: {
                         if (shapeItem.width > shapeItem.height) {
                             return shapeItem.height / 2 / (instantiator.model.length + 1)
                         }
                         return shapeItem.width / 2 / (instantiator.model.length + 1)
                     }
-                    readonly property var shapeRadius: signatureRadius * (idx + 2)
+                    readonly property real shapeRadius: signatureRadius * (idx + 2)
 
                     active: true
                     model: modelData

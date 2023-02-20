@@ -16,7 +16,7 @@ import org.kde.filelight 1.0
 Shape {
     id: shape
 
-    required property var segment
+    required property Segment segment
 
     property alias item: path.item
     property alias radius: path.radius
@@ -28,7 +28,7 @@ Shape {
 
     property alias fillColor: path.fillColor
 
-    property var segmentUuid: segment.uuid
+    property string segmentUuid: segment.uuid
     property url url: segment ? segment.url() : ""
 
     containsMode: Shape.FillContains
