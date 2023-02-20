@@ -297,7 +297,7 @@ Kirigami.Page {
                 zOrderedShapes = children
             }
 
-            function tooltip({path, size, isFolder, files, totalFiles, isRoot = false} ) {
+            function tooltip({ path, size, isFolder, files, totalFiles, isRoot = false }) {
                 let tips = [path, size]
                 if (isFolder) {
                     const percent = Math.floor((100 * files) / totalFiles)
@@ -340,14 +340,20 @@ Kirigami.Page {
                         required property var modelData
                         property bool segmentHover: hoveredSegment === segment.uuid || (segment.fake && hoveredSegment === "fake")
 
+
                         z: (instantiator.model.length - idx) // reverse order such that more central levels are above. this gives us segment appearance without having to actually paint segments (instead we stack full cicles)
                         segment: modelData
                         item: shapeItem
                         radius: shapeRadius
                         startAngle: -(modelData.start() / 16)
                         sweepAngle: -(modelData.length() / 16)
-                        tooltipText: shapeItem.tooltip({isFolder: segment.isFolder(), path: segment.displayPath(), size: segment.humanReadableSize(),
-                                                        files: segment.files(), totalFiles: RadialMap.numberOfChildren})
+                        tooltipText: shapeItem.tooltip({
+                            isFolder: segment.isFolder(),
+                            path: segment.displayPath(),
+                            size: segment.humanReadableSize(),
+                            files: segment.files(),
+                            totalFiles: RadialMap.numberOfChildren,
+                        })
                         showTooltip: !contextMenu && !hoveringListItem && segmentHover && shapeItem.visible
                         fillColor: segmentHover ? Qt.darker(segment.color) : segment.color
                     }
@@ -372,8 +378,14 @@ Kirigami.Page {
                 }
                 startAngle: 0
                 sweepAngle: 360
-                tooltipText: shapeItem.tooltip({isRoot: true, isFolder: true, path: RadialMap.displayPath, size: RadialMap.overallSize,
-                                                files: RadialMap.numberOfChildren, totalFiles: RadialMap.numberOfChildren})
+                tooltipText: shapeItem.tooltip({
+                    isFolder: true,
+                    path: RadialMap.displayPath,
+                    size: RadialMap.overallSize,
+                    files: RadialMap.numberOfChildren,
+                    totalFiles: RadialMap.numberOfChildren,
+                    isRoot: true,
+                })
                 showTooltip: !contextMenu && !hoveringListItem && hoveredSegment === segmentUuid && shapeItem.visible
                 Kirigami.Theme.colorSet: Kirigami.Theme.View
                 fillColor: Kirigami.Theme.backgroundColor
@@ -426,7 +438,7 @@ Kirigami.Page {
             return null
         }
 
-        onPositionChanged: (mouse) => {
+        onPositionChanged: mouse => {
             mouse.accepted = false
             const child = findTarget(mouse)
             if (child !== null) {
@@ -479,7 +491,7 @@ Kirigami.Page {
         z: 503
         width: shapeItem.width
         height: shapeItem.height
-        onUrlsDropped: function(urls) {
+        onUrlsDropped: urls => {
             const url = urls[0]
             appWindow.updateURL(url)
             appWindow.openURL(url)
