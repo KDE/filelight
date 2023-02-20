@@ -16,4 +16,6 @@ ecm_install_icons(ICONS
     48-apps-filelight.png
     64-apps-filelight.png
     128-apps-filelight.png
-    DESTINATION ${KDE_INSTALL_ICONDIR} THEME hicolor)
+    DESTINATION ${KDE_INSTALL_ICONDIR}
+    THEME hicolor
+)

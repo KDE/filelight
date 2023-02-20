@@ -31,7 +31,13 @@ add_library(filelightInternal STATIC
     localLister.h
     remoteLister.h
 )
-ecm_qt_declare_logging_category(filelightInternal HEADER filelight_debug.h IDENTIFIER FILELIGHT_LOG CATEGORY_NAME org.kde.filelight DESCRIPTION "filelight" EXPORT FILELIGHT)
+ecm_qt_declare_logging_category(filelightInternal
+    HEADER filelight_debug.h
+    IDENTIFIER FILELIGHT_LOG
+    CATEGORY_NAME org.kde.filelight
+    DESCRIPTION "filelight"
+    EXPORT FILELIGHT
+)
 if (WIN32)
     target_sources(filelightInternal PRIVATE windowsWalker.cpp)
 else()
@@ -98,8 +104,7 @@ endif()
 
 install(TARGETS filelight ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 ecm_qt_install_logging_categories(
-        EXPORT FILELIGHT
-        FILE filelight.categories
-        DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
-        )
-
+    EXPORT FILELIGHT
+    FILE filelight.categories
+    DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
+)
