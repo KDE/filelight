@@ -109,7 +109,6 @@ Kirigami.ApplicationWindow {
     }
 
     minimumWidth: Kirigami.Settings.isMobile ? 0 : Kirigami.Units.gridUnit * 22
-    onMinimumWidthChanged: console.log("Kirigami.Units.gridUnit * 22 " + Kirigami.Units.gridUnit * 22)
     minimumHeight: Kirigami.Settings.isMobile ? 0 : Kirigami.Units.gridUnit * 22
 
     pageStack.initialPage: "qrc:/ui/OverviewPage.qml"
