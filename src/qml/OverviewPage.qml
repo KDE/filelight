@@ -48,7 +48,6 @@ Kirigami.Page {
             }
             QQC2.ToolButton {
                 id: button2
-                visible: !inSandbox
                 icon.width: Kirigami.Units.iconSizes.huge
                 icon.height: Kirigami.Units.iconSizes.huge
                 display: QQC2.AbstractButton.TextUnderIcon
