@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-16 00:54+0000\n"
+"POT-Creation-Date: 2023-02-22 01:01+0000\n"
 "PO-Revision-Date: 2022-12-16 10:53+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -325,7 +325,7 @@ msgid_plural "%1 files"
 msgstr[0] "Bestand"
 msgstr[1] "%1 bestanden"
 
-#: src/qml/main.qml:176
+#: src/qml/main.qml:175
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
@@ -367,49 +367,49 @@ msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Uitzoomen"
 
-#: src/qml/MapPage.qml:104 src/qml/MapPage.qml:222
+#: src/qml/MapPage.qml:106 src/qml/MapPage.qml:224
 #, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "Openen"
 
-#: src/qml/MapPage.qml:112 src/qml/MapPage.qml:230
+#: src/qml/MapPage.qml:114 src/qml/MapPage.qml:232
 #, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
 msgstr "Terminal hier openen"
 
-#: src/qml/MapPage.qml:120
+#: src/qml/MapPage.qml:122
 #, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "Map hier centreren"
 
-#: src/qml/MapPage.qml:131 src/qml/MapPage.qml:238
+#: src/qml/MapPage.qml:133 src/qml/MapPage.qml:240
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "Aan Lijst niet scannen toevoegen"
 
-#: src/qml/MapPage.qml:139
+#: src/qml/MapPage.qml:141
 #, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Opnieuw scannen"
 
-#: src/qml/MapPage.qml:146 src/qml/MapPage.qml:245
+#: src/qml/MapPage.qml:148 src/qml/MapPage.qml:247
 #, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "Naar klembord kopiëren"
 
-#: src/qml/MapPage.qml:153 src/qml/MapPage.qml:252
+#: src/qml/MapPage.qml:155 src/qml/MapPage.qml:254
 #, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: src/qml/MapPage.qml:305
+#: src/qml/MapPage.qml:307
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -417,7 +417,7 @@ msgid_plural "%1 Files (%2%)"
 msgstr[0] "%1 bestand (%2%)"
 msgstr[1] "%1 bestanden (%2%)"
 
-#: src/qml/MapPage.qml:307
+#: src/qml/MapPage.qml:309
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -425,13 +425,13 @@ msgid_plural "%1 Files"
 msgstr[0] "%1 bestand"
 msgstr[1] "%1 bestanden"
 
-#: src/qml/MapPage.qml:311
+#: src/qml/MapPage.qml:313
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "Klik om naar de hogere map te gaan"
 
-#: src/qml/MapPage.qml:501
+#: src/qml/MapPage.qml:515
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -439,7 +439,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 bestand, %2"
 msgstr[1] "%1 bestanden, %2"
 
-#: src/qml/MapPage.qml:510
+#: src/qml/MapPage.qml:524
 #, kde-format
 msgid "No data available"
 msgstr "Geen gegevens beschikbaar"

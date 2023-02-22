@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-16 00:54+0000\n"
+"POT-Creation-Date: 2023-02-22 01:01+0000\n"
 "PO-Revision-Date: 2022-07-19 10:05+0200\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -323,7 +323,7 @@ msgstr[0] "1 Súbor"
 msgstr[1] "%1 súbory"
 msgstr[2] "%1 súbory"
 
-#: src/qml/main.qml:176
+#: src/qml/main.qml:175
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
@@ -367,7 +367,7 @@ msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Oddialiť"
 
-#: src/qml/MapPage.qml:104 src/qml/MapPage.qml:222
+#: src/qml/MapPage.qml:106 src/qml/MapPage.qml:224
 #, fuzzy, kde-format
 #| msgctxt "Scan/open the path of the selected element"
 #| msgid "&Open"
@@ -375,28 +375,28 @@ msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "&Otvoriť"
 
-#: src/qml/MapPage.qml:112 src/qml/MapPage.qml:230
+#: src/qml/MapPage.qml:114 src/qml/MapPage.qml:232
 #, fuzzy, kde-format
 #| msgid "Open &Terminal Here"
 msgctxt "@action"
 msgid "Open Terminal Here"
 msgstr "Tu otvoriť &terminál"
 
-#: src/qml/MapPage.qml:120
+#: src/qml/MapPage.qml:122
 #, fuzzy, kde-format
 #| msgid "&Center Map Here"
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "Tu vycentrovať &mapu"
 
-#: src/qml/MapPage.qml:131 src/qml/MapPage.qml:238
+#: src/qml/MapPage.qml:133 src/qml/MapPage.qml:240
 #, fuzzy, kde-format
 #| msgid "Add to Do &Not Scan List"
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "Pridať do zoznamu Neskenovať"
 
-#: src/qml/MapPage.qml:139
+#: src/qml/MapPage.qml:141
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Rescan"
@@ -404,21 +404,21 @@ msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Znovu prehľadať"
 
-#: src/qml/MapPage.qml:146 src/qml/MapPage.qml:245
+#: src/qml/MapPage.qml:148 src/qml/MapPage.qml:247
 #, fuzzy, kde-format
 #| msgid "&Copy to clipboard"
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "&Kopírovať do schránky"
 
-#: src/qml/MapPage.qml:153 src/qml/MapPage.qml:252
+#: src/qml/MapPage.qml:155 src/qml/MapPage.qml:254
 #, fuzzy, kde-format
 #| msgid "&Delete"
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "O&dstrániť"
 
-#: src/qml/MapPage.qml:305
+#: src/qml/MapPage.qml:307
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -427,7 +427,7 @@ msgstr[0] "%1 Súbor (%2%)"
 msgstr[1] "%1 Súbory (%2%)"
 msgstr[2] "%1 Súborov (%2%)"
 
-#: src/qml/MapPage.qml:307
+#: src/qml/MapPage.qml:309
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -436,7 +436,7 @@ msgstr[0] "%1 Súbor"
 msgstr[1] "%1 Súbory"
 msgstr[2] "%1 Súborov"
 
-#: src/qml/MapPage.qml:311
+#: src/qml/MapPage.qml:313
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -447,7 +447,7 @@ msgstr ""
 "\n"
 "Kliknite na prechod do nadradeného adresára"
 
-#: src/qml/MapPage.qml:501
+#: src/qml/MapPage.qml:515
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -456,7 +456,7 @@ msgstr[0] "%1 Súbor, %2"
 msgstr[1] "%1 Súbory, %2"
 msgstr[2] "%1 Súborov, %2"
 
-#: src/qml/MapPage.qml:510
+#: src/qml/MapPage.qml:524
 #, kde-format
 msgid "No data available"
 msgstr "Údaje nedostupné"
