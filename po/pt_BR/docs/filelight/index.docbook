@@ -1,6 +1,5 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
-  <!ENTITY kappname "&filelight;">
   <!ENTITY filelight "<application
 >Filelight</application
 >">
@@ -90,7 +89,7 @@
 >&filelight; 1.21 (Applications 15.08)</releaseinfo>
    <abstract
 ><para
->O &filelight; cria um mapa interativo de anéis concêntricos em segmentos, que o ajuda a visualizar a utilização do disco no seu computador.</para
+>Mostra o uso do disco e exclui arquivos não utilizados.</para
 ></abstract>
    <!-- These may be used by search engines -->
    <keywordset>
@@ -563,9 +562,9 @@
 >Configurações</guimenu
 > e <guimenu
 >Ajuda</guimenu
->, comuns do &kde;. Para mais informações, consulte as seções sobre o <ulink url="help:/fundamentals/ui.html#menus-settings"
+>, comuns do &kde;. Para mais informações, consulte as seções sobre o <ulink url="help:/fundamentals/menus.html#menus-settings"
 >Menu Configurações</ulink
-> e o <ulink url="help:/fundamentals/ui.html#menus-help"
+> e o <ulink url="help:/fundamentals/menus.html#menus-help"
 >Menu Ajuda</ulink
 > dos Fundamentos do &kde;. </para>
 </chapter>
@@ -584,8 +583,8 @@
       <para
 >Direitos autorais do programa 2008-2013 de Martin Sandsmark <email
 >martin.sandsmark@kde.org</email
-></para>
-&underGPL; </sect1>
+></para
+>&underGPL; </sect1>
    <sect1 id="Documentation">
       <title
 >Documentação</title>
@@ -603,8 +602,7 @@
 > e de Marcus Gama <email
 >marcus.gama@gmail.com</email
 ></para
-> 
-&underFDL; </sect1>
+> &underFDL; </sect1>
 </chapter>
 
 &documentation.index;
