@@ -65,6 +65,7 @@
   <summary xml:lang="ie">Monstrar li usage de disco e remover ínnecessi files</summary>
   <summary xml:lang="it">Mostra l'uso del disco ed elimina i file non utilizzati</summary>
   <summary xml:lang="ka">დისკის გამოყენების ჩვენება და გამოუყენებელი ფაილებს წაშლა</summary>
+  <summary xml:lang="ko">디스크 사용 통계를 보고 사용하지 않는 파일 삭제</summary>
   <summary xml:lang="nl">Schijfgebruik tonen en ongebruikte bestanden verwijderen</summary>
   <summary xml:lang="nn">Visualiser diskbruk og slett ubrukte filer</summary>
   <summary xml:lang="pl">Pokaż wykorzystanie dysku i usuń nieużywane pliki</summary>
@@ -97,6 +98,7 @@
     <p xml:lang="ie">Filelight visualisa li usage de disco de vor computator, monstrante fólderes in un vise comprensibil de concentric anelles. Filelight facilisa li liberation de spacie!</p>
     <p xml:lang="it">Filelight è un'applicazione per visualizzare l'uso del disco nel tuo computer, che mostra le cartelle in una vista ad anelli concentrici di semplice interpretazione. Filelight rende semplice liberare dello spazio!</p>
     <p xml:lang="ka">Filelight აპლიკაციაა თქვენს კომპიუტერში დისკის გამოყენების ვიზუალიზაციისთვის. ის საქაღალდეებს ადვილად-გასაგებ ხედში გაჩვენებთ. Filelight -ი აადვილებს დისკის გათავისუფლებას!</p>
+    <p xml:lang="ko">Filelight는 이해하기 쉬운 동심원 형태로 컴퓨터 디스크 사용량을 시각화합니다. 디스크 정리에 도움을 줄 수 있습니다!</p>
     <p xml:lang="nl">Filelight is een toepassing om het schijfgebruik op uw computer te visualiseren door mappen te tonen met een gemakkelijk te begrijpen beeld met concentrische ringen. Filelight maakt het gemakkelijk om ruimte vrij te maken!</p>
     <p xml:lang="nn">Filelight er eit program for å visualisera diskbruken på datamaskina di ved å visa mappene som konsentriske sirklar i eit plassbruk­diagram. Programmet gjer det lett for deg å frigjera diskplass.</p>
     <p xml:lang="pl">Filelight jest aplikacją do obrazowania wykorzystania przestrzeni dyskowej na twoim komputerze za pomocą łatwych do zrozumienia współśrodkowych pierścieni. Filelight ułatwia zwalnianie miejsca!</p>
@@ -173,6 +175,7 @@
       <li xml:lang="ie">Analisar local, lontan o removibil discos</li>
       <li xml:lang="it">Analizza i dischi locali, quelli remoti e quelli rimovibili</li>
       <li xml:lang="ka">ლოკალური, მოხსნადი და დაშორებული დისკების სკანირება</li>
+      <li xml:lang="ko">로컬, 원격, 이동식 디스크 검사</li>
       <li xml:lang="nl">Lokale, op afstand of verwijderbare schijven scannen</li>
       <li xml:lang="nn">Søk gjennom lokale diskar, nettverksdiskar og flyttbare lagringsmedium</li>
       <li xml:lang="pl">Przeszukiwanie miejscowych, zdalnych, wymiennych dysków</li>
@@ -204,6 +207,7 @@
       <li xml:lang="ie">Vider detalliat information pri files e fólderes</li>
       <li xml:lang="it">Visualizza informazioni dettagliate su file e cartelle</li>
       <li xml:lang="ka">დეტალებური ინფორმაცია ფაილებისა და საქაღალდეების შესახებ</li>
+      <li xml:lang="ko">파일과 폴더의 자세한 정보 표시</li>
       <li xml:lang="nl">Gedetailleerde informatie over bestanden en mappen bekijken</li>
       <li xml:lang="nn">Vis detaljert informasjon om filer og mapper</li>
       <li xml:lang="pl">Oglądanie szczegółowych danych o plikach i katalogach</li>
@@ -235,6 +239,7 @@
       <li xml:lang="ie">Remover files e fólderes quel ocupa tro mult spacie</li>
       <li xml:lang="it">Elimina i file o le cartelle che occupano troppo spazio</li>
       <li xml:lang="ka">წაშალეთ ფაილები და საქაღალდეები, რომლებიც მეტისმეტად ბევრ ადგილს ხარჯავენ</li>
+      <li xml:lang="ko">공간을 많이 차지하는 파일이나 폴더 삭제</li>
       <li xml:lang="nl">Bestanden of mappen verwijderen die te veel ruimte innemen</li>
       <li xml:lang="nn">Slett filer og mapper som tek opp for mykje plass</li>
       <li xml:lang="pl">Usuwanie plików i katalogów, które zajmują za dużo miejsca</li>
@@ -266,6 +271,7 @@
       <li xml:lang="ie">Integration con gerentes de file Dolphin, Konqueror e Krusader</li>
       <li xml:lang="it">Integrazione nei gestore di file Dolphin, Konqueror e Krusader</li>
       <li xml:lang="ka">ინტეგრაცია Dolphin-ში, Konqueror-ში და Krusader-ში</li>
+      <li xml:lang="ko">Dolphin, Konqueror, Krusader 파일 관리자와 통합</li>
       <li xml:lang="nl">Integratie in bestandsbeheerders Dolphin, Konqueror en Krusader</li>
       <li xml:lang="nn">Integrert med filhandsamarane Dolphin, Konqueror og Krusader</li>
       <li xml:lang="pl">Integracja z przeglądarkami plików takimi jak: Dolphin, Konqueror i Krusader</li>
@@ -304,7 +310,7 @@
       <li xml:lang="is">Stillanleg litastef</li>
       <li xml:lang="it">Schemi di colori configurabili</li>
       <li xml:lang="ka">მორგებადი ფერის სქემები</li>
-      <li xml:lang="ko">색 배열 설정</li>
+      <li xml:lang="ko">색 구성표 설정</li>
       <li xml:lang="nl">Te configureren kleurenschema's</li>
       <li xml:lang="nn">Støtte for ulike fargeoppsett</li>
       <li xml:lang="pl">Zestawy barwne do ustawienia</li>
