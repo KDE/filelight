@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Shinjo Park <kde@peremen.name>, 2011, 2013, 2015, 2017, 2019, 2020, 2021, 2022.
+# Shinjo Park <kde@peremen.name>, 2011, 2013, 2015, 2017, 2019, 2020, 2021, 2022, 2023.
 # Jung Hee Lee <daemul72@gmail.com>, 2019.
 #
 msgid ""
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-30 00:49+0000\n"
-"PO-Revision-Date: 2022-07-13 15:18+0200\n"
+"PO-Revision-Date: 2023-03-01 01:19+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -102,7 +102,7 @@ msgstr ""
 #: src/dialog.ui:174
 #, kde-format
 msgid "Exclude remote files&ystems"
-msgstr "원격 파일 시스템 제외하기(&Y)"
+msgstr "원격 파일 시스템 제외(&Y)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, scanAcrossMounts)
 #: src/dialog.ui:181
@@ -120,7 +120,7 @@ msgstr ""
 #: src/dialog.ui:184
 #, kde-format
 msgid "Scan across filesystem &boundaries"
-msgstr "다른 파일 시스템도 검사하기(&B)"
+msgstr "다른 파일 시스템도 검사(&B)"
 
 #. i18n: ectx: attribute (title), widget (QWidget, Widget3)
 #: src/dialog.ui:194
@@ -132,7 +132,7 @@ msgstr "모양(&A)"
 #: src/dialog.ui:206
 #, kde-format
 msgid "Color scheme"
-msgstr "색 배열"
+msgstr "색 구성표"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #: src/dialog.ui:232
