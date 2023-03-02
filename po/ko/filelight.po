@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Shinjo Park <kde@peremen.name>, 2011, 2013, 2015, 2017, 2019, 2020, 2021, 2022.
+# Shinjo Park <kde@peremen.name>, 2011, 2013, 2015, 2017, 2019, 2020, 2021, 2022, 2023.
 # Jung Hee Lee <daemul72@gmail.com>, 2019.
 #
 msgid ""
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-22 01:01+0000\n"
-"PO-Revision-Date: 2022-07-13 15:18+0200\n"
+"PO-Revision-Date: 2023-03-01 01:19+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -288,9 +288,7 @@ msgid "Configure…"
 msgstr "설정"
 
 #: src/qml/main.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@action configure app"
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "설정"
@@ -327,12 +325,10 @@ msgid "Aborting Scan..."
 msgstr "검사 중단 중..."
 
 #: src/qml/MapPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Overview"
+#, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
-msgstr "요약"
+msgstr "요약으로 이동"
 
 #: src/qml/MapPage.qml:37
 #, kde-format
@@ -365,55 +361,46 @@ msgid "Zoom Out"
 msgstr "축소"
 
 #: src/qml/MapPage.qml:106 src/qml/MapPage.qml:224
-#, fuzzy, kde-format
-#| msgctxt "Scan/open the path of the selected element"
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
-msgstr "열기(&O)"
+msgstr "열기"
 
 #: src/qml/MapPage.qml:114 src/qml/MapPage.qml:232
-#, fuzzy, kde-format
-#| msgid "Open &Terminal Here"
+#, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
-msgstr "여기에서 터미널 열기(&T)"
+msgstr "여기에서 터미널 열기"
 
 #: src/qml/MapPage.qml:122
-#, fuzzy, kde-format
-#| msgid "&Center Map Here"
+#, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
-msgstr "여기로 중앙 표시(&C)"
+msgstr "여기로 지도 중앙 배치"
 
 #: src/qml/MapPage.qml:133 src/qml/MapPage.qml:240
-#, fuzzy, kde-format
-#| msgid "Add to Do &Not Scan List"
+#, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
-msgstr "검색하지 않음 목록에 추가(&N)"
+msgstr "검색하지 않음 목록에 추가"
 
 #: src/qml/MapPage.qml:141
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
-msgstr "다시 검사"
+msgstr "재탐색"
 
 #: src/qml/MapPage.qml:148 src/qml/MapPage.qml:247
-#, fuzzy, kde-format
-#| msgid "&Copy to clipboard"
+#, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
-msgstr "클립보드에 복사(&C)"
+msgstr "클립보드에 복사"
 
 #: src/qml/MapPage.qml:155 src/qml/MapPage.qml:254
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
-msgstr "삭제(&D)"
+msgstr "삭제"
 
 #: src/qml/MapPage.qml:307
 #, kde-format
@@ -430,15 +417,10 @@ msgid_plural "%1 Files"
 msgstr[0] "파일 %1개"
 
 #: src/qml/MapPage.qml:313
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Click to go up to parent directory"
+#, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
-msgstr ""
-"\n"
-"상위 디렉터리로 가려면 클릭하십시오"
+msgstr "부모 디렉터리로 가려면 클릭하십시오"
 
 #: src/qml/MapPage.qml:515
 #, kde-format
@@ -465,106 +447,94 @@ msgid "Welcome to Filelight"
 msgstr "Filelight에 오신 것을 환영합니다"
 
 #: src/qml/SettingsPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Scannin&g"
+#, kde-format
 msgctxt "@title"
 msgid "Scanning"
-msgstr "검사(&G)"
+msgstr "검색 중"
 
 #: src/qml/SettingsPage.qml:27
-#, fuzzy, kde-format
-#| msgid "&Appearance"
+#, kde-format
 msgctxt "@title"
 msgid "Appearance"
-msgstr "모양(&A)"
+msgstr "모양"
 
 #: src/qml/SettingsPageAppearance.qml:16
-#, fuzzy, kde-format
-#| msgid "Color scheme"
+#, kde-format
 msgctxt "@title:group"
 msgid "Color Scheme"
-msgstr "색 배열"
+msgstr "색 구성표"
 
 #: src/qml/SettingsPageAppearance.qml:25
-#, fuzzy, kde-format
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "Rainbow"
 msgstr "무지개색"
 
 #: src/qml/SettingsPageAppearance.qml:34
-#, fuzzy, kde-format
-#| msgid "System colors"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "System colors"
 msgstr "시스템 색상"
 
 #: src/qml/SettingsPageAppearance.qml:43
-#, fuzzy, kde-format
-#| msgid "High contrast"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "High contrast"
 msgstr "고대비"
 
 #: src/qml/SettingsPageAppearance.qml:52
-#, fuzzy, kde-format
-#| msgid "Co&ntrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Contrast"
-msgstr "명암(&N):"
+msgstr "명암"
 
 #: src/qml/SettingsPageAppearance.qml:69
-#, fuzzy, kde-format
-#| msgid "Show small files"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "작은 파일 보기"
 
 #: src/qml/SettingsPageScanning.qml:23
-#, fuzzy, kde-format
-#| msgid "Do &not scan these folders:"
+#, kde-format
 msgctxt "@label"
 msgid "Do not scan these folders:"
-msgstr "다음 폴더 검사하지 않기(&N):"
+msgstr "다음 폴더 검사하지 않기:"
 
 #: src/qml/SettingsPageScanning.qml:48
-#, fuzzy, kde-format
-#| msgid "R&emove"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
-msgstr "삭제(&E)"
+msgstr "삭제"
 
 #: src/qml/SettingsPageScanning.qml:63
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
-msgstr ""
+msgstr "추가…"
 
 #: src/qml/SettingsPageScanning.qml:75
-#, fuzzy, kde-format
-#| msgid "Scan across filesystem &boundaries"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
-msgstr "다른 파일 시스템도 검사하기(&B)"
+msgstr "다른 파일 시스템도 검사"
 
 #: src/qml/SettingsPageScanning.qml:86
-#, fuzzy, kde-format
-#| msgid "Exclude remote files&ystems"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
-msgstr "원격 파일 시스템 제외하기(&Y)"
+msgstr "원격 파일 시스템 제외"
 
 #: src/radialMap/map.cpp:57
-#, fuzzy, kde-format
-#| msgid "1 file, with an average size of %2"
-#| msgid_plural "%1 files, with an average size of %2"
+#, kde-format
 msgid ""
 "\n"
 "%1 file, with an average size of %2"
 msgid_plural ""
 "\n"
 "%1 files, with an average size of %2"
-msgstr[0] "파일 %1개, 평균 크기 %2"
+msgstr[0] ""
+"\n"
+"파일 %1개, 평균 크기 %2"
 
 #~ msgid "Settings - Filelight"
 #~ msgstr "설정 - Filelight"
