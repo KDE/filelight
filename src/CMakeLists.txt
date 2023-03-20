@@ -92,7 +92,6 @@ ecm_add_app_icon(filelight ICONS
 target_link_libraries(filelight
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::XmlGui
-    Qt${QT_MAJOR_VERSION}::Svg
     Qt${QT_MAJOR_VERSION}::Quick
     Qt${QT_MAJOR_VERSION}::QuickControls2
     filelightInternal
