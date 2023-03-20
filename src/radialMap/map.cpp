@@ -21,7 +21,6 @@
 #include <QFontMetrics> //ctor
 #include <QImage> //make() & paint()
 #include <QPainter>
-#include <QSvgGenerator>
 
 #include <KColorScheme>
 #include <KLocalizedString>

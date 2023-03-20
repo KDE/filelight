@@ -46,7 +46,7 @@ include(KDEClangFormat)
 include(KDEGitCommitHooks)
 include(ECMFindQmlModule)
 
-find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Core Widgets Svg Quick QuickControls2)
+find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Core Widgets Quick QuickControls2)
 find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED
     XmlGui # For app
     KIO # For part
