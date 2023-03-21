@@ -6,8 +6,8 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-22 01:01+0000\n"
-"PO-Revision-Date: 2009-11-15 12:06+0100\n"
-"Last-Translator: Axel Rousseau <axel@esperanto-jeunes.org>\n"
+"PO-Revision-Date: 2023-03-20 22:31+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -52,10 +52,9 @@ msgstr "Lokobreto"
 
 #. i18n: ectx: ToolBar (viewToolBar)
 #: misc/filelightui.rc:38
-#, fuzzy, kde-format
-#| msgid "Main Toolbar"
+#, kde-format
 msgid "View Toolbar"
-msgstr "Ĉefa ilobreto"
+msgstr ""
 
 #: src/Config.cpp:58
 #, kde-format
@@ -232,11 +231,10 @@ msgid ""
 msgstr ""
 
 #: src/qml/GlobalMenu.qml:10
-#, fuzzy, kde-format
-#| msgid "&Scan"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Scan"
-msgstr "Tra&rigardi"
+msgstr "Trarigardi"
 
 #: src/qml/GlobalMenu.qml:21
 #, kde-format
@@ -251,25 +249,22 @@ msgid "Help"
 msgstr ""
 
 #: src/qml/main.qml:30
-#, fuzzy, kde-format
-#| msgid "Scan Folder"
+#, kde-format
 msgctxt "@action"
 msgid "Scan Folder"
 msgstr "Serĉi dosierujon"
 
 #: src/qml/main.qml:37
-#, fuzzy, kde-format
-#| msgid "Scan Folder"
+#, kde-format
 msgctxt "@action"
 msgid "Scan Home Folder"
-msgstr "Serĉi dosierujon"
+msgstr ""
 
 #: src/qml/main.qml:44
-#, fuzzy, kde-format
-#| msgid "Scan Folder"
+#, kde-format
 msgctxt "@action"
 msgid "Scan Root Folder"
-msgstr "Serĉi dosierujon"
+msgstr ""
 
 #: src/qml/main.qml:51
 #, kde-format
@@ -334,15 +329,13 @@ msgid "Up"
 msgstr ""
 
 #: src/qml/MapPage.qml:46
-#, fuzzy, kde-format
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action"
 msgid "Rescan"
 msgstr "Reserĉi"
 
 #: src/qml/MapPage.qml:55
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "Halti"
@@ -360,12 +353,10 @@ msgid "Zoom Out"
 msgstr ""
 
 #: src/qml/MapPage.qml:106 src/qml/MapPage.qml:224
-#, fuzzy, kde-format
-#| msgctxt "Scan/open the path of the selected element"
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
-msgstr "&Malfermu"
+msgstr "Malfermi"
 
 #: src/qml/MapPage.qml:114 src/qml/MapPage.qml:232
 #, kde-format
@@ -386,8 +377,7 @@ msgid "Add to Do Not Scan List"
 msgstr ""
 
 #: src/qml/MapPage.qml:141
-#, fuzzy, kde-format
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Reserĉi"
@@ -399,11 +389,10 @@ msgid "Copy to clipboard"
 msgstr ""
 
 #: src/qml/MapPage.qml:155 src/qml/MapPage.qml:254
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
-msgstr "&Forigi"
+msgstr "Forigi"
 
 #: src/qml/MapPage.qml:307
 #, kde-format
@@ -444,46 +433,43 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Overview"
-msgstr ""
+msgstr "Superrigardo"
 
 #: src/qml/OverviewPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Filelight"
+#, kde-format
 msgctxt "@title"
 msgid "Welcome to Filelight"
-msgstr "Filelight"
+msgstr "Bonvenon al Filelight"
 
 #: src/qml/SettingsPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Scanning: %1"
+#, kde-format
 msgctxt "@title"
 msgid "Scanning"
-msgstr "Serĉante: %1"
+msgstr "Skanante"
 
 #: src/qml/SettingsPage.qml:27
-#, fuzzy, kde-format
-#| msgid "&Appearance"
+#, kde-format
 msgctxt "@title"
 msgid "Appearance"
-msgstr "&Aspekto"
+msgstr "Aspekto"
 
 #: src/qml/SettingsPageAppearance.qml:16
 #, kde-format
 msgctxt "@title:group"
 msgid "Color Scheme"
-msgstr ""
+msgstr "Kolorskemo"
 
 #: src/qml/SettingsPageAppearance.qml:25
 #, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "Rainbow"
-msgstr ""
+msgstr "Ĉielarko"
 
 #: src/qml/SettingsPageAppearance.qml:34
 #, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "System colors"
-msgstr ""
+msgstr "Sistemkoloroj"
 
 #: src/qml/SettingsPageAppearance.qml:43
 #, kde-format
@@ -495,13 +481,13 @@ msgstr ""
 #, kde-format
 msgctxt "@label:slider"
 msgid "Contrast"
-msgstr ""
+msgstr "Kontrasto"
 
 #: src/qml/SettingsPageAppearance.qml:69
 #, kde-format
 msgctxt "@checkbox"
 msgid "Show small files"
-msgstr ""
+msgstr "Motri malgrandajn dosierojn"
 
 #: src/qml/SettingsPageScanning.qml:23
 #, kde-format
@@ -510,17 +496,16 @@ msgid "Do not scan these folders:"
 msgstr ""
 
 #: src/qml/SettingsPageScanning.qml:48
-#, fuzzy, kde-format
-#| msgid "R&emove"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
-msgstr "&Forigi"
+msgstr "Forigi"
 
 #: src/qml/SettingsPageScanning.qml:63
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
-msgstr ""
+msgstr "Aldoni…"
 
 #: src/qml/SettingsPageScanning.qml:75
 #, kde-format
@@ -544,49 +529,3 @@ msgid_plural ""
 "%1 files, with an average size of %2"
 msgstr[0] ""
 msgstr[1] ""
-
-#, fuzzy
-#~| msgid "Filelight"
-#~ msgid "Settings - Filelight"
-#~ msgstr "Filelight"
-
-#~ msgid "&Add..."
-#~ msgstr "&Aldonu"
-
-#, fuzzy
-#~| msgid "Rescan"
-#~ msgid "&Rescan"
-#~ msgstr "Reserĉi"
-
-#~ msgid "Go"
-#~ msgstr "Ek"
-
-#~ msgid "Location Bar"
-#~ msgstr "Lokobreto"
-
-#~ msgid "Scanning: %1"
-#~ msgstr "Serĉante: %1"
-
-#, fuzzy
-#~| msgctxt "&Up: /home/mxcl"
-#~| msgid "%1: %2"
-#~ msgctxt "Tooltip of used space on the partition, %1 is path, %2 is size"
-#~ msgid ""
-#~ "%1\n"
-#~ "Used: %2"
-#~ msgstr "%1: %2"
-
-#, fuzzy
-#~| msgctxt "&Up: /home/mxcl"
-#~| msgid "%1: %2"
-#~ msgctxt "Tooltip of free space on the partition, %1 is path, %2 is size"
-#~ msgid ""
-#~ "%1\n"
-#~ "Free: %2"
-#~ msgstr "%1: %2"
-
-#~ msgid "&Reset"
-#~ msgstr "&Reagordu"
-
-#~ msgid "&Close"
-#~ msgstr "F&ermi"
