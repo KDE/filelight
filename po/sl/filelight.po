@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-22 01:01+0000\n"
+"POT-Creation-Date: 2023-03-22 00:50+0000\n"
 "PO-Revision-Date: 2023-02-25 08:55+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -539,7 +539,7 @@ msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
 msgstr "Izvzemi oddaljene datotečne sisteme"
 
-#: src/radialMap/map.cpp:57
+#: src/radialMap/map.cpp:56
 #, kde-format
 msgid ""
 "\n"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-22 01:01+0000\n"
+"POT-Creation-Date: 2023-03-22 00:50+0000\n"
 "PO-Revision-Date: 2023-01-02 23:12+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -555,7 +555,7 @@ msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
 msgstr "Şəbəkədəki fa&yl sistemlərini istisna etmək"
 
-#: src/radialMap/map.cpp:57
+#: src/radialMap/map.cpp:56
 #, fuzzy, kde-format
 #| msgid "1 file, with an average size of %2"
 #| msgid_plural "%1 files, with an average size of %2"
