@@ -63,6 +63,7 @@
   <summary xml:lang="ia">Monstra usage de disco e dele files non usate</summary>
   <summary xml:lang="id">Menampilkan penggunaan disk dan menghapus file yang tidak digunakan</summary>
   <summary xml:lang="ie">Monstrar li usage de disco e remover ínnecessi files</summary>
+  <summary xml:lang="is">Sýna nýtingu diska og eyða ónotuðum skrám</summary>
   <summary xml:lang="it">Mostra l'uso del disco ed elimina i file non utilizzati</summary>
   <summary xml:lang="ka">დისკის გამოყენების ჩვენება და გამოუყენებელი ფაილებს წაშლა</summary>
   <summary xml:lang="ko">디스크 사용 통계를 보고 사용하지 않는 파일 삭제</summary>
@@ -95,6 +96,7 @@
     <p xml:lang="ia">Filelight es unapplication per visualisar le usage de disco sur tu computator per monstrar dossieres usante un vista facile a comprender de anillos concentric. Filelight rende simplice liberar spatio!</p>
     <p xml:lang="id">Filelight adalah sebuah aplikasi untuk memvisualkan penggunaan disk pada komputermu dengan menampilkan folder menggunakan sebuah tampilan lingkaran konsentris yang mudah dimengerti. Filelight memudahkan dalam pembebasan ruang!</p>
     <p xml:lang="ie">Filelight visualisa li usage de disco de vor computator, monstrante fólderes in un vise comprensibil de concentric anelles. Filelight facilisa li liberation de spacie!</p>
+    <p xml:lang="is">Filelight er forrit til að skoða myndrænt diskapláss á tölvunni þinni með því að birta möppur á auðskilinn máta sem hringgeira. Filelight einfaldar að losa um diskpláss!</p>
     <p xml:lang="it">Filelight è un'applicazione per visualizzare l'uso del disco nel tuo computer, che mostra le cartelle in una vista ad anelli concentrici di semplice interpretazione. Filelight rende semplice liberare dello spazio!</p>
     <p xml:lang="ka">Filelight აპლიკაციაა თქვენს კომპიუტერში დისკის გამოყენების ვიზუალიზაციისთვის. ის საქაღალდეებს ადვილად-გასაგებ ხედში გაჩვენებთ. Filelight -ი აადვილებს დისკის გათავისუფლებას!</p>
     <p xml:lang="ko">Filelight는 이해하기 쉬운 동심원 형태로 컴퓨터 디스크 사용량을 시각화합니다. 디스크 정리에 도움을 줄 수 있습니다!</p>
@@ -171,6 +173,7 @@
       <li xml:lang="ia">Scander discos local, remote o removabile</li>
       <li xml:lang="id">Pemindaian lokal, jarak jauh, atau disk yang dapat dilepas</li>
       <li xml:lang="ie">Analisar local, lontan o removibil discos</li>
+      <li xml:lang="is">Skannaðu staðværa, fjartengda eða útskiptanlega diska</li>
       <li xml:lang="it">Analizza i dischi locali, quelli remoti e quelli rimovibili</li>
       <li xml:lang="ka">ლოკალური, მოხსნადი და დაშორებული დისკების სკანირება</li>
       <li xml:lang="ko">로컬, 원격, 이동식 디스크 검사</li>
@@ -202,6 +205,7 @@
       <li xml:lang="ia">Vide Information detaliate  re files e directorios</li>
       <li xml:lang="id">Tampilan informasi terperinci tentang file dan folder</li>
       <li xml:lang="ie">Vider detalliat information pri files e fólderes</li>
+      <li xml:lang="is">Skoðaðu nákvæmar upplýsingar um skrár og möppur</li>
       <li xml:lang="it">Visualizza informazioni dettagliate su file e cartelle</li>
       <li xml:lang="ka">დეტალებური ინფორმაცია ფაილებისა და საქაღალდეების შესახებ</li>
       <li xml:lang="ko">파일과 폴더의 자세한 정보 표시</li>
@@ -233,6 +237,7 @@
       <li xml:lang="ia">Dele files o dossieres que es occupante troppo spatio</li>
       <li xml:lang="id">Hapus file atau folder yang terlalu banyak memakan ruang</li>
       <li xml:lang="ie">Remover files e fólderes quel ocupa tro mult spacie</li>
+      <li xml:lang="is">Eyddu skrám eða möppum sem eru að taka of mikið pláss</li>
       <li xml:lang="it">Elimina i file o le cartelle che occupano troppo spazio</li>
       <li xml:lang="ka">წაშალეთ ფაილები და საქაღალდეები, რომლებიც მეტისმეტად ბევრ ადგილს ხარჯავენ</li>
       <li xml:lang="ko">공간을 많이 차지하는 파일이나 폴더 삭제</li>
@@ -264,6 +269,7 @@
       <li xml:lang="ia">Integration in gerente de files Dolphin, Konqueror e Krusader</li>
       <li xml:lang="id">Integrasi ke dalam pengelola file Dolphin, Konqueror, dan Krusader</li>
       <li xml:lang="ie">Integration con gerentes de file Dolphin, Konqueror e Krusader</li>
+      <li xml:lang="is">Samþætting inn í Dolphin, Konqueror og Krusader skráastjóra</li>
       <li xml:lang="it">Integrazione nei gestore di file Dolphin, Konqueror e Krusader</li>
       <li xml:lang="ka">ინტეგრაცია Dolphin-ში, Konqueror-ში და Krusader-ში</li>
       <li xml:lang="ko">Dolphin, Konqueror, Krusader 파일 관리자와 통합</li>
