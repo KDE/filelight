@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-24 02:41+0000\n"
-"PO-Revision-Date: 2023-03-11 04:54\n"
+"PO-Revision-Date: 2023-03-26 02:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -290,12 +290,10 @@ msgid "Configure…"
 msgstr "配置…"
 
 #: src/qml/main.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@action configure app"
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr "配置…"
+msgstr "配置"
 
 #: src/qml/main.qml:76
 #, kde-format
@@ -329,12 +327,10 @@ msgid "Aborting Scan..."
 msgstr "正在中止扫描..."
 
 #: src/qml/MapPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Overview"
+#, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
-msgstr "概览"
+msgstr "转到概览"
 
 #: src/qml/MapPage.qml:37
 #, kde-format
@@ -367,55 +363,46 @@ msgid "Zoom Out"
 msgstr "缩小"
 
 #: src/qml/MapPage.qml:106 src/qml/MapPage.qml:224
-#, fuzzy, kde-format
-#| msgctxt "Scan/open the path of the selected element"
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
-msgstr "打开(&O)"
+msgstr "打开"
 
 #: src/qml/MapPage.qml:114 src/qml/MapPage.qml:232
-#, fuzzy, kde-format
-#| msgid "Open &Terminal Here"
+#, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
-msgstr "在此打开终端(&T)"
+msgstr "在此位置打开终端"
 
 #: src/qml/MapPage.qml:122
-#, fuzzy, kde-format
-#| msgid "&Center Map Here"
+#, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
-msgstr "在此居中图示(&C)"
+msgstr "在此居中图示"
 
 #: src/qml/MapPage.qml:133 src/qml/MapPage.qml:240
-#, fuzzy, kde-format
-#| msgid "Add to Do &Not Scan List"
+#, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
-msgstr "添加到不扫描列表(&N)"
+msgstr "添加到不扫描列表"
 
 #: src/qml/MapPage.qml:141
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "重新扫描"
 
 #: src/qml/MapPage.qml:148 src/qml/MapPage.qml:247
-#, fuzzy, kde-format
-#| msgid "&Copy to clipboard"
+#, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
-msgstr "复制到剪贴板(&C)"
+msgstr "复制到剪贴板"
 
 #: src/qml/MapPage.qml:155 src/qml/MapPage.qml:254
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
-msgstr "删除(&D)"
+msgstr "删除"
 
 #: src/qml/MapPage.qml:307
 #, kde-format
@@ -432,15 +419,10 @@ msgid_plural "%1 Files"
 msgstr[0] "%1 个文件"
 
 #: src/qml/MapPage.qml:313
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Click to go up to parent directory"
+#, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
-msgstr ""
-"\n"
-"点击转到上一级目录"
+msgstr "点击转到上一级目录"
 
 #: src/qml/MapPage.qml:515
 #, kde-format
@@ -467,195 +449,91 @@ msgid "Welcome to Filelight"
 msgstr "欢迎使用 Filelight"
 
 #: src/qml/SettingsPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Scannin&g"
+#, kde-format
 msgctxt "@title"
 msgid "Scanning"
-msgstr "扫描(&G)"
+msgstr "扫描"
 
 #: src/qml/SettingsPage.qml:27
-#, fuzzy, kde-format
-#| msgid "&Appearance"
+#, kde-format
 msgctxt "@title"
 msgid "Appearance"
-msgstr "外观(&A)"
+msgstr "外观"
 
 #: src/qml/SettingsPageAppearance.qml:16
-#, fuzzy, kde-format
-#| msgid "Color scheme"
+#, kde-format
 msgctxt "@title:group"
 msgid "Color Scheme"
 msgstr "配色方案"
 
 #: src/qml/SettingsPageAppearance.qml:25
-#, fuzzy, kde-format
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "Rainbow"
 msgstr "彩虹色"
 
 #: src/qml/SettingsPageAppearance.qml:34
-#, fuzzy, kde-format
-#| msgid "System colors"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "System colors"
 msgstr "系统颜色"
 
 #: src/qml/SettingsPageAppearance.qml:43
-#, fuzzy, kde-format
-#| msgid "High contrast"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "High contrast"
 msgstr "高对比度"
 
 #: src/qml/SettingsPageAppearance.qml:52
-#, fuzzy, kde-format
-#| msgid "Co&ntrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Contrast"
-msgstr "对比度(&N)"
+msgstr "对比度"
 
 #: src/qml/SettingsPageAppearance.qml:69
-#, fuzzy, kde-format
-#| msgid "Show small files"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "显示小文件"
 
 #: src/qml/SettingsPageScanning.qml:23
-#, fuzzy, kde-format
-#| msgid "Do &not scan these folders:"
+#, kde-format
 msgctxt "@label"
 msgid "Do not scan these folders:"
-msgstr "不扫描这些文件夹(&N)："
+msgstr "不扫描这些文件夹："
 
 #: src/qml/SettingsPageScanning.qml:48
-#, fuzzy, kde-format
-#| msgid "R&emove"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
-msgstr "移除(&E)"
+msgstr "移除"
 
 #: src/qml/SettingsPageScanning.qml:63
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
-msgstr ""
+msgstr "添加…"
 
 #: src/qml/SettingsPageScanning.qml:75
-#, fuzzy, kde-format
-#| msgid "Scan across filesystem &boundaries"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
-msgstr "跨文件系统范围扫描(&B)"
+msgstr "跨文件系统范围扫描"
 
 #: src/qml/SettingsPageScanning.qml:86
-#, fuzzy, kde-format
-#| msgid "Exclude remote files&ystems"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
-msgstr "排除远程文件系统(&Y)"
+msgstr "排除远程文件系统"
 
 #: src/radialMap/map.cpp:56
-#, fuzzy, kde-format
-#| msgid "1 file, with an average size of %2"
-#| msgid_plural "%1 files, with an average size of %2"
+#, kde-format
 msgid ""
 "\n"
 "%1 file, with an average size of %2"
 msgid_plural ""
 "\n"
 "%1 files, with an average size of %2"
-msgstr[0] "%1 个文件，平均大小为 %2"
-
-#~ msgid "Settings - Filelight"
-#~ msgstr "设置 - Filelight"
-
-#~ msgid "&Add..."
-#~ msgstr "添加(&A)..."
-
-#~ msgid ""
-#~ "Prevents scanning of filesystems that are not on this computer, e.g. NFS "
-#~ "or Samba mounts."
-#~ msgstr "禁止扫描不位于本机的文件系统，例如挂载的 NFS 或 Samba 位置。"
-
-#~ msgid ""
-#~ "Allows scans to enter directories that are part of other filesystems. For "
-#~ "example, when unchecked, this will usually prevent the contents of <b>/"
-#~ "mnt</b> from being scanned if you scan <b>/</b>."
-#~ msgstr ""
-#~ "允许进入位于其他文件系统的目录扫描。例如，当未选中时，<b>/mnt</b> 的内容会"
-#~ "在您扫描 <b>/</b> 时被排除在外。"
-
-#~ msgid "Here you can vary the contrast of the filemap in realtime."
-#~ msgstr "您可在此实时调整文件图示的对比度。"
-
-#~ msgid ""
-#~ "Anti-aliasing the filemap makes it clearer and prettier, unfortunately it "
-#~ "also makes rendering very slow."
-#~ msgstr "抗锯齿让文件图示更加清晰美观，但也会拖慢画面绘制速度。"
-
-#~ msgid "&Use anti-aliasing"
-#~ msgstr "使用抗锯齿(&U)"
-
-#~ msgid ""
-#~ "Some files are too small to be rendered on the filemap. Selecting this "
-#~ "option makes these files visible by merging them all into a single "
-#~ "\"multi-segment\"."
-#~ msgstr ""
-#~ "某些文件太小，无法在文件图示中显示。勾选此项后，这些小文件将被合并为一个整"
-#~ "体片段显示。"
-
-#~ msgid ""
-#~ "The font size of exploded labels can be varied relative to the depth of "
-#~ "the directories they represent. This helps you spot the important labels "
-#~ "more easily. Set a sensible minimum font size."
-#~ msgstr ""
-#~ "勾选此项后，文件图示的标签字体大小按照对象目录的相对深度而变化。这可以让您"
-#~ "更容易看清重要的标签。请设置一个合理的最小字体大小。"
-
-#~ msgid "Var&y label font sizes"
-#~ msgstr "标签字体大小可变(&Y)"
-
-#~ msgid "The smallest font size Filelight can use to render labels."
-#~ msgstr "Filelight 绘制标签时的最小字体大小。"
-
-#~ msgid "Minimum font si&ze:"
-#~ msgstr "最小字体大小(&Z)："
-
-#~ msgctxt "@action"
-#~ msgid "Save as SVG"
-#~ msgstr "保存为 SVG"
-
-#~ msgid "Save the current view as an SVG file"
-#~ msgstr "将当前视图保存为 SVG 文件"
-
-#~ msgid "Open &File Manager Here"
-#~ msgstr "在此打开文件管理器(&F)"
-
-#~ msgid "&Rescan"
-#~ msgstr "重新扫描(&R)"
-
-#~ msgctxt "We messed up, the user needs to initiate a rescan."
-#~ msgid ""
-#~ "Internal representation is invalid,\n"
-#~ "please rescan."
-#~ msgstr ""
-#~ "内部表示无效，\n"
-#~ "请重新扫描。"
-
-#~ msgctxt "Tooltip of file/folder, %1 is path, %2 is size"
-#~ msgid ""
-#~ "%1\n"
-#~ "%2"
-#~ msgstr ""
-#~ "%1\n"
-#~ "%2"
-
-#~ msgctxt "@title:window"
-#~ msgid "Save as SVG"
-#~ msgstr "保存为 SVG"
-
-#~ msgctxt "filedialog type filter"
-#~ msgid "SVG Files (*.svg);;All Files(*)"
-#~ msgstr "SVG 文件 (*.svg);;所有文件 (*)"
+msgstr[0] ""
+"\n"
+"%1 个文件，平均大小为 %2"
