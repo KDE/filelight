@@ -111,6 +111,9 @@ Kirigami.ApplicationWindow {
     minimumWidth: Kirigami.Settings.isMobile ? 0 : Kirigami.Units.gridUnit * 22
     minimumHeight: Kirigami.Settings.isMobile ? 0 : Kirigami.Units.gridUnit * 22
 
+    width: Kirigami.Units.gridUnit * 40
+    height: Kirigami.Units.gridUnit * 30
+
     pageStack.initialPage: "qrc:/ui/OverviewPage.qml"
     pageStack.defaultColumnWidth: appWindow.width // show single page
 
