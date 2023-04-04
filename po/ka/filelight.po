@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-24 02:41+0000\n"
+"POT-Creation-Date: 2023-04-04 02:57+0000\n"
 "PO-Revision-Date: 2023-02-03 16:59+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -319,7 +319,7 @@ msgid_plural "%1 files"
 msgstr[0] "1 ფაილი"
 msgstr[1] "%1 ფაილი"
 
-#: src/qml/main.qml:175
+#: src/qml/main.qml:178
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-24 02:41+0000\n"
+"POT-Creation-Date: 2023-04-04 02:57+0000\n"
 "PO-Revision-Date: 2014-09-21 00:35-0700\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -327,7 +327,7 @@ msgid_plural "%1 files"
 msgstr[0] "%1 ファイル"
 msgstr[1] "%1 ファイル"
 
-#: src/qml/main.qml:175
+#: src/qml/main.qml:178
 #, fuzzy, kde-format
 #| msgid "Aborting Scan..."
 msgctxt "@info:status"
