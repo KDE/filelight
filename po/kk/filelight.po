@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-22 00:50+0000\n"
+"POT-Creation-Date: 2023-04-04 00:50+0000\n"
 "PO-Revision-Date: 2013-06-27 03:35+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -328,7 +328,7 @@ msgid "1 file"
 msgid_plural "%1 files"
 msgstr[0] "%1 файл"
 
-#: src/qml/main.qml:175
+#: src/qml/main.qml:178
 #, fuzzy, kde-format
 #| msgid "Aborting Scan..."
 msgctxt "@info:status"
