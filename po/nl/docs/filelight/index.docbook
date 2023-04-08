@@ -61,7 +61,7 @@
 >&filelight; 1.21 (Applications 15.08)</releaseinfo>
    <abstract
 ><para
->Schijfgebruik tonen en ongebruikte bestanden verwijderen.</para
+>&filelight; creates an interactive map of concentric segmented-rings that helps visualize disk usage on your computer.</para
 ></abstract>
    <!-- These may be used by search engines -->
    <keywordset>
