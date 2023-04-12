@@ -507,7 +507,8 @@ Kirigami.Page {
 
         Timer {
             interval: 16 // = 60 fps because supposedly Qt hardcodes it all over the place (this claim is very old and it's unclear if still true)
-            running: parent.visible
+            // Polish doesn't lend itself to the advanced status text https://bugs.kde.org/show_bug.cgi?id=468395
+            running: parent.visible && Qt.uiLanguage != 'pl'
             repeat: true
             onTriggered: {
                 const files = ScanManager.files();
