@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-04 00:50+0000\n"
+"POT-Creation-Date: 2023-04-19 00:52+0000\n"
 "PO-Revision-Date: 2022-12-17 14:46+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -434,7 +434,7 @@ msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "Cliquez pour remonter au dossier parent"
 
-#: src/qml/MapPage.qml:515
+#: src/qml/MapPage.qml:516
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -442,7 +442,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 fichier, %2 %"
 msgstr[1] "%1 fichiers, %2"
 
-#: src/qml/MapPage.qml:524
+#: src/qml/MapPage.qml:525
 #, kde-format
 msgid "No data available"
 msgstr "Aucune donnée disponible"

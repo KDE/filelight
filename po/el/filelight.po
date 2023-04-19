@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-04 00:50+0000\n"
+"POT-Creation-Date: 2023-04-19 00:52+0000\n"
 "PO-Revision-Date: 2018-10-18 16:32+0300\n"
 "Last-Translator: Long Run <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -452,7 +452,7 @@ msgstr ""
 "\n"
 "Με κλικ μεταβαίνετε στον προηγούμενο κατάλογο"
 
-#: src/qml/MapPage.qml:515
+#: src/qml/MapPage.qml:516
 #, fuzzy, kde-format
 #| msgctxt "Tooltip of folder, %1 is number of files"
 #| msgid "%1 File (%2%)"
@@ -463,7 +463,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 αρχείο (%2%)"
 msgstr[1] "%1 αρχεία %2"
 
-#: src/qml/MapPage.qml:524
+#: src/qml/MapPage.qml:525
 #, kde-format
 msgid "No data available"
 msgstr ""
