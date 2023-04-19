@@ -9,8 +9,11 @@
 #include "define.h"
 #include "mainContext.h"
 
+#include <filesystem>
+
 #include <QApplication>
 #include <QCommandLineParser>
+#include <QDebug>
 #include <QDir>
 #include <QIcon>
 #include <QQuickStyle>
@@ -33,10 +36,19 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps, true);
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling, true);
 #endif
+
     // Since filelight may get used when the disk is full or near full we'll not
-    // want to risk caching problems.
+    // want to risk caching problems. If we don't have enough space -> disable caching.
     // https://bugs.kde.org/show_bug.cgi?id=466415
-    qputenv("QML_DISABLE_DISK_CACHE", "1");
+    const QString cachePath = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
+    std::error_code ec;
+    const auto spaceInfo = std::filesystem::space(cachePath.toStdString(), ec);
+    constexpr auto minimumSpace = 5UL * 1024 * 1024 * 1024; // GiB
+    const bool cache = ec ? false : (spaceInfo.available > minimumSpace);
+    if (!cache) {
+        qWarning() << "Disabling QML cache because of low disk space";
+        qputenv("QML_DISABLE_DISK_CACHE", "1");
+    }
 
     QApplication app(argc, argv);
 
