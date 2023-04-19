@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-04 02:57+0000\n"
+"POT-Creation-Date: 2023-04-19 02:56+0000\n"
 "PO-Revision-Date: 2023-03-05 21:50+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -428,7 +428,7 @@ msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "Siirry yläkansioon napsauttamalla"
 
-#: src/qml/MapPage.qml:515
+#: src/qml/MapPage.qml:516
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -436,7 +436,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 tiedosto, %2"
 msgstr[1] "%1 tiedostoa, %2"
 
-#: src/qml/MapPage.qml:524
+#: src/qml/MapPage.qml:525
 #, kde-format
 msgid "No data available"
 msgstr "Tietoa ei saatavilla"
