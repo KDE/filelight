@@ -33,6 +33,11 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps, true);
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling, true);
 #endif
+    // Since filelight may get used when the disk is full or near full we'll not
+    // want to risk caching problems.
+    // https://bugs.kde.org/show_bug.cgi?id=466415
+    qputenv("QML_DISABLE_DISK_CACHE", "1");
+
     QApplication app(argc, argv);
 
     qRegisterMetaType<std::shared_ptr<File>>("std::shared_ptr<File>");
