@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-19 02:56+0000\n"
+"POT-Creation-Date: 2023-04-20 03:01+0000\n"
 "PO-Revision-Date: 2022-07-19 10:05+0200\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -110,12 +110,12 @@ msgctxt "Go to forward in the history of paths viewed"
 msgid "Forward"
 msgstr "Dopredu"
 
-#: src/main.cpp:59
+#: src/main.cpp:64
 #, kde-format
 msgid "Graphical disk-usage information"
 msgstr "Grafické informácie o využití disku"
 
-#: src/main.cpp:61
+#: src/main.cpp:66
 #, kde-format
 msgid ""
 "(C) 2006 Max Howell\n"
@@ -126,87 +126,87 @@ msgstr ""
 "(C) 2008-2014 Martin Sandsmark\n"
 "(C) 2017-2022 Harald Sitter"
 
-#: src/main.cpp:66
+#: src/main.cpp:71
 #, kde-format
 msgid "Martin Sandsmark"
 msgstr "Martin Sandsmark"
 
-#: src/main.cpp:66
+#: src/main.cpp:71
 #, kde-format
 msgid "Maintainer"
 msgstr "Správca"
 
-#: src/main.cpp:67
+#: src/main.cpp:72
 #, kde-format
 msgid "Harald Sitter"
 msgstr "Harald Sitter"
 
-#: src/main.cpp:67
+#: src/main.cpp:72
 #, kde-format
 msgid "QtQuick Port"
 msgstr "QtQuick Port"
 
-#: src/main.cpp:68
+#: src/main.cpp:73
 #, kde-format
 msgid "Max Howell"
 msgstr "Max Howell"
 
-#: src/main.cpp:68
+#: src/main.cpp:73
 #, kde-format
 msgid "Original author"
 msgstr "Pôvodný autor"
 
-#: src/main.cpp:69
+#: src/main.cpp:74
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr "Lukas Appelhans"
 
-#: src/main.cpp:69
+#: src/main.cpp:74
 #, kde-format
 msgid "Help and support"
 msgstr "Pomocník a podpora"
 
-#: src/main.cpp:70
+#: src/main.cpp:75
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr "Steffen Gerlach"
 
-#: src/main.cpp:70
+#: src/main.cpp:75
 #, kde-format
 msgid "Inspiration"
 msgstr "Inšpirácia"
 
-#: src/main.cpp:71
+#: src/main.cpp:76
 #, kde-format
 msgid "Mike Diehl"
 msgstr "Mike Diehl"
 
-#: src/main.cpp:71
+#: src/main.cpp:76
 #, kde-format
 msgid "Original documentation"
 msgstr "Pôvodná dokumentácia"
 
-#: src/main.cpp:72
+#: src/main.cpp:77
 #, kde-format
 msgid "Sune Vuorela"
 msgstr "Sune Vuorela"
 
-#: src/main.cpp:72 src/main.cpp:73
+#: src/main.cpp:77 src/main.cpp:78
 #, kde-format
 msgid "Icon"
 msgstr "Ikona"
 
-#: src/main.cpp:73
+#: src/main.cpp:78
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr "Nuno Pinheiro"
 
-#: src/main.cpp:80
+#: src/main.cpp:85
 #, kde-format
 msgid "Path or URL to scan"
 msgstr "Cesta alebo URL na prehľadanie"
 
-#: src/main.cpp:80
+#: src/main.cpp:85
 #, kde-format
 msgid "[url]"
 msgstr "[url]"
