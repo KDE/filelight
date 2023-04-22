@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-20 00:51+0000\n"
+"POT-Creation-Date: 2023-04-22 00:54+0000\n"
 "PO-Revision-Date: 2021-09-09 21:51+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -108,12 +108,12 @@ msgctxt "Go to forward in the history of paths viewed"
 msgid "Forward"
 msgstr "Frem"
 
-#: src/main.cpp:64
+#: src/main.cpp:76
 #, kde-format
 msgid "Graphical disk-usage information"
 msgstr "Grafisk information om diskforbrug"
 
-#: src/main.cpp:66
+#: src/main.cpp:78
 #, fuzzy, kde-format
 #| msgid ""
 #| "(C) 2006 Max Howell\n"
@@ -126,87 +126,87 @@ msgstr ""
 "(C) 2006 Max Howell\n"
 "(C) 2008-2014 Martin Sandsmark"
 
-#: src/main.cpp:71
+#: src/main.cpp:83
 #, kde-format
 msgid "Martin Sandsmark"
 msgstr "Martin Sandsmark"
 
-#: src/main.cpp:71
+#: src/main.cpp:83
 #, kde-format
 msgid "Maintainer"
 msgstr "Vedligeholder"
 
-#: src/main.cpp:72
+#: src/main.cpp:84
 #, kde-format
 msgid "Harald Sitter"
 msgstr ""
 
-#: src/main.cpp:72
+#: src/main.cpp:84
 #, kde-format
 msgid "QtQuick Port"
 msgstr ""
 
-#: src/main.cpp:73
+#: src/main.cpp:85
 #, kde-format
 msgid "Max Howell"
 msgstr "Max Howell"
 
-#: src/main.cpp:73
+#: src/main.cpp:85
 #, kde-format
 msgid "Original author"
 msgstr "Oprindelig udvikler"
 
-#: src/main.cpp:74
+#: src/main.cpp:86
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr "Lukas Appelhans"
 
-#: src/main.cpp:74
+#: src/main.cpp:86
 #, kde-format
 msgid "Help and support"
 msgstr "Hjælp og support"
 
-#: src/main.cpp:75
+#: src/main.cpp:87
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr "Steffen Gerlach"
 
-#: src/main.cpp:75
+#: src/main.cpp:87
 #, kde-format
 msgid "Inspiration"
 msgstr "Inspiration"
 
-#: src/main.cpp:76
+#: src/main.cpp:88
 #, kde-format
 msgid "Mike Diehl"
 msgstr "Mike Diehl"
 
-#: src/main.cpp:76
+#: src/main.cpp:88
 #, kde-format
 msgid "Original documentation"
 msgstr "Oprindelig dokumentation"
 
-#: src/main.cpp:77
+#: src/main.cpp:89
 #, kde-format
 msgid "Sune Vuorela"
 msgstr "Sune Vuorela"
 
-#: src/main.cpp:77 src/main.cpp:78
+#: src/main.cpp:89 src/main.cpp:90
 #, kde-format
 msgid "Icon"
 msgstr "Ikon"
 
-#: src/main.cpp:78
+#: src/main.cpp:90
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr "Nuno Pinheiro"
 
-#: src/main.cpp:85
+#: src/main.cpp:97
 #, kde-format
 msgid "Path or URL to scan"
 msgstr "Sti eller URL der skal scannes"
 
-#: src/main.cpp:85
+#: src/main.cpp:97
 #, kde-format
 msgid "[url]"
 msgstr "[URL]"

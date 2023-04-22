@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-20 00:51+0000\n"
+"POT-Creation-Date: 2023-04-22 00:54+0000\n"
 "PO-Revision-Date: 2022-12-20 19:39+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -108,12 +108,12 @@ msgctxt "Go to forward in the history of paths viewed"
 msgid "Forward"
 msgstr "அடுத்த‍து"
 
-#: src/main.cpp:64
+#: src/main.cpp:76
 #, kde-format
 msgid "Graphical disk-usage information"
 msgstr "வரைமுறையில் வட்டுப் பயன்பாட்டு விவரங்கள்"
 
-#: src/main.cpp:66
+#: src/main.cpp:78
 #, kde-format
 msgid ""
 "(C) 2006 Max Howell\n"
@@ -124,87 +124,87 @@ msgstr ""
 "(C) 2008-2014 மார்ட்டின் சாண்டுஸ்மார்கு\n"
 "(C) 2017-2022 ஹரால்டு சிட்டர்"
 
-#: src/main.cpp:71
+#: src/main.cpp:83
 #, kde-format
 msgid "Martin Sandsmark"
 msgstr "மார்ட்டின் சான்டுஸ்மார்க்"
 
-#: src/main.cpp:71
+#: src/main.cpp:83
 #, kde-format
 msgid "Maintainer"
 msgstr "பராமரிப்பாளர்"
 
-#: src/main.cpp:72
+#: src/main.cpp:84
 #, kde-format
 msgid "Harald Sitter"
 msgstr "ஹரால்டு சிட்டர்"
 
-#: src/main.cpp:72
+#: src/main.cpp:84
 #, kde-format
 msgid "QtQuick Port"
 msgstr ""
 
-#: src/main.cpp:73
+#: src/main.cpp:85
 #, kde-format
 msgid "Max Howell"
 msgstr "மாக்சு ஹொவல்"
 
-#: src/main.cpp:73
+#: src/main.cpp:85
 #, kde-format
 msgid "Original author"
 msgstr "முதிலில் இயற்றியவர்"
 
-#: src/main.cpp:74
+#: src/main.cpp:86
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr ""
 
-#: src/main.cpp:74
+#: src/main.cpp:86
 #, kde-format
 msgid "Help and support"
 msgstr "உதவியும் ஆதரவம்"
 
-#: src/main.cpp:75
+#: src/main.cpp:87
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr ""
 
-#: src/main.cpp:75
+#: src/main.cpp:87
 #, kde-format
 msgid "Inspiration"
 msgstr "ஊக்கமளித்தது"
 
-#: src/main.cpp:76
+#: src/main.cpp:88
 #, kde-format
 msgid "Mike Diehl"
 msgstr ""
 
-#: src/main.cpp:76
+#: src/main.cpp:88
 #, kde-format
 msgid "Original documentation"
 msgstr "முதல் கையேடு"
 
-#: src/main.cpp:77
+#: src/main.cpp:89
 #, kde-format
 msgid "Sune Vuorela"
 msgstr ""
 
-#: src/main.cpp:77 src/main.cpp:78
+#: src/main.cpp:89 src/main.cpp:90
 #, kde-format
 msgid "Icon"
 msgstr "சின்னம்"
 
-#: src/main.cpp:78
+#: src/main.cpp:90
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr ""
 
-#: src/main.cpp:85
+#: src/main.cpp:97
 #, kde-format
 msgid "Path or URL to scan"
 msgstr "ஆராய வேண்டிய பாதை அல்லது முகவரி"
 
-#: src/main.cpp:85
+#: src/main.cpp:97
 #, kde-format
 msgid "[url]"
 msgstr "[url]"
