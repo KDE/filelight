@@ -112,7 +112,7 @@ Kirigami.Page {
                 action: Kirigami.Action {
                     iconName: "utilities-terminal"
                     text: i18nc("@action", "Open Terminal Here")
-                    onTriggered: ContextMenuContext.openTerminal(contextMenu.segment)
+                    onTriggered: ContextMenuContext.openTerminal(contextMenu.segment.url())
                 }
             }
             QQC2.MenuItem {
@@ -121,8 +121,8 @@ Kirigami.Page {
                     iconName: "zoom-in"
                     text: i18nc("@action focuses the filelight view on a given map segment", "Center Map Here")
                     onTriggered: {
-                        appWindow.updateURL(contextMenu.segment.url())
-                        mapItem.createFromCacheObject(contextMenu.segment)
+                        MainContext.updateURL(contextMenu.segment.url())
+                        MainContext.openUrl(contextMenu.segment.url())
                     }
                 }
             }
@@ -131,7 +131,7 @@ Kirigami.Page {
                 action: Kirigami.Action {
                     iconName: "list-remove"
                     text: i18nc("@action", "Add to Do Not Scan List")
-                    onTriggered: ContextMenuContext.doNotScan(contextMenu.segment)
+                    onTriggered: ContextMenuContext.doNotScan(contextMenu.segment.url())
                 }
             }
             QQC2.MenuItem {
@@ -146,7 +146,7 @@ Kirigami.Page {
                 action: Kirigami.Action {
                     iconName: "edit-copy"
                     text: i18nc("@action", "Copy to clipboard")
-                    onTriggered: ContextMenuContext.copyClipboard(contextMenu.segment)
+                    onTriggered: ContextMenuContext.copyClipboard(contextMenu.segment.displayPath())
                 }
             }
             QQC2.MenuItem {
