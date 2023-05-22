@@ -1,13 +1,14 @@
 # Translation of filelight into Japanese.
 # Yukiko Bando <ybando@k6.dion.ne.jp>, 2009, 2010.
-# Fumiaki Okushi <okushi@kde.gr.jp>, 2014.
+# Shizuku Hagoromo <Lemonade.flash.1164@gmail.com>, 2023.
+# Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2014, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-22 00:54+0000\n"
-"PO-Revision-Date: 2014-09-21 00:35-0700\n"
-"Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
+"PO-Revision-Date: 2023-05-21 12:11-0700\n"
+"Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -16,16 +17,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Yukiko Bando"
+msgstr "Hagoromo Shizuku"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "ybando@k6.dion.ne.jp"
+msgstr "Lemonade.flash.1164@gmail.com"
 
 #. i18n: ectx: Menu (file)
 #: misc/filelightui.rc:4
@@ -60,18 +62,17 @@ msgstr "ツールバーを表示"
 #: src/Config.cpp:58
 #, kde-format
 msgid "Select path to ignore"
-msgstr ""
+msgstr "無視するパスを選択"
 
 #: src/Config.cpp:71
-#, fuzzy, kde-format
-#| msgid "That folder is already set to be excluded from scans"
+#, kde-format
 msgid "That folder is already set to be excluded from scans."
 msgstr "そのフォルダは既にスキャン対象から除外されています。"
 
 #: src/Config.cpp:71
 #, kde-format
 msgid "Folder already ignored"
-msgstr ""
+msgstr "既に無視されているフォルダー"
 
 #: src/contextMenuContext.cpp:63
 #, kde-format
@@ -113,17 +114,15 @@ msgid "Graphical disk-usage information"
 msgstr "ディスクの使用状況をグラフィカルに表示します"
 
 #: src/main.cpp:78
-#, fuzzy, kde-format
-#| msgid ""
-#| "(C) 2006 Max Howell\n"
-#| "(C) 2008, 2009 Martin Sandsmark"
+#, kde-format
 msgid ""
 "(C) 2006 Max Howell\n"
 "(C) 2008-2014 Martin Sandsmark\n"
 "(C) 2017-2022 Harald Sitter"
 msgstr ""
 "(C) 2006 Max Howell\n"
-"(C) 2008, 2009 Martin Sandsmark"
+"(C) 2008-2014 Martin Sandsmark\n"
+"(C) 2017-2022 Harald Sitter"
 
 #: src/main.cpp:83
 #, kde-format
@@ -138,12 +137,12 @@ msgstr "メンテナ"
 #: src/main.cpp:84
 #, kde-format
 msgid "Harald Sitter"
-msgstr ""
+msgstr "Harald Sitter"
 
 #: src/main.cpp:84
 #, kde-format
 msgid "QtQuick Port"
-msgstr ""
+msgstr "QtQuick Port"
 
 #: src/main.cpp:85
 #, kde-format
@@ -188,27 +187,27 @@ msgstr "オリジナルのドキュメンテーション"
 #: src/main.cpp:89
 #, kde-format
 msgid "Sune Vuorela"
-msgstr ""
+msgstr "Sune Vuorela"
 
 #: src/main.cpp:89 src/main.cpp:90
 #, kde-format
 msgid "Icon"
-msgstr ""
+msgstr "アイコン"
 
 #: src/main.cpp:90
 #, kde-format
 msgid "Nuno Pinheiro"
-msgstr ""
+msgstr "Nuno Pinheiro"
 
 #: src/main.cpp:97
 #, kde-format
 msgid "Path or URL to scan"
-msgstr ""
+msgstr "パスまたは URL をスキャンする"
 
 #: src/main.cpp:97
 #, kde-format
 msgid "[url]"
-msgstr ""
+msgstr "[url]"
 
 #: src/mainContext.cpp:163
 #, kde-format
@@ -240,87 +239,79 @@ msgstr ""
 "この場所にアクセスする権限がありません。"
 
 #: src/qml/GlobalMenu.qml:10
-#, fuzzy, kde-format
-#| msgid "&Scan"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Scan"
-msgstr "スキャン(&S)"
+msgstr "スキャン"
 
 #: src/qml/GlobalMenu.qml:21
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Settings"
-msgstr ""
+msgstr "設定"
 
 #: src/qml/GlobalMenu.qml:27
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Help"
-msgstr ""
+msgstr "ヘルプ"
 
 #: src/qml/main.qml:30
-#, fuzzy, kde-format
-#| msgid "Scan Folder"
+#, kde-format
 msgctxt "@action"
 msgid "Scan Folder"
 msgstr "フォルダをスキャン"
 
 #: src/qml/main.qml:37
-#, fuzzy, kde-format
-#| msgid "Scan &Home Folder"
+#, kde-format
 msgctxt "@action"
 msgid "Scan Home Folder"
-msgstr "ホームフォルダをスキャン(&H)"
+msgstr "ホームフォルダをスキャン"
 
 #: src/qml/main.qml:44
-#, fuzzy, kde-format
-#| msgid "Scan &Root Folder"
+#, kde-format
 msgctxt "@action"
 msgid "Scan Root Folder"
-msgstr "ルートフォルダをスキャン(&R)"
+msgstr "ルートフォルダをスキャン"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
-msgstr ""
+msgstr "終了する"
 
 #: src/qml/main.qml:59
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
-msgstr ""
+msgstr "設定…"
 
 #: src/qml/main.qml:64
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr ""
+msgstr "設定"
 
 #: src/qml/main.qml:76
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
-msgstr ""
+msgstr "ハンドブックを開く"
 
 #: src/qml/main.qml:84
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
-msgstr ""
+msgstr "詳細"
 
 #: src/qml/main.qml:105
-#, fuzzy, kde-format
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "No files."
-msgstr "%1 ファイル"
+msgstr "ファイルがありません。"
 
 #: src/qml/main.qml:106
-#, fuzzy, kde-format
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "1 file"
 msgid_plural "%1 files"
@@ -328,8 +319,7 @@ msgstr[0] "%1 ファイル"
 msgstr[1] "%1 ファイル"
 
 #: src/qml/main.qml:178
-#, fuzzy, kde-format
-#| msgid "Aborting Scan..."
+#, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
 msgstr "スキャンを中止します..."
@@ -338,24 +328,22 @@ msgstr "スキャンを中止します..."
 #, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
-msgstr ""
+msgstr "概要を見る"
 
 #: src/qml/MapPage.qml:37
 #, kde-format
 msgctxt "@action"
 msgid "Up"
-msgstr ""
+msgstr "上げる"
 
 #: src/qml/MapPage.qml:46
-#, fuzzy, kde-format
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action"
 msgid "Rescan"
 msgstr "再スキャン"
 
 #: src/qml/MapPage.qml:55
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "停止"
@@ -364,77 +352,66 @@ msgstr "停止"
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
-msgstr ""
+msgstr "拡大"
 
 #: src/qml/MapPage.qml:73
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
-msgstr ""
+msgstr "縮小"
 
 #: src/qml/MapPage.qml:106 src/qml/MapPage.qml:224
-#, fuzzy, kde-format
-#| msgctxt "Scan/open the path of the selected element"
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
-msgstr "開く(&O)"
+msgstr "開く"
 
 #: src/qml/MapPage.qml:114 src/qml/MapPage.qml:232
-#, fuzzy, kde-format
-#| msgid "Open &Terminal Here"
+#, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
-msgstr "ここをターミナルで開く(&T)"
+msgstr "ここをターミナルで開く"
 
 #: src/qml/MapPage.qml:122
-#, fuzzy, kde-format
-#| msgid "&Center Map Here"
+#, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
-msgstr "ここをマップの中心にする(&C)"
+msgstr "ここをマップの中心にする"
 
 #: src/qml/MapPage.qml:133 src/qml/MapPage.qml:240
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
-msgstr ""
+msgstr "スキャンしない場所のリストを追加する"
 
 #: src/qml/MapPage.qml:141
-#, fuzzy, kde-format
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "再スキャン"
 
 #: src/qml/MapPage.qml:148 src/qml/MapPage.qml:247
-#, fuzzy, kde-format
-#| msgid "&Copy to clipboard"
+#, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
-msgstr "クリップボードにコピー(&C)"
+msgstr "クリップボードにコピー"
 
 #: src/qml/MapPage.qml:155 src/qml/MapPage.qml:254
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
-msgstr "削除(&D)"
+msgstr "削除"
 
 #: src/qml/MapPage.qml:307
-#, fuzzy, kde-format
-#| msgid "%1 File"
-#| msgid_plural "%1 Files"
+#, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
 msgid_plural "%1 Files (%2%)"
-msgstr[0] "%1 ファイル"
-msgstr[1] "%1 ファイル"
+msgstr[0] "%1 ファイル (%2%)"
+msgstr[1] "%1 ファイル (%2%)"
 
 #: src/qml/MapPage.qml:309
-#, fuzzy, kde-format
-#| msgid "%1 File"
-#| msgid_plural "%1 Files"
+#, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
 msgid_plural "%1 Files"
@@ -445,135 +422,122 @@ msgstr[1] "%1 ファイル"
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
-msgstr ""
+msgstr "クリックすることで親ディレクトリに移動します"
 
 #: src/qml/MapPage.qml:516
-#, fuzzy, kde-format
-#| msgid "%1 File"
-#| msgid_plural "%1 Files"
+#, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
 msgid_plural "%1 Files, %2"
-msgstr[0] "%1 ファイル"
-msgstr[1] "%1 ファイル"
+msgstr[0] "%1 ファイル、%2"
+msgstr[1] "%1 ファイル、%2"
 
 #: src/qml/MapPage.qml:525
 #, kde-format
 msgid "No data available"
-msgstr ""
+msgstr "データが存在しません"
 
 #: src/qml/OverviewPage.qml:15
 #, kde-format
 msgctxt "@title"
 msgid "Overview"
-msgstr ""
+msgstr "概要"
 
 #: src/qml/OverviewPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Settings - Filelight"
+#, kde-format
 msgctxt "@title"
 msgid "Welcome to Filelight"
-msgstr "設定 - Filelight"
+msgstr "Filelight へようこそ"
 
 #: src/qml/SettingsPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Scannin&g"
+#, kde-format
 msgctxt "@title"
 msgid "Scanning"
-msgstr "スキャン(&G)"
+msgstr "スキャン"
 
 #: src/qml/SettingsPage.qml:27
-#, fuzzy, kde-format
-#| msgid "&Appearance"
+#, kde-format
 msgctxt "@title"
 msgid "Appearance"
-msgstr "外観(&A)"
+msgstr "外観"
 
 #: src/qml/SettingsPageAppearance.qml:16
-#, fuzzy, kde-format
-#| msgid "Color scheme"
+#, kde-format
 msgctxt "@title:group"
 msgid "Color Scheme"
 msgstr "色スキーム"
 
 #: src/qml/SettingsPageAppearance.qml:25
-#, fuzzy, kde-format
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "Rainbow"
 msgstr "レインボー"
 
 #: src/qml/SettingsPageAppearance.qml:34
-#, fuzzy, kde-format
-#| msgid "System Colors"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "System colors"
 msgstr "システムカラー"
 
 #: src/qml/SettingsPageAppearance.qml:43
-#, fuzzy, kde-format
-#| msgid "High Contrast"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "High contrast"
 msgstr "ハイコントラスト"
 
 #: src/qml/SettingsPageAppearance.qml:52
-#, fuzzy, kde-format
-#| msgid "Co&ntrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Contrast"
-msgstr "コントラスト(&N)"
+msgstr "コントラスト"
 
 #: src/qml/SettingsPageAppearance.qml:69
-#, fuzzy, kde-format
-#| msgid "Show small files"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "小さいファイルを表示する"
 
 #: src/qml/SettingsPageScanning.qml:23
-#, fuzzy, kde-format
-#| msgid "Do &not scan these folders:"
+#, kde-format
 msgctxt "@label"
 msgid "Do not scan these folders:"
-msgstr "スキャンから除外するフォルダ(&N):"
+msgstr "スキャンから除外するフォルダ:"
 
 #: src/qml/SettingsPageScanning.qml:48
-#, fuzzy, kde-format
-#| msgid "R&emove"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
-msgstr "削除(&E)"
+msgstr "削除"
 
 #: src/qml/SettingsPageScanning.qml:63
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
-msgstr ""
+msgstr "追加…"
 
 #: src/qml/SettingsPageScanning.qml:75
-#, fuzzy, kde-format
-#| msgid "Scan across filesystem &boundaries"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
-msgstr "ファイルシステムの境界を越えてスキャンする(&B)"
+msgstr "ファイルシステムの境界を越えてスキャンする"
 
 #: src/qml/SettingsPageScanning.qml:86
-#, fuzzy, kde-format
-#| msgid "Exclude remote files&ystems"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
-msgstr "リモートファイルシステムを除外する(&Y)"
+msgstr "リモートファイルシステムを除外する"
 
 #: src/radialMap/map.cpp:56
-#, fuzzy, kde-format
-#| msgid "1 file, with an average size of %2"
-#| msgid_plural "%1 files, with an average size of %2"
+#, kde-format
 msgid ""
 "\n"
 "%1 file, with an average size of %2"
 msgid_plural ""
 "\n"
 "%1 files, with an average size of %2"
-msgstr[0] "1 ファイル (平均サイズ %2)"
-msgstr[1] "%1 ファイル (平均サイズ %2)"
+msgstr[0] ""
+"\n"
+"%1 ファイル (平均サイズ %2)"
+msgstr[1] ""
+"\n"
+"%1 ファイル (平均サイズ %2)"
