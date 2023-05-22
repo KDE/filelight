@@ -149,6 +149,7 @@ Kirigami.Page {
                     onTriggered: ContextMenuContext.copyClipboard(contextMenu.segment.displayPath())
                 }
             }
+            QQC2.MenuSeparator {}
             QQC2.MenuItem {
                 action: Kirigami.Action {
                     @KIRIGAMI_ICON_NAME@: "edit-delete"
@@ -248,6 +249,7 @@ Kirigami.Page {
                                 onTriggered: ContextMenuContext.copyClipboard(ROLE_URL)
                             }
                         }
+                        QQC2.MenuSeparator {}
                         QQC2.MenuItem {
                             action: Kirigami.Action {
                                 @KIRIGAMI_ICON_NAME@: "edit-delete"
