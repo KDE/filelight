@@ -1,0 +1,20 @@
+<!--
+    SPDX-License-Identifier: CC0-1.0
+    SPDX-FileCopyrightText: 2021-2022 Harald Sitter <sitter@kde.org>
+-->
+<RCC>
+    <qresource prefix="/ui">
+        <file alias="main.qml">@CMAKE_CURRENT_BINARY_DIR@/qml/main.qml</file>
+        <file alias="OverviewPage.qml">@CMAKE_CURRENT_BINARY_DIR@/qml/OverviewPage.qml</file>
+        <file alias="MapPage.qml">@CMAKE_CURRENT_BINARY_DIR@/qml/MapPage.qml</file>
+        <file>Action.qml</file>
+        <file>AboutPage.qml</file>
+        <file alias="ActionMenuItem.qml">@CMAKE_CURRENT_BINARY_DIR@/qml/ActionMenuItem.qml</file>
+        <file>GlobalMenu.qml</file>
+        <file alias="SegmentShape.qml">@CMAKE_CURRENT_BINARY_DIR@/qml/SegmentShape.qml</file>
+        <file alias="CenterShape.qml">@CMAKE_CURRENT_BINARY_DIR@/qml/CenterShape.qml</file>
+        <file>SettingsPage.qml</file>
+        <file alias="SettingsPageScanning.qml">@CMAKE_CURRENT_BINARY_DIR@/qml/SettingsPageScanning.qml</file>
+        <file>SettingsPageAppearance.qml</file>
+    </qresource>
+</RCC>

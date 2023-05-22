@@ -29,3 +29,4 @@ CMakeLists.txt.user*
 .idea
 /cmake-build*
 /.flatpak*
+src/qml/qml.generated.qrc

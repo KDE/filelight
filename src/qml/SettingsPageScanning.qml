@@ -46,7 +46,7 @@ Kirigami.Page {
                     actions: [
                         Kirigami.Action {
                             text: i18nc("@action:button remove list entry", "Remove")
-                            iconName: "list-remove"
+                            @KIRIGAMI_ICON_NAME@: "list-remove"
                             onTriggered: {
                                 Config.removeFolder(modelData)
                             }
@@ -61,7 +61,7 @@ Kirigami.Page {
             QQC2.Button {
                 action: Kirigami.Action {
                     text: i18nc("@action:button remove list entry", "Add…")
-                    iconName: "folder-open"
+                    @KIRIGAMI_ICON_NAME@: "folder-open"
                     onTriggered: Config.addFolder()
                 }
             }

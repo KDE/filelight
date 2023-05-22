@@ -5,7 +5,7 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.19 as Kirigami
-import org.kde.kcoreaddons 1.0 as KCoreAddons
+import @KCOREADDONS_QML_NAME@ 1.0 as KCoreAddons
 import QtQuick.Shapes 1.15
 
 import org.kde.filelight 1.0
@@ -25,7 +25,7 @@ Kirigami.Page {
     Kirigami.Action {
         id: goToOverviewAction
         enabled: page.state === ""
-        iconName: "go-home"
+        @KIRIGAMI_ICON_NAME@: "go-home"
         text: i18nc("@action", "Go to Overview")
         onTriggered: pageStack.currentIndex = 0
     }
@@ -33,7 +33,7 @@ Kirigami.Page {
     Kirigami.Action {
         id: goUpAction
         enabled: page.state === ""
-        iconName: "go-up"
+        @KIRIGAMI_ICON_NAME@: "go-up"
         text: i18nc("@action", "Up")
         onTriggered: appWindow.slotUp()
         shortcut: "Alt+Up"
@@ -42,7 +42,7 @@ Kirigami.Page {
     Kirigami.Action {
         id: rescanAction
         enabled: page.state !== "scanning"
-        iconName: "view-refresh"
+        @KIRIGAMI_ICON_NAME@: "view-refresh"
         text: i18nc("@action", "Rescan")
         onTriggered: appWindow.rescan()
         shortcut: StandardKey.Refresh
@@ -51,7 +51,7 @@ Kirigami.Page {
     Kirigami.Action {
         id: stopAction
         enabled: page.state === "scanning"
-        iconName: "process-stop"
+        @KIRIGAMI_ICON_NAME@: "process-stop"
         text: i18nc("@action", "Stop")
         onTriggered: appWindow.closeURL()
     }
@@ -59,9 +59,9 @@ Kirigami.Page {
     Kirigami.Action {
         id: zoomInAction
         enabled: page.state === ""
-        iconName: "zoom-in"
+        @KIRIGAMI_ICON_NAME@: "zoom-in"
         text: i18nc("@action", "Zoom In")
-        displayHint: Kirigami.Action.AlwaysHide
+        displayHint: Kirigami.@KIRIGAMI_ACTION_DISPLAYHINT@.AlwaysHide
         onTriggered: RadialMap.zoomIn()
         shortcut: StandardKey.ZoomIn
     }
@@ -69,14 +69,14 @@ Kirigami.Page {
     Kirigami.Action {
         id: zoomOutAction
         enabled: page.state === ""
-        iconName: "zoom-out"
+        @KIRIGAMI_ICON_NAME@: "zoom-out"
         text: i18nc("@action", "Zoom Out")
-        displayHint: Kirigami.Action.AlwaysHide
+        displayHint: Kirigami.@KIRIGAMI_ACTION_DISPLAYHINT@.AlwaysHide
         onTriggered: RadialMap.zoomOut()
         shortcut: StandardKey.ZoomOut
     }
 
-    contextualActions: MainContext.historyActions.concat([
+    @KIRIGAMI_PAGE_ACTIONS@: MainContext.historyActions.concat([
         goUpAction,
         goToOverviewAction,
         rescanAction,
@@ -102,7 +102,7 @@ Kirigami.Page {
 
             QQC2.MenuItem {
                 action: Kirigami.Action {
-                    iconName: "document-open"
+                    @KIRIGAMI_ICON_NAME@: "document-open"
                     text: i18nc("@action Open file or directory from context menu", "Open")
                 }
                 onTriggered: Qt.openUrlExternally(contextMenu.segment.url())
@@ -110,7 +110,7 @@ Kirigami.Page {
             QQC2.MenuItem {
                 visible: contextMenu.segment.isFolder() && contextMenu.segment.url().toString().startsWith("file:")
                 action: Kirigami.Action {
-                    iconName: "utilities-terminal"
+                    @KIRIGAMI_ICON_NAME@: "utilities-terminal"
                     text: i18nc("@action", "Open Terminal Here")
                     onTriggered: ContextMenuContext.openTerminal(contextMenu.segment.url())
                 }
@@ -118,7 +118,7 @@ Kirigami.Page {
             QQC2.MenuItem {
                 visible: contextMenu.segment.isFolder()
                 action: Kirigami.Action {
-                    iconName: "zoom-in"
+                    @KIRIGAMI_ICON_NAME@: "zoom-in"
                     text: i18nc("@action focuses the filelight view on a given map segment", "Center Map Here")
                     onTriggered: {
                         MainContext.updateURL(contextMenu.segment.url())
@@ -129,7 +129,7 @@ Kirigami.Page {
             QQC2.MenuItem {
                 visible: contextMenu.segment.isFolder()
                 action: Kirigami.Action {
-                    iconName: "list-remove"
+                    @KIRIGAMI_ICON_NAME@: "list-remove"
                     text: i18nc("@action", "Add to Do Not Scan List")
                     onTriggered: ContextMenuContext.doNotScan(contextMenu.segment.url())
                 }
@@ -137,21 +137,21 @@ Kirigami.Page {
             QQC2.MenuItem {
                 visible: contextMenu.segment.isFolder()
                 action: Kirigami.Action {
-                    iconName: "view-refresh"
+                    @KIRIGAMI_ICON_NAME@: "view-refresh"
                     text: i18nc("@action rescan filelight map", "Rescan")
                     onTriggered: MainContext.rescanSingleDir(contextMenu.segment.url())
                 }
             }
             QQC2.MenuItem {
                 action: Kirigami.Action {
-                    iconName: "edit-copy"
+                    @KIRIGAMI_ICON_NAME@: "edit-copy"
                     text: i18nc("@action", "Copy to clipboard")
                     onTriggered: ContextMenuContext.copyClipboard(contextMenu.segment.displayPath())
                 }
             }
             QQC2.MenuItem {
                 action: Kirigami.Action {
-                    iconName: "edit-delete"
+                    @KIRIGAMI_ICON_NAME@: "edit-delete"
                     text: i18nc("@action delete file or folder", "Delete")
                     onTriggered: ContextMenuContext.deleteFileFromSegment(contextMenu.segment)
                 }
@@ -193,8 +193,8 @@ Kirigami.Page {
                 keyNavigationEnabled: true
                 keyNavigationWraps: true
                 delegate: Kirigami.BasicListItem {
-                    icon: ROLE_IsFolder ? "folder" : "file" // TODO mimetype?
-                    text: display
+                    @KIRIGAMI_BASICLISTITEM_ICON@: ROLE_IsFolder ? "folder" : "file" // TODO mimetype?
+                    text: model.display
                     subtitle: ROLE_HumanReadableSize
                     highlighted: {
                         if (hoveringListItem) {
@@ -220,7 +220,7 @@ Kirigami.Page {
 
                         QQC2.MenuItem {
                             action: Kirigami.Action {
-                                iconName: "document-open"
+                                @KIRIGAMI_ICON_NAME@: "document-open"
                                 text: i18nc("@action Open file or directory from context menu", "Open")
                             }
                             onTriggered: Qt.openUrlExternally(ROLE_URL)
@@ -228,7 +228,7 @@ Kirigami.Page {
                         QQC2.MenuItem {
                             visible: ROLE_IsFolder && ROLE_URL.toString().startsWith("file:")
                             action: Kirigami.Action {
-                                iconName: "utilities-terminal"
+                                @KIRIGAMI_ICON_NAME@: "utilities-terminal"
                                 text: i18nc("@action", "Open Terminal Here")
                                 onTriggered: ContextMenuContext.openTerminal(ROLE_URL)
                             }
@@ -236,21 +236,21 @@ Kirigami.Page {
                         QQC2.MenuItem {
                             visible: ROLE_IsFolder
                             action: Kirigami.Action {
-                                iconName: "list-remove"
+                                @KIRIGAMI_ICON_NAME@: "list-remove"
                                 text: i18nc("@action", "Add to Do Not Scan List")
                                 onTriggered: ContextMenuContext.doNotScan(ROLE_URL)
                             }
                         }
                         QQC2.MenuItem {
                             action: Kirigami.Action {
-                                iconName: "edit-copy"
+                                @KIRIGAMI_ICON_NAME@: "edit-copy"
                                 text: i18nc("@action", "Copy to clipboard")
                                 onTriggered: ContextMenuContext.copyClipboard(ROLE_URL)
                             }
                         }
                         QQC2.MenuItem {
                             action: Kirigami.Action {
-                                iconName: "edit-delete"
+                                @KIRIGAMI_ICON_NAME@: "edit-delete"
                                 text: i18nc("@action delete file or folder", "Delete")
                                 onTriggered: ContextMenuContext.deleteFile(FileModel.file(index))
                             }

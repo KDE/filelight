@@ -26,36 +26,36 @@ Kirigami.ApplicationWindow {
 
     Kirigami.Action {
         id: scanFolderAction
-        iconName: "folder"
+        icon.name: "folder"
         text: i18nc("@action", "Scan Folder")
         onTriggered: appWindow.slotScanFolder()
     }
 
     Kirigami.Action {
         id: scanHomeAction
-        iconName: "user-home"
+        icon.name: "user-home"
         text: i18nc("@action", "Scan Home Folder")
         onTriggered: appWindow.slotScanHomeFolder()
     }
 
     Kirigami.Action {
         id: scanRootAction
-        iconName: "folder-root"
+        icon.name: "folder-root"
         text: i18nc("@action", "Scan Root Folder")
         onTriggered: appWindow.slotScanRootFolder()
     }
 
     Kirigami.Action {
         id: quitAction
-        iconName: "application-exit"
+        icon.name: "application-exit"
         text: i18nc("@action", "Quit")
         onTriggered: Qt.quit()
     }
 
     Kirigami.Action {
         id: configureAction
-        displayHint: Kirigami.Action.AlwaysHide
-        iconName: "configure"
+        displayHint: Kirigami.@KIRIGAMI_ACTION_DISPLAYHINT@.AlwaysHide
+        icon.name: "configure"
         text: i18nc("@action configure app", "Configure…")
         onTriggered: {
             const openDialogWindow = pageStack.pushDialogLayer("qrc:/ui/SettingsPage.qml", {
@@ -71,16 +71,16 @@ Kirigami.ApplicationWindow {
 
     Kirigami.Action {
         id: helpAction
-        displayHint: Kirigami.Action.AlwaysHide
-        iconName: "help-browser"
+        displayHint: Kirigami.@KIRIGAMI_ACTION_DISPLAYHINT@.AlwaysHide
+        icon.name: "help-browser"
         text: i18nc("@action", "Open Handbook")
         onTriggered: { Qt.openUrlExternally("help:/filelight") }
     }
 
     Kirigami.Action {
         id: aboutAction
-        displayHint: Kirigami.Action.AlwaysHide
-        iconName: "filelight"
+        displayHint: Kirigami.@KIRIGAMI_ACTION_DISPLAYHINT@.AlwaysHide
+        icon.name: "filelight"
         text: i18nc("@action opens about app page", "About")
         onTriggered: { pageStack.layers.push("qrc:/ui/AboutPage.qml") }
     }

@@ -14,7 +14,7 @@ Kirigami.Page {
 
     title: i18nc("@title", "Overview")
 
-    contextualActions: [
+    @KIRIGAMI_PAGE_ACTIONS@: [
         configureAction,
         helpAction,
         aboutAction

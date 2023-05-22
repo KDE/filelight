@@ -61,7 +61,11 @@ find_package(KF${KF_MAJOR_VERSION}DocTools) # Optional, not needed on Windows fo
 find_package(KF5QQC2DesktopStyle ${KF_MIN_VERSION})
 set_package_properties(KF5QQC2DesktopStyle PROPERTIES TYPE RUNTIME)
 
-ecm_find_qmlmodule(org.kde.kcoreaddons 1.0)
+if(QT_MAJOR_VERSION STREQUAL "6")
+    ecm_find_qmlmodule(org.kde.coreaddons 1.0)
+else()
+    ecm_find_qmlmodule(org.kde.kcoreaddons 1.0)
+endif()
 ecm_find_qmlmodule(org.kde.kirigami 2.19)
 ecm_find_qmlmodule(org.kde.quickcharts 1.0)
 ecm_find_qmlmodule(Qt.labs.platform 1.1)
@@ -71,6 +75,22 @@ add_definitions(-DTRANSLATION_DOMAIN=\"filelight\")
 ecm_set_disabled_deprecation_versions(QT 5.15.2
     KF 5.101
 )
+
+if(QT_MAJOR_VERSION STREQUAL "6")
+     set(KIRIGAMI_ICON_NAME "icon.name")
+     set(KIRIGAMI_ICON_SOURCE "icon.source")
+     set(KIRIGAMI_PAGE_ACTIONS "actions")
+     set(KIRIGAMI_ACTION_DISPLAYHINT "DisplayHint")
+     set(KIRIGAMI_BASICLISTITEM_ICON "icon.name")
+     set(KCOREADDONS_QML_NAME "org.kde.coreaddons")
+else()
+    set(KIRIGAMI_ICON_NAME "iconName")
+    set(KIRIGAMI_ICON_SOURCE "iconSource")
+    set(KIRIGAMI_PAGE_ACTIONS "contextualActions")
+    set(KIRIGAMI_ACTION_DISPLAYHINT "Action")
+    set(KIRIGAMI_BASICLISTITEM_ICON "icon")
+    set(KCOREADDONS_QML_NAME "org.kde.kcoreaddons")
+endif()
 
 include_directories(src)
 

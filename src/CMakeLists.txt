@@ -51,6 +51,15 @@ target_link_libraries(filelightInternal
     KF${KF_MAJOR_VERSION}::KIOWidgets # Only used for KDirLister, may be able to move away from that.
 )
 
+configure_file(qml/MapPage.qml ${CMAKE_CURRENT_BINARY_DIR}/qml/MapPage.qml)
+configure_file(qml/ActionMenuItem.qml ${CMAKE_CURRENT_BINARY_DIR}/qml/ActionMenuItem.qml)
+configure_file(qml/OverviewPage.qml ${CMAKE_CURRENT_BINARY_DIR}/qml/OverviewPage.qml)
+configure_file(qml/SettingsPageScanning.qml ${CMAKE_CURRENT_BINARY_DIR}/qml/SettingsPageScanning.qml)
+configure_file(qml/CenterShape.qml ${CMAKE_CURRENT_BINARY_DIR}/qml/CenterShape.qml)
+configure_file(qml/SegmentShape.qml ${CMAKE_CURRENT_BINARY_DIR}/qml/SegmentShape.qml)
+configure_file(qml/main.qml ${CMAKE_CURRENT_BINARY_DIR}/qml/main.qml)
+configure_file(qml/qml.qrc.in ${CMAKE_CURRENT_SOURCE_DIR}/qml/qml.generated.qrc)
+
 add_executable(filelight)
 target_sources(filelight PRIVATE
     radialMap/map.cpp
@@ -70,7 +79,7 @@ target_sources(filelight PRIVATE
     remoteLister.h
     historyAction.h
     Config.h
-    qml/qml.qrc
+    ${CMAKE_CURRENT_SOURCE_DIR}/qml/qml.generated.qrc
     contextMenuContext.cpp
     contextMenuContext.h
     fileModel.cpp
