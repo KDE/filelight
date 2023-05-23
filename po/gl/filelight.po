@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-22 00:54+0000\n"
+"POT-Creation-Date: 2023-05-23 00:49+0000\n"
 "PO-Revision-Date: 2023-03-26 11:47+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -367,13 +367,13 @@ msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Afastar"
 
-#: src/qml/MapPage.qml:106 src/qml/MapPage.qml:224
+#: src/qml/MapPage.qml:106 src/qml/MapPage.qml:225
 #, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "Abrir"
 
-#: src/qml/MapPage.qml:114 src/qml/MapPage.qml:232
+#: src/qml/MapPage.qml:114 src/qml/MapPage.qml:233
 #, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
@@ -385,7 +385,7 @@ msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "Centrar aquí o mapa"
 
-#: src/qml/MapPage.qml:133 src/qml/MapPage.qml:240
+#: src/qml/MapPage.qml:133 src/qml/MapPage.qml:241
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
@@ -397,19 +397,19 @@ msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Examinar de novo"
 
-#: src/qml/MapPage.qml:148 src/qml/MapPage.qml:247
+#: src/qml/MapPage.qml:148 src/qml/MapPage.qml:248
 #, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "Copiar no portapapeis"
 
-#: src/qml/MapPage.qml:155 src/qml/MapPage.qml:254
+#: src/qml/MapPage.qml:156 src/qml/MapPage.qml:256
 #, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "Eliminar"
 
-#: src/qml/MapPage.qml:307
+#: src/qml/MapPage.qml:309
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -417,7 +417,7 @@ msgid_plural "%1 Files (%2%)"
 msgstr[0] "%1 ficheiro (%2%)"
 msgstr[1] "%1 ficheiros (%2%)"
 
-#: src/qml/MapPage.qml:309
+#: src/qml/MapPage.qml:311
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -425,13 +425,13 @@ msgid_plural "%1 Files"
 msgstr[0] "%1 ficheiro"
 msgstr[1] "%1 ficheiros"
 
-#: src/qml/MapPage.qml:313
+#: src/qml/MapPage.qml:315
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "Prema para ir ao directorio superior."
 
-#: src/qml/MapPage.qml:516
+#: src/qml/MapPage.qml:518
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -439,7 +439,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 ficheiro, %2"
 msgstr[1] "%1 ficheiros, %2"
 
-#: src/qml/MapPage.qml:525
+#: src/qml/MapPage.qml:527
 #, kde-format
 msgid "No data available"
 msgstr "Non hai datos dispoñíbeis"
