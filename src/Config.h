@@ -19,13 +19,13 @@ enum class Dirty {
     Layout = 1,
     Colors = 3,
 };
-Q_ENUM_NS(Dirty);
+Q_ENUM_NS(Dirty)
 
 enum MapScheme { Rainbow, KDE, HighContrast };
 Q_ENUM_NS(MapScheme)
 } // namespace Filelight
 
-Q_DECLARE_METATYPE(Filelight::Dirty);
+Q_DECLARE_METATYPE(Filelight::Dirty)
 
 class Config : public QObject
 {
