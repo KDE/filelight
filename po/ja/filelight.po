@@ -14,7 +14,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 "X-Generator: Lokalize 22.12.2\n"
@@ -316,7 +316,6 @@ msgctxt "@info:status"
 msgid "1 file"
 msgid_plural "%1 files"
 msgstr[0] "%1 ファイル"
-msgstr[1] "%1 ファイル"
 
 #: src/qml/main.qml:178
 #, kde-format
@@ -408,7 +407,6 @@ msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
 msgid_plural "%1 Files (%2%)"
 msgstr[0] "%1 ファイル (%2%)"
-msgstr[1] "%1 ファイル (%2%)"
 
 #: src/qml/MapPage.qml:309
 #, kde-format
@@ -416,7 +414,6 @@ msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
 msgid_plural "%1 Files"
 msgstr[0] "%1 ファイル"
-msgstr[1] "%1 ファイル"
 
 #: src/qml/MapPage.qml:313
 #, kde-format
@@ -430,7 +427,6 @@ msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
 msgid_plural "%1 Files, %2"
 msgstr[0] "%1 ファイル、%2"
-msgstr[1] "%1 ファイル、%2"
 
 #: src/qml/MapPage.qml:525
 #, kde-format
@@ -536,8 +532,5 @@ msgid_plural ""
 "\n"
 "%1 files, with an average size of %2"
 msgstr[0] ""
-"\n"
-"%1 ファイル (平均サイズ %2)"
-msgstr[1] ""
 "\n"
 "%1 ファイル (平均サイズ %2)"
