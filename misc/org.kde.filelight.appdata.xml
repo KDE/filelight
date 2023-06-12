@@ -14,6 +14,7 @@
   <name xml:lang="de">Filelight</name>
   <name xml:lang="el">Filelight</name>
   <name xml:lang="en-GB">Filelight</name>
+  <name xml:lang="eo">Filelight</name>
   <name xml:lang="es">Filelight</name>
   <name xml:lang="et">Filelight</name>
   <name xml:lang="eu">Filelight</name>
@@ -57,6 +58,7 @@
   <summary xml:lang="cs">Zobrazit využití disku a smazat nepoužívané soubory</summary>
   <summary xml:lang="de">Festplattenbelegung anzeigen und ungenutzte Dateien löschen</summary>
   <summary xml:lang="en-GB">Show disk usage and delete unused files</summary>
+  <summary xml:lang="eo">Montri diskuzon kaj forigi neuzitajn dosierojn</summary>
   <summary xml:lang="es">Mostrar el uso del disco y borrar archivos no usados</summary>
   <summary xml:lang="eu">Diskoaren erabilera erakustea eta erabili gabeko fitxategiak ezabatzea</summary>
   <summary xml:lang="fi">Näytä levynkäyttö ja poista käyttämättömiä tiedostoja</summary>
@@ -129,6 +131,7 @@
     <p xml:lang="de">Funktionen:</p>
     <p xml:lang="el">Χαρακτηριστικά:</p>
     <p xml:lang="en-GB">Features:</p>
+    <p xml:lang="eo">Trajtoj:</p>
     <p xml:lang="es">Funciones:</p>
     <p xml:lang="et">Omadused:</p>
     <p xml:lang="eu">Eginbide:</p>
@@ -172,6 +175,7 @@
       <li xml:lang="ca-valencia">Explora discs locals, remots o extraïbles</li>
       <li xml:lang="de">Durchsehen von lokalen oder entfernten Festplatten oder Wechselmedien</li>
       <li xml:lang="en-GB">Scan local, remote, or removable disks</li>
+      <li xml:lang="eo">Skani lokajn, forajn, aŭ forpreneblajn diskojn</li>
       <li xml:lang="es">Explora discos locales, remotos y extraíbles</li>
       <li xml:lang="eu">Aztertu disko lokalak, urrunekoak edo aldagarriak</li>
       <li xml:lang="fi">Tutkii paikalliset, etä- ja siirrettävät levyt</li>
@@ -206,6 +210,7 @@
       <li xml:lang="cs">Zobrazit podrobné informace o souborech a složkách</li>
       <li xml:lang="de">Detaillierte Informationen über Dateien und Ordner beim Überfahren mit dem Mauszeiger anzeigen</li>
       <li xml:lang="en-GB">View detailed information about files and folders</li>
+      <li xml:lang="eo">Rigardi detelajn informojn pri dosieroj kaj dosierujoj</li>
       <li xml:lang="es">Mostrar información detallada sobre archivos y carpetas</li>
       <li xml:lang="eu">Ikusi fitxategiei eta karpetei buruzko informazio zehatza</li>
       <li xml:lang="fi">Näyttää tiedostojen ja kansioiden tiedot</li>
@@ -240,6 +245,7 @@
       <li xml:lang="cs">Smažte soubory a složky, které zabírají příliš mnoho místa</li>
       <li xml:lang="de">Dateien oder Ordner löschen, die zu viel Speicherplatz belegen</li>
       <li xml:lang="en-GB">Delete files or folders that are taking up too much space</li>
+      <li xml:lang="eo">Forigi dosierojn aŭ dosierujojn kiuj konsumas tro da spaco</li>
       <li xml:lang="es">Borrar archivos o carpetas que están ocupando demasiado espacio</li>
       <li xml:lang="eu">Ezabatu leku gehiegi hartzen ari diren fitxategiak edo karpetak</li>
       <li xml:lang="fi">Tilaa vievien tiedostojen ja kansioiden poisto</li>
@@ -274,6 +280,7 @@
       <li xml:lang="cs">Integrace do správců souborů Dolphin, Konqueror a Krusader</li>
       <li xml:lang="de">Integration in die Dateiverwaltungen Dolphin, Konqueror und Krusader</li>
       <li xml:lang="en-GB">Integration into the Dolphin, Konqueror, and Krusader file managers</li>
+      <li xml:lang="eo">Integriĝo en la Dolphin, Konqueror, kaj Krusader dosiermastrumiloj</li>
       <li xml:lang="es">Integración con los gestores de archivos Dolphin Konqueror y Krusader</li>
       <li xml:lang="eu">Dolphin, Konqueror eta Krusader fitxategi-kudeatzailetan bateratzea</li>
       <li xml:lang="fi">Integrointi Dolphin-, Konqueror- ja Krusader-tiedostonhallintaohjelmiin</li>
@@ -311,6 +318,7 @@
       <li xml:lang="de">Einstellbare Farbschemata</li>
       <li xml:lang="el">Διαμορφώσιμα χρωματιστά σχήματα</li>
       <li xml:lang="en-GB">Configurable colour schemes</li>
+      <li xml:lang="eo">Agordeblaj kolorskemoj</li>
       <li xml:lang="es">Esquemas de color que se pueden configurar</li>
       <li xml:lang="et">Seadistatavad värviskeemid</li>
       <li xml:lang="eu">Kolore antolaerak konfigura daitezke</li>
