@@ -63,7 +63,7 @@
   <summary xml:lang="eu">Diskoaren erabilera erakustea eta erabili gabeko fitxategiak ezabatzea</summary>
   <summary xml:lang="fi">Näytä levynkäyttö ja poista käyttämättömiä tiedostoja</summary>
   <summary xml:lang="fr">Afficher l'utilisation du disque et supprimer les fichiers non utilisés</summary>
-  <summary xml:lang="gl">Mostrar o uso de disco e eliminar ficheiros sen usar</summary>
+  <summary xml:lang="gl">Amosar o uso de disco e eliminar ficheiros sen usar</summary>
   <summary xml:lang="ia">Monstra usage de disco e dele files non usate</summary>
   <summary xml:lang="id">Menampilkan penggunaan disk dan menghapus file yang tidak digunakan</summary>
   <summary xml:lang="ie">Monstrar li usage de disco e remover ínnecessi files</summary>
@@ -98,7 +98,7 @@
     <p xml:lang="eu">Filelight zure ordenagailuko diskoaren erabilera, karpetak, eraztun zentrokideen ikuspegi ulerterraz bat erabiliz irudikatzeko aplikazio bat da. Filelight-ek lekua hustea errazten du!</p>
     <p xml:lang="fi">Filelight on sovellus tietokoneen levynkäytön hahmottamiseksi. Se näyttää kansiot helposti ymmärrettävinä renkaina. Filelight auttaa vapauttamaan levytilaa.</p>
     <p xml:lang="fr">Filelight est une application pour l'affichage de l'utilisation du disque sur votre ordinateur. Elle affiche les dossiers en utilisant une vue facile à comprendre en anneaux concentriques. Filelight permet de libérer simplement de l'espace !</p>
-    <p xml:lang="gl">Filelight é unha aplicación para visualizar o uso de disco no computador mostrando os cartafoles nunha vista de aros concéntricos fácil de entender. Filelight simplifica liberar espazo!</p>
+    <p xml:lang="gl">Filelight é unha aplicación para visualizar o uso de disco no computador amosando os cartafoles nunha vista de aros concéntricos fácil de entender. Filelight simplifica liberar espazo!</p>
     <p xml:lang="ia">Filelight es unapplication per visualisar le usage de disco sur tu computator per monstrar dossieres usante un vista facile a comprender de anillos concentric. Filelight rende simplice liberar spatio!</p>
     <p xml:lang="id">Filelight adalah sebuah aplikasi untuk memvisualkan penggunaan disk pada komputermu dengan menampilkan folder menggunakan sebuah tampilan lingkaran konsentris yang mudah dimengerti. Filelight memudahkan dalam pembebasan ruang!</p>
     <p xml:lang="ie">Filelight visualisa li usage de disco de vor computator, monstrante fólderes in un vise comprensibil de concentric anelles. Filelight facilisa li liberation de spacie!</p>
