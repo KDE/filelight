@@ -502,7 +502,7 @@ msgstr "Contraste"
 #, kde-format
 msgctxt "@checkbox"
 msgid "Show small files"
-msgstr "Mostrar os ficheiros pequenos"
+msgstr "Amosar os ficheiros pequenos"
 
 #: src/qml/SettingsPageScanning.qml:23
 #, kde-format
