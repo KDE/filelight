@@ -6,9 +6,7 @@
 #include <QTest>
 
 #include "fileTree.h"
-#include "localLister.h"
 #include "scan.h"
-#include "test-config.h"
 
 Q_DECLARE_METATYPE(std::shared_ptr<Folder>)
 
