@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-20 03:01+0000\n"
-"PO-Revision-Date: 2023-03-26 11:47+0200\n"
+"PO-Revision-Date: 2023-06-24 11:40+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -118,7 +118,7 @@ msgstr "Avanzar"
 #: src/main.cpp:64
 #, kde-format
 msgid "Graphical disk-usage information"
-msgstr "Información gráfica sobre a utilización dos discos"
+msgstr "Información gráfica sobre o uso dos discos"
 
 #: src/main.cpp:66
 #, kde-format
@@ -322,8 +322,8 @@ msgstr "Non hai ficheiros."
 msgctxt "@info:status"
 msgid "1 file"
 msgid_plural "%1 files"
-msgstr[0] "1 ficheiro"
-msgstr[1] "%1 ficheiros"
+msgstr[0] "1 ficheiro."
+msgstr[1] "%1 ficheiros."
 
 #: src/qml/main.qml:178
 #, kde-format
@@ -429,7 +429,7 @@ msgstr[1] "%1 ficheiros"
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
-msgstr "Prema para ir ao directorio superior."
+msgstr "Prema para ir ao cartafol superior."
 
 #: src/qml/MapPage.qml:516
 #, kde-format
@@ -478,19 +478,19 @@ msgstr "Esquema de cores"
 #, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "Rainbow"
-msgstr "Arco da vella"
+msgstr "Arco da vella."
 
 #: src/qml/SettingsPageAppearance.qml:34
 #, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "System colors"
-msgstr "Cores do sistema"
+msgstr "Cores do sistema."
 
 #: src/qml/SettingsPageAppearance.qml:43
 #, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "High contrast"
-msgstr "Contraste alto"
+msgstr "Contraste alto."
 
 #: src/qml/SettingsPageAppearance.qml:52
 #, kde-format
