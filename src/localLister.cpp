@@ -103,15 +103,21 @@ std::shared_ptr<Folder> LocalLister::scan(const QByteArray &path, const QByteArr
             // check to see if we've scanned this section already
 
             QMutexLocker lock(&m_treeMutex);
-            for (const auto /* hold the folder, we delete it below! */ folder : std::as_const(*m_trees)) {
+            QList<std::shared_ptr<Folder>> toRemove;
+            for (const auto &folder : std::as_const(*m_trees)) {
                 if (new_path == folder->name8Bit()) {
                     qCDebug(FILELIGHT_LOG) << "Tree pre-completed: " << folder->decodedName() << folder.get();
                     d = folder;
-                    m_trees->removeAll(folder);
+                    toRemove << folder;
                     m_parent->m_files += folder->children();
                     cwd->append(folder, new_dirname.constData());
                 }
             }
+
+            for (const auto /* hold the folder, we delete it below! */ folder : std::as_const(toRemove)) {
+                m_trees->removeAll(folder);
+            }
+
             lock.unlock();
             if (!d) { // then scan
                 qCDebug(FILELIGHT_LOG) << "Tree fresh" << new_path << new_dirname;
