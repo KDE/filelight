@@ -58,7 +58,7 @@ find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED
 )
 find_package(KF${KF_MAJOR_VERSION}DocTools) # Optional, not needed on Windows for example.
 
-find_package(KF5QQC2DesktopStyle ${KF_MIN_VERSION})
+find_package(KF${KF_MAJOR_VERSION}QQC2DesktopStyle ${KF_MIN_VERSION})
 set_package_properties(KF5QQC2DesktopStyle PROPERTIES TYPE RUNTIME)
 
 if(QT_MAJOR_VERSION STREQUAL "6")
