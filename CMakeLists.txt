@@ -98,12 +98,12 @@ if(BUILD_TESTING)
     add_subdirectory(autotests)
 endif()
 
-if (KF5DocTools_FOUND)
+if (KF${KF_MAJOR_VERSION}DocTools_FOUND)
     add_subdirectory(doc)
 endif()
 
 ki18n_install(po)
-if (KF5DocTools_FOUND)
+if (KF${KF_MAJOR_VERSION}DocTools_FOUND)
     kdoctools_install(po)
 endif()
 
