@@ -14,6 +14,7 @@
   <name xml:lang="de">Filelight</name>
   <name xml:lang="el">Filelight</name>
   <name xml:lang="en-GB">Filelight</name>
+  <name xml:lang="eo">Filelight</name>
   <name xml:lang="es">Filelight</name>
   <name xml:lang="et">Filelight</name>
   <name xml:lang="eu">Filelight</name>
@@ -57,6 +58,7 @@
   <summary xml:lang="cs">Zobrazit využití disku a smazat nepoužívané soubory</summary>
   <summary xml:lang="de">Festplattenbelegung anzeigen und ungenutzte Dateien löschen</summary>
   <summary xml:lang="en-GB">Show disk usage and delete unused files</summary>
+  <summary xml:lang="eo">Montri diskuzon kaj forigi neuzitajn dosierojn</summary>
   <summary xml:lang="es">Mostrar el uso del disco y borrar archivos no usados</summary>
   <summary xml:lang="eu">Diskoaren erabilera erakustea eta erabili gabeko fitxategiak ezabatzea</summary>
   <summary xml:lang="fi">Näytä levynkäyttö ja poista käyttämättömiä tiedostoja</summary>
@@ -65,6 +67,7 @@
   <summary xml:lang="ia">Monstra usage de disco e dele files non usate</summary>
   <summary xml:lang="id">Menampilkan penggunaan disk dan menghapus file yang tidak digunakan</summary>
   <summary xml:lang="ie">Monstrar li usage de disco e remover ínnecessi files</summary>
+  <summary xml:lang="is">Sýna nýtingu diska og eyða ónotuðum skrám</summary>
   <summary xml:lang="it">Mostra l'uso del disco ed elimina i file non utilizzati</summary>
   <summary xml:lang="ja">ファイルの利用状況の表示と不要なファイルの削除ができます</summary>
   <summary xml:lang="ka">დისკის გამოყენების ჩვენება და გამოუყენებელი ფაილებს წაშლა</summary>
@@ -91,6 +94,7 @@
     <p xml:lang="ca">El Filelight és una aplicació per a visualitzar l'ús del disc a l'ordinador que mostra l'ús de les carpetes amb una visualització d'anells concèntrics fàcil d'entendre. El Filelight facilita alliberar espai!</p>
     <p xml:lang="ca-valencia">Filelight és una aplicació per a visualitzar l'ús del disc en l'ordinador que mostra l'ús de les carpetes amb una visualització d'anells concèntrics fàcil d'entendre. Filelight facilita alliberar espai!</p>
     <p xml:lang="en-GB">Filelight is an application to visualise the disk usage on your computer by showing folders using an easy-to-understand view of concentric rings. Filelight makes it simple to free up space!</p>
+    <p xml:lang="eo">Filelight estas aplikaĵo por bildigi la uzadon de disko en via komputilo montrante dosierujojn uzante facile kompreneblan vidon de samcentraj ringoj. Filelight faciligas liberigadon de spaco!</p>
     <p xml:lang="es">Filelight es una aplicación para visualizar el uso del disco de su equipo que muestra carpetas en una vista de anillos concéntricos fácil de entender. Filelight hace que sea fácil liberar espacio.</p>
     <p xml:lang="eu">Filelight zure ordenagailuko diskoaren erabilera, karpetak, eraztun zentrokideen ikuspegi ulerterraz bat erabiliz irudikatzeko aplikazio bat da. Filelight-ek lekua hustea errazten du!</p>
     <p xml:lang="fi">Filelight on sovellus tietokoneen levynkäytön hahmottamiseksi. Se näyttää kansiot helposti ymmärrettävinä renkaina. Filelight auttaa vapauttamaan levytilaa.</p>
@@ -99,6 +103,7 @@
     <p xml:lang="ia">Filelight es unapplication per visualisar le usage de disco sur tu computator per monstrar dossieres usante un vista facile a comprender de anillos concentric. Filelight rende simplice liberar spatio!</p>
     <p xml:lang="id">Filelight adalah sebuah aplikasi untuk memvisualkan penggunaan disk pada komputermu dengan menampilkan folder menggunakan sebuah tampilan lingkaran konsentris yang mudah dimengerti. Filelight memudahkan dalam pembebasan ruang!</p>
     <p xml:lang="ie">Filelight visualisa li usage de disco de vor computator, monstrante fólderes in un vise comprensibil de concentric anelles. Filelight facilisa li liberation de spacie!</p>
+    <p xml:lang="is">Filelight er forrit til að skoða myndrænt diskapláss á tölvunni þinni með því að birta möppur á auðskilinn máta sem hringgeira. Filelight einfaldar að losa um diskpláss!</p>
     <p xml:lang="it">Filelight è un'applicazione per visualizzare l'uso del disco nel tuo computer, che mostra le cartelle in una vista ad anelli concentrici di semplice interpretazione. Filelight rende semplice liberare dello spazio!</p>
     <p xml:lang="ja">Filelight は、円グラフにてあなたのコンピュータのディスク利用率を簡単に、視覚的に伝えることができるソフトウェアです。Filelight はファイル空間を容易に作り出せます!</p>
     <p xml:lang="ka">Filelight აპლიკაციაა თქვენს კომპიუტერში დისკის გამოყენების ვიზუალიზაციისთვის. ის საქაღალდეებს ადვილად-გასაგებ ხედში გაჩვენებთ. Filelight -ი აადვილებს დისკის გათავისუფლებას!</p>
@@ -127,6 +132,7 @@
     <p xml:lang="de">Funktionen:</p>
     <p xml:lang="el">Χαρακτηριστικά:</p>
     <p xml:lang="en-GB">Features:</p>
+    <p xml:lang="eo">Trajtoj:</p>
     <p xml:lang="es">Funciones:</p>
     <p xml:lang="et">Omadused:</p>
     <p xml:lang="eu">Eginbide:</p>
@@ -170,6 +176,7 @@
       <li xml:lang="ca-valencia">Explora discs locals, remots o extraïbles</li>
       <li xml:lang="de">Durchsehen von lokalen oder entfernten Festplatten oder Wechselmedien</li>
       <li xml:lang="en-GB">Scan local, remote, or removable disks</li>
+      <li xml:lang="eo">Skani lokajn, forajn, aŭ forpreneblajn diskojn</li>
       <li xml:lang="es">Explora discos locales, remotos y extraíbles</li>
       <li xml:lang="eu">Aztertu disko lokalak, urrunekoak edo aldagarriak</li>
       <li xml:lang="fi">Tutkii paikalliset, etä- ja siirrettävät levyt</li>
@@ -178,6 +185,7 @@
       <li xml:lang="ia">Scander discos local, remote o removabile</li>
       <li xml:lang="id">Pemindaian lokal, jarak jauh, atau disk yang dapat dilepas</li>
       <li xml:lang="ie">Analisar local, lontan o removibil discos</li>
+      <li xml:lang="is">Skannaðu staðværa, fjartengda eða útskiptanlega diska</li>
       <li xml:lang="it">Analizza i dischi locali, quelli remoti e quelli rimovibili</li>
       <li xml:lang="ja">ローカル環境、リモート環境、リムーバブルディスクのスキャンができます</li>
       <li xml:lang="ka">ლოკალური, მოხსნადი და დაშორებული დისკების სკანირება</li>
@@ -203,6 +211,7 @@
       <li xml:lang="cs">Zobrazit podrobné informace o souborech a složkách</li>
       <li xml:lang="de">Detaillierte Informationen über Dateien und Ordner beim Überfahren mit dem Mauszeiger anzeigen</li>
       <li xml:lang="en-GB">View detailed information about files and folders</li>
+      <li xml:lang="eo">Rigardi detelajn informojn pri dosieroj kaj dosierujoj</li>
       <li xml:lang="es">Mostrar información detallada sobre archivos y carpetas</li>
       <li xml:lang="eu">Ikusi fitxategiei eta karpetei buruzko informazio zehatza</li>
       <li xml:lang="fi">Näyttää tiedostojen ja kansioiden tiedot</li>
@@ -211,6 +220,7 @@
       <li xml:lang="ia">Vide Information detaliate  re files e directorios</li>
       <li xml:lang="id">Tampilan informasi terperinci tentang file dan folder</li>
       <li xml:lang="ie">Vider detalliat information pri files e fólderes</li>
+      <li xml:lang="is">Skoðaðu nákvæmar upplýsingar um skrár og möppur</li>
       <li xml:lang="it">Visualizza informazioni dettagliate su file e cartelle</li>
       <li xml:lang="ja">ファイルやフォルダについて詳しい情報を見ることができます</li>
       <li xml:lang="ka">დეტალებური ინფორმაცია ფაილებისა და საქაღალდეების შესახებ</li>
@@ -236,6 +246,7 @@
       <li xml:lang="cs">Smažte soubory a složky, které zabírají příliš mnoho místa</li>
       <li xml:lang="de">Dateien oder Ordner löschen, die zu viel Speicherplatz belegen</li>
       <li xml:lang="en-GB">Delete files or folders that are taking up too much space</li>
+      <li xml:lang="eo">Forigi dosierojn aŭ dosierujojn kiuj konsumas tro da spaco</li>
       <li xml:lang="es">Borrar archivos o carpetas que están ocupando demasiado espacio</li>
       <li xml:lang="eu">Ezabatu leku gehiegi hartzen ari diren fitxategiak edo karpetak</li>
       <li xml:lang="fi">Tilaa vievien tiedostojen ja kansioiden poisto</li>
@@ -244,6 +255,7 @@
       <li xml:lang="ia">Dele files o dossieres que es occupante troppo spatio</li>
       <li xml:lang="id">Hapus file atau folder yang terlalu banyak memakan ruang</li>
       <li xml:lang="ie">Remover files e fólderes quel ocupa tro mult spacie</li>
+      <li xml:lang="is">Eyddu skrám eða möppum sem eru að taka of mikið pláss</li>
       <li xml:lang="it">Elimina i file o le cartelle che occupano troppo spazio</li>
       <li xml:lang="ja">ファイルやフォルダの削除に寄ってディスク容量を増やすことができます</li>
       <li xml:lang="ka">წაშალეთ ფაილები და საქაღალდეები, რომლებიც მეტისმეტად ბევრ ადგილს ხარჯავენ</li>
@@ -269,6 +281,7 @@
       <li xml:lang="cs">Integrace do správců souborů Dolphin, Konqueror a Krusader</li>
       <li xml:lang="de">Integration in die Dateiverwaltungen Dolphin, Konqueror und Krusader</li>
       <li xml:lang="en-GB">Integration into the Dolphin, Konqueror, and Krusader file managers</li>
+      <li xml:lang="eo">Integriĝo en la Dolphin, Konqueror, kaj Krusader dosiermastrumiloj</li>
       <li xml:lang="es">Integración con los gestores de archivos Dolphin Konqueror y Krusader</li>
       <li xml:lang="eu">Dolphin, Konqueror eta Krusader fitxategi-kudeatzailetan bateratzea</li>
       <li xml:lang="fi">Integrointi Dolphin-, Konqueror- ja Krusader-tiedostonhallintaohjelmiin</li>
@@ -277,6 +290,7 @@
       <li xml:lang="ia">Integration in gerente de files Dolphin, Konqueror e Krusader</li>
       <li xml:lang="id">Integrasi ke dalam pengelola file Dolphin, Konqueror, dan Krusader</li>
       <li xml:lang="ie">Integration con gerentes de file Dolphin, Konqueror e Krusader</li>
+      <li xml:lang="is">Samþætting inn í Dolphin, Konqueror og Krusader skráastjóra</li>
       <li xml:lang="it">Integrazione nei gestore di file Dolphin, Konqueror e Krusader</li>
       <li xml:lang="ja">ファイルマネージャである Dolphin、Konqueror、Krusader との統合</li>
       <li xml:lang="ka">ინტეგრაცია Dolphin-ში, Konqueror-ში და Krusader-ში</li>
@@ -305,6 +319,7 @@
       <li xml:lang="de">Einstellbare Farbschemata</li>
       <li xml:lang="el">Διαμορφώσιμα χρωματιστά σχήματα</li>
       <li xml:lang="en-GB">Configurable colour schemes</li>
+      <li xml:lang="eo">Agordeblaj kolorskemoj</li>
       <li xml:lang="es">Esquemas de color que se pueden configurar</li>
       <li xml:lang="et">Seadistatavad värviskeemid</li>
       <li xml:lang="eu">Kolore antolaerak konfigura daitezke</li>
