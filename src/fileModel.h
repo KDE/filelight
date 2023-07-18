@@ -28,7 +28,7 @@ public:
 
 public:
     enum class Role { HumanReadableSize = Qt::UserRole, IsFolder, URL, Segment };
-    Q_ENUM(Role);
+    Q_ENUM(Role)
 
     using QAbstractListModel::QAbstractListModel;
 
