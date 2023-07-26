@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Stefan Asserhäll <stefan.asserhall@bredband.net>, 2009, 2010.
-# Stefan Asserhall <stefan.asserhall@bredband.net>, 2010, 2013, 2015, 2017, 2018, 2020, 2021, 2022.
+# Stefan Asserhall <stefan.asserhall@bredband.net>, 2010, 2013, 2015, 2017, 2018, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-23 00:49+0000\n"
-"PO-Revision-Date: 2022-06-08 18:48+0200\n"
+"PO-Revision-Date: 2023-07-25 11:04+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -289,12 +289,10 @@ msgid "Configure…"
 msgstr "Anpassa…"
 
 #: src/qml/main.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@action configure app"
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr "Anpassa…"
+msgstr "Anpassa"
 
 #: src/qml/main.qml:76
 #, kde-format
@@ -329,12 +327,10 @@ msgid "Aborting Scan..."
 msgstr "Avbryter avsökning..."
 
 #: src/qml/MapPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Overview"
+#, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
-msgstr "Översikt"
+msgstr "Gå till översikt"
 
 #: src/qml/MapPage.qml:37
 #, kde-format
@@ -367,55 +363,46 @@ msgid "Zoom Out"
 msgstr "Zooma ut"
 
 #: src/qml/MapPage.qml:106 src/qml/MapPage.qml:225
-#, fuzzy, kde-format
-#| msgctxt "Scan/open the path of the selected element"
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
-msgstr "Ö&ppna"
+msgstr "Öppna"
 
 #: src/qml/MapPage.qml:114 src/qml/MapPage.qml:233
-#, fuzzy, kde-format
-#| msgid "Open &Terminal Here"
+#, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
-msgstr "Öppna &terminal här"
+msgstr "Öppna terminal här"
 
 #: src/qml/MapPage.qml:122
-#, fuzzy, kde-format
-#| msgid "&Center Map Here"
+#, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
-msgstr "&Centrera kartan här"
+msgstr "Skapa avbild här"
 
 #: src/qml/MapPage.qml:133 src/qml/MapPage.qml:241
-#, fuzzy, kde-format
-#| msgid "Add to Do &Not Scan List"
+#, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
-msgstr "Lägg till i avsök i&nte"
+msgstr "Lägg till i sök inte igenom"
 
 #: src/qml/MapPage.qml:141
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Avsök igen"
 
 #: src/qml/MapPage.qml:148 src/qml/MapPage.qml:248
-#, fuzzy, kde-format
-#| msgid "&Copy to clipboard"
+#, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
-msgstr "&Kopiera till klippbord"
+msgstr "Kopiera till klippbordet"
 
 #: src/qml/MapPage.qml:156 src/qml/MapPage.qml:256
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
-msgstr "Ta &bort"
+msgstr "Ta bort"
 
 #: src/qml/MapPage.qml:309
 #, kde-format
@@ -434,15 +421,10 @@ msgstr[0] "%1 fil"
 msgstr[1] "%1 filer"
 
 #: src/qml/MapPage.qml:315
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Click to go up to parent directory"
+#, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
-msgstr ""
-"\n"
-"Klicka för att gå upp till överliggande katalog"
+msgstr "Klicka för att gå upp till överliggande katalog"
 
 #: src/qml/MapPage.qml:518
 #, kde-format
@@ -470,107 +452,97 @@ msgid "Welcome to Filelight"
 msgstr "Välkommen till Filelight"
 
 #: src/qml/SettingsPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Scannin&g"
+#, kde-format
 msgctxt "@title"
 msgid "Scanning"
-msgstr "Av&sökning"
+msgstr "Avsöker"
 
 #: src/qml/SettingsPage.qml:27
-#, fuzzy, kde-format
-#| msgid "&Appearance"
+#, kde-format
 msgctxt "@title"
 msgid "Appearance"
-msgstr "&Utseende"
+msgstr "Utseende"
 
 #: src/qml/SettingsPageAppearance.qml:16
-#, fuzzy, kde-format
-#| msgid "Color scheme"
+#, kde-format
 msgctxt "@title:group"
 msgid "Color Scheme"
 msgstr "Färgschema"
 
 #: src/qml/SettingsPageAppearance.qml:25
-#, fuzzy, kde-format
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "Rainbow"
 msgstr "Regnbåge"
 
 #: src/qml/SettingsPageAppearance.qml:34
-#, fuzzy, kde-format
-#| msgid "System colors"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "System colors"
 msgstr "Systemfärger"
 
 #: src/qml/SettingsPageAppearance.qml:43
-#, fuzzy, kde-format
-#| msgid "High contrast"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "High contrast"
 msgstr "Hög kontrast"
 
 #: src/qml/SettingsPageAppearance.qml:52
-#, fuzzy, kde-format
-#| msgid "Co&ntrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Contrast"
-msgstr "Ko&ntrast"
+msgstr "Kontrast"
 
 #: src/qml/SettingsPageAppearance.qml:69
-#, fuzzy, kde-format
-#| msgid "Show small files"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "Visa små filer"
 
 #: src/qml/SettingsPageScanning.qml:23
-#, fuzzy, kde-format
-#| msgid "Do &not scan these folders:"
+#, kde-format
 msgctxt "@label"
 msgid "Do not scan these folders:"
-msgstr "Avsök i&nte följande kataloger:"
+msgstr "Avsök inte följande kataloger:"
 
 #: src/qml/SettingsPageScanning.qml:48
-#, fuzzy, kde-format
-#| msgid "R&emove"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
-msgstr "&Ta bort"
+msgstr "Ta bort"
 
 #: src/qml/SettingsPageScanning.qml:63
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
-msgstr ""
+msgstr "Lägg till…"
 
 #: src/qml/SettingsPageScanning.qml:75
-#, fuzzy, kde-format
-#| msgid "Scan across filesystem &boundaries"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
-msgstr "Avsök över &filsystemgränser"
+msgstr "Avsök över filsystemgränser"
 
 #: src/qml/SettingsPageScanning.qml:86
-#, fuzzy, kde-format
-#| msgid "Exclude remote files&ystems"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
-msgstr "Undanta fjärrfils&ystem"
+msgstr "Undanta fjärrfilsystem"
 
 #: src/radialMap/map.cpp:56
-#, fuzzy, kde-format
-#| msgid "1 file, with an average size of %2"
-#| msgid_plural "%1 files, with an average size of %2"
+#, kde-format
 msgid ""
 "\n"
 "%1 file, with an average size of %2"
 msgid_plural ""
 "\n"
 "%1 files, with an average size of %2"
-msgstr[0] "1 fil, med medelstorleken %2"
-msgstr[1] "%1 filer, med medelstorleken %2"
+msgstr[0] ""
+"\n"
+"%1 fil, med medelstorlek %2"
+msgstr[1] ""
+"\n"
+"%1 filer, med medelstorlek %2"
 
 #~ msgid "Settings - Filelight"
 #~ msgstr "Inställningar - Filelight"
