@@ -79,6 +79,7 @@
   <summary xml:lang="pt-BR">Mostra o uso do disco e exclui arquivos não utilizados</summary>
   <summary xml:lang="ru">Просмотр сведений об использовании дискового пространства и удаление неиспользуемых файлов</summary>
   <summary xml:lang="sl">Prikazuje rabo diska in briše neuporabljene datoteke</summary>
+  <summary xml:lang="sv">Visa diskanvändning och ta bort oanvända filer</summary>
   <summary xml:lang="ta">வட்டுப் பயன்பாட்டைக் காட்டி, தேவையில்லாத கோப்புகளை அகற்ற உதவும்</summary>
   <summary xml:lang="tr">Disk kullanımına bakın ve kullanılmayan dosyaları silin</summary>
   <summary xml:lang="uk">Показ даних щодо використання диска і вилучення зайвих файлів</summary>
@@ -115,6 +116,7 @@
     <p xml:lang="pt-BR">O Filelight é um aplicativo para visualizar a utilização do disco no seu computador mostrando pastas usando uma visão de anéis concêntricos de fácil compreensão. O Filelight simplifica a liberação de espaço!</p>
     <p xml:lang="ru">Filelight — приложение для визуализации использования дискового пространства, использующее наглядное отображение размеров папок в виде концентрических колец. Filelight позволяет просто находить большие файлы и помогает освобождать место на дисках.</p>
     <p xml:lang="sl">FIlelight je aplikacija za vizualizacijo porabe diska na vašem računalniku, tako da prikazuje mape v preprosto razumljivih koncentričnih krogih. Filelight poenostavi sproščanje prostora na disku!</p>
+    <p xml:lang="sv">Filelight är ett program för att åskådliggöra diskanvändning på datorn genom att visa kataloger med en lättförståelig vy av koncentriska ringar. Filelight gör det enkelt att frigöra utrymme!</p>
     <p xml:lang="ta">உங்கள் கணினியிலுள்ள அடைவுகளின் அளவுகளை நீங்கள் எளிதில் புரிந்துகொள்ளும் வகையில் ஃபைல்-லைட் காட்டும். தேவையில்லாதவற்றை சுலபமாக அகற்றி இடத்தை காலி செய்யலாம்!</p>
     <p xml:lang="tr">Dosya Feneri, bilgisayarınızdaki disk kullanımını, anlaması kolay eşmerkezli halkalar görünümü kullanarak görselleştiren bir uygulamadır. Dosya Feneri ile, bilgisayarınızı kolaylıkla temizleyebilirsiniz!</p>
     <p xml:lang="uk">Filelight — програма для візуалізації використання дискового простору вашого комп'ютера. Ця програма здатна показувати вміст тек у легко зрозумілому форматі концентричних кіл. За допомогою Filelight ви без проблем зможете звільняти місце на диску!</p>
@@ -197,6 +199,7 @@
       <li xml:lang="pt-BR">Verifica em discos locais, remotos ou removíveis</li>
       <li xml:lang="ru">Сканирование локальных, сетевых и сменных дисков;</li>
       <li xml:lang="sl">Preišči krajevne, oddaljene ali odstranljive diske</li>
+      <li xml:lang="sv">Sök igenom lokala diskar, diskar på en annan dator eller flyttbara diskar</li>
       <li xml:lang="ta">உள்ளமை, தொலை, மற்றும் கழற்றக்கூடிய வட்டுகளை ஆராயும்</li>
       <li xml:lang="tr">Yerel, uzak veya çıkarılabilir diskleri tarayın</li>
       <li xml:lang="uk">Сканування локальних, віддалених та портативних дисків</li>
@@ -232,6 +235,7 @@
       <li xml:lang="pt-BR">Veja informações detalhadas sobre os arquivos e pastas</li>
       <li xml:lang="ru">Подробные сведения о файлах и папках;</li>
       <li xml:lang="sl">Pogled podrobnih informacij o datotekah in mapah</li>
+      <li xml:lang="sv">Visa detaljerad information om filer och kataloger</li>
       <li xml:lang="ta">கோப்புகளின் மற்றும் அடைவுகளின் விவரங்களைக் காட்டும்</li>
       <li xml:lang="tr">Dosyalar ve klasörler hakkında bilgi alın</li>
       <li xml:lang="uk">Перегляд докладних відомостей щодо файлів і тек</li>
@@ -267,6 +271,7 @@
       <li xml:lang="pt-BR">Exclua arquivos ou pastas que estão ocupando muito espaço</li>
       <li xml:lang="ru">Удаление файлов или папок, занимающих слишком много места;</li>
       <li xml:lang="sl">Briši datoteke ali mape, ki zavzemajo preveč prostora</li>
+      <li xml:lang="sv">Ta bort filer eller kataloger som upptar för mycket utrymme</li>
       <li xml:lang="ta">மிகப்பெரிய கோப்புகளையும் அடைவுகளையும் எளிதில் அகற்ற உதவும்</li>
       <li xml:lang="tr">Çok fazla yer kaplayan dosyaları veya klasörleri silin</li>
       <li xml:lang="uk">Вилучення файлів і тек, які займають надто багато місця</li>
@@ -302,6 +307,7 @@
       <li xml:lang="pt-BR">Integração com os gerenciadores de arquivo Dolphin, Konqueror e Krusader</li>
       <li xml:lang="ru">Встраивание в диспетчеры файлов Dolphin, Konqueror и Krusader;</li>
       <li xml:lang="sl">Vključitev v upravljalnike datotek Dolphin, Konqueror in Krusader</li>
+      <li xml:lang="sv">Integrerat med filhanterarna Dolphin, Konqueror och Krusader</li>
       <li xml:lang="ta">டால்பின், கான்கொரர், குரூசெடர் போன்ற கோப்பு உலாவிகளுடனான ஒருங்கிணைப்பு</li>
       <li xml:lang="tr">Dolphin, Krusader ve Konqueror dosya yöneticileri tümleşimi</li>
       <li xml:lang="uk">Інтеграція з програмами для керування файлами — Dolphin, Konqueror і Krusader</li>
