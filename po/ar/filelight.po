@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:49+0000\n"
+"POT-Creation-Date: 2023-08-03 00:48+0000\n"
 "PO-Revision-Date: 2022-12-22 12:35+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -27,36 +27,6 @@ msgstr "زايد السعيدي"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zayed.alsaidi@gmail.com"
-
-#. i18n: ectx: Menu (file)
-#: misc/filelightui.rc:4
-#, kde-format
-msgid "&Scan"
-msgstr "ا&مسح"
-
-#. i18n: ectx: Menu (view)
-#: misc/filelightui.rc:18
-#, kde-format
-msgid "&View"
-msgstr "ال&عرض"
-
-#. i18n: ectx: ToolBar (mainToolBar)
-#: misc/filelightui.rc:24
-#, kde-format
-msgid "Main Toolbar"
-msgstr "شريط الأدوات الرئيسي"
-
-#. i18n: ectx: ToolBar (locationToolBar)
-#: misc/filelightui.rc:33
-#, kde-format
-msgid "Location Toolbar"
-msgstr "شريط أدوات الموقع"
-
-#. i18n: ectx: ToolBar (viewToolBar)
-#: misc/filelightui.rc:38
-#, kde-format
-msgid "View Toolbar"
-msgstr "شريط أدوات العرض"
 
 #: src/Config.cpp:58
 #, kde-format
@@ -568,6 +538,21 @@ msgstr[4] ""
 msgstr[5] ""
 "\n"
 "%1 ملف، بحجم متوسط %2"
+
+#~ msgid "&Scan"
+#~ msgstr "ا&مسح"
+
+#~ msgid "&View"
+#~ msgstr "ال&عرض"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "شريط الأدوات الرئيسي"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "شريط أدوات الموقع"
+
+#~ msgid "View Toolbar"
+#~ msgstr "شريط أدوات العرض"
 
 #~ msgid "Settings - Filelight"
 #~ msgstr "إعدادات - كشاف الملفات"

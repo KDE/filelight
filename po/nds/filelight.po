@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:49+0000\n"
+"POT-Creation-Date: 2023-08-03 00:48+0000\n"
 "PO-Revision-Date: 2014-02-20 11:39+0100\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-doc@kde.org>\n"
@@ -28,36 +28,6 @@ msgstr "Manfred Wiese, Sönke Dibbern"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "m.j.wiese@web.de, s_dibbern@web.de"
-
-#. i18n: ectx: Menu (file)
-#: misc/filelightui.rc:4
-#, kde-format
-msgid "&Scan"
-msgstr "&Dörkieken"
-
-#. i18n: ectx: Menu (view)
-#: misc/filelightui.rc:18
-#, kde-format
-msgid "&View"
-msgstr "&Ankieken"
-
-#. i18n: ectx: ToolBar (mainToolBar)
-#: misc/filelightui.rc:24
-#, kde-format
-msgid "Main Toolbar"
-msgstr "Hööft-Warktüüchbalken"
-
-#. i18n: ectx: ToolBar (locationToolBar)
-#: misc/filelightui.rc:33
-#, kde-format
-msgid "Location Toolbar"
-msgstr "Adressbalken"
-
-#. i18n: ectx: ToolBar (viewToolBar)
-#: misc/filelightui.rc:38
-#, kde-format
-msgid "View Toolbar"
-msgstr "Ansicht-Warktüüchbalken"
 
 #: src/Config.cpp:58
 #, kde-format
@@ -585,6 +555,21 @@ msgid_plural ""
 "%1 files, with an average size of %2"
 msgstr[0] "Een Datei mit de dörsnittlich Grött vun %2"
 msgstr[1] "%1Dateien mit de dörsnittlich Grött vun %2"
+
+#~ msgid "&Scan"
+#~ msgstr "&Dörkieken"
+
+#~ msgid "&View"
+#~ msgstr "&Ankieken"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Hööft-Warktüüchbalken"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Adressbalken"
+
+#~ msgid "View Toolbar"
+#~ msgstr "Ansicht-Warktüüchbalken"
 
 #~ msgid "Settings - Filelight"
 #~ msgstr "Filelight - Instellen"

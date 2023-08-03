@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:49+0000\n"
+"POT-Creation-Date: 2023-08-03 00:48+0000\n"
 "PO-Revision-Date: 2015-12-29 20:56+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -31,36 +31,6 @@ msgstr "Andrius Štikonas"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "andrius@stikonas.eu"
-
-#. i18n: ectx: Menu (file)
-#: misc/filelightui.rc:4
-#, kde-format
-msgid "&Scan"
-msgstr "&Skenuoti"
-
-#. i18n: ectx: Menu (view)
-#: misc/filelightui.rc:18
-#, kde-format
-msgid "&View"
-msgstr "&Rodymas"
-
-#. i18n: ectx: ToolBar (mainToolBar)
-#: misc/filelightui.rc:24
-#, kde-format
-msgid "Main Toolbar"
-msgstr "Pagrindinė įrankinė"
-
-#. i18n: ectx: ToolBar (locationToolBar)
-#: misc/filelightui.rc:33
-#, kde-format
-msgid "Location Toolbar"
-msgstr "Vietos įrankinė"
-
-#. i18n: ectx: ToolBar (viewToolBar)
-#: misc/filelightui.rc:38
-#, kde-format
-msgid "View Toolbar"
-msgstr "Rodymo įrankinė"
 
 #: src/Config.cpp:58
 #, kde-format
@@ -598,6 +568,21 @@ msgstr[0] "%1 failas, vidutinis dydis %2"
 msgstr[1] "%1 failai, vidutinis dydis %2"
 msgstr[2] "%1 failų, vidutinis dydis %2"
 msgstr[3] "%1 failas, vidutinis dydis %2"
+
+#~ msgid "&Scan"
+#~ msgstr "&Skenuoti"
+
+#~ msgid "&View"
+#~ msgstr "&Rodymas"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Pagrindinė įrankinė"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Vietos įrankinė"
+
+#~ msgid "View Toolbar"
+#~ msgstr "Rodymo įrankinė"
 
 #~ msgid "Settings - Filelight"
 #~ msgstr "Nutatymai – Filelight"

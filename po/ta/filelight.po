@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:49+0000\n"
+"POT-Creation-Date: 2023-08-03 00:48+0000\n"
 "PO-Revision-Date: 2023-05-21 15:56+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -26,36 +26,6 @@ msgstr "கோ. கிஷோர்"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Kde-l10n-ta@kde.org"
-
-#. i18n: ectx: Menu (file)
-#: misc/filelightui.rc:4
-#, kde-format
-msgid "&Scan"
-msgstr "&ஆராய்"
-
-#. i18n: ectx: Menu (view)
-#: misc/filelightui.rc:18
-#, kde-format
-msgid "&View"
-msgstr "&பார்வை"
-
-#. i18n: ectx: ToolBar (mainToolBar)
-#: misc/filelightui.rc:24
-#, kde-format
-msgid "Main Toolbar"
-msgstr "பிரதான கருவிப்பட்டை"
-
-#. i18n: ectx: ToolBar (locationToolBar)
-#: misc/filelightui.rc:33
-#, kde-format
-msgid "Location Toolbar"
-msgstr "இடக் கருவிப்பட்டை"
-
-#. i18n: ectx: ToolBar (viewToolBar)
-#: misc/filelightui.rc:38
-#, kde-format
-msgid "View Toolbar"
-msgstr "காட்சி கருவிப்பட்டை"
 
 #: src/Config.cpp:58
 #, kde-format
@@ -541,6 +511,21 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 கோப்புகள், சராசரியாக %2 அளவில்"
+
+#~ msgid "&Scan"
+#~ msgstr "&ஆராய்"
+
+#~ msgid "&View"
+#~ msgstr "&பார்வை"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "பிரதான கருவிப்பட்டை"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "இடக் கருவிப்பட்டை"
+
+#~ msgid "View Toolbar"
+#~ msgstr "காட்சி கருவிப்பட்டை"
 
 #~ msgid "Settings - Filelight"
 #~ msgstr "அமைப்புகள் — ஃபைல்-லைட்"

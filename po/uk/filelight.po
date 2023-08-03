@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:49+0000\n"
+"POT-Creation-Date: 2023-08-03 00:48+0000\n"
 "PO-Revision-Date: 2022-12-16 08:36+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -29,36 +29,6 @@ msgstr "Юрій Чорноіван"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
-
-#. i18n: ectx: Menu (file)
-#: misc/filelightui.rc:4
-#, kde-format
-msgid "&Scan"
-msgstr "&Сканування"
-
-#. i18n: ectx: Menu (view)
-#: misc/filelightui.rc:18
-#, kde-format
-msgid "&View"
-msgstr "П&ерегляд"
-
-#. i18n: ectx: ToolBar (mainToolBar)
-#: misc/filelightui.rc:24
-#, kde-format
-msgid "Main Toolbar"
-msgstr "Головний пенал"
-
-#. i18n: ectx: ToolBar (locationToolBar)
-#: misc/filelightui.rc:33
-#, kde-format
-msgid "Location Toolbar"
-msgstr "Пенал адреси"
-
-#. i18n: ectx: ToolBar (viewToolBar)
-#: misc/filelightui.rc:38
-#, kde-format
-msgid "View Toolbar"
-msgstr "Панель перегляду"
 
 #: src/Config.cpp:58
 #, kde-format
@@ -558,6 +528,21 @@ msgstr[2] ""
 msgstr[3] ""
 "\n"
 "%1 файл з середнім розміром %2"
+
+#~ msgid "&Scan"
+#~ msgstr "&Сканування"
+
+#~ msgid "&View"
+#~ msgstr "П&ерегляд"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Головний пенал"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Пенал адреси"
+
+#~ msgid "View Toolbar"
+#~ msgstr "Панель перегляду"
 
 #~ msgid "Settings - Filelight"
 #~ msgstr "Параметри — Filelight"

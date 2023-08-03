@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:49+0000\n"
+"POT-Creation-Date: 2023-08-03 00:48+0000\n"
 "PO-Revision-Date: 2020-10-11 01:28+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -28,36 +28,6 @@ msgstr "Marek Laane"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "qiilaq69@gmail.com"
-
-#. i18n: ectx: Menu (file)
-#: misc/filelightui.rc:4
-#, kde-format
-msgid "&Scan"
-msgstr "&Uurimine"
-
-#. i18n: ectx: Menu (view)
-#: misc/filelightui.rc:18
-#, kde-format
-msgid "&View"
-msgstr "&Vaade"
-
-#. i18n: ectx: ToolBar (mainToolBar)
-#: misc/filelightui.rc:24
-#, kde-format
-msgid "Main Toolbar"
-msgstr "Peamine tööriistariba"
-
-#. i18n: ectx: ToolBar (locationToolBar)
-#: misc/filelightui.rc:33
-#, kde-format
-msgid "Location Toolbar"
-msgstr "Asukohariba"
-
-#. i18n: ectx: ToolBar (viewToolBar)
-#: misc/filelightui.rc:38
-#, kde-format
-msgid "View Toolbar"
-msgstr "Vaateriba"
 
 #: src/Config.cpp:58
 #, kde-format
@@ -579,6 +549,21 @@ msgid_plural ""
 "%1 files, with an average size of %2"
 msgstr[0] "1 fail keskmise suurusega %2"
 msgstr[1] "%1 faili keskmise suurusega %2"
+
+#~ msgid "&Scan"
+#~ msgstr "&Uurimine"
+
+#~ msgid "&View"
+#~ msgstr "&Vaade"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Peamine tööriistariba"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Asukohariba"
+
+#~ msgid "View Toolbar"
+#~ msgstr "Vaateriba"
 
 #~ msgid "Settings - Filelight"
 #~ msgstr "Seadistused - Filelight"

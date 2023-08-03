@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:49+0000\n"
+"POT-Creation-Date: 2023-08-03 00:48+0000\n"
 "PO-Revision-Date: 2023-04-24 09:42+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -31,36 +31,6 @@ msgstr "Jure Repinc,Andrej Mernik,Matjaž Jeran"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "jlp@holodeck1.com,andrejm@ubuntu.si,matjaz.jeran@amis.net"
-
-#. i18n: ectx: Menu (file)
-#: misc/filelightui.rc:4
-#, kde-format
-msgid "&Scan"
-msgstr "Preišči"
-
-#. i18n: ectx: Menu (view)
-#: misc/filelightui.rc:18
-#, kde-format
-msgid "&View"
-msgstr "Pogled"
-
-#. i18n: ectx: ToolBar (mainToolBar)
-#: misc/filelightui.rc:24
-#, kde-format
-msgid "Main Toolbar"
-msgstr "Glavna orodna vrstica"
-
-#. i18n: ectx: ToolBar (locationToolBar)
-#: misc/filelightui.rc:33
-#, kde-format
-msgid "Location Toolbar"
-msgstr "Orodna vrstica mest"
-
-#. i18n: ectx: ToolBar (viewToolBar)
-#: misc/filelightui.rc:38
-#, kde-format
-msgid "View Toolbar"
-msgstr "Orodna vrstica pogleda"
 
 #: src/Config.cpp:58
 #, kde-format
@@ -559,6 +529,21 @@ msgstr[2] ""
 msgstr[3] ""
 "\n"
 "%1 datotek s povprečno velikostjo %2"
+
+#~ msgid "&Scan"
+#~ msgstr "Preišči"
+
+#~ msgid "&View"
+#~ msgstr "Pogled"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Glavna orodna vrstica"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Orodna vrstica mest"
+
+#~ msgid "View Toolbar"
+#~ msgstr "Orodna vrstica pogleda"
 
 #~ msgid "Settings - Filelight"
 #~ msgstr "Nastavitve – Filelight"

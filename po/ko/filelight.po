@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:49+0000\n"
+"POT-Creation-Date: 2023-08-03 00:48+0000\n"
 "PO-Revision-Date: 2023-03-01 01:19+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -27,36 +27,6 @@ msgstr "박신조"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
-
-#. i18n: ectx: Menu (file)
-#: misc/filelightui.rc:4
-#, kde-format
-msgid "&Scan"
-msgstr "검사(&S)"
-
-#. i18n: ectx: Menu (view)
-#: misc/filelightui.rc:18
-#, kde-format
-msgid "&View"
-msgstr "보기(&V)"
-
-#. i18n: ectx: ToolBar (mainToolBar)
-#: misc/filelightui.rc:24
-#, kde-format
-msgid "Main Toolbar"
-msgstr "주 도구 모음"
-
-#. i18n: ectx: ToolBar (locationToolBar)
-#: misc/filelightui.rc:33
-#, kde-format
-msgid "Location Toolbar"
-msgstr "위치 도구 모음"
-
-#. i18n: ectx: ToolBar (viewToolBar)
-#: misc/filelightui.rc:38
-#, kde-format
-msgid "View Toolbar"
-msgstr "보기 도구 모음"
 
 #: src/Config.cpp:58
 #, kde-format
@@ -535,6 +505,21 @@ msgid_plural ""
 msgstr[0] ""
 "\n"
 "파일 %1개, 평균 크기 %2"
+
+#~ msgid "&Scan"
+#~ msgstr "검사(&S)"
+
+#~ msgid "&View"
+#~ msgstr "보기(&V)"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "주 도구 모음"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "위치 도구 모음"
+
+#~ msgid "View Toolbar"
+#~ msgstr "보기 도구 모음"
 
 #~ msgid "Settings - Filelight"
 #~ msgstr "설정 - Filelight"

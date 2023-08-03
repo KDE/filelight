@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:49+0000\n"
-"PO-Revision-Date: 2023-07-30 07:09\n"
+"POT-Creation-Date: 2023-08-03 00:48+0000\n"
+"PO-Revision-Date: 2023-08-02 12:39\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -31,36 +31,6 @@ msgstr ""
 "073plan@kde.org, CoelacanthusHex@kde.org, DuckSoft@kde.org, EasternLi@kde."
 "org, i@guoyunhe.me, henryhu@kde.org, shuizhuyuanluo@126.com, "
 "tysontan@tysontan.com, slkde@kde.org, StarOnTheSky@kde.org"
-
-#. i18n: ectx: Menu (file)
-#: misc/filelightui.rc:4
-#, kde-format
-msgid "&Scan"
-msgstr "扫描(&S)"
-
-#. i18n: ectx: Menu (view)
-#: misc/filelightui.rc:18
-#, kde-format
-msgid "&View"
-msgstr "视图(&V)"
-
-#. i18n: ectx: ToolBar (mainToolBar)
-#: misc/filelightui.rc:24
-#, kde-format
-msgid "Main Toolbar"
-msgstr "主工具栏"
-
-#. i18n: ectx: ToolBar (locationToolBar)
-#: misc/filelightui.rc:33
-#, kde-format
-msgid "Location Toolbar"
-msgstr "位置工具栏"
-
-#. i18n: ectx: ToolBar (viewToolBar)
-#: misc/filelightui.rc:38
-#, kde-format
-msgid "View Toolbar"
-msgstr "视图工具栏"
 
 #: src/Config.cpp:58
 #, kde-format
@@ -537,3 +507,18 @@ msgid_plural ""
 msgstr[0] ""
 "\n"
 "%1 个文件，平均大小为 %2"
+
+#~ msgid "&Scan"
+#~ msgstr "扫描(&S)"
+
+#~ msgid "&View"
+#~ msgstr "视图(&V)"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "主工具栏"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "位置工具栏"
+
+#~ msgid "View Toolbar"
+#~ msgstr "视图工具栏"

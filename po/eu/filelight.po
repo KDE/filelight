@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:49+0000\n"
+"POT-Creation-Date: 2023-08-03 00:48+0000\n"
 "PO-Revision-Date: 2022-12-17 09:22+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque\n"
@@ -30,36 +30,6 @@ msgstr "Iñigo Salvador Azurmendi,Hizkuntza Politikarako Sailburuordetza"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xalba@ni.eus,hizpol@ej-gv.es"
-
-#. i18n: ectx: Menu (file)
-#: misc/filelightui.rc:4
-#, kde-format
-msgid "&Scan"
-msgstr "&Aztertu"
-
-#. i18n: ectx: Menu (view)
-#: misc/filelightui.rc:18
-#, kde-format
-msgid "&View"
-msgstr "&Ikusi"
-
-#. i18n: ectx: ToolBar (mainToolBar)
-#: misc/filelightui.rc:24
-#, kde-format
-msgid "Main Toolbar"
-msgstr "Tresna-barra nagusia"
-
-#. i18n: ectx: ToolBar (locationToolBar)
-#: misc/filelightui.rc:33
-#, kde-format
-msgid "Location Toolbar"
-msgstr "Kokalekuaren tresna-barra"
-
-#. i18n: ectx: ToolBar (viewToolBar)
-#: misc/filelightui.rc:38
-#, kde-format
-msgid "View Toolbar"
-msgstr "Ikuspegien tresna-barra"
 
 #: src/Config.cpp:58
 #, kde-format
@@ -545,6 +515,21 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 fitxategi, %2ko batezbesteko neurrikoa"
+
+#~ msgid "&Scan"
+#~ msgstr "&Aztertu"
+
+#~ msgid "&View"
+#~ msgstr "&Ikusi"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Tresna-barra nagusia"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Kokalekuaren tresna-barra"
+
+#~ msgid "View Toolbar"
+#~ msgstr "Ikuspegien tresna-barra"
 
 #~ msgid "Settings - Filelight"
 #~ msgstr "Ezarpenak - Filelight"

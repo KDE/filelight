@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:49+0000\n"
+"POT-Creation-Date: 2023-08-03 00:48+0000\n"
 "PO-Revision-Date: 2022-12-19 10:14+0100\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -28,36 +28,6 @@ msgstr "Johannes Obermayr"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "johannesobermayr@gmx.de"
-
-#. i18n: ectx: Menu (file)
-#: misc/filelightui.rc:4
-#, kde-format
-msgid "&Scan"
-msgstr "Ein&lesen"
-
-#. i18n: ectx: Menu (view)
-#: misc/filelightui.rc:18
-#, kde-format
-msgid "&View"
-msgstr "&Ansicht"
-
-#. i18n: ectx: ToolBar (mainToolBar)
-#: misc/filelightui.rc:24
-#, kde-format
-msgid "Main Toolbar"
-msgstr "Haupt-Werkzeugleiste"
-
-#. i18n: ectx: ToolBar (locationToolBar)
-#: misc/filelightui.rc:33
-#, kde-format
-msgid "Location Toolbar"
-msgstr "Adressleiste"
-
-#. i18n: ectx: ToolBar (viewToolBar)
-#: misc/filelightui.rc:38
-#, kde-format
-msgid "View Toolbar"
-msgstr "Ansichts-Werkzeugleiste"
 
 #: src/Config.cpp:58
 #, kde-format
@@ -544,6 +514,21 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 Dateien mit einer durchschnittlichen Größe von %2"
+
+#~ msgid "&Scan"
+#~ msgstr "Ein&lesen"
+
+#~ msgid "&View"
+#~ msgstr "&Ansicht"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Haupt-Werkzeugleiste"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Adressleiste"
+
+#~ msgid "View Toolbar"
+#~ msgstr "Ansichts-Werkzeugleiste"
 
 #~ msgid "Settings - Filelight"
 #~ msgstr "Einstellungen – Filelight"

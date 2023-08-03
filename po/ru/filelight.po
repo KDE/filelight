@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:49+0000\n"
+"POT-Creation-Date: 2023-08-03 00:48+0000\n"
 "PO-Revision-Date: 2022-12-18 11:12+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -34,36 +34,6 @@ msgstr "Александр Поташев, Павел Чернышов"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "aspotashev@gmail.com, farline99@yandex.ru"
-
-#. i18n: ectx: Menu (file)
-#: misc/filelightui.rc:4
-#, kde-format
-msgid "&Scan"
-msgstr "С&канирование"
-
-#. i18n: ectx: Menu (view)
-#: misc/filelightui.rc:18
-#, kde-format
-msgid "&View"
-msgstr "&Вид"
-
-#. i18n: ectx: ToolBar (mainToolBar)
-#: misc/filelightui.rc:24
-#, kde-format
-msgid "Main Toolbar"
-msgstr "Основная панель инструментов"
-
-#. i18n: ectx: ToolBar (locationToolBar)
-#: misc/filelightui.rc:33
-#, kde-format
-msgid "Location Toolbar"
-msgstr "Строка ввода пути"
-
-#. i18n: ectx: ToolBar (viewToolBar)
-#: misc/filelightui.rc:38
-#, kde-format
-msgid "View Toolbar"
-msgstr "Панель инструментов просмотра"
 
 #: src/Config.cpp:58
 #, kde-format
@@ -562,6 +532,21 @@ msgstr[2] ""
 msgstr[3] ""
 "\n"
 "%1 файл, средний размер файла %2"
+
+#~ msgid "&Scan"
+#~ msgstr "С&канирование"
+
+#~ msgid "&View"
+#~ msgstr "&Вид"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Основная панель инструментов"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Строка ввода пути"
+
+#~ msgid "View Toolbar"
+#~ msgstr "Панель инструментов просмотра"
 
 #~ msgid "Settings - Filelight"
 #~ msgstr "Настройка — Filelight"

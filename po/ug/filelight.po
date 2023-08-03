@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:49+0000\n"
+"POT-Creation-Date: 2023-08-03 00:48+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -26,36 +26,6 @@ msgstr "ئابدۇقادىر ئابلىز, غەيرەت كەنجى"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sahran.ug@gmail.com,  gheyret@gmail.com"
-
-#. i18n: ectx: Menu (file)
-#: misc/filelightui.rc:4
-#, kde-format
-msgid "&Scan"
-msgstr "شويلىلا(&S)"
-
-#. i18n: ectx: Menu (view)
-#: misc/filelightui.rc:18
-#, kde-format
-msgid "&View"
-msgstr "كۆرۈنۈش(&V)"
-
-#. i18n: ectx: ToolBar (mainToolBar)
-#: misc/filelightui.rc:24
-#, kde-format
-msgid "Main Toolbar"
-msgstr "ئاساسىي قورال بالداق"
-
-#. i18n: ectx: ToolBar (locationToolBar)
-#: misc/filelightui.rc:33
-#, kde-format
-msgid "Location Toolbar"
-msgstr "ئورۇن قورال بالدىقى"
-
-#. i18n: ectx: ToolBar (viewToolBar)
-#: misc/filelightui.rc:38
-#, kde-format
-msgid "View Toolbar"
-msgstr "كۆرۈنۈش ۋە جايلاشتۇرۇش قورال ئىستونى"
 
 #: src/Config.cpp:58
 #, kde-format
@@ -552,6 +522,21 @@ msgid_plural ""
 "\n"
 "%1 files, with an average size of %2"
 msgstr[0] ""
+
+#~ msgid "&Scan"
+#~ msgstr "شويلىلا(&S)"
+
+#~ msgid "&View"
+#~ msgstr "كۆرۈنۈش(&V)"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "ئاساسىي قورال بالداق"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "ئورۇن قورال بالدىقى"
+
+#~ msgid "View Toolbar"
+#~ msgstr "كۆرۈنۈش ۋە جايلاشتۇرۇش قورال ئىستونى"
 
 #~ msgid "&Add..."
 #~ msgstr "قوش(&A)…"

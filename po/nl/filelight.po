@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:49+0000\n"
+"POT-Creation-Date: 2023-08-03 00:48+0000\n"
 "PO-Revision-Date: 2022-12-16 10:53+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -33,36 +33,6 @@ msgstr "Rinse de Vries,Freek de Kruijf - t/m 2022"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "rinsedevries@kde.nl,freekdekruijf@kde.nl"
-
-#. i18n: ectx: Menu (file)
-#: misc/filelightui.rc:4
-#, kde-format
-msgid "&Scan"
-msgstr "&Bestand"
-
-#. i18n: ectx: Menu (view)
-#: misc/filelightui.rc:18
-#, kde-format
-msgid "&View"
-msgstr "&Beeld"
-
-#. i18n: ectx: ToolBar (mainToolBar)
-#: misc/filelightui.rc:24
-#, kde-format
-msgid "Main Toolbar"
-msgstr "Hoofdwerkbalk"
-
-#. i18n: ectx: ToolBar (locationToolBar)
-#: misc/filelightui.rc:33
-#, kde-format
-msgid "Location Toolbar"
-msgstr "Locatiebalk"
-
-#. i18n: ectx: ToolBar (viewToolBar)
-#: misc/filelightui.rc:38
-#, kde-format
-msgid "View Toolbar"
-msgstr "Werkbalk voor weergave"
 
 #: src/Config.cpp:58
 #, kde-format
@@ -548,6 +518,21 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 bestanden met een gemiddelde grootte van %2"
+
+#~ msgid "&Scan"
+#~ msgstr "&Bestand"
+
+#~ msgid "&View"
+#~ msgstr "&Beeld"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Hoofdwerkbalk"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Locatiebalk"
+
+#~ msgid "View Toolbar"
+#~ msgstr "Werkbalk voor weergave"
 
 #~ msgid "Settings - Filelight"
 #~ msgstr "Instellingen - Filelight"

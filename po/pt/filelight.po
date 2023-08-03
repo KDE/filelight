@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:49+0000\n"
+"POT-Creation-Date: 2023-08-03 00:48+0000\n"
 "PO-Revision-Date: 2022-12-18 12:00+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -30,36 +30,6 @@ msgstr "José Nuno Pires"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zepires@gmail.com"
-
-#. i18n: ectx: Menu (file)
-#: misc/filelightui.rc:4
-#, kde-format
-msgid "&Scan"
-msgstr "Pe&squisar"
-
-#. i18n: ectx: Menu (view)
-#: misc/filelightui.rc:18
-#, kde-format
-msgid "&View"
-msgstr "&Ver"
-
-#. i18n: ectx: ToolBar (mainToolBar)
-#: misc/filelightui.rc:24
-#, kde-format
-msgid "Main Toolbar"
-msgstr "Barra Principal"
-
-#. i18n: ectx: ToolBar (locationToolBar)
-#: misc/filelightui.rc:33
-#, kde-format
-msgid "Location Toolbar"
-msgstr "Barra de Localização"
-
-#. i18n: ectx: ToolBar (viewToolBar)
-#: misc/filelightui.rc:38
-#, kde-format
-msgid "View Toolbar"
-msgstr "Ver a Barra de Ferramentas"
 
 #: src/Config.cpp:58
 #, kde-format
@@ -545,3 +515,18 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 ficheiros, com um tamanho médio de %2"
+
+#~ msgid "&Scan"
+#~ msgstr "Pe&squisar"
+
+#~ msgid "&View"
+#~ msgstr "&Ver"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Barra Principal"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Barra de Localização"
+
+#~ msgid "View Toolbar"
+#~ msgstr "Ver a Barra de Ferramentas"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:49+0000\n"
+"POT-Creation-Date: 2023-08-03 00:48+0000\n"
 "PO-Revision-Date: 2023-01-02 20:35+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -29,36 +29,6 @@ msgstr "Michał Zając, Łukasz Wojniłowicz"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "michal.zajac@gmail.com, lukasz.wojnilowicz@gmail.com"
-
-#. i18n: ectx: Menu (file)
-#: misc/filelightui.rc:4
-#, kde-format
-msgid "&Scan"
-msgstr "&Przelicz"
-
-#. i18n: ectx: Menu (view)
-#: misc/filelightui.rc:18
-#, kde-format
-msgid "&View"
-msgstr "&Widok"
-
-#. i18n: ectx: ToolBar (mainToolBar)
-#: misc/filelightui.rc:24
-#, kde-format
-msgid "Main Toolbar"
-msgstr "Główny pasek narzędzi"
-
-#. i18n: ectx: ToolBar (locationToolBar)
-#: misc/filelightui.rc:33
-#, kde-format
-msgid "Location Toolbar"
-msgstr "Pasek narzędzi miejsc"
-
-#. i18n: ectx: ToolBar (viewToolBar)
-#: misc/filelightui.rc:38
-#, kde-format
-msgid "View Toolbar"
-msgstr "Pasek narzędzi widoku"
 
 #: src/Config.cpp:58
 #, kde-format
@@ -551,6 +521,21 @@ msgstr[1] ""
 msgstr[2] ""
 "\n"
 "%1 plików o średnim rozmiarze %2"
+
+#~ msgid "&Scan"
+#~ msgstr "&Przelicz"
+
+#~ msgid "&View"
+#~ msgstr "&Widok"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Główny pasek narzędzi"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Pasek narzędzi miejsc"
+
+#~ msgid "View Toolbar"
+#~ msgstr "Pasek narzędzi widoku"
 
 #~ msgid "Settings - Filelight"
 #~ msgstr "Ustawienia Filelight"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:49+0000\n"
+"POT-Creation-Date: 2023-08-03 00:48+0000\n"
 "PO-Revision-Date: 2019-02-09 14:23-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -26,36 +26,6 @@ msgstr "ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ (A S Alam)"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "aalam@users.sf.net"
-
-#. i18n: ectx: Menu (file)
-#: misc/filelightui.rc:4
-#, kde-format
-msgid "&Scan"
-msgstr "ਸਕੈਨ(&S)"
-
-#. i18n: ectx: Menu (view)
-#: misc/filelightui.rc:18
-#, kde-format
-msgid "&View"
-msgstr "ਵੇਖੋ(&V)"
-
-#. i18n: ectx: ToolBar (mainToolBar)
-#: misc/filelightui.rc:24
-#, kde-format
-msgid "Main Toolbar"
-msgstr "ਮੁੱਖ ਟੂਲਬਾਰ"
-
-#. i18n: ectx: ToolBar (locationToolBar)
-#: misc/filelightui.rc:33
-#, kde-format
-msgid "Location Toolbar"
-msgstr "ਟਿਕਾਣਾ ਟੂਲਬਾਰ"
-
-#. i18n: ectx: ToolBar (viewToolBar)
-#: misc/filelightui.rc:38
-#, kde-format
-msgid "View Toolbar"
-msgstr "ਟੂਲਬਾਰ ਵੇਖੋ"
 
 #: src/Config.cpp:58
 #, kde-format
@@ -571,6 +541,21 @@ msgid_plural ""
 "%1 files, with an average size of %2"
 msgstr[0] "੧ ਫਾਇਲ, %2 ਦੇ ਔਸਤ ਸਾਈਜ਼ ਨਾਲ"
 msgstr[1] "%1 ਫਾਇਲਾਂ, %2 ਦੇ ਔਸਤ ਸਾਈਜ਼ ਨਾਲ"
+
+#~ msgid "&Scan"
+#~ msgstr "ਸਕੈਨ(&S)"
+
+#~ msgid "&View"
+#~ msgstr "ਵੇਖੋ(&V)"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "ਮੁੱਖ ਟੂਲਬਾਰ"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "ਟਿਕਾਣਾ ਟੂਲਬਾਰ"
+
+#~ msgid "View Toolbar"
+#~ msgstr "ਟੂਲਬਾਰ ਵੇਖੋ"
 
 #~ msgid "Settings - Filelight"
 #~ msgstr "ਸੈਟਿੰਗ - ਫਾਇਲਲਾਈਟ"

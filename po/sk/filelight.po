@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:49+0000\n"
+"POT-Creation-Date: 2023-08-03 00:48+0000\n"
 "PO-Revision-Date: 2022-07-19 10:05+0200\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -28,36 +28,6 @@ msgstr "Michal Šulek"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "misurel@gmail.com"
-
-#. i18n: ectx: Menu (file)
-#: misc/filelightui.rc:4
-#, kde-format
-msgid "&Scan"
-msgstr "Pre&hľadať"
-
-#. i18n: ectx: Menu (view)
-#: misc/filelightui.rc:18
-#, kde-format
-msgid "&View"
-msgstr "&Zobraziť"
-
-#. i18n: ectx: ToolBar (mainToolBar)
-#: misc/filelightui.rc:24
-#, kde-format
-msgid "Main Toolbar"
-msgstr "Hlavný panel nástrojov"
-
-#. i18n: ectx: ToolBar (locationToolBar)
-#: misc/filelightui.rc:33
-#, kde-format
-msgid "Location Toolbar"
-msgstr "Panel umiestenia"
-
-#. i18n: ectx: ToolBar (viewToolBar)
-#: misc/filelightui.rc:38
-#, kde-format
-msgid "View Toolbar"
-msgstr "Panel nástrojov Zobraziť"
 
 #: src/Config.cpp:58
 #, kde-format
@@ -576,6 +546,21 @@ msgid_plural ""
 msgstr[0] "1 súbor s priemernou veľkosťou %2"
 msgstr[1] "%1 súbory s priemernou veľkosťou %2"
 msgstr[2] "%1 súborov s priemernou veľkosťou %2"
+
+#~ msgid "&Scan"
+#~ msgstr "Pre&hľadať"
+
+#~ msgid "&View"
+#~ msgstr "&Zobraziť"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Hlavný panel nástrojov"
+
+#~ msgid "Location Toolbar"
+#~ msgstr "Panel umiestenia"
+
+#~ msgid "View Toolbar"
+#~ msgstr "Panel nástrojov Zobraziť"
 
 #~ msgid "Settings - Filelight"
 #~ msgstr "Nastavenie - Filelight"
