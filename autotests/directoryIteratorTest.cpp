@@ -10,7 +10,7 @@
 class DirectoryIteratorTest : public QObject
 {
     Q_OBJECT
-    const QString m_tree = QFINDTESTDATA("iterator-tree");
+    QString m_tree = QFINDTESTDATA("iterator-tree");
 private Q_SLOTS:
     void testIterate()
     {
