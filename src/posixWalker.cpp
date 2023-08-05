@@ -113,11 +113,7 @@ void POSIXWalker::next()
         }
         m_entry.isDir = S_ISDIR(statbuf.st_mode);
         m_entry.isFile = S_ISREG(statbuf.st_mode);
-        if (Q_UNLIKELY(statbuf.st_blocks == 0 && statbuf.st_size != 0)) { // some fuse implementations don't return blocks; fall back to size
-            m_entry.size = statbuf.st_size;
-        } else { // otherwise default to the actual size in blocks
-            m_entry.size = statbuf.st_blocks * S_BLKSIZE;
-        }
+        m_entry.size = statbuf.st_blocks * S_BLKSIZE;
         break;
     }
 }
