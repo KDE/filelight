@@ -110,7 +110,17 @@ void WindowsWalker::updateEntry()
     m_entry.isDir = attributes & FILE_ATTRIBUTE_DIRECTORY;
     m_entry.isFile = !m_entry.isSkipable && !m_entry.isDir; // fileness is implicit in win32 api
     ULARGE_INTEGER ulargeInt;
-    ulargeInt.HighPart = fileAttributeData.nFileSizeHigh;
-    ulargeInt.LowPart = fileAttributeData.nFileSizeLow;
+    if (attributes & FILE_ATTRIBUTE_COMPRESSED || attributes & FILE_ATTRIBUTE_SPARSE_FILE) {
+        ulargeInt.HighPart = 0;
+        ulargeInt.LowPart = GetCompressedFileSizeW(new_path.c_str(), &ulargeInt.HighPart);
+        if (GetLastError() != ERROR_SUCCESS && ulargeInt.LowPart == INVALID_FILE_SIZE) {
+            ulargeInt.HighPart = fileAttributeData.nFileSizeHigh;
+            ulargeInt.LowPart = fileAttributeData.nFileSizeLow;
+        }
+    } else {
+        ulargeInt.HighPart = fileAttributeData.nFileSizeHigh;
+        ulargeInt.LowPart = fileAttributeData.nFileSizeLow;
+    }
+
     m_entry.size = ulargeInt.QuadPart;
 }

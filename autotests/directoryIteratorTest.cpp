@@ -2,6 +2,7 @@
 // SPDX-FileCopyrightText: 2022 Harald Sitter <sitter@kde.org>
 
 #include <QDebug>
+#include <QProcess>
 #include <QTest>
 
 #include "directoryIterator.h"
@@ -122,6 +123,59 @@ private Q_SLOTS:
             Q_UNUSED(entry);
             QVERIFY(false);
         }
+    }
+
+    void testSparseFile()
+    {
+        QTemporaryDir tmpdir;
+        QVERIFY(tmpdir.isValid());
+        tmpdir.path();
+
+        // cppreference for std::filesystem::resize_file says it will be sparse when possible but that is a lie!
+#if defined(Q_OS_WINDOWS)
+        {
+            QProcess proc;
+            proc.setWorkingDirectory(tmpdir.path());
+            proc.start(QStringLiteral("fsutil"), {QStringLiteral("File"), QStringLiteral("CreateNew"), QStringLiteral("foo"), QStringLiteral("1000")});
+            QVERIFY(proc.waitForFinished());
+        }
+        {
+            QProcess proc;
+            proc.setWorkingDirectory(tmpdir.path());
+            proc.start(QStringLiteral("fsutil"), {QStringLiteral("Sparse"), QStringLiteral("SetFlag"), QStringLiteral("foo")});
+            QVERIFY(proc.waitForFinished());
+        }
+        {
+            QProcess proc;
+            proc.setWorkingDirectory(tmpdir.path());
+            proc.start(QStringLiteral("fsutil"),
+                       {QStringLiteral("Sparse"), QStringLiteral("SetRange"), QStringLiteral("foo"), QStringLiteral("0"), QStringLiteral("1000")});
+            QVERIFY(proc.waitForFinished());
+        }
+        for (const auto &entry : DirectoryIterator(tmpdir.path().toUtf8())) {
+            QCOMPARE(entry.size, 0);
+        }
+#else
+        {
+            QProcess proc;
+            proc.setWorkingDirectory(tmpdir.path());
+            proc.start(QStringLiteral("truncate"), {QStringLiteral("-s"), QStringLiteral("1K"), QStringLiteral("foo")});
+            QVERIFY(proc.waitForFinished());
+        }
+#endif
+
+        bool found = false;
+        for (const auto &entry : DirectoryIterator(tmpdir.path().toUtf8())) {
+            QCOMPARE(entry.name, QByteArrayLiteral("foo"));
+#if defined(Q_OS_FREEBSD)
+            QCOMPARE(entry.size, S_BLKSIZE);
+#else
+            QCOMPARE(entry.size, 0);
+#endif
+            QVERIFY(!found); // only one item
+            found = true;
+        }
+        QVERIFY(found);
     }
 };
 
