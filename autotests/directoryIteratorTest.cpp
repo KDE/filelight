@@ -70,7 +70,7 @@ private Q_SLOTS:
             QVERIFY(!symlink.isDir);
             QVERIFY(!symlink.isFile);
             QVERIFY(symlink.isSkipable);
-            // size of skippables doesn't matter
+            // size of skipables doesn't matter
         }
 
         if (withLink) {
