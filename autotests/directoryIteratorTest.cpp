@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 // SPDX-FileCopyrightText: 2022 Harald Sitter <sitter@kde.org>
 
+#include <ranges>
+
 #include <QDebug>
 #include <QProcess>
 #include <QTest>
@@ -177,6 +179,35 @@ private Q_SLOTS:
         }
         QVERIFY(found);
     }
+
+#if defined(Q_OS_WINDOWS)
+    std::wstring toLongPath(const QString &path) {
+        return L"\\\\?\\" + path.toStdWString();
+    }
+
+    void testLongPaths()
+    {
+        QTemporaryDir tmpdir;
+        QVERIFY(tmpdir.isValid());
+
+        QString path = tmpdir.path().replace(QLatin1Char('/'), QLatin1Char('\\')) + QLatin1Char('\\'); 
+        for (int i : std::views::iota(0, 512)) {
+            path += QString::number(i) + QLatin1Char('\\');
+            QVERIFY(CreateDirectoryW(toLongPath(path).c_str(), nullptr) != 0);
+        }
+        // Place a needle at maximum depth so we can find it.
+        const QString filePath = path + QStringLiteral("needle");
+        auto handle = CreateFileW(toLongPath(filePath).c_str(), GENERIC_WRITE, 0, nullptr, CREATE_NEW, FILE_ATTRIBUTE_TEMPORARY, nullptr);
+        QVERIFY(CloseHandle(handle) != 0);
+
+        size_t count = 0;
+        for (const auto &entry : DirectoryIterator(path.toUtf8())) {
+            count++;
+            QCOMPARE(entry.name, QByteArrayLiteral("needle"));
+        }
+        QCOMPARE(count, 1);
+    }
+#endif
 };
 
 QTEST_GUILESS_MAIN(DirectoryIteratorTest)

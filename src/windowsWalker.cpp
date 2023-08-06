@@ -6,15 +6,21 @@
 #include <QScopeGuard>
 #include <QString>
 
+// https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation
+static constexpr auto s_longPathPrefix = "\\\\?\\";
+static constexpr auto s_longPathPrefixW = L"\\\\?\\";
+
 WindowsWalker::WindowsWalker(const QByteArray &path)
     : m_path(path)
-    , m_pathW(QString::fromUtf8(m_path).toStdWString())
+    , m_pathW(QString::fromUtf8(m_path).replace(QLatin1Char('/'), QLatin1Char('\\')).toStdWString())
+    , m_isLongPath(m_path.startsWith(QByteArray(s_longPathPrefix)))
+    , m_isUNC(m_pathW[1] != ':')
 {
     if (path.isEmpty()) {
         return;
     }
 
-    const std::wstring filespec = m_pathW + L"\\*";
+    const std::wstring filespec = makeLongPath(m_pathW + L"\\*");
     m_handle = FindFirstFileW(filespec.c_str(), &m_fileinfo);
     if (m_handle == INVALID_HANDLE_VALUE) {
         const DWORD errorCode = GetLastError();
@@ -87,6 +93,26 @@ QString WindowsWalker::GetLastErrorAsString(DWORD error)
     return QString::fromWCharArray(buffer);
 }
 
+std::wstring WindowsWalker::makeLongPath(const std::wstring &path)
+{
+    if (path.size() >= (MAX_PATH - 1 /* terminal NULL */) && !m_isLongPath) {
+        // NOTE: long paths are incredibly sensitive to duplicated backslashes,
+        // we implicitly rely on our input being sanitized correctly but will try to assert
+        std::wstring longPath = s_longPathPrefixW;
+        if (m_isUNC) {
+            longPath.append(L"UNC\\");
+            const std::wstring subPath(path.begin() + 2, path.end());
+            Q_ASSERT(subPath.find(L"\\\\") == std::wstring::npos);
+            longPath.append(subPath);
+        } else {
+            Q_ASSERT(path.find(L"\\\\") == std::wstring::npos);
+            longPath.append(path);
+        }
+        return longPath;
+    }
+    return path;
+}
+
 void WindowsWalker::updateEntry()
 {
     m_entry = {}; // reset
@@ -94,13 +120,14 @@ void WindowsWalker::updateEntry()
     const std::wstring name(m_fileinfo.cFileName);
     m_entry.name = QString::fromStdWString(name).toUtf8();
 
-    auto new_path = m_pathW + L"/" + name;
+    const auto new_path = makeLongPath(m_pathW + name);
 
     // https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getfileattributesexw
     WIN32_FILE_ATTRIBUTE_DATA fileAttributeData;
     BOOL result = GetFileAttributesExW(new_path.c_str(), GetFileExInfoStandard, (LPVOID)&fileAttributeData);
     if (result == 0) {
-        qWarning() << "failed to get attributes for" << QString::fromStdWString(new_path);
+        const auto errorString = GetLastErrorAsString(GetLastError());
+        qWarning() << "failed to get attributes" << errorString << QString::fromStdWString(new_path);
         return;
     }
 

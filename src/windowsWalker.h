@@ -26,9 +26,11 @@ private:
     // Returns the last Win32 error, in string format. Returns an empty string if there is no error.
     QString GetLastErrorAsString(DWORD error);
     void updateEntry();
-    void close();
+    std::wstring makeLongPath(const std::wstring &path);
 
     const std::wstring m_pathW;
+    bool m_isLongPath;
+    bool m_isUNC;
 
     Q_DISABLE_COPY_MOVE(WindowsWalker); // we hold a pointer, disable sharing
 };
