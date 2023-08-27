@@ -1,0 +1,23 @@
+{
+    "id": "org.kde.filelight",
+    "branch": "master",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "5.15-22.08",
+    "sdk": "org.kde.Sdk",
+    "command": "filelight",
+    "tags": ["nightly"],
+    "desktop-file-name-suffix": " (Nightly)",
+    "finish-args": ["--share=ipc", "--socket=x11", "--socket=wayland", "--filesystem=host" ],
+
+    "modules": [
+        {
+            "name": "filelight",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [ "-DBUILD_TESTING=OFF" ],
+            "sources": [
+                { "type": "dir", "path": "." }
+            ]
+        }
+    ]
+}
+
