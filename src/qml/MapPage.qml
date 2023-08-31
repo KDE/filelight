@@ -459,7 +459,7 @@ Kirigami.Page {
             }
         }
 
-        onClicked: {
+        onClicked: mouse => {
             const child = findTarget(mouse)
             if (child === null) {
                 return
