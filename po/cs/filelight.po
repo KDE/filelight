@@ -519,18 +519,3 @@ msgstr[1] ""
 msgstr[2] ""
 "\n"
 "%1 souborů, s průměrnou velikostí %2"
-
-#~ msgid "&Scan"
-#~ msgstr "&Prozkoumat"
-
-#~ msgid "&View"
-#~ msgstr "Po&hled"
-
-#~ msgid "Main Toolbar"
-#~ msgstr "Hlavní panel nástrojů"
-
-#~ msgid "Location Toolbar"
-#~ msgstr "Panel nástrojů umístění"
-
-#~ msgid "View Toolbar"
-#~ msgstr "Panel pohledu"
