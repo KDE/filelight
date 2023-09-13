@@ -59,7 +59,13 @@ find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED
 find_package(KF${KF_MAJOR_VERSION}DocTools) # Optional, not needed on Windows for example.
 
 find_package(KF${KF_MAJOR_VERSION}QQC2DesktopStyle ${KF_MIN_VERSION})
-set_package_properties(KF5QQC2DesktopStyle PROPERTIES TYPE RUNTIME)
+set_package_properties(KF${KF_MAJOR_VERSION}QQC2DesktopStyle PROPERTIES TYPE RUNTIME)
+
+find_package(KF${QT_MAJOR_VERSION}KirigamiAddons REQUIRED)
+set_package_properties(KF${QT_MAJOR_VERSION}KirigamiAddons PROPERTIES
+    TYPE REQUIRED
+    PURPOSE "Provides additional visual components"
+)
 
 if(QT_MAJOR_VERSION STREQUAL "6")
     ecm_find_qmlmodule(org.kde.coreaddons 1.0)
