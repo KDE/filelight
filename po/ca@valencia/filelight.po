@@ -226,7 +226,7 @@ msgstr "L'URL introduït no es pot analitzar; no és vàlid."
 #: src/mainContext.cpp:229
 #, kde-format
 msgid "Filelight only accepts absolute paths, eg. /%1"
-msgstr "Filelight només accepta camins absoluts, p. ex. /%1"
+msgstr "Filelight només accepta camins absoluts, p. ex., /%1"
 
 #: src/mainContext.cpp:231
 #, kde-format
