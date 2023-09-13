@@ -196,7 +196,7 @@ msgstr "L'URL introduït no es pot analitzar; no és vàlid."
 #: src/mainContext.cpp:229
 #, kde-format
 msgid "Filelight only accepts absolute paths, eg. /%1"
-msgstr "Filelight només accepta camins absoluts, p. ex. /%1"
+msgstr "Filelight només accepta camins absoluts, p. ex., /%1"
 
 #: src/mainContext.cpp:231
 #, kde-format
@@ -516,18 +516,3 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 fitxers, amb una mida mitjana de %2"
-
-#~ msgid "&Scan"
-#~ msgstr "&Explora"
-
-#~ msgid "&View"
-#~ msgstr "Vi&sualitza"
-
-#~ msgid "Main Toolbar"
-#~ msgstr "Barra d'eines principal"
-
-#~ msgid "Location Toolbar"
-#~ msgstr "Barra d'eines d'ubicació"
-
-#~ msgid "View Toolbar"
-#~ msgstr "Barra d'eines de visualització"
