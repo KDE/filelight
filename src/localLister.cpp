@@ -43,7 +43,7 @@ LocalLister::LocalLister(const QString &path, QList<std::shared_ptr<Folder>> *ca
     }
 
     for (const QString &ignorePath : std::as_const(list)) {
-        if (!ignorePath.startsWith(path)) {
+        if (ignorePath.startsWith(path)) {
             QString folderName = ignorePath;
             if (!folderName.endsWith(QLatin1Char('/'))) {
                 folderName += QLatin1Char('/');
@@ -119,11 +119,13 @@ std::shared_ptr<Folder> LocalLister::scan(const QByteArray &path, const QByteArr
             }
 
             lock.unlock();
+
             if (!d) { // then scan
                 qCDebug(FILELIGHT_LOG) << "Tree fresh" << new_path << new_dirname;
                 subDirectories.append({new_path, new_dirname});
             }
         }
+
         ++m_parent->m_files;
     }
 
