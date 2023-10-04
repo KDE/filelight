@@ -142,6 +142,9 @@ void MainContext::setupActions(QQmlApplicationEngine *engine) // singleton funct
         Q_ASSERT(action);
         QQmlComponent component(engine, QUrl(QStringLiteral("qrc:/ui/Action.qml")));
         QObject *object = component.create();
+        if (!object) {
+            qWarning() << "Failed to load component:" << component.errorString();
+        }
         Q_ASSERT(object);
         object->setProperty("iconName", action->icon().name());
         object->setProperty("text", action->text());
