@@ -16,7 +16,7 @@ Kirigami.ApplicationWindow {
     property string status
     property var mapPage: null
 
-    title: pageStack.currentItem.url !== undefined ? pageStack.currentItem.url : ''
+    title: MainContext.prettyUrl(MainContext.url)
     pageStack.globalToolBar.showNavigationButtons: {
         if (pageStack.currentItem instanceof MapPage) {
             return Kirigami.ApplicationHeaderStyle.NoNavigationButtons
@@ -151,10 +151,6 @@ Kirigami.ApplicationWindow {
     function slotUp() {
         makeMap()
         MainContext.slotUp()
-    }
-
-    function mapChanged() {
-        title = MainContext.prettyUrl(MainContext.url);
     }
 
     function updateURL(url) {
