@@ -17,8 +17,8 @@ cmake_minimum_required (VERSION 3.16 FATAL_ERROR)
 project(Filelight VERSION ${FILELIGHT_VERSION})
 
 set(PROJECT_VERSION ${RELEASE_SERVICE_VERSION})
-set(KF_MIN_VERSION "5.98.0")
-set(QT_REQUIRED_VERSION "5.15.2")
+set(KF_MIN_VERSION "5.240.0")
+set(QT_REQUIRED_VERSION "6.5.0")
 
 find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
@@ -38,40 +38,29 @@ include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
-if (QT_MAJOR_VERSION STREQUAL "6")
-    set(QT_REQUIRED_VERSION "6.5.0")
-    set(KF_MIN_VERSION "5.240.0")
-    set(KF_MAJOR_VERSION "6")
-else()
-    set(KF_MAJOR_VERSION "5")
-endif()
 include(KDEClangFormat)
 include(KDEGitCommitHooks)
 include(ECMFindQmlModule)
 
-find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Core Widgets Quick QuickControls2)
-find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED
+find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Core Widgets Quick QuickControls2)
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED
     CoreAddons
     XmlGui # For app
     KIO # For part
     I18n
 )
-find_package(KF${KF_MAJOR_VERSION}DocTools) # Optional, not needed on Windows for example.
+find_package(KF6DocTools) # Optional, not needed on Windows for example.
 
-find_package(KF${KF_MAJOR_VERSION}QQC2DesktopStyle ${KF_MIN_VERSION})
-set_package_properties(KF${KF_MAJOR_VERSION}QQC2DesktopStyle PROPERTIES TYPE RUNTIME)
+find_package(KF6QQC2DesktopStyle ${KF_MIN_VERSION})
+set_package_properties(KF6QQC2DesktopStyle PROPERTIES TYPE RUNTIME)
 
-find_package(KF${QT_MAJOR_VERSION}KirigamiAddons REQUIRED)
-set_package_properties(KF${QT_MAJOR_VERSION}KirigamiAddons PROPERTIES
+find_package(KF6KirigamiAddons REQUIRED)
+set_package_properties(KF6KirigamiAddons PROPERTIES
     TYPE REQUIRED
     PURPOSE "Provides additional visual components"
 )
 
-if(QT_MAJOR_VERSION STREQUAL "6")
-    ecm_find_qmlmodule(org.kde.coreaddons 1.0)
-else()
-    ecm_find_qmlmodule(org.kde.kcoreaddons 1.0)
-endif()
+ecm_find_qmlmodule(org.kde.coreaddons 1.0)
 ecm_find_qmlmodule(org.kde.kirigami 2.19)
 ecm_find_qmlmodule(org.kde.quickcharts 1.0)
 ecm_find_qmlmodule(Qt.labs.platform 1.1)
@@ -82,20 +71,11 @@ ecm_set_disabled_deprecation_versions(QT 5.15.2
     KF 5.101
 )
 
-if(QT_MAJOR_VERSION STREQUAL "6")
-     set(KIRIGAMI_ICON_SOURCE "icon.source")
-     set(KIRIGAMI_PAGE_ACTIONS "actions")
-     set(KIRIGAMI_ACTION_DISPLAYHINT "DisplayHint")
-     set(KIRIGAMI_BASICLISTITEM_ICON "icon.name")
-     set(KCOREADDONS_QML_NAME "org.kde.coreaddons")
-else()
-    set(KIRIGAMI_ICON_SOURCE "iconSource")
-    set(KIRIGAMI_PAGE_ACTIONS "contextualActions")
-    set(KIRIGAMI_ACTION_DISPLAYHINT "Action")
-    set(KIRIGAMI_BASICLISTITEM_ICON "icon")
-    set(KCOREADDONS_QML_NAME "org.kde.kcoreaddons")
-endif()
-
+set(KIRIGAMI_ICON_SOURCE "icon.source")
+set(KIRIGAMI_PAGE_ACTIONS "actions")
+set(KIRIGAMI_ACTION_DISPLAYHINT "DisplayHint")
+set(KIRIGAMI_BASICLISTITEM_ICON "icon.name")
+set(KCOREADDONS_QML_NAME "org.kde.coreaddons")
 include_directories(src)
 
 add_subdirectory(src)
@@ -104,12 +84,12 @@ if(BUILD_TESTING)
     add_subdirectory(autotests)
 endif()
 
-if (KF${KF_MAJOR_VERSION}DocTools_FOUND)
+if (KF6DocTools_FOUND)
     add_subdirectory(doc)
 endif()
 
 ki18n_install(po)
-if (KF${KF_MAJOR_VERSION}DocTools_FOUND)
+if (KF6DocTools_FOUND)
     kdoctools_install(po)
 endif()
 

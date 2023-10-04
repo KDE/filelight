@@ -4,7 +4,7 @@ endif()
 
 include(ECMAddTests)
 
-find_package(Qt${QT_MAJOR_VERSION}Test ${QT_MIN_VERSION} REQUIRED Test)
+find_package(Qt6Test ${QT_MIN_VERSION} REQUIRED Test)
 
 add_subdirectory(core)
 

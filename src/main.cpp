@@ -29,14 +29,6 @@
 
 int main(int argc, char *argv[])
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    /**
-     * enable high dpi support
-     */
-    QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling, true);
-#endif
-
     // Since filelight may get used when the disk is full or near full we'll not
     // want to risk caching problems. If we don't have enough space -> disable caching.
     // https://bugs.kde.org/show_bug.cgi?id=466415

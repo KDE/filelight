@@ -13,16 +13,5 @@ Dependencies:
     'frameworks/kio': '@latest-kf6'
     'libraries/kirigami-addons': '@latest-kf6'
 
-- 'on': ['Linux/Qt5', 'FreeBSD/Qt5', 'Windows/Qt5',]
-  'require':
-    'frameworks/extra-cmake-modules': '@stable'
-    'frameworks/kcoreaddons': '@stable'
-    'frameworks/ki18n': '@stable'
-    'frameworks/kdoctools': '@stable'
-    'frameworks/kxmlgui': '@stable'
-    'frameworks/kcrash': '@stable'
-    'frameworks/kio': '@stable'
-    'libraries/kirigami-addons': '@latest'
-
 Options:
   require-passing-tests-on: [ 'Linux', 'FreeBSD', 'Windows' ]

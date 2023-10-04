@@ -44,11 +44,11 @@ else()
     target_sources(filelightInternal PRIVATE posixWalker.cpp)
 endif()
 target_link_libraries(filelightInternal
-    Qt${QT_MAJOR_VERSION}::Gui
-    KF${KF_MAJOR_VERSION}::CoreAddons
-    KF${KF_MAJOR_VERSION}::ConfigCore
-    KF${KF_MAJOR_VERSION}::I18n
-    KF${KF_MAJOR_VERSION}::KIOWidgets # Only used for KDirLister, may be able to move away from that.
+    Qt6::Gui
+    KF6::CoreAddons
+    KF6::ConfigCore
+    KF6::I18n
+    KF6::KIOWidgets # Only used for KDirLister, may be able to move away from that.
 )
 
 configure_file(qml/MapPage.qml ${CMAKE_CURRENT_BINARY_DIR}/qml/MapPage.qml)
@@ -99,10 +99,10 @@ ecm_add_app_icon(filelight ICONS
     ${filelight_ICONS})
 
 target_link_libraries(filelight
-    KF${KF_MAJOR_VERSION}::I18n
-    KF${KF_MAJOR_VERSION}::XmlGui
-    Qt${QT_MAJOR_VERSION}::Quick
-    Qt${QT_MAJOR_VERSION}::QuickControls2
+    KF6::I18n
+    KF6::XmlGui
+    Qt6::Quick
+    Qt6::QuickControls2
     filelightInternal
 )
 if (WIN32)

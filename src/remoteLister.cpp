@@ -64,11 +64,7 @@ RemoteLister::RemoteLister(const QUrl &url, ScanManager *parent)
     , m_store(m_root)
     , m_manager(parent)
 {
-#if KIO_VERSION < QT_VERSION_CHECK(5, 100, 0)
-    setShowingDotFiles(true); // Stupid KDirLister API function names
-#else
     setShowHiddenFiles(true);
-#endif
 
     // Use SIGNAL(result(KIO::Job*)) instead and then use Job::error()
     connect(this, static_cast<void (KCoreDirLister::*)()>(&KCoreDirLister::completed), this, &RemoteLister::onCompleted);
