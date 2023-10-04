@@ -33,31 +33,26 @@ class MainContext : public QObject
 public:
     Q_PROPERTY(QUrl url READ url WRITE setUrl NOTIFY urlChanged)
     Q_SIGNAL void urlChanged();
-    void setUrl(const QUrl &url);
-    QUrl m_url;
+    QUrl url() const;
 
     Q_PROPERTY(QList<QObject *> historyActions MEMBER m_historyActions NOTIFY historyActionsChanged)
     Q_SIGNAL void historyActionsChanged();
-    QList<QObject *> m_historyActions;
 
     explicit MainContext(QObject *parent = nullptr);
-
-    void addHistoryAction(QObject *action);
-    Q_SLOT void scan(const QUrl &u);
 
 Q_SIGNALS:
     void canceled(const QString &);
     void canvasIsDirty(Filelight::Dirty filth);
 
 public Q_SLOTS:
+    void scan(const QUrl &u);
+
     void slotUp();
     void slotScanFolder();
     void slotScanHomeFolder();
     void slotScanRootFolder();
     bool slotScanUrl(const QUrl &);
     bool slotScanPath(const QString &);
-
-    void urlAboutToChange() const;
 
     bool openUrl(const QUrl &);
 
@@ -67,15 +62,19 @@ public Q_SLOTS:
 private:
     void setupActions(QQmlApplicationEngine *engine);
 
+    void addHistoryAction(QObject *action);
+
+    /// For internal use only -- call openUrl() instead
+    void setUrl(const QUrl &url);
+
+    QUrl m_url;
+    HistoryCollection *m_histories;
+    ScanManager *m_manager;
+    QList<QObject *> m_historyActions;
+
 public:
     Q_INVOKABLE QString prettyUrl(const QUrl &url) const;
     Q_INVOKABLE bool start(const QUrl &) const;
-
-    HistoryCollection *m_histories;
-    ScanManager *m_manager;
-
-public:
-    QUrl url() const;
 };
 
 } // namespace Filelight

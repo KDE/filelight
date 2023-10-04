@@ -204,14 +204,6 @@ bool MainContext::slotScanUrl(const QUrl &url)
     return false;
 }
 
-void MainContext::urlAboutToChange() const
-{
-    // called when part's URL is about to change internally
-    // the part will then create the Map and emit completed()
-
-    m_histories->push(url());
-}
-
 bool MainContext::openUrl(const QUrl &u)
 {
     // TODO everyone hates dialogs, instead render the text in big fonts on the Map
