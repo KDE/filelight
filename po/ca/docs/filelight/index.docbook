@@ -93,7 +93,7 @@
       </mediaobject>
    </screenshot>
    <para
->El &filelight; permet entendre ràpidament on s'està utilitzant exactament l'espai del disc representant gràficament el vostre sistema de fitxers com un conjunt d'anells segmentats concèntrics. El podeu utilitzar per localitzar les zones crítiques de l'ús del disc i després manipular aquestes àrees utilitzant el &dolphin; o el &konqueror;.</para>
+>El &filelight; permet entendre ràpidament on s'està utilitzant exactament l'espai del disc representant gràficament el vostre sistema de fitxers com un conjunt d'anells segmentats concèntrics. El podeu utilitzar per a localitzar les zones crítiques de l'ús del disc i després manipular aquestes àrees utilitzant el &dolphin; o el &konqueror;.</para>
 </chapter>
 
 
@@ -102,7 +102,7 @@
 >Configuració del &filelight;</title>
 
 <para
->El diàleg de configuració del &filelight; té dues pestanyes per configurar les opcions del &filelight;. Les dues pestanyes són <guilabel
+>El diàleg de configuració del &filelight; té dues pestanyes per a configurar les opcions del &filelight;. Les dues pestanyes són <guilabel
 >Exploració</guilabel
 > i <guilabel
 >Aparença</guilabel
@@ -134,9 +134,9 @@
 <para
 >La pestanya d'exploració permet configurar com explora les carpetes el &filelight;. <guilabel
 > No exploris aquestes carpetes</guilabel
-> s'utilitza per excloure certes carpetes de l'exploració. Aquesta opció és molt útil per ometre carpetes que potser no teniu permisos per llegir, o carpetes que formen part d'un sistema de fitxers virtual, com /proc. Per afegir una carpeta a la llista, feu clic al botó <guibutton
+> s'utilitza per a excloure certes carpetes de l'exploració. Aquesta opció és molt útil per a ometre carpetes que potser no teniu permisos per a llegir, o carpetes que formen part d'un sistema de fitxers virtual, com /proc. Per a afegir una carpeta a la llista, feu clic al botó <guibutton
 >Afegeix...</guibutton
->, això iniciarà un diàleg on podreu triar la carpeta de la vostra elecció a partir d'una vista en arbre. Per eliminar una carpeta simplement seleccioneu la carpeta de la vostra elecció i feu clic al botó <guibutton
+>, això iniciarà un diàleg on podreu triar la carpeta de la vostra elecció a partir d'una vista en arbre. Per a eliminar una carpeta simplement seleccioneu la carpeta de la vostra elecció i feu clic al botó <guibutton
 >Elimina</guibutton
 >.</para>
 <para
@@ -146,7 +146,7 @@
 >/mnt</filename
 > si s'inicia l'exploració des de la carpeta arrel <filename class="directory"
 >/</filename
->. Una exploració de sistemes de fitxers remots, &pex; muntatges d'NFS o Samba, pot generar un trànsit alt de xarxa. Per evitar l'exploració activeu <guilabel
+>. Una exploració de sistemes de fitxers remots, &pex; muntatges d'NFS o Samba, pot generar un trànsit alt de xarxa. Per a evitar l'exploració activeu <guilabel
 >Exclou els sistemes de fitxers remots</guilabel
 >. L'opció següent <guilabel
 >Exclou els suports extraïbles</guilabel
@@ -177,7 +177,7 @@
 <para
 >La secció <guilabel
 >Esquema de color</guilabel
-> s'utilitza per triar un esquema de color per al &filelight;. Els esquemes de color són <guilabel
+> s'utilitza per a triar un esquema de color per al &filelight;. Els esquemes de color són <guilabel
 >Arc de Sant Martí</guilabel
 >, <guilabel
 >Colors del sistema</guilabel
@@ -185,17 +185,17 @@
 >Contrast alt</guilabel
 >. També hi ha un control lliscant <guilabel
 >Contrast</guilabel
-> per ajustar el contrast dels segments de l'anell per facilitar la visualització.</para>
+> per a ajustar el contrast dels segments de l'anell per a facilitar la visualització.</para>
 <para
 >La casella de selecció <guilabel
 >Usa antialiàsing</guilabel
-> s'utilitza per activar l'ús de l'antialiàsing a la vista del &filelight;. Si se selecciona, aquesta opció fa que els segments dels anells tinguin un aspecte molt més net.</para>
+> s'utilitza per a activar l'ús de l'antialiàsing a la vista del &filelight;. Si se selecciona, aquesta opció fa que els segments dels anells tinguin un aspecte molt més net.</para>
 <para
 >La casella de selecció <guilabel
->Varia la mida del tipus de lletra de les etiquetes</guilabel
-> és útil quan teniu fitxers o carpetes amb noms llargs. Aquesta opció canviarà la mida del tipus de lletra per permetre que s'ajusti millor a la vista. Quan aquesta opció està activada, esdevé disponible el botó de selecció de valors <guilabel
->Mida mínima del tipus de lletra</guilabel
-> per triar el tipus de lletra de mida més petita a escalar. </para>
+>Varia la mida de la lletra de les etiquetes</guilabel
+> és útil quan teniu fitxers o carpetes amb noms llargs. Aquesta opció canviarà la mida de la lletra per a permetre que s'ajusti millor a la vista. Quan aquesta opció està activada, esdevé disponible el botó de selecció de valors <guilabel
+>Mida mínima de la lletra</guilabel
+> per a triar la lletra de mida més petita a escalar. </para>
 <para
 >L'opció <guilabel
 >Mostra els fitxers petits</guilabel
@@ -256,7 +256,7 @@
 <title
 >Exploració de les carpetes</title>
 <para
->L'exploració d'una carpeta mostra el seu contingut com un mapa de fitxers. Per explorar una carpeta, utilitzeu el menú d'exploració, o escriviu un &URL; directament a la barra de localització. </para>
+>L'exploració d'una carpeta mostra el seu contingut com un mapa de fitxers. Per a explorar una carpeta, utilitzeu el menú d'exploració, o escriviu un &URL; directament a la barra de localització. </para>
 </sect1>
 
 <sect1 id="exploring-filemaps">
@@ -283,7 +283,7 @@
 <para
 >Podeu obrir carpetes amb el gestor de fitxers predeterminat o el &konsole; utilitzant el menú contextual per a aquest segment. Un clic del &BMR; obre fitxers pel tipus MIME, &pex;, imatges amb el <application
 >Gwenview</application
->. Podeu fer clic dret en un segment per obtenir un menú contextual per a la carpeta explorada amb accions per copiar el camí de la carpeta al porta-retalls o suprimir la carpeta o el fitxer. En fer clic esquerre en els segments es tornaran a centrar en el mapa d'aquest segment. </para>
+>. Podeu fer clic dret en un segment per a obtenir un menú contextual per a la carpeta explorada amb accions per a copiar el camí de la carpeta al porta-retalls o suprimir la carpeta o el fitxer. En fer clic esquerre en els segments es tornaran a centrar en el mapa d'aquest segment. </para>
 </sect1>
 
 </chapter>
@@ -308,7 +308,7 @@
 <listitem
 ><para
 ><action
->Ofereix un diàleg de selecció de carpetes de manera que podreu triar una carpeta per explorar.</action
+>Ofereix un diàleg de selecció de carpetes de manera que podreu triar una carpeta per a explorar.</action
 ></para
 ></listitem>
 </varlistentry>
