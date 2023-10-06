@@ -6,13 +6,13 @@
 # obsoleteman <tulliana@gmail.com>, 2009-2010.
 # obsoleteman <tulliana@gmail.com>, 2010,2012.
 # Volkan Gezer <volkangezer@gmail.com>, 2013-2014, 2015.
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdeutils-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-23 00:49+0000\n"
-"PO-Revision-Date: 2023-03-07 20:17+0300\n"
+"PO-Revision-Date: 2023-10-05 13:38+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -65,12 +65,12 @@ msgstr "Görünüm Araç Çubuğu"
 #: src/Config.cpp:58
 #, kde-format
 msgid "Select path to ignore"
-msgstr "Yok sayılacak yolu seçin"
+msgstr "Yok sayılacak yolu seç"
 
 #: src/Config.cpp:71
 #, kde-format
 msgid "That folder is already set to be excluded from scans."
-msgstr "Bu klasör zaten tarama dışında bırakılacak şekilde ayarlanmış."
+msgstr "Bu klasör zaten tarama dışında bırakılacak biçimde ayarlanmış."
 
 #: src/Config.cpp:71
 #, kde-format
@@ -217,7 +217,7 @@ msgstr "[url]"
 #: src/mainContext.cpp:163
 #, kde-format
 msgid "Select Folder to Scan"
-msgstr "Taranacak Klasörü Seçin"
+msgstr "Taranacak Klasörü Seç"
 
 #: src/mainContext.cpp:227
 #, kde-format
