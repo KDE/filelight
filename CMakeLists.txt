@@ -71,11 +71,6 @@ ecm_set_disabled_deprecation_versions(QT 5.15.2
     KF 5.101
 )
 
-set(KIRIGAMI_ICON_SOURCE "icon.source")
-set(KIRIGAMI_PAGE_ACTIONS "actions")
-set(KIRIGAMI_ACTION_DISPLAYHINT "DisplayHint")
-set(KIRIGAMI_BASICLISTITEM_ICON "icon.name")
-set(KCOREADDONS_QML_NAME "org.kde.coreaddons")
 include_directories(src)
 
 add_subdirectory(src)

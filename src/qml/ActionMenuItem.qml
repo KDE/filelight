@@ -10,7 +10,7 @@ Platform.MenuItem {
     checkable: action.checkable
     checked: action.checked
     icon.name: action.icon.name
-    icon.source: action.@KIRIGAMI_ICON_SOURCE@
+    icon.source: action.icon.source
     shortcut: action.shortcut
     separator: action.separator
     text: action.text

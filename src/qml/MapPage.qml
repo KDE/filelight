@@ -5,7 +5,7 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.19 as Kirigami
-import @KCOREADDONS_QML_NAME@ 1.0 as KCoreAddons
+import org.kde.coreaddons 1.0 as KCoreAddons
 import QtQuick.Shapes 1.15
 
 import org.kde.filelight 1.0
@@ -61,7 +61,7 @@ Kirigami.Page {
         enabled: page.state === ""
         icon.name: "zoom-in"
         text: i18nc("@action", "Zoom In")
-        displayHint: Kirigami.@KIRIGAMI_ACTION_DISPLAYHINT@.AlwaysHide
+        displayHint: Kirigami.DisplayHint.AlwaysHide
         onTriggered: RadialMap.zoomIn()
         shortcut: StandardKey.ZoomIn
     }
@@ -71,12 +71,12 @@ Kirigami.Page {
         enabled: page.state === ""
         icon.name: "zoom-out"
         text: i18nc("@action", "Zoom Out")
-        displayHint: Kirigami.@KIRIGAMI_ACTION_DISPLAYHINT@.AlwaysHide
+        displayHint: Kirigami.DisplayHint.AlwaysHide
         onTriggered: RadialMap.zoomOut()
         shortcut: StandardKey.ZoomOut
     }
 
-    @KIRIGAMI_PAGE_ACTIONS@: MainContext.historyActions.concat([
+    actions: MainContext.historyActions.concat([
         goUpAction,
         goToOverviewAction,
         rescanAction,
@@ -194,7 +194,7 @@ Kirigami.Page {
                 keyNavigationEnabled: true
                 keyNavigationWraps: true
                 delegate: Kirigami.BasicListItem {
-                    @KIRIGAMI_BASICLISTITEM_ICON@: ROLE_IsFolder ? "folder" : "file" // TODO mimetype?
+                    icon.name: ROLE_IsFolder ? "folder" : "file" // TODO mimetype?
                     text: model.display
                     subtitle: ROLE_HumanReadableSize
                     highlighted: {

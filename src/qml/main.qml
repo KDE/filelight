@@ -54,7 +54,7 @@ Kirigami.ApplicationWindow {
 
     Kirigami.Action {
         id: configureAction
-        displayHint: Kirigami.@KIRIGAMI_ACTION_DISPLAYHINT@.AlwaysHide
+        displayHint: Kirigami.DisplayHint.AlwaysHide
         icon.name: "configure"
         text: i18nc("@action configure app", "Configure…")
         onTriggered: {
@@ -71,7 +71,7 @@ Kirigami.ApplicationWindow {
 
     Kirigami.Action {
         id: helpAction
-        displayHint: Kirigami.@KIRIGAMI_ACTION_DISPLAYHINT@.AlwaysHide
+        displayHint: Kirigami.DisplayHint.AlwaysHide
         icon.name: "help-browser"
         text: i18nc("@action", "Open Handbook")
         onTriggered: { Qt.openUrlExternally("help:/filelight") }
@@ -79,7 +79,7 @@ Kirigami.ApplicationWindow {
 
     Kirigami.Action {
         id: aboutAction
-        displayHint: Kirigami.@KIRIGAMI_ACTION_DISPLAYHINT@.AlwaysHide
+        displayHint: Kirigami.DisplayHint.AlwaysHide
         icon.name: "filelight"
         text: i18nc("@action opens about app page", "About")
         onTriggered: { pageStack.layers.push("qrc:/ui/AboutPage.qml") }
