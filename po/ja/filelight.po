@@ -504,18 +504,3 @@ msgid_plural ""
 msgstr[0] ""
 "\n"
 "%1 ファイル (平均サイズ %2)"
-
-#~ msgid "&Scan"
-#~ msgstr "スキャン(&S)"
-
-#~ msgid "&View"
-#~ msgstr "表示(&V)"
-
-#~ msgid "Main Toolbar"
-#~ msgstr "メインツールバー"
-
-#~ msgid "Location Toolbar"
-#~ msgstr "場所ツールバー"
-
-#~ msgid "View Toolbar"
-#~ msgstr "ツールバーを表示"
