@@ -101,7 +101,7 @@ msgstr "&Eliminar"
 #: src/contextMenuContext.cpp:92
 #, kde-format
 msgid "Error while deleting"
-msgstr "Ocorreu un erro ao eliminar"
+msgstr "Produciuse un erro ao eliminar"
 
 #: src/historyAction.cpp:64
 #, kde-format
