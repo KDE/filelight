@@ -333,7 +333,7 @@ msgstr "S'està interrompent l'exploració..."
 #, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
-msgstr "Ves a la vista general"
+msgstr "Ves fins a la vista general"
 
 #: src/qml/MapPage.qml:37
 #, kde-format
@@ -399,7 +399,7 @@ msgstr "Torna a explorar"
 #, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
-msgstr "Copia al porta-retalls"
+msgstr "Copia a dins del porta-retalls"
 
 #: src/qml/MapPage.qml:156 src/qml/MapPage.qml:256
 #, kde-format
