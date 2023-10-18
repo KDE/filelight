@@ -40,7 +40,7 @@ Kirigami.Page {
                 keyNavigationWraps: true
                 model: Config.skipList
                 delegate: Kirigami.SwipeListItem {
-                    QQC2.Label {
+                    contentItem: QQC2.Label {
                         text: modelData
                     }
                     actions: [
