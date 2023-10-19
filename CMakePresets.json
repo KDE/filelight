@@ -7,10 +7,10 @@
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/build-${presetName}",
             "installDir": "$env{KF6}",
+            "hidden": true,
             "cacheVariables": {
-                 "BUILD_WITH_QT6": "ON"
-            },
-            "hidden": true
+                "BUILD_QCH": "ON"
+            }
         },
         {
             "name": "dev-mold",
@@ -30,18 +30,6 @@
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
-            },
-            "inherits": [
-                "base"
-            ]
-        },
-        {
-            "name": "dev-qch",
-            "displayName": "Build as debug",
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
-                "BUILD_QCH": "ON"
             },
             "inherits": [
                 "base"
@@ -88,7 +76,8 @@
             "name": "release",
             "displayName": "Build as release mode.",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Release"
+                "CMAKE_BUILD_TYPE": "Release",
+                "BUILD_TESTING": "OFF"
             },
             "inherits": [
                 "base"
@@ -151,10 +140,6 @@
         {
             "name": "dev-mold",
             "configurePreset": "dev-mold"
-        },
-        {   
-            "name": "dev-qch",
-            "configurePreset": "dev-qch"
         },
         {
             "name": "dev-clang",
