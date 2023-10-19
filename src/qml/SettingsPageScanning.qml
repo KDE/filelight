@@ -22,9 +22,29 @@ Kirigami.Page {
 
     ColumnLayout {
         anchors.fill: parent
-        QQC2.Label {
-            text: i18nc("@label", "Do not scan these folders:")
+        spacing: Kirigami.Units.smallSpacing
+
+        RowLayout {
+            spacing: Kirigami.Units.smallSpacing
+            Layout.fillWidth: true
+
+            QQC2.Label {
+                Layout.fillWidth: true
+                text: i18nc("@label", "Do not scan these folders:")
+                wrapMode: Text.Wrap
+                verticalAlignment: Text.AlignBottom
+            }
+
+            QQC2.Button {
+                Layout.alignment: Qt.AlignBottom
+                action: Kirigami.Action {
+                    text: i18nc("@action:button remove list entry", "Add…")
+                    icon.name: "folder-open"
+                    onTriggered: Config.addFolder()
+                }
+            }
         }
+
         QQC2.ScrollView {
             Layout.fillWidth: true
             Layout.fillHeight: true
@@ -71,22 +91,9 @@ Kirigami.Page {
             }
         }
 
-        RowLayout {
-            Item { Layout.fillWidth: true }
-            QQC2.Button {
-                action: Kirigami.Action {
-                    text: i18nc("@action:button remove list entry", "Add…")
-                    icon.name: "folder-open"
-                    onTriggered: Config.addFolder()
-                }
-            }
-        }
-        Kirigami.Separator {
-            Layout.fillWidth: true
-            height: 1
-        }
         QQC2.CheckBox {
             id: scanAcrossMountsBox
+            Layout.fillWidth: true
             text: i18nc("@checkbox", "Scan across filesystem boundaries")
             checked: Config.scanAcrossMounts
             onToggled: {
@@ -98,6 +105,7 @@ Kirigami.Page {
             }
         }
         QQC2.CheckBox {
+            Layout.fillWidth: true
             text: i18nc("@checkbox", "Exclude remote filesystems")
             checked: !Config.scanRemoteMounts
             enabled: scanAcrossMountsBox.checked

@@ -15,8 +15,6 @@ QQC2.Pane {
         anchors.fill: parent
         spacing: 0
 
-        readonly property var window: Window.window
-
         QQC2.TabBar {
             Layout.fillWidth: true
             id: bar
@@ -40,8 +38,10 @@ QQC2.Pane {
             }
 
             Connections {
-                target: layout.window
-                function onClosing() { Config.write() }
+                target: layout.Window.window
+                function onClosing() {
+                    Config.write();
+                }
             }
         }
     }
