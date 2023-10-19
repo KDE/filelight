@@ -1,10 +1,13 @@
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 // SPDX-FileCopyrightText: 2022 Harald Sitter <sitter@kde.org>
 
+pragma ComponentBehavior: Bound
+
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.19 as Kirigami
+import org.kde.kirigami.delegates as KD
 
 import org.kde.filelight 1.0
 
@@ -31,8 +34,6 @@ Kirigami.Page {
 
             ListView {
                 id: skipView
-                Layout.fillHeight: true
-                Layout.fillWidth: true
                 clip: true
                 reuseItems: true
                 activeFocusOnTab: true
@@ -40,15 +41,29 @@ Kirigami.Page {
                 keyNavigationWraps: true
                 model: Config.skipList
                 delegate: Kirigami.SwipeListItem {
-                    contentItem: QQC2.Label {
-                        text: modelData
+                    id: delegate
+
+                    required property string modelData
+
+                    text: modelData
+
+                    QQC2.ToolTip.text: text
+                    QQC2.ToolTip.visible: (Kirigami.Settings.tabletMode ? down : hovered) && (contentItem?.truncated ?? false)
+                    QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+
+                    contentItem: KD.TitleSubtitle {
+                        title: delegate.text
+                        selected: delegate.highlighted
+                        font: delegate.font
+                        elide: Text.ElideMiddle
                     }
+
                     actions: [
                         Kirigami.Action {
                             text: i18nc("@action:button remove list entry", "Remove")
                             icon.name: "list-remove"
                             onTriggered: {
-                                Config.removeFolder(modelData)
+                                Config.removeFolder(delegate.modelData)
                             }
                         }
                     ]
