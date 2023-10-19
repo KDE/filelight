@@ -115,7 +115,7 @@ bool ScanManager::start(const QUrl &url)
             // find a pointer to the requested branch
 
             qCDebug(FILELIGHT_LOG) << "Cache-(a)hit: " << cachePath;
-            QVector<QStringView> split = QStringView(path).mid(cachePath.length()).split(QLatin1Char('/'));
+            QList<QStringView> split = QStringView(path).mid(cachePath.length()).split(QLatin1Char('/'));
             std::shared_ptr<Folder> d = folder;
 
             while (!split.isEmpty() && d != nullptr) { // if NULL we have got lost so abort!!
@@ -218,7 +218,7 @@ void ScanManager::invalidateCacheFor(const QUrl &url)
         if (!path.startsWith(cachePath)) {
             continue;
         }
-        QVector<QStringView> splitPath = QStringView(path).mid(cachePath.length()).split(QLatin1Char('/'));
+        QList<QStringView> splitPath = QStringView(path).mid(cachePath.length()).split(QLatin1Char('/'));
         auto d = folder;
 
         while (!splitPath.isEmpty() && d != nullptr) { // if NULL we have got lost so abort!!

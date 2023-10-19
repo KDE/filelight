@@ -81,7 +81,7 @@ void LocalLister::run()
 std::shared_ptr<Folder> LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
 {
     auto cwd = std::make_shared<Folder>(dirname.constData());
-    QVector<QPair<QByteArray, QByteArray>> subDirectories;
+    QList<QPair<QByteArray, QByteArray>> subDirectories;
 
     for (const auto &entry : DirectoryIterator(path)) {
         if (m_parent->m_abort) {
@@ -132,7 +132,7 @@ std::shared_ptr<Folder> LocalLister::scan(const QByteArray &path, const QByteArr
     // Scan all subdirectories, either in separate threads or immediately,
     // depending on how many free threads there are in the threadpool.
     // Yes, it isn't optimal, but it's better than nothing and pretty simple.
-    QVector<std::shared_ptr<Folder>> returnedCwds(subDirectories.count());
+    QList<std::shared_ptr<Folder>> returnedCwds(subDirectories.count());
     QSemaphore semaphore;
     for (int i = 0; i < subDirectories.count(); i++) {
         std::function<void()> scanSubdir = [this, i, &subDirectories, &semaphore, &returnedCwds]() {

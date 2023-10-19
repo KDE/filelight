@@ -85,7 +85,7 @@ public:
     }
 
     Q_INVOKABLE QList<QVariant> signature();
-    QVector<QList<Segment *>> rawSignature() const
+    QList<QList<Segment *>> rawSignature() const
     {
         return m_signature;
     }
@@ -120,12 +120,12 @@ private:
     bool build(const std::shared_ptr<Folder> &dir, uint depth = 0, uint a_start = 0, uint a_end = MAX_DEGREE);
     void createFromCache(const std::shared_ptr<Folder> &tree);
 
-    QVector<QList<Segment *>> m_signature;
+    QList<QList<Segment *>> m_signature;
 
     std::shared_ptr<Folder> m_root;
     std::unique_ptr<Segment> m_rootSegment;
     uint m_minSize{};
-    QVector<FileSize> m_limits;
+    QList<FileSize> m_limits;
     QRectF m_rect;
     uint m_visibleDepth; /// visible level depth of system
     int m_ringBreadth;

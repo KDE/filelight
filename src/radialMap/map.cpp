@@ -64,7 +64,7 @@ public:
 namespace
 {
 enum class Delete { Now = true, Later = false };
-void deleteAllSegments(QVector<QList<RadialMap::Segment *>> &signature, Delete del = Delete::Later)
+void deleteAllSegments(QList<QList<RadialMap::Segment *>> &signature, Delete del = Delete::Later)
 {
     for (auto &segments : signature) {
         for (const auto &segment : segments) {
