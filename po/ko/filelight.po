@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-05 01:42+0000\n"
+"POT-Creation-Date: 2023-10-20 01:39+0000\n"
 "PO-Revision-Date: 2023-03-01 01:19+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -416,13 +416,13 @@ msgctxt "@title"
 msgid "Welcome to Filelight"
 msgstr "Filelight에 오신 것을 환영합니다"
 
-#: src/qml/SettingsPage.qml:24
+#: src/qml/SettingsPage.qml:22
 #, kde-format
 msgctxt "@title"
 msgid "Scanning"
 msgstr "검색 중"
 
-#: src/qml/SettingsPage.qml:27
+#: src/qml/SettingsPage.qml:25
 #, kde-format
 msgctxt "@title"
 msgid "Appearance"
@@ -464,31 +464,31 @@ msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "작은 파일 보기"
 
-#: src/qml/SettingsPageScanning.qml:23
+#: src/qml/SettingsPageScanning.qml:33
 #, kde-format
 msgctxt "@label"
 msgid "Do not scan these folders:"
 msgstr "다음 폴더 검사하지 않기:"
 
-#: src/qml/SettingsPageScanning.qml:48
-#, kde-format
-msgctxt "@action:button remove list entry"
-msgid "Remove"
-msgstr "삭제"
-
-#: src/qml/SettingsPageScanning.qml:63
+#: src/qml/SettingsPageScanning.qml:41
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
 msgstr "추가…"
 
-#: src/qml/SettingsPageScanning.qml:75
+#: src/qml/SettingsPageScanning.qml:83
+#, kde-format
+msgctxt "@action:button remove list entry"
+msgid "Remove"
+msgstr "삭제"
+
+#: src/qml/SettingsPageScanning.qml:97
 #, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
 msgstr "다른 파일 시스템도 검사"
 
-#: src/qml/SettingsPageScanning.qml:86
+#: src/qml/SettingsPageScanning.qml:109
 #, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"

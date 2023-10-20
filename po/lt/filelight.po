@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-05 01:42+0000\n"
+"POT-Creation-Date: 2023-10-20 01:39+0000\n"
 "PO-Revision-Date: 2015-12-29 20:56+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -464,14 +464,14 @@ msgctxt "@title"
 msgid "Welcome to Filelight"
 msgstr "Nutatymai – Filelight"
 
-#: src/qml/SettingsPage.qml:24
+#: src/qml/SettingsPage.qml:22
 #, fuzzy, kde-format
 #| msgid "Scannin&g"
 msgctxt "@title"
 msgid "Scanning"
 msgstr "&Skenuojama"
 
-#: src/qml/SettingsPage.qml:27
+#: src/qml/SettingsPage.qml:25
 #, fuzzy, kde-format
 #| msgid "&Appearance"
 msgctxt "@title"
@@ -520,34 +520,34 @@ msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "Rodyti mažus failus"
 
-#: src/qml/SettingsPageScanning.qml:23
+#: src/qml/SettingsPageScanning.qml:33
 #, fuzzy, kde-format
 #| msgid "Do &not scan these folders:"
 msgctxt "@label"
 msgid "Do not scan these folders:"
 msgstr "&Neskenuoti šių aplankų:"
 
-#: src/qml/SettingsPageScanning.qml:48
+#: src/qml/SettingsPageScanning.qml:41
+#, kde-format
+msgctxt "@action:button remove list entry"
+msgid "Add…"
+msgstr ""
+
+#: src/qml/SettingsPageScanning.qml:83
 #, fuzzy, kde-format
 #| msgid "R&emove"
 msgctxt "@action:button remove list entry"
 msgid "Remove"
 msgstr "P&ašalinti"
 
-#: src/qml/SettingsPageScanning.qml:63
-#, kde-format
-msgctxt "@action:button remove list entry"
-msgid "Add…"
-msgstr ""
-
-#: src/qml/SettingsPageScanning.qml:75
+#: src/qml/SettingsPageScanning.qml:97
 #, fuzzy, kde-format
 #| msgid "Scan across filesystem &boundaries"
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
 msgstr "Skanuoti &už failų sistemos ribų"
 
-#: src/qml/SettingsPageScanning.qml:86
+#: src/qml/SettingsPageScanning.qml:109
 #, fuzzy, kde-format
 #| msgid "Exclude remote files&ystems"
 msgctxt "@checkbox"

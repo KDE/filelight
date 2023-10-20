@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-05 01:42+0000\n"
+"POT-Creation-Date: 2023-10-20 01:39+0000\n"
 "PO-Revision-Date: 2023-01-02 20:35+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -426,13 +426,13 @@ msgctxt "@title"
 msgid "Welcome to Filelight"
 msgstr "Witaj w Filelight"
 
-#: src/qml/SettingsPage.qml:24
+#: src/qml/SettingsPage.qml:22
 #, kde-format
 msgctxt "@title"
 msgid "Scanning"
 msgstr "Przeliczanie"
 
-#: src/qml/SettingsPage.qml:27
+#: src/qml/SettingsPage.qml:25
 #, kde-format
 msgctxt "@title"
 msgid "Appearance"
@@ -474,31 +474,31 @@ msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "Pokaż także małe pliki"
 
-#: src/qml/SettingsPageScanning.qml:23
+#: src/qml/SettingsPageScanning.qml:33
 #, kde-format
 msgctxt "@label"
 msgid "Do not scan these folders:"
 msgstr "Nie przeliczaj następujących katalogów:"
 
-#: src/qml/SettingsPageScanning.qml:48
-#, kde-format
-msgctxt "@action:button remove list entry"
-msgid "Remove"
-msgstr "Usuń"
-
-#: src/qml/SettingsPageScanning.qml:63
+#: src/qml/SettingsPageScanning.qml:41
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
 msgstr "Dodaj..."
 
-#: src/qml/SettingsPageScanning.qml:75
+#: src/qml/SettingsPageScanning.qml:83
+#, kde-format
+msgctxt "@action:button remove list entry"
+msgid "Remove"
+msgstr "Usuń"
+
+#: src/qml/SettingsPageScanning.qml:97
 #, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
 msgstr "Przechodź pomiędzy systemami plików"
 
-#: src/qml/SettingsPageScanning.qml:86
+#: src/qml/SettingsPageScanning.qml:109
 #, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"

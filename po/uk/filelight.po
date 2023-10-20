@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-05 01:42+0000\n"
+"POT-Creation-Date: 2023-10-20 01:39+0000\n"
 "PO-Revision-Date: 2022-12-16 08:36+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -430,13 +430,13 @@ msgctxt "@title"
 msgid "Welcome to Filelight"
 msgstr "Вітаємо у Filelight"
 
-#: src/qml/SettingsPage.qml:24
+#: src/qml/SettingsPage.qml:22
 #, kde-format
 msgctxt "@title"
 msgid "Scanning"
 msgstr "Сканування"
 
-#: src/qml/SettingsPage.qml:27
+#: src/qml/SettingsPage.qml:25
 #, kde-format
 msgctxt "@title"
 msgid "Appearance"
@@ -478,31 +478,31 @@ msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "Показувати малі файли"
 
-#: src/qml/SettingsPageScanning.qml:23
+#: src/qml/SettingsPageScanning.qml:33
 #, kde-format
 msgctxt "@label"
 msgid "Do not scan these folders:"
 msgstr "Не сканувати ці теки:"
 
-#: src/qml/SettingsPageScanning.qml:48
-#, kde-format
-msgctxt "@action:button remove list entry"
-msgid "Remove"
-msgstr "Вилучити"
-
-#: src/qml/SettingsPageScanning.qml:63
+#: src/qml/SettingsPageScanning.qml:41
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
 msgstr "Додати…"
 
-#: src/qml/SettingsPageScanning.qml:75
+#: src/qml/SettingsPageScanning.qml:83
+#, kde-format
+msgctxt "@action:button remove list entry"
+msgid "Remove"
+msgstr "Вилучити"
+
+#: src/qml/SettingsPageScanning.qml:97
 #, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
 msgstr "Сканувати за межами поточної файлової системи"
 
-#: src/qml/SettingsPageScanning.qml:86
+#: src/qml/SettingsPageScanning.qml:109
 #, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"

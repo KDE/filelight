@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeutils-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-05 01:42+0000\n"
+"POT-Creation-Date: 2023-10-20 01:39+0000\n"
 "PO-Revision-Date: 2023-10-05 13:38+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -424,13 +424,13 @@ msgctxt "@title"
 msgid "Welcome to Filelight"
 msgstr "Dosya Feneri'ne Hoş Geldiniz"
 
-#: src/qml/SettingsPage.qml:24
+#: src/qml/SettingsPage.qml:22
 #, kde-format
 msgctxt "@title"
 msgid "Scanning"
 msgstr "Tarama"
 
-#: src/qml/SettingsPage.qml:27
+#: src/qml/SettingsPage.qml:25
 #, kde-format
 msgctxt "@title"
 msgid "Appearance"
@@ -472,31 +472,31 @@ msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "Küçük dosyaları göster"
 
-#: src/qml/SettingsPageScanning.qml:23
+#: src/qml/SettingsPageScanning.qml:33
 #, kde-format
 msgctxt "@label"
 msgid "Do not scan these folders:"
 msgstr "Bu klasörleri taramanın dışında tut:"
 
-#: src/qml/SettingsPageScanning.qml:48
-#, kde-format
-msgctxt "@action:button remove list entry"
-msgid "Remove"
-msgstr "Kaldır"
-
-#: src/qml/SettingsPageScanning.qml:63
+#: src/qml/SettingsPageScanning.qml:41
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
 msgstr "Ekle…"
 
-#: src/qml/SettingsPageScanning.qml:75
+#: src/qml/SettingsPageScanning.qml:83
+#, kde-format
+msgctxt "@action:button remove list entry"
+msgid "Remove"
+msgstr "Kaldır"
+
+#: src/qml/SettingsPageScanning.qml:97
 #, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
 msgstr "Dosya sistemi sınırları arasında tarama yap"
 
-#: src/qml/SettingsPageScanning.qml:86
+#: src/qml/SettingsPageScanning.qml:109
 #, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
