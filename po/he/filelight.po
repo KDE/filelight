@@ -15,7 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Poedit 3.3.2\n"
 
 #, kde-format
@@ -280,12 +281,14 @@ msgid "No files."
 msgstr "אין קבצים."
 
 #: src/qml/main.qml:106
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "1 file"
 msgid_plural "%1 files"
 msgstr[0] "קובץ"
 msgstr[1] "%1 קבצים"
+msgstr[2] ""
+msgstr[3] ""
 
 #: src/qml/main.qml:178
 #, kde-format
@@ -372,20 +375,24 @@ msgid "Delete"
 msgstr "מחיקה"
 
 #: src/qml/MapPage.qml:309
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
 msgid_plural "%1 Files (%2%)"
 msgstr[0] "קובץ (%2%)"
 msgstr[1] "%1 קבצים (%2%)"
+msgstr[2] ""
+msgstr[3] ""
 
 #: src/qml/MapPage.qml:311
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
 msgid_plural "%1 Files"
 msgstr[0] "קובץ"
 msgstr[1] "%1 קבצים"
+msgstr[2] ""
+msgstr[3] ""
 
 #: src/qml/MapPage.qml:315
 #, kde-format
@@ -394,12 +401,14 @@ msgid "Click to go up to parent directory"
 msgstr "לחיצה תעלה לתיקיית ההורה"
 
 #: src/qml/MapPage.qml:518
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
 msgid_plural "%1 Files, %2"
 msgstr[0] "קובץ, %2"
 msgstr[1] "%1 קבצים, %2"
+msgstr[2] ""
+msgstr[3] ""
 
 #: src/qml/MapPage.qml:527
 #, kde-format
@@ -497,7 +506,7 @@ msgid "Exclude remote filesystems"
 msgstr "החרגת מערכות מרוחקות"
 
 #: src/radialMap/map.cpp:56
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "\n"
 "%1 file, with an average size of %2"
@@ -510,3 +519,5 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 קבצים, בגודל ממוצע של %2"
+msgstr[2] ""
+msgstr[3] ""
