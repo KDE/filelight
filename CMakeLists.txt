@@ -67,8 +67,8 @@ ecm_find_qmlmodule(Qt.labs.platform 1.1)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"filelight\")
 
-ecm_set_disabled_deprecation_versions(QT 5.15.2
-    KF 5.101
+ecm_set_disabled_deprecation_versions(QT 5.15
+    KF 5.240
 )
 
 include_directories(src)
