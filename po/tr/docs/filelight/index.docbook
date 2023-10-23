@@ -1,0 +1,604 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY filelight "<application
+>Filelight</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Turkish "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="filelight" lang="&language;">
+
+<bookinfo>
+   <title
+>&filelight; El Kitabı</title>
+   <authorgroup>
+      <author
+><firstname
+>Max</firstname
+> <surname
+>Howell</surname
+> <affiliation
+><address
+><email
+>max.howell@methylblue.com</email
+></address
+></affiliation>
+      </author>
+      <author
+><firstname
+>Martin</firstname
+> <surname
+>Sandsmark</surname
+> <affiliation
+><address
+><email
+>martin.sandsmark@kde.org</email
+></address
+></affiliation>
+      </author>
+      <othercredit role="translator"
+><firstname
+>Kaan</firstname
+><surname
+>Özdinçer</surname
+><affiliation
+><address
+><email
+>kaanozdincer@gmail.com</email
+></address
+></affiliation
+><contrib
+>Çeviri</contrib
+></othercredit
+> 
+   </authorgroup>
+   <copyright
+><year
+>2006</year
+><holder
+>Max Howell</holder
+></copyright>
+   <copyright
+><year
+>2009</year
+><holder
+>Martin Sandsmark</holder
+></copyright>
+   <!-- Translators: put here the copyright notice of the translation -->
+   <legalnotice
+>&FDLNotice;</legalnotice>
+   <date
+>2015-08-04</date>
+   <releaseinfo
+>&filelight; 1.21 (Uygulamalar 15.08)</releaseinfo>
+   <abstract
+><para
+>Disk kullanımını gösterin ve kullanılmayan dosyaları silin.</para
+></abstract>
+   <!-- These may be used by search engines -->
+   <keywordset>
+      <keyword
+>KDE</keyword>
+      <keyword
+>Dosya Feneri</keyword>
+      <keyword
+>du</keyword>
+      <keyword
+>disk kullanımı</keyword>
+   </keywordset>
+</bookinfo>
+
+
+<chapter id="introduction">
+   <title
+>Giriş</title>
+   <screenshot>
+      <screeninfo
+>&filelight; 1.20 Ekran Görüntüsü</screeninfo>
+      <mediaobject>
+         <imageobject
+><imagedata fileref="radial_map.png" format="PNG"/></imageobject>
+         <textobject
+><phrase
+>Ekran Görüntüsü</phrase
+></textobject>
+      </mediaobject>
+   </screenshot>
+   <para
+>&filelight; dosya sisteminizi grafik olarak bölütlü halkalar kümesi olarak temsil ederek, disk alanınızın nereden kullanıldığını hızlı bir şekilde anlamanıza olanak tanır. Disk kullanımının önemli noktalarını bulmak ve daha sonra bu alanları &dolphin; veya &konqueror; kullanarak değiştirmek için kullanabilirsiniz.</para>
+</chapter>
+
+
+<chapter id="configuring">
+<title
+>&filelight; Yapılandırması</title>
+
+<para
+>&filelight; ayarlar penceresi, &filelight; seçeneklerini yapılandırmak için iki sekme barındırır. Bunlar, <guilabel
+>Tarama</guilabel
+> ve <guilabel
+>Görünüm</guilabel
+> sekmeleridir. Aşağıda ayar sekmelerinin açıklamaları bulunmaktadır. &filelight; ayar penceresi, <menuchoice
+><guimenu
+>Ayarlar</guimenu
+><guimenuitem
+>Dosya Feneri Uygulamasını Yapılandır</guimenuitem
+></menuchoice
+> ögesine tıklanarak bulunabilir.</para>
+
+<sect1 id="scanning">
+<title
+>Tarama</title>
+
+<screenshot>
+<screeninfo
+>Tarama Ekran Görüntüsü</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_scan.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Ekran Görüntüsü</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Tarama sekmesi &filelight;'nin klasörleri nasıl tarayacağını yapılandırmanıza izin verir. <guilabel
+>Bu klasörleri taramanın dışında tut</guilabel
+>, belirli klasörleri taramanızdan dışarıda tutmak için kullanılır. Bu seçenek, okumak için izni olmayanlar veya bir sanal dosya sisteminin bir parçası olan klasörleri (örneğin, / proc) atlamak için çok kullanışlıdır. Listeye bir klasör eklemek için <guibutton
+>Ekle...</guibutton
+> düğmesine tıklayın, burada ağaç görünümünden seçtiğiniz klasörü seçebileceğiniz bir iletişim kutusu açılacaktır. Bir klasörü kaldırmak için istediğiniz klasörü seçin ve <guibutton
+>Kaldır</guibutton
+> düğmesine tıklayın.</para>
+<para
+><guilabel
+>Dosya sistemi sınırları arasında tarama yap</guilabel
+>, taramaların diğer dosya sistemlerinin bir parçası olan klasörlere girmesine izin verir. Örneğin, işaretlenmemişse bu, genellikle kök <filename class="directory"
+>/</filename
+> klasöründen başlayarak tarama yaparsanız <filename class="directory"
+>/mnt</filename
+> içeriğinin taranmasını önleyecektir. Uzak dosya sistemlerinin, &eg; NFS veya Samba, taranması yüksek ağ trafiği oluşturacaktır. Taramayı engellemek için <guilabel
+>Uzak dosya sistemlerini dışarıda tut</guilabel
+> seçeneğini işaretleyin. Sonraki seçenek <guilabel
+>Çıkarılabilir ortamı dışarıda tut</guilabel
+> seçilirse &filelight;, çıkarılabilir ortamları (&eg; &CD-ROM;) taramayı engelleyecektir.</para>
+</sect1>
+
+<sect1 id="appearance">
+<title
+>Görünüş</title>
+
+<screenshot>
+<screeninfo
+>Görünüş Ekran Görüntüsü</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_appear.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Ekran Görüntüsü</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+><guilabel
+>Görünüş</guilabel
+> sekmesi, &filelight; görünüşünü yapılandırmanıza olanak tanır.</para>
+<para
+><guilabel
+>Renk Şeması</guilabel
+> bölümü, &filelight; için bir renk şeması seçilmesi için kullanılır. Bunlar, <guilabel
+>Gökkuşağı</guilabel
+>, <guilabel
+>Sistem renkleri</guilabel
+>, ve <guilabel
+>Yüksek karşıtlık</guilabel
+> renk şemalarıdır. Ayrıca, daha kolay görüntüleme için halka bölütlerinin karşıtlığını ayarlamak için <guilabel
+>Karşıtlık</guilabel
+> kaydırıcısı vardır.</para>
+<para
+><guilabel
+>Yumuşatma kullan</guilabel
+> onay kutusu, &filelight; görünümünde kullanılacak yumuşatmayı etkinleştirmek için kullanılır. Seçiliyse halka bölütlerinin görünümün daha temiz yapar.</para>
+<para
+><guilabel
+>Etiket yazıtipi boyutlarını değişken yap</guilabel
+> işaret kutusu, uzun adlı dosya ve klasörleriniz varsa kullanışlıdır. Bu seçenek, yazıtipi boyutlarını ayarlayarak, görünüme daha iyi oturmasını sağlayacaktır. Seçenek etkinleştirildiğinde, <guilabel
+>En küçük yazıtipi boyutu</guilabel
+> ayar kutusu, ölçeklenebilir en küçük boyutlu yazıtipini seçmek için kullanılabilir hale gelecektir. </para>
+<para
+><guilabel
+>Küçük dosyaları göster</guilabel
+> seçeneği, küçük dosyaların karmaşıklığa yol açmaması için öntanımlı olarak kapalıdır. Küçük dosyalarınızı &filelight; görünümünde içermek istiyorsanız bu seçeneği etkinleştirin. Bu dosyalar tek bir <quote
+>çoklu bölüt</quote
+> olarak birleştirilir.</para>
+
+</sect1>
+</chapter>
+
+
+<chapter id="using">
+<title
+>&filelight; Kullanımı</title>
+
+<sect1 id="starting">
+<title
+>&filelight;'ni Başlatmak</title>
+<para
+>&filelight;, uygulama başlatıcısı veya komut satırından başlatılabilir</para>
+
+<sect2 id="starting-from-the-menu">
+<title
+>Uygulama Başlatıcısı Üzerinden</title>
+<para
+>Menüyü açın ve imleci <guimenu
+>İzlenceler</guimenu
+> menü ögesinin üstüne getirin. <guimenuitem
+>&filelight;</guimenuitem
+> ögesini seçin. </para>
+</sect2>
+
+<sect2 id="starting-from-the-command-line">
+<title
+>Komut Satırı Üzerinden</title>
+<para
+>&filelight;'ni (filelight) komut satırına yazarak başlatın. Aşağıdaki örnekteki gibi bir klasör adı verirseniz o klasörü tarayacaktır. </para>
+<informalexample>
+<screen
+><prompt
+>%</prompt
+><userinput
+><command
+>filelight</command
+> <option
+><replaceable
+>/home</replaceable
+></option
+></userinput
+>
+</screen>
+</informalexample>
+</sect2>
+
+</sect1>
+
+<sect1 id="scanning-folders">
+<title
+>Klasörleri tarama</title>
+<para
+>Bir klasörü taramak, içeriğini bir dosya adı olarak gösterecektir. Bir klasörü taramak için tarama menüsünü kullanın veya doğrudan konum çubuğuna bir &URL; yazın. </para>
+</sect1>
+
+<sect1 id="exploring-filemaps">
+<title
+>Dosya Haritalarını Keşfetmek</title>
+<para
+>Tarama tamamlandıktan sonra, taradığınız klasörü temsil eden bir dosya haritası sunulacaktır. Dosya haritası, merkezden genişleyen bölütlü halkalar dizisidir. Parlak renkli bölütler klasörler, gri bölümler ise dosyalardır. Bölütler, dosya boyutlarıyla orantılıdır. Bölütler iç içe geçmiş olabilirler, örneğin, <filename class="directory"
+>/home/mxcl</filename
+> dışa doğru bir düzeydir ve <filename class="directory"
+>/home</filename
+> temsil eden bölüt sınırları dahilinde olabilir. Bölütler etiketlenir ve fareyi üzerine getirirseniz o dilimin ve onun alt bölütlerinin ayrıntıları görüntülenir. </para>
+<screenshot>
+<screeninfo
+>Dosya Haritası Ekran Görüntüsü</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="radial_map_context_menu.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Ekran Görüntüsü</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+<para
+>Klasörlerin içerik menüsünü kullanarak öntanımlı dosya yöneticinizle veya &konsole; ile klasörleri açabilirsiniz. Bir &MMB; tıklaması, MIME türüne göre, &eg;, <application
+>Akbakış</application
+> içeren görüntüleri açar. Bir bölüte sağ tıklayıp bağlam menüsünü açarak; taranan klasör için klasör yolunu panoya kopyalamak veya dosyayı silmek gibi eylemlere erişebilirsiniz. Bölütlere sağ tıklamak, haritayı o bölüt üzerinde yeniden ortalar. </para>
+</sect1>
+
+</chapter>
+
+
+<chapter id="commands">
+<title
+>Menü ve Komut Başvuruları</title>
+
+<variablelist>
+<title
+>Tarama Menüsü</title>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Tara</guimenu
+> <guimenuitem
+>Klasör Tara</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Taranacak klasörü seçebilmeniz için bir klasör seçimi iletişim kutusu sunar.</action
+></para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keysym
+>Baş</keysym
+></keycombo
+> </shortcut
+> <guimenu
+>Tara</guimenu
+> <guimenuitem
+>Ana Klasörü Tara</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Kullanıcının ana klasörünü taramaya başlar.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Tara</guimenu
+> <guimenuitem
+>Kök Klasörü Tara</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Kök klasörü taramaya başlar.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycap
+>F5</keycap
+> </shortcut
+> <guimenu
+>Tara</guimenu
+> <guimenuitem
+>Yeniden Tara</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Geçerli çalışma klasöründe yeni bir tarama başlatır; dosya sistemi üzerinde değişiklikler yapıldığında bu kullanışlıdır.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> &Esc; </shortcut
+> <guimenu
+>Tara</guimenu
+> <guimenuitem
+>Durdur</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Geçerli taramayı durdurur.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Tara</guimenu
+> <guimenuitem
+>Çık</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>&filelight;'nden çıkar.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist>
+  <title
+>Görünüm Menüsü</title>
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>+</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Görünüm</guimenu
+> <guimenuitem
+>Yakınlaştır</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Dosya haritasının görünümünü artırır.</action
+></para>
+    </listitem>
+    </varlistentry>
+
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>-</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Görünüm</guimenu
+> <guimenuitem
+>Uzaklaştır</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Dosya haritasının görünümünü azaltır.</action
+></para>
+    </listitem>
+    </varlistentry>
+</variablelist>
+
+<variablelist>
+<title
+>Git Menüsü</title>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>Yukarı Ok</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Git</guimenu
+> <guimenuitem
+>Yukarı</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Dosya sisteminde bir adım ilerleyerek üst klasöre gider.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Git</guimenu
+> <guimenuitem
+>Geri</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Dosya sistemindeki tarama geçmişinizde sizi bir adım geriye götürür.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Git</guimenu
+> <guimenuitem
+>İleri</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Dosya sistemindeki tarama geçmişinizde sizi bir adım ileri götürür.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Ek olarak &filelight;, yaygın &kde; <guimenu
+>Ayarlar</guimenu
+> ve <guimenu
+>Yardım</guimenu
+> menü ögelerine sahiptir, daha fazla bilgi için &kde; Temel Bilgilerin <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Ayarlar Menüsü</ulink
+> ve <ulink url="help:/fundamentals/menus.html#menus-help"
+>Yardım Menüsü</ulink
+> bölümlerine göz atın. </para>
+</chapter>
+
+
+<chapter id="credits">
+   <title
+>Emeği Geçenler ve Lisans</title>
+   <sect1 id="kapp">
+      <title
+>&filelight;</title>
+      <para
+>Program telif hakkı 2006 Max B. Howell <email
+>max.howell@methylblue.com</email
+></para>
+      <para
+>Program telif hakkı 2008-2013 Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+></para
+>&underGPL; </sect1>
+   <sect1 id="Documentation">
+      <title
+>Belgelendirme</title>
+      <para
+>Belgelendirme telif hakkı 2003 Max B. Howell <email
+>max.howell@methylblue.com</email
+></para>
+      <para
+>Belgelendirme telif hakkı 2009 Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+></para>
+      <para
+>Çeviren: Kaan Özdinçer <email
+>kaanozdincer@gmail.com</email
+></para
+> &underFDL; </sect1>
+</chapter>
+
+&documentation.index;
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->
