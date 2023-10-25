@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
         QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
     }
 
-    KLocalizedString::setApplicationDomain("filelight");
+    KLocalizedString::setApplicationDomain(QByteArrayLiteral("filelight"));
     auto config = KSharedConfig::openConfig();
     auto stateConfig = KSharedConfig::openStateConfig();
     if (config->hasGroup("general")) {
