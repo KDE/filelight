@@ -199,9 +199,7 @@
 <para
 >L'opció <guilabel
 >Mostra els fitxers petits</guilabel
-> està desactivada de manera predeterminada, ja que els fitxers petits tendeixen a desordenar la visualització del &filelight;. Activeu aquesta opció si voleu incloure els fitxers petits a la visualització del &filelight;. Aquests fitxers es fusionen en un <quote
->multisegment</quote
-> únic.</para>
+> està desactivada de manera predeterminada, ja que els fitxers petits tendeixen a desordenar la visualització del &filelight;. Activeu aquesta opció si voleu incloure els fitxers petits a la visualització del &filelight;. Aquests fitxers es fusionen en un «multisegment» únic.</para>
 
 </sect1>
 </chapter>
