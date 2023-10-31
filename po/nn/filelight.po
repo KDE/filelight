@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-20 01:39+0000\n"
+"POT-Creation-Date: 2023-10-31 01:40+0000\n"
 "PO-Revision-Date: 2023-01-15 12:27+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -181,27 +181,27 @@ msgstr "Adresse å søkja gjennom"
 msgid "[url]"
 msgstr "[adresse]"
 
-#: src/mainContext.cpp:163
+#: src/mainContext.cpp:166
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Vel mappe å søkja gjennom"
 
-#: src/mainContext.cpp:227
+#: src/mainContext.cpp:222
 #, kde-format
 msgid "The entered URL cannot be parsed; it is invalid."
 msgstr "Kan ikkje tolka adressa; ho er ugyldig."
 
-#: src/mainContext.cpp:229
+#: src/mainContext.cpp:224
 #, kde-format
 msgid "Filelight only accepts absolute paths, eg. /%1"
 msgstr "Filelight godtek berre absolutte adresser, for eksempel /%1"
 
-#: src/mainContext.cpp:231
+#: src/mainContext.cpp:226
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Fann ikkje mappe: %1"
 
-#: src/mainContext.cpp:233
+#: src/mainContext.cpp:228
 #, kde-format
 msgid ""
 "Unable to enter: %1\n"
@@ -290,7 +290,7 @@ msgid_plural "%1 files"
 msgstr[0] "1 fil"
 msgstr[1] "%1 filer"
 
-#: src/qml/main.qml:178
+#: src/qml/main.qml:174
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-20 01:39+0000\n"
+"POT-Creation-Date: 2023-10-31 01:40+0000\n"
 "PO-Revision-Date: 2023-05-21 15:56+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -179,27 +179,27 @@ msgstr "ஆராய வேண்டிய பாதை அல்லது ம�
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:163
+#: src/mainContext.cpp:166
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "ஆராய வேண்டிய அடைவைத் தேர்ந்தெடுத்தல்"
 
-#: src/mainContext.cpp:227
+#: src/mainContext.cpp:222
 #, kde-format
 msgid "The entered URL cannot be parsed; it is invalid."
 msgstr "உள்ளிடப்பட்ட முகவரியை கையாள முடியவில்லை; அது முறையற்றதாகும்."
 
-#: src/mainContext.cpp:229
+#: src/mainContext.cpp:224
 #, kde-format
 msgid "Filelight only accepts absolute paths, eg. /%1"
 msgstr "முழுமையான பாதைகளை மட்டுமே ஃபைல்-லைட் ஏற்கும், எ.கா. /%1"
 
-#: src/mainContext.cpp:231
+#: src/mainContext.cpp:226
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "அடைவை கண்டுபிடிக்க முடியவில்லை: %1"
 
-#: src/mainContext.cpp:233
+#: src/mainContext.cpp:228
 #, kde-format
 msgid ""
 "Unable to enter: %1\n"
@@ -288,7 +288,7 @@ msgid_plural "%1 files"
 msgstr[0] "1 கோப்பு"
 msgstr[1] "%1 கோப்புகள்"
 
-#: src/qml/main.qml:178
+#: src/qml/main.qml:174
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
