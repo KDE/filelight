@@ -5,6 +5,7 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.19 as Kirigami
+import org.kde.kirigami.delegates as KD
 import org.kde.coreaddons 1.0 as KCoreAddons
 import QtQuick.Shapes 1.15
 
@@ -185,6 +186,7 @@ Kirigami.Page {
             Component.onCompleted: background.visible = true
 
             ListView {
+                id: listview
                 clip: true
                 model: visible ? FileModel : undefined
                 Component.onCompleted: currentIndex = -1
@@ -193,19 +195,22 @@ Kirigami.Page {
                 activeFocusOnTab: true
                 keyNavigationEnabled: true
                 keyNavigationWraps: true
-                delegate: Kirigami.BasicListItem {
+                delegate: KD.SubtitleDelegate {
+                    width: listview.width
                     icon.name: ROLE_IsFolder ? "folder" : "file" // TODO mimetype?
                     text: model.display
                     subtitle: ROLE_HumanReadableSize
+                    hoverEnabled: true
                     highlighted: {
                         if (hoveringListItem) {
-                            return containsMouse
+                            return hovered
                         }
                         return (hoveredSegment === ROLE_Segment) || (hoveredSegment === "fake" && ROLE_Segment === "")
                     }
-                    onContainsMouseChanged: {
-                        if (containsMouse) {
+                    onHoveredChanged: {
+                        if (hovered) {
                             hoveringListItem = true
+                            hoveredSegment = ROLE_Segment !== "" ? ROLE_Segment : "fake"
                         }
                     }
                     onClicked: {
@@ -214,7 +219,6 @@ Kirigami.Page {
                             MainContext.openUrl(ROLE_URL)
                         }
                     }
-                    onHoveredChanged: hoveredSegment = ROLE_Segment !== "" ? ROLE_Segment : "fake"
 
                     QQC2.Menu {
                         id: contextMenu
