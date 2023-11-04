@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-31 01:40+0000\n"
+"POT-Creation-Date: 2023-11-04 01:39+0000\n"
 "PO-Revision-Date: 2022-12-22 12:35+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -297,85 +297,85 @@ msgctxt "@info:status"
 msgid "Aborting Scan..."
 msgstr "أجهض المسح..."
 
-#: src/qml/MapPage.qml:29
+#: src/qml/MapPage.qml:30
 #, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
 msgstr "انتقل إلى نظرة عامة"
 
-#: src/qml/MapPage.qml:37
+#: src/qml/MapPage.qml:38
 #, kde-format
 msgctxt "@action"
 msgid "Up"
 msgstr "أعلى"
 
-#: src/qml/MapPage.qml:46
+#: src/qml/MapPage.qml:47
 #, kde-format
 msgctxt "@action"
 msgid "Rescan"
 msgstr "أعد المسح"
 
-#: src/qml/MapPage.qml:55
+#: src/qml/MapPage.qml:56
 #, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "أوقف"
 
-#: src/qml/MapPage.qml:63
+#: src/qml/MapPage.qml:64
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "قرّب"
 
-#: src/qml/MapPage.qml:73
+#: src/qml/MapPage.qml:74
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "بعّد"
 
-#: src/qml/MapPage.qml:106 src/qml/MapPage.qml:225
+#: src/qml/MapPage.qml:107 src/qml/MapPage.qml:229
 #, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "افتح"
 
-#: src/qml/MapPage.qml:114 src/qml/MapPage.qml:233
+#: src/qml/MapPage.qml:115 src/qml/MapPage.qml:237
 #, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
 msgstr "افتح الطرفية هنا"
 
-#: src/qml/MapPage.qml:122
+#: src/qml/MapPage.qml:123
 #, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "وسط الخريطة هنا"
 
-#: src/qml/MapPage.qml:133 src/qml/MapPage.qml:241
+#: src/qml/MapPage.qml:134 src/qml/MapPage.qml:245
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "أضفه إلى قائمة منع المسح"
 
-#: src/qml/MapPage.qml:141
+#: src/qml/MapPage.qml:142
 #, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "أعد المسح"
 
-#: src/qml/MapPage.qml:148 src/qml/MapPage.qml:248
+#: src/qml/MapPage.qml:149 src/qml/MapPage.qml:252
 #, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "انسخ إلى الحافظة"
 
-#: src/qml/MapPage.qml:156 src/qml/MapPage.qml:256
+#: src/qml/MapPage.qml:157 src/qml/MapPage.qml:260
 #, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "احذف"
 
-#: src/qml/MapPage.qml:309
+#: src/qml/MapPage.qml:313
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -387,7 +387,7 @@ msgstr[3] "%1 ملفّات (%2٪)"
 msgstr[4] "%1 ملفًّا (%2٪)"
 msgstr[5] "%1 ملفّ (%2٪)"
 
-#: src/qml/MapPage.qml:311
+#: src/qml/MapPage.qml:315
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -399,13 +399,13 @@ msgstr[3] "%1 ملفّات"
 msgstr[4] "%1 ملفًّا"
 msgstr[5] "%1 ملفّ"
 
-#: src/qml/MapPage.qml:315
+#: src/qml/MapPage.qml:319
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "انقر لتذهب للمجلد الأم"
 
-#: src/qml/MapPage.qml:518
+#: src/qml/MapPage.qml:522
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -417,7 +417,7 @@ msgstr[3] "%1 ملفّات، %2"
 msgstr[4] "%1 ملفًّا، %2"
 msgstr[5] "%1 ملفّ، %2"
 
-#: src/qml/MapPage.qml:527
+#: src/qml/MapPage.qml:531
 #, kde-format
 msgid "No data available"
 msgstr "لا تتوفر بيانات"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-31 01:40+0000\n"
+"POT-Creation-Date: 2023-11-04 01:39+0000\n"
 "PO-Revision-Date: 2020-10-11 01:28+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -306,45 +306,45 @@ msgctxt "@info:status"
 msgid "Aborting Scan..."
 msgstr "Uurimisest loobumine..."
 
-#: src/qml/MapPage.qml:29
+#: src/qml/MapPage.qml:30
 #, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
 msgstr ""
 
-#: src/qml/MapPage.qml:37
+#: src/qml/MapPage.qml:38
 #, kde-format
 msgctxt "@action"
 msgid "Up"
 msgstr ""
 
-#: src/qml/MapPage.qml:46
+#: src/qml/MapPage.qml:47
 #, fuzzy, kde-format
 #| msgid "Rescan"
 msgctxt "@action"
 msgid "Rescan"
 msgstr "Uuri uuesti"
 
-#: src/qml/MapPage.qml:55
+#: src/qml/MapPage.qml:56
 #, fuzzy, kde-format
 #| msgid "Stop"
 msgctxt "@action"
 msgid "Stop"
 msgstr "Peata"
 
-#: src/qml/MapPage.qml:63
+#: src/qml/MapPage.qml:64
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr ""
 
-#: src/qml/MapPage.qml:73
+#: src/qml/MapPage.qml:74
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr ""
 
-#: src/qml/MapPage.qml:106 src/qml/MapPage.qml:225
+#: src/qml/MapPage.qml:107 src/qml/MapPage.qml:229
 #, fuzzy, kde-format
 #| msgctxt "Scan/open the path of the selected element"
 #| msgid "&Open"
@@ -352,49 +352,49 @@ msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "&Ava"
 
-#: src/qml/MapPage.qml:114 src/qml/MapPage.qml:233
+#: src/qml/MapPage.qml:115 src/qml/MapPage.qml:237
 #, fuzzy, kde-format
 #| msgid "Open &Terminal Here"
 msgctxt "@action"
 msgid "Open Terminal Here"
 msgstr "Ava &terminal siin"
 
-#: src/qml/MapPage.qml:122
+#: src/qml/MapPage.qml:123
 #, fuzzy, kde-format
 #| msgid "&Center Map Here"
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "Tsentreeri kaart &siia"
 
-#: src/qml/MapPage.qml:133 src/qml/MapPage.qml:241
+#: src/qml/MapPage.qml:134 src/qml/MapPage.qml:245
 #, fuzzy, kde-format
 #| msgid "Add to Do &Not Scan List"
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "Lisa &eiratavate kataloogide loendisse"
 
-#: src/qml/MapPage.qml:141
+#: src/qml/MapPage.qml:142
 #, fuzzy, kde-format
 #| msgid "Rescan"
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Uuri uuesti"
 
-#: src/qml/MapPage.qml:148 src/qml/MapPage.qml:248
+#: src/qml/MapPage.qml:149 src/qml/MapPage.qml:252
 #, fuzzy, kde-format
 #| msgid "&Copy to clipboard"
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "Kopeeri &lõikepuhvrisse"
 
-#: src/qml/MapPage.qml:156 src/qml/MapPage.qml:256
+#: src/qml/MapPage.qml:157 src/qml/MapPage.qml:260
 #, fuzzy, kde-format
 #| msgid "&Delete"
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "&Kustuta"
 
-#: src/qml/MapPage.qml:309
+#: src/qml/MapPage.qml:313
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -402,7 +402,7 @@ msgid_plural "%1 Files (%2%)"
 msgstr[0] "%1 fail (%2%)"
 msgstr[1] "%1 faili (%2)"
 
-#: src/qml/MapPage.qml:311
+#: src/qml/MapPage.qml:315
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -410,7 +410,7 @@ msgid_plural "%1 Files"
 msgstr[0] "%1 fail"
 msgstr[1] "%1 faili"
 
-#: src/qml/MapPage.qml:315
+#: src/qml/MapPage.qml:319
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -421,7 +421,7 @@ msgstr ""
 "\n"
 "Klõpsa ülemkataloogi liikumiseks"
 
-#: src/qml/MapPage.qml:518
+#: src/qml/MapPage.qml:522
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -429,7 +429,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 fail, %2"
 msgstr[1] "%1 faili, %2"
 
-#: src/qml/MapPage.qml:527
+#: src/qml/MapPage.qml:531
 #, kde-format
 msgid "No data available"
 msgstr ""
