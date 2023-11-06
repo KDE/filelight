@@ -56,10 +56,10 @@ int main(int argc, char *argv[])
     KLocalizedString::setApplicationDomain(QByteArrayLiteral("filelight"));
     auto config = KSharedConfig::openConfig();
     auto stateConfig = KSharedConfig::openStateConfig();
-    if (config->hasGroup("general")) {
-        auto grp = stateConfig->group("general");
-        config->group("general").copyTo(&grp);
-        config->deleteGroup("general");
+    if (config->hasGroup(QLatin1String("general"))) {
+        auto grp = stateConfig->group(QLatin1String("general"));
+        config->group(QLatin1String("general")).copyTo(&grp);
+        config->deleteGroup(QLatin1String("general"));
     }
 
     KAboutData about(QStringLiteral(APP_NAME),
