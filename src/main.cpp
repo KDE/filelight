@@ -57,9 +57,9 @@ int main(int argc, char *argv[])
     auto config = KSharedConfig::openConfig();
     auto stateConfig = KSharedConfig::openStateConfig();
     if (config->hasGroup(QLatin1String("general"))) {
-        auto grp = stateConfig->group(QLatin1String("general"));
-        config->group(QLatin1String("general")).copyTo(&grp);
-        config->deleteGroup(QLatin1String("general"));
+        auto grp = stateConfig->group(QStringLiteral("general"));
+        config->group(QStringLiteral("general")).copyTo(&grp);
+        config->deleteGroup(QStringLiteral("general"));
     }
 
     KAboutData about(QStringLiteral(APP_NAME),

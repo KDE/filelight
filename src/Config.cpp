@@ -20,7 +20,7 @@
 
 void Config::read()
 {
-    const KConfigGroup config = KSharedConfig::openConfig()->group(QLatin1String("filelight_part"));
+    const KConfigGroup config = KSharedConfig::openConfig()->group(QStringLiteral("filelight_part"));
 
     scanAcrossMounts = config.readEntry("scanAcrossMounts", false);
     scanRemoteMounts = config.readEntry("scanRemoteMounts", false);
@@ -34,7 +34,7 @@ void Config::read()
 
 void Config::write() const
 {
-    KConfigGroup config = KSharedConfig::openConfig()->group(QLatin1String("filelight_part"));
+    KConfigGroup config = KSharedConfig::openConfig()->group(QStringLiteral("filelight_part"));
 
     config.writeEntry("scanAcrossMounts", scanAcrossMounts);
     config.writeEntry("scanRemoteMounts", scanRemoteMounts);
