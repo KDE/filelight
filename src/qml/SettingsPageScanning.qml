@@ -87,6 +87,12 @@ Kirigami.Page {
                             }
                         }
                     ]
+
+                    onClicked: {
+                        // Do not let auto-resolver prepend "qrc:"
+                        const url = Qt.url(`file://${modelData}`);
+                        Qt.openUrlExternally(url);
+                    }
                 }
             }
         }
