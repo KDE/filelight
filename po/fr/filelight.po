@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-04 01:39+0000\n"
+"POT-Creation-Date: 2023-11-22 01:37+0000\n"
 "PO-Revision-Date: 2023-09-28 17:47+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -495,13 +495,13 @@ msgctxt "@action:button remove list entry"
 msgid "Remove"
 msgstr "Supprimer"
 
-#: src/qml/SettingsPageScanning.qml:97
+#: src/qml/SettingsPageScanning.qml:103
 #, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
 msgstr "Analyser d'un bout à l'autre des limites du système de fichiers"
 
-#: src/qml/SettingsPageScanning.qml:109
+#: src/qml/SettingsPageScanning.qml:115
 #, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"

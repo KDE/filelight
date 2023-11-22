@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-04 01:39+0000\n"
+"POT-Creation-Date: 2023-11-22 01:37+0000\n"
 "PO-Revision-Date: 2022-12-20 19:40+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -486,13 +486,13 @@ msgctxt "@action:button remove list entry"
 msgid "Remove"
 msgstr "Премахване"
 
-#: src/qml/SettingsPageScanning.qml:97
+#: src/qml/SettingsPageScanning.qml:103
 #, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
 msgstr "Претърсване в рамките на файловата система"
 
-#: src/qml/SettingsPageScanning.qml:109
+#: src/qml/SettingsPageScanning.qml:115
 #, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"

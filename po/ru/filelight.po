@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-04 01:39+0000\n"
+"POT-Creation-Date: 2023-11-22 01:37+0000\n"
 "PO-Revision-Date: 2022-12-18 11:12+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -500,13 +500,13 @@ msgctxt "@action:button remove list entry"
 msgid "Remove"
 msgstr "Убрать из списка"
 
-#: src/qml/SettingsPageScanning.qml:97
+#: src/qml/SettingsPageScanning.qml:103
 #, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
 msgstr "Разрешить выход за рамки файловой системы при сканировании"
 
-#: src/qml/SettingsPageScanning.qml:109
+#: src/qml/SettingsPageScanning.qml:115
 #, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
