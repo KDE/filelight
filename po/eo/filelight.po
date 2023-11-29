@@ -1,12 +1,14 @@
-# Translation of filelight into esperanto.
+# Translation of filelight.pot into esperanto.
+# This file is distributed under the same license as the filelight package.
 # Axel Rousseau <axel@esperanto-jeunes.org>, 2009.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-23 00:49+0000\n"
-"PO-Revision-Date: 2023-03-20 22:31+0100\n"
+"PO-Revision-Date: 2023-10-08 21:44+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -19,12 +21,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Axel Rousseau"
+msgstr "Axel Rousseau,Oliver Kellogg"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "axel@esperanto-jeunes.org"
+msgstr "axel@esperanto-jeunes.org,okellogg@users.sourceforge.net"
 
 #. i18n: ectx: Menu (file)
 #: misc/filelightui.rc:4
@@ -59,17 +61,17 @@ msgstr ""
 #: src/Config.cpp:58
 #, kde-format
 msgid "Select path to ignore"
-msgstr ""
+msgstr "Elekti vojon ignorendan"
 
 #: src/Config.cpp:71
 #, kde-format
 msgid "That folder is already set to be excluded from scans."
-msgstr ""
+msgstr "Tiu dosierujo jam estas agordita por esti ekskludita de skanado."
 
 #: src/Config.cpp:71
 #, kde-format
 msgid "Folder already ignored"
-msgstr ""
+msgstr "Dosierujo jam ignorita"
 
 #: src/contextMenuContext.cpp:63
 #, kde-format
@@ -77,11 +79,13 @@ msgid ""
 "<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
 "b> deleted.</qt>"
 msgstr ""
+"<qt>La dosierujo ĉe <i>'%1'</i> estos <b>rekurse</b> kaj <b>konstante</b> "
+"forigita.</qt>"
 
 #: src/contextMenuContext.cpp:64
 #, kde-format
 msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
-msgstr ""
+msgstr "<qt><i>'%1'</i> estos <b>konstante</b> forigita.</qt>"
 
 #: src/contextMenuContext.cpp:65
 #, kde-format
@@ -91,7 +95,7 @@ msgstr "&Forigi"
 #: src/contextMenuContext.cpp:92
 #, kde-format
 msgid "Error while deleting"
-msgstr ""
+msgstr "Eraro dum forigo"
 
 #: src/historyAction.cpp:64
 #, kde-format
@@ -108,7 +112,7 @@ msgstr "Antaŭen"
 #: src/main.cpp:76
 #, kde-format
 msgid "Graphical disk-usage information"
-msgstr ""
+msgstr "Grafikaj informoj pri uzado de diskoj"
 
 #: src/main.cpp:78
 #, kde-format
@@ -117,6 +121,9 @@ msgid ""
 "(C) 2008-2014 Martin Sandsmark\n"
 "(C) 2017-2022 Harald Sitter"
 msgstr ""
+"(C) 2006 Max Howell\n"
+"(C) 2008-2014 Martin Sandsmark\n"
+"(C) 2017-2022 Harald Sitter"
 
 #: src/main.cpp:83
 #, kde-format
@@ -131,12 +138,12 @@ msgstr "Prizorganto"
 #: src/main.cpp:84
 #, kde-format
 msgid "Harald Sitter"
-msgstr ""
+msgstr "Harald Sitter"
 
 #: src/main.cpp:84
 #, kde-format
 msgid "QtQuick Port"
-msgstr ""
+msgstr "QtQuick-Portado"
 
 #: src/main.cpp:85
 #, kde-format
@@ -156,7 +163,7 @@ msgstr "Lukas Appelhans"
 #: src/main.cpp:86
 #, kde-format
 msgid "Help and support"
-msgstr ""
+msgstr "Helpo kaj subteno"
 
 #: src/main.cpp:87
 #, kde-format
@@ -166,7 +173,7 @@ msgstr "Steffen Gerlach"
 #: src/main.cpp:87
 #, kde-format
 msgid "Inspiration"
-msgstr ""
+msgstr "Inspiro"
 
 #: src/main.cpp:88
 #, kde-format
@@ -176,52 +183,52 @@ msgstr "Mike Diehl"
 #: src/main.cpp:88
 #, kde-format
 msgid "Original documentation"
-msgstr ""
+msgstr "Origina dokumentaro"
 
 #: src/main.cpp:89
 #, kde-format
 msgid "Sune Vuorela"
-msgstr ""
+msgstr "Sune Vuorela"
 
 #: src/main.cpp:89 src/main.cpp:90
 #, kde-format
 msgid "Icon"
-msgstr ""
+msgstr "Piktogramo"
 
 #: src/main.cpp:90
 #, kde-format
 msgid "Nuno Pinheiro"
-msgstr ""
+msgstr "Nuno Pinheiro"
 
 #: src/main.cpp:97
 #, kde-format
 msgid "Path or URL to scan"
-msgstr ""
+msgstr "Vojo aŭ URL skanenda"
 
 #: src/main.cpp:97
 #, kde-format
 msgid "[url]"
-msgstr ""
+msgstr "[url]"
 
 #: src/mainContext.cpp:163
 #, kde-format
 msgid "Select Folder to Scan"
-msgstr ""
+msgstr "Elekti Dosierujon por Skani"
 
 #: src/mainContext.cpp:227
 #, kde-format
 msgid "The entered URL cannot be parsed; it is invalid."
-msgstr ""
+msgstr "La enigita URL ne povas esti analizita; ĝi estas nevalida."
 
 #: src/mainContext.cpp:229
 #, kde-format
 msgid "Filelight only accepts absolute paths, eg. /%1"
-msgstr ""
+msgstr "Filelight akceptas nur absolutajn vojojn, ekz. /%1"
 
 #: src/mainContext.cpp:231
 #, kde-format
 msgid "Folder not found: %1"
-msgstr ""
+msgstr "Dosierujo ne trovita: %1"
 
 #: src/mainContext.cpp:233
 #, kde-format
@@ -229,6 +236,8 @@ msgid ""
 "Unable to enter: %1\n"
 "You do not have access rights to this location."
 msgstr ""
+"Ne eblas eniri: %1\n"
+"Vi ne havas alirrajtojn al ĉi tiu loko."
 
 #: src/qml/GlobalMenu.qml:10
 #, kde-format
@@ -240,13 +249,13 @@ msgstr "Trarigardi"
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Settings"
-msgstr ""
+msgstr "Agordoj"
 
 #: src/qml/GlobalMenu.qml:27
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Help"
-msgstr ""
+msgstr "Helpo"
 
 #: src/qml/main.qml:30
 #, kde-format
@@ -258,75 +267,75 @@ msgstr "Serĉi dosierujon"
 #, kde-format
 msgctxt "@action"
 msgid "Scan Home Folder"
-msgstr ""
+msgstr "Skani Hejman Dosierujon"
 
 #: src/qml/main.qml:44
 #, kde-format
 msgctxt "@action"
 msgid "Scan Root Folder"
-msgstr ""
+msgstr "Skani Radikan Dosierujon"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
-msgstr ""
+msgstr "Forlasi"
 
 #: src/qml/main.qml:59
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
-msgstr ""
+msgstr "Agordi…"
 
 #: src/qml/main.qml:64
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr ""
+msgstr "Agordi"
 
 #: src/qml/main.qml:76
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
-msgstr ""
+msgstr "Malfermi Manlibron"
 
 #: src/qml/main.qml:84
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
-msgstr ""
+msgstr "Pri"
 
 #: src/qml/main.qml:105
 #, kde-format
 msgctxt "@info:status"
 msgid "No files."
-msgstr ""
+msgstr "Neniuj dosieroj."
 
 #: src/qml/main.qml:106
 #, kde-format
 msgctxt "@info:status"
 msgid "1 file"
 msgid_plural "%1 files"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 dosiero"
+msgstr[1] "%1 dosieroj"
 
 #: src/qml/main.qml:178
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
-msgstr ""
+msgstr "Ĉesigante Skanon..."
 
 #: src/qml/MapPage.qml:29
 #, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
-msgstr ""
+msgstr "Iri al Superrigardo"
 
 #: src/qml/MapPage.qml:37
 #, kde-format
 msgctxt "@action"
 msgid "Up"
-msgstr ""
+msgstr "Supren"
 
 #: src/qml/MapPage.qml:46
 #, kde-format
@@ -344,13 +353,13 @@ msgstr "Halti"
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
-msgstr ""
+msgstr "Zomi"
 
 #: src/qml/MapPage.qml:73
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
-msgstr ""
+msgstr "Malzomi"
 
 #: src/qml/MapPage.qml:106 src/qml/MapPage.qml:225
 #, kde-format
@@ -362,19 +371,19 @@ msgstr "Malfermi"
 #, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
-msgstr ""
+msgstr "Malfermi Terminalon Ĉi tie"
 
 #: src/qml/MapPage.qml:122
 #, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
-msgstr ""
+msgstr "Centra Mapo Ĉi tie"
 
 #: src/qml/MapPage.qml:133 src/qml/MapPage.qml:241
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
-msgstr ""
+msgstr "Aldoni al Listo de Ne Skani"
 
 #: src/qml/MapPage.qml:141
 #, kde-format
@@ -386,7 +395,7 @@ msgstr "Reserĉi"
 #, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Kopii al tondujo"
 
 #: src/qml/MapPage.qml:156 src/qml/MapPage.qml:256
 #, kde-format
@@ -399,35 +408,35 @@ msgstr "Forigi"
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
 msgid_plural "%1 Files (%2%)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 Dosiero (%2%)"
+msgstr[1] "%1 Dosieroj (%2%)"
 
 #: src/qml/MapPage.qml:311
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
 msgid_plural "%1 Files"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 Dosiero"
+msgstr[1] "%1 Dosieroj"
 
 #: src/qml/MapPage.qml:315
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
-msgstr ""
+msgstr "Klaku por iri al gepatra dosierujo"
 
 #: src/qml/MapPage.qml:518
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
 msgid_plural "%1 Files, %2"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 Dosiero, %2"
+msgstr[1] "%1 Dosieroj, %2"
 
 #: src/qml/MapPage.qml:527
 #, kde-format
 msgid "No data available"
-msgstr ""
+msgstr "Neniuj datumoj haveblaj"
 
 #: src/qml/OverviewPage.qml:15
 #, kde-format
@@ -475,7 +484,7 @@ msgstr "Sistemkoloroj"
 #, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "High contrast"
-msgstr ""
+msgstr "Alta kontrasto"
 
 #: src/qml/SettingsPageAppearance.qml:52
 #, kde-format
@@ -493,7 +502,7 @@ msgstr "Motri malgrandajn dosierojn"
 #, kde-format
 msgctxt "@label"
 msgid "Do not scan these folders:"
-msgstr ""
+msgstr "Ne skani ĉi tiujn dosierujojn:"
 
 #: src/qml/SettingsPageScanning.qml:48
 #, kde-format
@@ -511,13 +520,13 @@ msgstr "Aldoni…"
 #, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
-msgstr ""
+msgstr "Skani trans dosiersistemoj"
 
 #: src/qml/SettingsPageScanning.qml:86
 #, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
-msgstr ""
+msgstr "Ekskludi forajn dosiersistemojn"
 
 #: src/radialMap/map.cpp:56
 #, kde-format
@@ -528,4 +537,8 @@ msgid_plural ""
 "\n"
 "%1 files, with an average size of %2"
 msgstr[0] ""
+"\n"
+"%1 dosiero, kun averaĝa grandeco de %2"
 msgstr[1] ""
+"\n"
+"%1 dosieroj, kun averaĝa grandeco de %2"
