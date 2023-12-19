@@ -380,7 +380,7 @@
     </ul>
   </description>
   <launchable type="desktop-id">org.kde.filelight.desktop</launchable>
-  <url type="homepage">https://kde.org/applications/en/utilities/org.kde.filelight</url>
+  <url type="homepage">https://apps.kde.org/filelight</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=filelight</url>
   <url type="help">https://docs.kde.org/?application=filelight</url>
   <url type="donation">https://www.kde.org/community/donations/?app=filelight&amp;source=appdata</url>
