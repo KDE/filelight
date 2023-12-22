@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Sébastien Renard <Sebastien.Renard@NewArch.fr>, 2009.
 # Joëlle Cornavin <jcorn@free.fr>, 2009, 2010, 2012, 2013.
-# SPDX-FileCopyrightText: 2013, 2020, 2021, 2022, 2023 xavier <xavier.besnard@neuf.fr>
+# SPDX-FileCopyrightText: 2013, 2020, 2021, 2022, 2023 xavier <xavier.besnard@kde.org>
 # Vincent Pinon <vpinon@kde.org>, 2015, 2017.
 # Simon Depiets <sdepiets@gmail.com>, 2018.
 #
@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-22 01:37+0000\n"
 "PO-Revision-Date: 2023-09-28 17:47+0200\n"
-"Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
+"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -34,7 +34,7 @@ msgstr "Joëlle Cornavin, Vincent Pinon, Simon Depiets, Xavier Besnard"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
-"jcorn@free.fr, vpinon@kde.org, sdepiets@gmail.com, xavier.besnard@neuf.fr"
+"jcorn@free.fr, vpinon@kde.org, sdepiets@gmail.com, xavier.besnard@kde.org"
 
 #: src/Config.cpp:58
 #, kde-format
