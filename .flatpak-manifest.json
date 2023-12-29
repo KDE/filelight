@@ -14,7 +14,8 @@
             "name": "kirigami-addons",
             "config-opts": [
                 "-DBUILD_TESTING=OFF",
-                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                "-DBUILD_WITH_QT6=ON"
             ],
             "buildsystem": "cmake-ninja",
             "sources": [
