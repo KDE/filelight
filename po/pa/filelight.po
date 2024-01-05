@@ -1,21 +1,21 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# A S Alam <aalam@users.sf.net>, 2009, 2010, 2019.
+# SPDX-FileCopyrightText: 2009, 2010, 2019, 2024 A S Alam <aalam@users.sf.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-22 01:37+0000\n"
-"PO-Revision-Date: 2019-02-09 14:23-0800\n"
-"Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
-"Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
+"PO-Revision-Date: 2024-01-04 08:44-0600\n"
+"Last-Translator: A S Alam <aalam@punlinux.org>\n"
+"Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
 "Language: pa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -25,22 +25,22 @@ msgstr "ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ (A S Alam)"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "aalam@users.sf.net"
+msgstr "aalam@punlinux.org"
 
 #: src/Config.cpp:58
 #, kde-format
 msgid "Select path to ignore"
-msgstr ""
+msgstr "ਅਣਡਿੱਠਾ ਕਰਨ ਵਾਸਤੇ ਪਾਥ ਚੁਣੋ"
 
 #: src/Config.cpp:71
 #, kde-format
 msgid "That folder is already set to be excluded from scans."
-msgstr "ਉਹ ਫੋਲਡਰ ਨੂੰ ਪਹਿਲਾਂ ਹੀ ਸਕੈਨ ਤੋਂ ਅੱਡ ਕੀਤਾ ਗਿਆ ਹੈ।"
+msgstr "ਉਸ ਫੋਲਡਰ ਨੂੰ ਪਹਿਲਾਂ ਹੀ ਸਕੈਨ ਕਰਨ ਤੋਂ ਅਲਹਿਦਾ ਕੀਤਾ ਗਿਆ ਹੈ।"
 
 #: src/Config.cpp:71
 #, kde-format
 msgid "Folder already ignored"
-msgstr ""
+msgstr "ਫੋਲਡਰ ਨੂੰ ਪਹਿਲਾਂ ਹੀ ਅਣਡਿੱਠਾ ਕੀਤਾ ਗਿਆ"
 
 #: src/contextMenuContext.cpp:63
 #, kde-format
@@ -48,11 +48,13 @@ msgid ""
 "<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
 "b> deleted.</qt>"
 msgstr ""
+"<qt><i>'%1'</i> ਤੋਂ ਫੋਲਡਰ ਨੂੰ <b>ਅੰਦਰੋਂ ਨਿਰੰਤਰ</b> ਅਤੇ <b>ਪੱਕੇ ਤੌਰ ਉੱਤੇ</b> ਹਟਾ ਦਿੱਤਾ ਜਾਵੇਗਾ।"
+"</qt>"
 
 #: src/contextMenuContext.cpp:64
 #, kde-format
 msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
-msgstr ""
+msgstr "<qt><i>'%1'</i> ਨੂੰ <b>ਪੱਕੇ ਤੌਰ ਉੱਤੇ</b> ਹਟਾ ਦਿੱਤਾ ਜਾਵੇਗਾ।</qt>"
 
 #: src/contextMenuContext.cpp:65
 #, kde-format
@@ -82,17 +84,15 @@ msgid "Graphical disk-usage information"
 msgstr "ਗਰਾਫਿਕਸ ਡਿਸਕ-ਵਰਤੋਂ ਜਾਣਕਾਰੀ"
 
 #: src/main.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "(C) 2006 Max Howell\n"
-#| "(C) 2008, 2009 Martin Sandsmark"
+#, kde-format
 msgid ""
 "(C) 2006 Max Howell\n"
 "(C) 2008-2014 Martin Sandsmark\n"
 "(C) 2017-2022 Harald Sitter"
 msgstr ""
-"(C) ੨੦੦੬ Max Howell\n"
-"(C) ੨੦੦੮, ੨੦੦੯ Martin Sandsmark"
+"(C) 2006 ਮੈਕਸ ਹੋਵੈਲ\n"
+"(C) 2008-2014 ਮਾਰਟੀਨ ਸੈਂਡਸਮਾਰਕ\n"
+"(C) 2017-2022 ਹਾਰਲਡ ਸਿਟਰ"
 
 #: src/main.cpp:75
 #, kde-format
@@ -107,12 +107,12 @@ msgstr "ਪਰਬੰਧਕ"
 #: src/main.cpp:76
 #, kde-format
 msgid "Harald Sitter"
-msgstr ""
+msgstr "ਹਾਰਲਡ ਸਿਟਰ"
 
 #: src/main.cpp:76
 #, kde-format
 msgid "QtQuick Port"
-msgstr ""
+msgstr "QtQuick ਪੋਰਟ"
 
 #: src/main.cpp:77
 #, kde-format
@@ -122,7 +122,7 @@ msgstr "ਮੈਕਸ ਹੋਵਿਲ"
 #: src/main.cpp:77
 #, kde-format
 msgid "Original author"
-msgstr "ਅਸਲੀ ਲੇਖਕ"
+msgstr "ਮੁਢਲਾ ਲੇਖਕ"
 
 #: src/main.cpp:78
 #, kde-format
@@ -152,32 +152,32 @@ msgstr "ਮਾਈਕ ਡਿਈਹਲ"
 #: src/main.cpp:80
 #, kde-format
 msgid "Original documentation"
-msgstr "ਅਸਲੀ ਡੌਕੂਮੈਂਟੇਸ਼ਨ"
+msgstr "ਮੁੱਢਲੇ ਦਸਤਾਵੇਜ਼"
 
 #: src/main.cpp:81
 #, kde-format
 msgid "Sune Vuorela"
-msgstr ""
+msgstr "ਸੁਨੇ ਵੂਓਰੇਲਾ"
 
 #: src/main.cpp:81 src/main.cpp:82
 #, kde-format
 msgid "Icon"
-msgstr ""
+msgstr "ਆਈਕਾਨ"
 
 #: src/main.cpp:82
 #, kde-format
 msgid "Nuno Pinheiro"
-msgstr ""
+msgstr "ਨੂਨੋ ਪਿਨਹੇਇਰੋ"
 
 #: src/main.cpp:89
 #, kde-format
 msgid "Path or URL to scan"
-msgstr ""
+msgstr "ਸਕੈਨ ਕਰਨ ਲਈ ਪਾਥ ਜਾਂ URL"
 
 #: src/main.cpp:89
 #, kde-format
 msgid "[url]"
-msgstr ""
+msgstr "[url]"
 
 #: src/mainContext.cpp:166
 #, kde-format
@@ -192,7 +192,7 @@ msgstr "ਦਿੱਤਾ URL ਪਾਰਸ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕ
 #: src/mainContext.cpp:224
 #, kde-format
 msgid "Filelight only accepts absolute paths, eg. /%1"
-msgstr "ਫਾਇਲਲਾਇਟ  ਕੇਵਲ ਅਸਲ ਪਾਥ ਹੀ ਵਰਤਦੀ ਹੈ, ਜਿਵੇਂ /%1"
+msgstr "ਫਾਇਲ-ਲਾਈਟ ਕੇਵਲ ਅਸਲ ਪਾਥ ਹੀ ਵਰਤਦਾ ਹੈ, ਜਿਵੇਂ /%1"
 
 #: src/mainContext.cpp:226
 #, kde-format
@@ -209,95 +209,87 @@ msgstr ""
 "ਇਸ ਟਿਕਾਣੇ ਨੂੰ ਖੋਲ੍ਹਣ ਲਈ ਤੁਹਾਡੇ ਕੋਲ ਅਧਿਕਾਰ ਨਹੀਂ ਹਨ।"
 
 #: src/qml/GlobalMenu.qml:10
-#, fuzzy, kde-format
-#| msgid "&Scan"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Scan"
-msgstr "ਸਕੈਨ(&S)"
+msgstr "ਸਕੈਨ ਕਰੋ"
 
 #: src/qml/GlobalMenu.qml:21
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Settings"
-msgstr ""
+msgstr "ਸੈਟਿੰਗਾਂ"
 
 #: src/qml/GlobalMenu.qml:27
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Help"
-msgstr ""
+msgstr "ਮਦਦ"
 
 #: src/qml/main.qml:30
-#, fuzzy, kde-format
-#| msgid "Scan Folder"
+#, kde-format
 msgctxt "@action"
 msgid "Scan Folder"
-msgstr "ਫੋਲਡਰ ਸਕੈਨ"
+msgstr "ਫੋਲਡਰ ਨੂੰ ਸਕੈਨ ਕਰੋ"
 
 #: src/qml/main.qml:37
-#, fuzzy, kde-format
-#| msgid "Scan &Home Folder"
+#, kde-format
 msgctxt "@action"
 msgid "Scan Home Folder"
-msgstr "ਘਰ ਫੋਲਡਰ ਸਕੈਨ ਕਰੋ(&H)"
+msgstr "ਘਰ ਫੋਲਡਰ ਨੂੰ ਸਕੈਨ ਕਰੋ"
 
 #: src/qml/main.qml:44
-#, fuzzy, kde-format
-#| msgid "Scan &Root Folder"
+#, kde-format
 msgctxt "@action"
 msgid "Scan Root Folder"
-msgstr "ਰੂਟ ਫੋਲਡਰ ਸਕੈਨ ਕਰੋ(&R)"
+msgstr "ਰੂਟ ਫੋਲਡਰ ਨੂੰ ਸਕੈਨ ਕਰੋ"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
-msgstr ""
+msgstr "ਬਾਹਰ"
 
 #: src/qml/main.qml:59
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
-msgstr ""
+msgstr "…ਸੰਰਚਨਾ"
 
 #: src/qml/main.qml:64
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr ""
+msgstr "ਸੰਰਚਨਾ"
 
 #: src/qml/main.qml:76
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
-msgstr ""
+msgstr "ਕਿਤਾਬਚਾ ਖੋਲ੍ਹੋ"
 
 #: src/qml/main.qml:84
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
-msgstr ""
+msgstr "ਇਸ ਬਾਰੇ"
 
 #: src/qml/main.qml:105
-#, fuzzy, kde-format
-#| msgid "No files."
+#, kde-format
 msgctxt "@info:status"
 msgid "No files."
-msgstr "ਫਾਇਲਾਂ ਨਹੀਂ।"
+msgstr "ਕੋਈ ਫਾਇਲਾਂ ਨਹੀਂ।"
 
 #: src/qml/main.qml:106
-#, fuzzy, kde-format
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "1 file"
 msgid_plural "%1 files"
-msgstr[0] "੧ ਫਾਇਲ"
+msgstr[0] "1 ਫਾਇਲ"
 msgstr[1] "%1 ਫਾਇਲਾਂ"
 
 #: src/qml/main.qml:174
-#, fuzzy, kde-format
-#| msgid "Aborting Scan..."
+#, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
 msgstr "...ਸਕੈਨ ਕਰਨਾ ਅਧੂਰਾ ਛੱਡੋ"
@@ -306,24 +298,22 @@ msgstr "...ਸਕੈਨ ਕਰਨਾ ਅਧੂਰਾ ਛੱਡੋ"
 #, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
-msgstr ""
+msgstr "ਸਾਰ ਉੱਤੇ ਜਾਓ"
 
 #: src/qml/MapPage.qml:38
 #, kde-format
 msgctxt "@action"
 msgid "Up"
-msgstr ""
+msgstr "ਉੱਤੇ"
 
 #: src/qml/MapPage.qml:47
-#, fuzzy, kde-format
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action"
 msgid "Rescan"
 msgstr "ਮੁੜ-ਸਕੈਨ"
 
 #: src/qml/MapPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "ਰੋਕੋ"
@@ -332,62 +322,55 @@ msgstr "ਰੋਕੋ"
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
-msgstr ""
+msgstr "ਜ਼ੂਮ ਇਨ"
 
 #: src/qml/MapPage.qml:74
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
-msgstr ""
+msgstr "ਜ਼ੂਮ ਆਉਟ"
 
 #: src/qml/MapPage.qml:107 src/qml/MapPage.qml:229
-#, fuzzy, kde-format
-#| msgctxt "Scan/open the path of the selected element"
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
-msgstr "ਖੋਲ੍ਹੋ(&O)"
+msgstr "ਖੋਲ੍ਹੋ"
 
 #: src/qml/MapPage.qml:115 src/qml/MapPage.qml:237
-#, fuzzy, kde-format
-#| msgid "Open &Terminal Here"
+#, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
-msgstr "ਟਰਮੀਨਲ ਇੱਥੇ ਖੋਲ੍ਹੋ(&T)"
+msgstr "ਟਰਮੀਨਲ ਇੱਥੇ ਖੋਲ੍ਹੋ"
 
 #: src/qml/MapPage.qml:123
-#, fuzzy, kde-format
-#| msgid "&Center Map Here"
+#, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
-msgstr "ਨਕਸ਼ਾ ਇੱਥੇ ਕੇਂਦਰਿਤ ਕਰੋ(&C)"
+msgstr "ਨਕਸ਼ਾ ਇੱਥੇ ਕੇਂਦਰਿਤ ਕਰੋ"
 
 #: src/qml/MapPage.qml:134 src/qml/MapPage.qml:245
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
-msgstr ""
+msgstr "ਸਕੈਨ ਨਾ ਕਰੋ ਸੂਚੀ ਵਿੱਚ ਜੋੜੋ"
 
 #: src/qml/MapPage.qml:142
-#, fuzzy, kde-format
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "ਮੁੜ-ਸਕੈਨ"
 
 #: src/qml/MapPage.qml:149 src/qml/MapPage.qml:252
-#, fuzzy, kde-format
-#| msgid "&Copy to clipboard"
+#, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
-msgstr "ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕਰੋ(&C)"
+msgstr "ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕਰੋ"
 
 #: src/qml/MapPage.qml:157 src/qml/MapPage.qml:260
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
-msgstr "ਹਟਾਓ(&D)"
+msgstr "ਹਟਾਓ"
 
 #: src/qml/MapPage.qml:313
 #, kde-format
@@ -409,138 +392,125 @@ msgstr[1] "%1 ਫਾਇਲਾਂ"
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
-msgstr ""
+msgstr "ਮੁੱਢਲੀ ਡਾਇਰੈਕਟਰੀ ਵਿੱਚ ਜਾਣ ਲਈ ਕਲਿੱਕ ਕਰੋ"
 
 #: src/qml/MapPage.qml:522
-#, fuzzy, kde-format
-#| msgctxt "Tooltip of folder, %1 is number of files"
-#| msgid "%1 File (%2%)"
-#| msgid_plural "%1 Files (%2%)"
+#, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
 msgid_plural "%1 Files, %2"
-msgstr[0] "%1 ਫਾਇਲ (%2%)"
-msgstr[1] "%1 ਫਾਇਲਾਂ (%2%)"
+msgstr[0] "%1 ਫਾਇਲ, %2"
+msgstr[1] "%1 ਫਾਇਲਾਂ, %2"
 
 #: src/qml/MapPage.qml:531
 #, kde-format
 msgid "No data available"
-msgstr ""
+msgstr "ਕੋਈ ਡਾਟਾ ਉਪਲੱਬਧ ਨਹੀਂ"
 
 #: src/qml/OverviewPage.qml:15
 #, kde-format
 msgctxt "@title"
 msgid "Overview"
-msgstr ""
+msgstr "ਸਾਰ"
 
 #: src/qml/OverviewPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Filelight"
+#, kde-format
 msgctxt "@title"
 msgid "Welcome to Filelight"
-msgstr "ਫਾਇਲਲਾਇਟ"
+msgstr "ਫਾਇਲ-ਲਾਈਟ ਵਲੋਂ ਜੀ ਆਇਆਂ ਨੂੰ"
 
 #: src/qml/SettingsPage.qml:22
-#, fuzzy, kde-format
-#| msgid "Scannin&g"
+#, kde-format
 msgctxt "@title"
 msgid "Scanning"
-msgstr "ਸਕੈਨ ਜਾਰੀ(&g)"
+msgstr "ਸਕੈਨ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
 #: src/qml/SettingsPage.qml:25
-#, fuzzy, kde-format
-#| msgid "&Appearance"
+#, kde-format
 msgctxt "@title"
 msgid "Appearance"
-msgstr "ਦਿੱਖ(&A)"
+msgstr "ਦਿੱਖ"
 
 #: src/qml/SettingsPageAppearance.qml:16
-#, fuzzy, kde-format
-#| msgid "Color scheme"
+#, kde-format
 msgctxt "@title:group"
 msgid "Color Scheme"
 msgstr "ਰੰਗ ਸਕੀਮ"
 
 #: src/qml/SettingsPageAppearance.qml:25
-#, fuzzy, kde-format
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "Rainbow"
-msgstr "ਇੰਦਰਧਨੁੱਖ"
+msgstr "ਸਤਰੰਗੀ ਪੀਂਘ"
 
 #: src/qml/SettingsPageAppearance.qml:34
-#, fuzzy, kde-format
-#| msgid "System colors"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "System colors"
-msgstr "ਸਿਸਟਮ ਰੰਗ"
+msgstr "ਸਿਸਟਮ ਦੇ ਰੰਗ"
 
 #: src/qml/SettingsPageAppearance.qml:43
-#, fuzzy, kde-format
-#| msgid "High contrast"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "High contrast"
 msgstr "ਵੱਧ ਕਨਟਰਾਸਟ"
 
 #: src/qml/SettingsPageAppearance.qml:52
-#, fuzzy, kde-format
-#| msgid "Co&ntrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Contrast"
-msgstr "ਕਨਟਰਾਸਟ(&n)"
+msgstr "ਕਨਟਰਾਸਟ"
 
 #: src/qml/SettingsPageAppearance.qml:69
-#, fuzzy, kde-format
-#| msgid "Show small files"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "ਛੋਟੀਆਂ ਫਾਇਲਾਂ ਵੇਖੋ"
 
 #: src/qml/SettingsPageScanning.qml:33
-#, fuzzy, kde-format
-#| msgid "Do &not scan these folders:"
+#, kde-format
 msgctxt "@label"
 msgid "Do not scan these folders:"
-msgstr "ਇਹ ਫੋਲਡਰਾਂ ਨੂੰ ਸਕੈਨ ਨਾ ਕਰੋ(&n):"
+msgstr "ਇਹ ਫੋਲਡਰਾਂ ਨੂੰ ਸਕੈਨ ਨਾ ਕਰੋ:"
 
 #: src/qml/SettingsPageScanning.qml:41
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
-msgstr ""
+msgstr "…ਜੋੜੋ"
 
 #: src/qml/SettingsPageScanning.qml:83
-#, fuzzy, kde-format
-#| msgid "R&emove"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
-msgstr "ਹਟਾਓ(&e)"
+msgstr "ਹਟਾਓ"
 
 #: src/qml/SettingsPageScanning.qml:103
 #, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
-msgstr ""
+msgstr "ਫਾਇਲ-ਸਿਸਟਮ ਹੱਦਾਂ ਤੱਕ ਸਕੈਨ ਕਰੋ"
 
 #: src/qml/SettingsPageScanning.qml:115
-#, fuzzy, kde-format
-#| msgid "Exclude remote files&ystems"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
-msgstr "ਰਿਮੋਟ ਫਾਇਲ ਸਿਸਟਮ ਨਾ ਵਰਤੋਂ(&y)"
+msgstr "ਰਿਮੋਟ ਫਾਇਲ-ਸਿਸਟਮਾਂ ਨੂੰ ਅਲਹਿਦਾ ਕਰੋ"
 
 #: src/radialMap/map.cpp:56
-#, fuzzy, kde-format
-#| msgid "1 file, with an average size of %2"
-#| msgid_plural "%1 files, with an average size of %2"
+#, kde-format
 msgid ""
 "\n"
 "%1 file, with an average size of %2"
 msgid_plural ""
 "\n"
 "%1 files, with an average size of %2"
-msgstr[0] "੧ ਫਾਇਲ, %2 ਦੇ ਔਸਤ ਸਾਈਜ਼ ਨਾਲ"
-msgstr[1] "%1 ਫਾਇਲਾਂ, %2 ਦੇ ਔਸਤ ਸਾਈਜ਼ ਨਾਲ"
+msgstr[0] ""
+"\n"
+"%1 ਫਾਇਲ, %2 ਦੇ ਔਸਤ ਆਕਾਰ ਨਾਲ"
+msgstr[1] ""
+"\n"
+"%1 ਫਾਇਲਾਂ, %2 ਦੇ ਔਸਤ ਆਕਾਰ ਨਾਲ"
 
 #~ msgid "&Scan"
 #~ msgstr "ਸਕੈਨ(&S)"
