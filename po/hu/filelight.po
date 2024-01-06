@@ -3,20 +3,21 @@
 #
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2011, 2015, 2020, 2021.
 # Balázs Úr <urbalazs@gmail.com>, 2013.
+# SPDX-FileCopyrightText: 2024 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-22 01:37+0000\n"
-"PO-Revision-Date: 2021-09-03 14:02+0200\n"
-"Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
+"PO-Revision-Date: 2024-01-05 21:46+0100\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.07.70\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -26,7 +27,7 @@ msgstr "Kiszel Kristóf"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "kiszel.kristof@gmail.com"
+msgstr "ulysses@fsf.hu"
 
 #: src/Config.cpp:58
 #, kde-format
@@ -85,17 +86,15 @@ msgid "Graphical disk-usage information"
 msgstr "Grafikus lemezhasználati információk"
 
 #: src/main.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "(C) 2006 Max Howell\n"
-#| "(C) 2008-2014 Martin Sandsmark"
+#, kde-format
 msgid ""
 "(C) 2006 Max Howell\n"
 "(C) 2008-2014 Martin Sandsmark\n"
 "(C) 2017-2022 Harald Sitter"
 msgstr ""
 "© Max Hovell, 2006.\n"
-"© Martin Sandsmark, 2008-2014."
+"© Martin Sandsmark, 2008-2014.\n"
+"© Harald Sitter, 2017-2022."
 
 #: src/main.cpp:75
 #, kde-format
@@ -110,12 +109,12 @@ msgstr "Karbantartó"
 #: src/main.cpp:76
 #, kde-format
 msgid "Harald Sitter"
-msgstr ""
+msgstr "Harald Sitter"
 
 #: src/main.cpp:76
 #, kde-format
 msgid "QtQuick Port"
-msgstr ""
+msgstr "Portolás QtQuickre"
 
 #: src/main.cpp:77
 #, kde-format
@@ -212,86 +211,79 @@ msgstr ""
 "Nincs hozzáférési joga ehhez a helyhez."
 
 #: src/qml/GlobalMenu.qml:10
-#, fuzzy, kde-format
-#| msgid "&Scan"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Scan"
-msgstr "Olva&sás"
+msgstr "Vizsgálat"
 
 #: src/qml/GlobalMenu.qml:21
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Settings"
-msgstr ""
+msgstr "Beállítások"
 
 #: src/qml/GlobalMenu.qml:27
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Help"
-msgstr ""
+msgstr "Súgó"
 
 #: src/qml/main.qml:30
-#, fuzzy, kde-format
-#| msgid "Scan Folder"
+#, kde-format
 msgctxt "@action"
 msgid "Scan Folder"
-msgstr "Mappa"
+msgstr "Mappa vizsgálata"
 
 #: src/qml/main.qml:37
-#, fuzzy, kde-format
-#| msgid "Scan &Home Folder"
+#, kde-format
 msgctxt "@action"
 msgid "Scan Home Folder"
-msgstr "Sa&ját mappa"
+msgstr "Saját mappa vizsgálata"
 
 #: src/qml/main.qml:44
-#, fuzzy, kde-format
-#| msgid "Scan &Root Folder"
+#, kde-format
 msgctxt "@action"
 msgid "Scan Root Folder"
-msgstr "Gyöké&rkönyvtár"
+msgstr "Gyökérmappa vizsgálata"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
-msgstr ""
+msgstr "Kilépés"
 
 #: src/qml/main.qml:59
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
-msgstr ""
+msgstr "Beállítások…"
 
 #: src/qml/main.qml:64
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr ""
+msgstr "Beállítások"
 
 #: src/qml/main.qml:76
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
-msgstr ""
+msgstr "Kézikönyv megnyitása"
 
 #: src/qml/main.qml:84
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
-msgstr ""
+msgstr "Névjegy"
 
 #: src/qml/main.qml:105
-#, fuzzy, kde-format
-#| msgid "No files."
+#, kde-format
 msgctxt "@info:status"
 msgid "No files."
 msgstr "Nincsenek fájlok."
 
 #: src/qml/main.qml:106
-#, fuzzy, kde-format
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "1 file"
 msgid_plural "%1 files"
@@ -299,34 +291,31 @@ msgstr[0] "1 fájl"
 msgstr[1] "%1 fájl"
 
 #: src/qml/main.qml:174
-#, fuzzy, kde-format
-#| msgid "Aborting Scan..."
+#, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
-msgstr "Keresés megszakítása…"
+msgstr "Vizsgálat megszakítása…"
 
 #: src/qml/MapPage.qml:30
 #, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
-msgstr ""
+msgstr "Ugrás az áttekintésre"
 
 #: src/qml/MapPage.qml:38
 #, kde-format
 msgctxt "@action"
 msgid "Up"
-msgstr ""
+msgstr "Fel"
 
 #: src/qml/MapPage.qml:47
-#, fuzzy, kde-format
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action"
 msgid "Rescan"
 msgstr "Újraolvasás"
 
 #: src/qml/MapPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "Leállítás"
@@ -335,63 +324,55 @@ msgstr "Leállítás"
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
-msgstr ""
+msgstr "Nagyítás"
 
 #: src/qml/MapPage.qml:74
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
-msgstr ""
+msgstr "Kicsinyítés"
 
 #: src/qml/MapPage.qml:107 src/qml/MapPage.qml:229
-#, fuzzy, kde-format
-#| msgctxt "Scan/open the path of the selected element"
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
-msgstr "Megny&itás"
+msgstr "Megnyitás"
 
 #: src/qml/MapPage.qml:115 src/qml/MapPage.qml:237
-#, fuzzy, kde-format
-#| msgid "Open &Terminal Here"
+#, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
-msgstr "&Terminál megnyitása itt"
+msgstr "Terminál megnyitása itt"
 
 #: src/qml/MapPage.qml:123
-#, fuzzy, kde-format
-#| msgid "&Center Map Here"
+#, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
-msgstr "Gra&fikon középpontját ide"
+msgstr "Grafikon középpontját ide"
 
 #: src/qml/MapPage.qml:134 src/qml/MapPage.qml:245
-#, fuzzy, kde-format
-#| msgid "Add to Do &Not Scan List"
+#, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
-msgstr "Hozzáadás a kihagy&ni kívántak listájához"
+msgstr "Hozzáadás a kihagyni kívántak listájához"
 
 #: src/qml/MapPage.qml:142
-#, fuzzy, kde-format
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Újraolvasás"
 
 #: src/qml/MapPage.qml:149 src/qml/MapPage.qml:252
-#, fuzzy, kde-format
-#| msgid "&Copy to clipboard"
+#, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
-msgstr "Másolás a &vágólapra"
+msgstr "Másolás a vágólapra"
 
 #: src/qml/MapPage.qml:157 src/qml/MapPage.qml:260
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
-msgstr "&Törlés"
+msgstr "Törlés"
 
 #: src/qml/MapPage.qml:313
 #, kde-format
@@ -410,15 +391,10 @@ msgstr[0] "%1 fájl"
 msgstr[1] "%1 fájl"
 
 #: src/qml/MapPage.qml:319
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Click to go up to parent directory"
+#, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
-msgstr ""
-"\n"
-"Kattintson a szülő könyvtárba ugráshoz"
+msgstr "Kattintson a szülő mappába ugráshoz"
 
 #: src/qml/MapPage.qml:522
 #, kde-format
@@ -431,123 +407,112 @@ msgstr[1] "%1 fájl, %2"
 #: src/qml/MapPage.qml:531
 #, kde-format
 msgid "No data available"
-msgstr ""
+msgstr "Nincs elérhető adat"
 
 #: src/qml/OverviewPage.qml:15
 #, kde-format
 msgctxt "@title"
 msgid "Overview"
-msgstr ""
+msgstr "Áttekintés"
 
 #: src/qml/OverviewPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Filelight"
+#, kde-format
 msgctxt "@title"
 msgid "Welcome to Filelight"
-msgstr "Filelight"
+msgstr "Üdvözli a Filelight"
 
 #: src/qml/SettingsPage.qml:22
-#, fuzzy, kde-format
-#| msgid "Scannin&g"
+#, kde-format
 msgctxt "@title"
 msgid "Scanning"
-msgstr "Ol&vasás"
+msgstr "Vizsgálat"
 
 #: src/qml/SettingsPage.qml:25
-#, fuzzy, kde-format
-#| msgid "&Appearance"
+#, kde-format
 msgctxt "@title"
 msgid "Appearance"
-msgstr "&Megjelenés"
+msgstr "Megjelenés"
 
 #: src/qml/SettingsPageAppearance.qml:16
-#, fuzzy, kde-format
-#| msgid "Color scheme"
+#, kde-format
 msgctxt "@title:group"
 msgid "Color Scheme"
 msgstr "Színséma"
 
 #: src/qml/SettingsPageAppearance.qml:25
-#, fuzzy, kde-format
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "Rainbow"
 msgstr "Szivárvány"
 
 #: src/qml/SettingsPageAppearance.qml:34
-#, fuzzy, kde-format
-#| msgid "System colors"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "System colors"
 msgstr "Rendszerszínek"
 
 #: src/qml/SettingsPageAppearance.qml:43
-#, fuzzy, kde-format
-#| msgid "High contrast"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "High contrast"
 msgstr "Magas kontraszt"
 
 #: src/qml/SettingsPageAppearance.qml:52
-#, fuzzy, kde-format
-#| msgid "Co&ntrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Contrast"
-msgstr "Ko&ntraszt"
+msgstr "Kontraszt"
 
 #: src/qml/SettingsPageAppearance.qml:69
-#, fuzzy, kde-format
-#| msgid "Show small files"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "Kis fájlok megjelenítése"
 
 #: src/qml/SettingsPageScanning.qml:33
-#, fuzzy, kde-format
-#| msgid "Do &not scan these folders:"
+#, kde-format
 msgctxt "@label"
 msgid "Do not scan these folders:"
-msgstr "&Ne olvassa ezeket a mappákat:"
+msgstr "Ne olvassa ezeket a mappákat:"
 
 #: src/qml/SettingsPageScanning.qml:41
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
-msgstr ""
+msgstr "Hozzáadás…"
 
 #: src/qml/SettingsPageScanning.qml:83
-#, fuzzy, kde-format
-#| msgid "R&emove"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
-msgstr "&Eltávolítás"
+msgstr "Eltávolítás"
 
 #: src/qml/SettingsPageScanning.qml:103
-#, fuzzy, kde-format
-#| msgid "Scan across filesystem &boundaries"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
-msgstr "Olvasás a fájlrendszer&határon túl"
+msgstr "Olvasás a fájlrendszerhatáron túl"
 
 #: src/qml/SettingsPageScanning.qml:115
-#, fuzzy, kde-format
-#| msgid "Exclude remote files&ystems"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
-msgstr "Távoli fájlrendszere&k kizárása"
+msgstr "Távoli fájlrendszerek kizárása"
 
 #: src/radialMap/map.cpp:56
-#, fuzzy, kde-format
-#| msgid "1 file, with an average size of %2"
-#| msgid_plural "%1 files, with an average size of %2"
+#, kde-format
 msgid ""
 "\n"
 "%1 file, with an average size of %2"
 msgid_plural ""
 "\n"
 "%1 files, with an average size of %2"
-msgstr[0] "1 fájl %2 átlagos mérettel"
-msgstr[1] "%1 fájl %2 átlagos mérettel"
+msgstr[0] ""
+"\n"
+"%1 fájl %2 átlagos mérettel"
+msgstr[1] ""
+"\n"
+"%1 fájl %2 átlagos mérettel"
 
 #~ msgid "&Scan"
 #~ msgstr "Olva&sás"
