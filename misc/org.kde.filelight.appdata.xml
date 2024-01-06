@@ -68,6 +68,7 @@
   <summary xml:lang="fr">Afficher l'utilisation du disque et supprimer les fichiers non utilisés</summary>
   <summary xml:lang="gl">Amosar o uso de disco e eliminar ficheiros sen usar.</summary>
   <summary xml:lang="he">הצגת תפוסת כונן ומחיקת קבצים שאינם בשימוש</summary>
+  <summary xml:lang="hu">Lemezhasználat megjelenítése és nem használt fájlok törlése</summary>
   <summary xml:lang="ia">Monstra usage de disco e dele files non usate</summary>
   <summary xml:lang="id">Menampilkan penggunaan disk dan menghapus file yang tidak digunakan</summary>
   <summary xml:lang="ie">Monstrar li usage de disco e remover ínnecessi files</summary>
@@ -109,6 +110,7 @@
     <p xml:lang="fr">Filelight est une application pour l'affichage de l'utilisation du disque sur votre ordinateur. Elle affiche les dossiers en utilisant une vue facile à comprendre en anneaux concentriques. Filelight permet de libérer simplement de l'espace !</p>
     <p xml:lang="gl">Filelight é unha aplicación para visualizar o uso de disco no computador amosando os cartafoles nunha vista de aros concéntricos fácil de entender. Filelight simplifica liberar espazo!</p>
     <p xml:lang="he">Filelight הוא יישום שמאפשר להמחיש את תפוסת כונן המחשב שלך על ידי הצגת תיקיות כטבעות שמצטברות סביב נקודה מרכזית וקל להבין. Filelight מקל על פינוי מקום בכונן!</p>
+    <p xml:lang="hu">A Filelight egy olyan alkalmazás, amely a számítógép lemezhasználatának vizualizálására szolgál a mappák megjelenítésével egy könnyen érthető, koncentrikus gyűrűkből álló nézetben. A Filelight segítségével egyszerűen szabadíthat fel helyet!</p>
     <p xml:lang="ia">Filelight es unapplication per visualisar le usage de disco sur tu computator per monstrar dossieres usante un vista facile a comprender de anillos concentric. Filelight rende simplice liberar spatio!</p>
     <p xml:lang="id">Filelight adalah sebuah aplikasi untuk memvisualkan penggunaan disk pada komputermu dengan menampilkan folder menggunakan sebuah tampilan lingkaran konsentris yang mudah dimengerti. Filelight memudahkan dalam pembebasan ruang!</p>
     <p xml:lang="ie">Filelight visualisa li usage de disco de vor computator, monstrante fólderes in un vise comprensibil de concentric anelles. Filelight facilisa li liberation de spacie!</p>
@@ -198,6 +200,7 @@
       <li xml:lang="fr">Analyser les disques locaux, distants ou amovibles</li>
       <li xml:lang="gl">Examinar discos locais, remotos e extraíbeis.</li>
       <li xml:lang="he">סריקת כוננים מקומיים, מרוחקים או נתיקים</li>
+      <li xml:lang="hu">Helyi, távoli vagy cserélhető eszközök olvasása</li>
       <li xml:lang="ia">Scander discos local, remote o removabile</li>
       <li xml:lang="id">Pemindaian lokal, jarak jauh, atau disk yang dapat dilepas</li>
       <li xml:lang="ie">Analisar local, lontan o removibil discos</li>
@@ -237,6 +240,7 @@
       <li xml:lang="fr">Afficher des informations détaillées sur les fichiers et les dossiers</li>
       <li xml:lang="gl">Ver información detallada de ficheiros e cartafoles.</li>
       <li xml:lang="he">הצגת פירוט על קבצים ותיקיות</li>
+      <li xml:lang="hu">Részletes információk megjelenítése fájlokról és mappákról</li>
       <li xml:lang="ia">Vide Information detaliate  re files e directorios</li>
       <li xml:lang="id">Tampilan informasi terperinci tentang file dan folder</li>
       <li xml:lang="ie">Vider detalliat information pri files e fólderes</li>
@@ -276,6 +280,7 @@
       <li xml:lang="fr">Supprimer des fichiers ou des dossiers prenant trop de place</li>
       <li xml:lang="gl">Eliminar ficheiros e cartafoles que ocupan demasiado espazo.</li>
       <li xml:lang="he">מחיקת קבצים או תיקיות שתופסים יותר מדי מקום</li>
+      <li xml:lang="hu">Túl sok helyet elfoglaló fájlok vagy mappák törlése</li>
       <li xml:lang="ia">Dele files o dossieres que es occupante troppo spatio</li>
       <li xml:lang="id">Hapus file atau folder yang terlalu banyak memakan ruang</li>
       <li xml:lang="ie">Remover files e fólderes quel ocupa tro mult spacie</li>
@@ -315,6 +320,7 @@
       <li xml:lang="fr">Intégration dans les gestionnaires de fichiers Dolphin, Konqueror et Krusader</li>
       <li xml:lang="gl">Integración con xestores de ficheiros Dolphin, Konqueror e Krusader.</li>
       <li xml:lang="he">שילוב עם שלל מנהלי קבצים</li>
+      <li xml:lang="hu">Integráció a Dolphin, Konqueror és Krusader fájlkezelőkkel</li>
       <li xml:lang="ia">Integration in gerente de files Dolphin, Konqueror e Krusader</li>
       <li xml:lang="id">Integrasi ke dalam pengelola file Dolphin, Konqueror, dan Krusader</li>
       <li xml:lang="ie">Integration con gerentes de file Dolphin, Konqueror e Krusader</li>
