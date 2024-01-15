@@ -31,6 +31,7 @@
   <name xml:lang="ja">Filelight</name>
   <name xml:lang="ka">Filelight</name>
   <name xml:lang="ko">Filelight</name>
+  <name xml:lang="lv">Filelight</name>
   <name xml:lang="nl">Filelight</name>
   <name xml:lang="nn">Filelight</name>
   <name xml:lang="pa">ਫਾਇਲ-ਲਾਈਟ</name>
@@ -77,6 +78,7 @@
   <summary xml:lang="ja">ファイルの利用状況の表示と不要なファイルの削除ができます</summary>
   <summary xml:lang="ka">დისკის გამოყენების ჩვენება და გამოუყენებელი ფაილებს წაშლა</summary>
   <summary xml:lang="ko">디스크 사용 통계를 보고 사용하지 않는 파일 삭제</summary>
+  <summary xml:lang="lv">Parāda diska lietojumu un dzēš neizmantotās datnes</summary>
   <summary xml:lang="nl">Schijfgebruik tonen en ongebruikte bestanden verwijderen</summary>
   <summary xml:lang="nn">Visualiser diskbruk og slett ubrukte filer</summary>
   <summary xml:lang="pa">ਡਿਸਕ ਦੀ ਵਰਤੋਂ ਦਿਖਾਓ ਅਤੇ ਨਾ-ਵਰਤੀਆਂ ਫਾਇਲਾਂ ਨੂੰ ਹਟਾਓ</summary>
@@ -119,6 +121,7 @@
     <p xml:lang="ja">Filelight は、円グラフにてあなたのコンピュータのディスク利用率を簡単に、視覚的に伝えることができるソフトウェアです。Filelight はファイル空間を容易に作り出せます!</p>
     <p xml:lang="ka">Filelight აპლიკაციაა თქვენს კომპიუტერში დისკის გამოყენების ვიზუალიზაციისთვის. ის საქაღალდეებს ადვილად-გასაგებ ხედში გაჩვენებთ. Filelight -ი აადვილებს დისკის გათავისუფლებას!</p>
     <p xml:lang="ko">Filelight는 이해하기 쉬운 동심원 형태로 컴퓨터 디스크 사용량을 시각화합니다. 디스크 정리에 도움을 줄 수 있습니다!</p>
+    <p xml:lang="lv">„Filelight“ ir programma ierīces disku izlietojuma vizualizācijai, mapes parādot viegli uztveramā koncentrisku riņķu skatā. „Filelight“ atvieglo brīvas vietas iegūšanu diskā!</p>
     <p xml:lang="nl">Filelight is een toepassing om het schijfgebruik op uw computer te visualiseren door mappen te tonen met een gemakkelijk te begrijpen beeld met concentrische ringen. Filelight maakt het gemakkelijk om ruimte vrij te maken!</p>
     <p xml:lang="nn">Filelight er eit program for å visualisera diskbruken på datamaskina di ved å visa mappene som konsentriske sirklar i eit plassbruk­diagram. Programmet gjer det lett for deg å frigjera diskplass.</p>
     <p xml:lang="pa">ਫਾਇਲ-ਲਾਈਟ ਤੁਹਾਡੇ ਕੰਪਿਊਟਰ ਉੱਤੇ ਡਿਸਕ ਦੇ ਇਸਤੇਮਾਲ ਨੂੰ ਦਿਖਾਉਣ ਵਾਲੀ ਐਪਲੀਕੇਸ਼ਨ ਹੈ, ਜੋ ਸਮਝਣ ਲਈ ਸੌਖੇ ਸਾਂਝੇ ਬਿੰਦੂ ਵਾਲੇ ਚੱਕਰਾਂ ਦੀ ਝਲਕ ਰਾਹੀਂ ਫੋਲਡਰ ਨੂੰ ਦਿਖਾਉਂਦੀ ਹੈ। ਫਾਇਲ-ਲਾਈਟ ਨੇ ਥਾਂ ਨੂੰ ਖਾਲੀ ਕਰਨਾ ਸੌਖਾ ਬਣਾ ਦਿੱਤਾ ਹੈ।</p>
@@ -163,6 +166,7 @@
     <p xml:lang="ja">特徴:</p>
     <p xml:lang="ka">ფუნქციები:</p>
     <p xml:lang="ko">기능:</p>
+    <p xml:lang="lv">Iespējas:</p>
     <p xml:lang="nl">Kenmerken:</p>
     <p xml:lang="nn">Funksjonar:</p>
     <p xml:lang="pa">ਫ਼ੀਚਰ:</p>
@@ -209,6 +213,7 @@
       <li xml:lang="ja">ローカル環境、リモート環境、リムーバブルディスクのスキャンができます</li>
       <li xml:lang="ka">ლოკალური, მოხსნადი და დაშორებული დისკების სკანირება</li>
       <li xml:lang="ko">로컬, 원격, 이동식 디스크 검사</li>
+      <li xml:lang="lv">Skenē lokālus un attālinātus vai noņemamus diskus</li>
       <li xml:lang="nl">Lokale, op afstand of verwijderbare schijven scannen</li>
       <li xml:lang="nn">Søk gjennom lokale diskar, nettverksdiskar og flyttbare lagringsmedium</li>
       <li xml:lang="pa">ਲੋਕਲ, ਰਿਮੋਟ ਜਾਂ ਹਟਾਉਣਯੋਗ ਡਿਸਕਾਂ ਦੀ ਜਾਂਚ ਕਰੋ</li>
@@ -249,6 +254,7 @@
       <li xml:lang="ja">ファイルやフォルダについて詳しい情報を見ることができます</li>
       <li xml:lang="ka">დეტალებური ინფორმაცია ფაილებისა და საქაღალდეების შესახებ</li>
       <li xml:lang="ko">파일과 폴더의 자세한 정보 표시</li>
+      <li xml:lang="lv">Parāda sīkāku informāciju par datnēm un mapēm</li>
       <li xml:lang="nl">Gedetailleerde informatie over bestanden en mappen bekijken</li>
       <li xml:lang="nn">Vis detaljert informasjon om filer og mapper</li>
       <li xml:lang="pa">ਫਾਇਲਾਂ ਅਤੇ ਫੋਲਡਰਾਂ ਬਾਰੇ ਵੇਰਵੇ ਸਮੇਤ ਜਾਣਕਾਰੀ ਵੇਖੋ</li>
@@ -289,6 +295,7 @@
       <li xml:lang="ja">ファイルやフォルダの削除に寄ってディスク容量を増やすことができます</li>
       <li xml:lang="ka">წაშალეთ ფაილები და საქაღალდეები, რომლებიც მეტისმეტად ბევრ ადგილს ხარჯავენ</li>
       <li xml:lang="ko">공간을 많이 차지하는 파일이나 폴더 삭제</li>
+      <li xml:lang="lv">Dzēš datnes un mapes, kas aizņem pārāk daudz vietas</li>
       <li xml:lang="nl">Bestanden of mappen verwijderen die te veel ruimte innemen</li>
       <li xml:lang="nn">Slett filer og mapper som tek opp for mykje plass</li>
       <li xml:lang="pa">ਬਹੁਤ ਵੱਧ ਥਾਂ ਮੱਲਣ ਵਾਲੀਆਂ ਫਾਇਲਾਂ ਜਾਂ ਫੋਲਡਰਾਂ ਨੂੰ ਹਟਾਓ</li>
@@ -329,6 +336,7 @@
       <li xml:lang="ja">ファイルマネージャである Dolphin、Konqueror、Krusader との統合</li>
       <li xml:lang="ka">ინტეგრაცია Dolphin-ში, Konqueror-ში და Krusader-ში</li>
       <li xml:lang="ko">Dolphin, Konqueror, Krusader 파일 관리자와 통합</li>
+      <li xml:lang="lv">Integrācija „Dolphon“, „Konqueror“ un „Krusader“ programmā</li>
       <li xml:lang="nl">Integratie in bestandsbeheerders Dolphin, Konqueror en Krusader</li>
       <li xml:lang="nn">Integrert med filhandsamarane Dolphin, Konqueror og Krusader</li>
       <li xml:lang="pa">ਡਾਲਫਿਨ, ਕੋਨਕਿਉਰੋਰ ਜਾਂ ਕਰੁਸਡਰ ਫਾਇਲ ਮੈਨੇਜਰਾਂ ਨਾਲ ਜੁੜਿਆ ਹੋਇਆ ਹੈ</li>
@@ -372,6 +380,7 @@
       <li xml:lang="ja">色のテーマを設定可能です</li>
       <li xml:lang="ka">მორგებადი ფერის სქემები</li>
       <li xml:lang="ko">색 구성표 설정</li>
+      <li xml:lang="lv">Pielāgojamas krāsu shēmas</li>
       <li xml:lang="nl">Te configureren kleurenschema's</li>
       <li xml:lang="nn">Støtte for ulike fargeoppsett</li>
       <li xml:lang="pa">ਸੰਰਚਨਾ ਕਰਨ ਯੋਗ ਰੰਗ ਸਕੀਮਾਂ</li>
