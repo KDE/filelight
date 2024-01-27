@@ -101,6 +101,18 @@ if (WIN32)
     target_link_libraries(filelight kdewin)
 endif()
 
+if(APPLE)
+    set_target_properties(filelight PROPERTIES
+        MACOSX_BUNDLE_DISPLAY_NAME "Filelight"
+        MACOSX_BUNDLE_BUNDLE_NAME "Filelight"
+        MACOSX_BUNDLE_LONG_VERSION_STRING "Filelight ${RELEASE_SERVICE_VERSION}"
+        MACOSX_BUNDLE_SHORT_VERSION_STRING "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}"
+        MACOSX_BUNDLE_BUNDLE_VERSION "${RELEASE_SERVICE_VERSION}"
+        MACOSX_BUNDLE_GUI_IDENTIFIER "org.kde.filelight"
+        MACOSX_BUNDLE_COPYRIGHT "2006-2024 The Filelight Developers")
+
+endif()
+
 install(TARGETS filelight ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 ecm_qt_install_logging_categories(
     EXPORT FILELIGHT
