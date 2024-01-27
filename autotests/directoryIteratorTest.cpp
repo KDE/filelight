@@ -65,8 +65,10 @@ private Q_SLOTS:
         QCOMPARE(file.size, 7682);
 #elif defined(Q_OS_FREEBSD)
         // CI keeps changing, we don't assert anything for freebsd.
-#else
+#elif defined(Q_OS_LINUX)
         QCOMPARE(file.size, 16 * DEV_BSIZE);
+#else
+        QCOMPARE(file.size, 16 * S_BLKSIZE);
 #endif
 
         if (withSymlink) {
@@ -93,6 +95,11 @@ private Q_SLOTS:
             QVERIFY(symlink.isDuplicate || file.isDuplicate);
             // Now make sure only one is a duplicate also
             QVERIFY(symlink.isDuplicate != file.isDuplicate);
+#if defined(Q_OS_LINUX)
+            QCOMPARE(symlink.size, 16 * DEV_BSIZE);
+#else
+            QCOMPARE(symlink.size, 16 * S_BLKSIZE);
+#endif
             QCOMPARE(symlink.size, 16 * DEV_BSIZE);
 #endif
         }
