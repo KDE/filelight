@@ -100,7 +100,6 @@ private Q_SLOTS:
 #else
             QCOMPARE(symlink.size, 16 * S_BLKSIZE);
 #endif
-            QCOMPARE(symlink.size, 16 * DEV_BSIZE);
 #endif
         }
     }
