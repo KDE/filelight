@@ -512,18 +512,3 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 файла със среден размер %2"
-
-#~ msgid "&Scan"
-#~ msgstr "Пр&етърсване"
-
-#~ msgid "&View"
-#~ msgstr "&Изглед"
-
-#~ msgid "Main Toolbar"
-#~ msgstr "Главна лента с инструменти"
-
-#~ msgid "Location Toolbar"
-#~ msgstr "Лента с адрес"
-
-#~ msgid "View Toolbar"
-#~ msgstr "Лентата за изглед"
