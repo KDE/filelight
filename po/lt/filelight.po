@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-22 01:37+0000\n"
-"PO-Revision-Date: 2015-12-29 20:56+0200\n"
+"PO-Revision-Date: 2024-02-20 01:45+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -20,12 +20,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Andrius Štikonas"
+msgstr "Andrius Štikonas, Moo"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -54,23 +54,23 @@ msgid ""
 "<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
 "b> deleted.</qt>"
 msgstr ""
-"<qt>Aplankas <i>„%1“</i> bus pilnai <b>rekursyviai</b> ir <b>galutinai</b> "
+"<qt>Aplankas ties <i>„%1“</i> bus <b>rekursyviai</b> ir <b>visam laikui</b> "
 "ištrintas.</qt>"
 
 #: src/contextMenuContext.cpp:64
 #, kde-format
 msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
-msgstr "<qt><i>„%1“</i> bus <b>galutinai</b> ištrintas.</qt>"
+msgstr "<qt><i>„%1“</i> bus <b>visam laikui</b> ištrintas.</qt>"
 
 #: src/contextMenuContext.cpp:65
 #, kde-format
 msgid "&Delete"
-msgstr "&Trinti"
+msgstr "&Ištrinti"
 
 #: src/contextMenuContext.cpp:92
 #, kde-format
 msgid "Error while deleting"
-msgstr "Klaida trinant"
+msgstr "Klaida ištrinant"
 
 #: src/historyAction.cpp:64
 #, kde-format
@@ -170,7 +170,7 @@ msgstr "Sune Vuorela"
 #: src/main.cpp:81 src/main.cpp:82
 #, kde-format
 msgid "Icon"
-msgstr "Ženkliukas"
+msgstr "Piktograma"
 
 #: src/main.cpp:82
 #, kde-format
@@ -190,22 +190,22 @@ msgstr ""
 #: src/mainContext.cpp:166
 #, kde-format
 msgid "Select Folder to Scan"
-msgstr "Parinkite aplanką skenavimui"
+msgstr "Pasirinkite, kurį aplanką skenuoti"
 
 #: src/mainContext.cpp:222
 #, kde-format
 msgid "The entered URL cannot be parsed; it is invalid."
-msgstr "Įvestas URL negali būti panaudotas, nes jis neteisingas."
+msgstr "Įvestas URL negali būti išnagrinėtas; jis neteisingas."
 
 #: src/mainContext.cpp:224
 #, kde-format
 msgid "Filelight only accepts absolute paths, eg. /%1"
-msgstr "Filelight priima tik absoliučius kelius, pavyzdžiui /%1"
+msgstr "Filelight priima tik absoliučius kelius, pavyzdžiui, /%1"
 
 #: src/mainContext.cpp:226
 #, kde-format
 msgid "Folder not found: %1"
-msgstr "Nerastas aplankas: %1"
+msgstr "Aplankas nerastas: %1"
 
 #: src/mainContext.cpp:228
 #, kde-format
@@ -214,7 +214,7 @@ msgid ""
 "You do not have access rights to this location."
 msgstr ""
 "Nepavyko įeiti į: %1\n"
-"Jūs neturite teisės įeiti į šią vietą."
+"Jūs neturite prieigos teisių įeiti į šią vietą."
 
 #: src/qml/GlobalMenu.qml:10
 #, fuzzy, kde-format
