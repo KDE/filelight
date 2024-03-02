@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdeutils-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-22 01:37+0000\n"
-"PO-Revision-Date: 2024-02-09 17:45+0300\n"
+"PO-Revision-Date: 2024-03-01 15:41+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.01.95\n"
+"X-Generator: Lokalize 24.02.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -40,7 +40,7 @@ msgstr "Yok sayılacak yolu seç"
 #: src/Config.cpp:71
 #, kde-format
 msgid "That folder is already set to be excluded from scans."
-msgstr "Bu klasör zaten tarama dışında bırakılacak biçimde ayarlanmış."
+msgstr "Bu klasör halihazırda taramadan dışlanacak biçimde ayarlanmış."
 
 #: src/Config.cpp:71
 #, kde-format
@@ -500,7 +500,7 @@ msgstr "Dosya sistemi sınırları arasında tarama yap"
 #, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
-msgstr "Uzak dosya sistemlerini dışarıda tut"
+msgstr "Uzak dosya sistemlerini dışla"
 
 #: src/radialMap/map.cpp:56
 #, kde-format
