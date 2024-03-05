@@ -2,7 +2,7 @@
     "id": "org.kde.filelight",
     "branch": "master",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.6-kf6preview",
+    "runtime-version": "6.6",
     "sdk": "org.kde.Sdk",
     "command": "filelight",
     "tags": ["nightly"],
