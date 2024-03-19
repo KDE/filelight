@@ -2,7 +2,7 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Jure Repinc <jlp@holodeck1.com>, 2010, 2013.
+# SPDX-FileCopyrightText: 2010, 2013, 2024 Jure Repinc <jlp@holodeck1.com>
 # Andrej Mernik <andrejm@ubuntu.si>, 2013, 2015, 2017.
 # Matjaž Jeran <matjaz.jeran@amis.net>, 2019, 2020, 2021, 2022.
 msgid ""
@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-22 01:37+0000\n"
-"PO-Revision-Date: 2023-04-24 09:42+0200\n"
-"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"PO-Revision-Date: 2024-03-17 16:36+0100\n"
+"Last-Translator: Jure Repinc <jlp@holodeck1.com>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -94,9 +94,9 @@ msgid ""
 "(C) 2008-2014 Martin Sandsmark\n"
 "(C) 2017-2022 Harald Sitter"
 msgstr ""
-"(C) 2006 Max Howell\n"
-"(C) 2008-2014 Martin Sandsmark\n"
-"(C) 2017-2022 Harald Sitter"
+"© 2006 Max Howell\n"
+"© 2008–2014 Martin Sandsmark\n"
+"© 2017–2022 Harald Sitter"
 
 #: src/main.cpp:75
 #, kde-format
@@ -258,13 +258,13 @@ msgstr "Zapusti"
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
-msgstr "Konfiguriraj…"
+msgstr "Nastavi …"
 
 #: src/qml/main.qml:64
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr "Konfiguriraj"
+msgstr "Nastavitve"
 
 #: src/qml/main.qml:76
 #, kde-format
@@ -289,16 +289,16 @@ msgstr "Ni datotek."
 msgctxt "@info:status"
 msgid "1 file"
 msgid_plural "%1 files"
-msgstr[0] "%1 datoteka"
-msgstr[1] "%1 datoteki"
-msgstr[2] "%1 datoteke"
-msgstr[3] "%1 datotek"
+msgstr[0] "%1 datotek"
+msgstr[1] "%1 datoteka"
+msgstr[2] "%1 datoteki"
+msgstr[3] "%1 datoteke"
 
 #: src/qml/main.qml:174
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
-msgstr "Prekinjanje preiskovanja..."
+msgstr "Prekinjanje preiskovanja …"
 
 #: src/qml/MapPage.qml:30
 #, kde-format
@@ -383,20 +383,20 @@ msgstr "Izbriši"
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
 msgid_plural "%1 Files (%2%)"
-msgstr[0] "%1 Datoteka (%2%)"
-msgstr[1] "%1 Datoteki (%2%)"
-msgstr[2] "%1 Datoteke (%2%)"
-msgstr[3] "%1 Datotek (%2%)"
+msgstr[0] "%1 Datotek (%2 %)"
+msgstr[1] "%1 Datoteka (%2 %)"
+msgstr[2] "%1 Datoteki (%2 %)"
+msgstr[3] "%1 Datoteke (%2 %)"
 
 #: src/qml/MapPage.qml:315
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
 msgid_plural "%1 Files"
-msgstr[0] "%1 datoteka"
-msgstr[1] "%1 datoteki"
-msgstr[2] "%1 datoteke"
-msgstr[3] "%1 datotek"
+msgstr[0] "%1 datotek"
+msgstr[1] "%1 datoteka"
+msgstr[2] "%1 datoteki"
+msgstr[3] "%1 datoteke"
 
 #: src/qml/MapPage.qml:319
 #, kde-format
@@ -409,10 +409,10 @@ msgstr "Kliknite za premik v nadrejeno mapo"
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
 msgid_plural "%1 Files, %2"
-msgstr[0] "%1 Datoteka %2%"
-msgstr[1] "%1 Datoteki %2%"
-msgstr[2] "%1 Datoteke %2%"
-msgstr[3] "%1 Datotek %2%"
+msgstr[0] "%1 Datotek, %2"
+msgstr[1] "%1 Datoteka, %2"
+msgstr[2] "%1 Datoteki, %2"
+msgstr[3] "%1 Datoteke, %2"
 
 #: src/qml/MapPage.qml:531
 #, kde-format
@@ -489,7 +489,7 @@ msgstr "Ne preišči teh map:"
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
-msgstr "Dodaj…"
+msgstr "Dodaj …"
 
 #: src/qml/SettingsPageScanning.qml:83
 #, kde-format
@@ -519,16 +519,16 @@ msgid_plural ""
 "%1 files, with an average size of %2"
 msgstr[0] ""
 "\n"
-"%1 datoteka s povprečno velikostjo %2"
+"%1 datotek s povprečno velikostjo %2"
 msgstr[1] ""
 "\n"
-"%1 datoteki s povprečno velikostjo %2"
+"%1 datoteka s povprečno velikostjo %2"
 msgstr[2] ""
 "\n"
-"%1 datoteke s povprečno velikostjo %2"
+"%1 datoteki s povprečno velikostjo %2"
 msgstr[3] ""
 "\n"
-"%1 datotek s povprečno velikostjo %2"
+"%1 datoteke s povprečno velikostjo %2"
 
 #~ msgid "&Scan"
 #~ msgstr "Preišči"
