@@ -62,7 +62,6 @@ set_package_properties(KF6KirigamiAddons PROPERTIES
 
 ecm_find_qmlmodule(org.kde.coreaddons 1.0)
 ecm_find_qmlmodule(org.kde.kirigami 2.19)
-ecm_find_qmlmodule(org.kde.quickcharts 1.0)
 ecm_find_qmlmodule(Qt.labs.platform 1.1)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"filelight\")

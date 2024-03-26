@@ -5,7 +5,6 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
-import org.kde.quickcharts 1.0 as Charts
 
 import org.kde.filelight 1.0
 
