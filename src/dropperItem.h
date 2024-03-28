@@ -14,9 +14,9 @@ class DropperItem : public QQuickItem
 public:
     explicit DropperItem(QQuickItem *parent = nullptr);
 
-    void dropEvent(QDropEvent *e) final;
-    void dragEnterEvent(QDragEnterEvent *e) final;
-    void dragMoveEvent(QDragMoveEvent *e) final;
+    void dropEvent(QDropEvent *e) override final;
+    void dragEnterEvent(QDragEnterEvent *e) override final;
+    void dragMoveEvent(QDragMoveEvent *e) override final;
 
 Q_SIGNALS:
     void urlsDropped(const QList<QUrl> &urls);
