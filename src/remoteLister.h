@@ -29,11 +29,9 @@ public:
 Q_SIGNALS:
     void branchCompleted(std::shared_ptr<Folder> tree);
 
-private Q_SLOTS:
+private:
     void onCompleted();
     void onCanceled();
-
-private:
     std::shared_ptr<Store> m_root;
     std::shared_ptr<Store> m_store;
     ScanManager *m_manager = nullptr;
