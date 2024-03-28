@@ -38,7 +38,7 @@ private:
     void setHelpText(const QUrl &url);
 
     void push(const QUrl &url);
-    QUrl pop();
+    [[nodiscard]] QUrl pop();
 
     const QString m_text;
     QList<QUrl> m_list;

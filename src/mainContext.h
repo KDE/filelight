@@ -33,7 +33,7 @@ class MainContext : public QObject
 public:
     Q_PROPERTY(QUrl url READ url WRITE setUrl NOTIFY urlChanged)
     Q_SIGNAL void urlChanged();
-    QUrl url() const;
+    [[nodiscard]] QUrl url() const;
 
     Q_PROPERTY(QList<QObject *> historyActions MEMBER m_historyActions NOTIFY historyActionsChanged)
     Q_SIGNAL void historyActionsChanged();

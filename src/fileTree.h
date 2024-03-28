@@ -65,7 +65,7 @@ public:
         m_name = newName;
     }
     /** Decoded name. Use when you need a QString. */
-    QString decodedName() const
+    [[nodiscard]] QString decodedName() const
     {
         return QString::fromUtf8(m_name);
     }
@@ -73,9 +73,9 @@ public:
      * Human readable name (including native separators where applicable).
      * Only use for display.
      */
-    QString displayName() const;
+    [[nodiscard]] QString displayName() const;
 
-    FileSize size() const
+    [[nodiscard]] FileSize size() const
     {
         return m_size;
     }
@@ -90,7 +90,7 @@ public:
      * Only use for display.
      */
     QString displayPath(const std::shared_ptr<Folder> &root = {}) const;
-    QString humanReadableSize() const
+    [[nodiscard]] QString humanReadableSize() const
     {
         return KFormat().formatByteSize(m_size);
     }
@@ -127,11 +127,11 @@ public:
     Folder(Folder &&) = default;
     Folder &operator=(Folder &&) = default;
 
-    uint children() const
+    [[nodiscard]] uint children() const
     {
         return m_children;
     }
-    bool isFolder() const override
+    [[nodiscard]] bool isFolder() const override
     {
         return true;
     }

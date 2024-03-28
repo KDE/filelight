@@ -24,10 +24,15 @@ public:
 
     void setTree(const std::shared_ptr<Folder> &tree);
 
-    QUrl url() const;
+    [[nodiscard]] QUrl url() const;
 
 public:
-    enum class Role { HumanReadableSize = Qt::UserRole, IsFolder, URL, Segment };
+    enum class Role {
+        HumanReadableSize = Qt::UserRole,
+        IsFolder,
+        URL,
+        Segment,
+    };
     Q_ENUM(Role)
 
     using QAbstractListModel::QAbstractListModel;
