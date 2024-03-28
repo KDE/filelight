@@ -341,7 +341,7 @@ Kirigami.Page {
 
                     active: true
                     model: modelData
-                    onObjectAdded: shapeItem.children.push(object)
+                    onObjectAdded: (index, object) => shapeItem.children.push(object)
 
                     delegate: SegmentShape {
                         // Qt doc: Note: model, index, and modelData roles are not accessible if the delegate contains required properties, unless it has also required properties with matching names.
