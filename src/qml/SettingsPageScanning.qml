@@ -3,10 +3,10 @@
 
 pragma ComponentBehavior: Bound
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
-import QtQuick.Controls 2.15 as QQC2
-import org.kde.kirigami 2.19 as Kirigami
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as QQC2
+import org.kde.kirigami as Kirigami
 import org.kde.kirigami.delegates as KD
 
 import org.kde.filelight 1.0
