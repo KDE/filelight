@@ -198,6 +198,7 @@ Kirigami.Page {
                 delegate: KD.SubtitleDelegate {
                     width: listview.width
                     icon.name: ROLE_IsFolder ? "folder" : "file" // TODO mimetype?
+                    icon.width: Kirigami.Units.iconSizes.huge
                     text: model.display
                     subtitle: ROLE_HumanReadableSize
                     hoverEnabled: true
@@ -407,8 +408,9 @@ Kirigami.Page {
                 Kirigami.Theme.colorSet: Kirigami.Theme.View
                 color: Kirigami.Theme.textColor
                 horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
                 // The diagonal of the circle is the hypotenuse of the largest square
-                readonly property var dimension: (2  * centerShape.radius) / Math.sqrt(2)
+                readonly property real dimension: (2  * centerShape.radius) / Math.sqrt(2)
                 width: dimension
                 height: dimension
                 anchors.centerIn: parent
