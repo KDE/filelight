@@ -27,7 +27,6 @@
 
 #include "map.h"
 #include "radialMap.h" // defines
-#include "sincos.h"
 
 RadialMap::Map::Map()
     : m_visibleDepth(DEFAULT_RING_DEPTH)
