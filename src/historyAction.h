@@ -68,5 +68,7 @@ private Q_SLOTS:
     void pop();
 
 private:
-    HistoryAction *m_b, *m_f, *m_receiver;
+    HistoryAction *m_b = nullptr;
+    HistoryAction *m_f = nullptr;
+    HistoryAction *m_receiver = nullptr;
 };

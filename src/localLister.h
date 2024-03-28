@@ -34,7 +34,7 @@ private:
     QString m_path;
     QMutex m_treeMutex;
     QList<std::shared_ptr<Folder>> *m_trees;
-    ScanManager *m_parent;
+    ScanManager *m_parent = nullptr;
 
 private:
     void run() override;
