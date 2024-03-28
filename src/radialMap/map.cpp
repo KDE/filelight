@@ -40,9 +40,16 @@ RadialMap::Map::Map()
     // Initialize breadth
     resize(QRectF());
 
-    connect(qGuiApp, &QGuiApplication::paletteChanged, this, [this] {
+    qGuiApp->installEventFilter(this);
+}
+
+bool RadialMap::Map::eventFilter(QObject *obj, QEvent *event)
+{
+    Q_UNUSED(obj);
+    if (event->type() == QEvent::ApplicationPaletteChange) {
         colorise();
-    });
+    }
+    return false;
 }
 
 // Helps to represent a group of files like a single segment on the map

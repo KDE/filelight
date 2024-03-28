@@ -112,6 +112,9 @@ Q_SIGNALS:
     void rectChanged();
     void signatureChanged();
 
+protected:
+    bool eventFilter(QObject *obj, QEvent *event) override;
+
 private:
     Map();
     void colorise();
