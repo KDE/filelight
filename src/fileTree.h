@@ -39,7 +39,7 @@ public:
     File(File &&) = default;
     File &operator=(File &&) = default;
 
-    QString segment() const
+    [[nodiscard]] QString segment() const
     {
         return m_segment;
     }
@@ -89,14 +89,14 @@ public:
      * Human readable path for display (including native separators where applicable.
      * Only use for display.
      */
-    QString displayPath(const std::shared_ptr<Folder> &root = {}) const;
+    [[nodiscard]] QString displayPath(const std::shared_ptr<Folder> &root = {}) const;
     [[nodiscard]] QString humanReadableSize() const
     {
         return KFormat().formatByteSize(m_size);
     }
 
     /** Builds a complete QUrl by walking up to root. */
-    QUrl url(const std::shared_ptr<Folder> &root = {}) const;
+    [[nodiscard]] QUrl url(const std::shared_ptr<Folder> &root = {}) const;
 
 protected:
     File(const char *name, FileSize size, Folder *parent)

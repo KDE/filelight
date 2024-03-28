@@ -82,11 +82,11 @@ public:
     {
         return m_brush.name();
     }
-    bool isFake() const
+    [[nodiscard]] bool isFake() const
     {
         return m_fake;
     }
-    bool hasHiddenChildren() const
+    [[nodiscard]] bool hasHiddenChildren() const
     {
         return m_hasHiddenChildren;
     }
@@ -109,7 +109,7 @@ public:
         return ((a >= start()) && (a < end()));
     }
 
-    QString uuid() const
+    [[nodiscard]] QString uuid() const
     {
         return m_uuid;
     }

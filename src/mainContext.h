@@ -32,17 +32,17 @@ class MainContext : public QObject
     Q_OBJECT
 public:
     Q_PROPERTY(QUrl url READ url WRITE setUrl NOTIFY urlChanged)
-    Q_SIGNAL void urlChanged();
-    [[nodiscard]] QUrl url() const;
 
     Q_PROPERTY(QList<QObject *> historyActions MEMBER m_historyActions NOTIFY historyActionsChanged)
-    Q_SIGNAL void historyActionsChanged();
 
     explicit MainContext(QObject *parent = nullptr);
+    [[nodiscard]] QUrl url() const;
 
 Q_SIGNALS:
     void canceled(const QString &);
     void canvasIsDirty(Filelight::Dirty filth);
+    void urlChanged();
+    void historyActionsChanged();
 
 public Q_SLOTS:
     void scan(const QUrl &u);

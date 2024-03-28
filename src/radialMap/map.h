@@ -49,27 +49,27 @@ public:
     ~Map() override;
     Q_DISABLE_COPY_MOVE(Map)
 
-    bool isValid() const
+    [[nodiscard]] bool isValid() const
     {
         return !m_signature.isEmpty() && m_root;
     }
 
-    QString overallSize() const
+    [[nodiscard]] QString overallSize() const
     {
         return m_root ? m_root->humanReadableSize() : QString();
     }
 
-    uint numberOfChildren() const
+    [[nodiscard]] uint numberOfChildren() const
     {
         return m_root ? m_root->children() : 0;
     }
 
-    QUrl rootUrl() const;
+    [[nodiscard]] QUrl rootUrl() const;
 
     void make(const std::shared_ptr<Folder> &tree, bool = false);
     bool resize(const QRectF &);
 
-    bool isNull() const
+    [[nodiscard]] bool isNull() const
     {
         return (m_signature.isEmpty());
     }
