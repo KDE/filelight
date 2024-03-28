@@ -101,7 +101,7 @@ Kirigami.ApplicationWindow {
                 elide: Text.ElideLeft
             }
             QQC2.Label {
-                text: (RadialMap.numberOfChildren == 0) ?
+                text: (RadialMap.numberOfChildren === 0) ?
                         i18nc("@info:status", "No files.") :
                         i18ncp("@info:status", "1 file", "%1 files", RadialMap.numberOfChildren)
             }
