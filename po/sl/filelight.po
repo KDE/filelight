@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 01:37+0000\n"
+"POT-Creation-Date: 2024-03-29 00:39+0000\n"
 "PO-Revision-Date: 2024-03-17 16:36+0100\n"
 "Last-Translator: Jure Repinc <jlp@holodeck1.com>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -336,13 +336,13 @@ msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Pomanjšaj"
 
-#: src/qml/MapPage.qml:107 src/qml/MapPage.qml:229
+#: src/qml/MapPage.qml:107 src/qml/MapPage.qml:230
 #, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "Odpri"
 
-#: src/qml/MapPage.qml:115 src/qml/MapPage.qml:237
+#: src/qml/MapPage.qml:115 src/qml/MapPage.qml:238
 #, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
@@ -354,7 +354,7 @@ msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "Tu usredini mapo"
 
-#: src/qml/MapPage.qml:134 src/qml/MapPage.qml:245
+#: src/qml/MapPage.qml:134 src/qml/MapPage.qml:246
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
@@ -366,19 +366,19 @@ msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Znova preišči"
 
-#: src/qml/MapPage.qml:149 src/qml/MapPage.qml:252
+#: src/qml/MapPage.qml:149 src/qml/MapPage.qml:253
 #, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "Kopiraj na odložišče"
 
-#: src/qml/MapPage.qml:157 src/qml/MapPage.qml:260
+#: src/qml/MapPage.qml:157 src/qml/MapPage.qml:261
 #, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "Izbriši"
 
-#: src/qml/MapPage.qml:313
+#: src/qml/MapPage.qml:314
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -388,7 +388,7 @@ msgstr[1] "%1 Datoteka (%2 %)"
 msgstr[2] "%1 Datoteki (%2 %)"
 msgstr[3] "%1 Datoteke (%2 %)"
 
-#: src/qml/MapPage.qml:315
+#: src/qml/MapPage.qml:316
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -398,13 +398,13 @@ msgstr[1] "%1 datoteka"
 msgstr[2] "%1 datoteki"
 msgstr[3] "%1 datoteke"
 
-#: src/qml/MapPage.qml:319
+#: src/qml/MapPage.qml:320
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "Kliknite za premik v nadrejeno mapo"
 
-#: src/qml/MapPage.qml:522
+#: src/qml/MapPage.qml:524
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -414,7 +414,7 @@ msgstr[1] "%1 Datoteka, %2"
 msgstr[2] "%1 Datoteki, %2"
 msgstr[3] "%1 Datoteke, %2"
 
-#: src/qml/MapPage.qml:531
+#: src/qml/MapPage.qml:533
 #, kde-format
 msgid "No data available"
 msgstr "Podatkov ni na voljo"
@@ -509,7 +509,7 @@ msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
 msgstr "Izvzemi oddaljene datotečne sisteme"
 
-#: src/radialMap/map.cpp:56
+#: src/radialMap/map.cpp:62
 #, kde-format
 msgid ""
 "\n"

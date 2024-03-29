@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 01:37+0000\n"
+"POT-Creation-Date: 2024-03-29 00:39+0000\n"
 "PO-Revision-Date: 2017-09-28 18:00+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -349,7 +349,7 @@ msgctxt "@action"
 msgid "Zoom Out"
 msgstr ""
 
-#: src/qml/MapPage.qml:107 src/qml/MapPage.qml:229
+#: src/qml/MapPage.qml:107 src/qml/MapPage.qml:230
 #, fuzzy, kde-format
 #| msgctxt "Scan/open the path of the selected element"
 #| msgid "&Open"
@@ -357,7 +357,7 @@ msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "&Отвори"
 
-#: src/qml/MapPage.qml:115 src/qml/MapPage.qml:237
+#: src/qml/MapPage.qml:115 src/qml/MapPage.qml:238
 #, fuzzy, kde-format
 #| msgid "Open &Terminal Here"
 msgctxt "@action"
@@ -371,7 +371,7 @@ msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "&Центрирај мапу овде"
 
-#: src/qml/MapPage.qml:134 src/qml/MapPage.qml:245
+#: src/qml/MapPage.qml:134 src/qml/MapPage.qml:246
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
@@ -384,21 +384,21 @@ msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Скенирај поново"
 
-#: src/qml/MapPage.qml:149 src/qml/MapPage.qml:252
+#: src/qml/MapPage.qml:149 src/qml/MapPage.qml:253
 #, fuzzy, kde-format
 #| msgid "&Copy to clipboard"
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "&Копирај у клипборд"
 
-#: src/qml/MapPage.qml:157 src/qml/MapPage.qml:260
+#: src/qml/MapPage.qml:157 src/qml/MapPage.qml:261
 #, fuzzy, kde-format
 #| msgid "&Delete"
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "&Обриши"
 
-#: src/qml/MapPage.qml:313
+#: src/qml/MapPage.qml:314
 #, fuzzy, kde-format
 #| msgid "%1 File"
 #| msgid_plural "%1 Files"
@@ -410,7 +410,7 @@ msgstr[1] "%1 фајла"
 msgstr[2] "%1 фајлова"
 msgstr[3] "%1 фајл"
 
-#: src/qml/MapPage.qml:315
+#: src/qml/MapPage.qml:316
 #, fuzzy, kde-format
 #| msgid "%1 File"
 #| msgid_plural "%1 Files"
@@ -422,7 +422,7 @@ msgstr[1] "%1 фајла"
 msgstr[2] "%1 фајлова"
 msgstr[3] "%1 фајл"
 
-#: src/qml/MapPage.qml:319
+#: src/qml/MapPage.qml:320
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -433,7 +433,7 @@ msgstr ""
 "\n"
 "Кликните за одлазак на родитељску фасциклу"
 
-#: src/qml/MapPage.qml:522
+#: src/qml/MapPage.qml:524
 #, fuzzy, kde-format
 #| msgid "%1 File"
 #| msgid_plural "%1 Files"
@@ -445,7 +445,7 @@ msgstr[1] "%1 фајла"
 msgstr[2] "%1 фајлова"
 msgstr[3] "%1 фајл"
 
-#: src/qml/MapPage.qml:531
+#: src/qml/MapPage.qml:533
 #, kde-format
 msgid "No data available"
 msgstr ""
@@ -553,7 +553,7 @@ msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
 msgstr "Искључи удаљене &фајл системе"
 
-#: src/radialMap/map.cpp:56
+#: src/radialMap/map.cpp:62
 #, fuzzy, kde-format
 #| msgid "1 file, with an average size of %2"
 #| msgid_plural "%1 files, with an average size of %2"
