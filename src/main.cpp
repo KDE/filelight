@@ -72,6 +72,7 @@ int main(int argc, char *argv[])
                           "(C) 2017-2022 Harald Sitter"),
                      QString(),
                      QStringLiteral("https://apps.kde.org/filelight"));
+    about.addAuthor(i18n("Laurent Montel"), i18n("Maintainer"), QStringLiteral("montel@kde.org"));
     about.addAuthor(i18n("Martin Sandsmark"), i18n("Maintainer"), QStringLiteral("martin.sandsmark@kde.org"), QStringLiteral("https://iskrembilen.com/"));
     about.addAuthor(i18n("Harald Sitter"), i18n("QtQuick Port"), QStringLiteral("sitter@kde.org"));
     about.addAuthor(i18n("Max Howell"), i18n("Original author"), QStringLiteral("max.howell@methylblue.com"), QStringLiteral("https://www.methylblue.com/"));
