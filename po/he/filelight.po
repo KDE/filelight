@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-29 00:39+0000\n"
+"POT-Creation-Date: 2024-03-30 00:39+0000\n"
 "PO-Revision-Date: 2023-10-21 16:12+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -95,85 +95,90 @@ msgstr ""
 
 #: src/main.cpp:75
 #, kde-format
-msgid "Martin Sandsmark"
-msgstr "מרטין זנדסמרק"
+msgid "Laurent Montel"
+msgstr ""
 
-#: src/main.cpp:75
+#: src/main.cpp:75 src/main.cpp:76
 #, kde-format
 msgid "Maintainer"
 msgstr "מתחזק"
 
 #: src/main.cpp:76
 #, kde-format
+msgid "Martin Sandsmark"
+msgstr "מרטין זנדסמרק"
+
+#: src/main.cpp:77
+#, kde-format
 msgid "Harald Sitter"
 msgstr "הרלד סיטר"
 
-#: src/main.cpp:76
+#: src/main.cpp:77
 #, kde-format
 msgid "QtQuick Port"
 msgstr "הסבת QtQuick"
 
-#: src/main.cpp:77
+#: src/main.cpp:78
 #, kde-format
 msgid "Max Howell"
 msgstr "מקס האוול"
 
-#: src/main.cpp:77
+#: src/main.cpp:78
 #, kde-format
 msgid "Original author"
 msgstr "יוצר מקורי"
 
-#: src/main.cpp:78
+#: src/main.cpp:79
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr "לוקאס אפלהאנס"
 
-#: src/main.cpp:78
+#: src/main.cpp:79
 #, kde-format
 msgid "Help and support"
 msgstr "עזרה ותמיכה"
 
-#: src/main.cpp:79
+#: src/main.cpp:80
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr "סטיבן גרלך"
 
-#: src/main.cpp:79
+#: src/main.cpp:80
 #, kde-format
 msgid "Inspiration"
 msgstr "השראה"
 
-#: src/main.cpp:80
+#: src/main.cpp:81
 #, kde-format
 msgid "Mike Diehl"
 msgstr "מייק דיהל"
 
-#: src/main.cpp:80
+#: src/main.cpp:81
 #, kde-format
 msgid "Original documentation"
 msgstr "תיעוד מקורי"
 
-#: src/main.cpp:81
+#: src/main.cpp:82
 #, kde-format
 msgid "Sune Vuorela"
 msgstr "סון וורלה"
 
-#: src/main.cpp:81 src/main.cpp:82
+#: src/main.cpp:82 src/main.cpp:83
 #, kde-format
 msgid "Icon"
 msgstr "סמל"
 
-#: src/main.cpp:82
+#: src/main.cpp:83
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr "נונו פיניירו"
 
-#: src/main.cpp:89
+#: src/main.cpp:90
 #, kde-format
 msgid "Path or URL to scan"
 msgstr "נתיב או כתובת לסריקה"
 
-#: src/main.cpp:89
+#: src/main.cpp:90
 #, kde-format
 msgid "[url]"
 msgstr "[כתובת]"
@@ -414,13 +419,13 @@ msgstr[3] "%1 קבצים, %2"
 msgid "No data available"
 msgstr "אין נתונים זמינים"
 
-#: src/qml/OverviewPage.qml:15
+#: src/qml/OverviewPage.qml:14
 #, kde-format
 msgctxt "@title"
 msgid "Overview"
 msgstr "סקירה"
 
-#: src/qml/OverviewPage.qml:35
+#: src/qml/OverviewPage.qml:34
 #, kde-format
 msgctxt "@title"
 msgid "Welcome to Filelight"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-29 00:39+0000\n"
+"POT-Creation-Date: 2024-03-30 00:39+0000\n"
 "PO-Revision-Date: 2022-12-20 11:08-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -100,85 +100,90 @@ msgstr ""
 
 #: src/main.cpp:75
 #, kde-format
-msgid "Martin Sandsmark"
-msgstr "Martin Sandsmark"
+msgid "Laurent Montel"
+msgstr ""
 
-#: src/main.cpp:75
+#: src/main.cpp:75 src/main.cpp:76
 #, kde-format
 msgid "Maintainer"
 msgstr "Mantenedor"
 
 #: src/main.cpp:76
 #, kde-format
+msgid "Martin Sandsmark"
+msgstr "Martin Sandsmark"
+
+#: src/main.cpp:77
+#, kde-format
 msgid "Harald Sitter"
 msgstr "Harald Sitter"
 
-#: src/main.cpp:76
+#: src/main.cpp:77
 #, kde-format
 msgid "QtQuick Port"
 msgstr "Porte para QtQuick"
 
-#: src/main.cpp:77
+#: src/main.cpp:78
 #, kde-format
 msgid "Max Howell"
 msgstr "Max Howell"
 
-#: src/main.cpp:77
+#: src/main.cpp:78
 #, kde-format
 msgid "Original author"
 msgstr "Autor original"
 
-#: src/main.cpp:78
+#: src/main.cpp:79
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr "Lukas Appelhans"
 
-#: src/main.cpp:78
+#: src/main.cpp:79
 #, kde-format
 msgid "Help and support"
 msgstr "Ajuda e suporte"
 
-#: src/main.cpp:79
+#: src/main.cpp:80
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr "Steffen Gerlach"
 
-#: src/main.cpp:79
+#: src/main.cpp:80
 #, kde-format
 msgid "Inspiration"
 msgstr "Inspiração"
 
-#: src/main.cpp:80
+#: src/main.cpp:81
 #, kde-format
 msgid "Mike Diehl"
 msgstr "Mike Diehl"
 
-#: src/main.cpp:80
+#: src/main.cpp:81
 #, kde-format
 msgid "Original documentation"
 msgstr "Documentação original"
 
-#: src/main.cpp:81
+#: src/main.cpp:82
 #, kde-format
 msgid "Sune Vuorela"
 msgstr "Sune Vuorela"
 
-#: src/main.cpp:81 src/main.cpp:82
+#: src/main.cpp:82 src/main.cpp:83
 #, kde-format
 msgid "Icon"
 msgstr "Ícone"
 
-#: src/main.cpp:82
+#: src/main.cpp:83
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr "Nuno Pinheiro"
 
-#: src/main.cpp:89
+#: src/main.cpp:90
 #, kde-format
 msgid "Path or URL to scan"
 msgstr "Caminho ou URL a verificar"
 
-#: src/main.cpp:89
+#: src/main.cpp:90
 #, kde-format
 msgid "[url]"
 msgstr "[URL]"
@@ -411,13 +416,13 @@ msgstr[1] "%1 arquivos, %2"
 msgid "No data available"
 msgstr "Nenhum dado disponível"
 
-#: src/qml/OverviewPage.qml:15
+#: src/qml/OverviewPage.qml:14
 #, kde-format
 msgctxt "@title"
 msgid "Overview"
 msgstr "Visão geral"
 
-#: src/qml/OverviewPage.qml:35
+#: src/qml/OverviewPage.qml:34
 #, kde-format
 msgctxt "@title"
 msgid "Welcome to Filelight"

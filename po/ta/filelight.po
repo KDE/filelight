@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-29 00:39+0000\n"
+"POT-Creation-Date: 2024-03-30 00:39+0000\n"
 "PO-Revision-Date: 2023-05-21 15:56+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -96,85 +96,90 @@ msgstr ""
 
 #: src/main.cpp:75
 #, kde-format
-msgid "Martin Sandsmark"
-msgstr "மார்ட்டின் சான்டுஸ்மார்க்"
+msgid "Laurent Montel"
+msgstr ""
 
-#: src/main.cpp:75
+#: src/main.cpp:75 src/main.cpp:76
 #, kde-format
 msgid "Maintainer"
 msgstr "பராமரிப்பாளர்"
 
 #: src/main.cpp:76
 #, kde-format
+msgid "Martin Sandsmark"
+msgstr "மார்ட்டின் சான்டுஸ்மார்க்"
+
+#: src/main.cpp:77
+#, kde-format
 msgid "Harald Sitter"
 msgstr "ஹரால்டு சிட்டர்"
 
-#: src/main.cpp:76
+#: src/main.cpp:77
 #, kde-format
 msgid "QtQuick Port"
 msgstr ""
 
-#: src/main.cpp:77
+#: src/main.cpp:78
 #, kde-format
 msgid "Max Howell"
 msgstr "மாக்சு ஹொவல்"
 
-#: src/main.cpp:77
+#: src/main.cpp:78
 #, kde-format
 msgid "Original author"
 msgstr "முதிலில் இயற்றியவர்"
 
-#: src/main.cpp:78
+#: src/main.cpp:79
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr ""
 
-#: src/main.cpp:78
+#: src/main.cpp:79
 #, kde-format
 msgid "Help and support"
 msgstr "உதவியும் ஆதரவம்"
 
-#: src/main.cpp:79
+#: src/main.cpp:80
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr ""
 
-#: src/main.cpp:79
+#: src/main.cpp:80
 #, kde-format
 msgid "Inspiration"
 msgstr "ஊக்கமளித்தது"
 
-#: src/main.cpp:80
+#: src/main.cpp:81
 #, kde-format
 msgid "Mike Diehl"
 msgstr ""
 
-#: src/main.cpp:80
+#: src/main.cpp:81
 #, kde-format
 msgid "Original documentation"
 msgstr "முதல் கையேடு"
 
-#: src/main.cpp:81
+#: src/main.cpp:82
 #, kde-format
 msgid "Sune Vuorela"
 msgstr ""
 
-#: src/main.cpp:81 src/main.cpp:82
+#: src/main.cpp:82 src/main.cpp:83
 #, kde-format
 msgid "Icon"
 msgstr "சின்னம்"
 
-#: src/main.cpp:82
+#: src/main.cpp:83
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr ""
 
-#: src/main.cpp:89
+#: src/main.cpp:90
 #, kde-format
 msgid "Path or URL to scan"
 msgstr "ஆராய வேண்டிய பாதை அல்லது முகவரி"
 
-#: src/main.cpp:89
+#: src/main.cpp:90
 #, kde-format
 msgid "[url]"
 msgstr "[url]"
@@ -407,13 +412,13 @@ msgstr[1] "%1 கோப்புகள், %2"
 msgid "No data available"
 msgstr "விவரங்கள் கிடைக்கவில்லை"
 
-#: src/qml/OverviewPage.qml:15
+#: src/qml/OverviewPage.qml:14
 #, kde-format
 msgctxt "@title"
 msgid "Overview"
 msgstr "மேலோட்டம்"
 
-#: src/qml/OverviewPage.qml:35
+#: src/qml/OverviewPage.qml:34
 #, kde-format
 msgctxt "@title"
 msgid "Welcome to Filelight"

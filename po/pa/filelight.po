@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-29 00:39+0000\n"
+"POT-Creation-Date: 2024-03-30 00:39+0000\n"
 "PO-Revision-Date: 2024-01-04 08:44-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -96,85 +96,90 @@ msgstr ""
 
 #: src/main.cpp:75
 #, kde-format
-msgid "Martin Sandsmark"
-msgstr "ਮਾਰਟੀਨ ਸੈਂਡਸਮਾਰਕ"
+msgid "Laurent Montel"
+msgstr ""
 
-#: src/main.cpp:75
+#: src/main.cpp:75 src/main.cpp:76
 #, kde-format
 msgid "Maintainer"
 msgstr "ਪਰਬੰਧਕ"
 
 #: src/main.cpp:76
 #, kde-format
+msgid "Martin Sandsmark"
+msgstr "ਮਾਰਟੀਨ ਸੈਂਡਸਮਾਰਕ"
+
+#: src/main.cpp:77
+#, kde-format
 msgid "Harald Sitter"
 msgstr "ਹਾਰਲਡ ਸਿਟਰ"
 
-#: src/main.cpp:76
+#: src/main.cpp:77
 #, kde-format
 msgid "QtQuick Port"
 msgstr "QtQuick ਪੋਰਟ"
 
-#: src/main.cpp:77
+#: src/main.cpp:78
 #, kde-format
 msgid "Max Howell"
 msgstr "ਮੈਕਸ ਹੋਵਿਲ"
 
-#: src/main.cpp:77
+#: src/main.cpp:78
 #, kde-format
 msgid "Original author"
 msgstr "ਮੁਢਲਾ ਲੇਖਕ"
 
-#: src/main.cpp:78
+#: src/main.cpp:79
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr ""
 
-#: src/main.cpp:78
+#: src/main.cpp:79
 #, kde-format
 msgid "Help and support"
 msgstr "ਮਦਦ ਅਤੇ ਸਹਿਯੋਗ"
 
-#: src/main.cpp:79
+#: src/main.cpp:80
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr ""
 
-#: src/main.cpp:79
+#: src/main.cpp:80
 #, kde-format
 msgid "Inspiration"
 msgstr ""
 
-#: src/main.cpp:80
+#: src/main.cpp:81
 #, kde-format
 msgid "Mike Diehl"
 msgstr "ਮਾਈਕ ਡਿਈਹਲ"
 
-#: src/main.cpp:80
+#: src/main.cpp:81
 #, kde-format
 msgid "Original documentation"
 msgstr "ਮੁੱਢਲੇ ਦਸਤਾਵੇਜ਼"
 
-#: src/main.cpp:81
+#: src/main.cpp:82
 #, kde-format
 msgid "Sune Vuorela"
 msgstr "ਸੁਨੇ ਵੂਓਰੇਲਾ"
 
-#: src/main.cpp:81 src/main.cpp:82
+#: src/main.cpp:82 src/main.cpp:83
 #, kde-format
 msgid "Icon"
 msgstr "ਆਈਕਾਨ"
 
-#: src/main.cpp:82
+#: src/main.cpp:83
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr "ਨੂਨੋ ਪਿਨਹੇਇਰੋ"
 
-#: src/main.cpp:89
+#: src/main.cpp:90
 #, kde-format
 msgid "Path or URL to scan"
 msgstr "ਸਕੈਨ ਕਰਨ ਲਈ ਪਾਥ ਜਾਂ URL"
 
-#: src/main.cpp:89
+#: src/main.cpp:90
 #, kde-format
 msgid "[url]"
 msgstr "[url]"
@@ -407,13 +412,13 @@ msgstr[1] "%1 ਫਾਇਲਾਂ, %2"
 msgid "No data available"
 msgstr "ਕੋਈ ਡਾਟਾ ਉਪਲੱਬਧ ਨਹੀਂ"
 
-#: src/qml/OverviewPage.qml:15
+#: src/qml/OverviewPage.qml:14
 #, kde-format
 msgctxt "@title"
 msgid "Overview"
 msgstr "ਸਾਰ"
 
-#: src/qml/OverviewPage.qml:35
+#: src/qml/OverviewPage.qml:34
 #, kde-format
 msgctxt "@title"
 msgid "Welcome to Filelight"
