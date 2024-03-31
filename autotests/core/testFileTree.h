@@ -5,8 +5,7 @@
  * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
  ***********************************************************************/
 
-#ifndef TESTFILETREE_H
-#define TESTFILETREE_H
+#pragma once
 
 #include <memory>
 
@@ -30,5 +29,3 @@ private Q_SLOTS:
 private:
     const std::unique_ptr<const File> m_file;
 };
-
-#endif
