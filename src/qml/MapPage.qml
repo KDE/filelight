@@ -482,7 +482,7 @@ Kirigami.Page {
                 MainContext.updateURL(child.url)
                 MainContext.openUrl(child.url)
             } else if (mouse.button === Qt.RightButton) {
-                console.log("click %1".arg(child))
+                // console.log("click %1".arg(child))
                 contextMenuComponent.createObject(child, {segment: child.segment}).popup()
             }
         }
