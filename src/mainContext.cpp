@@ -12,7 +12,6 @@
 #include <KActionCollection>
 #include <KIO/Global> // upUrl
 #include <KLocalizedString>
-#include <KMessageBox> //::start()
 
 #include <QDir>
 #include <QFileDialog>
@@ -206,11 +205,8 @@ bool MainContext::slotScanUrl(const QUrl &url)
 
 bool MainContext::openUrl(const QUrl &u)
 {
-    // TODO everyone hates dialogs, instead render the text in big fonts on the Map
     // TODO should have an empty QUrl until scan is confirmed successful
     // TODO probably should set caption to QString::null while map is unusable
-
-#define KMSG(s) KMessageBox::information(nullptr, s)
 
     QUrl uri = u.adjusted(QUrl::NormalizePathSegments);
     const QString localPath = uri.toLocalFile();
@@ -219,13 +215,13 @@ bool MainContext::openUrl(const QUrl &u)
     if (uri.isEmpty()) {
         // do nothing, chances are the user accidentally pressed ENTER
     } else if (!uri.isValid()) {
-        KMSG(i18n("The entered URL cannot be parsed; it is invalid."));
+        Q_EMIT openUrlFailed(i18n("The entered URL cannot be parsed"), i18n("it is invalid."));
     } else if (isLocal && !QDir::isAbsolutePath(localPath)) {
-        KMSG(i18n("Filelight only accepts absolute paths, eg. /%1", localPath));
+        Q_EMIT openUrlFailed(i18n("Filelight only accepts absolute paths"), i18n("eg. /%1", localPath));
     } else if (isLocal && !QDir(localPath).exists()) {
-        KMSG(i18n("Folder not found: %1", localPath));
+        Q_EMIT openUrlFailed(i18n("Folder not found: %1", localPath), QString());
     } else if (isLocal && !QDir(localPath).isReadable()) {
-        KMSG(i18n("Unable to enter: %1\nYou do not have access rights to this location.", localPath));
+        Q_EMIT openUrlFailed(i18n("Unable to enter: %1", localPath), i18n("You do not have access rights to this location."));
     } else {
         const bool success = start(uri);
         if (success) {

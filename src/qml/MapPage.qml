@@ -421,6 +421,20 @@ Kirigami.Page {
                 minimumPixelSize: 2
                 Component.onCompleted: font.pixelSize = font.pixelSize
             }
+
+            Kirigami.PlaceholderMessage {
+                id: openUrlWarning
+                visible: !centerShape.visible
+                anchors.centerIn: parent
+                width: parent.width - (Kirigami.Units.largeSpacing * 4)
+                Connections {
+                    target: MainContext
+                    function onOpenUrlFailed(text, explanation) { 
+                        openUrlWarning.text = text;
+                        openUrlWarning.explanation = explanation;
+                    }
+                }
+            }
         }
     }
 

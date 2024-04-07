@@ -43,6 +43,7 @@ Q_SIGNALS:
     void canvasIsDirty(Filelight::Dirty filth);
     void urlChanged();
     void historyActionsChanged();
+    void openUrlFailed(const QString &text, const QString &explanation);
 
 public Q_SLOTS:
     void scan(const QUrl &u);
