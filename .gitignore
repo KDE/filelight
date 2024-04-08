@@ -30,3 +30,4 @@ CMakeLists.txt.user*
 /cmake-build*
 /.flatpak*
 src/qml/qml.generated.qrc
+/.vscode/
