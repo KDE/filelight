@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-30 00:39+0000\n"
+"POT-Creation-Date: 2024-04-10 00:40+0000\n"
 "PO-Revision-Date: 2013-01-19 20:23+0100\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -183,31 +183,49 @@ msgstr ""
 msgid "[url]"
 msgstr ""
 
-#: src/mainContext.cpp:166
+#: src/mainContext.cpp:165
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Velg mappe som skal skannes"
 
-#: src/mainContext.cpp:222
-#, kde-format
-msgid "The entered URL cannot be parsed; it is invalid."
+#: src/mainContext.cpp:218
+#, fuzzy, kde-format
+#| msgid "The entered URL cannot be parsed; it is invalid."
+msgid "The entered URL cannot be parsed"
 msgstr "Den URL-en som er oppgitt kan ikke tolkes. Den er ugyldig."
 
-#: src/mainContext.cpp:224
+#: src/mainContext.cpp:218
 #, kde-format
-msgid "Filelight only accepts absolute paths, eg. /%1"
+msgid "it is invalid."
+msgstr ""
+
+#: src/mainContext.cpp:220
+#, fuzzy, kde-format
+#| msgid "Filelight only accepts absolute paths, eg. /%1"
+msgid "Filelight only accepts absolute paths"
 msgstr "Filelight aksepterer bare absolutte stier, f.eks. /%1"
 
-#: src/mainContext.cpp:226
+#: src/mainContext.cpp:220
+#, kde-format
+msgid "eg. /%1"
+msgstr ""
+
+#: src/mainContext.cpp:222
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Mappe finnes ikke: %1"
 
-#: src/mainContext.cpp:228
+#: src/mainContext.cpp:224
 #, kde-format
-msgid ""
-"Unable to enter: %1\n"
-"You do not have access rights to this location."
+msgid "Unable to enter: %1"
+msgstr ""
+
+#: src/mainContext.cpp:224
+#, fuzzy, kde-format
+#| msgid ""
+#| "Unable to enter: %1\n"
+#| "You do not have access rights to this location."
+msgid "You do not have access rights to this location."
 msgstr ""
 "Kan ikke gå inn i: %1\n"
 "Du har ikke adgangstillatelse."
@@ -398,7 +416,7 @@ msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr ""
 
-#: src/qml/MapPage.qml:524
+#: src/qml/MapPage.qml:538
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -406,7 +424,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/qml/MapPage.qml:533
+#: src/qml/MapPage.qml:547
 #, kde-format
 msgid "No data available"
 msgstr ""

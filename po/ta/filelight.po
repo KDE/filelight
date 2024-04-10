@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-30 00:39+0000\n"
+"POT-Creation-Date: 2024-04-10 00:40+0000\n"
 "PO-Revision-Date: 2024-03-30 21:56+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -184,31 +184,49 @@ msgstr "ஆராய வேண்டிய பாதை அல்லது ம�
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:166
+#: src/mainContext.cpp:165
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "ஆராய வேண்டிய அடைவைத் தேர்ந்தெடுத்தல்"
 
-#: src/mainContext.cpp:222
-#, kde-format
-msgid "The entered URL cannot be parsed; it is invalid."
+#: src/mainContext.cpp:218
+#, fuzzy, kde-format
+#| msgid "The entered URL cannot be parsed; it is invalid."
+msgid "The entered URL cannot be parsed"
 msgstr "உள்ளிடப்பட்ட முகவரியை கையாள முடியவில்லை; அது முறையற்றதாகும்."
 
-#: src/mainContext.cpp:224
+#: src/mainContext.cpp:218
 #, kde-format
-msgid "Filelight only accepts absolute paths, eg. /%1"
+msgid "it is invalid."
+msgstr ""
+
+#: src/mainContext.cpp:220
+#, fuzzy, kde-format
+#| msgid "Filelight only accepts absolute paths, eg. /%1"
+msgid "Filelight only accepts absolute paths"
 msgstr "முழுமையான பாதைகளை மட்டுமே ஃபைல்-லைட் ஏற்கும், எ.கா. /%1"
 
-#: src/mainContext.cpp:226
+#: src/mainContext.cpp:220
+#, kde-format
+msgid "eg. /%1"
+msgstr ""
+
+#: src/mainContext.cpp:222
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "அடைவை கண்டுபிடிக்க முடியவில்லை: %1"
 
-#: src/mainContext.cpp:228
+#: src/mainContext.cpp:224
 #, kde-format
-msgid ""
-"Unable to enter: %1\n"
-"You do not have access rights to this location."
+msgid "Unable to enter: %1"
+msgstr ""
+
+#: src/mainContext.cpp:224
+#, fuzzy, kde-format
+#| msgid ""
+#| "Unable to enter: %1\n"
+#| "You do not have access rights to this location."
+msgid "You do not have access rights to this location."
 msgstr ""
 "நுழைய முடியவில்லை: %1\n"
 "இவ்விடத்தில் நுழைவதற்கான அனுமதி உங்களுக்கு இல்லை."
@@ -399,7 +417,7 @@ msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "தாய் அடைவுக்குச் செல்ல கிளிக் செய்யவும்"
 
-#: src/qml/MapPage.qml:524
+#: src/qml/MapPage.qml:538
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -407,7 +425,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 கோப்பு, %2"
 msgstr[1] "%1 கோப்புகள், %2"
 
-#: src/qml/MapPage.qml:533
+#: src/qml/MapPage.qml:547
 #, kde-format
 msgid "No data available"
 msgstr "விவரங்கள் கிடைக்கவில்லை"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-30 00:39+0000\n"
+"POT-Creation-Date: 2024-04-10 00:40+0000\n"
 "PO-Revision-Date: 2022-10-27 03:55+0700\n"
 "Last-Translator: OIS <mistresssilvara@hotmail.com>\n"
 "Language-Team: kde-i18n-doc@kde.org\n"
@@ -185,31 +185,44 @@ msgstr "Rute o URL a examinar"
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:166
+#: src/mainContext.cpp:165
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Selecter un fólder a analisar"
 
+#: src/mainContext.cpp:218
+#, kde-format
+msgid "The entered URL cannot be parsed"
+msgstr ""
+
+#: src/mainContext.cpp:218
+#, kde-format
+msgid "it is invalid."
+msgstr ""
+
+#: src/mainContext.cpp:220
+#, kde-format
+msgid "Filelight only accepts absolute paths"
+msgstr ""
+
+#: src/mainContext.cpp:220
+#, kde-format
+msgid "eg. /%1"
+msgstr ""
+
 #: src/mainContext.cpp:222
-#, kde-format
-msgid "The entered URL cannot be parsed; it is invalid."
-msgstr ""
-
-#: src/mainContext.cpp:224
-#, kde-format
-msgid "Filelight only accepts absolute paths, eg. /%1"
-msgstr ""
-
-#: src/mainContext.cpp:226
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Fólder ne es trovat: %1"
 
-#: src/mainContext.cpp:228
+#: src/mainContext.cpp:224
 #, kde-format
-msgid ""
-"Unable to enter: %1\n"
-"You do not have access rights to this location."
+msgid "Unable to enter: %1"
+msgstr ""
+
+#: src/mainContext.cpp:224
+#, kde-format
+msgid "You do not have access rights to this location."
 msgstr ""
 
 #: src/qml/GlobalMenu.qml:10
@@ -416,7 +429,7 @@ msgstr ""
 "\n"
 "Ear al superiori fólder"
 
-#: src/qml/MapPage.qml:524
+#: src/qml/MapPage.qml:538
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -424,7 +437,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 file, %2"
 msgstr[1] "%1 files, %2"
 
-#: src/qml/MapPage.qml:533
+#: src/qml/MapPage.qml:547
 #, kde-format
 msgid "No data available"
 msgstr "Null data disponibil"

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-30 00:39+0000\n"
+"POT-Creation-Date: 2024-04-10 00:40+0000\n"
 "PO-Revision-Date: 2024-03-30 14:22+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -191,31 +191,50 @@ msgstr "Pad naar te scannen URL"
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:166
+#: src/mainContext.cpp:165
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Te scannen map selecteren..."
 
-#: src/mainContext.cpp:222
-#, kde-format
-msgid "The entered URL cannot be parsed; it is invalid."
+#: src/mainContext.cpp:218
+#, fuzzy, kde-format
+#| msgid "The entered URL cannot be parsed; it is invalid."
+msgid "The entered URL cannot be parsed"
 msgstr "Het opgegeven URL-adres kon niet worden ontleedt. Het is ongeldig."
 
-#: src/mainContext.cpp:224
+#: src/mainContext.cpp:218
 #, kde-format
-msgid "Filelight only accepts absolute paths, eg. /%1"
+msgid "it is invalid."
+msgstr ""
+
+#: src/mainContext.cpp:220
+#, fuzzy, kde-format
+#| msgid "Filelight only accepts absolute paths, eg. /%1"
+msgid "Filelight only accepts absolute paths"
 msgstr "Filelight accepteert alleen absolute paden, zoals /%1"
 
-#: src/mainContext.cpp:226
+#: src/mainContext.cpp:220
+#, kde-format
+msgid "eg. /%1"
+msgstr ""
+
+#: src/mainContext.cpp:222
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Map niet gevonden: %1"
 
-#: src/mainContext.cpp:228
-#, kde-format
-msgid ""
-"Unable to enter: %1\n"
-"You do not have access rights to this location."
+#: src/mainContext.cpp:224
+#, fuzzy, kde-format
+#| msgid "Unable to create part widget."
+msgid "Unable to enter: %1"
+msgstr "Niet in staat deel-widget aan te maken."
+
+#: src/mainContext.cpp:224
+#, fuzzy, kde-format
+#| msgid ""
+#| "Unable to enter: %1\n"
+#| "You do not have access rights to this location."
+msgid "You do not have access rights to this location."
 msgstr ""
 "Kon de map %1 niet openen\n"
 "U hebt niet de benodigde toegangsrechten voor deze locatie."
@@ -406,7 +425,7 @@ msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "Klik om naar de hogere map te gaan"
 
-#: src/qml/MapPage.qml:524
+#: src/qml/MapPage.qml:538
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -414,7 +433,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 bestand, %2"
 msgstr[1] "%1 bestanden, %2"
 
-#: src/qml/MapPage.qml:533
+#: src/qml/MapPage.qml:547
 #, kde-format
 msgid "No data available"
 msgstr "Geen gegevens beschikbaar"
@@ -760,9 +779,6 @@ msgstr[1] ""
 
 #~ msgid "Scan 'path'"
 #~ msgstr "Pad scannen"
-
-#~ msgid "Unable to create part widget."
-#~ msgstr "Niet in staat deel-widget aan te maken."
 
 #~ msgid "Reset any changes you have made since you opened this dialog."
 #~ msgstr ""

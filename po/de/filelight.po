@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-30 00:39+0000\n"
+"POT-Creation-Date: 2024-04-10 00:40+0000\n"
 "PO-Revision-Date: 2022-12-19 10:14+0100\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -186,32 +186,51 @@ msgstr "Pfad oder Adresse zum Einlesen"
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:166
+#: src/mainContext.cpp:165
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Bitte wählen Sie den einzulesenden Ordner aus"
 
-#: src/mainContext.cpp:222
-#, kde-format
-msgid "The entered URL cannot be parsed; it is invalid."
+#: src/mainContext.cpp:218
+#, fuzzy, kde-format
+#| msgid "The entered URL cannot be parsed; it is invalid."
+msgid "The entered URL cannot be parsed"
 msgstr ""
 "Die eingegebene Adresse kann nicht eingelesen werden, da sie ungültig ist."
 
-#: src/mainContext.cpp:224
+#: src/mainContext.cpp:218
 #, kde-format
-msgid "Filelight only accepts absolute paths, eg. /%1"
+msgid "it is invalid."
+msgstr ""
+
+#: src/mainContext.cpp:220
+#, fuzzy, kde-format
+#| msgid "Filelight only accepts absolute paths, eg. /%1"
+msgid "Filelight only accepts absolute paths"
 msgstr "Filelight benötigt absolute Pfade (z. B. /%1)"
 
-#: src/mainContext.cpp:226
+#: src/mainContext.cpp:220
+#, kde-format
+msgid "eg. /%1"
+msgstr ""
+
+#: src/mainContext.cpp:222
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Ordner nicht gefunden: %1"
 
-#: src/mainContext.cpp:228
-#, kde-format
-msgid ""
-"Unable to enter: %1\n"
-"You do not have access rights to this location."
+#: src/mainContext.cpp:224
+#, fuzzy, kde-format
+#| msgid "Unable to create part widget."
+msgid "Unable to enter: %1"
+msgstr "Das Teilmodul kann nicht erstellt werden."
+
+#: src/mainContext.cpp:224
+#, fuzzy, kde-format
+#| msgid ""
+#| "Unable to enter: %1\n"
+#| "You do not have access rights to this location."
+msgid "You do not have access rights to this location."
 msgstr ""
 "Auf %1 kann nicht zugegriffen werden.\n"
 "Ihre Zugriffsrechte reichen nicht aus."
@@ -402,7 +421,7 @@ msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "Klicken Sie, um zum übergeordneten Ordner zu gehen"
 
-#: src/qml/MapPage.qml:524
+#: src/qml/MapPage.qml:538
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -410,7 +429,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 Datei, %2"
 msgstr[1] "%1 Dateien, %2"
 
-#: src/qml/MapPage.qml:533
+#: src/qml/MapPage.qml:547
 #, kde-format
 msgid "No data available"
 msgstr "Keine Daten verfügbar"
@@ -759,9 +778,6 @@ msgstr[1] ""
 
 #~ msgid "Scan 'path'"
 #~ msgstr "„Pfad“ einlesen"
-
-#~ msgid "Unable to create part widget."
-#~ msgstr "Das Teilmodul kann nicht erstellt werden."
 
 #~ msgid "Reset any changes you have made since you opened this dialog."
 #~ msgstr "Setzt alle von Ihnen gemachten Einstellung in diesem Dialog zurück."

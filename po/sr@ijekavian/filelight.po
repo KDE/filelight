@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-30 00:39+0000\n"
+"POT-Creation-Date: 2024-04-10 00:40+0000\n"
 "PO-Revision-Date: 2017-09-28 18:00+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -191,31 +191,49 @@ msgid "[url]"
 msgstr "[УРЛ]"
 
 # >> @title:window
-#: src/mainContext.cpp:166
+#: src/mainContext.cpp:165
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Избор фасцикле за скенирање"
 
-#: src/mainContext.cpp:222
-#, kde-format
-msgid "The entered URL cannot be parsed; it is invalid."
+#: src/mainContext.cpp:218
+#, fuzzy, kde-format
+#| msgid "The entered URL cannot be parsed; it is invalid."
+msgid "The entered URL cannot be parsed"
 msgstr "Унесени УРЛ не може да се рашчлани (лош је)."
 
-#: src/mainContext.cpp:224
+#: src/mainContext.cpp:218
 #, kde-format
-msgid "Filelight only accepts absolute paths, eg. /%1"
+msgid "it is invalid."
+msgstr ""
+
+#: src/mainContext.cpp:220
+#, fuzzy, kde-format
+#| msgid "Filelight only accepts absolute paths, eg. /%1"
+msgid "Filelight only accepts absolute paths"
 msgstr "Фајлајт прихвата само апсолутне путање, нпр. /%1"
 
-#: src/mainContext.cpp:226
+#: src/mainContext.cpp:220
+#, kde-format
+msgid "eg. /%1"
+msgstr ""
+
+#: src/mainContext.cpp:222
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Фасцикла није нађена: %1"
 
-#: src/mainContext.cpp:228
+#: src/mainContext.cpp:224
 #, kde-format
-msgid ""
-"Unable to enter: %1\n"
-"You do not have access rights to this location."
+msgid "Unable to enter: %1"
+msgstr ""
+
+#: src/mainContext.cpp:224
+#, fuzzy, kde-format
+#| msgid ""
+#| "Unable to enter: %1\n"
+#| "You do not have access rights to this location."
+msgid "You do not have access rights to this location."
 msgstr ""
 "Не могу да уђем у ‘%1’.\n"
 "Немате права приступа за ову локацију."
@@ -438,7 +456,7 @@ msgstr ""
 "\n"
 "Кликните за одлазак на родитељску фасциклу"
 
-#: src/qml/MapPage.qml:524
+#: src/qml/MapPage.qml:538
 #, fuzzy, kde-format
 #| msgid "%1 File"
 #| msgid_plural "%1 Files"
@@ -450,7 +468,7 @@ msgstr[1] "%1 фајла"
 msgstr[2] "%1 фајлова"
 msgstr[3] "%1 фајл"
 
-#: src/qml/MapPage.qml:533
+#: src/qml/MapPage.qml:547
 #, kde-format
 msgid "No data available"
 msgstr ""

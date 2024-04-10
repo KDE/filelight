@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-30 00:39+0000\n"
+"POT-Creation-Date: 2024-04-10 00:40+0000\n"
 "PO-Revision-Date: 2024-03-30 03:22+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -188,31 +188,50 @@ msgstr "Ruta o URL a explorar"
 msgid "[url]"
 msgstr "[URL]"
 
-#: src/mainContext.cpp:166
+#: src/mainContext.cpp:165
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Seleccione la carpeta a explorar"
 
-#: src/mainContext.cpp:222
-#, kde-format
-msgid "The entered URL cannot be parsed; it is invalid."
+#: src/mainContext.cpp:218
+#, fuzzy, kde-format
+#| msgid "The entered URL cannot be parsed; it is invalid."
+msgid "The entered URL cannot be parsed"
 msgstr "La URL introducida no se puede analizar; no es válida."
 
-#: src/mainContext.cpp:224
+#: src/mainContext.cpp:218
 #, kde-format
-msgid "Filelight only accepts absolute paths, eg. /%1"
+msgid "it is invalid."
+msgstr ""
+
+#: src/mainContext.cpp:220
+#, fuzzy, kde-format
+#| msgid "Filelight only accepts absolute paths, eg. /%1"
+msgid "Filelight only accepts absolute paths"
 msgstr "Filelight solo puede aceptar rutas absolutas (por ejemplo, /%1)"
 
-#: src/mainContext.cpp:226
+#: src/mainContext.cpp:220
+#, kde-format
+msgid "eg. /%1"
+msgstr ""
+
+#: src/mainContext.cpp:222
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Carpeta no encontrada: %1"
 
-#: src/mainContext.cpp:228
-#, kde-format
-msgid ""
-"Unable to enter: %1\n"
-"You do not have access rights to this location."
+#: src/mainContext.cpp:224
+#, fuzzy, kde-format
+#| msgid "Unable to create part widget."
+msgid "Unable to enter: %1"
+msgstr "No ha sido posible crear el elemento gráfico de la parte."
+
+#: src/mainContext.cpp:224
+#, fuzzy, kde-format
+#| msgid ""
+#| "Unable to enter: %1\n"
+#| "You do not have access rights to this location."
+msgid "You do not have access rights to this location."
 msgstr ""
 "No ha sido posible acceder a: %1\n"
 "No tiene acceso a esta ubicación."
@@ -403,7 +422,7 @@ msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "Pulse para ir al directorio superior"
 
-#: src/qml/MapPage.qml:524
+#: src/qml/MapPage.qml:538
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -411,7 +430,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 archivo, %2%"
 msgstr[1] "%1 archivos, %2%"
 
-#: src/qml/MapPage.qml:533
+#: src/qml/MapPage.qml:547
 #, kde-format
 msgid "No data available"
 msgstr "No hay datos disponibles"
@@ -758,6 +777,3 @@ msgstr[1] ""
 
 #~ msgid "Scan 'path'"
 #~ msgstr "Explorar «ruta»"
-
-#~ msgid "Unable to create part widget."
-#~ msgstr "No ha sido posible crear el elemento gráfico de la parte."

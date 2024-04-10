@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-30 00:39+0000\n"
+"POT-Creation-Date: 2024-04-10 00:40+0000\n"
 "PO-Revision-Date: 2023-03-01 01:19+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -185,31 +185,50 @@ msgstr "검색할 경로나 URL"
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:166
+#: src/mainContext.cpp:165
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "검사할 폴더 선택"
 
-#: src/mainContext.cpp:222
-#, kde-format
-msgid "The entered URL cannot be parsed; it is invalid."
+#: src/mainContext.cpp:218
+#, fuzzy, kde-format
+#| msgid "The entered URL cannot be parsed; it is invalid."
+msgid "The entered URL cannot be parsed"
 msgstr "입력한 URL을 해석할 수 없습니다. 잘못된 URL입니다."
 
-#: src/mainContext.cpp:224
+#: src/mainContext.cpp:218
 #, kde-format
-msgid "Filelight only accepts absolute paths, eg. /%1"
+msgid "it is invalid."
+msgstr ""
+
+#: src/mainContext.cpp:220
+#, fuzzy, kde-format
+#| msgid "Filelight only accepts absolute paths, eg. /%1"
+msgid "Filelight only accepts absolute paths"
 msgstr "Filelight는 절대 경로만 받아들입니다. 예: /%1"
 
-#: src/mainContext.cpp:226
+#: src/mainContext.cpp:220
+#, kde-format
+msgid "eg. /%1"
+msgstr ""
+
+#: src/mainContext.cpp:222
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "폴더를 찾을 수 없음: %1"
 
-#: src/mainContext.cpp:228
-#, kde-format
-msgid ""
-"Unable to enter: %1\n"
-"You do not have access rights to this location."
+#: src/mainContext.cpp:224
+#, fuzzy, kde-format
+#| msgid "Unable to create part widget."
+msgid "Unable to enter: %1"
+msgstr "기능 위젯을 생성할 수 없습니다."
+
+#: src/mainContext.cpp:224
+#, fuzzy, kde-format
+#| msgid ""
+#| "Unable to enter: %1\n"
+#| "You do not have access rights to this location."
+msgid "You do not have access rights to this location."
 msgstr ""
 "다음에 들어갈 수 없음: %1.\n"
 "이 위치에 접근할 수 있는 권한이 없습니다."
@@ -397,14 +416,14 @@ msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "부모 디렉터리로 가려면 클릭하십시오"
 
-#: src/qml/MapPage.qml:524
+#: src/qml/MapPage.qml:538
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
 msgid_plural "%1 Files, %2"
 msgstr[0] "파일 %1개, %2"
 
-#: src/qml/MapPage.qml:533
+#: src/qml/MapPage.qml:547
 #, kde-format
 msgid "No data available"
 msgstr "데이터 없음"
@@ -740,6 +759,3 @@ msgstr[0] ""
 
 #~ msgid "Scan 'path'"
 #~ msgstr "'path' 검색"
-
-#~ msgid "Unable to create part widget."
-#~ msgstr "기능 위젯을 생성할 수 없습니다."

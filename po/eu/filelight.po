@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-30 00:39+0000\n"
+"POT-Creation-Date: 2024-04-10 00:40+0000\n"
 "PO-Revision-Date: 2024-04-04 19:17+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -188,31 +188,51 @@ msgstr "Aztertu beharreko bide-izen edo URLa"
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:166
+#: src/mainContext.cpp:165
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Hautatu aztertzeko karpeta"
 
-#: src/mainContext.cpp:222
-#, kde-format
-msgid "The entered URL cannot be parsed; it is invalid."
+#: src/mainContext.cpp:218
+#, fuzzy, kde-format
+#| msgid "The entered URL cannot be parsed; it is invalid."
+msgid "The entered URL cannot be parsed"
 msgstr "Sartutako URLak ez du azterketa sintaktikoa gainditu; ez du balio."
 
-#: src/mainContext.cpp:224
+#: src/mainContext.cpp:218
 #, kde-format
-msgid "Filelight only accepts absolute paths, eg. /%1"
+msgid "it is invalid."
+msgstr ""
+
+#: src/mainContext.cpp:220
+#, fuzzy, kde-format
+#| msgid "Filelight only accepts absolute paths, eg. /%1"
+msgid "Filelight only accepts absolute paths"
 msgstr "Filelight-ek soilik bide-izen absolutuak onartzen ditu, adib /%1"
 
-#: src/mainContext.cpp:226
+#: src/mainContext.cpp:220
+#, kde-format
+msgid "eg. /%1"
+msgstr ""
+
+#: src/mainContext.cpp:222
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Karpeta ez da aurkitu: %1"
 
-#: src/mainContext.cpp:228
-#, kde-format
-msgid ""
-"Unable to enter: %1\n"
-"You do not have access rights to this location."
+# A KDE component is called a part, and it encapsulates three things: a widget, the functionality that comes with it, and the user interface for this functionality.
+#: src/mainContext.cpp:224
+#, fuzzy, kde-format
+#| msgid "Unable to create part widget."
+msgid "Unable to enter: %1"
+msgstr "Ezin izan da sortu osagaiaren trepeta."
+
+#: src/mainContext.cpp:224
+#, fuzzy, kde-format
+#| msgid ""
+#| "Unable to enter: %1\n"
+#| "You do not have access rights to this location."
+msgid "You do not have access rights to this location."
 msgstr ""
 "Ezin sartu: %1\n"
 "Ez duzu kokaleku honetara sartzeko baimenik."
@@ -403,7 +423,7 @@ msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "Egin klik gora, guraso karpetara, joateko"
 
-#: src/qml/MapPage.qml:524
+#: src/qml/MapPage.qml:538
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -411,7 +431,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "Fitxategi %1, %2"
 msgstr[1] "%1 Fitxategi, %2"
 
-#: src/qml/MapPage.qml:533
+#: src/qml/MapPage.qml:547
 #, kde-format
 msgid "No data available"
 msgstr "Ez dago daturik eskuragarri"
@@ -752,7 +772,3 @@ msgstr[1] ""
 
 #~ msgid "Scan 'path'"
 #~ msgstr "Aztertu 'bidea'"
-
-# A KDE component is called a part, and it encapsulates three things: a widget, the functionality that comes with it, and the user interface for this functionality.
-#~ msgid "Unable to create part widget."
-#~ msgstr "Ezin izan da sortu osagaiaren trepeta."
