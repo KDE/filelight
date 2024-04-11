@@ -69,7 +69,7 @@ add_definitions(-DTRANSLATION_DOMAIN=\"filelight\")
 ecm_set_disabled_deprecation_versions(QT 6.6
     KF 6.1.0
 )
-
+add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
 include_directories(src)
 
 add_subdirectory(src)
