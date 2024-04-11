@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdeutils-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-10 00:40+0000\n"
-"PO-Revision-Date: 2024-03-30 14:06+0300\n"
+"PO-Revision-Date: 2024-04-10 14:21+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -53,7 +53,7 @@ msgid ""
 "<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
 "b> deleted.</qt>"
 msgstr ""
-"<qt> <i>'%1'</i> konumundaki klasör <b>özyineli</b> ve <b>kalıcı olarak</b> "
+"<qt> <i>“%1”</i> konumundaki klasör <b>özyineli</b> ve <b>kalıcı olarak</b> "
 "silinecek.</qt>"
 
 #: src/contextMenuContext.cpp:64
@@ -96,8 +96,8 @@ msgid ""
 "(C) 2017-2022 Harald Sitter"
 msgstr ""
 "(C) 2006 Max Howell\n"
-"(C) 2008-2014 Martin Sandsmark\n"
-"(C) 2017-2022 Harald Sitter"
+"(C) 2008–2014 Martin Sandsmark\n"
+"(C) 2017–2022 Harald Sitter"
 
 #: src/main.cpp:75
 #, kde-format
@@ -195,26 +195,24 @@ msgid "Select Folder to Scan"
 msgstr "Taranacak Klasörü Seç"
 
 #: src/mainContext.cpp:218
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "Girilen URL ayrıştırılamadı; bu geçersiz."
+msgstr "Girilen URL ayrıştırılamadı"
 
 #: src/mainContext.cpp:218
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "geçersiz."
 
 #: src/mainContext.cpp:220
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Dosya Feneri yalnızca tam yolları kabul eder, /%1 gibi"
+msgstr "Dosya Feneri yalnızca tam yolları kabul eder"
 
 #: src/mainContext.cpp:220
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "örn. /%1"
 
 #: src/mainContext.cpp:222
 #, kde-format
@@ -224,17 +222,12 @@ msgstr "Klasör bulunamadı: %1"
 #: src/mainContext.cpp:224
 #, kde-format
 msgid "Unable to enter: %1"
-msgstr ""
+msgstr "Girilemiyor: %1"
 
 #: src/mainContext.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
-"Girilemedi: %1\n"
-"Bu konuma erişim hakkınız yok."
+msgstr "Bu konuma erişim hakkınız yok."
 
 #: src/qml/GlobalMenu.qml:10
 #, kde-format

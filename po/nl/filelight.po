@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-10 00:40+0000\n"
-"PO-Revision-Date: 2024-03-30 14:22+0100\n"
+"PO-Revision-Date: 2024-04-10 10:56+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -197,26 +197,24 @@ msgid "Select Folder to Scan"
 msgstr "Te scannen map selecteren..."
 
 #: src/mainContext.cpp:218
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "Het opgegeven URL-adres kon niet worden ontleedt. Het is ongeldig."
+msgstr "Het ingevoerde URL kan niet worden ontleedt"
 
 #: src/mainContext.cpp:218
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "het is ongeldig."
 
 #: src/mainContext.cpp:220
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Filelight accepteert alleen absolute paden, zoals /%1"
+msgstr "Filelight accepteert absolute paden"
 
 #: src/mainContext.cpp:220
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "bijv. /%1"
 
 #: src/mainContext.cpp:222
 #, kde-format
@@ -224,20 +222,14 @@ msgid "Folder not found: %1"
 msgstr "Map niet gevonden: %1"
 
 #: src/mainContext.cpp:224
-#, fuzzy, kde-format
-#| msgid "Unable to create part widget."
+#, kde-format
 msgid "Unable to enter: %1"
-msgstr "Niet in staat deel-widget aan te maken."
+msgstr "Niet in staat in te voeren: %1"
 
 #: src/mainContext.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
-"Kon de map %1 niet openen\n"
-"U hebt niet de benodigde toegangsrechten voor deze locatie."
+msgstr "U hebt niet de benodigde toegangsrechten voor deze locatie."
 
 #: src/qml/GlobalMenu.qml:10
 #, kde-format

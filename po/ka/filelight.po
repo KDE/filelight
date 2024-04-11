@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-10 00:40+0000\n"
-"PO-Revision-Date: 2024-03-30 04:31+0100\n"
+"PO-Revision-Date: 2024-04-10 04:37+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -191,26 +191,24 @@ msgid "Select Folder to Scan"
 msgstr "აირჩიეთ დასასკანერებელი საქაღალდეები"
 
 #: src/mainContext.cpp:218
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "შეყვანილი URL-ის დამუშავების შეცდომა. ის არასწორია."
+msgstr "შეყვანილი URL-ის დამუშავება შეუძლებელია"
 
 #: src/mainContext.cpp:218
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "ეს არასწორია."
 
 #: src/mainContext.cpp:220
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Filelight მხოლოდ აბსოლუტურ ბილიკებს ამუშავებს. მაგ: /%1"
+msgstr "Filelight, მხოლოდ, აბსოლუტურ ბილიკებს ამუშავებს"
 
 #: src/mainContext.cpp:220
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "მაგ: /%1"
 
 #: src/mainContext.cpp:222
 #, kde-format
@@ -220,17 +218,12 @@ msgstr "საქაღალდე ვერ ვიპოვე: %1"
 #: src/mainContext.cpp:224
 #, kde-format
 msgid "Unable to enter: %1"
-msgstr ""
+msgstr "შესვლა შეუძლებელია: %1"
 
 #: src/mainContext.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
-"%1-ში შესვლის შეცდომა\n"
-"ამ მდებარეობასთან წვდომა არ გაგაჩნიათ."
+msgstr "ამ მდებარეობასთან წვდომა არ გაგაჩნიათ."
 
 #: src/qml/GlobalMenu.qml:10
 #, kde-format

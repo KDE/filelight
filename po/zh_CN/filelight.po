@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-10 00:40+0000\n"
-"PO-Revision-Date: 2024-04-01 14:44\n"
+"PO-Revision-Date: 2024-04-10 19:49\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -193,10 +193,9 @@ msgid "Select Folder to Scan"
 msgstr "选择要扫描的文件夹"
 
 #: src/mainContext.cpp:218
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "输入的 URL 无法解析；它是一个无效的 URL。"
+msgstr ""
 
 #: src/mainContext.cpp:218
 #, kde-format
@@ -204,10 +203,9 @@ msgid "it is invalid."
 msgstr ""
 
 #: src/mainContext.cpp:220
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Filelight 只接受绝对路径，例如 /%1"
+msgstr ""
 
 #: src/mainContext.cpp:220
 #, kde-format
@@ -225,14 +223,9 @@ msgid "Unable to enter: %1"
 msgstr ""
 
 #: src/mainContext.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
 msgstr ""
-"无法进入：%1\n"
-"您没有访问此位置的权限。"
 
 #: src/qml/GlobalMenu.qml:10
 #, kde-format

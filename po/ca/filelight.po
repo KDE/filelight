@@ -5,12 +5,13 @@
 #
 # SPDX-FileCopyrightText: 2010, 2013, 2014, 2015, 2017, 2018, 2020, 2021, 2022, 2024 Josep M. Ferrer <txemaq@gmail.com>
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2015, 2020, 2021.
+# Josep M. Ferrer <txemaq@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-10 00:40+0000\n"
-"PO-Revision-Date: 2024-03-30 08:43+0100\n"
+"PO-Revision-Date: 2024-04-10 12:08+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -19,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -194,26 +195,24 @@ msgid "Select Folder to Scan"
 msgstr "Seleccioneu la carpeta a explorar"
 
 #: src/mainContext.cpp:218
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "L'URL introduït no es pot analitzar; no és vàlid."
+msgstr "L'URL introduït no s'ha pogut analitzar"
 
 #: src/mainContext.cpp:218
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "no és vàlid."
 
 #: src/mainContext.cpp:220
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "El Filelight només accepta camins absoluts, p. ex. /%1"
+msgstr "El Filelight només accepta camins absoluts"
 
 #: src/mainContext.cpp:220
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "p. ex. /%1"
 
 #: src/mainContext.cpp:222
 #, kde-format
@@ -223,18 +222,13 @@ msgstr "No s'ha trobat la carpeta: %1"
 #: src/mainContext.cpp:224
 #, kde-format
 msgid "Unable to enter: %1"
-msgstr ""
+msgstr "No es pot entrar a: %1"
 
 # skip-rule: ff-enter
 #: src/mainContext.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
-"No es pot entrar a: %1\n"
-"No teniu drets d'accés a aquesta ubicació."
+msgstr "No teniu drets d'accés a aquesta ubicació."
 
 #: src/qml/GlobalMenu.qml:10
 #, kde-format
