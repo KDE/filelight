@@ -58,4 +58,7 @@ public:
     QStringList skipList;
 
     const QSet<QByteArray> remoteFsTypes = {"smbfs", "nfs", "afs"};
+
+Q_SIGNALS:
+    void addFolderFailed(const QString &reason);
 };

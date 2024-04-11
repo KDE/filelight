@@ -11,7 +11,6 @@
 #include <KConfig>
 #include <KConfigGroup>
 #include <KLocalizedString>
-#include <KMessageBox>
 #include <KSharedConfig>
 
 #include <QDebug>
@@ -68,7 +67,7 @@ void Config::addFolder()
             skipList.append(path);
             Q_EMIT changed();
         } else {
-            KMessageBox::information(nullptr, i18n("That folder is already set to be excluded from scans."), i18n("Folder already ignored"));
+            Q_EMIT addFolderFailed(i18n("Folder already ignored"));
         }
     }
 }

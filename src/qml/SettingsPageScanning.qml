@@ -45,6 +45,13 @@ Kirigami.Page {
             }
         }
 
+        Connections {
+            target: Config
+            function onAddFolderFailed(reason) {
+                showPassiveNotification(reason);
+            }
+        }
+
         QQC2.ScrollView {
             Layout.fillWidth: true
             Layout.fillHeight: true
