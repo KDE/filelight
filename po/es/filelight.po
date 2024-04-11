@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Miguel Angel Quesada Fernandez <kesadalive@gmail.com>, 2009.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2010, 2011, 2013, 2015, 2017, 2018, 2020, 2021, 2022.
+# SPDX-FileCopyrightText: 2010, 2011, 2013, 2015, 2017, 2018, 2020, 2021, 2022, 2024 Eloy Cuadra <ecuadra@eloihr.net>
 # Kira J. Fernandez <kirajfdez@gmail.com>, 2010.
 # Javier Viñal <fjvinal@gmail.com>, 2013.
 msgid ""
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-22 01:37+0000\n"
-"PO-Revision-Date: 2022-12-16 03:22+0100\n"
+"PO-Revision-Date: 2024-04-10 12:25+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -381,8 +381,8 @@ msgstr "Borrar"
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
 msgid_plural "%1 Files (%2%)"
-msgstr[0] "%1 archivo (%2%)"
-msgstr[1] "%1 archivos (%2%)"
+msgstr[0] "%1 archivo (%2 %)"
+msgstr[1] "%1 archivos (%2 %)"
 
 #: src/qml/MapPage.qml:315
 #, kde-format
@@ -403,8 +403,8 @@ msgstr "Pulse para ir al directorio superior"
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
 msgid_plural "%1 Files, %2"
-msgstr[0] "%1 archivo, %2%"
-msgstr[1] "%1 archivos, %2%"
+msgstr[0] "%1 archivo, %2 %"
+msgstr[1] "%1 archivos, %2 %"
 
 #: src/qml/MapPage.qml:531
 #, kde-format

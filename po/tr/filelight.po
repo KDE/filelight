@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdeutils-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-22 01:37+0000\n"
-"PO-Revision-Date: 2024-03-01 15:41+0300\n"
+"PO-Revision-Date: 2024-04-10 14:21+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.02.0\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -53,7 +53,7 @@ msgid ""
 "<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
 "b> deleted.</qt>"
 msgstr ""
-"<qt> <i>'%1'</i> konumundaki klasör <b>özyineli</b> ve <b>kalıcı olarak</b> "
+"<qt> <i>“%1”</i> konumundaki klasör <b>özyineli</b> ve <b>kalıcı olarak</b> "
 "silinecek.</qt>"
 
 #: src/contextMenuContext.cpp:64
@@ -96,8 +96,8 @@ msgid ""
 "(C) 2017-2022 Harald Sitter"
 msgstr ""
 "(C) 2006 Max Howell\n"
-"(C) 2008-2014 Martin Sandsmark\n"
-"(C) 2017-2022 Harald Sitter"
+"(C) 2008–2014 Martin Sandsmark\n"
+"(C) 2017–2022 Harald Sitter"
 
 #: src/main.cpp:75
 #, kde-format
