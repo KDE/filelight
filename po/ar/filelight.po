@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 00:40+0000\n"
+"POT-Creation-Date: 2024-04-12 00:39+0000\n"
 "PO-Revision-Date: 2024-03-30 10:52+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -28,17 +28,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zayed.alsaidi@gmail.com"
 
-#: src/Config.cpp:58
+#: src/Config.cpp:57
 #, kde-format
 msgid "Select path to ignore"
 msgstr "حدد مسار لتجاهله"
 
-#: src/Config.cpp:71
-#, kde-format
-msgid "That folder is already set to be excluded from scans."
-msgstr "عين بالفعل هذا المجلد ليستبعد من عمليات المسح."
-
-#: src/Config.cpp:71
+#: src/Config.cpp:70
 #, kde-format
 msgid "Folder already ignored"
 msgstr "تُجُوهل الملف بالفعل"
@@ -517,19 +512,19 @@ msgctxt "@action:button remove list entry"
 msgid "Add…"
 msgstr "أضف…"
 
-#: src/qml/SettingsPageScanning.qml:83
+#: src/qml/SettingsPageScanning.qml:90
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
 msgstr "أزل"
 
-#: src/qml/SettingsPageScanning.qml:103
+#: src/qml/SettingsPageScanning.qml:110
 #, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
 msgstr "امسح عابراً حدود نظام الملفات"
 
-#: src/qml/SettingsPageScanning.qml:115
+#: src/qml/SettingsPageScanning.qml:122
 #, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
@@ -561,6 +556,9 @@ msgstr[4] ""
 msgstr[5] ""
 "\n"
 "%1 ملف، بحجم متوسط %2"
+
+#~ msgid "That folder is already set to be excluded from scans."
+#~ msgstr "عين بالفعل هذا المجلد ليستبعد من عمليات المسح."
 
 #~ msgid "&Scan"
 #~ msgstr "ا&مسح"

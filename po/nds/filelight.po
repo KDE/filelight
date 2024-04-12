@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 00:40+0000\n"
+"POT-Creation-Date: 2024-04-12 00:39+0000\n"
 "PO-Revision-Date: 2014-02-20 11:39+0100\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-doc@kde.org>\n"
@@ -29,18 +29,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "m.j.wiese@web.de, s_dibbern@web.de"
 
-#: src/Config.cpp:58
+#: src/Config.cpp:57
 #, kde-format
 msgid "Select path to ignore"
 msgstr ""
 
-#: src/Config.cpp:71
-#, fuzzy, kde-format
-#| msgid "That folder is already set to be excluded from scans"
-msgid "That folder is already set to be excluded from scans."
-msgstr "De Orner is al vun't Dörkieken utslaten."
-
-#: src/Config.cpp:71
+#: src/Config.cpp:70
 #, kde-format
 msgid "Folder already ignored"
 msgstr ""
@@ -546,21 +540,21 @@ msgctxt "@action:button remove list entry"
 msgid "Add…"
 msgstr ""
 
-#: src/qml/SettingsPageScanning.qml:83
+#: src/qml/SettingsPageScanning.qml:90
 #, fuzzy, kde-format
 #| msgid "R&emove"
 msgctxt "@action:button remove list entry"
 msgid "Remove"
 msgstr "&Wegmaken"
 
-#: src/qml/SettingsPageScanning.qml:103
+#: src/qml/SettingsPageScanning.qml:110
 #, fuzzy, kde-format
 #| msgid "Scan across filesystem &boundaries"
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
 msgstr "Ok &anner Dateisystemen dörkieken"
 
-#: src/qml/SettingsPageScanning.qml:115
+#: src/qml/SettingsPageScanning.qml:122
 #, fuzzy, kde-format
 #| msgid "Exclude remote files&ystems"
 msgctxt "@checkbox"
@@ -579,6 +573,11 @@ msgid_plural ""
 "%1 files, with an average size of %2"
 msgstr[0] "Een Datei mit de dörsnittlich Grött vun %2"
 msgstr[1] "%1Dateien mit de dörsnittlich Grött vun %2"
+
+#, fuzzy
+#~| msgid "That folder is already set to be excluded from scans"
+#~ msgid "That folder is already set to be excluded from scans."
+#~ msgstr "De Orner is al vun't Dörkieken utslaten."
 
 #~ msgid "&Scan"
 #~ msgstr "&Dörkieken"

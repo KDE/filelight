@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 00:40+0000\n"
+"POT-Creation-Date: 2024-04-12 00:39+0000\n"
 "PO-Revision-Date: 2023-03-01 01:19+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -28,17 +28,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: src/Config.cpp:58
+#: src/Config.cpp:57
 #, kde-format
 msgid "Select path to ignore"
 msgstr "무시할 경로 선택"
 
-#: src/Config.cpp:71
-#, kde-format
-msgid "That folder is already set to be excluded from scans."
-msgstr "이 폴더는 이미 검사에서 제외되었습니다."
-
-#: src/Config.cpp:71
+#: src/Config.cpp:70
 #, kde-format
 msgid "Folder already ignored"
 msgstr "폴더가 이미 무시됨"
@@ -500,19 +495,19 @@ msgctxt "@action:button remove list entry"
 msgid "Add…"
 msgstr "추가…"
 
-#: src/qml/SettingsPageScanning.qml:83
+#: src/qml/SettingsPageScanning.qml:90
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
 msgstr "삭제"
 
-#: src/qml/SettingsPageScanning.qml:103
+#: src/qml/SettingsPageScanning.qml:110
 #, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
 msgstr "다른 파일 시스템도 검사"
 
-#: src/qml/SettingsPageScanning.qml:115
+#: src/qml/SettingsPageScanning.qml:122
 #, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
@@ -529,6 +524,9 @@ msgid_plural ""
 msgstr[0] ""
 "\n"
 "파일 %1개, 평균 크기 %2"
+
+#~ msgid "That folder is already set to be excluded from scans."
+#~ msgstr "이 폴더는 이미 검사에서 제외되었습니다."
 
 #~ msgid "&Scan"
 #~ msgstr "검사(&S)"

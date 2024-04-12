@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 00:40+0000\n"
+"POT-Creation-Date: 2024-04-12 00:39+0000\n"
 "PO-Revision-Date: 2022-12-18 12:00+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -31,17 +31,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zepires@gmail.com"
 
-#: src/Config.cpp:58
+#: src/Config.cpp:57
 #, kde-format
 msgid "Select path to ignore"
 msgstr "Seleccionar a localização a ignorar"
 
-#: src/Config.cpp:71
-#, kde-format
-msgid "That folder is already set to be excluded from scans."
-msgstr "Essa pasta já está a ser excluída das análises."
-
-#: src/Config.cpp:71
+#: src/Config.cpp:70
 #, kde-format
 msgid "Folder already ignored"
 msgstr "A pasta já é ignorada"
@@ -506,19 +501,19 @@ msgctxt "@action:button remove list entry"
 msgid "Add…"
 msgstr "Adicionar…"
 
-#: src/qml/SettingsPageScanning.qml:83
+#: src/qml/SettingsPageScanning.qml:90
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
 msgstr "Remover"
 
-#: src/qml/SettingsPageScanning.qml:103
+#: src/qml/SettingsPageScanning.qml:110
 #, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
 msgstr "Analisar dentro dos limites do sistema de ficheiros"
 
-#: src/qml/SettingsPageScanning.qml:115
+#: src/qml/SettingsPageScanning.qml:122
 #, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
@@ -538,6 +533,9 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 ficheiros, com um tamanho médio de %2"
+
+#~ msgid "That folder is already set to be excluded from scans."
+#~ msgstr "Essa pasta já está a ser excluída das análises."
 
 #~ msgid "&Scan"
 #~ msgstr "Pe&squisar"

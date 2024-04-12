@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 00:40+0000\n"
+"POT-Creation-Date: 2024-04-12 00:39+0000\n"
 "PO-Revision-Date: 2022-12-31 15:58+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
@@ -28,17 +28,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "andrew_coles@yahoo.co.uk, steve.allewell@gmail.com"
 
-#: src/Config.cpp:58
+#: src/Config.cpp:57
 #, kde-format
 msgid "Select path to ignore"
 msgstr "Select path to ignore"
 
-#: src/Config.cpp:71
-#, kde-format
-msgid "That folder is already set to be excluded from scans."
-msgstr "That folder is already set to be excluded from scans."
-
-#: src/Config.cpp:71
+#: src/Config.cpp:70
 #, kde-format
 msgid "Folder already ignored"
 msgstr "Folder already ignored"
@@ -504,19 +499,19 @@ msgctxt "@action:button remove list entry"
 msgid "Add…"
 msgstr "Add…"
 
-#: src/qml/SettingsPageScanning.qml:83
+#: src/qml/SettingsPageScanning.qml:90
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
 msgstr "Remove"
 
-#: src/qml/SettingsPageScanning.qml:103
+#: src/qml/SettingsPageScanning.qml:110
 #, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
 msgstr "Scan across filesystem boundaries"
 
-#: src/qml/SettingsPageScanning.qml:115
+#: src/qml/SettingsPageScanning.qml:122
 #, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
@@ -536,6 +531,9 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 files, with an average size of %2"
+
+#~ msgid "That folder is already set to be excluded from scans."
+#~ msgstr "That folder is already set to be excluded from scans."
 
 #~ msgid "&Scan"
 #~ msgstr "&Scan"

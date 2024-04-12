@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 00:40+0000\n"
+"POT-Creation-Date: 2024-04-12 00:39+0000\n"
 "PO-Revision-Date: 2024-04-04 17:40+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -31,17 +31,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "franklin@goodhorse.idv.tw, s8321414@gmail.com, mail@kisaragi-hiu.com"
 
-#: src/Config.cpp:58
+#: src/Config.cpp:57
 #, kde-format
 msgid "Select path to ignore"
 msgstr "選擇要忽略的路徑"
 
-#: src/Config.cpp:71
-#, kde-format
-msgid "That folder is already set to be excluded from scans."
-msgstr "該資料夾已被設定成排除掃描。"
-
-#: src/Config.cpp:71
+#: src/Config.cpp:70
 #, kde-format
 msgid "Folder already ignored"
 msgstr "已忽略的資料夾"
@@ -500,19 +495,19 @@ msgctxt "@action:button remove list entry"
 msgid "Add…"
 msgstr "新增…"
 
-#: src/qml/SettingsPageScanning.qml:83
+#: src/qml/SettingsPageScanning.qml:90
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
 msgstr "移除"
 
-#: src/qml/SettingsPageScanning.qml:103
+#: src/qml/SettingsPageScanning.qml:110
 #, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
 msgstr "允許掃描跨越檔案系統"
 
-#: src/qml/SettingsPageScanning.qml:115
+#: src/qml/SettingsPageScanning.qml:122
 #, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
@@ -529,6 +524,9 @@ msgid_plural ""
 msgstr[0] ""
 "\n"
 "%1 個檔案，平均大小為 %2"
+
+#~ msgid "That folder is already set to be excluded from scans."
+#~ msgstr "該資料夾已被設定成排除掃描。"
 
 #~ msgid "&Scan"
 #~ msgstr "掃描(&S)"

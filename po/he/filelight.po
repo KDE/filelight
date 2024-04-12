@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 00:40+0000\n"
-"PO-Revision-Date: 2024-03-30 11:49+0300\n"
+"POT-Creation-Date: 2024-04-12 00:39+0000\n"
+"PO-Revision-Date: 2024-04-10 06:47+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -28,17 +28,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-l10n-he@kde.org"
 
-#: src/Config.cpp:58
+#: src/Config.cpp:57
 #, kde-format
 msgid "Select path to ignore"
 msgstr "נא לבחור נתיב להחרגה"
 
-#: src/Config.cpp:71
-#, kde-format
-msgid "That folder is already set to be excluded from scans."
-msgstr "התיקייה הזאת כבר מוחרגת מהסריקות."
-
-#: src/Config.cpp:71
+#: src/Config.cpp:70
 #, kde-format
 msgid "Folder already ignored"
 msgstr "התיקייה כבר מוחרגת"
@@ -189,26 +184,24 @@ msgid "Select Folder to Scan"
 msgstr "נא לבחור תיקייה לסריקה"
 
 #: src/mainContext.cpp:218
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "אי אפשר לפענח את הכתובת שסופקה, היא שגויה."
+msgstr "אי אפשר לפענח את הכתובת שסופקה"
 
 #: src/mainContext.cpp:218
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "הוא שגוי"
 
 #: src/mainContext.cpp:220
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Filelight מקבל רק נתיבים מלאים, למשל: ‎/%1"
+msgstr "Filelight מקבל רק נתיבים מלאים"
 
 #: src/mainContext.cpp:220
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "למשל: ‎/%1"
 
 #: src/mainContext.cpp:222
 #, kde-format
@@ -218,17 +211,12 @@ msgstr "התיקייה לא נמצאה: %1"
 #: src/mainContext.cpp:224
 #, kde-format
 msgid "Unable to enter: %1"
-msgstr ""
+msgstr "לא ניתן להיכנס: %1"
 
 #: src/mainContext.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
-"לא ניתן להיכנס: %1\n"
-"אין לך הרשאות גישה למקום הזה."
+msgstr "אין לך הרשאות גישה למקום הזה."
 
 #: src/qml/GlobalMenu.qml:10
 #, kde-format
@@ -509,19 +497,19 @@ msgctxt "@action:button remove list entry"
 msgid "Add…"
 msgstr "הוספה…"
 
-#: src/qml/SettingsPageScanning.qml:83
+#: src/qml/SettingsPageScanning.qml:90
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
 msgstr "הסרה"
 
-#: src/qml/SettingsPageScanning.qml:103
+#: src/qml/SettingsPageScanning.qml:110
 #, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
 msgstr "סריקה מחוץ לגבולות מערכת הקבצים"
 
-#: src/qml/SettingsPageScanning.qml:115
+#: src/qml/SettingsPageScanning.qml:122
 #, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
@@ -547,3 +535,6 @@ msgstr[2] ""
 msgstr[3] ""
 "\n"
 "%1 קבצים, בגודל ממוצע של %2"
+
+#~ msgid "That folder is already set to be excluded from scans."
+#~ msgstr "התיקייה הזאת כבר מוחרגת מהסריקות."

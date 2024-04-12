@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 00:40+0000\n"
+"POT-Creation-Date: 2024-04-12 00:39+0000\n"
 "PO-Revision-Date: 2014-10-20 20:14+0000\n"
 "Last-Translator: Vedran Ljubovic <vljubovic@smartnet.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -30,17 +30,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Samir.ribic@etf.unsa.ba,vljubovic@smartnet.ba"
 
-#: src/Config.cpp:58
+#: src/Config.cpp:57
 #, kde-format
 msgid "Select path to ignore"
 msgstr ""
 
-#: src/Config.cpp:71
-#, fuzzy, kde-format
-msgid "That folder is already set to be excluded from scans."
-msgstr "Direktorij je već postavljen da se isključi iz skaniranja"
-
-#: src/Config.cpp:71
+#: src/Config.cpp:70
 #, kde-format
 msgid "Folder already ignored"
 msgstr ""
@@ -545,21 +540,21 @@ msgctxt "@action:button remove list entry"
 msgid "Add…"
 msgstr ""
 
-#: src/qml/SettingsPageScanning.qml:83
+#: src/qml/SettingsPageScanning.qml:90
 #, fuzzy, kde-format
 #| msgid "R&emove"
 msgctxt "@action:button remove list entry"
 msgid "Remove"
 msgstr "U&kloni"
 
-#: src/qml/SettingsPageScanning.qml:103
+#: src/qml/SettingsPageScanning.qml:110
 #, fuzzy, kde-format
 #| msgid "Scan across filesystem &boundaries"
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
 msgstr "Skaniraj kroz &granice datotečnih sistema"
 
-#: src/qml/SettingsPageScanning.qml:115
+#: src/qml/SettingsPageScanning.qml:122
 #, fuzzy, kde-format
 #| msgid "Exclude remote files&ystems"
 msgctxt "@checkbox"
@@ -579,6 +574,10 @@ msgid_plural ""
 msgstr[0] "%1 datoteka s srednjom veličinom %2"
 msgstr[1] "%1 datoteke s srednjom veličinom %2"
 msgstr[2] "%1 datoteka s srednjom veličinom %2"
+
+#, fuzzy
+#~ msgid "That folder is already set to be excluded from scans."
+#~ msgstr "Direktorij je već postavljen da se isključi iz skaniranja"
 
 #~ msgid "&Scan"
 #~ msgstr "&Skeniraj"

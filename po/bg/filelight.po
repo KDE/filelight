@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 00:40+0000\n"
-"PO-Revision-Date: 2024-04-02 12:49+0200\n"
+"POT-Creation-Date: 2024-04-12 00:39+0000\n"
+"PO-Revision-Date: 2024-04-11 11:37+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -28,17 +28,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yasen@lindeas.com"
 
-#: src/Config.cpp:58
+#: src/Config.cpp:57
 #, kde-format
 msgid "Select path to ignore"
 msgstr "Изберете папка за пропускане"
 
-#: src/Config.cpp:71
-#, kde-format
-msgid "That folder is already set to be excluded from scans."
-msgstr "Тази папка вече е зададена да бъде пропусната при претърсването."
-
-#: src/Config.cpp:71
+#: src/Config.cpp:70
 #, kde-format
 msgid "Folder already ignored"
 msgstr "Папката вече е пропусната"
@@ -191,26 +186,24 @@ msgid "Select Folder to Scan"
 msgstr "Изберете папка за претърсване"
 
 #: src/mainContext.cpp:218
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "Въведения адрес не може да бъде обработен, защото е неправилен."
+msgstr "Въведения адрес не може да бъде анализиран."
 
 #: src/mainContext.cpp:218
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "не е валидно."
 
 #: src/mainContext.cpp:220
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Filelight приема само абсолютни пътища, например: /%1"
+msgstr "Filelight приема само абсолютни пътища"
 
 #: src/mainContext.cpp:220
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "напр. /%1"
 
 #: src/mainContext.cpp:222
 #, kde-format
@@ -220,17 +213,12 @@ msgstr "Папката не е открита: %1"
 #: src/mainContext.cpp:224
 #, kde-format
 msgid "Unable to enter: %1"
-msgstr ""
+msgstr "Неуспешно влизане в директория: %1"
 
 #: src/mainContext.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
-"Не може да се влезе: %1\n"
-"Нямате права за достъп до това местоположение."
+msgstr "Нямате права за достъп до това местоположение."
 
 #: src/qml/GlobalMenu.qml:10
 #, kde-format
@@ -503,19 +491,19 @@ msgctxt "@action:button remove list entry"
 msgid "Add…"
 msgstr "Добавяне…"
 
-#: src/qml/SettingsPageScanning.qml:83
+#: src/qml/SettingsPageScanning.qml:90
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
 msgstr "Премахване"
 
-#: src/qml/SettingsPageScanning.qml:103
+#: src/qml/SettingsPageScanning.qml:110
 #, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
 msgstr "Претърсване в рамките на файловата система"
 
-#: src/qml/SettingsPageScanning.qml:115
+#: src/qml/SettingsPageScanning.qml:122
 #, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
@@ -535,3 +523,6 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 файла със среден размер %2"
+
+#~ msgid "That folder is already set to be excluded from scans."
+#~ msgstr "Тази папка вече е зададена да бъде пропусната при претърсването."
