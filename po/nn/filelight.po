@@ -531,6 +531,3 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 filer, med snittstorleik %2"
-
-#~ msgid "That folder is already set to be excluded from scans."
-#~ msgstr "Mappe er frå før definert til å hoppast over."
