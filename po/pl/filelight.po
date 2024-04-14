@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-12 00:39+0000\n"
-"PO-Revision-Date: 2024-04-01 07:54+0200\n"
+"PO-Revision-Date: 2024-04-13 19:13+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -188,26 +188,24 @@ msgid "Select Folder to Scan"
 msgstr "Wybierz katalog do przeliczenia"
 
 #: src/mainContext.cpp:218
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "Nie można przetworzyć podanego adresu URL; jest on nieprawidłowy."
+msgstr "Nie można przetworzyć wpisanego adresu URL"
 
 #: src/mainContext.cpp:218
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "jest nieprawidłowy."
 
 #: src/mainContext.cpp:220
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Filelight przyjmuje tylko ścieżki absolutne, np. /%1"
+msgstr "Filelight przyjmuje tylko ścieżki bezwzględne"
 
 #: src/mainContext.cpp:220
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "np. /%1"
 
 #: src/mainContext.cpp:222
 #, kde-format
@@ -215,20 +213,14 @@ msgid "Folder not found: %1"
 msgstr "Nie znaleziono katalogu %1"
 
 #: src/mainContext.cpp:224
-#, fuzzy, kde-format
-#| msgid "Unable to create part widget."
+#, kde-format
 msgid "Unable to enter: %1"
-msgstr "Nie można utworzyć elementu interfejsu."
+msgstr "Nie można wejść do: %1"
 
 #: src/mainContext.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
-"Brak dostępu do %1\n"
-"Nie posiadasz uprawień dostępu do tego miejsca."
+msgstr "Nie posiadasz uprawień dostępu do tego miejsca."
 
 #: src/qml/GlobalMenu.qml:10
 #, kde-format
