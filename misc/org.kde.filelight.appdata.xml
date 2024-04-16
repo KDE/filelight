@@ -130,6 +130,7 @@
     <p xml:lang="pt">O Filelight é uma aplicação para visualizar a utilização do disco no seu computador, mostrando as pastas com uma vista fácil de entender num formato em anéis concêntricos. O Filelight facilita a libertação de espaço!</p>
     <p xml:lang="pt-BR">O Filelight é um aplicativo para visualizar a utilização do disco no seu computador mostrando pastas usando uma visão de anéis concêntricos de fácil compreensão. O Filelight simplifica a liberação de espaço!</p>
     <p xml:lang="ru">Filelight — приложение для визуализации использования дискового пространства, использующее наглядное отображение размеров папок в виде концентрических колец. Filelight позволяет просто находить большие файлы и помогает освобождать место на дисках.</p>
+    <p xml:lang="sk">Filelight je aplikácia na vizualizáciu využitia disku v počítači pomocou prehľadného zobrazenia priečinkov v podobe sústredných kruhov. Filelight umožňuje jednoducho uvoľniť miesto na disku!</p>
     <p xml:lang="sl">FIlelight je aplikacija za vizualizacijo porabe diska na vašem računalniku, tako da prikazuje mape v preprosto razumljivih koncentričnih krogih. Filelight poenostavi sproščanje prostora na disku!</p>
     <p xml:lang="sv">Filelight är ett program för att åskådliggöra diskanvändning på datorn genom att visa kataloger med en lättförståelig vy av koncentriska ringar. Filelight gör det enkelt att frigöra utrymme!</p>
     <p xml:lang="ta">உங்கள் கணினியிலுள்ள அடைவுகளின் அளவுகளை நீங்கள் எளிதில் புரிந்துகொள்ளும் வகையில் ஃபைல்-லைட் காட்டும். தேவையில்லாதவற்றை சுலபமாக அகற்றி இடத்தை காலி செய்யலாம்!</p>
@@ -222,6 +223,7 @@
       <li xml:lang="pt">Sondar discos locais, remotos ou removíveis</li>
       <li xml:lang="pt-BR">Verifica em discos locais, remotos ou removíveis</li>
       <li xml:lang="ru">Сканирование локальных, сетевых и сменных дисков;</li>
+      <li xml:lang="sk">Skenujte lokálne, vzdialené alebo odoberateľné disky</li>
       <li xml:lang="sl">Preišči krajevne, oddaljene ali odstranljive diske</li>
       <li xml:lang="sv">Sök igenom lokala diskar, diskar på en annan dator eller flyttbara diskar</li>
       <li xml:lang="ta">உள்ளமை, தொலை, மற்றும் கழற்றக்கூடிய வட்டுகளை ஆராயும்</li>
@@ -263,6 +265,7 @@
       <li xml:lang="pt">Ver informações detalhadas sobre os ficheiros e pastas</li>
       <li xml:lang="pt-BR">Veja informações detalhadas sobre os arquivos e pastas</li>
       <li xml:lang="ru">Подробные сведения о файлах и папках;</li>
+      <li xml:lang="sk">Zobrazte podrobné informácie o súboroch a priečinkoch</li>
       <li xml:lang="sl">Pogled podrobnih informacij o datotekah in mapah</li>
       <li xml:lang="sv">Visa detaljerad information om filer och kataloger</li>
       <li xml:lang="ta">கோப்புகளின் மற்றும் அடைவுகளின் விவரங்களைக் காட்டும்</li>
@@ -304,6 +307,7 @@
       <li xml:lang="pt">Apagar os ficheiros ou pastas que ocupam demasiado espaço</li>
       <li xml:lang="pt-BR">Exclua arquivos ou pastas que estão ocupando muito espaço</li>
       <li xml:lang="ru">Удаление файлов или папок, занимающих слишком много места;</li>
+      <li xml:lang="sk">Odstráňte súbory alebo priečinky, ktoré zaberajú príliš veľa miesta</li>
       <li xml:lang="sl">Briši datoteke ali mape, ki zavzemajo preveč prostora</li>
       <li xml:lang="sv">Ta bort filer eller kataloger som upptar för mycket utrymme</li>
       <li xml:lang="ta">மிகப்பெரிய கோப்புகளையும் அடைவுகளையும் எளிதில் அகற்ற உதவும்</li>
@@ -345,6 +349,7 @@
       <li xml:lang="pt">Integração com os gestores de ficheiros Dolphin, Konqueror e Krusader</li>
       <li xml:lang="pt-BR">Integração com os gerenciadores de arquivo Dolphin, Konqueror e Krusader</li>
       <li xml:lang="ru">Встраивание в диспетчеры файлов Dolphin, Konqueror и Krusader;</li>
+      <li xml:lang="sk">Integrácia do správcov súborov Dolphin, Konqueror a Krusader</li>
       <li xml:lang="sl">Vključitev v upravljalnike datotek Dolphin, Konqueror in Krusader</li>
       <li xml:lang="sv">Integrerat med filhanterarna Dolphin, Konqueror och Krusader</li>
       <li xml:lang="ta">டால்பின், கான்கொரர், குரூசெடர் போன்ற கோப்பு உலாவிகளுடனான ஒருங்கிணைப்பு</li>
