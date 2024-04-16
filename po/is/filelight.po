@@ -1,31 +1,32 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the filelight package.
 #
 # Sveinn í Felli <sv1@fellsnet.is>, 2022, 2023.
+# SPDX-FileCopyrightText: 2024 Gummi <gudmundure@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-12 00:39+0000\n"
-"PO-Revision-Date: 2023-03-21 14:33+0000\n"
-"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
-"Language-Team: Icelandic\n"
+"PO-Revision-Date: 2024-04-14 18:04+0000\n"
+"Last-Translator: Gummi <gudmundure@gmail.com>\n"
+"Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Sveinn í Felli"
+msgstr "Sveinn í Felli, Guðmundur Erlingsson"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "sv1@fellsnet.is"
+msgstr "sv1@fellsnet.is, gudmundure@gmail.com"
 
 #: src/Config.cpp:57
 #, kde-format
@@ -92,7 +93,7 @@ msgstr ""
 #: src/main.cpp:75
 #, kde-format
 msgid "Laurent Montel"
-msgstr ""
+msgstr "Laurent Montel"
 
 #: src/main.cpp:75 src/main.cpp:76
 #, kde-format
@@ -185,26 +186,24 @@ msgid "Select Folder to Scan"
 msgstr "Veldu möppu til að skanna"
 
 #: src/mainContext.cpp:218
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "Ekki var hægt að þátta slóðina sem sett var inn; hún er ógild."
+msgstr "Ekki er hægt að þátta slóðina sem var slegin inn"
 
 #: src/mainContext.cpp:218
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "hún er ógild."
 
 #: src/mainContext.cpp:220
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Filelight samþykkir aðeins algildar slóðir, t.d. /%1"
+msgstr "Filelight samþykkir aðeins algildar slóðir"
 
 #: src/mainContext.cpp:220
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "t.d. /%1"
 
 #: src/mainContext.cpp:222
 #, kde-format
@@ -214,17 +213,12 @@ msgstr "Mappa fannst ekki: %1"
 #: src/mainContext.cpp:224
 #, kde-format
 msgid "Unable to enter: %1"
-msgstr ""
+msgstr "Get ekki opnað: %1"
 
 #: src/mainContext.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
-"Ekki tókst að skipta í: %1\n"
-"Þú hefur ekki nægar aðgangsheimildir á þessum stað."
+msgstr "Þú hefur ekki aðgangsheimildir að þessum stað."
 
 #: src/qml/GlobalMenu.qml:10
 #, kde-format
