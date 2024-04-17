@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-12 00:39+0000\n"
-"PO-Revision-Date: 2024-04-04 17:40+0900\n"
+"PO-Revision-Date: 2024-04-16 19:41+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -187,26 +187,24 @@ msgid "Select Folder to Scan"
 msgstr "選擇要掃描的資料夾"
 
 #: src/mainContext.cpp:218
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "輸入的網址無法被剖析，因為是不合法的。"
+msgstr "輸入的網址無法被剖析"
 
 #: src/mainContext.cpp:218
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "它是無效的。"
 
 #: src/mainContext.cpp:220
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Filelight 只接受絕對路徑，例如 /%1"
+msgstr "Filelight 只接受絕對路徑"
 
 #: src/mainContext.cpp:220
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "例如 /%1"
 
 #: src/mainContext.cpp:222
 #, kde-format
@@ -216,17 +214,12 @@ msgstr "找不到資料夾：%1"
 #: src/mainContext.cpp:224
 #, kde-format
 msgid "Unable to enter: %1"
-msgstr ""
+msgstr "無法進入：%1"
 
 #: src/mainContext.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
-"無法進入：%1\n"
-"您沒有這個位置的存取權限。"
+msgstr "您沒有這個位置的存取權限。"
 
 #: src/qml/GlobalMenu.qml:10
 #, kde-format
