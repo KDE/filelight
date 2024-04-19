@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-12 00:39+0000\n"
-"PO-Revision-Date: 2024-03-30 10:52+0400\n"
+"PO-Revision-Date: 2024-04-18 13:56+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -184,26 +184,24 @@ msgid "Select Folder to Scan"
 msgstr "اختر مجلّدًا لمسحه"
 
 #: src/mainContext.cpp:218
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "لا يمكن تحليل عنوان المسار المدخل ؛ إنه غير صالح."
+msgstr "لا يمكن تحليل العنوان المدخل"
 
 #: src/mainContext.cpp:218
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "غير صالحة"
 
 #: src/mainContext.cpp:220
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "يقبل كشاف الملفات المسارات المطلقة فقط مثل /%1"
+msgstr "يقبل كشاف الملفات المسارات المطلقة فقط"
 
 #: src/mainContext.cpp:220
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "مثل /%1"
 
 #: src/mainContext.cpp:222
 #, kde-format
@@ -213,17 +211,12 @@ msgstr "لم يعثر على المجلد: %1"
 #: src/mainContext.cpp:224
 #, kde-format
 msgid "Unable to enter: %1"
-msgstr ""
+msgstr "تعذّر الدخول: %1"
 
 #: src/mainContext.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
-"تعذّر الدخول إلى: %1\n"
-"لا تملك صلاحية الوصول إلى هذا الموقع."
+msgstr "لا تملك صلاحية الوصول إلى هذا الموقع."
 
 #: src/qml/GlobalMenu.qml:10
 #, kde-format

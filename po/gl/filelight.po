@@ -6,22 +6,22 @@
 # Xosé <xosecalvo@gmail.com>, 2010.
 # Adrian Chaves Fernandez <adriyetichaves@gmail.com>, 2013, 2015, 2017.
 # Marce Villarino <mvillarino@kde-espana.es>, 2013, 2014.
-# Adrián Chaves <adrian@chaves.io>, 2017, 2018, 2019, 2023.
+# SPDX-FileCopyrightText: 2017, 2018, 2019, 2023, 2024 Adrián Chaves <adrian@chaves.io>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-12 00:39+0000\n"
-"PO-Revision-Date: 2023-06-24 11:40+0200\n"
+"PO-Revision-Date: 2024-04-18 18:34+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
-"Language-Team: Galician <proxecto@trasno.gal>\n"
+"Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -99,7 +99,7 @@ msgstr ""
 #: src/main.cpp:75
 #, kde-format
 msgid "Laurent Montel"
-msgstr ""
+msgstr "Laurent Montel"
 
 #: src/main.cpp:75 src/main.cpp:76
 #, kde-format
@@ -192,26 +192,24 @@ msgid "Select Folder to Scan"
 msgstr "Seleccione o cartafol que quere examinar"
 
 #: src/mainContext.cpp:218
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "O URL que inseriu non se pode procesar; é incorrecto."
+msgstr "O URL que inseriu non se pode procesar"
 
 #: src/mainContext.cpp:218
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "non é válido."
 
 #: src/mainContext.cpp:220
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Filelight só acepta rutas absolutas, p.ex. /%1"
+msgstr "Filelight só acepta rutas absolutas"
 
 #: src/mainContext.cpp:220
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "p. ex. /%1"
 
 #: src/mainContext.cpp:222
 #, kde-format
@@ -219,20 +217,14 @@ msgid "Folder not found: %1"
 msgstr "Non se atopou o cartafol: %1"
 
 #: src/mainContext.cpp:224
-#, fuzzy, kde-format
-#| msgid "Unable to create part widget."
+#, kde-format
 msgid "Unable to enter: %1"
-msgstr "Non foi posíbel crear o widget do compoñente."
+msgstr "Non é posíbel entrar: %1"
 
 #: src/mainContext.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
-"Non é posíbel entrar: %1\n"
-"Non ten permiso de acceso a este lugar."
+msgstr "Non ten permiso de acceso a este lugar."
 
 #: src/qml/GlobalMenu.qml:10
 #, kde-format
