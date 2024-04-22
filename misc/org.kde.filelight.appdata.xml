@@ -32,7 +32,6 @@
   <name xml:lang="ka">Filelight</name>
   <name xml:lang="ko">Filelight</name>
   <name xml:lang="lt">Filelight</name>
-  <name xml:lang="lv">Filelight</name>
   <name xml:lang="nl">Filelight</name>
   <name xml:lang="nn">Filelight</name>
   <name xml:lang="pa">ਫਾਇਲ-ਲਾਈਟ</name>
@@ -80,7 +79,6 @@
   <summary xml:lang="ka">დისკის გამოყენების ჩვენება და გამოუყენებელი ფაილებს წაშლა</summary>
   <summary xml:lang="ko">디스크 사용 통계를 보고 사용하지 않는 파일 삭제</summary>
   <summary xml:lang="lt">Rodyti disko naudojimą ir ištrinti nenaudojamus failus</summary>
-  <summary xml:lang="lv">Parāda diska lietojumu un dzēš neizmantotās datnes</summary>
   <summary xml:lang="nl">Schijfgebruik tonen en ongebruikte bestanden verwijderen</summary>
   <summary xml:lang="nn">Visualiser diskbruk og slett ubrukte filer</summary>
   <summary xml:lang="pa">ਡਿਸਕ ਦੀ ਵਰਤੋਂ ਦਿਖਾਓ ਅਤੇ ਨਾ-ਵਰਤੀਆਂ ਫਾਇਲਾਂ ਨੂੰ ਹਟਾਓ</summary>
@@ -88,6 +86,7 @@
   <summary xml:lang="pt">Mostra a utilização do disco e apagar ficheiros não usados</summary>
   <summary xml:lang="pt-BR">Mostra o uso do disco e exclui arquivos não utilizados</summary>
   <summary xml:lang="ru">Просмотр сведений об использовании дискового пространства и удаление неиспользуемых файлов</summary>
+  <summary xml:lang="sk">Zobraziť využitie disku a odstránenie nepoužívaných súborov</summary>
   <summary xml:lang="sl">Prikazuje rabo diska in briše neuporabljene datoteke</summary>
   <summary xml:lang="sv">Visa diskanvändning och ta bort oanvända filer</summary>
   <summary xml:lang="ta">வட்டுப் பயன்பாட்டைக் காட்டி, தேவையில்லாத கோப்புகளை அகற்ற உதவும்</summary>
@@ -124,7 +123,6 @@
     <p xml:lang="ka">Filelight აპლიკაციაა თქვენს კომპიუტერში დისკის გამოყენების ვიზუალიზაციისთვის. ის საქაღალდეებს ადვილად-გასაგებ ხედში გაჩვენებთ. Filelight -ი აადვილებს დისკის გათავისუფლებას!</p>
     <p xml:lang="ko">Filelight는 이해하기 쉬운 동심원 형태로 컴퓨터 디스크 사용량을 시각화합니다. 디스크 정리에 도움을 줄 수 있습니다!</p>
     <p xml:lang="lt">Filelight yra programa, kuri skirta vizualizuoti disko naudojimą jūsų kompiuteryje ir atvaizduoja aplankus naudodama lengvai suprantamą koncentrinių apskritimų rodinį. Filelight palengvina vietos atlaisvinimą!</p>
-    <p xml:lang="lv">„Filelight“ ir programma ierīces disku izlietojuma vizualizācijai, mapes parādot viegli uztveramā koncentrisku riņķu skatā. „Filelight“ atvieglo brīvas vietas iegūšanu diskā!</p>
     <p xml:lang="nl">Filelight is een toepassing om het schijfgebruik op uw computer te visualiseren door mappen te tonen met een gemakkelijk te begrijpen beeld met concentrische ringen. Filelight maakt het gemakkelijk om ruimte vrij te maken!</p>
     <p xml:lang="nn">Filelight er eit program for å visualisera diskbruken på datamaskina di ved å visa mappene som konsentriske sirklar i eit plassbruk­diagram. Programmet gjer det lett for deg å frigjera diskplass.</p>
     <p xml:lang="pa">ਫਾਇਲ-ਲਾਈਟ ਤੁਹਾਡੇ ਕੰਪਿਊਟਰ ਉੱਤੇ ਡਿਸਕ ਦੇ ਇਸਤੇਮਾਲ ਨੂੰ ਦਿਖਾਉਣ ਵਾਲੀ ਐਪਲੀਕੇਸ਼ਨ ਹੈ, ਜੋ ਸਮਝਣ ਲਈ ਸੌਖੇ ਸਾਂਝੇ ਬਿੰਦੂ ਵਾਲੇ ਚੱਕਰਾਂ ਦੀ ਝਲਕ ਰਾਹੀਂ ਫੋਲਡਰ ਨੂੰ ਦਿਖਾਉਂਦੀ ਹੈ। ਫਾਇਲ-ਲਾਈਟ ਨੇ ਥਾਂ ਨੂੰ ਖਾਲੀ ਕਰਨਾ ਸੌਖਾ ਬਣਾ ਦਿੱਤਾ ਹੈ।</p>
@@ -132,6 +130,7 @@
     <p xml:lang="pt">O Filelight é uma aplicação para visualizar a utilização do disco no seu computador, mostrando as pastas com uma vista fácil de entender num formato em anéis concêntricos. O Filelight facilita a libertação de espaço!</p>
     <p xml:lang="pt-BR">O Filelight é um aplicativo para visualizar a utilização do disco no seu computador mostrando pastas usando uma visão de anéis concêntricos de fácil compreensão. O Filelight simplifica a liberação de espaço!</p>
     <p xml:lang="ru">Filelight — приложение для визуализации использования дискового пространства, использующее наглядное отображение размеров папок в виде концентрических колец. Filelight позволяет просто находить большие файлы и помогает освобождать место на дисках.</p>
+    <p xml:lang="sk">Filelight je aplikácia na vizualizáciu využitia disku v počítači pomocou prehľadného zobrazenia priečinkov v podobe sústredných kruhov. Filelight umožňuje jednoducho uvoľniť miesto na disku!</p>
     <p xml:lang="sl">FIlelight je aplikacija za vizualizacijo porabe diska na vašem računalniku, tako da prikazuje mape v preprosto razumljivih koncentričnih krogih. Filelight poenostavi sproščanje prostora na disku!</p>
     <p xml:lang="sv">Filelight är ett program för att åskådliggöra diskanvändning på datorn genom att visa kataloger med en lättförståelig vy av koncentriska ringar. Filelight gör det enkelt att frigöra utrymme!</p>
     <p xml:lang="ta">உங்கள் கணினியிலுள்ள அடைவுகளின் அளவுகளை நீங்கள் எளிதில் புரிந்துகொள்ளும் வகையில் ஃபைல்-லைட் காட்டும். தேவையில்லாதவற்றை சுலபமாக அகற்றி இடத்தை காலி செய்யலாம்!</p>
@@ -170,7 +169,6 @@
     <p xml:lang="ka">ფუნქციები:</p>
     <p xml:lang="ko">기능:</p>
     <p xml:lang="lt">Ypatybės:</p>
-    <p xml:lang="lv">Iespējas:</p>
     <p xml:lang="nl">Kenmerken:</p>
     <p xml:lang="nn">Funksjonar:</p>
     <p xml:lang="pa">ਫ਼ੀਚਰ:</p>
@@ -218,7 +216,6 @@
       <li xml:lang="ka">ლოკალური, მოხსნადი და დაშორებული დისკების სკანირება</li>
       <li xml:lang="ko">로컬, 원격, 이동식 디스크 검사</li>
       <li xml:lang="lt">Skenuokite vietinius, nuotolinius ar keičiamuosius diskus</li>
-      <li xml:lang="lv">Skenē lokālus un attālinātus vai noņemamus diskus</li>
       <li xml:lang="nl">Lokale, op afstand of verwijderbare schijven scannen</li>
       <li xml:lang="nn">Søk gjennom lokale diskar, nettverksdiskar og flyttbare lagringsmedium</li>
       <li xml:lang="pa">ਲੋਕਲ, ਰਿਮੋਟ ਜਾਂ ਹਟਾਉਣਯੋਗ ਡਿਸਕਾਂ ਦੀ ਜਾਂਚ ਕਰੋ</li>
@@ -226,6 +223,7 @@
       <li xml:lang="pt">Sondar discos locais, remotos ou removíveis</li>
       <li xml:lang="pt-BR">Verifica em discos locais, remotos ou removíveis</li>
       <li xml:lang="ru">Сканирование локальных, сетевых и сменных дисков;</li>
+      <li xml:lang="sk">Skenujte lokálne, vzdialené alebo odoberateľné disky</li>
       <li xml:lang="sl">Preišči krajevne, oddaljene ali odstranljive diske</li>
       <li xml:lang="sv">Sök igenom lokala diskar, diskar på en annan dator eller flyttbara diskar</li>
       <li xml:lang="ta">உள்ளமை, தொலை, மற்றும் கழற்றக்கூடிய வட்டுகளை ஆராயும்</li>
@@ -260,7 +258,6 @@
       <li xml:lang="ka">დეტალებური ინფორმაცია ფაილებისა და საქაღალდეების შესახებ</li>
       <li xml:lang="ko">파일과 폴더의 자세한 정보 표시</li>
       <li xml:lang="lt">Peržiūrėkite išsamią informaciją apie failus ir aplankus</li>
-      <li xml:lang="lv">Parāda sīkāku informāciju par datnēm un mapēm</li>
       <li xml:lang="nl">Gedetailleerde informatie over bestanden en mappen bekijken</li>
       <li xml:lang="nn">Vis detaljert informasjon om filer og mapper</li>
       <li xml:lang="pa">ਫਾਇਲਾਂ ਅਤੇ ਫੋਲਡਰਾਂ ਬਾਰੇ ਵੇਰਵੇ ਸਮੇਤ ਜਾਣਕਾਰੀ ਵੇਖੋ</li>
@@ -268,6 +265,7 @@
       <li xml:lang="pt">Ver informações detalhadas sobre os ficheiros e pastas</li>
       <li xml:lang="pt-BR">Veja informações detalhadas sobre os arquivos e pastas</li>
       <li xml:lang="ru">Подробные сведения о файлах и папках;</li>
+      <li xml:lang="sk">Zobrazte podrobné informácie o súboroch a priečinkoch</li>
       <li xml:lang="sl">Pogled podrobnih informacij o datotekah in mapah</li>
       <li xml:lang="sv">Visa detaljerad information om filer och kataloger</li>
       <li xml:lang="ta">கோப்புகளின் மற்றும் அடைவுகளின் விவரங்களைக் காட்டும்</li>
@@ -302,7 +300,6 @@
       <li xml:lang="ka">წაშალეთ ფაილები და საქაღალდეები, რომლებიც მეტისმეტად ბევრ ადგილს ხარჯავენ</li>
       <li xml:lang="ko">공간을 많이 차지하는 파일이나 폴더 삭제</li>
       <li xml:lang="lt">Ištrinkite failus ar aplankus, kurie užima per daug vietos</li>
-      <li xml:lang="lv">Dzēš datnes un mapes, kas aizņem pārāk daudz vietas</li>
       <li xml:lang="nl">Bestanden of mappen verwijderen die te veel ruimte innemen</li>
       <li xml:lang="nn">Slett filer og mapper som tek opp for mykje plass</li>
       <li xml:lang="pa">ਬਹੁਤ ਵੱਧ ਥਾਂ ਮੱਲਣ ਵਾਲੀਆਂ ਫਾਇਲਾਂ ਜਾਂ ਫੋਲਡਰਾਂ ਨੂੰ ਹਟਾਓ</li>
@@ -310,6 +307,7 @@
       <li xml:lang="pt">Apagar os ficheiros ou pastas que ocupam demasiado espaço</li>
       <li xml:lang="pt-BR">Exclua arquivos ou pastas que estão ocupando muito espaço</li>
       <li xml:lang="ru">Удаление файлов или папок, занимающих слишком много места;</li>
+      <li xml:lang="sk">Odstráňte súbory alebo priečinky, ktoré zaberajú príliš veľa miesta</li>
       <li xml:lang="sl">Briši datoteke ali mape, ki zavzemajo preveč prostora</li>
       <li xml:lang="sv">Ta bort filer eller kataloger som upptar för mycket utrymme</li>
       <li xml:lang="ta">மிகப்பெரிய கோப்புகளையும் அடைவுகளையும் எளிதில் அகற்ற உதவும்</li>
@@ -344,7 +342,6 @@
       <li xml:lang="ka">ინტეგრაცია Dolphin-ში, Konqueror-ში და Krusader-ში</li>
       <li xml:lang="ko">Dolphin, Konqueror, Krusader 파일 관리자와 통합</li>
       <li xml:lang="lt">Integracija į Dolphin, Konqueror ir Krusader failų tvarkytuves</li>
-      <li xml:lang="lv">Integrācija „Dolphon“, „Konqueror“ un „Krusader“ programmā</li>
       <li xml:lang="nl">Integratie in bestandsbeheerders Dolphin, Konqueror en Krusader</li>
       <li xml:lang="nn">Integrert med filhandsamarane Dolphin, Konqueror og Krusader</li>
       <li xml:lang="pa">ਡਾਲਫਿਨ, ਕੋਨਕਿਉਰੋਰ ਜਾਂ ਕਰੁਸਡਰ ਫਾਇਲ ਮੈਨੇਜਰਾਂ ਨਾਲ ਜੁੜਿਆ ਹੋਇਆ ਹੈ</li>
@@ -352,6 +349,7 @@
       <li xml:lang="pt">Integração com os gestores de ficheiros Dolphin, Konqueror e Krusader</li>
       <li xml:lang="pt-BR">Integração com os gerenciadores de arquivo Dolphin, Konqueror e Krusader</li>
       <li xml:lang="ru">Встраивание в диспетчеры файлов Dolphin, Konqueror и Krusader;</li>
+      <li xml:lang="sk">Integrácia do správcov súborov Dolphin, Konqueror a Krusader</li>
       <li xml:lang="sl">Vključitev v upravljalnike datotek Dolphin, Konqueror in Krusader</li>
       <li xml:lang="sv">Integrerat med filhanterarna Dolphin, Konqueror och Krusader</li>
       <li xml:lang="ta">டால்பின், கான்கொரர், குரூசெடர் போன்ற கோப்பு உலாவிகளுடனான ஒருங்கிணைப்பு</li>
@@ -389,7 +387,6 @@
       <li xml:lang="ka">მორგებადი ფერის სქემები</li>
       <li xml:lang="ko">색 구성표 설정</li>
       <li xml:lang="lt">Konfigūruojami spalvų rinkiniai</li>
-      <li xml:lang="lv">Pielāgojamas krāsu shēmas</li>
       <li xml:lang="nl">Te configureren kleurenschema's</li>
       <li xml:lang="nn">Støtte for ulike fargeoppsett</li>
       <li xml:lang="pa">ਸੰਰਚਨਾ ਕਰਨ ਯੋਗ ਰੰਗ ਸਕੀਮਾਂ</li>
