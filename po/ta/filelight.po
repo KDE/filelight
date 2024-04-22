@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-12 00:39+0000\n"
-"PO-Revision-Date: 2024-03-30 21:56+0530\n"
+"PO-Revision-Date: 2024-04-21 22:11+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -185,26 +185,24 @@ msgid "Select Folder to Scan"
 msgstr "ஆராய வேண்டிய அடைவைத் தேர்ந்தெடுத்தல்"
 
 #: src/mainContext.cpp:218
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "உள்ளிடப்பட்ட முகவரியை கையாள முடியவில்லை; அது முறையற்றதாகும்."
+msgstr "உள்ளிட்ட முகவரியை புரிந்துகொள்ள முடியவில்லை"
 
 #: src/mainContext.cpp:218
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "அது செல்லுபடியாகாத‍து"
 
 #: src/mainContext.cpp:220
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "முழுமையான பாதைகளை மட்டுமே ஃபைல்-லைட் ஏற்கும், எ.கா. /%1"
+msgstr "முழுமையான பாதைகளை மட்டுமே ஃபைல்-லைட் ஏற்கும்"
 
 #: src/mainContext.cpp:220
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "எ.கா. /%1"
 
 #: src/mainContext.cpp:222
 #, kde-format
@@ -214,17 +212,12 @@ msgstr "அடைவை கண்டுபிடிக்க முடியவ�
 #: src/mainContext.cpp:224
 #, kde-format
 msgid "Unable to enter: %1"
-msgstr ""
+msgstr "நுழைய முடியவில்லை: %1"
 
 #: src/mainContext.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
-"நுழைய முடியவில்லை: %1\n"
-"இவ்விடத்தில் நுழைவதற்கான அனுமதி உங்களுக்கு இல்லை."
+msgstr "இவ்விடத்தில் நுழைவதற்கான அனுமதி உங்களுக்கு இல்லை."
 
 #: src/qml/GlobalMenu.qml:10
 #, kde-format
