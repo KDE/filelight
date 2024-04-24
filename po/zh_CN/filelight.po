@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-12 00:39+0000\n"
-"PO-Revision-Date: 2024-04-12 19:12\n"
+"PO-Revision-Date: 2024-04-23 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/filelight/filelight.pot\n"
-"X-Crowdin-File-ID: 46498\n"
+"X-Crowdin-File: /kf6-stable/messages/filelight/filelight.pot\n"
+"X-Crowdin-File-ID: 51056\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -210,7 +210,7 @@ msgstr "例如：/%1"
 #: src/mainContext.cpp:222
 #, kde-format
 msgid "Folder not found: %1"
-msgstr "找不到文件夹：%1"
+msgstr "未找到文件夹：%1"
 
 #: src/mainContext.cpp:224
 #, kde-format
