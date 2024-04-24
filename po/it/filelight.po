@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-12 00:39+0000\n"
-"PO-Revision-Date: 2024-04-01 10:39+0200\n"
+"PO-Revision-Date: 2024-04-15 18:27+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -185,26 +185,24 @@ msgid "Select Folder to Scan"
 msgstr "Seleziona cartella da scansionare"
 
 #: src/mainContext.cpp:218
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "L'URL inserito non può essere analizzato; non è valido."
+msgstr "L'URL inserito non può essere analizzato"
 
 #: src/mainContext.cpp:218
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "non è valido."
 
 #: src/mainContext.cpp:220
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Filelight accetta solo percorsi assoluti, per esempio /%1"
+msgstr "Filelight accetta solo percorsi assoluti"
 
 #: src/mainContext.cpp:220
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "ad esempio /%1"
 
 #: src/mainContext.cpp:222
 #, kde-format
@@ -212,20 +210,14 @@ msgid "Folder not found: %1"
 msgstr "Cartella non trovata: %1"
 
 #: src/mainContext.cpp:224
-#, fuzzy, kde-format
-#| msgid "Unable to create part widget."
+#, kde-format
 msgid "Unable to enter: %1"
-msgstr "Impossibile creare l'oggetto del componente."
+msgstr "Impossibile entrare in: %1"
 
 #: src/mainContext.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
-"Impossibile entrare in: %1\n"
-"Non hai diritti di accesso a questa posizione."
+msgstr "Non hai diritti di accesso a questa posizione."
 
 #: src/qml/GlobalMenu.qml:10
 #, kde-format
