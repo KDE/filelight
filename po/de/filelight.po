@@ -1,7 +1,7 @@
+# SPDX-FileCopyrightText: 2010, 2024 Johannes Obermayr <johannesobermayr@gmx.de>
 # Christoph Hamann <chhamann@gmx.de>, 2006.
 # Thomas Reitelbach <tr@erdfunkstelle.de>, 2006, 2007.
 # Burkhard Lück <lueck@hube-lueck.de>, 2009, 2010, 2013, 2015, 2016, 2017, 2018, 2020, 2021.
-# Johannes Obermayr <johannesobermayr@gmx.de>, 2010.
 # Frederik Schwarzer <schwarzer@kde.org>, 2010, 2011, 2022.
 # Panagiotis Papadopoulos <pano_90@gmx.net>, 2010.
 msgid ""
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -94,7 +94,7 @@ msgstr ""
 #: src/main.cpp:75
 #, kde-format
 msgid "Laurent Montel"
-msgstr ""
+msgstr "Laurent Montel"
 
 #: src/main.cpp:75 src/main.cpp:76
 #, kde-format
