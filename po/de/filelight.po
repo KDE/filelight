@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-12 00:39+0000\n"
-"PO-Revision-Date: 2022-12-19 10:14+0100\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"PO-Revision-Date: 2024-04-28 20:19+0200\n"
+"Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -187,11 +187,9 @@ msgid "Select Folder to Scan"
 msgstr "Bitte wählen Sie den einzulesenden Ordner aus"
 
 #: src/mainContext.cpp:218
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr ""
-"Die eingegebene Adresse kann nicht eingelesen werden, da sie ungültig ist."
+msgstr "Die eingegebene Adresse kann nicht eingelesen werden"
 
 #: src/mainContext.cpp:218
 #, kde-format
@@ -199,10 +197,9 @@ msgid "it is invalid."
 msgstr ""
 
 #: src/mainContext.cpp:220
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Filelight benötigt absolute Pfade (z. B. /%1)"
+msgstr "Filelight benötigt absolute Pfade"
 
 #: src/mainContext.cpp:220
 #, kde-format
@@ -221,14 +218,9 @@ msgid "Unable to enter: %1"
 msgstr "Das Teilmodul kann nicht erstellt werden."
 
 #: src/mainContext.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
-"Auf %1 kann nicht zugegriffen werden.\n"
-"Ihre Zugriffsrechte reichen nicht aus."
+msgstr "Ihre Zugriffsrechte reichen für diesen Ort nicht aus."
 
 #: src/qml/GlobalMenu.qml:10
 #, kde-format
