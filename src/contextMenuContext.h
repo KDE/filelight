@@ -7,7 +7,7 @@
 
 #include <QObject>
 
-class File;
+#include "fileTree.h"
 
 namespace RadialMap
 {
@@ -35,8 +35,7 @@ public Q_SLOTS:
     void copyClipboard(RadialMap::Segment *segment);
     void copyClipboard(const QUrl &url);
 
-    void deleteFileFromSegment(RadialMap::Segment *segment);
-    void deleteFile(const std::shared_ptr<File> &file);
+    void deleteFile(const FileWrapper &file);
 
     void setDeleting(bool status);
 

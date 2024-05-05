@@ -16,6 +16,7 @@
 #include <QDebug>
 #include <QDir>
 #include <QIcon>
+#include <QQmlEngine>
 #include <QQuickStyle>
 #include <QUrl>
 
@@ -49,7 +50,7 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
     KCrash::initialize();
 
-    qRegisterMetaType<std::shared_ptr<File>>("std::shared_ptr<File>");
+    qmlRegisterUncreatableType<FileWrapper>("org.kde.filelight", 1, 0, "file", QStringLiteral("only consumed, never created"));
     qRegisterMetaType<std::shared_ptr<Folder>>("std::shared_ptr<Folder>");
 
     std::ignore = FileCleaner::instance(); // make sure the cleaner is up and running early so it is definitely up by the time shutdown happens

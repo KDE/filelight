@@ -69,6 +69,12 @@ public:
     {
         return m_file;
     }
+
+    Q_INVOKABLE FileWrapper wrappedFile() const
+    {
+        return FileWrapper(m_file);
+    }
+
     Q_INVOKABLE const QColor &pen() const
     {
         return m_pen;
