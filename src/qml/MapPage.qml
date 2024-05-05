@@ -42,6 +42,26 @@ Kirigami.Page {
         }
     }
 
+    Kirigami.PromptDialog {
+        property file file
+
+        id: deleteFileDialog
+        title: i18nc("@window:title", "Delete permanently")
+        standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
+ 
+        onAccepted: ContextMenuContext.deleteFile(file)
+    }
+
+    function deleteFile(file) {
+        deleteFileDialog.file = file;
+        if (file.isFolder()) {
+            deleteFileDialog.subtitle = i18n("<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</b> deleted.</qt>", file.url());
+        } else {
+            deleteFileDialog.subtitle = i18n("<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>", file.url());
+        }
+        deleteFileDialog.open();
+    }
+
     Kirigami.Action {
         id: goToOverviewAction
         enabled: page.state === ""
@@ -174,7 +194,7 @@ Kirigami.Page {
                 action: Kirigami.Action {
                     icon.name: "edit-delete"
                     text: i18nc("@action delete file or folder", "Delete")
-                    onTriggered: ContextMenuContext.deleteFileFromSegment(contextMenu.segment)
+                    onTriggered: deleteFile(contextMenu.segment.wrappedFile())
                 }
             }
         }
@@ -278,7 +298,7 @@ Kirigami.Page {
                             action: Kirigami.Action {
                                 icon.name: "edit-delete"
                                 text: i18nc("@action delete file or folder", "Delete")
-                                onTriggered: ContextMenuContext.deleteFile(FileModel.file(index))
+                                onTriggered: deleteFile(FileModel.file(index))
                             }
                         }
                     }

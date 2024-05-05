@@ -81,9 +81,9 @@ QHash<int, QByteArray> FileModel::roleNames() const
     return roles;
 }
 
-std::shared_ptr<File> FileModel::file(int row) const
+FileWrapper FileModel::file(int row) const
 {
-    return m_tree->files.at(row);
+    return FileWrapper(m_tree->files.at(row));
 }
 
 } // namespace Filelight

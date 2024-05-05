@@ -8,7 +8,7 @@
 #include <QAbstractListModel>
 
 class Folder;
-class File;
+class FileWrapper;
 
 namespace Filelight
 {
@@ -41,7 +41,7 @@ public:
     [[nodiscard]] QVariant data(const QModelIndex &index, int intRole) const override;
     [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
-    Q_INVOKABLE [[nodiscard]] std::shared_ptr<File> file(int row) const;
+    Q_INVOKABLE [[nodiscard]] FileWrapper file(int row) const;
 };
 
 } // namespace Filelight

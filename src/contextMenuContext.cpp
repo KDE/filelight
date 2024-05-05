@@ -58,28 +58,11 @@ void ContextMenuContext::copyClipboard(const QUrl &url)
     QGuiApplication::clipboard()->setMimeData(mime, QClipboard::Clipboard);
 }
 
-static bool shouldDelete(const QUrl &url, bool isFolder)
+void ContextMenuContext::deleteFile(const FileWrapper &_file)
 {
-    const QString message = isFolder ? i18n("<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</b> deleted.</qt>", url.toString())
-                                     : i18n("<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>", url.toString());
-    const auto userIntention = KMessageBox::warningContinueCancel(nullptr, message, QString(), KGuiItem(i18n("&Delete"), QStringLiteral("edit-delete")));
-
-    return userIntention == KMessageBox::Continue;
-}
-
-void ContextMenuContext::deleteFileFromSegment(RadialMap::Segment *segment)
-{
-    deleteFile(segment->file());
-}
-
-void ContextMenuContext::deleteFile(const std::shared_ptr<File> &file)
-{
+    const auto file = _file.file();
     const auto url = file->url();
     const auto isFolder = file->isFolder();
-
-    if (!shouldDelete(url, isFolder)) {
-        return;
-    }
 
     auto job = KIO::del(url);
     connect(job, &KJob::finished, this, [this, url, job, file] {
