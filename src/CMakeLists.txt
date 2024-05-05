@@ -45,6 +45,7 @@ else()
 endif()
 target_link_libraries(filelightInternal
     Qt6::Gui
+    Qt6::Qml
     KF6::CoreAddons
     KF6::ConfigCore
     KF6::I18n

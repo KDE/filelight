@@ -14,6 +14,9 @@
 
 #include <QByteArray>
 
+#include <QObject>
+#include <QUrl>
+
 using FileSize = quint64;
 
 class Folder;
@@ -199,4 +202,33 @@ private:
     }
 
     uint m_children = 0;
+};
+
+class FileWrapper
+{
+    Q_GADGET
+public:
+    FileWrapper()
+    {
+    }
+    FileWrapper(const std::shared_ptr<File> &file)
+        : m_file(file)
+    {
+    }
+
+    Q_INVOKABLE bool isFolder() const
+    {
+        return m_file->isFolder();
+    }
+    Q_INVOKABLE QUrl url() const
+    {
+        return m_file->url();
+    }
+    std::shared_ptr<File> file() const
+    {
+        return m_file;
+    }
+
+private:
+    std::shared_ptr<File> m_file;
 };
