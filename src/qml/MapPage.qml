@@ -41,24 +41,26 @@ Kirigami.Page {
     }
 
     Kirigami.PromptDialog {
+        id: deleteFileDialog
+
         property file file
 
-        id: deleteFileDialog
         title: i18nc("@window:title", "Delete permanently")
-        standardButtons: Kirigami.Dialog.NoButton
-        customFooterActions: [
-            Kirigami.Action {
-                text: i18nc("@button", "Delete")
-                icon.name: "delete-symbolic"
-                onTriggered: deleteFileDialog.accept()
-            },
-            Kirigami.Action {
-                text: i18nc("@button", "Cancel")
-                icon.name: "dialog-cancel-symbolic"
-                onTriggered: deleteFileDialog.reject()
-            }
-        ]
+        dialogType: Kirigami.PromptDialog.Warning
 
+        footer: QQC2.DialogButtonBox {
+            standardButtons: Kirigami.Dialog.Cancel
+
+            QQC2.Button {
+                id: deleteButton
+
+                text: i18nc("@action:button Delete file", "Delete")
+                icon.name: "delete-symbolic"
+                QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.AcceptRole
+            }
+        }
+
+        onRejected: deleteFileDialog.reject()
         onAccepted: ContextMenuContext.deleteFile(file)
     }
 
