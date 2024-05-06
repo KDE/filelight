@@ -194,7 +194,7 @@ Kirigami.Page {
                 action: Kirigami.Action {
                     icon.name: "edit-delete"
                     text: i18nc("@action delete file or folder", "Delete")
-                    onTriggered: deleteFile(contextMenu.segment.wrappedFile())
+                    onTriggered: page.deleteFile(contextMenu.segment.wrappedFile())
                 }
             }
         }
@@ -298,7 +298,7 @@ Kirigami.Page {
                             action: Kirigami.Action {
                                 icon.name: "edit-delete"
                                 text: i18nc("@action delete file or folder", "Delete")
-                                onTriggered: deleteFile(FileModel.file(index))
+                                onTriggered: page.deleteFile(FileModel.file(index))
                             }
                         }
                     }
