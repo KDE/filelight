@@ -17,6 +17,16 @@ Kirigami.Page {
     property url url: RadialMap.rootUrl
     property QQC2.Menu contextMenu
 
+    function deleteFile(file) {
+        deleteFileDialog.file = file;
+        if (file.isFolder()) {
+            deleteFileDialog.subtitle = i18n("<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</b> deleted.</qt>", file.url());
+        } else {
+            deleteFileDialog.subtitle = i18n("<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>", file.url());
+        }
+        deleteFileDialog.open();
+    }
+
     enabled: !ContextMenuContext.deleting
     topPadding: 0
     leftPadding: 0
@@ -35,19 +45,21 @@ Kirigami.Page {
 
         id: deleteFileDialog
         title: i18nc("@window:title", "Delete permanently")
-        standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
- 
-        onAccepted: ContextMenuContext.deleteFile(file)
-    }
+        standardButtons: Kirigami.Dialog.NoButton
+        customFooterActions: [
+            Kirigami.Action {
+                text: i18nc("@button", "Delete")
+                icon.name: "delete-symbolic"
+                onTriggered: deleteFileDialog.accept()
+            },
+            Kirigami.Action {
+                text: i18nc("@button", "Cancel")
+                icon.name: "dialog-cancel-symbolic"
+                onTriggered: deleteFileDialog.reject()
+            }
+        ]
 
-    function deleteFile(file) {
-        deleteFileDialog.file = file;
-        if (file.isFolder()) {
-            deleteFileDialog.subtitle = i18n("<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</b> deleted.</qt>", file.url());
-        } else {
-            deleteFileDialog.subtitle = i18n("<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>", file.url());
-        }
-        deleteFileDialog.open();
+        onAccepted: ContextMenuContext.deleteFile(file)
     }
 
     Kirigami.Action {
