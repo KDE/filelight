@@ -309,7 +309,7 @@ msgstr[1] "%1 fitxers"
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
-msgstr "S'està interrompent l'exploració..."
+msgstr "S'està interrompent l'exploració…"
 
 #: src/qml/MapPage.qml:30
 #, kde-format

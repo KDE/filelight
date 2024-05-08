@@ -528,21 +528,3 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 fitxers, amb una mida mitjana de %2"
-
-#~ msgid "That folder is already set to be excluded from scans."
-#~ msgstr "Ja s'ha indicat que aquesta carpeta s'exclogui de les exploracions."
-
-#~ msgid "&Scan"
-#~ msgstr "&Explora"
-
-#~ msgid "&View"
-#~ msgstr "&Visualitza"
-
-#~ msgid "Main Toolbar"
-#~ msgstr "Barra d'eines principal"
-
-#~ msgid "Location Toolbar"
-#~ msgstr "Barra d'eines de localització"
-
-#~ msgid "View Toolbar"
-#~ msgstr "Barra d'eines de visualització"
