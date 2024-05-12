@@ -12,8 +12,6 @@
 
 #include <QList>
 
-#include <kio_version.h>
-
 namespace Filelight
 {
 
