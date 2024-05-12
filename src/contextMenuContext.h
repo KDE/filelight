@@ -42,6 +42,7 @@ public Q_SLOTS:
 
 Q_SIGNALS:
     void deletingChanged();
+    void deleteFileFailed(QString reason);
 
 private:
     bool m_deleting = false;

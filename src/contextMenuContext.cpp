@@ -89,7 +89,7 @@ void ContextMenuContext::deleteFile(const std::shared_ptr<File> &file)
             file->parent()->remove(file);
             RadialMap::Map::instance()->refresh(Dirty::Layout);
         } else {
-            KMessageBox::error(nullptr, job->errorString(), i18n("Error while deleting"));
+            Q_EMIT deleteFileFailed(i18nc("@info:notification", "Error while deleting: %1", job->errorString()));
         }
     });
     setDeleting(true);

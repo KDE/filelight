@@ -23,6 +23,13 @@ Kirigami.Page {
     rightPadding: 0
     bottomPadding: 0
 
+    Connections {
+        target: ContextMenuContext
+        function onDeleteFileFailed(reason) {
+            showPassiveNotification(reason);
+        }
+    }
+
     Kirigami.Action {
         id: goToOverviewAction
         enabled: page.state === ""
