@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-12 00:39+0000\n"
+"POT-Creation-Date: 2024-05-13 00:40+0000\n"
 "PO-Revision-Date: 2024-04-19 22:32+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -61,8 +61,10 @@ msgid "&Delete"
 msgstr "&Ezabatu"
 
 #: src/contextMenuContext.cpp:92
-#, kde-format
-msgid "Error while deleting"
+#, fuzzy, kde-format
+#| msgid "Error while deleting"
+msgctxt "@info:notification"
+msgid "Error while deleting: %1"
 msgstr "Errorea ezabatzean."
 
 #: src/historyAction.cpp:64
@@ -310,85 +312,85 @@ msgctxt "@info:status"
 msgid "Aborting Scan..."
 msgstr "Aztertzea uzten..."
 
-#: src/qml/MapPage.qml:30
+#: src/qml/MapPage.qml:37
 #, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
 msgstr "Joan ikuspegi orokorrera"
 
-#: src/qml/MapPage.qml:38
+#: src/qml/MapPage.qml:45
 #, kde-format
 msgctxt "@action"
 msgid "Up"
 msgstr "Gora"
 
-#: src/qml/MapPage.qml:47
+#: src/qml/MapPage.qml:54
 #, kde-format
 msgctxt "@action"
 msgid "Rescan"
 msgstr "Berriro aztertu"
 
-#: src/qml/MapPage.qml:56
+#: src/qml/MapPage.qml:63
 #, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "Gelditu"
 
-#: src/qml/MapPage.qml:64
+#: src/qml/MapPage.qml:71
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "Zooma gerturatu"
 
-#: src/qml/MapPage.qml:74
+#: src/qml/MapPage.qml:81
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Zooma urrundu"
 
-#: src/qml/MapPage.qml:107 src/qml/MapPage.qml:230
+#: src/qml/MapPage.qml:114 src/qml/MapPage.qml:237
 #, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "Ireki"
 
-#: src/qml/MapPage.qml:115 src/qml/MapPage.qml:238
+#: src/qml/MapPage.qml:122 src/qml/MapPage.qml:245
 #, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
 msgstr "Ireki terminala hemen"
 
-#: src/qml/MapPage.qml:123
+#: src/qml/MapPage.qml:130
 #, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "Erdiratu mapa hemen"
 
-#: src/qml/MapPage.qml:134 src/qml/MapPage.qml:246
+#: src/qml/MapPage.qml:141 src/qml/MapPage.qml:253
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "Gehitu «Ez aztertu» zerrendara"
 
-#: src/qml/MapPage.qml:142
+#: src/qml/MapPage.qml:149
 #, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Berriro aztertu"
 
-#: src/qml/MapPage.qml:149 src/qml/MapPage.qml:253
+#: src/qml/MapPage.qml:156 src/qml/MapPage.qml:260
 #, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "Kopiatu arbelera"
 
-#: src/qml/MapPage.qml:157 src/qml/MapPage.qml:261
+#: src/qml/MapPage.qml:164 src/qml/MapPage.qml:268
 #, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "Ezabatu"
 
-#: src/qml/MapPage.qml:314
+#: src/qml/MapPage.qml:321
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -396,7 +398,7 @@ msgid_plural "%1 Files (%2%)"
 msgstr[0] "Fitxategi %1 (%%2)"
 msgstr[1] "%1 Fitxategi (%%2)"
 
-#: src/qml/MapPage.qml:316
+#: src/qml/MapPage.qml:323
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -404,13 +406,13 @@ msgid_plural "%1 Files"
 msgstr[0] "Fitxategi %1"
 msgstr[1] "%1 Fitxategi"
 
-#: src/qml/MapPage.qml:320
+#: src/qml/MapPage.qml:327
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "Egin klik gora, guraso karpetara, joateko"
 
-#: src/qml/MapPage.qml:538
+#: src/qml/MapPage.qml:545
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -418,7 +420,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "Fitxategi %1, %2"
 msgstr[1] "%1 Fitxategi, %2"
 
-#: src/qml/MapPage.qml:547
+#: src/qml/MapPage.qml:554
 #, kde-format
 msgid "No data available"
 msgstr "Ez dago daturik eskuragarri"

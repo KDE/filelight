@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-12 00:39+0000\n"
+"POT-Creation-Date: 2024-05-13 00:40+0000\n"
 "PO-Revision-Date: 2024-04-10 06:47+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -56,8 +56,10 @@ msgid "&Delete"
 msgstr "מ&חיקה"
 
 #: src/contextMenuContext.cpp:92
-#, kde-format
-msgid "Error while deleting"
+#, fuzzy, kde-format
+#| msgid "Error while deleting"
+msgctxt "@info:notification"
+msgid "Error while deleting: %1"
 msgstr "שגיאה במחיקה"
 
 #: src/historyAction.cpp:64
@@ -306,85 +308,85 @@ msgctxt "@info:status"
 msgid "Aborting Scan..."
 msgstr "הסריקה מבוטלת…"
 
-#: src/qml/MapPage.qml:30
+#: src/qml/MapPage.qml:37
 #, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
 msgstr "מעבר לסקירה"
 
-#: src/qml/MapPage.qml:38
+#: src/qml/MapPage.qml:45
 #, kde-format
 msgctxt "@action"
 msgid "Up"
 msgstr "למעלה"
 
-#: src/qml/MapPage.qml:47
+#: src/qml/MapPage.qml:54
 #, kde-format
 msgctxt "@action"
 msgid "Rescan"
 msgstr "סריקה מחדש"
 
-#: src/qml/MapPage.qml:56
+#: src/qml/MapPage.qml:63
 #, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "עצירה"
 
-#: src/qml/MapPage.qml:64
+#: src/qml/MapPage.qml:71
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "התקרבות"
 
-#: src/qml/MapPage.qml:74
+#: src/qml/MapPage.qml:81
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "התרחקות"
 
-#: src/qml/MapPage.qml:107 src/qml/MapPage.qml:230
+#: src/qml/MapPage.qml:114 src/qml/MapPage.qml:237
 #, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "פתיחה"
 
-#: src/qml/MapPage.qml:115 src/qml/MapPage.qml:238
+#: src/qml/MapPage.qml:122 src/qml/MapPage.qml:245
 #, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
 msgstr "פתיחת מסוף כאן"
 
-#: src/qml/MapPage.qml:123
+#: src/qml/MapPage.qml:130
 #, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "מרכוז המפה כאן"
 
-#: src/qml/MapPage.qml:134 src/qml/MapPage.qml:246
+#: src/qml/MapPage.qml:141 src/qml/MapPage.qml:253
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "הוספה לרשימת ‚לא לסרוק’"
 
-#: src/qml/MapPage.qml:142
+#: src/qml/MapPage.qml:149
 #, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "סריקה מחדש"
 
-#: src/qml/MapPage.qml:149 src/qml/MapPage.qml:253
+#: src/qml/MapPage.qml:156 src/qml/MapPage.qml:260
 #, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "העתקה ללוח הגזירים"
 
-#: src/qml/MapPage.qml:157 src/qml/MapPage.qml:261
+#: src/qml/MapPage.qml:164 src/qml/MapPage.qml:268
 #, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "מחיקה"
 
-#: src/qml/MapPage.qml:314
+#: src/qml/MapPage.qml:321
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -394,7 +396,7 @@ msgstr[1] "שני קבצים (%2%)"
 msgstr[2] "%1 קבצים (%2%)"
 msgstr[3] "%1 קבצים (%2%)"
 
-#: src/qml/MapPage.qml:316
+#: src/qml/MapPage.qml:323
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -404,13 +406,13 @@ msgstr[1] "שני קבצים"
 msgstr[2] "%1 קבצים"
 msgstr[3] "%1 קבצים"
 
-#: src/qml/MapPage.qml:320
+#: src/qml/MapPage.qml:327
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "לחיצה תעלה לתיקיית ההורה"
 
-#: src/qml/MapPage.qml:538
+#: src/qml/MapPage.qml:545
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -420,7 +422,7 @@ msgstr[1] "שני קבצים, %2"
 msgstr[2] "%1 קבצים, %2"
 msgstr[3] "%1 קבצים, %2"
 
-#: src/qml/MapPage.qml:547
+#: src/qml/MapPage.qml:554
 #, kde-format
 msgid "No data available"
 msgstr "אין נתונים זמינים"

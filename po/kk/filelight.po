@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-12 00:39+0000\n"
+"POT-Creation-Date: 2024-05-13 00:40+0000\n"
 "PO-Revision-Date: 2013-06-27 03:35+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -58,8 +58,10 @@ msgid "&Delete"
 msgstr "&Өшіру"
 
 #: src/contextMenuContext.cpp:92
-#, kde-format
-msgid "Error while deleting"
+#, fuzzy, kde-format
+#| msgid "Error while deleting"
+msgctxt "@info:notification"
+msgid "Error while deleting: %1"
 msgstr "Өшіру кезде қате орын алды."
 
 #: src/historyAction.cpp:64
@@ -323,45 +325,45 @@ msgctxt "@info:status"
 msgid "Aborting Scan..."
 msgstr "Зерттеуді доғару..."
 
-#: src/qml/MapPage.qml:30
+#: src/qml/MapPage.qml:37
 #, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
 msgstr ""
 
-#: src/qml/MapPage.qml:38
+#: src/qml/MapPage.qml:45
 #, kde-format
 msgctxt "@action"
 msgid "Up"
 msgstr ""
 
-#: src/qml/MapPage.qml:47
+#: src/qml/MapPage.qml:54
 #, fuzzy, kde-format
 #| msgid "Rescan"
 msgctxt "@action"
 msgid "Rescan"
 msgstr "Қайта зерттеу"
 
-#: src/qml/MapPage.qml:56
+#: src/qml/MapPage.qml:63
 #, fuzzy, kde-format
 #| msgid "Stop"
 msgctxt "@action"
 msgid "Stop"
 msgstr "Тоқтату"
 
-#: src/qml/MapPage.qml:64
+#: src/qml/MapPage.qml:71
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr ""
 
-#: src/qml/MapPage.qml:74
+#: src/qml/MapPage.qml:81
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr ""
 
-#: src/qml/MapPage.qml:107 src/qml/MapPage.qml:230
+#: src/qml/MapPage.qml:114 src/qml/MapPage.qml:237
 #, fuzzy, kde-format
 #| msgctxt "Scan/open the path of the selected element"
 #| msgid "&Open"
@@ -369,48 +371,48 @@ msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "&Ашу"
 
-#: src/qml/MapPage.qml:115 src/qml/MapPage.qml:238
+#: src/qml/MapPage.qml:122 src/qml/MapPage.qml:245
 #, fuzzy, kde-format
 #| msgid "Open &Terminal Here"
 msgctxt "@action"
 msgid "Open Terminal Here"
 msgstr "Мына жерде &Терминалды ашу"
 
-#: src/qml/MapPage.qml:123
+#: src/qml/MapPage.qml:130
 #, fuzzy, kde-format
 #| msgid "&Center Map Here"
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "Карта &ортасын осында"
 
-#: src/qml/MapPage.qml:134 src/qml/MapPage.qml:246
+#: src/qml/MapPage.qml:141 src/qml/MapPage.qml:253
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr ""
 
-#: src/qml/MapPage.qml:142
+#: src/qml/MapPage.qml:149
 #, fuzzy, kde-format
 #| msgid "Rescan"
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Қайта зерттеу"
 
-#: src/qml/MapPage.qml:149 src/qml/MapPage.qml:253
+#: src/qml/MapPage.qml:156 src/qml/MapPage.qml:260
 #, fuzzy, kde-format
 #| msgid "&Copy to clipboard"
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "Алмасу буферіне &көшіріп алу"
 
-#: src/qml/MapPage.qml:157 src/qml/MapPage.qml:261
+#: src/qml/MapPage.qml:164 src/qml/MapPage.qml:268
 #, fuzzy, kde-format
 #| msgid "&Delete"
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "&Өшіру"
 
-#: src/qml/MapPage.qml:314
+#: src/qml/MapPage.qml:321
 #, fuzzy, kde-format
 #| msgid "%1 File"
 #| msgid_plural "%1 Files"
@@ -419,7 +421,7 @@ msgid "%1 File (%2%)"
 msgid_plural "%1 Files (%2%)"
 msgstr[0] "%1 файл"
 
-#: src/qml/MapPage.qml:316
+#: src/qml/MapPage.qml:323
 #, fuzzy, kde-format
 #| msgid "%1 File"
 #| msgid_plural "%1 Files"
@@ -428,7 +430,7 @@ msgid "%1 File"
 msgid_plural "%1 Files"
 msgstr[0] "%1 файл"
 
-#: src/qml/MapPage.qml:320
+#: src/qml/MapPage.qml:327
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -439,7 +441,7 @@ msgstr ""
 "\n"
 "Аталық каталогқа ауысу үшін түртіңіз"
 
-#: src/qml/MapPage.qml:538
+#: src/qml/MapPage.qml:545
 #, fuzzy, kde-format
 #| msgid "%1 File"
 #| msgid_plural "%1 Files"
@@ -448,7 +450,7 @@ msgid "%1 File, %2"
 msgid_plural "%1 Files, %2"
 msgstr[0] "%1 файл"
 
-#: src/qml/MapPage.qml:547
+#: src/qml/MapPage.qml:554
 #, kde-format
 msgid "No data available"
 msgstr ""

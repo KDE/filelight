@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-12 00:39+0000\n"
+"POT-Creation-Date: 2024-05-13 00:40+0000\n"
 "PO-Revision-Date: 2022-06-01 18:29+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -58,8 +58,10 @@ msgid "&Delete"
 msgstr "Ș&terge"
 
 #: src/contextMenuContext.cpp:92
-#, kde-format
-msgid "Error while deleting"
+#, fuzzy, kde-format
+#| msgid "Error while deleting"
+msgctxt "@info:notification"
+msgid "Error while deleting: %1"
 msgstr "Eroare la ștergere"
 
 #: src/historyAction.cpp:64
@@ -322,7 +324,7 @@ msgctxt "@info:status"
 msgid "Aborting Scan..."
 msgstr "Se abandonează citirea..."
 
-#: src/qml/MapPage.qml:30
+#: src/qml/MapPage.qml:37
 #, fuzzy, kde-format
 #| msgctxt "@action go to overview page, listing browsable mount points"
 #| msgid "Overview"
@@ -330,39 +332,39 @@ msgctxt "@action"
 msgid "Go to Overview"
 msgstr "Privire generală"
 
-#: src/qml/MapPage.qml:38
+#: src/qml/MapPage.qml:45
 #, kde-format
 msgctxt "@action"
 msgid "Up"
 msgstr ""
 
-#: src/qml/MapPage.qml:47
+#: src/qml/MapPage.qml:54
 #, fuzzy, kde-format
 #| msgid "Rescan"
 msgctxt "@action"
 msgid "Rescan"
 msgstr "Recitește"
 
-#: src/qml/MapPage.qml:56
+#: src/qml/MapPage.qml:63
 #, fuzzy, kde-format
 #| msgid "Stop"
 msgctxt "@action"
 msgid "Stop"
 msgstr "Oprește"
 
-#: src/qml/MapPage.qml:64
+#: src/qml/MapPage.qml:71
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr ""
 
-#: src/qml/MapPage.qml:74
+#: src/qml/MapPage.qml:81
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr ""
 
-#: src/qml/MapPage.qml:107 src/qml/MapPage.qml:230
+#: src/qml/MapPage.qml:114 src/qml/MapPage.qml:237
 #, fuzzy, kde-format
 #| msgctxt "Scan/open the path of the selected element"
 #| msgid "&Open"
@@ -370,49 +372,49 @@ msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "&Deschide"
 
-#: src/qml/MapPage.qml:115 src/qml/MapPage.qml:238
+#: src/qml/MapPage.qml:122 src/qml/MapPage.qml:245
 #, fuzzy, kde-format
 #| msgid "Open &Terminal Here"
 msgctxt "@action"
 msgid "Open Terminal Here"
 msgstr "Deschide un &terminal aici"
 
-#: src/qml/MapPage.qml:123
+#: src/qml/MapPage.qml:130
 #, fuzzy, kde-format
 #| msgid "&Center Map Here"
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "&Centrează harta aici"
 
-#: src/qml/MapPage.qml:134 src/qml/MapPage.qml:246
+#: src/qml/MapPage.qml:141 src/qml/MapPage.qml:253
 #, fuzzy, kde-format
 #| msgid "Add to Do &Not Scan List"
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "Adaugă la lista de ig&norat"
 
-#: src/qml/MapPage.qml:142
+#: src/qml/MapPage.qml:149
 #, fuzzy, kde-format
 #| msgid "Rescan"
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Recitește"
 
-#: src/qml/MapPage.qml:149 src/qml/MapPage.qml:253
+#: src/qml/MapPage.qml:156 src/qml/MapPage.qml:260
 #, fuzzy, kde-format
 #| msgid "&Copy to clipboard"
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "&Copiază în clipboard"
 
-#: src/qml/MapPage.qml:157 src/qml/MapPage.qml:261
+#: src/qml/MapPage.qml:164 src/qml/MapPage.qml:268
 #, fuzzy, kde-format
 #| msgid "&Delete"
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "Ș&terge"
 
-#: src/qml/MapPage.qml:314
+#: src/qml/MapPage.qml:321
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -421,7 +423,7 @@ msgstr[0] "%1 fișier (%2%)"
 msgstr[1] "%1 fișiere (%2%)"
 msgstr[2] "%1 de fișiere (%2%)"
 
-#: src/qml/MapPage.qml:316
+#: src/qml/MapPage.qml:323
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -430,7 +432,7 @@ msgstr[0] "%1 fișier"
 msgstr[1] "%1 fișiere"
 msgstr[2] "%1 de fișiere"
 
-#: src/qml/MapPage.qml:320
+#: src/qml/MapPage.qml:327
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -441,7 +443,7 @@ msgstr ""
 "\n"
 "Apăsați pentru a merge în sus la dosarul-părinte "
 
-#: src/qml/MapPage.qml:538
+#: src/qml/MapPage.qml:545
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -450,7 +452,7 @@ msgstr[0] "%1 fișier, %2"
 msgstr[1] "%1 fișiere, %2"
 msgstr[2] "%1 de fișiere, %2"
 
-#: src/qml/MapPage.qml:547
+#: src/qml/MapPage.qml:554
 #, kde-format
 msgid "No data available"
 msgstr ""
