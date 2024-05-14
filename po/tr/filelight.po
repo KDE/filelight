@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdeutils-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-13 00:40+0000\n"
-"PO-Revision-Date: 2024-04-10 14:21+0300\n"
+"PO-Revision-Date: 2024-05-13 21:32+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.04.70\n"
+"X-Generator: Lokalize 24.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -54,7 +54,7 @@ msgstr ""
 #: src/contextMenuContext.cpp:64
 #, kde-format
 msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
-msgstr "<qt><i>'%1'</i> <b>kalıcı olarak</b> silinecek.</qt>"
+msgstr "<qt><i>“%1”</i> <b>kalıcı olarak</b> silinecek.</qt>"
 
 #: src/contextMenuContext.cpp:65
 #, kde-format
@@ -62,11 +62,10 @@ msgid "&Delete"
 msgstr "&Sil"
 
 #: src/contextMenuContext.cpp:92
-#, fuzzy, kde-format
-#| msgid "Error while deleting"
+#, kde-format
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
-msgstr "Silme hatası"
+msgstr "Silerken hata: %1"
 
 #: src/historyAction.cpp:64
 #, kde-format
@@ -184,7 +183,7 @@ msgstr "Taranacak yol veya URL"
 #: src/main.cpp:90
 #, kde-format
 msgid "[url]"
-msgstr "[url]"
+msgstr "[URL]"
 
 #: src/mainContext.cpp:165
 #, kde-format
@@ -204,7 +203,7 @@ msgstr "geçersiz."
 #: src/mainContext.cpp:220
 #, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Dosya Feneri yalnızca tam yolları kabul eder"
+msgstr "Dosya Feneri yalnızca mutlak yolları kabul eder"
 
 #: src/mainContext.cpp:220
 #, kde-format
