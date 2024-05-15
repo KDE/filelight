@@ -60,11 +60,10 @@ msgid "&Delete"
 msgstr "删除(&D)"
 
 #: src/contextMenuContext.cpp:92
-#, fuzzy, kde-format
-#| msgid "Error while deleting"
+#, kde-format
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
-msgstr "删除时发生错误"
+msgstr "删除时发生错误：%1"
 
 #: src/historyAction.cpp:64
 #, kde-format
