@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-13 00:40+0000\n"
-"PO-Revision-Date: 2024-04-11 09:09+0200\n"
+"PO-Revision-Date: 2024-05-14 10:41+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -66,11 +66,10 @@ msgid "&Delete"
 msgstr "&Supprimer"
 
 #: src/contextMenuContext.cpp:92
-#, fuzzy, kde-format
-#| msgid "Error while deleting"
+#, kde-format
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
-msgstr "Erreur lors de la suppression"
+msgstr "Erreur lors de la suppression : %1"
 
 #: src/historyAction.cpp:64
 #, kde-format
