@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-13 00:40+0000\n"
-"PO-Revision-Date: 2024-02-20 13:00+0200\n"
+"PO-Revision-Date: 2024-05-16 23:26+0300\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -62,11 +62,10 @@ msgid "&Delete"
 msgstr "&Ištrinti"
 
 #: src/contextMenuContext.cpp:92
-#, fuzzy, kde-format
-#| msgid "Error while deleting"
+#, kde-format
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
-msgstr "Klaida ištrinant"
+msgstr "Klaida ištrinant: %1"
 
 #: src/historyAction.cpp:64
 #, kde-format
@@ -99,7 +98,7 @@ msgstr ""
 #: src/main.cpp:75
 #, kde-format
 msgid "Laurent Montel"
-msgstr ""
+msgstr "Laurent Montel"
 
 #: src/main.cpp:75 src/main.cpp:76
 #, kde-format
@@ -192,26 +191,24 @@ msgid "Select Folder to Scan"
 msgstr "Pasirinkite, kurį aplanką skenuoti"
 
 #: src/mainContext.cpp:218
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "Įvestas URL negali būti išnagrinėtas; jis neteisingas."
+msgstr "Įvestas URL negali būti išnagrinėtas"
 
 #: src/mainContext.cpp:218
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "jis neteisingas."
 
 #: src/mainContext.cpp:220
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Filelight priima tik absoliučius kelius, pavyzdžiui, /%1"
+msgstr "Filelight priima tik absoliučius kelius"
 
 #: src/mainContext.cpp:220
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "pvz., /%1"
 
 #: src/mainContext.cpp:222
 #, kde-format
@@ -219,20 +216,14 @@ msgid "Folder not found: %1"
 msgstr "Aplankas nerastas: %1"
 
 #: src/mainContext.cpp:224
-#, fuzzy, kde-format
-#| msgid "Unable to create part widget."
+#, kde-format
 msgid "Unable to enter: %1"
-msgstr "Nepavyko sukurti dalies valdiklio."
+msgstr "Nepavyko įeiti į: %1"
 
 #: src/mainContext.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
-"Nepavyko įeiti į: %1\n"
-"Jūs neturite prieigos teisių įeiti į šią vietą."
+msgstr "Jūs neturite prieigos teisių įeiti į šią vietą."
 
 #: src/qml/GlobalMenu.qml:10
 #, kde-format
