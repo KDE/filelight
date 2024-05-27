@@ -143,23 +143,23 @@ void MainContext::setupActions(QQmlApplicationEngine *engine) // singleton funct
         Q_ASSERT(action);
 
         QQmlComponent component(engine, QUrl(QStringLiteral("qrc:/ui/Action.qml")));
-        QObject *object = component.createWithInitialProperties({
+        QObject *qmlAction = component.createWithInitialProperties({
             {u"icon.name"_s, action->icon().name()},
             {u"text"_s, action->text()},
             {u"enabled"_s, action->isEnabled()},
             {u"shortcut"_s, action->shortcut()},
         });
-        if (!object) {
+        if (!qmlAction) {
             qWarning() << "Failed to load component:" << component.errorString();
-            Q_ASSERT(object);
+            Q_ASSERT(qmlAction);
             continue;
         }
-        connect(object, SIGNAL(triggered()), action, SIGNAL(triggered()));
-        connect(action, &QAction::changed, object, [action, object] {
-            object->setProperty("enabled", action->isEnabled());
+        connect(qmlAction, SIGNAL(triggered()), action, SIGNAL(triggered()));
+        connect(action, &QAction::changed, qmlAction, [action, qmlAction] {
+            qmlAction->setProperty("enabled", action->isEnabled());
         });
 
-        addHistoryAction(object);
+        addHistoryAction(qmlAction);
     }
 
     connect(m_histories, &HistoryCollection::activated, this, &MainContext::slotScanUrl);
