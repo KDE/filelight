@@ -28,6 +28,8 @@
 #include "radialMap/radialMap.h"
 #include "scan.h"
 
+using namespace Qt::StringLiterals;
+
 namespace Filelight
 {
 
@@ -139,20 +141,22 @@ void MainContext::setupActions(QQmlApplicationEngine *engine) // singleton funct
         // Synthesize actions
         auto action = ac->action(name);
         Q_ASSERT(action);
+
         QQmlComponent component(engine, QUrl(QStringLiteral("qrc:/ui/Action.qml")));
-        QObject *object = component.create();
+        QObject *object = component.createWithInitialProperties({
+            {u"icon.name"_s, action->icon().name()},
+            {u"text"_s, action->text()},
+            {u"enabled"_s, action->isEnabled()},
+            {u"shortcut"_s, action->shortcut()},
+        });
         if (!object) {
             qWarning() << "Failed to load component:" << component.errorString();
         }
         Q_ASSERT(object);
-        object->setProperty("iconName", action->icon().name());
-        object->setProperty("text", action->text());
         connect(object, SIGNAL(triggered()), action, SIGNAL(triggered()));
         connect(action, &QAction::changed, object, [action, object] {
             object->setProperty("enabled", action->isEnabled());
         });
-        object->setProperty("enabled", action->isEnabled());
-        object->setProperty("shortcut", action->shortcut());
 
         addHistoryAction(object);
     }
