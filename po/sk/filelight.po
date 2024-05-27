@@ -3,20 +3,20 @@
 # Michal Sulek <misurel@gmail.com>, 2011.
 # Roman Paholík <wizzardsk@gmail.com>, 2013, 2015, 2017, 2022.
 # Mthw <jari_45@hotmail.com>, 2019.
-# Matej Mrenica <matejm98mthw@gmail.com>, 2020, 2021, 2022.
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2024 Matej Mrenica <matejm98mthw@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-12 00:39+0000\n"
-"PO-Revision-Date: 2022-07-19 10:05+0200\n"
+"PO-Revision-Date: 2024-05-26 12:09+0200\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.07.80\n"
+"X-Generator: Lokalize 24.05.0\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #, kde-format
@@ -94,7 +94,7 @@ msgstr ""
 #: src/main.cpp:75
 #, kde-format
 msgid "Laurent Montel"
-msgstr ""
+msgstr "Laurent Montel"
 
 #: src/main.cpp:75 src/main.cpp:76
 #, kde-format
@@ -187,26 +187,24 @@ msgid "Select Folder to Scan"
 msgstr "Vyberte priečinok, ktorý chcete prehľadať"
 
 #: src/mainContext.cpp:218
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "Zadanú URL adresu sa nepodarilo spracovať, pretože je neplatná."
+msgstr "Zadanú URL adresu sa nepodarilo spracovať"
 
 #: src/mainContext.cpp:218
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "je neplatné."
 
 #: src/mainContext.cpp:220
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Filelight akceptuje iba absolútne cesty, napr. /%1"
+msgstr "Filelight akceptuje iba absolútne cesty"
 
 #: src/mainContext.cpp:220
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "napr. /%1"
 
 #: src/mainContext.cpp:222
 #, kde-format
@@ -214,20 +212,14 @@ msgid "Folder not found: %1"
 msgstr "Priečinok sa nenašiel: %1"
 
 #: src/mainContext.cpp:224
-#, fuzzy, kde-format
-#| msgid "Unable to create part widget."
+#, kde-format
 msgid "Unable to enter: %1"
-msgstr "Nepodarilo sa vytvoriť komponent prvkov."
+msgstr "Nepodarilo sa zadať: %1"
 
 #: src/mainContext.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
-"Nepodarilo sa vstúpiť do: %1\n"
-"K tomuto umiestneniu nemáte prístupové práva."
+msgstr "K tomuto umiestneniu nemáte prístupové práva."
 
 #: src/qml/GlobalMenu.qml:10
 #, kde-format
@@ -278,12 +270,10 @@ msgid "Configure…"
 msgstr "Nastaviť..."
 
 #: src/qml/main.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@action configure app"
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr "Nastaviť..."
+msgstr "Nastaviť"
 
 #: src/qml/main.qml:76
 #, kde-format
@@ -319,12 +309,10 @@ msgid "Aborting Scan..."
 msgstr "Ruší sa prehľadávanie..."
 
 #: src/qml/MapPage.qml:30
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Overview"
+#, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
-msgstr "Prehľad"
+msgstr "Prejsť na prehľad"
 
 #: src/qml/MapPage.qml:38
 #, kde-format
@@ -357,55 +345,46 @@ msgid "Zoom Out"
 msgstr "Oddialiť"
 
 #: src/qml/MapPage.qml:107 src/qml/MapPage.qml:230
-#, fuzzy, kde-format
-#| msgctxt "Scan/open the path of the selected element"
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
-msgstr "&Otvoriť"
+msgstr "Otvoriť"
 
 #: src/qml/MapPage.qml:115 src/qml/MapPage.qml:238
-#, fuzzy, kde-format
-#| msgid "Open &Terminal Here"
+#, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
-msgstr "Tu otvoriť &terminál"
+msgstr "Tu otvoriť terminál"
 
 #: src/qml/MapPage.qml:123
-#, fuzzy, kde-format
-#| msgid "&Center Map Here"
+#, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
-msgstr "Tu vycentrovať &mapu"
+msgstr "Tu"
 
 #: src/qml/MapPage.qml:134 src/qml/MapPage.qml:246
-#, fuzzy, kde-format
-#| msgid "Add to Do &Not Scan List"
+#, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "Pridať do zoznamu Neskenovať"
 
 #: src/qml/MapPage.qml:142
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Znovu prehľadať"
 
 #: src/qml/MapPage.qml:149 src/qml/MapPage.qml:253
-#, fuzzy, kde-format
-#| msgid "&Copy to clipboard"
+#, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
-msgstr "&Kopírovať do schránky"
+msgstr "Kopírovať do schránky"
 
 #: src/qml/MapPage.qml:157 src/qml/MapPage.qml:261
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
-msgstr "O&dstrániť"
+msgstr "Odstrániť"
 
 #: src/qml/MapPage.qml:314
 #, kde-format
@@ -426,15 +405,10 @@ msgstr[1] "%1 Súbory"
 msgstr[2] "%1 Súborov"
 
 #: src/qml/MapPage.qml:320
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Click to go up to parent directory"
+#, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
-msgstr ""
-"\n"
-"Kliknite na prechod do nadradeného adresára"
+msgstr "Kliknite na prechod do nadradeného adresára"
 
 #: src/qml/MapPage.qml:538
 #, kde-format
@@ -463,108 +437,100 @@ msgid "Welcome to Filelight"
 msgstr "Vitajte vo Filelight"
 
 #: src/qml/SettingsPage.qml:22
-#, fuzzy, kde-format
-#| msgid "Scannin&g"
+#, kde-format
 msgctxt "@title"
 msgid "Scanning"
-msgstr "Pre&hľadávanie"
+msgstr "Prehľadávanie"
 
 #: src/qml/SettingsPage.qml:25
-#, fuzzy, kde-format
-#| msgid "&Appearance"
+#, kde-format
 msgctxt "@title"
 msgid "Appearance"
-msgstr "&Vzhľad"
+msgstr "Vzhľad"
 
 #: src/qml/SettingsPageAppearance.qml:16
-#, fuzzy, kde-format
-#| msgid "Color scheme"
+#, kde-format
 msgctxt "@title:group"
 msgid "Color Scheme"
 msgstr "Farebná schéma"
 
 #: src/qml/SettingsPageAppearance.qml:25
-#, fuzzy, kde-format
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "Rainbow"
 msgstr "Dúha"
 
 #: src/qml/SettingsPageAppearance.qml:34
-#, fuzzy, kde-format
-#| msgid "System colors"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "System colors"
 msgstr "Systémové farby"
 
 #: src/qml/SettingsPageAppearance.qml:43
-#, fuzzy, kde-format
-#| msgid "High contrast"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "High contrast"
 msgstr "Vysoký kontrast"
 
 #: src/qml/SettingsPageAppearance.qml:52
-#, fuzzy, kde-format
-#| msgid "Co&ntrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Contrast"
 msgstr "&Kontrast"
 
 #: src/qml/SettingsPageAppearance.qml:69
-#, fuzzy, kde-format
-#| msgid "Show small files"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "Zobraziť malé súbory"
 
 #: src/qml/SettingsPageScanning.qml:33
-#, fuzzy, kde-format
-#| msgid "Do &not scan these folders:"
+#, kde-format
 msgctxt "@label"
 msgid "Do not scan these folders:"
-msgstr "&Neprehľadávať tieto priečinky:"
+msgstr "Neprehľadávať tieto priečinky:"
 
 #: src/qml/SettingsPageScanning.qml:41
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
-msgstr ""
+msgstr "Pridať…"
 
 #: src/qml/SettingsPageScanning.qml:90
-#, fuzzy, kde-format
-#| msgid "R&emove"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
 msgstr "&Odstrániť"
 
 #: src/qml/SettingsPageScanning.qml:110
-#, fuzzy, kde-format
-#| msgid "Scan across filesystem &boundaries"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
-msgstr "Prehľadávať &cez hranice súborového systému"
+msgstr "Prehľadávať cez hranice súborového systému"
 
 #: src/qml/SettingsPageScanning.qml:122
-#, fuzzy, kde-format
-#| msgid "Exclude remote files&ystems"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
-msgstr "Vylúčiť &vzdialené súborové systémy"
+msgstr "Vylúčiť vzdialené súborové systémy"
 
 #: src/radialMap/map.cpp:62
-#, fuzzy, kde-format
-#| msgid "1 file, with an average size of %2"
-#| msgid_plural "%1 files, with an average size of %2"
+#, kde-format
 msgid ""
 "\n"
 "%1 file, with an average size of %2"
 msgid_plural ""
 "\n"
 "%1 files, with an average size of %2"
-msgstr[0] "1 súbor s priemernou veľkosťou %2"
-msgstr[1] "%1 súbory s priemernou veľkosťou %2"
-msgstr[2] "%1 súborov s priemernou veľkosťou %2"
+msgstr[0] ""
+"\n"
+"%1 súbor s priemernou veľkosťou %2"
+msgstr[1] ""
+"\n"
+"%1 súbory s priemernou veľkosťou %2"
+msgstr[2] ""
+"\n"
+"%1 súborov s priemernou veľkosťou %2"
 
 #~ msgid "That folder is already set to be excluded from scans."
 #~ msgstr "Tento priečinok už je vylúčený z prehľadávania."
