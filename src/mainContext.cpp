@@ -13,6 +13,7 @@
 #include <KIO/Global> // upUrl
 #include <KLocalizedString>
 
+#include <QBindable>
 #include <QDir>
 #include <QFileDialog>
 #include <QQmlApplicationEngine>
@@ -146,7 +147,6 @@ void MainContext::setupActions(QQmlApplicationEngine *engine) // singleton funct
         QObject *qmlAction = component.createWithInitialProperties({
             {u"icon.name"_s, action->icon().name()},
             {u"text"_s, action->text()},
-            {u"enabled"_s, action->isEnabled()},
             {u"shortcut"_s, action->shortcut()},
         });
         if (!qmlAction) {
@@ -154,10 +154,12 @@ void MainContext::setupActions(QQmlApplicationEngine *engine) // singleton funct
             Q_ASSERT(qmlAction);
             continue;
         }
-        connect(qmlAction, SIGNAL(triggered()), action, SIGNAL(triggered()));
-        connect(action, &QAction::changed, qmlAction, [action, qmlAction] {
-            qmlAction->setProperty("enabled", action->isEnabled());
+
+        QBindable<bool> actionEnabled(action, "enabled");
+        QBindable<bool>(qmlAction, "enabled").setBinding([actionEnabled] {
+            return actionEnabled.value();
         });
+        connect(qmlAction, SIGNAL(triggered()), action, SIGNAL(triggered()));
 
         addHistoryAction(qmlAction);
     }
