@@ -151,8 +151,9 @@ void MainContext::setupActions(QQmlApplicationEngine *engine) // singleton funct
         });
         if (!object) {
             qWarning() << "Failed to load component:" << component.errorString();
+            Q_ASSERT(object);
+            continue;
         }
-        Q_ASSERT(object);
         connect(object, SIGNAL(triggered()), action, SIGNAL(triggered()));
         connect(action, &QAction::changed, object, [action, object] {
             object->setProperty("enabled", action->isEnabled());
