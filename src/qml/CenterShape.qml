@@ -33,13 +33,11 @@ Shape {
 
     containsMode: Shape.FillContains
 
-    QQC2.ToolTip {
+    ShapeToolTip {
         id: tooltip
-        delay: 0
-        parent: shape
-        x: mouseyX + Kirigami.Units.gridUnit // offset away from mouse lest it covers the tooltip
-        y: mouseyY + Kirigami.Units.gridUnit
-        visible: showTooltip
+        parent: shapeItem
+        mouseX: mouseyX
+        mouseY: mouseyY
     }
 
     ShapePath {
