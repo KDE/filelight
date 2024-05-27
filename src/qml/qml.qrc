@@ -16,5 +16,6 @@
         <file>SettingsPage.qml</file>
         <file>SettingsPageScanning.qml</file>
         <file>SettingsPageAppearance.qml</file>
+        <file>ShapeToolTip.qml</file>
     </qresource>
 </RCC>
