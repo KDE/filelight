@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-13 00:40+0000\n"
+"POT-Creation-Date: 2024-05-29 00:41+0000\n"
 "PO-Revision-Date: 2024-05-13 23:48+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -184,42 +184,42 @@ msgstr "Ruta o URL a explorar"
 msgid "[url]"
 msgstr "[URL]"
 
-#: src/mainContext.cpp:165
+#: src/mainContext.cpp:172
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Seleccione la carpeta a explorar"
 
-#: src/mainContext.cpp:218
+#: src/mainContext.cpp:225
 #, kde-format
 msgid "The entered URL cannot be parsed"
 msgstr "La URL introducida no se puede analizar"
 
-#: src/mainContext.cpp:218
+#: src/mainContext.cpp:225
 #, kde-format
 msgid "it is invalid."
 msgstr "no es válida."
 
-#: src/mainContext.cpp:220
+#: src/mainContext.cpp:227
 #, kde-format
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight solo puede aceptar rutas absolutas"
 
-#: src/mainContext.cpp:220
+#: src/mainContext.cpp:227
 #, kde-format
 msgid "eg. /%1"
 msgstr "por ejemplo, /%1"
 
-#: src/mainContext.cpp:222
+#: src/mainContext.cpp:229
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Carpeta no encontrada: %1"
 
-#: src/mainContext.cpp:224
+#: src/mainContext.cpp:231
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr "No se ha podido introducir: %1"
 
-#: src/mainContext.cpp:224
+#: src/mainContext.cpp:231
 #, kde-format
 msgid "You do not have access rights to this location."
 msgstr "No tiene permiso de acceso a esta ubicación."

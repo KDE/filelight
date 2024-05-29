@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-13 00:40+0000\n"
+"POT-Creation-Date: 2024-05-29 00:41+0000\n"
 "PO-Revision-Date: 2024-04-28 20:19+0200\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -183,43 +183,43 @@ msgstr "Pfad oder Adresse zum Einlesen"
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:165
+#: src/mainContext.cpp:172
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Bitte wählen Sie den einzulesenden Ordner aus"
 
-#: src/mainContext.cpp:218
+#: src/mainContext.cpp:225
 #, kde-format
 msgid "The entered URL cannot be parsed"
 msgstr "Die eingegebene Adresse kann nicht eingelesen werden"
 
-#: src/mainContext.cpp:218
+#: src/mainContext.cpp:225
 #, kde-format
 msgid "it is invalid."
 msgstr ""
 
-#: src/mainContext.cpp:220
+#: src/mainContext.cpp:227
 #, kde-format
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight benötigt absolute Pfade"
 
-#: src/mainContext.cpp:220
+#: src/mainContext.cpp:227
 #, kde-format
 msgid "eg. /%1"
 msgstr ""
 
-#: src/mainContext.cpp:222
+#: src/mainContext.cpp:229
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Ordner nicht gefunden: %1"
 
-#: src/mainContext.cpp:224
+#: src/mainContext.cpp:231
 #, fuzzy, kde-format
 #| msgid "Unable to create part widget."
 msgid "Unable to enter: %1"
 msgstr "Das Teilmodul kann nicht erstellt werden."
 
-#: src/mainContext.cpp:224
+#: src/mainContext.cpp:231
 #, kde-format
 msgid "You do not have access rights to this location."
 msgstr "Ihre Zugriffsrechte reichen für diesen Ort nicht aus."
