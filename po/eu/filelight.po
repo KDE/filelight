@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-12 00:39+0000\n"
+"POT-Creation-Date: 2024-05-30 02:36+0000\n"
 "PO-Revision-Date: 2024-04-19 22:32+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -183,43 +183,43 @@ msgstr "Aztertu beharreko bide-izen edo URLa"
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:165
+#: src/mainContext.cpp:170
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Hautatu aztertzeko karpeta"
 
-#: src/mainContext.cpp:218
+#: src/mainContext.cpp:223
 #, kde-format
 msgid "The entered URL cannot be parsed"
 msgstr "Sartutako URLak ez du azterketa sintaktikoa gainditu"
 
-#: src/mainContext.cpp:218
+#: src/mainContext.cpp:223
 #, kde-format
 msgid "it is invalid."
 msgstr "baliogabea da."
 
-#: src/mainContext.cpp:220
+#: src/mainContext.cpp:225
 #, kde-format
 msgid "Filelight only accepts absolute paths"
 msgstr "«Filelight»ek soilik bide-izen absolutuak onartzen ditu"
 
-#: src/mainContext.cpp:220
+#: src/mainContext.cpp:225
 #, kde-format
 msgid "eg. /%1"
 msgstr "adib. /%1"
 
-#: src/mainContext.cpp:222
+#: src/mainContext.cpp:227
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Karpeta ez da aurkitu: %1"
 
 # A KDE component is called a part, and it encapsulates three things: a widget, the functionality that comes with it, and the user interface for this functionality.
-#: src/mainContext.cpp:224
+#: src/mainContext.cpp:229
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr "Ezin du sartu: %1"
 
-#: src/mainContext.cpp:224
+#: src/mainContext.cpp:229
 #, kde-format
 msgid "You do not have access rights to this location."
 msgstr "Ez duzu kokaleku honetara sartzeko baimenik."

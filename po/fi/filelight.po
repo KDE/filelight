@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-12 00:39+0000\n"
+"POT-Creation-Date: 2024-05-30 02:36+0000\n"
 "PO-Revision-Date: 2023-03-05 21:50+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -183,45 +183,45 @@ msgstr "Tutkittava kansiopolku tai verkko-osoite"
 msgid "[url]"
 msgstr "[osoite]"
 
-#: src/mainContext.cpp:165
+#: src/mainContext.cpp:170
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Valitse etsittävä kansio"
 
-#: src/mainContext.cpp:218
+#: src/mainContext.cpp:223
 #, fuzzy, kde-format
 #| msgid "The entered URL cannot be parsed; it is invalid."
 msgid "The entered URL cannot be parsed"
 msgstr "Syötettyä osoitetta ei voi jäsentää: se on virheellinen."
 
-#: src/mainContext.cpp:218
+#: src/mainContext.cpp:223
 #, kde-format
 msgid "it is invalid."
 msgstr ""
 
-#: src/mainContext.cpp:220
+#: src/mainContext.cpp:225
 #, fuzzy, kde-format
 #| msgid "Filelight only accepts absolute paths, eg. /%1"
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight hyväksyy vain absoluuttiset sijainnit, esim. /%1"
 
-#: src/mainContext.cpp:220
+#: src/mainContext.cpp:225
 #, kde-format
 msgid "eg. /%1"
 msgstr ""
 
-#: src/mainContext.cpp:222
+#: src/mainContext.cpp:227
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Kansiota ei löytynyt: %1"
 
-#: src/mainContext.cpp:224
+#: src/mainContext.cpp:229
 #, fuzzy, kde-format
 #| msgid "Unable to create part widget."
 msgid "Unable to enter: %1"
 msgstr "Osasovelmaa ei voitu luoda."
 
-#: src/mainContext.cpp:224
+#: src/mainContext.cpp:229
 #, fuzzy, kde-format
 #| msgid ""
 #| "Unable to enter: %1\n"

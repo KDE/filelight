@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-12 00:39+0000\n"
+"POT-Creation-Date: 2024-05-30 02:36+0000\n"
 "PO-Revision-Date: 2024-04-21 22:11+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -179,42 +179,42 @@ msgstr "ஆராய வேண்டிய பாதை அல்லது ம�
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:165
+#: src/mainContext.cpp:170
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "ஆராய வேண்டிய அடைவைத் தேர்ந்தெடுத்தல்"
 
-#: src/mainContext.cpp:218
+#: src/mainContext.cpp:223
 #, kde-format
 msgid "The entered URL cannot be parsed"
 msgstr "உள்ளிட்ட முகவரியை புரிந்துகொள்ள முடியவில்லை"
 
-#: src/mainContext.cpp:218
+#: src/mainContext.cpp:223
 #, kde-format
 msgid "it is invalid."
 msgstr "அது செல்லுபடியாகாத‍து"
 
-#: src/mainContext.cpp:220
+#: src/mainContext.cpp:225
 #, kde-format
 msgid "Filelight only accepts absolute paths"
 msgstr "முழுமையான பாதைகளை மட்டுமே ஃபைல்-லைட் ஏற்கும்"
 
-#: src/mainContext.cpp:220
+#: src/mainContext.cpp:225
 #, kde-format
 msgid "eg. /%1"
 msgstr "எ.கா. /%1"
 
-#: src/mainContext.cpp:222
+#: src/mainContext.cpp:227
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "அடைவை கண்டுபிடிக்க முடியவில்லை: %1"
 
-#: src/mainContext.cpp:224
+#: src/mainContext.cpp:229
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr "நுழைய முடியவில்லை: %1"
 
-#: src/mainContext.cpp:224
+#: src/mainContext.cpp:229
 #, kde-format
 msgid "You do not have access rights to this location."
 msgstr "இவ்விடத்தில் நுழைவதற்கான அனுமதி உங்களுக்கு இல்லை."

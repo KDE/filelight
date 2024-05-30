@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-12 00:39+0000\n"
+"POT-Creation-Date: 2024-05-30 02:36+0000\n"
 "PO-Revision-Date: 2024-04-11 09:09+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -188,42 +188,42 @@ msgstr "Emplacement ou URL à analyser"
 msgid "[url]"
 msgstr "[URL]"
 
-#: src/mainContext.cpp:165
+#: src/mainContext.cpp:170
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Sélectionner un dossier à analyser"
 
-#: src/mainContext.cpp:218
+#: src/mainContext.cpp:223
 #, kde-format
 msgid "The entered URL cannot be parsed"
 msgstr "Il est impossible d'analyser l'URL saisi."
 
-#: src/mainContext.cpp:218
+#: src/mainContext.cpp:223
 #, kde-format
 msgid "it is invalid."
 msgstr "Il est non valable."
 
-#: src/mainContext.cpp:220
+#: src/mainContext.cpp:225
 #, kde-format
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight n'accepte que les emplacements absolus."
 
-#: src/mainContext.cpp:220
+#: src/mainContext.cpp:225
 #, kde-format
 msgid "eg. /%1"
 msgstr "C'est-à-dire / %1"
 
-#: src/mainContext.cpp:222
+#: src/mainContext.cpp:227
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Impossible de trouver le dossier : %1"
 
-#: src/mainContext.cpp:224
+#: src/mainContext.cpp:229
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr "Saisie impossible : %1"
 
-#: src/mainContext.cpp:224
+#: src/mainContext.cpp:229
 #, kde-format
 msgid "You do not have access rights to this location."
 msgstr ""
