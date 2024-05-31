@@ -523,6 +523,3 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 файла със среден размер %2"
-
-#~ msgid "That folder is already set to be excluded from scans."
-#~ msgstr "Тази папка вече е зададена да бъде пропусната при претърсването."
