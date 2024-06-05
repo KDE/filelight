@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-29 00:41+0000\n"
+"POT-Creation-Date: 2024-06-05 00:41+0000\n"
 "PO-Revision-Date: 2024-05-26 12:23+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -411,7 +411,7 @@ msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "Naciśnij, aby przejść do katalogu nadrzędnego"
 
-#: src/qml/MapPage.qml:545
+#: src/qml/MapPage.qml:546
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -420,7 +420,7 @@ msgstr[0] "%1 plik, %2"
 msgstr[1] "%1 pliki, %2"
 msgstr[2] "%1 plików, %2"
 
-#: src/qml/MapPage.qml:554
+#: src/qml/MapPage.qml:555
 #, kde-format
 msgid "No data available"
 msgstr "Brak danych"

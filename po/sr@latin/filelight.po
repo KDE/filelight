@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-29 00:41+0000\n"
+"POT-Creation-Date: 2024-06-05 00:41+0000\n"
 "PO-Revision-Date: 2017-09-28 18:00+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -453,7 +453,7 @@ msgstr ""
 "\n"
 "Kliknite za odlazak na roditeljsku fasciklu"
 
-#: src/qml/MapPage.qml:545
+#: src/qml/MapPage.qml:546
 #, fuzzy, kde-format
 #| msgid "%1 File"
 #| msgid_plural "%1 Files"
@@ -465,7 +465,7 @@ msgstr[1] "%1 fajla"
 msgstr[2] "%1 fajlova"
 msgstr[3] "%1 fajl"
 
-#: src/qml/MapPage.qml:554
+#: src/qml/MapPage.qml:555
 #, kde-format
 msgid "No data available"
 msgstr ""
