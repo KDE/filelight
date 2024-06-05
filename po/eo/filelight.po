@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-30 02:36+0000\n"
+"POT-Creation-Date: 2024-06-05 03:03+0000\n"
 "PO-Revision-Date: 2024-05-15 09:56+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -406,7 +406,7 @@ msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "Klaku por iri al gepatra dosierujo"
 
-#: src/qml/MapPage.qml:538
+#: src/qml/MapPage.qml:539
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -414,7 +414,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 Dosiero, %2"
 msgstr[1] "%1 Dosieroj, %2"
 
-#: src/qml/MapPage.qml:547
+#: src/qml/MapPage.qml:548
 #, kde-format
 msgid "No data available"
 msgstr "Neniuj datumoj haveblaj"

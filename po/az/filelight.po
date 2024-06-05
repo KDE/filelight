@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-30 02:36+0000\n"
+"POT-Creation-Date: 2024-06-05 03:03+0000\n"
 "PO-Revision-Date: 2023-01-02 23:12+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -428,7 +428,7 @@ msgstr ""
 "\n"
 "Ana qovluğa keçid üçün vurun"
 
-#: src/qml/MapPage.qml:538
+#: src/qml/MapPage.qml:539
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -436,7 +436,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 Fayl, %2"
 msgstr[1] "%1 Fayl, %2"
 
-#: src/qml/MapPage.qml:547
+#: src/qml/MapPage.qml:548
 #, kde-format
 msgid "No data available"
 msgstr "Əlçatan məlumat yoxdur"

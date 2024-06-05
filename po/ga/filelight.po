@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-30 02:36+0000\n"
+"POT-Creation-Date: 2024-06-05 03:03+0000\n"
 "PO-Revision-Date: 2009-02-19 07:06-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -431,7 +431,7 @@ msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr ""
 
-#: src/qml/MapPage.qml:538
+#: src/qml/MapPage.qml:539
 #, fuzzy, kde-format
 #| msgid "%1 File"
 #| msgid_plural "%1 Files"
@@ -444,7 +444,7 @@ msgstr[2] "%1 Chomhad"
 msgstr[3] "%1 gComhad"
 msgstr[4] "%1 Comhad"
 
-#: src/qml/MapPage.qml:547
+#: src/qml/MapPage.qml:548
 #, kde-format
 msgid "No data available"
 msgstr ""

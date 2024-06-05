@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-30 02:36+0000\n"
+"POT-Creation-Date: 2024-06-05 03:03+0000\n"
 "PO-Revision-Date: 2013-03-15 14:32+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -414,7 +414,7 @@ msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr ""
 
-#: src/qml/MapPage.qml:538
+#: src/qml/MapPage.qml:539
 #, fuzzy, kde-format
 #| msgid "%1 File"
 #| msgid_plural "%1 Files"
@@ -424,7 +424,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 फाईल"
 msgstr[1] "%1 फाईल्स"
 
-#: src/qml/MapPage.qml:547
+#: src/qml/MapPage.qml:548
 #, kde-format
 msgid "No data available"
 msgstr ""

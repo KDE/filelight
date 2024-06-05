@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-30 02:36+0000\n"
+"POT-Creation-Date: 2024-06-05 03:03+0000\n"
 "PO-Revision-Date: 2024-04-10 07:22+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -415,7 +415,7 @@ msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "Kliknite za premik v nadrejeno mapo"
 
-#: src/qml/MapPage.qml:538
+#: src/qml/MapPage.qml:539
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -425,7 +425,7 @@ msgstr[1] "%1 Datoteka, %2"
 msgstr[2] "%1 Datoteki, %2"
 msgstr[3] "%1 Datoteke, %2"
 
-#: src/qml/MapPage.qml:547
+#: src/qml/MapPage.qml:548
 #, kde-format
 msgid "No data available"
 msgstr "Podatkov ni na voljo"

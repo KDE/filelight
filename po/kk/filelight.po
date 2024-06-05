@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-30 02:36+0000\n"
+"POT-Creation-Date: 2024-06-05 03:03+0000\n"
 "PO-Revision-Date: 2013-06-27 03:35+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -439,7 +439,7 @@ msgstr ""
 "\n"
 "Аталық каталогқа ауысу үшін түртіңіз"
 
-#: src/qml/MapPage.qml:538
+#: src/qml/MapPage.qml:539
 #, fuzzy, kde-format
 #| msgid "%1 File"
 #| msgid_plural "%1 Files"
@@ -448,7 +448,7 @@ msgid "%1 File, %2"
 msgid_plural "%1 Files, %2"
 msgstr[0] "%1 файл"
 
-#: src/qml/MapPage.qml:547
+#: src/qml/MapPage.qml:548
 #, kde-format
 msgid "No data available"
 msgstr ""

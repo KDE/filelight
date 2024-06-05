@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-30 02:36+0000\n"
+"POT-Creation-Date: 2024-06-05 03:03+0000\n"
 "PO-Revision-Date: 2014-02-20 11:39+0100\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-doc@kde.org>\n"
@@ -443,7 +443,7 @@ msgstr ""
 "\n"
 "Hier klicken, wenn Du na den Böverorner wullt"
 
-#: src/qml/MapPage.qml:538
+#: src/qml/MapPage.qml:539
 #, fuzzy, kde-format
 #| msgid "%1 File"
 #| msgid_plural "%1 Files"
@@ -453,7 +453,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 Datei"
 msgstr[1] "%1 Dateien"
 
-#: src/qml/MapPage.qml:547
+#: src/qml/MapPage.qml:548
 #, kde-format
 msgid "No data available"
 msgstr ""
