@@ -2,14 +2,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2009, 2010.
+# SPDX-FileCopyrightText: 2009, 2010, 2024 Stefan Asserhäll <stefan.asserhall@bredband.net>
 # Stefan Asserhall <stefan.asserhall@bredband.net>, 2010, 2013, 2015, 2017, 2018, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-05 03:03+0000\n"
-"PO-Revision-Date: 2023-07-25 11:04+0200\n"
+"PO-Revision-Date: 2024-06-08 16:45+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -94,7 +94,7 @@ msgstr ""
 #: src/main.cpp:75
 #, kde-format
 msgid "Laurent Montel"
-msgstr ""
+msgstr "Laurent Montel"
 
 #: src/main.cpp:75 src/main.cpp:76
 #, kde-format
@@ -187,26 +187,24 @@ msgid "Select Folder to Scan"
 msgstr "Markera katalog att söka igenom"
 
 #: src/mainContext.cpp:223
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "Den angivna webbadressen kan inte tolkas. Den är ogiltig."
+msgstr "Den angivna webbadressen kan inte tolkas"
 
 #: src/mainContext.cpp:223
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "är ogiltig."
 
 #: src/mainContext.cpp:225
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Filelight accepterar bara absoluta sökvägar, t.ex. /%1"
+msgstr "Filelight accepterar bara absoluta sökvägar"
 
 #: src/mainContext.cpp:225
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "t.ex. /%1"
 
 #: src/mainContext.cpp:227
 #, kde-format
@@ -214,20 +212,14 @@ msgid "Folder not found: %1"
 msgstr "Katalogen hittades inte: %1"
 
 #: src/mainContext.cpp:229
-#, fuzzy, kde-format
-#| msgid "Unable to create part widget."
+#, kde-format
 msgid "Unable to enter: %1"
-msgstr "Kunde inte skapa grafisk delkomponent."
+msgstr "Kan inte visa: %1"
 
 #: src/mainContext.cpp:229
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
-"Kan inte visa: %1\n"
-"Du har inte åtkomsträttigheter till platsen."
+msgstr "Du har inte åtkomsträttigheter till platsen."
 
 #: src/qml/GlobalMenu.qml:10
 #, kde-format
