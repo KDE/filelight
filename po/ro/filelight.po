@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
-# Sergiu Bivol <sergiu@cip.md>, 2010, 2012, 2013, 2020, 2021, 2022.
+# This file is distributed under the same license as the filelight package.
+# Sergiu Bivol <sergiu@cip.md>, 2010, 2012, 2013, 2020, 2021, 2022, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-05 00:41+0000\n"
-"PO-Revision-Date: 2022-06-01 18:29+0100\n"
+"PO-Revision-Date: 2024-06-08 16:55+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -58,11 +58,10 @@ msgid "&Delete"
 msgstr "Ș&terge"
 
 #: src/contextMenuContext.cpp:92
-#, fuzzy, kde-format
-#| msgid "Error while deleting"
+#, kde-format
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
-msgstr "Eroare la ștergere"
+msgstr "Eroare la ștergere: %1"
 
 #: src/historyAction.cpp:64
 #, kde-format
@@ -95,7 +94,7 @@ msgstr ""
 #: src/main.cpp:75
 #, kde-format
 msgid "Laurent Montel"
-msgstr ""
+msgstr "Laurent Montel"
 
 #: src/main.cpp:75 src/main.cpp:76
 #, kde-format
@@ -188,26 +187,24 @@ msgid "Select Folder to Scan"
 msgstr "Alegeți dosarul de citit"
 
 #: src/mainContext.cpp:225
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "URL-ul introdus nu poate fi parcurs. Nu este valid."
+msgstr "URL-ul introdus nu poate fi parcurs"
 
 #: src/mainContext.cpp:225
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "nu e valid."
 
 #: src/mainContext.cpp:227
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Filelight acceptă numai căi absolute, de ex. /%1"
+msgstr "Filelight acceptă numai căi absolute"
 
 #: src/mainContext.cpp:227
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "de ex. /%1"
 
 #: src/mainContext.cpp:229
 #, kde-format
@@ -217,99 +214,87 @@ msgstr "Dosarul nu a fost găsit: %1"
 #: src/mainContext.cpp:231
 #, kde-format
 msgid "Unable to enter: %1"
-msgstr ""
+msgstr "Nu se poate intra: %1"
 
 #: src/mainContext.cpp:231
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
-"Imposibil de intrat: %1\n"
-"Nu aveți drepturi de acces în această locație."
+msgstr "Nu aveți drepturi de acces în acest loc."
 
 #: src/qml/GlobalMenu.qml:10
-#, fuzzy, kde-format
-#| msgid "&Scan"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Scan"
-msgstr "&Scanează"
+msgstr "Scanează"
 
 #: src/qml/GlobalMenu.qml:21
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Settings"
-msgstr ""
+msgstr "Configurări"
 
 #: src/qml/GlobalMenu.qml:27
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Help"
-msgstr ""
+msgstr "Ajutor"
 
 #: src/qml/main.qml:30
-#, fuzzy, kde-format
-#| msgid "Scan Folder"
+#, kde-format
 msgctxt "@action"
 msgid "Scan Folder"
-msgstr "Citește dosar"
+msgstr "Citește dosarul"
 
 #: src/qml/main.qml:37
-#, fuzzy, kde-format
-#| msgid "Scan &Home Folder"
+#, kde-format
 msgctxt "@action"
 msgid "Scan Home Folder"
-msgstr "Citește dosarul &Acasă"
+msgstr "Citește dosarul Acasă"
 
 #: src/qml/main.qml:44
-#, fuzzy, kde-format
-#| msgid "Scan &Root Folder"
+#, kde-format
 msgctxt "@action"
 msgid "Scan Root Folder"
-msgstr "Citește dosarul &rădăcină"
+msgstr "Citește dosarul rădăcină"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
-msgstr ""
+msgstr "Termină"
 
 #: src/qml/main.qml:59
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
-msgstr ""
+msgstr "Configurează…"
 
 #: src/qml/main.qml:64
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr ""
+msgstr "Configurează"
 
 #: src/qml/main.qml:76
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
-msgstr ""
+msgstr "Deschide manualul"
 
 #: src/qml/main.qml:84
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
-msgstr ""
+msgstr "Despre"
 
 #: src/qml/main.qml:105
-#, fuzzy, kde-format
-#| msgid "No files."
+#, kde-format
 msgctxt "@info:status"
 msgid "No files."
 msgstr "Niciun fișier."
 
 #: src/qml/main.qml:106
-#, fuzzy, kde-format
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "1 file"
 msgid_plural "%1 files"
@@ -318,36 +303,31 @@ msgstr[1] "%1 fișiere"
 msgstr[2] "%1 de fișiere"
 
 #: src/qml/main.qml:174
-#, fuzzy, kde-format
-#| msgid "Aborting Scan..."
+#, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
-msgstr "Se abandonează citirea..."
+msgstr "Se abandonează citirea…"
 
 #: src/qml/MapPage.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@action go to overview page, listing browsable mount points"
-#| msgid "Overview"
+#, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
-msgstr "Privire generală"
+msgstr "Mergi la privirea generală"
 
 #: src/qml/MapPage.qml:45
 #, kde-format
 msgctxt "@action"
 msgid "Up"
-msgstr ""
+msgstr "Sus"
 
 #: src/qml/MapPage.qml:54
-#, fuzzy, kde-format
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action"
 msgid "Rescan"
 msgstr "Recitește"
 
 #: src/qml/MapPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "Oprește"
@@ -356,63 +336,55 @@ msgstr "Oprește"
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
-msgstr ""
+msgstr "Apropie"
 
 #: src/qml/MapPage.qml:81
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
-msgstr ""
+msgstr "Îndepărtează"
 
 #: src/qml/MapPage.qml:114 src/qml/MapPage.qml:237
-#, fuzzy, kde-format
-#| msgctxt "Scan/open the path of the selected element"
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
-msgstr "&Deschide"
+msgstr "Deschide"
 
 #: src/qml/MapPage.qml:122 src/qml/MapPage.qml:245
-#, fuzzy, kde-format
-#| msgid "Open &Terminal Here"
+#, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
-msgstr "Deschide un &terminal aici"
+msgstr "Deschide un terminal aici"
 
 #: src/qml/MapPage.qml:130
-#, fuzzy, kde-format
-#| msgid "&Center Map Here"
+#, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
-msgstr "&Centrează harta aici"
+msgstr "Centrează harta aici"
 
 #: src/qml/MapPage.qml:141 src/qml/MapPage.qml:253
-#, fuzzy, kde-format
-#| msgid "Add to Do &Not Scan List"
+#, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
-msgstr "Adaugă la lista de ig&norat"
+msgstr "Adaugă la lista de ignorat"
 
 #: src/qml/MapPage.qml:149
-#, fuzzy, kde-format
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Recitește"
 
 #: src/qml/MapPage.qml:156 src/qml/MapPage.qml:260
-#, fuzzy, kde-format
-#| msgid "&Copy to clipboard"
+#, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
-msgstr "&Copiază în clipboard"
+msgstr "Copiază în clipboard"
 
 #: src/qml/MapPage.qml:164 src/qml/MapPage.qml:268
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
-msgstr "Ș&terge"
+msgstr "Șterge"
 
 #: src/qml/MapPage.qml:321
 #, kde-format
@@ -433,15 +405,10 @@ msgstr[1] "%1 fișiere"
 msgstr[2] "%1 de fișiere"
 
 #: src/qml/MapPage.qml:327
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Click to go up to parent directory"
+#, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
-msgstr ""
-"\n"
-"Apăsați pentru a merge în sus la dosarul-părinte "
+msgstr "Apăsați pentru a merge în sus la dosarul-părinte"
 
 #: src/qml/MapPage.qml:546
 #, kde-format
@@ -455,345 +422,112 @@ msgstr[2] "%1 de fișiere, %2"
 #: src/qml/MapPage.qml:555
 #, kde-format
 msgid "No data available"
-msgstr ""
+msgstr "Nu sunt disponibile date"
 
 #: src/qml/OverviewPage.qml:14
-#, fuzzy, kde-format
-#| msgctxt "@action go to overview page, listing browsable mount points"
-#| msgid "Overview"
+#, kde-format
 msgctxt "@title"
 msgid "Overview"
 msgstr "Privire generală"
 
 #: src/qml/OverviewPage.qml:34
-#, fuzzy, kde-format
-#| msgid "Filelight"
+#, kde-format
 msgctxt "@title"
 msgid "Welcome to Filelight"
-msgstr "Filelight"
+msgstr "Bun venit la Filelight"
 
 #: src/qml/SettingsPage.qml:22
-#, fuzzy, kde-format
-#| msgid "Scannin&g"
+#, kde-format
 msgctxt "@title"
 msgid "Scanning"
-msgstr "Citi&re"
+msgstr "Se scanează"
 
 #: src/qml/SettingsPage.qml:25
-#, fuzzy, kde-format
-#| msgid "&Appearance"
+#, kde-format
 msgctxt "@title"
 msgid "Appearance"
-msgstr "&Aspect"
+msgstr "Aspect"
 
 #: src/qml/SettingsPageAppearance.qml:16
-#, fuzzy, kde-format
-#| msgid "Color scheme"
+#, kde-format
 msgctxt "@title:group"
 msgid "Color Scheme"
 msgstr "Schemă de culori"
 
 #: src/qml/SettingsPageAppearance.qml:25
-#, fuzzy, kde-format
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "Rainbow"
 msgstr "Curcubeu"
 
 #: src/qml/SettingsPageAppearance.qml:34
-#, fuzzy, kde-format
-#| msgid "System colors"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "System colors"
 msgstr "Culori de sistem"
 
 #: src/qml/SettingsPageAppearance.qml:43
-#, fuzzy, kde-format
-#| msgid "High contrast"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "High contrast"
 msgstr "Contrast sporit"
 
 #: src/qml/SettingsPageAppearance.qml:52
-#, fuzzy, kde-format
-#| msgid "Co&ntrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Contrast"
-msgstr "Co&ntrast"
+msgstr "Contrast"
 
 #: src/qml/SettingsPageAppearance.qml:69
-#, fuzzy, kde-format
-#| msgid "Show small files"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "Arată fișierele mici"
 
 #: src/qml/SettingsPageScanning.qml:33
-#, fuzzy, kde-format
-#| msgid "Do &not scan these folders:"
+#, kde-format
 msgctxt "@label"
 msgid "Do not scan these folders:"
-msgstr "&Nu citi aceste dosare:"
+msgstr "Nu citi aceste dosare:"
 
 #: src/qml/SettingsPageScanning.qml:41
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
-msgstr ""
+msgstr "Adaugă…"
 
 #: src/qml/SettingsPageScanning.qml:90
-#, fuzzy, kde-format
-#| msgid "R&emove"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
-msgstr "&Elimină"
+msgstr "Elimină"
 
 #: src/qml/SettingsPageScanning.qml:110
-#, fuzzy, kde-format
-#| msgid "Scan across filesystem &boundaries"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
-msgstr "Sc&anează peste hotarele sistemelor de fișiere"
+msgstr "Scanează peste hotarele sistemelor de fișiere"
 
 #: src/qml/SettingsPageScanning.qml:122
-#, fuzzy, kde-format
-#| msgid "Exclude remote files&ystems"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
-msgstr "Exclude &sistemele de fișiere distante"
+msgstr "Exclude sistemele de fișiere distante"
 
 #: src/radialMap/map.cpp:62
-#, fuzzy, kde-format
-#| msgid "1 file, with an average size of %2"
-#| msgid_plural "%1 files, with an average size of %2"
+#, kde-format
 msgid ""
 "\n"
 "%1 file, with an average size of %2"
 msgid_plural ""
 "\n"
 "%1 files, with an average size of %2"
-msgstr[0] "1 fișier, cu dimensiunea medie de %2"
-msgstr[1] "%1 fișiere, cu dimensiunea medie de %2"
-msgstr[2] "%1 de fișiere, cu dimensiunea medie de %2"
-
-#~ msgid "That folder is already set to be excluded from scans."
-#~ msgstr "Acel dosar este configurat deja să fie exclus de la citire."
-
-#~ msgid "&Scan"
-#~ msgstr "&Scanează"
-
-#~ msgid "&View"
-#~ msgstr "&Vizualizare"
-
-#~ msgid "Main Toolbar"
-#~ msgstr "Bara de unelte principală"
-
-#~ msgid "Location Toolbar"
-#~ msgstr "Bara de unelte locație"
-
-#~ msgid "View Toolbar"
-#~ msgstr "Bara de vizualizare"
-
-#~ msgid "Settings - Filelight"
-#~ msgstr "Configurări - Filelight"
-
-#~ msgid "&Add..."
-#~ msgstr "&Adăugare..."
-
-#~ msgid ""
-#~ "Prevents scanning of filesystems that are not on this computer, e.g. NFS "
-#~ "or Samba mounts."
-#~ msgstr ""
-#~ "Previne scanarea sistemelor de fișiere ce nu se află pe acest calculator, "
-#~ "cum ar fi montări NFS sau Samba."
-
-#~ msgid ""
-#~ "Allows scans to enter directories that are part of other filesystems. For "
-#~ "example, when unchecked, this will usually prevent the contents of <b>/"
-#~ "mnt</b> from being scanned if you scan <b>/</b>."
-#~ msgstr ""
-#~ "Permite citirii intrarea în dosare ce fac parte din alte sisteme de "
-#~ "fișiere. De exemplu, când nu e bifată, aceasta va preveni citirea "
-#~ "conținutului din <b>/mnt</b> dacă citiți <b>/</b>."
-
-#~ msgid "Here you can vary the contrast of the filemap in realtime."
-#~ msgstr "Aici puteți varia contrastul hărții de fișiere în timp real."
-
-#~ msgid ""
-#~ "Some files are too small to be rendered on the filemap. Selecting this "
-#~ "option makes these files visible by merging them all into a single "
-#~ "\"multi-segment\"."
-#~ msgstr ""
-#~ "Unele fișiere sunt prea mici pentru a fi randate pe harta de fișiere. "
-#~ "Alegerea acestei opțiuni face aceste fișiere vizibile prin îmbinarea lor "
-#~ "într-un singur „multi-segment”."
-
-#~ msgid ""
-#~ "Anti-aliasing the filemap makes it clearer and prettier, unfortunately it "
-#~ "also makes rendering very slow."
-#~ msgstr ""
-#~ "Anti-crenelarea hărții de fișiere o face mai clară și mai frumoasă, dar "
-#~ "încetinește randarea considerabil."
-
-#~ msgid "&Use anti-aliasing"
-#~ msgstr "&Folosește anti-crenelarea"
-
-#~ msgid ""
-#~ "The font size of exploded labels can be varied relative to the depth of "
-#~ "the directories they represent. This helps you spot the important labels "
-#~ "more easily. Set a sensible minimum font size."
-#~ msgstr ""
-#~ "Dimensiunea fontului pentru etichete explodate poate fi variată relativ "
-#~ "la adâncimea dosarelor reprezentate. Aceasta vă ajută să depistați mai "
-#~ "ușor etichetele importante. Stabiliți o dimensiune minimă de font "
-#~ "rezonabilă."
-
-#~ msgid "Var&y label font sizes"
-#~ msgstr "Varia&ză dimensiunile fontului etichetelor"
-
-#~ msgid "The smallest font size Filelight can use to render labels."
-#~ msgstr ""
-#~ "Cea mai mică dimensiune de font pe care Filelight o poate folosi pentru a "
-#~ "randa etichete."
-
-#~ msgid "Minimum font si&ze:"
-#~ msgstr "&Dimensiune minimă de font:"
-
-#, fuzzy
-#~| msgctxt "@title:window"
-#~| msgid "Save as SVG"
-#~ msgctxt "@action"
-#~ msgid "Save as SVG"
-#~ msgstr "Salvează ca SVG"
-
-#~ msgid "Save the current view as an SVG file"
-#~ msgstr "Salvează vizualizarea actuală ca fișier SVG"
-
-#~ msgid "Open &File Manager Here"
-#~ msgstr "Deschide gestionarul de &fișiere aici"
-
-#~ msgid "&Rescan"
-#~ msgstr "&Recitește"
-
-#~ msgctxt "We messed up, the user needs to initiate a rescan."
-#~ msgid ""
-#~ "Internal representation is invalid,\n"
-#~ "please rescan."
-#~ msgstr ""
-#~ "Reprezentarea internă nu este validă,\n"
-#~ "rescanați."
-
-#~ msgctxt "Tooltip of file/folder, %1 is path, %2 is size"
-#~ msgid ""
-#~ "%1\n"
-#~ "%2"
-#~ msgstr ""
-#~ "%1\n"
-#~ "%2"
-
-#~ msgctxt "@title:window"
-#~ msgid "Save as SVG"
-#~ msgstr "Salvează ca SVG"
-
-#~ msgctxt "filedialog type filter"
-#~ msgid "SVG Files (*.svg);;All Files(*)"
-#~ msgstr "Fișiere SVG (*.svg);;Toate fișierele (*)"
-
-#, fuzzy
-#~| msgid "Scan completed, generating map..."
-#~ msgctxt "@info:status"
-#~ msgid "Scan completed, generating map..."
-#~ msgstr "Citire încheiată, se generează harta..."
-
-#~ msgid "Go"
-#~ msgstr "Mergi"
-
-#~ msgid "Location Bar"
-#~ msgstr "Bara de amplasare"
-
-#~ msgid "Save as SVG..."
-#~ msgstr "Salvează ca SVG..."
-
-#~ msgid "&Recent Scans"
-#~ msgstr "Scanări &recente"
-
-#~ msgid "Scanning: %1"
-#~ msgstr "Scanare: %1"
-
-#~ msgid "Scan failed: %1"
-#~ msgstr "Citire eșuată: %1"
-
-#~ msgctxt "Tooltip of used space on the partition, %1 is path, %2 is size"
-#~ msgid ""
-#~ "%1\n"
-#~ "Used: %2"
-#~ msgstr ""
-#~ "%1\n"
-#~ "Folosit: %2"
-
-#~ msgctxt "Tooltip of free space on the partition, %1 is path, %2 is size"
-#~ msgid ""
-#~ "%1\n"
-#~ "Free: %2"
-#~ msgstr ""
-#~ "%1\n"
-#~ "Liber: %2"
-
-#~ msgctxt "Percent used disk space on the partition"
-#~ msgid "<b>%1</b><br/>%2% Used"
-#~ msgstr "<b>%1</b><br/>%2% folosit"
-
-#~ msgctxt "Percent used disk space on the partition"
-#~ msgid "<b>%1: %2</b><br/>%3% Used"
-#~ msgstr "<b>%1: %2</b><br/>%3% folosit"
-
-#~ msgid "Prevents Filelight from scanning removable media (eg. CD-ROMs)."
-#~ msgstr ""
-#~ "Previne scanarea suporturilor amovibile (de ex. CD-ROM) de către Filelight"
-
-#~ msgid "E&xclude removable media"
-#~ msgstr "E&xclude mediile amovibile"
-
-#~ msgid "%1 File"
-#~ msgid_plural "%1 Files"
-#~ msgstr[0] "%1 fișier"
-#~ msgstr[1] "%1 fișiere"
-#~ msgstr[2] "%1 de fișiere"
-
-#~ msgid "File: %1"
-#~ msgid_plural "Files: %1"
-#~ msgstr[0] "Fișier: %1"
-#~ msgstr[1] "Fișiere: %1"
-#~ msgstr[2] "Fișiere: %1"
-
-#~ msgctxt "Free space on the disks/partitions"
-#~ msgid "Free"
-#~ msgstr "Liber"
-
-#~ msgctxt "Used space on the disks/partitions"
-#~ msgid "Used"
-#~ msgstr "Utilizat"
-
-#~ msgid "Displays file usage in an easy to understand way."
-#~ msgstr "Afișează utilizarea fișierelor într-o formă ușor de înțeles."
-
-#, fuzzy
-#~| msgid ""
-#~| "(c) 2002-2004 Max Howell\n"
-#~| "                (c) 2008-2013 Martin T. Sandsmark"
-#~ msgid ""
-#~ "(c) 2002-2004 Max Howell\n"
-#~ "(c) 2008-2014 Martin T. Sandsmark"
-#~ msgstr ""
-#~ "(c) 2002-2004 Max Howell\n"
-#~ "                (c) 2008-2013 Martin T. Sandsmark"
-
-#~ msgid "Configure Filelight..."
-#~ msgstr "Configurare Filelight..."
-
-#~ msgctxt "Path in the file system to scan"
-#~ msgid "+[path]"
-#~ msgstr "+[cale]"
-
-#~ msgid "Scan 'path'"
-#~ msgstr "Calea de scanat"
+msgstr[0] ""
+"\n"
+"%1 fișier, cu dimensiunea medie de %2"
+msgstr[1] ""
+"\n"
+"%1 fișiere, cu dimensiunea medie de %2"
+msgstr[2] ""
+"\n"
+"%1 de fișiere, cu dimensiunea medie de %2"
