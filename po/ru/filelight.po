@@ -5,13 +5,13 @@
 # Nick Shaforostoff <shafff@ukr.net>, 2010.
 # Artem Sereda <overmind88@gmail.com>, 2010.
 # Yuri Efremov <yur.arh@gmail.com>, 2013.
-# Alexander Yavorsky <kekcuha@gmail.com>, 2018, 2020, 2022.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2018, 2020, 2022, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-05 00:41+0000\n"
-"PO-Revision-Date: 2022-12-18 11:12+0300\n"
+"PO-Revision-Date: 2024-06-08 21:05+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -64,11 +64,10 @@ msgid "&Delete"
 msgstr "&Удалить"
 
 #: src/contextMenuContext.cpp:92
-#, fuzzy, kde-format
-#| msgid "Error while deleting"
+#, kde-format
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
-msgstr "При попытке удаления произошла ошибка"
+msgstr "При попытке удаления произошла ошибка: %1"
 
 #: src/historyAction.cpp:64
 #, kde-format
@@ -101,7 +100,7 @@ msgstr ""
 #: src/main.cpp:75
 #, kde-format
 msgid "Laurent Montel"
-msgstr ""
+msgstr "Laurent Montel"
 
 #: src/main.cpp:75 src/main.cpp:76
 #, kde-format
@@ -194,10 +193,9 @@ msgid "Select Folder to Scan"
 msgstr "Выбор папки для сканирования"
 
 #: src/mainContext.cpp:225
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "Введён недопустимый адрес."
+msgstr "Указанный адрес не может быть проанализирован"
 
 #: src/mainContext.cpp:225
 #, kde-format
@@ -205,10 +203,9 @@ msgid "it is invalid."
 msgstr ""
 
 #: src/mainContext.cpp:227
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Filelight понимает только абсолютные пути, например, /%1"
+msgstr "Filelight понимает только абсолютные пути"
 
 #: src/mainContext.cpp:227
 #, kde-format
@@ -221,20 +218,14 @@ msgid "Folder not found: %1"
 msgstr "Папка не найдена: %1"
 
 #: src/mainContext.cpp:231
-#, fuzzy, kde-format
-#| msgid "Unable to create part widget."
+#, kde-format
 msgid "Unable to enter: %1"
-msgstr "Не удалось создать графический элемент компонента Filelight."
+msgstr "Невозможно войти в папку «%1»"
 
 #: src/mainContext.cpp:231
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
-"Невозможно войти в папку %1\n"
-"Проверьте права доступа."
+msgstr "Проверьте права доступа в эту папку."
 
 #: src/qml/GlobalMenu.qml:10
 #, kde-format

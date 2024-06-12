@@ -416,7 +416,7 @@ msgstr[0] "%1 个文件，%2"
 #: src/qml/MapPage.qml:555
 #, kde-format
 msgid "No data available"
-msgstr "无可用数据"
+msgstr "没有可用的数据"
 
 #: src/qml/OverviewPage.qml:14
 #, kde-format
