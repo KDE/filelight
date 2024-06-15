@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-05 00:41+0000\n"
-"PO-Revision-Date: 2024-04-21 14:45+0300\n"
+"PO-Revision-Date: 2024-05-28 16:30+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -58,11 +58,10 @@ msgid "&Delete"
 msgstr "&Dzēst"
 
 #: src/contextMenuContext.cpp:92
-#, fuzzy, kde-format
-#| msgid "Error while deleting"
+#, kde-format
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
-msgstr "Dzēšanas laikā radusies kļūda"
+msgstr "Kļūda dzēšot: %1"
 
 #: src/historyAction.cpp:64
 #, kde-format
@@ -268,7 +267,7 @@ msgstr "Iziet"
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
-msgstr "Konfigurēt..."
+msgstr "Konfigurēt…"
 
 #: src/qml/main.qml:64
 #, kde-format
@@ -495,7 +494,7 @@ msgstr "Neskenēt šīs mapes:"
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
-msgstr "Pievienot..."
+msgstr "Pievienot…"
 
 #: src/qml/SettingsPageScanning.qml:90
 #, kde-format
