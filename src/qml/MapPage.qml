@@ -41,7 +41,7 @@ Kirigami.Page {
     Kirigami.Action {
         id: goUpAction
         enabled: page.state === ""
-        icon.name: "go-up"
+        icon.name: "go-parent-folder"
         text: i18nc("@action", "Up")
         onTriggered: appWindow.slotUp()
         shortcut: "Alt+Up"
