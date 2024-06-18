@@ -3,6 +3,10 @@
   <id>org.kde.filelight.desktop</id>
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-2.0+</project_license>
+  <developer id="org.kde">
+    <name translate="no">KDE</name>
+    <url>https://kde.org</url>
+  </developer>
   <name>Filelight</name>
   <name xml:lang="ar">كشاف الملفات</name>
   <name xml:lang="az">Filelight</name>
