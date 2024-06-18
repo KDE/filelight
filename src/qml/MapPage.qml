@@ -84,7 +84,7 @@ Kirigami.Page {
         shortcut: StandardKey.ZoomOut
     }
 
-    actions: MainContext.historyActions.concat([
+    actions: [
         goUpAction,
         goToOverviewAction,
         rescanAction,
@@ -94,7 +94,7 @@ Kirigami.Page {
         configureAction,
         helpAction,
         aboutAction
-    ])
+    ]
 
     Component {
         id: contextMenuComponent

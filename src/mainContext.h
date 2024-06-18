@@ -33,8 +33,6 @@ class MainContext : public QObject
 public:
     Q_PROPERTY(QUrl url READ url WRITE setUrl NOTIFY urlChanged)
 
-    Q_PROPERTY(QList<QObject *> historyActions MEMBER m_historyActions NOTIFY historyActionsChanged)
-
     explicit MainContext(QObject *parent = nullptr);
     [[nodiscard]] QUrl url() const;
 
@@ -42,7 +40,6 @@ Q_SIGNALS:
     void canceled(const QString &);
     void canvasIsDirty(Filelight::Dirty filth);
     void urlChanged();
-    void historyActionsChanged();
     void openUrlFailed(const QString &text, const QString &explanation);
 
 public Q_SLOTS:
@@ -61,17 +58,11 @@ public Q_SLOTS:
     void rescanSingleDir(const QUrl &) const;
 
 private:
-    void setupActions(QQmlApplicationEngine *engine);
-
-    void addHistoryAction(QObject *action);
-
     /// For internal use only -- call openUrl() instead
     void setUrl(const QUrl &url);
 
     QUrl m_url;
-    HistoryCollection *m_histories;
     ScanManager *m_manager;
-    QList<QObject *> m_historyActions;
 
 public:
     Q_INVOKABLE QString prettyUrl(const QUrl &url) const;

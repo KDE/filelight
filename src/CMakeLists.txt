@@ -55,8 +55,6 @@ add_executable(filelight)
 target_sources(filelight PRIVATE
     radialMap/map.cpp
     radialMap/radialMap.cpp
-    historyAction.cpp
-    historyAction.h
     mainContext.cpp
     mainContext.h
     main.cpp
@@ -68,7 +66,6 @@ target_sources(filelight PRIVATE
     define.h
     localLister.h
     remoteLister.h
-    historyAction.h
     Config.h
     qml/qml.qrc
     contextMenuContext.cpp

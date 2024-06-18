@@ -9,7 +9,6 @@
 #include "mainContext.h"
 
 #include <KAboutData>
-#include <KActionCollection>
 #include <KIO/Global> // upUrl
 #include <KLocalizedString>
 
@@ -24,7 +23,6 @@
 #include "define.h"
 #include "dropperItem.h"
 #include "fileModel.h"
-#include "historyAction.h"
 #include "radialMap/map.h"
 #include "radialMap/radialMap.h"
 #include "scan.h"
@@ -49,15 +47,11 @@ public:
 
 MainContext::MainContext(QObject *parent)
     : QObject(parent)
-    , m_histories(nullptr)
     , m_manager(new ScanManager(this))
 {
     Config::instance()->read();
 
     auto engine = new QQmlApplicationEngine(this);
-
-    setupActions(engine);
-    connect(m_manager, &ScanManager::aborted, m_histories, &HistoryCollection::stop);
 
     static auto l10nContext = new KLocalizedContext(engine);
     l10nContext->setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));
@@ -131,42 +125,6 @@ void MainContext::scan(const QUrl &u)
     slotScanUrl(u);
 }
 
-void MainContext::setupActions(QQmlApplicationEngine *engine) // singleton function
-{
-    // Only here to satisfy the HistoryCollection. TODO: revise historycollection
-    auto ac = new KActionCollection(this, QStringLiteral("dummycollection"));
-
-    m_histories = new HistoryCollection(ac, this);
-
-    for (const auto &name : {QStringLiteral("go_back"), QStringLiteral("go_forward")}) {
-        // Synthesize actions
-        auto action = ac->action(name);
-        Q_ASSERT(action);
-
-        QQmlComponent component(engine, QUrl(QStringLiteral("qrc:/ui/Action.qml")));
-        QObject *qmlAction = component.createWithInitialProperties({
-            {u"icon.name"_s, action->icon().name()},
-            {u"text"_s, action->text()},
-            {u"shortcut"_s, action->shortcut()},
-        });
-        if (!qmlAction) {
-            qWarning() << "Failed to load component:" << component.errorString();
-            Q_ASSERT(qmlAction);
-            continue;
-        }
-
-        QBindable<bool> actionEnabled(action, "enabled");
-        QBindable<bool>(qmlAction, "enabled").setBinding([actionEnabled] {
-            return actionEnabled.value();
-        });
-        connect(qmlAction, SIGNAL(triggered()), action, SIGNAL(triggered()));
-
-        addHistoryAction(qmlAction);
-    }
-
-    connect(m_histories, &HistoryCollection::activated, this, &MainContext::slotScanUrl);
-}
-
 void MainContext::slotScanFolder()
 {
     slotScanUrl(QFileDialog::getExistingDirectoryUrl(nullptr, i18n("Select Folder to Scan"), url()));
@@ -204,7 +162,6 @@ bool MainContext::slotScanUrl(const QUrl &url)
     const QUrl oldUrl = this->url();
 
     if (openUrl(url)) {
-        m_histories->push(oldUrl);
         return true;
     }
     return false;
@@ -287,12 +244,6 @@ bool MainContext::start(const QUrl &url) const
         m_manager->abort();
     }
     return m_manager->start(url);
-}
-
-void MainContext::addHistoryAction(QObject *action)
-{
-    m_historyActions.append(action);
-    Q_EMIT historyActionsChanged();
 }
 
 } // namespace Filelight
