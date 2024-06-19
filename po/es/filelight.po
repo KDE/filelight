@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-05 00:41+0000\n"
+"POT-Creation-Date: 2024-06-19 00:41+0000\n"
 "PO-Revision-Date: 2024-06-01 23:46+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -65,18 +65,6 @@ msgstr "&Borrar"
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "Ha ocurrido un error al borrar: %1"
-
-#: src/historyAction.cpp:64
-#, kde-format
-msgctxt "Go to the last path viewed"
-msgid "Back"
-msgstr "Atrás"
-
-#: src/historyAction.cpp:68
-#, kde-format
-msgctxt "Go to forward in the history of paths viewed"
-msgid "Forward"
-msgstr "Adelante"
 
 #: src/main.cpp:68
 #, kde-format
@@ -184,42 +172,42 @@ msgstr "Ruta o URL a explorar"
 msgid "[url]"
 msgstr "[URL]"
 
-#: src/mainContext.cpp:172
+#: src/mainContext.cpp:130
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Seleccione la carpeta a explorar"
 
-#: src/mainContext.cpp:225
+#: src/mainContext.cpp:182
 #, kde-format
 msgid "The entered URL cannot be parsed"
 msgstr "La URL introducida no se puede analizar"
 
-#: src/mainContext.cpp:225
+#: src/mainContext.cpp:182
 #, kde-format
 msgid "it is invalid."
 msgstr "no es válida."
 
-#: src/mainContext.cpp:227
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight solo puede aceptar rutas absolutas"
 
-#: src/mainContext.cpp:227
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "eg. /%1"
 msgstr "por ejemplo, /%1"
 
-#: src/mainContext.cpp:229
+#: src/mainContext.cpp:186
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Carpeta no encontrada: %1"
 
-#: src/mainContext.cpp:231
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr "No se ha podido introducir: %1"
 
-#: src/mainContext.cpp:231
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "You do not have access rights to this location."
 msgstr "No tiene permiso de acceso a esta ubicación."
@@ -527,6 +515,14 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 archivos, con un tamaño medio de %2"
+
+#~ msgctxt "Go to the last path viewed"
+#~ msgid "Back"
+#~ msgstr "Atrás"
+
+#~ msgctxt "Go to forward in the history of paths viewed"
+#~ msgid "Forward"
+#~ msgstr "Adelante"
 
 #~ msgid "That folder is already set to be excluded from scans."
 #~ msgstr "Esta carpeta ya está excluida de las exploraciones."

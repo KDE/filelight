@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-05 00:41+0000\n"
+"POT-Creation-Date: 2024-06-19 00:41+0000\n"
 "PO-Revision-Date: 2024-05-13 11:15+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -65,18 +65,6 @@ msgstr "Izbriši"
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "Napaka med brisanjem: %1"
-
-#: src/historyAction.cpp:64
-#, kde-format
-msgctxt "Go to the last path viewed"
-msgid "Back"
-msgstr "Nazaj"
-
-#: src/historyAction.cpp:68
-#, kde-format
-msgctxt "Go to forward in the history of paths viewed"
-msgid "Forward"
-msgstr "Naprej"
 
 #: src/main.cpp:68
 #, kde-format
@@ -184,42 +172,42 @@ msgstr "Pot ali naslov URL za preiskati"
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:172
+#: src/mainContext.cpp:130
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Izberite mapo za preiskovanje"
 
-#: src/mainContext.cpp:225
+#: src/mainContext.cpp:182
 #, kde-format
 msgid "The entered URL cannot be parsed"
 msgstr "Vnesenega URL-ja ni mogoče razčleniti"
 
-#: src/mainContext.cpp:225
+#: src/mainContext.cpp:182
 #, kde-format
 msgid "it is invalid."
 msgstr "je neveljaven."
 
-#: src/mainContext.cpp:227
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight sprejema samo absolutne pot"
 
-#: src/mainContext.cpp:227
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "eg. /%1"
 msgstr "npr. /%1"
 
-#: src/mainContext.cpp:229
+#: src/mainContext.cpp:186
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Mapa ni bila najdena: %1"
 
-#: src/mainContext.cpp:231
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr "Ni mogoče vnesti: %1"
 
-#: src/mainContext.cpp:231
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "You do not have access rights to this location."
 msgstr "Nimate dovoljenj dostopa do tega mesta."
@@ -541,6 +529,14 @@ msgstr[2] ""
 msgstr[3] ""
 "\n"
 "%1 datoteke s povprečno velikostjo %2"
+
+#~ msgctxt "Go to the last path viewed"
+#~ msgid "Back"
+#~ msgstr "Nazaj"
+
+#~ msgctxt "Go to forward in the history of paths viewed"
+#~ msgid "Forward"
+#~ msgstr "Naprej"
 
 #~ msgid "That folder is already set to be excluded from scans."
 #~ msgstr "Ta mapa je že izločena iz preiskovanj."

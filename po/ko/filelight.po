@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-05 00:41+0000\n"
+"POT-Creation-Date: 2024-06-19 00:41+0000\n"
 "PO-Revision-Date: 2023-03-01 01:19+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -63,18 +63,6 @@ msgstr "삭제(&D)"
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "삭제 오류"
-
-#: src/historyAction.cpp:64
-#, kde-format
-msgctxt "Go to the last path viewed"
-msgid "Back"
-msgstr "뒤로"
-
-#: src/historyAction.cpp:68
-#, kde-format
-msgctxt "Go to forward in the history of paths viewed"
-msgid "Forward"
-msgstr "앞으로"
 
 #: src/main.cpp:68
 #, kde-format
@@ -182,45 +170,45 @@ msgstr "검색할 경로나 URL"
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:172
+#: src/mainContext.cpp:130
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "검사할 폴더 선택"
 
-#: src/mainContext.cpp:225
+#: src/mainContext.cpp:182
 #, fuzzy, kde-format
 #| msgid "The entered URL cannot be parsed; it is invalid."
 msgid "The entered URL cannot be parsed"
 msgstr "입력한 URL을 해석할 수 없습니다. 잘못된 URL입니다."
 
-#: src/mainContext.cpp:225
+#: src/mainContext.cpp:182
 #, kde-format
 msgid "it is invalid."
 msgstr ""
 
-#: src/mainContext.cpp:227
+#: src/mainContext.cpp:184
 #, fuzzy, kde-format
 #| msgid "Filelight only accepts absolute paths, eg. /%1"
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight는 절대 경로만 받아들입니다. 예: /%1"
 
-#: src/mainContext.cpp:227
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "eg. /%1"
 msgstr ""
 
-#: src/mainContext.cpp:229
+#: src/mainContext.cpp:186
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "폴더를 찾을 수 없음: %1"
 
-#: src/mainContext.cpp:231
+#: src/mainContext.cpp:188
 #, fuzzy, kde-format
 #| msgid "Unable to create part widget."
 msgid "Unable to enter: %1"
 msgstr "기능 위젯을 생성할 수 없습니다."
 
-#: src/mainContext.cpp:231
+#: src/mainContext.cpp:188
 #, fuzzy, kde-format
 #| msgid ""
 #| "Unable to enter: %1\n"
@@ -526,6 +514,14 @@ msgid_plural ""
 msgstr[0] ""
 "\n"
 "파일 %1개, 평균 크기 %2"
+
+#~ msgctxt "Go to the last path viewed"
+#~ msgid "Back"
+#~ msgstr "뒤로"
+
+#~ msgctxt "Go to forward in the history of paths viewed"
+#~ msgid "Forward"
+#~ msgstr "앞으로"
 
 #~ msgid "That folder is already set to be excluded from scans."
 #~ msgstr "이 폴더는 이미 검사에서 제외되었습니다."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-05 00:41+0000\n"
+"POT-Creation-Date: 2024-06-19 00:41+0000\n"
 "PO-Revision-Date: 2022-12-18 12:00+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -66,18 +66,6 @@ msgstr "&Apagar"
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "Erro na remoção"
-
-#: src/historyAction.cpp:64
-#, kde-format
-msgctxt "Go to the last path viewed"
-msgid "Back"
-msgstr "Recuar"
-
-#: src/historyAction.cpp:68
-#, kde-format
-msgctxt "Go to forward in the history of paths viewed"
-msgid "Forward"
-msgstr "Avançar"
 
 #: src/main.cpp:68
 #, kde-format
@@ -185,44 +173,44 @@ msgstr "Localização ou URL a sondar"
 msgid "[url]"
 msgstr "[URL]"
 
-#: src/mainContext.cpp:172
+#: src/mainContext.cpp:130
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Seleccionar a Pasta a Analisar"
 
-#: src/mainContext.cpp:225
+#: src/mainContext.cpp:182
 #, fuzzy, kde-format
 #| msgid "The entered URL cannot be parsed; it is invalid."
 msgid "The entered URL cannot be parsed"
 msgstr "Não é possível processar o URL indicado; é inválido."
 
-#: src/mainContext.cpp:225
+#: src/mainContext.cpp:182
 #, kde-format
 msgid "it is invalid."
 msgstr ""
 
-#: src/mainContext.cpp:227
+#: src/mainContext.cpp:184
 #, fuzzy, kde-format
 #| msgid "Filelight only accepts absolute paths, eg. /%1"
 msgid "Filelight only accepts absolute paths"
 msgstr "O Filelight só aceita pastas absolutas, p.ex., /%1"
 
-#: src/mainContext.cpp:227
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "eg. /%1"
 msgstr ""
 
-#: src/mainContext.cpp:229
+#: src/mainContext.cpp:186
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Pasta não encontrada: %1"
 
-#: src/mainContext.cpp:231
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr ""
 
-#: src/mainContext.cpp:231
+#: src/mainContext.cpp:188
 #, fuzzy, kde-format
 #| msgid ""
 #| "Unable to enter: %1\n"
@@ -535,6 +523,14 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 ficheiros, com um tamanho médio de %2"
+
+#~ msgctxt "Go to the last path viewed"
+#~ msgid "Back"
+#~ msgstr "Recuar"
+
+#~ msgctxt "Go to forward in the history of paths viewed"
+#~ msgid "Forward"
+#~ msgstr "Avançar"
 
 #~ msgid "That folder is already set to be excluded from scans."
 #~ msgstr "Essa pasta já está a ser excluída das análises."

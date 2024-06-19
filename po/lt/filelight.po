@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-05 00:41+0000\n"
+"POT-Creation-Date: 2024-06-19 00:41+0000\n"
 "PO-Revision-Date: 2024-05-16 23:26+0300\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -66,18 +66,6 @@ msgstr "&Ištrinti"
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "Klaida ištrinant: %1"
-
-#: src/historyAction.cpp:64
-#, kde-format
-msgctxt "Go to the last path viewed"
-msgid "Back"
-msgstr "Atgal"
-
-#: src/historyAction.cpp:68
-#, kde-format
-msgctxt "Go to forward in the history of paths viewed"
-msgid "Forward"
-msgstr "Pirmyn"
 
 #: src/main.cpp:68
 #, kde-format
@@ -185,42 +173,42 @@ msgstr "Kelias ar URL, kurį skenuoti"
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:172
+#: src/mainContext.cpp:130
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Pasirinkite, kurį aplanką skenuoti"
 
-#: src/mainContext.cpp:225
+#: src/mainContext.cpp:182
 #, kde-format
 msgid "The entered URL cannot be parsed"
 msgstr "Įvestas URL negali būti išnagrinėtas"
 
-#: src/mainContext.cpp:225
+#: src/mainContext.cpp:182
 #, kde-format
 msgid "it is invalid."
 msgstr "jis neteisingas."
 
-#: src/mainContext.cpp:227
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight priima tik absoliučius kelius"
 
-#: src/mainContext.cpp:227
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "eg. /%1"
 msgstr "pvz., /%1"
 
-#: src/mainContext.cpp:229
+#: src/mainContext.cpp:186
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Aplankas nerastas: %1"
 
-#: src/mainContext.cpp:231
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr "Nepavyko įeiti į: %1"
 
-#: src/mainContext.cpp:231
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "You do not have access rights to this location."
 msgstr "Jūs neturite prieigos teisių įeiti į šią vietą."
@@ -542,6 +530,14 @@ msgstr[2] ""
 msgstr[3] ""
 "\n"
 "%1 failas, vidutinis dydis – %2"
+
+#~ msgctxt "Go to the last path viewed"
+#~ msgid "Back"
+#~ msgstr "Atgal"
+
+#~ msgctxt "Go to forward in the history of paths viewed"
+#~ msgid "Forward"
+#~ msgstr "Pirmyn"
 
 #~ msgid "That folder is already set to be excluded from scans."
 #~ msgstr "Šio aplanko jau nurodyta neskenuoti."

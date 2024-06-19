@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-05 00:41+0000\n"
+"POT-Creation-Date: 2024-06-19 00:41+0000\n"
 "PO-Revision-Date: 2024-05-22 10:39+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -63,18 +63,6 @@ msgstr "&Törlés"
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "Hiba történt a törlés közben: %1"
-
-#: src/historyAction.cpp:64
-#, kde-format
-msgctxt "Go to the last path viewed"
-msgid "Back"
-msgstr "Vissza"
-
-#: src/historyAction.cpp:68
-#, kde-format
-msgctxt "Go to forward in the history of paths viewed"
-msgid "Forward"
-msgstr "Előre"
 
 #: src/main.cpp:68
 #, kde-format
@@ -182,42 +170,42 @@ msgstr "Az olvasandó elérési út vagy URL"
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:172
+#: src/mainContext.cpp:130
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Válassza ki a mappát"
 
-#: src/mainContext.cpp:225
+#: src/mainContext.cpp:182
 #, kde-format
 msgid "The entered URL cannot be parsed"
 msgstr "A megadott URL nem dolgozható fel"
 
-#: src/mainContext.cpp:225
+#: src/mainContext.cpp:182
 #, kde-format
 msgid "it is invalid."
 msgstr "érvénytelen"
 
-#: src/mainContext.cpp:227
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "Filelight only accepts absolute paths"
 msgstr "A Filelight csak abszolút elérési utakat fogad el"
 
-#: src/mainContext.cpp:227
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "eg. /%1"
 msgstr "pl.: /%1"
 
-#: src/mainContext.cpp:229
+#: src/mainContext.cpp:186
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "A mappa nem található: %1"
 
-#: src/mainContext.cpp:231
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr "Nem lehet belépni ide: %1"
 
-#: src/mainContext.cpp:231
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "You do not have access rights to this location."
 msgstr "Nincs hozzáférési joga ehhez a helyhez."
@@ -525,6 +513,14 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 fájl %2 átlagos mérettel"
+
+#~ msgctxt "Go to the last path viewed"
+#~ msgid "Back"
+#~ msgstr "Vissza"
+
+#~ msgctxt "Go to forward in the history of paths viewed"
+#~ msgid "Forward"
+#~ msgstr "Előre"
 
 #~ msgid "That folder is already set to be excluded from scans."
 #~ msgstr "A mappa már ki van zárva az olvasásból."

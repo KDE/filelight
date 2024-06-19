@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-05 00:41+0000\n"
+"POT-Creation-Date: 2024-06-19 00:41+0000\n"
 "PO-Revision-Date: 2023-01-02 23:12+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -62,18 +62,6 @@ msgstr "&silin"
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "Silinmə zamanı xəta"
-
-#: src/historyAction.cpp:64
-#, kde-format
-msgctxt "Go to the last path viewed"
-msgid "Back"
-msgstr "Geriyə"
-
-#: src/historyAction.cpp:68
-#, kde-format
-msgctxt "Go to forward in the history of paths viewed"
-msgid "Forward"
-msgstr "İrəli"
 
 #: src/main.cpp:68
 #, kde-format
@@ -181,44 +169,44 @@ msgstr "Axtarış üçün Yol və ya URL"
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:172
+#: src/mainContext.cpp:130
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Analiz üçün qovluğu seçmək"
 
-#: src/mainContext.cpp:225
+#: src/mainContext.cpp:182
 #, fuzzy, kde-format
 #| msgid "The entered URL cannot be parsed; it is invalid."
 msgid "The entered URL cannot be parsed"
 msgstr "Daxil edilmiş səhvdir."
 
-#: src/mainContext.cpp:225
+#: src/mainContext.cpp:182
 #, kde-format
 msgid "it is invalid."
 msgstr ""
 
-#: src/mainContext.cpp:227
+#: src/mainContext.cpp:184
 #, fuzzy, kde-format
 #| msgid "Filelight only accepts absolute paths, eg. /%1"
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight yalnız mütləq yolları qəbul edir, məsələn. /%1"
 
-#: src/mainContext.cpp:227
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "eg. /%1"
 msgstr ""
 
-#: src/mainContext.cpp:229
+#: src/mainContext.cpp:186
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Tapılmayan qovluq: %1"
 
-#: src/mainContext.cpp:231
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr ""
 
-#: src/mainContext.cpp:231
+#: src/mainContext.cpp:188
 #, fuzzy, kde-format
 #| msgid ""
 #| "Unable to enter: %1\n"
@@ -557,6 +545,14 @@ msgid_plural ""
 "%1 files, with an average size of %2"
 msgstr[0] "%1 fayl, %2 faylının orta ölçüsü"
 msgstr[1] "%1 fayl, %2 faylın orta ölçüsü"
+
+#~ msgctxt "Go to the last path viewed"
+#~ msgid "Back"
+#~ msgstr "Geriyə"
+
+#~ msgctxt "Go to forward in the history of paths viewed"
+#~ msgid "Forward"
+#~ msgstr "İrəli"
 
 #~ msgid "That folder is already set to be excluded from scans."
 #~ msgstr "Bu qovluq artıq analiz olunmadan istisna edilib."

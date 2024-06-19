@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-05 00:41+0000\n"
+"POT-Creation-Date: 2024-06-19 00:41+0000\n"
 "PO-Revision-Date: 2020-10-11 01:28+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -64,18 +64,6 @@ msgstr "&Kustuta"
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "Viga kustutamisel"
-
-#: src/historyAction.cpp:64
-#, kde-format
-msgctxt "Go to the last path viewed"
-msgid "Back"
-msgstr "Tagasi"
-
-#: src/historyAction.cpp:68
-#, kde-format
-msgctxt "Go to forward in the history of paths viewed"
-msgid "Forward"
-msgstr "Edasi"
 
 #: src/main.cpp:68
 #, kde-format
@@ -185,45 +173,45 @@ msgstr "Uuritav asukoht või URL"
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:172
+#: src/mainContext.cpp:130
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Uuritava kataloogi valimine"
 
-#: src/mainContext.cpp:225
+#: src/mainContext.cpp:182
 #, fuzzy, kde-format
 #| msgid "The entered URL cannot be parsed; it is invalid."
 msgid "The entered URL cannot be parsed"
 msgstr "Sisestatud URL-i parsimine nurjus, see on vigane."
 
-#: src/mainContext.cpp:225
+#: src/mainContext.cpp:182
 #, kde-format
 msgid "it is invalid."
 msgstr ""
 
-#: src/mainContext.cpp:227
+#: src/mainContext.cpp:184
 #, fuzzy, kde-format
 #| msgid "Filelight only accepts absolute paths, eg. /%1"
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight tunnistab ainult absoluutseid asukohti, nt. /%1"
 
-#: src/mainContext.cpp:227
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "eg. /%1"
 msgstr ""
 
-#: src/mainContext.cpp:229
+#: src/mainContext.cpp:186
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Kataloogi ei leitud: %1"
 
-#: src/mainContext.cpp:231
+#: src/mainContext.cpp:188
 #, fuzzy, kde-format
 #| msgid "Unable to create part widget."
 msgid "Unable to enter: %1"
 msgstr "Komponendi vidina loomine nurjus."
 
-#: src/mainContext.cpp:231
+#: src/mainContext.cpp:188
 #, fuzzy, kde-format
 #| msgid ""
 #| "Unable to enter: %1\n"
@@ -570,6 +558,14 @@ msgid_plural ""
 "%1 files, with an average size of %2"
 msgstr[0] "1 fail keskmise suurusega %2"
 msgstr[1] "%1 faili keskmise suurusega %2"
+
+#~ msgctxt "Go to the last path viewed"
+#~ msgid "Back"
+#~ msgstr "Tagasi"
+
+#~ msgctxt "Go to forward in the history of paths viewed"
+#~ msgid "Forward"
+#~ msgstr "Edasi"
 
 #~ msgid "That folder is already set to be excluded from scans."
 #~ msgstr "Kataloog on juba määratud uurimisest välja jääma."

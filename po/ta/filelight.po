@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-05 00:41+0000\n"
+"POT-Creation-Date: 2024-06-19 00:41+0000\n"
 "PO-Revision-Date: 2024-05-19 16:50+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -61,18 +61,6 @@ msgstr "&நீக்கு"
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "நீக்கும்போது சிக்கல்: %1"
-
-#: src/historyAction.cpp:64
-#, kde-format
-msgctxt "Go to the last path viewed"
-msgid "Back"
-msgstr "முந்தையது"
-
-#: src/historyAction.cpp:68
-#, kde-format
-msgctxt "Go to forward in the history of paths viewed"
-msgid "Forward"
-msgstr "அடுத்த‍து"
 
 #: src/main.cpp:68
 #, kde-format
@@ -180,42 +168,42 @@ msgstr "ஆராய வேண்டிய பாதை அல்லது ம�
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:172
+#: src/mainContext.cpp:130
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "ஆராய வேண்டிய அடைவைத் தேர்ந்தெடுத்தல்"
 
-#: src/mainContext.cpp:225
+#: src/mainContext.cpp:182
 #, kde-format
 msgid "The entered URL cannot be parsed"
 msgstr "உள்ளிட்ட முகவரியை புரிந்துகொள்ள முடியவில்லை"
 
-#: src/mainContext.cpp:225
+#: src/mainContext.cpp:182
 #, kde-format
 msgid "it is invalid."
 msgstr "அது செல்லுபடியாகாத‍து"
 
-#: src/mainContext.cpp:227
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "Filelight only accepts absolute paths"
 msgstr "முழுமையான பாதைகளை மட்டுமே ஃபைல்-லைட் ஏற்கும்"
 
-#: src/mainContext.cpp:227
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "eg. /%1"
 msgstr "எ.கா. /%1"
 
-#: src/mainContext.cpp:229
+#: src/mainContext.cpp:186
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "அடைவை கண்டுபிடிக்க முடியவில்லை: %1"
 
-#: src/mainContext.cpp:231
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr "நுழைய முடியவில்லை: %1"
 
-#: src/mainContext.cpp:231
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "You do not have access rights to this location."
 msgstr "இவ்விடத்தில் நுழைவதற்கான அனுமதி உங்களுக்கு இல்லை."
@@ -523,6 +511,14 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 கோப்புகள், சராசரியாக %2 அளவில்"
+
+#~ msgctxt "Go to the last path viewed"
+#~ msgid "Back"
+#~ msgstr "முந்தையது"
+
+#~ msgctxt "Go to forward in the history of paths viewed"
+#~ msgid "Forward"
+#~ msgstr "அடுத்த‍து"
 
 #~ msgid "That folder is already set to be excluded from scans."
 #~ msgstr "பொருட்படுத்தக்கூடாதவற்றின் பட்டியலில் அவ்வடைவு ஏற்கனவே உள்ளது."
