@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-05 00:41+0000\n"
+"POT-Creation-Date: 2024-06-19 00:41+0000\n"
 "PO-Revision-Date: 2024-06-16 22:48+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -63,18 +63,6 @@ msgstr "Ta &bort"
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "Fel vid borttagning: %1"
-
-#: src/historyAction.cpp:64
-#, kde-format
-msgctxt "Go to the last path viewed"
-msgid "Back"
-msgstr "Tillbaka"
-
-#: src/historyAction.cpp:68
-#, kde-format
-msgctxt "Go to forward in the history of paths viewed"
-msgid "Forward"
-msgstr "Framåt"
 
 #: src/main.cpp:68
 #, kde-format
@@ -182,42 +170,42 @@ msgstr "Sökväg eller webbadress att söka igenom"
 msgid "[url]"
 msgstr "[webbadress]"
 
-#: src/mainContext.cpp:172
+#: src/mainContext.cpp:130
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Markera katalog att söka igenom"
 
-#: src/mainContext.cpp:225
+#: src/mainContext.cpp:182
 #, kde-format
 msgid "The entered URL cannot be parsed"
 msgstr "Den angivna webbadressen kan inte tolkas"
 
-#: src/mainContext.cpp:225
+#: src/mainContext.cpp:182
 #, kde-format
 msgid "it is invalid."
 msgstr "är ogiltig."
 
-#: src/mainContext.cpp:227
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight accepterar bara absoluta sökvägar"
 
-#: src/mainContext.cpp:227
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "eg. /%1"
 msgstr "t.ex. /%1"
 
-#: src/mainContext.cpp:229
+#: src/mainContext.cpp:186
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Katalogen hittades inte: %1"
 
-#: src/mainContext.cpp:231
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr "Kan inte visa: %1"
 
-#: src/mainContext.cpp:231
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "You do not have access rights to this location."
 msgstr "Du har inte åtkomsträttigheter till platsen."
@@ -525,6 +513,14 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 filer, med medelstorlek %2"
+
+#~ msgctxt "Go to the last path viewed"
+#~ msgid "Back"
+#~ msgstr "Tillbaka"
+
+#~ msgctxt "Go to forward in the history of paths viewed"
+#~ msgid "Forward"
+#~ msgstr "Framåt"
 
 #~ msgid "That folder is already set to be excluded from scans."
 #~ msgstr "Katalogen är redan inställd att undantas från sökningar."
