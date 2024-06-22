@@ -507,11 +507,3 @@ msgid_plural ""
 msgstr[0] ""
 "\n"
 "%1 个文件，平均大小为 %2"
-
-#~ msgctxt "Go to the last path viewed"
-#~ msgid "Back"
-#~ msgstr "后退"
-
-#~ msgctxt "Go to forward in the history of paths viewed"
-#~ msgid "Forward"
-#~ msgstr "前进"
