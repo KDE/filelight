@@ -1,0 +1,12 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<!--
+SPDX-FileCopyrightText: none
+SPDX-License-Identifier: CC0-1.0
+
+This file is used to ensure that there is content in the hicolor theme. Without content the theme would be
+considered invalid by kiconthemes and we would end up without icons in some cases.
+-->
+<qresource>
+    <file alias="icons/hicolor/128x128/apps/filelight.png">../misc/128-apps-filelight.png</file>
+</qresource>
+</RCC>
