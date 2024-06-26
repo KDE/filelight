@@ -521,11 +521,3 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 filer, med snittstorleik %2"
-
-#~ msgctxt "Go to the last path viewed"
-#~ msgid "Back"
-#~ msgstr "Tilbake"
-
-#~ msgctxt "Go to forward in the history of paths viewed"
-#~ msgid "Forward"
-#~ msgstr "Fram"
