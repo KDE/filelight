@@ -437,6 +437,7 @@
     <value key="KDE::windows_store">https://www.microsoft.com/store/apps/9pfxcd722m2c</value>
   </custom>
   <releases>
+    <release version="24.05.2" date="2024-07-04"/>
     <release version="24.05.1" date="2024-06-13"/>
     <release version="24.05.0" date="2024-05-23"/>
     <release version="24.02.2" date="2024-04-11"/>
