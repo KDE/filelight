@@ -20,12 +20,15 @@
 #include <QUrl>
 
 #include <KAboutData>
+#include <KColorSchemeManager>
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
 
 #include "fileCleaner.h"
 #include "fileTree.h"
+
+using namespace Qt::StringLiterals;
 
 int main(int argc, char *argv[])
 {
@@ -52,6 +55,18 @@ int main(int argc, char *argv[])
     if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
         QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
     }
+
+#if defined(Q_OS_WINDOWS)
+    // Ensure we have a suitable color theme set for light/dark mode. KColorSchemeManager implicitly applies
+    // a suitable default theme.
+    KColorSchemeManager manager;
+    // Force breeze style to ensure coloring works consistently in dark mode. Specifically tab colors have
+    // troubles on windows.
+    app.setStyle(u"breeze"_s);
+    // Force breeze icon theme to ensure we can correctly adapt icons to color changes WRT dark/light mode.
+    // Without this we may end up with hicolor and fail to support icon recoloring.
+    QIcon::setThemeName(u"breeze"_s);
+#endif
 
     KLocalizedString::setApplicationDomain(QByteArrayLiteral("filelight"));
     auto config = KSharedConfig::openConfig();
