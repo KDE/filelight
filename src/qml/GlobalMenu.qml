@@ -6,7 +6,12 @@ import Qt.labs.platform 1.1 as Platform
 import org.kde.kirigami 2.19 as Kirigami
 
 Platform.MenuBar {
+    id: bar
+    // On Windows the bar doesn't theme properly plus we only want it on linux anyway for its global menu support.
+    readonly property bool visible: Qt.platform.os !== "windows"
+
     Platform.Menu {
+        visible: bar.visible
         title: i18nc("@item:inmenu", "Scan")
 
         ActionMenuItem { action: scanFolderAction }
@@ -18,12 +23,14 @@ Platform.MenuBar {
     }
 
     Platform.Menu {
+        visible: bar.visible
         title: i18nc("@item:inmenu", "Settings")
 
         ActionMenuItem { action: configureAction }
     }
 
     Platform.Menu {
+        visible: bar.visible
         title: i18nc("@item:inmenu", "Help")
 
         ActionMenuItem { action: helpAction }
