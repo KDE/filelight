@@ -75,6 +75,7 @@ target_sources(filelight PRIVATE
     dropperItem.cpp
     dropperItem.h
     hicolor.qrc
+    windowThemer.cpp
 )
 
 set(filelight_ICONS
