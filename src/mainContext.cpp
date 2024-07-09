@@ -27,6 +27,7 @@
 #include "radialMap/map.h"
 #include "radialMap/radialMap.h"
 #include "scan.h"
+#include "windowThemer.h"
 
 using namespace Qt::StringLiterals;
 
@@ -67,6 +68,7 @@ MainContext::MainContext(QObject *parent)
     auto about = new About(this);
     qRegisterMetaType<size_t>("size_t");
     qmlRegisterType<DropperItem>("org.kde.filelight", 1, 0, "DropperItem");
+    qmlRegisterType<WindowThemer>("org.kde.filelight", 1, 0, "WindowThemer");
     qmlRegisterSingletonInstance("org.kde.filelight", 1, 0, "About", about);
     qmlRegisterSingletonInstance("org.kde.filelight", 1, 0, "ScanManager", m_manager);
     qmlRegisterSingletonInstance("org.kde.filelight", 1, 0, "MainContext", this);

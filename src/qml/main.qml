@@ -24,6 +24,12 @@ Kirigami.ApplicationWindow {
         return (Kirigami.ApplicationHeaderStyle.ShowBackButton | Kirigami.ApplicationHeaderStyle.ShowForwardButton)
     }
 
+    WindowThemer {
+        // Kirigami.ApplicationWindow places us inside a contentItem so we can't implicitly rely on parent here, use
+        // a property instead.
+        window: appWindow
+    }
+
     Kirigami.Action {
         id: scanFolderAction
         icon.name: "folder"
