@@ -48,6 +48,7 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED
     XmlGui # For app
     KIO # For part
     I18n
+    ColorScheme
 )
 find_package(KF6DocTools) # Optional, not needed on Windows for example.
 
