@@ -11,7 +11,6 @@ Dependencies:
     'frameworks/kxmlgui': '@latest-kf6'
     'frameworks/kcrash': '@latest-kf6'
     'frameworks/kio': '@latest-kf6'
-    'libraries/kirigami-addons': '@latest-kf6'
 
 Options:
   require-passing-tests-on: [ 'Linux', 'FreeBSD', 'Windows' ]

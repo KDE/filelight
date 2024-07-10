@@ -55,12 +55,6 @@ find_package(KF6DocTools) # Optional, not needed on Windows for example.
 find_package(KF6QQC2DesktopStyle ${KF_MIN_VERSION})
 set_package_properties(KF6QQC2DesktopStyle PROPERTIES TYPE RUNTIME)
 
-find_package(KF6KirigamiAddons REQUIRED)
-set_package_properties(KF6KirigamiAddons PROPERTIES
-    TYPE REQUIRED
-    PURPOSE "Provides additional visual components"
-)
-
 ecm_find_qmlmodule(org.kde.coreaddons 1.0)
 ecm_find_qmlmodule(org.kde.kirigami 2.19)
 ecm_find_qmlmodule(Qt.labs.platform 1.1)
