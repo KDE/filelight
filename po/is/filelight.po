@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-19 00:41+0000\n"
+"POT-Creation-Date: 2024-07-11 00:41+0000\n"
 "PO-Revision-Date: 2024-05-23 14:52+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -63,12 +63,12 @@ msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "Villa kom upp við eyðingu: %1"
 
-#: src/main.cpp:68
+#: src/main.cpp:83
 #, kde-format
 msgid "Graphical disk-usage information"
 msgstr "Myndrænar upplýsingar um notkun á diskum"
 
-#: src/main.cpp:70
+#: src/main.cpp:85
 #, kde-format
 msgid ""
 "(C) 2006 Max Howell\n"
@@ -79,209 +79,209 @@ msgstr ""
 "(C) 2008-2014 Martin Sandsmark\n"
 "(C) 2017-2022 Harald Sitter"
 
-#: src/main.cpp:75
+#: src/main.cpp:90
 #, kde-format
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
 
-#: src/main.cpp:75 src/main.cpp:76
+#: src/main.cpp:90 src/main.cpp:91
 #, kde-format
 msgid "Maintainer"
 msgstr "Umsjónarmaður"
 
-#: src/main.cpp:76
+#: src/main.cpp:91
 #, kde-format
 msgid "Martin Sandsmark"
 msgstr "Martin Sandsmark"
 
-#: src/main.cpp:77
+#: src/main.cpp:92
 #, kde-format
 msgid "Harald Sitter"
 msgstr "Harald Sitter"
 
-#: src/main.cpp:77
+#: src/main.cpp:92
 #, kde-format
 msgid "QtQuick Port"
 msgstr "QtQuick yfirfærsla"
 
-#: src/main.cpp:78
+#: src/main.cpp:93
 #, kde-format
 msgid "Max Howell"
 msgstr "Max Howell"
 
-#: src/main.cpp:78
+#: src/main.cpp:93
 #, kde-format
 msgid "Original author"
 msgstr "Upprunalegur höfundur"
 
-#: src/main.cpp:79
+#: src/main.cpp:94
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr "Lukas Appelhans"
 
-#: src/main.cpp:79
+#: src/main.cpp:94
 #, kde-format
 msgid "Help and support"
 msgstr "Hjálp og aðstoð"
 
-#: src/main.cpp:80
+#: src/main.cpp:95
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr "Steffen Gerlach"
 
-#: src/main.cpp:80
+#: src/main.cpp:95
 #, kde-format
 msgid "Inspiration"
 msgstr "Innblástur"
 
-#: src/main.cpp:81
+#: src/main.cpp:96
 #, kde-format
 msgid "Mike Diehl"
 msgstr "Mike Diehl"
 
-#: src/main.cpp:81
+#: src/main.cpp:96
 #, kde-format
 msgid "Original documentation"
 msgstr "Upprunaleg hjálparskjöl"
 
-#: src/main.cpp:82
+#: src/main.cpp:97
 #, kde-format
 msgid "Sune Vuorela"
 msgstr "Sune Vuorela"
 
-#: src/main.cpp:82 src/main.cpp:83
+#: src/main.cpp:97 src/main.cpp:98
 #, kde-format
 msgid "Icon"
 msgstr "Táknmynd"
 
-#: src/main.cpp:83
+#: src/main.cpp:98
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr "Nuno Pinheiro"
 
-#: src/main.cpp:90
+#: src/main.cpp:105
 #, kde-format
 msgid "Path or URL to scan"
 msgstr "Slóð eða URL sem á að skanna"
 
-#: src/main.cpp:90
+#: src/main.cpp:105
 #, kde-format
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:130
+#: src/mainContext.cpp:132
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Veldu möppu til að skanna"
 
-#: src/mainContext.cpp:182
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "The entered URL cannot be parsed"
 msgstr "Ekki er hægt að þátta slóðina sem var slegin inn"
 
-#: src/mainContext.cpp:182
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "it is invalid."
 msgstr "hún er ógild."
 
-#: src/mainContext.cpp:184
+#: src/mainContext.cpp:186
 #, kde-format
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight samþykkir aðeins algildar slóðir"
 
-#: src/mainContext.cpp:184
+#: src/mainContext.cpp:186
 #, kde-format
 msgid "eg. /%1"
 msgstr "t.d. /%1"
 
-#: src/mainContext.cpp:186
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Mappa fannst ekki: %1"
 
-#: src/mainContext.cpp:188
+#: src/mainContext.cpp:190
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr "Get ekki opnað: %1"
 
-#: src/mainContext.cpp:188
+#: src/mainContext.cpp:190
 #, kde-format
 msgid "You do not have access rights to this location."
 msgstr "Þú hefur ekki aðgangsheimildir að þessum stað."
 
-#: src/qml/GlobalMenu.qml:10
+#: src/qml/GlobalMenu.qml:15
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Scan"
 msgstr "Skanna"
 
-#: src/qml/GlobalMenu.qml:21
+#: src/qml/GlobalMenu.qml:27
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Settings"
 msgstr "Stillingar"
 
-#: src/qml/GlobalMenu.qml:27
+#: src/qml/GlobalMenu.qml:34
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Help"
 msgstr "Hjálp"
 
-#: src/qml/main.qml:30
+#: src/qml/main.qml:36
 #, kde-format
 msgctxt "@action"
 msgid "Scan Folder"
 msgstr "Skanna möppu"
 
-#: src/qml/main.qml:37
+#: src/qml/main.qml:43
 #, kde-format
 msgctxt "@action"
 msgid "Scan Home Folder"
 msgstr "Skanna heimamöppu"
 
-#: src/qml/main.qml:44
+#: src/qml/main.qml:50
 #, kde-format
 msgctxt "@action"
 msgid "Scan Root Folder"
 msgstr "Skanna rótarmöppu"
 
-#: src/qml/main.qml:51
+#: src/qml/main.qml:57
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr "Hætta"
 
-#: src/qml/main.qml:59
+#: src/qml/main.qml:65
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "Stilla…"
 
-#: src/qml/main.qml:64
+#: src/qml/main.qml:70
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "Stilla"
 
-#: src/qml/main.qml:76
+#: src/qml/main.qml:82
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "Opna handbókina"
 
-#: src/qml/main.qml:84
+#: src/qml/main.qml:90
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr "Um hugbúnaðinn"
 
-#: src/qml/main.qml:105
+#: src/qml/main.qml:111
 #, kde-format
 msgctxt "@info:status"
 msgid "No files."
 msgstr "Engar skrár."
 
-#: src/qml/main.qml:106
+#: src/qml/main.qml:112
 #, kde-format
 msgctxt "@info:status"
 msgid "1 file"
@@ -289,7 +289,7 @@ msgid_plural "%1 files"
 msgstr[0] "1 skrá"
 msgstr[1] "%1 skrár"
 
-#: src/qml/main.qml:174
+#: src/qml/main.qml:180
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."

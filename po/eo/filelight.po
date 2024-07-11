@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-19 00:41+0000\n"
+"POT-Creation-Date: 2024-07-11 00:41+0000\n"
 "PO-Revision-Date: 2024-05-15 09:56+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -63,12 +63,12 @@ msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "Eraro forigante: %1"
 
-#: src/main.cpp:68
+#: src/main.cpp:83
 #, kde-format
 msgid "Graphical disk-usage information"
 msgstr "Grafikaj informoj pri uzado de diskoj"
 
-#: src/main.cpp:70
+#: src/main.cpp:85
 #, kde-format
 msgid ""
 "(C) 2006 Max Howell\n"
@@ -79,209 +79,209 @@ msgstr ""
 "(C) 2008-2014 Martin Sandsmark\n"
 "(C) 2017-2022 Harald Sitter"
 
-#: src/main.cpp:75
+#: src/main.cpp:90
 #, kde-format
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
 
-#: src/main.cpp:75 src/main.cpp:76
+#: src/main.cpp:90 src/main.cpp:91
 #, kde-format
 msgid "Maintainer"
 msgstr "Prizorganto"
 
-#: src/main.cpp:76
+#: src/main.cpp:91
 #, kde-format
 msgid "Martin Sandsmark"
 msgstr "Martin Sandsmark"
 
-#: src/main.cpp:77
+#: src/main.cpp:92
 #, kde-format
 msgid "Harald Sitter"
 msgstr "Harald Sitter"
 
-#: src/main.cpp:77
+#: src/main.cpp:92
 #, kde-format
 msgid "QtQuick Port"
 msgstr "QtQuick-Portado"
 
-#: src/main.cpp:78
+#: src/main.cpp:93
 #, kde-format
 msgid "Max Howell"
 msgstr "Max Howell"
 
-#: src/main.cpp:78
+#: src/main.cpp:93
 #, kde-format
 msgid "Original author"
 msgstr "Origina aŭtoro"
 
-#: src/main.cpp:79
+#: src/main.cpp:94
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr "Lukas Appelhans"
 
-#: src/main.cpp:79
+#: src/main.cpp:94
 #, kde-format
 msgid "Help and support"
 msgstr "Helpo kaj subteno"
 
-#: src/main.cpp:80
+#: src/main.cpp:95
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr "Steffen Gerlach"
 
-#: src/main.cpp:80
+#: src/main.cpp:95
 #, kde-format
 msgid "Inspiration"
 msgstr "Inspiro"
 
-#: src/main.cpp:81
+#: src/main.cpp:96
 #, kde-format
 msgid "Mike Diehl"
 msgstr "Mike Diehl"
 
-#: src/main.cpp:81
+#: src/main.cpp:96
 #, kde-format
 msgid "Original documentation"
 msgstr "Origina dokumentaro"
 
-#: src/main.cpp:82
+#: src/main.cpp:97
 #, kde-format
 msgid "Sune Vuorela"
 msgstr "Sune Vuorela"
 
-#: src/main.cpp:82 src/main.cpp:83
+#: src/main.cpp:97 src/main.cpp:98
 #, kde-format
 msgid "Icon"
 msgstr "Piktogramo"
 
-#: src/main.cpp:83
+#: src/main.cpp:98
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr "Nuno Pinheiro"
 
-#: src/main.cpp:90
+#: src/main.cpp:105
 #, kde-format
 msgid "Path or URL to scan"
 msgstr "Vojo aŭ URL skanenda"
 
-#: src/main.cpp:90
+#: src/main.cpp:105
 #, kde-format
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:130
+#: src/mainContext.cpp:132
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Elekti Dosierujon por Skani"
 
-#: src/mainContext.cpp:182
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "The entered URL cannot be parsed"
 msgstr "La enigita URL ne povas esti analizita"
 
-#: src/mainContext.cpp:182
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "it is invalid."
 msgstr "ĝi estas nevalida."
 
-#: src/mainContext.cpp:184
+#: src/mainContext.cpp:186
 #, kde-format
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight akceptas nur absolutajn vojojn"
 
-#: src/mainContext.cpp:184
+#: src/mainContext.cpp:186
 #, kde-format
 msgid "eg. /%1"
 msgstr "ekz. /%1"
 
-#: src/mainContext.cpp:186
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Dosierujo ne trovita: %1"
 
-#: src/mainContext.cpp:188
+#: src/mainContext.cpp:190
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr "Ne eblas eniĝi: %1"
 
-#: src/mainContext.cpp:188
+#: src/mainContext.cpp:190
 #, kde-format
 msgid "You do not have access rights to this location."
 msgstr "Vi ne havas alirrajtojn al ĉi tiu loko."
 
-#: src/qml/GlobalMenu.qml:10
+#: src/qml/GlobalMenu.qml:15
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Scan"
 msgstr "Trarigardi"
 
-#: src/qml/GlobalMenu.qml:21
+#: src/qml/GlobalMenu.qml:27
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Settings"
 msgstr "Agordoj"
 
-#: src/qml/GlobalMenu.qml:27
+#: src/qml/GlobalMenu.qml:34
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Help"
 msgstr "Helpo"
 
-#: src/qml/main.qml:30
+#: src/qml/main.qml:36
 #, kde-format
 msgctxt "@action"
 msgid "Scan Folder"
 msgstr "Serĉi dosierujon"
 
-#: src/qml/main.qml:37
+#: src/qml/main.qml:43
 #, kde-format
 msgctxt "@action"
 msgid "Scan Home Folder"
 msgstr "Skani Hejman Dosierujon"
 
-#: src/qml/main.qml:44
+#: src/qml/main.qml:50
 #, kde-format
 msgctxt "@action"
 msgid "Scan Root Folder"
 msgstr "Skani Radikan Dosierujon"
 
-#: src/qml/main.qml:51
+#: src/qml/main.qml:57
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr "Forlasi"
 
-#: src/qml/main.qml:59
+#: src/qml/main.qml:65
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "Agordi…"
 
-#: src/qml/main.qml:64
+#: src/qml/main.qml:70
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "Agordi"
 
-#: src/qml/main.qml:76
+#: src/qml/main.qml:82
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "Malfermi Manlibron"
 
-#: src/qml/main.qml:84
+#: src/qml/main.qml:90
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr "Pri"
 
-#: src/qml/main.qml:105
+#: src/qml/main.qml:111
 #, kde-format
 msgctxt "@info:status"
 msgid "No files."
 msgstr "Neniuj dosieroj."
 
-#: src/qml/main.qml:106
+#: src/qml/main.qml:112
 #, kde-format
 msgctxt "@info:status"
 msgid "1 file"
@@ -289,7 +289,7 @@ msgid_plural "%1 files"
 msgstr[0] "1 dosiero"
 msgstr[1] "%1 dosieroj"
 
-#: src/qml/main.qml:174
+#: src/qml/main.qml:180
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-19 00:41+0000\n"
+"POT-Creation-Date: 2024-07-11 00:41+0000\n"
 "PO-Revision-Date: 2024-05-13 10:32+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -69,12 +69,12 @@ msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "Produciuse un erro ao eliminar: %1"
 
-#: src/main.cpp:68
+#: src/main.cpp:83
 #, kde-format
 msgid "Graphical disk-usage information"
 msgstr "Información gráfica sobre o uso dos discos"
 
-#: src/main.cpp:70
+#: src/main.cpp:85
 #, kde-format
 msgid ""
 "(C) 2006 Max Howell\n"
@@ -85,209 +85,209 @@ msgstr ""
 "© 2008-2014 Martin Sandsmark\n"
 "© 2017-2022 Harald Sitter"
 
-#: src/main.cpp:75
+#: src/main.cpp:90
 #, kde-format
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
 
-#: src/main.cpp:75 src/main.cpp:76
+#: src/main.cpp:90 src/main.cpp:91
 #, kde-format
 msgid "Maintainer"
 msgstr "Mantedor"
 
-#: src/main.cpp:76
+#: src/main.cpp:91
 #, kde-format
 msgid "Martin Sandsmark"
 msgstr "Martin Sandsmark"
 
-#: src/main.cpp:77
+#: src/main.cpp:92
 #, kde-format
 msgid "Harald Sitter"
 msgstr "Harald Sitter"
 
-#: src/main.cpp:77
+#: src/main.cpp:92
 #, kde-format
 msgid "QtQuick Port"
 msgstr "Adaptación a QtQuick"
 
-#: src/main.cpp:78
+#: src/main.cpp:93
 #, kde-format
 msgid "Max Howell"
 msgstr "Max Howell"
 
-#: src/main.cpp:78
+#: src/main.cpp:93
 #, kde-format
 msgid "Original author"
 msgstr "Autor orixinal"
 
-#: src/main.cpp:79
+#: src/main.cpp:94
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr "Lukas Appelhans"
 
-#: src/main.cpp:79
+#: src/main.cpp:94
 #, kde-format
 msgid "Help and support"
 msgstr "Axuda e asistencia técnica"
 
-#: src/main.cpp:80
+#: src/main.cpp:95
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr "Steffen Gerlach"
 
-#: src/main.cpp:80
+#: src/main.cpp:95
 #, kde-format
 msgid "Inspiration"
 msgstr "Inspiración"
 
-#: src/main.cpp:81
+#: src/main.cpp:96
 #, kde-format
 msgid "Mike Diehl"
 msgstr "Mike Diehl"
 
-#: src/main.cpp:81
+#: src/main.cpp:96
 #, kde-format
 msgid "Original documentation"
 msgstr "Documentación orixinal"
 
-#: src/main.cpp:82
+#: src/main.cpp:97
 #, kde-format
 msgid "Sune Vuorela"
 msgstr "Sune Vuorela"
 
-#: src/main.cpp:82 src/main.cpp:83
+#: src/main.cpp:97 src/main.cpp:98
 #, kde-format
 msgid "Icon"
 msgstr "Icona."
 
-#: src/main.cpp:83
+#: src/main.cpp:98
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr "Nuno Pinheiro"
 
-#: src/main.cpp:90
+#: src/main.cpp:105
 #, kde-format
 msgid "Path or URL to scan"
 msgstr "Ruta ou URL que examinar"
 
-#: src/main.cpp:90
+#: src/main.cpp:105
 #, kde-format
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:130
+#: src/mainContext.cpp:132
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Seleccione o cartafol que quere examinar"
 
-#: src/mainContext.cpp:182
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "The entered URL cannot be parsed"
 msgstr "O URL que inseriu non se pode procesar"
 
-#: src/mainContext.cpp:182
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "it is invalid."
 msgstr "non é válido."
 
-#: src/mainContext.cpp:184
+#: src/mainContext.cpp:186
 #, kde-format
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight só acepta rutas absolutas"
 
-#: src/mainContext.cpp:184
+#: src/mainContext.cpp:186
 #, kde-format
 msgid "eg. /%1"
 msgstr "p. ex. /%1"
 
-#: src/mainContext.cpp:186
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Non se atopou o cartafol: %1"
 
-#: src/mainContext.cpp:188
+#: src/mainContext.cpp:190
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr "Non é posíbel entrar: %1"
 
-#: src/mainContext.cpp:188
+#: src/mainContext.cpp:190
 #, kde-format
 msgid "You do not have access rights to this location."
 msgstr "Non ten permiso de acceso a este lugar."
 
-#: src/qml/GlobalMenu.qml:10
+#: src/qml/GlobalMenu.qml:15
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Scan"
 msgstr "Examinar"
 
-#: src/qml/GlobalMenu.qml:21
+#: src/qml/GlobalMenu.qml:27
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Settings"
 msgstr "Configuración"
 
-#: src/qml/GlobalMenu.qml:27
+#: src/qml/GlobalMenu.qml:34
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Help"
 msgstr "Axuda"
 
-#: src/qml/main.qml:30
+#: src/qml/main.qml:36
 #, kde-format
 msgctxt "@action"
 msgid "Scan Folder"
 msgstr "Examinar o cartafol"
 
-#: src/qml/main.qml:37
+#: src/qml/main.qml:43
 #, kde-format
 msgctxt "@action"
 msgid "Scan Home Folder"
 msgstr "Examinar o cartafol persoal"
 
-#: src/qml/main.qml:44
+#: src/qml/main.qml:50
 #, kde-format
 msgctxt "@action"
 msgid "Scan Root Folder"
 msgstr "Examinar o cartafol raíz"
 
-#: src/qml/main.qml:51
+#: src/qml/main.qml:57
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr "Saír"
 
-#: src/qml/main.qml:59
+#: src/qml/main.qml:65
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "Configurar…"
 
-#: src/qml/main.qml:64
+#: src/qml/main.qml:70
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "Configurar"
 
-#: src/qml/main.qml:76
+#: src/qml/main.qml:82
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "Abrir o manual"
 
-#: src/qml/main.qml:84
+#: src/qml/main.qml:90
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr "Sobre"
 
-#: src/qml/main.qml:105
+#: src/qml/main.qml:111
 #, kde-format
 msgctxt "@info:status"
 msgid "No files."
 msgstr "Non hai ficheiros."
 
-#: src/qml/main.qml:106
+#: src/qml/main.qml:112
 #, kde-format
 msgctxt "@info:status"
 msgid "1 file"
@@ -295,7 +295,7 @@ msgid_plural "%1 files"
 msgstr[0] "1 ficheiro."
 msgstr[1] "%1 ficheiros."
 
-#: src/qml/main.qml:174
+#: src/qml/main.qml:180
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
