@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-05 03:03+0000\n"
+"POT-Creation-Date: 2024-07-12 02:29+0000\n"
 "PO-Revision-Date: 2023-06-06 19:00+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -73,12 +73,12 @@ msgctxt "Go to forward in the history of paths viewed"
 msgid "Forward"
 msgstr "Maju"
 
-#: src/main.cpp:68
+#: src/main.cpp:83
 #, kde-format
 msgid "Graphical disk-usage information"
 msgstr "Grafik informasi penggunaan disk"
 
-#: src/main.cpp:70
+#: src/main.cpp:85
 #, kde-format
 msgid ""
 "(C) 2006 Max Howell\n"
@@ -89,134 +89,134 @@ msgstr ""
 "(C) 2008-2014 Martin Sandsmark\n"
 "(C) 2017-2022 Harald Sitter"
 
-#: src/main.cpp:75
+#: src/main.cpp:90
 #, kde-format
 msgid "Laurent Montel"
 msgstr ""
 
-#: src/main.cpp:75 src/main.cpp:76
+#: src/main.cpp:90 src/main.cpp:91
 #, kde-format
 msgid "Maintainer"
 msgstr "Pemelihara"
 
-#: src/main.cpp:76
+#: src/main.cpp:91
 #, kde-format
 msgid "Martin Sandsmark"
 msgstr "Martin Sandsmark"
 
-#: src/main.cpp:77
+#: src/main.cpp:92
 #, kde-format
 msgid "Harald Sitter"
 msgstr "Harald Sitter"
 
-#: src/main.cpp:77
+#: src/main.cpp:92
 #, kde-format
 msgid "QtQuick Port"
 msgstr "Port QtQuick"
 
-#: src/main.cpp:78
+#: src/main.cpp:93
 #, kde-format
 msgid "Max Howell"
 msgstr "Max Howell"
 
-#: src/main.cpp:78
+#: src/main.cpp:93
 #, kde-format
 msgid "Original author"
 msgstr "Penulis asli"
 
-#: src/main.cpp:79
+#: src/main.cpp:94
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr "Lukas Appelhans"
 
-#: src/main.cpp:79
+#: src/main.cpp:94
 #, kde-format
 msgid "Help and support"
 msgstr "Bantuan dan dukungan"
 
-#: src/main.cpp:80
+#: src/main.cpp:95
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr "Steffen Gerlach"
 
-#: src/main.cpp:80
+#: src/main.cpp:95
 #, kde-format
 msgid "Inspiration"
 msgstr "Inspirasi"
 
-#: src/main.cpp:81
+#: src/main.cpp:96
 #, kde-format
 msgid "Mike Diehl"
 msgstr "Mike Diehl"
 
-#: src/main.cpp:81
+#: src/main.cpp:96
 #, kde-format
 msgid "Original documentation"
 msgstr "Dokumentasi asli"
 
-#: src/main.cpp:82
+#: src/main.cpp:97
 #, kde-format
 msgid "Sune Vuorela"
 msgstr "Sune Vuorela"
 
-#: src/main.cpp:82 src/main.cpp:83
+#: src/main.cpp:97 src/main.cpp:98
 #, kde-format
 msgid "Icon"
 msgstr "Ikon"
 
-#: src/main.cpp:83
+#: src/main.cpp:98
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr "Nuno Pinheiro"
 
-#: src/main.cpp:90
+#: src/main.cpp:105
 #, kde-format
 msgid "Path or URL to scan"
 msgstr "Alur atau URL untuk dipindai"
 
-#: src/main.cpp:90
+#: src/main.cpp:105
 #, kde-format
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:170
+#: src/mainContext.cpp:172
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Pilih Folder untuk Dipindai"
 
-#: src/mainContext.cpp:223
+#: src/mainContext.cpp:225
 #, fuzzy, kde-format
 #| msgid "The entered URL cannot be parsed; it is invalid."
 msgid "The entered URL cannot be parsed"
 msgstr "URL yang dimasukkan tidak bisa diurai; karena tidak valid"
 
-#: src/mainContext.cpp:223
+#: src/mainContext.cpp:225
 #, kde-format
 msgid "it is invalid."
 msgstr ""
 
-#: src/mainContext.cpp:225
+#: src/mainContext.cpp:227
 #, fuzzy, kde-format
 #| msgid "Filelight only accepts absolute paths, eg. /%1"
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight hanya menerima alur yang mutlak, misal /%1"
 
-#: src/mainContext.cpp:225
+#: src/mainContext.cpp:227
 #, kde-format
 msgid "eg. /%1"
 msgstr ""
 
-#: src/mainContext.cpp:227
+#: src/mainContext.cpp:229
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Folder tidak ditemukan: %1"
 
-#: src/mainContext.cpp:229
+#: src/mainContext.cpp:231
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr ""
 
-#: src/mainContext.cpp:229
+#: src/mainContext.cpp:231
 #, fuzzy, kde-format
 #| msgid ""
 #| "Unable to enter: %1\n"
@@ -226,79 +226,79 @@ msgstr ""
 "Tidak dapat memasuki: %1\n"
 "Anda tidak memiliki akses yang benar ke lokasi ini."
 
-#: src/qml/GlobalMenu.qml:10
+#: src/qml/GlobalMenu.qml:15
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Scan"
 msgstr "Pindai"
 
-#: src/qml/GlobalMenu.qml:21
+#: src/qml/GlobalMenu.qml:27
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Settings"
 msgstr "Pengaturan"
 
-#: src/qml/GlobalMenu.qml:27
+#: src/qml/GlobalMenu.qml:34
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Help"
 msgstr "Bantuan"
 
-#: src/qml/main.qml:30
+#: src/qml/main.qml:36
 #, kde-format
 msgctxt "@action"
 msgid "Scan Folder"
 msgstr "Pindai Folder"
 
-#: src/qml/main.qml:37
+#: src/qml/main.qml:43
 #, kde-format
 msgctxt "@action"
 msgid "Scan Home Folder"
 msgstr "Pindai Folder Beranda"
 
-#: src/qml/main.qml:44
+#: src/qml/main.qml:50
 #, kde-format
 msgctxt "@action"
 msgid "Scan Root Folder"
 msgstr "Pindai Folder Root"
 
-#: src/qml/main.qml:51
+#: src/qml/main.qml:57
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr "Keluar"
 
-#: src/qml/main.qml:59
+#: src/qml/main.qml:65
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "Atur..."
 
-#: src/qml/main.qml:64
+#: src/qml/main.qml:70
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "Atur"
 
-#: src/qml/main.qml:76
+#: src/qml/main.qml:82
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "Buka Buku Petunjuk"
 
-#: src/qml/main.qml:84
+#: src/qml/main.qml:90
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr "Tentang"
 
-#: src/qml/main.qml:105
+#: src/qml/main.qml:111
 #, kde-format
 msgctxt "@info:status"
 msgid "No files."
 msgstr "Tidak ada file"
 
-#: src/qml/main.qml:106
+#: src/qml/main.qml:112
 #, kde-format
 msgctxt "@info:status"
 msgid "1 file"
@@ -306,7 +306,7 @@ msgid_plural "%1 files"
 msgstr[0] "1 file"
 msgstr[1] "%1 file"
 
-#: src/qml/main.qml:174
+#: src/qml/main.qml:180
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
