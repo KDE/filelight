@@ -12,5 +12,4 @@ ecm_add_test(
     LINK_LIBRARIES
         Qt6::Test
         filelightInternal
-        KF6::CoreAddons
 )

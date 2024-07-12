@@ -5,12 +5,12 @@ Dependencies:
 - 'on': ['Linux', 'FreeBSD', 'Windows']
   'require':
     'frameworks/extra-cmake-modules': '@latest-kf6'
-    'frameworks/kcoreaddons': '@latest-kf6'
     'frameworks/ki18n': '@latest-kf6'
     'frameworks/kdoctools': '@latest-kf6'
-    'frameworks/kxmlgui': '@latest-kf6'
     'frameworks/kcrash': '@latest-kf6'
     'frameworks/kio': '@latest-kf6'
+    'frameworks/kconfig': '@latest-kf6'
+    'frameworks/kcolorscheme': '@latest-kf6'
 
 Options:
   require-passing-tests-on: [ 'Linux', 'FreeBSD', 'Windows' ]

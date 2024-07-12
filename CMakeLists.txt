@@ -44,11 +44,10 @@ include(ECMFindQmlModule)
 
 find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Core Widgets Quick QuickControls2)
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED
-    CoreAddons
-    XmlGui # For app
-    KIO # For part
+    KIO
     I18n
     ColorScheme
+    Config
 )
 find_package(KF6DocTools) # Optional, not needed on Windows for example.
 

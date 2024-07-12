@@ -45,7 +45,6 @@ else()
 endif()
 target_link_libraries(filelightInternal
     Qt6::Gui
-    KF6::CoreAddons
     KF6::ConfigCore
     KF6::I18n
     KF6::KIOWidgets # Only used for KDirLister, may be able to move away from that.
@@ -90,7 +89,7 @@ ecm_add_app_icon(filelight ICONS
 
 target_link_libraries(filelight
     KF6::I18n
-    KF6::XmlGui
+    KF6::ColorScheme
     Qt6::Quick
     Qt6::QuickControls2
     filelightInternal
