@@ -30,6 +30,18 @@ Kirigami.Page {
         }
     }
 
+    footer: QQC2.ToolBar {
+        height: footerLabel.implicitHeight + topPadding + bottomPadding
+        visible: shapeItem.visible
+        contentItem: QQC2.Label {
+            id: footerLabel
+            verticalAlignment: Text.AlignVCenter
+            text: (RadialMap.numberOfChildren === 0) ?
+            i18nc("@info:status", "No files shown.") :
+            i18ncp("@info:status", "1 file shown", "%1 files shown", RadialMap.numberOfChildren)
+        }
+    }
+
     Kirigami.Action {
         id: goToOverviewAction
         enabled: page.state === ""

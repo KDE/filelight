@@ -99,27 +99,6 @@ Kirigami.ApplicationWindow {
 
     GlobalMenu {}
 
-    footer: QQC2.Control { // gives us padding and whatnot
-        background: Rectangle {
-            Kirigami.Theme.inherit: false
-            Kirigami.Theme.colorSet: Kirigami.Theme.Header
-            color: Kirigami.Theme.backgroundColor
-        }
-
-        contentItem: RowLayout {
-            QQC2.Label {
-                Layout.fillWidth: true
-                text: appWindow.status
-                elide: Text.ElideLeft
-            }
-            QQC2.Label {
-                text: (RadialMap.numberOfChildren === 0) ?
-                        i18nc("@info:status", "No files.") :
-                        i18ncp("@info:status", "1 file", "%1 files", RadialMap.numberOfChildren)
-            }
-        }
-    }
-
     minimumWidth: Kirigami.Settings.isMobile ? 0 : Kirigami.Units.gridUnit * 22
     minimumHeight: Kirigami.Settings.isMobile ? 0 : Kirigami.Units.gridUnit * 22
 
@@ -190,8 +169,8 @@ Kirigami.ApplicationWindow {
     function closeURL() {
         mapPage = null
         pageStack.pop(pageStack.initialPage)
-        if (ScanManager.abort()) {
-            appWindow.status = i18nc("@info:status", "Aborting Scan...")
+        if (!ScanManager.abort()) {
+            appWindow.status = i18nc("@info:status", "Failed to abort scan")
         }
     }
 
@@ -211,7 +190,6 @@ Kirigami.ApplicationWindow {
 
         function onAborted() {
             appWindow.title = ""
-            appWindow.status = ""
         }
     }
 }
