@@ -48,6 +48,7 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED
     I18n
     ColorScheme
     Config
+    Crash
 )
 find_package(KF6DocTools) # Optional, not needed on Windows for example.
 

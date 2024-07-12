@@ -22,6 +22,7 @@
 #include <KAboutData>
 #include <KColorSchemeManager>
 #include <KConfigGroup>
+#include <KCrash>
 #include <KLocalizedString>
 #include <KSharedConfig>
 
@@ -46,6 +47,7 @@ int main(int argc, char *argv[])
     }
 
     QApplication app(argc, argv);
+    KCrash::initialize();
 
     qRegisterMetaType<std::shared_ptr<File>>("std::shared_ptr<File>");
     qRegisterMetaType<std::shared_ptr<Folder>>("std::shared_ptr<Folder>");
