@@ -23,15 +23,32 @@ Kirigami.Page {
         spacing: Kirigami.Units.gridUnit
         width: parent.width - (Kirigami.Units.largeSpacing * 4)
         anchors.centerIn: parent
+
         Kirigami.Icon {
             Layout.alignment: Qt.AlignHCenter
             source: "filelight"
             implicitWidth: Kirigami.Units.iconSizes.enormous
             implicitHeight: implicitWidth
         }
-        Kirigami.Heading {
-            Layout.alignment: Qt.AlignHCenter
-            text: i18nc("@title", "Welcome to Filelight")
+
+        ColumnLayout {
+            Layout.fillWidth: true
+            spacing: Kirigami.Units.smallSpacing
+
+            Kirigami.Heading {
+                Layout.fillWidth: true
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.Wrap
+                text: i18nc("@title", "Welcome to Filelight")
+            }
+            QQC2.Label {
+                Layout.fillWidth: true
+                Layout.maximumWidth: Kirigami.Units.gridUnit * 25
+                Layout.alignment: Qt.AlignHCenter
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.Wrap
+                text: i18nc("@info", "Filelight analyzes disk usage so you can see what's using lots of space. Choose a folder to proceed:")
+            }
         }
 
         Flow {
@@ -40,13 +57,6 @@ Kirigami.Page {
             Layout.preferredWidth: button1.implicitWidth + (button2.visible ? spacing + button2.implicitWidth : 0) + (button3.visible ? spacing + button3.implicitWidth : 0)
             QQC2.ToolButton {
                 id: button1
-                icon.width: Kirigami.Units.iconSizes.huge
-                icon.height: Kirigami.Units.iconSizes.huge
-                display: QQC2.AbstractButton.TextUnderIcon
-                action: scanFolderAction
-            }
-            QQC2.ToolButton {
-                id: button2
                 visible: !inSandbox
                 icon.width: Kirigami.Units.iconSizes.huge
                 icon.height: Kirigami.Units.iconSizes.huge
@@ -54,14 +64,20 @@ Kirigami.Page {
                 action: scanHomeAction
             }
             QQC2.ToolButton {
-                id: button3
+                id: button2
                 visible: !inSandbox
                 icon.width: Kirigami.Units.iconSizes.huge
                 icon.height: Kirigami.Units.iconSizes.huge
                 display: QQC2.AbstractButton.TextUnderIcon
                 action: scanRootAction
             }
+            QQC2.ToolButton {
+                id: button3
+                icon.width: Kirigami.Units.iconSizes.huge
+                icon.height: Kirigami.Units.iconSizes.huge
+                display: QQC2.AbstractButton.TextUnderIcon
+                action: scanFolderAction
+            }
         }
-
     }
 }

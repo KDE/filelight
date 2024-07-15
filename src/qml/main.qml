@@ -30,25 +30,26 @@ Kirigami.ApplicationWindow {
         window: appWindow
     }
 
-    Kirigami.Action {
-        id: scanFolderAction
-        icon.name: "folder"
-        text: i18nc("@action", "Scan Folder")
-        onTriggered: appWindow.slotScanFolder()
-    }
 
     Kirigami.Action {
         id: scanHomeAction
         icon.name: "user-home"
-        text: i18nc("@action", "Scan Home Folder")
+        text: i18nc("@action Scan home folder", "Home Folder")
         onTriggered: appWindow.slotScanHomeFolder()
     }
 
     Kirigami.Action {
         id: scanRootAction
         icon.name: "folder-root"
-        text: i18nc("@action", "Scan Root Folder")
+        text: i18nc("@action Scan root folder", "Root Folder")
         onTriggered: appWindow.slotScanRootFolder()
+    }
+
+    Kirigami.Action {
+        id: scanFolderAction
+        icon.name: "folder"
+        text: appWindow.inSandbox ? i18nc("@action Scan a user-selected folder", "Choose Folder…") : i18nc("@action Scan another folder", "Other Folder…")
+        onTriggered: appWindow.slotScanFolder()
     }
 
     Kirigami.Action {
