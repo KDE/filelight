@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:41+0000\n"
+"POT-Creation-Date: 2024-07-16 00:41+0000\n"
 "PO-Revision-Date: 2024-06-01 23:46+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -230,61 +230,71 @@ msgctxt "@item:inmenu"
 msgid "Help"
 msgstr "Ayuda"
 
-#: src/qml/main.qml:36
-#, kde-format
-msgctxt "@action"
-msgid "Scan Folder"
-msgstr "Explorar carpeta"
-
-#: src/qml/main.qml:43
-#, kde-format
-msgctxt "@action"
-msgid "Scan Home Folder"
+#: src/qml/main.qml:37
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Scan Home Folder"
+msgctxt "@action Scan home folder"
+msgid "Home Folder"
 msgstr "Explorar la carpeta personal"
 
-#: src/qml/main.qml:50
-#, kde-format
-msgctxt "@action"
-msgid "Scan Root Folder"
+#: src/qml/main.qml:44
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Scan Root Folder"
+msgctxt "@action Scan root folder"
+msgid "Root Folder"
 msgstr "Explorar la carpeta raíz"
 
-#: src/qml/main.qml:57
+#: src/qml/main.qml:51
+#, kde-format
+msgctxt "@action Scan a user-selected folder"
+msgid "Choose Folder…"
+msgstr ""
+
+#: src/qml/main.qml:51
+#, kde-format
+msgctxt "@action Scan another folder"
+msgid "Other Folder…"
+msgstr ""
+
+#: src/qml/main.qml:58
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr "Salir"
 
-#: src/qml/main.qml:65
+#: src/qml/main.qml:66
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "Configurar..."
 
-#: src/qml/main.qml:70
+#: src/qml/main.qml:71
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "Configurar"
 
-#: src/qml/main.qml:82
+#: src/qml/main.qml:83
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "Abrir el manual"
 
-#: src/qml/main.qml:90
+#: src/qml/main.qml:91
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr "Acerca de"
 
-#: src/qml/main.qml:111
+#: src/qml/main.qml:112
 #, kde-format
 msgctxt "@info:status"
 msgid "No files."
 msgstr "No hay archivos."
 
-#: src/qml/main.qml:112
+#: src/qml/main.qml:113
 #, kde-format
 msgctxt "@info:status"
 msgid "1 file"
@@ -292,7 +302,7 @@ msgid_plural "%1 files"
 msgstr[0] "1 archivo"
 msgstr[1] "%1 archivos"
 
-#: src/qml/main.qml:180
+#: src/qml/main.qml:181
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
@@ -417,11 +427,19 @@ msgctxt "@title"
 msgid "Overview"
 msgstr "Vista general"
 
-#: src/qml/OverviewPage.qml:34
+#: src/qml/OverviewPage.qml:42
 #, kde-format
 msgctxt "@title"
 msgid "Welcome to Filelight"
 msgstr "Bienvenido a Filelight"
+
+#: src/qml/OverviewPage.qml:50
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Filelight analyzes disk usage so you can see what's using lots of space. "
+"Choose a folder to proceed:"
+msgstr ""
 
 #: src/qml/SettingsPage.qml:22
 #, kde-format
@@ -515,6 +533,10 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 archivos, con un tamaño medio de %2"
+
+#~ msgctxt "@action"
+#~ msgid "Scan Folder"
+#~ msgstr "Explorar carpeta"
 
 #~ msgctxt "Go to the last path viewed"
 #~ msgid "Back"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:41+0000\n"
+"POT-Creation-Date: 2024-07-16 00:41+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -229,68 +229,78 @@ msgctxt "@item:inmenu"
 msgid "Help"
 msgstr "帮助"
 
-#: src/qml/main.qml:36
-#, kde-format
-msgctxt "@action"
-msgid "Scan Folder"
-msgstr "扫描文件夹"
-
-#: src/qml/main.qml:43
-#, kde-format
-msgctxt "@action"
-msgid "Scan Home Folder"
+#: src/qml/main.qml:37
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Scan Home Folder"
+msgctxt "@action Scan home folder"
+msgid "Home Folder"
 msgstr "扫描主文件夹"
 
-#: src/qml/main.qml:50
-#, kde-format
-msgctxt "@action"
-msgid "Scan Root Folder"
+#: src/qml/main.qml:44
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Scan Root Folder"
+msgctxt "@action Scan root folder"
+msgid "Root Folder"
 msgstr "扫描根文件夹"
 
-#: src/qml/main.qml:57
+#: src/qml/main.qml:51
+#, kde-format
+msgctxt "@action Scan a user-selected folder"
+msgid "Choose Folder…"
+msgstr ""
+
+#: src/qml/main.qml:51
+#, kde-format
+msgctxt "@action Scan another folder"
+msgid "Other Folder…"
+msgstr ""
+
+#: src/qml/main.qml:58
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr "退出"
 
-#: src/qml/main.qml:65
+#: src/qml/main.qml:66
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "配置…"
 
-#: src/qml/main.qml:70
+#: src/qml/main.qml:71
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "配置"
 
-#: src/qml/main.qml:82
+#: src/qml/main.qml:83
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "打开使用手册"
 
-#: src/qml/main.qml:90
+#: src/qml/main.qml:91
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr "关于"
 
-#: src/qml/main.qml:111
+#: src/qml/main.qml:112
 #, kde-format
 msgctxt "@info:status"
 msgid "No files."
 msgstr "没有文件。"
 
-#: src/qml/main.qml:112
+#: src/qml/main.qml:113
 #, kde-format
 msgctxt "@info:status"
 msgid "1 file"
 msgid_plural "%1 files"
 msgstr[0] "%1 个文件"
 
-#: src/qml/main.qml:180
+#: src/qml/main.qml:181
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
@@ -412,11 +422,19 @@ msgctxt "@title"
 msgid "Overview"
 msgstr "概览"
 
-#: src/qml/OverviewPage.qml:34
+#: src/qml/OverviewPage.qml:42
 #, kde-format
 msgctxt "@title"
 msgid "Welcome to Filelight"
 msgstr "欢迎使用 Filelight"
+
+#: src/qml/OverviewPage.qml:50
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Filelight analyzes disk usage so you can see what's using lots of space. "
+"Choose a folder to proceed:"
+msgstr ""
 
 #: src/qml/SettingsPage.qml:22
 #, kde-format
@@ -507,3 +525,7 @@ msgid_plural ""
 msgstr[0] ""
 "\n"
 "%1 个文件，平均大小为 %2"
+
+#~ msgctxt "@action"
+#~ msgid "Scan Folder"
+#~ msgstr "扫描文件夹"
