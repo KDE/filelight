@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdeutils-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-16 00:41+0000\n"
-"PO-Revision-Date: 2024-05-13 21:32+0300\n"
+"PO-Revision-Date: 2024-07-16 13:48+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -232,32 +232,28 @@ msgid "Help"
 msgstr "Yardım"
 
 #: src/qml/main.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Home Folder"
+#, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
-msgstr "Ana Klasörü Tara"
+msgstr "Ana Klasör"
 
 #: src/qml/main.qml:44
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Root Folder"
+#, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
-msgstr "Kök Klasörü Tara"
+msgstr "Kök Klasör"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
-msgstr ""
+msgstr "Klasör Seç…"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
-msgstr ""
+msgstr "Başka Klasör…"
 
 #: src/qml/main.qml:58
 #, kde-format
@@ -441,6 +437,8 @@ msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space. "
 "Choose a folder to proceed:"
 msgstr ""
+"Dosya Feneri disk kullanımını çözümler, böylece neyin fazla disk alanı "
+"kullandığını görebilirsiniz. Sürdürmek için bir klasör seçin:"
 
 #: src/qml/SettingsPage.qml:22
 #, kde-format

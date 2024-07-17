@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-16 00:41+0000\n"
-"PO-Revision-Date: 2024-05-13 17:25+0300\n"
+"PO-Revision-Date: 2024-07-16 08:43+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -230,32 +230,28 @@ msgid "Help"
 msgstr "Довідка"
 
 #: src/qml/main.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Home Folder"
+#, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
-msgstr "Сканувати домашню теку"
+msgstr "Домашня тека"
 
 #: src/qml/main.qml:44
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Root Folder"
+#, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
-msgstr "Сканувати кореневу теку"
+msgstr "Коренева тека"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
-msgstr ""
+msgstr "Вибрати теку…"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
-msgstr ""
+msgstr "Інша тека…"
 
 #: src/qml/main.qml:58
 #, kde-format
@@ -447,6 +443,8 @@ msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space. "
 "Choose a folder to proceed:"
 msgstr ""
+"Filelight аналізує використання диска, щоб ви могли бачити, які файли "
+"займають багато місця. Виберіть теку для обробки:"
 
 #: src/qml/SettingsPage.qml:22
 #, kde-format

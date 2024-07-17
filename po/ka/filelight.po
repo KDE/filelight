@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-16 00:41+0000\n"
-"PO-Revision-Date: 2024-05-13 05:42+0200\n"
+"PO-Revision-Date: 2024-07-16 05:55+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -228,32 +228,28 @@ msgid "Help"
 msgstr "დახმარება"
 
 #: src/qml/main.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Home Folder"
+#, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
-msgstr "საწყისი საქაღალდის სკანირება"
+msgstr "საწყისი საქაღალდე"
 
 #: src/qml/main.qml:44
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Root Folder"
+#, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
-msgstr "Root საქაღალდის სკანირება"
+msgstr "Root საქაღალდე"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
-msgstr ""
+msgstr "აირჩიეთ საქაღალდე…"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
-msgstr ""
+msgstr "სხვა საქაღალდე…"
 
 #: src/qml/main.qml:58
 #, kde-format
@@ -437,6 +433,8 @@ msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space. "
 "Choose a folder to proceed:"
 msgstr ""
+"Filelight აანალიზებს დისკის გამოყენებას და ამით გაჩვენებთ, რა იყენებს ბევრ "
+"ადგილს. გასაგრძელებლად აირჩიეთ საქაღალდე."
 
 #: src/qml/SettingsPage.qml:22
 #, kde-format

@@ -539,7 +539,3 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 filer, med snittstorleik %2"
-
-#~ msgctxt "@action"
-#~ msgid "Scan Folder"
-#~ msgstr "Søk gjennom mappe"
