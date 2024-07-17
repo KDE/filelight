@@ -128,9 +128,18 @@ Kirigami.ApplicationWindow {
 
     function makeMap() {
         if (mapPage === null) {
-            pageStack.push("qrc:/ui/MapPage.qml")
-        } else {
-            pageStack.pop(mapPage, QQC2.StackView.Immediate)
+            // Create a completely new page...
+            // Kirigami is a bit smart with cleanup where it will delete mapPage when we pop it and it has no parent.
+            // Explicitly create the object with appWindow as parent so this does not happen!
+            const component = Qt.createComponent("qrc:/ui/MapPage.qml")
+            const page = component.createObject(appWindow)
+            if (component.status === component.Error) {
+                throw new Error("Error while loading page: " + component.errorString());
+            }
+            pageStack.push(page) // MapPage sets itself as mapPage property
+        } else if (mapPage !== pageStack.currentItem) {
+            // If we aren't already on the page, push the existing mapPage to make sure we have a sane stack
+            pageStack.pop(pageStack.initialPage)
             pageStack.push(mapPage)
         }
     }
@@ -175,8 +184,7 @@ Kirigami.ApplicationWindow {
 
     function closeURL() {
         mapPage = null
-        pageStack.clear()
-        pageStack.push(pageStack.initialPage)
+        pageStack.pop(pageStack.initialPage)
         if (ScanManager.abort()) {
             appWindow.status = i18nc("@info:status", "Aborting Scan...")
         }
