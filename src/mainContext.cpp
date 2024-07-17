@@ -95,11 +95,13 @@ MainContext::MainContext(QObject *parent)
         }
     });
 
+    connect(m_manager, &ScanManager::aborted, fileModel, [fileModel]() {
+        fileModel->setTree({});
+    });
+
     connect(RadialMap::Map::instance(), &RadialMap::Map::signatureChanged, fileModel, [fileModel]() {
         const auto tree = RadialMap::Map::instance()->root();
-        if (tree) {
-            fileModel->setTree(tree);
-        }
+        fileModel->setTree(tree);
     });
 
     engine->setInitialProperties({
