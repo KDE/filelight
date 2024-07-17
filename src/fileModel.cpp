@@ -13,6 +13,10 @@ namespace Filelight
 
 void FileModel::setTree(const std::shared_ptr<Folder> &tree)
 {
+    if (m_tree == tree) {
+        return;
+    }
+
     beginResetModel();
     m_tree = tree;
     Q_EMIT treeChanged();
