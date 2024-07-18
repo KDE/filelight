@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-16 00:41+0000\n"
-"PO-Revision-Date: 2024-05-13 11:08+0200\n"
+"POT-Creation-Date: 2024-07-18 00:41+0000\n"
+"PO-Revision-Date: 2024-07-16 08:14+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -67,12 +67,12 @@ msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "S'ha produït un error en suprimir: %1"
 
-#: src/main.cpp:83
+#: src/main.cpp:85
 #, kde-format
 msgid "Graphical disk-usage information"
 msgstr "Informació gràfica d'ús del disc"
 
-#: src/main.cpp:85
+#: src/main.cpp:87
 #, kde-format
 msgid ""
 "(C) 2006 Max Howell\n"
@@ -83,133 +83,133 @@ msgstr ""
 "(C) 2008-2014 Martin Sandsmark\n"
 "(C) 2017-2022 Harald Sitter"
 
-#: src/main.cpp:90
+#: src/main.cpp:92
 #, kde-format
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
 
-#: src/main.cpp:90 src/main.cpp:91
+#: src/main.cpp:92 src/main.cpp:93
 #, kde-format
 msgid "Maintainer"
 msgstr "Mantenidor"
 
-#: src/main.cpp:91
+#: src/main.cpp:93
 #, kde-format
 msgid "Martin Sandsmark"
 msgstr "Martin Sandsmark"
 
-#: src/main.cpp:92
+#: src/main.cpp:94
 #, kde-format
 msgid "Harald Sitter"
 msgstr "Harald Sitter"
 
-#: src/main.cpp:92
+#: src/main.cpp:94
 #, kde-format
 msgid "QtQuick Port"
 msgstr "Adaptació a QtQuick"
 
-#: src/main.cpp:93
+#: src/main.cpp:95
 #, kde-format
 msgid "Max Howell"
 msgstr "Max Howell"
 
-#: src/main.cpp:93
+#: src/main.cpp:95
 #, kde-format
 msgid "Original author"
 msgstr "Autor original"
 
-#: src/main.cpp:94
+#: src/main.cpp:96
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr "Lukas Appelhans"
 
-#: src/main.cpp:94
+#: src/main.cpp:96
 #, kde-format
 msgid "Help and support"
 msgstr "Ajuda i suport"
 
-#: src/main.cpp:95
+#: src/main.cpp:97
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr "Steffen Gerlach"
 
-#: src/main.cpp:95
+#: src/main.cpp:97
 #, kde-format
 msgid "Inspiration"
 msgstr "Inspiració"
 
-#: src/main.cpp:96
+#: src/main.cpp:98
 #, kde-format
 msgid "Mike Diehl"
 msgstr "Mike Diehl"
 
-#: src/main.cpp:96
+#: src/main.cpp:98
 #, kde-format
 msgid "Original documentation"
 msgstr "Documentació original"
 
-#: src/main.cpp:97
+#: src/main.cpp:99
 #, kde-format
 msgid "Sune Vuorela"
 msgstr "Sune Vuorela"
 
-#: src/main.cpp:97 src/main.cpp:98
+#: src/main.cpp:99 src/main.cpp:100
 #, kde-format
 msgid "Icon"
 msgstr "Icona"
 
-#: src/main.cpp:98
+#: src/main.cpp:100
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr "Nuno Pinheiro"
 
-#: src/main.cpp:105
+#: src/main.cpp:107
 #, kde-format
 msgid "Path or URL to scan"
 msgstr "Camí o URL que s'ha d'explorar"
 
-#: src/main.cpp:105
+#: src/main.cpp:107
 #, kde-format
 msgid "[url]"
 msgstr "[URL]"
 
-#: src/mainContext.cpp:132
+#: src/mainContext.cpp:134
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Seleccioneu la carpeta que s'ha d'explorar"
 
-#: src/mainContext.cpp:184
+#: src/mainContext.cpp:186
 #, kde-format
 msgid "The entered URL cannot be parsed"
 msgstr "L'URL introduït no s'ha pogut analitzar"
 
-#: src/mainContext.cpp:184
+#: src/mainContext.cpp:186
 #, kde-format
 msgid "it is invalid."
 msgstr "no és vàlid."
 
-#: src/mainContext.cpp:186
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight només accepta camins absoluts"
 
-#: src/mainContext.cpp:186
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "eg. /%1"
 msgstr "p. ex., /%1"
 
-#: src/mainContext.cpp:188
+#: src/mainContext.cpp:190
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "No s'ha trobat la carpeta: %1"
 
-#: src/mainContext.cpp:190
+#: src/mainContext.cpp:192
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr "No es pot entrar a: %1"
 
 # skip-rule: ff-enter
-#: src/mainContext.cpp:190
+#: src/mainContext.cpp:192
 #, kde-format
 msgid "You do not have access rights to this location."
 msgstr "No teniu drets d'accés a esta ubicació."
@@ -233,32 +233,28 @@ msgid "Help"
 msgstr "Ajuda"
 
 #: src/qml/main.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Home Folder"
+#, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
-msgstr "Explora la carpeta d'inici"
+msgstr "Carpeta d'inici"
 
 #: src/qml/main.qml:44
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Root Folder"
+#, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
-msgstr "Explora la carpeta arrel"
+msgstr "Carpeta arrel"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
-msgstr ""
+msgstr "Seleccioneu una carpeta…"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
-msgstr ""
+msgstr "Altres carpetes…"
 
 #: src/qml/main.qml:58
 #, kde-format
@@ -442,6 +438,8 @@ msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space. "
 "Choose a folder to proceed:"
 msgstr ""
+"Filelight analitza l'ús del disc, de manera que podeu veure què està "
+"utilitzant molt espai. Seleccioneu una carpeta per a continuar:"
 
 #: src/qml/SettingsPage.qml:22
 #, kde-format
@@ -535,15 +533,3 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 fitxers, amb una mida mitjana de %2"
-
-#~ msgctxt "@action"
-#~ msgid "Scan Folder"
-#~ msgstr "Exploració de carpetes"
-
-#~ msgctxt "Go to the last path viewed"
-#~ msgid "Back"
-#~ msgstr "Arrere"
-
-#~ msgctxt "Go to forward in the history of paths viewed"
-#~ msgid "Forward"
-#~ msgstr "Avant"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-16 00:41+0000\n"
-"PO-Revision-Date: 2024-05-13 10:10+0300\n"
+"POT-Creation-Date: 2024-07-18 00:41+0000\n"
+"PO-Revision-Date: 2024-07-16 09:24+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -61,12 +61,12 @@ msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "שגיאה במחיקה: %1"
 
-#: src/main.cpp:83
+#: src/main.cpp:85
 #, kde-format
 msgid "Graphical disk-usage information"
 msgstr "פרטי תפוסת כונן חזותיים"
 
-#: src/main.cpp:85
+#: src/main.cpp:87
 #, kde-format
 msgid ""
 "(C) 2006 Max Howell\n"
@@ -77,132 +77,132 @@ msgstr ""
 "(C) 2008-2014 מרטין זנדסמרק\n"
 "(C) 2017-2022 הרלד סיטר"
 
-#: src/main.cpp:90
+#: src/main.cpp:92
 #, kde-format
 msgid "Laurent Montel"
 msgstr "לורנט מונטל"
 
-#: src/main.cpp:90 src/main.cpp:91
+#: src/main.cpp:92 src/main.cpp:93
 #, kde-format
 msgid "Maintainer"
 msgstr "מתחזק"
 
-#: src/main.cpp:91
+#: src/main.cpp:93
 #, kde-format
 msgid "Martin Sandsmark"
 msgstr "מרטין זנדסמרק"
 
-#: src/main.cpp:92
+#: src/main.cpp:94
 #, kde-format
 msgid "Harald Sitter"
 msgstr "הרלד סיטר"
 
-#: src/main.cpp:92
+#: src/main.cpp:94
 #, kde-format
 msgid "QtQuick Port"
 msgstr "הסבת QtQuick"
 
-#: src/main.cpp:93
+#: src/main.cpp:95
 #, kde-format
 msgid "Max Howell"
 msgstr "מקס האוול"
 
-#: src/main.cpp:93
+#: src/main.cpp:95
 #, kde-format
 msgid "Original author"
 msgstr "יוצר מקורי"
 
-#: src/main.cpp:94
+#: src/main.cpp:96
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr "לוקאס אפלהאנס"
 
-#: src/main.cpp:94
+#: src/main.cpp:96
 #, kde-format
 msgid "Help and support"
 msgstr "עזרה ותמיכה"
 
-#: src/main.cpp:95
+#: src/main.cpp:97
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr "סטיבן גרלך"
 
-#: src/main.cpp:95
+#: src/main.cpp:97
 #, kde-format
 msgid "Inspiration"
 msgstr "השראה"
 
-#: src/main.cpp:96
+#: src/main.cpp:98
 #, kde-format
 msgid "Mike Diehl"
 msgstr "מייק דיהל"
 
-#: src/main.cpp:96
+#: src/main.cpp:98
 #, kde-format
 msgid "Original documentation"
 msgstr "תיעוד מקורי"
 
-#: src/main.cpp:97
+#: src/main.cpp:99
 #, kde-format
 msgid "Sune Vuorela"
 msgstr "סון וורלה"
 
-#: src/main.cpp:97 src/main.cpp:98
+#: src/main.cpp:99 src/main.cpp:100
 #, kde-format
 msgid "Icon"
 msgstr "סמל"
 
-#: src/main.cpp:98
+#: src/main.cpp:100
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr "נונו פיניירו"
 
-#: src/main.cpp:105
+#: src/main.cpp:107
 #, kde-format
 msgid "Path or URL to scan"
 msgstr "נתיב או כתובת לסריקה"
 
-#: src/main.cpp:105
+#: src/main.cpp:107
 #, kde-format
 msgid "[url]"
 msgstr "[כתובת]"
 
-#: src/mainContext.cpp:132
+#: src/mainContext.cpp:134
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "נא לבחור תיקייה לסריקה"
 
-#: src/mainContext.cpp:184
+#: src/mainContext.cpp:186
 #, kde-format
 msgid "The entered URL cannot be parsed"
 msgstr "אי אפשר לפענח את הכתובת שסופקה"
 
-#: src/mainContext.cpp:184
+#: src/mainContext.cpp:186
 #, kde-format
 msgid "it is invalid."
 msgstr "הוא שגוי"
 
-#: src/mainContext.cpp:186
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight מקבל רק נתיבים מלאים"
 
-#: src/mainContext.cpp:186
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "eg. /%1"
 msgstr "למשל: ‎/%1"
 
-#: src/mainContext.cpp:188
+#: src/mainContext.cpp:190
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "התיקייה לא נמצאה: %1"
 
-#: src/mainContext.cpp:190
+#: src/mainContext.cpp:192
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr "לא ניתן להיכנס: %1"
 
-#: src/mainContext.cpp:190
+#: src/mainContext.cpp:192
 #, kde-format
 msgid "You do not have access rights to this location."
 msgstr "אין לך הרשאות גישה למקום הזה."
@@ -226,32 +226,28 @@ msgid "Help"
 msgstr "עזרה"
 
 #: src/qml/main.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Home Folder"
+#, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
-msgstr "סריקת תיקיית הבית"
+msgstr "תיקיית הבית"
 
 #: src/qml/main.qml:44
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Root Folder"
+#, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
-msgstr "סריקת תיקיית העל"
+msgstr "תיקיית העל"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
-msgstr ""
+msgstr "בחירת תיקייה…"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
-msgstr ""
+msgstr "תיקייה אחרת…"
 
 #: src/qml/main.qml:58
 #, kde-format
@@ -443,6 +439,8 @@ msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space. "
 "Choose a folder to proceed:"
 msgstr ""
+"Filelight מנתח את ניצולת הכונן כדי להראות לך מה תופס הרבה נפח. נא לבחור "
+"תיקייה כדי להמשיך:"
 
 #: src/qml/SettingsPage.qml:22
 #, kde-format

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-16 00:41+0000\n"
+"POT-Creation-Date: 2024-07-18 00:41+0000\n"
 "PO-Revision-Date: 2014-02-20 11:39+0100\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-doc@kde.org>\n"
@@ -65,12 +65,12 @@ msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "Fehler bi't Wegdoon"
 
-#: src/main.cpp:83
+#: src/main.cpp:85
 #, kde-format
 msgid "Graphical disk-usage information"
 msgstr "Graafsche Informatschonen över den Fastplaat-Bruuk"
 
-#: src/main.cpp:85
+#: src/main.cpp:87
 #, fuzzy, kde-format
 #| msgid ""
 #| "(C) 2006 Max Howell\n"
@@ -83,135 +83,135 @@ msgstr ""
 "(C) 2006 Max Howell\n"
 "        (C) 2008-2013 Martin Sandsmark"
 
-#: src/main.cpp:90
+#: src/main.cpp:92
 #, kde-format
 msgid "Laurent Montel"
 msgstr ""
 
-#: src/main.cpp:90 src/main.cpp:91
+#: src/main.cpp:92 src/main.cpp:93
 #, kde-format
 msgid "Maintainer"
 msgstr "Pleger"
 
-#: src/main.cpp:91
+#: src/main.cpp:93
 #, kde-format
 msgid "Martin Sandsmark"
 msgstr "Martin Sandsmark"
 
-#: src/main.cpp:92
+#: src/main.cpp:94
 #, kde-format
 msgid "Harald Sitter"
 msgstr ""
 
-#: src/main.cpp:92
+#: src/main.cpp:94
 #, kde-format
 msgid "QtQuick Port"
 msgstr ""
 
-#: src/main.cpp:93
+#: src/main.cpp:95
 #, kde-format
 msgid "Max Howell"
 msgstr "Max Howell"
 
-#: src/main.cpp:93
+#: src/main.cpp:95
 #, kde-format
 msgid "Original author"
 msgstr "Orginaal-Programmschriever"
 
-#: src/main.cpp:94
+#: src/main.cpp:96
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr "Lukas Appelhans"
 
-#: src/main.cpp:94
+#: src/main.cpp:96
 #, kde-format
 msgid "Help and support"
 msgstr "Hülp un Ünnerstütten"
 
-#: src/main.cpp:95
+#: src/main.cpp:97
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr "Steffen Gerlach"
 
-#: src/main.cpp:95
+#: src/main.cpp:97
 #, kde-format
 msgid "Inspiration"
 msgstr "Ideen"
 
-#: src/main.cpp:96
+#: src/main.cpp:98
 #, kde-format
 msgid "Mike Diehl"
 msgstr "Mike Diehl"
 
-#: src/main.cpp:96
+#: src/main.cpp:98
 #, kde-format
 msgid "Original documentation"
 msgstr "Orginaaldokmentatschoon"
 
-#: src/main.cpp:97
+#: src/main.cpp:99
 #, kde-format
 msgid "Sune Vuorela"
 msgstr "Sune Vuorela"
 
-#: src/main.cpp:97 src/main.cpp:98
+#: src/main.cpp:99 src/main.cpp:100
 #, kde-format
 msgid "Icon"
 msgstr "Lüttbild"
 
-#: src/main.cpp:98
+#: src/main.cpp:100
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr "Nuno Pinheiro"
 
-#: src/main.cpp:105
+#: src/main.cpp:107
 #, kde-format
 msgid "Path or URL to scan"
 msgstr ""
 
-#: src/main.cpp:105
+#: src/main.cpp:107
 #, kde-format
 msgid "[url]"
 msgstr ""
 
-#: src/mainContext.cpp:132
+#: src/mainContext.cpp:134
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Orner utsöken, den Du dörkieken wullt"
 
-#: src/mainContext.cpp:184
+#: src/mainContext.cpp:186
 #, fuzzy, kde-format
 #| msgid "The entered URL cannot be parsed; it is invalid."
 msgid "The entered URL cannot be parsed"
 msgstr "De angeven URL is leeg un lett sik nich inlesen."
 
-#: src/mainContext.cpp:184
+#: src/mainContext.cpp:186
 #, kde-format
 msgid "it is invalid."
 msgstr ""
 
-#: src/mainContext.cpp:186
+#: src/mainContext.cpp:188
 #, fuzzy, kde-format
 #| msgid "Filelight only accepts absolute paths, eg. /%1"
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight nimmt bloots afsoluut Dateipadden an, a.B. /%1"
 
-#: src/mainContext.cpp:186
+#: src/mainContext.cpp:188
 #, kde-format
 msgid "eg. /%1"
 msgstr ""
 
-#: src/mainContext.cpp:188
+#: src/mainContext.cpp:190
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Orner \"%1\" lett sik nich finnen."
 
-#: src/mainContext.cpp:190
+#: src/mainContext.cpp:192
 #, fuzzy, kde-format
 #| msgid "Unable to create part widget."
 msgid "Unable to enter: %1"
 msgstr "Deel-Lüttprogramm lett sik nich opstellen."
 
-#: src/mainContext.cpp:190
+#: src/mainContext.cpp:192
 #, fuzzy, kde-format
 #| msgid ""
 #| "Unable to enter: %1\n"
