@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
+import org.kde.config as KConfig
 
 import org.kde.filelight 1.0
 
@@ -22,6 +23,10 @@ Kirigami.ApplicationWindow {
             return Kirigami.ApplicationHeaderStyle.NoNavigationButtons
         }
         return (Kirigami.ApplicationHeaderStyle.ShowBackButton | Kirigami.ApplicationHeaderStyle.ShowForwardButton)
+    }
+
+    KConfig.WindowStateSaver {
+        configGroupName: "Main"
     }
 
     WindowThemer {
