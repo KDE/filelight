@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-18 00:41+0000\n"
-"PO-Revision-Date: 2024-06-16 22:48+0200\n"
-"Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
+"POT-Creation-Date: 2024-07-19 00:42+0000\n"
+"PO-Revision-Date: 2024-07-18 17:30+0200\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
@@ -229,32 +229,28 @@ msgid "Help"
 msgstr "Hjälp"
 
 #: src/qml/main.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Home Folder"
+#, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
-msgstr "Avsök hemkatalog"
+msgstr "Hemkatalog"
 
 #: src/qml/main.qml:44
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Root Folder"
+#, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
-msgstr "Avsök rotkatalog"
+msgstr "Rotkatalog"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
-msgstr ""
+msgstr "Välj katalog…"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
-msgstr ""
+msgstr "Annan katalog…"
 
 #: src/qml/main.qml:58
 #, kde-format
@@ -300,7 +296,7 @@ msgid_plural "%1 files"
 msgstr[0] "1 fil"
 msgstr[1] "%1 filer"
 
-#: src/qml/main.qml:181
+#: src/qml/main.qml:189
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
@@ -438,6 +434,8 @@ msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space. "
 "Choose a folder to proceed:"
 msgstr ""
+"Filelight analyserar diskanvändning så att du kan se vad som använder mycket "
+"utrymme. Välj en katalog för att fortsätta:"
 
 #: src/qml/SettingsPage.qml:22
 #, kde-format

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-18 00:41+0000\n"
+"POT-Creation-Date: 2024-07-19 00:42+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -230,20 +230,16 @@ msgid "Help"
 msgstr "帮助"
 
 #: src/qml/main.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Home Folder"
+#, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
-msgstr "扫描主文件夹"
+msgstr ""
 
 #: src/qml/main.qml:44
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Root Folder"
+#, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
-msgstr "扫描根文件夹"
+msgstr ""
 
 #: src/qml/main.qml:51
 #, kde-format
@@ -300,7 +296,7 @@ msgid "1 file"
 msgid_plural "%1 files"
 msgstr[0] "%1 个文件"
 
-#: src/qml/main.qml:181
+#: src/qml/main.qml:189
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."
@@ -525,7 +521,3 @@ msgid_plural ""
 msgstr[0] ""
 "\n"
 "%1 个文件，平均大小为 %2"
-
-#~ msgctxt "@action"
-#~ msgid "Scan Folder"
-#~ msgstr "扫描文件夹"
