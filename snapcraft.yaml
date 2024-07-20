@@ -15,6 +15,7 @@ apps:
         desktop: usr/share/applications/org.kde.filelight.desktop
         command: usr/bin/filelight
         plugs:
+        - home
         - mount-observe
         - udisks2
 slots:
