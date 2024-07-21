@@ -4,12 +4,12 @@
 #include "contextMenuContext.h"
 
 #include <QClipboard>
+#include <QCursor>
 #include <QGuiApplication>
 #include <QMimeData>
 
 #include <KIO/DeleteJob>
 #include <KLocalizedString>
-#include <KMessageBox>
 #include <KTerminalLauncherJob>
 #include <KUrlMimeData>
 

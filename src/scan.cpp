@@ -10,12 +10,12 @@
 
 #include "fileTree.h"
 #include "filelight_debug.h"
-#include "remoteLister.h"
 
 #include <QCursor>
 #include <QDir>
 #include <QGuiApplication>
 #include <QStringBuilder>
+#include <QUrl>
 
 namespace Filelight
 {
@@ -38,13 +38,11 @@ ScanManager::~ScanManager()
         m_abort = true;
         m_thread->wait();
     }
-
-    // RemoteListers are QObjects and get automatically deleted
 }
 
 bool ScanManager::running() const
 {
-    return (m_thread && m_thread->isRunning()) || (m_remoteLister && !m_remoteLister->isFinished());
+    return m_thread && m_thread->isRunning();
 }
 
 bool ScanManager::start(const QUrl &url)
@@ -68,20 +66,6 @@ bool ScanManager::start(const QUrl &url)
     m_abort = false;
 
     if (!url.isLocalFile()) {
-        QGuiApplication::changeOverrideCursor(Qt::BusyCursor);
-        // will start listing straight away
-        m_remoteLister = std::make_unique<Filelight::RemoteLister>(url, this);
-        connect(m_remoteLister.get(), &Filelight::RemoteLister::branchCompleted, this, &ScanManager::cacheTree, Qt::QueuedConnection);
-        auto updateRunning = [this] {
-            if (m_remoteLister && m_remoteLister->isFinished()) {
-                m_remoteLister = nullptr;
-                Q_EMIT runningChanged();
-            }
-        };
-        connect(m_remoteLister.get(), &Filelight::RemoteLister::completed, this, updateRunning);
-        connect(m_remoteLister.get(), &Filelight::RemoteLister::canceled, this, updateRunning);
-        m_remoteLister->openUrl(url);
-        Q_EMIT runningChanged();
         return true;
     }
 
@@ -174,10 +158,6 @@ bool ScanManager::abort()
 {
     m_abort = true;
 
-    if (m_remoteLister) {
-        m_remoteLister->stop();
-    }
-    m_remoteLister = nullptr;
     const bool ret = m_thread && m_thread->wait();
     Q_EMIT runningChanged();
 
@@ -194,7 +174,7 @@ void ScanManager::invalidateCacheFor(const QUrl &url)
     }
 
     if (!url.isLocalFile()) {
-        qWarning() << "Remote cache clearing not implemented";
+        qWarning() << "Invalidate cache for remote url, skip";
         return;
     }
 

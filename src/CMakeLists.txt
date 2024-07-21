@@ -22,14 +22,12 @@ add_library(filelightInternal STATIC
     scan.cpp
     Config.cpp
     localLister.cpp
-    remoteLister.cpp
     fileTree.h
     directoryIterator.h
     fileCleaner.h
     scan.h
     Config.h
     localLister.h
-    remoteLister.h
 )
 ecm_qt_declare_logging_category(filelightInternal
     HEADER filelight_debug.h
@@ -46,10 +44,13 @@ endif()
 target_link_libraries(filelightInternal
     Qt6::Gui
     Qt6::Qml
+    Qt6::Widgets
+    KF6::CoreAddons
     KF6::ConfigCore
     KF6::I18n
-    KF6::KIOWidgets # Only used for KDirLister, may be able to move away from that.
     KF6::Crash
+    KF6::KIOCore
+    KF6::KIOWidgets
 )
 
 add_executable(filelight)
@@ -66,7 +67,6 @@ target_sources(filelight PRIVATE
     scan.h
     define.h
     localLister.h
-    remoteLister.h
     Config.h
     qml/qml.qrc
     contextMenuContext.cpp

@@ -178,17 +178,18 @@ bool MainContext::openUrl(const QUrl &u)
 
     QUrl uri = u.adjusted(QUrl::NormalizePathSegments);
     const QString localPath = uri.toLocalFile();
-    const bool isLocal = uri.isLocalFile();
 
     if (uri.isEmpty()) {
         // do nothing, chances are the user accidentally pressed ENTER
+    } else if (!uri.isLocalFile()) {
+        Q_EMIT openUrlFailed(i18n("The entered URL is not a locale file"), i18n("it is invalid."));
     } else if (!uri.isValid()) {
         Q_EMIT openUrlFailed(i18n("The entered URL cannot be parsed"), i18n("it is invalid."));
-    } else if (isLocal && !QDir::isAbsolutePath(localPath)) {
+    } else if (!QDir::isAbsolutePath(localPath)) {
         Q_EMIT openUrlFailed(i18n("Filelight only accepts absolute paths"), i18n("eg. /%1", localPath));
-    } else if (isLocal && !QDir(localPath).exists()) {
+    } else if (!QDir(localPath).exists()) {
         Q_EMIT openUrlFailed(i18n("Folder not found: %1", localPath), QString());
-    } else if (isLocal && !QDir(localPath).isReadable()) {
+    } else if (!QDir(localPath).isReadable()) {
         Q_EMIT openUrlFailed(i18n("Unable to enter: %1", localPath), i18n("You do not have access rights to this location."));
     } else {
         const bool success = start(uri);

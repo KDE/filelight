@@ -46,6 +46,7 @@ find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Core Widgets Quick Quick
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED
     KIO
     I18n
+    CoreAddons
     ColorScheme
     Config
     Crash

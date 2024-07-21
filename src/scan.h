@@ -23,14 +23,12 @@ namespace Filelight
 {
 
 class LocalLister;
-class RemoteLister;
 
 class ScanManager : public QObject
 {
     Q_OBJECT
 
     friend class LocalLister;
-    friend class RemoteLister;
 
     Q_PROPERTY(bool running READ running NOTIFY runningChanged)
 
@@ -73,7 +71,6 @@ private:
     QMutex m_mutex;
     std::unique_ptr<LocalLister> m_thread;
     QList<std::shared_ptr<Folder>> m_cache;
-    std::unique_ptr<RemoteLister> m_remoteLister;
 
     Q_DISABLE_COPY_MOVE(ScanManager)
 };
