@@ -1,13 +1,12 @@
 # Translation of filelight to Norwegian Nynorsk
 #
-# Karl Ove Hufthammer <karl@huftis.org>, 2016, 2017, 2018, 2020, 2022, 2023.
 # Øystein Steffensen-Alværvik <oysteins.omsetting@protonmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-19 00:42+0000\n"
-"PO-Revision-Date: 2023-01-15 12:27+0100\n"
+"PO-Revision-Date: 2024-07-26 14:47+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -15,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 24.11.70\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -59,11 +58,10 @@ msgid "&Delete"
 msgstr "&Slett"
 
 #: src/contextMenuContext.cpp:92
-#, fuzzy, kde-format
-#| msgid "Error while deleting"
+#, kde-format
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
-msgstr "Feil ved sletting"
+msgstr "Feil ved sletting: %1"
 
 #: src/main.cpp:85
 #, kde-format
@@ -84,7 +82,7 @@ msgstr ""
 #: src/main.cpp:92
 #, kde-format
 msgid "Laurent Montel"
-msgstr ""
+msgstr "Laurent Montel"
 
 #: src/main.cpp:92 src/main.cpp:93
 #, kde-format
@@ -177,26 +175,24 @@ msgid "Select Folder to Scan"
 msgstr "Vel mappe å søkja gjennom"
 
 #: src/mainContext.cpp:186
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "Kan ikkje tolka adressa; ho er ugyldig."
+msgstr "Klarte ikkje tolka adressa"
 
 #: src/mainContext.cpp:186
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "Ho er ugyldig."
 
 #: src/mainContext.cpp:188
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Filelight godtek berre absolutte adresser, for eksempel /%1"
+msgstr "Filelight godtek berre absolutte adresser"
 
 #: src/mainContext.cpp:188
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "for eksempel /%1"
 
 #: src/mainContext.cpp:190
 #, kde-format
@@ -206,17 +202,12 @@ msgstr "Fann ikkje mappe: %1"
 #: src/mainContext.cpp:192
 #, kde-format
 msgid "Unable to enter: %1"
-msgstr ""
+msgstr "Kan ikkje gå inn i: %1"
 
 #: src/mainContext.cpp:192
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
-"Kan ikkje gå inn i: %1\n"
-"Du har ikkje tilgangsløyve til denne mappa."
+msgstr "Du har ikkje tilgangsløyve til denne mappa."
 
 #: src/qml/GlobalMenu.qml:15
 #, kde-format
@@ -237,32 +228,28 @@ msgid "Help"
 msgstr "Hjelp"
 
 #: src/qml/main.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Home Folder"
+#, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
-msgstr "Søk gjennom heimemappa"
+msgstr "Heimemappa"
 
 #: src/qml/main.qml:44
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Root Folder"
+#, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
-msgstr "Søk gjennom rotmappa"
+msgstr "Rotmappa"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
-msgstr ""
+msgstr "Vel mappe …"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
-msgstr ""
+msgstr "Anna mappe …"
 
 #: src/qml/main.qml:58
 #, kde-format
@@ -446,6 +433,8 @@ msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space. "
 "Choose a folder to proceed:"
 msgstr ""
+"Filelight analyserer diskbruken, slik at du kan sjå kva som tek opp mest "
+"plass. Vel mappe å analysera:"
 
 #: src/qml/SettingsPage.qml:22
 #, kde-format
