@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-19 00:42+0000\n"
-"PO-Revision-Date: 2024-05-16 23:26+0300\n"
+"PO-Revision-Date: 2024-07-27 22:39+0300\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -232,32 +232,28 @@ msgid "Help"
 msgstr "Pagalba"
 
 #: src/qml/main.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Home Folder"
+#, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
-msgstr "Skenuoti namų aplanką"
+msgstr "Namų aplankas"
 
 #: src/qml/main.qml:44
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Root Folder"
+#, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
-msgstr "Skenuoti šakninį aplanką"
+msgstr "Šakninis aplankas"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
-msgstr ""
+msgstr "Pasirinkti aplanką…"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
-msgstr ""
+msgstr "Kitas aplankas…"
 
 #: src/qml/main.qml:58
 #, kde-format
@@ -449,6 +445,8 @@ msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space. "
 "Choose a folder to proceed:"
 msgstr ""
+"Filelight ištiria diske naudojamą vietą, kad galėtumėte pamatyti, kas užima "
+"daug vietos. Norėdami tęsti, pasirinkite aplanką:"
 
 #: src/qml/SettingsPage.qml:22
 #, kde-format
