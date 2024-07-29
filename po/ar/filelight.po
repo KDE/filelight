@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-19 00:42+0000\n"
-"PO-Revision-Date: 2024-05-16 11:48+0400\n"
+"PO-Revision-Date: 2024-07-28 12:55+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -225,32 +226,28 @@ msgid "Help"
 msgstr "مساعدة"
 
 #: src/qml/main.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Home Folder"
+#, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
-msgstr "امسح مجلد البيت"
+msgstr "مجلّد المنزل"
 
 #: src/qml/main.qml:44
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Root Folder"
+#, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
-msgstr "امسح مجلد الجذر"
+msgstr "مجلّد الجذر"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
-msgstr ""
+msgstr "اختر مجلّدًا…"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
-msgstr ""
+msgstr "مجلد أخر…"
 
 #: src/qml/main.qml:58
 #, kde-format
@@ -450,6 +447,8 @@ msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space. "
 "Choose a folder to proceed:"
 msgstr ""
+"يقوم كاشف الملفات بتحليل استخدام القرص حتى تتمكن من معرفة ما يستخدم مساحة "
+"كبيرة. اختر مجلدًا للمتابعة:"
 
 #: src/qml/SettingsPage.qml:22
 #, kde-format
