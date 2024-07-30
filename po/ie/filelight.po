@@ -1,22 +1,21 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the filelight package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# SPDX-FileCopyrightText: 2024 OIS <mistresssilvara@hotmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-19 00:42+0000\n"
-"PO-Revision-Date: 2022-10-27 03:55+0700\n"
+"PO-Revision-Date: 2024-07-29 16:22+0700\n"
 "Last-Translator: OIS <mistresssilvara@hotmail.com>\n"
-"Language-Team: kde-i18n-doc@kde.org\n"
+"Language-Team: Interlingue <>\n"
 "Language: ie\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Lokalize 24.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -58,11 +57,10 @@ msgid "&Delete"
 msgstr "&Remover"
 
 #: src/contextMenuContext.cpp:92
-#, fuzzy, kde-format
-#| msgid "Error while deleting"
+#, kde-format
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
-msgstr "Un errore evenit durante deletion"
+msgstr "Un errore evenit durante deletion: %1"
 
 #: src/main.cpp:85
 #, kde-format
@@ -83,7 +81,7 @@ msgstr ""
 #: src/main.cpp:92
 #, kde-format
 msgid "Laurent Montel"
-msgstr ""
+msgstr "Laurent Montel"
 
 #: src/main.cpp:92 src/main.cpp:93
 #, kde-format
@@ -178,22 +176,22 @@ msgstr "Selecter un fólder a analisar"
 #: src/mainContext.cpp:186
 #, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr ""
+msgstr "Ne successat analisar li adresse"
 
 #: src/mainContext.cpp:186
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "it es ínvalid."
 
 #: src/mainContext.cpp:188
 #, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr ""
+msgstr "Filelight accepta solmen absolut rutes"
 
 #: src/mainContext.cpp:188
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "p.ex. /%1"
 
 #: src/mainContext.cpp:190
 #, kde-format
@@ -203,12 +201,12 @@ msgstr "Fólder ne es trovat: %1"
 #: src/mainContext.cpp:192
 #, kde-format
 msgid "Unable to enter: %1"
-msgstr ""
+msgstr "Ne successat intrar: %1"
 
 #: src/mainContext.cpp:192
 #, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
+msgstr "Vu ne have permissiones por accesse a ti localisation."
 
 #: src/qml/GlobalMenu.qml:15
 #, kde-format
@@ -229,32 +227,28 @@ msgid "Help"
 msgstr "Auxilie"
 
 #: src/qml/main.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Home Folder"
+#, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
-msgstr "Examinar li hem-fólder"
+msgstr "Hem-fólder"
 
 #: src/qml/main.qml:44
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Root Folder"
+#, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
-msgstr "Examinar li fólder original"
+msgstr "Fólder original"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
-msgstr ""
+msgstr "Selecter un fólder..."
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
-msgstr ""
+msgstr "Un altri fólder..."
 
 #: src/qml/main.qml:58
 #, kde-format
@@ -269,12 +263,10 @@ msgid "Configure…"
 msgstr "Configurar..."
 
 #: src/qml/main.qml:71
-#, fuzzy, kde-format
-#| msgctxt "@action configure app"
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr "Configurar..."
+msgstr "Configurar"
 
 #: src/qml/main.qml:83
 #, kde-format
@@ -309,12 +301,10 @@ msgid "Aborting Scan..."
 msgstr "Interruption de analise..."
 
 #: src/qml/MapPage.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Overview"
+#, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
-msgstr "Compendie"
+msgstr "Ear al compendie"
 
 #: src/qml/MapPage.qml:45
 #, kde-format
@@ -347,55 +337,46 @@ msgid "Zoom Out"
 msgstr "Diminuer"
 
 #: src/qml/MapPage.qml:114 src/qml/MapPage.qml:237
-#, fuzzy, kde-format
-#| msgctxt "Scan/open the path of the selected element"
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
-msgstr "&Aperter"
+msgstr "Aperter"
 
 #: src/qml/MapPage.qml:122 src/qml/MapPage.qml:245
-#, fuzzy, kde-format
-#| msgid "Open &Terminal Here"
+#, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
-msgstr "Aperter li &Terminal ci"
+msgstr "Aperter li Terminal ci"
 
 #: src/qml/MapPage.qml:130
-#, fuzzy, kde-format
-#| msgid "&Center Map Here"
+#, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
-msgstr "&Centrar li carte"
+msgstr "Centrar li carte"
 
 #: src/qml/MapPage.qml:141 src/qml/MapPage.qml:253
-#, fuzzy, kde-format
-#| msgid "Add to Do &Not Scan List"
+#, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
-msgstr "&Ne examinar denov"
+msgstr "Ne examinar denov"
 
 #: src/qml/MapPage.qml:149
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Reexaminar"
 
 #: src/qml/MapPage.qml:156 src/qml/MapPage.qml:260
-#, fuzzy, kde-format
-#| msgid "&Copy to clipboard"
+#, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
-msgstr "&Copiar al Paperiere"
+msgstr "Copiar al Paperiere"
 
 #: src/qml/MapPage.qml:164 src/qml/MapPage.qml:268
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
-msgstr "&Remover"
+msgstr "Remover"
 
 #: src/qml/MapPage.qml:321
 #, kde-format
@@ -414,15 +395,10 @@ msgstr[0] "%1 file"
 msgstr[1] "%1 files"
 
 #: src/qml/MapPage.qml:327
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Click to go up to parent directory"
+#, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
-msgstr ""
-"\n"
-"Ear al superiori fólder"
+msgstr "Fa clic por ear al superiori fólder"
 
 #: src/qml/MapPage.qml:546
 #, kde-format
@@ -456,109 +432,101 @@ msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space. "
 "Choose a folder to proceed:"
 msgstr ""
+"Filelight analisa li usage de disco por vider quo occupa mult spacie. Ples "
+"selecter un fólder por continuar:"
 
 #: src/qml/SettingsPage.qml:22
-#, fuzzy, kde-format
-#| msgid "Scannin&g"
+#, kde-format
 msgctxt "@title"
 msgid "Scanning"
-msgstr "E&xamination"
+msgstr "Examination"
 
 #: src/qml/SettingsPage.qml:25
-#, fuzzy, kde-format
-#| msgid "&Appearance"
+#, kde-format
 msgctxt "@title"
 msgid "Appearance"
-msgstr "&Aspecte"
+msgstr "Aspecte"
 
 #: src/qml/SettingsPageAppearance.qml:16
-#, fuzzy, kde-format
-#| msgid "Color scheme"
+#, kde-format
 msgctxt "@title:group"
 msgid "Color Scheme"
 msgstr "Schema de colores"
 
 #: src/qml/SettingsPageAppearance.qml:25
-#, fuzzy, kde-format
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "Rainbow"
 msgstr "Ciel-arc"
 
 #: src/qml/SettingsPageAppearance.qml:34
-#, fuzzy, kde-format
-#| msgid "System colors"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "System colors"
 msgstr "Colores del sistema"
 
 #: src/qml/SettingsPageAppearance.qml:43
-#, fuzzy, kde-format
-#| msgid "High contrast"
+#, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "High contrast"
 msgstr "Alt contraste"
 
 #: src/qml/SettingsPageAppearance.qml:52
-#, fuzzy, kde-format
-#| msgid "Co&ntrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Contrast"
-msgstr "Co&ntraste"
+msgstr "Contraste"
 
 #: src/qml/SettingsPageAppearance.qml:69
-#, fuzzy, kde-format
-#| msgid "Show small files"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "Monstrar micri files"
 
 #: src/qml/SettingsPageScanning.qml:33
-#, fuzzy, kde-format
-#| msgid "Do &not scan these folders:"
+#, kde-format
 msgctxt "@label"
 msgid "Do not scan these folders:"
-msgstr "&Ne examinar ti fólderes:"
+msgstr "Ne examinar ti fólderes:"
 
 #: src/qml/SettingsPageScanning.qml:41
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
-msgstr ""
+msgstr "Ajunter…"
 
 #: src/qml/SettingsPageScanning.qml:90
-#, fuzzy, kde-format
-#| msgid "R&emove"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Remove"
-msgstr "R&emover"
+msgstr "Remover"
 
 #: src/qml/SettingsPageScanning.qml:110
-#, fuzzy, kde-format
-#| msgid "Scan across filesystem &boundaries"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Scan across filesystem boundaries"
-msgstr "Analisar t&rans sistemas de files"
+msgstr "Analisar trans sistemas de files"
 
 #: src/qml/SettingsPageScanning.qml:122
-#, fuzzy, kde-format
-#| msgid "Exclude remote files&ystems"
+#, kde-format
 msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
-msgstr "Excluder lontan s&istemas de files"
+msgstr "Excluder lontan sistemas de files"
 
 #: src/radialMap/map.cpp:62
-#, fuzzy, kde-format
-#| msgid "1 file, with an average size of %2"
-#| msgid_plural "%1 files, with an average size of %2"
+#, kde-format
 msgid ""
 "\n"
 "%1 file, with an average size of %2"
 msgid_plural ""
 "\n"
 "%1 files, with an average size of %2"
-msgstr[0] "1 file, con un medial grandore de %2"
-msgstr[1] "%1 files, con un medial grandore de %2"
+msgstr[0] ""
+"\n"
+"%1 file, con un medial grandore de %2"
+msgstr[1] ""
+"\n"
+"%1 files, con un medial grandore de %2"
 
 #~ msgctxt "@action"
 #~ msgid "Scan Folder"
