@@ -47,7 +47,6 @@ int main(int argc, char *argv[])
     }
 
     QApplication app(argc, argv);
-    KCrash::initialize();
 
     qRegisterMetaType<std::shared_ptr<File>>("std::shared_ptr<File>");
     qRegisterMetaType<std::shared_ptr<Folder>>("std::shared_ptr<Folder>");
@@ -100,6 +99,7 @@ int main(int argc, char *argv[])
     about.addCredit(i18n("Nuno Pinheiro"), i18n("Icon"));
 
     KAboutData::setApplicationData(about);
+    KCrash::initialize();
     app.setOrganizationName(QStringLiteral("KDE"));
     app.setWindowIcon(QIcon::fromTheme(QStringLiteral(APP_NAME)));
 
