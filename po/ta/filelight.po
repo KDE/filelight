@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-19 00:42+0000\n"
+"POT-Creation-Date: 2024-08-10 00:44+0000\n"
 "PO-Revision-Date: 2024-05-19 16:50+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -62,12 +62,12 @@ msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "நீக்கும்போது சிக்கல்: %1"
 
-#: src/main.cpp:85
+#: src/main.cpp:84
 #, kde-format
 msgid "Graphical disk-usage information"
 msgstr "வரைமுறையில் வட்டுப் பயன்பாட்டு விவரங்கள்"
 
-#: src/main.cpp:87
+#: src/main.cpp:86
 #, kde-format
 msgid ""
 "(C) 2006 Max Howell\n"
@@ -78,82 +78,82 @@ msgstr ""
 "(C) 2008-2014 மார்ட்டின் சாண்டுஸ்மார்கு\n"
 "(C) 2017-2022 ஹரால்டு சிட்டர்"
 
-#: src/main.cpp:92
+#: src/main.cpp:91
 #, kde-format
 msgid "Laurent Montel"
 msgstr "லாரெண்டு மாண்டெல்"
 
-#: src/main.cpp:92 src/main.cpp:93
+#: src/main.cpp:91 src/main.cpp:92
 #, kde-format
 msgid "Maintainer"
 msgstr "பராமரிப்பாளர்"
 
-#: src/main.cpp:93
+#: src/main.cpp:92
 #, kde-format
 msgid "Martin Sandsmark"
 msgstr "மார்ட்டின் சான்டுஸ்மார்க்"
 
-#: src/main.cpp:94
+#: src/main.cpp:93
 #, kde-format
 msgid "Harald Sitter"
 msgstr "ஹரால்டு சிட்டர்"
 
-#: src/main.cpp:94
+#: src/main.cpp:93
 #, kde-format
 msgid "QtQuick Port"
 msgstr "QtQuick நிரல்மொழிமாற்றம்"
 
-#: src/main.cpp:95
+#: src/main.cpp:94
 #, kde-format
 msgid "Max Howell"
 msgstr "மாக்சு ஹொவல்"
 
-#: src/main.cpp:95
+#: src/main.cpp:94
 #, kde-format
 msgid "Original author"
 msgstr "முதிலில் இயற்றியவர்"
 
-#: src/main.cpp:96
+#: src/main.cpp:95
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr "லூக்காசு அப்பெல்ஹான்சு"
 
-#: src/main.cpp:96
+#: src/main.cpp:95
 #, kde-format
 msgid "Help and support"
 msgstr "உதவியும் ஆதரவம்"
 
-#: src/main.cpp:97
+#: src/main.cpp:96
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr ""
 
-#: src/main.cpp:97
+#: src/main.cpp:96
 #, kde-format
 msgid "Inspiration"
 msgstr "ஊக்கமளித்தது"
 
-#: src/main.cpp:98
+#: src/main.cpp:97
 #, kde-format
 msgid "Mike Diehl"
 msgstr ""
 
-#: src/main.cpp:98
+#: src/main.cpp:97
 #, kde-format
 msgid "Original documentation"
 msgstr "முதல் கையேடு"
 
-#: src/main.cpp:99
+#: src/main.cpp:98
 #, kde-format
 msgid "Sune Vuorela"
 msgstr ""
 
-#: src/main.cpp:99 src/main.cpp:100
+#: src/main.cpp:98 src/main.cpp:99
 #, kde-format
 msgid "Icon"
 msgstr "சின்னம்"
 
-#: src/main.cpp:100
+#: src/main.cpp:99
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr ""
@@ -226,7 +226,7 @@ msgctxt "@item:inmenu"
 msgid "Help"
 msgstr "உதவி"
 
-#: src/qml/main.qml:37
+#: src/qml/main.qml:42
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Scan Home Folder"
@@ -234,7 +234,7 @@ msgctxt "@action Scan home folder"
 msgid "Home Folder"
 msgstr "முகப்பு அடைவை ஆராய்"
 
-#: src/qml/main.qml:44
+#: src/qml/main.qml:49
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Scan Root Folder"
@@ -242,55 +242,55 @@ msgctxt "@action Scan root folder"
 msgid "Root Folder"
 msgstr "ரூட் அடைவை ஆராய்"
 
-#: src/qml/main.qml:51
+#: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
 msgstr ""
 
-#: src/qml/main.qml:51
+#: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
 msgstr ""
 
-#: src/qml/main.qml:58
+#: src/qml/main.qml:63
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr "வெளியேறு"
 
-#: src/qml/main.qml:66
+#: src/qml/main.qml:71
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "அமை..."
 
-#: src/qml/main.qml:71
+#: src/qml/main.qml:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "அமைப்புகள்"
 
-#: src/qml/main.qml:83
+#: src/qml/main.qml:88
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "கையேட்டைத் திற"
 
-#: src/qml/main.qml:91
+#: src/qml/main.qml:96
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr "இதுபற்றி"
 
-#: src/qml/main.qml:112
+#: src/qml/main.qml:117
 #, kde-format
 msgctxt "@info:status"
 msgid "No files."
 msgstr "கோப்புகள் இல்லை."
 
-#: src/qml/main.qml:113
+#: src/qml/main.qml:118
 #, kde-format
 msgctxt "@info:status"
 msgid "1 file"
@@ -298,7 +298,7 @@ msgid_plural "%1 files"
 msgstr[0] "1 கோப்பு"
 msgstr[1] "%1 கோப்புகள்"
 
-#: src/qml/main.qml:189
+#: src/qml/main.qml:194
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."

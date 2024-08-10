@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-19 00:42+0000\n"
+"POT-Creation-Date: 2024-08-10 00:44+0000\n"
 "PO-Revision-Date: 2024-07-16 09:24+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -61,12 +61,12 @@ msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "שגיאה במחיקה: %1"
 
-#: src/main.cpp:85
+#: src/main.cpp:84
 #, kde-format
 msgid "Graphical disk-usage information"
 msgstr "פרטי תפוסת כונן חזותיים"
 
-#: src/main.cpp:87
+#: src/main.cpp:86
 #, kde-format
 msgid ""
 "(C) 2006 Max Howell\n"
@@ -77,82 +77,82 @@ msgstr ""
 "(C) 2008-2014 מרטין זנדסמרק\n"
 "(C) 2017-2022 הרלד סיטר"
 
-#: src/main.cpp:92
+#: src/main.cpp:91
 #, kde-format
 msgid "Laurent Montel"
 msgstr "לורנט מונטל"
 
-#: src/main.cpp:92 src/main.cpp:93
+#: src/main.cpp:91 src/main.cpp:92
 #, kde-format
 msgid "Maintainer"
 msgstr "מתחזק"
 
-#: src/main.cpp:93
+#: src/main.cpp:92
 #, kde-format
 msgid "Martin Sandsmark"
 msgstr "מרטין זנדסמרק"
 
-#: src/main.cpp:94
+#: src/main.cpp:93
 #, kde-format
 msgid "Harald Sitter"
 msgstr "הרלד סיטר"
 
-#: src/main.cpp:94
+#: src/main.cpp:93
 #, kde-format
 msgid "QtQuick Port"
 msgstr "הסבת QtQuick"
 
-#: src/main.cpp:95
+#: src/main.cpp:94
 #, kde-format
 msgid "Max Howell"
 msgstr "מקס האוול"
 
-#: src/main.cpp:95
+#: src/main.cpp:94
 #, kde-format
 msgid "Original author"
 msgstr "יוצר מקורי"
 
-#: src/main.cpp:96
+#: src/main.cpp:95
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr "לוקאס אפלהאנס"
 
-#: src/main.cpp:96
+#: src/main.cpp:95
 #, kde-format
 msgid "Help and support"
 msgstr "עזרה ותמיכה"
 
-#: src/main.cpp:97
+#: src/main.cpp:96
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr "סטיבן גרלך"
 
-#: src/main.cpp:97
+#: src/main.cpp:96
 #, kde-format
 msgid "Inspiration"
 msgstr "השראה"
 
-#: src/main.cpp:98
+#: src/main.cpp:97
 #, kde-format
 msgid "Mike Diehl"
 msgstr "מייק דיהל"
 
-#: src/main.cpp:98
+#: src/main.cpp:97
 #, kde-format
 msgid "Original documentation"
 msgstr "תיעוד מקורי"
 
-#: src/main.cpp:99
+#: src/main.cpp:98
 #, kde-format
 msgid "Sune Vuorela"
 msgstr "סון וורלה"
 
-#: src/main.cpp:99 src/main.cpp:100
+#: src/main.cpp:98 src/main.cpp:99
 #, kde-format
 msgid "Icon"
 msgstr "סמל"
 
-#: src/main.cpp:100
+#: src/main.cpp:99
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr "נונו פיניירו"
@@ -225,67 +225,67 @@ msgctxt "@item:inmenu"
 msgid "Help"
 msgstr "עזרה"
 
-#: src/qml/main.qml:37
+#: src/qml/main.qml:42
 #, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
 msgstr "תיקיית הבית"
 
-#: src/qml/main.qml:44
+#: src/qml/main.qml:49
 #, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
 msgstr "תיקיית העל"
 
-#: src/qml/main.qml:51
+#: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
 msgstr "בחירת תיקייה…"
 
-#: src/qml/main.qml:51
+#: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
 msgstr "תיקייה אחרת…"
 
-#: src/qml/main.qml:58
+#: src/qml/main.qml:63
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr "יציאה"
 
-#: src/qml/main.qml:66
+#: src/qml/main.qml:71
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "הגדרה…"
 
-#: src/qml/main.qml:71
+#: src/qml/main.qml:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "הגדרה"
 
-#: src/qml/main.qml:83
+#: src/qml/main.qml:88
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "פתיחת מדריך המשתמש"
 
-#: src/qml/main.qml:91
+#: src/qml/main.qml:96
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr "על אודות"
 
-#: src/qml/main.qml:112
+#: src/qml/main.qml:117
 #, kde-format
 msgctxt "@info:status"
 msgid "No files."
 msgstr "אין קבצים."
 
-#: src/qml/main.qml:113
+#: src/qml/main.qml:118
 #, kde-format
 msgctxt "@info:status"
 msgid "1 file"
@@ -295,7 +295,7 @@ msgstr[1] "שני קבצים"
 msgstr[2] "%1 קבצים"
 msgstr[3] "%1 קבצים"
 
-#: src/qml/main.qml:189
+#: src/qml/main.qml:194
 #, kde-format
 msgctxt "@info:status"
 msgid "Aborting Scan..."

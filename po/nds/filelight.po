@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-19 00:42+0000\n"
+"POT-Creation-Date: 2024-08-10 00:44+0000\n"
 "PO-Revision-Date: 2014-02-20 11:39+0100\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-doc@kde.org>\n"
@@ -65,12 +65,12 @@ msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "Fehler bi't Wegdoon"
 
-#: src/main.cpp:85
+#: src/main.cpp:84
 #, kde-format
 msgid "Graphical disk-usage information"
 msgstr "Graafsche Informatschonen över den Fastplaat-Bruuk"
 
-#: src/main.cpp:87
+#: src/main.cpp:86
 #, fuzzy, kde-format
 #| msgid ""
 #| "(C) 2006 Max Howell\n"
@@ -83,82 +83,82 @@ msgstr ""
 "(C) 2006 Max Howell\n"
 "        (C) 2008-2013 Martin Sandsmark"
 
-#: src/main.cpp:92
+#: src/main.cpp:91
 #, kde-format
 msgid "Laurent Montel"
 msgstr ""
 
-#: src/main.cpp:92 src/main.cpp:93
+#: src/main.cpp:91 src/main.cpp:92
 #, kde-format
 msgid "Maintainer"
 msgstr "Pleger"
 
-#: src/main.cpp:93
+#: src/main.cpp:92
 #, kde-format
 msgid "Martin Sandsmark"
 msgstr "Martin Sandsmark"
 
-#: src/main.cpp:94
+#: src/main.cpp:93
 #, kde-format
 msgid "Harald Sitter"
 msgstr ""
 
-#: src/main.cpp:94
+#: src/main.cpp:93
 #, kde-format
 msgid "QtQuick Port"
 msgstr ""
 
-#: src/main.cpp:95
+#: src/main.cpp:94
 #, kde-format
 msgid "Max Howell"
 msgstr "Max Howell"
 
-#: src/main.cpp:95
+#: src/main.cpp:94
 #, kde-format
 msgid "Original author"
 msgstr "Orginaal-Programmschriever"
 
-#: src/main.cpp:96
+#: src/main.cpp:95
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr "Lukas Appelhans"
 
-#: src/main.cpp:96
+#: src/main.cpp:95
 #, kde-format
 msgid "Help and support"
 msgstr "Hülp un Ünnerstütten"
 
-#: src/main.cpp:97
+#: src/main.cpp:96
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr "Steffen Gerlach"
 
-#: src/main.cpp:97
+#: src/main.cpp:96
 #, kde-format
 msgid "Inspiration"
 msgstr "Ideen"
 
-#: src/main.cpp:98
+#: src/main.cpp:97
 #, kde-format
 msgid "Mike Diehl"
 msgstr "Mike Diehl"
 
-#: src/main.cpp:98
+#: src/main.cpp:97
 #, kde-format
 msgid "Original documentation"
 msgstr "Orginaaldokmentatschoon"
 
-#: src/main.cpp:99
+#: src/main.cpp:98
 #, kde-format
 msgid "Sune Vuorela"
 msgstr "Sune Vuorela"
 
-#: src/main.cpp:99 src/main.cpp:100
+#: src/main.cpp:98 src/main.cpp:99
 #, kde-format
 msgid "Icon"
 msgstr "Lüttbild"
 
-#: src/main.cpp:100
+#: src/main.cpp:99
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr "Nuno Pinheiro"
@@ -240,70 +240,70 @@ msgctxt "@item:inmenu"
 msgid "Help"
 msgstr ""
 
-#: src/qml/main.qml:37
+#: src/qml/main.qml:42
 #, fuzzy, kde-format
 #| msgid "Scan &Home Folder"
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
 msgstr "&Tohuusorner dörkieken"
 
-#: src/qml/main.qml:44
+#: src/qml/main.qml:49
 #, fuzzy, kde-format
 #| msgid "Scan &Root Folder"
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
 msgstr "&Wörtelorner dörkieken"
 
-#: src/qml/main.qml:51
+#: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
 msgstr ""
 
-#: src/qml/main.qml:51
+#: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
 msgstr ""
 
-#: src/qml/main.qml:58
+#: src/qml/main.qml:63
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr ""
 
-#: src/qml/main.qml:66
+#: src/qml/main.qml:71
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr ""
 
-#: src/qml/main.qml:71
+#: src/qml/main.qml:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr ""
 
-#: src/qml/main.qml:83
+#: src/qml/main.qml:88
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr ""
 
-#: src/qml/main.qml:91
+#: src/qml/main.qml:96
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr ""
 
-#: src/qml/main.qml:112
+#: src/qml/main.qml:117
 #, fuzzy, kde-format
 #| msgid "No files."
 msgctxt "@info:status"
 msgid "No files."
 msgstr "Keen Dateien"
 
-#: src/qml/main.qml:113
+#: src/qml/main.qml:118
 #, fuzzy, kde-format
 #| msgid "1 file"
 #| msgid_plural "%1 files"
@@ -313,7 +313,7 @@ msgid_plural "%1 files"
 msgstr[0] "1 Datei"
 msgstr[1] "%1 Dateien"
 
-#: src/qml/main.qml:189
+#: src/qml/main.qml:194
 #, fuzzy, kde-format
 #| msgid "Aborting Scan..."
 msgctxt "@info:status"
