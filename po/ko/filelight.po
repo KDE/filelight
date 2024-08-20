@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Shinjo Park <kde@peremen.name>, 2011, 2013, 2015, 2017, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2011, 2013, 2015, 2017, 2019, 2020, 2021, 2022, 2023, 2024 Shinjo Park <kde@peremen.name>
 # Jung Hee Lee <daemul72@gmail.com>, 2019.
 #
 msgid ""
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-10 00:44+0000\n"
-"PO-Revision-Date: 2023-03-01 01:19+0100\n"
+"PO-Revision-Date: 2024-08-19 22:29+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -58,11 +58,10 @@ msgid "&Delete"
 msgstr "삭제(&D)"
 
 #: src/contextMenuContext.cpp:92
-#, fuzzy, kde-format
-#| msgid "Error while deleting"
+#, kde-format
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
-msgstr "삭제 오류"
+msgstr "삭제 오류: %1"
 
 #: src/main.cpp:84
 #, kde-format
@@ -83,7 +82,7 @@ msgstr ""
 #: src/main.cpp:91
 #, kde-format
 msgid "Laurent Montel"
-msgstr ""
+msgstr "Laurent Montel"
 
 #: src/main.cpp:91 src/main.cpp:92
 #, kde-format
@@ -176,26 +175,24 @@ msgid "Select Folder to Scan"
 msgstr "검사할 폴더 선택"
 
 #: src/mainContext.cpp:186
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "입력한 URL을 해석할 수 없습니다. 잘못된 URL입니다."
+msgstr "입력한 URL을 해석할 수 없음"
 
 #: src/mainContext.cpp:186
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "잘못되었습니다."
 
 #: src/mainContext.cpp:188
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Filelight는 절대 경로만 받아들입니다. 예: /%1"
+msgstr "Filelight는 절대 경로만 사용할 수 있음"
 
 #: src/mainContext.cpp:188
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "예: /%1"
 
 #: src/mainContext.cpp:190
 #, kde-format
@@ -203,20 +200,14 @@ msgid "Folder not found: %1"
 msgstr "폴더를 찾을 수 없음: %1"
 
 #: src/mainContext.cpp:192
-#, fuzzy, kde-format
-#| msgid "Unable to create part widget."
+#, kde-format
 msgid "Unable to enter: %1"
-msgstr "기능 위젯을 생성할 수 없습니다."
+msgstr "들어갈 수 없음: %1"
 
 #: src/mainContext.cpp:192
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
-"다음에 들어갈 수 없음: %1.\n"
-"이 위치에 접근할 수 있는 권한이 없습니다."
+msgstr "이 위치에 접근할 수 있는 권한이 없습니다."
 
 #: src/qml/GlobalMenu.qml:15
 #, kde-format
@@ -237,32 +228,28 @@ msgid "Help"
 msgstr "도움말"
 
 #: src/qml/main.qml:42
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Home Folder"
+#, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
-msgstr "홈 폴더 검사"
+msgstr "홈 폴더"
 
 #: src/qml/main.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Root Folder"
+#, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
-msgstr "루트 폴더 검사"
+msgstr "루트 폴더"
 
 #: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
-msgstr ""
+msgstr "폴더 선택…"
 
 #: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
-msgstr ""
+msgstr "기타 폴더…"
 
 #: src/qml/main.qml:63
 #, kde-format
@@ -442,6 +429,8 @@ msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space. "
 "Choose a folder to proceed:"
 msgstr ""
+"Filelight는 디스크 사용량을 분석하여 많은 공간을 차지하는 항목을 볼 수 있습니"
+"다. 진행할 폴더를 선택하십시오:"
 
 #: src/qml/SettingsPage.qml:22
 #, kde-format
