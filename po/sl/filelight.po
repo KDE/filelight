@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-10 00:44+0000\n"
+"POT-Creation-Date: 2024-08-21 00:49+0000\n"
 "PO-Revision-Date: 2024-07-16 06:46+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -284,107 +284,112 @@ msgctxt "@action opens about app page"
 msgid "About"
 msgstr "O programu"
 
-#: src/qml/main.qml:117
+#: src/qml/main.qml:173
 #, kde-format
 msgctxt "@info:status"
-msgid "No files."
+msgid "Failed to abort scan"
+msgstr ""
+
+#: src/qml/MapPage.qml:40
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "No files."
+msgctxt "@info:status"
+msgid "No files shown."
 msgstr "Ni datotek."
 
-#: src/qml/main.qml:118
-#, kde-format
+#: src/qml/MapPage.qml:41
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "1 file"
+#| msgid_plural "%1 files"
 msgctxt "@info:status"
-msgid "1 file"
-msgid_plural "%1 files"
+msgid "1 file shown"
+msgid_plural "%1 files shown"
 msgstr[0] "%1 datotek"
 msgstr[1] "%1 datoteka"
 msgstr[2] "%1 datoteki"
 msgstr[3] "%1 datoteke"
 
-#: src/qml/main.qml:194
-#, kde-format
-msgctxt "@info:status"
-msgid "Aborting Scan..."
-msgstr "Prekinjanje preiskovanja …"
-
-#: src/qml/MapPage.qml:37
+#: src/qml/MapPage.qml:49
 #, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
 msgstr "Pojdi na pregled"
 
-#: src/qml/MapPage.qml:45
+#: src/qml/MapPage.qml:57
 #, kde-format
 msgctxt "@action"
 msgid "Up"
 msgstr "Gor"
 
-#: src/qml/MapPage.qml:54
+#: src/qml/MapPage.qml:66
 #, kde-format
 msgctxt "@action"
 msgid "Rescan"
 msgstr "Znova preišči"
 
-#: src/qml/MapPage.qml:63
+#: src/qml/MapPage.qml:75
 #, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "Zaustavi"
 
-#: src/qml/MapPage.qml:71
+#: src/qml/MapPage.qml:83
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "Povečaj"
 
-#: src/qml/MapPage.qml:81
+#: src/qml/MapPage.qml:93
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Pomanjšaj"
 
-#: src/qml/MapPage.qml:114 src/qml/MapPage.qml:237
+#: src/qml/MapPage.qml:126 src/qml/MapPage.qml:249
 #, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "Odpri"
 
-#: src/qml/MapPage.qml:122 src/qml/MapPage.qml:245
+#: src/qml/MapPage.qml:134 src/qml/MapPage.qml:257
 #, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
 msgstr "Tu odpri terminal"
 
-#: src/qml/MapPage.qml:130
+#: src/qml/MapPage.qml:142
 #, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "Tu usredini mapo"
 
-#: src/qml/MapPage.qml:141 src/qml/MapPage.qml:253
+#: src/qml/MapPage.qml:153 src/qml/MapPage.qml:265
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "Dodaj na seznam Ne skeniraj"
 
-#: src/qml/MapPage.qml:149
+#: src/qml/MapPage.qml:161
 #, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Znova preišči"
 
-#: src/qml/MapPage.qml:156 src/qml/MapPage.qml:260
+#: src/qml/MapPage.qml:168 src/qml/MapPage.qml:272
 #, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "Kopiraj na odložišče"
 
-#: src/qml/MapPage.qml:164 src/qml/MapPage.qml:268
+#: src/qml/MapPage.qml:176 src/qml/MapPage.qml:280
 #, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "Izbriši"
 
-#: src/qml/MapPage.qml:321
+#: src/qml/MapPage.qml:333
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -394,7 +399,7 @@ msgstr[1] "%1 Datoteka (%2 %)"
 msgstr[2] "%1 Datoteki (%2 %)"
 msgstr[3] "%1 Datoteke (%2 %)"
 
-#: src/qml/MapPage.qml:323
+#: src/qml/MapPage.qml:335
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -404,13 +409,13 @@ msgstr[1] "%1 datoteka"
 msgstr[2] "%1 datoteki"
 msgstr[3] "%1 datoteke"
 
-#: src/qml/MapPage.qml:327
+#: src/qml/MapPage.qml:339
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "Kliknite za premik v nadrejeno mapo"
 
-#: src/qml/MapPage.qml:546
+#: src/qml/MapPage.qml:558
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -420,7 +425,7 @@ msgstr[1] "%1 Datoteka, %2"
 msgstr[2] "%1 Datoteki, %2"
 msgstr[3] "%1 Datoteke, %2"
 
-#: src/qml/MapPage.qml:555
+#: src/qml/MapPage.qml:567
 #, kde-format
 msgid "No data available"
 msgstr "Podatkov ni na voljo"
@@ -545,6 +550,10 @@ msgstr[2] ""
 msgstr[3] ""
 "\n"
 "%1 datoteke s povprečno velikostjo %2"
+
+#~ msgctxt "@info:status"
+#~ msgid "Aborting Scan..."
+#~ msgstr "Prekinjanje preiskovanja …"
 
 #~ msgctxt "@action"
 #~ msgid "Scan Folder"

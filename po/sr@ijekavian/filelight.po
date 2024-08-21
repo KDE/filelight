@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-10 00:44+0000\n"
+"POT-Creation-Date: 2024-08-21 00:49+0000\n"
 "PO-Revision-Date: 2017-09-28 18:00+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -298,71 +298,70 @@ msgctxt "@action opens about app page"
 msgid "About"
 msgstr ""
 
-#: src/qml/main.qml:117
+#: src/qml/main.qml:173
+#, kde-format
+msgctxt "@info:status"
+msgid "Failed to abort scan"
+msgstr ""
+
+#: src/qml/MapPage.qml:40
 #, fuzzy, kde-format
 #| msgid "No files."
 msgctxt "@info:status"
-msgid "No files."
+msgid "No files shown."
 msgstr "Нема фајлова."
 
-#: src/qml/main.qml:118
+#: src/qml/MapPage.qml:41
 #, fuzzy, kde-format
 #| msgid "1 file"
 #| msgid_plural "%1 files"
 msgctxt "@info:status"
-msgid "1 file"
-msgid_plural "%1 files"
+msgid "1 file shown"
+msgid_plural "%1 files shown"
 msgstr[0] "%1 фајл"
 msgstr[1] "%1 фајла"
 msgstr[2] "%1 фајлова"
 msgstr[3] "%1 фајл"
 
-#: src/qml/main.qml:194
-#, fuzzy, kde-format
-#| msgid "Aborting Scan..."
-msgctxt "@info:status"
-msgid "Aborting Scan..."
-msgstr "Обустављам скенирање..."
-
-#: src/qml/MapPage.qml:37
+#: src/qml/MapPage.qml:49
 #, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
 msgstr ""
 
-#: src/qml/MapPage.qml:45
+#: src/qml/MapPage.qml:57
 #, kde-format
 msgctxt "@action"
 msgid "Up"
 msgstr ""
 
-#: src/qml/MapPage.qml:54
+#: src/qml/MapPage.qml:66
 #, fuzzy, kde-format
 #| msgid "Rescan"
 msgctxt "@action"
 msgid "Rescan"
 msgstr "Скенирај поново"
 
-#: src/qml/MapPage.qml:63
+#: src/qml/MapPage.qml:75
 #, fuzzy, kde-format
 #| msgid "Stop"
 msgctxt "@action"
 msgid "Stop"
 msgstr "Заустави"
 
-#: src/qml/MapPage.qml:71
+#: src/qml/MapPage.qml:83
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr ""
 
-#: src/qml/MapPage.qml:81
+#: src/qml/MapPage.qml:93
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr ""
 
-#: src/qml/MapPage.qml:114 src/qml/MapPage.qml:237
+#: src/qml/MapPage.qml:126 src/qml/MapPage.qml:249
 #, fuzzy, kde-format
 #| msgctxt "Scan/open the path of the selected element"
 #| msgid "&Open"
@@ -370,48 +369,48 @@ msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "&Отвори"
 
-#: src/qml/MapPage.qml:122 src/qml/MapPage.qml:245
+#: src/qml/MapPage.qml:134 src/qml/MapPage.qml:257
 #, fuzzy, kde-format
 #| msgid "Open &Terminal Here"
 msgctxt "@action"
 msgid "Open Terminal Here"
 msgstr "Отвори &терминал овдје"
 
-#: src/qml/MapPage.qml:130
+#: src/qml/MapPage.qml:142
 #, fuzzy, kde-format
 #| msgid "&Center Map Here"
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "&Центрирај мапу овдје"
 
-#: src/qml/MapPage.qml:141 src/qml/MapPage.qml:253
+#: src/qml/MapPage.qml:153 src/qml/MapPage.qml:265
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr ""
 
-#: src/qml/MapPage.qml:149
+#: src/qml/MapPage.qml:161
 #, fuzzy, kde-format
 #| msgid "Rescan"
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Скенирај поново"
 
-#: src/qml/MapPage.qml:156 src/qml/MapPage.qml:260
+#: src/qml/MapPage.qml:168 src/qml/MapPage.qml:272
 #, fuzzy, kde-format
 #| msgid "&Copy to clipboard"
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "&Копирај у клипборд"
 
-#: src/qml/MapPage.qml:164 src/qml/MapPage.qml:268
+#: src/qml/MapPage.qml:176 src/qml/MapPage.qml:280
 #, fuzzy, kde-format
 #| msgid "&Delete"
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "&Обриши"
 
-#: src/qml/MapPage.qml:321
+#: src/qml/MapPage.qml:333
 #, fuzzy, kde-format
 #| msgid "%1 File"
 #| msgid_plural "%1 Files"
@@ -423,7 +422,7 @@ msgstr[1] "%1 фајла"
 msgstr[2] "%1 фајлова"
 msgstr[3] "%1 фајл"
 
-#: src/qml/MapPage.qml:323
+#: src/qml/MapPage.qml:335
 #, fuzzy, kde-format
 #| msgid "%1 File"
 #| msgid_plural "%1 Files"
@@ -435,7 +434,7 @@ msgstr[1] "%1 фајла"
 msgstr[2] "%1 фајлова"
 msgstr[3] "%1 фајл"
 
-#: src/qml/MapPage.qml:327
+#: src/qml/MapPage.qml:339
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -446,7 +445,7 @@ msgstr ""
 "\n"
 "Кликните за одлазак на родитељску фасциклу"
 
-#: src/qml/MapPage.qml:546
+#: src/qml/MapPage.qml:558
 #, fuzzy, kde-format
 #| msgid "%1 File"
 #| msgid_plural "%1 Files"
@@ -458,7 +457,7 @@ msgstr[1] "%1 фајла"
 msgstr[2] "%1 фајлова"
 msgstr[3] "%1 фајл"
 
-#: src/qml/MapPage.qml:555
+#: src/qml/MapPage.qml:567
 #, kde-format
 msgid "No data available"
 msgstr ""
@@ -588,6 +587,12 @@ msgstr[0] "%1 фајл, просечне величине %2"
 msgstr[1] "%1 фајла, просечне величине %2"
 msgstr[2] "%1 фајлова, просечне величине %2"
 msgstr[3] "%1 фајл, просечне величине %2"
+
+#, fuzzy
+#~| msgid "Aborting Scan..."
+#~ msgctxt "@info:status"
+#~ msgid "Aborting Scan..."
+#~ msgstr "Обустављам скенирање..."
 
 #, fuzzy
 #~| msgid "Scan Folder"
