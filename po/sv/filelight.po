@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-21 00:49+0000\n"
-"PO-Revision-Date: 2024-07-18 17:30+0200\n"
+"PO-Revision-Date: 2024-08-21 08:08+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -286,26 +286,21 @@ msgstr "Om"
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
-msgstr ""
+msgstr "Misslyckades avbryta sökning"
 
 #: src/qml/MapPage.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "No files."
+#, kde-format
 msgctxt "@info:status"
 msgid "No files shown."
-msgstr "Inga filer."
+msgstr "Inga filer visas."
 
 #: src/qml/MapPage.qml:41
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "1 file shown"
 msgid_plural "%1 files shown"
-msgstr[0] "1 fil"
-msgstr[1] "%1 filer"
+msgstr[0] "1 fil visas"
+msgstr[1] "%1 filer visas"
 
 #: src/qml/MapPage.qml:49
 #, kde-format

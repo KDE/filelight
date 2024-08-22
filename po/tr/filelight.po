@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdeutils-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-21 00:49+0000\n"
-"PO-Revision-Date: 2024-07-16 13:48+0300\n"
+"PO-Revision-Date: 2024-08-21 12:01+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.07.70\n"
+"X-Generator: Lokalize 24.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -48,7 +48,7 @@ msgid ""
 "<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
 "b> deleted.</qt>"
 msgstr ""
-"<qt> <i>“%1”</i> konumundaki klasör <b>özyineli</b> ve <b>kalıcı olarak</b> "
+"<qt><i>“%1”</i> konumundaki klasör <b>özyineli</b> ve <b>kalıcı olarak</b> "
 "silinecek.</qt>"
 
 #: src/contextMenuContext.cpp:64
@@ -79,9 +79,9 @@ msgid ""
 "(C) 2008-2014 Martin Sandsmark\n"
 "(C) 2017-2022 Harald Sitter"
 msgstr ""
-"(C) 2006 Max Howell\n"
-"(C) 2008–2014 Martin Sandsmark\n"
-"(C) 2017–2022 Harald Sitter"
+"© 2006 Max Howell\n"
+"© 2008–2014 Martin Sandsmark\n"
+"© 2017–2022 Harald Sitter"
 
 #: src/main.cpp:91
 #, kde-format
@@ -289,26 +289,21 @@ msgstr "Hakkında"
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
-msgstr ""
+msgstr "Tarama iptal edilemedi"
 
 #: src/qml/MapPage.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "No files."
+#, kde-format
 msgctxt "@info:status"
 msgid "No files shown."
-msgstr "Dosya yok."
+msgstr "Gösterilen dosya yok."
 
 #: src/qml/MapPage.qml:41
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "1 file shown"
 msgid_plural "%1 files shown"
-msgstr[0] "1 dosya"
-msgstr[1] "%1 dosya"
+msgstr[0] "1 dosya gösteriliyor"
+msgstr[1] "%1 dosya gösteriliyor"
 
 #: src/qml/MapPage.qml:49
 #, kde-format

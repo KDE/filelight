@@ -290,22 +290,17 @@ msgid "Failed to abort scan"
 msgstr ""
 
 #: src/qml/MapPage.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "No files."
+#, kde-format
 msgctxt "@info:status"
 msgid "No files shown."
-msgstr "没有文件。"
+msgstr ""
 
 #: src/qml/MapPage.qml:41
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "1 file shown"
 msgid_plural "%1 files shown"
-msgstr[0] "%1 个文件"
+msgstr[0] ""
 
 #: src/qml/MapPage.qml:49
 #, kde-format
@@ -528,7 +523,3 @@ msgid_plural ""
 msgstr[0] ""
 "\n"
 "%1 个文件，平均大小为 %2"
-
-#~ msgctxt "@info:status"
-#~ msgid "Aborting Scan..."
-#~ msgstr "正在中止扫描..."

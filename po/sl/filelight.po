@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-21 00:49+0000\n"
-"PO-Revision-Date: 2024-07-16 06:46+0200\n"
+"PO-Revision-Date: 2024-08-21 07:41+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -288,28 +288,23 @@ msgstr "O programu"
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
-msgstr ""
+msgstr "Neuspela prekinitev prečesavanja"
 
 #: src/qml/MapPage.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "No files."
+#, kde-format
 msgctxt "@info:status"
 msgid "No files shown."
-msgstr "Ni datotek."
+msgstr "Ni prikazanih datotek."
 
 #: src/qml/MapPage.qml:41
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "1 file shown"
 msgid_plural "%1 files shown"
-msgstr[0] "%1 datotek"
-msgstr[1] "%1 datoteka"
-msgstr[2] "%1 datoteki"
-msgstr[3] "%1 datoteke"
+msgstr[0] "prikazano %1 datotek"
+msgstr[1] "prikazana %1 datoteka"
+msgstr[2] "prikazani %1 datoteki"
+msgstr[3] "prikazane %1 datoteke"
 
 #: src/qml/MapPage.qml:49
 #, kde-format

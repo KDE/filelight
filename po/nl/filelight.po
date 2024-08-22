@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-21 00:49+0000\n"
-"PO-Revision-Date: 2024-07-16 12:56+0200\n"
+"PO-Revision-Date: 2024-08-21 11:03+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -291,26 +291,21 @@ msgstr "Info over"
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
-msgstr ""
+msgstr "Scannen afbreken is mislukt"
 
 #: src/qml/MapPage.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "No files."
+#, kde-format
 msgctxt "@info:status"
 msgid "No files shown."
-msgstr "Geen bestanden."
+msgstr "Geen bestanden getoond."
 
 #: src/qml/MapPage.qml:41
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "1 file shown"
 msgid_plural "%1 files shown"
-msgstr[0] "Bestand"
-msgstr[1] "%1 bestanden"
+msgstr[0] "1 bestand getoond"
+msgstr[1] "%1 bestanden getoond"
 
 #: src/qml/MapPage.qml:49
 #, kde-format

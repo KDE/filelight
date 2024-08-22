@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-21 00:49+0000\n"
-"PO-Revision-Date: 2024-07-16 10:53+0200\n"
+"PO-Revision-Date: 2024-08-21 12:20+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -289,26 +289,21 @@ msgstr "Honi buruz"
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
-msgstr ""
+msgstr "Azterketa uztea huts egin du"
 
 #: src/qml/MapPage.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "No files."
+#, kde-format
 msgctxt "@info:status"
 msgid "No files shown."
-msgstr "Fitxategirik ez."
+msgstr "Ez da fitxategirik erakusten."
 
 #: src/qml/MapPage.qml:41
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "1 file shown"
 msgid_plural "%1 files shown"
-msgstr[0] "fitxategi 1"
-msgstr[1] "%1 fitxategi"
+msgstr[0] "fitxategi 1 erakusten da"
+msgstr[1] "%1 fitxategi erakusten dira"
 
 #: src/qml/MapPage.qml:49
 #, kde-format
