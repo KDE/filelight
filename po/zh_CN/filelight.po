@@ -287,20 +287,20 @@ msgstr "关于"
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
-msgstr ""
+msgstr "中止扫描失败"
 
 #: src/qml/MapPage.qml:40
 #, kde-format
 msgctxt "@info:status"
 msgid "No files shown."
-msgstr ""
+msgstr "没有显示文件。"
 
 #: src/qml/MapPage.qml:41
 #, kde-format
 msgctxt "@info:status"
 msgid "1 file shown"
 msgid_plural "%1 files shown"
-msgstr[0] ""
+msgstr[0] "显示了 %1 个文件"
 
 #: src/qml/MapPage.qml:49
 #, kde-format
