@@ -73,12 +73,9 @@ if(BUILD_TESTING)
     add_subdirectory(autotests)
 endif()
 
-if (KF6DocTools_FOUND)
-    add_subdirectory(doc)
-endif()
-
 ki18n_install(po)
 if (KF6DocTools_FOUND)
+    add_subdirectory(doc)
     kdoctools_install(po)
 endif()
 
