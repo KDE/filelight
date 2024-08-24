@@ -533,7 +533,3 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 filer, med snittstorleik %2"
-
-#~ msgctxt "@info:status"
-#~ msgid "Aborting Scan..."
-#~ msgstr "Avbryt søk …"

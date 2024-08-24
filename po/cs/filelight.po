@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-21 00:49+0000\n"
-"PO-Revision-Date: 2024-07-16 15:34+0200\n"
+"PO-Revision-Date: 2024-08-21 14:57+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -192,7 +192,7 @@ msgstr "Filelight přijímá pouze úplné cesty"
 #: src/mainContext.cpp:188
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "např. /%1"
 
 #: src/mainContext.cpp:190
 #, kde-format
@@ -288,24 +288,19 @@ msgid "Failed to abort scan"
 msgstr ""
 
 #: src/qml/MapPage.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "No files."
+#, kde-format
 msgctxt "@info:status"
 msgid "No files shown."
-msgstr "Žádné soubory."
+msgstr "Nebyly zobrazeny žádné soubory."
 
 #: src/qml/MapPage.qml:41
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "1 file shown"
 msgid_plural "%1 files shown"
-msgstr[0] "1 soubor"
-msgstr[1] "%1 soubory"
-msgstr[2] "%1 souborů"
+msgstr[0] "Zobrazen 1 soubor"
+msgstr[1] "Zobrazeny %1 soubory"
+msgstr[2] "Zobrazeno %1 souborů"
 
 #: src/qml/MapPage.qml:49
 #, kde-format
@@ -538,7 +533,3 @@ msgstr[1] ""
 msgstr[2] ""
 "\n"
 "%1 souborů, s průměrnou velikostí %2"
-
-#~ msgctxt "@info:status"
-#~ msgid "Aborting Scan..."
-#~ msgstr "Přerušuje se zkoumání..."
