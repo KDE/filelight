@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-21 00:49+0000\n"
-"PO-Revision-Date: 2024-07-21 07:00+0200\n"
+"PO-Revision-Date: 2024-08-24 11:13+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -287,27 +287,22 @@ msgstr "O programie"
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
-msgstr ""
+msgstr "Nie udało się przerwać przeszukiwania"
 
 #: src/qml/MapPage.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "No files."
+#, kde-format
 msgctxt "@info:status"
 msgid "No files shown."
-msgstr "Brak plików."
+msgstr "Nie pokazano żadnych plików."
 
 #: src/qml/MapPage.qml:41
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "1 file shown"
 msgid_plural "%1 files shown"
-msgstr[0] "1 plik"
-msgstr[1] "%1 pliki"
-msgstr[2] "%1 plików"
+msgstr[0] "Pokazano 1 plik"
+msgstr[1] "Pokazano %1 pliki"
+msgstr[2] "Pokazano %1 plików"
 
 #: src/qml/MapPage.qml:49
 #, kde-format
@@ -361,7 +356,7 @@ msgstr "Otwórz tutaj terminal"
 #, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
-msgstr "Tutaj wyśrodkuj mapę"
+msgstr "Wyśrodkuj mapę tutaj"
 
 #: src/qml/MapPage.qml:153 src/qml/MapPage.qml:265
 #, kde-format
