@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-19 00:42+0000\n"
-"PO-Revision-Date: 2024-07-21 07:00+0200\n"
+"PO-Revision-Date: 2024-08-24 11:13+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -356,7 +356,7 @@ msgstr "Otwórz tutaj terminal"
 #, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
-msgstr "Tutaj wyśrodkuj mapę"
+msgstr "Wyśrodkuj mapę tutaj"
 
 #: src/qml/MapPage.qml:141 src/qml/MapPage.qml:253
 #, kde-format
