@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-21 00:49+0000\n"
-"PO-Revision-Date: 2024-04-28 20:19+0200\n"
+"PO-Revision-Date: 2024-08-21 21:31+0200\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -17,17 +17,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Johannes Obermayr"
+msgstr "Deutsches KDE-Übersetzerteam"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "johannesobermayr@gmx.de"
+msgstr "kde-i18n-de@kde.org"
 
 #: src/Config.cpp:57
 #, kde-format
@@ -59,11 +59,10 @@ msgid "&Delete"
 msgstr "&Löschen"
 
 #: src/contextMenuContext.cpp:92
-#, fuzzy, kde-format
-#| msgid "Error while deleting"
+#, kde-format
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
-msgstr "Beim Löschen ist ein Fehler aufgetreten"
+msgstr "Beim Löschen ist ein Fehler aufgetreten: %1"
 
 #: src/main.cpp:84
 #, kde-format
@@ -169,7 +168,7 @@ msgstr "Pfad oder Adresse zum Einlesen"
 #: src/main.cpp:107
 #, kde-format
 msgid "[url]"
-msgstr "[url]"
+msgstr "[Adresse]"
 
 #: src/mainContext.cpp:134
 #, kde-format
@@ -184,7 +183,7 @@ msgstr "Die eingegebene Adresse kann nicht eingelesen werden"
 #: src/mainContext.cpp:186
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "Sie ist ungültig."
 
 #: src/mainContext.cpp:188
 #, kde-format
@@ -194,18 +193,17 @@ msgstr "Filelight benötigt absolute Pfade"
 #: src/mainContext.cpp:188
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "z. B. /%1"
 
 #: src/mainContext.cpp:190
 #, kde-format
 msgid "Folder not found: %1"
-msgstr "Ordner nicht gefunden: %1"
+msgstr "Der Ordner %1 kann nicht gefunden werden."
 
 #: src/mainContext.cpp:192
-#, fuzzy, kde-format
-#| msgid "Unable to create part widget."
+#, kde-format
 msgid "Unable to enter: %1"
-msgstr "Das Teilmodul kann nicht erstellt werden."
+msgstr "%1 kann nicht geöffnet werden."
 
 #: src/mainContext.cpp:192
 #, kde-format
@@ -231,32 +229,28 @@ msgid "Help"
 msgstr "Hilfe"
 
 #: src/qml/main.qml:42
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Home Folder"
+#, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
-msgstr "Persönlichen Ordner einlesen"
+msgstr "Persönlicher Ordner"
 
 #: src/qml/main.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Root Folder"
+#, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
-msgstr "Basisordner einlesen"
+msgstr "Basisordner"
 
 #: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
-msgstr ""
+msgstr "Ordner auswählen …"
 
 #: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
-msgstr ""
+msgstr "Anderer Ordner …"
 
 #: src/qml/main.qml:63
 #, kde-format
@@ -445,6 +439,9 @@ msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space. "
 "Choose a folder to proceed:"
 msgstr ""
+"Filelight analysiert die Festplattenbelegung damit Sie übermäßigen "
+"Speicherverbrauch erkennen können. Bitte wählen Sie einen Ordner für die "
+"Analyse:"
 
 #: src/qml/SettingsPage.qml:22
 #, kde-format

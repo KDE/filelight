@@ -289,17 +289,12 @@ msgstr ""
 
 #: src/qml/MapPage.qml:40
 #, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "No files."
 msgctxt "@info:status"
 msgid "No files shown."
 msgstr "Ingen filer."
 
 #: src/qml/MapPage.qml:41
 #, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "1 file"
-#| msgid_plural "%1 files"
 msgctxt "@info:status"
 msgid "1 file shown"
 msgid_plural "%1 files shown"
