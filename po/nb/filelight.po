@@ -60,7 +60,6 @@ msgstr "&Slett"
 
 #: src/contextMenuContext.cpp:92
 #, fuzzy, kde-format
-#| msgid "Error while deleting"
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "Feil ved sletting"
@@ -175,7 +174,6 @@ msgstr "Velg mappe som skal skannes"
 
 #: src/mainContext.cpp:186
 #, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
 msgid "The entered URL cannot be parsed"
 msgstr "Den URL-en som er oppgitt kan ikke tolkes. Den er ugyldig."
 
@@ -186,7 +184,6 @@ msgstr ""
 
 #: src/mainContext.cpp:188
 #, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight aksepterer bare absolutte stier, f.eks. /%1"
 
@@ -207,9 +204,6 @@ msgstr ""
 
 #: src/mainContext.cpp:192
 #, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
 msgid "You do not have access rights to this location."
 msgstr ""
 "Kan ikke gå inn i: %1\n"
