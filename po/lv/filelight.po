@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-21 00:49+0000\n"
-"PO-Revision-Date: 2024-05-28 16:30+0300\n"
+"PO-Revision-Date: 2024-08-22 15:39+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -228,32 +228,28 @@ msgid "Help"
 msgstr "Palīdzība"
 
 #: src/qml/main.qml:42
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Home Folder"
+#, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
-msgstr "Skenēt mājas mapi"
+msgstr "Mājas mape"
 
 #: src/qml/main.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Root Folder"
+#, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
-msgstr "Skenēt saknes mapi"
+msgstr "Saknes mape"
 
 #: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
-msgstr ""
+msgstr "Izvēlēties mapi…"
 
 #: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
-msgstr ""
+msgstr "Cita mape…"
 
 #: src/qml/main.qml:63
 #, kde-format
@@ -289,33 +285,28 @@ msgstr "Par"
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
-msgstr ""
+msgstr "Neizdevās izbeigt skenēšanu"
 
 #: src/qml/MapPage.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "No files."
+#, kde-format
 msgctxt "@info:status"
 msgid "No files shown."
-msgstr "Nav datņu."
+msgstr "Nav datņu, ko parādīt."
 
 #: src/qml/MapPage.qml:41
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "1 file shown"
 msgid_plural "%1 files shown"
-msgstr[0] "%1 datne"
-msgstr[1] "%1 datnes"
-msgstr[2] "%1 datņu"
+msgstr[0] "Parādīta %1 datne"
+msgstr[1] "Parādītas %1 datnes"
+msgstr[2] "Parādītas %1 datnes"
 
 #: src/qml/MapPage.qml:49
 #, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
-msgstr "Doties uz pārskatu"
+msgstr "Iet uz pārskatu"
 
 #: src/qml/MapPage.qml:57
 #, kde-format
@@ -446,6 +437,8 @@ msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space. "
 "Choose a folder to proceed:"
 msgstr ""
+"„Filelight“ analizē diska lietojumu, ļaujot redzēt, kas diskā aizņem daudz "
+"vietas. Lai turpinātu, izvēlieties mapi:"
 
 #: src/qml/SettingsPage.qml:22
 #, kde-format
