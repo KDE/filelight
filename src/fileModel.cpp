@@ -13,10 +13,8 @@ namespace Filelight
 
 void FileModel::setTree(const std::shared_ptr<Folder> &tree)
 {
-    if (m_tree == tree) {
-        return;
-    }
-
+    // NOTE: even reset the model if the root hasn't changed! When deleting an item in the tree the root doesn't change
+    // but the tree will be different.
     beginResetModel();
     m_tree = tree;
     Q_EMIT treeChanged();
