@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-19 00:42+0000\n"
-"PO-Revision-Date: 2024-08-26 12:07+0200\n"
+"PO-Revision-Date: 2024-08-31 12:19+0200\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
 "Language: sk\n"
@@ -59,11 +59,10 @@ msgid "&Delete"
 msgstr "O&dstrániť"
 
 #: src/contextMenuContext.cpp:92
-#, fuzzy, kde-format
-#| msgid "Error while deleting"
+#, kde-format
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
-msgstr "Chyba pri odstraňovaní"
+msgstr "Chyba pri odstraňovaní: %1"
 
 #: src/main.cpp:85
 #, kde-format
@@ -245,13 +244,13 @@ msgstr "Koreňový priečinok"
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
-msgstr ""
+msgstr "Vybrať priečinok…"
 
 #: src/qml/main.qml:51
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
-msgstr ""
+msgstr "Iný priečinok..."
 
 #: src/qml/main.qml:58
 #, kde-format
