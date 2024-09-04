@@ -32,6 +32,7 @@ Shape {
     property url url: segment ? segment.url() : ""
 
     containsMode: Shape.FillContains
+    preferredRendererType: Shape.CurveRenderer
 
     ShapeToolTip {
         id: tooltip
