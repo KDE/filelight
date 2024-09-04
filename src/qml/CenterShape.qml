@@ -26,13 +26,27 @@ Shape {
     property alias tooltipText: tooltip.text
     property alias showTooltip: tooltip.visible
 
-    property alias fillColor: path.fillColor
+    property color fillColor
 
     property string segmentUuid: segment.uuid
     property url url: segment ? segment.url() : ""
 
     containsMode: Shape.FillContains
     preferredRendererType: Shape.CurveRenderer
+    asynchronous: true
+
+    function forceUpdate() {
+        path.fillColor = "transparent"
+        path.fillColor = Qt.binding(function() { return shape.fillColor })
+    }
+
+    onStatusChanged: {
+        // Hack for https://bugreports.qt.io/browse/QTBUG-128637
+        // Force an update by briefly switching the colors around.
+        if (shape.status === Shape.Ready) {
+            Qt.callLater(forceUpdate)
+        }
+    }
 
     ShapeToolTip {
         id: tooltip
@@ -48,6 +62,7 @@ Shape {
         required property var startAngle
         required property var sweepAngle
 
+        fillColor: shape.fillColor
         strokeColor: Kirigami.Theme.textColor
         strokeWidth: Kirigami.Units.smallSpacing / 4
         capStyle: ShapePath.FlatCap
