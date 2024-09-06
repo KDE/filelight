@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-21 00:49+0000\n"
-"PO-Revision-Date: 2024-07-28 12:55+0400\n"
+"PO-Revision-Date: 2024-09-05 10:11+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -283,30 +283,25 @@ msgstr "عن"
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
-msgstr ""
+msgstr "فشلت عملية إجهاض المسح"
 
 #: src/qml/MapPage.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "No files."
+#, kde-format
 msgctxt "@info:status"
 msgid "No files shown."
-msgstr "لم يجد ملفّات"
+msgstr "لم يعرض أي ملفات."
 
 #: src/qml/MapPage.qml:41
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "1 file shown"
 msgid_plural "%1 files shown"
-msgstr[0] "ملف"
-msgstr[1] "ملفّ واحد"
-msgstr[2] "ملفّان"
-msgstr[3] "%1 ملفّات"
-msgstr[4] "%1 ملفّاً"
-msgstr[5] "%1 ملفّ"
+msgstr[0] "لا يوجد ملف"
+msgstr[1] "ملفّ واحد معروض"
+msgstr[2] "ملفّان معروضان"
+msgstr[3] "%1 ملفّات معروضة"
+msgstr[4] "%1 ملفًّا معروضًا"
+msgstr[5] "%1 ملفّ معروض"
 
 #: src/qml/MapPage.qml:49
 #, kde-format
