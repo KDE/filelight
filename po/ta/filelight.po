@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-21 00:49+0000\n"
-"PO-Revision-Date: 2024-05-19 16:50+0530\n"
+"PO-Revision-Date: 2024-09-08 12:52+0200\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -227,32 +227,28 @@ msgid "Help"
 msgstr "உதவி"
 
 #: src/qml/main.qml:42
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Home Folder"
+#, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
-msgstr "முகப்பு அடைவை ஆராய்"
+msgstr "முகப்பு அடைவு"
 
 #: src/qml/main.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Root Folder"
+#, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
-msgstr "ரூட் அடைவை ஆராய்"
+msgstr "ரூட் அடைவு"
 
 #: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
-msgstr ""
+msgstr "அடைவைத் தேர்ந்தெடு…"
 
 #: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
-msgstr ""
+msgstr "வேறு அடைவு…"
 
 #: src/qml/main.qml:63
 #, kde-format
@@ -288,26 +284,21 @@ msgstr "இதுபற்றி"
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
-msgstr ""
+msgstr "ஆராய்வதை ரத்து செய்ய முடியவில்லை"
 
 #: src/qml/MapPage.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "No files."
+#, kde-format
 msgctxt "@info:status"
 msgid "No files shown."
-msgstr "கோப்புகள் இல்லை."
+msgstr "எந்த கோப்பும் காட்டப்படவில்லை."
 
 #: src/qml/MapPage.qml:41
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "1 file shown"
 msgid_plural "%1 files shown"
-msgstr[0] "1 கோப்பு"
-msgstr[1] "%1 கோப்புகள்"
+msgstr[0] "1 கோப்பு காட்டப்பட்டது"
+msgstr[1] "%1 கோப்புகள் காட்டப்பட்டன"
 
 #: src/qml/MapPage.qml:49
 #, kde-format
@@ -441,6 +432,8 @@ msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space. "
 "Choose a folder to proceed:"
 msgstr ""
+"சேமிப்பக இடத்தை அடைப்பது எதுவென்று கண்டறிய உதவும் விதத்தில் ஃபைல்-லைட் வட்டு பயன்பாட்டை "
+"காட்டும். தொடர ஓர் அடைவைத் தேர்ந்தெடுக்கவும்:"
 
 #: src/qml/SettingsPage.qml:22
 #, kde-format
