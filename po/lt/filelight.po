@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-21 00:49+0000\n"
-"PO-Revision-Date: 2024-07-27 22:39+0300\n"
+"PO-Revision-Date: 2024-09-14 22:45+0300\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -289,28 +289,23 @@ msgstr "Apie"
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
-msgstr ""
+msgstr "Nepavyko nutraukti skenavimo"
 
 #: src/qml/MapPage.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "No files."
+#, kde-format
 msgctxt "@info:status"
 msgid "No files shown."
-msgstr "Nėra failų."
+msgstr "Nerodoma jokių failų."
 
 #: src/qml/MapPage.qml:41
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "1 file shown"
 msgid_plural "%1 files shown"
-msgstr[0] "1 failas"
-msgstr[1] "%1 failai"
-msgstr[2] "%1 failų"
-msgstr[3] "%1 failas"
+msgstr[0] "Rodomas 1 failas"
+msgstr[1] "Rodomi %1 failai"
+msgstr[2] "Rodoma %1 failų"
+msgstr[3] "Rodomas %1 failas"
 
 #: src/qml/MapPage.qml:49
 #, kde-format
