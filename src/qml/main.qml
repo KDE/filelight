@@ -26,7 +26,7 @@ Kirigami.ApplicationWindow {
     }
 
     KConfig.WindowStateSaver {
-        configGroupName: "Main"
+        configGroupName: "MainWindow"
     }
 
     WindowThemer {
