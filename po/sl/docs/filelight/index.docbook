@@ -1,0 +1,604 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY filelight "<application
+>Filelight</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Slovenian "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="filelight" lang="&language;">
+
+<bookinfo>
+   <title
+>Priročnik za &filelight;</title>
+   <authorgroup>
+      <author
+><firstname
+>Max</firstname
+> <surname
+>Howell</surname
+> <affiliation
+><address
+><email
+>max.howell@methylblue.com</email
+></address
+></affiliation>
+      </author>
+      <author
+><firstname
+>Martin</firstname
+> <surname
+>Sandsmark</surname
+> <affiliation
+><address
+><email
+>martin.sandsmark@kde.org</email
+></address
+></affiliation>
+      </author>
+      <othercredit role="translator"
+><firstname
+>Peter</firstname
+><surname
+>Žaucer</surname
+><affiliation
+><address
+><email
+>peter.zaucer@gmail.com</email
+></address
+></affiliation
+><contrib
+>Prevod</contrib
+></othercredit
+> 
+   </authorgroup>
+   <copyright
+><year
+>2006</year
+><holder
+>Max Howell</holder
+></copyright>
+   <copyright
+><year
+>2009</year
+><holder
+>Martin Sandsmark</holder
+></copyright>
+   <!-- Translators: put here the copyright notice of the translation -->
+   <legalnotice
+>&FDLNotice;</legalnotice>
+   <date
+>04.08.2015</date>
+   <releaseinfo
+>&filelight; 1.21 (Applications 15.08)</releaseinfo>
+   <abstract
+><para
+>Prikaži uporabo diska in izbriši neuporabljene datoteke.</para
+></abstract>
+   <!-- These may be used by search engines -->
+   <keywordset>
+      <keyword
+>KDE</keyword>
+      <keyword
+>Filelight</keyword>
+      <keyword
+>du</keyword>
+      <keyword
+>uporaba diska</keyword>
+   </keywordset>
+</bookinfo>
+
+
+<chapter id="introduction">
+   <title
+>Uvod</title>
+   <screenshot>
+      <screeninfo
+>&filelight; 1.20 Posnetek zaslona</screeninfo>
+      <mediaobject>
+         <imageobject
+><imagedata fileref="radial_map.png" format="PNG"/></imageobject>
+         <textobject
+><phrase
+>Posnetek zaslona</phrase
+></textobject>
+      </mediaobject>
+   </screenshot>
+   <para
+>&filelight; vam omogoča, da hitro razumete, kje točno se uporablja vaš prostor na disku, tako da grafično predstavite svoj datotečni sistem kot niz koncentričnih segmentiranih obročev. Z njim lahko poiščete vroče točke uporabe diska in nato s temi področji upravljate s programom &dolphin; ali &konqueror;.</para>
+</chapter>
+
+
+<chapter id="configuring">
+<title
+>Konfiguriranje &filelight;a</title>
+
+<para
+>&filelight; pogovorno okno z nastavitvami ima dva zavihka za konfiguracijo &filelight; opcij. Zavihka sta <guilabel
+>Skeniranje</guilabel
+> in <guilabel
+>Videz</guilabel
+>. Spodaj je opis zavihkov z nastavitvami. &filelight; pogovorno okno z nastavitvami najdete s klikom na <menuchoice
+><guimenu
+>Nastavitve</guimenu
+><guimenuitem
+>Konfiguriraj Filelight</guimenuitem
+></menuchoice
+>.</para>
+
+<sect1 id="scanning">
+<title
+>Skeniranje</title>
+
+<screenshot>
+<screeninfo
+>Skeniranje posnetka zaslona</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_scan.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Posnetek zaslona</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Zavihek skeniranja vam omogoča, da konfigurirate, kako &filelight; pregleduje mape. <guilabel
+> Ne pregleduj teh map</guilabel
+> se uporablja za izključitev določenih map iz pregleda. Ta možnost je zelo uporabna za preskakovanje map, za katere morda nimate dovoljenj za branje, ali map, ki so del navideznega datotečnega sistema, kot je /proc. Če želite dodati mapo na seznam, kliknite gumb <guibutton
+>Dodaj...</guibutton
+>, s tem se bo odprlo pogovorno okno, v katerem lahko v drevesnem pogledu izberete mapo po svoji izbiri. Če želite odstraniti mapo, preprosto izberite mapo po vaši izbiri in kliknite gumb <guibutton
+>Odstrani</guibutton
+>.</para>
+<para
+>Uporaba <guilabel
+>Skeniraj prek meja datotečnega sistema</guilabel
+> omogoča skeniranje vstopa v mape, ki so del drugih datotečnih sistemov. Na primer, če ni označeno, bo to običajno preprečilo pregledovanje vsebine <filename class="directory"
+>/mnt</filename
+>, če začnete skenirati s korensko mapo <filename class="directory"
+>/</filename 
+>. Pregled oddaljenih datotečnih sistemov, npr. namestitve NFS ali Samba lahko ustvarijo veliko omrežnega prometa. Če želite preprečiti njihovo skeniranje, označite <guilabel
+>Izključi oddaljene datotečne sisteme</guilabel
+>. Naslednja možnost <guilabel
+>Izključi izmenljive medije</guilabel
+> prepreči &filelight; iz optičnega branja izmenljivih medijev (&CD-ROM;ov).</para>
+</sect1>
+
+<sect1 id="appearance">
+<title
+>Videz</title>
+
+<screenshot>
+<screeninfo
+>Posnetek zaslona videza</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_appear.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Posnetek zaslona</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Zavihek <guilabel
+>Videz</guilabel
+> vam omogoča, da konfigurirate način &filelight; izgleda.</para>
+<para
+>Razdelek <guilabel
+>Barvna shema</guilabel
+> se uporablja za izbiro barvne sheme za &filelight;. Barvne sheme so <guilabel
+>Mavrica</guilabel
+>, <guilabel
+>Sistemske barve</guilabel
+> in <guilabel
+>Visok kontrast</guilabel
+>. Na voljo je tudi drsnik <guilabel
+>Kontrast</guilabel
+> za prilagoditev kontrasta obročnih segmentov za lažji ogled.</para>
+<para
+>Potrditveno polje <guilabel
+>Uporabi anti-aliasing</guilabel
+> se uporablja za omogočanje uporabe anti-aliasinga v &filelight; pogledu. Če izberete to možnost, bodo segmenti prstanov videti veliko čistejši.</para>
+<para
+>Potrditveno polje <guilabel
+>Spreminjanje velikosti pisave oznak</guilabel
+> je uporabno, če imate datoteke ali mape z dolgimi imeni. Ta možnost bo spremenila velikost pisave, da se bo bolje prilegala pogledu. Ko je ta možnost omogočena, postane vrtilno polje <guilabel
+>Najmanjša velikost pisave</guilabel
+> na voljo za izbiro najmanjše velikosti pisave za prilagajanje. </para>
+<para
+>Možnost <guilabel
+>Pokaži majhne datoteke</guilabel
+> je privzeto onemogočena, saj majhne datoteke ponavadi zamašijo &filelight; pogled. Omogočite to možnost, če želite, da so vaše majhne datoteke vključene v &filelight; pogled. Vse te datoteke so združene v en sam <quote
+>več-segment</quote
+>.</para>
+
+</sect1>
+</chapter>
+
+
+<chapter id="using">
+<title
+>Uporaba &filelight;a</title>
+
+<sect1 id="starting">
+<title
+>Zagon &filelight;a</title>
+<para
+>&filelight; lahko zaženete iz zaganjalnika aplikacij ali iz ukazne vrstice</para>
+
+<sect2 id="starting-from-the-menu">
+<title
+>Iz zaganjalnika aplikacij</title>
+<para
+>Odprite meni aplikacije in premaknite kazalec navzgor po meniju do menijske postavke <guimenu
+>Pripomočki</guimenu
+>. Izberite <guimenuitem
+>&filelight;</guimenuitem
+>. </para>
+</sect2>
+
+<sect2 id="starting-from-the-command-line">
+<title
+>Iz ukazne vrstice</title>
+<para
+>Lahko zaženete &filelight; tako, da vnesete njegovo ime v ukazno vrstico. Če mu daste ime mape, kot je prikazano v spodnjem primeru, bo pregledal to mapo. </para>
+<informalexample>
+<screen
+><prompt
+>%</prompt
+><userinput
+><command
+>filelight</command
+> <option
+><replaceable
+>/home</replaceable
+></option
+></userinput
+>
+</screen>
+</informalexample>
+</sect2>
+
+</sect1>
+
+<sect1 id="scanning-folders">
+<title
+>Pregledovanje map</title>
+<para
+>Pregledovanje mape pokaže njeno vsebino kot datotečni zemljevid. Za pregledovanje mape uporabite meni za pregledovanje ali vnesite &URL; naravnost v lokacijsko vrstico. </para>
+</sect1>
+
+<sect1 id="exploring-filemaps">
+<title
+>Raziskovanje zemljevidov datotek</title>
+<para
+>Ko je skeniranje končano, se vam prikaže zemljevid datotek, ki predstavlja mapo, ki ste jo skenirali. Datotečni zemljevid je niz segmentiranih obročev, ki se širijo od sredine. Svetlo obarvani segmenti so mape, sivi segmenti so datoteke. Segmenti so velikosti sorazmerno z njihovo velikostjo datoteke. Segmente je mogoče ugnezditi, tako da bo na primer <filename class="directory"
+>/home/mxcl</filename
+> eno raven navzven in znotraj meja segmenta, ki predstavlja <filename class="directory"
+>/home</filename
+>. Segmenti so označeni in z miško nad segmenti boste dobili več podrobnosti o tem segmentu in njegovih podrejenih segmentih. </para>
+<screenshot>
+<screeninfo
+>Posnetek zaslona zemljevida datotek</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="radial_map_context_menu.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Posnetek zaslona</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+<para
+>Mape lahko odprete s privzetim upraviteljem datotek ali &konsole; z uporabo kontekstnega menija za ta segment. Sredinski klik miške odpre datoteke glede na vrsto mime, &eg; slike z <application
+>Gwenview</application
+> Z desno miškino tipko kliknite segment, da dobite kontekstni meni za optično prebrano mapo z dejanji za kopiranje poti mape v odložišče ali brisanje mape ali datoteke. Levi klik na segmente bo znova centriral zemljevid na ta segment. </para>
+</sect1>
+
+</chapter>
+
+
+<chapter id="commands">
+<title
+>Meni in referenca ukaza</title>
+
+<variablelist>
+<title
+>Meni skeniranja</title>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Skeniraj</guimenu
+> <guimenuitem
+>Skeniraj mapo..</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Ponuja pogovorno okno za izbiro mape, tako da lahko izberete mapo za skeniranje.</action
+></para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keysym
+>Domača stran</keysym
+></keycombo
+> </shortcut
+> <guimenu
+>Skeniraj</guimenu
+> <guimenuitem
+>Skeniraj domačo mapo</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Zažene skeniranje uporabnikove domače mape.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Skeniraj</guimenu
+> <guimenuitem
+>Skeniraj korensko mapo</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Zažene skeniranje korenske mape.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycap
+>F5</keycap
+> </shortcut
+> <guimenu
+>Skeniraj</guimenu
+> <guimenuitem
+>Ponovno skeniraj</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Začne novo skeniranje trenutne delovne mape, to je uporabno, ko so bile narejene spremembe v datotečnem sistemu.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> &Esc; </shortcut
+> <guimenu
+>Skeniraj</guimenu
+> <guimenuitem
+>Ustavi</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Ustavi trenutno skeniranje.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Skeniraj</guimenu
+> <guimenuitem
+>Zapusti</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Zapusti &filelight;.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist>
+  <title
+>Meni Pogled</title>
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>+</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Pogled</guimenu
+> <guimenuitem
+>Povečaj</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Povečajte pogled na datotečni zemljevid.</action
+></para>
+    </listitem>
+    </varlistentry>
+
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>-</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Pogled</guimenu
+> <guimenuitem
+>Pomanjšaj</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Pomanjšajte pogled zemljevida datotek.</action
+></para>
+    </listitem>
+    </varlistentry>
+</variablelist>
+
+<variablelist>
+<title
+>Meni pojdi</title>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>Gor</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Pojdi</guimenu
+> <guimenuitem
+>Gor</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Premakne vas eno stopnjo navzgor v datotečnem sistemu v nadrejeno mapo.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Pojdi</guimenu
+> <guimenuitem
+>Nazaj</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Premakne vas en korak nazaj v zgodovini brskanja po datotečnem sistemu.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Pojdi</guimenu
+> <guimenuitem
+>Naprej</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Premakne vas korak naprej v zgodovini brskanja po datotečnem sistemu.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Poleg tega ima &filelight; skupne &kde; elemente menija <guimenu
+>Nastavitve</guimenu
+> in <guimenu
+>Pomoč</guimenu
+>, za več informacij preberite razdelke o <ulink url="help:/fundamentals/menus.html#menus-settings"
+>meniju z nastavitvami</ulink
+> in <ulink url="help:/fundamentals/menus.html#menus-help"
+>meni Pomoč</ulink
+> v &kde; Osnovah. </para>
+</chapter>
+
+
+<chapter id="credits">
+   <title
+>Zasluge in licenca</title>
+   <sect1 id="kapp">
+      <title
+>&filelight;</title>
+      <para
+>Avtorske pravice za program 2006 Max B. Howell <email
+>max.howell@methylblue.com</email
+></para>
+      <para
+>Avtorske pravice za program 2008-2013 Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+></para
+>&underGPL; </sect1>
+   <sect1 id="Documentation">
+      <title
+>Dokumentacija</title>
+      <para
+>Avtorske pravice dokumentacije 2003 Max B. Howell <email
+>max.howell@methylblue.com</email
+></para>
+      <para
+>Avtorske pravice dokumentacije 2009 Martin Sandsmark <email
+>martin.sandsmark@kde.org</email
+></para>
+      <para
+>Prevod: Peter Žaucer<email
+>peter.zaucer@gmail.com</email
+></para
+> &underFDL; </sect1>
+</chapter>
+
+&documentation.index;
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->
