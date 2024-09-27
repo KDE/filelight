@@ -529,19 +529,3 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 файла със среден размер %2"
-
-#~ msgctxt "@info:status"
-#~ msgid "Aborting Scan..."
-#~ msgstr "Прекъсване на претърсването…"
-
-#~ msgctxt "@action"
-#~ msgid "Scan Folder"
-#~ msgstr "Претърсване на директория"
-
-#~ msgctxt "Go to the last path viewed"
-#~ msgid "Back"
-#~ msgstr "Назад"
-
-#~ msgctxt "Go to forward in the history of paths viewed"
-#~ msgid "Forward"
-#~ msgstr "Напред"
