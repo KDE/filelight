@@ -1,6 +1,6 @@
-# translation of filelight.po to Español
+# Translation of filelight to Spanish
 # Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the filelight package.
 #
 # SPDX-FileCopyrightText: 2009 Miguel Angel Quesada Fernandez <kesadalive@gmail.com>
 # SPDX-FileCopyrightText: 2010, 2011, 2013, 2015, 2017, 2018, 2020, 2021, 2022, 2024 Eloy Cuadra <ecuadra@eloihr.net>
