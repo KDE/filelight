@@ -60,7 +60,11 @@ int main(int argc, char *argv[])
 #if defined(Q_OS_WINDOWS)
     // Ensure we have a suitable color theme set for light/dark mode. KColorSchemeManager implicitly applies
     // a suitable default theme.
+#if KCOLORSCHEME_VERSION < QT_VERSION_CHECK(6, 6, 0)
     KColorSchemeManager manager;
+#else
+    (void)KColorSchemeManager::instance();
+#endif
     // Force breeze style to ensure coloring works consistently in dark mode. Specifically tab colors have
     // troubles on windows.
     app.setStyle(u"breeze"_s);
