@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeutils-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-21 00:49+0000\n"
+"POT-Creation-Date: 2024-10-19 00:42+0000\n"
 "PO-Revision-Date: 2024-08-21 12:01+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -67,12 +67,12 @@ msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "Silerken hata: %1"
 
-#: src/main.cpp:84
+#: src/main.cpp:88
 #, kde-format
 msgid "Graphical disk-usage information"
 msgstr "Grafiksel disk kullanımı bilgileri"
 
-#: src/main.cpp:86
+#: src/main.cpp:90
 #, kde-format
 msgid ""
 "(C) 2006 Max Howell\n"
@@ -83,92 +83,92 @@ msgstr ""
 "© 2008–2014 Martin Sandsmark\n"
 "© 2017–2022 Harald Sitter"
 
-#: src/main.cpp:91
+#: src/main.cpp:95
 #, kde-format
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
 
-#: src/main.cpp:91 src/main.cpp:92
+#: src/main.cpp:95 src/main.cpp:96
 #, kde-format
 msgid "Maintainer"
 msgstr "Projeyi sürdüren"
 
-#: src/main.cpp:92
+#: src/main.cpp:96
 #, kde-format
 msgid "Martin Sandsmark"
 msgstr "Martin Sandsmark"
 
-#: src/main.cpp:93
+#: src/main.cpp:97
 #, kde-format
 msgid "Harald Sitter"
 msgstr "Harald Sitter"
 
-#: src/main.cpp:93
+#: src/main.cpp:97
 #, kde-format
 msgid "QtQuick Port"
 msgstr "QtQuick Geçişi"
 
-#: src/main.cpp:94
+#: src/main.cpp:98
 #, kde-format
 msgid "Max Howell"
 msgstr "Max Howell"
 
-#: src/main.cpp:94
+#: src/main.cpp:98
 #, kde-format
 msgid "Original author"
 msgstr "Özgün yazar"
 
-#: src/main.cpp:95
+#: src/main.cpp:99
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr "Lukas Appelhans"
 
-#: src/main.cpp:95
+#: src/main.cpp:99
 #, kde-format
 msgid "Help and support"
 msgstr "Yardım ve destek"
 
-#: src/main.cpp:96
+#: src/main.cpp:100
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr "Steffen Gerlach"
 
-#: src/main.cpp:96
+#: src/main.cpp:100
 #, kde-format
 msgid "Inspiration"
 msgstr "Esinlenme"
 
-#: src/main.cpp:97
+#: src/main.cpp:101
 #, kde-format
 msgid "Mike Diehl"
 msgstr "Mike Diehl"
 
-#: src/main.cpp:97
+#: src/main.cpp:101
 #, kde-format
 msgid "Original documentation"
 msgstr "Özgün belgelendirme"
 
-#: src/main.cpp:98
+#: src/main.cpp:102
 #, kde-format
 msgid "Sune Vuorela"
 msgstr "Sune Vuorela"
 
-#: src/main.cpp:98 src/main.cpp:99
+#: src/main.cpp:102 src/main.cpp:103
 #, kde-format
 msgid "Icon"
 msgstr "Simge"
 
-#: src/main.cpp:99
+#: src/main.cpp:103
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr "Nuno Pinheiro"
 
-#: src/main.cpp:107
+#: src/main.cpp:111
 #, kde-format
 msgid "Path or URL to scan"
 msgstr "Taranacak yol veya URL"
 
-#: src/main.cpp:107
+#: src/main.cpp:111
 #, kde-format
 msgid "[url]"
 msgstr "[URL]"
