@@ -61,7 +61,7 @@ ecm_find_qmlmodule(Qt.labs.platform 1.1)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"filelight\")
 
-ecm_set_disabled_deprecation_versions(QT 6.7
+ecm_set_disabled_deprecation_versions(QT 6.8.0
     KF 6.7
 )
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
