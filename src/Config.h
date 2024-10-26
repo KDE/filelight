@@ -21,7 +21,11 @@ enum class Dirty {
 };
 Q_ENUM_NS(Dirty)
 
-enum MapScheme { Rainbow, KDE, HighContrast };
+enum MapScheme {
+    Rainbow,
+    KDE,
+    HighContrast
+};
 Q_ENUM_NS(MapScheme)
 } // namespace Filelight
 

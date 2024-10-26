@@ -69,7 +69,10 @@ public:
 
 namespace
 {
-enum class Delete { Now = true, Later = false };
+enum class Delete {
+    Now = true,
+    Later = false
+};
 void deleteAllSegments(QList<QList<RadialMap::Segment *>> &signature, Delete del = Delete::Later)
 {
     for (auto &segments : signature) {
