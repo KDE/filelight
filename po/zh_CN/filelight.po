@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/filelight/filelight.pot\n"
-"X-Crowdin-File-ID: 46498\n"
+"X-Crowdin-File: /kf6-stable/messages/filelight/filelight.pot\n"
+"X-Crowdin-File-ID: 51056\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -199,7 +199,7 @@ msgstr "例如：/%1"
 #: src/mainContext.cpp:190
 #, kde-format
 msgid "Folder not found: %1"
-msgstr "找不到文件夹：%1"
+msgstr "未找到文件夹：%1"
 
 #: src/mainContext.cpp:192
 #, kde-format
