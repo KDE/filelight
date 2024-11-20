@@ -95,6 +95,11 @@ target_link_libraries(filelight
     Qt6::QuickControls2
     filelightInternal
 )
+if(TARGET KF6::I18nQml)
+target_link_libraries(filelight
+        KF6::I18nQml
+)
+endif()
 
 if(APPLE)
     set_target_properties(filelight PROPERTIES

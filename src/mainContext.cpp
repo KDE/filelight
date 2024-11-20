@@ -7,7 +7,10 @@
  ***********************************************************************/
 
 #include "mainContext.h"
-
+#include "ki18n_version.h"
+#if KI18N_VERSION >= QT_VERSION_CHECK(6, 8, 0)
+#include <KLocalizedQmlContext>
+#endif
 #include <KAboutData>
 #include <KIO/Global> // upUrl
 #include <KLocalizedString>
@@ -54,7 +57,11 @@ MainContext::MainContext(QObject *parent)
 
     auto engine = new QQmlApplicationEngine(this);
 
+#if KI18N_VERSION < QT_VERSION_CHECK(6, 8, 0)
     static auto l10nContext = new KLocalizedContext(engine);
+#else
+    static auto l10nContext = new KLocalizedQmlContext(engine);
+#endif
     l10nContext->setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));
     engine->rootContext()->setContextObject(l10nContext);
 
