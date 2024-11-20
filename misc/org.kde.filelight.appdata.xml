@@ -439,6 +439,7 @@
   </provides>
   <custom>
     <value key="KDE::windows_store">https://www.microsoft.com/store/apps/9pfxcd722m2c</value>
+    <value key="KDE::supporters">EisiBaer</value>
   </custom>
   <releases>
     <release version="24.08.3" date="2024-11-07"/>
