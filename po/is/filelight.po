@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-19 00:42+0000\n"
+"POT-Creation-Date: 2024-11-21 00:43+0000\n"
 "PO-Revision-Date: 2024-07-22 22:03+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -169,42 +169,42 @@ msgstr "Slóð eða URL sem á að skanna"
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:134
+#: src/mainContext.cpp:141
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Veldu möppu til að skanna"
 
-#: src/mainContext.cpp:186
+#: src/mainContext.cpp:193
 #, kde-format
 msgid "The entered URL cannot be parsed"
 msgstr "Ekki er hægt að þátta slóðina sem var slegin inn"
 
-#: src/mainContext.cpp:186
+#: src/mainContext.cpp:193
 #, kde-format
 msgid "it is invalid."
 msgstr "hún er ógild."
 
-#: src/mainContext.cpp:188
+#: src/mainContext.cpp:195
 #, kde-format
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight samþykkir aðeins algildar slóðir"
 
-#: src/mainContext.cpp:188
+#: src/mainContext.cpp:195
 #, kde-format
 msgid "eg. /%1"
 msgstr "t.d. /%1"
 
-#: src/mainContext.cpp:190
+#: src/mainContext.cpp:197
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Mappa fannst ekki: %1"
 
-#: src/mainContext.cpp:192
+#: src/mainContext.cpp:199
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr "Get ekki opnað: %1"
 
-#: src/mainContext.cpp:192
+#: src/mainContext.cpp:199
 #, kde-format
 msgid "You do not have access rights to this location."
 msgstr "Þú hefur ekki aðgangsheimildir að þessum stað."
