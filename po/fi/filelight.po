@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Tommi Nieminen <translator@legisign.org>, 2010, 2017, 2018, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2010, 2017, 2018, 2020, 2021, 2022, 2023, 2024 Tommi Nieminen <translator@legisign.org>
 # Lasse Liehu <lliehu@kolumbus.fi>, 2011, 2012, 2013, 2014, 2015.
 #
 # KDE Finnish translation sprint participants:
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-21 00:43+0000\n"
-"PO-Revision-Date: 2023-03-05 21:50+0200\n"
+"PO-Revision-Date: 2024-10-19 10:29+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -18,8 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-POT-Import-Date: 2012-12-01 22:25:39+0000\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -61,11 +60,10 @@ msgid "&Delete"
 msgstr "&Poista"
 
 #: src/contextMenuContext.cpp:92
-#, fuzzy, kde-format
-#| msgid "Error while deleting"
+#, kde-format
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
-msgstr "Virhe poistettaessa"
+msgstr "Virhe poistettaessa: %1"
 
 #: src/main.cpp:88
 #, kde-format
@@ -86,7 +84,7 @@ msgstr ""
 #: src/main.cpp:95
 #, kde-format
 msgid "Laurent Montel"
-msgstr ""
+msgstr "Laurent Montel"
 
 #: src/main.cpp:95 src/main.cpp:96
 #, kde-format
@@ -179,26 +177,24 @@ msgid "Select Folder to Scan"
 msgstr "Valitse etsittävä kansio"
 
 #: src/mainContext.cpp:193
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "Syötettyä osoitetta ei voi jäsentää: se on virheellinen."
+msgstr "Annettu osoite on virheellinen"
 
 #: src/mainContext.cpp:193
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "on virheellinen."
 
 #: src/mainContext.cpp:195
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Filelight hyväksyy vain absoluuttiset sijainnit, esim. /%1"
+msgstr "Filelight hyväksyy vain absoluuttiset sijainnit"
 
 #: src/mainContext.cpp:195
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "esim. /%1"
 
 #: src/mainContext.cpp:197
 #, kde-format
@@ -206,20 +202,14 @@ msgid "Folder not found: %1"
 msgstr "Kansiota ei löytynyt: %1"
 
 #: src/mainContext.cpp:199
-#, fuzzy, kde-format
-#| msgid "Unable to create part widget."
+#, kde-format
 msgid "Unable to enter: %1"
-msgstr "Osasovelmaa ei voitu luoda."
+msgstr "Kansioon ei päästä: %1"
 
 #: src/mainContext.cpp:199
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
-"Sijaintiin ei päästä: %1\n"
-"Sinulla ei ole riittäviä oikeuksia."
+msgstr "Sijaintiin ei ole käyttöoikeuksia."
 
 #: src/qml/GlobalMenu.qml:15
 #, kde-format
@@ -240,32 +230,28 @@ msgid "Help"
 msgstr "Ohje"
 
 #: src/qml/main.qml:42
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Home Folder"
+#, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
-msgstr "Tutki kotikansio"
+msgstr "Kotikansio"
 
 #: src/qml/main.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Root Folder"
+#, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
-msgstr "Tutki juurikansio"
+msgstr "Juurikansio"
 
 #: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
-msgstr ""
+msgstr "Valitse kansio…"
 
 #: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
-msgstr ""
+msgstr "Muu kansio…"
 
 #: src/qml/main.qml:63
 #, kde-format
@@ -301,26 +287,21 @@ msgstr "Tietoa"
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
-msgstr ""
+msgstr "Tutkinnan keskeytys epäonnistui"
 
 #: src/qml/MapPage.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "No files."
+#, kde-format
 msgctxt "@info:status"
 msgid "No files shown."
-msgstr "Ei tiedostoja."
+msgstr "Ei näytettyjä tiedostoja."
 
 #: src/qml/MapPage.qml:41
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "1 file shown"
 msgid_plural "%1 files shown"
-msgstr[0] "1 tiedosto"
-msgstr[1] "%1 tiedostoa"
+msgstr[0] "1 tiedosto näkyvissä"
+msgstr[1] "%1 tiedostoa näkyvissä"
 
 #: src/qml/MapPage.qml:49
 #, kde-format
@@ -454,6 +435,8 @@ msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space. "
 "Choose a folder to proceed:"
 msgstr ""
+"Filelight tutkii levykäytön, jotta näet, mihin tila hupenee. Aloita "
+"valitsemalla kansio:"
 
 #: src/qml/SettingsPage.qml:22
 #, kde-format
