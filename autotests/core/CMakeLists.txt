@@ -3,7 +3,7 @@ if(NOT UNIX)
 endif()
 
 SET(FILENAME_TEST_SRCS
-    testFileTree.cpp
+    testFileTree.cpp testFileTree.h
 )
 
 ecm_add_test(

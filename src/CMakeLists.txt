@@ -39,9 +39,9 @@ ecm_qt_declare_logging_category(filelightInternal
     EXPORT FILELIGHT
 )
 if (WIN32)
-    target_sources(filelightInternal PRIVATE windowsWalker.cpp)
+    target_sources(filelightInternal PRIVATE windowsWalker.cpp windowsWalker.h)
 else()
-    target_sources(filelightInternal PRIVATE posixWalker.cpp)
+    target_sources(filelightInternal PRIVATE posixWalker.cpp posixWalker.h)
 endif()
 target_link_libraries(filelightInternal
     Qt6::Gui
@@ -75,7 +75,7 @@ target_sources(filelight PRIVATE
     dropperItem.cpp
     dropperItem.h
     hicolor.qrc
-    windowThemer.cpp
+    windowThemer.cpp windowThemer.h
 )
 
 set(filelight_ICONS
