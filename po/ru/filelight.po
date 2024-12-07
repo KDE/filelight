@@ -5,22 +5,23 @@
 # Nick Shaforostoff <shafff@ukr.net>, 2010.
 # Artem Sereda <overmind88@gmail.com>, 2010.
 # Yuri Efremov <yur.arh@gmail.com>, 2013.
-# Alexander Yavorsky <kekcuha@gmail.com>, 2018, 2020, 2022, 2024.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2018, 2020, 2022.
+# SPDX-FileCopyrightText: 2023, 2024 Olesya Gerasimenko <translation-team@basealt.ru>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-21 00:43+0000\n"
-"PO-Revision-Date: 2024-06-08 21:05+0300\n"
-"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
-"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"PO-Revision-Date: 2024-12-06 12:04+0300\n"
+"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
+"Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.08.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -28,12 +29,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Александр Поташев, Павел Чернышов"
+msgstr "Александр Поташев, Павел Чернышов, Олеся Герасименко"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "aspotashev@gmail.com, farline99@yandex.ru"
+msgstr "aspotashev@gmail.com, farline99@yandex.ru, translation-team@basealt.ru"
 
 #: src/Config.cpp:57
 #, kde-format
@@ -82,7 +83,7 @@ msgid ""
 "(C) 2017-2022 Harald Sitter"
 msgstr ""
 "© Max Howell, 2006\n"
-"© Martin Sand.smark, 2008—2014\n"
+"© Martin Sandsmark, 2008—2014\n"
 "© Harald Sitter, 2017—2022"
 
 #: src/main.cpp:95
@@ -168,7 +169,7 @@ msgstr "Nuno Pinheiro"
 #: src/main.cpp:111
 #, kde-format
 msgid "Path or URL to scan"
-msgstr "Путь или адрес URL для сканирования"
+msgstr "Путь или URL-адрес для сканирования"
 
 #: src/main.cpp:111
 #, kde-format
@@ -183,22 +184,22 @@ msgstr "Выбор папки для сканирования"
 #: src/mainContext.cpp:193
 #, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "Указанный адрес не может быть проанализирован"
+msgstr "Введённый адрес не может быть обработан."
 
 #: src/mainContext.cpp:193
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "Он является недопустимым."
 
 #: src/mainContext.cpp:195
 #, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Filelight понимает только абсолютные пути"
+msgstr "Filelight распознаёт только абсолютные пути."
 
 #: src/mainContext.cpp:195
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "Пример: /%1"
 
 #: src/mainContext.cpp:197
 #, kde-format
@@ -208,12 +209,12 @@ msgstr "Папка не найдена: %1"
 #: src/mainContext.cpp:199
 #, kde-format
 msgid "Unable to enter: %1"
-msgstr "Невозможно войти в папку «%1»"
+msgstr "Не удалось выполнить вход: %1"
 
 #: src/mainContext.cpp:199
 #, kde-format
 msgid "You do not have access rights to this location."
-msgstr "Проверьте права доступа в эту папку."
+msgstr "Отсутствуют права доступа к этому расположению."
 
 #: src/qml/GlobalMenu.qml:15
 #, kde-format
@@ -234,32 +235,28 @@ msgid "Help"
 msgstr "Справка"
 
 #: src/qml/main.qml:42
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Home Folder"
+#, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
-msgstr "Сканировать домашнюю папку"
+msgstr "Домашняя папка"
 
 #: src/qml/main.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Root Folder"
+#, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
-msgstr "Сканировать корневую папку"
+msgstr "Корневая папка"
 
 #: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
-msgstr ""
+msgstr "Выбрать папку…"
 
 #: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
-msgstr ""
+msgstr "Другая папка…"
 
 #: src/qml/main.qml:63
 #, kde-format
@@ -295,28 +292,23 @@ msgstr "О программе"
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
-msgstr ""
+msgstr "Не удалось прервать сканирование"
 
 #: src/qml/MapPage.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "No files."
+#, kde-format
 msgctxt "@info:status"
 msgid "No files shown."
 msgstr "Нет файлов."
 
 #: src/qml/MapPage.qml:41
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "1 file shown"
 msgid_plural "%1 files shown"
 msgstr[0] "%1 файл"
 msgstr[1] "%1 файла"
 msgstr[2] "%1 файлов"
-msgstr[3] "%1 файл"
+msgstr[3] "1 файл"
 
 #: src/qml/MapPage.qml:49
 #, kde-format
@@ -404,7 +396,7 @@ msgid_plural "%1 Files (%2%)"
 msgstr[0] "%1 файл (%2%)"
 msgstr[1] "%1 файла (%2%)"
 msgstr[2] "%1 файлов (%2%)"
-msgstr[3] "один файл (%1%)"
+msgstr[3] "%1 файл (%2%)"
 
 #: src/qml/MapPage.qml:335
 #, kde-format
@@ -414,7 +406,7 @@ msgid_plural "%1 Files"
 msgstr[0] "%1 файл"
 msgstr[1] "%1 файла"
 msgstr[2] "%1 файлов"
-msgstr[3] "один файл"
+msgstr[3] "%1 файл"
 
 #: src/qml/MapPage.qml:339
 #, kde-format
@@ -427,10 +419,10 @@ msgstr "Нажмите для перехода к родительскому к�
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
 msgid_plural "%1 Files, %2"
-msgstr[0] "%1 файл (%2%)"
-msgstr[1] "%1 файла (%2%)"
-msgstr[2] "%1 файлов (%2%)"
-msgstr[3] "один файл (%1%)"
+msgstr[0] "%1 файл (%2)"
+msgstr[1] "%1 файла (%2)"
+msgstr[2] "%1 файлов (%2)"
+msgstr[3] "%1 файл (%2)"
 
 #: src/qml/MapPage.qml:567
 #, kde-format
@@ -456,6 +448,8 @@ msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space. "
 "Choose a folder to proceed:"
 msgstr ""
+"Filelight анализирует использование дискового пространства и показывает, что "
+"занимает много места. Выберите папку для продолжения:"
 
 #: src/qml/SettingsPage.qml:22
 #, kde-format
@@ -691,7 +685,6 @@ msgstr[3] ""
 #~ msgstr "Изображения SVG (*.svg);;Все файлы (*)"
 
 #, fuzzy
-#~| msgid "Scan completed, generating map..."
 #~ msgctxt "@info:status"
 #~ msgid "Scan completed, generating map..."
 #~ msgstr "Сканирование завершено, генерирование изображения..."
