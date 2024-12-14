@@ -36,6 +36,19 @@ using namespace Qt::StringLiterals;
 namespace Filelight
 {
 
+class About : public QObject
+{
+    Q_OBJECT
+    Q_PROPERTY(KAboutData data READ data CONSTANT)
+    [[nodiscard]] static KAboutData data()
+    {
+        return KAboutData::applicationData();
+    }
+
+public:
+    using QObject::QObject;
+};
+
 MainContext::MainContext(QObject *parent)
     : QObject(parent)
     , m_manager(new ScanManager(this))
@@ -54,9 +67,11 @@ MainContext::MainContext(QObject *parent)
 
     qmlRegisterUncreatableMetaObject(Filelight::staticMetaObject, "org.kde.filelight", 1, 0, "Filelight", QStringLiteral("Access to enums & flags only"));
 
+    auto about = new About(this);
     qRegisterMetaType<size_t>("size_t");
     qmlRegisterType<DropperItem>("org.kde.filelight", 1, 0, "DropperItem");
     qmlRegisterType<WindowThemer>("org.kde.filelight", 1, 0, "WindowThemer");
+    qmlRegisterSingletonInstance("org.kde.filelight", 1, 0, "About", about);
     qmlRegisterSingletonInstance("org.kde.filelight", 1, 0, "ScanManager", m_manager);
     qmlRegisterSingletonInstance("org.kde.filelight", 1, 0, "MainContext", this);
     auto fileModel = new FileModel(this);
