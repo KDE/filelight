@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-21 00:43+0000\n"
+"POT-Creation-Date: 2024-12-15 00:43+0000\n"
 "PO-Revision-Date: 2021-09-09 21:51+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -171,45 +171,45 @@ msgstr "Sti eller URL der skal scannes"
 msgid "[url]"
 msgstr "[URL]"
 
-#: src/mainContext.cpp:141
+#: src/mainContext.cpp:126
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Vælg mappe der skal scannes"
 
-#: src/mainContext.cpp:193
+#: src/mainContext.cpp:178
 #, fuzzy, kde-format
 #| msgid "The entered URL cannot be parsed; it is invalid."
 msgid "The entered URL cannot be parsed"
 msgstr "Den angivne URL kan ikke fortolkes. Den er ugyldig."
 
-#: src/mainContext.cpp:193
+#: src/mainContext.cpp:178
 #, kde-format
 msgid "it is invalid."
 msgstr ""
 
-#: src/mainContext.cpp:195
+#: src/mainContext.cpp:180
 #, fuzzy, kde-format
 #| msgid "Filelight only accepts absolute paths, eg. /%1"
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight accepterer kun absolutte stier, f.eks. /%1"
 
-#: src/mainContext.cpp:195
+#: src/mainContext.cpp:180
 #, kde-format
 msgid "eg. /%1"
 msgstr ""
 
-#: src/mainContext.cpp:197
+#: src/mainContext.cpp:182
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Mappe ikke fundet: %1"
 
-#: src/mainContext.cpp:199
+#: src/mainContext.cpp:184
 #, fuzzy, kde-format
 #| msgid "Unable to create part widget."
 msgid "Unable to enter: %1"
 msgstr "Kan ikke oprette Part-widget."
 
-#: src/mainContext.cpp:199
+#: src/mainContext.cpp:184
 #, fuzzy, kde-format
 #| msgid ""
 #| "Unable to enter: %1\n"

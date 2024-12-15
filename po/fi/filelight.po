@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-21 00:43+0000\n"
+"POT-Creation-Date: 2024-12-15 00:43+0000\n"
 "PO-Revision-Date: 2024-10-19 10:29+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -171,42 +171,42 @@ msgstr "Tutkittava kansiopolku tai verkko-osoite"
 msgid "[url]"
 msgstr "[osoite]"
 
-#: src/mainContext.cpp:141
+#: src/mainContext.cpp:126
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Valitse etsittävä kansio"
 
-#: src/mainContext.cpp:193
+#: src/mainContext.cpp:178
 #, kde-format
 msgid "The entered URL cannot be parsed"
 msgstr "Annettu osoite on virheellinen"
 
-#: src/mainContext.cpp:193
+#: src/mainContext.cpp:178
 #, kde-format
 msgid "it is invalid."
 msgstr "on virheellinen."
 
-#: src/mainContext.cpp:195
+#: src/mainContext.cpp:180
 #, kde-format
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight hyväksyy vain absoluuttiset sijainnit"
 
-#: src/mainContext.cpp:195
+#: src/mainContext.cpp:180
 #, kde-format
 msgid "eg. /%1"
 msgstr "esim. /%1"
 
-#: src/mainContext.cpp:197
+#: src/mainContext.cpp:182
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Kansiota ei löytynyt: %1"
 
-#: src/mainContext.cpp:199
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr "Kansioon ei päästä: %1"
 
-#: src/mainContext.cpp:199
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "You do not have access rights to this location."
 msgstr "Sijaintiin ei ole käyttöoikeuksia."

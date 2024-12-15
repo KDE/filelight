@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-21 00:43+0000\n"
+"POT-Creation-Date: 2024-12-15 00:43+0000\n"
 "PO-Revision-Date: 2024-09-05 10:11+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -167,42 +167,42 @@ msgstr "مسار أو عنون لمسحه"
 msgid "[url]"
 msgstr "[المسار]"
 
-#: src/mainContext.cpp:141
+#: src/mainContext.cpp:126
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "اختر مجلّدًا لمسحه"
 
-#: src/mainContext.cpp:193
+#: src/mainContext.cpp:178
 #, kde-format
 msgid "The entered URL cannot be parsed"
 msgstr "لا يمكن تحليل العنوان المدخل"
 
-#: src/mainContext.cpp:193
+#: src/mainContext.cpp:178
 #, kde-format
 msgid "it is invalid."
 msgstr "غير صالحة"
 
-#: src/mainContext.cpp:195
+#: src/mainContext.cpp:180
 #, kde-format
 msgid "Filelight only accepts absolute paths"
 msgstr "يقبل كشاف الملفات المسارات المطلقة فقط"
 
-#: src/mainContext.cpp:195
+#: src/mainContext.cpp:180
 #, kde-format
 msgid "eg. /%1"
 msgstr "مثل /%1"
 
-#: src/mainContext.cpp:197
+#: src/mainContext.cpp:182
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "لم يعثر على المجلد: %1"
 
-#: src/mainContext.cpp:199
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr "تعذّر الدخول: %1"
 
-#: src/mainContext.cpp:199
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "You do not have access rights to this location."
 msgstr "لا تملك صلاحية الوصول إلى هذا الموقع."

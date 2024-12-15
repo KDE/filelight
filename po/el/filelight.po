@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-21 00:43+0000\n"
+"POT-Creation-Date: 2024-12-15 00:43+0000\n"
 "PO-Revision-Date: 2023-07-29 23:52+0300\n"
 "Last-Translator: Theofilos Intzoglou <int.teo@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -174,45 +174,45 @@ msgstr "Διαδρομή ή URL προς σάρωση"
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:141
+#: src/mainContext.cpp:126
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Επιλογή φακέλου για σάρωση"
 
-#: src/mainContext.cpp:193
+#: src/mainContext.cpp:178
 #, fuzzy, kde-format
 #| msgid "The entered URL cannot be parsed; it is invalid."
 msgid "The entered URL cannot be parsed"
 msgstr "Το URL που έχει εισαχθεί δε μπορεί να αναλυθεί: είναι μη έγκυρο."
 
-#: src/mainContext.cpp:193
+#: src/mainContext.cpp:178
 #, kde-format
 msgid "it is invalid."
 msgstr ""
 
-#: src/mainContext.cpp:195
+#: src/mainContext.cpp:180
 #, fuzzy, kde-format
 #| msgid "Filelight only accepts absolute paths, eg. /%1"
 msgid "Filelight only accepts absolute paths"
 msgstr "Το Filelight δέχεται μόνο απόλυτες διαδρομές, πχ. /%1"
 
-#: src/mainContext.cpp:195
+#: src/mainContext.cpp:180
 #, kde-format
 msgid "eg. /%1"
 msgstr ""
 
-#: src/mainContext.cpp:197
+#: src/mainContext.cpp:182
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Ο φάκελος δεν βρέθηκε: %1"
 
-#: src/mainContext.cpp:199
+#: src/mainContext.cpp:184
 #, fuzzy, kde-format
 #| msgid "Unable to create part widget."
 msgid "Unable to enter: %1"
 msgstr "Αδύνατη η δημιουργία του γραφικού συστατικού του τμήματος."
 
-#: src/mainContext.cpp:199
+#: src/mainContext.cpp:184
 #, fuzzy, kde-format
 #| msgid ""
 #| "Unable to enter: %1\n"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-21 00:43+0000\n"
+"POT-Creation-Date: 2024-12-15 00:43+0000\n"
 "PO-Revision-Date: 2024-12-06 12:04+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -176,42 +176,42 @@ msgstr "Путь или URL-адрес для сканирования"
 msgid "[url]"
 msgstr "[адрес]"
 
-#: src/mainContext.cpp:141
+#: src/mainContext.cpp:126
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Выбор папки для сканирования"
 
-#: src/mainContext.cpp:193
+#: src/mainContext.cpp:178
 #, kde-format
 msgid "The entered URL cannot be parsed"
 msgstr "Введённый адрес не может быть обработан."
 
-#: src/mainContext.cpp:193
+#: src/mainContext.cpp:178
 #, kde-format
 msgid "it is invalid."
 msgstr "Он является недопустимым."
 
-#: src/mainContext.cpp:195
+#: src/mainContext.cpp:180
 #, kde-format
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight распознаёт только абсолютные пути."
 
-#: src/mainContext.cpp:195
+#: src/mainContext.cpp:180
 #, kde-format
 msgid "eg. /%1"
 msgstr "Пример: /%1"
 
-#: src/mainContext.cpp:197
+#: src/mainContext.cpp:182
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Папка не найдена: %1"
 
-#: src/mainContext.cpp:199
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr "Не удалось выполнить вход: %1"
 
-#: src/mainContext.cpp:199
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "You do not have access rights to this location."
 msgstr "Отсутствуют права доступа к этому расположению."

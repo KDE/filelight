@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-21 00:43+0000\n"
+"POT-Creation-Date: 2024-12-15 00:43+0000\n"
 "PO-Revision-Date: 2024-12-14 01:48+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -170,42 +170,42 @@ msgstr "स्कैन् कर्तुं मार्गः अथवा UR
 msgid "[url]"
 msgstr "[उर्ल्] ९."
 
-#: src/mainContext.cpp:141
+#: src/mainContext.cpp:126
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Scan कर्तुं Folder इति चिनोतु"
 
-#: src/mainContext.cpp:193
+#: src/mainContext.cpp:178
 #, kde-format
 msgid "The entered URL cannot be parsed"
 msgstr "प्रविष्टं URL विश्लेषणं कर्तुं न शक्यते"
 
-#: src/mainContext.cpp:193
+#: src/mainContext.cpp:178
 #, kde-format
 msgid "it is invalid."
 msgstr "असिद्धम् इति ।"
 
-#: src/mainContext.cpp:195
+#: src/mainContext.cpp:180
 #, kde-format
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight केवलं निरपेक्षमार्गान् स्वीकुर्वति"
 
-#: src/mainContext.cpp:195
+#: src/mainContext.cpp:180
 #, kde-format
 msgid "eg. /%1"
 msgstr "यथा--- /%1"
 
-#: src/mainContext.cpp:197
+#: src/mainContext.cpp:182
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "पुटं न प्राप्तम्: %1"
 
-#: src/mainContext.cpp:199
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr "प्रविष्टुं असमर्थः: %1"
 
-#: src/mainContext.cpp:199
+#: src/mainContext.cpp:184
 #, kde-format
 msgid "You do not have access rights to this location."
 msgstr "अस्मिन् स्थाने भवतः प्रवेशाधिकारः नास्ति ।"
