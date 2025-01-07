@@ -17,6 +17,8 @@
 #include "radialMap/map.h"
 #include "radialMap/radialMap.h"
 
+using namespace Qt::StringLiterals;
+
 namespace Filelight
 {
 
@@ -27,6 +29,7 @@ void ContextMenuContext::openTerminal(RadialMap::Segment *segment)
 
 void ContextMenuContext::openTerminal(const QUrl &url)
 {
+    Q_ASSERT(url.scheme() == "file"_L1); // terminals generally only support local paths
     auto *job = new KTerminalLauncherJob(QString(), this);
     job->setWorkingDirectory(url.toLocalFile());
     job->start();
