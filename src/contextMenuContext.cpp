@@ -28,7 +28,7 @@ void ContextMenuContext::openTerminal(RadialMap::Segment *segment)
 void ContextMenuContext::openTerminal(const QUrl &url)
 {
     auto *job = new KTerminalLauncherJob(QString(), this);
-    job->setWorkingDirectory(url.path());
+    job->setWorkingDirectory(url.toLocalFile());
     job->start();
 }
 
