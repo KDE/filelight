@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-15 00:43+0000\n"
+"POT-Creation-Date: 2025-01-09 00:43+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -42,24 +42,24 @@ msgstr "选择要忽略的路径"
 msgid "Folder already ignored"
 msgstr "文件夹已被忽略"
 
-#: src/contextMenuContext.cpp:63
+#: src/contextMenuContext.cpp:66
 #, kde-format
 msgid ""
 "<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
 "b> deleted.</qt>"
 msgstr "<qt>位于<i>“%1”</i>的文件夹将以<b>递归</b>方式被<b>永久</b>删除。</qt>"
 
-#: src/contextMenuContext.cpp:64
+#: src/contextMenuContext.cpp:67
 #, kde-format
 msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
 msgstr "<qt><i>“%1”</i>将被<b>永久</b>删除。</qt>"
 
-#: src/contextMenuContext.cpp:65
+#: src/contextMenuContext.cpp:68
 #, kde-format
 msgid "&Delete"
 msgstr "删除(&D)"
 
-#: src/contextMenuContext.cpp:92
+#: src/contextMenuContext.cpp:95
 #, kde-format
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"

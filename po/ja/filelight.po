@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-15 00:43+0000\n"
+"POT-Creation-Date: 2025-01-09 00:43+0000\n"
 "PO-Revision-Date: 2023-05-21 12:11-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -39,24 +39,24 @@ msgstr "無視するパスを選択"
 msgid "Folder already ignored"
 msgstr "既に無視されているフォルダー"
 
-#: src/contextMenuContext.cpp:63
+#: src/contextMenuContext.cpp:66
 #, kde-format
 msgid ""
 "<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
 "b> deleted.</qt>"
 msgstr "<qt>フォルダ ‘%1’ とその内容は「再帰的かつ完全に」削除されます。</qt>"
 
-#: src/contextMenuContext.cpp:64
+#: src/contextMenuContext.cpp:67
 #, kde-format
 msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
 msgstr "<qt>‘%1’ は「完全に」削除されます。</qt>"
 
-#: src/contextMenuContext.cpp:65
+#: src/contextMenuContext.cpp:68
 #, kde-format
 msgid "&Delete"
 msgstr "削除(&D)"
 
-#: src/contextMenuContext.cpp:92
+#: src/contextMenuContext.cpp:95
 #, fuzzy, kde-format
 #| msgid "Error while deleting"
 msgctxt "@info:notification"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-15 00:43+0000\n"
+"POT-Creation-Date: 2025-01-09 00:43+0000\n"
 "PO-Revision-Date: 2021-09-09 21:51+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -37,7 +37,7 @@ msgstr "Vælg sti der skal ignoreres"
 msgid "Folder already ignored"
 msgstr "Mappen ignoreres allerede"
 
-#: src/contextMenuContext.cpp:63
+#: src/contextMenuContext.cpp:66
 #, kde-format
 msgid ""
 "<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
@@ -46,17 +46,17 @@ msgstr ""
 "<qt>Mappen i <i>\"%1\"</i> vil blive slettet <b>rekursivt</b> og "
 "<b>permanent</b>.</qt>"
 
-#: src/contextMenuContext.cpp:64
+#: src/contextMenuContext.cpp:67
 #, kde-format
 msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
 msgstr "<qt><i>\"%1\"</i> vil blive slettet <b>permanent</b>.</qt>"
 
-#: src/contextMenuContext.cpp:65
+#: src/contextMenuContext.cpp:68
 #, kde-format
 msgid "&Delete"
 msgstr "&Slet"
 
-#: src/contextMenuContext.cpp:92
+#: src/contextMenuContext.cpp:95
 #, fuzzy, kde-format
 #| msgid "Error while deleting"
 msgctxt "@info:notification"

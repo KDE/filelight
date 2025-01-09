@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-15 00:43+0000\n"
+"POT-Creation-Date: 2025-01-09 00:43+0000\n"
 "PO-Revision-Date: 2024-08-21 10:30+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -42,7 +42,7 @@ msgstr "Seleccioneu els camins a ignorar"
 msgid "Folder already ignored"
 msgstr "Carpeta ja ignorada"
 
-#: src/contextMenuContext.cpp:63
+#: src/contextMenuContext.cpp:66
 #, kde-format
 msgid ""
 "<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
@@ -51,17 +51,17 @@ msgstr ""
 "<qt>La carpeta <i>«%1»</i> se suprimirà <b>recursivament</b> i "
 "<b>permanentment</b>.</qt>"
 
-#: src/contextMenuContext.cpp:64
+#: src/contextMenuContext.cpp:67
 #, kde-format
 msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
 msgstr "<qt><i>«%1»</i> se suprimirà <b>permanentment</b>.</qt>"
 
-#: src/contextMenuContext.cpp:65
+#: src/contextMenuContext.cpp:68
 #, kde-format
 msgid "&Delete"
 msgstr "Su&primeix"
 
-#: src/contextMenuContext.cpp:92
+#: src/contextMenuContext.cpp:95
 #, kde-format
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"

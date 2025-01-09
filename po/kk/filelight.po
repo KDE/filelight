@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-15 00:43+0000\n"
+"POT-Creation-Date: 2025-01-09 00:43+0000\n"
 "PO-Revision-Date: 2013-06-27 03:35+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -38,7 +38,7 @@ msgstr ""
 msgid "Folder already ignored"
 msgstr ""
 
-#: src/contextMenuContext.cpp:63
+#: src/contextMenuContext.cpp:66
 #, kde-format
 msgid ""
 "<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
@@ -47,17 +47,17 @@ msgstr ""
 "<qt><i>'%1'</i> деген қапшық, <b>бүкіл ішіндегісімен</b>, <b>мүлдем</b> "
 "жойылады.</qt>"
 
-#: src/contextMenuContext.cpp:64
+#: src/contextMenuContext.cpp:67
 #, kde-format
 msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
 msgstr "<qt><i>'%1'</i> деген <b>мүлдем</b> жойылады.</qt>"
 
-#: src/contextMenuContext.cpp:65
+#: src/contextMenuContext.cpp:68
 #, kde-format
 msgid "&Delete"
 msgstr "&Өшіру"
 
-#: src/contextMenuContext.cpp:92
+#: src/contextMenuContext.cpp:95
 #, fuzzy, kde-format
 #| msgid "Error while deleting"
 msgctxt "@info:notification"
