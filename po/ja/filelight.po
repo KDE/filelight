@@ -1,14 +1,14 @@
 # Translation of filelight into Japanese.
 # Yukiko Bando <ybando@k6.dion.ne.jp>, 2009, 2010.
-# Shizuku Hagoromo <Lemonade.flash.1164@gmail.com>, 2023.
+# Lemon73 <Lemonade.Flash.1164@gmail.com>, 2023, 2025.
 # Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2014, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-09 00:43+0000\n"
-"PO-Revision-Date: 2023-05-21 12:11-0700\n"
-"Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
+"PO-Revision-Date: 2025-01-27 21:29+0900\n"
+"Last-Translator: Lemon73 <Lemonade.Flash.1164@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -17,12 +17,12 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Hagoromo Shizuku"
+msgstr "Lemon73"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -44,7 +44,8 @@ msgstr "既に無視されているフォルダー"
 msgid ""
 "<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
 "b> deleted.</qt>"
-msgstr "<qt>フォルダ ‘%1’ とその内容は「再帰的かつ完全に」削除されます。</qt>"
+msgstr ""
+"<qt>フォルダー ‘%1’ とその内容は「再帰的かつ完全に」削除されます。</qt>"
 
 #: src/contextMenuContext.cpp:67
 #, kde-format
@@ -57,11 +58,10 @@ msgid "&Delete"
 msgstr "削除(&D)"
 
 #: src/contextMenuContext.cpp:95
-#, fuzzy, kde-format
-#| msgid "Error while deleting"
+#, kde-format
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
-msgstr "削除中にエラー"
+msgstr "削除中にエラーが発生: %1"
 
 #: src/main.cpp:88
 #, kde-format
@@ -142,7 +142,7 @@ msgstr "Mike Diehl"
 #: src/main.cpp:101
 #, kde-format
 msgid "Original documentation"
-msgstr "オリジナルのドキュメンテーション"
+msgstr "オリジナルの資料"
 
 #: src/main.cpp:102
 #, kde-format
@@ -172,13 +172,12 @@ msgstr "[url]"
 #: src/mainContext.cpp:126
 #, kde-format
 msgid "Select Folder to Scan"
-msgstr "スキャンするフォルダを選択"
+msgstr "スキャンするフォルダーを選択"
 
 #: src/mainContext.cpp:178
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "入力された URL を解析できません。無効な URL です。"
+msgstr "入力された URL を解析できません。"
 
 #: src/mainContext.cpp:178
 #, kde-format
@@ -186,35 +185,29 @@ msgid "it is invalid."
 msgstr ""
 
 #: src/mainContext.cpp:180
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Filelight は絶対パス (例: /%1) しか受け付けません。"
+msgstr "Filelight は絶対パスのみ利用できます。"
 
 #: src/mainContext.cpp:180
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "例: /%1"
 
 #: src/mainContext.cpp:182
 #, kde-format
 msgid "Folder not found: %1"
-msgstr "フォルダが見つかりません: %1"
+msgstr "フォルダーが見つかりません: %1"
 
 #: src/mainContext.cpp:184
 #, kde-format
 msgid "Unable to enter: %1"
-msgstr ""
+msgstr "入力不可です: %1"
 
 #: src/mainContext.cpp:184
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
-"次に入ることができません: %1\n"
-"この場所にアクセスする権限がありません。"
+msgstr "この場所にアクセスする権限がありません。"
 
 #: src/qml/GlobalMenu.qml:15
 #, kde-format
@@ -235,32 +228,28 @@ msgid "Help"
 msgstr "ヘルプ"
 
 #: src/qml/main.qml:42
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Home Folder"
+#, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
-msgstr "ホームフォルダをスキャン"
+msgstr "ホームフォルダー"
 
 #: src/qml/main.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Root Folder"
+#, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
-msgstr "ルートフォルダをスキャン"
+msgstr "ルートフォルダー"
 
 #: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
-msgstr ""
+msgstr "フォルダーを選択…"
 
 #: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
-msgstr ""
+msgstr "その他のフォルダー"
 
 #: src/qml/main.qml:63
 #, kde-format
@@ -296,25 +285,20 @@ msgstr "詳細"
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
-msgstr ""
+msgstr "スキャンの中止に失敗しました"
 
 #: src/qml/MapPage.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "No files."
+#, kde-format
 msgctxt "@info:status"
 msgid "No files shown."
-msgstr "ファイルがありません。"
+msgstr "ファイルが表示されていません。"
 
 #: src/qml/MapPage.qml:41
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "1 file shown"
 msgid_plural "%1 files shown"
-msgstr[0] "%1 ファイル"
+msgstr[0] "%1 ファイル表示"
 
 #: src/qml/MapPage.qml:49
 #, kde-format
@@ -326,7 +310,7 @@ msgstr "概要を見る"
 #, kde-format
 msgctxt "@action"
 msgid "Up"
-msgstr "上げる"
+msgstr "上の階層"
 
 #: src/qml/MapPage.qml:66
 #, kde-format
@@ -445,6 +429,8 @@ msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space. "
 "Choose a folder to proceed:"
 msgstr ""
+"Filelight はディスクの利用状況を分析し、たくさんのスペースを利用しているファ"
+"イルを見ることができます。フォルダーを選択して続行:"
 
 #: src/qml/SettingsPage.qml:22
 #, kde-format
@@ -498,7 +484,7 @@ msgstr "小さいファイルを表示する"
 #, kde-format
 msgctxt "@label"
 msgid "Do not scan these folders:"
-msgstr "スキャンから除外するフォルダ:"
+msgstr "スキャンから除外するフォルダー:"
 
 #: src/qml/SettingsPageScanning.qml:41
 #, kde-format
@@ -535,22 +521,3 @@ msgid_plural ""
 msgstr[0] ""
 "\n"
 "%1 ファイル (平均サイズ %2)"
-
-#~ msgctxt "@info:status"
-#~ msgid "Aborting Scan..."
-#~ msgstr "スキャンを中止します..."
-
-#~ msgctxt "@action"
-#~ msgid "Scan Folder"
-#~ msgstr "フォルダをスキャン"
-
-#~ msgctxt "Go to the last path viewed"
-#~ msgid "Back"
-#~ msgstr "戻る"
-
-#~ msgctxt "Go to forward in the history of paths viewed"
-#~ msgid "Forward"
-#~ msgstr "進む"
-
-#~ msgid "That folder is already set to be excluded from scans."
-#~ msgstr "そのフォルダは既にスキャン対象から除外されています。"
