@@ -32,7 +32,7 @@ msgstr "mvillarino, Xosé Calvo, Adrián Chaves (Gallaecio)"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
-"mvillarino@users.sourceforge.net, xosecalvo@gmail.com, adrian@chaves.io"
+"mvillarino@users.sourceforge.net, xosecalvo@gmail.com, adrian@chaves.gal"
 
 #: src/Config.cpp:57
 #, kde-format
