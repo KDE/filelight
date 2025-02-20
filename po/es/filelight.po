@@ -1,9 +1,9 @@
 # Translation of filelight to Spanish
-# Copyright (C) YEAR This_file_is_part_of_KDE
+# Copyright (C) 2009-2025 This_file_is_part_of_KDE
 # This file is distributed under the same license as the filelight package.
 #
 # SPDX-FileCopyrightText: 2009 Miguel Angel Quesada Fernandez <kesadalive@gmail.com>
-# SPDX-FileCopyrightText: 2010, 2011, 2013, 2015, 2017, 2018, 2020, 2021, 2022, 2024 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2010, 2011, 2013, 2015, 2017, 2018, 2020, 2021, 2022, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 # SPDX-FileCopyrightText: 2010 Kira J. Fernandez <kirajfdez@gmail.com>
 # SPDX-FileCopyrightText: 2013 Javier Viñal <fjvinal@gmail.com>
 msgid ""
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-09 00:43+0000\n"
-"PO-Revision-Date: 2024-08-21 03:53+0200\n"
+"PO-Revision-Date: 2025-02-18 02:19+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -246,13 +246,13 @@ msgstr "Carpeta raíz"
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
-msgstr "Escoger carpeta..."
+msgstr "Escoger carpeta…"
 
 #: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
-msgstr "Otra carpeta..."
+msgstr "Otra carpeta…"
 
 #: src/qml/main.qml:63
 #, kde-format
@@ -264,7 +264,7 @@ msgstr "Salir"
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
-msgstr "Configurar..."
+msgstr "Configurar…"
 
 #: src/qml/main.qml:76
 #, kde-format
@@ -497,7 +497,7 @@ msgstr "No explorar estas carpetas:"
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
-msgstr "Añadir..."
+msgstr "Añadir…"
 
 #: src/qml/SettingsPageScanning.qml:90
 #, kde-format
