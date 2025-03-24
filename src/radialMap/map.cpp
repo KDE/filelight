@@ -65,6 +65,11 @@ public:
                                        KFormat().formatByteSize(totalSize / fileCount));
         m_name = fakeName.toUtf8().constData();
     };
+
+    [[nodiscard]] bool isFilesGroup() const override
+    {
+        return true;
+    }
 };
 
 namespace

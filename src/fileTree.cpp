@@ -96,3 +96,8 @@ std::shared_ptr<Folder> Folder::duplicate() const
     clone(this, other);
     return other;
 }
+
+bool File::isFilesGroup() const
+{
+    return false;
+}

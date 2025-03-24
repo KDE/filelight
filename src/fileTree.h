@@ -98,6 +98,8 @@ public:
     /** Builds a complete QUrl by walking up to root. */
     [[nodiscard]] QUrl url(const std::shared_ptr<Folder> &root = {}) const;
 
+    [[nodiscard]] virtual bool isFilesGroup() const;
+
 protected:
     File(const char *name, FileSize size, Folder *parent)
         : m_parent(parent)
