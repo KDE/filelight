@@ -31,6 +31,7 @@ public:
     Q_SIGNAL void paletteChanged();
 
     Q_PROPERTY(QString uuid MEMBER m_uuid CONSTANT)
+    Q_PROPERTY(bool isFilesGroup READ isFilesGroup CONSTANT)
 
     Segment(const std::shared_ptr<File> &f, uint s, uint l, bool isFake = false);
     ~Segment() override;
@@ -112,6 +113,11 @@ public:
     [[nodiscard]] QString uuid() const
     {
         return m_uuid;
+    }
+
+    [[nodiscard]] bool isFilesGroup() const
+    {
+        return m_file->isFilesGroup();
     }
 
     friend class Map;

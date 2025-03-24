@@ -116,6 +116,7 @@ Kirigami.Page {
             required property Segment segment
 
             title: segment.displayName()
+            visible: !segment.isFilesGroup
 
             onAboutToShow: page.contextMenu = this
             onAboutToHide: page.contextMenu = null
@@ -506,6 +507,10 @@ Kirigami.Page {
             if (mouse.button === Qt.LeftButton) {
                 if (child.segmentUuid === "root") {
                     appWindow.slotUp()
+                    return
+                }
+                if (child.segment.isFilesGroup) {
+                    // Cannot open a files group. It describes any number of files.
                     return
                 }
                 if (!child.segment.isFolder()) {
