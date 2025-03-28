@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-09 00:43+0000\n"
+"POT-Creation-Date: 2025-03-28 02:39+0000\n"
 "PO-Revision-Date: 2024-09-14 22:45+0300\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -343,49 +343,49 @@ msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Mažinti"
 
-#: src/qml/MapPage.qml:126 src/qml/MapPage.qml:249
+#: src/qml/MapPage.qml:127 src/qml/MapPage.qml:250
 #, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "Atverti"
 
-#: src/qml/MapPage.qml:134 src/qml/MapPage.qml:257
+#: src/qml/MapPage.qml:135 src/qml/MapPage.qml:258
 #, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
 msgstr "Atverti čia terminalą"
 
-#: src/qml/MapPage.qml:142
+#: src/qml/MapPage.qml:143
 #, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "Centruoti žemėlapį čia"
 
-#: src/qml/MapPage.qml:153 src/qml/MapPage.qml:265
+#: src/qml/MapPage.qml:154 src/qml/MapPage.qml:266
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "Pridėti į neskenavimo sąrašą"
 
-#: src/qml/MapPage.qml:161
+#: src/qml/MapPage.qml:162
 #, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Skenuoti iš naujo"
 
-#: src/qml/MapPage.qml:168 src/qml/MapPage.qml:272
+#: src/qml/MapPage.qml:169 src/qml/MapPage.qml:273
 #, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "Kopijuoti į iškarpinę"
 
-#: src/qml/MapPage.qml:176 src/qml/MapPage.qml:280
+#: src/qml/MapPage.qml:177 src/qml/MapPage.qml:281
 #, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "Ištrinti"
 
-#: src/qml/MapPage.qml:333
+#: src/qml/MapPage.qml:334
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -395,7 +395,7 @@ msgstr[1] "%1 failai (%2%)"
 msgstr[2] "%1 failų (%2%)"
 msgstr[3] "%1 failas (%2%)"
 
-#: src/qml/MapPage.qml:335
+#: src/qml/MapPage.qml:336
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -405,13 +405,13 @@ msgstr[1] "%1 failai"
 msgstr[2] "%1 failų"
 msgstr[3] "%1 failas"
 
-#: src/qml/MapPage.qml:339
+#: src/qml/MapPage.qml:340
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "Spustelėkite, norėdami pereiti į virškatalogį"
 
-#: src/qml/MapPage.qml:558
+#: src/qml/MapPage.qml:563
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -421,7 +421,7 @@ msgstr[1] "%1 failai, %2"
 msgstr[2] "%1 failų, %2"
 msgstr[3] "%1 failas, %2"
 
-#: src/qml/MapPage.qml:567
+#: src/qml/MapPage.qml:572
 #, kde-format
 msgid "No data available"
 msgstr "Nėra prieinamų duomenų"

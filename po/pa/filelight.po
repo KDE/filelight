@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-09 00:43+0000\n"
+"POT-Creation-Date: 2025-03-28 02:39+0000\n"
 "PO-Revision-Date: 2024-01-04 08:44-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -354,49 +354,49 @@ msgctxt "@action"
 msgid "Zoom Out"
 msgstr "ਜ਼ੂਮ ਆਉਟ"
 
-#: src/qml/MapPage.qml:126 src/qml/MapPage.qml:249
+#: src/qml/MapPage.qml:127 src/qml/MapPage.qml:250
 #, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "ਖੋਲ੍ਹੋ"
 
-#: src/qml/MapPage.qml:134 src/qml/MapPage.qml:257
+#: src/qml/MapPage.qml:135 src/qml/MapPage.qml:258
 #, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
 msgstr "ਟਰਮੀਨਲ ਇੱਥੇ ਖੋਲ੍ਹੋ"
 
-#: src/qml/MapPage.qml:142
+#: src/qml/MapPage.qml:143
 #, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "ਨਕਸ਼ਾ ਇੱਥੇ ਕੇਂਦਰਿਤ ਕਰੋ"
 
-#: src/qml/MapPage.qml:153 src/qml/MapPage.qml:265
+#: src/qml/MapPage.qml:154 src/qml/MapPage.qml:266
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "ਸਕੈਨ ਨਾ ਕਰੋ ਸੂਚੀ ਵਿੱਚ ਜੋੜੋ"
 
-#: src/qml/MapPage.qml:161
+#: src/qml/MapPage.qml:162
 #, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "ਮੁੜ-ਸਕੈਨ"
 
-#: src/qml/MapPage.qml:168 src/qml/MapPage.qml:272
+#: src/qml/MapPage.qml:169 src/qml/MapPage.qml:273
 #, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕਰੋ"
 
-#: src/qml/MapPage.qml:176 src/qml/MapPage.qml:280
+#: src/qml/MapPage.qml:177 src/qml/MapPage.qml:281
 #, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "ਹਟਾਓ"
 
-#: src/qml/MapPage.qml:333
+#: src/qml/MapPage.qml:334
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -404,7 +404,7 @@ msgid_plural "%1 Files (%2%)"
 msgstr[0] "%1 ਫਾਇਲ (%2%)"
 msgstr[1] "%1 ਫਾਇਲਾਂ (%2%)"
 
-#: src/qml/MapPage.qml:335
+#: src/qml/MapPage.qml:336
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -412,13 +412,13 @@ msgid_plural "%1 Files"
 msgstr[0] "%1 ਫਾਇਲ"
 msgstr[1] "%1 ਫਾਇਲਾਂ"
 
-#: src/qml/MapPage.qml:339
+#: src/qml/MapPage.qml:340
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "ਮੁੱਢਲੀ ਡਾਇਰੈਕਟਰੀ ਵਿੱਚ ਜਾਣ ਲਈ ਕਲਿੱਕ ਕਰੋ"
 
-#: src/qml/MapPage.qml:558
+#: src/qml/MapPage.qml:563
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -426,7 +426,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 ਫਾਇਲ, %2"
 msgstr[1] "%1 ਫਾਇਲਾਂ, %2"
 
-#: src/qml/MapPage.qml:567
+#: src/qml/MapPage.qml:572
 #, kde-format
 msgid "No data available"
 msgstr "ਕੋਈ ਡਾਟਾ ਉਪਲੱਬਧ ਨਹੀਂ"

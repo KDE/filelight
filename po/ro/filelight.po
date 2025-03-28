@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-09 00:43+0000\n"
+"POT-Creation-Date: 2025-03-28 02:39+0000\n"
 "PO-Revision-Date: 2024-06-08 16:55+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -347,49 +347,49 @@ msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Îndepărtează"
 
-#: src/qml/MapPage.qml:126 src/qml/MapPage.qml:249
+#: src/qml/MapPage.qml:127 src/qml/MapPage.qml:250
 #, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "Deschide"
 
-#: src/qml/MapPage.qml:134 src/qml/MapPage.qml:257
+#: src/qml/MapPage.qml:135 src/qml/MapPage.qml:258
 #, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
 msgstr "Deschide un terminal aici"
 
-#: src/qml/MapPage.qml:142
+#: src/qml/MapPage.qml:143
 #, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "Centrează harta aici"
 
-#: src/qml/MapPage.qml:153 src/qml/MapPage.qml:265
+#: src/qml/MapPage.qml:154 src/qml/MapPage.qml:266
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "Adaugă la lista de ignorat"
 
-#: src/qml/MapPage.qml:161
+#: src/qml/MapPage.qml:162
 #, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Recitește"
 
-#: src/qml/MapPage.qml:168 src/qml/MapPage.qml:272
+#: src/qml/MapPage.qml:169 src/qml/MapPage.qml:273
 #, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "Copiază în clipboard"
 
-#: src/qml/MapPage.qml:176 src/qml/MapPage.qml:280
+#: src/qml/MapPage.qml:177 src/qml/MapPage.qml:281
 #, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "Șterge"
 
-#: src/qml/MapPage.qml:333
+#: src/qml/MapPage.qml:334
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -398,7 +398,7 @@ msgstr[0] "%1 fișier (%2%)"
 msgstr[1] "%1 fișiere (%2%)"
 msgstr[2] "%1 de fișiere (%2%)"
 
-#: src/qml/MapPage.qml:335
+#: src/qml/MapPage.qml:336
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -407,13 +407,13 @@ msgstr[0] "%1 fișier"
 msgstr[1] "%1 fișiere"
 msgstr[2] "%1 de fișiere"
 
-#: src/qml/MapPage.qml:339
+#: src/qml/MapPage.qml:340
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "Apăsați pentru a merge în sus la dosarul-părinte"
 
-#: src/qml/MapPage.qml:558
+#: src/qml/MapPage.qml:563
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -422,7 +422,7 @@ msgstr[0] "%1 fișier, %2"
 msgstr[1] "%1 fișiere, %2"
 msgstr[2] "%1 de fișiere, %2"
 
-#: src/qml/MapPage.qml:567
+#: src/qml/MapPage.qml:572
 #, kde-format
 msgid "No data available"
 msgstr "Nu sunt disponibile date"
