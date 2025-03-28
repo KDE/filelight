@@ -7,6 +7,9 @@
 install(PROGRAMS org.kde.filelight.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES filelightrc DESTINATION ${KDE_INSTALL_CONFDIR})
 install(FILES org.kde.filelight.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
+install(PROGRAMS servicemenu.desktop
+    RENAME filelight.desktop
+    DESTINATION ${KDE_INSTALL_DATADIR}/kio/servicemenus)
 
 ecm_install_icons(ICONS
     16-apps-filelight.png

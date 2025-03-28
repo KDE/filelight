@@ -1,0 +1,10 @@
+[Desktop Entry]
+Actions=filelight
+Type=Service
+MimeType=inode/directory;
+X-KDE-MaxNumberOfUrls=1
+
+[Desktop Action filelight]
+Name=View Disk Usage Statistics
+Icon=filelight
+Exec=filelight %u
