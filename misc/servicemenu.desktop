@@ -6,5 +6,15 @@ X-KDE-MaxNumberOfUrls=1
 
 [Desktop Action filelight]
 Name=View Disk Usage Statistics
+Name[bg]=Преглед на статистика на използване на диска
+Name[ca]=Visualització d'estadístiques d'ús del disc
+Name[ca@valencia]=Visualització d'estadístiques d'ús del disc
+Name[es]=Ver estadísticas del uso de discos
+Name[ka]=დისკის გამოყენების სტატისტიკის ნახვა
+Name[nl]=Gebruiksstatistieken van schijven bekijken
+Name[sl]=Pogled statistike uporabe diska
+Name[tr]=Disk Kullanımı İstatistiklerini Görüntüle
+Name[uk]=Перегляд статистики використання диска
+Name[x-test]=xxView Disk Usage Statisticsxx
 Icon=filelight
 Exec=filelight %u
