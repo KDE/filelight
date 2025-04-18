@@ -56,6 +56,8 @@ void WindowsWalker::next()
             } else {
                 qWarning() << m_path << ':' << errorCode << GetLastErrorAsString(errorCode);
             }
+            // WARNING: do not access m_fileinfo, it has undefined content!
+            continue;
         } else {
             if (m_fileinfo.cFileName == std::wstring(L".") || m_fileinfo.cFileName == std::wstring(L"..")) {
                 continue;
