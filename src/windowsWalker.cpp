@@ -53,15 +53,14 @@ void WindowsWalker::next()
                 // qDebug() << "no more files";
                 close();
                 return;
-            } else {
-                qWarning() << m_path << ':' << errorCode << GetLastErrorAsString(errorCode);
             }
             // WARNING: do not access m_fileinfo, it has undefined content!
+            qWarning() << m_path << ':' << errorCode << GetLastErrorAsString(errorCode);
             continue;
-        } else {
-            if (m_fileinfo.cFileName == std::wstring(L".") || m_fileinfo.cFileName == std::wstring(L"..")) {
-                continue;
-            }
+        }
+
+        if (m_fileinfo.cFileName == std::wstring(L".") || m_fileinfo.cFileName == std::wstring(L"..")) {
+            continue;
         }
 
         updateEntry();
