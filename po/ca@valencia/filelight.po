@@ -404,7 +404,7 @@ msgstr[1] "%1 fitxers"
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
-msgstr "Feu-hi clic per a pujar al directori superior"
+msgstr "Cliqueu-hi per a pujar al directori superior"
 
 #: src/qml/MapPage.qml:563
 #, kde-format
