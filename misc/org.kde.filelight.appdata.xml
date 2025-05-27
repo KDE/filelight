@@ -95,6 +95,7 @@
   <summary xml:lang="ro">Arată utilizarea discului și șterge fișiere nefolosite</summary>
   <summary xml:lang="ru">Просмотр сведений об использовании дискового пространства и удаление неиспользуемых файлов</summary>
   <summary xml:lang="sa">डिस्क-उपयोगं दर्शयन्तु, अप्रयुक्तानि सञ्चिकानि च विलोपयन्तु</summary>
+  <summary xml:lang="sk">Zobraziť využitie disku a odstránenie nepoužívaných súborov</summary>
   <summary xml:lang="sl">Prikazuje rabo diska in briše neuporabljene datoteke</summary>
   <summary xml:lang="sv">Visa diskanvändning och ta bort oanvända filer</summary>
   <summary xml:lang="ta">வட்டுப் பயன்பாட்டைக் காட்டி, தேவையில்லாத கோப்புகளை அகற்ற உதவும்</summary>
@@ -141,6 +142,7 @@
     <p xml:lang="ro">Filelight e o aplicație pentru vizualizarea folosirii discului din calculator prin afișarea dosarelor într-o vizualizare cu inele concentrice. Filelight ușurează eliberarea spațiului!</p>
     <p xml:lang="ru">Filelight — приложение для визуализации использования дискового пространства, использующее наглядное отображение размеров папок в виде концентрических колец. Filelight позволяет просто находить большие файлы и помогает освобождать место на дисках.</p>
     <p xml:lang="sa">Filelight इति एकः अनुप्रयोगः अस्ति यत् भवतः सङ्गणके डिस्क-उपयोगं दृश्यमानं भवति, यत् समकेन्द्र-वलयस्य सुलभ-अवगमन-दृश्यस्य उपयोगेन समुच्चय-प्रदर्शनं करोति । Filelight इत्यनेन स्थानं मुक्तं कर्तुं सरलं भवति!</p>
+    <p xml:lang="sk">Filelight je aplikácia na vizualizáciu využitia disku v počítači pomocou prehľadného zobrazenia priečinkov v podobe sústredných krúžkov. Filelight umožňuje jednoducho uvoľniť miesto!</p>
     <p xml:lang="sl">FIlelight je aplikacija za vizualizacijo porabe diska na vašem računalniku, tako da prikazuje mape v preprosto razumljivih koncentričnih krogih. Filelight poenostavi sproščanje prostora na disku!</p>
     <p xml:lang="sv">Filelight är ett program för att åskådliggöra diskanvändning på datorn genom att visa kataloger med en lättförståelig vy av koncentriska ringar. Filelight gör det enkelt att frigöra utrymme!</p>
     <p xml:lang="ta">உங்கள் கணினியிலுள்ள அடைவுகளின் அளவுகளை நீங்கள் எளிதில் புரிந்துகொள்ளும் வகையில் ஃபைல்-லைட் காட்டும். தேவையில்லாதவற்றை சுலபமாக அகற்றி இடத்தை காலி செய்யலாம்!</p>
@@ -238,6 +240,7 @@
       <li xml:lang="ro">Scanați discuri locale, distante sau amovibile</li>
       <li xml:lang="ru">Сканирование локальных, сетевых и сменных дисков;</li>
       <li xml:lang="sa">स्थानीयं, दूरस्थं, अथवा हटनीयं डिस्कं स्कैन कुर्वन्तु</li>
+      <li xml:lang="sk">Skenujte lokálne, vzdialené alebo odoberateľné disky</li>
       <li xml:lang="sl">Preišči krajevne, oddaljene ali odstranljive diske</li>
       <li xml:lang="sv">Sök igenom lokala diskar, diskar på en annan dator eller flyttbara diskar</li>
       <li xml:lang="ta">உள்ளமை, தொலை, மற்றும் கழற்றக்கூடிய வட்டுகளை ஆராயும்</li>
@@ -282,6 +285,7 @@
       <li xml:lang="ro">Vedeți informații detaliate despre fișiere și dosare</li>
       <li xml:lang="ru">Подробные сведения о файлах и папках;</li>
       <li xml:lang="sa">सञ्चिकानां, पुटस्य च विषये विस्तृतां सूचनां पश्यन्तु</li>
+      <li xml:lang="sk">1Informácie o súboroch a priečinkoch prechodom myši ponad položky</li>
       <li xml:lang="sl">Pogled podrobnih informacij o datotekah in mapah</li>
       <li xml:lang="sv">Visa detaljerad information om filer och kataloger</li>
       <li xml:lang="ta">கோப்புகளின் மற்றும் அடைவுகளின் விவரங்களைக் காட்டும்</li>
@@ -326,6 +330,7 @@
       <li xml:lang="ro">Ștergeți fișiere sau dosare ce ocupă prea mult spațiu</li>
       <li xml:lang="ru">Удаление файлов или папок, занимающих слишком много места;</li>
       <li xml:lang="sa">अत्यधिकं स्थानं गृह्णन्ति सञ्चिकाः अथवा पुटं विलोपयन्तु</li>
+      <li xml:lang="sk">Odstráňte súbory alebo priečinky, ktoré zaberajú príliš veľa miesta</li>
       <li xml:lang="sl">Briši datoteke ali mape, ki zavzemajo preveč prostora</li>
       <li xml:lang="sv">Ta bort filer eller kataloger som upptar för mycket utrymme</li>
       <li xml:lang="ta">மிகப்பெரிய கோப்புகளையும் அடைவுகளையும் எளிதில் அகற்ற உதவும்</li>
@@ -370,6 +375,7 @@
       <li xml:lang="ro">Integrare cu gestionarii de fișiere Dolphin, Konqueror și Krusader</li>
       <li xml:lang="ru">Встраивание в диспетчеры файлов Dolphin, Konqueror и Krusader;</li>
       <li xml:lang="sa">Dolphin, Konqueror, Krusader च सञ्चिकाप्रबन्धकानां मध्ये एकीकरणं</li>
+      <li xml:lang="sk">Integrácia do správcov súborov Dolphin, Konqueror a Krusader</li>
       <li xml:lang="sl">Vključitev v upravljalnike datotek Dolphin, Konqueror in Krusader</li>
       <li xml:lang="sv">Integrerat med filhanterarna Dolphin, Konqueror och Krusader</li>
       <li xml:lang="ta">டால்பின், கான்கொரர், குரூசெடர் போன்ற கோப்பு உலாவிகளுடனான ஒருங்கிணைப்பு</li>
