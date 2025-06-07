@@ -149,7 +149,7 @@
 >La pestaña de exploración le permite configurar cómo analizará &filelight; las carpetas. <guilabel
 >No inspeccionar estas carpetas</guilabel
 > sirve para excluir ciertas carpetas de la exploración. Esta opción resulta muy útil para omitir carpetas para las que es posible que no tenga permiso de lectura, o carpetas que forman parte de un sistema de archivos virtual, como /proc. Para añadir una carpeta a la lista, pulse el botón <guibutton
->Añadir...</guibutton
+>Añadir…</guibutton
 >. Esto le mostrará un diálogo donde puede seleccionar una carpeta en una vista de árbol. Para eliminar una carpeta de la lista, selecciónela y pulse el botón<guibutton
 >Eliminar</guibutton
 >.</para>
@@ -314,7 +314,7 @@
 ><guimenu
 >Explorar</guimenu
 > <guimenuitem
->Explorar carpeta...</guimenuitem
+>Explorar carpeta…</guimenuitem
 > </menuchoice
 ></term>
 <listitem
