@@ -186,6 +186,8 @@ bool MainContext::openUrl(const QUrl &u)
         const bool success = start(uri);
         if (success) {
             setUrl(uri);
+            m_upEnabled = (url() != KIO::upUrl(url()));
+            Q_EMIT upEnabledChanged();
         }
         return success;
     }

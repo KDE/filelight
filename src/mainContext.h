@@ -32,6 +32,7 @@ class MainContext : public QObject
     Q_OBJECT
 public:
     Q_PROPERTY(QUrl url READ url WRITE setUrl NOTIFY urlChanged)
+    Q_PROPERTY(bool upEnabled MEMBER m_upEnabled NOTIFY upEnabledChanged)
 
     explicit MainContext(QObject *parent = nullptr);
     [[nodiscard]] QUrl url() const;
@@ -40,6 +41,7 @@ Q_SIGNALS:
     void canceled(const QString &);
     void canvasIsDirty(Filelight::Dirty filth);
     void urlChanged();
+    void upEnabledChanged();
     void openUrlFailed(const QString &text, const QString &explanation);
 
 public Q_SLOTS:
@@ -62,6 +64,7 @@ private:
     void setUrl(const QUrl &url);
 
     QUrl m_url;
+    bool m_upEnabled;
     ScanManager *m_manager;
 
 public:
