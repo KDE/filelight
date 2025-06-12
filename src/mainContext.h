@@ -62,6 +62,7 @@ public Q_SLOTS:
 private:
     /// For internal use only -- call openUrl() instead
     void setUrl(const QUrl &url);
+    void setUpEnabled(const bool enabled);
 
     QUrl m_url;
     bool m_upEnabled;

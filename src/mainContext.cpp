@@ -186,8 +186,7 @@ bool MainContext::openUrl(const QUrl &u)
         const bool success = start(uri);
         if (success) {
             setUrl(uri);
-            m_upEnabled = (url() != KIO::upUrl(url()));
-            Q_EMIT upEnabledChanged();
+            setUpEnabled(url() != KIO::upUrl(url()));
         }
         return success;
     }
@@ -234,6 +233,14 @@ void MainContext::setUrl(const QUrl &url)
 {
     m_url = url;
     Q_EMIT urlChanged();
+}
+
+void MainContext::setUpEnabled(const bool enabled)
+{
+    if (m_upEnabled != enabled) {
+        m_upEnabled = enabled;
+        Q_EMIT upEnabledChanged();
+    }
 }
 
 bool MainContext::start(const QUrl &url) const
