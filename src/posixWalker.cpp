@@ -100,12 +100,12 @@ void POSIXWalker::next()
             return;
         }
 
-        m_entry.isSkipable =
+        m_entry.isSkippable =
             S_ISLNK(statbuf.st_mode) || S_ISCHR(statbuf.st_mode) || S_ISBLK(statbuf.st_mode) || S_ISFIFO(statbuf.st_mode) || S_ISSOCK(statbuf.st_mode);
 
         auto links = statbuf.st_nlink;
         // Only count as hard link if it's not already being skipped
-        if (links > 1 && !m_entry.isSkipable) {
+        if (links > 1 && !m_entry.isSkippable) {
             ino_t inode = statbuf.st_ino;
             // If we already counted this inode, skip it
             if (m_countedHardlinks.find(inode) != m_countedHardlinks.end()) {

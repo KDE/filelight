@@ -53,14 +53,14 @@ private Q_SLOTS:
         const auto dir = entries[QByteArrayLiteral("Con 자백")];
         QVERIFY(dir.isDir);
         QVERIFY(!dir.isFile);
-        QVERIFY(!dir.isSkipable);
+        QVERIFY(!dir.isSkippable);
         // size doesn't matter, it's ignored
 
         QVERIFY(entries.contains(QByteArrayLiteral("bar")));
         const auto file = entries[QByteArrayLiteral("bar")];
         QVERIFY(!file.isDir);
         QVERIFY(file.isFile);
-        QVERIFY(!file.isSkipable);
+        QVERIFY(!file.isSkippable);
 #ifdef Q_OS_WINDOWS
         QCOMPARE(file.size, 7682);
 #elif defined(Q_OS_FREEBSD)
@@ -76,8 +76,8 @@ private Q_SLOTS:
             const auto symlink = entries[QByteArrayLiteral("symlink")];
             QVERIFY(!symlink.isDir);
             QVERIFY(!symlink.isFile);
-            QVERIFY(symlink.isSkipable);
-            // size of skipables doesn't matter
+            QVERIFY(symlink.isSkippable);
+            // size of skippables doesn't matter
         }
 
         if (withLink) {
@@ -85,7 +85,7 @@ private Q_SLOTS:
             const auto symlink = entries[QByteArrayLiteral("link")];
             QVERIFY(!symlink.isDir);
             QVERIFY(symlink.isFile);
-            QVERIFY(!symlink.isSkipable);
+            QVERIFY(!symlink.isSkippable);
 #ifdef Q_OS_WINDOWS
             QCOMPARE(symlink.size, 7682);
 #elif defined(Q_OS_FREEBSD)

@@ -88,7 +88,7 @@ std::shared_ptr<Folder> LocalLister::scan(const QByteArray &path, const QByteArr
             return cwd;
         }
 
-        if (entry.isSkipable || entry.isDuplicate) {
+        if (entry.isSkippable || entry.isDuplicate) {
             continue;
         }
 
