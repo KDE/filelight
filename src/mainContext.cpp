@@ -231,8 +231,10 @@ QUrl MainContext::url() const
 
 void MainContext::setUrl(const QUrl &url)
 {
-    m_url = url;
-    Q_EMIT urlChanged();
+    if (m_url != url) {
+        m_url = url;
+        Q_EMIT urlChanged();
+    }
 }
 
 void MainContext::setUpEnabled(const bool enabled)
