@@ -118,19 +118,23 @@ void RadialMap::Map::make(const std::shared_ptr<Folder> &tree, bool refresh)
         //**** this is a mess
 
         deleteAllSegments(m_signature);
-        m_signature.resize(m_visibleDepth + 1);
-        Q_EMIT signatureChanged();
 
         m_root = tree;
-        if (m_rootSegment && m_rootSegment->file()) {
-            m_rootSegment->file()->setSegment({});
-        }
-        m_rootSegment = std::make_unique<Segment>(tree, 0, MAX_DEGREE);
-
         if (!refresh) {
             m_minSize = (tree->size() * 3) / (PI * height() - MAP_2MARGIN);
             findVisibleDepth(tree);
         }
+
+        uint signatureSize = m_visibleDepth + 1;
+        if (m_signature.size() != signatureSize) {
+            m_signature.resize(signatureSize);
+            Q_EMIT signatureChanged();
+        }
+
+        if (m_rootSegment && m_rootSegment->file()) {
+            m_rootSegment->file()->setSegment({});
+        }
+        m_rootSegment = std::make_unique<Segment>(tree, 0, MAX_DEGREE);
 
         setRingBreadth();
 
@@ -173,7 +177,7 @@ void RadialMap::Map::findVisibleDepth(const std::shared_ptr<Folder> &dir, uint c
     static uint stopDepth = 0;
 
     if (dir == m_root) {
-        stopDepth = m_visibleDepth;
+        stopDepth = Config::instance()->defaultRingDepth;
         m_visibleDepth = 0;
     }
 
