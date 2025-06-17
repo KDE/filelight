@@ -47,14 +47,16 @@ Kirigami.Page {
                 Layout.alignment: Qt.AlignHCenter
                 horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.Wrap
-                text: i18nc("@info", "Filelight analyzes disk usage so you can see what's using lots of space. Choose a folder to proceed:")
+                text: inSandbox
+                    ? i18nc("@info", "Filelight analyzes disk usage so you can see what's using lots of space.")
+                    : i18nc("@info", "Filelight analyzes disk usage so you can see what's using lots of space. Choose a folder to proceed:")
             }
         }
 
         Flow {
             Layout.alignment: Qt.AlignHCenter
             Layout.maximumWidth: parent.width
-            Layout.preferredWidth: button1.implicitWidth + (button2.visible ? spacing + button2.implicitWidth : 0) + (button3.visible ? spacing + button3.implicitWidth : 0)
+            spacing: Kirigami.Units.smallSpacing
             QQC2.ToolButton {
                 id: button1
                 visible: !inSandbox
