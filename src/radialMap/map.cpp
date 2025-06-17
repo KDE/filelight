@@ -402,18 +402,18 @@ void RadialMap::Map::zoomIn() // slot
 {
     if (m_visibleDepth > MIN_RING_DEPTH) {
         --m_visibleDepth;
-        make(m_root);
         Config::instance()->defaultRingDepth = m_visibleDepth;
+        make(m_root);
     }
 }
 
 void RadialMap::Map::zoomOut() // slot
 {
     ++m_visibleDepth;
-    make(m_root);
     if (m_visibleDepth > Config::instance()->defaultRingDepth) {
         Config::instance()->defaultRingDepth = m_visibleDepth;
     }
+    make(m_root);
 }
 
 void RadialMap::Map::refresh(const Filelight::Dirty filth)
