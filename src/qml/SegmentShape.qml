@@ -35,22 +35,6 @@ Shape {
     preferredRendererType: Shape.CurveRenderer
     asynchronous: true
 
-    property bool wasReady: false
-
-    function forceUpdate() {
-        path.fillColor = "transparent"
-        path.fillColor = Qt.binding(function() { return shape.fillColor })
-    }
-
-    onStatusChanged: {
-        // Hack for https://bugreports.qt.io/browse/QTBUG-128637
-        // Force an update by briefly switching the colors around.
-        if (!wasReady && shape.status === Shape.Ready) {
-            wasReady = true
-            Qt.callLater(forceUpdate)
-        }
-    }
-
     ShapeToolTip {
         id: tooltip
         parent: shapeItem
