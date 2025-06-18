@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-25 00:44+0000\n"
+"POT-Creation-Date: 2025-06-18 00:45+0000\n"
 "PO-Revision-Date: 2024-08-21 05:33+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -426,7 +426,20 @@ msgctxt "@title"
 msgid "Welcome to Filelight"
 msgstr "მოგესალმებით Firelight-ში"
 
-#: src/qml/OverviewPage.qml:50
+#: src/qml/OverviewPage.qml:51
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Filelight analyzes disk usage so you can see what's using lots of space. "
+#| "Choose a folder to proceed:"
+msgctxt "@info"
+msgid ""
+"Filelight analyzes disk usage so you can see what's using lots of space."
+msgstr ""
+"Filelight აანალიზებს დისკის გამოყენებას და ამით გაჩვენებთ, რა იყენებს ბევრ "
+"ადგილს. გასაგრძელებლად აირჩიეთ საქაღალდე:"
+
+#: src/qml/OverviewPage.qml:52
 #, kde-format
 msgctxt "@info"
 msgid ""

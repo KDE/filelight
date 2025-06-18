@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-25 00:44+0000\n"
+"POT-Creation-Date: 2025-06-18 00:45+0000\n"
 "PO-Revision-Date: 2024-09-08 12:52+0200\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -425,7 +425,20 @@ msgctxt "@title"
 msgid "Welcome to Filelight"
 msgstr "ஃபைல்-லைட்டுக்கு நல்வரவு"
 
-#: src/qml/OverviewPage.qml:50
+#: src/qml/OverviewPage.qml:51
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Filelight analyzes disk usage so you can see what's using lots of space. "
+#| "Choose a folder to proceed:"
+msgctxt "@info"
+msgid ""
+"Filelight analyzes disk usage so you can see what's using lots of space."
+msgstr ""
+"சேமிப்பக இடத்தை அடைப்பது எதுவென்று கண்டறிய உதவும் விதத்தில் ஃபைல்-லைட் வட்டு பயன்பாட்டை "
+"காட்டும். தொடர ஓர் அடைவைத் தேர்ந்தெடுக்கவும்:"
+
+#: src/qml/OverviewPage.qml:52
 #, kde-format
 msgctxt "@info"
 msgid ""

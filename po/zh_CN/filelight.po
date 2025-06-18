@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-25 00:44+0000\n"
+"POT-Creation-Date: 2025-06-18 00:45+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -424,7 +424,20 @@ msgctxt "@title"
 msgid "Welcome to Filelight"
 msgstr "欢迎使用 Filelight"
 
-#: src/qml/OverviewPage.qml:50
+#: src/qml/OverviewPage.qml:51
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Filelight analyzes disk usage so you can see what's using lots of space. "
+#| "Choose a folder to proceed:"
+msgctxt "@info"
+msgid ""
+"Filelight analyzes disk usage so you can see what's using lots of space."
+msgstr ""
+"Filelight 可以分析磁盘使用情况，让您发现占用较大存储空间的项目。请选择一个文"
+"件夹以继续操作："
+
+#: src/qml/OverviewPage.qml:52
 #, kde-format
 msgctxt "@info"
 msgid ""

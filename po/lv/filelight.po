@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-25 00:44+0000\n"
+"POT-Creation-Date: 2025-06-18 00:45+0000\n"
 "PO-Revision-Date: 2024-08-22 15:39+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -430,7 +430,20 @@ msgctxt "@title"
 msgid "Welcome to Filelight"
 msgstr "Laipni lūgti programmā „Filelight“!"
 
-#: src/qml/OverviewPage.qml:50
+#: src/qml/OverviewPage.qml:51
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Filelight analyzes disk usage so you can see what's using lots of space. "
+#| "Choose a folder to proceed:"
+msgctxt "@info"
+msgid ""
+"Filelight analyzes disk usage so you can see what's using lots of space."
+msgstr ""
+"„Filelight“ analizē diska lietojumu, ļaujot redzēt, kas diskā aizņem daudz "
+"vietas. Lai turpinātu, izvēlieties mapi:"
+
+#: src/qml/OverviewPage.qml:52
 #, kde-format
 msgctxt "@info"
 msgid ""
