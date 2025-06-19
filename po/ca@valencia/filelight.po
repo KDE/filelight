@@ -1,17 +1,16 @@
 # Translation of filelight.po to Catalan (Valencian)
-# Copyright (C) 2010-2024 This_file_is_part_of_KDE
+# Copyright (C) 2010-2025 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2010, 2013, 2014, 2015, 2017, 2018, 2020, 2021, 2022, 2024 Josep M. Ferrer <txemaq@gmail.com>
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2015, 2020, 2021.
-# Josep M. Ferrer <txemaq@gmail.com>, 2024.
+# Josep M. Ferrer <txemaq@gmail.com>, 2010, 2013, 2014, 2015, 2017, 2018, 2020, 2021, 2022, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-18 00:45+0000\n"
-"PO-Revision-Date: 2024-08-21 10:30+0200\n"
+"PO-Revision-Date: 2025-06-18 08:40+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -20,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -432,17 +431,13 @@ msgid "Welcome to Filelight"
 msgstr "Us donem la benvinguda a Filelight"
 
 #: src/qml/OverviewPage.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Filelight analyzes disk usage so you can see what's using lots of space. "
-#| "Choose a folder to proceed:"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space."
 msgstr ""
 "Filelight analitza l'ús del disc, de manera que podeu veure què està "
-"utilitzant molt espai. Seleccioneu una carpeta per a continuar:"
+"utilitzant molt espai."
 
 #: src/qml/OverviewPage.qml:52
 #, kde-format

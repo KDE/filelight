@@ -3,13 +3,13 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2009, 2010, 2011, 2013, 2015, 2017, 2018, 2020, 2021, 2022, 2024.
+# Yuri Chornoivan <yurchor@ukr.net>, 2009, 2010, 2011, 2013, 2015, 2017, 2018, 2020, 2021, 2022, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-18 00:45+0000\n"
-"PO-Revision-Date: 2024-08-21 16:37+0300\n"
+"PO-Revision-Date: 2025-06-18 08:22+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -437,17 +437,13 @@ msgid "Welcome to Filelight"
 msgstr "Вітаємо у Filelight"
 
 #: src/qml/OverviewPage.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Filelight analyzes disk usage so you can see what's using lots of space. "
-#| "Choose a folder to proceed:"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space."
 msgstr ""
 "Filelight аналізує використання диска, щоб ви могли бачити, які файли "
-"займають багато місця. Виберіть теку для обробки:"
+"займають багато місця."
 
 #: src/qml/OverviewPage.qml:52
 #, kde-format

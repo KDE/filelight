@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the filelight package.
 #
-# SPDX-FileCopyrightText: 2023, 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-18 00:45+0000\n"
-"PO-Revision-Date: 2024-08-22 14:27+0300\n"
+"PO-Revision-Date: 2025-06-18 15:56+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -433,17 +433,11 @@ msgid "Welcome to Filelight"
 msgstr "ברוך בואך ל־Filelight"
 
 #: src/qml/OverviewPage.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Filelight analyzes disk usage so you can see what's using lots of space. "
-#| "Choose a folder to proceed:"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space."
-msgstr ""
-"Filelight מנתח את ניצולת הכונן כדי להראות לך מה תופס הרבה נפח. נא לבחור "
-"תיקייה כדי להמשיך:"
+msgstr "Filelight מנתח את ניצולת הכונן כדי להראות לך מה תופס הרבה נפח."
 
 #: src/qml/OverviewPage.qml:52
 #, kde-format

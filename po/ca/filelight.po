@@ -1,17 +1,16 @@
 # Translation of filelight.po to Catalan
-# Copyright (C) 2010-2024 This_file_is_part_of_KDE
+# Copyright (C) 2010-2025 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2010, 2013, 2014, 2015, 2017, 2018, 2020, 2021, 2022, 2024 Josep M. Ferrer <txemaq@gmail.com>
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2015, 2020, 2021.
-# Josep M. Ferrer <txemaq@gmail.com>, 2024.
+# Josep M. Ferrer <txemaq@gmail.com>, 2010, 2013, 2014, 2015, 2017, 2018, 2020, 2021, 2022, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-18 00:45+0000\n"
-"PO-Revision-Date: 2024-08-21 10:30+0200\n"
+"PO-Revision-Date: 2025-06-18 08:40+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -20,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -432,17 +431,13 @@ msgid "Welcome to Filelight"
 msgstr "Us donem la benvinguda al Filelight"
 
 #: src/qml/OverviewPage.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Filelight analyzes disk usage so you can see what's using lots of space. "
-#| "Choose a folder to proceed:"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space."
 msgstr ""
 "El Filelight analitza l'ús del disc, de manera que podeu veure què està "
-"usant molt espai. Trieu una carpeta per a continuar:"
+"usant molt espai."
 
 #: src/qml/OverviewPage.qml:52
 #, kde-format
@@ -546,37 +541,3 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 fitxers, amb una mida mitjana de %2"
-
-#~ msgctxt "@info:status"
-#~ msgid "Aborting Scan..."
-#~ msgstr "S'està interrompent l'exploració..."
-
-#~ msgctxt "@action"
-#~ msgid "Scan Folder"
-#~ msgstr "Exploració de carpetes"
-
-#~ msgctxt "Go to the last path viewed"
-#~ msgid "Back"
-#~ msgstr "Enrere"
-
-#~ msgctxt "Go to forward in the history of paths viewed"
-#~ msgid "Forward"
-#~ msgstr "Endavant"
-
-#~ msgid "That folder is already set to be excluded from scans."
-#~ msgstr "Ja s'ha indicat que aquesta carpeta s'exclogui de les exploracions."
-
-#~ msgid "&Scan"
-#~ msgstr "&Explora"
-
-#~ msgid "&View"
-#~ msgstr "&Visualitza"
-
-#~ msgid "Main Toolbar"
-#~ msgstr "Barra d'eines principal"
-
-#~ msgid "Location Toolbar"
-#~ msgstr "Barra d'eines de localització"
-
-#~ msgid "View Toolbar"
-#~ msgstr "Barra d'eines de visualització"
