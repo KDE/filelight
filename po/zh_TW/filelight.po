@@ -5,13 +5,13 @@
 # Franklin Weng <franklin@mail.everfocus.com.tw>, 2010, 2013, 2015.
 # Jeff Huang <s8321414@gmail.com>, 2017, 2020.
 # pan93412 <pan93412@gmail.com>, 2018, 2019.
-# SPDX-FileCopyrightText: 2022, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2022, 2024, 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-18 00:45+0000\n"
-"PO-Revision-Date: 2024-08-25 02:08+0900\n"
+"PO-Revision-Date: 2025-06-19 21:58+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.04.70\n"
+"X-Generator: Lokalize 25.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -424,17 +424,11 @@ msgid "Welcome to Filelight"
 msgstr "歡迎使用 Filelight"
 
 #: src/qml/OverviewPage.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Filelight analyzes disk usage so you can see what's using lots of space. "
-#| "Choose a folder to proceed:"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space."
-msgstr ""
-"Filelight 會分析磁碟用量，讓您能清楚看到什麼東西正在使用大量空間。選擇一個資"
-"料夾以繼續："
+msgstr "Filelight 會分析磁碟用量，讓您能清楚看到什麼東西正在使用大量空間。"
 
 #: src/qml/OverviewPage.qml:52
 #, kde-format
