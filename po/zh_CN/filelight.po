@@ -425,17 +425,11 @@ msgid "Welcome to Filelight"
 msgstr "欢迎使用 Filelight"
 
 #: src/qml/OverviewPage.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Filelight analyzes disk usage so you can see what's using lots of space. "
-#| "Choose a folder to proceed:"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space."
 msgstr ""
-"Filelight 可以分析磁盘使用情况，让您发现占用较大存储空间的项目。请选择一个文"
-"件夹以继续操作："
 
 #: src/qml/OverviewPage.qml:52
 #, kde-format
