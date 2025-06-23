@@ -73,5 +73,11 @@ Kirigami.Page {
                 RadialMap.refresh(Filelight.Dirty.Layout)
             }
         }
+
+        QQC2.CheckBox {
+            text: i18nc("@checkbox", "Show folders sidebar")
+            checked: Config.showFoldersSidebar
+            onToggled: Config.showFoldersSidebar = checked
+        }
     }
 }

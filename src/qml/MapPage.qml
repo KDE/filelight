@@ -192,6 +192,7 @@ Kirigami.Page {
         visible: page.state === ""
 
         QQC2.ScrollView {
+            visible: Config.showFoldersSidebar
             implicitWidth: Kirigami.Units.gridUnit * 10
             Layout.maximumWidth: Kirigami.Units.gridUnit * 22
             Layout.fillWidth: true
@@ -293,6 +294,7 @@ Kirigami.Page {
         }
 
         Kirigami.Separator {
+            visible: Config.showFoldersSidebar
             Layout.fillHeight: true
         }
 

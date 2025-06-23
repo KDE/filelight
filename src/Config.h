@@ -37,6 +37,7 @@ class Config : public QObject
     Q_PROPERTY(bool scanAcrossMounts MEMBER scanAcrossMounts NOTIFY changed)
     Q_PROPERTY(bool scanRemoteMounts MEMBER scanRemoteMounts NOTIFY changed)
     Q_PROPERTY(bool showSmallFiles MEMBER showSmallFiles NOTIFY changed)
+    Q_PROPERTY(bool showFoldersSidebar MEMBER showFoldersSidebar NOTIFY changed)
     Q_PROPERTY(uint contrast MEMBER contrast NOTIFY changed)
     Q_PROPERTY(uint defaultRingDepth MEMBER defaultRingDepth NOTIFY changed)
     Q_PROPERTY(Filelight::MapScheme scheme MEMBER scheme NOTIFY changed)
@@ -55,6 +56,7 @@ public:
     bool scanAcrossMounts;
     bool scanRemoteMounts;
     bool showSmallFiles;
+    bool showFoldersSidebar;
     uint contrast;
     uint defaultRingDepth = 4;
 
