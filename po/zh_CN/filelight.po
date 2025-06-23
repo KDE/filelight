@@ -429,7 +429,7 @@ msgstr "欢迎使用 Filelight"
 msgctxt "@info"
 msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space."
-msgstr ""
+msgstr "Filelight 能够分析磁盘使用情况，让您了解哪些项目占用了大量空间。"
 
 #: src/qml/OverviewPage.qml:52
 #, kde-format
