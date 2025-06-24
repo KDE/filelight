@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-18 00:45+0000\n"
+"POT-Creation-Date: 2025-06-24 00:45+0000\n"
 "PO-Revision-Date: 2023-06-06 19:00+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -27,12 +27,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "wantoyek@gmail.com"
 
-#: src/Config.cpp:57
+#: src/Config.cpp:59
 #, kde-format
 msgid "Select path to ignore"
 msgstr "Pilih alur untuk abaikan"
 
-#: src/Config.cpp:70
+#: src/Config.cpp:72
 #, kde-format
 msgid "Folder already ignored"
 msgstr "Folder sudah diabaikan"
@@ -353,13 +353,13 @@ msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Zoom Perkecil"
 
-#: src/qml/MapPage.qml:127 src/qml/MapPage.qml:250
+#: src/qml/MapPage.qml:127 src/qml/MapPage.qml:251
 #, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "Buka"
 
-#: src/qml/MapPage.qml:135 src/qml/MapPage.qml:258
+#: src/qml/MapPage.qml:135 src/qml/MapPage.qml:259
 #, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
@@ -371,7 +371,7 @@ msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "Tengahkan Peta Di Sini"
 
-#: src/qml/MapPage.qml:154 src/qml/MapPage.qml:266
+#: src/qml/MapPage.qml:154 src/qml/MapPage.qml:267
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
@@ -383,19 +383,19 @@ msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Pindai ulang"
 
-#: src/qml/MapPage.qml:169 src/qml/MapPage.qml:273
+#: src/qml/MapPage.qml:169 src/qml/MapPage.qml:274
 #, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "Salin ke papan klip"
 
-#: src/qml/MapPage.qml:177 src/qml/MapPage.qml:281
+#: src/qml/MapPage.qml:177 src/qml/MapPage.qml:282
 #, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "Hapus"
 
-#: src/qml/MapPage.qml:334
+#: src/qml/MapPage.qml:336
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -403,7 +403,7 @@ msgid_plural "%1 Files (%2%)"
 msgstr[0] "%1 File (%2%)"
 msgstr[1] "%1 File (%2%)"
 
-#: src/qml/MapPage.qml:336
+#: src/qml/MapPage.qml:338
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -411,13 +411,13 @@ msgid_plural "%1 Files"
 msgstr[0] "%1 File"
 msgstr[1] "%1 File"
 
-#: src/qml/MapPage.qml:340
+#: src/qml/MapPage.qml:342
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "Klik untuk menuju naik ke direktori induk"
 
-#: src/qml/MapPage.qml:563
+#: src/qml/MapPage.qml:565
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -425,7 +425,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 File, %2"
 msgstr[1] "%1 File, %2"
 
-#: src/qml/MapPage.qml:572
+#: src/qml/MapPage.qml:574
 #, kde-format
 msgid "No data available"
 msgstr "Tidak ada data yang tersedia"
@@ -504,6 +504,12 @@ msgstr "Kontras"
 msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "Tampilkan file-file kecil"
+
+#: src/qml/SettingsPageAppearance.qml:78
+#, kde-format
+msgctxt "@checkbox"
+msgid "Show folders sidebar"
+msgstr ""
 
 #: src/qml/SettingsPageScanning.qml:33
 #, kde-format

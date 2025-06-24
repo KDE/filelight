@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-18 00:45+0000\n"
+"POT-Creation-Date: 2025-06-24 00:45+0000\n"
 "PO-Revision-Date: 2025-06-18 08:22+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -30,12 +30,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: src/Config.cpp:57
+#: src/Config.cpp:59
 #, kde-format
 msgid "Select path to ignore"
 msgstr "Виберіть шлях для ігнорування"
 
-#: src/Config.cpp:70
+#: src/Config.cpp:72
 #, kde-format
 msgid "Folder already ignored"
 msgstr "Теку вже проігноровано"
@@ -341,13 +341,13 @@ msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Зменшити"
 
-#: src/qml/MapPage.qml:127 src/qml/MapPage.qml:250
+#: src/qml/MapPage.qml:127 src/qml/MapPage.qml:251
 #, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "Відкрити"
 
-#: src/qml/MapPage.qml:135 src/qml/MapPage.qml:258
+#: src/qml/MapPage.qml:135 src/qml/MapPage.qml:259
 #, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
@@ -359,7 +359,7 @@ msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "Розташувати тут центр карти"
 
-#: src/qml/MapPage.qml:154 src/qml/MapPage.qml:266
+#: src/qml/MapPage.qml:154 src/qml/MapPage.qml:267
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
@@ -371,19 +371,19 @@ msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Пересканувати"
 
-#: src/qml/MapPage.qml:169 src/qml/MapPage.qml:273
+#: src/qml/MapPage.qml:169 src/qml/MapPage.qml:274
 #, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "Копіювати до буфера"
 
-#: src/qml/MapPage.qml:177 src/qml/MapPage.qml:281
+#: src/qml/MapPage.qml:177 src/qml/MapPage.qml:282
 #, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "Вилучити"
 
-#: src/qml/MapPage.qml:334
+#: src/qml/MapPage.qml:336
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -393,7 +393,7 @@ msgstr[1] "%1 файли (%2%)"
 msgstr[2] "%1 файлів (%2%)"
 msgstr[3] "%1 файл (%2%)"
 
-#: src/qml/MapPage.qml:336
+#: src/qml/MapPage.qml:338
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -403,13 +403,13 @@ msgstr[1] "%1 файли"
 msgstr[2] "%1 файлів"
 msgstr[3] "%1 файл"
 
-#: src/qml/MapPage.qml:340
+#: src/qml/MapPage.qml:342
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "Натисніть, щоб перейти до батьківського каталогу"
 
-#: src/qml/MapPage.qml:563
+#: src/qml/MapPage.qml:565
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -419,7 +419,7 @@ msgstr[1] "%1 файли, %2"
 msgstr[2] "%1 файлів, %2"
 msgstr[3] "Один файл, %2"
 
-#: src/qml/MapPage.qml:572
+#: src/qml/MapPage.qml:574
 #, kde-format
 msgid "No data available"
 msgstr "Немає доступних даних"
@@ -502,6 +502,12 @@ msgstr "Контрастність"
 msgctxt "@checkbox"
 msgid "Show small files"
 msgstr "Показувати малі файли"
+
+#: src/qml/SettingsPageAppearance.qml:78
+#, kde-format
+msgctxt "@checkbox"
+msgid "Show folders sidebar"
+msgstr ""
 
 #: src/qml/SettingsPageScanning.qml:33
 #, kde-format
