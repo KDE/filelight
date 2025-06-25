@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-24 00:45+0000\n"
-"PO-Revision-Date: 2025-06-18 14:39+0200\n"
+"PO-Revision-Date: 2025-06-24 11:55+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -503,7 +503,7 @@ msgstr "Kleine bestanden tonen"
 #, kde-format
 msgctxt "@checkbox"
 msgid "Show folders sidebar"
-msgstr ""
+msgstr "Zijbalk van mappen tonen"
 
 #: src/qml/SettingsPageScanning.qml:33
 #, kde-format

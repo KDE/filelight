@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-24 00:45+0000\n"
-"PO-Revision-Date: 2025-06-18 04:34+0200\n"
+"PO-Revision-Date: 2025-06-24 05:44+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -497,7 +497,7 @@ msgstr "პატარა ფაილების ჩვენება"
 #, kde-format
 msgctxt "@checkbox"
 msgid "Show folders sidebar"
-msgstr ""
+msgstr "საქაღალდის გვერდითი პანელის ჩვენება"
 
 #: src/qml/SettingsPageScanning.qml:33
 #, kde-format
