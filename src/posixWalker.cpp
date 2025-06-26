@@ -8,6 +8,10 @@
 #include <sys/param.h>
 #endif
 
+#ifdef Q_OS_HAIKU
+#define S_BLKSIZE 512
+#endif
+
 static void outputError(const QByteArray &path)
 {
     /// show error message that stat or opendir may give

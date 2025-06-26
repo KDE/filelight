@@ -9,6 +9,10 @@
 #include <sys/param.h>
 #endif
 
+#ifdef Q_OS_HAIKU
+#define S_BLKSIZE 512
+#endif
+
 #include "directoryIterator.h"
 #include "test-config.h"
 
