@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the filelight package.
 #
-# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
+# SPDX-FileCopyrightText: 2024, 2025 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-24 00:45+0000\n"
-"PO-Revision-Date: 2024-08-22 15:39+0300\n"
+"PO-Revision-Date: 2025-06-21 13:21+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -431,17 +431,13 @@ msgid "Welcome to Filelight"
 msgstr "Laipni lūgti programmā „Filelight“!"
 
 #: src/qml/OverviewPage.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Filelight analyzes disk usage so you can see what's using lots of space. "
-#| "Choose a folder to proceed:"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space."
 msgstr ""
 "„Filelight“ analizē diska lietojumu, ļaujot redzēt, kas diskā aizņem daudz "
-"vietas. Lai turpinātu, izvēlieties mapi:"
+"vietas."
 
 #: src/qml/OverviewPage.qml:52
 #, kde-format
