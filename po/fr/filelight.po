@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-24 00:45+0000\n"
-"PO-Revision-Date: 2025-06-19 13:15+0200\n"
+"PO-Revision-Date: 2025-06-25 08:38+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -506,7 +506,7 @@ msgstr "Afficher les petits fichiers"
 #, kde-format
 msgctxt "@checkbox"
 msgid "Show folders sidebar"
-msgstr ""
+msgstr "Afficher la barre latérale des dossiers"
 
 #: src/qml/SettingsPageScanning.qml:33
 #, kde-format

@@ -493,7 +493,7 @@ msgstr "显示小文件"
 #, kde-format
 msgctxt "@checkbox"
 msgid "Show folders sidebar"
-msgstr ""
+msgstr "显示文件夹侧边栏"
 
 #: src/qml/SettingsPageScanning.qml:33
 #, kde-format

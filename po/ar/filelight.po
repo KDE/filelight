@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the filelight package.
+# SPDX-FileCopyrightText: 2021, 2022, 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
-# SPDX-FileCopyrightText: 2021, 2022, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-24 00:45+0000\n"
-"PO-Revision-Date: 2024-09-05 10:11+0400\n"
+"PO-Revision-Date: 2025-06-26 10:38+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -441,17 +441,12 @@ msgid "Welcome to Filelight"
 msgstr "أهلا وسهلا في كشاف الملفات"
 
 #: src/qml/OverviewPage.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Filelight analyzes disk usage so you can see what's using lots of space. "
-#| "Choose a folder to proceed:"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space."
 msgstr ""
-"يقوم كاشف الملفات بتحليل استخدام القرص حتى تتمكن من معرفة ما يستخدم مساحة "
-"كبيرة. اختر مجلدًا للمتابعة:"
+"يحلل كاشف الملفات استخدام القرص حتى تتمكن من معرفة ما يستخدم مساحة كبيرة."
 
 #: src/qml/OverviewPage.qml:52
 #, kde-format
@@ -515,7 +510,7 @@ msgstr "أعرض الملفات الصغيرة"
 #, kde-format
 msgctxt "@checkbox"
 msgid "Show folders sidebar"
-msgstr ""
+msgstr "أظهر الشريط الجانبي للمجلدات"
 
 #: src/qml/SettingsPageScanning.qml:33
 #, kde-format
