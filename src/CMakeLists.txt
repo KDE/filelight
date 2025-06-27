@@ -42,6 +42,10 @@ if (WIN32)
     target_sources(filelightInternal PRIVATE windowsWalker.cpp windowsWalker.h)
 else()
     target_sources(filelightInternal PRIVATE posixWalker.cpp posixWalker.h)
+    target_sources(filelightInternal PRIVATE uringWalker.cpp uringWalker.h)
+    include(FindPkgConfig)
+    pkg_check_modules(liburing REQUIRED IMPORTED_TARGET liburing)
+    target_link_libraries(filelightInternal PkgConfig::liburing)
 endif()
 target_link_libraries(filelightInternal
     Qt6::Gui

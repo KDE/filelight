@@ -10,8 +10,8 @@
 #include "windowsWalker.h"
 template<class T = WindowsWalker>
 #else
-#include "posixWalker.h"
-template<class T = POSIXWalker>
+#include "uringWalker.h"
+template<class T = URingWalker>
 #endif
 class DirectoryIterator
 {
