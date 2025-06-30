@@ -1,13 +1,13 @@
 # translation of filelight.po to Italian
 #
-# SPDX-FileCopyrightText: 2017, 2018, 2020, 2021, 2022, 2024 Paolo Zamponi <feus73@gmail.com>
+# SPDX-FileCopyrightText: 2017, 2018, 2020, 2021, 2022, 2024, 2025 Paolo Zamponi <feus73@gmail.com>
 # Federico Zenith <federico.zenith@member.fsf.org>, 2005, 2006, 2009, 2010, 2013, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-24 00:45+0000\n"
-"PO-Revision-Date: 2024-08-27 18:31+0200\n"
+"PO-Revision-Date: 2025-06-29 15:12+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -426,17 +426,13 @@ msgid "Welcome to Filelight"
 msgstr "Benvenuto in Filelight"
 
 #: src/qml/OverviewPage.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Filelight analyzes disk usage so you can see what's using lots of space. "
-#| "Choose a folder to proceed:"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space."
 msgstr ""
-"Filelight analizza l'uso del disco per farti vedere quello sta occupando "
-"molto spazio. Scegli una cartella per procedere:"
+"Filelight analizza l'uso del disco per farti vedere cosa sta usando molto "
+"spazio."
 
 #: src/qml/OverviewPage.qml:52
 #, kde-format
@@ -500,7 +496,7 @@ msgstr "Mostra i file piccoli"
 #, kde-format
 msgctxt "@checkbox"
 msgid "Show folders sidebar"
-msgstr ""
+msgstr "Mostra la barra laterale delle cartelle"
 
 #: src/qml/SettingsPageScanning.qml:33
 #, kde-format
