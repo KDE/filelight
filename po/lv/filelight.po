@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-24 00:45+0000\n"
-"PO-Revision-Date: 2025-06-21 13:21+0300\n"
+"PO-Revision-Date: 2025-07-02 17:30+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -501,7 +501,7 @@ msgstr "Rādīt mazās datnes"
 #, kde-format
 msgctxt "@checkbox"
 msgid "Show folders sidebar"
-msgstr ""
+msgstr "Rādīt sānu joslu ar mapēm"
 
 #: src/qml/SettingsPageScanning.qml:33
 #, kde-format
