@@ -131,7 +131,7 @@
     <p xml:lang="ka">Filelight აპლიკაციაა თქვენს კომპიუტერში დისკის გამოყენების ვიზუალიზაციისთვის. ის საქაღალდეებს ადვილად-გასაგებ ხედში გაჩვენებთ. Filelight -ი აადვილებს დისკის გათავისუფლებას!</p>
     <p xml:lang="ko">Filelight는 이해하기 쉬운 동심원 형태로 컴퓨터 디스크 사용량을 시각화합니다. 디스크 정리에 도움을 줄 수 있습니다!</p>
     <p xml:lang="lt">Filelight yra programa, kuri skirta vizualizuoti disko naudojimą jūsų kompiuteryje ir atvaizduoja aplankus naudodama lengvai suprantamą koncentrinių apskritimų rodinį. Filelight palengvina vietos atlaisvinimą!</p>
-    <p xml:lang="lv">„Filelight“ ir programma ierīces disku izlietojuma vizualizācijai, mapes parādot viegli uztveramā koncentrisku riņķu skatā. „Filelight“ atvieglo brīvas vietas iegūšanu diskā!</p>
+    <p xml:lang="lv">„Filelight“ ir programma ierīces disku izlietojuma vizualizācijai. Tā sistēmas mapes parādot viegli uztveramā koncentrisku riņķu skatā. „Filelight“ atvieglo brīvas vietas iegūšanu diskā!</p>
     <p xml:lang="nl">Filelight is een toepassing om het schijfgebruik op uw computer te visualiseren door mappen te tonen met een gemakkelijk te begrijpen beeld met concentrische ringen. Filelight maakt het gemakkelijk om ruimte vrij te maken!</p>
     <p xml:lang="nn">Filelight er eit program for å visualisera diskbruken på datamaskina di ved å visa mappene som konsentriske sirklar i eit plassbruk­diagram. Programmet gjer det lett for deg å frigjera diskplass.</p>
     <p xml:lang="pa">ਫਾਇਲ-ਲਾਈਟ ਤੁਹਾਡੇ ਕੰਪਿਊਟਰ ਉੱਤੇ ਡਿਸਕ ਦੇ ਇਸਤੇਮਾਲ ਨੂੰ ਦਿਖਾਉਣ ਵਾਲੀ ਐਪਲੀਕੇਸ਼ਨ ਹੈ, ਜੋ ਸਮਝਣ ਲਈ ਸੌਖੇ ਸਾਂਝੇ ਬਿੰਦੂ ਵਾਲੇ ਚੱਕਰਾਂ ਦੀ ਝਲਕ ਰਾਹੀਂ ਫੋਲਡਰ ਨੂੰ ਦਿਖਾਉਂਦੀ ਹੈ। ਫਾਇਲ-ਲਾਈਟ ਨੇ ਥਾਂ ਨੂੰ ਖਾਲੀ ਕਰਨਾ ਸੌਖਾ ਬਣਾ ਦਿੱਤਾ ਹੈ।</p>
@@ -228,7 +228,7 @@
       <li xml:lang="ka">ლოკალური, მოხსნადი და დაშორებული დისკების სკანირება</li>
       <li xml:lang="ko">로컬, 원격, 이동식 디스크 검사</li>
       <li xml:lang="lt">Skenuokite vietinius, nuotolinius ar keičiamuosius diskus</li>
-      <li xml:lang="lv">Skenē lokālus un attālinātus vai noņemamus diskus</li>
+      <li xml:lang="lv">Skenē lokālus, attālus un noņemamus diskus</li>
       <li xml:lang="nl">Lokale, op afstand of verwijderbare schijven scannen</li>
       <li xml:lang="nn">Søk gjennom lokale diskar, nettverksdiskar og flyttbare lagringsmedium</li>
       <li xml:lang="pa">ਲੋਕਲ, ਰਿਮੋਟ ਜਾਂ ਹਟਾਉਣਯੋਗ ਡਿਸਕਾਂ ਦੀ ਜਾਂਚ ਕਰੋ</li>
@@ -360,7 +360,7 @@
       <li xml:lang="ka">ინტეგრაცია Dolphin-ში, Konqueror-ში და Krusader-ში</li>
       <li xml:lang="ko">Dolphin, Konqueror, Krusader 파일 관리자와 통합</li>
       <li xml:lang="lt">Integracija į Dolphin, Konqueror ir Krusader failų tvarkytuves</li>
-      <li xml:lang="lv">Integrācija „Dolphon“, „Konqueror“ un „Krusader“ programmā</li>
+      <li xml:lang="lv">Integrācija „Dolphon“, „Konqueror“ un „Krusader“ datņu pārvaldniekā</li>
       <li xml:lang="nl">Integratie in bestandsbeheerders Dolphin, Konqueror en Krusader</li>
       <li xml:lang="nn">Integrert med filhandsamarane Dolphin, Konqueror og Krusader</li>
       <li xml:lang="pa">ਡਾਲਫਿਨ, ਕੋਨਕਿਉਰੋਰ ਜਾਂ ਕਰੁਸਡਰ ਫਾਇਲ ਮੈਨੇਜਰਾਂ ਨਾਲ ਜੁੜਿਆ ਹੋਇਆ ਹੈ</li>
