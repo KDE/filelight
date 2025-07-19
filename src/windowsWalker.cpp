@@ -97,15 +97,10 @@ void WindowsWalker::updateEntry()
 
     auto new_path = m_pathW + L"/" + name;
 
-    // https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getfileattributesexw
-    WIN32_FILE_ATTRIBUTE_DATA fileAttributeData;
-    BOOL result = GetFileAttributesExW(new_path.c_str(), GetFileExInfoStandard, (LPVOID)&fileAttributeData);
-    if (result == 0) {
-        qWarning() << "failed to get attributes for" << QString::fromStdWString(new_path);
-        return;
-    }
+    // We already have all file information we need. If we ever need more, be very careful with which API you use.
+    // Windows file APIs have huge performance differences! Best benchmark all options you can find.
 
-    const auto attributes = fileAttributeData.dwFileAttributes;
+    const auto attributes = m_fileinfo.dwFileAttributes;
     // Reparse points are symlinks or NTFS junctions.
     m_entry.isSkippable = attributes & FILE_ATTRIBUTE_REPARSE_POINT || attributes & FILE_ATTRIBUTE_TEMPORARY;
     m_entry.isDir = attributes & FILE_ATTRIBUTE_DIRECTORY;
@@ -115,12 +110,12 @@ void WindowsWalker::updateEntry()
         ulargeInt.HighPart = 0;
         ulargeInt.LowPart = GetCompressedFileSizeW(new_path.c_str(), &ulargeInt.HighPart);
         if (GetLastError() != ERROR_SUCCESS && ulargeInt.LowPart == INVALID_FILE_SIZE) {
-            ulargeInt.HighPart = fileAttributeData.nFileSizeHigh;
-            ulargeInt.LowPart = fileAttributeData.nFileSizeLow;
+            ulargeInt.HighPart = m_fileinfo.nFileSizeHigh;
+            ulargeInt.LowPart = m_fileinfo.nFileSizeLow;
         }
     } else {
-        ulargeInt.HighPart = fileAttributeData.nFileSizeHigh;
-        ulargeInt.LowPart = fileAttributeData.nFileSizeLow;
+        ulargeInt.HighPart = m_fileinfo.nFileSizeHigh;
+        ulargeInt.LowPart = m_fileinfo.nFileSizeLow;
     }
 
     m_entry.size = ulargeInt.QuadPart;
