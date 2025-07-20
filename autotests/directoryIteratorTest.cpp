@@ -12,6 +12,8 @@
 #include "directoryIterator.h"
 #include "test-config.h"
 
+using namespace Qt::StringLiterals;
+
 class DirectoryIteratorTest : public QObject
 {
     Q_OBJECT
@@ -106,7 +108,8 @@ private Q_SLOTS:
 
     void testIterateInsideUnicode()
     {
-        QByteArray tree = QFINDTESTDATA("iterator-tree/Con 자백").toUtf8();
+        QByteArray tree = QFINDTESTDATA(u"iterator-tree/Con 자백"_s).toUtf8();
+        QVERIFY(!tree.isEmpty());
         QMap<QByteArray, DirectoryEntry> entries;
         for (const auto &entry : DirectoryIterator(tree)) {
             qDebug() << entry.name;
