@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2011, 2013, 2015, 2017, 2019, 2020, 2021, 2022, 2023, 2024 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2011, 2013, 2015, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Shinjo Park <kde@peremen.name>
 # Jung Hee Lee <daemul72@gmail.com>, 2019.
 #
 msgid ""
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-24 00:45+0000\n"
-"PO-Revision-Date: 2024-11-29 01:14+0100\n"
+"PO-Revision-Date: 2025-07-20 00:54+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -423,17 +423,13 @@ msgid "Welcome to Filelight"
 msgstr "Filelight에 오신 것을 환영합니다"
 
 #: src/qml/OverviewPage.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Filelight analyzes disk usage so you can see what's using lots of space. "
-#| "Choose a folder to proceed:"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space."
 msgstr ""
 "Filelight는 디스크 사용량을 분석하여 많은 공간을 차지하는 항목을 볼 수 있습니"
-"다. 진행할 폴더를 선택하십시오:"
+"다."
 
 #: src/qml/OverviewPage.qml:52
 #, kde-format
@@ -497,7 +493,7 @@ msgstr "작은 파일 보기"
 #, kde-format
 msgctxt "@checkbox"
 msgid "Show folders sidebar"
-msgstr ""
+msgstr "폴더 사이드바 표시"
 
 #: src/qml/SettingsPageScanning.qml:33
 #, kde-format
