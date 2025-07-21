@@ -135,7 +135,8 @@ std::shared_ptr<Folder> LocalLister::scan(const QByteArray &path, const QByteArr
     QList<std::shared_ptr<Folder>> returnedCwds(subDirectories.count());
     QSemaphore semaphore;
     for (int i = 0; i < subDirectories.count(); i++) {
-        std::function<void()> scanSubdir = [this, i, &subDirectories, &semaphore, &returnedCwds]() {
+        // Capture as a lambda rather than a std::function to speed up calling
+        auto scanSubdir = [this, i, &subDirectories, &semaphore, &returnedCwds]() {
             returnedCwds[i] = scan(subDirectories[i].first, subDirectories[i].second);
             semaphore.release(1);
         };
