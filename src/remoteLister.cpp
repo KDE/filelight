@@ -111,6 +111,10 @@ void RemoteLister::onCompleted()
         return;
     }
 
+    std::ranges::sort(m_store->folder->files, [](const auto &a, const auto &b) {
+        return a->size() > b->size();
+    });
+
     qCDebug(FILELIGHT_LOG) << "I think we're done";
     Q_ASSERT(m_root == m_store);
     Q_EMIT branchCompleted(m_store->folder);
