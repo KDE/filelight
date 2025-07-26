@@ -4,20 +4,21 @@
 # Burkhard Lück <lueck@hube-lueck.de>, 2009, 2010, 2013, 2015, 2016, 2017, 2018, 2020, 2021.
 # Frederik Schwarzer <schwarzer@kde.org>, 2010, 2011, 2022.
 # Panagiotis Papadopoulos <pano_90@gmx.net>, 2010.
+# SPDX-FileCopyrightText: 2025 Frank Steinmetzger <dev-kde@felsenfleischer.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-24 00:45+0000\n"
-"PO-Revision-Date: 2024-09-06 19:43+0200\n"
-"Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
+"PO-Revision-Date: 2025-07-22 12:08+0200\n"
+"Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -428,18 +429,13 @@ msgid "Welcome to Filelight"
 msgstr "Willkommen in Filelight"
 
 #: src/qml/OverviewPage.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Filelight analyzes disk usage so you can see what's using lots of space. "
-#| "Choose a folder to proceed:"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space."
 msgstr ""
-"Filelight analysiert die Festplattenbelegung damit Sie übermäßigen "
-"Speicherverbrauch erkennen können. Bitte wählen Sie einen Ordner für die "
-"Analyse:"
+"Filelight analysiert die Festplattenbelegung, damit Sie übermäßigen "
+"Speicherverbrauch erkennen können."
 
 #: src/qml/OverviewPage.qml:52
 #, kde-format
@@ -448,7 +444,7 @@ msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space. "
 "Choose a folder to proceed:"
 msgstr ""
-"Filelight analysiert die Festplattenbelegung damit Sie übermäßigen "
+"Filelight analysiert die Festplattenbelegung, damit Sie übermäßigen "
 "Speicherverbrauch erkennen können. Bitte wählen Sie einen Ordner für die "
 "Analyse:"
 
@@ -504,7 +500,7 @@ msgstr "Kleine Dateien anzeigen"
 #, kde-format
 msgctxt "@checkbox"
 msgid "Show folders sidebar"
-msgstr ""
+msgstr "Ordner-Seitenleiste anzeigen"
 
 #: src/qml/SettingsPageScanning.qml:33
 #, kde-format
