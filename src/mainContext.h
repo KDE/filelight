@@ -39,7 +39,6 @@ public:
 
 Q_SIGNALS:
     void canceled(const QString &);
-    void canvasIsDirty(Filelight::Dirty filth);
     void urlChanged();
     void upEnabledChanged();
     void openUrlFailed(const QString &text, const QString &explanation);
