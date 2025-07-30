@@ -16,6 +16,7 @@
 #include <QObject>
 
 #include "localLister.h"
+#include "remoteLister.h"
 
 class Folder;
 
@@ -23,7 +24,6 @@ namespace Filelight
 {
 
 class LocalLister;
-class RemoteLister;
 
 class ScanManager : public QObject
 {
@@ -71,9 +71,9 @@ private:
     QAtomicInteger<size_t> m_totalSize;
 
     QMutex m_mutex;
-    std::unique_ptr<LocalLister> m_thread;
+    std::shared_ptr<LocalLister> m_thread;
     QList<std::shared_ptr<Folder>> m_cache;
-    std::unique_ptr<RemoteLister> m_remoteLister;
+    std::shared_ptr<RemoteLister> m_remoteLister;
 
     Q_DISABLE_COPY_MOVE(ScanManager)
 };

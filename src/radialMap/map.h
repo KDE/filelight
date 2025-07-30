@@ -126,7 +126,7 @@ private:
     QList<QList<Segment *>> m_signature;
 
     std::shared_ptr<Folder> m_root;
-    std::unique_ptr<Segment> m_rootSegment;
+    std::shared_ptr<Segment> m_rootSegment;
     uint m_minSize{};
     QList<FileSize> m_limits;
     QRectF m_rect;

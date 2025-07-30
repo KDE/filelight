@@ -17,6 +17,8 @@
 #include <QGuiApplication>
 #include <QStringBuilder>
 
+#include "memory.h"
+
 namespace Filelight
 {
 
@@ -24,7 +26,6 @@ ScanManager::ScanManager(QObject *parent)
     : QObject(parent)
     , m_abort(false)
     , m_files(0)
-    , m_thread(nullptr)
 {
     connect(this, &ScanManager::branchCacheHit, this, &ScanManager::foundCached, Qt::QueuedConnection);
     // Bit aggressive this. Completed is emitted per folder I think.
@@ -70,7 +71,7 @@ bool ScanManager::start(const QUrl &url)
     if (!url.isLocalFile()) {
         QGuiApplication::changeOverrideCursor(Qt::BusyCursor);
         // will start listing straight away
-        m_remoteLister = std::make_unique<Filelight::RemoteLister>(url, this);
+        m_remoteLister = make_shared_qobject<Filelight::RemoteLister>(url, this);
         connect(m_remoteLister.get(), &Filelight::RemoteLister::branchCompleted, this, &ScanManager::cacheTree, Qt::QueuedConnection);
         auto updateRunning = [this] {
             if (m_remoteLister && m_remoteLister->isFinished()) {
@@ -161,7 +162,7 @@ bool ScanManager::start(const QUrl &url)
 
     QGuiApplication::changeOverrideCursor(QCursor(Qt::BusyCursor));
     // starts listing by itself
-    m_thread = std::make_unique<Filelight::LocalLister>(path, trees, this);
+    m_thread = make_shared_qobject<Filelight::LocalLister>(path, trees, this);
     connect(m_thread.get(), &LocalLister::branchCompleted, this, &ScanManager::cacheTree, Qt::QueuedConnection);
     m_thread->start();
 
