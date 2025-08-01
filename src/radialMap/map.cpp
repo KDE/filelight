@@ -26,6 +26,7 @@
 #include <KLocalizedString>
 
 #include "map.h"
+#include "memory.h"
 #include "radialMap.h" // defines
 
 RadialMap::Map::Map()
@@ -134,7 +135,7 @@ void RadialMap::Map::make(const std::shared_ptr<Folder> &tree, bool refresh)
         if (m_rootSegment && m_rootSegment->file()) {
             m_rootSegment->file()->setSegment({});
         }
-        m_rootSegment = std::make_unique<Segment>(tree, 0, MAX_DEGREE);
+        m_rootSegment = make_shared_qobject<Segment>(tree, 0, MAX_DEGREE);
 
         setRingBreadth();
 
