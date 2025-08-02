@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:45+0000\n"
+"POT-Creation-Date: 2025-08-02 00:46+0000\n"
 "PO-Revision-Date: 2025-06-29 15:12+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -528,7 +528,7 @@ msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
 msgstr "Escludi i filesystem remoti"
 
-#: src/radialMap/map.cpp:62
+#: src/radialMap/map.cpp:63
 #, kde-format
 msgid ""
 "\n"
