@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:45+0000\n"
+"POT-Creation-Date: 2025-08-03 02:39+0000\n"
 "PO-Revision-Date: 2023-07-29 23:52+0300\n"
 "Last-Translator: Theofilos Intzoglou <int.teo@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -547,7 +547,7 @@ msgctxt "@checkbox"
 msgid "Exclude remote filesystems"
 msgstr "Εξαίρεση απομακρυσμένων συστημάτων αρχείων"
 
-#: src/radialMap/map.cpp:62
+#: src/radialMap/map.cpp:63
 #, kde-format
 msgid ""
 "\n"
