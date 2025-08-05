@@ -16,6 +16,11 @@
         "--filesystem=host",
         "--device=dri"
     ],
+    "cleanup": [
+        "/include",
+        "/lib/cmake",
+        "/share/qlogging-categories6"
+    ],
     "modules": [
         {
             "name": "filelight",
