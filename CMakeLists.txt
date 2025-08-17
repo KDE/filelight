@@ -17,8 +17,8 @@ cmake_minimum_required (VERSION 3.16 FATAL_ERROR)
 project(Filelight VERSION ${FILELIGHT_VERSION})
 
 set(PROJECT_VERSION ${RELEASE_SERVICE_VERSION})
-set(KF_MIN_VERSION "6.5.0")
-set(QT_REQUIRED_VERSION "6.8.1")
+set(KF_MIN_VERSION "6.13.0")
+set(QT_REQUIRED_VERSION "6.9.0")
 
 find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
@@ -62,7 +62,7 @@ ecm_find_qmlmodule(Qt.labs.platform 1.1)
 add_definitions(-DTRANSLATION_DOMAIN=\"filelight\")
 
 ecm_set_disabled_deprecation_versions(QT 6.9.0
-    KF 6.16.0
+    KF 6.13.0
 )
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
 include_directories(src)
