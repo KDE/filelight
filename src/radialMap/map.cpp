@@ -455,3 +455,10 @@ QObject *RadialMap::Map::rootSegment() const
 {
     return m_rootSegment.get();
 }
+
+RadialMap::Map *RadialMap::Map::create(QQmlEngine *qml, QJSEngine *js)
+{
+    auto map = instance();
+    QQmlEngine::setObjectOwnership(map, QQmlEngine::CppOwnership);
+    return map;
+}

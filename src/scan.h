@@ -14,6 +14,7 @@
 #include <QList>
 #include <QMutex>
 #include <QObject>
+#include <QQmlEngine>
 
 #include "localLister.h"
 #include "remoteLister.h"
@@ -28,6 +29,8 @@ class LocalLister;
 class ScanManager : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
     friend class LocalLister;
     friend class RemoteLister;
@@ -35,6 +38,9 @@ class ScanManager : public QObject
     Q_PROPERTY(bool running READ running NOTIFY runningChanged)
 
 public:
+    static ScanManager *instance();
+    static ScanManager *create(QQmlEngine *qml, QJSEngine *js);
+
     explicit ScanManager(QObject *parent);
     ~ScanManager() override;
 

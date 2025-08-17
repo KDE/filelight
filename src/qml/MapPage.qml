@@ -17,14 +17,18 @@ Kirigami.Page {
     property url url: RadialMap.rootUrl
     property QQC2.Menu contextMenu
 
-    enabled: !ContextMenuContext.deleting
+    ContextMenuContext{
+        id: contextMenuContext
+    }
+
+    enabled: !contextMenuContext.deleting
     topPadding: 0
     leftPadding: 0
     rightPadding: 0
     bottomPadding: 0
 
     Connections {
-        target: ContextMenuContext
+        target: contextMenuContext
         function onDeleteFileFailed(reason) {
             showPassiveNotification(reason);
         }
@@ -133,7 +137,7 @@ Kirigami.Page {
                 action: Kirigami.Action {
                     icon.name: "utilities-terminal"
                     text: i18nc("@action", "Open Terminal Here")
-                    onTriggered: ContextMenuContext.openTerminal(contextMenu.segment.url())
+                    onTriggered: contextMenuContext.openTerminal(contextMenu.segment.url())
                 }
             }
             QQC2.MenuItem {
@@ -152,7 +156,7 @@ Kirigami.Page {
                 action: Kirigami.Action {
                     icon.name: "list-remove"
                     text: i18nc("@action", "Add to Do Not Scan List")
-                    onTriggered: ContextMenuContext.doNotScan(contextMenu.segment.url())
+                    onTriggered: contextMenuContext.doNotScan(contextMenu.segment.url())
                 }
             }
             QQC2.MenuItem {
@@ -167,7 +171,7 @@ Kirigami.Page {
                 action: Kirigami.Action {
                     icon.name: "edit-copy"
                     text: i18nc("@action", "Copy to clipboard")
-                    onTriggered: ContextMenuContext.copyClipboard(contextMenu.segment.displayPath())
+                    onTriggered: contextMenuContext.copyClipboard(contextMenu.segment.displayPath())
                 }
             }
             QQC2.MenuSeparator {}
@@ -175,7 +179,7 @@ Kirigami.Page {
                 action: Kirigami.Action {
                     icon.name: "edit-delete"
                     text: i18nc("@action delete file or folder", "Delete")
-                    onTriggered: ContextMenuContext.deleteFileFromSegment(contextMenu.segment)
+                    onTriggered: contextMenuContext.deleteFileFromSegment(contextMenu.segment)
                 }
             }
         }
@@ -257,7 +261,7 @@ Kirigami.Page {
                             action: Kirigami.Action {
                                 icon.name: "utilities-terminal"
                                 text: i18nc("@action", "Open Terminal Here")
-                                onTriggered: ContextMenuContext.openTerminal(ROLE_URL)
+                                onTriggered: contextMenuContext.openTerminal(ROLE_URL)
                             }
                         }
                         QQC2.MenuItem {
@@ -265,14 +269,14 @@ Kirigami.Page {
                             action: Kirigami.Action {
                                 icon.name: "list-remove"
                                 text: i18nc("@action", "Add to Do Not Scan List")
-                                onTriggered: ContextMenuContext.doNotScan(ROLE_URL)
+                                onTriggered: contextMenuContext.doNotScan(ROLE_URL)
                             }
                         }
                         QQC2.MenuItem {
                             action: Kirigami.Action {
                                 icon.name: "edit-copy"
                                 text: i18nc("@action", "Copy to clipboard")
-                                onTriggered: ContextMenuContext.copyClipboard(ROLE_URL)
+                                onTriggered: contextMenuContext.copyClipboard(ROLE_URL)
                             }
                         }
                         QQC2.MenuSeparator {}
@@ -280,7 +284,7 @@ Kirigami.Page {
                             action: Kirigami.Action {
                                 icon.name: "edit-delete"
                                 text: i18nc("@action delete file or folder", "Delete")
-                                onTriggered: ContextMenuContext.deleteFile(FileModel.file(index))
+                                onTriggered: contextMenuContext.deleteFile(FileModel.file(index))
                             }
                         }
                     }

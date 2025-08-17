@@ -11,10 +11,12 @@
 #include <QObject>
 #include <QSet>
 #include <QStringList>
+#include <qqmlintegration.h>
 
 namespace Filelight
 {
 Q_NAMESPACE
+QML_ELEMENT
 enum class Dirty {
     Layout = 1,
     Colors = 3,
@@ -31,9 +33,14 @@ Q_ENUM_NS(MapScheme)
 
 Q_DECLARE_METATYPE(Filelight::Dirty)
 
+class QQmlEngine;
+class QJSEngine;
+
 class Config : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
     Q_PROPERTY(bool scanAcrossMounts MEMBER scanAcrossMounts NOTIFY changed)
     Q_PROPERTY(bool scanRemoteMounts MEMBER scanRemoteMounts NOTIFY changed)
     Q_PROPERTY(bool showSmallFiles MEMBER showSmallFiles NOTIFY changed)
@@ -44,6 +51,8 @@ class Config : public QObject
     Q_PROPERTY(QStringList skipList MEMBER skipList NOTIFY changed)
 public:
     static Config *instance();
+    static Config *create(QQmlEngine *qml, QJSEngine *js);
+
     void read();
     Q_INVOKABLE void write() const;
     Q_SIGNAL void changed();
@@ -67,4 +76,8 @@ public:
 
 Q_SIGNALS:
     void addFolderFailed(const QString &reason);
+
+private:
+    // We must have a constructor so create() gets called for the singleton!
+    explicit Config(QObject *parent = nullptr);
 };

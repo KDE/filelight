@@ -86,4 +86,22 @@ std::shared_ptr<File> FileModel::file(int row) const
     return m_tree->files.at(row);
 }
 
+FileModel *FileModel::instance()
+{
+    static FileModel model;
+    return &model;
+}
+
+FileModel *FileModel::create(QQmlEngine *qml, QJSEngine *js)
+{
+    auto model = instance();
+    QQmlEngine::setObjectOwnership(model, QQmlEngine::CppOwnership);
+    return model;
+}
+
+FileModel::FileModel(QObject *parent)
+    : QAbstractListModel(parent)
+{
+}
+
 } // namespace Filelight

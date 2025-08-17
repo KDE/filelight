@@ -35,7 +35,6 @@ Kirigami.ApplicationWindow {
         window: appWindow
     }
 
-
     Kirigami.Action {
         id: scanHomeAction
         icon.name: "user-home"
@@ -191,6 +190,12 @@ Kirigami.ApplicationWindow {
 
         function onAborted() {
             appWindow.title = ""
+        }
+    }
+
+    Component.onCompleted: {
+        if (Application.arguments.length >= 2) {
+            MainContext.scan(Application.arguments[1]);
         }
     }
 }

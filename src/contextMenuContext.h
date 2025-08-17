@@ -6,6 +6,9 @@
 #include <memory>
 
 #include <QObject>
+#include <QQmlEngine>
+
+#include "radialMap.h"
 
 class File;
 
@@ -21,6 +24,7 @@ class FileModel;
 class ContextMenuContext : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(bool deleting MEMBER m_deleting WRITE setDeleting NOTIFY deletingChanged)
 public:
     using QObject::QObject;

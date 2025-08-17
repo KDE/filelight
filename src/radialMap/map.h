@@ -28,6 +28,9 @@ class Segment;
 class Map : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+    QML_NAMED_ELEMENT(RadialMap)
 
     Q_PROPERTY(bool valid READ isValid NOTIFY signatureChanged)
     Q_PROPERTY(QRectF rect MEMBER m_rect NOTIFY rectChanged)
@@ -46,6 +49,9 @@ public:
         static Map map;
         return &map;
     }
+
+    static Map *create(QQmlEngine *qml, QJSEngine *js);
+
     ~Map() override;
     Q_DISABLE_COPY_MOVE(Map)
 
