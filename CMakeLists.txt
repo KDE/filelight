@@ -41,6 +41,7 @@ include(ECMDeprecationSettings)
 include(KDEClangFormat)
 include(KDEGitCommitHooks)
 include(ECMFindQmlModule)
+include(ECMQmlModule)
 
 find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Core Widgets Quick QuickControls2)
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED

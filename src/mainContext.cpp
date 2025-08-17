@@ -21,13 +21,10 @@
 #include <QStandardPaths>
 
 #include "contextMenuContext.h"
-#include "define.h"
-#include "dropperItem.h"
 #include "fileModel.h"
 #include "radialMap/map.h"
 #include "radialMap/radialMap.h"
 #include "scan.h"
-#include "windowThemer.h"
 
 using namespace Qt::StringLiterals;
 
@@ -36,44 +33,11 @@ namespace Filelight
 
 MainContext::MainContext(QObject *parent)
     : QObject(parent)
-    , m_manager(new ScanManager(this))
+    , m_manager(ScanManager::instance())
 {
-    Config::instance()->read();
-
-    auto engine = new QQmlApplicationEngine(this);
-
-    static auto l10nContext = new KLocalizedQmlContext(engine);
-    l10nContext->setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));
-    engine->rootContext()->setContextObject(l10nContext);
-
-    qmlRegisterUncreatableMetaObject(Filelight::staticMetaObject, "org.kde.filelight", 1, 0, "Filelight", QStringLiteral("Access to enums & flags only"));
-
     qRegisterMetaType<size_t>("size_t");
-    qmlRegisterType<DropperItem>("org.kde.filelight", 1, 0, "DropperItem");
-    qmlRegisterType<WindowThemer>("org.kde.filelight", 1, 0, "WindowThemer");
-    qmlRegisterSingletonInstance("org.kde.filelight", 1, 0, "ScanManager", m_manager);
-    qmlRegisterSingletonInstance("org.kde.filelight", 1, 0, "MainContext", this);
-    auto fileModel = new FileModel(this);
-    qmlRegisterSingletonInstance("org.kde.filelight", 1, 0, "FileModel", fileModel);
 
-    auto contextMenuContext = new ContextMenuContext(this);
-    qmlRegisterSingletonInstance("org.kde.filelight", 1, 0, "ContextMenuContext", contextMenuContext);
-    qmlRegisterUncreatableType<RadialMap::Segment>("org.kde.filelight", 1, 0, "Segment", QStringLiteral("only consumed, never created"));
-
-    // Do not initialize the map too early. It causes crashes on exit. Unclear why, probably a lifetime problem deep inside the retrofitted map. May be fixable
-    // with enough brain juice.
-    qmlRegisterSingletonType<RadialMap::Map>("org.kde.filelight", 1, 0, "RadialMap", [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
-        Q_UNUSED(engine)
-        Q_UNUSED(scriptEngine)
-        QQmlEngine::setObjectOwnership(RadialMap::Map::instance(), QQmlEngine::CppOwnership);
-        return RadialMap::Map::instance();
-    });
-    qmlRegisterSingletonType<Config>("org.kde.filelight", 1, 0, "Config", [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
-        Q_UNUSED(engine)
-        Q_UNUSED(scriptEngine)
-        QQmlEngine::setObjectOwnership(Config::instance(), QQmlEngine::CppOwnership);
-        return Config::instance();
-    });
+    auto fileModel = FileModel::instance();
 
     connect(m_manager, &ScanManager::completed, RadialMap::Map::instance(), [](const auto &tree) {
         if (tree) {
@@ -89,30 +53,12 @@ MainContext::MainContext(QObject *parent)
         const auto tree = RadialMap::Map::instance()->root();
         fileModel->setTree(tree);
     });
-
-    engine->setInitialProperties({
-        {QStringLiteral("inSandbox"),
-         !QStandardPaths::locate(QStandardPaths::RuntimeLocation, QStringLiteral("flatpak-info")).isEmpty() || qEnvironmentVariableIsSet("SNAP")},
-    });
-
-    const QUrl mainUrl(QStringLiteral("qrc:/ui/main.qml"));
-    QObject::connect(
-        engine,
-        &QQmlApplicationEngine::objectCreated,
-        this,
-        [mainUrl](QObject *obj, const QUrl &objUrl) {
-            if (!obj && mainUrl == objUrl) {
-                qWarning() << "Failed to load QML dialog.";
-                abort();
-            }
-        },
-        Qt::QueuedConnection);
-    engine->load(mainUrl);
 }
 
-void MainContext::scan(const QUrl &u)
+void MainContext::scan(const QString &u)
 {
-    slotScanUrl(u);
+    auto url = QUrl::fromUserInput(u, QDir::currentPath(), QUrl::AssumeLocalFile);
+    slotScanUrl(url);
 }
 
 void MainContext::slotScanFolder()
@@ -247,6 +193,10 @@ bool MainContext::start(const QUrl &url) const
     return m_manager->start(url);
 }
 
+MainContext *MainContext::create([[maybe_unused]] QQmlEngine *qml, [[maybe_unused]] QJSEngine *js)
+{
+    return new MainContext;
+}
 } // namespace Filelight
 
 #include "mainContext.moc"

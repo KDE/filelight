@@ -45,6 +45,7 @@ else()
 endif()
 target_link_libraries(filelightInternal
     Qt6::Gui
+    Qt6::Qml
     KF6::ConfigCore
     KF6::I18n
     KF6::KIOWidgets # Only used for KDirLister, may be able to move away from that.
@@ -77,6 +78,7 @@ target_sources(filelight PRIVATE
     hicolor.qrc
     windowThemer.cpp windowThemer.h
 )
+target_include_directories(filelight PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/radialMap)
 
 set(filelight_ICONS
     ${CMAKE_CURRENT_SOURCE_DIR}/../misc/16-apps-filelight.png
@@ -89,13 +91,25 @@ ecm_add_app_icon(filelight ICONS
     ${filelight_ICONS})
 
 target_link_libraries(filelight
-    KF6::I18n
-    KF6::I18nQml
-    KF6::ColorScheme
-    Qt6::Quick
-    Qt6::QuickControls2
-    filelightInternal
+    PRIVATE
+        KF6::I18n
+        KF6::I18nQml
+        KF6::ColorScheme
+        Qt6::Quick
+        Qt6::QuickControls2
+        Qt6::Qml
+        filelightInternal
 )
+
+ecm_add_qml_module(filelight URI org.kde.filelight
+    VERSION 1.0
+    GENERATE_PLUGIN_SOURCE
+    OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/src/org/kde/filelight)
+ecm_finalize_qml_module(filelight DESTINATION ${KDE_INSTALL_QMLDIR})
+# Somehow qmlls doesn't find it in bin even though the qmlls.ini tells it to look there :(
+add_custom_target(link_bin_org ALL
+                  COMMAND ${CMAKE_COMMAND} -E create_symlink bin/org ${CMAKE_BINARY_DIR}/org)
+add_dependencies(filelight link_bin_org)
 
 if(APPLE)
     set_target_properties(filelight PROPERTIES

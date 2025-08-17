@@ -20,6 +20,8 @@ namespace RadialMap
 class Segment : public QObject // all angles are in 16ths of degrees
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("only created by Map")
 public:
     bool m_highlight = false;
     Q_SIGNAL void highlightChanged();

@@ -16,6 +16,8 @@
 #include <QDebug>
 #include <QDir>
 #include <QIcon>
+#include <QQmlApplicationEngine>
+#include <QQmlContext>
 #include <QQuickStyle>
 #include <QUrl>
 
@@ -23,6 +25,7 @@
 #include <KColorSchemeManager>
 #include <KConfigGroup>
 #include <KCrash>
+#include <KLocalizedQmlContext>
 #include <KLocalizedString>
 #include <KSharedConfig>
 
@@ -113,11 +116,32 @@ int main(int argc, char *argv[])
     options.process(app);
     about.processCommandLine(&options);
 
-    Filelight::MainContext mainContext;
-    const QStringList args = options.positionalArguments();
-    if (args.count() > 0) {
-        mainContext.scan(QUrl::fromUserInput(args.at(0), QDir::currentPath(), QUrl::AssumeLocalFile));
-    }
+    Config::instance()->read();
+
+    auto engine = new QQmlApplicationEngine(&app);
+
+    static auto l10nContext = new KLocalizedQmlContext(engine);
+    l10nContext->setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));
+    engine->rootContext()->setContextObject(l10nContext);
+
+    engine->setInitialProperties({
+        {QStringLiteral("inSandbox"),
+         !QStandardPaths::locate(QStandardPaths::RuntimeLocation, QStringLiteral("flatpak-info")).isEmpty() || qEnvironmentVariableIsSet("SNAP")},
+    });
+
+    const QUrl mainUrl(QStringLiteral("qrc:/ui/main.qml"));
+    QObject::connect(
+        engine,
+        &QQmlApplicationEngine::objectCreated,
+        &app,
+        [mainUrl](QObject *obj, const QUrl &objUrl) {
+            if (!obj && mainUrl == objUrl) {
+                qWarning() << "Failed to load QML dialog.";
+                abort();
+            }
+        },
+        Qt::QueuedConnection);
+    engine->load(mainUrl);
 
     return app.exec();
 }

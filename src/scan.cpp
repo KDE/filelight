@@ -301,4 +301,17 @@ void ScanManager::foundCached(std::shared_ptr<Folder> tree)
     QGuiApplication::restoreOverrideCursor();
 }
 
+ScanManager *ScanManager::instance()
+{
+    static ScanManager manager(nullptr);
+    return &manager;
 }
+
+ScanManager *ScanManager::create([[maybe_unused]] QQmlEngine *qml, [[maybe_unused]] QJSEngine *js)
+{
+    auto manager = instance();
+    QQmlEngine::setObjectOwnership(manager, QQmlEngine::CppOwnership);
+    return manager;
+}
+
+} // namespace Filelight

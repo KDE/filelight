@@ -16,6 +16,7 @@
 #include <QDebug>
 #include <QFileDialog>
 #include <QFont>
+#include <QQmlEngine>
 
 void Config::read()
 {
@@ -79,4 +80,16 @@ void Config::removeFolder(const QString &url)
     qDebug() << url;
     skipList.removeAll(url);
     Q_EMIT changed();
+}
+
+Config *Config::create(QQmlEngine *qml, QJSEngine *js)
+{
+    auto config = Config::instance();
+    QQmlEngine::setObjectOwnership(config, QQmlEngine::CppOwnership);
+    return config;
+}
+
+Config::Config(QObject *parent)
+    : QObject(parent)
+{
 }

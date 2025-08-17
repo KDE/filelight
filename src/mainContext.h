@@ -30,11 +30,14 @@ class ScanManager;
 class MainContext : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 public:
     Q_PROPERTY(QUrl url READ url WRITE setUrl NOTIFY urlChanged)
     Q_PROPERTY(bool upEnabled MEMBER m_upEnabled NOTIFY upEnabledChanged)
 
-    explicit MainContext(QObject *parent = nullptr);
+    static MainContext *create(QQmlEngine *qml, QJSEngine *js);
+
     [[nodiscard]] QUrl url() const;
 
 Q_SIGNALS:
@@ -44,7 +47,7 @@ Q_SIGNALS:
     void openUrlFailed(const QString &text, const QString &explanation);
 
 public Q_SLOTS:
-    void scan(const QUrl &u);
+    void scan(const QString &u);
 
     void slotUp();
     void slotScanFolder();
@@ -66,6 +69,8 @@ private:
     QUrl m_url;
     bool m_upEnabled;
     ScanManager *m_manager;
+
+    explicit MainContext(QObject *parent = nullptr);
 
 public:
     Q_INVOKABLE QString prettyUrl(const QUrl &url) const;

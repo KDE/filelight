@@ -12,6 +12,7 @@ class WindowThemer : public QObject
 {
     Q_OBJECT
     QML_ELEMENT
+    QML_NAMED_ELEMENT(WindowThemer)
     Q_PROPERTY(QWindow *window MEMBER m_window WRITE setWindow NOTIFY windowChanged REQUIRED)
 public:
     using QObject::QObject;

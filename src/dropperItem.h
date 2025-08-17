@@ -11,6 +11,7 @@ namespace Filelight
 class DropperItem : public QQuickItem
 {
     Q_OBJECT
+    QML_ELEMENT
 public:
     explicit DropperItem(QQuickItem *parent = nullptr);
 
