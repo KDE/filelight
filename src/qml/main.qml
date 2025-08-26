@@ -52,6 +52,7 @@ Kirigami.ApplicationWindow {
 
     Kirigami.Action {
         id: scanFolderAction
+        shortcut: StandardKey.Open
         icon.name: "folder"
         text: appWindow.inSandbox ? i18nc("@action Scan a user-selected folder", "Choose Folder…") : i18nc("@action Scan another folder", "Other Folder…")
         onTriggered: appWindow.slotScanFolder()
