@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-02 00:46+0000\n"
+"POT-Creation-Date: 2025-08-27 00:46+0000\n"
 "PO-Revision-Date: 2024-09-14 22:45+0300\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -243,49 +243,49 @@ msgctxt "@action Scan root folder"
 msgid "Root Folder"
 msgstr "Šakninis aplankas"
 
-#: src/qml/main.qml:56
+#: src/qml/main.qml:57
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
 msgstr "Pasirinkti aplanką…"
 
-#: src/qml/main.qml:56
+#: src/qml/main.qml:57
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
 msgstr "Kitas aplankas…"
 
-#: src/qml/main.qml:63
+#: src/qml/main.qml:64
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr "Išeiti"
 
-#: src/qml/main.qml:71
+#: src/qml/main.qml:72
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "Konfigūruoti…"
 
-#: src/qml/main.qml:76
+#: src/qml/main.qml:77
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "Konfigūruoti"
 
-#: src/qml/main.qml:88
+#: src/qml/main.qml:89
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "Atverti žinyną"
 
-#: src/qml/main.qml:96
+#: src/qml/main.qml:97
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr "Apie"
 
-#: src/qml/main.qml:173
+#: src/qml/main.qml:174
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"

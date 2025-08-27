@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-02 00:46+0000\n"
+"POT-Creation-Date: 2025-08-27 00:46+0000\n"
 "PO-Revision-Date: 2025-06-25 01:59+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -242,49 +242,49 @@ msgctxt "@action Scan root folder"
 msgid "Root Folder"
 msgstr "Carpeta raíz"
 
-#: src/qml/main.qml:56
+#: src/qml/main.qml:57
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
 msgstr "Escoger carpeta…"
 
-#: src/qml/main.qml:56
+#: src/qml/main.qml:57
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
 msgstr "Otra carpeta…"
 
-#: src/qml/main.qml:63
+#: src/qml/main.qml:64
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr "Salir"
 
-#: src/qml/main.qml:71
+#: src/qml/main.qml:72
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "Configurar…"
 
-#: src/qml/main.qml:76
+#: src/qml/main.qml:77
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "Configurar"
 
-#: src/qml/main.qml:88
+#: src/qml/main.qml:89
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "Abrir el manual"
 
-#: src/qml/main.qml:96
+#: src/qml/main.qml:97
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr "Acerca de"
 
-#: src/qml/main.qml:173
+#: src/qml/main.qml:174
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"

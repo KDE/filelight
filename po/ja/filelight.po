@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-02 00:46+0000\n"
+"POT-Creation-Date: 2025-08-27 00:46+0000\n"
 "PO-Revision-Date: 2025-01-27 21:29+0900\n"
 "Last-Translator: Lemon73 <Lemonade.Flash.1164@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -239,49 +239,49 @@ msgctxt "@action Scan root folder"
 msgid "Root Folder"
 msgstr "ルートフォルダー"
 
-#: src/qml/main.qml:56
+#: src/qml/main.qml:57
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
 msgstr "フォルダーを選択…"
 
-#: src/qml/main.qml:56
+#: src/qml/main.qml:57
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
 msgstr "その他のフォルダー"
 
-#: src/qml/main.qml:63
+#: src/qml/main.qml:64
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr "終了する"
 
-#: src/qml/main.qml:71
+#: src/qml/main.qml:72
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "設定…"
 
-#: src/qml/main.qml:76
+#: src/qml/main.qml:77
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "設定"
 
-#: src/qml/main.qml:88
+#: src/qml/main.qml:89
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "ハンドブックを開く"
 
-#: src/qml/main.qml:96
+#: src/qml/main.qml:97
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr "詳細"
 
-#: src/qml/main.qml:173
+#: src/qml/main.qml:174
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
