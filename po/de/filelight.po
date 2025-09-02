@@ -5,20 +5,21 @@
 # Frederik Schwarzer <schwarzer@kde.org>, 2010, 2011, 2022.
 # Panagiotis Papadopoulos <pano_90@gmx.net>, 2010.
 # SPDX-FileCopyrightText: 2025 Frank Steinmetzger <dev-kde@felsenfleischer.de>
+# SPDX-FileCopyrightText: 2025 Alois Spitzbart <spitz234@hotmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-03 02:39+0000\n"
-"PO-Revision-Date: 2025-07-22 12:08+0200\n"
-"Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
+"PO-Revision-Date: 2025-08-30 12:05+0200\n"
+"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -52,7 +53,7 @@ msgstr ""
 #: src/contextMenuContext.cpp:67
 #, kde-format
 msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
-msgstr "<qt><i>„%1t“</i> wird <b>unwiderruflich</b> gelöscht.</qt>"
+msgstr "<qt><i>„%1“</i> wird <b>unwiderruflich</b> gelöscht.</qt>"
 
 #: src/contextMenuContext.cpp:68
 #, kde-format
@@ -77,9 +78,9 @@ msgid ""
 "(C) 2008-2014 Martin Sandsmark\n"
 "(C) 2017-2022 Harald Sitter"
 msgstr ""
-"(C) 2006 Max Howell\n"
-"(C) 2008-2014 Martin Sandsmark\n"
-"(C) 2017-2022 Harald Sitter"
+"© 2006 Max Howell\n"
+"© 2008–2014 Martin Sandsmark\n"
+"© 2017–2022 Harald Sitter"
 
 #: src/main.cpp:95
 #, kde-format
