@@ -34,7 +34,7 @@ msgstr "txemaq@gmail.com"
 #: src/Config.cpp:59
 #, kde-format
 msgid "Select path to ignore"
-msgstr "Seleccioneu els camins que s'han d'ignorar"
+msgstr "Trieu els camins que s'han d'ignorar"
 
 #: src/Config.cpp:72
 #, kde-format
@@ -175,7 +175,7 @@ msgstr "[URL]"
 #: src/mainContext.cpp:126
 #, kde-format
 msgid "Select Folder to Scan"
-msgstr "Seleccioneu la carpeta que s'ha d'explorar"
+msgstr "Trieu la carpeta que s'ha d'explorar"
 
 #: src/mainContext.cpp:178
 #, kde-format
@@ -247,7 +247,7 @@ msgstr "Carpeta arrel"
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
-msgstr "Seleccioneu una carpeta…"
+msgstr "Tria una carpeta…"
 
 #: src/qml/main.qml:57
 #, kde-format
@@ -447,7 +447,7 @@ msgid ""
 "Choose a folder to proceed:"
 msgstr ""
 "Filelight analitza l'ús del disc, de manera que podeu veure què està "
-"utilitzant molt espai. Seleccioneu una carpeta per a continuar:"
+"utilitzant molt espai. Trieu una carpeta per a continuar:"
 
 #: src/qml/SettingsPage.qml:22
 #, kde-format
