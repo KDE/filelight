@@ -2,15 +2,15 @@
 # This file is distributed under the same license as the filelight package.
 #
 # SPDX-FileCopyrightText: 2024 Gummi <gudmundure@gmail.com>
-# Sveinn í Felli <sv1@fellsnet.is>, 2022, 2023, 2024.
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Sveinn í Felli <sv1@fellsnet.is>
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-03 02:39+0000\n"
-"PO-Revision-Date: 2024-07-22 22:03+0000\n"
-"Last-Translator: Gummi <gudmundure@gmail.com>\n"
-"Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2025-09-12 10:34+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: Icelandic\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -285,26 +285,21 @@ msgstr "Um hugbúnaðinn"
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
-msgstr ""
+msgstr "Mistókst að hætta skönnun"
 
 #: src/qml/MapPage.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "No files."
+#, kde-format
 msgctxt "@info:status"
 msgid "No files shown."
-msgstr "Engar skrár."
+msgstr "Engar skrár birtar."
 
 #: src/qml/MapPage.qml:41
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "1 file shown"
 msgid_plural "%1 files shown"
-msgstr[0] "1 skrá"
-msgstr[1] "%1 skrár"
+msgstr[0] "1 skrá birt"
+msgstr[1] "%1 skrár birtar"
 
 #: src/qml/MapPage.qml:49
 #, kde-format
@@ -432,17 +427,12 @@ msgid "Welcome to Filelight"
 msgstr "Velkomin í Filelight"
 
 #: src/qml/OverviewPage.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Filelight analyzes disk usage so you can see what's using lots of space. "
-#| "Choose a folder to proceed:"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space."
 msgstr ""
-"Filelight greinir disknotkun svo þú getir séð hvað tekur mikið pláss. Veldu "
-"möppu til að halda áfram:"
+"Filelight greinir disknotkun svo þú getir séð hvað sé að taka mikið pláss."
 
 #: src/qml/OverviewPage.qml:52
 #, kde-format
@@ -506,7 +496,7 @@ msgstr "Sýna litlar skrár"
 #, kde-format
 msgctxt "@checkbox"
 msgid "Show folders sidebar"
-msgstr ""
+msgstr "Birta hliðarspjald fyrir möppur"
 
 #: src/qml/SettingsPageScanning.qml:33
 #, kde-format
