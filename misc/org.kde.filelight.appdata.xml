@@ -99,7 +99,7 @@
   <summary xml:lang="ta">வட்டுப் பயன்பாட்டைக் காட்டி, தேவையில்லாத கோப்புகளை அகற்ற உதவும்</summary>
   <summary xml:lang="tr">Disk kullanımına bakın ve kullanılmayan dosyaları silin</summary>
   <summary xml:lang="uk">Показ даних щодо використання диска і вилучення зайвих файлів</summary>
-  <summary xml:lang="zh-CN">显示磁盘使用情况并删除未使用的文件</summary>
+  <summary xml:lang="zh-CN">显示磁盘使用率并删除未使用的文件</summary>
   <summary xml:lang="zh-TW">顯示磁碟用量、刪除不需要的檔案</summary>
   <description>
     <p>
