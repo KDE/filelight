@@ -5,7 +5,6 @@
 
 #include <QGuiApplication>
 #include <QStyleHints>
-#include <QWindow>
 
 #if defined(Q_OS_WINDOWS)
 #include <dwmapi.h>
