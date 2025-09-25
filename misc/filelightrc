@@ -1,6 +1,2 @@
 [filelight_part]
 skipList=/dev,/proc,/sys,/root
-
-[window]
-Height=400
-Width=600
