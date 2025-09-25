@@ -38,6 +38,11 @@ ecm_qt_declare_logging_category(filelightInternal
     DESCRIPTION "filelight"
     EXPORT FILELIGHT
 )
+kconfig_target_kcfg_file(filelightInternal
+    FILE filelightsettings.kcfg
+    CLASS_NAME FilelightSettings
+    MUTATORS
+)
 if (WIN32)
     target_sources(filelightInternal PRIVATE windowsWalker.cpp windowsWalker.h)
 else()
@@ -46,6 +51,7 @@ endif()
 target_link_libraries(filelightInternal
     Qt6::Gui
     KF6::ConfigCore
+    KF6::ConfigGui
     KF6::I18n
     KF6::KIOWidgets # Only used for KDirLister, may be able to move away from that.
     KF6::Crash
