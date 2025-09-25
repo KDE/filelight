@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+SPDX-FileCopyrightText: 2025 Nicolas Fella <nicolas.fella@gmx.de>
+SPDX-License-Identifier: BSD-2-Clause
+-->
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+  <kcfgfile name="filelightrc"/>
+  <group name="filelight_part">
+    <entry name="scanAcrossMounts" type="Bool">
+      <label>Scan across filesystem boundaries</label>
+      <default>false</default>
+    </entry>
+    <entry name="scanRemoteMounts" type="Bool">
+      <label>Scan remote filesystems</label>
+      <default>false</default>
+    </entry>
+    <entry name="showSmallFiles" type="Bool">
+      <label>Show small files</label>
+      <default>false</default>
+    </entry>
+    <entry name="showFoldersSidebar" type="Bool">
+      <label>Show folders sidebar</label>
+      <default>true</default>
+    </entry>
+    <entry name="contrast" type="Int">
+      <label>Contrast</label>
+      <default>75</default>
+    </entry>
+    <entry name="scheme" type="Int">
+      <label>Color Scheme</label>
+      <default>0</default>
+    </entry>
+    <entry name="skipList" type="PathList">
+      <label>Do not scan these folders</label>
+      <default>/dev,/proc,/sys,/root</default>
+    </entry>
+  </group>
+</kcfg>

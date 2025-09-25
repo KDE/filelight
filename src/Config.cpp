@@ -18,35 +18,37 @@
 #include <QFont>
 #include <QQmlEngine>
 
+#include "filelightsettings.h"
+
 void Config::read()
 {
-    const KConfigGroup config = KSharedConfig::openConfig()->group(QStringLiteral("filelight_part"));
+    FilelightSettings config;
 
-    scanAcrossMounts = config.readEntry("scanAcrossMounts", false);
-    scanRemoteMounts = config.readEntry("scanRemoteMounts", false);
-    showSmallFiles = config.readEntry("showSmallFiles", false);
-    showFoldersSidebar = config.readEntry("showFoldersSidebar", true);
-    contrast = config.readEntry("contrast", 75);
-    scheme = (Filelight::MapScheme)config.readEntry("scheme", 0);
-    skipList = config.readEntry("skipList", QStringList());
+    scanAcrossMounts = config.scanAcrossMounts();
+    scanRemoteMounts = config.scanRemoteMounts();
+    showSmallFiles = config.showSmallFiles();
+    showFoldersSidebar = config.showFoldersSidebar();
+    contrast = config.contrast();
+    scheme = (Filelight::MapScheme)config.scheme();
+    skipList = config.skipList();
 
     Q_EMIT changed();
 }
 
 void Config::write() const
 {
-    KConfigGroup config = KSharedConfig::openConfig()->group(QStringLiteral("filelight_part"));
+    FilelightSettings config;
 
-    config.writeEntry("scanAcrossMounts", scanAcrossMounts);
-    config.writeEntry("scanRemoteMounts", scanRemoteMounts);
-    config.writeEntry("showSmallFiles", showSmallFiles);
-    config.writeEntry("showFoldersSidebar", showFoldersSidebar);
-    config.writeEntry("contrast", contrast);
-    config.writeEntry("scheme", (int)scheme); // TODO: make the enum belong to a qwidget,
+    config.setScanAcrossMounts(scanAcrossMounts);
+    config.setScanRemoteMounts(scanRemoteMounts);
+    config.setShowSmallFiles(showSmallFiles);
+    config.setShowFoldersSidebar(showFoldersSidebar);
+    config.setContrast(contrast);
+    config.setScheme((int)scheme); // TODO: make the enum belong to a qwidget,
     // and use magic macros to make it save this properly
-    config.writePathEntry("skipList", skipList);
+    config.setSkipList(skipList);
 
-    config.sync();
+    config.save();
 }
 
 Config *Config::instance()
