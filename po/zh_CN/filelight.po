@@ -68,7 +68,7 @@ msgstr "删除时发生错误：%1"
 #: src/main.cpp:88
 #, kde-format
 msgid "Graphical disk-usage information"
-msgstr "图形化磁盘使用情况信息"
+msgstr "图形化磁盘使用率信息"
 
 #: src/main.cpp:90
 #, kde-format
@@ -429,7 +429,7 @@ msgstr "欢迎使用 Filelight"
 msgctxt "@info"
 msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space."
-msgstr "Filelight 能够分析磁盘使用情况，让您了解哪些项目占用了大量空间。"
+msgstr "Filelight 能够分析磁盘使用率，让您了解哪些项目占用了大量空间。"
 
 #: src/qml/OverviewPage.qml:52
 #, kde-format
@@ -438,8 +438,8 @@ msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space. "
 "Choose a folder to proceed:"
 msgstr ""
-"Filelight 可以分析磁盘使用情况，让您发现占用较大存储空间的项目。请选择一个文"
-"件夹以继续操作："
+"Filelight 可以分析磁盘使用率，让您发现占用较大存储空间的项目。请选择一个文件"
+"夹以继续操作："
 
 #: src/qml/SettingsPage.qml:22
 #, kde-format
