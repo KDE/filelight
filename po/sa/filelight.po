@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-27 00:46+0000\n"
+"POT-Creation-Date: 2025-10-16 00:45+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -29,12 +29,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "skkalwar999@gmail.com"
 
-#: src/Config.cpp:59
+#: src/Config.cpp:60
 #, kde-format
 msgid "Select path to ignore"
 msgstr "उपेक्षितुं मार्गं चिनोतु"
 
-#: src/Config.cpp:72
+#: src/Config.cpp:73
 #, kde-format
 msgid "Folder already ignored"
 msgstr "पुटं पूर्वमेव उपेक्षितम्"
@@ -64,12 +64,12 @@ msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "विलोपनकाले त्रुटिः: %1"
 
-#: src/main.cpp:88
+#: src/main.cpp:91
 #, kde-format
 msgid "Graphical disk-usage information"
 msgstr "चित्रात्मक डिस्क-उपयोगसूचना"
 
-#: src/main.cpp:90
+#: src/main.cpp:93
 #, kde-format
 msgid ""
 "(C) 2006 Max Howell\n"
@@ -80,132 +80,132 @@ msgstr ""
 "(C) 2008-2014 मार्टिन सैंड्स्मार्क\n"
 "(ग) 2017-2022 हरल्ड सिटर"
 
-#: src/main.cpp:95
+#: src/main.cpp:98
 #, kde-format
 msgid "Laurent Montel"
 msgstr "लॉरेण्ट् मोंटेल्"
 
-#: src/main.cpp:95 src/main.cpp:96
+#: src/main.cpp:98 src/main.cpp:99
 #, kde-format
 msgid "Maintainer"
 msgstr "परिपालकः"
 
-#: src/main.cpp:96
+#: src/main.cpp:99
 #, kde-format
 msgid "Martin Sandsmark"
 msgstr "मार्टिन् सैण्ड्स्मार्क"
 
-#: src/main.cpp:97
+#: src/main.cpp:100
 #, kde-format
 msgid "Harald Sitter"
 msgstr "हरल्ड सिटर"
 
-#: src/main.cpp:97
+#: src/main.cpp:100
 #, kde-format
 msgid "QtQuick Port"
 msgstr "QtQuick पोर्ट"
 
-#: src/main.cpp:98
+#: src/main.cpp:101
 #, kde-format
 msgid "Max Howell"
 msgstr "मैक्स हावेल्"
 
-#: src/main.cpp:98
+#: src/main.cpp:101
 #, kde-format
 msgid "Original author"
 msgstr "मूल लेखक"
 
-#: src/main.cpp:99
+#: src/main.cpp:102
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr "लुकास एप्पलहान्स"
 
-#: src/main.cpp:99
+#: src/main.cpp:102
 #, kde-format
 msgid "Help and support"
 msgstr "सहायतां समर्थनं च कुर्वन्तु"
 
-#: src/main.cpp:100
+#: src/main.cpp:103
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr "स्टीफेन गेर्लाच्"
 
-#: src/main.cpp:100
+#: src/main.cpp:103
 #, kde-format
 msgid "Inspiration"
 msgstr "प्रोत्साहन"
 
-#: src/main.cpp:101
+#: src/main.cpp:104
 #, kde-format
 msgid "Mike Diehl"
 msgstr "माइक डिएल्"
 
-#: src/main.cpp:101
+#: src/main.cpp:104
 #, kde-format
 msgid "Original documentation"
 msgstr "मूल दस्तावेजीकरण"
 
-#: src/main.cpp:102
+#: src/main.cpp:105
 #, kde-format
 msgid "Sune Vuorela"
 msgstr "सुने वुओरेला"
 
-#: src/main.cpp:102 src/main.cpp:103
+#: src/main.cpp:105 src/main.cpp:106
 #, kde-format
 msgid "Icon"
 msgstr "चिह्नम्"
 
-#: src/main.cpp:103
+#: src/main.cpp:106
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr "नुनो पिन्हेरो"
 
-#: src/main.cpp:111
+#: src/main.cpp:114
 #, kde-format
 msgid "Path or URL to scan"
 msgstr "स्कैन् कर्तुं मार्गः अथवा URL"
 
-#: src/main.cpp:111
+#: src/main.cpp:114
 #, kde-format
 msgid "[url]"
 msgstr "[उर्ल्]"
 
-#: src/mainContext.cpp:126
+#: src/mainContext.cpp:66
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Scan कर्तुं Folder इति चिनोतु"
 
-#: src/mainContext.cpp:178
+#: src/mainContext.cpp:118
 #, kde-format
 msgid "The entered URL cannot be parsed"
 msgstr "प्रविष्टं URL विश्लेषणं कर्तुं न शक्यते"
 
-#: src/mainContext.cpp:178
+#: src/mainContext.cpp:118
 #, kde-format
 msgid "it is invalid."
 msgstr "असिद्धम् इति ।"
 
-#: src/mainContext.cpp:180
+#: src/mainContext.cpp:120
 #, kde-format
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight केवलं निरपेक्षमार्गान् स्वीकुर्वति"
 
-#: src/mainContext.cpp:180
+#: src/mainContext.cpp:120
 #, kde-format
 msgid "eg. /%1"
 msgstr "यथा--- /%1"
 
-#: src/mainContext.cpp:182
+#: src/mainContext.cpp:122
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "पुटं न प्राप्तम्: %1"
 
-#: src/mainContext.cpp:184
+#: src/mainContext.cpp:124
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr "प्रविष्टुं असमर्थः: %1"
 
-#: src/mainContext.cpp:184
+#: src/mainContext.cpp:124
 #, kde-format
 msgid "You do not have access rights to this location."
 msgstr "अस्मिन् स्थाने भवतः प्रवेशाधिकारः नास्ति ।"
@@ -228,73 +228,73 @@ msgctxt "@item:inmenu"
 msgid "Help"
 msgstr "साहाय्यम्‌"
 
-#: src/qml/main.qml:42
+#: src/qml/main.qml:41
 #, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
 msgstr "Home Folder"
 
-#: src/qml/main.qml:49
+#: src/qml/main.qml:48
 #, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
 msgstr "मूलपुटम्"
 
-#: src/qml/main.qml:57
+#: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
 msgstr "Folder इति चिनोतु…"
 
-#: src/qml/main.qml:57
+#: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
 msgstr "अन्यः पुटः…"
 
-#: src/qml/main.qml:64
+#: src/qml/main.qml:63
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr "परिजहातु"
 
-#: src/qml/main.qml:72
+#: src/qml/main.qml:71
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "विन्यस्तं कुर्वन्तु…"
 
-#: src/qml/main.qml:77
+#: src/qml/main.qml:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "विन्यस्तं कुर्वन्तु"
 
-#: src/qml/main.qml:89
+#: src/qml/main.qml:88
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "Open Handbook"
 
-#: src/qml/main.qml:97
+#: src/qml/main.qml:96
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr "विषये"
 
-#: src/qml/main.qml:174
+#: src/qml/main.qml:173
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
 msgstr "स्कैन् गर्भपातं कर्तुं असफलम्"
 
-#: src/qml/MapPage.qml:40
+#: src/qml/MapPage.qml:44
 #, kde-format
 msgctxt "@info:status"
 msgid "No files shown."
 msgstr "न सञ्चिकाः दर्शिताः।"
 
-#: src/qml/MapPage.qml:41
+#: src/qml/MapPage.qml:45
 #, kde-format
 msgctxt "@info:status"
 msgid "1 file shown"
@@ -302,85 +302,85 @@ msgid_plural "%1 files shown"
 msgstr[0] "१ सञ्चिका दर्शिता"
 msgstr[1] "%1 सञ्चिकाः दर्शिताः"
 
-#: src/qml/MapPage.qml:49
+#: src/qml/MapPage.qml:53
 #, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
 msgstr "Overview इत्यत्र गच्छन्तु"
 
-#: src/qml/MapPage.qml:57
+#: src/qml/MapPage.qml:61
 #, kde-format
 msgctxt "@action"
 msgid "Up"
 msgstr "उपरि"
 
-#: src/qml/MapPage.qml:66
+#: src/qml/MapPage.qml:70
 #, kde-format
 msgctxt "@action"
 msgid "Rescan"
 msgstr "पुनः स्कैन करें"
 
-#: src/qml/MapPage.qml:75
+#: src/qml/MapPage.qml:79
 #, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "विरमतु"
 
-#: src/qml/MapPage.qml:83
+#: src/qml/MapPage.qml:87
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "Zoom In इति"
 
-#: src/qml/MapPage.qml:93
+#: src/qml/MapPage.qml:97
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Zoom Out इति"
 
-#: src/qml/MapPage.qml:127 src/qml/MapPage.qml:251
+#: src/qml/MapPage.qml:131 src/qml/MapPage.qml:255
 #, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "उद्घाटित"
 
-#: src/qml/MapPage.qml:135 src/qml/MapPage.qml:259
+#: src/qml/MapPage.qml:139 src/qml/MapPage.qml:263
 #, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
 msgstr "अत्र टर्मिनल् उद्घाटयन्तु"
 
-#: src/qml/MapPage.qml:143
+#: src/qml/MapPage.qml:147
 #, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "केन्द्र मानचित्रम् अत्र"
 
-#: src/qml/MapPage.qml:154 src/qml/MapPage.qml:267
+#: src/qml/MapPage.qml:158 src/qml/MapPage.qml:271
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "Do Not Scan List इत्यत्र योजयतु"
 
-#: src/qml/MapPage.qml:162
+#: src/qml/MapPage.qml:166
 #, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "पुनः स्कैन करें"
 
-#: src/qml/MapPage.qml:169 src/qml/MapPage.qml:274
+#: src/qml/MapPage.qml:173 src/qml/MapPage.qml:278
 #, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "क्लिप्बोर्ड् प्रति प्रतिलिख्यताम्"
 
-#: src/qml/MapPage.qml:177 src/qml/MapPage.qml:282
+#: src/qml/MapPage.qml:181 src/qml/MapPage.qml:286
 #, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "लुप्"
 
-#: src/qml/MapPage.qml:336
+#: src/qml/MapPage.qml:340
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -388,7 +388,7 @@ msgid_plural "%1 Files (%2%)"
 msgstr[0] "%1 सञ्चिका (%2%) ."
 msgstr[1] "%1 सञ्चिकाः (%2%) ."
 
-#: src/qml/MapPage.qml:338
+#: src/qml/MapPage.qml:342
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -396,13 +396,13 @@ msgid_plural "%1 Files"
 msgstr[0] "%1 सञ्चिका"
 msgstr[1] "%1 सञ्चिकाः"
 
-#: src/qml/MapPage.qml:342
+#: src/qml/MapPage.qml:346
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "मातापितृनिर्देशिकां प्रति गन्तुं क्लिक् कुर्वन्तु"
 
-#: src/qml/MapPage.qml:565
+#: src/qml/MapPage.qml:569
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -410,7 +410,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 सञ्चिका, %2"
 msgstr[1] "%1 सञ्चिकाः, %2"
 
-#: src/qml/MapPage.qml:574
+#: src/qml/MapPage.qml:578
 #, kde-format
 msgid "No data available"
 msgstr "न कोऽपि दत्तांशः उपलब्धः"

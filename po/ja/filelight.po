@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-27 00:46+0000\n"
+"POT-Creation-Date: 2025-10-16 00:45+0000\n"
 "PO-Revision-Date: 2025-01-27 21:29+0900\n"
 "Last-Translator: Lemon73 <Lemonade.Flash.1164@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -29,12 +29,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Lemonade.flash.1164@gmail.com"
 
-#: src/Config.cpp:59
+#: src/Config.cpp:60
 #, kde-format
 msgid "Select path to ignore"
 msgstr "無視するパスを選択"
 
-#: src/Config.cpp:72
+#: src/Config.cpp:73
 #, kde-format
 msgid "Folder already ignored"
 msgstr "既に無視されているフォルダー"
@@ -63,12 +63,12 @@ msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "削除中にエラーが発生: %1"
 
-#: src/main.cpp:88
+#: src/main.cpp:91
 #, kde-format
 msgid "Graphical disk-usage information"
 msgstr "ディスクの使用状況をグラフィカルに表示します"
 
-#: src/main.cpp:90
+#: src/main.cpp:93
 #, kde-format
 msgid ""
 "(C) 2006 Max Howell\n"
@@ -79,132 +79,132 @@ msgstr ""
 "(C) 2008-2014 Martin Sandsmark\n"
 "(C) 2017-2022 Harald Sitter"
 
-#: src/main.cpp:95
+#: src/main.cpp:98
 #, kde-format
 msgid "Laurent Montel"
 msgstr ""
 
-#: src/main.cpp:95 src/main.cpp:96
+#: src/main.cpp:98 src/main.cpp:99
 #, kde-format
 msgid "Maintainer"
 msgstr "メンテナ"
 
-#: src/main.cpp:96
+#: src/main.cpp:99
 #, kde-format
 msgid "Martin Sandsmark"
 msgstr "Martin Sandsmark"
 
-#: src/main.cpp:97
+#: src/main.cpp:100
 #, kde-format
 msgid "Harald Sitter"
 msgstr "Harald Sitter"
 
-#: src/main.cpp:97
+#: src/main.cpp:100
 #, kde-format
 msgid "QtQuick Port"
 msgstr "QtQuick Port"
 
-#: src/main.cpp:98
+#: src/main.cpp:101
 #, kde-format
 msgid "Max Howell"
 msgstr "Max Howell"
 
-#: src/main.cpp:98
+#: src/main.cpp:101
 #, kde-format
 msgid "Original author"
 msgstr "オリジナルの作者"
 
-#: src/main.cpp:99
+#: src/main.cpp:102
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr "Lukas Appelhans"
 
-#: src/main.cpp:99
+#: src/main.cpp:102
 #, kde-format
 msgid "Help and support"
 msgstr "ヘルプとサポート"
 
-#: src/main.cpp:100
+#: src/main.cpp:103
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr "Steffen Gerlach"
 
-#: src/main.cpp:100
+#: src/main.cpp:103
 #, kde-format
 msgid "Inspiration"
 msgstr "着想"
 
-#: src/main.cpp:101
+#: src/main.cpp:104
 #, kde-format
 msgid "Mike Diehl"
 msgstr "Mike Diehl"
 
-#: src/main.cpp:101
+#: src/main.cpp:104
 #, kde-format
 msgid "Original documentation"
 msgstr "オリジナルの資料"
 
-#: src/main.cpp:102
+#: src/main.cpp:105
 #, kde-format
 msgid "Sune Vuorela"
 msgstr "Sune Vuorela"
 
-#: src/main.cpp:102 src/main.cpp:103
+#: src/main.cpp:105 src/main.cpp:106
 #, kde-format
 msgid "Icon"
 msgstr "アイコン"
 
-#: src/main.cpp:103
+#: src/main.cpp:106
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr "Nuno Pinheiro"
 
-#: src/main.cpp:111
+#: src/main.cpp:114
 #, kde-format
 msgid "Path or URL to scan"
 msgstr "パスまたは URL をスキャンする"
 
-#: src/main.cpp:111
+#: src/main.cpp:114
 #, kde-format
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:126
+#: src/mainContext.cpp:66
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "スキャンするフォルダーを選択"
 
-#: src/mainContext.cpp:178
+#: src/mainContext.cpp:118
 #, kde-format
 msgid "The entered URL cannot be parsed"
 msgstr "入力された URL を解析できません。"
 
-#: src/mainContext.cpp:178
+#: src/mainContext.cpp:118
 #, kde-format
 msgid "it is invalid."
 msgstr ""
 
-#: src/mainContext.cpp:180
+#: src/mainContext.cpp:120
 #, kde-format
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight は絶対パスのみ利用できます。"
 
-#: src/mainContext.cpp:180
+#: src/mainContext.cpp:120
 #, kde-format
 msgid "eg. /%1"
 msgstr "例: /%1"
 
-#: src/mainContext.cpp:182
+#: src/mainContext.cpp:122
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "フォルダーが見つかりません: %1"
 
-#: src/mainContext.cpp:184
+#: src/mainContext.cpp:124
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr "入力不可です: %1"
 
-#: src/mainContext.cpp:184
+#: src/mainContext.cpp:124
 #, kde-format
 msgid "You do not have access rights to this location."
 msgstr "この場所にアクセスする権限がありません。"
@@ -227,185 +227,185 @@ msgctxt "@item:inmenu"
 msgid "Help"
 msgstr "ヘルプ"
 
-#: src/qml/main.qml:42
+#: src/qml/main.qml:41
 #, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
 msgstr "ホームフォルダー"
 
-#: src/qml/main.qml:49
+#: src/qml/main.qml:48
 #, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
 msgstr "ルートフォルダー"
 
-#: src/qml/main.qml:57
+#: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
 msgstr "フォルダーを選択…"
 
-#: src/qml/main.qml:57
+#: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
 msgstr "その他のフォルダー"
 
-#: src/qml/main.qml:64
+#: src/qml/main.qml:63
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr "終了する"
 
-#: src/qml/main.qml:72
+#: src/qml/main.qml:71
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "設定…"
 
-#: src/qml/main.qml:77
+#: src/qml/main.qml:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "設定"
 
-#: src/qml/main.qml:89
+#: src/qml/main.qml:88
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "ハンドブックを開く"
 
-#: src/qml/main.qml:97
+#: src/qml/main.qml:96
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr "詳細"
 
-#: src/qml/main.qml:174
+#: src/qml/main.qml:173
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
 msgstr "スキャンの中止に失敗しました"
 
-#: src/qml/MapPage.qml:40
+#: src/qml/MapPage.qml:44
 #, kde-format
 msgctxt "@info:status"
 msgid "No files shown."
 msgstr "ファイルが表示されていません。"
 
-#: src/qml/MapPage.qml:41
+#: src/qml/MapPage.qml:45
 #, kde-format
 msgctxt "@info:status"
 msgid "1 file shown"
 msgid_plural "%1 files shown"
 msgstr[0] "%1 ファイル表示"
 
-#: src/qml/MapPage.qml:49
+#: src/qml/MapPage.qml:53
 #, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
 msgstr "概要を見る"
 
-#: src/qml/MapPage.qml:57
+#: src/qml/MapPage.qml:61
 #, kde-format
 msgctxt "@action"
 msgid "Up"
 msgstr "上の階層"
 
-#: src/qml/MapPage.qml:66
+#: src/qml/MapPage.qml:70
 #, kde-format
 msgctxt "@action"
 msgid "Rescan"
 msgstr "再スキャン"
 
-#: src/qml/MapPage.qml:75
+#: src/qml/MapPage.qml:79
 #, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "停止"
 
-#: src/qml/MapPage.qml:83
+#: src/qml/MapPage.qml:87
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "拡大"
 
-#: src/qml/MapPage.qml:93
+#: src/qml/MapPage.qml:97
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "縮小"
 
-#: src/qml/MapPage.qml:127 src/qml/MapPage.qml:251
+#: src/qml/MapPage.qml:131 src/qml/MapPage.qml:255
 #, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "開く"
 
-#: src/qml/MapPage.qml:135 src/qml/MapPage.qml:259
+#: src/qml/MapPage.qml:139 src/qml/MapPage.qml:263
 #, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
 msgstr "ここをターミナルで開く"
 
-#: src/qml/MapPage.qml:143
+#: src/qml/MapPage.qml:147
 #, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "ここをマップの中心にする"
 
-#: src/qml/MapPage.qml:154 src/qml/MapPage.qml:267
+#: src/qml/MapPage.qml:158 src/qml/MapPage.qml:271
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "スキャンしない場所のリストを追加する"
 
-#: src/qml/MapPage.qml:162
+#: src/qml/MapPage.qml:166
 #, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "再スキャン"
 
-#: src/qml/MapPage.qml:169 src/qml/MapPage.qml:274
+#: src/qml/MapPage.qml:173 src/qml/MapPage.qml:278
 #, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "クリップボードにコピー"
 
-#: src/qml/MapPage.qml:177 src/qml/MapPage.qml:282
+#: src/qml/MapPage.qml:181 src/qml/MapPage.qml:286
 #, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "削除"
 
-#: src/qml/MapPage.qml:336
+#: src/qml/MapPage.qml:340
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
 msgid_plural "%1 Files (%2%)"
 msgstr[0] "%1 ファイル (%2%)"
 
-#: src/qml/MapPage.qml:338
+#: src/qml/MapPage.qml:342
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
 msgid_plural "%1 Files"
 msgstr[0] "%1 ファイル"
 
-#: src/qml/MapPage.qml:342
+#: src/qml/MapPage.qml:346
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "クリックすることで親ディレクトリに移動します"
 
-#: src/qml/MapPage.qml:565
+#: src/qml/MapPage.qml:569
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
 msgid_plural "%1 Files, %2"
 msgstr[0] "%1 ファイル、%2"
 
-#: src/qml/MapPage.qml:574
+#: src/qml/MapPage.qml:578
 #, kde-format
 msgid "No data available"
 msgstr "データが存在しません"

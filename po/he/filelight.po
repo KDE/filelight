@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-27 00:46+0000\n"
+"POT-Creation-Date: 2025-10-16 00:45+0000\n"
 "PO-Revision-Date: 2025-06-24 06:05+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -28,12 +28,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-l10n-he@kde.org"
 
-#: src/Config.cpp:59
+#: src/Config.cpp:60
 #, kde-format
 msgid "Select path to ignore"
 msgstr "נא לבחור נתיב להחרגה"
 
-#: src/Config.cpp:72
+#: src/Config.cpp:73
 #, kde-format
 msgid "Folder already ignored"
 msgstr "התיקייה כבר מוחרגת"
@@ -61,12 +61,12 @@ msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "שגיאה במחיקה: %1"
 
-#: src/main.cpp:88
+#: src/main.cpp:91
 #, kde-format
 msgid "Graphical disk-usage information"
 msgstr "פרטי תפוסת כונן חזותיים"
 
-#: src/main.cpp:90
+#: src/main.cpp:93
 #, kde-format
 msgid ""
 "(C) 2006 Max Howell\n"
@@ -77,132 +77,132 @@ msgstr ""
 "(C) 2008-2014 מרטין זנדסמרק\n"
 "(C) 2017-2022 הרלד סיטר"
 
-#: src/main.cpp:95
+#: src/main.cpp:98
 #, kde-format
 msgid "Laurent Montel"
 msgstr "לורנט מונטל"
 
-#: src/main.cpp:95 src/main.cpp:96
+#: src/main.cpp:98 src/main.cpp:99
 #, kde-format
 msgid "Maintainer"
 msgstr "מתחזק"
 
-#: src/main.cpp:96
+#: src/main.cpp:99
 #, kde-format
 msgid "Martin Sandsmark"
 msgstr "מרטין זנדסמרק"
 
-#: src/main.cpp:97
+#: src/main.cpp:100
 #, kde-format
 msgid "Harald Sitter"
 msgstr "הרלד סיטר"
 
-#: src/main.cpp:97
+#: src/main.cpp:100
 #, kde-format
 msgid "QtQuick Port"
 msgstr "הסבת QtQuick"
 
-#: src/main.cpp:98
+#: src/main.cpp:101
 #, kde-format
 msgid "Max Howell"
 msgstr "מקס האוול"
 
-#: src/main.cpp:98
+#: src/main.cpp:101
 #, kde-format
 msgid "Original author"
 msgstr "יוצר מקורי"
 
-#: src/main.cpp:99
+#: src/main.cpp:102
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr "לוקאס אפלהאנס"
 
-#: src/main.cpp:99
+#: src/main.cpp:102
 #, kde-format
 msgid "Help and support"
 msgstr "עזרה ותמיכה"
 
-#: src/main.cpp:100
+#: src/main.cpp:103
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr "סטיבן גרלך"
 
-#: src/main.cpp:100
+#: src/main.cpp:103
 #, kde-format
 msgid "Inspiration"
 msgstr "השראה"
 
-#: src/main.cpp:101
+#: src/main.cpp:104
 #, kde-format
 msgid "Mike Diehl"
 msgstr "מייק דיהל"
 
-#: src/main.cpp:101
+#: src/main.cpp:104
 #, kde-format
 msgid "Original documentation"
 msgstr "תיעוד מקורי"
 
-#: src/main.cpp:102
+#: src/main.cpp:105
 #, kde-format
 msgid "Sune Vuorela"
 msgstr "סון וורלה"
 
-#: src/main.cpp:102 src/main.cpp:103
+#: src/main.cpp:105 src/main.cpp:106
 #, kde-format
 msgid "Icon"
 msgstr "סמל"
 
-#: src/main.cpp:103
+#: src/main.cpp:106
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr "נונו פיניירו"
 
-#: src/main.cpp:111
+#: src/main.cpp:114
 #, kde-format
 msgid "Path or URL to scan"
 msgstr "נתיב או כתובת לסריקה"
 
-#: src/main.cpp:111
+#: src/main.cpp:114
 #, kde-format
 msgid "[url]"
 msgstr "[כתובת]"
 
-#: src/mainContext.cpp:126
+#: src/mainContext.cpp:66
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "נא לבחור תיקייה לסריקה"
 
-#: src/mainContext.cpp:178
+#: src/mainContext.cpp:118
 #, kde-format
 msgid "The entered URL cannot be parsed"
 msgstr "אי אפשר לפענח את הכתובת שסופקה"
 
-#: src/mainContext.cpp:178
+#: src/mainContext.cpp:118
 #, kde-format
 msgid "it is invalid."
 msgstr "הוא שגוי"
 
-#: src/mainContext.cpp:180
+#: src/mainContext.cpp:120
 #, kde-format
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight מקבל רק נתיבים מלאים"
 
-#: src/mainContext.cpp:180
+#: src/mainContext.cpp:120
 #, kde-format
 msgid "eg. /%1"
 msgstr "למשל: ‎/%1"
 
-#: src/mainContext.cpp:182
+#: src/mainContext.cpp:122
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "התיקייה לא נמצאה: %1"
 
-#: src/mainContext.cpp:184
+#: src/mainContext.cpp:124
 #, kde-format
 msgid "Unable to enter: %1"
 msgstr "לא ניתן להיכנס: %1"
 
-#: src/mainContext.cpp:184
+#: src/mainContext.cpp:124
 #, kde-format
 msgid "You do not have access rights to this location."
 msgstr "אין לך הרשאות גישה למקום הזה."
@@ -225,73 +225,73 @@ msgctxt "@item:inmenu"
 msgid "Help"
 msgstr "עזרה"
 
-#: src/qml/main.qml:42
+#: src/qml/main.qml:41
 #, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
 msgstr "תיקיית הבית"
 
-#: src/qml/main.qml:49
+#: src/qml/main.qml:48
 #, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
 msgstr "תיקיית העל"
 
-#: src/qml/main.qml:57
+#: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
 msgstr "בחירת תיקייה…"
 
-#: src/qml/main.qml:57
+#: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
 msgstr "תיקייה אחרת…"
 
-#: src/qml/main.qml:64
+#: src/qml/main.qml:63
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr "יציאה"
 
-#: src/qml/main.qml:72
+#: src/qml/main.qml:71
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "הגדרה…"
 
-#: src/qml/main.qml:77
+#: src/qml/main.qml:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "הגדרה"
 
-#: src/qml/main.qml:89
+#: src/qml/main.qml:88
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "פתיחת מדריך המשתמש"
 
-#: src/qml/main.qml:97
+#: src/qml/main.qml:96
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr "על אודות"
 
-#: src/qml/main.qml:174
+#: src/qml/main.qml:173
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
 msgstr "ביטול הסריקה נכשל"
 
-#: src/qml/MapPage.qml:40
+#: src/qml/MapPage.qml:44
 #, kde-format
 msgctxt "@info:status"
 msgid "No files shown."
 msgstr "לא מופיעים קבצים."
 
-#: src/qml/MapPage.qml:41
+#: src/qml/MapPage.qml:45
 #, kde-format
 msgctxt "@info:status"
 msgid "1 file shown"
@@ -301,85 +301,85 @@ msgstr[1] "שני קבצים מופיעים"
 msgstr[2] "%1 קבצים מופיעים"
 msgstr[3] "%1 קבצים מופיעים"
 
-#: src/qml/MapPage.qml:49
+#: src/qml/MapPage.qml:53
 #, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
 msgstr "מעבר לסקירה"
 
-#: src/qml/MapPage.qml:57
+#: src/qml/MapPage.qml:61
 #, kde-format
 msgctxt "@action"
 msgid "Up"
 msgstr "למעלה"
 
-#: src/qml/MapPage.qml:66
+#: src/qml/MapPage.qml:70
 #, kde-format
 msgctxt "@action"
 msgid "Rescan"
 msgstr "סריקה מחדש"
 
-#: src/qml/MapPage.qml:75
+#: src/qml/MapPage.qml:79
 #, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "עצירה"
 
-#: src/qml/MapPage.qml:83
+#: src/qml/MapPage.qml:87
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "התקרבות"
 
-#: src/qml/MapPage.qml:93
+#: src/qml/MapPage.qml:97
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "התרחקות"
 
-#: src/qml/MapPage.qml:127 src/qml/MapPage.qml:251
+#: src/qml/MapPage.qml:131 src/qml/MapPage.qml:255
 #, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "פתיחה"
 
-#: src/qml/MapPage.qml:135 src/qml/MapPage.qml:259
+#: src/qml/MapPage.qml:139 src/qml/MapPage.qml:263
 #, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
 msgstr "פתיחת מסוף כאן"
 
-#: src/qml/MapPage.qml:143
+#: src/qml/MapPage.qml:147
 #, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "מרכוז המפה כאן"
 
-#: src/qml/MapPage.qml:154 src/qml/MapPage.qml:267
+#: src/qml/MapPage.qml:158 src/qml/MapPage.qml:271
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "הוספה לרשימת ‚לא לסרוק’"
 
-#: src/qml/MapPage.qml:162
+#: src/qml/MapPage.qml:166
 #, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "סריקה מחדש"
 
-#: src/qml/MapPage.qml:169 src/qml/MapPage.qml:274
+#: src/qml/MapPage.qml:173 src/qml/MapPage.qml:278
 #, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "העתקה ללוח הגזירים"
 
-#: src/qml/MapPage.qml:177 src/qml/MapPage.qml:282
+#: src/qml/MapPage.qml:181 src/qml/MapPage.qml:286
 #, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "מחיקה"
 
-#: src/qml/MapPage.qml:336
+#: src/qml/MapPage.qml:340
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -389,7 +389,7 @@ msgstr[1] "שני קבצים (%2%)"
 msgstr[2] "%1 קבצים (%2%)"
 msgstr[3] "%1 קבצים (%2%)"
 
-#: src/qml/MapPage.qml:338
+#: src/qml/MapPage.qml:342
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -399,13 +399,13 @@ msgstr[1] "שני קבצים"
 msgstr[2] "%1 קבצים"
 msgstr[3] "%1 קבצים"
 
-#: src/qml/MapPage.qml:342
+#: src/qml/MapPage.qml:346
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "לחיצה תעלה לתיקיית ההורה"
 
-#: src/qml/MapPage.qml:565
+#: src/qml/MapPage.qml:569
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -415,7 +415,7 @@ msgstr[1] "שני קבצים, %2"
 msgstr[2] "%1 קבצים, %2"
 msgstr[3] "%1 קבצים, %2"
 
-#: src/qml/MapPage.qml:574
+#: src/qml/MapPage.qml:578
 #, kde-format
 msgid "No data available"
 msgstr "אין נתונים זמינים"

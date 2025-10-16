@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-27 00:46+0000\n"
+"POT-Creation-Date: 2025-10-16 00:45+0000\n"
 "PO-Revision-Date: 2022-07-19 10:05+0200\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -29,12 +29,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "misurel@gmail.com"
 
-#: src/Config.cpp:59
+#: src/Config.cpp:60
 #, kde-format
 msgid "Select path to ignore"
 msgstr "Vyberte cestu na vylúčenie"
 
-#: src/Config.cpp:72
+#: src/Config.cpp:73
 #, kde-format
 msgid "Folder already ignored"
 msgstr "Priečinok je už ignorovaný"
@@ -65,12 +65,12 @@ msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "Chyba pri odstraňovaní"
 
-#: src/main.cpp:88
+#: src/main.cpp:91
 #, kde-format
 msgid "Graphical disk-usage information"
 msgstr "Grafické informácie o využití disku"
 
-#: src/main.cpp:90
+#: src/main.cpp:93
 #, kde-format
 msgid ""
 "(C) 2006 Max Howell\n"
@@ -81,135 +81,135 @@ msgstr ""
 "(C) 2008-2014 Martin Sandsmark\n"
 "(C) 2017-2022 Harald Sitter"
 
-#: src/main.cpp:95
+#: src/main.cpp:98
 #, kde-format
 msgid "Laurent Montel"
 msgstr ""
 
-#: src/main.cpp:95 src/main.cpp:96
+#: src/main.cpp:98 src/main.cpp:99
 #, kde-format
 msgid "Maintainer"
 msgstr "Správca"
 
-#: src/main.cpp:96
+#: src/main.cpp:99
 #, kde-format
 msgid "Martin Sandsmark"
 msgstr "Martin Sandsmark"
 
-#: src/main.cpp:97
+#: src/main.cpp:100
 #, kde-format
 msgid "Harald Sitter"
 msgstr "Harald Sitter"
 
-#: src/main.cpp:97
+#: src/main.cpp:100
 #, kde-format
 msgid "QtQuick Port"
 msgstr "QtQuick Port"
 
-#: src/main.cpp:98
+#: src/main.cpp:101
 #, kde-format
 msgid "Max Howell"
 msgstr "Max Howell"
 
-#: src/main.cpp:98
+#: src/main.cpp:101
 #, kde-format
 msgid "Original author"
 msgstr "Pôvodný autor"
 
-#: src/main.cpp:99
+#: src/main.cpp:102
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr "Lukas Appelhans"
 
-#: src/main.cpp:99
+#: src/main.cpp:102
 #, kde-format
 msgid "Help and support"
 msgstr "Pomocník a podpora"
 
-#: src/main.cpp:100
+#: src/main.cpp:103
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr "Steffen Gerlach"
 
-#: src/main.cpp:100
+#: src/main.cpp:103
 #, kde-format
 msgid "Inspiration"
 msgstr "Inšpirácia"
 
-#: src/main.cpp:101
+#: src/main.cpp:104
 #, kde-format
 msgid "Mike Diehl"
 msgstr "Mike Diehl"
 
-#: src/main.cpp:101
+#: src/main.cpp:104
 #, kde-format
 msgid "Original documentation"
 msgstr "Pôvodná dokumentácia"
 
-#: src/main.cpp:102
+#: src/main.cpp:105
 #, kde-format
 msgid "Sune Vuorela"
 msgstr "Sune Vuorela"
 
-#: src/main.cpp:102 src/main.cpp:103
+#: src/main.cpp:105 src/main.cpp:106
 #, kde-format
 msgid "Icon"
 msgstr "Ikona"
 
-#: src/main.cpp:103
+#: src/main.cpp:106
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr "Nuno Pinheiro"
 
-#: src/main.cpp:111
+#: src/main.cpp:114
 #, kde-format
 msgid "Path or URL to scan"
 msgstr "Cesta alebo URL na prehľadanie"
 
-#: src/main.cpp:111
+#: src/main.cpp:114
 #, kde-format
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:126
+#: src/mainContext.cpp:66
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Vyberte priečinok, ktorý chcete prehľadať"
 
-#: src/mainContext.cpp:178
+#: src/mainContext.cpp:118
 #, fuzzy, kde-format
 #| msgid "The entered URL cannot be parsed; it is invalid."
 msgid "The entered URL cannot be parsed"
 msgstr "Zadanú URL adresu sa nepodarilo spracovať, pretože je neplatná."
 
-#: src/mainContext.cpp:178
+#: src/mainContext.cpp:118
 #, kde-format
 msgid "it is invalid."
 msgstr ""
 
-#: src/mainContext.cpp:180
+#: src/mainContext.cpp:120
 #, fuzzy, kde-format
 #| msgid "Filelight only accepts absolute paths, eg. /%1"
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight akceptuje iba absolútne cesty, napr. /%1"
 
-#: src/mainContext.cpp:180
+#: src/mainContext.cpp:120
 #, kde-format
 msgid "eg. /%1"
 msgstr ""
 
-#: src/mainContext.cpp:182
+#: src/mainContext.cpp:122
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Priečinok sa nenašiel: %1"
 
-#: src/mainContext.cpp:184
+#: src/mainContext.cpp:124
 #, fuzzy, kde-format
 #| msgid "Unable to create part widget."
 msgid "Unable to enter: %1"
 msgstr "Nepodarilo sa vytvoriť komponent prvkov."
 
-#: src/mainContext.cpp:184
+#: src/mainContext.cpp:124
 #, fuzzy, kde-format
 #| msgid ""
 #| "Unable to enter: %1\n"
@@ -237,7 +237,7 @@ msgctxt "@item:inmenu"
 msgid "Help"
 msgstr "Pomocník"
 
-#: src/qml/main.qml:42
+#: src/qml/main.qml:41
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Scan Home Folder"
@@ -245,7 +245,7 @@ msgctxt "@action Scan home folder"
 msgid "Home Folder"
 msgstr "Prehľadať domovský priečinok"
 
-#: src/qml/main.qml:49
+#: src/qml/main.qml:48
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Scan Root Folder"
@@ -253,31 +253,31 @@ msgctxt "@action Scan root folder"
 msgid "Root Folder"
 msgstr "Prehľadať koreňový priečinok"
 
-#: src/qml/main.qml:57
+#: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
 msgstr ""
 
-#: src/qml/main.qml:57
+#: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
 msgstr ""
 
-#: src/qml/main.qml:64
+#: src/qml/main.qml:63
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr "Ukončiť"
 
-#: src/qml/main.qml:72
+#: src/qml/main.qml:71
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "Nastaviť..."
 
-#: src/qml/main.qml:77
+#: src/qml/main.qml:76
 #, fuzzy, kde-format
 #| msgctxt "@action configure app"
 #| msgid "Configure…"
@@ -285,25 +285,25 @@ msgctxt "@title:window"
 msgid "Configure"
 msgstr "Nastaviť..."
 
-#: src/qml/main.qml:89
+#: src/qml/main.qml:88
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "Otvoriť príručku"
 
-#: src/qml/main.qml:97
+#: src/qml/main.qml:96
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr "O aplikácii"
 
-#: src/qml/main.qml:174
+#: src/qml/main.qml:173
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
 msgstr ""
 
-#: src/qml/MapPage.qml:40
+#: src/qml/MapPage.qml:44
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "No files."
@@ -311,7 +311,7 @@ msgctxt "@info:status"
 msgid "No files shown."
 msgstr "Žiadne súbory."
 
-#: src/qml/MapPage.qml:41
+#: src/qml/MapPage.qml:45
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "1 file"
@@ -323,7 +323,7 @@ msgstr[0] "1 Súbor"
 msgstr[1] "%1 súbory"
 msgstr[2] "%1 súbory"
 
-#: src/qml/MapPage.qml:49
+#: src/qml/MapPage.qml:53
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Overview"
@@ -331,37 +331,37 @@ msgctxt "@action"
 msgid "Go to Overview"
 msgstr "Prehľad"
 
-#: src/qml/MapPage.qml:57
+#: src/qml/MapPage.qml:61
 #, kde-format
 msgctxt "@action"
 msgid "Up"
 msgstr "Hore"
 
-#: src/qml/MapPage.qml:66
+#: src/qml/MapPage.qml:70
 #, kde-format
 msgctxt "@action"
 msgid "Rescan"
 msgstr "Znovu prehľadať"
 
-#: src/qml/MapPage.qml:75
+#: src/qml/MapPage.qml:79
 #, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "Zastaviť"
 
-#: src/qml/MapPage.qml:83
+#: src/qml/MapPage.qml:87
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "Priblížiť"
 
-#: src/qml/MapPage.qml:93
+#: src/qml/MapPage.qml:97
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Oddialiť"
 
-#: src/qml/MapPage.qml:127 src/qml/MapPage.qml:251
+#: src/qml/MapPage.qml:131 src/qml/MapPage.qml:255
 #, fuzzy, kde-format
 #| msgctxt "Scan/open the path of the selected element"
 #| msgid "&Open"
@@ -369,28 +369,28 @@ msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "&Otvoriť"
 
-#: src/qml/MapPage.qml:135 src/qml/MapPage.qml:259
+#: src/qml/MapPage.qml:139 src/qml/MapPage.qml:263
 #, fuzzy, kde-format
 #| msgid "Open &Terminal Here"
 msgctxt "@action"
 msgid "Open Terminal Here"
 msgstr "Tu otvoriť &terminál"
 
-#: src/qml/MapPage.qml:143
+#: src/qml/MapPage.qml:147
 #, fuzzy, kde-format
 #| msgid "&Center Map Here"
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "Tu vycentrovať &mapu"
 
-#: src/qml/MapPage.qml:154 src/qml/MapPage.qml:267
+#: src/qml/MapPage.qml:158 src/qml/MapPage.qml:271
 #, fuzzy, kde-format
 #| msgid "Add to Do &Not Scan List"
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "Pridať do zoznamu Neskenovať"
 
-#: src/qml/MapPage.qml:162
+#: src/qml/MapPage.qml:166
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Rescan"
@@ -398,21 +398,21 @@ msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Znovu prehľadať"
 
-#: src/qml/MapPage.qml:169 src/qml/MapPage.qml:274
+#: src/qml/MapPage.qml:173 src/qml/MapPage.qml:278
 #, fuzzy, kde-format
 #| msgid "&Copy to clipboard"
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "&Kopírovať do schránky"
 
-#: src/qml/MapPage.qml:177 src/qml/MapPage.qml:282
+#: src/qml/MapPage.qml:181 src/qml/MapPage.qml:286
 #, fuzzy, kde-format
 #| msgid "&Delete"
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "O&dstrániť"
 
-#: src/qml/MapPage.qml:336
+#: src/qml/MapPage.qml:340
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -421,7 +421,7 @@ msgstr[0] "%1 Súbor (%2%)"
 msgstr[1] "%1 Súbory (%2%)"
 msgstr[2] "%1 Súborov (%2%)"
 
-#: src/qml/MapPage.qml:338
+#: src/qml/MapPage.qml:342
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -430,7 +430,7 @@ msgstr[0] "%1 Súbor"
 msgstr[1] "%1 Súbory"
 msgstr[2] "%1 Súborov"
 
-#: src/qml/MapPage.qml:342
+#: src/qml/MapPage.qml:346
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -441,7 +441,7 @@ msgstr ""
 "\n"
 "Kliknite na prechod do nadradeného adresára"
 
-#: src/qml/MapPage.qml:565
+#: src/qml/MapPage.qml:569
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -450,7 +450,7 @@ msgstr[0] "%1 Súbor, %2"
 msgstr[1] "%1 Súbory, %2"
 msgstr[2] "%1 Súborov, %2"
 
-#: src/qml/MapPage.qml:574
+#: src/qml/MapPage.qml:578
 #, kde-format
 msgid "No data available"
 msgstr "Údaje nedostupné"

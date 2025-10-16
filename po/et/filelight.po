@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-27 00:46+0000\n"
+"POT-Creation-Date: 2025-10-16 00:45+0000\n"
 "PO-Revision-Date: 2020-10-11 01:28+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -29,12 +29,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "qiilaq69@gmail.com"
 
-#: src/Config.cpp:59
+#: src/Config.cpp:60
 #, kde-format
 msgid "Select path to ignore"
 msgstr "Eiratava asukoha valimine"
 
-#: src/Config.cpp:72
+#: src/Config.cpp:73
 #, kde-format
 msgid "Folder already ignored"
 msgstr "Kataloogi juba eiratakse"
@@ -65,12 +65,12 @@ msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "Viga kustutamisel"
 
-#: src/main.cpp:88
+#: src/main.cpp:91
 #, kde-format
 msgid "Graphical disk-usage information"
 msgstr "Graafiline kettakasutuse teave"
 
-#: src/main.cpp:90
+#: src/main.cpp:93
 #, fuzzy, kde-format
 #| msgid ""
 #| "(C) 2006 Max Howell\n"
@@ -83,135 +83,135 @@ msgstr ""
 "(C) 2006: Max Howell\n"
 "(C) 2008-2014: Martin Sandsmark"
 
-#: src/main.cpp:95
+#: src/main.cpp:98
 #, kde-format
 msgid "Laurent Montel"
 msgstr ""
 
-#: src/main.cpp:95 src/main.cpp:96
+#: src/main.cpp:98 src/main.cpp:99
 #, kde-format
 msgid "Maintainer"
 msgstr "Hooldaja"
 
-#: src/main.cpp:96
+#: src/main.cpp:99
 #, kde-format
 msgid "Martin Sandsmark"
 msgstr "Martin Sandsmark"
 
-#: src/main.cpp:97
+#: src/main.cpp:100
 #, kde-format
 msgid "Harald Sitter"
 msgstr ""
 
-#: src/main.cpp:97
+#: src/main.cpp:100
 #, kde-format
 msgid "QtQuick Port"
 msgstr ""
 
-#: src/main.cpp:98
+#: src/main.cpp:101
 #, kde-format
 msgid "Max Howell"
 msgstr "Max Howell"
 
-#: src/main.cpp:98
+#: src/main.cpp:101
 #, kde-format
 msgid "Original author"
 msgstr "Algne autor"
 
-#: src/main.cpp:99
+#: src/main.cpp:102
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr "Lukas Appelhans"
 
-#: src/main.cpp:99
+#: src/main.cpp:102
 #, kde-format
 msgid "Help and support"
 msgstr "Abi ja toetus"
 
-#: src/main.cpp:100
+#: src/main.cpp:103
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr "Steffen Gerlach"
 
-#: src/main.cpp:100
+#: src/main.cpp:103
 #, kde-format
 msgid "Inspiration"
 msgstr "Innustus"
 
-#: src/main.cpp:101
+#: src/main.cpp:104
 #, kde-format
 msgid "Mike Diehl"
 msgstr "Mike Diehl"
 
-#: src/main.cpp:101
+#: src/main.cpp:104
 #, kde-format
 msgid "Original documentation"
 msgstr "Algne dokumentatsioon"
 
-#: src/main.cpp:102
+#: src/main.cpp:105
 #, kde-format
 msgid "Sune Vuorela"
 msgstr "Sune Vuorela"
 
-#: src/main.cpp:102 src/main.cpp:103
+#: src/main.cpp:105 src/main.cpp:106
 #, kde-format
 msgid "Icon"
 msgstr "Ikoon"
 
-#: src/main.cpp:103
+#: src/main.cpp:106
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr "Nuno Pinheiro"
 
-#: src/main.cpp:111
+#: src/main.cpp:114
 #, kde-format
 msgid "Path or URL to scan"
 msgstr "Uuritav asukoht või URL"
 
-#: src/main.cpp:111
+#: src/main.cpp:114
 #, kde-format
 msgid "[url]"
 msgstr "[url]"
 
-#: src/mainContext.cpp:126
+#: src/mainContext.cpp:66
 #, kde-format
 msgid "Select Folder to Scan"
 msgstr "Uuritava kataloogi valimine"
 
-#: src/mainContext.cpp:178
+#: src/mainContext.cpp:118
 #, fuzzy, kde-format
 #| msgid "The entered URL cannot be parsed; it is invalid."
 msgid "The entered URL cannot be parsed"
 msgstr "Sisestatud URL-i parsimine nurjus, see on vigane."
 
-#: src/mainContext.cpp:178
+#: src/mainContext.cpp:118
 #, kde-format
 msgid "it is invalid."
 msgstr ""
 
-#: src/mainContext.cpp:180
+#: src/mainContext.cpp:120
 #, fuzzy, kde-format
 #| msgid "Filelight only accepts absolute paths, eg. /%1"
 msgid "Filelight only accepts absolute paths"
 msgstr "Filelight tunnistab ainult absoluutseid asukohti, nt. /%1"
 
-#: src/mainContext.cpp:180
+#: src/mainContext.cpp:120
 #, kde-format
 msgid "eg. /%1"
 msgstr ""
 
-#: src/mainContext.cpp:182
+#: src/mainContext.cpp:122
 #, kde-format
 msgid "Folder not found: %1"
 msgstr "Kataloogi ei leitud: %1"
 
-#: src/mainContext.cpp:184
+#: src/mainContext.cpp:124
 #, fuzzy, kde-format
 #| msgid "Unable to create part widget."
 msgid "Unable to enter: %1"
 msgstr "Komponendi vidina loomine nurjus."
 
-#: src/mainContext.cpp:184
+#: src/mainContext.cpp:124
 #, fuzzy, kde-format
 #| msgid ""
 #| "Unable to enter: %1\n"
@@ -240,76 +240,76 @@ msgctxt "@item:inmenu"
 msgid "Help"
 msgstr ""
 
-#: src/qml/main.qml:42
+#: src/qml/main.qml:41
 #, fuzzy, kde-format
 #| msgid "Scan &Home Folder"
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
 msgstr "Uuri ko&dukataloogi"
 
-#: src/qml/main.qml:49
+#: src/qml/main.qml:48
 #, fuzzy, kde-format
 #| msgid "Scan &Root Folder"
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
 msgstr "Uu&ri juurkataloogi"
 
-#: src/qml/main.qml:57
+#: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
 msgstr ""
 
-#: src/qml/main.qml:57
+#: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
 msgstr ""
 
-#: src/qml/main.qml:64
+#: src/qml/main.qml:63
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr ""
 
-#: src/qml/main.qml:72
+#: src/qml/main.qml:71
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr ""
 
-#: src/qml/main.qml:77
+#: src/qml/main.qml:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr ""
 
-#: src/qml/main.qml:89
+#: src/qml/main.qml:88
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr ""
 
-#: src/qml/main.qml:97
+#: src/qml/main.qml:96
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
 msgstr ""
 
-#: src/qml/main.qml:174
+#: src/qml/main.qml:173
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
 msgstr ""
 
-#: src/qml/MapPage.qml:40
+#: src/qml/MapPage.qml:44
 #, fuzzy, kde-format
 #| msgid "No files."
 msgctxt "@info:status"
 msgid "No files shown."
 msgstr "Faile pole."
 
-#: src/qml/MapPage.qml:41
+#: src/qml/MapPage.qml:45
 #, fuzzy, kde-format
 #| msgid "1 file"
 #| msgid_plural "%1 files"
@@ -319,45 +319,45 @@ msgid_plural "%1 files shown"
 msgstr[0] "1 fail"
 msgstr[1] "%1 faili"
 
-#: src/qml/MapPage.qml:49
+#: src/qml/MapPage.qml:53
 #, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
 msgstr ""
 
-#: src/qml/MapPage.qml:57
+#: src/qml/MapPage.qml:61
 #, kde-format
 msgctxt "@action"
 msgid "Up"
 msgstr ""
 
-#: src/qml/MapPage.qml:66
+#: src/qml/MapPage.qml:70
 #, fuzzy, kde-format
 #| msgid "Rescan"
 msgctxt "@action"
 msgid "Rescan"
 msgstr "Uuri uuesti"
 
-#: src/qml/MapPage.qml:75
+#: src/qml/MapPage.qml:79
 #, fuzzy, kde-format
 #| msgid "Stop"
 msgctxt "@action"
 msgid "Stop"
 msgstr "Peata"
 
-#: src/qml/MapPage.qml:83
+#: src/qml/MapPage.qml:87
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr ""
 
-#: src/qml/MapPage.qml:93
+#: src/qml/MapPage.qml:97
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr ""
 
-#: src/qml/MapPage.qml:127 src/qml/MapPage.qml:251
+#: src/qml/MapPage.qml:131 src/qml/MapPage.qml:255
 #, fuzzy, kde-format
 #| msgctxt "Scan/open the path of the selected element"
 #| msgid "&Open"
@@ -365,49 +365,49 @@ msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "&Ava"
 
-#: src/qml/MapPage.qml:135 src/qml/MapPage.qml:259
+#: src/qml/MapPage.qml:139 src/qml/MapPage.qml:263
 #, fuzzy, kde-format
 #| msgid "Open &Terminal Here"
 msgctxt "@action"
 msgid "Open Terminal Here"
 msgstr "Ava &terminal siin"
 
-#: src/qml/MapPage.qml:143
+#: src/qml/MapPage.qml:147
 #, fuzzy, kde-format
 #| msgid "&Center Map Here"
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "Tsentreeri kaart &siia"
 
-#: src/qml/MapPage.qml:154 src/qml/MapPage.qml:267
+#: src/qml/MapPage.qml:158 src/qml/MapPage.qml:271
 #, fuzzy, kde-format
 #| msgid "Add to Do &Not Scan List"
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
 msgstr "Lisa &eiratavate kataloogide loendisse"
 
-#: src/qml/MapPage.qml:162
+#: src/qml/MapPage.qml:166
 #, fuzzy, kde-format
 #| msgid "Rescan"
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Uuri uuesti"
 
-#: src/qml/MapPage.qml:169 src/qml/MapPage.qml:274
+#: src/qml/MapPage.qml:173 src/qml/MapPage.qml:278
 #, fuzzy, kde-format
 #| msgid "&Copy to clipboard"
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "Kopeeri &lõikepuhvrisse"
 
-#: src/qml/MapPage.qml:177 src/qml/MapPage.qml:282
+#: src/qml/MapPage.qml:181 src/qml/MapPage.qml:286
 #, fuzzy, kde-format
 #| msgid "&Delete"
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "&Kustuta"
 
-#: src/qml/MapPage.qml:336
+#: src/qml/MapPage.qml:340
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
@@ -415,7 +415,7 @@ msgid_plural "%1 Files (%2%)"
 msgstr[0] "%1 fail (%2%)"
 msgstr[1] "%1 faili (%2)"
 
-#: src/qml/MapPage.qml:338
+#: src/qml/MapPage.qml:342
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
@@ -423,7 +423,7 @@ msgid_plural "%1 Files"
 msgstr[0] "%1 fail"
 msgstr[1] "%1 faili"
 
-#: src/qml/MapPage.qml:342
+#: src/qml/MapPage.qml:346
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -434,7 +434,7 @@ msgstr ""
 "\n"
 "Klõpsa ülemkataloogi liikumiseks"
 
-#: src/qml/MapPage.qml:565
+#: src/qml/MapPage.qml:569
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
@@ -442,7 +442,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 fail, %2"
 msgstr[1] "%1 faili, %2"
 
-#: src/qml/MapPage.qml:574
+#: src/qml/MapPage.qml:578
 #, kde-format
 msgid "No data available"
 msgstr ""
