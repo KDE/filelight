@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the filelight package.
-# Sergiu Bivol <sergiu@cip.md>, 2010, 2012, 2013, 2020, 2021, 2022, 2024.
+# SPDX-FileCopyrightText: 2010, 2012, 2013, 2020, 2021, 2022, 2024, 2025 Sergiu Bivol <sergiu@cip.md>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-03 02:39+0000\n"
-"PO-Revision-Date: 2024-06-08 16:55+0100\n"
+"PO-Revision-Date: 2025-10-19 10:36+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -228,32 +228,28 @@ msgid "Help"
 msgstr "Ajutor"
 
 #: src/qml/main.qml:42
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Home Folder"
+#, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
-msgstr "Citește dosarul Acasă"
+msgstr "Dosar personal"
 
 #: src/qml/main.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Scan Root Folder"
+#, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
-msgstr "Citește dosarul rădăcină"
+msgstr "Dosar rădăcină"
 
 #: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
-msgstr ""
+msgstr "Alege dosarul…"
 
 #: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
-msgstr ""
+msgstr "Alt dosar…"
 
 #: src/qml/main.qml:63
 #, kde-format
@@ -289,33 +285,28 @@ msgstr "Despre"
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
-msgstr ""
+msgstr "Abandonarea scanării a eșuat"
 
 #: src/qml/MapPage.qml:40
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "No files."
+#, kde-format
 msgctxt "@info:status"
 msgid "No files shown."
-msgstr "Niciun fișier."
+msgstr "Niciun fișier arătat."
 
 #: src/qml/MapPage.qml:41
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "1 file shown"
 msgid_plural "%1 files shown"
-msgstr[0] "1 fișier"
-msgstr[1] "%1 fișiere"
-msgstr[2] "%1 de fișiere"
+msgstr[0] "1 fișier arătat"
+msgstr[1] "%1 fișiere arătate"
+msgstr[2] "%1 de fișiere arătate"
 
 #: src/qml/MapPage.qml:49
 #, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
-msgstr "Mergi la privirea generală"
+msgstr "Mergi la prezentarea generală"
 
 #: src/qml/MapPage.qml:57
 #, kde-format
@@ -445,6 +436,8 @@ msgctxt "@info"
 msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space."
 msgstr ""
+"Filelight analizează utilizarea discului și vă permite să vedeți ce consumă "
+"mult spațiu."
 
 #: src/qml/OverviewPage.qml:52
 #, kde-format
@@ -453,6 +446,8 @@ msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space. "
 "Choose a folder to proceed:"
 msgstr ""
+"Filelight analizează utilizarea discului și vă permite să vedeți ce consumă "
+"mult spațiu. Alegeți un dosar pentru a continua:"
 
 #: src/qml/SettingsPage.qml:22
 #, kde-format
@@ -506,7 +501,7 @@ msgstr "Arată fișierele mici"
 #, kde-format
 msgctxt "@checkbox"
 msgid "Show folders sidebar"
-msgstr ""
+msgstr "Arată bara laterală cu dosare"
 
 #: src/qml/SettingsPageScanning.qml:33
 #, kde-format
