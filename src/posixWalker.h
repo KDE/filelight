@@ -4,13 +4,7 @@
 #pragma once
 
 #include <dirent.h>
-#include <fcntl.h>
-#include <set>
 #include <sys/stat.h>
-#include <sys/types.h>
-#include <unistd.h>
-
-#include <cerrno>
 
 #include "directoryEntry.h"
 
@@ -31,8 +25,6 @@ private:
 
     DIR *m_dir = nullptr;
     int m_dirfd = -1;
-    // Hard link files we have already counted, so we will ignore them
-    std::set<ino_t> m_countedHardlinks;
 
     struct stat statbuf{};
 };

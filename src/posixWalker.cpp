@@ -3,10 +3,38 @@
 
 #include "posixWalker.h"
 #include <QDebug>
+#include <QReadWriteLock>
+
+#include <fcntl.h>
+#include <sys/types.h>
+#include <unistd.h>
 
 #ifdef Q_OS_LINUX
 #include <sys/param.h>
 #endif
+
+#include <tuple>
+
+struct ThreadSafeCountedHardLinks {
+    using Inode = std::tuple<dev_t, ino_t>;
+
+    void insert(const Inode &inode)
+    {
+        QWriteLocker locker(&m_lock);
+        m_links.insert(inode);
+    }
+
+    [[nodiscard]] bool contains(const Inode &inode)
+    {
+        QReadLocker locker(&m_lock);
+        return m_links.contains(inode);
+    }
+
+private:
+    QReadWriteLock m_lock;
+    // Hard link files we have already counted, so we will ignore them
+    std::set<Inode> m_links;
+};
 
 static void outputError(const QByteArray &path)
 {
@@ -106,13 +134,14 @@ void POSIXWalker::next()
         auto links = statbuf.st_nlink;
         // Only count as hard link if it's not already being skipped
         if (links > 1 && !m_entry.isSkippable) {
-            ino_t inode = statbuf.st_ino;
+            const auto inode = std::tie(statbuf.st_dev, statbuf.st_ino);
             // If we already counted this inode, skip it
-            if (m_countedHardlinks.contains(inode)) {
+            static ThreadSafeCountedHardLinks s_countedHardlinks;
+            if (s_countedHardlinks.contains(inode)) {
                 m_entry.isDuplicate = true;
             } else {
                 // Only add to counted hard links if we are going to count it
-                m_countedHardlinks.insert(inode);
+                s_countedHardlinks.insert(inode);
             }
         }
         m_entry.isDir = S_ISDIR(statbuf.st_mode);
