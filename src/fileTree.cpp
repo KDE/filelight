@@ -55,7 +55,7 @@ QUrl File::url(const std::shared_ptr<Folder> &root) const
     return QUrl::fromUserInput(path, QString(), QUrl::AssumeLocalFile);
 }
 
-void Folder::clone(const Folder *that, std::shared_ptr<Folder> other)
+void Folder::clone(const Folder *that, const std::shared_ptr<Folder> &other)
 {
     struct Clone {
         const Folder *source;

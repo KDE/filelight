@@ -139,7 +139,7 @@ public:
     }
 
     // Separate **static** function so we don't risk using this when we should be using clone.source!
-    static void clone(const Folder *that, std::shared_ptr<Folder> other);
+    static void clone(const Folder *that, const std::shared_ptr<Folder> &other);
 
     std::shared_ptr<Folder> duplicate() const;
 
