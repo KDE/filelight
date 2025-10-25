@@ -33,7 +33,6 @@ private:
     // Hard link files we have already counted, so we will ignore them
     std::set<ino_t> m_countedHardlinks;
 
-    struct stat statbuf {
-    };
+    struct stat statbuf{};
     Q_DISABLE_COPY_MOVE(POSIXWalker) // we hold a pointer, disable sharing
 };
