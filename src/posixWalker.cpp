@@ -108,7 +108,7 @@ void POSIXWalker::next()
         if (links > 1 && !m_entry.isSkippable) {
             ino_t inode = statbuf.st_ino;
             // If we already counted this inode, skip it
-            if (m_countedHardlinks.find(inode) != m_countedHardlinks.end()) {
+            if (m_countedHardlinks.contains(inode)) {
                 m_entry.isDuplicate = true;
             } else {
                 // Only add to counted hard links if we are going to count it
