@@ -10,6 +10,7 @@
 
 #include <QDir>
 #include <QUrl>
+#include <ranges>
 
 #include "fileCleaner.h"
 #include "filelight_debug.h"
@@ -77,10 +78,9 @@ void Folder::clone(const Folder *that, std::shared_ptr<Folder> other)
         }
         completedClones.append(clone);
     }
-    for (auto it = completedClones.rbegin(); it != completedClones.rend(); ++it) {
+    for (const auto &clone : std::ranges::reverse_view(completedClones)) {
         // Appending forwards the size data, it must only happen after all duplicating is done so the sizes are known.
         // And obviously in reverse order of existence in the tree.
-        auto clone = *it;
         if (clone.parent) {
             clone.parent->append(clone.target);
         }
