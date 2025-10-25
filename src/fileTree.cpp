@@ -63,7 +63,7 @@ void Folder::clone(const Folder *that, std::shared_ptr<Folder> other)
         std::shared_ptr<Folder> parent;
     };
     QList<Clone> completedClones;
-    QList<Clone> clones({{that, other, nullptr}});
+    QList<Clone> clones({Clone{.source = that, .target = other, .parent = nullptr}});
     while (!clones.isEmpty()) {
         const auto &clone = clones.takeLast();
         qCDebug(FILELIGHT_LOG) << "cloning" << clone.source->m_name << clone.source << "into" << clone.target.get() << "parent" << clone.parent.get();
@@ -71,7 +71,7 @@ void Folder::clone(const Folder *that, std::shared_ptr<Folder> other)
             qCDebug(FILELIGHT_LOG) << "  " << file->displayName() << file->isFolder();
             if (file->isFolder()) {
                 auto folder = std::dynamic_pointer_cast<Folder>(file);
-                clones.append(Clone{folder.get(), std::make_shared<Folder>(folder->m_name.constData()), clone.target});
+                clones.append(Clone{.source = folder.get(), .target = std::make_shared<Folder>(folder->m_name.constData()), .parent = clone.target});
             } else {
                 clone.target->append(file->m_name.constData(), file->m_size);
             }
