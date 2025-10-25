@@ -114,8 +114,9 @@ std::shared_ptr<Folder> LocalLister::scan(const QByteArray &path, const QByteArr
                 }
             }
 
-            for (const auto /* hold the folder, we delete it below! */ folder : std::as_const(toRemove)) {
+            for (const auto &folder : std::as_const(toRemove)) {
                 m_trees->removeAll(folder);
+                // The **possibly** last shared_ptr is now in toRemove and will get cleaned up with it.
             }
 
             lock.unlock();
