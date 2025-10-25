@@ -19,6 +19,7 @@ class POSIXWalker
 public:
     explicit POSIXWalker(const QByteArray &path);
     ~POSIXWalker();
+    Q_DISABLE_COPY_MOVE(POSIXWalker) // we hold a pointer, disable sharing
 
     void next();
 
@@ -34,5 +35,4 @@ private:
     std::set<ino_t> m_countedHardlinks;
 
     struct stat statbuf{};
-    Q_DISABLE_COPY_MOVE(POSIXWalker) // we hold a pointer, disable sharing
 };
