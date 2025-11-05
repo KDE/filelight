@@ -116,11 +116,11 @@
 >Configuration de &filelight;</title>
 
 <para
->La boîte de dialogue de configuration de &filelight; comporte deux onglets permettant de configurer les options de &filelight;. Les deux onglets sont <guilabel
+>La boite de dialogue de configuration de &filelight; comporte deux onglets permettant de configurer les options de &filelight;. Les deux onglets sont <guilabel
 >Analyse en cours</guilabel
 > et <guilabel
 >Apparence</guilabel
->. Au-dessous se trouve une description des onglets de configuration. On accède à la boîte de dialogue de configuration de &filelight; en cliquant sur <menuchoice
+>. Au-dessous se trouve une description des onglets de configuration. On accède à la boite de dialogue de configuration de &filelight; en cliquant sur <menuchoice
 ><guimenu
 >Configuration</guimenu
 ><guimenuitem
@@ -152,7 +152,7 @@
 >Ne pas analyser ces dossiers</guilabel
 > sert à exclure certains dossiers de votre analyse. Elle est très utile pour ignorer les dossiers sur lesquels vous ne disposez pas des droits de lecture ou les dossiers qui font partie d'un système de fichiers virtuel, tels que /proc. Pour ajouter un dossier à la liste, cliquez sur le bouton <guibutton
 >Ajouter...</guibutton
->. Cette action ouvre une boîte de dialogue où vous pouvez choisir le dossier de votre choix depuis une vue arborescente. Pour supprimer un dossier, sélectionnez simplement le dossier en question et cliquez sur le bouton <guibutton
+>. Cette action ouvre une boite de dialogue où vous pouvez choisir le dossier de votre choix depuis une vue arborescente. Pour supprimer un dossier, sélectionnez simplement le dossier en question et cliquez sur le bouton <guibutton
 >Supprimer</guibutton
 >.</para>
 <para
@@ -326,7 +326,7 @@
 <listitem
 ><para
 ><action
->Offre une boîte de dialogue de sélection de dossier, ainsi vous pouvez choisir un dossier à analyser.</action
+>Offre une boite de dialogue de sélection de dossier, ainsi vous pouvez choisir un dossier à analyser.</action
 ></para
 ></listitem>
 </varlistentry>
