@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-16 00:45+0000\n"
+"POT-Creation-Date: 2025-11-09 00:45+0000\n"
 "PO-Revision-Date: 2024-08-21 14:57+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -28,12 +28,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "vit@pelcak.org,david@kolibac.cz"
 
-#: src/Config.cpp:60
+#: src/Config.cpp:62
 #, kde-format
 msgid "Select path to ignore"
 msgstr "Vyberte cestu pro ignorování"
 
-#: src/Config.cpp:73
+#: src/Config.cpp:75
 #, kde-format
 msgid "Folder already ignored"
 msgstr "Složka již byla ignorována"

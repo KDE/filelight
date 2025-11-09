@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-16 00:45+0000\n"
+"POT-Creation-Date: 2025-11-09 00:45+0000\n"
 "PO-Revision-Date: 2023-07-29 23:52+0300\n"
 "Last-Translator: Theofilos Intzoglou <int.teo@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -32,12 +32,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sng@hellug.gr, pvidalis@gmail.com, int.teo@gmail.com"
 
-#: src/Config.cpp:60
+#: src/Config.cpp:62
 #, kde-format
 msgid "Select path to ignore"
 msgstr "Επιλογή διαδρομής για αγνόηση"
 
-#: src/Config.cpp:73
+#: src/Config.cpp:75
 #, kde-format
 msgid "Folder already ignored"
 msgstr "Ο φάκελος αγνοείται ήδη"

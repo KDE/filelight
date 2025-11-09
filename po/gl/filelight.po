@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-16 00:45+0000\n"
+"POT-Creation-Date: 2025-11-09 00:45+0000\n"
 "PO-Revision-Date: 2025-06-19 09:55+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -35,12 +35,12 @@ msgid "Your emails"
 msgstr ""
 "mvillarino@users.sourceforge.net, xosecalvo@gmail.com, adrian@chaves.gal"
 
-#: src/Config.cpp:60
+#: src/Config.cpp:62
 #, kde-format
 msgid "Select path to ignore"
 msgstr "Seleccionar unha ruta para ignorar"
 
-#: src/Config.cpp:73
+#: src/Config.cpp:75
 #, kde-format
 msgid "Folder already ignored"
 msgstr "Ese cartafol xa se está a ignorar"

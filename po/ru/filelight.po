@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-16 00:45+0000\n"
+"POT-Creation-Date: 2025-11-09 00:45+0000\n"
 "PO-Revision-Date: 2025-06-30 15:25+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -38,12 +38,12 @@ msgstr ""
 "aspotashev@gmail.com, farline99@yandex.ru, translation-team@basealt.ru, "
 "cheembox573@gmail.com"
 
-#: src/Config.cpp:60
+#: src/Config.cpp:62
 #, kde-format
 msgid "Select path to ignore"
 msgstr "Выбор игнорируемой папки"
 
-#: src/Config.cpp:73
+#: src/Config.cpp:75
 #, kde-format
 msgid "Folder already ignored"
 msgstr "Папка уже игнорируется"

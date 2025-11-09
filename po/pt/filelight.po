@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-16 00:45+0000\n"
+"POT-Creation-Date: 2025-11-09 00:45+0000\n"
 "PO-Revision-Date: 2022-12-18 12:00+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -31,12 +31,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zepires@gmail.com"
 
-#: src/Config.cpp:60
+#: src/Config.cpp:62
 #, kde-format
 msgid "Select path to ignore"
 msgstr "Seleccionar a localização a ignorar"
 
-#: src/Config.cpp:73
+#: src/Config.cpp:75
 #, kde-format
 msgid "Folder already ignored"
 msgstr "A pasta já é ignorada"
