@@ -199,7 +199,7 @@ msgstr "例如：/%1"
 #: src/mainContext.cpp:122
 #, kde-format
 msgid "Folder not found: %1"
-msgstr "未找到文件夹：%1"
+msgstr "找不到文件夹：%1"
 
 #: src/mainContext.cpp:124
 #, kde-format
