@@ -15,3 +15,4 @@ include:
       - /gitlab-templates/craft-windows-x86-64-qt6.yml
       # Publish (requires Deploy)
       - /gitlab-templates/craft-windows-appx-qt6.yml
+      - /gitlab-templates/documentation.yml
