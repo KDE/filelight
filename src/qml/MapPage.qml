@@ -226,15 +226,20 @@ Kirigami.Page {
                     icon.width: Kirigami.Units.iconSizes.huge
                     text: model.display
                     subtitle: ROLE_HumanReadableSize
-                    hoverEnabled: true
+                    hoverEnabled: !page.contextMenu
                     highlighted: {
-                        if (hoveringListItem) {
-                            return hovered
+                        if (page.contextMenu) {
+                            return (listview.currentIndex === index) && hoveringListItem;
+                        } else {
+                            if (hoveringListItem) {
+                                return hovered
+                            }
+                            return (hoveredSegment === ROLE_Segment) || (hoveredSegment === "fake" && ROLE_Segment === "")
                         }
-                        return (hoveredSegment === ROLE_Segment) || (hoveredSegment === "fake" && ROLE_Segment === "")
                     }
                     onHoveredChanged: {
                         if (hovered) {
+                            listview.currentIndex = index;
                             hoveringListItem = true
                             hoveredSegment = ROLE_Segment !== "" ? ROLE_Segment : "fake"
                         }
@@ -248,6 +253,9 @@ Kirigami.Page {
 
                     QQC2.Menu {
                         id: contextMenu
+
+                        onAboutToShow: page.contextMenu = this
+                        onAboutToHide: page.contextMenu = null
 
                         QQC2.MenuItem {
                             action: Kirigami.Action {
@@ -470,7 +478,7 @@ Kirigami.Page {
         z: 502
         width: shapeItem.width
         height: shapeItem.height
-        hoverEnabled: true
+        hoverEnabled: !page.contextMenu
         acceptedButtons: Qt.LeftButton | Qt.RightButton
 
         function findTarget(mouse) {
