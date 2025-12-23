@@ -70,7 +70,7 @@
    <legalnotice
 >&FDLNotice;</legalnotice>
    <date
->2015-08-04</date>
+>2015‒08‒04</date>
    <releaseinfo
 >&filelight; 1.21 (Uygulamalar 15.08)</releaseinfo>
    <abstract
@@ -146,10 +146,10 @@
 </screenshot>
 
 <para
->Tarama sekmesi, &filelight;'nin klasörleri nasıl tarayacağını yapılandırmanıza izin verir. <guilabel
+>Tarama sekmesi, &filelight;’nin klasörleri nasıl tarayacağını yapılandırmanıza izin verir. <guilabel
 >Bu klasörleri taramadan dışla</guilabel
 >, belirli klasörleri taramanızdan dışlamak için kullanılır. Bu seçenek, okumak için izni olmayanlar veya bir sanal dosya sisteminin bir parçası olan klasörleri (örneğin, / proc) atlamak için çok kullanışlıdır. Listeye bir klasör eklemek için <guibutton
->Ekle...</guibutton
+>Ekle…</guibutton
 > düğmesine tıklayın, burada ağaç görünümünden seçtiğiniz klasörü seçebileceğiniz bir iletişim kutusu açılacaktır. Bir klasörü kaldırmak için istediğiniz klasörü seçin ve <guibutton
 >Kaldır</guibutton
 > düğmesine tıklayın.</para>
@@ -199,17 +199,17 @@
 >Yüksek karşıtlık</guilabel
 > renk şemalarıdır. Ayrıca, daha kolay görüntüleme için halka bölütlerinin karşıtlığını ayarlamak için <guilabel
 >Karşıtlık</guilabel
-> kaydırıcısı vardır.</para>
+> sürgüsü vardır.</para>
 <para
 ><guilabel
 >Yumuşatma kullan</guilabel
 > onay kutusu, &filelight; görünümünde kullanılacak yumuşatmayı etkinleştirmek için kullanılır. Seçiliyse halka bölütlerinin görünümün daha temiz yapar.</para>
 <para
 ><guilabel
->Etiket yazıtipi boyutlarını değişken yap</guilabel
-> işaret kutusu, uzun adlı dosya ve klasörleriniz varsa kullanışlıdır. Bu seçenek, yazıtipi boyutlarını ayarlayarak, görünüme daha iyi oturmasını sağlayacaktır. Seçenek etkinleştirildiğinde, <guilabel
->En küçük yazıtipi boyutu</guilabel
-> ayar kutusu, ölçeklenebilir en küçük boyutlu yazıtipini seçmek için kullanılabilir hale gelecektir. </para>
+>Etiket yazıtipi puntosunu değişken yap</guilabel
+> işaret kutusu, uzun adlı dosya ve klasörleriniz varsa kullanışlıdır. Bu seçenek, yazıtipi puntosunu ayarlayarak, görünüme daha iyi oturmasını sağlayacaktır. Seçenek etkinleştirildiğinde, <guilabel
+>En küçük yazıtipi puntosu</guilabel
+> ayar kutusu, ölçeklenebilir en küçük puntolu yazıtipini seçmek için kullanılabilir hale gelecektir. </para>
 <para
 ><guilabel
 >Küçük dosyaları göster</guilabel
@@ -227,7 +227,7 @@
 
 <sect1 id="starting">
 <title
->&filelight;'ni Başlatmak</title>
+>&filelight;’ni Başlatmak</title>
 <para
 >&filelight;, uygulama başlatıcısı veya komut satırından başlatılabilir</para>
 
@@ -246,7 +246,7 @@
 <title
 >Komut Satırı Üzerinden</title>
 <para
->&filelight;'ni (filelight) komut satırına yazarak başlatın. Aşağıdaki örnekteki gibi bir klasör adı verirseniz o klasörü tarayacaktır. </para>
+>&filelight;’ni (filelight) komut satırına yazarak başlatın. Aşağıdaki örnekteki gibi bir klasör adı verirseniz o klasörü tarayacaktır. </para>
 <informalexample>
 <screen
 ><prompt
@@ -424,7 +424,7 @@
 <listitem
 ><para
 ><action
->&filelight;'nden çıkar.</action
+>&filelight;’nden çıkar.</action
 ></para
 ></listitem>
 </varlistentry>
@@ -567,7 +567,7 @@
 >max.howell@methylblue.com</email
 ></para>
       <para
->Program telif hakkı 2008-2013 Martin Sandsmark <email
+>Program telif hakkı 2008–2013 Martin Sandsmark <email
 >martin.sandsmark@kde.org</email
 ></para
 >&underGPL; </sect1>
