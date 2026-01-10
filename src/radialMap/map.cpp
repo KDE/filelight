@@ -92,6 +92,17 @@ void deleteAllSegments(QList<QList<RadialMap::Segment *>> &signature, Delete del
     }
     signature.clear();
 }
+
+void clearAllFileSegments(const std::shared_ptr<Folder> &folder)
+{
+    folder->setSegment({});
+    for (const auto &file : folder->files) {
+        file->setSegment({});
+        if (file->isFolder()) {
+            clearAllFileSegments(std::dynamic_pointer_cast<Folder>(file));
+        }
+    }
+}
 } // namespace
 
 RadialMap::Map::~Map()
@@ -119,6 +130,9 @@ void RadialMap::Map::make(const std::shared_ptr<Folder> &tree, bool refresh)
         //**** this is a mess
 
         deleteAllSegments(m_signature);
+
+        // Clear all file segments in the tree to ensure clean state for rebuilding
+        clearAllFileSegments(tree);
 
         m_root = tree;
         if (!refresh) {
@@ -208,10 +222,12 @@ bool RadialMap::Map::build(const std::shared_ptr<Folder> &dir, const uint depth,
 
     FileSize hiddenSize = 0;
     uint hiddenFileCount = 0;
+    std::vector<std::shared_ptr<File>> hiddenFiles;
 
     for (const auto &file : dir->files) {
         if (file->size() < m_limits[depth] * 6) { // limit is half a degree? we want at least 3 degrees
             hiddenSize += file->size();
+            hiddenFiles.push_back(file);
             if (file->isFolder()) { //**** considered virtual, but dir wouldn't count itself!
                 hiddenFileCount += std::dynamic_pointer_cast<Folder>(file)->children(); // need to add one to count the dir as well
             }
@@ -244,7 +260,12 @@ bool RadialMap::Map::build(const std::shared_ptr<Folder> &dir, const uint depth,
     }
 
     if ((depth == 0 || Config::instance()->showSmallFiles) && hiddenSize >= m_limits[depth] && hiddenFileCount > 0) {
-        m_signature[depth].append(new Segment(std::make_shared<FilesGroup>(hiddenFileCount, hiddenSize, dir.get()), a_start, a_end - a_start, true));
+        auto *filesGroupSegment = new Segment(std::make_shared<FilesGroup>(hiddenFileCount, hiddenSize, dir.get()), a_start, a_end - a_start, true);
+        m_signature[depth].append(filesGroupSegment);
+        // Assign the FilesGroup segment's UUID to all hidden files so they can highlight the group when hovered in the list
+        for (const auto &hiddenFile : hiddenFiles) {
+            hiddenFile->setSegment(filesGroupSegment->uuid());
+        }
         Q_EMIT signatureChanged();
     }
 

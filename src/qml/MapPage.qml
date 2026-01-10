@@ -234,14 +234,14 @@ Kirigami.Page {
                             if (hoveringListItem) {
                                 return hovered
                             }
-                            return (hoveredSegment === ROLE_Segment) || (hoveredSegment === "fake" && ROLE_Segment === "")
+                            return hoveredSegment === ROLE_Segment
                         }
                     }
                     onHoveredChanged: {
                         if (hovered) {
                             listview.currentIndex = index;
                             hoveringListItem = true
-                            hoveredSegment = ROLE_Segment !== "" ? ROLE_Segment : "fake"
+                            hoveredSegment = ROLE_Segment
                         }
                     }
                     onClicked: {
@@ -382,7 +382,7 @@ Kirigami.Page {
                         // Qt doc: Note: model, index, and modelData roles are not accessible if the delegate contains required properties, unless it has also required properties with matching names.
                         required property var modelData
 
-                        readonly property bool segmentHover: hoveredSegment === segment.uuid || (segment.fake && hoveredSegment === "fake")
+                        readonly property bool segmentHover: hoveredSegment === segment.uuid
 
                         z: (instantiator.model.length - idx) // reverse order such that more central levels are above. this gives us segment appearance without having to actually paint segments (instead we stack full cicles)
                         segment: modelData

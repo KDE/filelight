@@ -15,7 +15,7 @@ RadialMap::Segment::Segment(const std::shared_ptr<File> &f, uint s, uint l, bool
     , m_angleSegment(l)
     , m_file(f)
     , m_fake(isFake)
-    , m_uuid(isFake ? QStringLiteral("fake") : QUuid::createUuid().toString())
+    , m_uuid(QUuid::createUuid().toString())
 {
     QQmlEngine::setObjectOwnership(this, QQmlEngine::CppOwnership);
     f->setSegment(m_uuid);
