@@ -64,7 +64,7 @@ msgstr "Sup&rimix"
 #, kde-format
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
-msgstr "S'ha produït un error en suprimir: %1"
+msgstr "S'ha produït un error mentre se suprimia: %1"
 
 #: src/main.cpp:91
 #, kde-format
