@@ -38,7 +38,20 @@ parts:
     plugin: cmake
     source: .
     source-type: local
+    build-snaps:
+      - kde-qt6-core24-sdk/latest/beta
+      - kf6-core24-sdk/latest/beta
     build-packages:
+      - libxml2-dev
+      - gettext
+      - doxygen
+      - graphviz
+      - libxml2-utils
+      - docbook-xml
+      - docbook-xsl
+      - libglx-dev
+      - libgl-dev
+      - libglvnd-dev
       - libpulse0
     stage-packages:
       - libpulse0
