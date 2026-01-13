@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2026-01-13 08:44+0000\n"
 "PO-Revision-Date: 2025-07-20 00:54+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -336,13 +336,13 @@ msgctxt "@action"
 msgid "Zoom Out"
 msgstr "축소"
 
-#: src/qml/MapPage.qml:131 src/qml/MapPage.qml:255
+#: src/qml/MapPage.qml:131 src/qml/MapPage.qml:263
 #, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "열기"
 
-#: src/qml/MapPage.qml:139 src/qml/MapPage.qml:263
+#: src/qml/MapPage.qml:139 src/qml/MapPage.qml:271
 #, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
@@ -354,7 +354,7 @@ msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "여기로 지도 중앙 배치"
 
-#: src/qml/MapPage.qml:158 src/qml/MapPage.qml:271
+#: src/qml/MapPage.qml:158 src/qml/MapPage.qml:279
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
@@ -366,46 +366,46 @@ msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "재탐색"
 
-#: src/qml/MapPage.qml:173 src/qml/MapPage.qml:278
+#: src/qml/MapPage.qml:173 src/qml/MapPage.qml:286
 #, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "클립보드에 복사"
 
-#: src/qml/MapPage.qml:181 src/qml/MapPage.qml:286
+#: src/qml/MapPage.qml:181 src/qml/MapPage.qml:294
 #, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "삭제"
 
-#: src/qml/MapPage.qml:340
+#: src/qml/MapPage.qml:348
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
 msgid_plural "%1 Files (%2%)"
 msgstr[0] "파일 %1개(%2%)"
 
-#: src/qml/MapPage.qml:342
+#: src/qml/MapPage.qml:350
 #, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
 msgid_plural "%1 Files"
 msgstr[0] "파일 %1개"
 
-#: src/qml/MapPage.qml:346
+#: src/qml/MapPage.qml:354
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
 msgstr "부모 디렉터리로 가려면 클릭하십시오"
 
-#: src/qml/MapPage.qml:569
+#: src/qml/MapPage.qml:577
 #, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
 msgid_plural "%1 Files, %2"
 msgstr[0] "파일 %1개, %2"
 
-#: src/qml/MapPage.qml:578
+#: src/qml/MapPage.qml:586
 #, kde-format
 msgid "No data available"
 msgstr "데이터 없음"

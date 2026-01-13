@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2026-01-13 08:44+0000\n"
 "PO-Revision-Date: 2014-02-20 11:39+0100\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-doc@kde.org>\n"
@@ -357,7 +357,7 @@ msgctxt "@action"
 msgid "Zoom Out"
 msgstr ""
 
-#: src/qml/MapPage.qml:131 src/qml/MapPage.qml:255
+#: src/qml/MapPage.qml:131 src/qml/MapPage.qml:263
 #, fuzzy, kde-format
 #| msgctxt "Scan/open the path of the selected element"
 #| msgid "&Open"
@@ -365,7 +365,7 @@ msgctxt "@action Open file or directory from context menu"
 msgid "Open"
 msgstr "&Opmaken"
 
-#: src/qml/MapPage.qml:139 src/qml/MapPage.qml:263
+#: src/qml/MapPage.qml:139 src/qml/MapPage.qml:271
 #, fuzzy, kde-format
 #| msgid "Open &Terminal Here"
 msgctxt "@action"
@@ -379,7 +379,7 @@ msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
 msgstr "Infografik hier &inmiddeln"
 
-#: src/qml/MapPage.qml:158 src/qml/MapPage.qml:271
+#: src/qml/MapPage.qml:158 src/qml/MapPage.qml:279
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
@@ -392,21 +392,21 @@ msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Nieg dörkieken"
 
-#: src/qml/MapPage.qml:173 src/qml/MapPage.qml:278
+#: src/qml/MapPage.qml:173 src/qml/MapPage.qml:286
 #, fuzzy, kde-format
 #| msgid "&Copy to clipboard"
 msgctxt "@action"
 msgid "Copy to clipboard"
 msgstr "Na Twischenaflaag &koperen"
 
-#: src/qml/MapPage.qml:181 src/qml/MapPage.qml:286
+#: src/qml/MapPage.qml:181 src/qml/MapPage.qml:294
 #, fuzzy, kde-format
 #| msgid "&Delete"
 msgctxt "@action delete file or folder"
 msgid "Delete"
 msgstr "&Wegdoon"
 
-#: src/qml/MapPage.qml:340
+#: src/qml/MapPage.qml:348
 #, fuzzy, kde-format
 #| msgid "%1 File"
 #| msgid_plural "%1 Files"
@@ -416,7 +416,7 @@ msgid_plural "%1 Files (%2%)"
 msgstr[0] "%1 Datei"
 msgstr[1] "%1 Dateien"
 
-#: src/qml/MapPage.qml:342
+#: src/qml/MapPage.qml:350
 #, fuzzy, kde-format
 #| msgid "%1 File"
 #| msgid_plural "%1 Files"
@@ -426,7 +426,7 @@ msgid_plural "%1 Files"
 msgstr[0] "%1 Datei"
 msgstr[1] "%1 Dateien"
 
-#: src/qml/MapPage.qml:346
+#: src/qml/MapPage.qml:354
 #, fuzzy, kde-format
 #| msgid ""
 #| "\n"
@@ -437,7 +437,7 @@ msgstr ""
 "\n"
 "Hier klicken, wenn Du na den Böverorner wullt"
 
-#: src/qml/MapPage.qml:569
+#: src/qml/MapPage.qml:577
 #, fuzzy, kde-format
 #| msgid "%1 File"
 #| msgid_plural "%1 Files"
@@ -447,7 +447,7 @@ msgid_plural "%1 Files, %2"
 msgstr[0] "%1 Datei"
 msgstr[1] "%1 Dateien"
 
-#: src/qml/MapPage.qml:578
+#: src/qml/MapPage.qml:586
 #, kde-format
 msgid "No data available"
 msgstr ""
