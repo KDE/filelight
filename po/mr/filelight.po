@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-13 08:44+0000\n"
+"POT-Creation-Date: 2026-01-29 00:47+0000\n"
 "PO-Revision-Date: 2013-03-15 14:32+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -451,94 +451,84 @@ msgid ""
 "Choose a folder to proceed:"
 msgstr ""
 
-#: src/qml/SettingsPage.qml:22
-#, fuzzy, kde-format
-#| msgid "Scannin&g"
-msgctxt "@title"
-msgid "Scanning"
-msgstr "स्कॅन करत आहे (&G)"
-
-#: src/qml/SettingsPage.qml:25
-#, fuzzy, kde-format
-#| msgid "&Appearance"
-msgctxt "@title"
-msgid "Appearance"
-msgstr "दर्शनीयता (&A)"
-
-#: src/qml/SettingsPageAppearance.qml:16
-#, fuzzy, kde-format
-#| msgid "Color scheme"
-msgctxt "@title:group"
-msgid "Color Scheme"
-msgstr "रंग सुत्रयोजना"
-
-#: src/qml/SettingsPageAppearance.qml:25
+#: src/qml/SettingsPage.qml:51
 #, kde-format
-msgctxt "@option:radio a color scheme variant"
+msgctxt "@title:group"
+msgid "Colors:"
+msgstr ""
+
+#: src/qml/SettingsPage.qml:54
+#, kde-format
+msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
+msgid "From system color scheme"
+msgstr ""
+
+#: src/qml/SettingsPage.qml:55
+#, kde-format
+msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "Rainbow"
 msgstr ""
 
-#: src/qml/SettingsPageAppearance.qml:34
-#, kde-format
-msgctxt "@option:radio a color scheme variant"
-msgid "System colors"
-msgstr ""
-
-#: src/qml/SettingsPageAppearance.qml:43
+#: src/qml/SettingsPage.qml:56
 #, fuzzy, kde-format
 #| msgid "Co&ntrast"
-msgctxt "@option:radio a color scheme variant"
+msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "High contrast"
 msgstr "काँट्रास्ट (&N):"
 
-#: src/qml/SettingsPageAppearance.qml:52
+#: src/qml/SettingsPage.qml:82
 #, fuzzy, kde-format
 #| msgid "Co&ntrast"
 msgctxt "@label:slider"
-msgid "Contrast"
+msgid "Color contrast:"
 msgstr "काँट्रास्ट (&N):"
 
-#: src/qml/SettingsPageAppearance.qml:69
+#: src/qml/SettingsPage.qml:100
 #, kde-format
-msgctxt "@checkbox"
-msgid "Show small files"
+msgctxt "@title:group Show small files/show folders sidebar"
+msgid "Show:"
 msgstr ""
 
-#: src/qml/SettingsPageAppearance.qml:78
+#: src/qml/SettingsPage.qml:102
 #, kde-format
-msgctxt "@checkbox"
-msgid "Show folders sidebar"
+msgctxt "@option:check Show small files"
+msgid "Small files"
 msgstr ""
 
-#: src/qml/SettingsPageScanning.qml:33
+#: src/qml/SettingsPage.qml:114
 #, kde-format
-msgctxt "@label"
-msgid "Do not scan these folders:"
+msgctxt "@option:check Show files on other disks"
+msgid "Files on other disks"
 msgstr ""
 
-#: src/qml/SettingsPageScanning.qml:41
+#: src/qml/SettingsPage.qml:128
+#, kde-format
+msgctxt "@option:check Show files on remote filesystems"
+msgid "Files on remote filesystems"
+msgstr ""
+
+#: src/qml/SettingsPage.qml:140
+#, kde-format
+msgctxt "@option:check Show folders sidebar"
+msgid "Folders sidebar"
+msgstr ""
+
+#: src/qml/SettingsPage.qml:172
+#, kde-format
+msgctxt "@title:group"
+msgid "Do not scan these folders"
+msgstr ""
+
+#: src/qml/SettingsPage.qml:175
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
 msgstr ""
 
-#: src/qml/SettingsPageScanning.qml:90
-#, fuzzy, kde-format
-#| msgid "R&emove"
+#: src/qml/SettingsPage.qml:203
+#, kde-format
 msgctxt "@action:button remove list entry"
-msgid "Remove"
-msgstr "काढून टाका (&E)"
-
-#: src/qml/SettingsPageScanning.qml:110
-#, kde-format
-msgctxt "@checkbox"
-msgid "Scan across filesystem boundaries"
-msgstr ""
-
-#: src/qml/SettingsPageScanning.qml:122
-#, kde-format
-msgctxt "@checkbox"
-msgid "Exclude remote filesystems"
+msgid "Resume scanning this folder"
 msgstr ""
 
 #: src/radialMap/map.cpp:63
@@ -551,6 +541,30 @@ msgid_plural ""
 "%1 files, with an average size of %2"
 msgstr[0] ""
 msgstr[1] ""
+
+#, fuzzy
+#~| msgid "Scannin&g"
+#~ msgctxt "@title"
+#~ msgid "Scanning"
+#~ msgstr "स्कॅन करत आहे (&G)"
+
+#, fuzzy
+#~| msgid "&Appearance"
+#~ msgctxt "@title"
+#~ msgid "Appearance"
+#~ msgstr "दर्शनीयता (&A)"
+
+#, fuzzy
+#~| msgid "Color scheme"
+#~ msgctxt "@title:group"
+#~ msgid "Color Scheme"
+#~ msgstr "रंग सुत्रयोजना"
+
+#, fuzzy
+#~| msgid "R&emove"
+#~ msgctxt "@action:button remove list entry"
+#~ msgid "Remove"
+#~ msgstr "काढून टाका (&E)"
 
 #~ msgctxt "Go to the last path viewed"
 #~ msgid "Back"

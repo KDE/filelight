@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-13 08:44+0000\n"
+"POT-Creation-Date: 2026-01-29 00:47+0000\n"
 "PO-Revision-Date: 2025-06-25 08:38+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -454,89 +454,101 @@ msgstr ""
 "Filelight analyse l'utilisation du disque afin que vous puissiez voir ce qui "
 "utilise beaucoup d'espace. Veuillez sélectionner un dossier pour continuer :"
 
-#: src/qml/SettingsPage.qml:22
-#, kde-format
-msgctxt "@title"
-msgid "Scanning"
-msgstr "Analyse en cours"
-
-#: src/qml/SettingsPage.qml:25
-#, kde-format
-msgctxt "@title"
-msgid "Appearance"
-msgstr "Apparence"
-
-#: src/qml/SettingsPageAppearance.qml:16
+#: src/qml/SettingsPage.qml:51
 #, kde-format
 msgctxt "@title:group"
-msgid "Color Scheme"
-msgstr "Thème de couleurs"
+msgid "Colors:"
+msgstr ""
 
-#: src/qml/SettingsPageAppearance.qml:25
-#, kde-format
-msgctxt "@option:radio a color scheme variant"
+#: src/qml/SettingsPage.qml:54
+#, fuzzy, kde-format
+#| msgctxt "@option:radio a color scheme variant"
+#| msgid "System colors"
+msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
+msgid "From system color scheme"
+msgstr "Couleurs du système"
+
+#: src/qml/SettingsPage.qml:55
+#, fuzzy, kde-format
+#| msgctxt "@option:radio a color scheme variant"
+#| msgid "Rainbow"
+msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "Rainbow"
 msgstr "Arc-en-ciel"
 
-#: src/qml/SettingsPageAppearance.qml:34
-#, kde-format
-msgctxt "@option:radio a color scheme variant"
-msgid "System colors"
-msgstr "Couleurs du système"
-
-#: src/qml/SettingsPageAppearance.qml:43
-#, kde-format
-msgctxt "@option:radio a color scheme variant"
+#: src/qml/SettingsPage.qml:56
+#, fuzzy, kde-format
+#| msgctxt "@option:radio a color scheme variant"
+#| msgid "High contrast"
+msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "High contrast"
 msgstr "Contraste élevé"
 
-#: src/qml/SettingsPageAppearance.qml:52
-#, kde-format
+#: src/qml/SettingsPage.qml:82
+#, fuzzy, kde-format
+#| msgctxt "@label:slider"
+#| msgid "Contrast"
 msgctxt "@label:slider"
-msgid "Contrast"
+msgid "Color contrast:"
 msgstr "Contraste"
 
-#: src/qml/SettingsPageAppearance.qml:69
+#: src/qml/SettingsPage.qml:100
 #, kde-format
-msgctxt "@checkbox"
-msgid "Show small files"
+msgctxt "@title:group Show small files/show folders sidebar"
+msgid "Show:"
+msgstr ""
+
+#: src/qml/SettingsPage.qml:102
+#, fuzzy, kde-format
+#| msgctxt "@checkbox"
+#| msgid "Show small files"
+msgctxt "@option:check Show small files"
+msgid "Small files"
 msgstr "Afficher les petits fichiers"
 
-#: src/qml/SettingsPageAppearance.qml:78
+#: src/qml/SettingsPage.qml:114
 #, kde-format
-msgctxt "@checkbox"
-msgid "Show folders sidebar"
+msgctxt "@option:check Show files on other disks"
+msgid "Files on other disks"
+msgstr ""
+
+#: src/qml/SettingsPage.qml:128
+#, fuzzy, kde-format
+#| msgctxt "@checkbox"
+#| msgid "Exclude remote filesystems"
+msgctxt "@option:check Show files on remote filesystems"
+msgid "Files on remote filesystems"
+msgstr "Exclure les systèmes de fichiers distants"
+
+#: src/qml/SettingsPage.qml:140
+#, fuzzy, kde-format
+#| msgctxt "@checkbox"
+#| msgid "Show folders sidebar"
+msgctxt "@option:check Show folders sidebar"
+msgid "Folders sidebar"
 msgstr "Afficher la barre latérale des dossiers"
 
-#: src/qml/SettingsPageScanning.qml:33
-#, kde-format
-msgctxt "@label"
-msgid "Do not scan these folders:"
+#: src/qml/SettingsPage.qml:172
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Do not scan these folders:"
+msgctxt "@title:group"
+msgid "Do not scan these folders"
 msgstr "Ne pas analyser ces dossiers :"
 
-#: src/qml/SettingsPageScanning.qml:41
+#: src/qml/SettingsPage.qml:175
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
 msgstr "Ajouter…"
 
-#: src/qml/SettingsPageScanning.qml:90
-#, kde-format
+#: src/qml/SettingsPage.qml:203
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Do not scan these folders:"
 msgctxt "@action:button remove list entry"
-msgid "Remove"
-msgstr "Supprimer"
-
-#: src/qml/SettingsPageScanning.qml:110
-#, kde-format
-msgctxt "@checkbox"
-msgid "Scan across filesystem boundaries"
-msgstr "Analyser d'un bout à l'autre des limites du système de fichiers"
-
-#: src/qml/SettingsPageScanning.qml:122
-#, kde-format
-msgctxt "@checkbox"
-msgid "Exclude remote filesystems"
-msgstr "Exclure les systèmes de fichiers distants"
+msgid "Resume scanning this folder"
+msgstr "Ne pas analyser ces dossiers :"
 
 #: src/radialMap/map.cpp:63
 #, kde-format
@@ -552,6 +564,26 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 fichiers, avec une taille moyenne de %2"
+
+#~ msgctxt "@title"
+#~ msgid "Scanning"
+#~ msgstr "Analyse en cours"
+
+#~ msgctxt "@title"
+#~ msgid "Appearance"
+#~ msgstr "Apparence"
+
+#~ msgctxt "@title:group"
+#~ msgid "Color Scheme"
+#~ msgstr "Thème de couleurs"
+
+#~ msgctxt "@action:button remove list entry"
+#~ msgid "Remove"
+#~ msgstr "Supprimer"
+
+#~ msgctxt "@checkbox"
+#~ msgid "Scan across filesystem boundaries"
+#~ msgstr "Analyser d'un bout à l'autre des limites du système de fichiers"
 
 #~ msgctxt "@info:status"
 #~ msgid "Aborting Scan..."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-13 08:44+0000\n"
+"POT-Creation-Date: 2026-01-29 00:47+0000\n"
 "PO-Revision-Date: 2024-09-08 12:52+0200\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -448,89 +448,99 @@ msgstr ""
 "சேமிப்பக இடத்தை அடைப்பது எதுவென்று கண்டறிய உதவும் விதத்தில் ஃபைல்-லைட் வட்டு பயன்பாட்டை "
 "காட்டும். தொடர ஓர் அடைவைத் தேர்ந்தெடுக்கவும்:"
 
-#: src/qml/SettingsPage.qml:22
-#, kde-format
-msgctxt "@title"
-msgid "Scanning"
-msgstr "ஆராய்வது"
-
-#: src/qml/SettingsPage.qml:25
-#, kde-format
-msgctxt "@title"
-msgid "Appearance"
-msgstr "தோற்றம்"
-
-#: src/qml/SettingsPageAppearance.qml:16
+#: src/qml/SettingsPage.qml:51
 #, kde-format
 msgctxt "@title:group"
-msgid "Color Scheme"
-msgstr "நிறத்திட்டம்"
+msgid "Colors:"
+msgstr ""
 
-#: src/qml/SettingsPageAppearance.qml:25
-#, kde-format
-msgctxt "@option:radio a color scheme variant"
+#: src/qml/SettingsPage.qml:54
+#, fuzzy, kde-format
+#| msgctxt "@option:radio a color scheme variant"
+#| msgid "System colors"
+msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
+msgid "From system color scheme"
+msgstr "கணினித் திட்டத்தின் நிறங்கள்"
+
+#: src/qml/SettingsPage.qml:55
+#, fuzzy, kde-format
+#| msgctxt "@option:radio a color scheme variant"
+#| msgid "Rainbow"
+msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "Rainbow"
 msgstr "வானவில்"
 
-#: src/qml/SettingsPageAppearance.qml:34
-#, kde-format
-msgctxt "@option:radio a color scheme variant"
-msgid "System colors"
-msgstr "கணினித் திட்டத்தின் நிறங்கள்"
-
-#: src/qml/SettingsPageAppearance.qml:43
-#, kde-format
-msgctxt "@option:radio a color scheme variant"
+#: src/qml/SettingsPage.qml:56
+#, fuzzy, kde-format
+#| msgctxt "@option:radio a color scheme variant"
+#| msgid "High contrast"
+msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "High contrast"
 msgstr "அதிக நிறமாறுபாடு"
 
-#: src/qml/SettingsPageAppearance.qml:52
-#, kde-format
+#: src/qml/SettingsPage.qml:82
+#, fuzzy, kde-format
+#| msgctxt "@label:slider"
+#| msgid "Contrast"
 msgctxt "@label:slider"
-msgid "Contrast"
+msgid "Color contrast:"
 msgstr "நிறமாறுபாடு"
 
-#: src/qml/SettingsPageAppearance.qml:69
+#: src/qml/SettingsPage.qml:100
 #, kde-format
-msgctxt "@checkbox"
-msgid "Show small files"
-msgstr "சிறிய கோப்புகளைக் காட்டு"
-
-#: src/qml/SettingsPageAppearance.qml:78
-#, kde-format
-msgctxt "@checkbox"
-msgid "Show folders sidebar"
+msgctxt "@title:group Show small files/show folders sidebar"
+msgid "Show:"
 msgstr ""
 
-#: src/qml/SettingsPageScanning.qml:33
+#: src/qml/SettingsPage.qml:102
+#, fuzzy, kde-format
+#| msgctxt "@checkbox"
+#| msgid "Show small files"
+msgctxt "@option:check Show small files"
+msgid "Small files"
+msgstr "சிறிய கோப்புகளைக் காட்டு"
+
+#: src/qml/SettingsPage.qml:114
 #, kde-format
-msgctxt "@label"
-msgid "Do not scan these folders:"
+msgctxt "@option:check Show files on other disks"
+msgid "Files on other disks"
+msgstr ""
+
+#: src/qml/SettingsPage.qml:128
+#, fuzzy, kde-format
+#| msgctxt "@checkbox"
+#| msgid "Exclude remote filesystems"
+msgctxt "@option:check Show files on remote filesystems"
+msgid "Files on remote filesystems"
+msgstr "தொலை கோப்புமுறைமைகளை ஆராயாதே"
+
+#: src/qml/SettingsPage.qml:140
+#, kde-format
+msgctxt "@option:check Show folders sidebar"
+msgid "Folders sidebar"
+msgstr ""
+
+#: src/qml/SettingsPage.qml:172
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Do not scan these folders:"
+msgctxt "@title:group"
+msgid "Do not scan these folders"
 msgstr "இவ்வடைவுகளை ஆராயாதே:"
 
-#: src/qml/SettingsPageScanning.qml:41
+#: src/qml/SettingsPage.qml:175
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
 msgstr "சேர்…"
 
-#: src/qml/SettingsPageScanning.qml:90
-#, kde-format
+#: src/qml/SettingsPage.qml:203
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Do not scan these folders:"
 msgctxt "@action:button remove list entry"
-msgid "Remove"
-msgstr "நீக்கு"
-
-#: src/qml/SettingsPageScanning.qml:110
-#, kde-format
-msgctxt "@checkbox"
-msgid "Scan across filesystem boundaries"
-msgstr "கோப்புமுறைமைகளின் எல்லைகளைத் தாண்டி ஆராய்"
-
-#: src/qml/SettingsPageScanning.qml:122
-#, kde-format
-msgctxt "@checkbox"
-msgid "Exclude remote filesystems"
-msgstr "தொலை கோப்புமுறைமைகளை ஆராயாதே"
+msgid "Resume scanning this folder"
+msgstr "இவ்வடைவுகளை ஆராயாதே:"
 
 #: src/radialMap/map.cpp:63
 #, kde-format
@@ -546,6 +556,26 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 கோப்புகள், சராசரியாக %2 அளவில்"
+
+#~ msgctxt "@title"
+#~ msgid "Scanning"
+#~ msgstr "ஆராய்வது"
+
+#~ msgctxt "@title"
+#~ msgid "Appearance"
+#~ msgstr "தோற்றம்"
+
+#~ msgctxt "@title:group"
+#~ msgid "Color Scheme"
+#~ msgstr "நிறத்திட்டம்"
+
+#~ msgctxt "@action:button remove list entry"
+#~ msgid "Remove"
+#~ msgstr "நீக்கு"
+
+#~ msgctxt "@checkbox"
+#~ msgid "Scan across filesystem boundaries"
+#~ msgstr "கோப்புமுறைமைகளின் எல்லைகளைத் தாண்டி ஆராய்"
 
 #~ msgctxt "@info:status"
 #~ msgid "Aborting Scan..."

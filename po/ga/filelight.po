@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-13 08:44+0000\n"
+"POT-Creation-Date: 2026-01-29 00:47+0000\n"
 "PO-Revision-Date: 2009-02-19 07:06-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -472,98 +472,89 @@ msgid ""
 "Choose a folder to proceed:"
 msgstr ""
 
-#: src/qml/SettingsPage.qml:22
-#, fuzzy, kde-format
-#| msgid "Scannin&g"
-msgctxt "@title"
-msgid "Scanning"
-msgstr "&Scanadh"
-
-#: src/qml/SettingsPage.qml:25
-#, fuzzy, kde-format
-#| msgid "&Appearance"
-msgctxt "@title"
-msgid "Appearance"
-msgstr "&Cuma"
-
-#: src/qml/SettingsPageAppearance.qml:16
-#, fuzzy, kde-format
-#| msgid "Color scheme"
+#: src/qml/SettingsPage.qml:51
+#, kde-format
 msgctxt "@title:group"
-msgid "Color Scheme"
-msgstr "Scéim dathanna"
+msgid "Colors:"
+msgstr ""
 
-#: src/qml/SettingsPageAppearance.qml:25
+#: src/qml/SettingsPage.qml:54
+#, fuzzy, kde-format
+#| msgid "System Colors"
+msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
+msgid "From system color scheme"
+msgstr "Dathanna an Chórais"
+
+#: src/qml/SettingsPage.qml:55
 #, fuzzy, kde-format
 #| msgid "Rainbow"
-msgctxt "@option:radio a color scheme variant"
+msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "Rainbow"
 msgstr "Tua Cheatha"
 
-#: src/qml/SettingsPageAppearance.qml:34
-#, fuzzy, kde-format
-#| msgid "System Colors"
-msgctxt "@option:radio a color scheme variant"
-msgid "System colors"
-msgstr "Dathanna an Chórais"
-
-#: src/qml/SettingsPageAppearance.qml:43
+#: src/qml/SettingsPage.qml:56
 #, fuzzy, kde-format
 #| msgid "High Contrast"
-msgctxt "@option:radio a color scheme variant"
+msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "High contrast"
 msgstr "Ardchodarsnacht"
 
-#: src/qml/SettingsPageAppearance.qml:52
+#: src/qml/SettingsPage.qml:82
 #, fuzzy, kde-format
 #| msgid "High Contrast"
 msgctxt "@label:slider"
-msgid "Contrast"
+msgid "Color contrast:"
 msgstr "Ardchodarsnacht"
 
-#: src/qml/SettingsPageAppearance.qml:69
+#: src/qml/SettingsPage.qml:100
 #, kde-format
-msgctxt "@checkbox"
-msgid "Show small files"
+msgctxt "@title:group Show small files/show folders sidebar"
+msgid "Show:"
 msgstr ""
 
-#: src/qml/SettingsPageAppearance.qml:78
+#: src/qml/SettingsPage.qml:102
 #, kde-format
-msgctxt "@checkbox"
-msgid "Show folders sidebar"
+msgctxt "@option:check Show small files"
+msgid "Small files"
 msgstr ""
 
-#: src/qml/SettingsPageScanning.qml:33
+#: src/qml/SettingsPage.qml:114
+#, kde-format
+msgctxt "@option:check Show files on other disks"
+msgid "Files on other disks"
+msgstr ""
+
+#: src/qml/SettingsPage.qml:128
+#, kde-format
+msgctxt "@option:check Show files on remote filesystems"
+msgid "Files on remote filesystems"
+msgstr ""
+
+#: src/qml/SettingsPage.qml:140
+#, kde-format
+msgctxt "@option:check Show folders sidebar"
+msgid "Folders sidebar"
+msgstr ""
+
+#: src/qml/SettingsPage.qml:172
 #, fuzzy, kde-format
 #| msgid "Do &not scan these folders:"
-msgctxt "@label"
-msgid "Do not scan these folders:"
+msgctxt "@title:group"
+msgid "Do not scan these folders"
 msgstr "&Ná scan na fillteáin seo:"
 
-#: src/qml/SettingsPageScanning.qml:41
+#: src/qml/SettingsPage.qml:175
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
 msgstr ""
 
-#: src/qml/SettingsPageScanning.qml:90
+#: src/qml/SettingsPage.qml:203
 #, fuzzy, kde-format
-#| msgid "R&emove"
+#| msgid "Do &not scan these folders:"
 msgctxt "@action:button remove list entry"
-msgid "Remove"
-msgstr "B&ain"
-
-#: src/qml/SettingsPageScanning.qml:110
-#, kde-format
-msgctxt "@checkbox"
-msgid "Scan across filesystem boundaries"
-msgstr ""
-
-#: src/qml/SettingsPageScanning.qml:122
-#, kde-format
-msgctxt "@checkbox"
-msgid "Exclude remote filesystems"
-msgstr ""
+msgid "Resume scanning this folder"
+msgstr "&Ná scan na fillteáin seo:"
 
 #: src/radialMap/map.cpp:63
 #, kde-format
@@ -578,6 +569,30 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 msgstr[4] ""
+
+#, fuzzy
+#~| msgid "Scannin&g"
+#~ msgctxt "@title"
+#~ msgid "Scanning"
+#~ msgstr "&Scanadh"
+
+#, fuzzy
+#~| msgid "&Appearance"
+#~ msgctxt "@title"
+#~ msgid "Appearance"
+#~ msgstr "&Cuma"
+
+#, fuzzy
+#~| msgid "Color scheme"
+#~ msgctxt "@title:group"
+#~ msgid "Color Scheme"
+#~ msgstr "Scéim dathanna"
+
+#, fuzzy
+#~| msgid "R&emove"
+#~ msgctxt "@action:button remove list entry"
+#~ msgid "Remove"
+#~ msgstr "B&ain"
 
 #~ msgctxt "Go to the last path viewed"
 #~ msgid "Back"

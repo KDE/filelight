@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-13 08:44+0000\n"
+"POT-Creation-Date: 2026-01-29 00:47+0000\n"
 "PO-Revision-Date: 2025-07-08 22:17+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -445,89 +445,101 @@ msgstr ""
 "A Filelight elemzi a lemezhasználatot, így láthatja, mi használ sok helyet. "
 "Válasszon ki egy mappát a folytatáshoz:"
 
-#: src/qml/SettingsPage.qml:22
-#, kde-format
-msgctxt "@title"
-msgid "Scanning"
-msgstr "Vizsgálat"
-
-#: src/qml/SettingsPage.qml:25
-#, kde-format
-msgctxt "@title"
-msgid "Appearance"
-msgstr "Megjelenés"
-
-#: src/qml/SettingsPageAppearance.qml:16
+#: src/qml/SettingsPage.qml:51
 #, kde-format
 msgctxt "@title:group"
-msgid "Color Scheme"
-msgstr "Színséma"
+msgid "Colors:"
+msgstr ""
 
-#: src/qml/SettingsPageAppearance.qml:25
-#, kde-format
-msgctxt "@option:radio a color scheme variant"
+#: src/qml/SettingsPage.qml:54
+#, fuzzy, kde-format
+#| msgctxt "@option:radio a color scheme variant"
+#| msgid "System colors"
+msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
+msgid "From system color scheme"
+msgstr "Rendszerszínek"
+
+#: src/qml/SettingsPage.qml:55
+#, fuzzy, kde-format
+#| msgctxt "@option:radio a color scheme variant"
+#| msgid "Rainbow"
+msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "Rainbow"
 msgstr "Szivárvány"
 
-#: src/qml/SettingsPageAppearance.qml:34
-#, kde-format
-msgctxt "@option:radio a color scheme variant"
-msgid "System colors"
-msgstr "Rendszerszínek"
-
-#: src/qml/SettingsPageAppearance.qml:43
-#, kde-format
-msgctxt "@option:radio a color scheme variant"
+#: src/qml/SettingsPage.qml:56
+#, fuzzy, kde-format
+#| msgctxt "@option:radio a color scheme variant"
+#| msgid "High contrast"
+msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "High contrast"
 msgstr "Magas kontraszt"
 
-#: src/qml/SettingsPageAppearance.qml:52
-#, kde-format
+#: src/qml/SettingsPage.qml:82
+#, fuzzy, kde-format
+#| msgctxt "@label:slider"
+#| msgid "Contrast"
 msgctxt "@label:slider"
-msgid "Contrast"
+msgid "Color contrast:"
 msgstr "Kontraszt"
 
-#: src/qml/SettingsPageAppearance.qml:69
+#: src/qml/SettingsPage.qml:100
 #, kde-format
-msgctxt "@checkbox"
-msgid "Show small files"
+msgctxt "@title:group Show small files/show folders sidebar"
+msgid "Show:"
+msgstr ""
+
+#: src/qml/SettingsPage.qml:102
+#, fuzzy, kde-format
+#| msgctxt "@checkbox"
+#| msgid "Show small files"
+msgctxt "@option:check Show small files"
+msgid "Small files"
 msgstr "Kis fájlok megjelenítése"
 
-#: src/qml/SettingsPageAppearance.qml:78
+#: src/qml/SettingsPage.qml:114
 #, kde-format
-msgctxt "@checkbox"
-msgid "Show folders sidebar"
+msgctxt "@option:check Show files on other disks"
+msgid "Files on other disks"
+msgstr ""
+
+#: src/qml/SettingsPage.qml:128
+#, fuzzy, kde-format
+#| msgctxt "@checkbox"
+#| msgid "Exclude remote filesystems"
+msgctxt "@option:check Show files on remote filesystems"
+msgid "Files on remote filesystems"
+msgstr "Távoli fájlrendszerek kizárása"
+
+#: src/qml/SettingsPage.qml:140
+#, fuzzy, kde-format
+#| msgctxt "@checkbox"
+#| msgid "Show folders sidebar"
+msgctxt "@option:check Show folders sidebar"
+msgid "Folders sidebar"
 msgstr "Mappák oldalsáv megjelenítése"
 
-#: src/qml/SettingsPageScanning.qml:33
-#, kde-format
-msgctxt "@label"
-msgid "Do not scan these folders:"
+#: src/qml/SettingsPage.qml:172
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Do not scan these folders:"
+msgctxt "@title:group"
+msgid "Do not scan these folders"
 msgstr "Ne olvassa ezeket a mappákat:"
 
-#: src/qml/SettingsPageScanning.qml:41
+#: src/qml/SettingsPage.qml:175
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
 msgstr "Hozzáadás…"
 
-#: src/qml/SettingsPageScanning.qml:90
-#, kde-format
+#: src/qml/SettingsPage.qml:203
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Do not scan these folders:"
 msgctxt "@action:button remove list entry"
-msgid "Remove"
-msgstr "Eltávolítás"
-
-#: src/qml/SettingsPageScanning.qml:110
-#, kde-format
-msgctxt "@checkbox"
-msgid "Scan across filesystem boundaries"
-msgstr "Olvasás a fájlrendszerhatáron túl"
-
-#: src/qml/SettingsPageScanning.qml:122
-#, kde-format
-msgctxt "@checkbox"
-msgid "Exclude remote filesystems"
-msgstr "Távoli fájlrendszerek kizárása"
+msgid "Resume scanning this folder"
+msgstr "Ne olvassa ezeket a mappákat:"
 
 #: src/radialMap/map.cpp:63
 #, kde-format
@@ -543,6 +555,26 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 fájl %2 átlagos mérettel"
+
+#~ msgctxt "@title"
+#~ msgid "Scanning"
+#~ msgstr "Vizsgálat"
+
+#~ msgctxt "@title"
+#~ msgid "Appearance"
+#~ msgstr "Megjelenés"
+
+#~ msgctxt "@title:group"
+#~ msgid "Color Scheme"
+#~ msgstr "Színséma"
+
+#~ msgctxt "@action:button remove list entry"
+#~ msgid "Remove"
+#~ msgstr "Eltávolítás"
+
+#~ msgctxt "@checkbox"
+#~ msgid "Scan across filesystem boundaries"
+#~ msgstr "Olvasás a fájlrendszerhatáron túl"
 
 #~ msgctxt "@info:status"
 #~ msgid "Aborting Scan..."
