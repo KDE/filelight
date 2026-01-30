@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the filelight package.
-# SPDX-FileCopyrightText: 2021, 2022, 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2024, 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 00:47+0000\n"
-"PO-Revision-Date: 2025-08-14 09:25+0400\n"
+"PO-Revision-Date: 2026-01-29 16:58+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -73,9 +73,9 @@ msgid ""
 "(C) 2008-2014 Martin Sandsmark\n"
 "(C) 2017-2022 Harald Sitter"
 msgstr ""
-"(C) 2006 Max Howell\n"
-"(C) 2008-2014 Martin Sandsmark\n"
-"(C) 2017-2022 Harald Sitter"
+"(ج) 2006 ماكس هاول\n"
+"(ج) 2008-2014 مارتن ساندسمارك\n"
+"(ج) 2017-2022 هارالد سيتر"
 
 #: src/main.cpp:98
 #, kde-format
@@ -90,7 +90,7 @@ msgstr "الصائن"
 #: src/main.cpp:99
 #, kde-format
 msgid "Martin Sandsmark"
-msgstr "Martin Sandsmark"
+msgstr "مارتن ساندسمارك"
 
 #: src/main.cpp:100
 #, kde-format
@@ -105,7 +105,7 @@ msgstr "النقل إلى QtQuick"
 #: src/main.cpp:101
 #, kde-format
 msgid "Max Howell"
-msgstr "Max Howell"
+msgstr "ماكس هويل"
 
 #: src/main.cpp:101
 #, kde-format
@@ -115,7 +115,7 @@ msgstr "المؤلف الأصلي"
 #: src/main.cpp:102
 #, kde-format
 msgid "Lukas Appelhans"
-msgstr "Lukas Appelhans"
+msgstr "لوكاس أبيلهانز"
 
 #: src/main.cpp:102
 #, kde-format
@@ -125,7 +125,7 @@ msgstr "المساعدة والدعم"
 #: src/main.cpp:103
 #, kde-format
 msgid "Steffen Gerlach"
-msgstr "Steffen Gerlach"
+msgstr "ستيفن غيرلاخ"
 
 #: src/main.cpp:103
 #, kde-format
@@ -135,7 +135,7 @@ msgstr "إلهام"
 #: src/main.cpp:104
 #, kde-format
 msgid "Mike Diehl"
-msgstr "Mike Diehl"
+msgstr "مايك ديهل"
 
 #: src/main.cpp:104
 #, kde-format
@@ -145,7 +145,7 @@ msgstr "التوثيق الأصلي"
 #: src/main.cpp:105
 #, kde-format
 msgid "Sune Vuorela"
-msgstr "Sune Vuorela"
+msgstr "سونه فوريلا"
 
 #: src/main.cpp:105 src/main.cpp:106
 #, kde-format
@@ -155,7 +155,7 @@ msgstr "الأيقونة"
 #: src/main.cpp:106
 #, kde-format
 msgid "Nuno Pinheiro"
-msgstr "نونو بينييرو (Nuno Pinheiro)"
+msgstr "نونو بينهيرو"
 
 #: src/main.cpp:114
 #, kde-format
@@ -462,83 +462,67 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Colors:"
-msgstr ""
+msgstr "الألوان:"
 
 #: src/qml/SettingsPage.qml:54
-#, fuzzy, kde-format
-#| msgctxt "@option:radio a color scheme variant"
-#| msgid "System colors"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "From system color scheme"
-msgstr "ألوان النظام"
+msgstr "من مخطط ألوان النظام"
 
 #: src/qml/SettingsPage.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@option:radio a color scheme variant"
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "Rainbow"
 msgstr "قوس قزح"
 
 #: src/qml/SettingsPage.qml:56
-#, fuzzy, kde-format
-#| msgctxt "@option:radio a color scheme variant"
-#| msgid "High contrast"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "High contrast"
 msgstr "تباين عالٍ"
 
 #: src/qml/SettingsPage.qml:82
-#, fuzzy, kde-format
-#| msgctxt "@label:slider"
-#| msgid "Contrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Color contrast:"
-msgstr "التباين"
+msgstr "تباين الألوان:"
 
 #: src/qml/SettingsPage.qml:100
 #, kde-format
 msgctxt "@title:group Show small files/show folders sidebar"
 msgid "Show:"
-msgstr ""
+msgstr "أظهر:"
 
 #: src/qml/SettingsPage.qml:102
-#, fuzzy, kde-format
-#| msgctxt "@checkbox"
-#| msgid "Show small files"
+#, kde-format
 msgctxt "@option:check Show small files"
 msgid "Small files"
-msgstr "أعرض الملفات الصغيرة"
+msgstr "الملفات الصغيرة"
 
 #: src/qml/SettingsPage.qml:114
 #, kde-format
 msgctxt "@option:check Show files on other disks"
 msgid "Files on other disks"
-msgstr ""
+msgstr "الملفات على أقراص أخرى"
 
 #: src/qml/SettingsPage.qml:128
-#, fuzzy, kde-format
-#| msgctxt "@checkbox"
-#| msgid "Exclude remote filesystems"
+#, kde-format
 msgctxt "@option:check Show files on remote filesystems"
 msgid "Files on remote filesystems"
-msgstr "استثنِ أنظمة الملفات البعيدة"
+msgstr "الملفات على أنظمة الملفات البعيدة"
 
 #: src/qml/SettingsPage.qml:140
-#, fuzzy, kde-format
-#| msgctxt "@checkbox"
-#| msgid "Show folders sidebar"
+#, kde-format
 msgctxt "@option:check Show folders sidebar"
 msgid "Folders sidebar"
-msgstr "أظهر الشريط الجانبي للمجلدات"
+msgstr "الشريط الجانبي للمجلدات"
 
 #: src/qml/SettingsPage.qml:172
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Do not scan these folders:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Do not scan these folders"
-msgstr "لا تمسح هذه الملفَات أو المجلَدات:"
+msgstr "لا تمسح هذه الملفَات أو المجلَدات"
 
 #: src/qml/SettingsPage.qml:175
 #, kde-format
@@ -547,12 +531,10 @@ msgid "Add…"
 msgstr "أضف…"
 
 #: src/qml/SettingsPage.qml:203
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Do not scan these folders:"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Resume scanning this folder"
-msgstr "لا تمسح هذه الملفَات أو المجلَدات:"
+msgstr "استأنف مسح هذه المجلد"
 
 #: src/radialMap/map.cpp:63
 #, kde-format

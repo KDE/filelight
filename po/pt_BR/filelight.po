@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2009, 2010, 2018, 2020, 2021, 2022.
-# Marcus Vinícius de Andrade Gama <marcus.gama@gmail.com>, 2010.
+# SPDX-FileCopyrightText: 2010, 2026 Marcus Vinícius de Andrade Gama <marcus.gama@gmail.com>
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2010, 2011, 2012, 2013, 2015, 2018.
 # Aracele Torres <araceletorres@gmail.com>, 2010.
 # SPDX-FileCopyrightText: 2024, 2025 Geraldo Simiao <geraldosimiao@fedoraproject.org>
@@ -13,15 +13,15 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 00:47+0000\n"
-"PO-Revision-Date: 2025-11-08 21:10-0300\n"
-"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
+"PO-Revision-Date: 2026-01-29 06:59-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -455,83 +455,67 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Colors:"
-msgstr ""
+msgstr "Cores:"
 
 #: src/qml/SettingsPage.qml:54
-#, fuzzy, kde-format
-#| msgctxt "@option:radio a color scheme variant"
-#| msgid "System colors"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "From system color scheme"
-msgstr "Cores do sistema"
+msgstr "A partir do esquema de cores do sistema"
 
 #: src/qml/SettingsPage.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@option:radio a color scheme variant"
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "Rainbow"
 msgstr "Arco-íris"
 
 #: src/qml/SettingsPage.qml:56
-#, fuzzy, kde-format
-#| msgctxt "@option:radio a color scheme variant"
-#| msgid "High contrast"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "High contrast"
 msgstr "Alto contraste"
 
 #: src/qml/SettingsPage.qml:82
-#, fuzzy, kde-format
-#| msgctxt "@label:slider"
-#| msgid "Contrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Color contrast:"
-msgstr "Contraste"
+msgstr "Contraste de cor:"
 
 #: src/qml/SettingsPage.qml:100
 #, kde-format
 msgctxt "@title:group Show small files/show folders sidebar"
 msgid "Show:"
-msgstr ""
+msgstr "Mostrar:"
 
 #: src/qml/SettingsPage.qml:102
-#, fuzzy, kde-format
-#| msgctxt "@checkbox"
-#| msgid "Show small files"
+#, kde-format
 msgctxt "@option:check Show small files"
 msgid "Small files"
-msgstr "Exibir arquivos pequenos"
+msgstr "Arquivos pequenos"
 
 #: src/qml/SettingsPage.qml:114
 #, kde-format
 msgctxt "@option:check Show files on other disks"
 msgid "Files on other disks"
-msgstr ""
+msgstr "Arquivos em outros discos"
 
 #: src/qml/SettingsPage.qml:128
-#, fuzzy, kde-format
-#| msgctxt "@checkbox"
-#| msgid "Exclude remote filesystems"
+#, kde-format
 msgctxt "@option:check Show files on remote filesystems"
 msgid "Files on remote filesystems"
-msgstr "Excluir sistemas de arquivos remotos"
+msgstr "Arquivos em sistemas de arquivos remotos"
 
 #: src/qml/SettingsPage.qml:140
-#, fuzzy, kde-format
-#| msgctxt "@checkbox"
-#| msgid "Show folders sidebar"
+#, kde-format
 msgctxt "@option:check Show folders sidebar"
 msgid "Folders sidebar"
-msgstr "Mostrar barra lateral de pastas"
+msgstr "Barra lateral de pastas"
 
 #: src/qml/SettingsPage.qml:172
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Do not scan these folders:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Do not scan these folders"
-msgstr "Não examinar estas pastas:"
+msgstr "Não examinar estas pastas"
 
 #: src/qml/SettingsPage.qml:175
 #, kde-format
@@ -540,12 +524,10 @@ msgid "Add…"
 msgstr "Adicionar…"
 
 #: src/qml/SettingsPage.qml:203
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Do not scan these folders:"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Resume scanning this folder"
-msgstr "Não examinar estas pastas:"
+msgstr "Retomar exame desta pasta"
 
 #: src/radialMap/map.cpp:63
 #, kde-format

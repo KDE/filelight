@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 00:47+0000\n"
-"PO-Revision-Date: 2025-06-24 06:58+0200\n"
+"PO-Revision-Date: 2026-01-29 07:01+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.8\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -460,83 +460,67 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Colors:"
-msgstr ""
+msgstr "Barve:"
 
 #: src/qml/SettingsPage.qml:54
-#, fuzzy, kde-format
-#| msgctxt "@option:radio a color scheme variant"
-#| msgid "System colors"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "From system color scheme"
-msgstr "Sistemske barve"
+msgstr "Iz barvne sheme sistema"
 
 #: src/qml/SettingsPage.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@option:radio a color scheme variant"
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "Rainbow"
 msgstr "Mavrica"
 
 #: src/qml/SettingsPage.qml:56
-#, fuzzy, kde-format
-#| msgctxt "@option:radio a color scheme variant"
-#| msgid "High contrast"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "High contrast"
-msgstr "Visok kontrast"
+msgstr "Visoki kontrast"
 
 #: src/qml/SettingsPage.qml:82
-#, fuzzy, kde-format
-#| msgctxt "@label:slider"
-#| msgid "Contrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Color contrast:"
-msgstr "Kontrast"
+msgstr "Barvni kontrast:"
 
 #: src/qml/SettingsPage.qml:100
 #, kde-format
 msgctxt "@title:group Show small files/show folders sidebar"
 msgid "Show:"
-msgstr ""
+msgstr "Prikaži:"
 
 #: src/qml/SettingsPage.qml:102
-#, fuzzy, kde-format
-#| msgctxt "@checkbox"
-#| msgid "Show small files"
+#, kde-format
 msgctxt "@option:check Show small files"
 msgid "Small files"
-msgstr "Pokaži majhne datoteke"
+msgstr "Majhne datoteke"
 
 #: src/qml/SettingsPage.qml:114
 #, kde-format
 msgctxt "@option:check Show files on other disks"
 msgid "Files on other disks"
-msgstr ""
+msgstr "Datoteke na drugih diskih"
 
 #: src/qml/SettingsPage.qml:128
-#, fuzzy, kde-format
-#| msgctxt "@checkbox"
-#| msgid "Exclude remote filesystems"
+#, kde-format
 msgctxt "@option:check Show files on remote filesystems"
 msgid "Files on remote filesystems"
-msgstr "Izvzemi oddaljene datotečne sisteme"
+msgstr "Datoteke na oddaljenih datotečnih sistemih"
 
 #: src/qml/SettingsPage.qml:140
-#, fuzzy, kde-format
-#| msgctxt "@checkbox"
-#| msgid "Show folders sidebar"
+#, kde-format
 msgctxt "@option:check Show folders sidebar"
 msgid "Folders sidebar"
-msgstr "Prikaži stransko vrstico map"
+msgstr "Stranska vrstica map"
 
 #: src/qml/SettingsPage.qml:172
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Do not scan these folders:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Do not scan these folders"
-msgstr "Ne preišči teh map:"
+msgstr "Ne pregleduj teh map"
 
 #: src/qml/SettingsPage.qml:175
 #, kde-format
@@ -545,12 +529,10 @@ msgid "Add…"
 msgstr "Dodaj …"
 
 #: src/qml/SettingsPage.qml:203
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Do not scan these folders:"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Resume scanning this folder"
-msgstr "Ne preišči teh map:"
+msgstr "Nadaljuj s pregledovanjem te mape"
 
 #: src/radialMap/map.cpp:63
 #, kde-format
