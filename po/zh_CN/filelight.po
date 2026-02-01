@@ -448,36 +448,28 @@ msgid "Colors:"
 msgstr ""
 
 #: src/qml/SettingsPage.qml:54
-#, fuzzy, kde-format
-#| msgctxt "@option:radio a color scheme variant"
-#| msgid "System colors"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "From system color scheme"
-msgstr "系统颜色"
+msgstr ""
 
 #: src/qml/SettingsPage.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@option:radio a color scheme variant"
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "Rainbow"
-msgstr "彩虹色"
+msgstr ""
 
 #: src/qml/SettingsPage.qml:56
-#, fuzzy, kde-format
-#| msgctxt "@option:radio a color scheme variant"
-#| msgid "High contrast"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "High contrast"
-msgstr "高对比度"
+msgstr ""
 
 #: src/qml/SettingsPage.qml:82
-#, fuzzy, kde-format
-#| msgctxt "@label:slider"
-#| msgid "Contrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Color contrast:"
-msgstr "对比度"
+msgstr ""
 
 #: src/qml/SettingsPage.qml:100
 #, kde-format
@@ -486,12 +478,10 @@ msgid "Show:"
 msgstr ""
 
 #: src/qml/SettingsPage.qml:102
-#, fuzzy, kde-format
-#| msgctxt "@checkbox"
-#| msgid "Show small files"
+#, kde-format
 msgctxt "@option:check Show small files"
 msgid "Small files"
-msgstr "显示小文件"
+msgstr ""
 
 #: src/qml/SettingsPage.qml:114
 #, kde-format
@@ -500,28 +490,22 @@ msgid "Files on other disks"
 msgstr ""
 
 #: src/qml/SettingsPage.qml:128
-#, fuzzy, kde-format
-#| msgctxt "@checkbox"
-#| msgid "Exclude remote filesystems"
+#, kde-format
 msgctxt "@option:check Show files on remote filesystems"
 msgid "Files on remote filesystems"
-msgstr "排除远程文件系统"
+msgstr ""
 
 #: src/qml/SettingsPage.qml:140
-#, fuzzy, kde-format
-#| msgctxt "@checkbox"
-#| msgid "Show folders sidebar"
+#, kde-format
 msgctxt "@option:check Show folders sidebar"
 msgid "Folders sidebar"
-msgstr "显示文件夹侧边栏"
+msgstr ""
 
 #: src/qml/SettingsPage.qml:172
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Do not scan these folders:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Do not scan these folders"
-msgstr "不扫描这些文件夹："
+msgstr ""
 
 #: src/qml/SettingsPage.qml:175
 #, kde-format
@@ -530,12 +514,10 @@ msgid "Add…"
 msgstr "添加…"
 
 #: src/qml/SettingsPage.qml:203
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Do not scan these folders:"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Resume scanning this folder"
-msgstr "不扫描这些文件夹："
+msgstr ""
 
 #: src/radialMap/map.cpp:63
 #, kde-format
@@ -548,23 +530,3 @@ msgid_plural ""
 msgstr[0] ""
 "\n"
 "%1 个文件，平均大小为 %2"
-
-#~ msgctxt "@title"
-#~ msgid "Scanning"
-#~ msgstr "扫描"
-
-#~ msgctxt "@title"
-#~ msgid "Appearance"
-#~ msgstr "外观"
-
-#~ msgctxt "@title:group"
-#~ msgid "Color Scheme"
-#~ msgstr "配色方案"
-
-#~ msgctxt "@action:button remove list entry"
-#~ msgid "Remove"
-#~ msgstr "移除"
-
-#~ msgctxt "@checkbox"
-#~ msgid "Scan across filesystem boundaries"
-#~ msgstr "跨文件系统范围扫描"
