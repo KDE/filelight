@@ -463,7 +463,7 @@ msgstr "配色方案"
 #, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "Rainbow"
-msgstr ""
+msgstr "彩虹色"
 
 #: src/qml/SettingsPageAppearance.qml:34
 #, kde-format
@@ -475,7 +475,7 @@ msgstr "系统颜色"
 #, kde-format
 msgctxt "@option:radio a color scheme variant"
 msgid "High contrast"
-msgstr ""
+msgstr "高对比度"
 
 #: src/qml/SettingsPageAppearance.qml:52
 #, kde-format
