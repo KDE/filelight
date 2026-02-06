@@ -557,23 +557,3 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 filer, med snittstorleik %2"
-
-#~ msgctxt "@title"
-#~ msgid "Scanning"
-#~ msgstr "Søkjer gjennom"
-
-#~ msgctxt "@title"
-#~ msgid "Appearance"
-#~ msgstr "Utsjånad"
-
-#~ msgctxt "@title:group"
-#~ msgid "Color Scheme"
-#~ msgstr "Fargeoppsett"
-
-#~ msgctxt "@action:button remove list entry"
-#~ msgid "Remove"
-#~ msgstr "Fjern"
-
-#~ msgctxt "@checkbox"
-#~ msgid "Scan across filesystem boundaries"
-#~ msgstr "Søk utover filsystemgrenser"
