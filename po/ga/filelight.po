@@ -66,17 +66,12 @@ msgid "Graphical disk-usage information"
 msgstr ""
 
 #: src/main.cpp:93
-#, fuzzy, kde-format
-#| msgid ""
-#| "(C) 2006 Max Howell\n"
-#| "        (C) 2008-2013 Martin Sandsmark"
+#, kde-format
 msgid ""
 "(C) 2006 Max Howell\n"
 "(C) 2008-2014 Martin Sandsmark\n"
 "(C) 2017-2022 Harald Sitter"
 msgstr ""
-"© 2006 Max Howell\n"
-"        © 2008-2013 Martin Sandsmark"
 
 #: src/main.cpp:98
 #, kde-format
@@ -209,18 +204,16 @@ msgid "You do not have access rights to this location."
 msgstr ""
 
 #: src/qml/GlobalMenu.qml:15
-#, fuzzy, kde-format
-#| msgid "&Scan"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Scan"
-msgstr "&Scan"
+msgstr ""
 
 #: src/qml/GlobalMenu.qml:27
-#, fuzzy, kde-format
-#| msgid "Testing"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Settings"
-msgstr "Tástáil"
+msgstr ""
 
 #: src/qml/GlobalMenu.qml:34
 #, kde-format
@@ -289,25 +282,18 @@ msgid "Failed to abort scan"
 msgstr ""
 
 #: src/qml/MapPage.qml:44
-#, fuzzy, kde-format
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "No files shown."
-msgstr "%1 chomhad"
+msgstr ""
 
 #: src/qml/MapPage.qml:45
-#, fuzzy, kde-format
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "1 file shown"
 msgid_plural "%1 files shown"
-msgstr[0] "%1 chomhad"
-msgstr[1] "%1 chomhad"
-msgstr[2] "%1 chomhad"
-msgstr[3] "%1 gcomhad"
-msgstr[4] "%1 comhad"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/qml/MapPage.qml:53
 #, kde-format
@@ -322,18 +308,16 @@ msgid "Up"
 msgstr ""
 
 #: src/qml/MapPage.qml:70
-#, fuzzy, kde-format
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action"
 msgid "Rescan"
-msgstr "Athscan"
+msgstr ""
 
 #: src/qml/MapPage.qml:79
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgctxt "@action"
 msgid "Stop"
-msgstr "Stad"
+msgstr ""
 
 #: src/qml/MapPage.qml:87
 #, kde-format
@@ -348,19 +332,16 @@ msgid "Zoom Out"
 msgstr ""
 
 #: src/qml/MapPage.qml:131 src/qml/MapPage.qml:263
-#, fuzzy, kde-format
-#| msgctxt "Scan/open the path of the selected element"
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
-msgstr "&Oscail"
+msgstr ""
 
 #: src/qml/MapPage.qml:139 src/qml/MapPage.qml:271
-#, fuzzy, kde-format
-#| msgid "Open &Terminal Here"
+#, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
-msgstr "Oscail &Teirminéal Anseo"
+msgstr ""
 
 #: src/qml/MapPage.qml:147
 #, kde-format
@@ -375,11 +356,10 @@ msgid "Add to Do Not Scan List"
 msgstr ""
 
 #: src/qml/MapPage.qml:166
-#, fuzzy, kde-format
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
-msgstr "Athscan"
+msgstr ""
 
 #: src/qml/MapPage.qml:173 src/qml/MapPage.qml:286
 #, kde-format
@@ -388,37 +368,26 @@ msgid "Copy to clipboard"
 msgstr ""
 
 #: src/qml/MapPage.qml:181 src/qml/MapPage.qml:294
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
-msgstr "&Scrios"
+msgstr ""
 
 #: src/qml/MapPage.qml:348
-#, fuzzy, kde-format
-#| msgid "%1 File"
-#| msgid_plural "%1 Files"
+#, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
 msgid_plural "%1 Files (%2%)"
-msgstr[0] "%1 Chomhad"
-msgstr[1] "%1 Chomhad"
-msgstr[2] "%1 Chomhad"
-msgstr[3] "%1 gComhad"
-msgstr[4] "%1 Comhad"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/qml/MapPage.qml:350
-#, fuzzy, kde-format
-#| msgid "%1 File"
-#| msgid_plural "%1 Files"
+#, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
 msgid_plural "%1 Files"
-msgstr[0] "%1 Chomhad"
-msgstr[1] "%1 Chomhad"
-msgstr[2] "%1 Chomhad"
-msgstr[3] "%1 gComhad"
-msgstr[4] "%1 Comhad"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/qml/MapPage.qml:354
 #, kde-format
@@ -427,17 +396,12 @@ msgid "Click to go up to parent directory"
 msgstr ""
 
 #: src/qml/MapPage.qml:577
-#, fuzzy, kde-format
-#| msgid "%1 File"
-#| msgid_plural "%1 Files"
+#, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
 msgid_plural "%1 Files, %2"
-msgstr[0] "%1 Chomhad"
-msgstr[1] "%1 Chomhad"
-msgstr[2] "%1 Chomhad"
-msgstr[3] "%1 gComhad"
-msgstr[4] "%1 Comhad"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/qml/MapPage.qml:586
 #, kde-format
@@ -451,11 +415,10 @@ msgid "Overview"
 msgstr ""
 
 #: src/qml/OverviewPage.qml:42
-#, fuzzy, kde-format
-#| msgid "Filelight"
+#, kde-format
 msgctxt "@title"
 msgid "Welcome to Filelight"
-msgstr "Filelight"
+msgstr ""
 
 #: src/qml/OverviewPage.qml:51
 #, kde-format
@@ -479,32 +442,28 @@ msgid "Colors:"
 msgstr ""
 
 #: src/qml/SettingsPage.qml:54
-#, fuzzy, kde-format
-#| msgid "System Colors"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "From system color scheme"
-msgstr "Dathanna an Chórais"
+msgstr ""
 
 #: src/qml/SettingsPage.qml:55
-#, fuzzy, kde-format
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "Rainbow"
-msgstr "Tua Cheatha"
+msgstr ""
 
 #: src/qml/SettingsPage.qml:56
-#, fuzzy, kde-format
-#| msgid "High Contrast"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "High contrast"
-msgstr "Ardchodarsnacht"
+msgstr ""
 
 #: src/qml/SettingsPage.qml:82
-#, fuzzy, kde-format
-#| msgid "High Contrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Color contrast:"
-msgstr "Ardchodarsnacht"
+msgstr ""
 
 #: src/qml/SettingsPage.qml:100
 #, kde-format
@@ -537,11 +496,10 @@ msgid "Folders sidebar"
 msgstr ""
 
 #: src/qml/SettingsPage.qml:172
-#, fuzzy, kde-format
-#| msgid "Do &not scan these folders:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Do not scan these folders"
-msgstr "&Ná scan na fillteáin seo:"
+msgstr ""
 
 #: src/qml/SettingsPage.qml:175
 #, kde-format
@@ -550,11 +508,10 @@ msgid "Add…"
 msgstr ""
 
 #: src/qml/SettingsPage.qml:203
-#, fuzzy, kde-format
-#| msgid "Do &not scan these folders:"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Resume scanning this folder"
-msgstr "&Ná scan na fillteáin seo:"
+msgstr ""
 
 #: src/radialMap/map.cpp:63
 #, kde-format
@@ -566,167 +523,3 @@ msgid_plural ""
 "%1 files, with an average size of %2"
 msgstr[0] ""
 msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-
-#, fuzzy
-#~| msgid "Scannin&g"
-#~ msgctxt "@title"
-#~ msgid "Scanning"
-#~ msgstr "&Scanadh"
-
-#, fuzzy
-#~| msgid "&Appearance"
-#~ msgctxt "@title"
-#~ msgid "Appearance"
-#~ msgstr "&Cuma"
-
-#, fuzzy
-#~| msgid "Color scheme"
-#~ msgctxt "@title:group"
-#~ msgid "Color Scheme"
-#~ msgstr "Scéim dathanna"
-
-#, fuzzy
-#~| msgid "R&emove"
-#~ msgctxt "@action:button remove list entry"
-#~ msgid "Remove"
-#~ msgstr "B&ain"
-
-#~ msgctxt "Go to the last path viewed"
-#~ msgid "Back"
-#~ msgstr "Siar"
-
-#~ msgctxt "Go to forward in the history of paths viewed"
-#~ msgid "Forward"
-#~ msgstr "Ar Aghaidh"
-
-#~ msgid "&Scan"
-#~ msgstr "&Scan"
-
-#~ msgid "&View"
-#~ msgstr "&Amharc"
-
-#~ msgid "Main Toolbar"
-#~ msgstr "Príomhbharra Uirlisí"
-
-#~ msgid "Location Toolbar"
-#~ msgstr "Barra Uirlisí Suíomh"
-
-#~ msgid "View Toolbar"
-#~ msgstr "Barra Uirlisí Amhairc"
-
-#~ msgid "Settings - Filelight"
-#~ msgstr "Socruithe - Filelight"
-
-#~ msgid "&Add..."
-#~ msgstr "&Cuir Leis..."
-
-#~ msgid "Minimum font si&ze:"
-#~ msgstr "Clómhéid is &lú:"
-
-#~ msgid "Open &File Manager Here"
-#~ msgstr "Oscail &Bainisteoir Comhad Anseo"
-
-#, fuzzy
-#~| msgid "Rescan"
-#~ msgid "&Rescan"
-#~ msgstr "Athscan"
-
-#~ msgid "Go"
-#~ msgstr "Téigh"
-
-#~ msgid "Location Bar"
-#~ msgstr "Barra Suímh"
-
-#~ msgid "Scanning: %1"
-#~ msgstr "Ag scanadh: %1"
-
-#, fuzzy
-#~| msgctxt "&Up: /home/mxcl"
-#~| msgid "%1: %2"
-#~ msgctxt "Tooltip of used space on the partition, %1 is path, %2 is size"
-#~ msgid ""
-#~ "%1\n"
-#~ "Used: %2"
-#~ msgstr "%1: %2"
-
-#, fuzzy
-#~| msgctxt "&Up: /home/mxcl"
-#~| msgid "%1: %2"
-#~ msgctxt "Tooltip of free space on the partition, %1 is path, %2 is size"
-#~ msgid ""
-#~ "%1\n"
-#~ "Free: %2"
-#~ msgstr "%1: %2"
-
-#, fuzzy
-#~| msgctxt "Percent used disk space on the partition"
-#~| msgid "</b> (%1% Used)"
-#~ msgctxt "Percent used disk space on the partition"
-#~ msgid "<b>%1</b><br/>%2% Used"
-#~ msgstr "</b> (%1% Úsáidte)"
-
-#, fuzzy
-#~| msgctxt "Percent used disk space on the partition"
-#~| msgid "</b> (%1% Used)"
-#~ msgctxt "Percent used disk space on the partition"
-#~ msgid "<b>%1: %2</b><br/>%3% Used"
-#~ msgstr "</b> (%1% Úsáidte)"
-
-#~ msgid "%1 File"
-#~ msgid_plural "%1 Files"
-#~ msgstr[0] "%1 Chomhad"
-#~ msgstr[1] "%1 Chomhad"
-#~ msgstr[2] "%1 Chomhad"
-#~ msgstr[3] "%1 gComhad"
-#~ msgstr[4] "%1 Comhad"
-
-#~ msgid "File: %1"
-#~ msgid_plural "Files: %1"
-#~ msgstr[0] "Comhad: %1"
-#~ msgstr[1] "Comhaid: %1"
-#~ msgstr[2] "Comhaid: %1"
-#~ msgstr[3] "Comhaid: %1"
-#~ msgstr[4] "Comhaid: %1"
-
-#~ msgctxt "Free space on the disks/partitions"
-#~ msgid "Free"
-#~ msgstr "Saor"
-
-#~ msgctxt "Used space on the disks/partitions"
-#~ msgid "Used"
-#~ msgstr "Úsáidte"
-
-#, fuzzy
-#~| msgid ""
-#~| "(c) 2002-2004 Max Howell\n"
-#~| "                (c) 2008-2013 Martin T. Sandsmark"
-#~ msgid ""
-#~ "(c) 2002-2004 Max Howell\n"
-#~ "(c) 2008-2014 Martin T. Sandsmark"
-#~ msgstr ""
-#~ "© 2002-2004 Max Howell\n"
-#~ "                 © 2008-2013 Martin T. Sandsmark"
-
-#~ msgid "Configure Filelight..."
-#~ msgstr "Cumraigh Filelight..."
-
-#~ msgid "&Reset"
-#~ msgstr "Athshoc&raigh"
-
-#~ msgid "&Close"
-#~ msgstr "&Dún"
-
-#~ msgid "&Go"
-#~ msgstr "&Téigh"
-
-#~ msgid "André Somers"
-#~ msgstr "André Somers"
-
-#~ msgid "Stephanie James"
-#~ msgstr "Stephanie James"
-
-#~ msgid "Marcus Camen"
-#~ msgstr "Marcus Camen"
