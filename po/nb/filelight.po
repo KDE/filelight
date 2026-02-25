@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:42+0000\n"
-"PO-Revision-Date: 2026-02-08 17:57+0100\n"
+"PO-Revision-Date: 2026-02-23 23:10+0100\n"
 "Last-Translator: Kjetil Sorlund <translate@sorlund.no>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
 "Language: nb\n"
@@ -37,7 +37,7 @@ msgstr "Velg adresse som skal hoppes over"
 #: src/Config.cpp:73
 #, kde-format
 msgid "Folder already ignored"
-msgstr "Mappen blir allerede hoppet over"
+msgstr "Mappa blir allerede hoppet over"
 
 #: src/contextMenuContext.cpp:66
 #, kde-format
