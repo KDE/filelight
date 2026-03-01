@@ -112,6 +112,7 @@
     <p xml:lang="bg">Filelight е приложение за визуализиране на използването на диска на вашия компютър като изобразява папките с лесен за разбиране изглед от концентрични пръстени. Filelight улеснява освобождаването на място на диска!</p>
     <p xml:lang="ca">El Filelight és una aplicació per a visualitzar l'ús del disc a l'ordinador que mostra l'ús de les carpetes amb una visualització d'anells concèntrics fàcil d'entendre. El Filelight facilita alliberar espai!</p>
     <p xml:lang="ca-valencia">Filelight és una aplicació per a visualitzar l'ús del disc en l'ordinador que mostra l'ús de les carpetes amb una visualització d'anells concèntrics fàcil d'entendre. Filelight facilita alliberar espai!</p>
+    <p xml:lang="cs">Filelight je aplikace pro vizualizaci využití disku ve vašem počítači, která zobrazuje složky pomocí snadno srozumitelného zobrazení soustředných kruhů. Filelight usnadňuje uvolnění místa.</p>
     <p xml:lang="da">Filelight er et program til at visualisere diskforbruget på din computer ved at vise mapper på en letforståelige måde som koncentriske ringe. Filelight gør det simpelt at frigøre plads!</p>
     <p xml:lang="de">Filelight ist eine Anwendung zur Darstellung der Festplattennutzung auf dem Computer indem die Ordner mit einem einfach zu verstehenden Ring dargestellt werden. Filelight ermöglicht das einfache Aufräumen von Speicherplatz.</p>
     <p xml:lang="el">Το Filelight είναι μια εφαρμογή για την οπτικοποίηση της χρήσης του δίσκου στον υπολογιστή σας εμφανίζοντας τους φακέλους χρησιμοποιώντας μια εύκολη στην κατανόηση εμφάνιση ομόκεντρων δακτυλίων. Το Filelight κάνει απλή την απελευθέρωση αποθηκευτικού χώρου!</p>
@@ -210,6 +211,7 @@
       <li xml:lang="bg">Сканира не локални, отдалечени и сменяеми дискови устройства</li>
       <li xml:lang="ca">Explora discs locals, remots o extraïbles</li>
       <li xml:lang="ca-valencia">Explora discs locals, remots o extraïbles</li>
+      <li xml:lang="cs">Skenuje místní, vzdálené nebo vyměnitelné disky</li>
       <li xml:lang="da">Skan lokale-, fjerne- eller flytbare diske</li>
       <li xml:lang="de">Durchsehen von lokalen oder entfernten Festplatten oder Wechselmedien</li>
       <li xml:lang="el">Σάρωση τοπικών, απομακρυσμένων ή αφαιρούμενων δίσκων</li>
@@ -254,7 +256,7 @@
       <li xml:lang="bg">Подробна информация за файлове и папки</li>
       <li xml:lang="ca">Visualització d'informació detallada quant a fitxers i carpetes</li>
       <li xml:lang="ca-valencia">Visualització d'informació detallada quant a fitxers i carpetes</li>
-      <li xml:lang="cs">Zobrazit podrobné informace o souborech a složkách</li>
+      <li xml:lang="cs">Zobrazení podrobných informací o souborech a složkách</li>
       <li xml:lang="da">Vis detaljeret information om filer og mapper</li>
       <li xml:lang="de">Detaillierte Informationen über Dateien und Ordner beim Überfahren mit dem Mauszeiger anzeigen</li>
       <li xml:lang="el">Προβολή λεπτομερών πληροφοριών για αρχεία και καταλόγους</li>
@@ -299,7 +301,7 @@
       <li xml:lang="bg">Изтриване на файлове и папки, които заемат твърде много място на диска</li>
       <li xml:lang="ca">Supressió de fitxer o carpetes que ocupen massa espai</li>
       <li xml:lang="ca-valencia">Suprimiu el fitxer o carpetes que ocupen massa espai</li>
-      <li xml:lang="cs">Smažte soubory a složky, které zabírají příliš mnoho místa</li>
+      <li xml:lang="cs">Smazání souborů a složek, které zabírají příliš mnoho místa</li>
       <li xml:lang="da">Sletter filer og mapper, der bruger for meget plads</li>
       <li xml:lang="de">Dateien oder Ordner löschen, die zu viel Speicherplatz belegen</li>
       <li xml:lang="el">Διαγραφή αρχείων ή φακέλων που καταλαμβάνουν πάρα πολύ χώρο</li>
