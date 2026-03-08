@@ -120,7 +120,7 @@
 >Tarama</guilabel
 > ve <guilabel
 >Görünüm</guilabel
-> sekmeleridir. Aşağıda ayar sekmelerinin açıklamaları bulunmaktadır. &filelight; ayar penceresi, <menuchoice
+> sekmeleridir. Aşağıda ayar sekmelerinin açıklamaları bulunmaktadır. &filelight; ayar iletişim kutusu, <menuchoice
 ><guimenu
 >Ayarlar</guimenu
 ><guimenuitem
@@ -268,7 +268,7 @@
 
 <sect1 id="scanning-folders">
 <title
->Klasörleri tarama</title>
+>Klasörleri Tarama</title>
 <para
 >Bir klasörü taramak, içeriğini bir dosya adı olarak gösterecektir. Bir klasörü taramak için tarama menüsünü kullanın veya doğrudan konum çubuğuna bir &URL; yazın. </para>
 </sect1>
@@ -563,11 +563,11 @@
       <title
 >&filelight;</title>
       <para
->Program telif hakkı 2006 Max B. Howell <email
+>Program telif hakkı © 2006 Max B. Howell <email
 >max.howell@methylblue.com</email
 ></para>
       <para
->Program telif hakkı 2008–2013 Martin Sandsmark <email
+>Program telif hakkı © 2008–2013 Martin Sandsmark <email
 >martin.sandsmark@kde.org</email
 ></para
 >&underGPL; </sect1>
