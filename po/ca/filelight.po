@@ -541,23 +541,3 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 fitxers, amb una mida mitjana de %2"
-
-#~ msgctxt "@title"
-#~ msgid "Scanning"
-#~ msgstr "Exploració"
-
-#~ msgctxt "@title"
-#~ msgid "Appearance"
-#~ msgstr "Aparença"
-
-#~ msgctxt "@title:group"
-#~ msgid "Color Scheme"
-#~ msgstr "Esquema de color"
-
-#~ msgctxt "@action:button remove list entry"
-#~ msgid "Remove"
-#~ msgstr "Elimina"
-
-#~ msgctxt "@checkbox"
-#~ msgid "Scan across filesystem boundaries"
-#~ msgstr "Explora a través dels límits dels sistemes de fitxers"
