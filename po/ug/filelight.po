@@ -8,34 +8,35 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 00:47+0000\n"
-"PO-Revision-Date: 2013-09-08 07:05+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"PO-Revision-Date: 2026-04-15 13:31-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "ئابدۇقادىر ئابلىز, غەيرەت كەنجى"
+msgstr "ئابدۇقادىر ئابلىز، غەيرەت كەنجى"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "sahran.ug@gmail.com,  gheyret@gmail.com"
+msgstr "sahranbay@gmail.com, gheyret@gmail.com"
 
 #: src/Config.cpp:62
 #, kde-format
 msgid "Select path to ignore"
-msgstr ""
+msgstr "پەرۋا قىلمايدىغان ئورۇن تاللىنىدۇ"
 
 #: src/Config.cpp:75
 #, kde-format
 msgid "Folder already ignored"
-msgstr ""
+msgstr "پەرۋا قىلمايدىغان قىسقۇچ"
 
 #: src/contextMenuContext.cpp:66
 #, kde-format
@@ -43,11 +44,13 @@ msgid ""
 "<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
 "b> deleted.</qt>"
 msgstr ""
+"<i>«%1»</i><qt> دىكى قىسقۇچ <b>قايتىلانما</b> ۋە <b>مەڭگۈلۈك</b> ئۆچۈرۈلىدۇ."
+"</qt>"
 
 #: src/contextMenuContext.cpp:67
 #, kde-format
 msgid "<qt><i>'%1'</i> will be <b>permanently</b> deleted.</qt>"
-msgstr ""
+msgstr "<i>«%1»</i><qt> <b>مەڭگۈلۈك</b> ئۆچۈرۈلىدۇ.</qt>"
 
 #: src/contextMenuContext.cpp:68
 #, kde-format
@@ -55,16 +58,15 @@ msgid "&Delete"
 msgstr "ئۆچۈر(&D)"
 
 #: src/contextMenuContext.cpp:95
-#, fuzzy, kde-format
-#| msgid "Error while deleting"
+#, kde-format
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
-msgstr "ئۆچۈرۈشتە خاتالىق كۆرۈلدى"
+msgstr "ئۆچۈرۈۋاتقاندا خاتالىق كۆرۈلدى: %1"
 
 #: src/main.cpp:91
 #, kde-format
 msgid "Graphical disk-usage information"
-msgstr ""
+msgstr "گىرافىكىلىق دىسكا ئىشلىتىلىش ئۇچۇرى"
 
 #: src/main.cpp:93
 #, kde-format
@@ -73,16 +75,19 @@ msgid ""
 "(C) 2008-2014 Martin Sandsmark\n"
 "(C) 2017-2022 Harald Sitter"
 msgstr ""
+"(C) 2006 Max Howell\n"
+"(C) 2008-2014 Martin Sandsmark\n"
+"(C) 2017-2022 Harald Sitter"
 
 #: src/main.cpp:98
 #, kde-format
 msgid "Laurent Montel"
-msgstr ""
+msgstr "Laurent Montel"
 
 #: src/main.cpp:98 src/main.cpp:99
 #, kde-format
 msgid "Maintainer"
-msgstr "مەسئۇل كىشى"
+msgstr "ئاسرىغۇچى"
 
 #: src/main.cpp:99
 #, kde-format
@@ -92,22 +97,22 @@ msgstr "Martin Sandsmark"
 #: src/main.cpp:100
 #, kde-format
 msgid "Harald Sitter"
-msgstr ""
+msgstr "Harald Sitter"
 
 #: src/main.cpp:100
 #, kde-format
 msgid "QtQuick Port"
-msgstr ""
+msgstr "QtQuick ئېغىزى"
 
 #: src/main.cpp:101
 #, kde-format
 msgid "Max Howell"
-msgstr ""
+msgstr "Max Howell"
 
 #: src/main.cpp:101
 #, kde-format
 msgid "Original author"
-msgstr "ئەسلى ئاپتور"
+msgstr "ئەسلى يازغۇچى"
 
 #: src/main.cpp:102
 #, kde-format
@@ -117,17 +122,17 @@ msgstr "Lukas Appelhans"
 #: src/main.cpp:102
 #, kde-format
 msgid "Help and support"
-msgstr ""
+msgstr "ياردەم ۋە قوللاش"
 
 #: src/main.cpp:103
 #, kde-format
 msgid "Steffen Gerlach"
-msgstr ""
+msgstr "Steffen Gerlach"
 
 #: src/main.cpp:103
 #, kde-format
 msgid "Inspiration"
-msgstr ""
+msgstr "ئىلھام"
 
 #: src/main.cpp:104
 #, kde-format
@@ -137,12 +142,12 @@ msgstr "Mike Diehl"
 #: src/main.cpp:104
 #, kde-format
 msgid "Original documentation"
-msgstr ""
+msgstr "ئەسلى قوللانما"
 
 #: src/main.cpp:105
 #, kde-format
 msgid "Sune Vuorela"
-msgstr ""
+msgstr "Sune Vuorela"
 
 #: src/main.cpp:105 src/main.cpp:106
 #, kde-format
@@ -157,172 +162,164 @@ msgstr "Nuno Pinheiro"
 #: src/main.cpp:114
 #, kde-format
 msgid "Path or URL to scan"
-msgstr ""
+msgstr "تارايدىغان يول ياكى تور ئادرېس"
 
 #: src/main.cpp:114
 #, kde-format
 msgid "[url]"
-msgstr ""
+msgstr "[url]"
 
 #: src/mainContext.cpp:66
 #, kde-format
 msgid "Select Folder to Scan"
-msgstr ""
+msgstr "تارايدىغان قىسقۇچ تاللىنىدۇ"
 
 #: src/mainContext.cpp:118
 #, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr ""
+msgstr "كىرگۈزۈلگەن تور ئادرېسىنى تەھلىل قىلالمىدى"
 
 #: src/mainContext.cpp:118
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "ئۇ ئىناۋەتسىز."
 
 #: src/mainContext.cpp:120
 #, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr ""
+msgstr "Filelight پەقەت مۇتلەق يولنىلا قوللايدۇ"
 
 #: src/mainContext.cpp:120
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "مەسىلەن: /%1"
 
 #: src/mainContext.cpp:122
 #, kde-format
 msgid "Folder not found: %1"
-msgstr ""
+msgstr "قىسقۇچ تېپىلمىدى: %1"
 
 #: src/mainContext.cpp:124
 #, kde-format
 msgid "Unable to enter: %1"
-msgstr ""
+msgstr "كىرەلمىدى: %1"
 
 #: src/mainContext.cpp:124
 #, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
+msgstr "بۇ ئورۇننى زىيارەت قىلىش ئىجازىتىڭىز يوق."
 
 #: src/qml/GlobalMenu.qml:15
-#, fuzzy, kde-format
-#| msgid "&Scan"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Scan"
-msgstr "شويلىلا(&S)"
+msgstr "تەكشۈر"
 
 #: src/qml/GlobalMenu.qml:27
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Settings"
-msgstr ""
+msgstr "تەڭشەك"
 
 #: src/qml/GlobalMenu.qml:34
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Help"
-msgstr ""
+msgstr "ياردەم"
 
 #: src/qml/main.qml:41
-#, fuzzy, kde-format
-#| msgid "Scan Folder"
+#, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
-msgstr "قىسقۇچ تەكشۈر"
+msgstr "باش قىسقۇچ"
 
 #: src/qml/main.qml:48
-#, fuzzy, kde-format
-#| msgid "Scan Folder"
+#, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
-msgstr "قىسقۇچ تەكشۈر"
+msgstr "غول مۇندەرىجە"
 
 #: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
-msgstr ""
+msgstr "قىسقۇچ تاللا…"
 
 #: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
-msgstr ""
+msgstr "باشقا قىسقۇچ…"
 
 #: src/qml/main.qml:63
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
-msgstr ""
+msgstr "چىكىن"
 
 #: src/qml/main.qml:71
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
-msgstr ""
+msgstr "سەپلە…"
 
 #: src/qml/main.qml:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr ""
+msgstr "سەپلە"
 
 #: src/qml/main.qml:88
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
-msgstr ""
+msgstr "قوللانما ئاچ"
 
 #: src/qml/main.qml:96
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About"
-msgstr ""
+msgstr "ھەققىدە"
 
 #: src/qml/main.qml:173
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
-msgstr ""
+msgstr "تاراشتىن چېكىنەلمىدى"
 
 #: src/qml/MapPage.qml:44
-#, fuzzy, kde-format
-#| msgid "No files."
+#, kde-format
 msgctxt "@info:status"
 msgid "No files shown."
-msgstr "ھۆججەت يوق."
+msgstr "كۆرسىتىدىغان ھۆججەت يوق."
 
 #: src/qml/MapPage.qml:45
-#, fuzzy, kde-format
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "1 file shown"
 msgid_plural "%1 files shown"
-msgstr[0] "%1 ھۆججەت"
+msgstr[0] "%1 ھۆججەتنى كۆرسەتتى"
 
 #: src/qml/MapPage.qml:53
 #, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
-msgstr ""
+msgstr "ئىخچام كۆرۈنۈشكە يۆتكەل"
 
 #: src/qml/MapPage.qml:61
 #, kde-format
 msgctxt "@action"
 msgid "Up"
-msgstr ""
+msgstr "ئۈستى"
 
 #: src/qml/MapPage.qml:70
-#, fuzzy, kde-format
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action"
 msgid "Rescan"
 msgstr "قايتا تەكشۈر"
 
 #: src/qml/MapPage.qml:79
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "توختا"
@@ -331,74 +328,65 @@ msgstr "توختا"
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
-msgstr ""
+msgstr "يېقىنلات"
 
 #: src/qml/MapPage.qml:97
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
-msgstr ""
+msgstr "يىراقلات"
 
 #: src/qml/MapPage.qml:131 src/qml/MapPage.qml:263
-#, fuzzy, kde-format
-#| msgctxt "Scan/open the path of the selected element"
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
-msgstr "ئاچ(&O)"
+msgstr "ئاچ"
 
 #: src/qml/MapPage.qml:139 src/qml/MapPage.qml:271
 #, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
-msgstr ""
+msgstr "بۇ يەردە تېرمىنالنى ئاچ"
 
 #: src/qml/MapPage.qml:147
 #, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
-msgstr ""
+msgstr "بۇ جايدا خەرىتىنى مەركەزلەشتۈر"
 
 #: src/qml/MapPage.qml:158 src/qml/MapPage.qml:279
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
-msgstr ""
+msgstr "تارىمايدىغان تىزىمغا قوش"
 
 #: src/qml/MapPage.qml:166
-#, fuzzy, kde-format
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "قايتا تەكشۈر"
 
 #: src/qml/MapPage.qml:173 src/qml/MapPage.qml:286
-#, fuzzy, kde-format
-#| msgid "&Copy to clipboard"
+#, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
-msgstr "چاپلاش تاختىسىغا كۆچۈر(&C)"
+msgstr "چاپلاش تاختىسىغا كۆچۈر"
 
 #: src/qml/MapPage.qml:181 src/qml/MapPage.qml:294
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
-msgstr "ئۆچۈر(&D)"
+msgstr "ئۆچۈر"
 
 #: src/qml/MapPage.qml:348
-#, fuzzy, kde-format
-#| msgid "%1 File"
-#| msgid_plural "%1 Files"
+#, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
 msgid_plural "%1 Files (%2%)"
-msgstr[0] "%1 ھۆججەت"
+msgstr[0] "%1 ھۆججەت (%2%)"
 
 #: src/qml/MapPage.qml:350
-#, fuzzy, kde-format
-#| msgid "%1 File"
-#| msgid_plural "%1 Files"
+#, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
 msgid_plural "%1 Files"
@@ -408,33 +396,31 @@ msgstr[0] "%1 ھۆججەت"
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
-msgstr ""
+msgstr "چېكىلسە ئاتا مۇندەرىجىگە يۆتكىلىدۇ"
 
 #: src/qml/MapPage.qml:577
-#, fuzzy, kde-format
-#| msgid "%1 File"
-#| msgid_plural "%1 Files"
+#, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
 msgid_plural "%1 Files, %2"
-msgstr[0] "%1 ھۆججەت"
+msgstr[0] "%1 ھۆججەت، %2"
 
 #: src/qml/MapPage.qml:586
 #, kde-format
 msgid "No data available"
-msgstr ""
+msgstr "ئىشلەتكىلى بولىدىغان ئۇچۇر يوق"
 
 #: src/qml/OverviewPage.qml:14
 #, kde-format
 msgctxt "@title"
 msgid "Overview"
-msgstr ""
+msgstr "ئىخچام كۆرۈنۈش"
 
 #: src/qml/OverviewPage.qml:42
 #, kde-format
 msgctxt "@title"
 msgid "Welcome to Filelight"
-msgstr ""
+msgstr "Filelight غا خۇش كەپسىز"
 
 #: src/qml/OverviewPage.qml:51
 #, kde-format
@@ -442,6 +428,8 @@ msgctxt "@info"
 msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space."
 msgstr ""
+"Filelight دىسكا ئىشلىتىلىشىنى تەھلىل قىلالايدۇ، شۇڭا نېمىلەرنىڭ دىسكا "
+"بوشلۇقىنى كۆپ ئىگىلىگەنلىكىنى كۆرەلەيسىز."
 
 #: src/qml/OverviewPage.qml:52
 #, kde-format
@@ -450,87 +438,87 @@ msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space. "
 "Choose a folder to proceed:"
 msgstr ""
+"Filelight دىسكا ئىشلىتىلىشىنى تەھلىل قىلالايدۇ، شۇڭا نېمىلەرنىڭ دىسكا "
+"بوشلۇقىنى كۆپ ئىگىلىگەنلىكىنى كۆرەلەيسىز. مەشغۇلاتنى  داۋاملاشتۇرىدىغان "
+"قىسقۇچ تاللىنىدۇ:"
 
 #: src/qml/SettingsPage.qml:51
 #, kde-format
 msgctxt "@title:group"
 msgid "Colors:"
-msgstr ""
+msgstr "رەڭ:"
 
 #: src/qml/SettingsPage.qml:54
 #, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "From system color scheme"
-msgstr ""
+msgstr "سىستېما رەڭ لايىھەسىدىن"
 
 #: src/qml/SettingsPage.qml:55
-#, fuzzy, kde-format
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "Rainbow"
 msgstr "ھەسەن-ھۈسەن"
 
 #: src/qml/SettingsPage.qml:56
-#, fuzzy, kde-format
-#| msgid "High Contrast"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "High contrast"
-msgstr "يۇقىرى ئاق-قارىلىقى"
+msgstr "يۇقىرى سېلىشتۇرما"
 
 #: src/qml/SettingsPage.qml:82
-#, fuzzy, kde-format
-#| msgid "High Contrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Color contrast:"
-msgstr "يۇقىرى ئاق-قارىلىقى"
+msgstr "رەڭ سېلىشتۇرمىسى:"
 
 #: src/qml/SettingsPage.qml:100
 #, kde-format
 msgctxt "@title:group Show small files/show folders sidebar"
 msgid "Show:"
-msgstr ""
+msgstr "كۆرسەت:"
 
 #: src/qml/SettingsPage.qml:102
 #, kde-format
 msgctxt "@option:check Show small files"
 msgid "Small files"
-msgstr ""
+msgstr "كىچىك ھۆججەت"
 
 #: src/qml/SettingsPage.qml:114
 #, kde-format
 msgctxt "@option:check Show files on other disks"
 msgid "Files on other disks"
-msgstr ""
+msgstr "باشقا دىسكىدىكى ھۆججەت"
 
 #: src/qml/SettingsPage.qml:128
 #, kde-format
 msgctxt "@option:check Show files on remote filesystems"
 msgid "Files on remote filesystems"
-msgstr ""
+msgstr "كۆچمە ھۆججەت سىستېمىسىدىكى ھۆججەت"
 
 #: src/qml/SettingsPage.qml:140
 #, kde-format
 msgctxt "@option:check Show folders sidebar"
 msgid "Folders sidebar"
-msgstr ""
+msgstr "قىسقۇچ يان بالداق"
 
 #: src/qml/SettingsPage.qml:172
 #, kde-format
 msgctxt "@title:group"
 msgid "Do not scan these folders"
-msgstr ""
+msgstr "بۇ قىسقۇچنى تارىمايدۇ"
 
 #: src/qml/SettingsPage.qml:175
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
-msgstr ""
+msgstr "قوش…قوش…"
 
 #: src/qml/SettingsPage.qml:203
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Resume scanning this folder"
-msgstr ""
+msgstr "بۇ قىسقۇچنى تاراشنى داۋاملاشتۇر"
 
 #: src/radialMap/map.cpp:63
 #, kde-format
@@ -541,32 +529,29 @@ msgid_plural ""
 "\n"
 "%1 files, with an average size of %2"
 msgstr[0] ""
+"\n"
+"%1 ھۆججەت، ئوتتۇرىچە چوڭلۇقى %2"
 
-#, fuzzy
 #~| msgid "Scanning: %1"
 #~ msgctxt "@title"
 #~ msgid "Scanning"
 #~ msgstr "تەكشۈرۈۋاتىدۇ: %1"
 
-#, fuzzy
 #~| msgid "&Appearance"
 #~ msgctxt "@title"
 #~ msgid "Appearance"
 #~ msgstr "كۆرۈنۈشى(&A)"
 
-#, fuzzy
 #~| msgid "Color scheme"
 #~ msgctxt "@title:group"
 #~ msgid "Color Scheme"
 #~ msgstr "رەڭ نۇسخىسى"
 
-#, fuzzy
 #~| msgid "R&emove"
 #~ msgctxt "@action:button remove list entry"
 #~ msgid "Remove"
 #~ msgstr "چىقىرىۋەت(&E)"
 
-#, fuzzy
 #~| msgid "Scan Folder"
 #~ msgctxt "@action"
 #~ msgid "Scan Folder"
@@ -598,7 +583,6 @@ msgstr[0] ""
 #~ msgid "&Add..."
 #~ msgstr "قوش(&A)…"
 
-#, fuzzy
 #~| msgid "Rescan"
 #~ msgid "&Rescan"
 #~ msgstr "قايتا تەكشۈر"
@@ -609,7 +593,6 @@ msgstr[0] ""
 #~ msgid "Location Bar"
 #~ msgstr "ئادرېس ئىستونى"
 
-#, fuzzy
 #~| msgctxt "&Up: /home/mxcl"
 #~| msgid "%1: %2"
 #~ msgctxt "Tooltip of used space on the partition, %1 is path, %2 is size"
@@ -618,7 +601,6 @@ msgstr[0] ""
 #~ "Used: %2"
 #~ msgstr "%1: %2"
 
-#, fuzzy
 #~| msgctxt "&Up: /home/mxcl"
 #~| msgid "%1: %2"
 #~ msgctxt "Tooltip of free space on the partition, %1 is path, %2 is size"
