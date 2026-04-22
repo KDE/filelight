@@ -93,7 +93,7 @@ Kirigami.ApplicationWindow {
         id: aboutAction
         displayHint: Kirigami.DisplayHint.AlwaysHide
         icon.name: "filelight"
-        text: i18nc("@action opens about app page", "About")
+        text: i18nc("@action opens about app page", "About Filelight")
         onTriggered: { pageStack.layers.push("qrc:/ui/AboutPage.qml") }
     }
 
