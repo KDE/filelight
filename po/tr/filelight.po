@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeutils-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:47+0000\n"
+"POT-Creation-Date: 2026-04-23 00:47+0000\n"
 "PO-Revision-Date: 2026-01-29 16:23+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -280,10 +280,12 @@ msgid "Open Handbook"
 msgstr "El Kitabını Aç"
 
 #: src/qml/main.qml:96
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Welcome to Filelight"
 msgctxt "@action opens about app page"
-msgid "About"
-msgstr "Hakkında"
+msgid "About Filelight"
+msgstr "Dosya Feneri’ne Hoş Geldiniz"
 
 #: src/qml/main.qml:173
 #, kde-format
@@ -541,6 +543,10 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 dosya, ortalama boyut %2"
+
+#~ msgctxt "@action opens about app page"
+#~ msgid "About"
+#~ msgstr "Hakkında"
 
 #~ msgctxt "@title"
 #~ msgid "Scanning"

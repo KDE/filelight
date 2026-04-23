@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:47+0000\n"
+"POT-Creation-Date: 2026-04-23 00:47+0000\n"
 "PO-Revision-Date: 2013-06-27 03:35+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -290,10 +290,11 @@ msgid "Open Handbook"
 msgstr ""
 
 #: src/qml/main.qml:96
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Filelight"
 msgctxt "@action opens about app page"
-msgid "About"
-msgstr ""
+msgid "About Filelight"
+msgstr "Filelight"
 
 #: src/qml/main.qml:173
 #, kde-format

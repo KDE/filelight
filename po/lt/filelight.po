@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:47+0000\n"
+"POT-Creation-Date: 2026-04-23 00:47+0000\n"
 "PO-Revision-Date: 2026-02-02 23:15+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -280,10 +280,12 @@ msgid "Open Handbook"
 msgstr "Atverti žinyną"
 
 #: src/qml/main.qml:96
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Welcome to Filelight"
 msgctxt "@action opens about app page"
-msgid "About"
-msgstr "Apie"
+msgid "About Filelight"
+msgstr "Jus sveikina Filelight"
 
 #: src/qml/main.qml:173
 #, kde-format
@@ -555,6 +557,10 @@ msgstr[2] ""
 msgstr[3] ""
 "\n"
 "%1 failas, vidutinis dydis – %2"
+
+#~ msgctxt "@action opens about app page"
+#~ msgid "About"
+#~ msgstr "Apie"
 
 #~ msgctxt "@title"
 #~ msgid "Scanning"

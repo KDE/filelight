@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:47+0000\n"
+"POT-Creation-Date: 2026-04-23 00:47+0000\n"
 "PO-Revision-Date: 2026-01-29 14:49+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -280,10 +280,12 @@ msgid "Open Handbook"
 msgstr "Obre el manual"
 
 #: src/qml/main.qml:96
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Welcome to Filelight"
 msgctxt "@action opens about app page"
-msgid "About"
-msgstr "Quant al"
+msgid "About Filelight"
+msgstr "Us donem la benvinguda al Filelight"
 
 #: src/qml/main.qml:173
 #, kde-format
@@ -541,6 +543,10 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 fitxers, amb una mida mitjana de %2"
+
+#~ msgctxt "@action opens about app page"
+#~ msgid "About"
+#~ msgstr "Quant al"
 
 #~ msgctxt "@title"
 #~ msgid "Scanning"

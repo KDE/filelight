@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:47+0000\n"
+"POT-Creation-Date: 2026-04-23 00:47+0000\n"
 "PO-Revision-Date: 2009-02-19 07:06-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -272,7 +272,7 @@ msgstr ""
 #: src/qml/main.qml:96
 #, kde-format
 msgctxt "@action opens about app page"
-msgid "About"
+msgid "About Filelight"
 msgstr ""
 
 #: src/qml/main.qml:173

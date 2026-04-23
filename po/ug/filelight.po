@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:47+0000\n"
+"POT-Creation-Date: 2026-04-23 00:47+0000\n"
 "PO-Revision-Date: 2026-04-15 13:31-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -276,10 +276,12 @@ msgid "Open Handbook"
 msgstr "قوللانما ئاچ"
 
 #: src/qml/main.qml:96
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Welcome to Filelight"
 msgctxt "@action opens about app page"
-msgid "About"
-msgstr "ھەققىدە"
+msgid "About Filelight"
+msgstr "Filelight غا خۇش كەپسىز"
 
 #: src/qml/main.qml:173
 #, kde-format
@@ -531,6 +533,10 @@ msgid_plural ""
 msgstr[0] ""
 "\n"
 "%1 ھۆججەت، ئوتتۇرىچە چوڭلۇقى %2"
+
+#~ msgctxt "@action opens about app page"
+#~ msgid "About"
+#~ msgstr "ھەققىدە"
 
 #~| msgid "Scanning: %1"
 #~ msgctxt "@title"

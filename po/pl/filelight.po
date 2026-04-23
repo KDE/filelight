@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:47+0000\n"
+"POT-Creation-Date: 2026-04-23 00:47+0000\n"
 "PO-Revision-Date: 2026-04-04 19:09+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -278,10 +278,12 @@ msgid "Open Handbook"
 msgstr "Otwórz podręcznik"
 
 #: src/qml/main.qml:96
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Welcome to Filelight"
 msgctxt "@action opens about app page"
-msgid "About"
-msgstr "O programie"
+msgid "About Filelight"
+msgstr "Witaj w Filelight"
 
 #: src/qml/main.qml:173
 #, kde-format
@@ -546,6 +548,10 @@ msgstr[1] ""
 msgstr[2] ""
 "\n"
 "%1 plików o przeciętnym rozmiarze %2"
+
+#~ msgctxt "@action opens about app page"
+#~ msgid "About"
+#~ msgstr "O programie"
 
 #~ msgctxt "@title"
 #~ msgid "Scanning"

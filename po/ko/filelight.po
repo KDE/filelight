@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:47+0000\n"
+"POT-Creation-Date: 2026-04-23 00:47+0000\n"
 "PO-Revision-Date: 2026-02-04 00:38+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -276,10 +276,12 @@ msgid "Open Handbook"
 msgstr "도움말 열기"
 
 #: src/qml/main.qml:96
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Welcome to Filelight"
 msgctxt "@action opens about app page"
-msgid "About"
-msgstr "정보"
+msgid "About Filelight"
+msgstr "Filelight에 오신 것을 환영합니다"
 
 #: src/qml/main.qml:173
 #, kde-format
@@ -530,6 +532,10 @@ msgid_plural ""
 msgstr[0] ""
 "\n"
 "파일 %1개, 평균 크기 %2"
+
+#~ msgctxt "@action opens about app page"
+#~ msgid "About"
+#~ msgstr "정보"
 
 #~ msgctxt "@title"
 #~ msgid "Scanning"
