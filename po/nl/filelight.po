@@ -8,20 +8,20 @@
 # Bram Schoenmakers <bramschoenmakers@kde.nl>, 2004, 2005.
 # Rinse de Vries <rinsedevries@kde.nl>, 2005, 2006.
 # Rinse de Vries <RinseDeVries@home.nl>, 2005.
-# SPDX-FileCopyrightText: 2010, 2011, 2013, 2015, 2016, 2017, 2018, 2020, 2021, 2022, 2024, 2025, 2026 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2010-2011, 2013, 2015-2018, 2020-2022, 2024-2026 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-23 00:47+0000\n"
-"PO-Revision-Date: 2026-01-29 15:18+0100\n"
+"PO-Revision-Date: 2026-04-23 18:46+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 26.04.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -282,12 +282,10 @@ msgid "Open Handbook"
 msgstr "Handboek openen"
 
 #: src/qml/main.qml:96
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Welcome to Filelight"
+#, kde-format
 msgctxt "@action opens about app page"
 msgid "About Filelight"
-msgstr "Welkom bij Filelight"
+msgstr "Info over Filelight"
 
 #: src/qml/main.qml:173
 #, kde-format

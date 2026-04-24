@@ -277,12 +277,10 @@ msgid "Open Handbook"
 msgstr "Otvoriť príručku"
 
 #: src/qml/main.qml:96
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Welcome to Filelight"
+#, kde-format
 msgctxt "@action opens about app page"
 msgid "About Filelight"
-msgstr "Vitajte vo Filelight"
+msgstr "O Filelight"
 
 #: src/qml/main.qml:173
 #, kde-format
