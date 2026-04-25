@@ -278,12 +278,10 @@ msgid "Open Handbook"
 msgstr "打开使用手册"
 
 #: src/qml/main.qml:96
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Welcome to Filelight"
+#, kde-format
 msgctxt "@action opens about app page"
 msgid "About Filelight"
-msgstr "欢迎使用 Filelight"
+msgstr ""
 
 #: src/qml/main.qml:173
 #, kde-format
@@ -532,7 +530,3 @@ msgid_plural ""
 msgstr[0] ""
 "\n"
 "%1 个文件，平均大小为 %2"
-
-#~ msgctxt "@action opens about app page"
-#~ msgid "About"
-#~ msgstr "关于"
