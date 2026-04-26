@@ -12,9 +12,9 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-23 00:47+0000\n"
-"PO-Revision-Date: 2026-01-30 07:49+0100\n"
+"PO-Revision-Date: 2026-04-24 08:07+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: \n"
+"Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 "X-Text-Markup: kde4\n"
 
 #, kde-format
@@ -285,12 +285,10 @@ msgid "Open Handbook"
 msgstr "Ouvrir un manuel utilisateur "
 
 #: src/qml/main.qml:96
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Welcome to Filelight"
+#, kde-format
 msgctxt "@action opens about app page"
 msgid "About Filelight"
-msgstr "Bienvenue dans Filelight"
+msgstr "À propos de Filelight"
 
 #: src/qml/main.qml:173
 #, kde-format
