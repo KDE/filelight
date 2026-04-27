@@ -538,7 +538,3 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 filer, med gjennomsnittlig størrelse på %2"
-
-#~ msgctxt "@action opens about app page"
-#~ msgid "About"
-#~ msgstr "Om"
