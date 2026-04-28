@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-23 00:47+0000\n"
-"PO-Revision-Date: 2026-04-18 15:45+0200\n"
+"PO-Revision-Date: 2026-04-27 21:53+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.0\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -276,12 +276,10 @@ msgid "Open Handbook"
 msgstr "Opna handbok"
 
 #: src/qml/main.qml:96
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Welcome to Filelight"
+#, kde-format
 msgctxt "@action opens about app page"
 msgid "About Filelight"
-msgstr "Velkommen til Filelight"
+msgstr "Om Filelight"
 
 #: src/qml/main.qml:173
 #, kde-format
