@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-23 00:47+0000\n"
-"PO-Revision-Date: 2026-02-02 13:26+0000\n"
+"PO-Revision-Date: 2026-04-29 15:54+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -276,12 +276,10 @@ msgid "Open Handbook"
 msgstr "Opna handbókina"
 
 #: src/qml/main.qml:96
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Welcome to Filelight"
+#, kde-format
 msgctxt "@action opens about app page"
 msgid "About Filelight"
-msgstr "Velkomin í Filelight"
+msgstr "Um Filelight"
 
 #: src/qml/main.qml:173
 #, kde-format
