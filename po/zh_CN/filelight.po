@@ -281,7 +281,7 @@ msgstr "打开使用手册"
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About Filelight"
-msgstr ""
+msgstr "关于 Filelight"
 
 #: src/qml/main.qml:173
 #, kde-format
