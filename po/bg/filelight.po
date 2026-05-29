@@ -538,23 +538,3 @@ msgstr[0] ""
 msgstr[1] ""
 "\n"
 "%1 файла със среден размер %2"
-
-#~ msgctxt "@title"
-#~ msgid "Scanning"
-#~ msgstr "Сканиране"
-
-#~ msgctxt "@title"
-#~ msgid "Appearance"
-#~ msgstr "Външен вид"
-
-#~ msgctxt "@title:group"
-#~ msgid "Color Scheme"
-#~ msgstr "Цветова схема"
-
-#~ msgctxt "@action:button remove list entry"
-#~ msgid "Remove"
-#~ msgstr "Премахване"
-
-#~ msgctxt "@checkbox"
-#~ msgid "Scan across filesystem boundaries"
-#~ msgstr "Претърсване в рамките на файловата система"
