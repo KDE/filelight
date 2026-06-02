@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-23 00:47+0000\n"
-"PO-Revision-Date: 2026-04-15 13:31-0400\n"
+"PO-Revision-Date: 2026-05-30 16:26-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
@@ -213,7 +213,7 @@ msgstr "بۇ ئورۇننى زىيارەت قىلىش ئىجازىتىڭىز ي�
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Scan"
-msgstr "تەكشۈر"
+msgstr "تارا"
 
 #: src/qml/GlobalMenu.qml:27
 #, kde-format
@@ -276,12 +276,10 @@ msgid "Open Handbook"
 msgstr "قوللانما ئاچ"
 
 #: src/qml/main.qml:96
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Welcome to Filelight"
+#, kde-format
 msgctxt "@action opens about app page"
 msgid "About Filelight"
-msgstr "Filelight غا خۇش كەپسىز"
+msgstr "Filelight ھەققىدە"
 
 #: src/qml/main.qml:173
 #, kde-format
@@ -514,7 +512,7 @@ msgstr "بۇ قىسقۇچنى تارىمايدۇ"
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
-msgstr "قوش…قوش…"
+msgstr "قوش…"
 
 #: src/qml/SettingsPage.qml:203
 #, kde-format
