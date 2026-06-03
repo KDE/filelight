@@ -56,6 +56,7 @@
   <name xml:lang="sv">Filelight</name>
   <name xml:lang="ta">ஃபைல்-லைட்</name>
   <name xml:lang="tr">Dosya Feneri</name>
+  <name xml:lang="ug">Filelight دىسكا ئىشلىتىلىشىنى كۆرسەتكۈچ</name>
   <name xml:lang="uk">Filelight</name>
   <name xml:lang="zh-CN">Filelight 磁盘占用查看器</name>
   <name xml:lang="zh-TW">Filelight</name>
@@ -102,6 +103,7 @@
   <summary xml:lang="sv">Visa diskanvändning och ta bort oanvända filer</summary>
   <summary xml:lang="ta">வட்டுப் பயன்பாட்டைக் காட்டி, தேவையில்லாத கோப்புகளை அகற்ற உதவும்</summary>
   <summary xml:lang="tr">Disk kullanımına bakın ve kullanılmayan dosyaları silin</summary>
+  <summary xml:lang="ug">دىسكا ئىشلىتىلىشىنى كۆرسىتىپ ۋە ئىشلىتىلمىگەن ھۆججەتنى ئۆچۈرىدۇ</summary>
   <summary xml:lang="uk">Показ даних щодо використання диска і вилучення зайвих файлів</summary>
   <summary xml:lang="zh-CN">显示磁盘使用率并删除未使用的文件</summary>
   <summary xml:lang="zh-TW">顯示磁碟用量、刪除不需要的檔案</summary>
@@ -204,6 +206,7 @@
     <p xml:lang="sv">Funktioner:</p>
     <p xml:lang="ta">அம்சங்கள்:</p>
     <p xml:lang="tr">Özellikler:</p>
+    <p xml:lang="ug">ئىقتىدار:</p>
     <p xml:lang="uk">Можливості:</p>
     <p xml:lang="zh-CN">功能：</p>
     <p xml:lang="zh-TW">功能：</p>
@@ -441,6 +444,7 @@
       <li xml:lang="sv">Anpassningsbara färgscheman</li>
       <li xml:lang="ta">மாற்றியமைக்க‍க்கூடிய நிறத்திட்டங்கள்</li>
       <li xml:lang="tr">Yapılandırılabilir renk şemaları</li>
+      <li xml:lang="ug">سەپلەشچان رەڭ لايىھەسى</li>
       <li xml:lang="uk">Придатна до налаштовування тема кольорів</li>
       <li xml:lang="zh-CN">可自定义的配色方案</li>
       <li xml:lang="zh-TW">配色方案可以自行設定</li>
