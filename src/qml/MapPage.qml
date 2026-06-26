@@ -9,7 +9,7 @@ import org.kde.kirigami.delegates as KD
 import org.kde.coreaddons as KCoreAddons
 import QtQuick.Shapes
 
-import org.kde.filelight 1.0
+import org.kde.filelight
 
 Kirigami.Page {
     id: page

@@ -5,10 +5,10 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
-import org.kde.coreaddons 1.0 as KCoreAddons
+import org.kde.coreaddons as KCoreAddons
 import QtQuick.Shapes
 
-import org.kde.filelight 1.0
+import org.kde.filelight
 
 // Different from SegmentShape because this moves rather than lining from center. This avoids obnoxious strokes from
 // the center outwards.

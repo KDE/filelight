@@ -8,7 +8,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.coreaddons as KCoreAddons
 import QtQuick.Shapes
 
-import org.kde.filelight 1.0
+import org.kde.filelight
 
 // Different from CenterShape because this lines rather than moving from center. This produces consistent strokes
 // on all edges.

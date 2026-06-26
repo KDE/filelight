@@ -6,7 +6,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 
-import org.kde.filelight 1.0
+import org.kde.filelight
 
 Kirigami.Page {
     id: page
