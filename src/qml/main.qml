@@ -97,8 +97,6 @@ Kirigami.ApplicationWindow {
         onTriggered: { pageStack.layers.push("qrc:/ui/AboutPage.qml") }
     }
 
-    GlobalMenu {}
-
     minimumWidth: Kirigami.Settings.isMobile ? 0 : Kirigami.Units.gridUnit * 22
     minimumHeight: Kirigami.Settings.isMobile ? 0 : Kirigami.Units.gridUnit * 22
 
