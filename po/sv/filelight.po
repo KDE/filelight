@@ -2,14 +2,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2009, 2010, 2024, 2025 Stefan Asserhäll <stefan.asserhall@gmail.com>
+# SPDX-FileCopyrightText: 2009, 2010, 2024, 2025, 2026 Stefan Asserhäll <stefan.asserhall@gmail.com>
 # Stefan Asserhall <stefan.asserhall@gmail.com>, 2010, 2013, 2015, 2017, 2018, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 00:47+0000\n"
-"PO-Revision-Date: 2025-06-28 19:52+0200\n"
+"PO-Revision-Date: 2026-07-01 16:41+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -450,83 +450,67 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Colors:"
-msgstr ""
+msgstr "Färger:"
 
 #: src/qml/SettingsPage.qml:54
-#, fuzzy, kde-format
-#| msgctxt "@option:radio a color scheme variant"
-#| msgid "System colors"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "From system color scheme"
-msgstr "Systemfärger"
+msgstr "Från systemfärgsschema"
 
 #: src/qml/SettingsPage.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@option:radio a color scheme variant"
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "Rainbow"
 msgstr "Regnbåge"
 
 #: src/qml/SettingsPage.qml:56
-#, fuzzy, kde-format
-#| msgctxt "@option:radio a color scheme variant"
-#| msgid "High contrast"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "High contrast"
 msgstr "Hög kontrast"
 
 #: src/qml/SettingsPage.qml:82
-#, fuzzy, kde-format
-#| msgctxt "@label:slider"
-#| msgid "Contrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Color contrast:"
-msgstr "Kontrast"
+msgstr "Färgkontrast:"
 
 #: src/qml/SettingsPage.qml:100
 #, kde-format
 msgctxt "@title:group Show small files/show folders sidebar"
 msgid "Show:"
-msgstr ""
+msgstr "Visa:"
 
 #: src/qml/SettingsPage.qml:102
-#, fuzzy, kde-format
-#| msgctxt "@checkbox"
-#| msgid "Show small files"
+#, kde-format
 msgctxt "@option:check Show small files"
 msgid "Small files"
-msgstr "Visa små filer"
+msgstr "Små filer"
 
 #: src/qml/SettingsPage.qml:114
 #, kde-format
 msgctxt "@option:check Show files on other disks"
 msgid "Files on other disks"
-msgstr ""
+msgstr "Filer på andra diskar"
 
 #: src/qml/SettingsPage.qml:128
-#, fuzzy, kde-format
-#| msgctxt "@checkbox"
-#| msgid "Exclude remote filesystems"
+#, kde-format
 msgctxt "@option:check Show files on remote filesystems"
 msgid "Files on remote filesystems"
-msgstr "Undanta fjärrfilsystem"
+msgstr "Filer på andra filsystem"
 
 #: src/qml/SettingsPage.qml:140
-#, fuzzy, kde-format
-#| msgctxt "@checkbox"
-#| msgid "Show folders sidebar"
+#, kde-format
 msgctxt "@option:check Show folders sidebar"
 msgid "Folders sidebar"
-msgstr "Visa katalogsidorad"
+msgstr "Katalogsidorad"
 
 #: src/qml/SettingsPage.qml:172
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Do not scan these folders:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Do not scan these folders"
-msgstr "Avsök inte följande kataloger:"
+msgstr "Avsök inte följande kataloger"
 
 #: src/qml/SettingsPage.qml:175
 #, kde-format
@@ -535,12 +519,10 @@ msgid "Add…"
 msgstr "Lägg till…"
 
 #: src/qml/SettingsPage.qml:203
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Do not scan these folders:"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Resume scanning this folder"
-msgstr "Avsök inte följande kataloger:"
+msgstr "Återuppta avsökning av katalogen"
 
 #: src/radialMap/map.cpp:63
 #, kde-format
