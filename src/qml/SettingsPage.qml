@@ -9,7 +9,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigami.delegates as KD
 
-import org.kde.filelight 1.0
+import org.kde.filelight
 
 QQC2.Page {
     id: root

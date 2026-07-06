@@ -7,7 +7,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.config as KConfig
 
-import org.kde.filelight 1.0
+import org.kde.filelight
 
 Kirigami.ApplicationWindow {
     id: appWindow

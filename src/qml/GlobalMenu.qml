@@ -2,8 +2,8 @@
 // SPDX-FileCopyrightText: 2022 Harald Sitter <sitter@kde.org>
 
 import QtQuick
-import Qt.labs.platform 1.1 as Platform
-import org.kde.kirigami 2.19 as Kirigami
+import Qt.labs.platform as Platform
+import org.kde.kirigami as Kirigami
 
 Platform.MenuBar {
     id: bar
