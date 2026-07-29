@@ -34,6 +34,8 @@
 
 using namespace Qt::StringLiterals;
 
+static const auto INITIAL_STYLE = QQuickStyle::name();
+
 int main(int argc, char *argv[])
 {
     // Since filelight may get used when the disk is full or near full we'll not
@@ -56,8 +58,9 @@ int main(int argc, char *argv[])
 
     std::ignore = FileCleaner::instance(); // make sure the cleaner is up and running early so it is definitely up by the time shutdown happens
 
-    if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
-        QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
+    bool handledByQPT = INITIAL_STYLE != QQuickStyle::name();
+    if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE") && !handledByQPT) {
+        QQuickStyle::setStyle(u"org.kde.desktop"_s);
     }
 
 #if defined(Q_OS_WINDOWS)
