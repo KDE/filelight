@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-23 00:47+0000\n"
+"POT-Creation-Date: 2026-07-30 00:48+0000\n"
 "PO-Revision-Date: 2026-04-30 09:12+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -61,12 +61,12 @@ msgctxt "@info:notification"
 msgid "Error while deleting: %1"
 msgstr "خطأ أثناء الحذف: %1"
 
-#: src/main.cpp:91
+#: src/main.cpp:94
 #, kde-format
 msgid "Graphical disk-usage information"
 msgstr "معلومات استخدام القرص الرسومية"
 
-#: src/main.cpp:93
+#: src/main.cpp:96
 #, kde-format
 msgid ""
 "(C) 2006 Max Howell\n"
@@ -77,92 +77,92 @@ msgstr ""
 "(ج) 2008-2014 مارتن ساندسمارك\n"
 "(ج) 2017-2022 هارالد سيتر"
 
-#: src/main.cpp:98
+#: src/main.cpp:101
 #, kde-format
 msgid "Laurent Montel"
 msgstr "لوران مونتال"
 
-#: src/main.cpp:98 src/main.cpp:99
+#: src/main.cpp:101 src/main.cpp:102
 #, kde-format
 msgid "Maintainer"
 msgstr "الصائن"
 
-#: src/main.cpp:99
+#: src/main.cpp:102
 #, kde-format
 msgid "Martin Sandsmark"
 msgstr "مارتن ساندسمارك"
 
-#: src/main.cpp:100
+#: src/main.cpp:103
 #, kde-format
 msgid "Harald Sitter"
 msgstr "هارالد سِتِر"
 
-#: src/main.cpp:100
+#: src/main.cpp:103
 #, kde-format
 msgid "QtQuick Port"
 msgstr "النقل إلى QtQuick"
 
-#: src/main.cpp:101
+#: src/main.cpp:104
 #, kde-format
 msgid "Max Howell"
 msgstr "ماكس هويل"
 
-#: src/main.cpp:101
+#: src/main.cpp:104
 #, kde-format
 msgid "Original author"
 msgstr "المؤلف الأصلي"
 
-#: src/main.cpp:102
+#: src/main.cpp:105
 #, kde-format
 msgid "Lukas Appelhans"
 msgstr "لوكاس أبيلهانز"
 
-#: src/main.cpp:102
+#: src/main.cpp:105
 #, kde-format
 msgid "Help and support"
 msgstr "المساعدة والدعم"
 
-#: src/main.cpp:103
+#: src/main.cpp:106
 #, kde-format
 msgid "Steffen Gerlach"
 msgstr "ستيفن غيرلاخ"
 
-#: src/main.cpp:103
+#: src/main.cpp:106
 #, kde-format
 msgid "Inspiration"
 msgstr "إلهام"
 
-#: src/main.cpp:104
+#: src/main.cpp:107
 #, kde-format
 msgid "Mike Diehl"
 msgstr "مايك ديهل"
 
-#: src/main.cpp:104
+#: src/main.cpp:107
 #, kde-format
 msgid "Original documentation"
 msgstr "التوثيق الأصلي"
 
-#: src/main.cpp:105
+#: src/main.cpp:108
 #, kde-format
 msgid "Sune Vuorela"
 msgstr "سونه فوريلا"
 
-#: src/main.cpp:105 src/main.cpp:106
+#: src/main.cpp:108 src/main.cpp:109
 #, kde-format
 msgid "Icon"
 msgstr "الأيقونة"
 
-#: src/main.cpp:106
+#: src/main.cpp:109
 #, kde-format
 msgid "Nuno Pinheiro"
 msgstr "نونو بينهيرو"
 
-#: src/main.cpp:114
+#: src/main.cpp:117
 #, kde-format
 msgid "Path or URL to scan"
 msgstr "مسار أو عنون لمسحه"
 
-#: src/main.cpp:114
+#: src/main.cpp:117
 #, kde-format
 msgid "[url]"
 msgstr "[المسار]"
