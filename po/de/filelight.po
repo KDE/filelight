@@ -196,7 +196,7 @@ msgstr "Filelight benötigt absolute Pfade"
 #: src/mainContext.cpp:120
 #, kde-format
 msgid "eg. /%1"
-msgstr "z. B. /%1"
+msgstr "z. B. /%1"
 
 #: src/mainContext.cpp:122
 #, kde-format
