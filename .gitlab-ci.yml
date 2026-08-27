@@ -6,8 +6,6 @@ include:
     file:
       # CI
       - /gitlab-templates/linux-qt6-lts.yml
-      - /gitlab-templates/flatpak.yml
-      - /gitlab-templates/snap-snapcraft-lxd.yml
       # Deploy
       - /gitlab-templates/craft-windows-x86-64-qt6.yml
       # Publish (requires Deploy)
