@@ -35,7 +35,7 @@ SPDX-License-Identifier: BSD-2-Clause
     </entry>
     <entry name="skipList" type="PathList">
       <label>Do not scan these folders</label>
-      <default>/dev,/proc,/sys,/root</default>
+      <default>/dev,/proc,/sys,/root,$HOME/.snapshots</default>
     </entry>
   </group>
 </kcfg>
