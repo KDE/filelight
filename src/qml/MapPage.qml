@@ -317,10 +317,8 @@ Kirigami.Page {
             Layout.minimumHeight: Kirigami.Units.gridUnit * 10
             Layout.minimumWidth: Kirigami.Units.gridUnit * 10
             Layout.margins: Kirigami.Units.gridUnit
-            antialiasing: true
-            layer.enabled: true
-            layer.samples: 8
-            layer.smooth: true
+            // Render shapes directly. An offscreen layer can clip the map with the
+            // software backend at fractional display scales.
 
             property var zOrderedShapes: []
             property bool hasShapes: zOrderedShapes.length > 0
