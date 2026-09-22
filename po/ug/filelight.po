@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-30 00:48+0000\n"
-"PO-Revision-Date: 2026-05-30 16:26-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
-"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
+"Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -75,14 +75,11 @@ msgid ""
 "(C) 2008-2014 Martin Sandsmark\n"
 "(C) 2017-2022 Harald Sitter"
 msgstr ""
-"(C) 2006 Max Howell\n"
-"(C) 2008-2014 Martin Sandsmark\n"
-"(C) 2017-2022 Harald Sitter"
 
 #: src/main.cpp:101
 #, kde-format
 msgid "Laurent Montel"
-msgstr "Laurent Montel"
+msgstr ""
 
 #: src/main.cpp:101 src/main.cpp:102
 #, kde-format
@@ -92,12 +89,12 @@ msgstr "ئاسرىغۇچى"
 #: src/main.cpp:102
 #, kde-format
 msgid "Martin Sandsmark"
-msgstr "Martin Sandsmark"
+msgstr ""
 
 #: src/main.cpp:103
 #, kde-format
 msgid "Harald Sitter"
-msgstr "Harald Sitter"
+msgstr ""
 
 #: src/main.cpp:103
 #, kde-format
@@ -107,7 +104,7 @@ msgstr "QtQuick ئېغىزى"
 #: src/main.cpp:104
 #, kde-format
 msgid "Max Howell"
-msgstr "Max Howell"
+msgstr ""
 
 #: src/main.cpp:104
 #, kde-format
@@ -117,7 +114,7 @@ msgstr "ئەسلى يازغۇچى"
 #: src/main.cpp:105
 #, kde-format
 msgid "Lukas Appelhans"
-msgstr "Lukas Appelhans"
+msgstr ""
 
 #: src/main.cpp:105
 #, kde-format
@@ -127,7 +124,7 @@ msgstr "ياردەم ۋە قوللاش"
 #: src/main.cpp:106
 #, kde-format
 msgid "Steffen Gerlach"
-msgstr "Steffen Gerlach"
+msgstr ""
 
 #: src/main.cpp:106
 #, kde-format
@@ -137,7 +134,7 @@ msgstr "ئىلھام"
 #: src/main.cpp:107
 #, kde-format
 msgid "Mike Diehl"
-msgstr "Mike Diehl"
+msgstr ""
 
 #: src/main.cpp:107
 #, kde-format
@@ -147,7 +144,7 @@ msgstr "ئەسلى قوللانما"
 #: src/main.cpp:108
 #, kde-format
 msgid "Sune Vuorela"
-msgstr "Sune Vuorela"
+msgstr ""
 
 #: src/main.cpp:108 src/main.cpp:109
 #, kde-format
@@ -157,7 +154,7 @@ msgstr "سىنبەلگە"
 #: src/main.cpp:109
 #, kde-format
 msgid "Nuno Pinheiro"
-msgstr "Nuno Pinheiro"
+msgstr ""
 
 #: src/main.cpp:117
 #, kde-format
@@ -167,7 +164,7 @@ msgstr "تارايدىغان يول ياكى تور ئادرېس"
 #: src/main.cpp:117
 #, kde-format
 msgid "[url]"
-msgstr "[url]"
+msgstr ""
 
 #: src/mainContext.cpp:66
 #, kde-format
@@ -192,7 +189,7 @@ msgstr "Filelight پەقەت مۇتلەق يولنىلا قوللايدۇ"
 #: src/mainContext.cpp:120
 #, kde-format
 msgid "eg. /%1"
-msgstr "مەسىلەن: /%1"
+msgstr ""
 
 #: src/mainContext.cpp:122
 #, kde-format
@@ -439,8 +436,7 @@ msgid ""
 "Choose a folder to proceed:"
 msgstr ""
 "Filelight دىسكا ئىشلىتىلىشىنى تەھلىل قىلالايدۇ، شۇڭا نېمىلەرنىڭ دىسكا "
-"بوشلۇقىنى كۆپ ئىگىلىگەنلىكىنى كۆرەلەيسىز. مەشغۇلاتنى  داۋاملاشتۇرىدىغان "
-"قىسقۇچ تاللىنىدۇ:"
+"بوشلۇقىنى كۆپ ئىگىلىگەنلىكىنى كۆرەلەيسىز. Choose a folder to proceed:"
 
 #: src/qml/SettingsPage.qml:51
 #, kde-format
