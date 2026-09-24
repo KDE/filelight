@@ -83,7 +83,7 @@
 >&filelight; 1.21 (Приложения KDE 15.08)</releaseinfo>
    <abstract
 ><para
->Программа &filelight; наглядно отображает использование дискового пространства, представляя его в виде интерактивной карты из концентрических колец, разделённых на сегменты.</para
+>Показывает использование дискового пространства и позволяет удалять неиспользуемые файлы.</para
 ></abstract>
    <!-- These may be used by search engines -->
    <keywordset>
@@ -558,9 +558,9 @@
 >Настройка</guimenu
 > и <guimenu
 >Справка</guimenu
->. Дополнительные сведения доступны в разделе справки «Основы &kde;» (подразделы <ulink url="help:/fundamentals/ui.html#menus-settings"
+>. Дополнительные сведения доступны в разделе справки «Основы &kde;» (подразделы <ulink url="help:/fundamentals/menus.html#menus-settings"
 >Меню «Настройка»</ulink
-> и <ulink url="help:/fundamentals/ui.html#menus-help"
+> и <ulink url="help:/fundamentals/menus.html#menus-help"
 >Меню «Справка»</ulink
 >). </para>
 </chapter>
@@ -579,8 +579,8 @@
       <para
 >Авторские права на программу: © Martin Sandsmark <email
 >martin.sandsmark@kde.org</email
->, 2008—2013</para>
-&underGPL; </sect1>
+>, 2008—2013</para
+>&underGPL; </sect1>
    <sect1 id="Documentation">
       <title
 >Документация</title>
@@ -596,8 +596,7 @@
 >Олеся Герасименко<email
 >gammaray@basealt.ru</email
 ></para
-> 
-&underFDL; </sect1>
+> &underFDL; </sect1>
 </chapter>
 
 &documentation.index;
