@@ -7,7 +7,7 @@
 #include "testFileTree.h"
 
 TestFileTree::TestFileTree()
-    : m_file(std::make_unique<File>(qUtf8Printable(QFINDTESTDATA("dummy.txt")), 20))
+    : m_file(std::make_unique<File>(qUtf8Printable(QFINDTESTDATA("dummy.txt")), 20, 20))
 {
 }
 
@@ -36,12 +36,12 @@ void TestFileTree::testDuplicate()
     auto bar = std::make_shared<Folder>("bar/");
     auto file = std::make_shared<Folder>("file/");
     auto light = std::make_shared<Folder>("light/");
-    bar->append("onion", 1024);
-    light->append("torch", 128);
+    bar->append("onion", 1024, 1024);
+    light->append("torch", 128, 128);
     file->append(light);
     foo->append(bar);
     foo->append(file);
-    foo->append("shallot", 512);
+    foo->append("shallot", 512, 512);
     auto other = foo->duplicate();
     qDebug() << other->size();
     QCOMPARE(other->size(), foo->size());

@@ -118,5 +118,5 @@ void WindowsWalker::updateEntry()
         ulargeInt.LowPart = m_fileinfo.nFileSizeLow;
     }
 
-    m_entry.size = ulargeInt.QuadPart;
+    m_entry.size = m_entry.sizeIncludingShared = ulargeInt.QuadPart;
 }

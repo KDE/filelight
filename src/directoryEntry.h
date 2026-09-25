@@ -12,4 +12,5 @@ struct DirectoryEntry {
     bool isDir = false;
     bool isFile = false;
     size_t size = 0;
+    size_t sizeIncludingShared = 0;
 };

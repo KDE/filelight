@@ -75,6 +75,7 @@ private:
     std::atomic_bool m_abort;
     QAtomicInt m_files;
     QAtomicInteger<size_t> m_totalSize;
+    QAtomicInteger<size_t> m_totalSizeIncludingShared;
 
     QMutex m_mutex;
     std::shared_ptr<LocalLister> m_thread;

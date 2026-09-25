@@ -73,7 +73,7 @@ void Folder::clone(const Folder *that, const std::shared_ptr<Folder> &other)
                 auto folder = std::dynamic_pointer_cast<Folder>(file);
                 clones.append(Clone{.source = folder.get(), .target = std::make_shared<Folder>(folder->m_name.constData()), .parent = clone.target});
             } else {
-                clone.target->append(file->m_name.constData(), file->m_size);
+                clone.target->append(file->m_name.constData(), file->m_size, file->m_sizeIncludingShared);
             }
         }
         completedClones.append(clone);

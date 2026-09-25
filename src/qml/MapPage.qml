@@ -192,6 +192,8 @@ Kirigami.Page {
 
     RowLayout {
         anchors.fill: parent
+        // Layout.fillHeight: true
+        // Layout.fillWidth: true
         spacing: 0
         visible: page.state === ""
 
@@ -206,8 +208,8 @@ Kirigami.Page {
 
             // flush against both the toolbar and the window edge. without this we get a framed rectangle
             background: Rectangle {
-	             color: Kirigami.Theme.backgroundColor
-	        }
+                color: Kirigami.Theme.backgroundColor
+            }
             Component.onCompleted: background.visible = true
 
             ListView {
@@ -470,6 +472,16 @@ Kirigami.Page {
                 }
             }
         }
+    }
+
+    Kirigami.InlineMessage {
+        id: exclusiveSharedRatioMessage
+        width: shapeItem.width
+        x: shapeItem.x
+        y: shapeItem.y
+        z: 503
+        visible: RadialMap.exclusiveRatio < 0.5
+        text: i18nc("@info", "A large portion of the size of this directory is shared between multiple files. This suggests that even if you delete large files in one place, the overall amount of used space may not go down. Consider cleaning up snapshots, if any.")
     }
 
     MouseArea {

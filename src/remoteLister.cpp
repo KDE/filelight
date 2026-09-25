@@ -84,7 +84,7 @@ void RemoteLister::onCompleted()
         if (item.isDir()) {
             m_store->stores << std::make_shared<Store>(item.url(), item.name(), m_store);
         } else {
-            m_store->folder->append(item.name().toUtf8().constData(), item.size());
+            m_store->folder->append(item.name().toUtf8().constData(), item.size(), 0);
             m_manager->m_totalSize += item.size();
         }
 

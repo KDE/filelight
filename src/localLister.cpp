@@ -93,8 +93,9 @@ std::shared_ptr<Folder> LocalLister::scan(const QByteArray &path, const QByteArr
         }
 
         if (entry.isFile) {
-            cwd->append(entry.name.constData(), entry.size);
+            cwd->append(entry.name.constData(), entry.size, entry.sizeIncludingShared);
             m_parent->m_totalSize += entry.size;
+            m_parent->m_totalSizeIncludingShared += entry.sizeIncludingShared;
         } else if (entry.isDir) {
             std::shared_ptr<Folder> d = nullptr;
             const QByteArray new_dirname = entry.name + QByteArrayLiteral("/");

@@ -3,9 +3,19 @@
 
 #include "posixWalker.h"
 #include <QDebug>
+#include <QScopeGuard>
 
 #ifdef Q_OS_LINUX
+#include <linux/btrfs.h>
+#include <linux/fiemap.h>
+#include <linux/fs.h>
+#include <linux/magic.h>
+#include <sys/ioctl.h>
 #include <sys/param.h>
+#include <sys/stat.h>
+#include <sys/statfs.h>
+
+#define MAX_EXTENTS 64
 #endif
 
 #ifdef Q_OS_HAIKU
@@ -60,6 +70,16 @@ POSIXWalker::POSIXWalker(const QByteArray &path)
     }
 
     m_dirfd = dirfd(m_dir);
+
+#ifdef Q_OS_LINUX
+    struct statfs sfs;
+    if (statfs(path.constData(), &sfs) < 0) {
+        outputError(QByteArray(path));
+        return;
+    }
+    isBtrfs = (sfs.f_type == BTRFS_SUPER_MAGIC);
+#endif
+
     // load first entry to achieve iterator behavior. If there are no entries then this results
     // in a default constructed m_entry and thus ==end(); otherwise it is the first m_entry ==begin().
     next();
@@ -123,9 +143,72 @@ void POSIXWalker::next()
         m_entry.isFile = S_ISREG(statbuf.st_mode);
 
 #ifdef Q_OS_LINUX
-        m_entry.size = statbuf.st_blocks * DEV_BSIZE;
+        m_entry.size = m_entry.sizeIncludingShared = statbuf.st_blocks * DEV_BSIZE;
+
+        if (isBtrfs && m_entry.isFile) {
+            int fd = openat(m_dirfd, ent->d_name, AT_SYMLINK_NOFOLLOW);
+            if (fd < 0) {
+                outputError(m_entry.name);
+            }
+            auto fdGuard = qScopeGuard([fd] {
+                ::close(fd);
+            });
+
+            char buf[sizeof(struct fiemap) + sizeof(struct fiemap_extent) * MAX_EXTENTS];
+            struct fiemap *fiemap = (struct fiemap *)buf;
+            struct fiemap_extent *extents = &fiemap->fm_extents[0];
+
+            memset(fiemap, 0, sizeof(struct fiemap));
+
+            bool last = false;
+            uint64_t total_size = 0;
+            uint64_t shared_size = 0;
+
+            fiemap->fm_flags = FIEMAP_FLAG_SYNC;
+
+            do {
+                fiemap->fm_length = FIEMAP_MAX_OFFSET;
+                fiemap->fm_extent_count = MAX_EXTENTS;
+
+                int rc = ioctl(fd, FS_IOC_FIEMAP, (unsigned long)fiemap);
+                if (rc < 0) {
+                    outputError(m_entry.name);
+                    break;
+                }
+
+                if (fiemap->fm_mapped_extents == 0) {
+                    break;
+                }
+
+                for (uint32_t i = 0; i < fiemap->fm_mapped_extents; i++) {
+                    struct fiemap_extent extent = extents[i];
+                    if (extent.fe_flags & FIEMAP_EXTENT_LAST) {
+                        last = true;
+                    }
+
+                    if (extent.fe_flags & (FIEMAP_EXTENT_DATA_INLINE | FIEMAP_EXTENT_UNKNOWN | FIEMAP_EXTENT_DELALLOC)) {
+                        continue;
+                    }
+
+                    if (extent.fe_length == 0) {
+                        continue;
+                    }
+
+                    total_size += extent.fe_length;
+                    if (extent.fe_flags & FIEMAP_EXTENT_SHARED) {
+                        shared_size += extent.fe_length;
+                    }
+                }
+
+                uint32_t last_ext = fiemap->fm_mapped_extents - 1;
+                fiemap->fm_start = extents[last_ext].fe_logical + extents[last_ext].fe_length;
+            } while (!last);
+
+            m_entry.size = total_size - shared_size;
+            m_entry.sizeIncludingShared = shared_size;
+        }
 #else
-        m_entry.size = statbuf.st_blocks * S_BLKSIZE;
+        m_entry.size = m_entry.sizeIncludingShared = statbuf.st_blocks * S_BLKSIZE;
 #endif
         break;
     }

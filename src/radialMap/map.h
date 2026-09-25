@@ -36,6 +36,7 @@ class Map : public QObject
     Q_PROPERTY(QRectF rect MEMBER m_rect NOTIFY rectChanged)
     Q_PROPERTY(QList<QVariant> signature READ signature NOTIFY signatureChanged)
     Q_PROPERTY(QString overallSize READ overallSize NOTIFY signatureChanged)
+    Q_PROPERTY(double exclusiveRatio READ exclusiveRatio NOTIFY signatureChanged)
     Q_PROPERTY(uint numberOfChildren READ numberOfChildren NOTIFY signatureChanged)
     Q_PROPERTY(QUrl rootUrl READ rootUrl NOTIFY signatureChanged)
     Q_PROPERTY(QObject *rootSegment READ rootSegment NOTIFY signatureChanged)
@@ -63,6 +64,11 @@ public:
     [[nodiscard]] QString overallSize() const
     {
         return m_root ? m_root->humanReadableSize() : QString();
+    }
+
+    [[nodiscard]] double exclusiveRatio() const
+    {
+        return m_root ? (double)m_root->size() / (double)m_root->sizeIncludingShared() : 1.0;
     }
 
     [[nodiscard]] uint numberOfChildren() const

@@ -35,4 +35,8 @@ private:
     std::set<ino_t> m_countedHardlinks;
 
     struct stat statbuf{};
+
+#ifdef Q_OS_LINUX
+    bool isBtrfs = false;
+#endif
 };
