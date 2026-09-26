@@ -1,7 +1,7 @@
 # translation of filelight.po to Italian
 #
-# SPDX-FileCopyrightText: 2017-2018, 2020-2022, 2024-2026 Paolo Zamponi <feus73@gmail.com>
 # Federico Zenith <federico.zenith@member.fsf.org>, 2005, 2006, 2009, 2010, 2013, 2015.
+# SPDX-FileCopyrightText: 2017-2018, 2020-2022, 2024-2026 Paolo Zamponi <feus73@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
