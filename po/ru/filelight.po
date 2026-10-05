@@ -85,8 +85,8 @@ msgid ""
 "(C) 2017-2022 Harald Sitter"
 msgstr ""
 "© Max Howell, 2006\n"
-"© Martin Sandsmark, 2008—2014\n"
-"© Harald Sitter, 2017—2022"
+"© Martin Sandsmark, 2008–2014\n"
+"© Harald Sitter, 2017–2022"
 
 #: src/main.cpp:101
 #, kde-format
@@ -186,12 +186,12 @@ msgstr "Выбор папки для сканирования"
 #: src/mainContext.cpp:118
 #, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "Введённый адрес не может быть обработан, "
+msgstr "Введённый адрес не может быть обработан"
 
 #: src/mainContext.cpp:118
 #, kde-format
 msgid "it is invalid."
-msgstr "он является недопустимым."
+msgstr "Он недопустим."
 
 #: src/mainContext.cpp:120
 #, kde-format
@@ -201,7 +201,7 @@ msgstr "Filelight поддерживает только абсолютные п�
 #: src/mainContext.cpp:120
 #, kde-format
 msgid "eg. /%1"
-msgstr "например /%1"
+msgstr "например, /%1"
 
 #: src/mainContext.cpp:122
 #, kde-format
@@ -414,7 +414,7 @@ msgstr[3] "Один файл"
 #, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
-msgstr "Нажмите для перехода к родительскому каталогу"
+msgstr "Нажмите для перехода к родительской папке"
 
 #: src/qml/MapPage.qml:577
 #, kde-format

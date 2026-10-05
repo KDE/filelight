@@ -1,13 +1,14 @@
 # Translation of filelight.po into Serbian.
 # Chusslove Illich <caslav.ilic@gmx.net>, 2010, 2013, 2015, 2016, 2017.
 # Dalibor Djuric <daliborddjuric@gmail.com>, 2011.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-30 02:43+0000\n"
-"PO-Revision-Date: 2017-09-28 18:00+0200\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-10-04 23:13+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@ijekavianlatin\n"
 "MIME-Version: 1.0\n"
@@ -22,12 +23,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Časlav Ilić"
+msgstr "Časlav Ilić,Nemanja Hiršl"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "caslav.ilic@gmx.net"
+msgstr "caslav.ilic@gmx.net,nemhirsl@gmail.com"
 
 # >> @title:window
 #: src/Config.cpp:62
@@ -47,7 +48,7 @@ msgid ""
 "<qt>The folder at <i>'%1'</i> will be <b>recursively</b> and <b>permanently</"
 "b> deleted.</qt>"
 msgstr ""
-"<qt>Fascikla <tt>%1</tt> bićem <b>dubinski</b> i <b>trajno</b> obrisana.</qt>"
+"<qt>Fascikla <tt>%1</tt> biće <b>dubinski</b> i <b>trajno</b> obrisana.</qt>"
 
 # >> %1 is a file name (not folder)
 #: src/contextMenuContext.cpp:67
@@ -61,11 +62,10 @@ msgid "&Delete"
 msgstr "&Obriši"
 
 #: src/contextMenuContext.cpp:95
-#, fuzzy, kde-format
-#| msgid "Error while deleting"
+#, kde-format
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"
-msgstr "Greška pri brisanju"
+msgstr "Greška pri brisanju: %1"
 
 #: src/main.cpp:94
 #, kde-format
@@ -73,22 +73,20 @@ msgid "Graphical disk-usage information"
 msgstr "Grafička predstava popunjenosti diska"
 
 #: src/main.cpp:96
-#, fuzzy, kde-format
-#| msgid ""
-#| "(C) 2006 Max Howell\n"
-#| "(C) 2008-2014 Martin Sandsmark"
+#, kde-format
 msgid ""
 "(C) 2006 Max Howell\n"
 "(C) 2008-2014 Martin Sandsmark\n"
 "(C) 2017-2022 Harald Sitter"
 msgstr ""
 "© 2006, Maks Hauel\n"
-"© 2008–2014, Martin Sandsmark"
+"© 2008–2014, Martin Sandsmark\n"
+"© 2017–2022, Harald Siter"
 
 #: src/main.cpp:101
 #, kde-format
 msgid "Laurent Montel"
-msgstr ""
+msgstr "Loren Montel"
 
 #: src/main.cpp:101 src/main.cpp:102
 #, kde-format
@@ -103,12 +101,12 @@ msgstr "Martin Sandsmark"
 #: src/main.cpp:103
 #, kde-format
 msgid "Harald Sitter"
-msgstr ""
+msgstr "Harald Siter"
 
 #: src/main.cpp:103
 #, kde-format
 msgid "QtQuick Port"
-msgstr ""
+msgstr "Prenos na Qt Quick"
 
 #: src/main.cpp:104
 #, kde-format
@@ -182,26 +180,24 @@ msgid "Select Folder to Scan"
 msgstr "Izbor fascikle za skeniranje"
 
 #: src/mainContext.cpp:118
-#, fuzzy, kde-format
-#| msgid "The entered URL cannot be parsed; it is invalid."
+#, kde-format
 msgid "The entered URL cannot be parsed"
-msgstr "Uneseni URL ne može da se raščlani (loš je)."
+msgstr "Uneseni URL ne može da se raščlani"
 
 #: src/mainContext.cpp:118
 #, kde-format
 msgid "it is invalid."
-msgstr ""
+msgstr "Nije ispravan."
 
 #: src/mainContext.cpp:120
-#, fuzzy, kde-format
-#| msgid "Filelight only accepts absolute paths, eg. /%1"
+#, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Filelight prihvata samo apsolutne putanje, npr. /%1"
+msgstr "Filelight prihvata samo apsolutne putanje"
 
 #: src/mainContext.cpp:120
 #, kde-format
 msgid "eg. /%1"
-msgstr ""
+msgstr "Npr. /%1"
 
 #: src/mainContext.cpp:122
 #, kde-format
@@ -211,141 +207,127 @@ msgstr "Fascikla nije nađena: %1"
 #: src/mainContext.cpp:124
 #, kde-format
 msgid "Unable to enter: %1"
-msgstr ""
+msgstr "Ne mogu da uđem u: %1"
 
 #: src/mainContext.cpp:124
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to enter: %1\n"
-#| "You do not have access rights to this location."
+#, kde-format
 msgid "You do not have access rights to this location."
-msgstr ""
-"Ne mogu da uđem u ‘%1’.\n"
-"Nemate prava pristupa za ovu lokaciju."
+msgstr "Nemate prava pristupa za ovu lokaciju."
 
 #: src/qml/GlobalMenu.qml:15
-#, fuzzy, kde-format
-#| msgid "&Scan"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Scan"
-msgstr "&Skeniraj"
+msgstr "Skeniraj"
 
 #: src/qml/GlobalMenu.qml:27
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Settings"
-msgstr ""
+msgstr "Podešavanje"
 
 #: src/qml/GlobalMenu.qml:34
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Help"
-msgstr ""
+msgstr "Pomoć"
 
 #: src/qml/main.qml:41
-#, fuzzy, kde-format
-#| msgid "Scan &Home Folder"
+#, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
-msgstr "Skeniraj &domaću fasciklu"
+msgstr "Domaća fascikla"
 
 #: src/qml/main.qml:48
-#, fuzzy, kde-format
-#| msgid "Scan &Root Folder"
+#, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
-msgstr "Skeniraj &korenu fasciklu"
+msgstr "Korjena fascikla"
 
 #: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
-msgstr ""
+msgstr "Izaberi fasciklu…"
 
 #: src/qml/main.qml:56
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
-msgstr ""
+msgstr "Druga fascikla…"
 
 #: src/qml/main.qml:63
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
-msgstr ""
+msgstr "Napusti"
 
 #: src/qml/main.qml:71
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
-msgstr ""
+msgstr "Podesi…"
 
 #: src/qml/main.qml:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr ""
+msgstr "Podešavanje"
 
 #: src/qml/main.qml:88
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
-msgstr ""
+msgstr "Otvori priručnik"
 
 #: src/qml/main.qml:96
-#, fuzzy, kde-format
-#| msgid "Settings - Filelight"
+#, kde-format
 msgctxt "@action opens about app page"
 msgid "About Filelight"
-msgstr "Postavke — Filelight"
+msgstr "O Filelightu"
 
 #: src/qml/main.qml:173
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
-msgstr ""
+msgstr "Ne mogu da prekinem skeniranje"
 
 #: src/qml/MapPage.qml:44
-#, fuzzy, kde-format
-#| msgid "No files."
+#, kde-format
 msgctxt "@info:status"
 msgid "No files shown."
-msgstr "Nema fajlova."
+msgstr "Nema prikazanih fajlova."
 
 #: src/qml/MapPage.qml:45
-#, fuzzy, kde-format
-#| msgid "1 file"
-#| msgid_plural "%1 files"
+#, kde-format
 msgctxt "@info:status"
 msgid "1 file shown"
 msgid_plural "%1 files shown"
-msgstr[0] "%1 fajl"
-msgstr[1] "%1 fajla"
-msgstr[2] "%1 fajlova"
-msgstr[3] "%1 fajl"
+msgstr[0] "%1 fajl prikazan"
+msgstr[1] "%1 fajla prikazana"
+msgstr[2] "%1 fajlova prikazano"
+msgstr[3] "jedan fajl prikazan"
 
 #: src/qml/MapPage.qml:53
 #, kde-format
 msgctxt "@action"
 msgid "Go to Overview"
-msgstr ""
+msgstr "Idi na pregled"
 
 #: src/qml/MapPage.qml:61
 #, kde-format
 msgctxt "@action"
 msgid "Up"
-msgstr ""
+msgstr "Gore"
 
 #: src/qml/MapPage.qml:70
-#, fuzzy, kde-format
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action"
 msgid "Rescan"
 msgstr "Skeniraj ponovo"
 
 #: src/qml/MapPage.qml:79
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "Zaustavi"
@@ -354,79 +336,68 @@ msgstr "Zaustavi"
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
-msgstr ""
+msgstr "Uveličaj"
 
 #: src/qml/MapPage.qml:97
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
-msgstr ""
+msgstr "Umanji"
 
 #: src/qml/MapPage.qml:131 src/qml/MapPage.qml:263
-#, fuzzy, kde-format
-#| msgctxt "Scan/open the path of the selected element"
-#| msgid "&Open"
+#, kde-format
 msgctxt "@action Open file or directory from context menu"
 msgid "Open"
-msgstr "&Otvori"
+msgstr "Otvori"
 
 #: src/qml/MapPage.qml:139 src/qml/MapPage.qml:271
-#, fuzzy, kde-format
-#| msgid "Open &Terminal Here"
+#, kde-format
 msgctxt "@action"
 msgid "Open Terminal Here"
-msgstr "Otvori &terminal ovdje"
+msgstr "Otvori terminal ovdje"
 
 #: src/qml/MapPage.qml:147
-#, fuzzy, kde-format
-#| msgid "&Center Map Here"
+#, kde-format
 msgctxt "@action focuses the filelight view on a given map segment"
 msgid "Center Map Here"
-msgstr "&Centriraj mapu ovdje"
+msgstr "Centriraj mapu ovdje"
 
 #: src/qml/MapPage.qml:158 src/qml/MapPage.qml:279
 #, kde-format
 msgctxt "@action"
 msgid "Add to Do Not Scan List"
-msgstr ""
+msgstr "Dodaj na spisak za neskeniranje"
 
 #: src/qml/MapPage.qml:166
-#, fuzzy, kde-format
-#| msgid "Rescan"
+#, kde-format
 msgctxt "@action rescan filelight map"
 msgid "Rescan"
 msgstr "Skeniraj ponovo"
 
 #: src/qml/MapPage.qml:173 src/qml/MapPage.qml:286
-#, fuzzy, kde-format
-#| msgid "&Copy to clipboard"
+#, kde-format
 msgctxt "@action"
 msgid "Copy to clipboard"
-msgstr "&Kopiraj u klipbord"
+msgstr "Kopiraj u klipbord"
 
 #: src/qml/MapPage.qml:181 src/qml/MapPage.qml:294
-#, fuzzy, kde-format
-#| msgid "&Delete"
+#, kde-format
 msgctxt "@action delete file or folder"
 msgid "Delete"
-msgstr "&Obriši"
+msgstr "Obriši"
 
 #: src/qml/MapPage.qml:348
-#, fuzzy, kde-format
-#| msgid "%1 File"
-#| msgid_plural "%1 Files"
+#, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File (%2%)"
 msgid_plural "%1 Files (%2%)"
-msgstr[0] "%1 fajl"
-msgstr[1] "%1 fajla"
-msgstr[2] "%1 fajlova"
-msgstr[3] "%1 fajl"
+msgstr[0] "%1 fajl (%2%)"
+msgstr[1] "%1 fajla (%2%)"
+msgstr[2] "%1 fajlova (%2%)"
+msgstr[3] "%1 fajl (%2%)"
 
 #: src/qml/MapPage.qml:350
-#, fuzzy, kde-format
-#| msgid "%1 File"
-#| msgid_plural "%1 Files"
+#, kde-format
 msgctxt "Tooltip of folder, %1 is number of files"
 msgid "%1 File"
 msgid_plural "%1 Files"
@@ -436,45 +407,37 @@ msgstr[2] "%1 fajlova"
 msgstr[3] "%1 fajl"
 
 #: src/qml/MapPage.qml:354
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "Click to go up to parent directory"
+#, kde-format
 msgctxt "part of tooltip indicating that the item under the mouse is clickable"
 msgid "Click to go up to parent directory"
-msgstr ""
-"\n"
-"Kliknite za odlazak na roditeljsku fasciklu"
+msgstr "Kliknite za odlazak na roditeljsku fasciklu"
 
 #: src/qml/MapPage.qml:577
-#, fuzzy, kde-format
-#| msgid "%1 File"
-#| msgid_plural "%1 Files"
+#, kde-format
 msgctxt "Scanned number of files and size so far"
 msgid "%1 File, %2"
 msgid_plural "%1 Files, %2"
-msgstr[0] "%1 fajl"
-msgstr[1] "%1 fajla"
-msgstr[2] "%1 fajlova"
-msgstr[3] "%1 fajl"
+msgstr[0] "%1 fajl, %2"
+msgstr[1] "%1 fajla, %2"
+msgstr[2] "%1 fajlova, %2"
+msgstr[3] "%1 fajl, %2"
 
 #: src/qml/MapPage.qml:586
 #, kde-format
 msgid "No data available"
-msgstr ""
+msgstr "Nema dostupnih podataka"
 
 #: src/qml/OverviewPage.qml:14
 #, kde-format
 msgctxt "@title"
 msgid "Overview"
-msgstr ""
+msgstr "Pregled"
 
 #: src/qml/OverviewPage.qml:42
-#, fuzzy, kde-format
-#| msgid "Settings - Filelight"
+#, kde-format
 msgctxt "@title"
 msgid "Welcome to Filelight"
-msgstr "Postavke — Filelight"
+msgstr "Dobro došli u Filelight"
 
 #: src/qml/OverviewPage.qml:51
 #, kde-format
@@ -482,6 +445,8 @@ msgctxt "@info"
 msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space."
 msgstr ""
+"Filelight analizira popunjenost diska, da biste vidjeli šta zauzima mnogo "
+"prostora."
 
 #: src/qml/OverviewPage.qml:52
 #, kde-format
@@ -490,282 +455,104 @@ msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space. "
 "Choose a folder to proceed:"
 msgstr ""
+"Filelight analizira popunjenost diska, da biste vidjeli šta zauzima mnogo "
+"prostora. Izaberite fasciklu za nastavak:"
 
 #: src/qml/SettingsPage.qml:51
 #, kde-format
 msgctxt "@title:group"
 msgid "Colors:"
-msgstr ""
+msgstr "Boje:"
 
 #: src/qml/SettingsPage.qml:54
-#, fuzzy, kde-format
-#| msgid "System colors"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "From system color scheme"
-msgstr "Sistemske boje"
+msgstr "iz sistemske šeme boja"
 
 #: src/qml/SettingsPage.qml:55
-#, fuzzy, kde-format
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "Rainbow"
-msgstr "Duga"
+msgstr "duga"
 
 #: src/qml/SettingsPage.qml:56
-#, fuzzy, kde-format
-#| msgid "High contrast"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "High contrast"
-msgstr "Visoki kontrast"
+msgstr "visoki kontrast"
 
 #: src/qml/SettingsPage.qml:82
-#, fuzzy, kde-format
-#| msgid "Co&ntrast"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Color contrast:"
-msgstr "&Kontrast"
+msgstr "Kontrast boja:"
 
 #: src/qml/SettingsPage.qml:100
 #, kde-format
 msgctxt "@title:group Show small files/show folders sidebar"
 msgid "Show:"
-msgstr ""
+msgstr "Prikaži:"
 
 #: src/qml/SettingsPage.qml:102
-#, fuzzy, kde-format
-#| msgid "Show small files"
+#, kde-format
 msgctxt "@option:check Show small files"
 msgid "Small files"
-msgstr "Prikaži male fajlove"
+msgstr "Male fajlove"
 
 #: src/qml/SettingsPage.qml:114
 #, kde-format
 msgctxt "@option:check Show files on other disks"
 msgid "Files on other disks"
-msgstr ""
+msgstr "Fajlove na drugim diskovima"
 
 #: src/qml/SettingsPage.qml:128
-#, fuzzy, kde-format
-#| msgid "Exclude remote files&ystems"
+#, kde-format
 msgctxt "@option:check Show files on remote filesystems"
 msgid "Files on remote filesystems"
-msgstr "Isključi udaljene &fajl sisteme"
+msgstr "Fajlove na udaljenim fajl sistemima"
 
 #: src/qml/SettingsPage.qml:140
 #, kde-format
 msgctxt "@option:check Show folders sidebar"
 msgid "Folders sidebar"
-msgstr ""
+msgstr "Bočnu traku fascikli"
 
 #: src/qml/SettingsPage.qml:172
-#, fuzzy, kde-format
-#| msgid "Do &not scan these folders:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Do not scan these folders"
-msgstr "&Ne skeniraj ove fascikle:"
+msgstr "Ne skeniraj ove fascikle"
 
 #: src/qml/SettingsPage.qml:175
 #, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Add…"
-msgstr ""
+msgstr "Dodaj…"
 
 #: src/qml/SettingsPage.qml:203
-#, fuzzy, kde-format
-#| msgid "Do &not scan these folders:"
+#, kde-format
 msgctxt "@action:button remove list entry"
 msgid "Resume scanning this folder"
-msgstr "&Ne skeniraj ove fascikle:"
+msgstr "Nastavi skeniranje ove fascikle"
 
 #: src/radialMap/map.cpp:63
-#, fuzzy, kde-format
-#| msgid "1 file, with an average size of %2"
-#| msgid_plural "%1 files, with an average size of %2"
+#, kde-format
 msgid ""
 "\n"
 "%1 file, with an average size of %2"
 msgid_plural ""
 "\n"
 "%1 files, with an average size of %2"
-msgstr[0] "%1 fajl, prosečne veličine %2"
-msgstr[1] "%1 fajla, prosečne veličine %2"
-msgstr[2] "%1 fajlova, prosečne veličine %2"
-msgstr[3] "%1 fajl, prosečne veličine %2"
-
-#, fuzzy
-#~| msgid "Scannin&g"
-#~ msgctxt "@title"
-#~ msgid "Scanning"
-#~ msgstr "&Skeniranje"
-
-#, fuzzy
-#~| msgid "&Appearance"
-#~ msgctxt "@title"
-#~ msgid "Appearance"
-#~ msgstr "&Izgled"
-
-#, fuzzy
-#~| msgid "Color scheme"
-#~ msgctxt "@title:group"
-#~ msgid "Color Scheme"
-#~ msgstr "Šema boja"
-
-#, fuzzy
-#~| msgid "R&emove"
-#~ msgctxt "@action:button remove list entry"
-#~ msgid "Remove"
-#~ msgstr "&Ukloni"
-
-#, fuzzy
-#~| msgid "Scan across filesystem &boundaries"
-#~ msgctxt "@checkbox"
-#~ msgid "Scan across filesystem boundaries"
-#~ msgstr "Skeniraj preko &granica fajl sistema"
-
-#, fuzzy
-#~| msgid "Aborting Scan..."
-#~ msgctxt "@info:status"
-#~ msgid "Aborting Scan..."
-#~ msgstr "Obustavljam skeniranje..."
-
-#, fuzzy
-#~| msgid "Scan Folder"
-#~ msgctxt "@action"
-#~ msgid "Scan Folder"
-#~ msgstr "Skeniraj fasciklu"
-
-#~ msgctxt "Go to the last path viewed"
-#~ msgid "Back"
-#~ msgstr "Nazad"
-
-#~ msgctxt "Go to forward in the history of paths viewed"
-#~ msgid "Forward"
-#~ msgstr "Naprijed"
-
-#~ msgid "That folder is already set to be excluded from scans."
-#~ msgstr "Ova fascikla je već isključena iz skeniranja."
-
-#~ msgid "&View"
-#~ msgstr "Pri&kaz"
-
-#~ msgid "Main Toolbar"
-#~ msgstr "Glavna traka"
-
-#~ msgid "Location Toolbar"
-#~ msgstr "Traka lokacije"
-
-#~ msgid "View Toolbar"
-#~ msgstr "Traka prikaza"
-
-#~ msgid "&Add..."
-#~ msgstr "&Dodaj..."
-
-#~ msgid ""
-#~ "Prevents scanning of filesystems that are not on this computer, e.g. NFS "
-#~ "or Samba mounts."
-#~ msgstr ""
-#~ "Sprečava skeniranje fajl sistema koji nisu na ovom računar, npr. NFS ili "
-#~ "Samba montiranja."
-
-#~ msgid ""
-#~ "Allows scans to enter directories that are part of other filesystems. For "
-#~ "example, when unchecked, this will usually prevent the contents of <b>/"
-#~ "mnt</b> from being scanned if you scan <b>/</b>."
-#~ msgstr ""
-#~ "Omogućava skeniranje fascikli na drugim fajl sistemima. Na primjer, ako "
-#~ "je isključeno, vjerovatno će biti preskočen sadržaj <tt>/mnt</tt> kada "
-#~ "zadate skeniranje nad <tt>/</tt>."
-
-# rewrite-msgid: /Filelight from//
-#~ msgid "Prevents Filelight from scanning removable media (eg. CD-ROMs)."
-#~ msgstr "Sprečava skeniranje uklonjivih medijuma (npr. CD‑ova)."
-
-#~ msgid "E&xclude removable media"
-#~ msgstr "Isključi uklonjive &medijume"
-
-#~ msgid "Here you can vary the contrast of the filemap in realtime."
-#~ msgstr "Ovdje možete mijenjati kontrast mape fajlova u stvarnom vremenu."
-
-# rewrite-msgid: /rendering/drawing/
-#~ msgid ""
-#~ "Anti-aliasing the filemap makes it clearer and prettier, unfortunately it "
-#~ "also makes rendering very slow."
-#~ msgstr ""
-#~ "Omekšavanje čini mapu fajlova čistijom i lepšom, ali nažalost i jako "
-#~ "usporava iscrtavanje."
-
-#~ msgid "&Use anti-aliasing"
-#~ msgstr "Primijeni &omekšavanje"
-
-# well-spelled: мултисегмент
-# rewrite-msgid: /rendered/drawn/
-#~ msgid ""
-#~ "Some files are too small to be rendered on the filemap. Selecting this "
-#~ "option makes these files visible by merging them all into a single "
-#~ "\"multi-segment\"."
-#~ msgstr ""
-#~ "Neki fajlovi su premali da bi se iscrtali na mapi fajlova. Ova opcija "
-#~ "čini takve fajlove vidljivim tako što se svi stope u jedinstveni "
-#~ "„multisegment“."
-
-#~ msgid ""
-#~ "The font size of exploded labels can be varied relative to the depth of "
-#~ "the directories they represent. This helps you spot the important labels "
-#~ "more easily. Set a sensible minimum font size."
-#~ msgstr ""
-#~ "Veličina fonta raširenih etiketa može biti promenljiva, prema dubini "
-#~ "fascikli koje predstavljaju. Ovo olakšava brzo uočavanje važnih etiketa. "
-#~ "Pazite da postavite razumnu najmanju veličinu."
-
-#~ msgid "Var&y label font sizes"
-#~ msgstr "Mijenjaj &veličinu fonta etiketa"
-
-# rewrite-msgid: /Filelight can/to/
-# rewrite-msgid: /render/draw/
-#~ msgid "The smallest font size Filelight can use to render labels."
-#~ msgstr "Najmanja veličina fonta kojom će se iscrtavati etikete."
-
-#~ msgid "Minimum font si&ze:"
-#~ msgstr "Naj&manja veličina fonta:"
-
-#~ msgid "Go"
-#~ msgstr "Kreni"
-
-#~ msgid "Location Bar"
-#~ msgstr "Traka lokacije"
-
-#~ msgid "&Recent Scans"
-#~ msgstr "&Nedavna skeniranja"
-
-#~ msgid "Scanning: %1"
-#~ msgstr "Skeniram: %1"
-
-#~ msgid "Scan completed, generating map..."
-#~ msgstr "Skeniranje dovršeno, generišem mapu..."
-
-#~ msgid "Scan failed: %1"
-#~ msgstr "Skeniranje propalo: %1"
-
-#~ msgid "%1 File"
-#~ msgid_plural "%1 Files"
-#~ msgstr[0] "%1 fajl"
-#~ msgstr[1] "%1 fajla"
-#~ msgstr[2] "%1 fajlova"
-#~ msgstr[3] "%1 fajl"
-
-#~ msgctxt "We messed up, the user needs to initiate a rescan."
-#~ msgid ""
-#~ "Internal representation is invalid,\n"
-#~ "please rescan."
-#~ msgstr "Loša unutrašnja predstava, skenirajte ponovo."
-
-#~ msgid "Open &File Manager Here"
-#~ msgstr "Otvori &menadžer fajlova ovdje"
-
-#~ msgctxt "Percent used disk space on the partition"
-#~ msgid "<b>%1</b><br/>%2% Used"
-#~ msgstr "<b>%1</b><br/>%2% popunjeno"
-
-#~ msgctxt "Percent used disk space on the partition"
-#~ msgid "<b>%1: %2</b><br/>%3% Used"
-#~ msgstr "<b>%1: %2</b><br/>%3% popunjeno"
+msgstr[0] ""
+"\n"
+"%1 fajl, prosječne veličine %2"
+msgstr[1] ""
+"\n"
+"%1 fajla, prosječne veličine %2"
+msgstr[2] ""
+"\n"
+"%1 fajlova, prosječne veličine %2"
+msgstr[3] ""
+"\n"
+"%1 fajl, prosječne veličine %2"
