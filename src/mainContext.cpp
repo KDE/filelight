@@ -198,5 +198,3 @@ MainContext *MainContext::create([[maybe_unused]] QQmlEngine *qml, [[maybe_unuse
     return new MainContext;
 }
 } // namespace Filelight
-
-#include "mainContext.moc"
