@@ -593,13 +593,6 @@ Kirigami.Page {
         }
     }
 
-    Connections {
-        target: MainContext
-        function onCanvasIsDirty(filth) {
-            RadialMap.refresh(filth)
-        }
-    }
-
     Component.onCompleted: {
         appWindow.mapPage = this
     }
