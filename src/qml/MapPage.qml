@@ -319,6 +319,9 @@ Kirigami.Page {
             Layout.minimumHeight: Kirigami.Units.gridUnit * 10
             Layout.minimumWidth: Kirigami.Units.gridUnit * 10
             Layout.margins: Kirigami.Units.gridUnit
+            Layout.topMargin: exclusiveSharedRatioMessage.visible
+                ? exclusiveSharedRatioMessage.height + Kirigami.Units.gridUnit * 2
+                : Kirigami.Units.gridUnit
             antialiasing: true
             layer.enabled: true
             layer.samples: 8
@@ -478,7 +481,7 @@ Kirigami.Page {
         id: exclusiveSharedRatioMessage
         width: shapeItem.width
         x: shapeItem.x
-        y: shapeItem.y
+        y: shapeItem.y - height - Kirigami.Units.gridUnit
         z: 503
         visible: RadialMap.exclusiveRatio < 0.5
         text: i18nc("@info", "A large portion of the size of this directory is shared between multiple files. This suggests that even if you delete large files in one place, the overall amount of used space may not go down. Consider cleaning up snapshots, if any.")
