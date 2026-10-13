@@ -82,7 +82,7 @@
       <keyword
 >KDE</keyword>
       <keyword
->Dosya Feneri</keyword>
+>Filelight</keyword>
       <keyword
 >du</keyword>
       <keyword
@@ -124,7 +124,7 @@
 ><guimenu
 >Ayarlar</guimenu
 ><guimenuitem
->Dosya Feneri Uygulamasını Yapılandır</guimenuitem
+>Filelight Uygulamasını Yapılandır</guimenuitem
 ></menuchoice
 > ögesine tıklanarak bulunabilir.</para>
 
@@ -146,7 +146,7 @@
 </screenshot>
 
 <para
->Tarama sekmesi, &filelight;’nin klasörleri nasıl tarayacağını yapılandırmanıza izin verir. <guilabel
+>Tarama sekmesi, &filelight;’ın klasörleri nasıl tarayacağını yapılandırmanıza izin verir. <guilabel
 >Bu klasörleri taramadan dışla</guilabel
 >, belirli klasörleri taramanızdan dışlamak için kullanılır. Bu seçenek, okumak için izni olmayanlar veya bir sanal dosya sisteminin bir parçası olan klasörleri (örneğin, / proc) atlamak için çok kullanışlıdır. Listeye bir klasör eklemek için <guibutton
 >Ekle…</guibutton
@@ -227,7 +227,7 @@
 
 <sect1 id="starting">
 <title
->&filelight;’ni Başlatmak</title>
+>&filelight;’ı Başlatmak</title>
 <para
 >&filelight;, uygulama başlatıcısı veya komut satırından başlatılabilir</para>
 
@@ -246,7 +246,7 @@
 <title
 >Komut Satırı Üzerinden</title>
 <para
->&filelight;’ni (filelight) komut satırına yazarak başlatın. Aşağıdaki örnekteki gibi bir klasör adı verirseniz o klasörü tarayacaktır. </para>
+>&filelight;’ı komut satırına yazarak başlatın. Aşağıdaki örnekteki gibi bir klasör adı verirseniz o klasörü tarayacaktır. </para>
 <informalexample>
 <screen
 ><prompt
@@ -424,7 +424,7 @@
 <listitem
 ><para
 ><action
->&filelight;’nden çıkar.</action
+>&filelight;’tan çıkar.</action
 ></para
 ></listitem>
 </varlistentry>

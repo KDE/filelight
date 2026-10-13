@@ -6,13 +6,13 @@
 # obsoleteman <tulliana@gmail.com>, 2009-2010.
 # obsoleteman <tulliana@gmail.com>, 2010,2012.
 # Volkan Gezer <volkangezer@gmail.com>, 2013-2014, 2015.
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025, 2026 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022-2026 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdeutils-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-08 00:49+0000\n"
-"PO-Revision-Date: 2026-05-02 19:42+0300\n"
+"PO-Revision-Date: 2026-10-12 09:34+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -191,7 +191,7 @@ msgstr "geçersiz."
 #: src/mainContext.cpp:120
 #, kde-format
 msgid "Filelight only accepts absolute paths"
-msgstr "Dosya Feneri yalnızca mutlak yolları kabul eder"
+msgstr "Filelight yalnızca mutlak yolları kabul eder"
 
 #: src/mainContext.cpp:120
 #, kde-format
@@ -283,7 +283,7 @@ msgstr "El Kitabını Aç"
 #, kde-format
 msgctxt "@action opens about app page"
 msgid "About Filelight"
-msgstr "Dosya Feneri Hakkında"
+msgstr "Filelight Hakkında"
 
 #: src/qml/main.qml:173
 #, kde-format
@@ -428,7 +428,7 @@ msgstr "Genel Görünüm"
 #, kde-format
 msgctxt "@title"
 msgid "Welcome to Filelight"
-msgstr "Dosya Feneri’ne Hoş Geldiniz"
+msgstr "Filelight’a Hoş Geldiniz"
 
 #: src/qml/OverviewPage.qml:51
 #, kde-format
@@ -436,7 +436,7 @@ msgctxt "@info"
 msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space."
 msgstr ""
-"Dosya Feneri disk kullanımını çözümler, böylece neyin ne kadar disk alanı "
+"Filelight disk kullanımını çözümler, böylece neyin ne kadar disk alanı "
 "kullandığını görebilirsiniz."
 
 #: src/qml/OverviewPage.qml:52
@@ -446,7 +446,7 @@ msgid ""
 "Filelight analyzes disk usage so you can see what's using lots of space. "
 "Choose a folder to proceed:"
 msgstr ""
-"Dosya Feneri disk kullanımını çözümler, böylece neyin fazla disk alanı "
+"Filelight disk kullanımını çözümler, böylece neyin fazla disk alanı "
 "kullandığını görebilirsiniz. Sürdürmek için bir klasör seçin:"
 
 #: src/qml/SettingsPage.qml:51
