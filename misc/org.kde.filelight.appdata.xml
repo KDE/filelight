@@ -55,7 +55,7 @@
   <name xml:lang="sr-ijekavianlatin">Filelight</name>
   <name xml:lang="sv">Filelight</name>
   <name xml:lang="ta">ஃபைல்-லைட்</name>
-  <name xml:lang="tr">Dosya Feneri</name>
+  <name xml:lang="tr">Filelight</name>
   <name xml:lang="ug">Filelight دىسكا ئىشلىتىلىشىنى كۆرسەتكۈچ</name>
   <name xml:lang="uk">Filelight</name>
   <name xml:lang="zh-CN">Filelight 磁盘占用查看器</name>
@@ -160,7 +160,7 @@
     <p xml:lang="sr-ijekavianlatin">Filelight je program koji prikazuje popunjenost diska na vašem računaru, predstavljajući fascikle lako razumljivim prikazom koncentričnih prstenova. Uz Filelight je oslobađanje prostora jednostavno!</p>
     <p xml:lang="sv">Filelight är ett program för att åskådliggöra diskanvändning på datorn genom att visa kataloger med en lättförståelig vy av koncentriska ringar. Filelight gör det enkelt att frigöra utrymme!</p>
     <p xml:lang="ta">உங்கள் கணினியிலுள்ள அடைவுகளின் அளவுகளை நீங்கள் எளிதில் புரிந்துகொள்ளும் வகையில் ஃபைல்-லைட் காட்டும். தேவையில்லாதவற்றை சுலபமாக அகற்றி இடத்தை காலி செய்யலாம்!</p>
-    <p xml:lang="tr">Dosya Feneri, bilgisayarınızdaki disk kullanımını, anlaması kolay eşmerkezli halkalar görünümü kullanarak görselleştiren bir uygulamadır. Dosya Feneri ile, bilgisayarınızı kolaylıkla temizleyebilirsiniz!</p>
+    <p xml:lang="tr">Filelight, bilgisayarınızdaki disk kullanımını, anlaması kolay eşmerkezli halkalar görünümü kullanarak görselleştiren bir uygulamadır. Filelight ile, bilgisayarınızı kolaylıkla temizleyebilirsiniz!</p>
     <p xml:lang="uk">Filelight — програма для візуалізації використання дискового простору вашого комп'ютера. Ця програма здатна показувати вміст тек у легко зрозумілому форматі концентричних кіл. За допомогою Filelight ви без проблем зможете звільняти місце на диску!</p>
     <p xml:lang="zh-CN">Filelight 是一款以图形化方式显示电脑磁盘使用情况的应用程序。它通过多层同心圆示意图来显示文件夹结构，易于理解。Filelight 让释放存储空间变得简单易行！</p>
     <p xml:lang="zh-TW">Filelight 是以視覺化方式顯示您的電腦的磁碟用量的應用程式，資料夾以容易理解的同心圓方式呈現。Filelight 讓清理空間變得簡單！</p>
