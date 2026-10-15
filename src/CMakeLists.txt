@@ -86,6 +86,13 @@ target_sources(filelight PRIVATE
 )
 target_include_directories(filelight PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/radialMap)
 
+if(libbtrfsutil_FOUND)
+    target_compile_definitions(filelight PRIVATE HAVE_LIBBTRFSUTIL=1)
+    target_link_libraries(filelight PRIVATE PkgConfig::libbtrfsutil)
+else()
+    target_compile_definitions(filelight PRIVATE HAVE_LIBBTRFSUTIL=0)
+endif()
+
 set(filelight_ICONS
     ${CMAKE_CURRENT_SOURCE_DIR}/../misc/16-apps-filelight.png
     ${CMAKE_CURRENT_SOURCE_DIR}/../misc/32-apps-filelight.png
