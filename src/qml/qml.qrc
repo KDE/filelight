@@ -15,5 +15,6 @@
         <file>CenterShape.qml</file>
         <file>SettingsPage.qml</file>
         <file>ShapeToolTip.qml</file>
+        <file>XrView.qml</file>
     </qresource>
 </RCC>

@@ -83,6 +83,7 @@ target_sources(filelight PRIVATE
     dropperItem.h
     hicolor.qrc
     windowThemer.cpp windowThemer.h
+    XrPieSliceGeometry.cpp XrPieSliceGeometry.h
 )
 target_include_directories(filelight PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/radialMap)
 
@@ -102,6 +103,7 @@ target_link_libraries(filelight
         KF6::I18nQml
         KF6::ColorScheme
         Qt6::Quick
+        Qt6::Quick3D
         Qt6::QuickControls2
         Qt6::Qml
         filelightInternal

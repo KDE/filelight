@@ -97,7 +97,23 @@ Kirigami.ApplicationWindow {
         onTriggered: { pageStack.layers.push("qrc:/ui/AboutPage.qml") }
     }
 
+    Kirigami.Action {
+        id: xrAction
+        displayHint: Kirigami.DisplayHint.AlwaysHide
+        icon.name: "external-link-symbolic"
+        text: i18nc("@action", "Show in VR")
+        checkable: true
+    }
+
     GlobalMenu {}
+
+    Loader {
+        active: xrAction.checked
+        asynchronous: true
+        sourceComponent: XrView {
+            mapPage: appWindow.mapPage
+        }
+    }
 
     minimumWidth: Kirigami.Settings.isMobile ? 0 : Kirigami.Units.gridUnit * 22
     minimumHeight: Kirigami.Settings.isMobile ? 0 : Kirigami.Units.gridUnit * 22

@@ -107,6 +107,7 @@ Kirigami.Page {
         stopAction,
         zoomInAction,
         zoomOutAction,
+        xrAction,
         configureAction,
         helpAction,
         aboutAction
