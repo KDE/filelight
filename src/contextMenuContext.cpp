@@ -89,7 +89,9 @@ void ContextMenuContext::deleteFile(const std::shared_ptr<File> &file)
         QGuiApplication::restoreOverrideCursor();
         setDeleting(false);
         if (!job->error()) {
-            file->parent()->remove(file);
+            if (auto parent = file->parent()) {
+                parent->remove(file);
+            }
             RadialMap::Map::instance()->refresh(Dirty::Layout);
         } else {
             Q_EMIT deleteFileFailed(i18nc("@info:notification", "Error while deleting: %1", job->errorString()));

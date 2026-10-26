@@ -140,11 +140,7 @@ void RadialMap::Map::make(const std::shared_ptr<Folder> &tree, bool refresh)
             findVisibleDepth(tree);
         }
 
-        uint signatureSize = m_visibleDepth + 1;
-        if (m_signature.size() != signatureSize) {
-            m_signature.resize(signatureSize);
-            Q_EMIT signatureChanged();
-        }
+        m_signature.resize(m_visibleDepth + 1);
 
         if (m_rootSegment && m_rootSegment->file()) {
             m_rootSegment->file()->setSegment({});
@@ -166,6 +162,9 @@ void RadialMap::Map::make(const std::shared_ptr<Folder> &tree, bool refresh)
 
     // colour the segments
     colorise();
+
+    // Publish the complete map, including an empty root and any grouped files.
+    Q_EMIT signatureChanged();
 
     QApplication::restoreOverrideCursor();
 }
@@ -216,7 +215,8 @@ bool RadialMap::Map::build(const std::shared_ptr<Folder> &dir, const uint depth,
 {
     // first iteration: dir == m_root
 
-    if (dir->children() == 0) { // we do fileCount rather than size to avoid chance of divide by zero later
+    // Prevent division by zero when calculating angles; the children may all be empty directories.
+    if (dir->children() == 0 || m_root->size() == 0) {
         return false;
     }
 
@@ -251,10 +251,6 @@ bool RadialMap::Map::build(const std::shared_ptr<Folder> &dir, const uint depth,
 
         a_start += a_len; //**** should we add 1?
     }
-    if (depth == 0) {
-        Q_EMIT signatureChanged();
-    }
-
     if (hiddenFileCount == dir->children() && !Config::instance()->showSmallFiles) {
         return true;
     }
@@ -266,7 +262,6 @@ bool RadialMap::Map::build(const std::shared_ptr<Folder> &dir, const uint depth,
         for (const auto &hiddenFile : hiddenFiles) {
             hiddenFile->setSegment(filesGroupSegment->uuid());
         }
-        Q_EMIT signatureChanged();
     }
 
     return false;

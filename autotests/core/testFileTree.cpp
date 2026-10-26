@@ -48,4 +48,39 @@ void TestFileTree::testDuplicate()
     QCOMPARE(other->children(), foo->children());
 }
 
+void TestFileTree::testRemove()
+{
+    auto root = std::make_shared<Folder>("root/");
+    auto docs = std::make_shared<Folder>("docs/");
+    auto nested = std::make_shared<Folder>("nested/");
+    nested->append("book", 300);
+    docs->append(nested);
+    docs->append("note", 100);
+    root->append(docs);
+    root->append("sibling", 200);
+    const auto note = docs->files.last();
+
+    docs->remove(nested);
+    QCOMPARE(docs->size(), 100);
+    QCOMPARE(docs->children(), 1);
+    QCOMPARE(root->size(), 300);
+    QCOMPARE(root->children(), 3);
+    QCOMPARE(root->files.first()->decodedName(), QStringLiteral("sibling"));
+    QVERIFY(!nested->parent());
+
+    docs->remove(nested);
+    root->remove(note);
+    QCOMPARE(docs->size(), 100);
+    QCOMPARE(docs->children(), 1);
+    QCOMPARE(root->size(), 300);
+    QCOMPARE(root->children(), 3);
+
+    docs->remove(docs->files.first());
+    QVERIFY(docs->files.isEmpty());
+    QCOMPARE(docs->size(), 0);
+    QCOMPARE(docs->children(), 0);
+    QCOMPARE(root->size(), 200);
+    QCOMPARE(root->children(), 2);
+}
+
 QTEST_MAIN(TestFileTree)

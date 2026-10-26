@@ -8,6 +8,7 @@
 
 #pragma once
 
+#include <algorithm>
 #include <cstdlib>
 
 #include <KFormat>
@@ -164,14 +165,21 @@ public:
     }
 
     /// removes a file
-    void remove(const std::shared_ptr<File> &f)
+    void remove(std::shared_ptr<File> f)
     {
-        files.removeAll(f);
+        if (!f || !files.removeOne(f)) {
+            return;
+        }
         const FileSize childSize = f->size();
+        const uint childCount = 1 + (f->isFolder() ? std::static_pointer_cast<Folder>(f)->children() : 0);
         for (Folder *d = this; d; d = d->parent()) {
             d->m_size -= childSize;
-            d->m_children--;
+            d->m_children -= childCount;
+            std::stable_sort(d->files.begin(), d->files.end(), [](const auto &a, const auto &b) {
+                return a->size() > b->size();
+            });
         }
+        f->m_parent = nullptr;
     }
 
     // Removes a file, but does not delete

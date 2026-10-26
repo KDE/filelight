@@ -25,6 +25,7 @@ private Q_SLOTS:
     void testFileSize();
     void testFilePath();
     void testDuplicate();
+    void testRemove();
 
 private:
     const std::unique_ptr<const File> m_file;

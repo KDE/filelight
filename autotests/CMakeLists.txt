@@ -25,3 +25,10 @@ if(CMAKE_SYSTEM_NAME MATCHES "Linux")
     ecm_add_test(localListerTest.cpp TEST_NAME localListerTest LINK_LIBRARIES Qt::Test filelightInternal)
 endif()
 ecm_add_test(scanManagerTest.cpp TEST_NAME scanManagerTest LINK_LIBRARIES Qt::Test filelightInternal)
+
+ecm_add_test(mapUpdateTest.cpp
+    ../src/radialMap/map.cpp ../src/radialMap/map.h
+    ../src/radialMap/radialMap.cpp ../src/radialMap/radialMap.h
+    TEST_NAME mapUpdateTest LINK_LIBRARIES Qt::Test filelightInternal KF6::ColorScheme)
+target_include_directories(mapUpdateTest PRIVATE ${CMAKE_SOURCE_DIR}/src/radialMap)
+set_tests_properties(mapUpdateTest PROPERTIES ENVIRONMENT "QT_QPA_PLATFORM=offscreen")
