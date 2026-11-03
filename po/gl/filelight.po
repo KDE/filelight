@@ -467,20 +467,16 @@ msgid "From system color scheme"
 msgstr "Cores do sistema."
 
 #: src/qml/SettingsPage.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@option:radio a color scheme variant"
-#| msgid "Rainbow"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "Rainbow"
-msgstr "Arco da vella."
+msgstr "Arco-da-vella"
 
 #: src/qml/SettingsPage.qml:56
-#, fuzzy, kde-format
-#| msgctxt "@option:radio a color scheme variant"
-#| msgid "High contrast"
+#, kde-format
 msgctxt "@item:inlistbox Name of a color scheme to use for the graph view"
 msgid "High contrast"
-msgstr "Contraste alto."
+msgstr "Contraste alto"
 
 #: src/qml/SettingsPage.qml:82
 #, fuzzy, kde-format
