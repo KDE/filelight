@@ -23,6 +23,31 @@
     ],
     "modules": [
         {
+            "name": "libbtrfsutil",
+            "buildsystem": "autotools",
+            "no-autogen": false,
+            "config-opts": ["--prefix=/app", "--disable-documentation"],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/kdave/btrfs-progs",
+                    "commit": "afdc3a65e33f4d42f768ad50dca20c32e5ee1496",
+                    "tag": "v7.3"
+                }
+            ]
+        },
+        {
+            "name": "kio-snapshot",
+            "buildsystem": "cmake",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/kio-snapshot/kio-snapshot-1.1.0.tar.xz",
+                    "sha256": "c56a41cc1646031474e1c8c80c972471d55fffaad037e36ca7cebf1283031947"
+                }
+            ]
+        },
+        {
             "name": "filelight",
             "buildsystem": "cmake-ninja",
             "config-opts": [
