@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-08 00:49+0000\n"
+"POT-Creation-Date: 2026-11-05 01:00+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -59,7 +59,7 @@ msgstr "<qt><i>“%1”</i>将被<b>永久</b>删除。</qt>"
 msgid "&Delete"
 msgstr "删除(&D)"
 
-#: src/contextMenuContext.cpp:95
+#: src/contextMenuContext.cpp:97
 #, kde-format
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"

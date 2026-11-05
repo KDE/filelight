@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-08 00:49+0000\n"
+"POT-Creation-Date: 2026-11-05 01:00+0000\n"
 "PO-Revision-Date: 2026-05-12 03:16+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -58,7 +58,7 @@ msgstr "<qt><i>%1</i> 將會<b>永久</b>刪除。</qt>"
 msgid "&Delete"
 msgstr "刪除(&D)"
 
-#: src/contextMenuContext.cpp:95
+#: src/contextMenuContext.cpp:97
 #, kde-format
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"

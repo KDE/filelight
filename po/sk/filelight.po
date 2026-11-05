@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-08 00:49+0000\n"
+"POT-Creation-Date: 2026-11-05 01:00+0000\n"
 "PO-Revision-Date: 2022-07-19 10:05+0200\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -58,7 +58,7 @@ msgstr "<qt><i>'%1'</i> bude <b>nenávratne</b> odstránený.</qt>"
 msgid "&Delete"
 msgstr "O&dstrániť"
 
-#: src/contextMenuContext.cpp:95
+#: src/contextMenuContext.cpp:97
 #, kde-format
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-08 00:49+0000\n"
+"POT-Creation-Date: 2026-11-05 01:00+0000\n"
 "PO-Revision-Date: 2026-04-25 23:51+0300\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -61,7 +61,7 @@ msgstr "<qt><i>„%1“</i> bus <b>visam laikui</b> ištrintas.</qt>"
 msgid "&Delete"
 msgstr "&Ištrinti"
 
-#: src/contextMenuContext.cpp:95
+#: src/contextMenuContext.cpp:97
 #, kde-format
 msgctxt "@info:notification"
 msgid "Error while deleting: %1"

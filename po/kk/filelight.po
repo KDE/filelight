@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-08 00:49+0000\n"
+"POT-Creation-Date: 2026-11-05 01:00+0000\n"
 "PO-Revision-Date: 2013-06-27 03:35+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -57,7 +57,7 @@ msgstr "<qt><i>'%1'</i> деген <b>мүлдем</b> жойылады.</qt>"
 msgid "&Delete"
 msgstr "&Өшіру"
 
-#: src/contextMenuContext.cpp:95
+#: src/contextMenuContext.cpp:97
 #, fuzzy, kde-format
 #| msgid "Error while deleting"
 msgctxt "@info:notification"

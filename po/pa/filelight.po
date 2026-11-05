@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-08 00:49+0000\n"
+"POT-Creation-Date: 2026-11-05 01:00+0000\n"
 "PO-Revision-Date: 2024-01-04 08:44-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -56,7 +56,7 @@ msgstr "<qt><i>'%1'</i> ਨੂੰ <b>ਪੱਕੇ ਤੌਰ ਉੱਤੇ</b> ਹ
 msgid "&Delete"
 msgstr "ਹਟਾਓ(&D)"
 
-#: src/contextMenuContext.cpp:95
+#: src/contextMenuContext.cpp:97
 #, fuzzy, kde-format
 #| msgid "Error while deleting"
 msgctxt "@info:notification"

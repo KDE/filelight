@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-08 00:49+0000\n"
+"POT-Creation-Date: 2026-11-05 01:00+0000\n"
 "PO-Revision-Date: 2014-10-20 20:14+0000\n"
 "Last-Translator: Vedran Ljubovic <vljubovic@smartnet.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -59,7 +59,7 @@ msgstr "<qt><i>'%1'</i> će biti<b>stalno</b> obrisana.</qt>"
 msgid "&Delete"
 msgstr "&Obriši"
 
-#: src/contextMenuContext.cpp:95
+#: src/contextMenuContext.cpp:97
 #, fuzzy, kde-format
 #| msgid "Error while deleting"
 msgctxt "@info:notification"

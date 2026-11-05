@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-08 00:49+0000\n"
+"POT-Creation-Date: 2026-11-05 01:00+0000\n"
 "PO-Revision-Date: 2023-07-29 23:52+0300\n"
 "Last-Translator: Theofilos Intzoglou <int.teo@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -61,7 +61,7 @@ msgstr "<qt>Το <i>'%1'</i> θα διαγραφεί <b>μόνιμα</b>!</qt>"
 msgid "&Delete"
 msgstr "&Διαγραφή"
 
-#: src/contextMenuContext.cpp:95
+#: src/contextMenuContext.cpp:97
 #, fuzzy, kde-format
 #| msgid "Error while deleting"
 msgctxt "@info:notification"
