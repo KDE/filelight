@@ -14,6 +14,7 @@
 #include <KIO/ListJob>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <KMountPoint>
 #include <KTerminalLauncherJob>
 #include <KUrlMimeData>
 
@@ -24,6 +25,8 @@
 
 #if HAVE_LIBBTRFSUTIL
 #include <btrfsutil.h>
+#include <linux/magic.h>
+#include <sys/statfs.h>
 #endif
 
 using namespace Qt::StringLiterals;
@@ -94,7 +97,6 @@ static bool shouldDelete(const QUrl &url, bool isFolder, bool hasSnapshots, bool
                                                                   shouldDeleteSnapshots,
                                                                   KMessageBox::Dangerous);
 
-        qDebug() << userIntention;
         return userIntention == QDialogButtonBox::StandardButton::Ok;
     }
 
@@ -114,11 +116,59 @@ void ContextMenuContext::deleteFile(const std::shared_ptr<File> &file)
     const auto isFolder = file->isFolder();
 
 #if HAVE_LIBBTRFSUTIL
+    bool isOnBtrfs = false;
+
+#if KIO_VERSION >= QT_VERSION_CHECK(6, 30, 0)
+    KMountPoint::Ptr mountPoint = KMountPoint::currentMountPointForPath(file->url().path());
+    isOnBtrfs = mountPoint && mountPoint->mountType() == "btrfs"_L1;
+#else
+    struct statfs sfs;
+    if (statfs(file->url().path().toLocal8Bit().constData(), &sfs) < 0) {
+        isOnBtrfs = false;
+    } else {
+        isOnBtrfs = sfs.f_type == BTRFS_SUPER_MAGIC;
+    }
+#endif
+
+    if (isOnBtrfs) {
+        deleteFileWithSnapshots(file);
+        return;
+    }
+#endif
+
+    if (!shouldDelete(url, isFolder, /*hasSnapshots=*/false, /*shouldDeleteSnapshots=*/nullptr)) {
+        return;
+    }
+
+    auto job = KIO::del(url);
+    connect(job, &KJob::finished, this, [this, url, job, file] {
+        QGuiApplication::restoreOverrideCursor();
+        setDeleting(false);
+        if (!job->error()) {
+            if (auto parent = file->parent()) {
+                parent->remove(file);
+            }
+            RadialMap::Map::instance()->refresh(Dirty::Layout);
+        } else {
+            Q_EMIT deleteFileFailed(i18nc("@info:notification", "Error while deleting: %1", job->errorString()));
+        }
+    });
+    setDeleting(true);
+    QGuiApplication::setOverrideCursor(Qt::BusyCursor);
+}
+
+#if HAVE_LIBBTRFSUTIL
+void ContextMenuContext::deleteFileWithSnapshots(const std::shared_ptr<File> &file)
+{
+    const auto url = file->url();
+    const auto isFolder = file->isFolder();
+
     QUrl snapshotsUrl;
     snapshotsUrl.setScheme("snapshot"_L1);
     snapshotsUrl.setPath("/file/"_L1 + file->parent()->url().path());
     auto *snapshotLister = new KCoreDirLister(this);
     snapshotLister->openUrl(snapshotsUrl);
+    snapshotLister->setAutoErrorHandlingEnabled(false); // if user doesn't have KIO Snapshot installed we don't want to throw an error dialog at them
     connect(snapshotLister, &KCoreDirLister::completed, this, [this, url, snapshotLister, file, isFolder] {
         QList<QString> snapshots;
         for (const auto &item : snapshotLister->items()) {
@@ -201,28 +251,8 @@ void ContextMenuContext::deleteFile(const std::shared_ptr<File> &file)
         setDeleting(true);
         QGuiApplication::setOverrideCursor(Qt::BusyCursor);
     });
-#else
-    if (!shouldDelete(url, isFolder, false, nullptr)) {
-        return;
-    }
-
-    auto job = KIO::del(url);
-    connect(job, &KJob::finished, this, [this, url, job, file] {
-        QGuiApplication::restoreOverrideCursor();
-        setDeleting(false);
-        if (!job->error()) {
-            if (auto parent = file->parent()) {
-                parent->remove(file);
-            }
-            RadialMap::Map::instance()->refresh(Dirty::Layout);
-        } else {
-            Q_EMIT deleteFileFailed(i18nc("@info:notification", "Error while deleting: %1", job->errorString()));
-        }
-    });
-    setDeleting(true);
-    QGuiApplication::setOverrideCursor(Qt::BusyCursor);
-#endif
 }
+#endif
 
 void ContextMenuContext::setDeleting(bool status)
 {

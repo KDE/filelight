@@ -50,6 +50,10 @@ Q_SIGNALS:
 
 private:
     bool m_deleting = false;
+
+#if HAVE_LIBBTRFSUTIL
+    void deleteFileWithSnapshots(const std::shared_ptr<File> &file);
+#endif
 };
 
 } // namespace Filelight
