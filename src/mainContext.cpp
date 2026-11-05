@@ -9,6 +9,9 @@
 #include "mainContext.h"
 
 #include <KAboutData>
+#include <KConfig>
+#include <KConfigGroup>
+#include <KFileMetaData/UserMetaData>
 #include <KIO/Global> // upUrl
 #include <KLocalizedQmlContext>
 #include <KLocalizedString>
@@ -123,6 +126,23 @@ bool MainContext::openUrl(const QUrl &u)
     } else if (isLocal && !QDir(localPath).isReadable()) {
         Q_EMIT openUrlFailed(i18n("Unable to enter: %1", localPath), i18n("You do not have access rights to this location."));
     } else {
+        // going through the portal FUSE layer makes scanning way slower
+        // and doesn't allow for features like smarter Btrfs support
+        // so if we can go through the original path we should
+        // see https://flatpak.github.io/xdg-desktop-portal/docs/doc-org.freedesktop.portal.Documents.html#org-freedesktop-portal-documents-gethostpaths
+        const QString flatpakInfoLocation = QStandardPaths::locate(QStandardPaths::RuntimeLocation, QStringLiteral("flatpak-info"));
+        if (!flatpakInfoLocation.isEmpty()) {
+            const KConfig flatpakInfoConfig(flatpakInfoLocation, KConfig::SimpleConfig);
+            const auto allowedFilesystems = flatpakInfoConfig.group("Context"_L1).readXdgListEntry("filesystems"_L1);
+            if (allowedFilesystems.contains("host"_L1)) {
+                const KFileMetaData::UserMetaData metadata(localPath);
+                const QString hostPath = metadata.attribute(QStringLiteral("document-portal.host-path"));
+                if (!hostPath.isEmpty() && QDir(hostPath).exists() && QDir(hostPath).isReadable()) {
+                    uri = QUrl::fromLocalFile(hostPath);
+                }
+            }
+        }
+
         const bool success = start(uri);
         if (success) {
             setUrl(uri);
