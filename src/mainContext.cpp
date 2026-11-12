@@ -11,7 +11,6 @@
 #include <KAboutData>
 #include <KConfig>
 #include <KConfigGroup>
-#include <KFileMetaData/UserMetaData>
 #include <KIO/Global> // upUrl
 #include <KLocalizedQmlContext>
 #include <KLocalizedString>
@@ -28,6 +27,10 @@
 #include "radialMap/map.h"
 #include "radialMap/radialMap.h"
 #include "scan.h"
+
+#ifdef Q_OS_LINUX
+#include <sys/xattr.h>
+#endif
 
 using namespace Qt::StringLiterals;
 
@@ -126,6 +129,7 @@ bool MainContext::openUrl(const QUrl &u)
     } else if (isLocal && !QDir(localPath).isReadable()) {
         Q_EMIT openUrlFailed(i18n("Unable to enter: %1", localPath), i18n("You do not have access rights to this location."));
     } else {
+#ifdef Q_OS_LINUX
         // going through the portal FUSE layer makes scanning way slower
         // and doesn't allow for features like smarter Btrfs support
         // so if we can go through the original path we should
@@ -135,13 +139,17 @@ bool MainContext::openUrl(const QUrl &u)
             const KConfig flatpakInfoConfig(flatpakInfoLocation, KConfig::SimpleConfig);
             const auto allowedFilesystems = flatpakInfoConfig.group("Context"_L1).readXdgListEntry("filesystems"_L1);
             if (allowedFilesystems.contains("host"_L1)) {
-                const KFileMetaData::UserMetaData metadata(localPath);
-                const QString hostPath = metadata.attribute(QStringLiteral("document-portal.host-path"));
-                if (!hostPath.isEmpty() && QDir(hostPath).exists() && QDir(hostPath).isReadable()) {
-                    uri = QUrl::fromLocalFile(hostPath);
+                char hostPath[PATH_MAX];
+                ssize_t hostPathLen = getxattr(localPath.toLocal8Bit().constData(), "user.document-portal.host-path", hostPath, sizeof(hostPath));
+                if (hostPathLen > 0) {
+                    QString hostPathStr = QString::fromLocal8Bit(hostPath, hostPathLen);
+                    if (QDir(hostPathStr).exists() && QDir(hostPathStr).isReadable()) {
+                        uri = QUrl::fromLocalFile(hostPathStr);
+                    }
                 }
             }
         }
+#endif
 
         const bool success = start(uri);
         if (success) {

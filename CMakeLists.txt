@@ -50,7 +50,6 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED
     ColorScheme
     Config
     Crash
-    FileMetaData
 )
 find_package(KF6DocTools) # Optional, not needed on Windows for example.
 
