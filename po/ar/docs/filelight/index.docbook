@@ -1,0 +1,604 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY filelight "<application
+>Filelight</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Arabic "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="filelight" lang="&language;">
+
+<bookinfo>
+   <title
+>دليل كشاف الملفات</title>
+   <authorgroup>
+      <author
+><firstname
+>Max</firstname
+> <surname
+>Howell</surname
+> <affiliation
+><address
+><email
+>max.howell@methylblue.com</email
+></address
+></affiliation>
+      </author>
+      <author
+><firstname
+>Martin</firstname
+> <surname
+>Sandsmark</surname
+> <affiliation
+><address
+><email
+>martin.sandsmark@kde.org</email
+></address
+></affiliation>
+      </author>
+      <othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+   </authorgroup>
+   <copyright
+><year
+>2006</year
+><holder
+>Max Howell</holder
+></copyright>
+   <copyright
+><year
+>2009</year
+><holder
+>Martin Sandsmark</holder
+></copyright>
+   <!-- Translators: put here the copyright notice of the translation -->
+   <legalnotice
+>&FDLNotice;</legalnotice>
+   <date
+>2015-08-04</date>
+   <releaseinfo
+>كاشف الملفات 1.21 (تطبيقات 15.08)</releaseinfo>
+   <abstract
+><para
+>اعرض المساحة المستخدمة من القرص واحذف الملفات غير المستخدمة.</para
+></abstract>
+   <!-- These may be used by search engines -->
+   <keywordset>
+      <keyword
+>كيدي</keyword>
+      <keyword
+>كشاف الملفات</keyword>
+      <keyword
+>du</keyword>
+      <keyword
+>استخدام القرص</keyword>
+   </keywordset>
+</bookinfo>
+
+
+<chapter id="introduction">
+   <title
+>مقدمة</title>
+   <screenshot>
+      <screeninfo
+>لقطة شاشة كاشف الملفات 1.20</screeninfo>
+      <mediaobject>
+         <imageobject
+><imagedata fileref="radial_map.png" format="PNG"/></imageobject>
+         <textobject
+><phrase
+>لقطة شاشة</phrase
+></textobject>
+      </mediaobject>
+   </screenshot>
+   <para
+>يتيح لك كاشف الملفات فهم أين تُستخدم مساحة قرصك بسرعة من خلال تمثيل نظام ملفاتك بيانيًا كمجموعة من الحلقات المقسمة متحدة المركز. يمكنك استخدامه لتحديد نقاط الاستخدام الساخنة ثم التعامل مع تلك المناطق باستخدام دولفين أو كونكيورر.</para>
+</chapter>
+
+
+<chapter id="configuring">
+<title
+>ضبط كاشف الملفات</title>
+
+<para
+>يحتوي حوار إعدادات كاشف الملفات على لسانَين لضبط خيارات كاشف الملفات. اللسانان هما <guilabel
+>المسح</guilabel
+> و<guilabel
+>المظهر</guilabel
+>. فيما يلي وصف لسانَي الإعدادات. يمكن العثور على حوار إعدادات كاشف الملفات بالنقر على <menuchoice
+><guimenu
+>الإعدادات</guimenu
+><guimenuitem
+>اضبط كاشف الملفات</guimenuitem
+></menuchoice
+>.</para>
+
+<sect1 id="scanning">
+<title
+>المسح</title>
+
+<screenshot>
+<screeninfo
+>لقطة شاشة المسح</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_scan.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>لقطة شاشة</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>يتيح لك لسان المسح ضبط كيفية مسح كاشف الملفات للمجلدات. يُستخدم الخيار <guilabel
+> لا تمسح هذه المجلدات</guilabel
+> لاستثناء مجلدات معينة من مسحك. هذا الخيار مفيد جدًا لتخطي المجلدات التي قد لا تملك أذون قراءتها، أو المجلدات التي هي جزء من نظام ملفات افتراضي، مثل /proc. لإضافة مجلد إلى القائمة، انقر على الزر <guibutton
+>أضف...</guibutton
+>، سيبدأ هذا حوارًا حيث يمكنك اختيار المجلد الذي تريده من عرض شجري. لإزالة مجلد، ببساطة حدد المجلد الذي تريده وانقر على الزر <guibutton
+>أزل</guibutton
+>.</para>
+<para
+>استخدام <guilabel
+>المسح عبر حدود أنظمة الملفات</guilabel
+> يسمح للمسح بدخول المجلدات التي هي جزء من أنظمة ملفات أخرى. على سبيل المثال، عند إلغاء تحديده، سيمنع هذا عادةً مسح محتويات <filename class="directory"
+>/mnt</filename
+> إذا مسحت بدءًا من المجلد الجذر <filename class="directory"
+>/</filename
+>. يمكن أن يولد مسح أنظمة الملفات البعيدة، مثل وصلات NFS أو Samba، حركة مرور عالية على الشبكة. لمنع مسحها، حدد <guilabel
+>استبعد أنظمة الملفات البعيدة</guilabel
+>. الخيار التالي <guilabel
+>استبعد الوسائط القابلة للإزالة</guilabel
+> يمنع كاشف الملفات من مسح الوسائط القابلة للإزالة (مثل أقراص CD-ROM).</para>
+</sect1>
+
+<sect1 id="appearance">
+<title
+>المظهر</title>
+
+<screenshot>
+<screeninfo
+>لقطة شاشة المظهر</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="config_appear.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>لقطة شاشة</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>يتيح لك لسان <guilabel
+>المظهر</guilabel
+> ضبط شكل كاشف الملفات.</para>
+<para
+>يُستخدم قسم <guilabel
+>نظام الألوان</guilabel
+> لاختيار نظام ألوان لكاشف الملفات. أنظمة الألوان هي <guilabel
+>قوس قزح</guilabel
+> و<guilabel
+>ألوان النظام</guilabel
+> و<guilabel
+>تباين عالٍ</guilabel
+>. يوجد أيضًا منزلق <guilabel
+>التباين</guilabel
+> لضبط تباين مقاطع الحلقات لسهولة المشاهدة.</para>
+<para
+>يُستخدم مربع الاختيار <guilabel
+>استخدم منع التعرج</guilabel
+> لتمكين استخدام منع التعرج في عرض كاشف الملفات. عند تحديده، يجعل هذا الخيار مقاطع الحلقات تبدو أكثر نقاءً.</para>
+<para
+>مربع الاختيار <guilabel
+>نوّع أحجام خطوط اللصائق</guilabel
+> مفيد عندما يكون لديك ملفات أو مجلدات بأسماء طويلة. سيغير هذا الخيار حجم الخط للسماح له بالتناسب بشكل أفضل في العرض. عند تمكين هذا الخيار، يصبح مربع تدوير <guilabel
+>أدنى حجم خط</guilabel
+> متاحًا لاختيار أصغر حجم خط للتحجيم إليه. </para>
+<para
+>خيار <guilabel
+>أظهر الملفات الصغيرة</guilabel
+> معطل مبدئيًا لأن الملفات الصغيرة تميل إلى إرباك عرض كاشف الملفات. فعّل هذا الخيار إذا كنت ترغب في تضمين ملفاتك الصغيرة في عرض كاشف الملفات. تُدمج هذه الملفات جميعًا في <quote
+>مقطع متعدد</quote
+> واحد.</para>
+
+</sect1>
+</chapter>
+
+
+<chapter id="using">
+<title
+>استخدام كاشف الملفات</title>
+
+<sect1 id="starting">
+<title
+>بدء كاشف الملفات</title>
+<para
+>يمكن بدء كاشف الملفات من مشغل التطبيقات، أو من سطر الأوامر</para>
+
+<sect2 id="starting-from-the-menu">
+<title
+>من مطلق التطبيقات</title>
+<para
+>افتح قائمة التطبيقات وحرّك مؤشرك لأعلى القائمة إلى عنصر القائمة <guimenu
+>الأدوات المساعدة</guimenu
+>. اختر <guimenuitem
+>كاشف الملفات</guimenuitem
+>. </para>
+</sect2>
+
+<sect2 id="starting-from-the-command-line">
+<title
+>من سطر الأوامر</title>
+<para
+>يمكنك بدء كاشف الملفات بكتابة اسمه في سطر الأوامر. إذا أعطيته اسم مجلد، كما في المثال أدناه، فسيمسح ذلك المجلد. </para>
+<informalexample>
+<screen
+><prompt
+>%</prompt
+><userinput
+><command
+>كاشف الملفات</command
+> <option
+><replaceable
+>/home</replaceable
+></option
+></userinput
+>
+</screen>
+</informalexample>
+</sect2>
+
+</sect1>
+
+<sect1 id="scanning-folders">
+<title
+>فحص المجلدات</title>
+<para
+>مسح مجلد يُظهر محتوياته كخريطة ملفات. لمسح مجلد، استخدم قائمة المسح، أو اكتب عنوان URL مباشرة في شريط الموقع. </para>
+</sect1>
+
+<sect1 id="exploring-filemaps">
+<title
+>استكشاف خرائط الملفات</title>
+<para
+>بمجرد اكتمال المسح، ستُعرض عليك خريطة ملفات تمثل المجلد الذي مسحته. خريطة الملفات هي سلسلة من الحلقات المقسمة التي تتوسع من المركز. المقاطع ذات الألوان الزاهية هي مجلدات، والمقاطع الرمادية هي ملفات. تُحجم المقاطع بما يتناسب مع حجم ملفاتها. يمكن أن تكون المقاطع متداخلة، لذا على سبيل المثال، سيكون <filename class="directory"
+>/home/mxcl</filename
+> على مستوى واحد للخارج وداخل حدود المقطع الذي يمثل <filename class="directory"
+>/home</filename
+>. المقاطع موسومة، وتحويم الفأرة فوق المقاطع سيعطيك تفاصيل أكثر عن ذلك المقطع ومقاطعه الفرعية. </para>
+<screenshot>
+<screeninfo
+>لقطة شاشة خريطة الملفات</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="radial_map_context_menu.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>لقطة شاشة</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+<para
+>يمكنك فتح المجلدات باستخدام مدير الملفات المبدئي أو كونسول باستخدام قائمة السياق لذلك المقطع. نقرة بالزر الأوسط تفتح الملفات حسب نوع الميم، مثل الصور مع <application
+>جوينفيو</application
+>. يمكنك النقر بزر الفأرة الأيمن على مقطع للحصول على قائمة سياق للمجلد الممسوح مع إجراءات لنسخ مسار المجلد إلى الحافظة أو حذف المجلد أو الملف. النقر بزر الفأرة الأيسر على المقاطع سيعيد توسيط الخريطة على ذلك المقطع. </para>
+</sect1>
+
+</chapter>
+
+
+<chapter id="commands">
+<title
+>مرجع القائمة والأوامر</title>
+
+<variablelist>
+<title
+>قائمة المسح</title>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>مسح</guimenu
+> <guimenuitem
+>امسح مجلدًا...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>يقدم حوار اختيار مجلد لتتمكن من اختيار مجلد لمسحه.</action
+></para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keysym
+>Home</keysym
+></keycombo
+> </shortcut
+> <guimenu
+>مسح</guimenu
+> <guimenuitem
+>امسح مجلد المستخدم الرئيس</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>يبدأ مسحًا لمجلد المستخدم الرئيس.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>مسح</guimenu
+> <guimenuitem
+>امسح المجلد الجذر</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>يبدأ مسحًا للمجلد الجذر.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycap
+>F5</keycap
+> </shortcut
+> <guimenu
+>مسح</guimenu
+> <guimenuitem
+>أعد المسح</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>يبدأ مسحًا جديدًا لمجلد العمل الحالي، هذا مفيد عند إجراء تغييرات على نظام الملفات.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> &Esc; </shortcut
+> <guimenu
+>مسح</guimenu
+> <guimenuitem
+>أوقف</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>يوقف المسح الحالي.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>مسح</guimenu
+> <guimenuitem
+>اخرج</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>يخرج من كاشف الملفات.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist>
+  <title
+>قائمة عرض</title>
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>+</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>عرض</guimenu
+> <guimenuitem
+>قرب</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>يكبّر عرض خريطة الملفات.</action
+></para>
+    </listitem>
+    </varlistentry>
+
+    <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>-</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>عرض</guimenu
+> <guimenuitem
+>بعد</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>يُصغّر عرض خريطة الملفات.</action
+></para>
+    </listitem>
+    </varlistentry>
+</variablelist>
+
+<variablelist>
+<title
+>قائمة اذهب</title>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt;<keycap
+>Up</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>اذهب</guimenu
+> <guimenuitem
+>لأعلى</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>ينقلك خطوة واحدة لأعلى في نظام الملفات إلى المجلد الأب.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>اذهب</guimenu
+> <guimenuitem
+>عُد</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>ينقلك خطوة واحدة إلى الخلف في تاريخ تصفح نظام الملفات.</action
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>اذهب</guimenu
+> <guimenuitem
+>تقدم</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>ينقلك خطوة واحدة إلى الأمام في تاريخ تصفح نظام الملفات.</action
+></para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>بالإضافة إلى ذلك، يحتوي كاشف الملفات على عناصر القائمة الشائعة في كيدي <guimenu
+>إعدادات</guimenu
+> و<guimenu
+>مساعدة</guimenu
+>. لمزيد من المعلومات، اقرأ القسمين حول <ulink url="help:/fundamentals/menus.html#menus-settings"
+>قائمة الإعدادات</ulink
+> و<ulink url="help:/fundamentals/menus.html#menus-help"
+>قائمة المساعدة</ulink
+> من أساسيات كيدي. </para>
+</chapter>
+
+
+<chapter id="credits">
+   <title
+>الحقوق والترخيص</title>
+   <sect1 id="kapp">
+      <title
+>كشاف الملفات</title>
+      <para
+>حقوق نشر البرنامج 2006 ماكس بي. هاول <email
+>max.howell@methylblue.com</email
+></para>
+      <para
+>حقوق نشر البرنامج 2008-2013 مارتن ساندسمارك <email
+>martin.sandsmark@kde.org</email
+></para
+>&underGPL; </sect1>
+   <sect1 id="Documentation">
+      <title
+>التّوثيق</title>
+      <para
+>حقوق نشر التوثيق 2003 ماكس بي. هاول <email
+>max.howell@methylblue.com</email
+></para>
+      <para
+>حقوق نشر التوثيق 2009 مارتن ساندسمارك <email
+>martin.sandsmark@kde.org</email
+></para>
+      <para
+>الترجمة: زايد السعيدي <email
+>zayed.alsaidi@gmail.com</email
+></para
+> &underFDL; </sect1>
+</chapter>
+
+&documentation.index;
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->
