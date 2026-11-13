@@ -47,7 +47,6 @@ static void outputError(const QByteArray &path)
 }
 
 POSIXWalker::POSIXWalker(const QByteArray &path)
-    : m_path(path)
 {
     if (path.isEmpty()) {
         return;

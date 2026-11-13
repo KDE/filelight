@@ -6,6 +6,7 @@
 #include <windows.h>
 
 #include <QByteArray>
+#include <QString>
 
 #include "directoryEntry.h"
 
@@ -17,10 +18,7 @@ public:
 
     void next();
 
-    HANDLE m_handle = INVALID_HANDLE_VALUE;
-    const QByteArray m_path;
     DirectoryEntry m_entry{};
-    WIN32_FIND_DATAW m_fileinfo{};
 
 private:
     // Returns the last Win32 error, in string format. Returns an empty string if there is no error.
@@ -28,6 +26,9 @@ private:
     void updateEntry();
     void close();
 
+    HANDLE m_handle = INVALID_HANDLE_VALUE;
+    WIN32_FIND_DATAW m_fileinfo{};
+    QString m_path; // backing data for m_pathW do not remove lightly
     const std::wstring m_pathW;
 
     Q_DISABLE_COPY_MOVE(WindowsWalker); // we hold a pointer, disable sharing

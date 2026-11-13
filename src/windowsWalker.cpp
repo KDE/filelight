@@ -7,8 +7,8 @@
 #include <QString>
 
 WindowsWalker::WindowsWalker(const QByteArray &path)
-    : m_path(path)
-    , m_pathW(QString::fromUtf8(m_path).toStdWString())
+    : m_path(QString::fromUtf8(path))
+    , m_pathW(m_path.toStdWString())
 {
     if (path.isEmpty()) {
         return;
@@ -55,7 +55,7 @@ void WindowsWalker::next()
                 return;
             }
             // WARNING: do not access m_fileinfo, it has undefined content!
-            qWarning() << m_path << ':' << errorCode << GetLastErrorAsString(errorCode);
+            qWarning() << QString::fromUtf8(m_pathW.c_str()) << ':' << errorCode << GetLastErrorAsString(errorCode);
             continue;
         }
 

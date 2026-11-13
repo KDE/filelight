@@ -23,7 +23,6 @@ public:
 
     void next();
 
-    QByteArray m_path;
     DirectoryEntry m_entry;
 
 private:
