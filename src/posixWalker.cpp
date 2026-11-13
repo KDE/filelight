@@ -81,7 +81,7 @@ void POSIXWalker::close()
 void POSIXWalker::next()
 {
     while (true) {
-        m_entry = {}; // reset
+        m_entry = std::nullopt; // reset
 
         if (!m_dir) {
             return;
@@ -97,34 +97,36 @@ void POSIXWalker::next()
             continue;
         }
 
-        m_entry.name = QByteArray(ent->d_name);
+        m_entry = std::make_optional<DirectoryEntry>();
+
+        m_entry->name = QByteArray(ent->d_name);
         if (fstatat(m_dirfd, ent->d_name, &statbuf, AT_SYMLINK_NOFOLLOW) == -1) {
-            outputError(m_entry.name);
+            outputError(m_entry->name);
             return;
         }
 
-        m_entry.isSkippable =
+        m_entry->isSkippable =
             S_ISLNK(statbuf.st_mode) || S_ISCHR(statbuf.st_mode) || S_ISBLK(statbuf.st_mode) || S_ISFIFO(statbuf.st_mode) || S_ISSOCK(statbuf.st_mode);
 
         auto links = statbuf.st_nlink;
         // Only count as hard link if it's not already being skipped
-        if (links > 1 && !m_entry.isSkippable) {
+        if (links > 1 && !m_entry->isSkippable) {
             ino_t inode = statbuf.st_ino;
             // If we already counted this inode, skip it
             if (m_countedHardlinks.contains(inode)) {
-                m_entry.isDuplicate = true;
+                m_entry->isDuplicate = true;
             } else {
                 // Only add to counted hard links if we are going to count it
                 m_countedHardlinks.insert(inode);
             }
         }
-        m_entry.isDir = S_ISDIR(statbuf.st_mode);
-        m_entry.isFile = S_ISREG(statbuf.st_mode);
+        m_entry->isDir = S_ISDIR(statbuf.st_mode);
+        m_entry->isFile = S_ISREG(statbuf.st_mode);
 
 #ifdef Q_OS_LINUX
-        m_entry.size = statbuf.st_blocks * DEV_BSIZE;
+        m_entry->size = statbuf.st_blocks * DEV_BSIZE;
 #else
-        m_entry.size = statbuf.st_blocks * S_BLKSIZE;
+        m_entry->size = statbuf.st_blocks * S_BLKSIZE;
 #endif
         break;
     }

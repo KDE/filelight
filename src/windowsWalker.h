@@ -18,7 +18,7 @@ public:
 
     void next();
 
-    DirectoryEntry m_entry{};
+    std::optional<DirectoryEntry> m_entry;
 
 private:
     // Returns the last Win32 error, in string format. Returns an empty string if there is no error.

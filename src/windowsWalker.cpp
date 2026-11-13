@@ -45,7 +45,7 @@ void WindowsWalker::close()
 void WindowsWalker::next()
 {
     while (true) {
-        m_entry = {}; // reset
+        m_entry = std::nullopt; // reset
 
         if (FindNextFileW(m_handle, &m_fileinfo) == 0) { // error
             const DWORD errorCode = GetLastError();
@@ -55,7 +55,7 @@ void WindowsWalker::next()
                 return;
             }
             // WARNING: do not access m_fileinfo, it has undefined content!
-            qWarning() << QString::fromUtf8(m_pathW.c_str()) << ':' << errorCode << GetLastErrorAsString(errorCode);
+            qWarning() << QString::fromStdWString(m_pathW) << ':' << errorCode << GetLastErrorAsString(errorCode);
             continue;
         }
 
@@ -90,10 +90,10 @@ QString WindowsWalker::GetLastErrorAsString(DWORD error)
 
 void WindowsWalker::updateEntry()
 {
-    m_entry = {}; // reset
+    m_entry = std::make_optional<DirectoryEntry>();
 
     const std::wstring name(m_fileinfo.cFileName);
-    m_entry.name = QString::fromStdWString(name).toUtf8();
+    m_entry->name = QString::fromStdWString(name).toUtf8();
 
     auto new_path = m_pathW + L"/" + name;
 
@@ -102,9 +102,9 @@ void WindowsWalker::updateEntry()
 
     const auto attributes = m_fileinfo.dwFileAttributes;
     // Reparse points are symlinks or NTFS junctions.
-    m_entry.isSkippable = attributes & FILE_ATTRIBUTE_REPARSE_POINT || attributes & FILE_ATTRIBUTE_TEMPORARY;
-    m_entry.isDir = attributes & FILE_ATTRIBUTE_DIRECTORY;
-    m_entry.isFile = !m_entry.isSkippable && !m_entry.isDir; // fileness is implicit in win32 api
+    m_entry->isSkippable = attributes & FILE_ATTRIBUTE_REPARSE_POINT || attributes & FILE_ATTRIBUTE_TEMPORARY;
+    m_entry->isDir = attributes & FILE_ATTRIBUTE_DIRECTORY;
+    m_entry->isFile = !m_entry->isSkippable && !m_entry->isDir; // fileness is implicit in win32 api
     ULARGE_INTEGER ulargeInt;
     if (attributes & FILE_ATTRIBUTE_COMPRESSED || attributes & FILE_ATTRIBUTE_SPARSE_FILE || attributes & FILE_ATTRIBUTE_UNPINNED) {
         ulargeInt.HighPart = 0;
@@ -118,5 +118,5 @@ void WindowsWalker::updateEntry()
         ulargeInt.LowPart = m_fileinfo.nFileSizeLow;
     }
 
-    m_entry.size = ulargeInt.QuadPart;
+    m_entry->size = ulargeInt.QuadPart;
 }

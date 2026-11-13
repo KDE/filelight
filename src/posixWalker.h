@@ -23,7 +23,7 @@ public:
 
     void next();
 
-    DirectoryEntry m_entry;
+    std::optional<DirectoryEntry> m_entry;
 
 private:
     void close();

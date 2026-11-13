@@ -22,10 +22,10 @@ struct DirectoryEntryListing {
         Walker walker(path);
         while (true) {
             // Already has the first entry after creation, call .next() at the end!
-            if (walker.m_entry.name.isEmpty()) { // EOF
+            if (!walker.m_entry.has_value()) { // EOF
                 break;
             }
-            co_yield walker.m_entry;
+            co_yield *walker.m_entry;
             walker.next();
         }
     }
