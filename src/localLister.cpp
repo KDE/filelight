@@ -19,7 +19,7 @@
 #include <QStorageInfo>
 #include <QThreadPool>
 
-#include "directoryIterator.h"
+#include "directoryEntryListing.h"
 
 namespace Filelight
 {
@@ -83,7 +83,7 @@ std::shared_ptr<Folder> LocalLister::scan(const QByteArray &path, const QByteArr
     auto cwd = std::make_shared<Folder>(dirname.constData());
     QList<QPair<QByteArray, QByteArray>> subDirectories;
 
-    for (const auto &entry : DirectoryIterator(path)) {
+    for (const auto &entry : DirectoryEntryListing{.path = path}.generate()) {
         if (m_parent->m_abort) {
             return cwd;
         }

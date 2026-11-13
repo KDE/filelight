@@ -13,12 +13,12 @@
 #define S_BLKSIZE 512
 #endif
 
-#include "directoryIterator.h"
+#include "directoryEntryListing.h"
 #include "test-config.h"
 
 using namespace Qt::StringLiterals;
 
-class DirectoryIteratorTest : public QObject
+class DirectoryEntryListingTest : public QObject
 {
     Q_OBJECT
     QString m_tree = QFINDTESTDATA("iterator-tree");
@@ -37,7 +37,7 @@ private Q_SLOTS:
 #endif
 
         QMap<QByteArray, DirectoryEntry> entries;
-        for (const auto &entry : DirectoryIterator(m_tree.toUtf8())) {
+        for (const auto &entry : DirectoryEntryListing{.path = m_tree.toUtf8()}.generate()) {
             qDebug() << entry.name;
             QVERIFY(!entries.contains(entry.name));
             entries.insert(entry.name, entry);
@@ -115,7 +115,7 @@ private Q_SLOTS:
         QByteArray tree = QFINDTESTDATA(u"iterator-tree/Con 자백"_s).toUtf8();
         QVERIFY(!tree.isEmpty());
         QMap<QByteArray, DirectoryEntry> entries;
-        for (const auto &entry : DirectoryIterator(tree)) {
+        for (const auto &entry : DirectoryEntryListing{.path = tree}.generate()) {
             qDebug() << entry.name;
             QVERIFY(!entries.contains(entry.name));
             entries.insert(entry.name, entry);
@@ -127,7 +127,7 @@ private Q_SLOTS:
     void testCDrive()
     {
         QMap<QByteArray, DirectoryEntry> entries;
-        for (const auto &entry : DirectoryIterator(m_tree.toUtf8())) {
+        for (const auto &entry : DirectoryEntryListing{.path = m_tree.toUtf8()}.generate()) {
             QVERIFY(!entries.contains(entry.name));
             entries.insert(entry.name, entry);
         }
@@ -136,7 +136,7 @@ private Q_SLOTS:
 
     void testBadPath()
     {
-        for (const auto &entry : DirectoryIterator(QByteArrayLiteral("/tmp/filelighttest1312312312313123123123"))) {
+        for (const auto &entry : DirectoryEntryListing{.path = QByteArrayLiteral("/tmp/filelighttest1312312312313123123123")}.generate()) {
             Q_UNUSED(entry);
             QVERIFY(false);
         }
@@ -169,7 +169,7 @@ private Q_SLOTS:
                        {QStringLiteral("Sparse"), QStringLiteral("SetRange"), QStringLiteral("foo"), QStringLiteral("0"), QStringLiteral("1000")});
             QVERIFY(proc.waitForFinished());
         }
-        for (const auto &entry : DirectoryIterator(tmpdir.path().toUtf8())) {
+        for (const auto &entry : DirectoryEntryListing{.path = tmpdir.path().toUtf8()}.generate()) {
             QCOMPARE(entry.size, 0);
         }
 #else
@@ -182,7 +182,7 @@ private Q_SLOTS:
 #endif
 
         bool found = false;
-        for (const auto &entry : DirectoryIterator(tmpdir.path().toUtf8())) {
+        for (const auto &entry : DirectoryEntryListing{.path = tmpdir.path().toUtf8()}.generate()) {
             QCOMPARE(entry.name, QByteArrayLiteral("foo"));
 #if defined(Q_OS_FREEBSD)
             // CI keeps changing, we don't assert anything for freebsd.
@@ -196,6 +196,6 @@ private Q_SLOTS:
     }
 };
 
-QTEST_GUILESS_MAIN(DirectoryIteratorTest)
+QTEST_GUILESS_MAIN(DirectoryEntryListingTest)
 
-#include "directoryIteratorTest.moc"
+#include "directoryEntryListingTest.moc"

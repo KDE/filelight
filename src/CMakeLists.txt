@@ -17,14 +17,13 @@ endif()
 
 add_library(filelightInternal STATIC
     fileTree.cpp
-    directoryIterator.cpp
+    directoryEntryListing.cpp
     fileCleaner.cpp
     scan.cpp
     Config.cpp
     localLister.cpp
     remoteLister.cpp
     fileTree.h
-    directoryIterator.h
     fileCleaner.h
     scan.h
     Config.h
