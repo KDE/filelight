@@ -6,6 +6,7 @@
 #include <memory>
 
 #include <QObject>
+#include <QPointer>
 
 // Make a slot-safe QObject shared_ptr. Uses deleteLater() as deleter.
 // Mind that this is usually preferred over unique_ptr when dealing with complex usage scenarios because shared_ptr's
@@ -14,9 +15,9 @@ template<typename T, typename... Args>
 std::shared_ptr<T> make_shared_qobject(Args &&...args)
 {
     T *raw = new T(std::forward<Args>(args)...);
-    return std::shared_ptr<T>(raw, [](T *obj) {
-        if (obj) {
-            obj->deleteLater();
+    return std::shared_ptr<T>(raw, [safeObj = QPointer(raw)]([[maybe_unused]] T *obj) {
+        if (safeObj) {
+            safeObj->deleteLater();
         }
     });
 }
