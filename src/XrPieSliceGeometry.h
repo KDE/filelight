@@ -23,6 +23,9 @@ class XrPieSliceGeometry : public QQuick3DGeometry
     Q_PROPERTY(float thickness
                READ thickness WRITE setThickness NOTIFY thicknessChanged)
 
+    // A narrow overlay following the top perimeter, used for the luminous rim.
+    Q_PROPERTY(bool edgeOnly READ edgeOnly WRITE setEdgeOnly NOTIFY edgeOnlyChanged)
+
 public:
     explicit XrPieSliceGeometry();
 
@@ -41,19 +44,29 @@ public:
     float thickness() const { return m_thickness; }
     void setThickness(float value);
 
+    bool edgeOnly() const
+    {
+        return m_edgeOnly;
+    }
+    void setEdgeOnly(bool value);
+
 Q_SIGNALS:
     void radiusChanged();
     void innerRadiusChanged();
     void startAngleChanged();
     void sweepAngleChanged();
     void thicknessChanged();
+    void edgeOnlyChanged();
 
 private:
     void rebuildGeometry();
 
     float m_radius = 1.0f;
     float m_innerRadius = 0.0f;
+    // Retain the requested value when innerRadius is assigned before radius.
+    float m_requestedInnerRadius = 0.0f;
     float m_startAngle = 0.0f;
     float m_sweepAngle = 45.0f;
     float m_thickness = 0.2f;
+    bool m_edgeOnly = false;
 };
