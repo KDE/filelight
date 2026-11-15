@@ -14,7 +14,13 @@
         "--socket=fallback-x11",
         "--socket=wayland",
         "--filesystem=host",
-        "--device=dri"
+        "--device=all",
+        "--device=shm",
+        "--filesystem=xdg-config/openxr:ro",
+        "--filesystem=xdg-config/openvr",
+        "--filesystem=/home/david/.local/share/Steam/:ro",
+        "--filesystem=/opt/steamvr:ro",
+        "--filesystem=xdg-run/monado_comp_ipc"
     ],
     "cleanup": [
         "/include",
@@ -23,10 +29,73 @@
     ],
     "modules": [
         {
-            "name": "filelight",
+            "name": "qtshadertools",
             "buildsystem": "cmake-ninja",
+            "builddir": true,
             "config-opts": [
-                "-DBUILD_TESTING=OFF"
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DCMAKE_INSTALL_PREFIX=/app",
+                "-DQT_BUILD_EXAMPLES=OFF",
+                "-DQT_BUILD_TESTS=OFF"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/qt/qtshadertools.git",
+                    "tag": "v6.11.3",
+                    "commit": "e150edd58bec5be4893d5491ec84d564b78adfa2"
+                }
+            ]
+        },
+        {
+            "name": "qtquicktimeline",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DCMAKE_INSTALL_PREFIX=/app",
+                "-DQT_BUILD_EXAMPLES=OFF",
+                "-DQT_BUILD_TESTS=OFF"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/qt/qtquicktimeline.git",
+                    "tag": "v6.11.3",
+                    "commit": "bc5e3d21e8437ca2cae98bf1cefcc7dc966be84e"
+                }
+            ]
+        },
+        {
+            "name": "qtquick3d",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DCMAKE_INSTALL_PREFIX=/app",
+                "-DQT_BUILD_EXAMPLES=OFF",
+                "-DQT_BUILD_TESTS=OFF",
+                "-DFEATURE_quick3d_assimp=ON",
+                "-DFEATURE_quick3dxr_openxr=ON",
+                "-DFEATURE_system_assimp=OFF",
+                "-DFEATURE_system_openxr=OFF"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/qt/qtquick3d.git",
+                    "tag": "v6.11.3",
+                    "commit": "ea086ac75d09b4f08b042a203c5ecdbcedd0ec71"
+                }
+            ]
+        },
+        {
+            "name": "filelight",
+            "buildsystem": "simple",
+            "build-commands": [
+                "cmake -S . -B flatpak-build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/app -DBUILD_TESTING=OFF || cmake -S . -B flatpak-build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/app -DBUILD_TESTING=OFF",
+                "cmake --build flatpak-build",
+                "cmake --install flatpak-build"
             ],
             "sources": [
                 {
