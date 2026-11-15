@@ -15,7 +15,7 @@ if (HAVE_SINCOS)
     add_definitions(-DHAVE_SINCOS)
 endif()
 
-add_library(filelightInternal STATIC
+add_library(filelightInternal OBJECT
     fileTree.cpp
     directoryEntryListing.cpp
     fileCleaner.cpp
@@ -23,12 +23,15 @@ add_library(filelightInternal STATIC
     Config.cpp
     localLister.cpp
     remoteLister.cpp
-    fileTree.h
-    fileCleaner.h
-    scan.h
-    Config.h
-    localLister.h
-    remoteLister.h
+    radialMap/map.cpp
+    radialMap/radialMap.cpp
+    mainContext.cpp
+    qml/qml.qrc
+    contextMenuContext.cpp
+    fileModel.cpp
+    dropperItem.cpp
+    hicolor.qrc
+    windowThemer.cpp
 )
 ecm_qt_declare_logging_category(filelightInternal
     HEADER filelight_debug.h
@@ -55,35 +58,17 @@ target_link_libraries(filelightInternal
     KF6::I18n
     KF6::KIOWidgets # Only used for KDirLister, may be able to move away from that.
     KF6::Crash
+    KF6::I18nQml
+    KF6::ColorScheme
+    Qt6::Quick
+    Qt6::QuickControls2
+)
+target_include_directories(filelightInternal PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/radialMap
 )
 
-add_executable(filelight)
-target_sources(filelight PRIVATE
-    radialMap/map.cpp
-    radialMap/radialMap.cpp
-    mainContext.cpp
-    mainContext.h
-    main.cpp
-    fileTree.h
-    radialMap/map.h
-    radialMap/radialMap.h
-    radialMap/sincos.h
-    scan.h
-    define.h
-    localLister.h
-    remoteLister.h
-    Config.h
-    qml/qml.qrc
-    contextMenuContext.cpp
-    contextMenuContext.h
-    fileModel.cpp
-    fileModel.h
-    dropperItem.cpp
-    dropperItem.h
-    hicolor.qrc
-    windowThemer.cpp windowThemer.h
-)
-target_include_directories(filelight PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/radialMap)
+add_executable(filelight main.cpp)
 
 set(filelight_ICONS
     ${CMAKE_CURRENT_SOURCE_DIR}/../misc/16-apps-filelight.png
@@ -110,6 +95,8 @@ ecm_add_qml_module(filelight URI org.kde.filelight
     VERSION 1.0
     GENERATE_PLUGIN_SOURCE
     OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/src/org/kde/filelight)
+# Rope in the QML types from the OBJECT library.
+qt_generate_foreign_qml_types(filelightInternal filelight)
 ecm_finalize_qml_module(filelight DESTINATION ${KDE_INSTALL_QMLDIR})
 # Somehow qmlls doesn't find it in bin even though the qmlls.ini tells it to look there :(
 add_custom_target(link_bin_org ALL
