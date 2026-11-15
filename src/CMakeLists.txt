@@ -26,7 +26,6 @@ add_library(filelightInternal OBJECT
     radialMap/map.cpp
     radialMap/radialMap.cpp
     mainContext.cpp
-    qml/qml.qrc
     contextMenuContext.cpp
     fileModel.cpp
     dropperItem.cpp
@@ -95,6 +94,20 @@ ecm_add_qml_module(filelight URI org.kde.filelight
     VERSION 1.0
     GENERATE_PLUGIN_SOURCE
     OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/src/org/kde/filelight)
+ecm_target_qml_sources(filelight
+    SOURCES
+        qml/Main.qml
+        qml/OverviewPage.qml
+        qml/MapPage.qml
+        qml/Action.qml
+        qml/AboutPage.qml
+        qml/ActionMenuItem.qml
+        qml/GlobalMenu.qml
+        qml/SegmentShape.qml
+        qml/CenterShape.qml
+        qml/SettingsPage.qml
+        qml/ShapeToolTip.qml
+    )
 # Rope in the QML types from the OBJECT library.
 qt_generate_foreign_qml_types(filelightInternal filelight)
 ecm_finalize_qml_module(filelight DESTINATION ${KDE_INSTALL_QMLDIR})

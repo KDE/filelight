@@ -70,7 +70,7 @@ Kirigami.ApplicationWindow {
         icon.name: "configure"
         text: i18nc("@action configure app", "Configure…")
         onTriggered: {
-            const openDialogWindow = pageStack.pushDialogLayer("qrc:/ui/SettingsPage.qml", {
+            const openDialogWindow = pageStack.pushDialogLayer(Qt.resolvedUrl("SettingsPage.qml"), {
                 width: appWindow.width
             }, {
                 title: i18nc("@title:window", "Configure"),
@@ -94,7 +94,7 @@ Kirigami.ApplicationWindow {
         displayHint: Kirigami.DisplayHint.AlwaysHide
         icon.name: "filelight"
         text: i18nc("@action opens about app page", "About Filelight")
-        onTriggered: { pageStack.layers.push("qrc:/ui/AboutPage.qml") }
+        onTriggered: { pageStack.layers.push(Qt.resolvedUrl("AboutPage.qml")) }
     }
 
     GlobalMenu {}
@@ -105,7 +105,7 @@ Kirigami.ApplicationWindow {
     width: Kirigami.Units.gridUnit * 40
     height: Kirigami.Units.gridUnit * 30
 
-    pageStack.initialPage: "qrc:/ui/OverviewPage.qml"
+    pageStack.initialPage: Qt.resolvedUrl("OverviewPage.qml")
     pageStack.defaultColumnWidth: appWindow.width // show single page
 
     signal completed
@@ -115,7 +115,7 @@ Kirigami.ApplicationWindow {
             // Create a completely new page...
             // Kirigami is a bit smart with cleanup where it will delete mapPage when we pop it and it has no parent.
             // Explicitly create the object with appWindow as parent so this does not happen!
-            const component = Qt.createComponent("qrc:/ui/MapPage.qml")
+            const component = Qt.createComponent("MapPage.qml")
             if (component.status === Component.Error) {
                 throw new Error("Error while loading page: " + component.errorString());
             }

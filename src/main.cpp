@@ -132,19 +132,11 @@ int main(int argc, char *argv[])
          !QStandardPaths::locate(QStandardPaths::RuntimeLocation, QStringLiteral("flatpak-info")).isEmpty() || qEnvironmentVariableIsSet("SNAP")},
     });
 
-    const QUrl mainUrl(QStringLiteral("qrc:/ui/main.qml"));
-    QObject::connect(
-        engine,
-        &QQmlApplicationEngine::objectCreated,
-        &app,
-        [mainUrl](QObject *obj, const QUrl &objUrl) {
-            if (!obj && mainUrl == objUrl) {
-                qWarning() << "Failed to load QML dialog.";
-                abort();
-            }
-        },
-        Qt::QueuedConnection);
-    engine->load(mainUrl);
+    engine->loadFromModule("org.kde.filelight", "Main");
+    if (engine->hasError()) {
+        qWarning() << "Failed to load QML module 'org.kde.filelight' with main file 'Main'.";
+        return 1;
+    }
 
     return app.exec();
 }
