@@ -2,7 +2,7 @@
 <component type="desktop-application">
   <id>org.kde.filelight.desktop</id>
   <metadata_license>FSFAP</metadata_license>
-  <project_license>GPL-2.0+</project_license>
+  <project_license>GPL-2.0-or-later</project_license>
   <developer id="org.kde">
     <name translate="no">KDE</name>
     <url>https://kde.org</url>
@@ -479,6 +479,8 @@
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=filelight</url>
   <url type="help">https://docs.kde.org/?application=filelight</url>
   <url type="donation">https://www.kde.org/community/donations/?app=filelight&amp;source=appdata</url>
+  <url type="vcs-browser">https://invent.kde.org/utilities/filelight</url>
+  <url type="contribute">https://community.kde.org/Get_Involved</url>
   <screenshots>
     <screenshot type="default">
       <image>https://cdn.kde.org/screenshots/filelight/filelight.png</image>
