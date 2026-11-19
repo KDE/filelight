@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-05 01:00+0000\n"
+"POT-Creation-Date: 2026-11-19 01:11+0000\n"
 "PO-Revision-Date: 2022-12-18 12:00+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -238,7 +238,7 @@ msgctxt "@item:inmenu"
 msgid "Help"
 msgstr "Ajuda"
 
-#: src/qml/main.qml:41
+#: src/qml/Main.qml:41
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Scan Home Folder"
@@ -246,7 +246,7 @@ msgctxt "@action Scan home folder"
 msgid "Home Folder"
 msgstr "Analisar a Pasta Pessoal"
 
-#: src/qml/main.qml:48
+#: src/qml/Main.qml:48
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Scan Root Folder"
@@ -254,43 +254,43 @@ msgctxt "@action Scan root folder"
 msgid "Root Folder"
 msgstr "Analisar a Pasta de Raiz"
 
-#: src/qml/main.qml:56
+#: src/qml/Main.qml:56
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
 msgstr ""
 
-#: src/qml/main.qml:56
+#: src/qml/Main.qml:56
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
 msgstr ""
 
-#: src/qml/main.qml:63
+#: src/qml/Main.qml:63
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr "Sair"
 
-#: src/qml/main.qml:71
+#: src/qml/Main.qml:71
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "Configurar…"
 
-#: src/qml/main.qml:76
+#: src/qml/Main.qml:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "Configurar"
 
-#: src/qml/main.qml:88
+#: src/qml/Main.qml:88
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "Abrir o Manual"
 
-#: src/qml/main.qml:96
+#: src/qml/Main.qml:96
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Welcome to Filelight"
@@ -298,7 +298,7 @@ msgctxt "@action opens about app page"
 msgid "About Filelight"
 msgstr "Bem-vindo ao Filelight"
 
-#: src/qml/main.qml:173
+#: src/qml/Main.qml:173
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"

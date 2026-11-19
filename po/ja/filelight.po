@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filelight\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-05 01:00+0000\n"
+"POT-Creation-Date: 2026-11-19 01:11+0000\n"
 "PO-Revision-Date: 2025-01-27 21:29+0900\n"
 "Last-Translator: Lemon73 <Lemonade.Flash.1164@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -227,55 +227,55 @@ msgctxt "@item:inmenu"
 msgid "Help"
 msgstr "ヘルプ"
 
-#: src/qml/main.qml:41
+#: src/qml/Main.qml:41
 #, kde-format
 msgctxt "@action Scan home folder"
 msgid "Home Folder"
 msgstr "ホームフォルダー"
 
-#: src/qml/main.qml:48
+#: src/qml/Main.qml:48
 #, kde-format
 msgctxt "@action Scan root folder"
 msgid "Root Folder"
 msgstr "ルートフォルダー"
 
-#: src/qml/main.qml:56
+#: src/qml/Main.qml:56
 #, kde-format
 msgctxt "@action Scan a user-selected folder"
 msgid "Choose Folder…"
 msgstr "フォルダーを選択…"
 
-#: src/qml/main.qml:56
+#: src/qml/Main.qml:56
 #, kde-format
 msgctxt "@action Scan another folder"
 msgid "Other Folder…"
 msgstr "その他のフォルダー"
 
-#: src/qml/main.qml:63
+#: src/qml/Main.qml:63
 #, kde-format
 msgctxt "@action"
 msgid "Quit"
 msgstr "終了する"
 
-#: src/qml/main.qml:71
+#: src/qml/Main.qml:71
 #, kde-format
 msgctxt "@action configure app"
 msgid "Configure…"
 msgstr "設定…"
 
-#: src/qml/main.qml:76
+#: src/qml/Main.qml:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "設定"
 
-#: src/qml/main.qml:88
+#: src/qml/Main.qml:88
 #, kde-format
 msgctxt "@action"
 msgid "Open Handbook"
 msgstr "ハンドブックを開く"
 
-#: src/qml/main.qml:96
+#: src/qml/Main.qml:96
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Welcome to Filelight"
@@ -283,7 +283,7 @@ msgctxt "@action opens about app page"
 msgid "About Filelight"
 msgstr "Filelight へようこそ"
 
-#: src/qml/main.qml:173
+#: src/qml/Main.qml:173
 #, kde-format
 msgctxt "@info:status"
 msgid "Failed to abort scan"
