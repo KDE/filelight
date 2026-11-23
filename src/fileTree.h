@@ -14,6 +14,7 @@
 #include <KFormat>
 
 #include <QByteArray>
+#include <QList>
 
 using FileSize = quint64;
 

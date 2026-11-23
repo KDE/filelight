@@ -5,6 +5,8 @@
 
 #include "fileTree.h"
 
+#include <QObject>
+
 // Tiny helper class to defer file deletion into a thread. The Files are being held until actual cleanup.
 class FileCleaner : public QObject
 {
