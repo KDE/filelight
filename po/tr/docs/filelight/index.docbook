@@ -206,14 +206,14 @@
 > onay kutusu, &filelight; görünümünde kullanılacak yumuşatmayı etkinleştirmek için kullanılır. Seçiliyse halka bölütlerinin görünümün daha temiz yapar.</para>
 <para
 ><guilabel
->Etiket yazıtipi puntosunu değişken yap</guilabel
-> işaret kutusu, uzun adlı dosya ve klasörleriniz varsa kullanışlıdır. Bu seçenek, yazıtipi puntosunu ayarlayarak, görünüme daha iyi oturmasını sağlayacaktır. Seçenek etkinleştirildiğinde, <guilabel
->En küçük yazıtipi puntosu</guilabel
-> ayar kutusu, ölçeklenebilir en küçük puntolu yazıtipini seçmek için kullanılabilir hale gelecektir. </para>
+>Etiket yazı tipi puntosunu değişken yap</guilabel
+> işaret kutusu, uzun adlı dosya ve klasörleriniz varsa kullanışlıdır. Bu seçenek, yazı tipi puntosunu ayarlayarak, görünüme daha iyi oturmasını sağlayacaktır. Seçenek etkinleştirildiğinde, <guilabel
+>En küçük yazı tipi puntosu</guilabel
+> ayar kutusu, ölçeklenebilir en küçük puntolu yazı tipini seçmek için kullanılabilir hale gelecektir. </para>
 <para
 ><guilabel
 >Küçük dosyaları göster</guilabel
-> seçeneği, küçük dosyaların karmaşıklığa yol açmaması için öntanımlı olarak kapalıdır. Küçük dosyalarınızı &filelight; görünümünde içermek istiyorsanız bu seçeneği etkinleştirin. Bu dosyalar tek bir <quote
+> seçeneği, küçük dosyaların karmaşıklığa yol açmaması için varsayılan olarak kapalıdır. Küçük dosyalarınızı &filelight; görünümünde içermek istiyorsanız bu seçeneği etkinleştirin. Bu dosyalar tek bir <quote
 >çoklu bölüt</quote
 > olarak birleştirilir.</para>
 
@@ -295,7 +295,7 @@
 </mediaobject>
 </screenshot>
 <para
->Klasörlerin içerik menüsünü kullanarak öntanımlı dosya yöneticinizle veya &konsole; ile klasörleri açabilirsiniz. Bir &MMB; tıklaması, MIME türüne göre, &eg;, <application
+>Klasörlerin içerik menüsünü kullanarak varsayılan dosya yöneticinizle veya &konsole; ile klasörleri açabilirsiniz. Bir &MMB; tıklaması, MIME türüne göre, &eg;, <application
 >Gwenview</application
 > içeren görüntüleri açar. Bir bölüte sağ tıklayıp bağlam menüsünü açarak; taranan klasör için klasör yolunu panoya kopyalamak veya dosyayı silmek gibi eylemlere erişebilirsiniz. Bölütlere sağ tıklamak, haritayı o bölüt üzerinde yeniden ortalar. </para>
 </sect1>
